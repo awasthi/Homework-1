@@ -38,7 +38,7 @@
 \usepackage{mleftright}
 \mleftright
 
-% \usepackage{microtype}
+\usepackage{microtype}
 
 \usepackage{amsthm}
 \usepackage{amssymb}
@@ -148,35 +148,21 @@
   \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
   {#1} % the function
   % \vphantom{\big|} % pretend it's a little taller at normal size
-  \right|{#2} % this is the delimiter
+  \right|_{#2} % this is the delimiter
   }}
 
-%% Operators & functions
-\DeclareMathOperator{\id}{id}
-\DeclareMathOperator{\lcm}{lcm}
-\DeclareMathOperator{\rk}{rk}
-\DeclareMathOperator{\rank}{rank}
-\DeclareMathOperator{\sgn}{sgn}
-\DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\trace}{trace}
+%% Commands and operators
+\newcommand{\id}{id}
+\newcommand{\lcm}{lcm}
+\newcommand{\ann}{ann}
+\newcommand{\ass}{ass}
+\newcommand{\im}{im}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\ZZ}{\mathbf{Z}}
 
-%% Sets
-\DeclareMathOperator{\ann}{ann}
-\DeclareMathOperator{\ass}{ass}
-\DeclareMathOperator{\im}{im}
-
-%% Number sets
-\DeclareMathOperator{\CC}{\mathbf{C}}
-\DeclareMathOperator{\NN}{\mathbf{N}}
-\DeclareMathOperator{\QQ}{\mathbf{Q}}
-\DeclareMathOperator{\RR}{\mathbf{R}}
-\DeclareMathOperator{\ZZ}{\mathbf{Z}}
-
-%% Groups
-\DeclareMathOperator{\Sym}{Sym}
-\DeclareMathOperator{\SL}{SL}
-\DeclareMathOperator{\GL}{GL}
-\DeclareMathOperator{\Orth}{O}
 
 %% Fields
 \DeclareMathOperator{\FF}{\mathbf{F}}

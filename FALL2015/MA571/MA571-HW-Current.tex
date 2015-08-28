@@ -148,21 +148,17 @@
   \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
   {#1} % the function
   % \vphantom{\big|} % pretend it's a little taller at normal size
-  \right|{#2} % this is the delimiter
+  \right|_{#2} % this is the delimiter
   }}
 
-%% Operators & functions
-\DeclareMathOperator{\id}{id}
-
-%% Sets
-\DeclareMathOperator{\im}{im}
-
-%% Number sets
-\DeclareMathOperator{\CC}{\mathbf{C}}
-\DeclareMathOperator{\NN}{\mathbf{N}}
-\DeclareMathOperator{\QQ}{\mathbf{Q}}
-\DeclareMathOperator{\RR}{\mathbf{R}}
-\DeclareMathOperator{\ZZ}{\mathbf{Z}}
+%% Commands and operators
+\newcommand{\id}{id}
+\newcommand{\im}{im}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\ZZ}{\mathbf{Z}}
 
 \begin{document}
 \frontmatter
