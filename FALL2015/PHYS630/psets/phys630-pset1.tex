@@ -18,7 +18,35 @@ Consider the transmission line described in Jackson's problem
 \textbf{E}=\frac{Q}{4\pi\varepsilon_0 r}
 \end{equation}
 where $Q$ is the charge per unit length and $r$ is the
-perpendicular distance
+perpendicular distance from the point of interest, say $P$, to
+the conductor. Along the perpendicular line joining the two
+conductors, the field due to to the two conductors are in the
+same direction. Therefore, the total field along this line is
+\begin{equation}
+\label{eq:total-electric-field}
+\vec{E}=\frac{Q}{2\pi\varepsilon_0
+  r_1}+\frac{Q}{2\pi\varepsilon_0 r_2}
+\end{equation}
+where $r_1$ and $r_2$ are the perpendicular distances from the
+point $P$ to each conductor. The electric field $\vec{E}$
+points from $+Q$ to $-Q$ and the potential difference is given by
+the expression
+\begin{align*}
+V&=\Phi_1+\Phi_2\\
+ &=-\int\vec{E}\cdot\diff\vec{\ell}\\
+ &=\frac{Q}{2\pi\varepsilon_0}
+   \left(\int_{a_1}^{d-a_2}\frac{1}{r_1}\diff
+   r_1+\int_{a_2}^{a_1-d}\frac{1}{r_2}\diff r_2\right)\\
+ &=\frac{Q}{2\pi\varepsilon_0}\log\left((d-a_1)(d-a_2)/a_1a_2\right).
+\end{align*}
+Thus the capacitance is
+\begin{align*}
+C&=Q/V\\
+ &=\frac{2\pi\varepsilon_0}{\log\left(d^2/\sqrt{a_1a_2}^2\right)}\\
+ &\approx
+ \frac{Q}{2\pi\varepsilon_0}{\log\left(\frac{d^2}{\sqrt{a_1a_2}^2}\right)}\\
+ &=\frac{\pi\varepsilon_0}{\log(d/a)}.
+\end{align*}
 \\\\
 (b)
 \end{proof}
@@ -47,7 +75,7 @@ found.
 \item Use the boundary condition at the surface of the plane to
   find all $c_\ell$.
 \item Find the Cartesian components of the electric field
-  $\mathbf{E}$.
+  $\vec{E}$.
 \item Find the change in the electrostatic energy caused by the
   presence of the sphere.
 \end{enumerate}

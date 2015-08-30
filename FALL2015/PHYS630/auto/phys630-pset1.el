@@ -5,5 +5,6 @@
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
    (LaTeX-add-labels
-    "eq:electric-field-conductor")))
+    "eq:electric-field-conductor"
+    "eq:total-electric-field")))
 

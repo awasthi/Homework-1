@@ -40,6 +40,7 @@
     "Div"
     "Grad"
     "Curl"
+    "diff"
     "documentauthor"
     "documenttitle"
     "hwnum"
