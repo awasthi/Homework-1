@@ -110,7 +110,7 @@ $\mathcal{T}_\infty$ defines a topology on $X$. Consider the
 collection of subsets
 $\left\{\{i\}\right\}_{i=1}^\infty$. $\ZZ_+\smallsetminus\{i\}=\left\{1,...,i-1,i+1,...\right\}$
 is infinite hence, $\{i\}\in\mathcal{T}_\infty$ for all
-$i\in\{1,...\}$. However,
+$i\in\NN$. However,
 $\ZZ_+\smallsetminus\bigcup_{i=1}^\infty\{i\}=\{0\}$ is finite so
 $\bigcup_{i=1}^\infty\{i\}\notin\mathcal{T}_\infty$, this is a
 contradiction. Therefore, $\mathcal{T}_\infty$ does not define a
@@ -339,8 +339,22 @@ Let $\mathcal{B}$ denote the collection
 \left\{\,(a,b)\times(c,d)\;\middle|\;
 \text{$a<b$ and $c<d$, and $a,b,c,d$ are rational}\,\right\}.
 \]
-Then, for every $p=(x,y)\in\RR^2$,
-we have that
+Then, for every $p=(x,y)\in\RR^2$, by the density of the
+rationals in $\RR$, there exists rational $a$ and $b$, $c$ and
+$d$ such that $a<x<b$ and $c<y<d$, so $p\in (a,b)\times (c,d)$
+which is in $\mathcal{B}$. Next, suppose $p=(x,y)\in
+\left((a,b)\times(c,d)\right) \cap \left((a',b')\times
+  (c',d')\right)$. Then $a<x<b$, $c<y<d$ and $a'<x<b'$,
+$c'<y<d'$. Let
+\begin{align*}
+\alpha&=\min\{a,a'\},&\beta&=\min\{b,b'\},\\
+\gamma&=\min\{c,c'\},&\delta&=\min\{d,d'\}.
+\end{align*}
+Then,
+\[
+x\in(\alpha,\beta)\times(\gamma,\delta)\subset\left((a,b)\times(c,d)\right)\cap\left((a',b')\times(c',d')\right).
+\]
+Thus, $\mathcal{B}$ is a basis.
 \end{proof}
 \newpage
 
@@ -351,6 +365,14 @@ $\RR_d$ denotes $\RR$ in the discrete topology. Compare this
 topology with the standard topology on $\RR^2$.
 \end{problem}
 \begin{proof}
+Let $\mathcal{B}_1$ denote a basis for the dictionary topology on
+$\RR\times\RR$ and let $\mathcal{B}_2$ denote a basis for the
+product topology on $\RR_d\times\RR$ where, as in the problem
+prompt, $\RR_d$ denotes the set $\RR$ equipped with the discrete
+topology. We want to show that the topologies on $\RR\times\RR$
+and $\RR_d\times\RR$ are equivalent. We will proceed by Lemma
+13.3. Let $x\in\RR\times\RR$ and let $U\in\mathcal{B}_1$ be a
+neighborhood of $x$. Then
 \end{proof}
 
 %%% Local Variables:

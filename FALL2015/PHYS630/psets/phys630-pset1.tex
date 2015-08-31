@@ -1,7 +1,7 @@
 \begin{problem}
 Consider the transmission line described in Jackson's problem
 1.7. Suppose the conductors carry charges $\pm Q$.
-\begin{enumerate}[noitemsep,label=(\alph*)]
+ \begin{enumerate}[noitemsep,label=(\alph*)]
 \item Find the electric field at any point of the plane passing
   through the axes of the conductors. (Please neglect the end
   effects, i.e., assume the length of the line to be effectively
@@ -24,16 +24,16 @@ conductors, the field due to to the two conductors are in the
 same direction. Therefore, the total field along this line is
 \begin{equation}
 \label{eq:total-electric-field}
-\vec{E}=\frac{Q}{2\pi\varepsilon_0
+\mathbf{E}=\frac{Q}{2\pi\varepsilon_0
   r_1}+\frac{Q}{2\pi\varepsilon_0 r_2}
 \end{equation}
 where $r_1$ and $r_2$ are the perpendicular distances from the
-point $P$ to each conductor. The electric field $\vec{E}$
+point $P$ to each conductor. The electric field $\mathbf{E}$
 points from $+Q$ to $-Q$ and the potential difference is given by
 the expression
 \begin{align*}
 V&=\Phi_1+\Phi_2\\
- &=-\int\vec{E}\cdot\diff\vec{\ell}\\
+ &=-\int\mathbf{E}\cdot\diff\mathbf{l}\\
  &=\frac{Q}{2\pi\varepsilon_0}
    \left(\int_{a_1}^{d-a_2}\frac{1}{r_1}\diff
    r_1+\int_{a_2}^{a_1-d}\frac{1}{r_2}\diff r_2\right)\\
@@ -64,7 +64,7 @@ the sphere.
 Look for a solution to the Laplace equation outside the sphere in
 the form
 \[
-\varphi(r,\theta)=-E_0z+\sum_{\ell=1}^\infty
+\varphi(r,\theta)=-E_0z+\sum_{l=1}^\infty
 \frac{c_\ell P_\ell(\cos\theta)}{r^{\ell+1}},
 \]
 where $r,\theta,\varphi$ are spherical coordinates (there is no
@@ -75,7 +75,7 @@ found.
 \item Use the boundary condition at the surface of the plane to
   find all $c_\ell$.
 \item Find the Cartesian components of the electric field
-  $\vec{E}$.
+  $\mathbf{E}$.
 \item Find the change in the electrostatic energy caused by the
   presence of the sphere.
 \end{enumerate}
