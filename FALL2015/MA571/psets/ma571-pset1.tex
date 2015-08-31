@@ -365,14 +365,53 @@ $\RR_d$ denotes $\RR$ in the discrete topology. Compare this
 topology with the standard topology on $\RR^2$.
 \end{problem}
 \begin{proof}
-Let $\mathcal{B}_1$ denote a basis for the dictionary topology on
-$\RR\times\RR$ and let $\mathcal{B}_2$ denote a basis for the
-product topology on $\RR_d\times\RR$ where, as in the problem
-prompt, $\RR_d$ denotes the set $\RR$ equipped with the discrete
-topology. We want to show that the topologies on $\RR\times\RR$
-and $\RR_d\times\RR$ are equivalent. We will proceed by Lemma
-13.3. Let $x\in\RR\times\RR$ and let $U\in\mathcal{B}_1$ be a
-neighborhood of $x$. Then
+Let $\mathcal{B}_1$ denote a basis for the dictionary order
+topology on $\RR\times\RR$ (defined on Munkres) and let
+$\mathcal{B}_2$ denote a basis for the product topology on
+$\RR_d\times\RR$ where, as in the problem prompt, $\RR_d$ denotes
+the set $\RR$ equipped with the discrete topology. To remove
+ambiguity between the interval $(x,y)$ in $\RR$ and the point
+$(x,y)\in\RR\times\RR$, we shall let $x\times y$ to denote the
+point $(x,y)\in\RR\times\RR$. The basis on $\RR\times\RR$ with
+the dictionary order topology is the collection
+\[
+\mathcal{B}_1=\left\{\,(a\times b,c\times
+  d)\;\middle|\;\text{$a,b,c,d\in\RR$ and $a<c$ or if $a=c$,
+    $b<d$}\,\right\}.
+\]
+The basis on $\RR_d\times\RR$ is the collection
+\[
+\mathcal{B}_2=\left\{\,\{a\}\times
+  (b,c)\;\middle|\;\text{$a,b,c\in\RR$, $b<c$}\,\right\}.
+\]
+We want to show that the topologies on $\RR\times\RR$ and
+$\RR_d\times\RR$ are equivalent. We will proceed by Lemma
+13.3. Let $x\times y\in\RR\times\RR$ and let $U(a\times b,c\times
+d)\in\mathcal{B}_1$ be a neighborhood of $x\times y$. Let
+$\varepsilon>0$. Then,
+\[
+x\times
+y\in(a,c)\times\RR\{a\}\times(c,\infty)\cup\{b\}\times(-\infty,d)
+\]
+which is a union in of open sets in $\RR_d\times\RR$. Thus
+$\mathcal{B}_1\subset\mathcal{B}_2$. To see the reverse
+containment. Let $x\times y\in \{a\}\times (b,c)$, then this set
+is in $\mathcal{B}_2$ since it is of the form $(a\times b,c\times
+d)$ with $a=c$. Thus, $\mathcal{B}_2\subset\mathcal{B}_1$ so the
+dictionary order topology on $\RR\times\RR$ is equivalent to the
+topology on $\RR_d\times\RR$.
+\\\\
+Proceeding by Lemma 13.3, let $x\times y\in\RR\times\RR$ and let
+$U=(a\times c,b\times d)$ be an open square containing $x$. Then,
+the union
+\[
+\bigcup_{a<\alpha<c}(\alpha\times b,\alpha\times
+d)=(a\times,c\b\times d),
+\]
+but $\{a\}\times(b,c)$ is not in the standard topology on
+$\RR\times\RR$ so we see that the dictionary order topology on
+$\RR\times\RR$ is strictly finer than the standard topology on
+$\RR\times\RR$.
 \end{proof}
 
 %%% Local Variables:

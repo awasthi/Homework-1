@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.79.1 (TeX Live 2014/Arch Linux) (rev 4971)  (format=lualatex 2015.5.28)  31 AUG 2015 10:00
+This is LuaTeX, Version beta-0.79.1 (TeX Live 2014/Arch Linux) (rev 4971)  (format=lualatex 2015.5.28)  31 AUG 2015 15:44
  restricted \write18 enabled.
  file:line:error style messages enabled.
 **\input MA571-HW-Current.tex
@@ -1019,7 +1019,7 @@ luatexbase-attr: luatexbase.attributes["luaotfload@cursbase"] = 6
 luatexbase-attr: luatexbase.attributes["luaotfload@curscurs"] = 7
 luatexbase-attr: luatexbase.attributes["luaotfload@cursdone"] = 8
 luatexbase-attr: luatexbase.attributes["luaotfload@state"] = 9
-luaotfload | main : fontloader loaded in 0.115 seconds
+luaotfload | main : fontloader loaded in 0.117 seconds
 luatexbase-mcb: inserting 'luaotfload.node_processor'
 at position 1 in 'pre_linebreak_filter'
 luatexbase-mcb: inserting 'luaotfload.node_processor'
@@ -2217,7 +2217,7 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
-] (./psets/ma571-pset1.tex
+] (./psets/ma571-pset2.tex
 luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman12-regular.otf"(c
 ompiling luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/lmroman12-regular.lu
 c)(load luc: /home/carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/lmro
@@ -2228,34 +2228,30 @@ d luc: /home/carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/lmroman12-
 bold.luc)
 
 LaTeX Font Warning: Font shape `EU2/LatinModernRoman(0)/bx/sc' undefined
-(Font)              using `EU2/LatinModernRoman(0)/bx/n' instead on input line 1
+(Font)              using `EU2/LatinModernRoman(0)/bx/n' instead on input line 2
 .
 
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 10.00015pt on input line 2.
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 7.00006pt on input line 2.
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 5.00008pt on input line 2.
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 9.99985pt on input line 2.
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 6.99986pt on input line 2.
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 4.99992pt on input line 2.
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman10-italic.otf"
-Underfull \hbox (badness 10000) in paragraph at lines 17--31
-
- []
-
+luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
+luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
+LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
+(Font)              scaled to size 10.00015pt on input line 4.
+luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
+LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
+(Font)              scaled to size 7.00006pt on input line 4.
+luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
+LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
+(Font)              scaled to size 5.00008pt on input line 4.
+luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
+LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
+(Font)              scaled to size 9.99985pt on input line 4.
+luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
+LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
+(Font)              scaled to size 6.99986pt on input line 4.
+luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
+LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
+(Font)              scaled to size 4.99992pt on input line 4.
+luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman9-regular.otf"(co
 mpiling luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/lmroman9-regular.luc)
 (load luc: /home/carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/lmroma
@@ -2269,39 +2265,22 @@ oad luc: /home/carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/lmroman9
 
 ]
 luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman12-bold.otf" [2]
-luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman7-regular.otf"(co
-mpiling luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/lmroman7-regular.luc)
-(load luc: /home/carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/lmroma
-n7-regular.luc)
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman5-regular.otf"(co
-mpiling luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/lmroman5-regular.luc)
-(load luc: /home/carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/lmroma
-n5-regular.luc)
-Underfull \hbox (badness 10000) in paragraph at lines 98--118
-
- []
-
-[3]
-luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman10-bold.otf"
-Underfull \hbox (badness 10000) in paragraph at lines 176--195
-
- []
-
-[4] [5] [6] [7] [8]) [9]
+ [3] [4] [5] [6] [7]) [8]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 193.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 193.
- (./MA571-HW-Current.aux (./psets/ma571-pset1.aux))
+
+(./MA571-HW-Current.aux (./psets/ma571-pset2.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 193.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 193.
-Package rerunfilecheck Info: File `MA571-HW-Current.out' has not changed.
-(rerunfilecheck)             Checksum: 8FD3935B45983A6332BBEA48C916A57F;662.
 
+
+Package rerunfilecheck Warning: File `MA571-HW-Current.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `MA571-HW-Current.out':
+(rerunfilecheck)             Before: 8FD3935B45983A6332BBEA48C916A57F;662
+(rerunfilecheck)             After:  B86477A644249971F786B1F6BDA915EB;384.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -2309,28 +2288,29 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 193.
 )
 
 Here is how much of LuaTeX's memory you used:
- 34032 strings out of 494693
+ 33969 strings out of 494693
  100000,953878 words of node,token memory allocated
- 905 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 3 kern, 1 penalty, 9 attribute, 147 glue_sp
-ec, 9 attribute_list, 3 write nodes
-   avail lists: 1:52,2:5759,3:176,4:1008,5:157,6:1955,7:87,8:4,9:508,10:981,11:5
-19,12:230
- 36463 multiletter control sequences out of 65536+600000
- 102 fonts using 26617067 bytes
+ 799 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 3 kern, 1 penalty, 8 attribute, 147 glue_sp
+ec, 8 attribute_list, 3 write nodes
+   avail lists: 1:52,2:335,3:20,4:167,5:5,6:80,7:20,8:4,9:509,10:981,11:519,12:2
+30
+ 36422 multiletter control sequences out of 65536+600000
+ 88 fonts using 21633951 bytes
  50i,12n,60p,1205b,370s stack positions out of 5000i,500n,10000p,200000b,100000s
-</home/carlos/.local/share/fonts/OTF-TeXLive/public/lm/lmroman10-bold.otf></home
-/carlos/.local/share/fonts/OTF-TeXLive/public/lm/lmroman10-italic.otf></usr/shar
-e/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></usr/share/texm
-f-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></usr/share/texmf-dist
-/fonts/opentype/public/lm/lmroman12-bold.otf></usr/share/texmf-dist/fonts/openty
-pe/public/lm/lmroman9-italic.otf></home/carlos/.local/share/fonts/OTF-TeXLive/pu
-blic/lm/lmroman10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lm
-roman17-regular.otf>
-Output written on MA571-HW-Current.pdf (11 pages, 72230 bytes).
+LuaTeX warning (dest): name{section.0.9} has been referenced but does not exist,
+ replaced by a fixed one
 
-PDF statistics: 145 PDF objects out of 1000 (max. 8388607)
- 106 compressed objects within 2 object streams
- 15 named destinations out of 1000 (max. 131072)
+</usr/share/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></home
+/carlos/.local/share/fonts/OTF-TeXLive/public/lm/lmroman10-italic.otf></usr/shar
+e/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/share/texmf-dist/
+fonts/opentype/public/lm/lmroman9-italic.otf></home/carlos/.local/share/fonts/OT
+F-TeXLive/public/lm/lmroman10-regular.otf></usr/share/texmf-dist/fonts/opentype/
+public/lm/lmroman17-regular.otf>
+Output written on MA571-HW-Current.pdf (10 pages, 24299 bytes).
+
+PDF statistics: 120 PDF objects out of 1000 (max. 8388607)
+ 89 compressed objects within 1 object stream
+ 10 named destinations out of 1000 (max. 131072)
  73 words of extra memory for PDF output out of 10000 (max. 10000000)
 
