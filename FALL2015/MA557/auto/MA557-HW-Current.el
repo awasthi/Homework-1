@@ -10,6 +10,7 @@
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
    (TeX-run-style-hooks
     "latex2e"
+    "psets/ma557-pset1"
     "memoir"
     "memoir10"
     "geometry"
@@ -31,9 +32,9 @@
     '("restr" 2)
     "id"
     "lcm"
-    "ann"
-    "ass"
     "im"
+    "nil"
+    "rad"
     "CC"
     "NN"
     "QQ"

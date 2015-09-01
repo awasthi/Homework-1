@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.79.1 (TeX Live 2014/Arch Linux) (rev 4971)  (format=lualatex 2015.5.28)  31 AUG 2015 15:44
+This is LuaTeX, Version beta-0.79.1 (TeX Live 2014/Arch Linux) (rev 4971)  (format=lualatex 2015.5.28)  31 AUG 2015 20:33
  restricted \write18 enabled.
  file:line:error style messages enabled.
 **\input MA571-HW-Current.tex
@@ -1019,7 +1019,7 @@ luatexbase-attr: luatexbase.attributes["luaotfload@cursbase"] = 6
 luatexbase-attr: luatexbase.attributes["luaotfload@curscurs"] = 7
 luatexbase-attr: luatexbase.attributes["luaotfload@cursdone"] = 8
 luatexbase-attr: luatexbase.attributes["luaotfload@state"] = 9
-luaotfload | main : fontloader loaded in 0.117 seconds
+luaotfload | main : fontloader loaded in 0.147 seconds
 luatexbase-mcb: inserting 'luaotfload.node_processor'
 at position 1 in 'pre_linebreak_filter'
 luatexbase-mcb: inserting 'luaotfload.node_processor'
@@ -2036,31 +2036,31 @@ Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \titlewidthfirst=\dimen312
 )
 \c@remark=\count346
- (./MA571-HW-Current.aux (./psets/ma571-pset1.aux))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for EU2/lmr/m/n on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 163.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 163.
+ (./MA571-HW-Current.aux (./psets/ma571-pset2.aux))
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for EU2/lmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 166.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 166.
  (/usr/share/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -2111,7 +2111,7 @@ LaTeX Font Info:    ... okay on input line 163.
 \everyMPtoPDFconversion=\toks46
 )
 \AtBeginShipoutBox=\box275
-Package hyperref Info: Link coloring ON on input line 163.
+Package hyperref Info: Link coloring ON on input line 166.
  (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -2122,10 +2122,10 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 163.
-LaTeX Info: Redefining \ref on input line 163.
-LaTeX Info: Redefining \pageref on input line 163.
-LaTeX Info: Redefining \nameref on input line 163.
+LaTeX Info: Redefining \nameref on input line 166.
+LaTeX Info: Redefining \ref on input line 166.
+LaTeX Info: Redefining \pageref on input line 166.
+LaTeX Info: Redefining \nameref on input line 166.
 (./MA571-HW-Current.out) (./MA571-HW-Current.out)
 \@outlinefile=\write4
 
@@ -2145,7 +2145,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 ))
 \c@lstlisting=\count354
-LaTeX Info: Redefining \microtypecontext on input line 163.
+LaTeX Info: Redefining \microtypecontext on input line 166.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -2181,31 +2181,31 @@ Package microtype Info: Loading generic settings for font family
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 10.95015pt on input line 171.
+(Font)              scaled to size 10.95015pt on input line 174.
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 8.00012pt on input line 171.
+(Font)              scaled to size 8.00012pt on input line 174.
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 6.00009pt on input line 171.
+(Font)              scaled to size 6.00009pt on input line 174.
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 10.94983pt on input line 171.
+(Font)              scaled to size 10.94983pt on input line 174.
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 7.99988pt on input line 171.
+(Font)              scaled to size 7.99988pt on input line 174.
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 5.99991pt on input line 171.
+(Font)              scaled to size 5.99991pt on input line 174.
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-LaTeX Font Info:    Try loading font information for U+msa on input line 171.
+LaTeX Font Info:    Try loading font information for U+msa on input line 174.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 (/usr/share/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 171.
+LaTeX Font Info:    Try loading font information for U+msb on input line 174.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -2228,30 +2228,35 @@ d luc: /home/carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/lmroman12-
 bold.luc)
 
 LaTeX Font Warning: Font shape `EU2/LatinModernRoman(0)/bx/sc' undefined
-(Font)              using `EU2/LatinModernRoman(0)/bx/n' instead on input line 2
+(Font)              using `EU2/LatinModernRoman(0)/bx/n' instead on input line 1
 .
 
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern 1.66702pt
+(hyperref)                removed on input line 1.
+
+luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
+luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
+LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
+(Font)              scaled to size 10.00015pt on input line 2.
+luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
+LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
+(Font)              scaled to size 7.00006pt on input line 2.
+luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
+LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
+(Font)              scaled to size 5.00008pt on input line 2.
+luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
+LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
+(Font)              scaled to size 9.99985pt on input line 2.
+luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
+LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
+(Font)              scaled to size 6.99986pt on input line 2.
+luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
+LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
+(Font)              scaled to size 4.99992pt on input line 2.
+luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman10-italic.otf"
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 10.00015pt on input line 4.
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 7.00006pt on input line 4.
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 5.00008pt on input line 4.
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 9.99985pt on input line 4.
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 6.99986pt on input line 4.
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 4.99992pt on input line 4.
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman9-regular.otf"(co
 mpiling luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/lmroman9-regular.luc)
 (load luc: /home/carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/lmroma
@@ -2264,53 +2269,133 @@ oad luc: /home/carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/lmroman9
 
 
 ]
-luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman12-bold.otf" [2]
- [3] [4] [5] [6] [7]) [8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 193.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 193.
+luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman12-bold.otf"
 
-(./MA571-HW-Current.aux (./psets/ma571-pset2.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 193.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 193.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern 1.66702pt
+(hyperref)                removed on input line 8.
+
+[2]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern 1.66702pt
+(hyperref)                removed on input line 18.
+
+[3]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern 1.66702pt
+(hyperref)                removed on input line 28.
+
+[4]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern 1.66702pt
+(hyperref)                removed on input line 40.
+
+[5]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern 1.66702pt
+(hyperref)                removed on input line 50.
+
+[6]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern 1.66702pt
+(hyperref)                removed on input line 56.
+
+[7]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern 1.66702pt
+(hyperref)                removed on input line 64.
+
+luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman7-regular.otf"(co
+mpiling luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/lmroman7-regular.luc)
+(load luc: /home/carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/lmroma
+n7-regular.luc)
+luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman5-regular.otf"(co
+mpiling luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/lmroman5-regular.luc)
+(load luc: /home/carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/lmroma
+n5-regular.luc) [8]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern 1.66702pt
+(hyperref)                removed on input line 75.
+
+./psets/ma571-pset2.tex:79: Undefined control sequence.
+<recently read> \letf 
+      
+l.79 \item Show that the set $\letf
+                                 \{\,x\;\middle|\;f(x)\leq
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./psets/ma571-pset2.tex:79: Extra \middle.
+l.79 \item Show that the set $\letf\{\,x\;\middle|
+                                                \;f(x)\leq
+I'm ignoring a \middle that had no matching \left.
 
 
-Package rerunfilecheck Warning: File `MA571-HW-Current.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+./psets/ma571-pset2.tex:80: Package mleftright Error: Missing previous \mleft.
 
-Package rerunfilecheck Info: Checksums for `MA571-HW-Current.out':
-(rerunfilecheck)             Before: 8FD3935B45983A6332BBEA48C916A57F;662
-(rerunfilecheck)             After:  B86477A644249971F786B1F6BDA915EB;384.
+See the mleftright package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.80   g(x)\,\right
+                 \}$ is closed in $X$.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./psets/ma571-pset2.tex:80: Extra \right.
+<to be read again> 
+\scan_stop: 
+l.80   g(x)\,\right\}
+                   $ is closed in $X$.
+I'm ignoring a \right that had no matching \left.
+
+[9]) [10]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
+ (./MA571-HW-Current.aux (./psets/ma571-pset2.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 196.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
+Package rerunfilecheck Info: File `MA571-HW-Current.out' has not changed.
+(rerunfilecheck)             Checksum: 4A17FC6971547FF1ADE5DD11301802F3;776.
+
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 193.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
 )
 
 Here is how much of LuaTeX's memory you used:
- 33969 strings out of 494693
+ 33993 strings out of 494693
  100000,953878 words of node,token memory allocated
- 799 words of node memory still in use:
+ 813 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 2 glue, 3 kern, 1 penalty, 8 attribute, 147 glue_sp
 ec, 8 attribute_list, 3 write nodes
-   avail lists: 1:52,2:335,3:20,4:167,5:5,6:80,7:20,8:4,9:509,10:981,11:519,12:2
-30
- 36422 multiletter control sequences out of 65536+600000
- 88 fonts using 21633951 bytes
+   avail lists: 1:52,2:1051,3:43,4:288,5:34,6:349,7:22,8:4,9:509,10:981,11:519,1
+2:230
+ 36441 multiletter control sequences out of 65536+600000
+ 90 fonts using 21884387 bytes
  50i,12n,60p,1205b,370s stack positions out of 5000i,500n,10000p,200000b,100000s
-LuaTeX warning (dest): name{section.0.9} has been referenced but does not exist,
- replaced by a fixed one
-
 </usr/share/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></home
 /carlos/.local/share/fonts/OTF-TeXLive/public/lm/lmroman10-italic.otf></usr/shar
-e/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/share/texmf-dist/
-fonts/opentype/public/lm/lmroman9-italic.otf></home/carlos/.local/share/fonts/OT
-F-TeXLive/public/lm/lmroman10-regular.otf></usr/share/texmf-dist/fonts/opentype/
-public/lm/lmroman17-regular.otf>
-Output written on MA571-HW-Current.pdf (10 pages, 24299 bytes).
+e/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></usr/share/texm
+f-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/share/texmf-dist/fonts/
+opentype/public/lm/lmroman9-italic.otf></home/carlos/.local/share/fonts/OTF-TeXL
+ive/public/lm/lmroman10-regular.otf></usr/share/texmf-dist/fonts/opentype/public
+/lm/lmroman17-regular.otf>
+Output written on MA571-HW-Current.pdf (12 pages, 41321 bytes).
 
-PDF statistics: 120 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
- 10 named destinations out of 1000 (max. 131072)
- 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+PDF statistics: 142 PDF objects out of 1000 (max. 8388607)
+ 105 compressed objects within 2 object streams
+ 13 named destinations out of 1000 (max. 131072)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
