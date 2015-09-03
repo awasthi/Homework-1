@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.79.1 (TeX Live 2014/Arch Linux) (rev 4971)  (format=lualatex 2015.5.28)  31 AUG 2015 20:33
+This is LuaTeX, Version beta-0.79.1 (TeX Live 2014/Arch Linux) (rev 4971)  (format=lualatex 2015.5.28)  3 SEP 2015 07:35
  restricted \write18 enabled.
  file:line:error style messages enabled.
 **\input MA571-HW-Current.tex
@@ -1019,7 +1019,7 @@ luatexbase-attr: luatexbase.attributes["luaotfload@cursbase"] = 6
 luatexbase-attr: luatexbase.attributes["luaotfload@curscurs"] = 7
 luatexbase-attr: luatexbase.attributes["luaotfload@cursdone"] = 8
 luatexbase-attr: luatexbase.attributes["luaotfload@state"] = 9
-luaotfload | main : fontloader loaded in 0.147 seconds
+luaotfload | main : fontloader loaded in 0.123 seconds
 luatexbase-mcb: inserting 'luaotfload.node_processor'
 at position 1 in 'pre_linebreak_filter'
 luatexbase-mcb: inserting 'luaotfload.node_processor'
@@ -2324,41 +2324,6 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \kern 1.66702pt
 (hyperref)                removed on input line 75.
 
-./psets/ma571-pset2.tex:79: Undefined control sequence.
-<recently read> \letf 
-      
-l.79 \item Show that the set $\letf
-                                 \{\,x\;\middle|\;f(x)\leq
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./psets/ma571-pset2.tex:79: Extra \middle.
-l.79 \item Show that the set $\letf\{\,x\;\middle|
-                                                \;f(x)\leq
-I'm ignoring a \middle that had no matching \left.
-
-
-./psets/ma571-pset2.tex:80: Package mleftright Error: Missing previous \mleft.
-
-See the mleftright package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.80   g(x)\,\right
-                 \}$ is closed in $X$.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./psets/ma571-pset2.tex:80: Extra \right.
-<to be read again> 
-\scan_stop: 
-l.80   g(x)\,\right\}
-                   $ is closed in $X$.
-I'm ignoring a \right that had no matching \left.
-
 [9]) [10]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
@@ -2375,15 +2340,15 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
 )
 
 Here is how much of LuaTeX's memory you used:
- 33993 strings out of 494693
+ 33992 strings out of 494693
  100000,953878 words of node,token memory allocated
- 813 words of node memory still in use:
+ 816 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 2 glue, 3 kern, 1 penalty, 8 attribute, 147 glue_sp
 ec, 8 attribute_list, 3 write nodes
-   avail lists: 1:52,2:1051,3:43,4:288,5:34,6:349,7:22,8:4,9:509,10:981,11:519,1
+   avail lists: 1:52,2:1057,3:43,4:288,5:34,6:351,7:22,8:4,9:509,10:981,11:519,1
 2:230
- 36441 multiletter control sequences out of 65536+600000
- 90 fonts using 21884387 bytes
+ 36440 multiletter control sequences out of 65536+600000
+ 90 fonts using 21884463 bytes
  50i,12n,60p,1205b,370s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></home
 /carlos/.local/share/fonts/OTF-TeXLive/public/lm/lmroman10-italic.otf></usr/shar
@@ -2392,7 +2357,7 @@ f-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/share/texmf-dist/fonts/
 opentype/public/lm/lmroman9-italic.otf></home/carlos/.local/share/fonts/OTF-TeXL
 ive/public/lm/lmroman10-regular.otf></usr/share/texmf-dist/fonts/opentype/public
 /lm/lmroman17-regular.otf>
-Output written on MA571-HW-Current.pdf (12 pages, 41321 bytes).
+Output written on MA571-HW-Current.pdf (12 pages, 41238 bytes).
 
 PDF statistics: 142 PDF objects out of 1000 (max. 8388607)
  105 compressed objects within 2 object streams

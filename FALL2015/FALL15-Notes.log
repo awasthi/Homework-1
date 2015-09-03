@@ -1,8 +1,8 @@
-This is LuaTeX, Version beta-0.79.1 (TeX Live 2014/Arch Linux) (rev 4971)  (format=lualatex 2015.5.28)  1 SEP 2015 11:33
+This is LuaTeX, Version beta-0.79.1 (TeX Live 2014/Arch Linux) (rev 4971)  (format=lualatex 2015.5.28)  3 SEP 2015 09:13
  restricted \write18 enabled.
  file:line:error style messages enabled.
-**\input PHYS550-HW-Current.tex
-(./PHYS550-HW-Current.tex (/usr/share/texmf-dist/tex/latex/memoir/memoir.cls
+**\input FALL15-Notes.tex
+(./FALL15-Notes.tex (/usr/share/texmf-dist/tex/latex/memoir/memoir.cls
 Document Class: memoir 2015/03/05 v3.7c configurable book, report, article docum
 ent class
 \onelineskip=\skip41
@@ -1019,7 +1019,7 @@ luatexbase-attr: luatexbase.attributes["luaotfload@cursbase"] = 6
 luatexbase-attr: luatexbase.attributes["luaotfload@curscurs"] = 7
 luatexbase-attr: luatexbase.attributes["luaotfload@cursdone"] = 8
 luatexbase-attr: luatexbase.attributes["luaotfload@state"] = 9
-luaotfload | main : fontloader loaded in 0.123 seconds
+luaotfload | main : fontloader loaded in 0.117 seconds
 luatexbase-mcb: inserting 'luaotfload.node_processor'
 at position 1 in 'pre_linebreak_filter'
 luatexbase-mcb: inserting 'luaotfload.node_processor'
@@ -1616,15 +1616,15 @@ script=math;language=DFLT;+ssty=1;"
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 luaotfload | load : Lookup/name: "Latin Modern Math" -> "latinmodern-math.otf"
 LaTeX Font Info:    Encoding `OT1' has changed to `EU2' for symbol font
-(Font)              `operators' in the math version `normal' on input line 63.
+(Font)              `operators' in the math version `normal' on input line 53.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> EU2/LatinModernMath(0)/m/n on input line
- 63.
+ 53.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU2' for symbol font
-(Font)              `operators' in the math version `bold' on input line 63.
+(Font)              `operators' in the math version `bold' on input line 53.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> EU2/LatinModernMath(0)/bx/n on input li
-ne 63.
+ne 53.
 luaotfload | load : Lookup/name: "Latin Modern Math" -> "latinmodern-math.otf"
 luaotfload | load : Lookup/name: "Latin Modern Math" -> "latinmodern-math.otf"
 luaotfload | load : Lookup/name: "Latin Modern Math" -> "latinmodern-math.otf"
@@ -1680,15 +1680,15 @@ e=10-},{Size=7-10,Font=Latin
 . 22\font =163840sp\relax 
 .................................................
 LaTeX Font Info:    Encoding `OMS' has changed to `EU2' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 63.
+(Font)              `symbols' in the math version `normal' on input line 53.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/cmsy/m/n --> EU2/LatinModernMath(1)/m/n on input lin
-e 63.
+e 53.
 LaTeX Font Info:    Encoding `OMS' has changed to `EU2' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 63.
+(Font)              `symbols' in the math version `bold' on input line 53.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/cmsy/b/n --> EU2/LatinModernMath(1)/bx/n on input li
-ne 63.
+ne 53.
 luaotfload | load : Lookup/name: "Latin Modern Math" -> "latinmodern-math.otf"
 luaotfload | load : Lookup/name: "Latin Modern Math" -> "latinmodern-math.otf"
 luaotfload | load : Lookup/name: "Latin Modern Math" -> "latinmodern-math.otf"
@@ -1734,335 +1734,48 @@ e=10-},{Size=7-10,Font=Latin
 . \fontdimen 12\font =393216sp\relax \fontdimen 13\font =0pt\relax 
 .................................................
 LaTeX Font Info:    Encoding `OMX' has changed to `EU2' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 63
+(Font)              `largesymbols' in the math version `normal' on input line 53
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/cmex/m/n --> EU2/LatinModernMath(2)/m/n on input lin
-e 63.
+e 53.
 LaTeX Font Info:    Encoding `OMX' has changed to `EU2' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 63.
+(Font)              `largesymbols' in the math version `bold' on input line 53.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> EU2/LatinModernMath(2)/bx/n on input li
-ne 63.
+ne 53.
+\c@theorem=\count339
+\c@definition=\count340
+\c@example=\count341
+\c@exercise=\count342
+\c@remark=\count343
 
-(/usr/share/texmf-dist/tex/latex/polyglossia/polyglossia.sty
-Package: polyglossia 2014/05/21 v1.33.5 Babel replacement for XeLaTeX and LuaTeX
-
-
-(/usr/share/texmf-dist/tex/latex/makecmds/makecmds.sty
-Package: makecmds 2009/09/03 v1.0a extra command making commands
-)
-(/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
-
-(/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks42
-\XKV@tempa@toks=\toks43
-)
-\XKV@depth=\count339
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-(/usr/share/texmf-dist/tex/latex/polyglossia/polyglossia.lua)
-(/usr/share/texmf-dist/tex/luatex/hyph-utf8/luatex-hyphen.lua)
-luatex-hyphen: using data file: /usr/share/texmf-dist/tex/generic/config/languag
-e.dat.lua
-Lua module: polyglossia 2013/05/11 1.3 Polyglossia
-)
-(/usr/share/texmf-dist/tex/latex/polyglossia/gloss-english.ldf
-File: gloss-english.ldf polyglossia: module for english
-)
-Package polyglossia Info: Default language is english.
-
-(/usr/share/texmf-dist/tex/latex/polyglossia/gloss-french.ldf
-File: gloss-french.ldf polyglossia: module for french
-\xpg@frpt=\luatexattribute10
-
-(/usr/share/texmf-dist/tex/latex/polyglossia/polyglossia-frpt.lua))
-(/usr/share/texmf-dist/tex/latex/polyglossia/gloss-german.ldf
-File: gloss-german.ldf polyglossia: module for german
-
-(/usr/share/texmf-dist/tex/latex/polyglossia/babelsh.def
-File: babelsh.def 2013/04/30 Babel common definitions for shorthands
- Taken verbatim from babel.def (2013/04/15 v3.9e)
-)
-Package polyglossia Info: Making " an active character on input line 68.
-)
-(/usr/share/texmf-dist/tex/latex/polyglossia/gloss-russian.ldf
-File: gloss-russian.ldf polyglossia: module for russian
-)
-(/usr/share/texmf-dist/tex/latex/polyglossia/gloss-spanish.ldf
-File: gloss-spanish.ldf polyglossia: module for spanish
-)
-luaotfload | load : Lookup/name: "CMU Serif" -> "cmunrm.otf"(compiling luc: /var
-/lib/texmf/luatex-cache/generic/fonts/otf/cmunrm.luc)(load luc: /home/carlos/.te
-xlive/texmf-var/luatex-cache/generic/fonts/otf/cmunrm.luc)
-luaotfload | load : Lookup/name: "CMU Serif" -> "cmunrm.otf"
-\g__fontspec_family_CMUSerif_int=\count340
-luaotfload | load : Lookup/name: "CMU Serif" -> "cmunrm.otf"
-luaotfload | load : Lookup/name: "CMU Serif" -> "cmunbi.otf"(compiling luc: /var
-/lib/texmf/luatex-cache/generic/fonts/otf/cmunbi.luc)(load luc: /home/carlos/.te
-xlive/texmf-var/luatex-cache/generic/fonts/otf/cmunbi.luc)
-luaotfload | load : Lookup/name: "CMU Serif" -> "cmunrm.otf"
-luaotfload | load : Lookup/name: "CMU Serif" -> "cmunbx.otf"(compiling luc: /var
-/lib/texmf/luatex-cache/generic/fonts/otf/cmunbx.luc)(load luc: /home/carlos/.te
-xlive/texmf-var/luatex-cache/generic/fonts/otf/cmunbx.luc)
-luaotfload | load : Lookup/name: "CMU Serif" -> "cmunrm.otf"
-luaotfload | load : Lookup/name: "CMU Serif" -> "cmunti.otf"(compiling luc: /var
-/lib/texmf/luatex-cache/generic/fonts/otf/cmunti.luc)(load luc: /home/carlos/.te
-xlive/texmf-var/luatex-cache/generic/fonts/otf/cmunti.luc)
-luaotfload | load : Lookup/name: "CMUSerif" -> "cmunrm.otf"
-luaotfload | load : Lookup/name: "CMUSerif" -> "cmunrm.otf"
-luaotfload | load : Lookup/name: "CMUSerif" -> "cmunbx.otf"
-luaotfload | load : Lookup/name: "CMUSerif" -> "cmunbx.otf"
-luaotfload | load : Lookup/name: "CMUSerif" -> "cmunti.otf"
-luaotfload | load : Lookup/name: "CMUSerif" -> "cmunti.otf"
-luaotfload | aux : font no 39 (CMUSerif-Italic) does not define feature smcp for
- script latn with language dflt
-luaotfload | aux : no font with id 39
-luaotfload | load : Lookup/name: "CMUSerif" -> "cmunbi.otf"
-luaotfload | load : Lookup/name: "CMUSerif" -> "cmunbi.otf"
-luaotfload | aux : font no 37 (CMUSerif-BoldItalic) does not define feature smcp
- for script latn with language dflt
-luaotfload | aux : no font with id 37
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'CMUSerif(0)' created for font 'CMU Serif' with options
-. [Ligatures=TeX].
-. 
-. This font family consists of the following shapes:
-. 
-. * 'normal' with NFSS spec.:
-. <->"CMUSerif:mode=node;script=latn;language=DFLT;+tlig;+trep;"
-. 
-. * 'small caps' with NFSS spec.:
-. <->"CMUSerif:mode=node;script=latn;language=DFLT;+tlig;+trep;+smcp;"
-. and font adjustment code:
-. 
-. 
-. * 'bold' with NFSS spec.:
-. <->"CMUSerif/B:mode=node;script=latn;language=DFLT;+tlig;+trep;"
-. 
-. * 'bold small caps' with NFSS spec.:
-. <->"CMUSerif/B:mode=node;script=latn;language=DFLT;+tlig;+trep;+smcp;"
-. and font adjustment code:
-. 
-. 
-. * 'italic' with NFSS spec.:
-. <->"CMUSerif/I:mode=node;script=latn;language=DFLT;+tlig;+trep;"
-. 
-. * 'small caps' with NFSS spec.:
-. 
-. and font adjustment code:
-. 
-. 
-. * 'bold italic' with NFSS spec.:
-. <->"CMUSerif/BI:mode=node;script=latn;language=DFLT;+tlig;+trep;"
-. 
-. * 'bold small caps' with NFSS spec.:
-. 
-. and font adjustment code:
-. 
-.................................................
-luaotfload | load : Lookup/name: "CMU Sans Serif" -> "cmunss.otf"(compiling luc:
- /var/lib/texmf/luatex-cache/generic/fonts/otf/cmunss.luc)(load luc: /home/carlo
-s/.texlive/texmf-var/luatex-cache/generic/fonts/otf/cmunss.luc)
-luaotfload | load : Lookup/name: "CMU Sans Serif" -> "cmunss.otf"
-\g__fontspec_family_CMUSansSerif_int=\count341
-luaotfload | load : Lookup/name: "CMU Sans Serif" -> "cmunss.otf"
-luaotfload | load : Lookup/name: "CMU Sans Serif" -> "cmunso.otf"(compiling luc:
- /var/lib/texmf/luatex-cache/generic/fonts/otf/cmunso.luc)(load luc: /home/carlo
-s/.texlive/texmf-var/luatex-cache/generic/fonts/otf/cmunso.luc)
-luaotfload | load : Lookup/name: "CMU Sans Serif" -> "cmunss.otf"
-luaotfload | load : Lookup/name: "CMU Sans Serif" -> "cmunsx.otf"(compiling luc:
- /var/lib/texmf/luatex-cache/generic/fonts/otf/cmunsx.luc)(load luc: /home/carlo
-s/.texlive/texmf-var/luatex-cache/generic/fonts/otf/cmunsx.luc)
-luaotfload | load : Lookup/name: "CMU Sans Serif" -> "cmunss.otf"
-luaotfload | load : Lookup/name: "CMU Sans Serif" -> "cmunsi.otf"(compiling luc:
- /var/lib/texmf/luatex-cache/generic/fonts/otf/cmunsi.luc)(load luc: /home/carlo
-s/.texlive/texmf-var/luatex-cache/generic/fonts/otf/cmunsi.luc)
-luaotfload | load : Lookup/name: "CMUSansSerif" -> "cmunss.otf"
-luaotfload | load : Lookup/name: "CMUSansSerif" -> "cmunss.otf"
-luaotfload | aux : font no 40 (CMUSansSerif) does not define feature smcp for sc
-ript latn with language dflt
-luaotfload | aux : no font with id 40
-luaotfload | load : Lookup/name: "CMUSansSerif" -> "cmunsx.otf"
-luaotfload | load : Lookup/name: "CMUSansSerif" -> "cmunsx.otf"
-luaotfload | aux : font no 42 (CMUSansSerif-Bold) does not define feature smcp f
-or script latn with language dflt
-luaotfload | aux : no font with id 42
-luaotfload | load : Lookup/name: "CMUSansSerif" -> "cmunsi.otf"
-luaotfload | load : Lookup/name: "CMUSansSerif" -> "cmunsi.otf"
-luaotfload | aux : font no 43 (CMUSansSerif-Oblique) does not define feature smc
-p for script latn with language dflt
-luaotfload | aux : no font with id 43
-luaotfload | load : Lookup/name: "CMUSansSerif" -> "cmunso.otf"
-luaotfload | load : Lookup/name: "CMUSansSerif" -> "cmunso.otf"
-luaotfload | aux : font no 41 (CMUSansSerif-BoldOblique) does not define feature
- smcp for script latn with language dflt
-luaotfload | aux : no font with id 41
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'CMUSansSerif(0)' created for font 'CMU Sans Serif' with options
-. [Ligatures=TeX].
-. 
-. This font family consists of the following shapes:
-. 
-. * 'normal' with NFSS spec.:
-. <->"CMUSansSerif:mode=node;script=latn;language=DFLT;+tlig;+trep;"
-. 
-. * 'small caps' with NFSS spec.:
-. 
-. and font adjustment code:
-. 
-. 
-. * 'bold' with NFSS spec.:
-. <->"CMUSansSerif/B:mode=node;script=latn;language=DFLT;+tlig;+trep;"
-. 
-. * 'bold small caps' with NFSS spec.:
-. 
-. and font adjustment code:
-. 
-. 
-. * 'italic' with NFSS spec.:
-. <->"CMUSansSerif/I:mode=node;script=latn;language=DFLT;+tlig;+trep;"
-. 
-. * 'small caps' with NFSS spec.:
-. 
-. and font adjustment code:
-. 
-. 
-. * 'bold italic' with NFSS spec.:
-. <->"CMUSansSerif/BI:mode=node;script=latn;language=DFLT;+tlig;+trep;"
-. 
-. * 'bold small caps' with NFSS spec.:
-. 
-. and font adjustment code:
-. 
-.................................................
-luaotfload | load : Lookup/name: "CMU Typewriter Text" -> "cmuntt.otf"(compiling
- luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/cmuntt.luc)(load luc: /home/
-carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/cmuntt.luc)
-luaotfload | load : Lookup/name: "CMU Typewriter Text" -> "cmuntt.otf"
-\g__fontspec_family_CMUTypewriterText_int=\count342
-luaotfload | load : Lookup/name: "CMU Typewriter Text" -> "cmuntt.otf"
-luaotfload | load : Lookup/name: "CMU Typewriter Text" -> "cmuntx.otf"(compiling
- luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/cmuntx.luc)(load luc: /home/
-carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/cmuntx.luc)
-luaotfload | load : Lookup/name: "CMU Typewriter Text" -> "cmuntt.otf"
-luaotfload | load : Lookup/name: "CMU Typewriter Text" -> "cmuntb.otf"(compiling
- luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/cmuntb.luc)(load luc: /home/
-carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/cmuntb.luc)
-luaotfload | load : Lookup/name: "CMU Typewriter Text" -> "cmuntt.otf"
-luaotfload | load : Lookup/name: "CMU Typewriter Text" -> "cmunit.otf"(compiling
- luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/cmunit.luc)(load luc: /home/
-carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/cmunit.luc)
-luaotfload | load : Lookup/name: "CMUTypewriterText" -> "cmuntt.otf"
-luaotfload | load : Lookup/name: "CMUTypewriterText" -> "cmuntt.otf"
-luaotfload | aux : font no 44 (CMUTypewriter-Regular) does not define feature sm
-cp for script latn with language dflt
-luaotfload | aux : no font with id 44
-luaotfload | load : Lookup/name: "CMUTypewriterText" -> "cmuntb.otf"
-luaotfload | load : Lookup/name: "CMUTypewriterText" -> "cmuntb.otf"
-luaotfload | aux : font no 46 (CMUTypewriter-Bold) does not define feature smcp 
-for script latn with language dflt
-luaotfload | aux : no font with id 46
-luaotfload | load : Lookup/name: "CMUTypewriterText" -> "cmunit.otf"
-luaotfload | load : Lookup/name: "CMUTypewriterText" -> "cmunit.otf"
-luaotfload | aux : font no 47 (CMUTypewriter-Italic) does not define feature smc
-p for script latn with language dflt
-luaotfload | aux : no font with id 47
-luaotfload | load : Lookup/name: "CMUTypewriterText" -> "cmuntx.otf"
-luaotfload | load : Lookup/name: "CMUTypewriterText" -> "cmuntx.otf"
-luaotfload | aux : font no 45 (CMUTypewriter-BoldItalic) does not define feature
- smcp for script latn with language dflt
-luaotfload | aux : no font with id 45
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'CMUTypewriterText(0)' created for font 'CMU Typewriter Text'
-. with options [].
-. 
-. This font family consists of the following shapes:
-. 
-. * 'normal' with NFSS spec.:
-. <->"CMUTypewriterText:mode=node;script=latn;language=DFLT;"
-. 
-. * 'small caps' with NFSS spec.:
-. 
-. and font adjustment code:
-. 
-. 
-. * 'bold' with NFSS spec.:
-. <->"CMUTypewriterText/B:mode=node;script=latn;language=DFLT;"
-. 
-. * 'bold small caps' with NFSS spec.:
-. 
-. and font adjustment code:
-. 
-. 
-. * 'italic' with NFSS spec.:
-. <->"CMUTypewriterText/I:mode=node;script=latn;language=DFLT;"
-. 
-. * 'small caps' with NFSS spec.:
-. 
-. and font adjustment code:
-. 
-. 
-. * 'bold italic' with NFSS spec.:
-. <->"CMUTypewriterText/BI:mode=node;script=latn;language=DFLT;"
-. 
-. * 'bold small caps' with NFSS spec.:
-. 
-. and font adjustment code:
-. 
-.................................................
-\c@theorem=\count343
-\c@definition=\count344
-\c@example=\count345
-
-(/usr/share/texmf-dist/tex/latex/titlesec/titlesec.sty
-Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
-\ttl@box=\box273
-\beforetitleunit=\skip273
-\aftertitleunit=\skip274
-\ttl@plus=\dimen308
-\ttl@minus=\dimen309
-\ttl@toksa=\toks44
-\titlewidth=\dimen310
-\titlewidthlast=\dimen311
-\titlewidthfirst=\dimen312
-)
-\c@remark=\count346
-
-(./PHYS550-HW-Current.aux (./psets/phys550-pset1.aux))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for EU2/lmr/m/n on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 163.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 163.
-
-(/usr/share/texmf-dist/tex/latex/tipa/t3cmr.fd
+(./FALL15-Notes.aux (./MA557/notes/atiyah-mcdonald.aux)
+(./MA571/notes/munkres.aux))
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for EU2/lmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 123.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 123.
+ (/usr/share/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -2100,35 +1813,35 @@ LaTeX Font Info:    ... okay on input line 163.
 
 (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count347
-\scratchdimen=\dimen313
-\scratchbox=\box274
-\nofMPsegments=\count348
-\nofMParguments=\count349
-\everyMPshowfont=\toks45
-\MPscratchCnt=\count350
-\MPscratchDim=\dimen314
-\MPnumerator=\count351
-\makeMPintoPDFobject=\count352
-\everyMPtoPDFconversion=\toks46
+\scratchcounter=\count344
+\scratchdimen=\dimen308
+\scratchbox=\box273
+\nofMPsegments=\count345
+\nofMParguments=\count346
+\everyMPshowfont=\toks42
+\MPscratchCnt=\count347
+\MPscratchDim=\dimen309
+\MPnumerator=\count348
+\makeMPintoPDFobject=\count349
+\everyMPtoPDFconversion=\toks43
 )
-\AtBeginShipoutBox=\box275
-Package hyperref Info: Link coloring ON on input line 163.
+\AtBeginShipoutBox=\box274
+Package hyperref Info: Link coloring ON on input line 123.
  (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count353
+\c@section@level=\count350
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 163.
-LaTeX Info: Redefining \ref on input line 163.
-LaTeX Info: Redefining \pageref on input line 163.
-LaTeX Info: Redefining \nameref on input line 163.
-(./PHYS550-HW-Current.out) (./PHYS550-HW-Current.out)
+LaTeX Info: Redefining \nameref on input line 123.
+LaTeX Info: Redefining \ref on input line 123.
+LaTeX Info: Redefining \pageref on input line 123.
+LaTeX Info: Redefining \nameref on input line 123.
+(./FALL15-Notes.out) (./FALL15-Notes.out)
 \@outlinefile=\write4
 
 (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
@@ -2146,8 +1859,8 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 ))
-\c@lstlisting=\count354
-LaTeX Info: Redefining \microtypecontext on input line 163.
+\c@lstlisting=\count351
+LaTeX Info: Redefining \microtypecontext on input line 123.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -2169,7 +1882,6 @@ rn Roman (RS)
 * 
 * Use \Uoverbracket and \Uunderbracket for original `unicode-math' definition.
 *************************************************
-Package polyglossia Info: Option: english variant=american.
 luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman17-regular.otf"(c
 ompiling luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/lmroman17-regular.lu
 c)(load luc: /home/carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/lmro
@@ -2183,43 +1895,38 @@ Package microtype Info: Loading generic settings for font family
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 10.95015pt on input line 171.
+(Font)              scaled to size 10.95015pt on input line 128.
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 8.00012pt on input line 171.
+(Font)              scaled to size 8.00012pt on input line 128.
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 6.00009pt on input line 171.
+(Font)              scaled to size 6.00009pt on input line 128.
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 10.94983pt on input line 171.
+(Font)              scaled to size 10.94983pt on input line 128.
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 7.99988pt on input line 171.
+(Font)              scaled to size 7.99988pt on input line 128.
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 5.99991pt on input line 171.
+(Font)              scaled to size 5.99991pt on input line 128.
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-LaTeX Font Info:    Try loading font information for U+msa on input line 171.
+LaTeX Font Info:    Try loading font information for U+msa on input line 128.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 (/usr/share/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 171.
+LaTeX Font Info:    Try loading font information for U+msb on input line 128.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 (/usr/share/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [1
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
-
-] (./psets/phys550-pset1.tex
+)
 luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman12-regular.otf"(c
 ompiling luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/lmroman12-regular.lu
 c)(load luc: /home/carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/lmro
@@ -2227,88 +1934,73 @@ man12-regular.luc)
 luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman12-bold.otf"(comp
 iling luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/lmroman12-bold.luc)(loa
 d luc: /home/carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/lmroman12-
-bold.luc)
-
-LaTeX Font Warning: Font shape `EU2/LatinModernRoman(0)/bx/sc' undefined
-(Font)              using `EU2/LatinModernRoman(0)/bx/n' instead on input line 2
-.
-
+bold.luc) (./FALL15-Notes.toc
+luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman10-bold.otf"
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 10.00015pt on input line 3.
+(Font)              scaled to size 10.00015pt on input line 1.
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 7.00006pt on input line 3.
+(Font)              scaled to size 7.00006pt on input line 1.
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 5.00008pt on input line 3.
+(Font)              scaled to size 5.00008pt on input line 1.
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 9.99985pt on input line 3.
+(Font)              scaled to size 9.99985pt on input line 1.
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 6.99986pt on input line 3.
+(Font)              scaled to size 6.99986pt on input line 1.
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 4.99992pt on input line 3.
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman10-italic.otf"
-luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman9-regular.otf"(co
-mpiling luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/lmroman9-regular.luc)
-(load luc: /home/carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/lmroma
-n9-regular.luc)
-luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman9-italic.otf"(com
-piling luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/lmroman9-italic.luc)(l
-oad luc: /home/carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/lmroman9
--italic.luc) [1
+(Font)              scaled to size 4.99992pt on input line 1.
+luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf") [
+1
 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./MA557/notes/atiyah-mcdo
+nald.tex
+luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman10-italic.otf") 
+[2
+
+] (./MA571/notes/munkres.tex)
+[3
 
 
 ]
-luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman12-bold.otf" [2]
- [3]
-Underfull \hbox (badness 10000) in paragraph at lines 34--45
-
- []
-
-) [4]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 193.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 193.
- (./PHYS550-HW-Current.aux (./psets/phys550-pset1.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 193.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 193.
-Package rerunfilecheck Info: File `PHYS550-HW-Current.out' has not changed.
-(rerunfilecheck)             Checksum: 5B5C6C45F7D1C19109FB12220948A853;192.
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 193.
+\tf@toc=\write5
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 135.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 135.
+ (./FALL15-Notes.aux (./MA557/notes/atiyah-mcdonald.aux)
+(./MA571/notes/munkres.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 135.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 135.
+Package rerunfilecheck Info: File `FALL15-Notes.out' has not changed.
+(rerunfilecheck)             Checksum: 9C55407E0A1838FF21976B0587C36E65;245.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 135.
 )
 
 Here is how much of LuaTeX's memory you used:
- 33961 strings out of 494693
- 100000,953878 words of node,token memory allocated
- 814 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 penalty, 9 attribute, 147 glue_sp
-ec, 9 attribute_list, 3 write nodes
-   avail lists: 1:52,2:1824,3:53,4:250,5:31,6:576,7:42,8:4,9:509,10:981,11:519,1
+ 32602 strings out of 494693
+ 100000,794899 words of node,token memory allocated
+ 773 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 2 kern, 7 attribute, 143 glue_spec, 7 attri
+bute_list, 3 write nodes
+   avail lists: 1:51,2:2205,3:85,4:541,5:76,6:811,7:19,8:9,9:509,10:981,11:519,1
 2:230
- 36418 multiletter control sequences out of 65536+600000
- 88 fonts using 21633875 bytes
- 50i,12n,60p,1207b,370s stack positions out of 5000i,500n,10000p,200000b,100000s
-</home/carlos/.local/share/fonts/OTF-TeXLive/public/lm/lmroman10-italic.otf></us
-r/share/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></usr/shar
-e/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></usr/share/texm
-f-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/share/texmf-dist/fonts/
-opentype/public/lm/lmroman9-italic.otf></home/carlos/.local/share/fonts/OTF-TeXL
-ive/public/lm/lmroman10-regular.otf></usr/share/texmf-dist/fonts/opentype/public
-/lm/lmroman17-regular.otf>
-Output written on PHYS550-HW-Current.pdf (6 pages, 32111 bytes).
+ 35280 multiletter control sequences out of 65536+600000
+ 74 fonts using 18116279 bytes
+ 50i,11n,60p,1201b,337s stack positions out of 5000i,500n,10000p,200000b,100000s
+</usr/share/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></home
+/carlos/.local/share/fonts/OTF-TeXLive/public/lm/lmroman10-italic.otf></home/car
+los/.local/share/fonts/OTF-TeXLive/public/lm/lmroman10-bold.otf></usr/share/texm
+f-dist/fonts/opentype/public/lm/lmroman12-bold.otf></home/carlos/.local/share/fo
+nts/OTF-TeXLive/public/lm/lmroman10-regular.otf></usr/share/texmf-dist/fonts/ope
+ntype/public/lm/lmroman17-regular.otf>
+Output written on FALL15-Notes.pdf (3 pages, 29205 bytes).
 
-PDF statistics: 98 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
- 6 named destinations out of 1000 (max. 131072)
+PDF statistics: 90 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
+ 12 named destinations out of 1000 (max. 131072)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

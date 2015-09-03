@@ -1,0 +1,32 @@
+\chapter{Commutative Algebra: Atiyah and McDonald}
+\section{Rings and ring homomorphisms}
+A \emph{ring} $A$ is a set with two binary operations (addition
+and multiplication) such that
+\begin{enumerate}[noitemsep,label=(\arabic*)]
+\item $A$ is an abelian group with respect to addition (so that
+  $A$ has a zero element, denoted by $0$, and every $x\in A$ has
+  an (additive) inverse, $-x$).
+\item Multiplication is associative ($(xy)z=x(yz)$) and
+  distributive over addition ($(x(x+z)=xy+xz$,
+  $(y+z)x=yx+zx$). We shall consider only rigs which are
+  \emph{commutative}:
+\item $xy=yx$ for all $x,y\in A$, and have an \emph{identity
+    element} (denoted by $1$):
+\item $\exists 1\in A$ such that $x1=1x=x$ for all $x\in A$. The
+  identity element is then unique.
+\end{enumerate}
+
+A \emph{ring homomorphism} is a mapping $f$ of a ring $A$
+into a ring $B$ such that
+\begin{enumerate}[noitemsep,label=(\roman*)]
+\item $f(x+y)=f(x)+f(y)$ (so that $f$ is a homomorphism of
+  abelian groups, and therefore also $f(x-y)=f(x)-f(y)$,
+  $f(-x)=-f(x)$, $f(0)=0$),
+\item $f(xy)=f(x)f(y)$,
+\item $f(1)=1$.
+\end{enumerate}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../FALL15-Notes"
+%%% End:

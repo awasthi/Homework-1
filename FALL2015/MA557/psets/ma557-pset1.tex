@@ -2,6 +2,25 @@
 Show that $\rad(R[x])=\nil(R[x])$.
 \end{problem}
 \begin{proof}
+Suppose $R$ is a commutative ring with identity and $R[x]$ is the
+polynomial ring over $R$ in the indeterminate $x$. Then, it is
+clear that $\rad(R[x])\supset\nil(R[x])$ since $\nil(R[x])$ is
+the intersection of all prime ideals of $R[x]$ and every maximal
+ideal is a prime ideal. To show the reverse containment, we will
+first prove the following results found in Dummit and Foote,
+\S7.3, p.\,33:
+\begin{lemma}
+Let $f=a_nx^n+\cdots+a_1x+a_0\smallin R[x]$. Then
+\begin{enumerate}[noitemsep,label=(\alph*)]
+\item $f$ is a unit in $R[x]$ if and only if $a_0$ is a unit and
+  $a_1,...,a_n$ are nilpotent in $R$;
+\item $f$ is nilpotent in $R[x]$ if and only if $a_0,a_1,...,a_n$
+  are nilpotent elements of $R$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}[Proof of lemma]
+\renewcommand\qedsymbol{$\clubsuit$}
+\end{proof}
 \end{proof}
 \newpage
 \begin{problem}
@@ -16,11 +35,12 @@ Let $S$ be a subset of a ring $R$. Show that the following are
 equivalent:
 \begin{enumerate}[noitemsep,label=(\roman*)]
 \item $R\smallsetminus S$ is a union of prime ideals.
-\item $1\in S$, and for any elements $x$, $y$ of $R$, $x\in S$
-  and $y\in S$ if and only if $xy\in S$.
+\item $1\smallin S$, and for any elements $x$, $y$ of $R$, $x\smallin S$
+  and $y\smallin S$ if and only if $xy\smallin S$.
 \end{enumerate}
 \end{problem}
 \begin{proof}
+
 \end{proof}
 \newpage
 \begin{problem}
@@ -43,7 +63,7 @@ rings.
 \end{proof}
 \newpage
 \begin{problem}
-An element $e\in R$is called \emph{idempotent} if $e^2=e$. Show
+An element $e\smallin R$is called \emph{idempotent} if $e^2=e$. Show
 that in a local ring, $0$ and $1$ are the only idempotents.
 \end{problem}
 \begin{proof}

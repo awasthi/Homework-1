@@ -29,10 +29,10 @@ the following:
 Criticize the following ``proof'' that $\clsr{\bigcup
   A_\alpha}\subset\bigcup\bar A_\alpha$: if
 $\left\{A_\alpha\right\}$ is a collection of sets in $X$ and if
-$x\in\clsr{\bigcup A_\alpha}$, then every neighborhood $U$ of $x$
+$x\smallin\clsr{\bigcup A_\alpha}$, then every neighborhood $U$ of $x$
 intersects $\bigcup A_\alpha$. Thus $U$ must intersect some
 $A_\alpha$, so $x$ must belong to the closure of some
-$A_\alpha$. Therefore, $x\in\bigcup\bar A_\alpha$.
+$A_\alpha$. Therefore, $x\smallin\bigcup\bar A_\alpha$.
 \end{problem}
 \begin{proof}[Critique]
 \end{proof}
@@ -55,14 +55,14 @@ Show that every order topology is Hausdorff.
 \newpage
 \begin{problem}[Munkres, \S17, p.\,101, 13]
 Show that $X$ is Hausdorff if and only if the \emph{diagonal}
-$\Delta=\left\{\,x\times x\;\middle|\;x\in X\,\right\}$ is closed
+$\Delta=\left\{\,x\times x\;\middle|\;x\smallin X\,\right\}$ is closed
 in $X\times X$.
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
 \begin{problem}[Munkres, \S18, p.\,111, 4]
-Given $x_0\in X$ and $y_0\in Y$, show that the maps $f\colon X\to
+Given $x_0\smallin X$ and $y_0\smallin Y$, show that the maps $f\colon X\to
 X\times Y$ and $g\colon Y\to X\times Y$ defined by
 \[
 f(x)=x\times y_0\quad\text{and}\quad g(y)=x_0\times y
@@ -76,8 +76,8 @@ are imbeddings.
 Let $Y$ be an ordered set in the order topology. Let
 $f,g\colon X\to Y$ be continuous.
 \begin{enumerate}[noitemsep,label=(\alph*)]
-\item Show that the set $\letf\{\,x\;\middle|\;f(x)\leq
-  g(x)\,\right\}$ is closed in $X$.
+\item Show that the set
+  $\left\{\,x\;\middle|\;f(x)\leq g(x)\,\right\}$ is closed in $X$.
 \item Let $h\colon X\to Y$ be the
   function \[h(x)=\min\{f(x),g(x)\}.\] Show that $h$ is
   continuous. [\emph{Hint:} Use the pasting lemma.]
