@@ -15,7 +15,7 @@ Consider the transmission line described in Jackson's problem
 (a) From Gauss's law, the electric field due to one conductor is
 \begin{equation}
 \label{eq:electric-field-conductor}
-\textbf{E}=\frac{Q}{4\pi\varepsilon_0 r}
+\textbf{E}=\frac{Q}{4\pi\epsilon_0 r}
 \end{equation}
 where $Q$ is the charge per unit length and $r$ is the
 perpendicular distance from the point of interest, say $P$, to
@@ -24,8 +24,8 @@ conductors, the field due to to the two conductors are in the
 same direction. Therefore, the total field along this line is
 \begin{equation}
 \label{eq:total-electric-field}
-\mathbf{E}=\frac{Q}{2\pi\varepsilon_0
-  r_1}+\frac{Q}{2\pi\varepsilon_0 r_2}
+\mathbf{E}=\frac{Q}{2\pi\epsilon_0
+  r_1}+\frac{Q}{2\pi\epsilon_0 r_2}
 \end{equation}
 where $r_1$ and $r_2$ are the perpendicular distances from the
 point $P$ to each conductor. The electric field $\mathbf{E}$
@@ -34,18 +34,18 @@ the expression
 \begin{align*}
 V&=\Phi_1+\Phi_2\\
  &=-\int\mathbf{E}\cdot\diff\mathbf{l}\\
- &=\frac{Q}{2\pi\varepsilon_0}
+ &=\frac{Q}{2\pi\epsilon_0}
    \left(\int_{a_1}^{d-a_2}\frac{1}{r_1}\diff
    r_1+\int_{a_2}^{a_1-d}\frac{1}{r_2}\diff r_2\right)\\
- &=\frac{Q}{2\pi\varepsilon_0}\log\left((d-a_1)(d-a_2)/a_1a_2\right).
+ &=\frac{Q}{2\pi\epsilon_0}\log\left((d-a_1)(d-a_2)/a_1a_2\right).
 \end{align*}
 Thus the capacitance is
 \begin{align*}
 C&=Q/V\\
- &=\frac{2\pi\varepsilon_0}{\log\left((d-a_1)(d-a_2)/a_1a_2\right)}\\
+ &=\frac{2\pi\epsilon_0}{\log\left((d-a_1)(d-a_2)/a_1a_2\right)}\\
  &\approx
- \frac{2\pi\varepsilon_0}{\log\left(d^2/\sqrt{a_1a_2}^2\right)}\\
- &=\frac{\pi\varepsilon_0}{\log(d/a)}.
+ \frac{2\pi\epsilon_0}{\log\left(d^2/\sqrt{a_1a_2}^2\right)}\\
+ &=\frac{\pi\epsilon_0}{\log(d/a)}.
 \end{align*}
 \\\\
 (b)
@@ -64,11 +64,11 @@ the sphere.
 Look for a solution to the Laplace equation outside the sphere in
 the form
 \[
-\varphi(r,\theta)=-E_0z+\sum_{l=1}^\infty
+\phi(r,\theta)=-E_0z+\sum_{l=1}^\infty
 \frac{c_\ell P_\ell(\cos\theta)}{r^{\ell+1}},
 \]
-where $r,\theta,\varphi$ are spherical coordinates (there is no
-dependence on $\varphi$), $z=r\cos\theta$, $P_\ell$ are the Legendre
+where $r,\theta,\phi$ are spherical coordinates (there is no
+dependence on $\phi$), $z=r\cos\theta$, $P_\ell$ are the Legendre
 polynomials, and $c_\ell$ are the expansion coefficients to be
 found.
 \begin{enumerate}[noitemsep,label=(\alph*)]

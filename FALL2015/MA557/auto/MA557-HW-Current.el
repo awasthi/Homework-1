@@ -40,7 +40,6 @@
     "QQ"
     "RR"
     "ZZ"
-    "FF"
     "documentauthor"
     "documenttitle"
     "hwnum"
@@ -48,7 +47,10 @@
     "coursename"
     "documentsubject"
     "authoremail"
-    "exercisename")
+    "exercisename"
+    "setminus"
+    "phi"
+    "epsilon")
    (LaTeX-add-environments
     "theorem"
     "proposition"

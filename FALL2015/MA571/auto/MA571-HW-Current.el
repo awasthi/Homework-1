@@ -47,7 +47,10 @@
     "coursename"
     "documentsubject"
     "authoremail"
-    "exercisename")
+    "exercisename"
+    "setminus"
+    "phi"
+    "epsilon")
    (LaTeX-add-environments
     "theorem"
     "proposition"

@@ -143,6 +143,7 @@
 
 %% Redefinitions & commands
 \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
+
 \newcommand\restr[2]{{% we make the whole thing an ordinary symbol
   \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
   {#1} % the function
@@ -167,6 +168,13 @@
 \DeclareMathOperator{\FF}{\mathbf{F}}
 
 \begin{document}
+\let\setminus\relax
+\let\phi\relax
+\let\epsilon\relax
+\newcommand\setminus{\smallsetminus}
+\newcommand\phi{\varphi}
+\newcommand\epsilon{\varepsilon}
+
 \frontmatter
 \aliaspagestyle{title}{empty}
 \pagestyle{title}

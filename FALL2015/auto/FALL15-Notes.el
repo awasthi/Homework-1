@@ -52,7 +52,10 @@
     "coursename"
     "shorttitle"
     "documentsubject"
-    "authoremail")
+    "authoremail"
+    "setminus"
+    "phi"
+    "epsilon")
    (LaTeX-add-environments
     "theorem"
     "proposition"

@@ -1,4 +1,8 @@
 \contentsline {chapter}{Contents}{1}{section*.1}
 \contentsline {chapter}{\chapternumberline {1}Commutative Algebra: Atiyah and McDonald}{2}{chapter.1}
-\contentsline {section}{\numberline {1.1}Rings and ring homomorphisms}{2}{section.1.1}
-\contentsline {chapter}{\chapternumberline {2}Topology: Munkres}{3}{chapter.2}
+\contentsline {section}{\numberline {1.1}Rings and Ideals}{2}{section.1.1}
+\contentsline {subsection}{Rings and ring homomorphisms}{2}{section*.2}
+\contentsline {subsection}{Ideals. Quotient rings}{2}{section*.3}
+\contentsline {subsection}{Zero-divisors. Nilpotent elements. Units}{2}{section*.4}
+\contentsline {subsection}{Prime ideals and maximal ideals}{3}{section*.5}
+\contentsline {chapter}{\chapternumberline {2}Topology: Munkres}{5}{chapter.2}

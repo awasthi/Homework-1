@@ -67,10 +67,10 @@
 \newtheorem*{theorem*}{Theorem}
 
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}[chapter]
-\newtheorem{example}{Example}[chapter]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
 \newtheorem{examples}[example]{Examples}
-\newtheorem{exercise}{Exercise}[chapter]
+\newtheorem{exercise}{Exercise}[section]
 \newtheorem{problem}[exercise]{Problem}
 
 \newtheorem*{definition*}{Definition}
@@ -92,6 +92,7 @@
 
 %% Redefinitions & commands
 \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
+
 \newcommand\restr[2]{{% we make the whole thing an ordinary symbol
   \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
   {#1} % the function
@@ -121,6 +122,13 @@
 \newcommand{\ZZ}{\mathbf{Z}}
 
 \begin{document}
+\let\setminus\relax
+\let\phi\relax
+\let\epsilon\relax
+\newcommand\setminus{\smallsetminus}
+\newcommand\phi{\varphi}
+\newcommand\epsilon{\varepsilon}
+
 \author{\href{mailto:\authoremail}{\documentauthor}}
 \title{\documenttitle}
 \date{\today}

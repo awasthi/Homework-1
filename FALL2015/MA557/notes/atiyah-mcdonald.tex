@@ -1,5 +1,6 @@
 \chapter{Commutative Algebra: Atiyah and McDonald}
-\section{Rings and ring homomorphisms}
+\section{Rings and Ideals}
+\subsection{Rings and ring homomorphisms}
 A \emph{ring} $A$ is a set with two binary operations (addition
 and multiplication) such that
 \begin{enumerate}[noitemsep,label=(\arabic*)]
@@ -25,6 +26,171 @@ into a ring $B$ such that
 \item $f(xy)=f(x)f(y)$,
 \item $f(1)=1$.
 \end{enumerate}
+In other words, $f$ respects addition, multiplication and the
+identity element.
+
+A subset $S$ of a ring $A$ is a \emph{subring} of $A$ if $S$ is
+closed under addition and multiplication and contains the
+identity element of $A$. The identity mapping of $S$ into $A$ is
+then a ring homomorphism.
+
+If $f\colon A\to B$, $g\colon B\to C$ are ring homomorphisms so
+is their composition $g\circ f\colon A\to C$.
+\subsection{Ideals. Quotient rings}
+An \emph{ideal} $\mathfrak{a}$ of a ring $A$ is a subset of $A$
+which is an additive subgroup and is such that
+$A\mathfrak{a}\subset\mathfrak{a}$ (i.e., $x\in A$ and
+$y\in\mathfrak{a}$). The quotient group $A/\mathfrak{a}$
+inherits a uniquely defined multiplication from $A$ which makes
+it into a ring, called the \emph{quotient ring} (or residue-class
+ring) $A/\mathfrak{a}$. The elements of $A/\mathfrak{a}$ are the
+cosets of $\mathfrak{a}$ in $A$, and the mapping $\phi\colon
+A\to A/\mathfrak{a}$ which maps each $x\in A$ to its coset
+$x+\mathfrak{a}$ is a surjective ring homomorphism.
+\begin{proposition}
+There is a $1$-to-$1$ order-preserving correspondence between the
+ideals $\mathfrak{b}$ of $A$ which contains $\mathfrak{a}$, and
+the ideals $\bar\mathfrak{b}$ of $A/\mathfrak{a}$, given by
+$\mathfrak{b}=\phi^{-1}\left(\bar\mathfrak{b}\right)$.
+\end{proposition}
+If $f\colon A\to B$ is any ring homomorphism, the \emph{kernel}
+of $f(=f^{-1}(0))$ is an ideal $\mathfrak{a}$ of $A$, and the
+\emph{image} of $f(=(f(A))$ is a subring $C$ of $B$; and $f$
+induces a ring isomorphism $A/\mathfrak{a}\cong C$.
+
+We shall sometimes use the notation $x\equiv
+y\pmod{\mathfrak{a}}$; this means that $x-y\in\mathfrak{a}$.
+\subsection{Zero-divisors. Nilpotent elements. Units}
+A \emph{zero-divisor} in a ring $A$ is an element $x$ which
+``divides $0$'', i.e., for which there exists $y\neq 0$ in $A$
+such that $xy=0$. A ring with no zero-divisors $\neq 0$ (and in
+which $1\neq 0$) is called an \emph{integral domain}. For
+example, $\ZZ$ and $k[x_1,...,x_n]$ ($k$ a field, $x_i$
+indeterminates) are integral domains.
+
+An element $x\in A$ is \emph{nilpotent} if $x^n=0$ for some
+$n>0$. A nilpotent element is a zero-divisor (unless $A\neq 0$),
+but not conversely (in general).
+
+A \emph{unit} in $A$ is an element $x$ which ``divides $1$'',
+i.e., an element $x$ such that $xy=1$ for some $y\in A$. The
+element $y$ is then uniquely determined by $x$, and is written
+$x^{-1}$. The units in $A$ form a (multiplicative) abelian group.
+
+The multiples $ax$ of an element $x\in A$ from a
+\emph{principal} ideal, denoted by $(x)$ or $Ax$. $x$ is a unit
+$\iff$ $(x)=A$. The \emph{zero} ideal $(0)$ is usually denoted by
+$0$.
+
+A \emph{field} is a ring $A$ in which $1\neq 0$ and every nonzero
+element is a unit. Every field is an integral domain (but not
+conversely: $\ZZ$ is not a field).
+
+\begin{proposition}
+Let $A$ be a ring $\neq 0$. Then the following are equivalent:
+\begin{enumerate}[noitemsep,label=(\roman*)]
+\item $A$ is a field;
+\item the only ideals in $A$ are $0$ and $(1)$;
+\item every homomorphism of $A$ into a nonzero ring $B$ is
+  injective.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+(i) $\implies$ (ii). Let $\mathfrak{a}\neq 0$ be an ideal in
+$A$. Then $\mathfrak{a}$ contains a nonzero element $x$, $x$ is a
+unit, hence $\mathfrak{a}\supset(x)=A$, hence $\mathfrak{a}=A$.
+
+(ii) $\implies$ (iii). Let $\phi\colon A\to B$ be a ring
+homomorphism. Then $\ker \phi$ is an ideal $\neq (1)$ in $A$,
+hence $\ker\phi=0$, hence $\phi$ is injective.
+
+(iii) $\implies$ (i). Let $x$ be an element of $A$ which is not a
+unit. Then $(x)\neq(1)$, hence $B=A/(x)$ is not the zero ring. Let
+$\phi\colon A\to B$ be the natural homomorphism of $A$ onto
+$B$, with kernel $(x)$. By hypothesis, $\phi$ is injective,
+hence $x=0$.
+\end{proof}
+\subsection{Prime ideals and maximal ideals}
+An ideal $\mathfrak{p}$ in $A$ is \emph{prime} if
+$\mathfrak{p}\neq(1)$ and if $xy\in\mathfrak{p}$ $\implies$
+$x\in\mathfrak{p}$ or $y\in\mathfrak{p}$.
+
+An ideal $\mathfrak{m}$ in $A$ is \emph{maximal} if
+$\mathfrak{m}\neq(1)$ and if there is no ideal $\mathfrak{a}$ such
+that $\mathfrak{a}\subsetneq\mathfrak{a}\subsetneq A$. Equivalently
+\[
+\text{$\mathfrak{p}$ is prime}\iff\text{$A/\mathfrak{p}$ is an
+  integral domain;}
+\]
+\[
+\text{$\mathfrak{m}$ is maximal}\iff\text{$A/\mathfrak{m}$ is a field.}
+\]
+Hence a maximal ideal is prime (but not conversely, in
+general). The zero ideal is prime $\iff$ $A$ is an integral
+domain.
+
+If $f\colon A\to B$ is a ring homomorphism and $\mathfrak{q}$ is
+a prime ideal in $B$, then $f^{-1}(\mathfrak{q})$ is a prime
+ideal in $A$, for $A/f^{-1}(\mathfrak{q})$ is isomorphic to a
+subring of $B/\mathfrak{q}$ and hence has a no zero-divisor $\neq
+0$. But if $\mathfrak{n}$ is a maximal ideal of $B$ is not
+necessarily true that $f^{-1}(\mathfrak{n})$ is maximal in $A$;
+all we can say for sure is that it is prime. (Example: $A=\ZZ$,
+$B=\QQ$, $\mathfrak{n}=0$.)
+\begin{theorem}
+Every ring $A\neq 0$ has at least one maximal ideal.
+\end{theorem}
+\begin{proof}
+This is a standard application of Zorn's lemma. Let $\Sigma$ be
+the set of all ideals $\neq(1)$ in $A$.  Order $\Sigma$ by
+inclusion. $\Sigma$ is not empty, since $0\in\Sigma$. To apply
+Zorn's lemma we must show that every chain in $\Sigma$ has an
+upper bound in $\Sigma$; let then
+$\left(\mathfrak{a}_\alpha\right)$ be a chain of ideals in
+$\Sigma$, so that for each pair of indices $\alpha,\beta$ we have
+either $\mathfrak{a}_\alpha\subset\mathfrak{a}_\beta$ or
+$\mathfrak{a}_\beta\subset\mathfrak{a}_\alpha$. Let
+$\mathfrak{a}=\bigcup_\alpha\mathfrak{a}_\alpha$. Then
+$\mathfrak{a}$ is an ideal and $1\notin\mathfrak{a}$. Hence
+$\mathfrak{a}\in\Sigma$, and $\mathfrak{a}$ is an upper bound of
+the chain. Hence by Zorn's lemma $\Sigma$ has a maximal element.
+\end{proof}
+\begin{corollary}
+If $\mathfrak{a}\neq(1)$ is an ideal of $A$, there exists a
+maximal ideal of $A$ containing $\mathfrak{a}$.
+\end{corollary}
+\begin{proof}
+Apply (1.3) to $A/\mathfrak{a}$ bearing in mind
+(1.1). Alternatively, modify the proof of (1.3).
+\end{proof}
+\begin{corollary}
+Every nonunit of of $A$ is contained in a maximal ideal.
+\end{corollary}
+\begin{remarks*}
+\begin{enumerate}[noitemsep,label=(\arabic*)]
+\item If $A$ is Noetherian we can avoid the use f Zorn's lemma:
+  the set of all ideals $\neq (1)$ has a maximal element.
+\item There exists rings with exactly one maximal ideal, for
+  example fields. A ring $A$ with exactly one maximal ideal
+  $\mathfrak{m}$ is called a \emph{local ring}. The field
+  $k=A/\mathfrak{m}$ is called the \emph{residue field} of $A$.
+\end{enumerate}
+\end{remarks*}
+\begin{proposition}
+\begin{enumerate}[noitemsep,label=(\roman*)]
+\item Let $A$ be a ring and $\mathfrak{m}\neq (1)$ be an ideal of
+  $A$ such that every $x\in A-\mathfrak{m}$ is a unit in
+  $A$. Then $A$ is a local ring and $\mathfrak{m}$ its maximal
+  ideal.
+\item Let $A$ be a ring and $\mathfrak{m}$ a maximal ideal of
+  $A$, such that every element of $1+\mathfrak{m}$ (i.e., every
+  $1+x$, where $x\in\mathfrak{m}$) is a unit in $A$. Then $A$ is
+  a local ring.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+
+\end{proof}
 
 %%% Local Variables:
 %%% mode: latex
