@@ -19,7 +19,22 @@ Let $f=a_nx^n+\cdots+a_1x+a_0\in R[x]$. Then
 \end{enumerate}
 \end{lemma}
 \begin{proof}[Proof of lemma]
-\renewcommand\qedsymbol{$\clubsuit$}
+\renewcommand\qedsymbol{$\vardiamondsuit$}
+(a) Suppose $f$ is a unit. Then there exists
+$g=b_mx^m+\cdots+b_0$ in $R[x]$ such that $fg=1$. In particular,
+\begin{align*}
+fg-1
+&=\left(a_nx^n+\cdots+a_0\right)\left(b_mx^m+\cdots+b_0\right)-1\\
+&=\sum_{\substack{k_0+\cdots+k_n=m\\\ell_0+\cdots+\ell_m=m}}
+  a_0^{k_0}\cdots a_{n}^{k_n}
+  b_0^{\ell_0}\cdots b_m^{\ell_m}
+  x^{mn+\sum ik_i+\sum j\ell_j}
+  -1\\
+&=0,
+\end{align*}
+is true if and only if
+
+(b)
 \end{proof}
 \end{proof}
 \newpage
@@ -28,6 +43,7 @@ Let $I$ and $J$ be $R$-ideals. Show that
 \[\sqrt{IJ}=\sqrt{I\cap J}=\sqrt{I}\cap\sqrt{J}.\]
 \end{problem}
 \begin{proof}
+
 \end{proof}
 \newpage
 \begin{problem}

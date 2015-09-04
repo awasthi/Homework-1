@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.79.1 (TeX Live 2014/Arch Linux) (rev 4971)  (format=lualatex 2015.5.28)  3 SEP 2015 11:51
+This is LuaTeX, Version beta-0.79.1 (TeX Live 2014/Arch Linux) (rev 4971)  (format=lualatex 2015.5.28)  4 SEP 2015 11:32
  restricted \write18 enabled.
  file:line:error style messages enabled.
 **\input FALL15-Notes.tex
@@ -1019,7 +1019,7 @@ luatexbase-attr: luatexbase.attributes["luaotfload@cursbase"] = 6
 luatexbase-attr: luatexbase.attributes["luaotfload@curscurs"] = 7
 luatexbase-attr: luatexbase.attributes["luaotfload@cursdone"] = 8
 luatexbase-attr: luatexbase.attributes["luaotfload@state"] = 9
-luaotfload | main : fontloader loaded in 0.117 seconds
+luaotfload | main : fontloader loaded in 0.114 seconds
 luatexbase-mcb: inserting 'luaotfload.node_processor'
 at position 1 in 'pre_linebreak_filter'
 luatexbase-mcb: inserting 'luaotfload.node_processor'
@@ -1979,7 +1979,42 @@ luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman5-regular.otf"(co
 mpiling luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/lmroman5-regular.luc)
 (load luc: /home/carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/lmroma
 n5-regular.luc)
-[3]) [4] (./MA571/notes/munkres.tex) [5
+[3]
+
+LaTeX Warning: Command \t invalid in math mode on input line 198.
+
+Missing character: There is no ͡ (U+0361) in font cmmi10!
+[4]
+./MA557/notes/atiyah-mcdonald.tex:308: Undefined control sequence.
+<argument> \mahfrak 
+         {a}_i
+l.308 ...arrow\prod_{i=1}^n\frac{A_i}{\mahfrak{a}_i}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./MA557/notes/atiyah-mcdonald.tex:325: Undefined control sequence.
+l.325 $\mathfrak{a}_i+\mahfrak
+                            {a}_j=(1)$ ($1\leq i\leq n-1$) we have
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./MA557/notes/atiyah-mcdonald.tex:333: Undefined control sequence.
+l.333 \prod_{i=1}^n\mathfrak{a}_i=\mahfrak
+                                        {b}\mathfrak{a}_n=\mathfrak{b}\cap\m...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[5]) [6] (./MA571/notes/munkres.tex) [7
 
 
 ]
@@ -1996,16 +2031,16 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 143.
 )
 
 Here is how much of LuaTeX's memory you used:
- 32668 strings out of 494693
+ 32686 strings out of 494693
  100000,794899 words of node,token memory allocated
- 796 words of node memory still in use:
+ 812 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 2 glue, 2 kern, 7 attribute, 144 glue_spec, 7 attri
 bute_list, 3 write nodes
-   avail lists: 1:51,2:7066,3:168,4:1512,5:222,6:2498,7:54,8:13,9:509,10:981,11:
+   avail lists: 1:51,2:7782,3:186,4:1674,5:225,6:2754,7:54,8:13,9:509,10:981,11:
 519,12:230
- 35312 multiletter control sequences out of 65536+600000
- 89 fonts using 23224563 bytes
- 50i,11n,60p,1201b,551s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 35314 multiletter control sequences out of 65536+600000
+ 89 fonts using 23224663 bytes
+ 50i,12n,60p,1201b,551s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></usr/
 share/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></home/carlo
 s/.local/share/fonts/OTF-TeXLive/public/lm/lmroman10-italic.otf></home/carlos/.l
@@ -2013,10 +2048,10 @@ ocal/share/fonts/OTF-TeXLive/public/lm/lmroman10-bold.otf></usr/share/texmf-dist
 /fonts/opentype/public/lm/lmroman12-bold.otf></home/carlos/.local/share/fonts/OT
 F-TeXLive/public/lm/lmroman10-regular.otf></usr/share/texmf-dist/fonts/opentype/
 public/lm/lmroman17-regular.otf>
-Output written on FALL15-Notes.pdf (5 pages, 52032 bytes).
+Output written on FALL15-Notes.pdf (7 pages, 69704 bytes).
 
-PDF statistics: 120 PDF objects out of 1000 (max. 8388607)
- 91 compressed objects within 1 object stream
- 29 named destinations out of 1000 (max. 131072)
+PDF statistics: 145 PDF objects out of 1000 (max. 8388607)
+ 113 compressed objects within 2 object streams
+ 45 named destinations out of 1000 (max. 131072)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

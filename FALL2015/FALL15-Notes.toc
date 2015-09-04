@@ -5,4 +5,6 @@
 \contentsline {subsection}{Ideals. Quotient rings}{2}{section*.3}
 \contentsline {subsection}{Zero-divisors. Nilpotent elements. Units}{2}{section*.4}
 \contentsline {subsection}{Prime ideals and maximal ideals}{3}{section*.5}
-\contentsline {chapter}{\chapternumberline {2}Topology: Munkres}{5}{chapter.2}
+\contentsline {subsection}{Nilradical and Jacobson radical}{4}{section*.6}
+\contentsline {subsection}{Operations on Ideals}{5}{section*.7}
+\contentsline {chapter}{\chapternumberline {2}Topology: Munkres}{7}{chapter.2}

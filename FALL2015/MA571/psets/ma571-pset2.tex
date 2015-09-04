@@ -1,11 +1,31 @@
-\begin{problem}[Munkres, \S17, p.\,100, 3]
+\begin{problem}[Munkres \S17, p.\,100, 2]
 Show that if $A$ is closed in $Y$ and $Y$ is closed in $X$, then
 $A$ is closed in $X$.
 \end{problem}
 \begin{proof}
+Let $C$ denote the closure of $A$ in $X$ then, by Theorem 17.4,
+$A=\bar A=C\cap Y$ is the closure of $A$ in $Y$. Thus, $A$ is
+closed in $X$ since it is the intersection of two closed subsets
+of $X$.
 \end{proof}
 \newpage
-\begin{problem}[Munkres, \S17, p.\,101, 6(b)]
+\begin{problem}[Munkres \S17, p.\,100, 3]
+Show that if $A$ is closed in $X$ and $B$ is closed in $Y$, then
+$A\times B$ is closed in $X\times Y$.
+\end{problem}
+\begin{proof}
+Since $A$ is closed in $X$ and $B$ is closed in $Y$ their
+complements $X\setminus A$ and $Y\setminus B$ are open in $X$ and
+$Y$, respectively. Thus $(X\setminus A)\times (B\setminus Y)$ are
+basic sets in the product topology on $X\times Y$. Hence
+\[
+(X\times Y)\setminus\left((X\setminus A)\times(Y\setminus
+  B)\right)
+=
+\]
+\end{proof}
+\newpage
+\begin{problem}[Munkres \S17, p.\,101, 6(b)]
 Let $A$, $B$ and $A_\alpha$ denote subsets of a space $X$. Prove
 the following:
 \begin{enumerate}[noitemsep]
@@ -15,7 +35,7 @@ the following:
 \begin{proof}
 \end{proof}
 \newpage
-\begin{problem}[Munkres, \S17, p.\,101, 6(c)]
+\begin{problem}[Munkres \S17, p.\,101, 6(c)]
 Let $A$, $B$ and $A_\alpha$ denote subsets of a space $X$. Prove
 the following:
 \begin{enumerate}[noitemsep]
@@ -25,7 +45,7 @@ the following:
 \begin{proof}
 \end{proof}
 \newpage
-\begin{problem}[Munkres, \S17, p.\,101, 7]
+\begin{problem}[Munkres \S17, p.\,101, 7]
 Criticize the following ``proof'' that $\clsr{\bigcup
   A_\alpha}\subset\bigcup\bar A_\alpha$: if
 $\left\{A_\alpha\right\}$ is a collection of sets in $X$ and if
@@ -37,7 +57,7 @@ $A_\alpha$. Therefore, $x\in\bigcup\bar A_\alpha$.
 \begin{proof}[Critique]
 \end{proof}
 \newpage
-\begin{problem}[Munkres, \S17, p.\,101, 9]
+\begin{problem}[Munkres \S17, p.\,101, 9]
 Let $A\subset X$ and $B\subset Y$. Show that in the space
 $X\times Y$,
 \[
@@ -47,13 +67,13 @@ $X\times Y$,
 \begin{proof}
 \end{proof}
 \newpage
-\begin{problem}[Munkres, \S17, p.\,101, 10]
+\begin{problem}[Munkres \S17, p.\,101, 10]
 Show that every order topology is Hausdorff.
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
-\begin{problem}[Munkres, \S17, p.\,101, 13]
+\begin{problem}[Munkres \S17, p.\,101, 13]
 Show that $X$ is Hausdorff if and only if the \emph{diagonal}
 $\Delta=\left\{\,x\times x\;\middle|\;x\in X\,\right\}$ is closed
 in $X\times X$.
@@ -61,7 +81,7 @@ in $X\times X$.
 \begin{proof}
 \end{proof}
 \newpage
-\begin{problem}[Munkres, \S18, p.\,111, 4]
+\begin{problem}[Munkres \S18, p.\,111, 4]
 Given $x_0\in X$ and $y_0\in Y$, show that the maps $f\colon X\to
 X\times Y$ and $g\colon Y\to X\times Y$ defined by
 \[
@@ -72,7 +92,7 @@ are imbeddings.
 \begin{proof}
 \end{proof}
 \newpage
-\begin{problem}[Munkres, \S18, p.\,111-112, 8(a,b)]
+\begin{problem}[Munkres \S18, p.\,111-112, 8(a,b)]
 Let $Y$ be an ordered set in the order topology. Let
 $f,g\colon X\to Y$ be continuous.
 \begin{enumerate}[noitemsep,label=(\alph*)]
