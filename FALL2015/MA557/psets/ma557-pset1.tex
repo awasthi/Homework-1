@@ -1,41 +1,47 @@
 \begin{problem}
-Show that $\rad(R[x])=\nil(R[x])$.
+Show that $\rad(R[X])=\nil(R[X])$.
 \end{problem}
 \begin{proof}
-Suppose $R$ is a commutative ring with identity and $R[x]$ is the
-polynomial ring over $R$ in the indeterminate $x$. Then, it is
-clear that $\rad(R[x])\supset\nil(R[x])$ since $\nil(R[x])$ is
-the intersection of all prime ideals of $R[x]$ and every maximal
-ideal is a prime ideal. To show the reverse containment, we will
-first prove the following results found in Dummit and Foote,
-\S7.3, p.\,33:
+We will first prove the following results (which can be found in
+Dummit and Foote, \S7.3, p.\,33):
 \begin{lemma}
-Let $f=a_nx^n+\cdots+a_1x+a_0\in R[x]$. Then
+Let $f=a_nX^n+\cdots+a_0\in R[X]$. Then
 \begin{enumerate}[noitemsep,label=(\alph*)]
-\item $f$ is a unit in $R[x]$ if and only if $a_0$ is a unit and
-  $a_1,...,a_n$ are nilpotent in $R$;
-\item $f$ is nilpotent in $R[x]$ if and only if $a_0,a_1,...,a_n$
-  are nilpotent elements of $R$.
+\item $f$ is nilpotent in $R[X]$ if and only if $a_0,a_1,...,a_n$
+  are nilpotent elements of $R$;
+\item $f$ is a unit in $R[X]$ if and only if $a_0$ is a unit and
+  $a_1,...,a_n$ are nilpotent in $R$.
 \end{enumerate}
 \end{lemma}
 \begin{proof}[Proof of lemma]
 \renewcommand\qedsymbol{$\vardiamondsuit$}
-(a) Suppose $f$ is a unit. Then there exists
-$g=b_mx^m+\cdots+b_0$ in $R[x]$ such that $fg=1$. In particular,
-\begin{align*}
-fg-1
-&=\left(a_nx^n+\cdots+a_0\right)\left(b_mx^m+\cdots+b_0\right)-1\\
-&=\sum_{\substack{k_0+\cdots+k_n=m\\\ell_0+\cdots+\ell_m=m}}
-  a_0^{k_0}\cdots a_{n}^{k_n}
-  b_0^{\ell_0}\cdots b_m^{\ell_m}
-  x^{mn+\sum ik_i+\sum j\ell_j}
-  -1\\
-&=0,
-\end{align*}
-is true if and only if
-
-(b)
+(a) $\impliedby$: Suppose that $a_0,...,a_n$ are nilpotent. Then
+$a_0,...,a_n\in\nil(R)$, hence
+$f\in\nil(R)\subset\nil(R[X])$. $\implies$: Conversely, if
+$f^k=0$ for some positive integer $k$, then $(a_nX^n)^k=0$, so
+$a_nx^n\in\nil(R[X])$ so $f-a_nX^n\in\nil(R[X])$, in particular
+$a_n\in\nil(R[X])$. By induction on $n$,
+$a_0,...,a_n\in\nil(R[X])$.
+\\\\
+(b) $\impliedby$: Suppose $a_0$ is unit and $a_1,...,a_n$ are
+nilpotent. Then, by (a), $f-a_0=a_nX^n+\cdots+a_1X$ is nilpotent
+so $f-a_0\in\rad(R[X])$. By Proposition 1.13, $f$ is a
+unit. $\implies$: On the other hand, if $f$ is a unit, there
+exist $g=b_mX^m+\cdots+b_0$ in $R[X]$ with $fg=1$. Now, let
+$\mathfrak{p}$ be an arbitrary prime ideal. Since $f$ is a unit
+in $R[X]$, $\bar f=\bar a_nX^n+\cdots+\bar a_0$ is a unit in
+$R[X]/\mathfrak{p}$. But since $R[X]/\mathfrak{p}$ is an integral
+domain and $\bar f$ is a unit, $\deg\bar f=0$ so $\bar a_i=0$ for
+every $i\in\{1,...,n\}$. Since $\mathfrak{p}$ was chosen
+arbitrarily,
 \end{proof}
+By definition $\rad(R)$ is the intersection of every maximal
+(hence prime) ideal of $R$ so, by Theorem 1.12,
+$\rad(R)\supset\nil(R)$. To see the reverse containment let
+$f=a_nX^n+\cdots+a_0$ be in $\rad(R[X])$. By Proposition 1.13,
+$1+fg$ is a unit for every $g\in R[X]$. In particular, $1+fX$ is
+a unit, so by Lemma 1(b), $a_0,...,a_n$ are nilpotent so
+$f\in\nil(R[X])$.
 \end{proof}
 \newpage
 \begin{problem}
@@ -43,7 +49,25 @@ Let $I$ and $J$ be $R$-ideals. Show that
 \[\sqrt{IJ}=\sqrt{I\cap J}=\sqrt{I}\cap\sqrt{J}.\]
 \end{problem}
 \begin{proof}
-
+$\sqrt{IJ}=\sqrt{I\cap J}$:~By contradiction, suppose that there
+exists some prime ideal $\mathfrak{p}\supset IJ$, but
+$\mathfrak{p}\nsupset I\cap J$. Then there exists some element
+$x\in I\cap J$ with $x\notin\mathfrak{p}$. However, $x^2\in
+IJ$. This contradicts the primality of $\mathfrak{p}$. Hence, if
+$\mathfrak{p}$ is a prime ideal containing $IJ$, it must also
+contain $I\cap J$ so $\sqrt{IJ}=\sqrt{I\cap J}$.
+\\\\
+$\sqrt{IJ}=\sqrt{I}\cap\sqrt{J}$: Let
+$x\in\sqrt{I}\cap\sqrt{J}$. Then $x^n\in I$ for some $n>0$ and
+$x^m\in J$ for some $m>0$. Then $x^{n+m}\in IJ$ so
+$x\in\sqrt{IJ}$. Hence $\sqrt{IJ}\supset\sqrt{I}\cap\sqrt{J}$. To
+see the reverse containment note that, by above, since
+$\sqrt{IJ}=\sqrt{I\cap J}$, then $x\in\sqrt{IJ}$ implies $x^n\in
+J$ an $x^n\in J$ for some $n>0$, hence $x\in\sqrt{I}\cap\sqrt{J}$
+so $\sqrt{IJ}=\sqrt{I}\cap\sqrt{J}$.
+\\\\
+By transitivity of ``$=$'', it follows that
+$\sqrt{IJ}=\sqrt{I\cap J}=\sqrt{I}\cap\sqrt{J}$.
 \end{proof}
 \newpage
 \begin{problem}
@@ -56,7 +80,23 @@ equivalent:
 \end{enumerate}
 \end{problem}
 \begin{proof}
-
+(ii) $\implies$ (i):~Suppose that $S$ is a saturated
+multiplicative subset of $R$. Then $S\supset R^\times$ so every
+element of $R\setminus S$ is a non-unit. By Corollary 1.5, for
+every $x\in R\setminus S$, there exists a maximal ideal
+$\mathfrak{m}\supset\langle x\rangle$. Hence
+\[
+R\setminus S=\bigcup_{\mathfrak{m}\supset\langle x\rangle}\mathfrak{m},
+\]
+in particular $R\setminus S$ is a union of prime ideals.
+\\\\
+(i) $\implies$ (ii):~Suppose that $R\setminus S$ is a union of
+prime ideals. Then, it is clear that $R^\times \subset S$ so
+$1\in S$. Now $x,y\in S$ if and only if $x,y\notin R\setminus S$
+if and only if $xy\notin\mathfrak{p}$ for some prime ideal
+$\mathfrak{p}\subset R\setminus S$. Hence, $S$ is a saturated
+multiplicative subset of $R$, i.e., satisfies the conditions
+given in (ii).
 \end{proof}
 \newpage
 \begin{problem}
@@ -64,6 +104,14 @@ Show that the set of all zero divisors in a ring is a union of
 prime ideals.
 \end{problem}
 \begin{proof}
+By Problem 1.3, it suffices to show that the complement of the
+set of all zero-divisors, call it $Z$, of a ring $R$ is a
+saturated multiplicative subset. It is clear that $R\setminus
+Z\supset R^\times$ (since, if $u\in R^\times$, $ub=0$ if and only
+if $b=0$: $\implies$ is easily seen since $u^{-1}ub=1\cdot b=0$
+so $b=0$; the converse is immediate). Now, suppose the product
+$xy\in R\setminus S$. Then $xy$ is not a zero divisor so $x,y$
+are not zero divisors.
 \end{proof}
 \newpage
 \begin{problem}
