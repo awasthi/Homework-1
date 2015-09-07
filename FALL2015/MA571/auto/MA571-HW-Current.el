@@ -26,7 +26,6 @@
     "mathtools"
     "lualatex-math"
     "unicode-math"
-    "polyglossia"
     "titlesec")
    (TeX-add-symbols
     '("clsr" 1)

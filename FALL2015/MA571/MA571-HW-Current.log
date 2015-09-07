@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.79.1 (TeX Live 2014/Arch Linux) (rev 4971)  (format=lualatex 2015.5.28)  6 SEP 2015 03:04
+This is LuaTeX, Version beta-0.79.1 (TeX Live 2014/Arch Linux) (rev 4971)  (format=lualatex 2015.5.28)  7 SEP 2015 11:31
  restricted \write18 enabled.
  file:line:error style messages enabled.
 **\input MA571-HW-Current.tex
@@ -1019,7 +1019,7 @@ luatexbase-attr: luatexbase.attributes["luaotfload@cursbase"] = 6
 luatexbase-attr: luatexbase.attributes["luaotfload@curscurs"] = 7
 luatexbase-attr: luatexbase.attributes["luaotfload@cursdone"] = 8
 luatexbase-attr: luatexbase.attributes["luaotfload@state"] = 9
-luaotfload | main : fontloader loaded in 0.118 seconds
+luaotfload | main : fontloader loaded in 0.114 seconds
 luatexbase-mcb: inserting 'luaotfload.node_processor'
 at position 1 in 'pre_linebreak_filter'
 luatexbase-mcb: inserting 'luaotfload.node_processor'
@@ -1357,14 +1357,14 @@ luaotfload | aux : no font with id 24
 . fontspec info: "defining-font"
 . 
 . Font family 'LatinModernRoman(0)' created for font 'Latin Modern Roman' with
-. options [Ligatures=TeX,Ligatures=TeX].
+. options [Ligatures=TeX,Ligatures=TeX,Numbers=OldStyle].
 . 
 . This font family consists of the following shapes:
 . 
 . * 'normal' with NFSS spec.:
 . 
 . <->"LatinModernRoman:mode=node;script=latn;language=DFLT;+tlig;+trep;+tlig;+tr
-ep;"
+ep;+onum;"
 . 
 . * 'small caps' with NFSS spec.:
 . 
@@ -1374,7 +1374,7 @@ ep;"
 . * 'bold' with NFSS spec.:
 . 
 . <->"LatinModernRoman/B:mode=node;script=latn;language=DFLT;+tlig;+trep;+tlig;+
-trep;"
+trep;+onum;"
 . 
 . * 'bold small caps' with NFSS spec.:
 . 
@@ -1384,7 +1384,7 @@ trep;"
 . * 'italic' with NFSS spec.:
 . 
 . <->"LatinModernRoman/I:mode=node;script=latn;language=DFLT;+tlig;+trep;+tlig;+
-trep;"
+trep;+onum;"
 . 
 . * 'small caps' with NFSS spec.:
 . 
@@ -1394,7 +1394,7 @@ trep;"
 . * 'bold italic' with NFSS spec.:
 . 
 . <->"LatinModernRoman/BI:mode=node;script=latn;language=DFLT;+tlig;+trep;+tlig;
-+trep;"
++trep;+onum;"
 . 
 . * 'bold small caps' with NFSS spec.:
 . 
@@ -1422,37 +1422,37 @@ ompiling luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/lmsans10-oblique.luc
 s10-oblique.luc)
 luaotfload | load : Lookup/name: "LatinModernSans" -> "lmsans10-regular.otf"
 luaotfload | load : Lookup/name: "LatinModernSans" -> "lmsans10-regular.otf"
-luaotfload | aux : font no 28 (LMSans10-Regular) does not define feature smcp fo
+luaotfload | aux : font no 29 (LMSans10-Regular) does not define feature smcp fo
 r script latn with language dflt
-luaotfload | aux : no font with id 28
+luaotfload | aux : no font with id 29
 luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman10-regular.otf"
 luaotfload | load : Lookup/name: "LatinModernSans" -> "lmsans10-bold.otf"
 luaotfload | load : Lookup/name: "LatinModernSans" -> "lmsans10-bold.otf"
-luaotfload | aux : font no 30 (LMSans10-Bold) does not define feature smcp for s
+luaotfload | aux : font no 31 (LMSans10-Bold) does not define feature smcp for s
 cript latn with language dflt
-luaotfload | aux : no font with id 30
-luaotfload | load : Lookup/name: "LatinModernSans" -> "lmsans10-oblique.otf"
-luaotfload | load : Lookup/name: "LatinModernSans" -> "lmsans10-oblique.otf"
-luaotfload | aux : font no 31 (LMSans10-Oblique) does not define feature smcp fo
-r script latn with language dflt
 luaotfload | aux : no font with id 31
+luaotfload | load : Lookup/name: "LatinModernSans" -> "lmsans10-oblique.otf"
+luaotfload | load : Lookup/name: "LatinModernSans" -> "lmsans10-oblique.otf"
+luaotfload | aux : font no 32 (LMSans10-Oblique) does not define feature smcp fo
+r script latn with language dflt
+luaotfload | aux : no font with id 32
 luaotfload | load : Lookup/name: "LatinModernSans" -> "lmsans10-boldoblique.otf"
 luaotfload | load : Lookup/name: "LatinModernSans" -> "lmsans10-boldoblique.otf"
-luaotfload | aux : font no 29 (LMSans10-BoldOblique) does not define feature smc
+luaotfload | aux : font no 30 (LMSans10-BoldOblique) does not define feature smc
 p for script latn with language dflt
-luaotfload | aux : no font with id 29
+luaotfload | aux : no font with id 30
 .................................................
 . fontspec info: "defining-font"
 . 
 . Font family 'LatinModernSans(0)' created for font 'Latin Modern Sans' with
-. options [Ligatures=TeX,Ligatures=TeX].
+. options [Ligatures=TeX,Ligatures=TeX,Numbers=OldStyle].
 . 
 . This font family consists of the following shapes:
 . 
 . * 'normal' with NFSS spec.:
 . 
 . <->"LatinModernSans:mode=node;script=latn;language=DFLT;+tlig;+trep;+tlig;+tre
-p;"
+p;+onum;"
 . 
 . * 'small caps' with NFSS spec.:
 . 
@@ -1462,7 +1462,7 @@ p;"
 . * 'bold' with NFSS spec.:
 . 
 . <->"LatinModernSans/B:mode=node;script=latn;language=DFLT;+tlig;+trep;+tlig;+t
-rep;"
+rep;+onum;"
 . 
 . * 'bold small caps' with NFSS spec.:
 . 
@@ -1472,7 +1472,7 @@ rep;"
 . * 'italic' with NFSS spec.:
 . 
 . <->"LatinModernSans/I:mode=node;script=latn;language=DFLT;+tlig;+trep;+tlig;+t
-rep;"
+rep;+onum;"
 . 
 . * 'small caps' with NFSS spec.:
 . 
@@ -1482,7 +1482,7 @@ rep;"
 . * 'bold italic' with NFSS spec.:
 . 
 . <->"LatinModernSans/BI:mode=node;script=latn;language=DFLT;+tlig;+trep;+tlig;+
-trep;"
+trep;+onum;"
 . 
 . * 'bold small caps' with NFSS spec.:
 . 
@@ -1509,24 +1509,24 @@ load luc: /home/carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/lmmono1
 0-italic.luc)
 luaotfload | load : Lookup/name: "LatinModernMono" -> "lmmono10-regular.otf"
 luaotfload | load : Lookup/name: "LatinModernMono" -> "lmmono10-regular.otf"
-luaotfload | aux : font no 32 (LMMono10-Regular) does not define feature smcp fo
+luaotfload | aux : font no 34 (LMMono10-Regular) does not define feature smcp fo
 r script latn with language dflt
-luaotfload | aux : no font with id 32
-luaotfload | load : Lookup/name: "LatinModernMono" -> "lmmono12-regular.otf"
-luaotfload | load : Lookup/name: "LatinModernMono" -> "lmmono12-regular.otf"
-luaotfload | aux : font no 33 (LMMono12-Regular) does not define feature smcp fo
-r script latn with language dflt
-luaotfload | aux : no font with id 33
-luaotfload | load : Lookup/name: "LatinModernMono" -> "lmmono10-italic.otf"
-luaotfload | load : Lookup/name: "LatinModernMono" -> "lmmono10-italic.otf"
-luaotfload | aux : font no 34 (LMMono10-Italic) does not define feature smcp for
- script latn with language dflt
 luaotfload | aux : no font with id 34
 luaotfload | load : Lookup/name: "LatinModernMono" -> "lmmono12-regular.otf"
 luaotfload | load : Lookup/name: "LatinModernMono" -> "lmmono12-regular.otf"
-luaotfload | aux : font no 33 (LMMono12-Regular) does not define feature smcp fo
+luaotfload | aux : font no 35 (LMMono12-Regular) does not define feature smcp fo
 r script latn with language dflt
-luaotfload | aux : no font with id 33
+luaotfload | aux : no font with id 35
+luaotfload | load : Lookup/name: "LatinModernMono" -> "lmmono10-italic.otf"
+luaotfload | load : Lookup/name: "LatinModernMono" -> "lmmono10-italic.otf"
+luaotfload | aux : font no 36 (LMMono10-Italic) does not define feature smcp for
+ script latn with language dflt
+luaotfload | aux : no font with id 36
+luaotfload | load : Lookup/name: "LatinModernMono" -> "lmmono12-regular.otf"
+luaotfload | load : Lookup/name: "LatinModernMono" -> "lmmono12-regular.otf"
+luaotfload | aux : font no 35 (LMMono12-Regular) does not define feature smcp fo
+r script latn with language dflt
+luaotfload | aux : no font with id 35
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1586,9 +1586,9 @@ luaotfload | load : Lookup/name: "Latin Modern Math" -> "latinmodern-math.otf"
 .................................................
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-luaotfload | aux : font no 35 (LatinModernMath-Regular) does not define feature 
+luaotfload | aux : font no 37 (LatinModernMath-Regular) does not define feature 
 smcp for script math with language dflt
-luaotfload | aux : no font with id 35
+luaotfload | aux : no font with id 37
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 .................................................
@@ -1637,9 +1637,9 @@ luaotfload | load : Lookup/name: "Latin Modern Math" -> "latinmodern-math.otf"
 .................................................
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-luaotfload | aux : font no 35 (LatinModernMath-Regular) does not define feature 
+luaotfload | aux : font no 37 (LatinModernMath-Regular) does not define feature 
 smcp for script math with language dflt
-luaotfload | aux : no font with id 35
+luaotfload | aux : no font with id 37
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 .................................................
@@ -1701,9 +1701,9 @@ luaotfload | load : Lookup/name: "Latin Modern Math" -> "latinmodern-math.otf"
 .................................................
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-luaotfload | aux : font no 35 (LatinModernMath-Regular) does not define feature 
+luaotfload | aux : font no 37 (LatinModernMath-Regular) does not define feature 
 smcp for script math with language dflt
-luaotfload | aux : no font with id 35
+luaotfload | aux : no font with id 37
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 .................................................
@@ -1745,284 +1745,9 @@ LaTeX Font Info:    Encoding `OMX' has changed to `EU2' for symbol font
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> EU2/LatinModernMath(2)/bx/n on input li
 ne 63.
-
-(/usr/share/texmf-dist/tex/latex/polyglossia/polyglossia.sty
-Package: polyglossia 2014/05/21 v1.33.5 Babel replacement for XeLaTeX and LuaTeX
-
-
-(/usr/share/texmf-dist/tex/latex/makecmds/makecmds.sty
-Package: makecmds 2009/09/03 v1.0a extra command making commands
-)
-(/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
-
-(/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks42
-\XKV@tempa@toks=\toks43
-)
-\XKV@depth=\count339
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-(/usr/share/texmf-dist/tex/latex/polyglossia/polyglossia.lua)
-(/usr/share/texmf-dist/tex/luatex/hyph-utf8/luatex-hyphen.lua)
-luatex-hyphen: using data file: /usr/share/texmf-dist/tex/generic/config/languag
-e.dat.lua
-Lua module: polyglossia 2013/05/11 1.3 Polyglossia
-)
-(/usr/share/texmf-dist/tex/latex/polyglossia/gloss-english.ldf
-File: gloss-english.ldf polyglossia: module for english
-)
-Package polyglossia Info: Default language is english.
-
-(/usr/share/texmf-dist/tex/latex/polyglossia/gloss-french.ldf
-File: gloss-french.ldf polyglossia: module for french
-\xpg@frpt=\luatexattribute10
-
-(/usr/share/texmf-dist/tex/latex/polyglossia/polyglossia-frpt.lua))
-(/usr/share/texmf-dist/tex/latex/polyglossia/gloss-german.ldf
-File: gloss-german.ldf polyglossia: module for german
-
-(/usr/share/texmf-dist/tex/latex/polyglossia/babelsh.def
-File: babelsh.def 2013/04/30 Babel common definitions for shorthands
- Taken verbatim from babel.def (2013/04/15 v3.9e)
-)
-Package polyglossia Info: Making " an active character on input line 68.
-)
-(/usr/share/texmf-dist/tex/latex/polyglossia/gloss-russian.ldf
-File: gloss-russian.ldf polyglossia: module for russian
-)
-(/usr/share/texmf-dist/tex/latex/polyglossia/gloss-spanish.ldf
-File: gloss-spanish.ldf polyglossia: module for spanish
-)
-luaotfload | load : Lookup/name: "CMU Serif" -> "cmunrm.otf"(compiling luc: /var
-/lib/texmf/luatex-cache/generic/fonts/otf/cmunrm.luc)(load luc: /home/carlos/.te
-xlive/texmf-var/luatex-cache/generic/fonts/otf/cmunrm.luc)
-luaotfload | load : Lookup/name: "CMU Serif" -> "cmunrm.otf"
-\g__fontspec_family_CMUSerif_int=\count340
-luaotfload | load : Lookup/name: "CMU Serif" -> "cmunrm.otf"
-luaotfload | load : Lookup/name: "CMU Serif" -> "cmunbi.otf"(compiling luc: /var
-/lib/texmf/luatex-cache/generic/fonts/otf/cmunbi.luc)(load luc: /home/carlos/.te
-xlive/texmf-var/luatex-cache/generic/fonts/otf/cmunbi.luc)
-luaotfload | load : Lookup/name: "CMU Serif" -> "cmunrm.otf"
-luaotfload | load : Lookup/name: "CMU Serif" -> "cmunbx.otf"(compiling luc: /var
-/lib/texmf/luatex-cache/generic/fonts/otf/cmunbx.luc)(load luc: /home/carlos/.te
-xlive/texmf-var/luatex-cache/generic/fonts/otf/cmunbx.luc)
-luaotfload | load : Lookup/name: "CMU Serif" -> "cmunrm.otf"
-luaotfload | load : Lookup/name: "CMU Serif" -> "cmunti.otf"(compiling luc: /var
-/lib/texmf/luatex-cache/generic/fonts/otf/cmunti.luc)(load luc: /home/carlos/.te
-xlive/texmf-var/luatex-cache/generic/fonts/otf/cmunti.luc)
-luaotfload | load : Lookup/name: "CMUSerif" -> "cmunrm.otf"
-luaotfload | load : Lookup/name: "CMUSerif" -> "cmunrm.otf"
-luaotfload | load : Lookup/name: "CMUSerif" -> "cmunbx.otf"
-luaotfload | load : Lookup/name: "CMUSerif" -> "cmunbx.otf"
-luaotfload | load : Lookup/name: "CMUSerif" -> "cmunti.otf"
-luaotfload | load : Lookup/name: "CMUSerif" -> "cmunti.otf"
-luaotfload | aux : font no 40 (CMUSerif-Italic) does not define feature smcp for
- script latn with language dflt
-luaotfload | aux : no font with id 40
-luaotfload | load : Lookup/name: "CMUSerif" -> "cmunbi.otf"
-luaotfload | load : Lookup/name: "CMUSerif" -> "cmunbi.otf"
-luaotfload | aux : font no 38 (CMUSerif-BoldItalic) does not define feature smcp
- for script latn with language dflt
-luaotfload | aux : no font with id 38
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'CMUSerif(0)' created for font 'CMU Serif' with options
-. [Ligatures=TeX].
-. 
-. This font family consists of the following shapes:
-. 
-. * 'normal' with NFSS spec.:
-. <->"CMUSerif:mode=node;script=latn;language=DFLT;+tlig;+trep;"
-. 
-. * 'small caps' with NFSS spec.:
-. <->"CMUSerif:mode=node;script=latn;language=DFLT;+tlig;+trep;+smcp;"
-. and font adjustment code:
-. 
-. 
-. * 'bold' with NFSS spec.:
-. <->"CMUSerif/B:mode=node;script=latn;language=DFLT;+tlig;+trep;"
-. 
-. * 'bold small caps' with NFSS spec.:
-. <->"CMUSerif/B:mode=node;script=latn;language=DFLT;+tlig;+trep;+smcp;"
-. and font adjustment code:
-. 
-. 
-. * 'italic' with NFSS spec.:
-. <->"CMUSerif/I:mode=node;script=latn;language=DFLT;+tlig;+trep;"
-. 
-. * 'small caps' with NFSS spec.:
-. 
-. and font adjustment code:
-. 
-. 
-. * 'bold italic' with NFSS spec.:
-. <->"CMUSerif/BI:mode=node;script=latn;language=DFLT;+tlig;+trep;"
-. 
-. * 'bold small caps' with NFSS spec.:
-. 
-. and font adjustment code:
-. 
-.................................................
-luaotfload | load : Lookup/name: "CMU Sans Serif" -> "cmunss.otf"(compiling luc:
- /var/lib/texmf/luatex-cache/generic/fonts/otf/cmunss.luc)(load luc: /home/carlo
-s/.texlive/texmf-var/luatex-cache/generic/fonts/otf/cmunss.luc)
-luaotfload | load : Lookup/name: "CMU Sans Serif" -> "cmunss.otf"
-\g__fontspec_family_CMUSansSerif_int=\count341
-luaotfload | load : Lookup/name: "CMU Sans Serif" -> "cmunss.otf"
-luaotfload | load : Lookup/name: "CMU Sans Serif" -> "cmunso.otf"(compiling luc:
- /var/lib/texmf/luatex-cache/generic/fonts/otf/cmunso.luc)(load luc: /home/carlo
-s/.texlive/texmf-var/luatex-cache/generic/fonts/otf/cmunso.luc)
-luaotfload | load : Lookup/name: "CMU Sans Serif" -> "cmunss.otf"
-luaotfload | load : Lookup/name: "CMU Sans Serif" -> "cmunsx.otf"(compiling luc:
- /var/lib/texmf/luatex-cache/generic/fonts/otf/cmunsx.luc)(load luc: /home/carlo
-s/.texlive/texmf-var/luatex-cache/generic/fonts/otf/cmunsx.luc)
-luaotfload | load : Lookup/name: "CMU Sans Serif" -> "cmunss.otf"
-luaotfload | load : Lookup/name: "CMU Sans Serif" -> "cmunsi.otf"(compiling luc:
- /var/lib/texmf/luatex-cache/generic/fonts/otf/cmunsi.luc)(load luc: /home/carlo
-s/.texlive/texmf-var/luatex-cache/generic/fonts/otf/cmunsi.luc)
-luaotfload | load : Lookup/name: "CMUSansSerif" -> "cmunss.otf"
-luaotfload | load : Lookup/name: "CMUSansSerif" -> "cmunss.otf"
-luaotfload | aux : font no 41 (CMUSansSerif) does not define feature smcp for sc
-ript latn with language dflt
-luaotfload | aux : no font with id 41
-luaotfload | load : Lookup/name: "CMUSansSerif" -> "cmunsx.otf"
-luaotfload | load : Lookup/name: "CMUSansSerif" -> "cmunsx.otf"
-luaotfload | aux : font no 43 (CMUSansSerif-Bold) does not define feature smcp f
-or script latn with language dflt
-luaotfload | aux : no font with id 43
-luaotfload | load : Lookup/name: "CMUSansSerif" -> "cmunsi.otf"
-luaotfload | load : Lookup/name: "CMUSansSerif" -> "cmunsi.otf"
-luaotfload | aux : font no 44 (CMUSansSerif-Oblique) does not define feature smc
-p for script latn with language dflt
-luaotfload | aux : no font with id 44
-luaotfload | load : Lookup/name: "CMUSansSerif" -> "cmunso.otf"
-luaotfload | load : Lookup/name: "CMUSansSerif" -> "cmunso.otf"
-luaotfload | aux : font no 42 (CMUSansSerif-BoldOblique) does not define feature
- smcp for script latn with language dflt
-luaotfload | aux : no font with id 42
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'CMUSansSerif(0)' created for font 'CMU Sans Serif' with options
-. [Ligatures=TeX].
-. 
-. This font family consists of the following shapes:
-. 
-. * 'normal' with NFSS spec.:
-. <->"CMUSansSerif:mode=node;script=latn;language=DFLT;+tlig;+trep;"
-. 
-. * 'small caps' with NFSS spec.:
-. 
-. and font adjustment code:
-. 
-. 
-. * 'bold' with NFSS spec.:
-. <->"CMUSansSerif/B:mode=node;script=latn;language=DFLT;+tlig;+trep;"
-. 
-. * 'bold small caps' with NFSS spec.:
-. 
-. and font adjustment code:
-. 
-. 
-. * 'italic' with NFSS spec.:
-. <->"CMUSansSerif/I:mode=node;script=latn;language=DFLT;+tlig;+trep;"
-. 
-. * 'small caps' with NFSS spec.:
-. 
-. and font adjustment code:
-. 
-. 
-. * 'bold italic' with NFSS spec.:
-. <->"CMUSansSerif/BI:mode=node;script=latn;language=DFLT;+tlig;+trep;"
-. 
-. * 'bold small caps' with NFSS spec.:
-. 
-. and font adjustment code:
-. 
-.................................................
-luaotfload | load : Lookup/name: "CMU Typewriter Text" -> "cmuntt.otf"(compiling
- luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/cmuntt.luc)(load luc: /home/
-carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/cmuntt.luc)
-luaotfload | load : Lookup/name: "CMU Typewriter Text" -> "cmuntt.otf"
-\g__fontspec_family_CMUTypewriterText_int=\count342
-luaotfload | load : Lookup/name: "CMU Typewriter Text" -> "cmuntt.otf"
-luaotfload | load : Lookup/name: "CMU Typewriter Text" -> "cmuntx.otf"(compiling
- luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/cmuntx.luc)(load luc: /home/
-carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/cmuntx.luc)
-luaotfload | load : Lookup/name: "CMU Typewriter Text" -> "cmuntt.otf"
-luaotfload | load : Lookup/name: "CMU Typewriter Text" -> "cmuntb.otf"(compiling
- luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/cmuntb.luc)(load luc: /home/
-carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/cmuntb.luc)
-luaotfload | load : Lookup/name: "CMU Typewriter Text" -> "cmuntt.otf"
-luaotfload | load : Lookup/name: "CMU Typewriter Text" -> "cmunit.otf"(compiling
- luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/cmunit.luc)(load luc: /home/
-carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/cmunit.luc)
-luaotfload | load : Lookup/name: "CMUTypewriterText" -> "cmuntt.otf"
-luaotfload | load : Lookup/name: "CMUTypewriterText" -> "cmuntt.otf"
-luaotfload | aux : font no 45 (CMUTypewriter-Regular) does not define feature sm
-cp for script latn with language dflt
-luaotfload | aux : no font with id 45
-luaotfload | load : Lookup/name: "CMUTypewriterText" -> "cmuntb.otf"
-luaotfload | load : Lookup/name: "CMUTypewriterText" -> "cmuntb.otf"
-luaotfload | aux : font no 47 (CMUTypewriter-Bold) does not define feature smcp 
-for script latn with language dflt
-luaotfload | aux : no font with id 47
-luaotfload | load : Lookup/name: "CMUTypewriterText" -> "cmunit.otf"
-luaotfload | load : Lookup/name: "CMUTypewriterText" -> "cmunit.otf"
-luaotfload | aux : font no 48 (CMUTypewriter-Italic) does not define feature smc
-p for script latn with language dflt
-luaotfload | aux : no font with id 48
-luaotfload | load : Lookup/name: "CMUTypewriterText" -> "cmuntx.otf"
-luaotfload | load : Lookup/name: "CMUTypewriterText" -> "cmuntx.otf"
-luaotfload | aux : font no 46 (CMUTypewriter-BoldItalic) does not define feature
- smcp for script latn with language dflt
-luaotfload | aux : no font with id 46
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'CMUTypewriterText(0)' created for font 'CMU Typewriter Text'
-. with options [].
-. 
-. This font family consists of the following shapes:
-. 
-. * 'normal' with NFSS spec.:
-. <->"CMUTypewriterText:mode=node;script=latn;language=DFLT;"
-. 
-. * 'small caps' with NFSS spec.:
-. 
-. and font adjustment code:
-. 
-. 
-. * 'bold' with NFSS spec.:
-. <->"CMUTypewriterText/B:mode=node;script=latn;language=DFLT;"
-. 
-. * 'bold small caps' with NFSS spec.:
-. 
-. and font adjustment code:
-. 
-. 
-. * 'italic' with NFSS spec.:
-. <->"CMUTypewriterText/I:mode=node;script=latn;language=DFLT;"
-. 
-. * 'small caps' with NFSS spec.:
-. 
-. and font adjustment code:
-. 
-. 
-. * 'bold italic' with NFSS spec.:
-. <->"CMUTypewriterText/BI:mode=node;script=latn;language=DFLT;"
-. 
-. * 'bold small caps' with NFSS spec.:
-. 
-. and font adjustment code:
-. 
-.................................................
-\c@theorem=\count343
-\c@definition=\count344
-\c@example=\count345
+\c@theorem=\count339
+\c@definition=\count340
+\c@example=\count341
 
 (/usr/share/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
@@ -2031,12 +1756,12 @@ Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \aftertitleunit=\skip274
 \ttl@plus=\dimen308
 \ttl@minus=\dimen309
-\ttl@toksa=\toks44
+\ttl@toksa=\toks42
 \titlewidth=\dimen310
 \titlewidthlast=\dimen311
 \titlewidthfirst=\dimen312
 )
-\c@remark=\count346
+\c@remark=\count342
  (./MA571-HW-Current.aux (./psets/ma571-pset2.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 170.
 LaTeX Font Info:    ... okay on input line 170.
@@ -2099,17 +1824,17 @@ LaTeX Font Info:    ... okay on input line 170.
 
 (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count347
+\scratchcounter=\count343
 \scratchdimen=\dimen313
 \scratchbox=\box274
-\nofMPsegments=\count348
-\nofMParguments=\count349
-\everyMPshowfont=\toks45
-\MPscratchCnt=\count350
+\nofMPsegments=\count344
+\nofMParguments=\count345
+\everyMPshowfont=\toks43
+\MPscratchCnt=\count346
 \MPscratchDim=\dimen314
-\MPnumerator=\count351
-\makeMPintoPDFobject=\count352
-\everyMPtoPDFconversion=\toks46
+\MPnumerator=\count347
+\makeMPintoPDFobject=\count348
+\everyMPtoPDFconversion=\toks44
 )
 \AtBeginShipoutBox=\box275
 Package hyperref Info: Link coloring ON on input line 170.
@@ -2119,7 +1844,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count353
+\c@section@level=\count349
 )
 Redoing nameref's sectioning
 Redoing nameref's label
@@ -2145,7 +1870,7 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 ))
-\c@lstlisting=\count354
+\c@lstlisting=\count350
 LaTeX Info: Redefining \microtypecontext on input line 170.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
@@ -2168,7 +1893,6 @@ rn Roman (RS)
 * 
 * Use \Uoverbracket and \Uunderbracket for original `unicode-math' definition.
 *************************************************
-Package polyglossia Info: Option: english variant=american.
 luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman17-regular.otf"(c
 ompiling luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/lmroman17-regular.lu
 c)(load luc: /home/carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/lmro
@@ -2262,43 +1986,43 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \kern 1.82538pt
-(hyperref)                removed on input line 28.
+(hyperref)                removed on input line 30.
 
 [3]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \kern 1.82538pt
-(hyperref)                removed on input line 38.
+(hyperref)                removed on input line 40.
 
 [4]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \kern 1.82538pt
-(hyperref)                removed on input line 48.
+(hyperref)                removed on input line 50.
 
 [5]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \kern 1.82538pt
-(hyperref)                removed on input line 60.
+(hyperref)                removed on input line 62.
 
 [6]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \kern 1.82538pt
-(hyperref)                removed on input line 70.
+(hyperref)                removed on input line 72.
 
 [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \kern 1.82538pt
-(hyperref)                removed on input line 76.
+(hyperref)                removed on input line 78.
 
 [8]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \kern 1.82538pt
-(hyperref)                removed on input line 84.
+(hyperref)                removed on input line 86.
 
 luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman8-regular.otf"(co
 mpiling luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/lmroman8-regular.luc)
@@ -2311,7 +2035,7 @@ n6-regular.luc) [9]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \kern 1.82538pt
-(hyperref)                removed on input line 95.
+(hyperref)                removed on input line 97.
 
 [10]) [11]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 207.
@@ -2329,15 +2053,15 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 207.
 )
 
 Here is how much of LuaTeX's memory you used:
- 33964 strings out of 494693
+ 32803 strings out of 494693
  100000,953878 words of node,token memory allocated
- 820 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 3 kern, 1 penalty, 8 attribute, 147 glue_sp
-ec, 8 attribute_list, 3 write nodes
-   avail lists: 1:52,2:1060,3:58,4:287,5:43,6:353,7:22,8:4,9:509,10:981,11:519,1
+ 808 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 2 kern, 7 attribute, 147 glue_spec, 7 attri
+bute_list, 3 write nodes
+   avail lists: 1:52,2:1124,3:61,4:307,5:48,6:393,7:22,8:4,9:509,10:981,11:519,1
 2:230
- 36421 multiletter control sequences out of 65536+600000
- 79 fonts using 17882295 bytes
+ 35515 multiletter control sequences out of 65536+600000
+ 70 fonts using 14990095 bytes
  50i,12n,60p,1205b,369s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></usr/
 share/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></home/carlo
@@ -2346,7 +2070,7 @@ mf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></home/carlos/.local/share/f
 onts/OTF-TeXLive/public/lm/lmroman10-italic.otf></usr/share/texmf-dist/fonts/ope
 ntype/public/lm/lmroman12-regular.otf></usr/share/texmf-dist/fonts/opentype/publ
 ic/lm/lmroman17-regular.otf>
-Output written on MA571-HW-Current.pdf (13 pages, 43969 bytes).
+Output written on MA571-HW-Current.pdf (13 pages, 44470 bytes).
 
 PDF statistics: 149 PDF objects out of 1000 (max. 8388607)
  111 compressed objects within 2 object streams
