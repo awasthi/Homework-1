@@ -109,9 +109,11 @@ set of all zero-divisors, call it $Z$, of a ring $R$ is a
 saturated multiplicative subset. It is clear that $R\setminus
 Z\supset R^\times$ (since, if $u\in R^\times$, $ub=0$ if and only
 if $b=0$: $\implies$ is easily seen since $u^{-1}ub=1\cdot b=0$
-so $b=0$; the converse is immediate). Now, suppose the product
-$xy\in R\setminus S$. Then $xy$ is not a zero divisor so $x,y$
-are not zero divisors.
+so $b=0$; the converse is immediate). Now, $xy$ in $R$ is a
+zero-divisor if and only if $x$ or $y$ are zero-divisors, hence
+(by taking the negation of this statement) $xy\in R\setminus Z$
+implies $x,y\in R\setminus Z$. Thus, $R\setminus Z$ is a
+saturated multiplicative subset of $R$.
 \end{proof}
 \newpage
 \begin{problem}
@@ -124,6 +126,45 @@ rings.
 \end{enumerate}
 \end{problem}
 \begin{proof}
+(a) The containment $\phi(\rad(R))\subset\rad(S)$ follows easily
+from Proposition 1.13: $x\in\rad(R)$ if and only if $1+xy$ is a
+unit for every $y\in R$. Then
+\begin{align*}
+\phi(1+xy)&=\phi(1)+\phi(xy)\\
+             &=\phi(1)+\phi(x)\phi(y)\\
+             &1+\phi(x)\phi(y).
+\end{align*}
+Since $\phi$ is surjective, $1+\phi(x)s$ is a unit for every
+$s\in S$ so $\phi(x)\in\rad(S)$.
+
+To see that equality does not hold in general consider the
+localization of $\ZZ$ at a prime ideal $(p)$,
+$R=\ZZ_{(p)}$. Then, the homomorphism $\phi_0\colon R[X]\to R$
+given by $f\mapsto f(0)$ is a surjection, but, by Problem 1.1,
+$\rad(R[x])=\nil(R[X])=\langle 0\rangle$
+\\\\
+(b) $\phi(\rad(R))\subset\rad(S)$ by above. Suppose $R$ is
+semilocal with maximal ideals
+$\mathfrak{m}_1,...,\mathfrak{m}_n$. Then, by Corollary 1.15,
+$\rad(R)=\mathfrak{m}_1\cdots\mathfrak{m}_n$. Now, by the
+Homeomorphism Theorem, $S\cong R/\ker\phi$ so, by Proposition
+1.2, the maximal ideals of $S$ are in $1$-$1$ correspondence with
+the maximal ideals of $R$ that contain $\ker\phi$. Thus, it
+suffices to show that $\mathfrak{m}_i\supset\ker\phi$ for all
+$i$. We will proceed by contradiction. Without loss of
+generality, suppose that $\mathfrak{m}_1,...,\mathfrak{m}_m$,
+$0<m<n$, do not contain $\ker\phi$. Then,
+$y\in\prod_{i=1}^m\phi(\mathfrak{m}_i)$ so
+\[
+y
+=
+\sum_i\phi(x_{i1})\cdots\phi(x_{im})
+=
+\phi\left(\sum_i x_{i1}\cdots x_{im}\right)
+\]
+for $x_{ij}\in\phi(\mathfrak{m}_j)$. Now, for $i>n$,
+$\mathfrak{m}_i$ and $\ker\phi$ are comaximal so $x+x_0=1$ for
+some $x\in\mathfrak{m}_i$, $x_0\in\ker\phi$.
 \end{proof}
 \newpage
 \begin{problem}
@@ -131,6 +172,13 @@ An element $e\in R$is called \emph{idempotent} if $e^2=e$. Show
 that in a local ring, $0$ and $1$ are the only idempotents.
 \end{problem}
 \begin{proof}
+Suppose $R$ is a local ring with maximal ideal
+$\mathfrak{m}$. Suppose, by contradiction, that there exists some
+$e\in R$, $e\neq 0$ or $1$, with $e^2=e$. Then $e^2-e=e(e-1)=0$
+so $e$ and $e-1$ are zero-divisors, in particular, $e$ and $e-1$
+are non-units and hence contained in the maximal ideal
+$\mathfrak{m}$. But then $e-(e-1)=1\in\mathfrak{m}$. This
+contradicts the maximality of $\mathfrak{m}$.
 \end{proof}
 \newpage
 \begin{problem}
@@ -138,6 +186,7 @@ Let $I$ be an $R$-ideal. Show that $I$ is finitely generated and
 $I^2=I$ if and only if $I=Re$ with $e$ idempotent.
 \end{problem}
 \begin{proof}
+
 \end{proof}
 
 %%% Local Variables:
