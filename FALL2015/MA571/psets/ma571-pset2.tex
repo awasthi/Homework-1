@@ -14,17 +14,73 @@ Show that if $A$ is closed in $X$ and $B$ is closed in $Y$, then
 $A\times B$ is closed in $X\times Y$.
 \end{problem}
 \begin{proof}
-Since $A$ is closed in $X$ and $B$ is closed in $Y$ their
-complements $X\setminus A$ and $Y\setminus B$ are open in $X$ and
-$Y$, respectively. Then, $(X\setminus A)\times Y$ and $X\times
-(Y\setminus A)$ are basic open sets in $X\times Y$. Thus
+Before proceeding we will prove the following set theoretic
+result (which was adapted from Exercises 2(n) and 2(o) from \S1,
+p.\,14 of Munkres):
+
+\begin{lemma}
+For sets $A$, $B$, $C$ and $D$ we the following equalities hold:
+\begin{enumerate}[noitemsep,label=(\alph*)]
+\item $(A\times B)\cap (C\times D)=(A\cap C)\times (B\cap D)$.
+\item $A\times (B\setminus C)=(A\times B)\setminus (A\times C)$.
+\item $(A\setminus C)\times B=(A\times B)\setminus (C\times B)$.
+\end{enumerate}
+that is, the Cartesian product distributes over taking
+complements.
+\end{lemma}
+\begin{proof}[Proof of Lemma 4]
+\renewcommand\qedsymbol{$\vardiamondsuit$}
+(a) The equality follows (rather straightforwardly) from the
+definition of the Cartesian product and the complement of a set
+for $x\times y\in (A\times B)\cap (C\times D)$ if and only if
+$x\times y\in A\times B$ and $x\times y\in C\times D$ if and only
+if $x\in A$ and $x\in C$ and $y\in B$ and $y\in D$ if and only if
+$x\in A\cap C$ and $y\in B\cap D$ if and only if $x\times y\in
+(A\cap C)\times (B\cap D)$.
+\\\\
+(b) The point $x\times y\in A\times (B\setminus C)$ if and only
+if $x\in A$ and $y\in B\setminus C$ if and only if $x\in A$ and
+$y\in B$ and $y\notin C$ if and only if $x\times y\in A\times B$
+and $x\times y\notin A\times C$ if and only if $x\times y\in
+(A\times B)\setminus (A\times C)$.
+\\\\
+(c) The very same argument as part (b) can be used, taking $B$ to
+be a subset of $A$ and replacing (where appropriate) $A$ by
+$A\setminus B$ and $B\setminus C$ by $C$, to prove that
 \[
-(X\setminus A)\times (Y\setminus B)
-=
-\left((X\setminus A)\times Y\right)
-\cap
-\left(X\times(Y\setminus B)\right)
+(A\setminus B)\times C=(A\times C)\setminus (B\times C).\qedhere
 \]
+\end{proof}
+Now, since $A$ is closed in $X$ and $B$ is closed in $Y$, their
+complements, $X\setminus A$ and $Y\setminus B$ are, by
+definition, open in $X$ and $Y$, respectively. Then, the sets
+\[
+(X\setminus A)\times Y
+\quad
+\text{and}
+\quad
+X\times (Y\setminus B)
+\]
+are open since they are basic open sets in the product topology
+on $X\times Y$. So, applying Lemma 4(b) and (c), their
+complements
+\[
+(X\times Y)\setminus (X\setminus A)\times Y=A\times Y
+\quad
+\text{and}
+\quad
+(X\times Y)\setminus X\times (Y\setminus B)=X\times B
+\]
+are closed in $X\times Y$. At last, we have that
+\[
+(A\times Y)\cap (X\times B)
+\]
+is the intersection of closed sets, hence, by Theorem 17.1(b), is
+closed. By Lemma 4(a),
+\[
+(A\times Y)\cap (X\times B)=(A\cap X)\times (Y\cap B)=A\times B
+\]
+so $A\times B$ is closed in $X\times Y$.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S17, p.\,101, 6(b)]
@@ -35,7 +91,20 @@ the following:
 \end{enumerate}
 \end{problem}
 \begin{proof}
+By definition, the closure of a set is the intersection of all
+closed sets which contain it therefore, $\overline{A\cup
+  B}\subset\bar A\cup\bar B$ since $\bar A\cup\bar B$ is a
+closed set, by Theorem 17.1(a), which contains $A\cup B$. To see
+the reverse containment note that $\bar A\subset\clsr{A\cup B}$
+since $\clsr{A\cup B}$ is a closed set which contains
+$A$. Similarly $\bar B\subset\clsr{A\cup B}$ so $\bar A\cup \bar
+B\subset\clsr{A\cup B}$. Therefore, $\clsr{A\cup B}=\bar
+A\cup\bar B$ holds.
+
+Naturally this results extends, by induction, to the case of
+finite unions of sets.
 \end{proof}
+
 \newpage
 \begin{problem}[Munkres \S17, p.\,101, 6(c)]
 Let $A$, $B$ and $A_\alpha$ denote subsets of a space $X$. Prove
@@ -45,6 +114,24 @@ the following:
 \end{enumerate}
 \end{problem}
 \begin{proof}
+Let $C$ denote the set $\clsr{\bigcup A_\alpha}$. It is clear, by
+the definition of the closure of a set, that $\bar
+A_\alpha\subset C$ for every $\alpha$ since $C$ is a closed set
+which contains $A_\alpha$, so $\bigcup_\alpha \bar
+A_\alpha\subset C$.
+
+The reverse is not true in general; in fact, as Theorem 17.1(3)
+suggests, an arbitrary union of closed sets is not even
+necessarily closed. For a concrete example consider the family
+$A_r=\{r\}$ for $r\in\QQ$. The closure of a point $r$ in $\RR$ is
+itself since its complement, $\RR\setminus\{r\}$, is the
+union of the open intervals $(-\infty,r)$ and $(r,\infty)$; in
+particular, $\{r\}$ is the ``smallest'' closed set containing
+$\{r\}$. Hence, we see that the union
+\[
+\bigcup_{r\in\QQ}\bar A_r=\QQ,
+\]
+but, by Example 6, $\bar\QQ=\RR$.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S17, p.\,101, 7]
@@ -57,6 +144,13 @@ $A_\alpha$, so $x$ must belong to the closure of some
 $A_\alpha$. Therefore, $x\in\bigcup\bar A_\alpha$.
 \end{problem}
 \begin{proof}[Critique]
+The main argument, that ``$x$ must belong to the closure of some
+$A_\alpha$'', is what is wrong here. The point $x$ may belong to
+the closure of multiple $A_\alpha$'s, in fact uncountably many of
+them, so that one would have to prove that if $x$ belongs the
+closure of some family $A_\beta$ of set, then $x$ must belong to
+the union of their closures. This takes us right back to what we
+are trying to prove.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S17, p.\,101, 9]

@@ -2,7 +2,7 @@
  "MA571-HW-Current"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
-                     '(("memoir" "article" "oneside" "11pt")))
+                     '(("memoir" "article" "oneside" "10pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("xcolor" "dvipsnames") ("enumitem" "inline") ("titlesec" "explicit")))
    (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
@@ -12,7 +12,7 @@
     "latex2e"
     "psets/ma571-pset2"
     "memoir"
-    "memoir11"
+    "memoir10"
     "geometry"
     "xcolor"
     "graphicx"
