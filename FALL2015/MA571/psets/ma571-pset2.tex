@@ -29,7 +29,7 @@ that is, the Cartesian product distributes over taking
 complements.
 \end{lemma}
 \begin{proof}[Proof of Lemma 4]
-\renewcommand\qedsymbol{$\vardiamondsuit$}
+\renewcommand\qedsymbol{$\clubsuit$}
 (a) The equality follows (rather straightforwardly) from the
 definition of the Cartesian product and the complement of a set
 for $x\times y\in (A\times B)\cap (C\times D)$ if and only if
@@ -151,6 +151,13 @@ them, so that one would have to prove that if $x$ belongs the
 closure of some family $A_\beta$ of set, then $x$ must belong to
 the union of their closures. This takes us right back to what we
 are trying to prove.
+
+Like in Problem 2.4, consider the sets $A_r=\{r\}$ for
+$r\in\QQ$. For any open interval about a point $x\in\RR$, say
+$B_\delta(x)$ for $\delta>0$, we may
+
+Then, by the density of the irrational numbers in
+$\RR$, between any two sets
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S17, p.\,101, 9]
@@ -294,19 +301,64 @@ f(x)=x\times y_0\quad\text{and}\quad g(y)=x_0\times y
 are imbeddings.
 \end{problem}
 \begin{proof}
-We will prove the result for $f$ only as the proof for $g$ is
-analogous. Let $Z=\im f$. To show that $f\colon X\to X\times Y$
-is an imbedding, we must demonstrate that the map $f'\colon X\to
-Z$, obtained by restricting the range of $f$, is a continuous
-injection with a continuous inverse. To see that $f'$ is indeed
-injective suppose $f'(x)=f(x)=f(x)'=f'(x')$ for $x,x'\in X$. Then
-$x\times y_0=x'\times y_0$ so $x=x'$. Thus $f'$ is
-injective. Now, $f$ is continuous since, by Theorem 18.1(4), for
-each $x\in X$ and each neighborhood $V$ of $f(x)=x\times y_0$,
-there is an open set $U$, namely $\pi_X(V)$ which is open since
-$\pi_X\colon Z\to X$ is an open map by Problem 1.7 (Munkres
-\S16, Exercise 4), with $f(U)=\left\{\,x\times
-  y_0\;\middle|\;x\in\pi_X(V)\,\right\}\subset V$
+Let $Z=\im f$. To show that $f\colon X\to X\times Y$ is an
+imbedding, we will show that the map $f'\colon X\to Z$, which is
+obtained by restricting the codomain of $f$ is a continuous
+injection with a continuous inverse $g$. First we shall show
+injectivity. To see that $f$ is continuous we note that $f$ can
+be written as the tuple $f'(x)=(f_1,f_2)$ where $f_1=\id_X$ and
+$f_2$ is the constant map $x\mapsto y_0$ for all $x\in X$. The
+maps $f_1$ and $f_2$ are continuous (by Theorem 18.2(a) and (b))
+so, by Theorem 18.4, $f$ is continuous. To prove that $f$ is
+bijective it suffices to exhibit an inverse. We claim that the
+map $F=\restr{\pi_X}{Z}$ is an inverse (continuity follows of $F$
+from Theorem 18.2(d) and the fact that projections are continuous
+as discussed on \S15 pp.\,87-88). But this claim is clear since
+\begin{align*}
+F\circ f(x)
+&=F(f(x))&
+f\circ F(x\times y_0)
+&=f(F(x\times y_0))\\
+&=F(x\times y_0)&
+&=f(x)\\
+&=x&&=x\times y_0\\
+&=\id_X(x)&
+&=\id_Z(x\times y_0).
+\end{align*}
+Thus, $f$ is an imbedding.
+
+The proof that $g$ is an imbedding is analogous (it is sufficient
+to replace $f$ by $g$, $F$ by $G$, $x\times y_0$ by $x_0\times
+y$, $x\mapsto y_0$ by $y\mapsto x_0$, $\pi_X$ by $\pi_Y$, and
+$\id_X$ by $\id_Y$ in the argument above). So as not to be
+penalized for not providing the proof for $g$ we copy and paste,
+making the appropriate replacements, here:
+\\\\
+Let $Z=\im g$. To show that $g\colon Y\to X\times Y$ is an
+imbedding, we will show that the map $g'\colon Y\to Z$, which is
+obtained by restricting the codomain of $g$ is a continuous
+injection with a continuous inverse $g$. First we shall show
+injectivity. To see that $g$ is continuous we note that $g$ can
+be written as the tuple $g'(x)=(g_1,g_2)$ where $g_1=\id_Y$ and
+$g_2$ is the constant map $y\mapsto x_0$ for all $y\in Y$. The
+maps $g_1$ and $g_2$ are continuous (by Theorem 18.2(a) and (b))
+so, by Theorem 18.4, $g$ is continuous. To prove that $g$ is
+bijective it suffices to exhibit an inverse. We claim that the
+map $G=\restr{\pi_Y}{Z}$ is an inverse (continuity of $G$ follows
+from Theorem 18.2(d) and the fact that projections are continuous
+as discussed on \S15 pp.\,87-88). But this claim is clear since
+\begin{align*}
+G\circ G(x)
+&=G(g(x))&
+g\circ G(x_0\times y)
+&=g(G(x_0\times y))\\
+&=G(x_0\times y)&
+&=g(y)\\
+&=y&&=x_0\times y\\
+&=\id_Y(y)&
+&=\id_Z(x_0\times y).
+\end{align*}
+Thus, $g$ is an imbedding.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S18, p.\,111-112, 8(a,b)]
