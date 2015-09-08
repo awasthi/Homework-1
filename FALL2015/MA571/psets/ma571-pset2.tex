@@ -161,13 +161,100 @@ $X\times Y$,
 \]
 \end{problem}
 \begin{proof}
+By Problem 2.2, $\bar A\times\bar B$ is a closed set which
+contains $A\times B$ so it must contain the closure of $A\times
+B$, i.e., $\clsr{A\times B}\subset\bar A\times\bar B$. To see the
+reverse containment, take a point $x\times y\in\bar A\times\bar
+B$. Then, by Theorem 17.5(a), for every neighborhood $U$ of $x$
+and every neighborhood $V$ of $y$, the intersections $U\cap A$
+and $V\cap B$ are nonempty. Thus, by Lemma 5(a), the set
+\[
+(V\times U)\cap(A\times B)=(V\cap A)\times (U\cap B)
+\]
+is nonempty. Then, since $U\times V$ is an arbitrary basis
+element containing $x\times y$, by Theorem 17.5(b) $x\times
+y\in\clsr{A\times B}$. Thus, $\clsr{A\times B}=\bar A\times\bar
+B$.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S17, p.\,101, 10]
 Show that every order topology is Hausdorff.
 \end{problem}
 \begin{proof}
+Let $(X,<)$ denote a nonempty set equipped with a simple order
+relation. Then by the definition on Munkres \S14, p.\,84, a basis
+for the order topology on $X$ are sets of the following types:
+\begin{enumerate}[noitemsep,label=(\arabic*)]
+\item All open intervals $(a,b)$ in $X$.
+\item All intervals of the form $[a_0,b)$, where $a_0$ is the
+  smallest element (if any) of $X$.
+\item All intervals of the form $(a,b_0]$, where $b_0$ is the
+  largest element (if any) of $X$.
+\end{enumerate}
+Let $a$ and $b$ be two distinct points in $X$; we may assume,
+without loss of generality, that $a<b$. Then, we must show that
+there exists neighborhoods $U$ and $V$ of $x$ and $y$,
+respectively, such that $U\cap V=\emptyset$.
+
+If $X$ set with finite cardinality the order topology on $X$ will
+coincide with the discrete topology so that we may take $\{a\}$
+and $\{b\}$ to be neighborhoods of $a$ and $b$. Then,
+$\{a\}\cap\{b\}=\emptyset$ so $X$ is Hausdorff.
+
+Now, suppose $X$ is not of finite cardinality.  Define the sets
+\[
+C=(a,b),
+\quad
+A=\left\{\,x\in X\;\middle|\;x<a\right\}
+\quad
+\text{and}
+\quad
+B=\left\{\,x\in X\;\middle|\;x>b\right\}.
+\]
+Then at least one of $A$, $B$ or $C$ is nonempty and has infinite
+cardinality.
+
+Suppose $A$ is nonempty, but $B$ and $C$ are empty. Take any
+element $x\in A$, then $(x,b)$ is a neighborhood of $a$ and $b$
+must be a largest element so $(a,b_0]=C\cup\{b\}=\{b\}$ is a
+neighborhood of $b$ satisfying
+$(x,b)\cap\{b\}=\emptyset$. Similarly, if $B$ is nonempty, but
+$A$ and $C$ are empty, $\{a\}$ and $(a,x)$ for some $x\in B$ are
+neighborhoods of $a$ and $b$, respectively, with
+$\{a\}\cap(a,x)=\emptyset$.
+
+If $C$ is nonempty but $A$ and $B$ are empty, $a$ must be a
+smallest element and $b$ must be a largest element. Then, since
+$X$ is not finite, there exist at least two distinct elements $x$
+and $y$ in $C$ with $x<y$ so $[a,x)$ and $(y,b]$ are
+neighborhoods of $a$ and $b$, respectively, with
+$[a,x)\cap(y,b]=\emptyset$.
+
+Now, suppose at least two of $A$, $B$ and $C$ are nonempty. If
+$C$ is empty, but $A$ and $B$ are nonempty. Then the intervals
+$(x,b)=(x,a]$ and $(a,y)=[b,y)$ are neighborhoods of $a$ and $b$
+respectively with $(x,b)\cap (a,y)=\emptyset$. If $A$ is empty,
+but $B$ and $C$ are nonempty, then $a$ is a smallest
+element. Then there exists at least two distinct elements $x$
+and $y$ with $x<y$ in $C$ so that $[a,x)$ and $(y,b)$ are
+neighborhoods of $a$ and $b$, respectively, with $[a,x)\cap
+(y,b)=\emptyset$. Similarly, if $B$ is empty, but $A$ and $C$ are
+nonempty, for any $x<y$ in $C$, $(a,x)$ and $(y,b]$ are
+neighborhoods of $a$ and $b$, respectively, with $(a,x)\cap
+(y,b]$.
+
+Lastly, if $A$, $B$ and $C$ are nonempty we win! Then, for any
+$x\in A$, $y\in B$ and $z,w\in C$ with $z<w$ the intervals
+$(x,z)$ and $(w,y)$ are neighborhoods of $a$ and $b$,
+respectively, with $(x,z)\cap (w,y)=\emptyset$.
+
+In every case, $X$ satisfies the Hausdorff property.
 \end{proof}
+\begin{remarks*}
+Perhaps there is a better way to approach this problem. The
+demonstration is thorough and covers every case, but we still
+desire a more elegant proof.
+\end{remarks*}
 \newpage
 \begin{problem}[Munkres \S17, p.\,101, 13]
 Show that $X$ is Hausdorff if and only if the \emph{diagonal}
@@ -175,6 +262,27 @@ $\Delta=\left\{\,x\times x\;\middle|\;x\in X\,\right\}$ is closed
 in $X\times X$.
 \end{problem}
 \begin{proof}
+$\implies$ Suppose $X$ is Hausdorff. The diagonal $\Delta$ is
+closed, by definition, if and only if its complement, $(X\times
+X)\setminus\Delta$, is open in $X\times X$. Let $x\times
+y\in(X\times X)\setminus\Delta$. Since $X$ is Hausdorff, there
+exists neighborhoods $U$ and $V$ of $x$ and $y$, respectively,
+such that $U\cap V=\emptyset$. Thus, $U\times V$ is a
+neighborhood of $x\times y$ contained in $(X\times X)\setminus
+\Delta$. By the definition on Munkres \S13 p.\,78, since for
+every point $x\times y\in(X\times X)\setminus\Delta$ we may find
+a basis element $U\times V\subset (X\times X)\setminus\Delta$
+containing $x\times y$, it follows that $(X\times
+X)\setminus\Delta$ is open. Thus, $\Delta$ is closed.
+
+$\impliedby$ Suppose $\Delta$ is closed. Then the complement
+of $\Delta$ is open in $X\times X$. Thus, for every $x\times y$
+in the complement of $\Delta$, we may find a basis element
+$U\times V\subset(X\times X)\setminus\Delta$ containing $x\times
+y$. Thus, $U$ and $V$ are neighborhoods of $x$ and $y$,
+respectively, such that $U\cap V=\emptyset$ (for otherwise
+$z\times z\in U\times V$ but $U\times V$ is in the complement of
+$\Delta$). Thus, $X$ is Hausdorff.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S18, p.\,111, 4]
@@ -186,6 +294,19 @@ f(x)=x\times y_0\quad\text{and}\quad g(y)=x_0\times y
 are imbeddings.
 \end{problem}
 \begin{proof}
+We will prove the result for $f$ only as the proof for $g$ is
+analogous. Let $Z=\im f$. To show that $f\colon X\to X\times Y$
+is an imbedding, we must demonstrate that the map $f'\colon X\to
+Z$, obtained by restricting the range of $f$, is a continuous
+injection with a continuous inverse. To see that $f'$ is indeed
+injective suppose $f'(x)=f(x)=f(x)'=f'(x')$ for $x,x'\in X$. Then
+$x\times y_0=x'\times y_0$ so $x=x'$. Thus $f'$ is
+injective. Now, $f$ is continuous since, by Theorem 18.1(4), for
+each $x\in X$ and each neighborhood $V$ of $f(x)=x\times y_0$,
+there is an open set $U$, namely $\pi_X(V)$ which is open since
+$\pi_X\colon Z\to X$ is an open map by Problem 1.7 (Munkres
+\S16, Exercise 4), with $f(U)=\left\{\,x\times
+  y_0\;\middle|\;x\in\pi_X(V)\,\right\}\subset V$
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S18, p.\,111-112, 8(a,b)]
@@ -200,6 +321,7 @@ $f,g\colon X\to Y$ be continuous.
 \end{enumerate}
 \end{problem}
 \begin{proof}
+
 \end{proof}
 \newpage
 \begin{problem}

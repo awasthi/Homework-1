@@ -1,0 +1,148 @@
+\def\documentauthor{Carlos Salinas}
+\def\documenttitle{Fall 2015---Algebraic Topology}
+\def\coursename{Alggebraic Topology}
+\def\shorttitle{AlgTop-F15}
+\def\documentsubject{algebraic topology, hatcher}
+\def\authoremail{salinac@purdue.edu}
+
+\documentclass[article,oneside,10pt]{memoir}
+\usepackage{geometry}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage[
+    breaklinks,
+    bookmarks=true,
+    colorlinks=true,
+    pageanchor=false,
+    linkcolor=black,
+    anchorcolor=black,
+    citecolor=black,
+    filecolor=black,
+    menucolor=black,
+    runcolor=black,
+    urlcolor=black,
+    hyperindex=false,
+    hyperfootnotes=true,
+    pdftitle={\shorttitle},
+    pdfauthor={\documentauthor},
+    pdfkeywords={\documentsubject},
+    pdfsubject={\coursename}
+    ]{hyperref}
+
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+
+\usepackage{multicol}
+\usepackage[inline]{enumitem}
+\usepackage{listings}
+\usepackage{mleftright}
+\mleftright
+
+\usepackage{microtype}
+
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{lualatex-math}
+\usepackage{unicode-math}
+
+\setmainfont[Ligatures=TeX]{Latin Modern Roman}
+\setsansfont[Ligatures=TeX]{Latin Modern Sans}
+\setmonofont{Latin Modern Mono}
+\setmathfont{Latin Modern Math}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{axiom}[theorem]{Axiom}
+
+\newtheorem*{corollary*}{Corollary}
+\newtheorem*{claim*}{Claim}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem*{theorem*}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{examples}[example]{Examples}
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem{problem}[exercise]{Problem}
+
+\newtheorem*{definition*}{Definition}
+\newtheorem*{example*}{Examples}
+\newtheorem*{examples*}{Examples}
+\newtheorem*{exercise*}{Exercise}
+\newtheorem*{problem*}{Problem}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{remarks}[remark]{Remarks}
+\newtheorem{observation}[remark]{Observation}
+\newtheorem{observations}[remark]{Observations}
+
+\newtheorem*{remark*}{**Remark**}
+\newtheorem*{remarks*}{**Remarks**}
+\newtheorem*{observation*}{**Observation**}
+\newtheorem*{observations*}{**Observations**}
+
+%% Redefinitions & commands
+\renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
+
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  {#1} % the function
+  \right|_{#2} % this is the delimiter
+  }}
+
+%% Commands and operators
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\im}{\mathrm{im}}
+
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\GO}{\mathrm{GO}}
+\newcommand{\OO}{\mathrm{O}}
+\newcommand{\SL}{\mathrm{SL}}
+\newcommand{\SO}{\mathrm{SO}}
+
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\CP}{\mathbf{CP}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RP}{\mathbf{RP}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\Sphere}{\mathbf{S}}
+\newcommand{\Torus}{\mathbf{T}}
+\newcommand{\ZZ}{\mathbf{Z}}
+
+\begin{document}
+\let\setminus\relax
+\let\phi\relax
+\let\epsilon\relax
+\newcommand\setminus{\smallsetminus}
+\newcommand\phi{\varphi}
+\newcommand\epsilon{\varepsilon}
+
+\author{\href{mailto:\authoremail}{\documentauthor}}
+\title{\documenttitle}
+\date{\today}
+\maketitle
+\tableofcontents
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\numberwithin{equation}{section}
+\include{chapters/algtop-0}
+\include{chapters/algtop-1}
+\include{chapters/algtop-2}
+\include{chapters/algtop-3}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
