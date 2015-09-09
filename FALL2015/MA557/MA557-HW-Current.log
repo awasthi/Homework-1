@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.79.1 (TeX Live 2014/Arch Linux) (rev 4971)  (format=lualatex 2015.5.28)  8 SEP 2015 19:36
+This is LuaTeX, Version beta-0.79.1 (TeX Live 2014/Arch Linux) (rev 4971)  (format=lualatex 2015.5.28)  9 SEP 2015 10:50
  restricted \write18 enabled.
  file:line:error style messages enabled.
 **\input MA557-HW-Current.tex
@@ -1019,7 +1019,7 @@ luatexbase-attr: luatexbase.attributes["luaotfload@cursbase"] = 6
 luatexbase-attr: luatexbase.attributes["luaotfload@curscurs"] = 7
 luatexbase-attr: luatexbase.attributes["luaotfload@cursdone"] = 8
 luatexbase-attr: luatexbase.attributes["luaotfload@state"] = 9
-luaotfload | main : fontloader loaded in 0.115 seconds
+luaotfload | main : fontloader loaded in 0.112 seconds
 luatexbase-mcb: inserting 'luaotfload.node_processor'
 at position 1 in 'pre_linebreak_filter'
 luatexbase-mcb: inserting 'luaotfload.node_processor'
@@ -2009,7 +2009,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 90--100
  []
 
 [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 140--158
+Underfull \hbox (badness 10000) in paragraph at lines 140--165
 
  []
 
@@ -2031,13 +2031,13 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 176.
 Here is how much of LuaTeX's memory you used:
  32836 strings out of 494693
  100000,953878 words of node,token memory allocated
- 811 words of node memory still in use:
+ 814 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 2 kern, 8 attribute, 147 glue_spec, 8 attri
 bute_list, 3 write nodes
-   avail lists: 1:52,2:3141,3:104,4:844,5:177,6:1327,7:85,8:4,9:508,10:981,11:51
-9,12:230
+   avail lists: 1:52,2:3421,3:113,4:904,5:177,6:1412,7:118,8:4,9:508,10:981,11:5
+19,12:230
  35536 multiletter control sequences out of 65536+600000
- 79 fonts using 18742091 bytes
+ 79 fonts using 18742015 bytes
  50i,12n,60p,1205b,370s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></home
 /carlos/.local/share/fonts/OTF-TeXLive/public/lm/lmroman10-bold.otf></home/carlo
@@ -2047,7 +2047,7 @@ f-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></usr/share/texmf-dist
 pe/public/lm/lmroman9-italic.otf></home/carlos/.local/share/fonts/OTF-TeXLive/pu
 blic/lm/lmroman10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lm
 roman17-regular.otf>
-Output written on MA557-HW-Current.pdf (9 pages, 54733 bytes).
+Output written on MA557-HW-Current.pdf (9 pages, 55583 bytes).
 
 PDF statistics: 130 PDF objects out of 1000 (max. 8388607)
  94 compressed objects within 1 object stream

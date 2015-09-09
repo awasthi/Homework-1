@@ -103,14 +103,26 @@ contain the closure of $A\cup B$. To see the reverse containment
 note we will make use of the following lemma (which I was not
 able to immediately find in Munkres):
 \begin{lemma}
-If $A\subset C$ and $B\subset C$ then $A\cup B\subset C$.
+\begin{enumerate}[noitemsep,label=(\alph*)]
+\item If $A\subset C$ and $B\subset C$ then $A\cup B\subset C$.
+\item If $A\subset B$ and $C$ is any set then $A\subset B\cup C$.
+\item If $A\subset C$ and $B\subset D$ then $A\cup B\subset C\cup
+  D$.
+\end{enumerate}
 \end{lemma}
 \begin{proof}[Proof of Lemma 5]
 \renewcommand\qedsymbol{$\clubsuit$}
-By the definition of subset and union (cf.\,Munkres \S1,
+(a) By the definition of subset and union (cf.\,Munkres \S1,
 pp.\,4-5) if $x\in A\cup B$ then $x\in A$ or $x\in B$. Since
 $A\subset C$ and $B\subset C$, in either case we have that $x\in
 C$. Thus $A\cup B\subset C$.
+\\\\
+(b) By the definition of subset and union, if $x\in A$ and
+$A\subset B$, then $x\in B$ so $x\in B\cup C$ (by definition of
+union).
+\\\\
+(c) By part (b) $A\subset C\cup D$ and $B\subset C\cup D$ so by
+part (a) $A\cup B\subset C\cup D$.
 \end{proof}
 \noindent Armed with Lemma 5, note that $A\subset\clsr{A\cup B}$
 and $B\subset\clsr{A\cup B}$ so $\clsr{A\cup B}$ contains the
@@ -328,18 +340,18 @@ injectivity. To see that $f$ is continuous we note that $f$ can
 be written as the tuple $f'(x)=(f_1,f_2)$ where $f_1=\id_X$ and
 $f_2$ is the constant map $x\mapsto y_0$ for all $x\in X$. The
 maps $f_1$ and $f_2$ are continuous (by Theorem 18.2(a) and (b))
-so, by Theorem 18.4, $f$ is continuous. To prove that $f$ is
+so, by Theorem 18.4, $f'$ is continuous. To prove that $f'$ is
 bijective it suffices to exhibit an inverse. We claim that the
-map $F=\restr{\pi_X}{Z}$ is an inverse (continuity follows of $F$
+map $F=\restr{\pi_X}{Z}$ is an inverse (continuity of $F$ follows
 from Theorem 18.2(d) and the fact that projections are continuous
 as discussed on \S15 pp.\,87-88). But this claim is clear since
 \begin{align*}
-F\circ f(x)
+F\circ f'(x)
 &=F(f(x))&
-f\circ F(x\times y_0)
-&=f(F(x\times y_0))\\
+f'\circ F(x\times y_0)
+&=f'(F(x\times y_0))\\
 &=F(x\times y_0)&
-&=f(x)\\
+&=f'(x)\\
 &=x&&=x\times y_0\\
 &=\id_X(x)&
 &=\id_Z(x\times y_0).
@@ -356,22 +368,22 @@ making the appropriate replacements, here:
 \noindent Let $Z=\im g$. To show that $g\colon Y\to X\times Y$ is an
 imbedding, we will show that the map $g'\colon Y\to Z$, which is
 obtained by restricting the codomain of $g$ is a continuous
-injection with a continuous inverse $g$. First we shall show
-injectivity. To see that $g$ is continuous we note that $g$ can
+injection with a continuous inverse $G$. First we shall show
+injectivity. To see that $g'$ is continuous we note that $g'$ can
 be written as the tuple $g'(x)=(g_1,g_2)$ where $g_1=\id_Y$ and
 $g_2$ is the constant map $y\mapsto x_0$ for all $y\in Y$. The
-maps $g_1$ and $g_2$ are continuous $g$ is continuous. To prove
-that $g$ is bijective it suffices to exhibit an inverse. We claim
+maps $g_1$ and $g_2$ are continuous $g'$ is continuous. To prove
+that $g'$ is bijective it suffices to exhibit an inverse. We claim
 that the map $G=\restr{\pi_Y}{Z}$ is an inverse (the continuity
 of $G$ follows from he fact that it is the restriction of a
 projection). But this claim is clear since
 \begin{align*}
-G\circ g(x)
-&=G(g(x))&
-g\circ G(x_0\times y)
-&=g(G(x_0\times y))\\
+G\circ g'(x)
+&=G(g'(x))&
+g'\circ G(x_0\times y)
+&=g'(G(x_0\times y))\\
 &=G(x_0\times y)&
-&=g(y)\\
+&=g'(y)\\
 &=y&&=x_0\times y\\
 &=\id_Y(y)&
 &=\id_Z(x_0\times y).

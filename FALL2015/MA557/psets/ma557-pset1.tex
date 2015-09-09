@@ -137,24 +137,35 @@ unit for every $y\in R$. Then
 Since $\phi$ is surjective, $1+\phi(x)s$ is a unit for every
 $s\in S$ so $\phi(x)\in\rad(S)$.
 
-To see that equality does not, in general, hold take $R$ and $S$
-to be the rings $\ZZ$ and $\ZZ/(pq)$ for $p$ and $q$ primes in
-$\ZZ$. Then, the canonical projection $\pi\colon\ZZ\to\ZZ/(pq)$
-is a surjection. Since $R$ is an integral domain,
-$\rad(R)=0$, but $\rad(S)=(p)\cap (q)=(pq)\neq\phi(0)=0$.
+To see that equality does not hold in general, take $R$ to be
+$\ZZ$ and $S$ to be $\ZZ/(6)$. Then the canonical projection
+$\pi\colon R\to S$ is a surjection. Since $R$ is a domain,
+$\rad(R)=0$, but $\rad(S)= 3S\cap 2S\neq
+0=\phi(0)=\phi(\rad(R))$.
 \\\\
-(b) $\phi(\rad(R))\subset\rad(S)$ by above. Suppose $R$ is
+(b) By part (a) we have that $\phi(\rad(R))\subset\rad(S)$ so we
+need only show the reverse containment. Now, suppose $R$ is
 semilocal with maximal ideals
 $\mathfrak{m}_1,...,\mathfrak{m}_n$. Then, by Corollary 1.15,
-$\rad(R)=\mathfrak{m}_1\cdots\mathfrak{m}_n$. Now, by the
-Homeomorphism Theorem, $S\cong R/\ker\phi$ so, by Proposition
-1.2, the maximal ideals of $S$ are in $1$-$1$ correspondence with
-the maximal ideals of $R$ that contain $\ker\phi$. Thus, it
-suffices to show that $\mathfrak{m}_i\supset\ker\phi$ for all
-$i$. We will proceed by contradiction. Without loss of
-generality, suppose that $\mathfrak{m}_1,...,\mathfrak{m}_m$,
-$0<m<n$, do not contain $\ker\phi$. Then,
-$y\in\prod_{i=1}^m\phi(\mathfrak{m}_i)$ so
+$\rad(R)=\bigcap_{i=1}^n=\mathfrak{m}_1\cdots\mathfrak{m}_n$. Now,
+by the Homeomorphism Theorem, $S\cong R/\ker\phi$ so, by
+Proposition 1.2, the maximal ideals of $S$ are in one-one
+correspondence with the maximal ideals of $R$ that contain
+$\ker\phi$. Assuming $S\neq 0$, $\ker\phi\neq R$ so, by Corollary
+1.5, at least one of the maximal ideals
+$\mathfrak{m}_i\supset\ker\phi$. Without loss of generality,
+assume the first $k$ maximal ideals
+$\mathfrak{m}_1,...,\mathfrak{m}_k$ contain $\ker\phi$ and the
+last $\mathfrak{m}_{k+1},...,\mathfrak{m}_n$ do not. Since
+$\ker\phi\nsubseteq\mathfrak{m}_i$ for $k+1\leq i\leq n$,
+$\ker\phi+\mathfrak{m}_i=R$, i.e., $\ker\phi$ and
+$\mathfrak{m}_i$ are comaximal, so there exits elements
+$y\in\ker\phi$ and $x_i\in\mathfrak{m}_i$ such that
+$y+x_i=1$.
+
+ Then,
+$y\in\prod_{i=1}^m\phi(\mathfrak{m}_i)$
+so
 \[
 y
 =
@@ -186,9 +197,19 @@ Let $I$ be an $R$-ideal. Show that $I$ is finitely generated and
 $I^2=I$ if and only if $I=Re$ with $e$ idempotent.
 \end{problem}
 \begin{proof}
-Recall Nakayama's lemma (Theorem 2.2). If $M$ is an finitely
-generated $R$-module and $I$ is an $R$-ideal. Then $M=IM$ if and
-only if $aM=0$ for some $a\in 1+I$.
+By Nakayama's lemma (Theorem 2.2), if can view $I$ as a finitely
+generated $I$-module, then $I=I^2$ if and only if $aI=0$ for some
+$a\in 1+I$. Then, for any element $b\in I$
+\[
+(1-a)b=b-ba=b.
+\]
+This implies that any element of $I$ is of the form $(1-a)r$ for
+some $r\in R$. This gives that $I\subset (1-a)$. Note that
+$(1-a)$ is idempotent since
+\[
+(1-a)(1-a)=1-a.
+\]
+Thus $I=R(1-a)$.
 \end{proof}
 
 %%% Local Variables:
