@@ -1,23 +1,22 @@
-\begin{problem}[Munkres \S17, p.\,100, 2]
-Show that if $A$ is closed in $Y$ and $Y$ is closed in $X$, then
-$A$ is closed in $X$.
-\end{problem}
-\begin{proof}
-Let $C$ denote the closure of $A$ in $X$ then, by Theorem 17.4,
-$A=\bar A=C\cap Y$ is the closure of $A$ in $Y$. Thus, $A$ is
-closed in $X$ since it is the intersection of two closed subsets
-of $X$.
-\end{proof}
-\newpage
-\begin{problem}[Munkres \S17, p.\,100, 3]
+% \begin{problem}[Munkres \S17, p.\,100, 2]
+% Show that if $A$ is closed in $Y$ and $Y$ is closed in $X$, then
+% $A$ is closed in $X$.
+% \end{problem}
+% \begin{proof}
+% Let $C$ denote the closure of $A$ in $X$ then, by Theorem 17.4,
+% $A=\clsr A=C\cap Y$ is the closure of $A$ in $Y$. Thus, $A$ is
+% closed in $X$ since it is the intersection of two closed subsets
+% of $X$.
+% \end{proof}
+% \newpage
+\begin{problem}[Munkres \S17, p.\,100, Exercise 3]
 Show that if $A$ is closed in $X$ and $B$ is closed in $Y$, then
 $A\times B$ is closed in $X\times Y$.
 \end{problem}
 \begin{proof}
-Before proceeding we will prove the following set theoretic
-result (which was adapted from Exercises 2(n) and 2(o) from \S1,
-p.\,14 of Munkres):
-
+Before proceeding with our main result we will prove the
+following useful set theoretic results which we have taken (and
+modified) from Munkres \S1, p.\,14, Exercises 2(n) and 2(o):
 \begin{lemma}
 For sets $A$, $B$, $C$ and $D$ we the following equalities hold:
 \begin{enumerate}[noitemsep,label=(\alph*)]
@@ -51,9 +50,12 @@ $A\setminus B$ and $B\setminus C$ by $C$, to prove that
 (A\setminus B)\times C=(A\times C)\setminus (B\times C).\qedhere
 \]
 \end{proof}
-Now, since $A$ is closed in $X$ and $B$ is closed in $Y$, their
-complements, $X\setminus A$ and $Y\setminus B$ are, by
-definition, open in $X$ and $Y$, respectively. Then, the sets
+\noindent
+Now let's turn our attention back to the problem at hand. Since
+$A$ is closed in $X$ and $B$ is closed in $Y$, their complements,
+$X\setminus A$ and $Y\setminus B$, are open in $X$ and $Y$,
+respectively (this is by definition cf.\,Munkres \S17,
+p.\,93). Hence, the sets
 \[
 (X\setminus A)\times Y
 \quad
@@ -61,126 +63,143 @@ definition, open in $X$ and $Y$, respectively. Then, the sets
 \quad
 X\times (Y\setminus B)
 \]
-are open since they are basic open sets in the product topology
-on $X\times Y$. So, applying Lemma 4(b) and (c), their
-complements
+are open in $X\times Y$ since they are basis elements of the
+product topology on $X\times Y$ (cf.\,definition of the product
+topology on Munkres \S15, p.\,86). Hence, their complements are
+closed. By Lemma 4(b) and 4(c), we may rewrite the complements of
+$(X\setminus A)\times Y$ and $X\times(Y\setminus B)$ as
 \[
-(X\times Y)\setminus (X\setminus A)\times Y=A\times Y
+(X\times Y)\setminus((X\setminus A)\times Y)=A\times Y
 \quad
 \text{and}
 \quad
-(X\times Y)\setminus X\times (Y\setminus B)=X\times B
+(X\times Y)\setminus(X\times (Y\setminus B))=X\times B,
 \]
-are closed in $X\times Y$. At last, we have that
+respectively. Then, by Theorem 17.(b), the intersection
 \[
 (A\times Y)\cap (X\times B)
 \]
-is the intersection of closed sets, hence, by Theorem 17.1(b), is
-closed. By Lemma 4(a),
+is closed since $A\times Y$ and $X\times B$ are closed. At last,
+by Lemma 4(a), we may rewrite the former intersection as
 \[
-(A\times Y)\cap (X\times B)=(A\cap X)\times (Y\cap B)=A\times B
+(A\times Y)\cap (X\times B)=(A\cap X)\times (Y\cap B)=A\times B.
 \]
-so $A\times B$ is closed in $X\times Y$.
+Thus $A\times B$ is closed in $X\times Y$.
 \end{proof}
 \newpage
-\begin{problem}[Munkres \S17, p.\,101, 6(b)]
+\begin{problem}[Munkres \S17 p.\,101, Exercise 6(b)]
 Let $A$, $B$ and $A_\alpha$ denote subsets of a space $X$. Prove
 the following:
 \begin{enumerate}[noitemsep]
-\item[(b)] $\clsr{A\cup B}=\bar A\cup\bar B$.
+\item[(b)] $\clsr{A\cup B}=\clsr A\cup\clsr B$.
 \end{enumerate}
 \end{problem}
 \begin{proof}
-By definition, the closure of a set is the intersection of all
-closed sets which contain it therefore, $\overline{A\cup
-  B}\subset\bar A\cup\bar B$ since $\bar A\cup\bar B$ is a
-closed set, by Theorem 17.1(a), which contains $A\cup B$. To see
-the reverse containment note that $\bar A\subset\clsr{A\cup B}$
-since $\clsr{A\cup B}$ is a closed set which contains
-$A$. Similarly $\bar B\subset\clsr{A\cup B}$ so $\bar A\cup \bar
-B\subset\clsr{A\cup B}$. Therefore, $\clsr{A\cup B}=\bar
-A\cup\bar B$ holds.
+The containment $\clsr{A\cup B}\subset\clsr A\cup\clsr B$ is
+immediate from the definition of the closure of a set
+(cf.\,Munkres \S17, p.\,95) since $\clsr A\cup\clsr B$ is a closed
+set (by Theorem 17.1(a)) which contains $A\cup B$, hence must
+contain the closure of $A\cup B$. To see the reverse containment
+note we will make use of the following lemma (which I was not
+able to immediately find in Munkres):
+\begin{lemma}
+If $A\subset C$ and $B\subset C$ then $A\cup B\subset C$.
+\end{lemma}
+\begin{proof}[Proof of Lemma 5]
+\renewcommand\qedsymbol{$\clubsuit$}
+By the definition of subset and union (cf.\,Munkres \S1,
+pp.\,4-5) if $x\in A\cup B$ then $x\in A$ or $x\in B$. Since
+$A\subset C$ and $B\subset C$, in either case we have that $x\in
+C$. Thus $A\cup B\subset C$.
+\end{proof}
+\noindent Armed with Lemma 5, note that $A\subset\clsr{A\cup B}$
+and $B\subset\clsr{A\cup B}$ so $\clsr{A\cup B}$ contains the
+closure of $A$ and $B$ so it must contain the union of their
+respective closures, i.e., $\clsr A\cup\clsr B\subset\clsr{A\cup
+  B}$.
 
-Naturally this results extends, by induction, to the case of
-finite unions of sets.
+Naturally, this result may be extended, by induction, to show
+that the closure of a finite union of sets is the union of the
+closure of said sets.
 \end{proof}
 
 \newpage
-\begin{problem}[Munkres \S17, p.\,101, 6(c)]
+\begin{problem}[Munkres \S17 p.\,101, Exercise 6(c)]
 Let $A$, $B$ and $A_\alpha$ denote subsets of a space $X$. Prove
 the following:
 \begin{enumerate}[noitemsep]
-\item[(b)] $\clsr{\bigcup A_\alpha}\supset\bigcup\clsr{A_\alpha}$.
+\item[(b)] $\clsr{\bigcup
+    A_\alpha}\supset\bigcup\clsr{A_\alpha}$; give an example
+  where equality fails.
 \end{enumerate}
 \end{problem}
 \begin{proof}
-Let $C$ denote the set $\clsr{\bigcup A_\alpha}$. It is clear, by
-the definition of the closure of a set, that $\bar
-A_\alpha\subset C$ for every $\alpha$ since $C$ is a closed set
-which contains $A_\alpha$, so $\bigcup_\alpha \bar
-A_\alpha\subset C$.
+The containment $\clsr{\bigcup
+  A_\alpha}\supset\bigcup\clsr{A_\alpha}$ follows immediately
+from the definition of closure since $\clsr{\bigcup A_\alpha}$ is
+a closed set containing $A_\alpha$ so must contain
+$\clsr{A_\alpha}$ for each $\alpha$.
 
-The reverse is not true in general; in fact, as Theorem 17.1(3)
-suggests, an arbitrary union of closed sets is not even
-necessarily closed. For a concrete example consider the family
-$A_r=\{r\}$ for $r\in\QQ$. The closure of a point $r$ in $\RR$ is
-itself since its complement, $\RR\setminus\{r\}$, is the
-union of the open intervals $(-\infty,r)$ and $(r,\infty)$; in
-particular, $\{r\}$ is the ``smallest'' closed set containing
-$\{r\}$. Hence, we see that the union
+The reverse containment is not true in general (in fact, as
+Theorem 17.1(3) suggests, an arbitrary union of closed sets is
+not even necessarily closed). As a counter example, consider the
+family of subsets $A_q=\{q\}$, for $q\in\QQ$, of $\RR$. Since
+$\RR$ is Hausdorff, by Theorem 17.8, the closure of $A_q$ is
+itself. Hence, we see that the union
 \[
-\bigcup_{r\in\QQ}\bar A_r=\QQ,
+\bigcup_{q\in\QQ}\clsr{A_q}=\QQ,
 \]
-but, by Example 6, $\bar\QQ=\RR$.
+but, (by Munkres \S17, Example 6) $\clsr\QQ=\RR$.
 \end{proof}
 \newpage
-\begin{problem}[Munkres \S17, p.\,101, 7]
+\begin{problem}[Munkres \S17 p.\,101, Exercise 7]
 Criticize the following ``proof'' that $\clsr{\bigcup
-  A_\alpha}\subset\bigcup\bar A_\alpha$: if
+  A_\alpha}\subset\bigcup\clsr A_\alpha$: if
 $\left\{A_\alpha\right\}$ is a collection of sets in $X$ and if
 $x\in\clsr{\bigcup A_\alpha}$, then every neighborhood $U$ of $x$
 intersects $\bigcup A_\alpha$. Thus $U$ must intersect some
 $A_\alpha$, so $x$ must belong to the closure of some
-$A_\alpha$. Therefore, $x\in\bigcup\bar A_\alpha$.
+$A_\alpha$. Therefore, $x\in\bigcup\clsr A_\alpha$.
 \end{problem}
 \begin{proof}[Critique]
-The main argument, that ``$x$ must belong to the closure of some
-$A_\alpha$'', is what is wrong here. The point $x$ may belong to
-the closure of multiple $A_\alpha$'s, in fact uncountably many of
-them, so that one would have to prove that if $x$ belongs the
-closure of some family $A_\beta$ of set, then $x$ must belong to
-the union of their closures. This takes us right back to what we
-are trying to prove.
-
-Like in Problem 2.4, consider the sets $A_r=\{r\}$ for
-$r\in\QQ$. For any open interval about a point $x\in\RR$, say
-$B_\delta(x)$ for $\delta>0$, we may
-
-Then, by the density of the irrational numbers in
-$\RR$, between any two sets
-\end{proof}
+\renewcommand\qedsymbol{$\varheartsuit$}
+The claim is false in general as the counterexample in the
+preceding problem demonstrates. The main problem with this proof
+lies in the assertion $U$ intersecting some $A_\alpha$ implies
+``$x$ must belong to the closure of some $A_\alpha$.'' But a
+different neighborhood of $x$ may intersect a different
+$A_\alpha$ in the union. Recall, by Theorem 17.5(a), if $x$ is in
+the closure of $A_\alpha$, then $U\cap A_\alpha\neq\emptyset$ for
+every neighborhood $U$ of $x$. That is, the proof is claiming
+that for every neighborhood $U$ of $x$ there exists some
+$A_\alpha$ in the union $\bigcup A_\alpha$ such that $U\cap
+A_\alpha\neq\emptyset$, i.e., $x\in\clsr{A_\alpha}$. But for $x$
+to be in $\bigcup\clsr{A_\alpha}$ we need that for some
+$A_\alpha$ for every neighborhood $U$ of $x$, $U\cap
+A_\alpha\neq\emptyset$. These are not equivalent statements.
+ \end{proof}
 \newpage
 \begin{problem}[Munkres \S17, p.\,101, 9]
 Let $A\subset X$ and $B\subset Y$. Show that in the space
 $X\times Y$,
 \[
-\clsr{A\times B}=\bar A\times\bar B.
+\clsr{A\times B}=\clsr A\times\clsr B.
 \]
 \end{problem}
 \begin{proof}
-By Problem 2.2, $\bar A\times\bar B$ is a closed set which
+By Problem 2.1, $\clsr A\times\clsr B$ is a closed set which
 contains $A\times B$ so it must contain the closure of $A\times
-B$, i.e., $\clsr{A\times B}\subset\bar A\times\bar B$. To see the
-reverse containment, take a point $x\times y\in\bar A\times\bar
+B$, i.e., $\clsr{A\times B}\subset\clsr A\times\clsr B$. To see the
+reverse containment, take a point $x\times y\in\clsr A\times\clsr
 B$. Then, by Theorem 17.5(a), for every neighborhood $U$ of $x$
 and every neighborhood $V$ of $y$, the intersections $U\cap A$
-and $V\cap B$ are nonempty. Thus, by Lemma 5(a), the set
+and $V\cap B$ are nonempty. Thus, by Lemma 4(a), the set
 \[
 (V\times U)\cap(A\times B)=(V\cap A)\times (U\cap B)
 \]
 is nonempty. Then, since $U\times V$ is an arbitrary basis
 element containing $x\times y$, by Theorem 17.5(b) $x\times
-y\in\clsr{A\times B}$. Thus, $\clsr{A\times B}=\bar A\times\bar
+y\in\clsr{A\times B}$. Thus, $\clsr{A\times B}=\clsr A\times\clsr
 B$.
 \end{proof}
 \newpage
@@ -276,7 +295,7 @@ y\in(X\times X)\setminus\Delta$. Since $X$ is Hausdorff, there
 exists neighborhoods $U$ and $V$ of $x$ and $y$, respectively,
 such that $U\cap V=\emptyset$. Thus, $U\times V$ is a
 neighborhood of $x\times y$ contained in $(X\times X)\setminus
-\Delta$. By the definition on Munkres \S13 p.\,78, since for
+\Delta$. By the definition (cf.\,Munkres \S13 p.\,78), since for
 every point $x\times y\in(X\times X)\setminus\Delta$ we may find
 a basis element $U\times V\subset (X\times X)\setminus\Delta$
 containing $x\times y$, it follows that $(X\times
@@ -333,22 +352,21 @@ y$, $x\mapsto y_0$ by $y\mapsto x_0$, $\pi_X$ by $\pi_Y$, and
 $\id_X$ by $\id_Y$ in the argument above). So as not to be
 penalized for not providing the proof for $g$ we copy and paste,
 making the appropriate replacements, here:
-\\\\
-Let $Z=\im g$. To show that $g\colon Y\to X\times Y$ is an
+
+\noindent Let $Z=\im g$. To show that $g\colon Y\to X\times Y$ is an
 imbedding, we will show that the map $g'\colon Y\to Z$, which is
 obtained by restricting the codomain of $g$ is a continuous
 injection with a continuous inverse $g$. First we shall show
 injectivity. To see that $g$ is continuous we note that $g$ can
 be written as the tuple $g'(x)=(g_1,g_2)$ where $g_1=\id_Y$ and
 $g_2$ is the constant map $y\mapsto x_0$ for all $y\in Y$. The
-maps $g_1$ and $g_2$ are continuous (by Theorem 18.2(a) and (b))
-so, by Theorem 18.4, $g$ is continuous. To prove that $g$ is
-bijective it suffices to exhibit an inverse. We claim that the
-map $G=\restr{\pi_Y}{Z}$ is an inverse (continuity of $G$ follows
-from Theorem 18.2(d) and the fact that projections are continuous
-as discussed on \S15 pp.\,87-88). But this claim is clear since
+maps $g_1$ and $g_2$ are continuous $g$ is continuous. To prove
+that $g$ is bijective it suffices to exhibit an inverse. We claim
+that the map $G=\restr{\pi_Y}{Z}$ is an inverse (the continuity
+of $G$ follows from he fact that it is the restriction of a
+projection). But this claim is clear since
 \begin{align*}
-G\circ G(x)
+G\circ g(x)
 &=G(g(x))&
 g\circ G(x_0\times y)
 &=g(G(x_0\times y))\\
@@ -373,15 +391,82 @@ $f,g\colon X\to Y$ be continuous.
 \end{enumerate}
 \end{problem}
 \begin{proof}
-
+(a) Let $A=\left\{\,x\;\middle|\;f(x)\leq g(x)\,\right\}$. To
+prove that $A$ is closed, we will demonstrate that its
+complement,
+\[
+X\setminus A=\left\{\,x\;\middle|\;f(x)>g(x)\,\right\},
+\]
+is open. Let $x\in X\setminus
+A$. Then $f(x)\neq g(x)$. By Problem 2.6, $Y$ is Hausdorff so
+there exist neighborhoods $U$ and $V$ of $f(x)$ and $g(x)$,
+respectively, such that $U\cap V=\emptyset$. Without loss of
+generality, we may assume $U$ and $V$ are basis elements, i.e.,
+$U=(x_3,x_4)$ and $V=(x_1,x_2)$. Then, since $f$ and $g$ are
+continuous (cf.\,Munkres \S18, p.\,102), the intersection
+$f^{-1}(U)\cap g^{-1}(V)$ in a neighborhood of $x$ contained
+entirely in $X\setminus A$ (for otherwise there exists a
+$y\in(f^{-1}(U)\cap g^{-1}(V))\cap A$ which simultaneously
+satisfies $x_1<g(y)<x_2<x_3<f(y)<x_4$ and $f(y)\leq g(y)$, but
+this is absurd).
+\\\\
+(b) Define the sets
+\[
+A=\left\{\,x\;\middle|\;f(x)\leq g(x)\,\right\}
+\quad
+\text{and}
+\quad
+B=\left\{\,x\;\middle|\;f(x)\geq g(x)\,\right\}.
+\]
+By part (a), $A$ and $B$ are closed in $X$. Lastly, define
+$f'=\restr{f}{A}$ and $g'=\restr{g}{B}$ (by Theorem 18.2(d) $f'$
+and $g'$ are continuous). Since $f'=g'$ on $A\cap B$ (by
+construction), by the pasting lemma, we have that
+\[
+h(x)
+=\min\{f(x),g(x)\}
+=\begin{cases}f'(x)&\text{if $x\in A$},\\g'(x)&\text{if $x\in
+    B$}\end{cases}
+\]
+is continuous.
 \end{proof}
 \newpage
 \begin{problem}
 Given: $X$ is a topological space with open sets $U_1,...,U_n$
-such that $\bar U_i=X$ for all $i$. Prove that the closure of
+such that $\clsr U_i=X$ for all $i$. Prove that the closure of
 $U_1\cap\cdots\cap U_n$ is $X$.
 \end{problem}
 \begin{proof}
+\textbf{**Opening remarks**:} This property of $U$, that
+$\clsr{U}=X$, is called \emph{density} (and is not defined until
+Munkres \S30, p.\,190), but should be recognizable to anyone who
+has taken a course in real analysis so I don't feel any qualms
+about using said adjective here. At any rate, we shall proceed by
+induction on $n$ the number of sets in the intersection.
+
+Consider the base case $n=2$: Suppose $U_1$ and $U_2$ are dense
+open subsets of $X$. Let $x\in\clsr{U_1}=X$. Then, by Theorem
+17.5(a), for any neighborhood $U$ of $x$, $U\cap
+U_1\neq\emptyset$. In particular, note that $U\cap U_1$ is
+open since it is a finite intersection of open sets (cf.\,Munkres
+\S13 definition of topology). Let $y\in U\cap U_1$. Then, since
+$y\in\clsr{U_2}$ and $U\cap U_1$ is a neighborhood of $y$, we
+have that
+\[
+(U\cap U_1)\cap U_2=U\cap (U_1\cap U_2)\neq\emptyset.
+\]
+Hence, $x$ is in the closure of $U_1\cap U_2$ for any $x\in X$ so
+$\clsr{U_1\cap U_2}=\emptyset$.
+
+Suppose the property holds for he intersection of $n-1$ such open
+dense sets. Suppose $U_1,...,U_n$ are open dense subsets in $X$. Let
+$U'=\bigcap_{i=1}^{n-1}U_i$. Then, by the induction hypothesis,
+$U'$ is an open set with $\clsr{U'}=X$. Again, as in the base
+case, we have $U'\cap U$ is the intersection of open dense
+subsets of $X$ so
+\[
+\clsr{U'\cap U}=X=\clsr{U_1\cap\cdots\cap U_{n-1}\cap U_n}.\qedhere
+\]
 \end{proof}
 
 %%% Local Variables:

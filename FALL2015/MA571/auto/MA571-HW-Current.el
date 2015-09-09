@@ -32,8 +32,6 @@
     '("restr" 2)
     "id"
     "im"
-    "Int"
-    "Cl"
     "CC"
     "NN"
     "QQ"

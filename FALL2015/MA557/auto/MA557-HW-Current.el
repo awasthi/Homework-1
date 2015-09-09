@@ -30,8 +30,8 @@
    (TeX-add-symbols
     '("restr" 2)
     "id"
-    "lcm"
     "im"
+    "lcm"
     "nil"
     "rad"
     "CC"

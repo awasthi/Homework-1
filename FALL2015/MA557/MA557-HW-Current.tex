@@ -45,50 +45,11 @@
 \usepackage{mathtools}
 \usepackage{lualatex-math}
 \usepackage{unicode-math}
-% \usepackage{unicode-minionmath}
-
-% \setmainfont[Ligatures=TeX]{Minion Pro}
-% \setsansfont[Ligatures=TeX]{Myriad Pro}
-% \setmonofont{Courier Std}
-
-% \setmathfont{Minion Math}
-% \setmathfont[range={\mathfrak}]{XITS Math}
-% \setmathfont[range={\mathcal},StylisticSet=1]{XITS Math}
-% \setmathfont[range={\mathscr}]{XITS Math}
-% \setmathfont[range={}]{Minion Math}
 
 \setmainfont[Ligatures=TeX,Numbers=OldStyle]{Latin Modern Roman}
 \setsansfont[Ligatures=TeX,Numbers=OldStyle]{Latin Modern Sans}
 \setmonofont{Latin Modern Mono}
 \setmathfont{Latin Modern Math}
-
-% \setmainfont[Ligatures=TeX]{CMU Serif}
-% \setsansfont[Ligatures=TeX]{CMU Sans Serif}
-% \setmonofont{CMU Typewriter Text}
-
-% \setmainfont[Ligatures=TeX,Numbers=OldStyle]{Linux Libertine O}
-% \setsansfont[Ligatures=TeX,Numbers=OldStyle]{Linux Biolinum O}
-% \setmonofont{Linux Libertine Mono O}
-
-% \setmainfont[Ligatures=TeX]{XITS}
-% \setmathfont[range={\mathcal,\mathbfcal},StylisticSet=1]{XITS Math}
-% \setmathfont[range=\mathscr]{XITS Math}
-% \setmathfont{XITS Math}
-
-% \setmathfont[range=\mathit/{latin,Latin,num,Greek,greek}]{Linux Libertine O Italic}
-% \setmathfont[range=\mathup/{latin,Latin,num,Greek,greek}]{Linux Libertine O}
-% \setmathfont[range=\mathbfup/{latin,Latin,num,Greek,greek}]{Linux Libertine O Bold}
-
-% \usepackage{polyglossia}
-% \setmainlanguage[variant=american]{english}
-% \setotherlanguage{french}
-% \setotherlanguage[spelling=new,latesthyphen,babelshorthands]{german}
-% \setotherlanguage[spelling=modern,babelshorthands]{russian}
-% \setotherlanguage{spanish}
-
-% \newfontfamily\cyrillicfont[Ligatures=TeX]{CMU Serif}
-% \newfontfamily\cyrillicfontsf[Ligatures=TeX]{CMU Sans Serif}
-% \newfontfamily\cyrillicfonttt{CMU Typewriter Text}
 
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
@@ -160,11 +121,11 @@
   }}
 
 %% Commands and operators
-\newcommand{\id}{\mathrm{id}}
-\newcommand{\lcm}{\mathrm{lcm}}
-\newcommand{\im}{\mathrm{im}}
-\newcommand{\nil}{\mathrm{nil}}
-\newcommand{\rad}{\mathrm{rad}}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\nil}{nil}
+\DeclareMathOperator{\rad}{rad}
 
 \newcommand{\CC}{\mathbf{C}}
 \newcommand{\NN}{\mathbf{N}}
