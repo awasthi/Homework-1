@@ -1,16 +1,16 @@
 (TeX-add-style-hook
- "Hatcher-Problems"
+ "Geometric-Group-Theory"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("memoir" "article" "oneside" "10pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("xcolor" "dvipsnames") ("enumitem" "inline")))
+   (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
+   (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
    (TeX-run-style-hooks
     "latex2e"
-    "chapters/algtop-0"
-    "chapters/algtop-1"
-    "chapters/algtop-2"
-    "chapters/algtop-3"
+    "chapters/"
     "memoir"
     "memoir10"
     "geometry"

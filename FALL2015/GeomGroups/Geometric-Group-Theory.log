@@ -1,8 +1,9 @@
-This is LuaTeX, Version beta-0.79.1 (TeX Live 2014/Arch Linux) (rev 4971)  (format=lualatex 2015.5.28)  8 SEP 2015 16:20
+This is LuaTeX, Version beta-0.79.1 (TeX Live 2014/Arch Linux) (rev 4971)  (format=lualatex 2015.5.28)  10 SEP 2015 12:54
  restricted \write18 enabled.
  file:line:error style messages enabled.
-**\input Hatcher-Problems.tex
-(./Hatcher-Problems.tex (/usr/share/texmf-dist/tex/latex/memoir/memoir.cls
+**\input Geometric-Group-Theory.tex
+(./Geometric-Group-Theory.tex
+(/usr/share/texmf-dist/tex/latex/memoir/memoir.cls
 Document Class: memoir 2015/03/05 v3.7c configurable book, report, article docum
 ent class
 \onelineskip=\skip41
@@ -1019,7 +1020,7 @@ luatexbase-attr: luatexbase.attributes["luaotfload@cursbase"] = 6
 luatexbase-attr: luatexbase.attributes["luaotfload@curscurs"] = 7
 luatexbase-attr: luatexbase.attributes["luaotfload@cursdone"] = 8
 luatexbase-attr: luatexbase.attributes["luaotfload@state"] = 9
-luaotfload | main : fontloader loaded in 0.119 seconds
+luaotfload | main : fontloader loaded in 0.114 seconds
 luatexbase-mcb: inserting 'luaotfload.node_processor'
 at position 1 in 'pre_linebreak_filter'
 luatexbase-mcb: inserting 'luaotfload.node_processor'
@@ -1357,14 +1358,14 @@ luaotfload | aux : no font with id 24
 . fontspec info: "defining-font"
 . 
 . Font family 'LatinModernRoman(0)' created for font 'Latin Modern Roman' with
-. options [Ligatures=TeX,Ligatures=TeX].
+. options [Ligatures=TeX,Ligatures=TeX,Numbers=OldStyle].
 . 
 . This font family consists of the following shapes:
 . 
 . * 'normal' with NFSS spec.:
 . 
 . <->"LatinModernRoman:mode=node;script=latn;language=DFLT;+tlig;+trep;+tlig;+tr
-ep;"
+ep;+onum;"
 . 
 . * 'small caps' with NFSS spec.:
 . 
@@ -1374,7 +1375,7 @@ ep;"
 . * 'bold' with NFSS spec.:
 . 
 . <->"LatinModernRoman/B:mode=node;script=latn;language=DFLT;+tlig;+trep;+tlig;+
-trep;"
+trep;+onum;"
 . 
 . * 'bold small caps' with NFSS spec.:
 . 
@@ -1384,7 +1385,7 @@ trep;"
 . * 'italic' with NFSS spec.:
 . 
 . <->"LatinModernRoman/I:mode=node;script=latn;language=DFLT;+tlig;+trep;+tlig;+
-trep;"
+trep;+onum;"
 . 
 . * 'small caps' with NFSS spec.:
 . 
@@ -1394,7 +1395,7 @@ trep;"
 . * 'bold italic' with NFSS spec.:
 . 
 . <->"LatinModernRoman/BI:mode=node;script=latn;language=DFLT;+tlig;+trep;+tlig;
-+trep;"
++trep;+onum;"
 . 
 . * 'bold small caps' with NFSS spec.:
 . 
@@ -1422,36 +1423,36 @@ ompiling luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/lmsans10-oblique.luc
 s10-oblique.luc)
 luaotfload | load : Lookup/name: "LatinModernSans" -> "lmsans10-regular.otf"
 luaotfload | load : Lookup/name: "LatinModernSans" -> "lmsans10-regular.otf"
-luaotfload | aux : font no 27 (LMSans10-Regular) does not define feature smcp fo
+luaotfload | aux : font no 28 (LMSans10-Regular) does not define feature smcp fo
 r script latn with language dflt
-luaotfload | aux : no font with id 27
-luaotfload | load : Lookup/name: "LatinModernSans" -> "lmsans10-bold.otf"
-luaotfload | load : Lookup/name: "LatinModernSans" -> "lmsans10-bold.otf"
-luaotfload | aux : font no 29 (LMSans10-Bold) does not define feature smcp for s
-cript latn with language dflt
-luaotfload | aux : no font with id 29
-luaotfload | load : Lookup/name: "LatinModernSans" -> "lmsans10-oblique.otf"
-luaotfload | load : Lookup/name: "LatinModernSans" -> "lmsans10-oblique.otf"
-luaotfload | aux : font no 30 (LMSans10-Oblique) does not define feature smcp fo
-r script latn with language dflt
-luaotfload | aux : no font with id 30
-luaotfload | load : Lookup/name: "LatinModernSans" -> "lmsans10-boldoblique.otf"
-luaotfload | load : Lookup/name: "LatinModernSans" -> "lmsans10-boldoblique.otf"
-luaotfload | aux : font no 28 (LMSans10-BoldOblique) does not define feature smc
-p for script latn with language dflt
 luaotfload | aux : no font with id 28
+luaotfload | load : Lookup/name: "LatinModernSans" -> "lmsans10-bold.otf"
+luaotfload | load : Lookup/name: "LatinModernSans" -> "lmsans10-bold.otf"
+luaotfload | aux : font no 30 (LMSans10-Bold) does not define feature smcp for s
+cript latn with language dflt
+luaotfload | aux : no font with id 30
+luaotfload | load : Lookup/name: "LatinModernSans" -> "lmsans10-oblique.otf"
+luaotfload | load : Lookup/name: "LatinModernSans" -> "lmsans10-oblique.otf"
+luaotfload | aux : font no 31 (LMSans10-Oblique) does not define feature smcp fo
+r script latn with language dflt
+luaotfload | aux : no font with id 31
+luaotfload | load : Lookup/name: "LatinModernSans" -> "lmsans10-boldoblique.otf"
+luaotfload | load : Lookup/name: "LatinModernSans" -> "lmsans10-boldoblique.otf"
+luaotfload | aux : font no 29 (LMSans10-BoldOblique) does not define feature smc
+p for script latn with language dflt
+luaotfload | aux : no font with id 29
 .................................................
 . fontspec info: "defining-font"
 . 
 . Font family 'LatinModernSans(0)' created for font 'Latin Modern Sans' with
-. options [Ligatures=TeX,Ligatures=TeX].
+. options [Ligatures=TeX,Ligatures=TeX,Numbers=OldStyle].
 . 
 . This font family consists of the following shapes:
 . 
 . * 'normal' with NFSS spec.:
 . 
 . <->"LatinModernSans:mode=node;script=latn;language=DFLT;+tlig;+trep;+tlig;+tre
-p;"
+p;+onum;"
 . 
 . * 'small caps' with NFSS spec.:
 . 
@@ -1461,7 +1462,7 @@ p;"
 . * 'bold' with NFSS spec.:
 . 
 . <->"LatinModernSans/B:mode=node;script=latn;language=DFLT;+tlig;+trep;+tlig;+t
-rep;"
+rep;+onum;"
 . 
 . * 'bold small caps' with NFSS spec.:
 . 
@@ -1471,7 +1472,7 @@ rep;"
 . * 'italic' with NFSS spec.:
 . 
 . <->"LatinModernSans/I:mode=node;script=latn;language=DFLT;+tlig;+trep;+tlig;+t
-rep;"
+rep;+onum;"
 . 
 . * 'small caps' with NFSS spec.:
 . 
@@ -1481,7 +1482,7 @@ rep;"
 . * 'bold italic' with NFSS spec.:
 . 
 . <->"LatinModernSans/BI:mode=node;script=latn;language=DFLT;+tlig;+trep;+tlig;+
-trep;"
+trep;+onum;"
 . 
 . * 'bold small caps' with NFSS spec.:
 . 
@@ -1508,24 +1509,24 @@ load luc: /home/carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/lmmono1
 0-italic.luc)
 luaotfload | load : Lookup/name: "LatinModernMono" -> "lmmono10-regular.otf"
 luaotfload | load : Lookup/name: "LatinModernMono" -> "lmmono10-regular.otf"
-luaotfload | aux : font no 31 (LMMono10-Regular) does not define feature smcp fo
-r script latn with language dflt
-luaotfload | aux : no font with id 31
-luaotfload | load : Lookup/name: "LatinModernMono" -> "lmmono12-regular.otf"
-luaotfload | load : Lookup/name: "LatinModernMono" -> "lmmono12-regular.otf"
-luaotfload | aux : font no 32 (LMMono12-Regular) does not define feature smcp fo
+luaotfload | aux : font no 32 (LMMono10-Regular) does not define feature smcp fo
 r script latn with language dflt
 luaotfload | aux : no font with id 32
-luaotfload | load : Lookup/name: "LatinModernMono" -> "lmmono10-italic.otf"
-luaotfload | load : Lookup/name: "LatinModernMono" -> "lmmono10-italic.otf"
-luaotfload | aux : font no 33 (LMMono10-Italic) does not define feature smcp for
- script latn with language dflt
+luaotfload | load : Lookup/name: "LatinModernMono" -> "lmmono12-regular.otf"
+luaotfload | load : Lookup/name: "LatinModernMono" -> "lmmono12-regular.otf"
+luaotfload | aux : font no 33 (LMMono12-Regular) does not define feature smcp fo
+r script latn with language dflt
 luaotfload | aux : no font with id 33
+luaotfload | load : Lookup/name: "LatinModernMono" -> "lmmono10-italic.otf"
+luaotfload | load : Lookup/name: "LatinModernMono" -> "lmmono10-italic.otf"
+luaotfload | aux : font no 34 (LMMono10-Italic) does not define feature smcp for
+ script latn with language dflt
+luaotfload | aux : no font with id 34
 luaotfload | load : Lookup/name: "LatinModernMono" -> "lmmono12-regular.otf"
 luaotfload | load : Lookup/name: "LatinModernMono" -> "lmmono12-regular.otf"
-luaotfload | aux : font no 32 (LMMono12-Regular) does not define feature smcp fo
+luaotfload | aux : font no 33 (LMMono12-Regular) does not define feature smcp fo
 r script latn with language dflt
-luaotfload | aux : no font with id 32
+luaotfload | aux : no font with id 33
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1585,9 +1586,9 @@ luaotfload | load : Lookup/name: "Latin Modern Math" -> "latinmodern-math.otf"
 .................................................
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-luaotfload | aux : font no 34 (LatinModernMath-Regular) does not define feature 
+luaotfload | aux : font no 35 (LatinModernMath-Regular) does not define feature 
 smcp for script math with language dflt
-luaotfload | aux : no font with id 34
+luaotfload | aux : no font with id 35
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 .................................................
@@ -1636,9 +1637,9 @@ luaotfload | load : Lookup/name: "Latin Modern Math" -> "latinmodern-math.otf"
 .................................................
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-luaotfload | aux : font no 34 (LatinModernMath-Regular) does not define feature 
+luaotfload | aux : font no 35 (LatinModernMath-Regular) does not define feature 
 smcp for script math with language dflt
-luaotfload | aux : no font with id 34
+luaotfload | aux : no font with id 35
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 .................................................
@@ -1700,9 +1701,9 @@ luaotfload | load : Lookup/name: "Latin Modern Math" -> "latinmodern-math.otf"
 .................................................
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-luaotfload | aux : font no 34 (LatinModernMath-Regular) does not define feature 
+luaotfload | aux : font no 35 (LatinModernMath-Regular) does not define feature 
 smcp for script math with language dflt
-luaotfload | aux : no font with id 34
+luaotfload | aux : no font with id 35
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
 .................................................
@@ -1750,8 +1751,7 @@ ne 52.
 \c@exercise=\count342
 \c@remark=\count343
 
-(./Hatcher-Problems.aux (./chapters/algtop-0.aux) (./chapters/algtop-1.aux)
-(./chapters/algtop-2.aux) (./chapters/algtop-3.aux))
+No file Geometric-Group-Theory.aux.
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 123.
 LaTeX Font Info:    ... okay on input line 123.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 123.
@@ -1770,7 +1770,6 @@ LaTeX Font Info:    Checking defaults for EU2/lmr/m/n on input line 123.
 LaTeX Font Info:    ... okay on input line 123.
 LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 123.
 LaTeX Font Info:    Try loading font information for T3+cmr on input line 123.
-
 (/usr/share/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
@@ -1842,9 +1841,7 @@ LaTeX Info: Redefining \nameref on input line 123.
 LaTeX Info: Redefining \ref on input line 123.
 LaTeX Info: Redefining \pageref on input line 123.
 LaTeX Info: Redefining \nameref on input line 123.
-(./Hatcher-Problems.out) (./Hatcher-Problems.out)
 \@outlinefile=\write4
-
 (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -1935,76 +1932,46 @@ man12-regular.luc)
 luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman12-bold.otf"(comp
 iling luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/lmroman12-bold.luc)(loa
 d luc: /home/carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/lmroman12-
-bold.luc) (./Hatcher-Problems.toc
-luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman10-bold.otf"
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 10.00015pt on input line 1.
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 7.00006pt on input line 1.
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-LaTeX Font Info:    Font shape `EU2/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 5.00008pt on input line 1.
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 9.99985pt on input line 1.
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 6.99986pt on input line 1.
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf"
-LaTeX Font Info:    Font shape `EU2/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 4.99992pt on input line 1.
-luaotfload | load : Lookup/name: "LatinModernMath" -> "latinmodern-math.otf") [
-1
+bold.luc) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./chapters/algtop-0.tex) 
-[2
-
-] (./chapters/algtop-1.tex) [3
-
-
-]
-(./chapters/algtop-2.tex) [4
-
-
-] (./chapters/algtop-3.tex) [5
-
-
-]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 \tf@toc=\write5
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 143.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 143.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 140.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 140.
 
-(./Hatcher-Problems.aux (./chapters/algtop-0.aux) (./chapters/algtop-1.aux)
-(./chapters/algtop-2.aux) (./chapters/algtop-3.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 143.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 143.
-Package rerunfilecheck Info: File `Hatcher-Problems.out' has not changed.
-(rerunfilecheck)             Checksum: 8D4EBFA57B985F8B62902040BF260F56;1265.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 143.
+(./Geometric-Group-Theory.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 140.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 140.
+
+
+Package rerunfilecheck Warning: File `Geometric-Group-Theory.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Geometric-Group-Theory.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  1178D1AA0ACBBBF90C5F3558B6FBAB2A;44.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 140.
 )
 
 Here is how much of LuaTeX's memory you used:
- 32677 strings out of 494693
- 100000,953878 words of node,token memory allocated
- 775 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 2 kern, 7 attribute, 143 glue_spec, 7 attri
-bute_list, 3 write nodes
-   avail lists: 1:51,2:2479,3:139,4:657,5:82,6:675,7:19,8:24,9:509,10:981,11:519
-,12:230
- 35289 multiletter control sequences out of 65536+600000
- 74 fonts using 18115975 bytes
- 50i,11n,60p,1205b,337s stack positions out of 5000i,500n,10000p,200000b,100000s
-</home/carlos/.local/share/fonts/OTF-TeXLive/public/lm/lmroman10-bold.otf></usr/
-share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></home/carlos/.loca
-l/share/fonts/OTF-TeXLive/public/lm/lmroman10-regular.otf></usr/share/texmf-dist
-/fonts/opentype/public/lm/lmroman17-regular.otf>
-Output written on Hatcher-Problems.pdf (5 pages, 26196 bytes).
+ 32425 strings out of 494693
+ 100000,794899 words of node,token memory allocated
+ 772 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 2 kern, 7 attribute, 144 glue_spec, 7 attri
+bute_list, 2 write nodes
+   avail lists: 1:51,2:481,3:29,4:209,5:6,6:124,7:19,8:4,9:509,10:981,11:519,12:
+230
+ 35216 multiletter control sequences out of 65536+600000
+ 58 fonts using 11871935 bytes
+ 50i,11n,60p,1211b,336s stack positions out of 5000i,500n,10000p,200000b,100000s
+</usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></home/carlos
+/.local/share/fonts/OTF-TeXLive/public/lm/lmroman10-regular.otf></usr/share/texm
+f-dist/fonts/opentype/public/lm/lmroman17-regular.otf>
+Output written on Geometric-Group-Theory.pdf (1 page, 10903 bytes).
 
-PDF statistics: 156 PDF objects out of 1000 (max. 8388607)
- 135 compressed objects within 2 object streams
- 21 named destinations out of 1000 (max. 131072)
- 161 words of extra memory for PDF output out of 10000 (max. 10000000)
+PDF statistics: 36 PDF objects out of 1000 (max. 8388607)
+ 23 compressed objects within 1 object stream
+ 2 named destinations out of 1000 (max. 131072)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

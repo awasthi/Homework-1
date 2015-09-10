@@ -5,12 +5,12 @@
                      '(("memoir" "article" "oneside" "10pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("xcolor" "dvipsnames") ("enumitem" "inline")))
+   (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
+   (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
    (TeX-run-style-hooks
     "latex2e"
-    "chapters/metric-spaces"
-    "chapters/topological-spaces"
-    "chapters/homotopy-theory"
-    "chapters/higher-dimensional-homotopy"
+    "chapters/viro"
     "memoir"
     "memoir10"
     "geometry"
