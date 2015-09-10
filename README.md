@@ -1,1 +1,1 @@
-# Mathematics Homework (Purdue University)
+# Mathematics Homework (Purdue)
