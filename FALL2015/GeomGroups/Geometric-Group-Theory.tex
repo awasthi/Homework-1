@@ -1,5 +1,5 @@
 \def\documentauthor{Carlos Salinas}
-\def\documenttitle{Geometric Group Theory: Notes and Exercises from de la Harpe}
+\def\documenttitle{Geometric Group Theory: Notes and Exercises from Druţu and Kapovich}
 \def\coursename{Geometric Group Theory}
 \def\shorttitle{GeomGroups}
 \def\documentsubject{geometric group theory, de la harpe}
@@ -52,7 +52,7 @@
 \setmathfont{Latin Modern Math}
 
 \theoremstyle{plain}
-\newtheorem{theorem}{Theorem}[section]
+\newtheorem{theorem}{Theorem}[chapter]
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{claim}[theorem]{Claim}
@@ -66,11 +66,11 @@
 \newtheorem*{theorem*}{Theorem}
 
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
-\newtheorem{example}{Example}[section]
-\newtheorem{examples}[example]{Examples}
-\newtheorem{exercise}{Exercise}[section]
-\newtheorem{problem}[exercise]{Problem}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{examples}[theorem]{Examples}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{problem}[theorem]{Problem}
 
 \newtheorem*{definition*}{Definition}
 \newtheorem*{example*}{Examples}
@@ -79,10 +79,11 @@
 \newtheorem*{problem*}{Problem}
 
 \theoremstyle{remark}
-\newtheorem{remark}{Remark}
-\newtheorem{remarks}[remark]{Remarks}
-\newtheorem{observation}[remark]{Observation}
-\newtheorem{observations}[remark]{Observations}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{remarks}[theorem]{Remarks}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{observations}[theorem]{Observations}
+\newtheorem{convention}[theorem]{Convention}
 
 \newtheorem*{remark*}{**Remark**}
 \newtheorem*{remarks*}{**Remarks**}
@@ -136,7 +137,8 @@
 
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 \numberwithin{equation}{section}
-\include{chapters/}
+% \include{chapters/}
+% \include{chapters/general-preliminaries}
 \end{document}
 
 %%% Local Variables:

@@ -5,5 +5,7 @@
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
    (LaTeX-add-labels
-    "eq:mcclure-1")))
+    "eq:mcclure-1")
+   (LaTeX-add-environments
+    '("problem" LaTeX-env-args ["argument"] 0))))
 

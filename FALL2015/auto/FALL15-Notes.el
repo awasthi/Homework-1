@@ -10,8 +10,9 @@
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
    (TeX-run-style-hooks
     "latex2e"
-    "MA557/notes/atiyah-mcdonald"
-    "MA571/notes/munkres"
+    "MA557/lectures/ma557-lecture-1"
+    "MA571/lectures/ma571-lecture-1"
+    "MA571/lectures/mcclure-problems"
     "memoir"
     "memoir10"
     "geometry"
@@ -57,6 +58,7 @@
     "phi"
     "epsilon")
    (LaTeX-add-environments
+    '("problem" LaTeX-env-args ["argument"] 0)
     "theorem"
     "proposition"
     "corollary"

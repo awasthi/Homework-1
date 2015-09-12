@@ -10,7 +10,6 @@
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
    (TeX-run-style-hooks
     "latex2e"
-    "chapters/"
     "memoir"
     "memoir10"
     "geometry"
@@ -56,6 +55,7 @@
     "phi"
     "epsilon")
    (LaTeX-add-environments
+    '("problem" LaTeX-env-args ["argument"] 0)
     "theorem"
     "proposition"
     "corollary"
@@ -70,5 +70,6 @@
     "remark"
     "remarks"
     "observation"
-    "observations")))
+    "observations"
+    "convention")))
 
