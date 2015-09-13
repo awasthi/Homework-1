@@ -49,6 +49,7 @@
     "phi"
     "epsilon")
    (LaTeX-add-environments
+    '("problem" LaTeX-env-args ["argument"] 0)
     "theorem"
     "proposition"
     "corollary"
@@ -58,7 +59,6 @@
     "definition"
     "example"
     "examples"
-    "problem"
     "remark"
     "remarks"
     "observation"

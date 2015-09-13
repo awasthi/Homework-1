@@ -17,7 +17,36 @@ $a\leq x<b$. We write $f(x+)=q$ if $f(t_n)\to q$ as $n\to\infty$,
 for all sequences $\left\{t_n\right\}$ in $(x,b)$ such that
 $t_n\to x$.
 \end{definition*}
-
+This definition is not well suited for our purposes since it is
+defined in terms of limits of sequences, which Rudin validates in
+Theorem 4.6 (cf.\,Rudin, \S4, p.\,86) by proving that the limit-point
+formulation of continuity coincides with the $\epsilon$-$\delta$
+formulation. We shall, therefore, reformulate Rudin's definitions
+in terms of $\epsilon$'s and $\delta$'s as follows:
+\begin{definition*}
+$f\colon\RR\to\RR$ is right-continuous at $x_0\in\RR$ if for
+every $\epsilon>0$ there exists $\delta>0$ such that $x\in
+[x_0,x_0+\delta)$ implies
+$f(x)\in\left(f(x_0)-\epsilon,f(x_0)+\epsilon\right)$.
+\end{definition*}
+We will prove that $f\colon\RR_\ell\to\RR$ is continuous in the
+sense: ``for each open subset $V$ of $\RR$, the set $f^{-1}(V)$
+is an open subset of $\RR_\ell$'' (cf.\,Munkres, \S18,
+p.\,102) and we shall do so in the spirit of Example 1 in Munkres
+\S18, p.\,103 and employ Theorem 18.1(4). Recall what basic open
+sets look like in the lower-limit topology (defined in Munkres
+\S13, pp.\,81-82), they are intervals of the form
+$[a,b)\subset\RR$. Without loss of generality, consider the basic
+open set $V=(a,b)$ in $\RR$. Let $x_0\in f^{-1}(V)$. Then, since
+$f$ is right-continuous, for
+$\epsilon\leq\min\left\{f(x_0)-a,b-f(x_0)\right\}$, there exists
+$\delta>0$ such that $x\in[x_0,x_0+\delta)$ implies
+$f(x)\in\left(f(x_0)-\epsilon,f(x_0)+\epsilon\right)$, i.e.,
+\[
+f\left([x_0,x_0+\delta)\right)\subset\left(f(x_0)-\epsilon,f(x_0)+\epsilon\right)\subset
+V.
+\]
+By Theorem 18.1(4), $f$ is continuous.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S18, p.\,112, \#13]
@@ -27,6 +56,25 @@ function $g\colon\clsr A\to Y$, then $g$ is uniquely determined
 by $f$.
 \end{problem}
 \begin{proof}
+We shall proceed by contradiction. Suppose that $g_1$ and $g_2$
+are distinct continuous extensions of $f$ to the closure of $A$,
+i.e., $g_1(x)\neq g_2(x)$ for some $x\in\clsr A\setminus
+A$. Recall from Problem 2.7 (Munkres \S13, p.\,101, \#13) that
+$Y$ is Hausdorff if and only the diagonal
+$\Delta=\left\{\,y\times y\;\middle|\;y\in Y\,\right\}$ is closed
+in $Y\times Y$. Now, consider the product map $G=g_1\times
+g_2\colon X\to Y\times Y$. This map is continuous by Theorem
+18.4 so, by Theorem 18.1(2), $G(\clsr
+A)\subset\clsr{G(A)}$. However, since $g_1=g_2$ on $A$ we have
+that $G(A)\subset\Delta$ so, by Lemma B (from Prof.\,McClure's
+lectures), we have that
+\[
+G(\clsr{A})\subset\clsr{G(A)}\subset\Delta.
+\]
+But by assumption $g_1(x)\times g_2(x)\notin\Delta$. This is a
+contradiction. Therefore, $g_1=g_2$ on $\clsr A$, i.e., the
+extension of $f$ to a continuous function $g$ on $\clsr A$ is
+unique.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S19, p.\,118, \#2]
@@ -36,11 +84,79 @@ Prove Theorem 19.3.
 Recall the exact statement of Theorem 19.3 from Munkres \S19,
 p.\,116:
 \begin{theorem*}
-Let $A_\alpha$ be as subspace of $X_\alpha$, for each $\alpha\in
+Let $A_\alpha$ be a subspace of $X_\alpha$, for each $\alpha\in
 J$. Then $\prod A_\alpha$ is a subspace of $\prod X_\alpha$ if
 both products are given the box topology, or if both products are
 given the product topology.
 \end{theorem*}
+Our goal is to show that the box (or product) topology on $\prod
+A_\alpha$ coincides with the subspace topology on $\prod
+A_\alpha$ as a subset of $\prod X_\alpha$ with the product (or
+box) topology. That is, we will show that $U$ is open in the
+box (or product) topology on $\prod A_\alpha$ if and only if it
+is of the form $V\cap\prod A_\alpha$ where $V$ is open in $\prod
+X_\alpha$ with the box (or product) topology (cf.\, Munkres \S16
+p.\,88 and Munkres \S19, p.\,114 for the relevant
+definitions as we will avoid naming these topologies explicitly
+in this proof).
+
+$\implies$ By Theorem 13.1, it suffices to consider basic open
+sets in $\prod A_\alpha$ (equipped with the box or the product
+topology). Let $U$ be a basic open set in $\prod A_\alpha$ with
+the box (or product) topology , then, by Theorem 19.2, $U=\prod
+U_\alpha$ where $U_\alpha$ is a basic open set in $A_\alpha$ (or
+all of $A_\alpha$ for all but finitely many $\alpha$ in the case
+of the product topology). Then, since $A_\alpha$ is a subspace of
+$X_\alpha$, the set $U_\alpha=V_\alpha\cap A_\alpha$ for
+$V_\alpha$ open in $X_\alpha$ (or equal to $X_\alpha$ for all but
+finitely many $\alpha$). Then, $V=\prod V_\alpha$ is a basic open
+set in $\prod X_\alpha$ (again, by Theorem 19.2) and we have that
+\[
+U=\prod U_\alpha=\prod\left(V_\alpha\cap A_\alpha\right).
+\]
+We must now prove that:
+\begin{lemma}
+\[
+\prod (A_\alpha\cap B_\alpha)=\prod A_\alpha\cap\prod B_\alpha.
+\]
+\end{lemma}
+\begin{proof}[Proof of Lemma 6]
+\renewcommand\qedsymbol{$\clubsuit$}
+The proof is just a matter of chasing definitions and so our
+demonstration will be compact, but slightly informal. Recall
+from the two lowermost definition in Munkres \S19, p.\,113  that
+$\mathbf{x}\in\prod_{\alpha\in J} \left(A_\alpha\cap
+  B_\alpha\right)$ if, by definition, $\mathbf{x}\colon
+J\to\bigcup_{\alpha\in   J}\left(A_\alpha\cap B_\alpha\right)$
+such that $\mathbf{x}(\alpha)\in A_\alpha\cap B_\alpha$ for each
+$\alpha\in J$ if and only if $\mathbf{x}(\alpha)\in A_\alpha$,
+$\mathbf{x}(\alpha)\in B_\alpha$ if and only if $\mathbf{x}\colon
+J\to\bigcup_{\alpha\in J}A_\alpha$, $\mathbf{x}\colon
+J\to\bigcup_{\alpha\in J}B_\alpha$ if and only if
+$\mathbf{x}\in\prod_{\alpha\in J}A_\alpha$ and
+$\mathbf{x}\in\prod_{\alpha\in J}B_\alpha$ if and only if
+$\mathbf{x}\in\prod_{\alpha\in J}A_\alpha\cap\prod_{\alpha\in
+  J}B_\alpha$.
+\end{proof}
+Thus, by Lemma 6
+\[
+U
+=\prod\left(V_\alpha\cap A_\alpha\right)
+=\prod V_\alpha\cap\prod A_\alpha
+=V\cap\prod A_\alpha.
+\]
+
+$\impliedby$ Conversely, suppose $U$ is of the form $V\cap\prod
+A_\alpha$, i.e., $U$ is a basic open set in the subspace topology
+on $\prod A_\alpha$. Without loss of generality, assume that
+$V=\prod V_\alpha$ is a basic open set in $\prod X_\alpha$. Then,
+by Lemma 6,
+\[
+U=V\cap\prod A_\alpha=\prod\left(V_\alpha\cap A_\alpha\right).
+\]
+is a basic open set in the box (or product topology) on $\prod
+A_\alpha$ since $V\alpha\cap A_\alpha$ is a basic open set in
+$A_\alpha$ with the subspace topology.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S19, p.\,118, \#3]
@@ -54,6 +170,43 @@ If each space $X_\alpha$ is a Hausdorff space, then $\prod
 X_\alpha$ is a Hausdorff space in both the box and product
 topologies.
 \end{theorem*}
+To show that $\prod X_\alpha$ equipped with the box (or the
+product) topology we will proceed in the following way: let
+$\mathbf{x},\mathbf{y}\in\prod X_\alpha$, it is sufficient,
+although not necessary, to show that there exists basic open sets
+$U=\prod U_\alpha$ and $V=\prod V_\alpha$ neighborhoods of
+$\mathbf{x}$ and $\mathbf{y}$, respectively, such that $U\cap
+V=\emptyset$.
+
+We will first demonstrate this for the product topology on $\prod
+X_\alpha$. Since $X_\alpha$ is Hausdorff for each $\alpha$, there
+exists basic open sets $U_\alpha$ and $V_\alpha$ neighborhoods of
+$x_\alpha$ and $y_\alpha$, respectively, such that $U_\alpha\cap
+V_\alpha=\emptyset$. For a finite collection of $\alpha$'s, say
+$A$, let $U_\alpha'=U_\alpha$ and $V_\alpha'=V_\alpha$ for all
+$\alpha\in A$ and $U_\alpha'=X_\alpha$, $V_\alpha'=X_\alpha$
+otherwise. Then $U=\prod U_\alpha'$ and $V=\prod V_\alpha'$, by
+Theorem 19.2, are open in $\prod X_\alpha$ with the product
+topology and, by Lemma 6,
+\[
+U\cap V=\prod U_\alpha'\cap \prod V_\alpha'
+=\prod_{\alpha\in A}\left(U_\alpha\cap
+  V_\alpha\right)\times\prod_{\alpha\notin A}X_\alpha
+=\prod_{\alpha\in A}\emptyset\times\prod_{\alpha\notin A}X_\alpha
+=\emptyset.
+\]
+Thus $\prod X_\alpha$ with the product topology is Hausdorff.
+
+In the case of $\prod X_\alpha$ with the box topology, we take
+$U$ and $V$ to be the basis elements $U=\prod U_\alpha$ and
+$V=\prod V_\alpha$ such that $U_\alpha\cap V_\alpha=\emptyset$
+for all $\alpha$. Then, by Lemma 6, we have
+\[
+U\cap V=\prod U_\alpha\cap\prod V_\alpha
+=\prod \left(U_\alpha\cap V_\alpha\right)
+=\prod\emptyset=\emptyset.
+\]
+Hence $\prod X_\alpha$ with the box topology is Hausdorff.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S19, p.\,118, \#6]
@@ -65,6 +218,23 @@ to $\pi_\alpha(\mathbf{x})$ for each $\alpha$. Is this fact true
 if one uses the box topology instead of the product topology?
 \end{problem}
 \begin{proof}
+$\implies$ Suppose that the sequence
+$\left\{\mathbf{x}_n\right\}$ converges to $\mathbf{x}\in\prod
+X_\alpha$ then, from Munkres \S17, p.\,98, for every neighborhood
+$U$ of $\mathbf{x}$, there is a positive integer $N$ such that
+$\mathbf{x}_n\in U$ for $n\geq N$. Then, since
+$\pi_\beta\colon\prod X_\alpha\to X_\beta$ is continuous,
+$\pi_\beta(\mathbf{x}_n)=x_\beta^{(n)}\in\pi_\beta(U)$ a
+neighborhood of $x_\alpha$ for $n\geq N$ for all $\alpha$. Note
+that this holds for $\prod X_\alpha$ with the box topology.
+
+$\impliedby$ Now, suppose that
+$\pi_\alpha(\mathbf{x}_n)\to\pi_\alpha(\mathbf{x})$ for all
+$\alpha$, i.e., the sequence $x_\alpha^{(n)}\to x_\alpha$ in
+$X_\alpha$. Then, for every neighborhood $U_\alpha$ of
+$x_\alpha$, there exists a positive integer $N$ such that
+$x_\alpha^{(n)}\in U_\alpha$ for all $n\geq N$. Let $A$ be a
+finite collection of $\alpha$'s
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S19, p.\,118, \#7]
@@ -82,11 +252,12 @@ answer.
 Let $X$ be a metric space with metric $d$.
 \begin{enumerate}[noitemsep]
 \item[(b)] Let $X'$ denote a space having the same underlying set
-  as $X$. show that if $d\colon X'\times X'\to\RR$ is continuous,
+  as $X$. Show that if $d\colon X'\times X'\to\RR$ is continuous,
   then the topology of $X'$ is finer than the topology of $X$.
 \end{enumerate}
 \end{problem}
 \begin{proof}
+
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S20, p.\,127, \#4(b)]
