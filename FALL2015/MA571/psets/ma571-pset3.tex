@@ -89,74 +89,74 @@ J$. Then $\prod A_\alpha$ is a subspace of $\prod X_\alpha$ if
 both products are given the box topology, or if both products are
 given the product topology.
 \end{theorem*}
-Our goal is to show that the box (or product) topology on $\prod
-A_\alpha$ coincides with the subspace topology on $\prod
-A_\alpha$ as a subset of $\prod X_\alpha$ with the product (or
-box) topology. That is, we will show that $U$ is open in the
-box (or product) topology on $\prod A_\alpha$ if and only if it
-is of the form $V\cap\prod A_\alpha$ where $V$ is open in $\prod
-X_\alpha$ with the box (or product) topology (cf.\, Munkres \S16
-p.\,88 and Munkres \S19, p.\,114 for the relevant
-definitions as we will avoid naming these topologies explicitly
-in this proof).
+Our goal is to show that the box topology or the product topology
+on $\prod A_\alpha$ corresponds to subspace topology on $\prod
+A_\alpha$ as a subset of $\prod X_\alpha$ with the
+product topology or the box topology, respectively. That is, we
+will show that $U$ is open in the box (or product) topology on
+$\prod A_\alpha$ if and only if it can be expressed in the form
+$V\cap\prod A_\alpha$ where $V$ is open in $\prod X_\alpha$ with
+the box (or product) topology (cf.\,Munkres \S16, p.\,88 and
+Munkres \S19, pp.\,114-116 for the relevant definitions). We will
+attempt to prove these simultaneously, taking note of where the
+proof for the box topology may differ from the proof for the
+product topology.
 
-$\implies$ By Theorem 13.1, it suffices to consider basic open
-sets in $\prod A_\alpha$ (equipped with the box or the product
-topology). Let $U$ be a basic open set in $\prod A_\alpha$ with
-the box (or product) topology , then, by Theorem 19.2, $U=\prod
-U_\alpha$ where $U_\alpha$ is a basic open set in $A_\alpha$ (or
-all of $A_\alpha$ for all but finitely many $\alpha$ in the case
-of the product topology). Then, since $A_\alpha$ is a subspace of
-$X_\alpha$, the set $U_\alpha=V_\alpha\cap A_\alpha$ for
-$V_\alpha$ open in $X_\alpha$ (or equal to $X_\alpha$ for all but
-finitely many $\alpha$). Then, $V=\prod V_\alpha$ is a basic open
-set in $\prod X_\alpha$ (again, by Theorem 19.2) and we have that
+$\implies$ By Lemma 13.3(2), it is enough to consider basic open
+sets in $\prod A_\alpha$. Recall from Theorem 19.2 that $U$ is a
+basic open set in $\prod A_\alpha$ if it is of the form $U=\prod
+U_\alpha$ where $U_\alpha$ is a basic open set in $A_\alpha$ (or,
+in the case of the product topology, equal to $A_\alpha$ for all
+but finitely many $\alpha$). Then, by Lemma 16.1, $U_\alpha$ is
+of the form $U_\alpha=V_\alpha\cap A_\alpha$ for $V_\alpha$ open
+in $X_\alpha$ (in the case of the product topology, we simply
+demand that $V_\alpha=X_\alpha$ for all but finitely many
+$\alpha$). Then, by Theorem 19.2, the set $V=\prod V_\alpha$ is a
+basic open set in $\prod X_\alpha$. We claim that
 \[
-U=\prod U_\alpha=\prod\left(V_\alpha\cap A_\alpha\right).
+U=V\cap\prod A_\alpha.
 \]
-We must now prove that:
+But this follows from the remarks made by Munkres in \S19,
+p.\,144, namely that
+\[
+V\cap\prod A_\alpha=\prod V_\alpha\cap\prod
+A_\alpha=\prod\left(V_\alpha\cap A_\alpha\right)=\prod U_\alpha.
+\]
+This fact is one which Munkres does not prove, but which
+nevertheless can be effortlessly proven:
 \begin{lemma}
-\[
-\prod (A_\alpha\cap B_\alpha)=\prod A_\alpha\cap\prod B_\alpha.
-\]
+\[\prod\left(A_\alpha\cap B_\alpha\right)=\prod
+  A_\alpha\cap\prod B_\alpha.\]
 \end{lemma}
-\begin{proof}[Proof of Lemma 6]
+\begin{proof}
 \renewcommand\qedsymbol{$\clubsuit$}
-The proof is just a matter of chasing definitions and so our
-demonstration will be compact, but slightly informal. Recall
-from the two lowermost definition in Munkres \S19, p.\,113  that
-$\mathbf{x}\in\prod_{\alpha\in J} \left(A_\alpha\cap
-  B_\alpha\right)$ if, by definition, $\mathbf{x}\colon
-J\to\bigcup_{\alpha\in   J}\left(A_\alpha\cap B_\alpha\right)$
-such that $\mathbf{x}(\alpha)\in A_\alpha\cap B_\alpha$ for each
-$\alpha\in J$ if and only if $\mathbf{x}(\alpha)\in A_\alpha$,
-$\mathbf{x}(\alpha)\in B_\alpha$ if and only if $\mathbf{x}\colon
-J\to\bigcup_{\alpha\in J}A_\alpha$, $\mathbf{x}\colon
-J\to\bigcup_{\alpha\in J}B_\alpha$ if and only if
-$\mathbf{x}\in\prod_{\alpha\in J}A_\alpha$ and
-$\mathbf{x}\in\prod_{\alpha\in J}B_\alpha$ if and only if
-$\mathbf{x}\in\prod_{\alpha\in J}A_\alpha\cap\prod_{\alpha\in
-  J}B_\alpha$.
-\end{proof}
-Thus, by Lemma 6
-\[
-U
-=\prod\left(V_\alpha\cap A_\alpha\right)
-=\prod V_\alpha\cap\prod A_\alpha
-=V\cap\prod A_\alpha.
-\]
+The proof is just a matter of chasing definitions so we will be a
+little informal. The point $\mathbf{x}\in\prod\left(A_\alpha\cap
+  B_\alpha\right)$ if and only if
+$\pi_\alpha(\mathbf{x})=x_\alpha\in A_\alpha\cap B_\alpha$ for
+all $\alpha$ if and only if $x_\alpha\in A_\alpha$ and
+$x_\alpha\in B_\alpha$ for all $\alpha$ if and only if
+$\mathbf{x}\in\prod A_\alpha$ and $\mathbf{x}\in\prod B_\alpha$
+if and only if $\mathbf{x}\in\prod A_\alpha\cap\prod B_\alpha$.
+ \end{proof}
 
-$\impliedby$ Conversely, suppose $U$ is of the form $V\cap\prod
-A_\alpha$, i.e., $U$ is a basic open set in the subspace topology
-on $\prod A_\alpha$. Without loss of generality, assume that
-$V=\prod V_\alpha$ is a basic open set in $\prod X_\alpha$. Then,
-by Lemma 6,
+$\impliedby$ Conversely, suppose $V\cap\prod A_\alpha$ for some
+basic open set $V=\prod V_\alpha$ (where, in the case of the
+product topology, $V_\alpha=X_\alpha$ for all but finitely many
+$\alpha$). Then, by Lemma 6, we have
 \[
-U=V\cap\prod A_\alpha=\prod\left(V_\alpha\cap A_\alpha\right).
+V\cap\prod A_\alpha=\prod\left(V_\alpha\cap A_\alpha\right)
 \]
-is a basic open set in the box (or product topology) on $\prod
-A_\alpha$ since $V\alpha\cap A_\alpha$ is a basic open set in
-$A_\alpha$ with the subspace topology.
+where $U_\alpha=V_\alpha\cap A_\alpha$ (with $U_\alpha=A_\alpha$
+for all but finitely many $\alpha$in the case of the product
+topology) is a basic open set in $A_\alpha$ with the subspace
+topology. Hence, $\prod U_\alpha$ is a basic open set in the
+box (or product) topology on $\prod A_\alpha$. We have shown that
+a basic open set in the box (or product) topology on $\prod
+A_\alpha$ corresponds to a basic open set in the subspace
+topology on $\prod A_\alpha$. Therefore, by Lemma 13.3(2), the
+box (or product) topology on $\prod A_\alpha$ is equivalent to
+the subspace topology on $\prod A_\alpha$.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S19, p.\,118, \#3]
@@ -222,19 +222,100 @@ $\implies$ Suppose that the sequence
 $\left\{\mathbf{x}_n\right\}$ converges to $\mathbf{x}\in\prod
 X_\alpha$ then, from Munkres \S17, p.\,98, for every neighborhood
 $U$ of $\mathbf{x}$, there is a positive integer $N$ such that
-$\mathbf{x}_n\in U$ for $n\geq N$. Then, since
-$\pi_\beta\colon\prod X_\alpha\to X_\beta$ is continuous,
-$\pi_\beta(\mathbf{x}_n)=x_\beta^{(n)}\in\pi_\beta(U)$ a
-neighborhood of $x_\alpha$ for $n\geq N$ for all $\alpha$. Note
-that this holds for $\prod X_\alpha$ with the box topology.
+$\mathbf{x}_n\in U$ for $n\geq N$. We claim that
+\begin{lemma}
+$\pi_\beta\colon\prod X_\alpha\to X_\beta$ is an open map on
+$\prod X_\alpha$ with the product or the box topology.
+\end{lemma}
+\begin{proof}
+\renewcommand\qedsymbol{$\clubsuit$}
+This is \emph{forced} by the basis definition for the product
+topology (cf.\,Theorem 19.2, Munkres \S19, p.\,114). That is, the
+$U$ is a basic open set if and only if it is of the form $\prod
+U_\alpha$ where $U_\alpha$ is open in $X_\alpha$ (and
+$U_\alpha=X_\alpha$ for all but finitely many $\alpha$ in the
+case of the product topology). Then clearly $\pi_\beta(\prod
+U_\alpha)=U_\beta$ is open in $X_\alpha$. This extends to
+arbitrary open sets in $\prod X_\alpha$ equipped with the product
+or box topology.
+\end{proof}
+\noindent Now, since $\pi_\alpha$ is an open map $\pi_\alpha(U)$
+is a neighborhood of $\pi_\alpha(\mathbf{x})$ such that
+$\pi_\alpha(\mathbf{x}_n)\in\pi_\alpha(U)$ for all $n\geq N$ for
+all $\alpha$. Thus, the sequence
+$\left\{\pi_\alpha(\mathbf{x}_n)\right\}$ converges to
+$\pi_\alpha(\mathbf{x})$ in $X_\alpha$ for all $\alpha$.
 
-$\impliedby$ Now, suppose that
-$\pi_\alpha(\mathbf{x}_n)\to\pi_\alpha(\mathbf{x})$ for all
-$\alpha$, i.e., the sequence $x_\alpha^{(n)}\to x_\alpha$ in
-$X_\alpha$. Then, for every neighborhood $U_\alpha$ of
-$x_\alpha$, there exists a positive integer $N$ such that
-$x_\alpha^{(n)}\in U_\alpha$ for all $n\geq N$. Let $A$ be a
-finite collection of $\alpha$'s
+$\impliedby$ Conversely, suppose that the sequence
+$\left\{\pi_\alpha(\mathbf{x})\right\}$ converges to
+$\pi_\alpha(\mathbf{x})$ for all $\alpha$. Then, for every
+neighborhood $U_\alpha$ of $\pi_\alpha(\mathbf{x})$ there exists
+a positive integer $N$ such that $n\geq N$ implies
+$\pi_\alpha(\mathbf{x}_n)\in U_\alpha$ for all $n\geq N$ for all
+$\alpha$. Let $U$ be a basic neighborhood of $\mathbf{x}$. Then,
+by Theorem 19.2, $U=\prod U_\alpha$ where $U_\alpha$ is an
+open set in $X_\alpha$ and $U_\alpha=X_\alpha$ for all but
+finitely many $\alpha$. Let
+$B=\left\{\beta_1,...,\beta_k\right\}$ be the collection of
+$\alpha$'s for which $U_\alpha\neq X_\alpha$. Then, since
+$\pi_{\beta_i}(\mathbf{x}_n)\to\pi_{\beta_i}(\mathbf{x})$
+converges and $\pi_{\beta_i}(U)$ is a neighborhood of
+$\pi_{\beta_i}(\mathbf{x})$, there exists a positive integer
+$N_i$ such that $\pi_{\beta_i}(\mathbf{x}_n)\in\pi_{\beta_i}(U)$
+for all $n\geq N_i$ (note that we are not ignoring the case where
+$U_\alpha=X_\alpha$ since in that case the sequence
+$\left\{\pi_\alpha(\mathbf{x})\right\}\in X_\alpha$ for all $n$
+and everything works out nicely). Take
+$N=\max\left\{N_1,...,N_k\right\}$. Then we claim that
+$\mathbf{x}_n\in U$ for every $n\geq N$. But this follows from
+construction for $\mathbf{x}_n\in U$ if and only if
+$\pi_\alpha(\mathbf{x}_n)\in U_\alpha$ (cf.\,Munkres \S19,
+p.\,113) for all $\alpha$ if $n\geq N_i$, but $n\geq N\geq N_i$
+for all $i$ so $\pi_\alpha(\mathbf{x}_n)\in U_\alpha$. Thus, the
+sequence $\left\{\mathbf{x}_n\right\}$ converges to $\mathbf{x}$
+in the product topology on $\prod X_\alpha$.
+
+The argument $\mathbf{x}_n\to\mathbf{x}$ $\implies$
+$\pi_\alpha(\mathbf{x}_n)\to\pi_\alpha(\mathbf{x})$ carries over
+to the box topology on $\prod X_\alpha$ since $\pi_\alpha$ is an
+open map. That is, for every open neighborhood $U$ of
+$\mathbf{x}$ there exists a positive integer $N$ such that
+$\mathbf{x}_n\in U$ for all $n\geq N$. Then, $\pi_\alpha(U)$ is a
+neighborhood of $\pi_\alpha(\mathbf{x})$ with
+$\mathbf{x}_n\in\pi_\alpha(U)$ for all $n\geq N$ for all
+$\alpha$. Thus, the sequence
+$\left\{\pi_\alpha(\mathbf{x}_n)\right\}$ converges to
+$\pi_\alpha(\mathbf{x})$ in $X_\alpha$.
+
+The reverse implication, however, does not hold. It is not too
+difficult to see why the reverse implication may not hold since
+we relied on the property that for a basic open set $U$ in $\prod
+X_\alpha$, $\prod_\alpha(U)=X_\alpha$ for all but finitely many
+$\alpha$ and from this we were able to pick a maximum positive
+integer $N$ that made the sequence $\mathbf{x}$ converge in
+$\prod X_\alpha$. Because in the product topology, we do not have
+the condition that $\pi_\alpha(U)=X_\alpha$ for all but finitely
+many $\alpha$, the set $\left\{N_\alpha\right\}$ of positive
+integers does not necessarily posses a maximum element. More
+concretely, consider $X=\RR^\omega$ in the box topology from
+Example 2 in Munkres \S19, p.\,117. Consider the sequence
+$\left\{x_n\right\}$ where $x_n=1/n$ in $\RR$. It is clear that
+$x_n\to 0$, but we claim that the sequence
+$\mathbf{x}_n=(x_n,x_n,...)\nrightarrow(0,0,...)=\mathbf{0}$ in
+$\RR^\omega$. That is, we must show that there exist an open
+neighborhood $U$ of $\mathbf{0}$ such that for every positive
+integer $N$, $\mathbf{x}_n\notin U$ for some $n\geq N$. Then
+consider the neighborhood $U=\prod_{k=1}^\infty U_k$ of
+$\mathbf{0}$ for open neighborhoods $U_k=(-1/k,1/k)$ of
+$0$. Thus, if $\mathbf{x}_n\in U$,
+$\pi_k(\mathbf{x}_n)=1/n>1/N\in U_k$ for all $k$, but
+$\pi_{N+1}(\mathbf{x}_N)=1/N\notin U_{N+1}$. Thus,
+$\mathbf{x}_N\in U$ not so the sequence
+$\left\{\mathbf{x}_n\right\}$ does not converge to $\mathbf{0}$
+and we see that it is not sufficient in the box topology that
+$\pi_\alpha(\mathbf{x}_n)\to\pi_\alpha(\mathbf{x})$ in $X_\alpha$
+for all $\alpha$ to deduce that $\mathbf{x}_n\to\mathbf{x}$ in
+$\prod X_\alpha$.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S19, p.\,118, \#7]
@@ -246,6 +327,33 @@ $\RR^\omega$ in the box and product topologies? Justify your
 answer.
 \end{problem}
 \begin{proof}
+We first consider the case when $\RR^\omega$ is equipped with the
+product topology. We claim that
+$\clsr{\RR^\infty}=\RR^\omega$. Let $\mathbf{x}\in\RR^\omega$. It
+is enough to show that for every basic neighborhood $U=\prod
+U_\alpha$ of $\mathbf{x}$, where $U_\alpha=\RR$ for all but
+finitely many $\alpha$ (by Theorem 19.2), the intersection
+$U\cap\RR^\omega \neq\emptyset$. Without loss of generality, we
+may assume $U_i\neq\RR$ for $i\in\{1,..,n\}$. Then the point
+$\mathbf{y}=(y_1,...,y_n,0,0,...)\in \RR^\infty$ where
+$y_i\in U_i$ for $i\in\{1,..,n\}$. In particular,
+$U\cap\RR^\infty\neq\emptyset$ so
+$\clsr{\RR^\infty}=\RR^\omega$.
+
+Now let us consider the case when $\RR^\omega$ is equipped with
+the box toplogy. It this case, we claim that
+$\clsr{\RR^\infty}=\RR^\infty$, in particular, we prove that
+$\RR^\omega\setminus\RR^\infty$ is open. Let
+$\mathbf{x}\in\RR^\omega\setminus\RR^\infty$. Then $\mathbf{x}$
+is a point such that $x_n\neq 0$ for infinitely
+many $n$. Since $\RR$ is Hausdorff, choose neighborhoods
+$U_i$ of $x_i$ such that $0\notin U_i$ whenever
+$x_i\neq 0$ (and whenever $x_i=0$ choose arbitrary neighborhoods
+of $0$). Then the set $U=\prod U_i$ is a basic open set in
+$\RR^\omega$ such that $\prod U_i\cap\RR^\infty=\emptyset$ since
+every point $\mathbf{y}'\in U$ is zero for only finitely
+many $y_n$. Therefore, $U\subset\RR^\omega\setminus\RR^\infty$ so
+$\RR^\infty$ is closed, i.e., $\clsr{\RR^\infty}=\RR$.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S20, p.\,126, \#3(b)]
@@ -257,7 +365,12 @@ Let $X$ be a metric space with metric $d$.
 \end{enumerate}
 \end{problem}
 \begin{proof}
-
+Suppose that $d\colon X'\times X'\to\RR$ is continuous. Fix
+$x_0\in X$. Recall from by Problem 2.8 (Munkres \S18, Ex.\,\#4) the
+map $\iota(x)=x\times x_0$ is an imbedding, in particular it is
+continuous so by theorem 18.2(c), the composite map
+$d_0=d\circ\iota\colon X\to\RR$ is continuous. Then, by Theorem
+13.3(2) we see that $B=d_0^{-1}((-\infty,\epsilon))$
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S20, p.\,127, \#4(b)]
@@ -277,6 +390,43 @@ Consider the product, uniform and box topologies on $\RR^\omega$
 \end{enumerate}
 \end{problem}
 \begin{proof}
+We were asked to work only on $\mathbf{w}$. We claim that
+$\mathbf{w}_n\to\mathbf{0}$ in the product topology on $\RR^\omega$
+and that $\mathbf{w}$ does not converge in the uniform topology
+and the box topology.
+
+To see that $\mathbf{w}_n\to\mathbf{0}$ in $\RR^\omega$ with the
+product topology we appeal to Problem 3.5. That is,
+$\mathbf{w}_n\to\mathbf{0}$ if and only if $w_n\to 0$ for all
+$n$. But this is clear since for the sequence $w_k^{(n)}=0$ for
+all $n\geq k$ so $w_k^{(n)}\in U$ for any neighborhood $U$ of $0$
+for all $n\geq k$. Thus, by Problem 3.5, we have that
+$\mathbf{w}_n\to\mathbf{0}$.
+
+By Theorem 20.4, it is enough to prove that
+$\mathbf{w}_n\nrightarrow\mathbf{0}$ in the uniform topology since
+a counterexample in the uniform topology provides a
+counterexample in the box topology on $\RR^\omega$. By the
+definition of the uniform topology (cf.\,Munkres \S20,
+p.\,124). Consider the ball of radius $1$,
+$U=B_{\text{unif}}(\mathbf{0},1)$, in the uniform topology on
+$\RR^\omega$, that is, the set
+\[
+U
+=\left\{\,\mathbf{x}\in\RR^\omega\;\middle|\;
+\clsr{\rho}(\mathbf{0},\mathbf{x})<1\,\right\}.
+\]
+Then
+\begin{align*}
+\clsr\rho (\mathbf{0},\mathbf{w}_n)
+&=\sup\left\{\clsr d(0,0),...,\clsr d(0,0),\clsr d(0,n),\clsr
+  d(0,n),...\right\}\\
+&=\sup\{0,...,0,1,1,...\}\\
+&=1
+\end{align*}
+for all $n$. Hence the sequence $\left\{\mathbf{w}_n\right\}$ is
+never in $U$ for any $n$ so $\left\{\mathbf{w}\right\}$ does not
+converge to $\mathbf{0}$.
 \end{proof}
 \newpage
 \begin{problem}[A]
@@ -285,15 +435,67 @@ $\clsr A=X$. To prove: the topology of $X$ has a countable
 basis.
 \end{problem}
 \begin{proof}
+Let $d\colon X\times X\to\RR$ denote the metric on $X$. We claim
+that the collection
+\[
+\mathcal{B}=\bigcup_{a\in A} B_a
+\quad
+\text{where}
+\quad
+B_a=
+\left\{\,B_d\left(a,\tfrac{1}{k}\right)\;\middle|\;k\in \ZZ\,\right\}
+\]
+is a countable basis for the topology on $X$ induced by the
+metric $d$. First $B_a$ is countable, by Theorem 7.1(3), since
+there is an injection,
+namely the map
+$B_d\left(a,\frac{1}{k}\right)\overset{f}{\longmapsto} k$ (since if
+$f\left(B_d\left(a,\frac{1}{k}\right)\right)=k=\ell=f\left(B_d\left(a,\frac{1}{\ell}\right)\right)$
+then $B_d\left(a,\frac{1}{k}\right)=B_d\left(a,\frac{1}{\ell}\right)$), from
+$B_a$ to $\ZZ_+$. Then $\mathcal{B}$ is countable by Theorem 7.5
+since it is a countable union of countable sets.
+
+Now we will prove that $\mathcal{B}$ is indeed a basis. Let $y\in
+X$. Then, since $A$ is dense in $X$, for any
+open ball $B_d(y,\epsilon)$, for $\epsilon>0$, there is
+$B_d(y,\epsilon)\cap A\neq\emptyset$. By the Archimedean
+property of $\RR$ (cf.\,Munkres \S4, Theorem 4.2), we may choose
+$N>2/\epsilon$ so that we have
+$B_d\left(y,\frac{1}{N}\right)\subset B_d(y,\epsilon)$. Then,
+since $A$ is dense in $X$, $B_d\left(y,\frac{1}{N}\right)\cap
+A\neq\emptyset$. Let $x\in B_d\left(y,\frac{1}{N}\right)\cap
+A$. Then $y\in B_d\left(x,\frac{1}{N}\right)\subset
+B_d(y,\epsilon)$ so by Lemma 13.2, $\mathcal{B}$ is a basis for
+the topology of $X$. Hence, the topology of $X$ has a countable
+basis.
 \end{proof}
 \newpage
 \begin{problem}[B]
 Given: $Y$ is an ordered set, $(a,b)$ and $(c,d)$ are disjoint
 open intervals, and there are elements $x\in(a,b)$ and
-$y\in(c,d)$ with $x<y$. To prove: every element of $(a,b)$ less
+$y\in(c,d)$ with $x<y$. To prove: every element of $(a,b)$ is less
 than every element of $(c,d)$.
 \end{problem}
 \begin{proof}
+First, it is evident that $a<b$ and $c<d$. Let $w\in(a,b)$ and
+$z\in(c,d)$. Then $w<x$ or $w>x$ and $z<y$ or $z>y$ (there are
+four cases in total). In most of the cases we shall proceed by
+contradiction.
+\begin{enumerate}[label=Case \arabic*:]
+\item Suppose $w<x$ and $z<y$. If $z<w$, then the interval
+  $(a,b)\cap (c,d)\neq\emptyset$ since $x\in (z,y)\subset (c,d)$ and
+  $x\in (a,b)$ by hypothesis. This is a contradiction.
+\item Suppose $w>x$ and $z<y$. If $z<w$, then the interval
+  $(a,b)\cap (c,d)\neq\emptyset$ since $(z,y)\subset (c,d)$ and
+  $w\in (z,y)$. This is a contradiction.
+\item Suppose $w<x$ and $z>y$. Then by the transitivity of the
+  order relation (cf.\,Munkres \S1, p.\,24), $w<x<y<z$ so
+  $w<z$.
+\item Suppose $w>x$ and $z>y$. If $z<w$, then
+  $(a,b)\cap(c,d)\neq\emptyset$  since $y\in (x,w)\subset (a,b)$
+  and $y\in(c,d)$ by hypothesis. This is a contradiction.
+\end{enumerate}
+In every case, we have that $w<z$.
 \end{proof}
 \newpage
 \begin{problem}[C]
@@ -315,6 +517,19 @@ isn't always valid.
 \end{enumerate}
 \end{problem}
 \begin{proof}
+(i) Problem 1.1 (Munkres \S2, Ex.\,1(b)) gives a hint as to what
+sort of map $f$ might be. In particular, we are looking for a map
+between sets $f\colon S\to T$ that is not surjective. Consider
+the map $f\colon x\mapsto 0$ from $\RR\subset\RR$ to $\RR$. Then
+$f(A)=\{0\}$ for any subset $A\subset\RR$, but
+$f^{-1}(f(A))=f^{-1}(\{0\})=\RR\neq A$ if $A\subsetneq\RR$.
+\\\\
+(ii) The subsets of $A$ for which (\ref{eq:mcclure-1}) is true
+are the equivalence classes $A=\left\{\,s\sim s'\,\right\}$. By
+Problem 1.1 (Munkres \S2, Ex.\,1(b)) it is enough to show that
+the map $f\colon s\mapsto f(s)$ is surjective onto
+$\{f(s)\}$. But this is immediate since $s'\in A$ if and only if
+$f(s')=f(s)$.
 \end{proof}
 
 %%% Local Variables:
