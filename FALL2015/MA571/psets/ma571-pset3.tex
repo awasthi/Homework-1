@@ -89,30 +89,25 @@ J$. Then $\prod A_\alpha$ is a subspace of $\prod X_\alpha$ if
 both products are given the box topology, or if both products are
 given the product topology.
 \end{theorem*}
-Our goal is to show that the box topology or the product topology
-on $\prod A_\alpha$ corresponds to subspace topology on $\prod
+Our goal is to show that the  product topology on $\prod
+A_\alpha$ corresponds to subspace topology on $\prod
 A_\alpha$ as a subset of $\prod X_\alpha$ with the
-product topology or the box topology, respectively. That is, we
-will show that $U$ is open in the box (or product) topology on
+product topology. That is, we will show that $U$ is open in
 $\prod A_\alpha$ if and only if it can be expressed in the form
 $V\cap\prod A_\alpha$ where $V$ is open in $\prod X_\alpha$ with
-the box (or product) topology (cf.\,Munkres \S16, p.\,88 and
-Munkres \S19, pp.\,114-116 for the relevant definitions). We will
-attempt to prove these simultaneously, taking note of where the
-proof for the box topology may differ from the proof for the
-product topology.
+the product topology (cf.\,Munkres \S16, p.\,88 and Munkres \S19,
+pp.\,114-116 for the relevant definitions).
 
 $\implies$ By Lemma 13.3(2), it is enough to consider basic open
 sets in $\prod A_\alpha$. Recall from Theorem 19.2 that $U$ is a
 basic open set in $\prod A_\alpha$ if it is of the form $U=\prod
-U_\alpha$ where $U_\alpha$ is a basic open set in $A_\alpha$ (or,
-in the case of the product topology, equal to $A_\alpha$ for all
-but finitely many $\alpha$). Then, by Lemma 16.1, $U_\alpha$ is
-of the form $U_\alpha=V_\alpha\cap A_\alpha$ for $V_\alpha$ open
-in $X_\alpha$ (in the case of the product topology, we simply
-demand that $V_\alpha=X_\alpha$ for all but finitely many
-$\alpha$). Then, by Theorem 19.2, the set $V=\prod V_\alpha$ is a
-basic open set in $\prod X_\alpha$. We claim that
+U_\alpha$ where $U_\alpha$ is a basic open set in $A_\alpha$ and
+is equal to $A_\alpha$ for all but finitely many $\alpha$. Then,
+by Lemma 16.1, $U_\alpha$ is of the form $U_\alpha=V_\alpha\cap
+A_\alpha$ for $V_\alpha$ open in $X_\alpha$ and
+$V_\alpha=X_\alpha$ for all but finitely many $\alpha$. Then, by
+Theorem 19.2, the set $V=\prod V_\alpha$ is a basic open set in
+$\prod X_\alpha$. We claim that
 \[
 U=V\cap\prod A_\alpha.
 \]
@@ -141,19 +136,17 @@ if and only if $\mathbf{x}\in\prod A_\alpha\cap\prod B_\alpha$.
  \end{proof}
 
 $\impliedby$ Conversely, suppose $V\cap\prod A_\alpha$ for some
-basic open set $V=\prod V_\alpha$ (where, in the case of the
-product topology, $V_\alpha=X_\alpha$ for all but finitely many
-$\alpha$). Then, by Lemma 6, we have
+basic open set $V=\prod V_\alpha$ where $V_\alpha=X_\alpha$ for
+all but finitely many $\alpha$). Then, by Lemma 6, we have
 \[
 V\cap\prod A_\alpha=\prod\left(V_\alpha\cap A_\alpha\right)
 \]
-where $U_\alpha=V_\alpha\cap A_\alpha$ (with $U_\alpha=A_\alpha$
-for all but finitely many $\alpha$in the case of the product
-topology) is a basic open set in $A_\alpha$ with the subspace
-topology. Hence, $\prod U_\alpha$ is a basic open set in the
-box (or product) topology on $\prod A_\alpha$. We have shown that
-a basic open set in the box (or product) topology on $\prod
-A_\alpha$ corresponds to a basic open set in the subspace
+where $U_\alpha=V_\alpha\cap A_\alpha$, with $U_\alpha=A_\alpha$
+for all but finitely many $\alpha$, is a basic open set in
+$A_\alpha$ with the subspace topology. Hence, $\prod U_\alpha$ is
+a basic open set in the product topology on $\prod A_\alpha$. We
+have shown that a basic open set in the product topology on
+$\prod A_\alpha$ corresponds to a basic open set in the subspace
 topology on $\prod A_\alpha$. Therefore, by Lemma 13.3(2), the
 box (or product) topology on $\prod A_\alpha$ is equivalent to
 the subspace topology on $\prod A_\alpha$.
@@ -195,18 +188,18 @@ U\cap V=\prod U_\alpha'\cap \prod V_\alpha'
 =\prod_{\alpha\in A}\emptyset\times\prod_{\alpha\notin A}X_\alpha
 =\emptyset.
 \]
-Thus $\prod X_\alpha$ with the product topology is Hausdorff.
+Thus $\prod X_\alpha$ with the product topology is Hausdorff.\qedhere
 
-In the case of $\prod X_\alpha$ with the box topology, we take
-$U$ and $V$ to be the basis elements $U=\prod U_\alpha$ and
-$V=\prod V_\alpha$ such that $U_\alpha\cap V_\alpha=\emptyset$
-for all $\alpha$. Then, by Lemma 6, we have
-\[
-U\cap V=\prod U_\alpha\cap\prod V_\alpha
-=\prod \left(U_\alpha\cap V_\alpha\right)
-=\prod\emptyset=\emptyset.
-\]
-Hence $\prod X_\alpha$ with the box topology is Hausdorff.
+% In the case of $\prod X_\alpha$ with the box topology, we take
+% $U$ and $V$ to be the basis elements $U=\prod U_\alpha$ and
+% $V=\prod V_\alpha$ such that $U_\alpha\cap V_\alpha=\emptyset$
+% for all $\alpha$. Then, by Lemma 6, we have
+% \[
+% U\cap V=\prod U_\alpha\cap\prod V_\alpha
+% =\prod \left(U_\alpha\cap V_\alpha\right)
+% =\prod\emptyset=\emptyset.
+% \]
+% Hence $\prod X_\alpha$ with the box topology is Hausdorff.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S19, p.\,118, \#6]
