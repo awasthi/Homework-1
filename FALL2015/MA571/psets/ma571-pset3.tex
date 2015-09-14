@@ -366,11 +366,22 @@ Let $X$ be a metric space with metric $d$.
 \end{problem}
 \begin{proof}
 Suppose that $d\colon X'\times X'\to\RR$ is continuous. Fix
-$x_0\in X$. Recall from by Problem 2.8 (Munkres \S18, Ex.\,\#4) the
-map $\iota(x)=x\times x_0$ is an imbedding, in particular it is
-continuous so by theorem 18.2(c), the composite map
-$d_0=d\circ\iota\colon X\to\RR$ is continuous. Then, by Theorem
-13.3(2) we see that $B=d_0^{-1}((-\infty,\epsilon))$
+$x_0\in X$ and $\epsilon>0$. Recall from by Problem 2.8 (Munkres
+\S18, Ex.\,\#4) the map $\iota(x)=x\times x_0$ is an imbedding,
+in particular it is continuous so by theorem 18.2(c), the
+composite map $d_0=d\circ\iota\colon X\to\RR$ is
+continuous. Then, we claim
+\[
+B_d(x_0,\epsilon)=\left\{\,x\in
+  X\;\middle|\;d(x_0,y)<\epsilon\,\right\}=d_0^{-1}((-\infty,\epsilon)).
+\]
+To see this let $y\in B_d(x_0,\epsilon)$. Then
+$d_0(y)=d\circ\iota(y)=d(x_0,y)<\epsilon$ so $y\in
+d_0^{-1}((-\infty,\epsilon))$. To see the reverse containment
+take $y\in d_0^{-1}((-\infty,\epsilon))$. Then, similarly, we
+have that $d(x_0,y)=d_0(y)=d\circ\iota(y)<\epsilon$ so $y\in
+B_d(x_0,\epsilon)$. Hence, by Theorem 13.3(2), the topology on
+$X'$ is finer than the topology on $X$ induced by $d$.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S20, p.\,127, \#4(b)]

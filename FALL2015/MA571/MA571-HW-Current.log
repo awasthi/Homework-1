@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.79.1 (TeX Live 2014/Arch Linux) (rev 4971)  (format=lualatex 2015.5.28)  13 SEP 2015 22:07
+This is LuaTeX, Version beta-0.79.1 (TeX Live 2014/Arch Linux) (rev 4971)  (format=lualatex 2015.5.28)  13 SEP 2015 22:24
  restricted \write18 enabled.
  file:line:error style messages enabled.
 **\input MA571-HW-Current.tex
@@ -1019,7 +1019,7 @@ luatexbase-attr: luatexbase.attributes["luaotfload@cursbase"] = 6
 luatexbase-attr: luatexbase.attributes["luaotfload@curscurs"] = 7
 luatexbase-attr: luatexbase.attributes["luaotfload@cursdone"] = 8
 luatexbase-attr: luatexbase.attributes["luaotfload@state"] = 9
-luaotfload | main : fontloader loaded in 0.117 seconds
+luaotfload | main : fontloader loaded in 0.125 seconds
 luatexbase-mcb: inserting 'luaotfload.node_processor'
 at position 1 in 'pre_linebreak_filter'
 luatexbase-mcb: inserting 'luaotfload.node_processor'
@@ -2034,7 +2034,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \kern 1.66702pt
-(hyperref)                removed on input line 376.
+(hyperref)                removed on input line 387.
 
 luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman7-regular.otf"(co
 mpiling luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/lmroman7-regular.luc)
@@ -2044,7 +2044,7 @@ luaotfload | load : Lookup/name: "LatinModernRoman" -> "lmroman5-regular.otf"(co
 mpiling luc: /var/lib/texmf/luatex-cache/generic/fonts/otf/lmroman5-regular.luc)
 (load luc: /home/carlos/.texlive/texmf-var/luatex-cache/generic/fonts/otf/lmroma
 n5-regular.luc) [9] [10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 520--533
+Underfull \hbox (badness 10000) in paragraph at lines 531--544
 
  []
 
@@ -2066,13 +2066,13 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 172.
 Here is how much of LuaTeX's memory you used:
  32846 strings out of 494693
  100000,953878 words of node,token memory allocated
- 951 words of node memory still in use:
+ 955 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 3 kern, 9 attribute, 147 glue_spec, 9 attri
 bute_list, 3 write nodes
-   avail lists: 1:52,2:8742,3:228,4:1495,5:307,6:3270,7:133,8:7,9:508,10:981,11:
+   avail lists: 1:52,2:8742,3:232,4:1491,5:307,6:3270,7:133,8:7,9:508,10:981,11:
 519,12:230
  35538 multiletter control sequences out of 65536+600000
- 78 fonts using 18617759 bytes
+ 78 fonts using 18617607 bytes
  50i,12n,60p,1205b,397s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf></home/carl
 os/.local/share/fonts/OTF-TeXLive/public/lm/lmroman10-bold.otf></home/carlos/.lo
@@ -2083,7 +2083,7 @@ type/public/lm/lmroman12-bold.otf></usr/share/texmf-dist/fonts/opentype/public/l
 m/lmroman9-italic.otf></home/carlos/.local/share/fonts/OTF-TeXLive/public/lm/lmr
 oman10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman17-reg
 ular.otf>
-Output written on MA571-HW-Current.pdf (14 pages, 91728 bytes).
+Output written on MA571-HW-Current.pdf (14 pages, 92428 bytes).
 
 PDF statistics: 176 PDF objects out of 1000 (max. 8388607)
  131 compressed objects within 2 object streams
