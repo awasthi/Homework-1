@@ -147,9 +147,10 @@ $A_\alpha$ with the subspace topology. Hence, $\prod U_\alpha$ is
 a basic open set in the product topology on $\prod A_\alpha$. We
 have shown that a basic open set in the product topology on
 $\prod A_\alpha$ corresponds to a basic open set in the subspace
-topology on $\prod A_\alpha$. Therefore, by Lemma 13.3(2), the
-box (or product) topology on $\prod A_\alpha$ is equivalent to
-the subspace topology on $\prod A_\alpha$.
+topology on $\prod A_\alpha$. This is true for every $x_0\in
+X'$. Therefore, by Lemma 13.3(2), the box (or product) topology
+on $\prod A_\alpha$ is equivalent to the subspace topology on
+$\prod A_\alpha$.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S19, p.\,118, \#3]
@@ -188,18 +189,7 @@ U\cap V=\prod U_\alpha'\cap \prod V_\alpha'
 =\prod_{\alpha\in A}\emptyset\times\prod_{\alpha\notin A}X_\alpha
 =\emptyset.
 \]
-Thus $\prod X_\alpha$ with the product topology is Hausdorff.\qedhere
-
-% In the case of $\prod X_\alpha$ with the box topology, we take
-% $U$ and $V$ to be the basis elements $U=\prod U_\alpha$ and
-% $V=\prod V_\alpha$ such that $U_\alpha\cap V_\alpha=\emptyset$
-% for all $\alpha$. Then, by Lemma 6, we have
-% \[
-% U\cap V=\prod U_\alpha\cap\prod V_\alpha
-% =\prod \left(U_\alpha\cap V_\alpha\right)
-% =\prod\emptyset=\emptyset.
-% \]
-% Hence $\prod X_\alpha$ with the box topology is Hausdorff.
+Thus $\prod X_\alpha$ with the product topology is Hausdorff.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S19, p.\,118, \#6]
@@ -304,11 +294,10 @@ $0$. Thus, if $\mathbf{x}_n\in U$,
 $\pi_k(\mathbf{x}_n)=1/n>1/N\in U_k$ for all $k$, but
 $\pi_{N+1}(\mathbf{x}_N)=1/N\notin U_{N+1}$. Thus,
 $\mathbf{x}_N\in U$ not so the sequence
-$\left\{\mathbf{x}_n\right\}$ does not converge to $\mathbf{0}$
-and we see that it is not sufficient in the box topology that
-$\pi_\alpha(\mathbf{x}_n)\to\pi_\alpha(\mathbf{x})$ in $X_\alpha$
-for all $\alpha$ to deduce that $\mathbf{x}_n\to\mathbf{x}$ in
-$\prod X_\alpha$.
+$\left\{\mathbf{x}_n\right\}$ does not converge to
+$\mathbf{0}$. In particular, we note that the sequence
+$\left\{\mathbf{w}_n\right\}$ is not Cauchy (cf.\,Rudin \S3,
+pp.\,52-54) so it does not converge.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S19, p.\,118, \#7]
@@ -366,12 +355,12 @@ composite map $d_0=d\circ\iota\colon X\to\RR$ is
 continuous. Then, we claim
 \[
 B_d(x_0,\epsilon)=\left\{\,x\in
-  X\;\middle|\;d(x_0,y)<\epsilon\,\right\}=d_0^{-1}((-\infty,\epsilon)).
+  X\;\middle|\;d(x_0,y)<\epsilon\,\right\}=d_0^{-1}((-\epsilon,\epsilon)).
 \]
 To see this let $y\in B_d(x_0,\epsilon)$. Then
 $d_0(y)=d\circ\iota(y)=d(x_0,y)<\epsilon$ so $y\in
-d_0^{-1}((-\infty,\epsilon))$. To see the reverse containment
-take $y\in d_0^{-1}((-\infty,\epsilon))$. Then, similarly, we
+d_0^{-1}((-\epsilon,\epsilon))$. To see the reverse containment
+take $y\in d_0^{-1}((-\epsilon,\epsilon))$. Then, similarly, we
 have that $d(x_0,y)=d_0(y)=d\circ\iota(y)<\epsilon$ so $y\in
 B_d(x_0,\epsilon)$. Hence, by Theorem 13.3(2), the topology on
 $X'$ is finer than the topology on $X$ induced by $d$.
@@ -528,12 +517,33 @@ the map $f\colon x\mapsto 0$ from $\RR\subset\RR$ to $\RR$. Then
 $f(A)=\{0\}$ for any subset $A\subset\RR$, but
 $f^{-1}(f(A))=f^{-1}(\{0\})=\RR\neq A$ if $A\subsetneq\RR$.
 \\\\
-(ii) The subsets of $A$ for which (\ref{eq:mcclure-1}) is true
-are the equivalence classes $A=\left\{\,s\sim s'\,\right\}$. By
-Problem 1.1 (Munkres \S2, Ex.\,1(b)) it is enough to show that
-the map $f\colon s\mapsto f(s)$ is surjective onto
-$\{f(s)\}$. But this is immediate since $s'\in A$ if and only if
-$f(s')=f(s)$.
+(ii) First we shall demonstrate that $\sim$ is indeed an
+equivalence relation. By the definition of equivalence class in
+Munkres \S3, p.\,22, we must show that:
+\begin{enumerate}[noitemsep,label=(\arabic*)]
+\item $s\sim s$ for every $s$ in $A$.
+\item If $s\sim s'$, then $s'\sim s$.
+\item If $s\sim s'$ and $s'\sim s''$, then $s'\sim s''$.
+\end{enumerate}
+(1): Is clear since if $s=s$, $f(s)=f(s)$ so $s\sim s$. (2):
+Suppose $s\sim s'$, then $f(s)=f(s')$ so $f(s')=f(s)$ thus,
+$s'\sim s'$. (3): Lastly, if $s\sim s'$ and $s'\sim s''$ then
+$f(s)=f(s')$ and $f(s')=f(s'')$ so $f(s)=f(s'')$ hence, $s\sim
+s''$. We conclude that $\sim$ is indeed an equivalence relation
+on $S$.
+
+Now, we claim that the subsets $A$ of $S$ for which
+(\ref{eq:mcclure-1}) is true are disjoint unions of equivalence
+classes of points $s$ in $S$ under $\sim$. That is, we will show
+that $s\in A$ if and only if $f^{-1}(f(s))\subset A$.
+
+$\implies$ Suppose $s\in A$. Then, we have that $f^{-1}(f(A))=A$
+then $f(s)\in f(A)$ so $f^{-1}(f(s))\subset f^{-1}(f(A))=A$. Thus
+$f^{-1}(f(s))\subset A$.
+
+$\impliedby$ Conversely, if $f^{-1}(f(s))\subset A$ then $A$
+contains every point $s'\in S$ such that $f(s')=f(s)$, in
+particular $f(s)=f(s)$ so $s\in A$.
 \end{proof}
 
 %%% Local Variables:
