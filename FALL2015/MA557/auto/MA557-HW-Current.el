@@ -24,23 +24,15 @@
     "amsthm"
     "amssymb"
     "mathtools"
-    "lualatex-math"
     "unicode-math"
     "titlesec")
    (TeX-add-symbols
     '("restr" 2)
-    "ann"
-    "id"
-    "im"
-    "lcm"
-    "nil"
-    "rad"
     "CC"
     "NN"
     "QQ"
     "RR"
     "ZZ"
-    "FF"
     "documentauthor"
     "documenttitle"
     "hwnum"

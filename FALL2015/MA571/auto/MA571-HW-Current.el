@@ -24,7 +24,6 @@
     "amsthm"
     "amssymb"
     "mathtools"
-    "lualatex-math"
     "unicode-math"
     "titlesec")
    (TeX-add-symbols
