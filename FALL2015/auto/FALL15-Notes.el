@@ -25,7 +25,8 @@
     "amsthm"
     "amssymb"
     "mathtools"
-    "unicode-math")
+    "unicode-math"
+    "xeCJK")
    (TeX-add-symbols
     '("restr" 2)
     "id"

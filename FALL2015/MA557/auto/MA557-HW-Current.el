@@ -25,6 +25,7 @@
     "amssymb"
     "mathtools"
     "unicode-math"
+    "xeCJK"
     "titlesec")
    (TeX-add-symbols
     '("restr" 2)

@@ -6,7 +6,24 @@ $R$-module. Show that
 \]
 \end{problem}
 \begin{proof}
-
+One inclusion is immediate, namely,
+\[
+\sqrt{\ann(M/\mathfrak{a}M)}\subset\sqrt{\ann(M)+\mathfrak{a}}
+\]
+since $x\in\sqrt{\ann(M/\mathfrak{a}M)}$ if
+$x^n\in\ann(M/\mathfrak{a}M)$ if $x^nM\subset\mathfrak{a}M$,
+i.e., $x^nm=\sum y_im_i$ for $y_i\in\mathfrak{a}$, $m_i\in
+M$. But $x'\in\sqrt{\ann(M)+\mathfrak{a}}$ if $x'^n=n+y$ for
+$n\in\ann(M)$, $y\in\mathfrak{a}$, or $x'^nm=(n+y)m=nm+ym=ym$, in
+particular, $x'^nm\in\mathfrak{a}M$ so
+$x'\in\sqrt{\ann(M/\mathfrak{a}M)}$. To see the reverse inclusion
+note that [cf.\,Matsumura, Theorem 2.1] if
+$x^n\in\ann(M/\mathfrak{a}M)$ then there exists a
+$y\in\mathfrak{a}$ such that $(x^n+y)M=0$ or
+$x^nM=-yM\subset\mathfrak{a}M$ so
+$x\in\sqrt{\ann(M/\mathfrak{a}M)}$. Thus,
+$\sqrt{\ann(M)+\mathfrak{a}}\subset\sqrt{\ann(M/\mathfrak{a}M}$
+and we have equality.
 \end{proof}
 \newpage
 \begin{problem}
@@ -14,6 +31,22 @@ Let $R$ be a local ring and $M,N$ finite $R$-modules. Show that
 $M\otimes_R N=0$ if and only if $M=0$ or $N=0$.
 \end{problem}
 \begin{proof}
+$\impliedby$: If $M=0$ or $N=0$, it is immediate that $M\otimes_R
+N=0$.
+
+$\implies$: Let $\mathfrak{m}$ be a maximal ideal of $R$. Since
+$M\otimes_R N=0$, by Theorem 2.7, we have
+
+% Let m b e the maximal ideal of A. Since M ⊗ A N = 0 we have 0 =
+% (M ⊗ A N ) ⊗ A (A/m. However, this module is isomorphic to (M ⊗ A
+% A/m) ⊗ A/m (N ⊗ A A/m).  Thus, this module is 0. Note that the
+% factors are isomorphic to M/mM and N/mN by a previous homework
+% problem. Also, it is a tensor product of vector spaces over the
+% field A/m, and each factor is finitely generated, hence
+% finite-dimensional. By the dimension formula dim(V ⊗ F W ) =
+% dim(V ) dim(W ) for finite-dimensional vector spaces over a field
+% F , we get 0 = dim(M/mM ) dim(N/mN ), which forces M/mM = 0 or
+% N/mN = 0.  By Nakayama, we get M = 0 or N = 0.
 \end{proof}
 \newpage
 \begin{problem}
@@ -26,24 +59,66 @@ Show that $R^n\cong R^m$ if and only if $n=m$.
 Prove 2.7.
 \end{problem}
 \begin{proof}
+Recall the statement of Theorem 2.7:
+\begin{theorem*}
+\begin{enumerate}[noitemsep,label=(\alph*)]
+\item $M\otimes_R N\cong N\otimes_R M$ via $x\otimes y\mapsto
+  y\otimes x$.
+\item $(M\otimes_R N)\otimes_R P\cong M\otimes_R N\otimes_R
+  P\cong M\otimes_R(N\otimes_R P)$ via $(x\otimes y)\otimes
+  z\mapsto x\otimes y\otimes z\mapsto x\otimes (y\otimes z)$.
+\item $(M\oplus N)\otimes_R P\cong (M\otimes_R P)\oplus
+  (N\otimes_R P)$ via $(x+y)\otimes z\mapsto x\otimes z+y\otimes
+  z$.
+\item $R\otimes_R M\cong M$ via $r\otimes x\mapsto rx$.
+\end{enumerate}
+\end{theorem*}
 \end{proof}
 \newpage
 \begin{problem}
 Prove 2.8.
 \end{problem}
 \begin{proof}
+Recall the statement of Proposition 2.8:
+\begin{proposition*}
+Let $M$ be an $R$-module, $N$ an $R$-$S$-bimodule and $P$ an
+$S$-module. Then:
+\begin{enumerate}[noitemsep,label=(\alph*)]
+\item $M\otimes_R N$ is an $R$-$S$-bimodule via $\left(\sum
+    m_i\otimes n_i\right)s=\sum m_i\otimes (sn_i).$
+\item The free module $(M\otimes_R N)\otimes_S P\cong M\otimes_R
+  (N\otimes_S P)$ as $R$-$S$-bimodules via $(x\otimes y)\otimes
+  z\mapsto x\otimes (y\otimes z)$.
+\end{enumerate}
+\end{proposition*}
 \end{proof}
 \newpage
 \begin{problem}
 Prove 2.9.
 \end{problem}
 \begin{proof}
+Recall the statement of Theorem 2.9:
+\begin{theorem*}
+Let $\psi\colon R\to S$ be a ring map and $M$ and $R$
+module. Then $S\otimes_R M$ is an $S$-module (by Proposition
+2.8) and $\mu\colon M\to S\otimes_R M$ with $\mu(m)=1\otimes m$
+is an $R$-linear map. Moreover, for every $R$-linear map
+$\phi\colon M\to N$, where $N$ is any $S$-module, there exists a
+unique $S$-linear map $f$ so that $\phi=f\circ\mu$, i.e, the
+diagram commmutes
+\end{theorem*}
 \end{proof}
 \newpage
 \begin{problem}
 Prove 2.10.
 \end{problem}
 \begin{proof}
+Recall the statement of Proposition 2.10:
+\begin{proposition*}
+Let $S$ and $T$ be $R$-algebras. Then there is an $R$-algebra
+structure on $S\otimes_R T$ with $(s_1\otimes t_1)(s_2\otimes
+t_2)=(s_1s_2)\otimes (t_1t_2)$.
+\end{proposition*}
 \end{proof}
 
 %%% Local Variables:
