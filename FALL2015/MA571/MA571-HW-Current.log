@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Arch Linux) (preloaded format=xelatex 2015.9.14)  16 SEP 2015 00:21
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Arch Linux) (preloaded format=xelatex 2015.9.14)  17 SEP 2015 09:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -4962,75 +4962,16 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removed on input line 11.
 
 [3] [4] [5] [6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 44--49
+Underfull \hbox (badness 10000) in paragraph at lines 67--72
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 57--69
+Underfull \hbox (badness 10000) in paragraph at lines 80--92
 
  []
 
-[9]
-Missing character: There is no М in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no ы in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no т in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no у in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no т in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no н in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no и in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no ч in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no е in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no г in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no о in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no н in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no е in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no з in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no н in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no а in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no е in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no м in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no Қ in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no и in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no ы in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no л in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no ы in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no с in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no д in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no ң in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no ғ in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no ы in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-Missing character: There is no л in font Latin Modern Roman 10 Regular/OT:scrip
-t=latn;language=DFLT;mapping=tex-text;mapping=tex-text;!
-) [10]
+[9]) [10]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 180.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 180.
  (./MA571-HW-Current.aux (./psets/ma571-pset4.aux))
@@ -5043,11 +4984,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 180.
  ) 
 Here is how much of TeX's memory you used:
- 36539 strings out of 493706
- 644964 string characters out of 6150888
+ 36542 strings out of 493706
+ 645125 string characters out of 6150888
  825487 words of memory out of 5000000
- 39540 multiletter control sequences out of 15000+600000
- 9963 words of font info for 80 fonts, out of 8000000 for 9000
+ 39542 multiletter control sequences out of 15000+600000
+ 9971 words of font info for 81 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  50i,12n,69p,10374b,376s stack positions out of 5000i,500n,10000p,200000b,80000s
 
