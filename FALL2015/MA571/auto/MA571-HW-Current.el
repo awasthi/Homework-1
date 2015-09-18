@@ -25,7 +25,6 @@
     "amssymb"
     "mathtools"
     "unicode-math"
-    "xeCJK"
     "titlesec")
    (TeX-add-symbols
     '("clsr" 1)

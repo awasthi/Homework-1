@@ -25,15 +25,22 @@
     "amssymb"
     "mathtools"
     "unicode-math"
-    "xeCJK"
     "titlesec")
    (TeX-add-symbols
     '("restr" 2)
+    "ann"
+    "colim"
+    "id"
+    "im"
+    "lcm"
+    "nil"
+    "rad"
     "CC"
     "NN"
     "QQ"
     "RR"
     "ZZ"
+    "FF"
     "documentauthor"
     "documenttitle"
     "hwnum"

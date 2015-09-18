@@ -10,6 +10,7 @@
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
    (TeX-run-style-hooks
     "latex2e"
+    "MA571/lectures/mcclure-problems"
     "MA571/lectures/kaufmann-problems"
     "MA553/ma553-qual-problems"
     "memoir"
@@ -25,9 +26,9 @@
     "amsthm"
     "amssymb"
     "mathtools"
-    "unicode-math"
-    "xeCJK")
+    "unicode-math")
    (TeX-add-symbols
+    '("clsr" 1)
     '("restr" 2)
     "id"
     "im"
