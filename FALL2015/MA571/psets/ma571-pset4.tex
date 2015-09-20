@@ -1,16 +1,239 @@
-\begin{problem}[Munkres \S20, Ex.\,\#4(a)]
+\begin{problem}[Munkres \S20, Ex.\,4(a)]
+Consider the product, uniform, and box topologies on
+$\RR^\omega$.
+\begin{enumerate}[noitemsep]
+\item[(a)] In which topologies are the following functions from
+  $\RR$ to $\RR^\omega$ continuous?
+  \begin{align*}
+    f(t)&=(t,2t,3t,...)\\
+    g(t)&=(t,t,t,...)\\
+    h(t)&=\left(t,\tfrac{1}{2}t,\tfrac{1}{3}t,...\right).
+  \end{align*}
+\end{enumerate}
 \end{problem}
 \begin{proof}
+The maps $f$, $g$ and $h$ are, evidently, continuous by Theorem
+19.6 and the following lemmas (they may be useful in the future
+so we prove them here):
+\begin{lemma}[Munkres \S18, Ex.\,1]
+Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces. Suppose $f\colon
+X\to Y$ is continuous in $\epsilon$-$\delta$ sense. Then $f$ is
+continuous in the open set sense.
+\end{lemma}
+\begin{proof}
+\renewcommand\qedsymbol{$\clubsuit$}
+Suppose $f$ is continuous in the $\epsilon$-$\delta$ sense, that
+is, for every $\epsilon>0$ there exists $\delta>0$ such that
+$d_X\left(x_0,x\right)<\delta$ implies
+$d_Y\left(f(x_0),f(x)\right)<\epsilon$. Now, let $U$ be an open
+set in $\RR$ and let $x_0\in f^{-1}(U)$. Since $U$ is open, there
+exists a real number $\epsilon>0$ such that
+$B_{d_Y}\left(f(x_0),\epsilon\right)\subset U$. Since $f$ is
+$\epsilon$-$\delta$ continuous, there exists $\delta>0$ such that
+$x\in B_{d_X}\left(x_0,\delta\right)$ implies
+$f(x)\in B_{d_Y}\left(f(x_0),\epsilon\right)$ so
+$B_{d_X}\left(x_0,\delta\right)\subset f^{-1}(U)$ (this is
+because if $x\in B_{d_X}\left(x_0,\delta\right)$, then $f(x)\in
+B_{d_Y}\left(f(x_0),\epsilon\right)\subset U$ so $f(x)\in
+U$ and in particular $x\in f^{-1}(U)$). Since $x_0$ was arbitrary,
+we conclude that $f^{-1}(U)$ is open.
+\end{proof}
+\begin{lemma}
+Suppose $f,g\colon\RR\to\RR$ are continuous. Then the following
+hold
+\begin{enumerate}[noitemsep,label=(\roman*)]
+\item The sum $(f+g)(x)=f(x)+g(x)$ is continuous.
+\item The product $fg(x)=f(x)g(x)$ is continuous.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+\renewcommand\qedsymbol{$\clubsuit$}
+By Lemma 8, it suffices to show that $f+g$ and $fg$ are
+continuous in the $\epsilon$-$\delta$ sense: Let $x_0\in\RR$ and
+let $\epsilon>0$ be given.
+\\\\
+(i) Since $f$ and $g$ are continuous in the $\epsilon$-$\delta$
+sense there exists $\delta_1>0$ and $\delta_2>0$ such that
+$|x_0-x|<\delta_1$ implies $\left|f(x_0)-f(x)\right|<\epsilon/2$
+and $|x_0-x|<\delta_2$ implies $\left|g(x_0)-g(x)\right|<\epsilon/2$
+respectively. Take
+$\delta=\min\left\{\delta_1,\delta_2\right\}$. Then, by the
+triangle inequality (cf.\,Munkres \S20 the definition of a metric
+in p.\,119) we have
+\begin{align*}
+\left|(f+g)(x_0)-(f+g)(x)\right|
+&=\left|f(x_0)+g(x_0)-f(x)-g(x)\right|
+\\
+&=\left|f(x_0)-f(x)+g(x_0)-g(x)\right|
+\\
+&\leq
+\left|f(x_0)-f(x)\right|+\left|g(x_0)-g(x)\right|\\
+&\leq \epsilon
+\end{align*}
+\\\\
+(ii) Since $f$ and $g$ are continuous in the $\epsilon$-$\delta$
+sense, by the triangle inequality we have
+\begin{align*}
+\left|fg(x_0)-fg(x)\right|
+&=\left|f(x_0)g(x_0)-f(x)g(x)\right|
+\\
+&=\left|f(x_0)g(x_0)-f(x_0)g(x)+f(x_0)g(x)-f(x)g(x)\right|\\
+&=\left|f(x_0)g(x_0)-f(x_0)g(x)\right|
++\left|f(x_0)g(x)-f(x)g(x)\right|\\
+&=
+\left|f(x_0)\right|
+\left|g(x_0)-g(x)\right|
++\left|f(x_0)-f(x)\right|
+\left|g(x)\right|.
+\end{align*}
+To bound this expression, consider the following: Let
+$\delta_1>0$ such that
+$\left|f(x_0)-f(x)\right|<\epsilon/2$. Since $g$ is continuous,
+choose $\delta_2>0$ such that $\left|g(x_0)-g(x)\right|<1$. Then
+$g(x)<g(x_0)+1$ for all $x\in(x_0-\delta,x_0+\delta)$. Finally,
+if choose $\delta_3>0$ such that
+$\left|g(x_0)-g(x)\right|<\epsilon/2f(x_0)$. Then
+$\delta=\min\left\{\delta_1,\delta_2,\delta_3\right\}$ gives a
+bound to the expression
+\[
+\left|f(x_0)\right|
+\left|g(x_0)-g(x)\right|
++\left|f(x_0)-f(x)\right|
+\left|g(x)\right|
+<\epsilon.
+\]
+Note that if $f(x_0)=0$, we discard $\delta_3$ and we obtain a
+stricter bound on our estimates. In any case, $fg$ is
+continuous.
+\end{proof}
+\begin{corollary*}
+Polynomials from $\RR$ to $\RR$ are continuous.
+\end{corollary*}
+\begin{proof}[Proof of Corollary]
+\renewcommand\qedsymbol{$\clubsuit$}
+It is immediate from Lemma 9(i,ii) and Theorem 18.2(a,b) from
+Munkres. Here is a sketch: By Theorem 18.2(a) constant functions
+are continuous, therefore $x\mapsto a_0$ for $a_0\in\RR$ is
+continuous. By Theorem 18.2(b), the map $x\mapsto x$ is
+continuous so by Lemma 9(ii), $x\mapsto x^2$ is continuous. By
+induction on $n$, $x\mapsto x^n$ is continuous. Similarly, we
+have that $x\mapsto a_nx^n$ is continuous. Thus, by Lemma 9(i),
+the map
+\[
+x\longmapsto a_nx^n+\cdots+a_1x+a_0
+\]
+is continuous.
+\end{proof}
+Now, for the box topology, consider our favorite neighborhood of
+$\mathbf{0}$ (as seen in Munkres \S19, p.\,117) given by
+\[
+U=\prod_{i=1}^\infty\left(-\frac{1}{n},\frac{1}{n}\right).
+\]
+The set $U$ is clearly open since it is a basis element, by
+Theorem 19.2. However, the preimage
+\[
+h^{-1}(U)=\bigcap_{n=1}^\infty\left(-\frac{1}{n},\frac{1}{n}\right)=\{0\}
+\]
+is not open in $\RR$ so $h$ is not open in $\RR^\omega$ with the
+box topology.
+
+Finally, we will show that $h$ is continuous in the
+$\epsilon$-$\delta$ sense: Given $\epsilon>0$ and $x_0\in\RR$,
+let $\delta=\epsilon$, then for any
+$x\in(x_0-\epsilon,x_0+\epsilon)$ we have
+\[
+d_{\bar\rho}\left(h(x_0),h(x)\right)
+=|x_0-x|<\epsilon.
+\]
+Thus, since $h$ is continuous in the $\epsilon$-$\delta$ sense,
+by Lemma 8, we have that $h$ is continuous in the open set sense.
 \end{proof}
 \newpage
-\begin{problem}[Munkres \S20, Ex.\,\#4(b)]
+\begin{problem}[Munkres \S20, Ex.\,4(b)]
+Consider the product, uniform, and box topologies on
+$\RR^\omega$.
+\begin{enumerate}[noitemsep]
+\item[(b)] In which topologies do the following sequences
+  converge?
+\begin{align*}
+\mathbf{w}_1&=(1,1,1,1,...),&\mathbf{x}_1&=(1,1,1,1,...),\\
+\mathbf{w}_2&=(0,2,2,2,...),&\mathbf{x}_2&=\left(0,\tfrac{1}{2},\tfrac{1}{2},\tfrac{1}{2},...\right),\\
+\mathbf{w}_3&=(0,0,3,3,...),&\mathbf{x}_3&=\left(0,0,\tfrac{1}{3},\tfrac{1}{3},...\right),\\
+&\vdotswithin{=}&&\vdotswithin{=}\\
+\mathbf{y}_1&=(1,0,0,0,...)&\mathbf{z}_1&=(1,1,0,0,...),\\
+\mathbf{y}_2&=\left(\tfrac{1}{2},\tfrac{1}{2},0,0,...\right)&\mathbf{z}_2&=\left(\tfrac{1}{2},\tfrac{1}{2},0,0,...\right),\\
+\mathbf{y}_3&=\left(\tfrac{1}{3},\tfrac{1}{3},\tfrac{1}{3},0,...\right)&\mathbf{z}_3&=\left(\tfrac{1}{3},\tfrac{1}{3},0,0,...\right),\\
+&\vdotswithin{=}&&\vdotswithin{=}
+\end{align*}
+\end{enumerate}
 \end{problem}
 \begin{proof}
+By Lemma D (from Prof.\,McClure's notes) if
+$\left\{\mathbf{x}_n\right\}$, $\left\{\mathbf{y}_n\right\}$ and
+$\left\{\mathbf{z}_n\right\}$ converge in the box topology, they
+converge to $\mathbf{0}$ since they converge to $\mathbf{0}$ in
+the product topology (and this can be readily seen by applying
+Problem 3.5 [Munkres \S19, Ex.\,6]).
+
+However, for the sequences $\left\{\mathbf{x}_n\right\}$ and
+$\left\{\mathbf{y}_n\right\}$ we see that the neighborhood of
+$\mathbf{0}$ given by
+\[
+U=\prod_{i=1}^\infty\left(-\frac{1}{n},\frac{1}{n}\right)
+\]
+does not contain any term of either sequence since for any
+$k\in\ZZ_+$, the term
+\[
+\mathbf{x}_k
+=\left(0,0,...,\tfrac{1}{k},\tfrac{1}{k},...\right)
+\notin
+(-1,1)
+\times
+\cdots\left(-\tfrac{1}{k},\tfrac{1}{k}\right)
+\times
+\left(-\tfrac{1}{(k-1)},\tfrac{1}{(k-1)}\right)
+\times\cdots.
+\]
+Similarly, we can see that $\mathbf{y}_k$ will not be in $U$ for
+any $k$ so the sequence $\left\{\mathbf{x}_n\right\}$ and
+$\left\{\mathbf{y}_n\right\}$ will not converge in the box
+topology.
+
+Although $\left\{\mathbf{x}_n\right\}$ and
+$\left\{\mathbf{y}_n\right\}$ do not converge in the box topology
+we claim that the sequence $\left\{\mathbf{z}_n\right\}$ does
+converge. To see this it is enough to consider basic open
+neighborhoods of $\mathbf{0}$. Let $U=\prod (a_n,b_n)$ be a basis
+element containing $\mathbf{0}$. Then we must show that for $N$
+sufficiently big, $\mathbf{x}_n\in U$ for all $n\geq N$. Let
+$b=\min\{b_1,b_2\}$. Since $b>0$, by the Archimedean property
+(Munkres Theorem 4.2), there exists $N\in\ZZ_+$ such that
+$1/N<b$. Thus, $\mathbf{z}_n\in U$ for all $n\geq N$ so
+$\mathbf{z}_n\to\mathbf{0}$ in the box topology.
 \end{proof}
 \newpage
-\begin{problem}[Munkres \S20, Ex.\,\#6]
+\begin{problem}[Munkres \S20, Ex.\,6]
+Let $\bar\rho$ be the uniform metric on $\RR^\omega$. Given
+$\mathbf{x}=(x_1,x_2,x_3,...)\in\RR^\omega$ and given
+$0<\epsilon<1$, let
+\[
+U(\mathbf{x},\epsilon)=
+\left(x_1-\epsilon,x_1+\epsilon\right)\times\cdots\times
+\left(x_n-\epsilon,x_n+\epsilon\right)\times\cdots.
+\]
+\begin{enumerate}[noitemsep]
+% \item Show that $U(\mathbf{x},\epsilon)$ is not equal to the
+%   $\epsilon$-ball $B_{\bar\rho}(\mathbf{x},\epsilon)$.
+\item[(b)] Show that $U(\mathbf{x},\epsilon)$ is not even open in the
+  uniform topology.
+% \item Show that
+%   \[
+%     B_{\bar\rho}(\mathbf{x},\epsilon)=\bigcup_{\delta<\epsilon}U(\mathbf{x},\delta).
+%   \]
+\end{enumerate}
 \end{problem}
 \begin{proof}
+It is sufficient to find point $\mathbf{x}_0\in U(\mathbf{x},\epsilon)$
 \end{proof}
 \newpage
 \begin{problem}[A]
@@ -95,6 +318,9 @@ well-defined).
 \end{enumerate}
 \end{problem}
 \begin{proof}
+(i)
+\\\\
+(ii)
 \end{proof}
 \newpage
 \begin{problem}[G]

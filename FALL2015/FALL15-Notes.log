@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Arch Linux) (preloaded format=xelatex 2015.9.14)  18 SEP 2015 11:44
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Arch Linux) (preloaded format=xelatex 2015.9.14)  19 SEP 2015 01:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1593,7 +1593,7 @@ LaTeX Font Info:    Font shape `EU1/LatinModernMath(2)/m/n' will be
  (./MA571/lectures/mcclure-problems.tex [2
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 116--125
+Underfull \hbox (badness 10000) in paragraph at lines 117--126
 
  []
 
