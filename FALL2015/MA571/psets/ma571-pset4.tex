@@ -338,11 +338,91 @@ f(x)=z$. Since $z$ was arbitrary, we conclude that the
 composition of surjective maps is again surjective.
 \end{proof}
 Now suppose $U$ is open in $Y$. Then the preimage
-$p^{-1}(U)=(\bar p\circ q)^{-1}(U)=q^{-1}\left(\bar p^{-1}(U)\right)$
+\[
+p^{-1}(U)=(\bar p\circ q)^{-1}(U)=q^{-1}\left(\bar p^{-1}(U)\right)
+\]
+is open since $p$ is continuous. Conversely, suppose that the
+preimage $p^{-1}(U)$ is open in $X$ for $U\subset Y$. Then we
+have that
+\[
+p^{-1}(U)=(\bar p\circ q)^{-1}(U)=q^{-1}\left(\bar p^{-1}(U)\right)
+\]
+so $\bar p^{-1}(U)$ is open in $X/{\sim}$. Hence, we have that
+\[
+\bar p\left(\bar p^{-1}(U)\right)
+=\left(\bar p\circ\bar p^{-1}\right)(U)
+=\id_Y(U)
+=U
+\]
+is open in $Y$ since $\bar p$ is a homeomorphism.
 
 $\impliedby$ Now suppose that $p\colon X\to Y$ is a Munkres
 quotient map. That is, the map $p\colon X\to Y$ is surjective
+with $U$ open in $Y$ if and only if $p^{-1}(U)$ is open in
+$X$. We claim that he map $\bar p\colon X/{\sim}\to Y$ is a
+homeomorphism with continuous inverse $\bar p^{-1}\colon Y\to
+X/{\sim_p}$ given by $y\mapsto[x]$ where $x'$ is in the equivalence
+class $[x]$ if and only if $x'\in p^{-1}(y)$. First,
+it is clear that the map $\bar p$ is continuous by Problem 4.4
+(A) (that is, Theorem Q.2 from the notes) since $p\colon X\to Y$
+is continuous. Now we check that $\bar p^{-1}$ is indeed the
+inverse map of $\bar p$. Let $y\in Y$. Since $p$ is surjective,
+there exists $x\in X$ such that $p(x)=y$; take this $x$ to be the
+our representative of the equivalence class $[x]$ of points in
+$X$ which map to $y$. Then
+\begin{align*}
+\bar p\circ \bar p^{-1}(y)
+&=
+\bar p\left(\bar p^{-1}(y)\right)
+&
+\bar p^{-1}\circ\bar p([x])
+&=\bar p^{-1}\left(\bar p([x])\right)
+\\
+&=
+\bar p([x])
+&
+&=\bar p^{-1}(y)
+\\
+&=y
+&
+&=[x]
+\\
+&=\id_Y(y)
+&
+&=\id_{X/{\sim_p}}([x]).
+\end{align*}
+Lastly, we will show that $\bar p^{-1}$ is continuous. Let $U$ be
+open in $X/{\sim_p}$. Then $\left(\bar p^{-1}\right)^{-1}(U)$ is
+open in $Y$ if and only if $p^{-1}\left(\bar
+  p^{-1}\right)^{-1}(U)$ is open in $X$, that is,
+\begin{align*}
+p^{-1}\left(\bar p^{-1}\right)^{-1}(U)
+&=\left(\bar p\circ q\right)\left(\bar p^{-1}\right)^{-1}(U)\\
+&=q^{-1}\left(\bar p^{-1}\left(\left(\bar p^{-1}\right)^{-1}(U)\right)\right),\\
+\shortintertext{but since $\bar p$ is bijective, in particular
+  surjective, by Problem 1.1 (Munkres \S2, Ex.\,1(b)), we have}
+&=q^{-1}(U)
+\end{align*}
+which is by definition open in $X$. Thus, $\left(\bar
+  p^{-1}\right)^{-1}(U)$ is open in $Y$ and we see that
+$\bar p^{-1}$ is continuous. We conclude that the map $\bar
+p\colon X/{\sim_p}\to Y$ is a homeomorphism.
 \end{proof}
+\begin{remarks*}
+In retrospect it would have been easier to show that the map
+$\bar p\colon X/{\sim_p}\to Y$ is an open map (at least
+conceptually and the notation would have been easier to
+digest). Observe how much cleaner this is: Let $U$ be an open set
+in $X/{\sim_p}$, the image $\bar p(U)$ is open in $Y$ if and only
+if $p^{-1}(\bar p(U))$ is open in $X$, but as sets
+\[
+p^{-1}(\bar p(U))=q^{-1}\left(\bar p^{-1}\left(\bar p(U)\right)\right)=q^{-1}(U)
+\]
+where $\bar p^{-1}\left(\bar p(U)\right)$ follows from the
+bijectivity of $\bar p$ which we previously demonstrated. It is
+clear then that $\bar p$ is a homeomorphism. Both proofs are
+correct, but we leave this here for pedantic purposes.
+\end{remarks*}
 \newpage
 \begin{problem}[C]
 Prove Proposition Q.6 from the notes on Quotient Spaces.
@@ -357,6 +437,9 @@ X\overset{p}{\longrightarrow}Y\overset{f}{\longrightarrow}Z
 \]
 is continuous.
 \end{proposition*}
+Identify $Y$ with the quotient $X/{\sim_p}$ via the homeomorphism
+$\bar p\colon X/{\sim_p}\to Y$ given in above in Problem 4.5
+(Proposition Q.5) then apply Problem 4.4 (Theorem Q.2).
 \end{proof}
 \newpage
 \begin{problem}[D]
@@ -367,6 +450,72 @@ have to prove that this is an equivalence relation). Prove that
 $[-1,1]/{\sim}$ is not Hausdorff.
 \end{problem}
 \begin{proof}
+% We will show that for any open neighborhood $U$ of $[-1]$ and $V$
+% of $[1]$ in $[-1,1]/{\sim}$ the intersection $U\cap V$ is
+% nonempty. Let $U$ and $V$ be as above, then their preimages under
+% the quotient map $q\colon [-1,1]\to[-1,1]/{\sim}$ are open in
+% $[-1,1]$, in other words, $q^{-1}(U)$ and $q^{-1}(V)$ are open
+% neighborhoods of $-1$ and $1$ respectively. Thus, $[-1,-1+\epsilon_1)\subset
+% q^{-1}(U)$ and $(b,1]\subset q^{-1}(V)$ for sufficiently small
+% $\epsilon,\delta>0$. Then, $q([-1,-1+\epsilon_1))\subset U$ and
+% $q((b,1])\subset V$ and we have that
+% \[
+% q^{-1}(q([-1,-a))\cap q^{-1}(q((b,1]))
+% =
+% \left([-1,a)\cup (a,1)\right)\cap\left((-1,-b)\cup(b,1]\right)\\
+% \neq\emptyset,
+% \]
+% in particular $\pm\min\{\epsilon_1,\epsilon_2\}$ is in the intersection above so
+% $q[-1,a)\cap q((b,1])\subset U\cap V$ is nonempty.
+We will show that for any open neighborhood $U$ and $V$ of $[1]$
+and $[-1]$ respectively, the intersection $U\cap
+V\neq\emptyset$. Let $U$ and $V$ be as above, then by the
+definition of the quotient map $q^{-1}(U)$ and $q^{-1}(V)$ are
+open neighborhoods of $1$ and $-1$ respectively. Then by the
+definition of the subspace topology, there exists
+$\epsilon_1,\epsilon_2>0$ such that
+\[
+B\left(1,\epsilon_1\right)\cap[-1,1]
+=\left(1-\epsilon_1,1\right]
+\subset q^{-1}(U)
+\quad\text{and}\quad
+B\left(-1,\epsilon_2\right)\cap[-1,1]
+=\left[-1,-1+\epsilon_2\right)
+\subset q^{-1}(V).
+\]
+Then, by Problem 1.1 (Munkres \S2, Ex.\,2(b)) and the transitivity
+of the subset relation,
+$U_0=q\left(\left(1-\epsilon_1,1\right]\right)\subset U$ and
+$V_0=q\left(\left[-1,-1+\epsilon_2\right)\right)\subset V$ so
+$U_0\cap V_0\subset U\cap V$. Let us prove this claim:
+\begin{lemma}
+Suppose $A\subset C$ and $B\subset D$. Then $A\cap B\subset C\cap
+D$.
+\end{lemma}
+\begin{proof}[Proof of lemma]
+\renewcommand\qedsymbol{$\clubsuit$}
+Suppose $x\in A\cap B$ if and only if $x\in A$ and $x\in B$ which
+implies $x\in C$ and $x\in D$ since $A\subset C$ and $B\subset
+D$. But this is true if and only if $x\in C\cap D$. Thus, $A\cap
+B\subset C\cap D$.
+\end{proof}
+Now we will show that $U_0\cap V_0\neq\emptyset$. For if we take the
+preimage of $U_0$ and $V_0$ under $q$ we have
+\begin{align*}
+q^{-1}(U_0)&=\left\{\,x\in[-1,1]\;\middle|\;
+\text{$x\sim x'$ for every $x'\in\left(1-\epsilon_1,1\right]$}\,\right\}\\
+&=\left(-1,-1+\epsilon_1\right)\cup\left(-1-\epsilon_1,1\right]\\
+q^{-1}(V_0)&=\left\{\,x\in[-1,1]\;\middle|\;
+\text{$x\sim x'$ for every $x'\in\left[-1,-1+\epsilon_2\right)$}\,\right\}\\
+&=\left[-1,-1+\epsilon_2\right)\cup\left(1-\epsilon_2,1\right)
+\end{align*}
+where one can see that the points
+$\pm\min\{\epsilon_1,\epsilon_2\}$ are in the intersection
+$q^{-1}(U_0)\cap q^{-1}\left(V_0\right)$. Thus,
+$q^{-1}\left(U_0\right)\cap q^{-1}(V_0)=q^{-1}\left(U_0\cap
+  V_0\right)\neq\emptyset$ so $U_0\cap V_0\neq\emptyset$. In
+particular $U\cap V\neq\emptyset$ so $[-1,1]/{\sim}$ is not
+Hausdorff.
 \end{proof}
 \newpage
 \begin{problem}[E]
@@ -380,6 +529,8 @@ S=\left\{\,x\times y\in X\times X\;\middle|\;x\sim y\,\right\}
 is a closed subset of $X\times X$.
 \end{problem}
 \begin{proof}
+We will show that $(X\times X)\setminus S$ is open in $X\times
+X$.
 \end{proof}
 \newpage
 \begin{problem}[F]
