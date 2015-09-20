@@ -212,9 +212,9 @@ $1/N<b$. Thus, $\mathbf{z}_n\in U$ for all $n\geq N$ so
 $\mathbf{z}_n\to\mathbf{0}$ in the box topology.
 \end{proof}
 \newpage
-\begin{problem}[Munkres \S20, Ex.\,6]
+\begin{problem}[Munkres \S20, Ex.\,6(b)]
 Let $\bar\rho$ be the uniform metric on $\RR^\omega$. Given
-$\mathbf{x}=(x_1,x_2,x_3,...)\in\RR^\omega$ and given
+$\mathbf{x}=\left(x_1,x_2,x_3,...\right)\in\RR^\omega$ and given
 $0<\epsilon<1$, let
 \[
 U(\mathbf{x},\epsilon)=
@@ -222,18 +222,36 @@ U(\mathbf{x},\epsilon)=
 \left(x_n-\epsilon,x_n+\epsilon\right)\times\cdots.
 \]
 \begin{enumerate}[noitemsep]
-% \item Show that $U(\mathbf{x},\epsilon)$ is not equal to the
-%   $\epsilon$-ball $B_{\bar\rho}(\mathbf{x},\epsilon)$.
 \item[(b)] Show that $U(\mathbf{x},\epsilon)$ is not even open in the
   uniform topology.
-% \item Show that
-%   \[
-%     B_{\bar\rho}(\mathbf{x},\epsilon)=\bigcup_{\delta<\epsilon}U(\mathbf{x},\delta).
-%   \]
 \end{enumerate}
 \end{problem}
-\begin{proof}
-It is sufficient to find point $\mathbf{x}_0\in U(\mathbf{x},\epsilon)$
+\begin{proof}[Proof of (b)]
+It is sufficient to find a point $\mathbf{x}_0\in
+U(\mathbf{x},\epsilon)$ such that
+$B_{\bar\rho}\left(\mathbf{x}_0,\delta\right)\nsubset
+U(\mathbf{x},\epsilon)$ for any $\delta>0$. Let $\mathbf{x}_0$ be
+the point
+\[
+\mathbf{x}_0=\prod_{i=1}^\infty\left(x_i+\left(\tfrac{i-1}{i}\right)\epsilon\right).
+\]
+Now consider the open ball
+$B_{\bar\rho}\left(\mathbf{x}_0,\delta\right)$ for
+$\delta>0$. Now, pick a point $\mathbf{y}\in
+B_{\bar\rho}\left(\mathbf{x}_0,\delta\right)$ given by
+\[
+\mathbf{y}=\prod_{i=1}^\infty\left(x_i+\tfrac{i-1}{i}+\tfrac{\delta}{2}\right).
+\]
+Clearly $\mathbf{y}\in
+B_{\bar\rho}\left(\mathbf{x}_0,\delta\right)$ since
+\[
+\bar\rho\left(\mathbf{x}_0,\mathbf{y}\right)
+=\sup_{i\in\ZZ_+}\left\{\min\left\{\left|x_i-y_i\right|,1\right\}\right\}
+=\min\left\{\tfrac{\delta}{2},1\right\}
+\leq\delta/2.
+\]
+However, by the Archimedean property, there exists $k\in\ZZ_+$
+such that $\delta/2>1/k$ so $z_n=x_n+(n-1)/n\epsilon+\delta/2$
 \end{proof}
 \newpage
 \begin{problem}[A]
