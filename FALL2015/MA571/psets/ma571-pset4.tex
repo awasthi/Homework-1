@@ -127,12 +127,12 @@ is continuous.
 Now, for the box topology, consider our favorite neighborhood of
 $\mathbf{0}$ (as seen in Munkres \S19, p.\,117) given by
 \[
-U=\prod_{i=1}^\infty\left(-\frac{1}{n},\frac{1}{n}\right).
+U=\prod_{n\in\ZZ_+}\left(-\frac{1}{n},\frac{1}{n}\right).
 \]
 The set $U$ is clearly open since it is a basis element, by
 Theorem 19.2. However, the preimage
 \[
-h^{-1}(U)=\bigcap_{n=1}^\infty\left(-\frac{1}{n},\frac{1}{n}\right)=\{0\}
+h^{-1}(U)=\bigcap_{n\in\ZZ_+}\left(-\frac{1}{n},\frac{1}{n}\right)=\{0\}
 \]
 is not open in $\RR$ so $h$ is not open in $\RR^\omega$ with the
 box topology.
@@ -179,19 +179,21 @@ However, for the sequences $\left\{\mathbf{x}_n\right\}$ and
 $\left\{\mathbf{y}_n\right\}$ we see that the neighborhood of
 $\mathbf{0}$ given by
 \[
-U=\prod_{i=1}^\infty\left(-\frac{1}{n},\frac{1}{n}\right)
+U=\prod_{n\in\ZZ_+}\left(-\frac{1}{n},\frac{1}{n}\right)
 \]
 does not contain any term of either sequence since for any
 $k\in\ZZ_+$, the term
 \[
 \mathbf{x}_k
-=\left(0,0,...,\tfrac{1}{k},\tfrac{1}{k},...\right)
+=\left(0,0,...,1/k,1/k,...\right)
 \notin
 (-1,1)
 \times
-\cdots\left(-\tfrac{1}{k},\tfrac{1}{k}\right)
+\cdots
 \times
-\left(-\tfrac{1}{(k-1)},\tfrac{1}{(k-1)}\right)
+\left(-1/k,1/k\right)
+\times
+\left(-1/(k-1),1/(k-1)\right)
 \times\cdots.
 \]
 Similarly, we can see that $\mathbf{y}_k$ will not be in $U$ for
@@ -233,25 +235,30 @@ $B_{\bar\rho}\left(\mathbf{x}_0,\delta\right)\nsubset
 U(\mathbf{x},\epsilon)$ for any $\delta>0$. Let $\mathbf{x}_0$ be
 the point
 \[
-\mathbf{x}_0=\prod_{i=1}^\infty\left(x_i+\left(\tfrac{i-1}{i}\right)\epsilon\right).
+\mathbf{x}_0=\prod_{n\in\ZZ_+}\left(x_n+\left(\frac{n-1}{n}\right)\epsilon\right).
 \]
 Now consider the open ball
 $B_{\bar\rho}\left(\mathbf{x}_0,\delta\right)$ for
 $\delta>0$. Now, pick a point $\mathbf{y}\in
 B_{\bar\rho}\left(\mathbf{x}_0,\delta\right)$ given by
 \[
-\mathbf{y}=\prod_{i=1}^\infty\left(x_i+\tfrac{i-1}{i}+\tfrac{\delta}{2}\right).
+\mathbf{y}=\prod_{n\in\ZZ_+}
+\left(x_n+\left(\frac{n-1}{n}\right)\epsilon+\frac{\delta}{2}\right).
 \]
 Clearly $\mathbf{y}\in
 B_{\bar\rho}\left(\mathbf{x}_0,\delta\right)$ since
 \[
 \bar\rho\left(\mathbf{x}_0,\mathbf{y}\right)
-=\sup_{i\in\ZZ_+}\left\{\min\left\{\left|x_i-y_i\right|,1\right\}\right\}
-=\min\left\{\tfrac{\delta}{2},1\right\}
+=\sup_{n\in\ZZ_+}\left\{\min\left\{\left|x_n-y_n\right|,1\right\}\right\}
+=\min\left\{\delta/2,1\right\}
 \leq\delta/2.
 \]
 However, by the Archimedean property, there exists $k\in\ZZ_+$
-such that $\delta/2>1/k$ so $z_n=x_n+(n-1)/n\epsilon+\delta/2$
+such that $\delta/2>1/k$ so $n\geq k$ implies
+\[y_n=x_n+\left(\frac{n-1}{n}\right)\epsilon+\frac{\delta}{2}>x_n+\epsilon\]
+so $\mathbf{y}$ is in $B_{\bar\rho}(\mathbf{x}_0,\delta)$ but not
+in $U(\mathbf{x},\epsilon)$. Since $\delta$ was arbitrary, we
+conclude that $U(\mathbf{x},\epsilon)$ is not open.
 \end{proof}
 \newpage
 \begin{problem}[A]
@@ -267,17 +274,74 @@ X\overset{q}{\longrightarrow}X/{\sim}\overset{f}{\longrightarrow}Y
 \]
 is continuous.
 \end{theorem*}
+The direction $\implies$ follows from Theorem 18.2(c) in Munkres.
+
+$\impliedby$ Suppose that the composite
+\[
+X\overset{q}{\longrightarrow}X/{\sim}\overset{f}{\longrightarrow}Y
+\]
+is continuous. Then for every open set $U\subset Y$, the preimage
+$(f\circ q)^{-1}(U)$ is open in $X$. But the preimage
+\[
+(f\circ q)^{1}(U)=q^{-1}\left(f^{-1}(U)\right)
+\]
+and since $q$ is a quotient map by definition (cf.\,Munkres \S22,
+p.\,137) $f^{-1}(U)$ is open in $X/{\sim}$ if and only if
+$q^{-1}\left(f^{-1}(U)\right)$ is open in $X$. Thus, the map
+$f\colon X/{\sim}\to Y$ is continuous.
 \end{proof}
 \newpage
 \begin{problem}[B]
 Prove Proposition Q.5 from the notes on Quotient Spaces.
 \end{problem}
 \begin{proof}
-Recall the statement of the proposition:
+Recall the definition and the proposition:
+\begin{definition*}
+Let $X$ and $Y$ be topological spaces. A map $p\colon X\to Y$ is
+a \emph{Munkres quotient map} if $\bar p\colon X/{\sim_p}\to Y$
+is a homeomorphism.
+\end{definition*}
 \begin{proposition*}[Proposition Q.5]
 A map $p\colon X\to Y$ satisfies Definition Q.4 if and only if it
 satisfies the definition at the top of page 137 in Munkres.
 \end{proposition*}
+and Munkres's definition:
+\begin{definition*}[Munkres \S22, p.\,137]
+Let $X$ and $Y$ be topological spaces; let $p\colon X\to Y$ be a
+surjective map. The map $p$ is said to be a \emph{quotient map}
+provided a subset $U$ of $Y$ is open in $Y$ if and only if
+$p^{-1}(U)$ is open in $X$.
+\end{definition*}
+$\implies$ Now, suppose that $\bar p\colon X/{\sim_p}\to Y$ is a
+homeomorphism. Then $\bar p$ is continuous with a continuous
+inverse $\bar p^{-1}\colon Y\to X/{\sim_p}$. Let $q\colon X\to
+X/{\sim_p}$ bet he map which takes $x$ in $X$ to its equivalence
+class $[x]$ in $X/{\sim_p}$. Then by Problem 4.5(A), the composite
+\[
+X\overset{q}{\longrightarrow}X/{\sim_p}\overset{\bar p}{\longrightarrow}Y
+\]
+is continuous if and only if $\bar p$ is continuous. Moreover,
+since $\bar p$ is bijective, it is surjective and $q$ is clearly
+surjective so the map $p=\bar p\circ q$ is surjective. Let us
+prove this claim:
+\begin{lemma}
+Suppose $f\colon X\to Y$ and $g\colon Y\to Z$ are surjective
+maps. Then the composite map $g\circ f\colon X\to Z$ is surjective.
+\end{lemma}
+\begin{proof}
+\renewcommand\qedsymbol{$\clubsuit$}
+Since $g\colon Y\to Z$ is surjective, for every $z\in Z$ there
+exists a $y\in Y$ such that $g(y)=z$. Similarly, for every $y'\in
+Y$ there exists a $x'\in X$ such that $f(x')=y'$, in particular
+there exists a $x\in X$ such that $f(x)=y$. Thus, $g(f(x))=g\circ
+f(x)=z$. Since $z$ was arbitrary, we conclude that the
+composition of surjective maps is again surjective.
+\end{proof}
+Now suppose $U$ is open in $Y$. Then the preimage
+$p^{-1}(U)=(\bar p\circ q)^{-1}(U)=q^{-1}\left(\bar p^{-1}(U)\right)$
+
+$\impliedby$ Now suppose that $p\colon X\to Y$ is a Munkres
+quotient map. That is, the map $p\colon X\to Y$ is surjective
 \end{proof}
 \newpage
 \begin{problem}[C]
