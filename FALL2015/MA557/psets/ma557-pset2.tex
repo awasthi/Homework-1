@@ -116,9 +116,35 @@ process above.
 \\\\
 (c) Consider the map $\phi\colon(M\oplus N)\times P\to (M\otimes
 P)\oplus (N\otimes P)$ which sends an element $(x+y,z)\mapsto
-x\otimes z+y\otimes z$.
+x\otimes z+y\otimes z$. This induces a homeomorphism
+$\varphi^*\colon (M\oplus N)\otimes P\to (M\otimes P)\oplus
+(N\otimes P)$ which sends $(x+y)\otimes z\mapsto x\otimes
+z+y\otimes z$.
+
+To see that this is an isomorphism we construct the inverse map:
+Consider the bilinear maps $\psi_1\colon M\times P\to (M\oplus
+N)\otimes P$ and $\psi_2\colon N\times P\to(M\oplus N)\otimes
+P$ given by $(x,z)\mapsto (x+0)\otimes z$ and $(y,z)\mapsto
+(0+y)\otimes z$, respectively. They induce homomorphisms
+$\psi_1^*\colon M\otimes P\hookrightarrow (M\oplus N)$ and
+$\psi_2^*\colon N\otimes P\hookrightarrow (M\oplus N)\otimes
+P$. By the UMP of the direct sum, there exists a unique
+homomorphism $\psi^*=\psi_1^*+\psi_2^*\colon(M\otimes P)\oplus
+(N\otimes P)$ such that $\psi^*\circ\phi^*=1$ and
+$\phi^*\circ\psi^*=1$.
 \\\\
-(d)
+(d) Consider the map prescribed above $\phi\colon R\times M\to
+M$ by $(r,x)\mapsto rx$. We will show it satisfies the
+tensor UMP. Given a bilinear map $f\colon R\times M\to P$, define
+the map $f_1\colon M\to P$ by $f_1(x)=f(1,x)$. Then $f_1$ is
+linear and $f$ is bilinear. Moreover, the composition
+$f=f_1\circ\phi$ since
+\[
+f(r,x)=rf(1,x)=f(1,rx)=f_1(rx)=f_1(\phi(r,x))=\left(f_1\circ\phi\right)(r,x).
+\]
+Further, since $\phi$ is surjective, the map $f_1$ is unique so
+by the UMP of the tensor the equivalence $R\otimes M\cong M$
+holds.
 \end{proof}
 \newpage
 \begin{problem}
@@ -130,16 +156,32 @@ Recall the statement of Proposition 2.8:
 Let $M$ be an $R$-module, $N$ an $R$-$S$-bimodule and $P$ an
 $S$-module. Then:
 \begin{enumerate}[noitemsep,label=(\alph*)]
-\item $M\otimes N$ is an $R$-$S$-bimodule via $\left(\sum
+\item $M\otimes_R N$ is an $R$-$S$-bimodule via $\left(\sum
     m_i\otimes n_i\right)s=\sum m_i\otimes (sn_i).$
-\item The free module $(M\otimes N)\otimes_S P\cong M\otimes
+\item The free module $(M\otimes_R N)\otimes_S P\cong M\otimes_R
   (N\otimes_S P)$ as $R$-$S$-bimodules via $(x\otimes y)\otimes
   z\mapsto x\otimes (y\otimes z)$.
 \end{enumerate}
 \end{proposition*}
-(i)
+From Atiyah and MacDonald
+\vspace{.25in}
+
+\noindent (a) It is clear that $M\otimes_R N$ is an $R$-$S$
+bimodule via the multiplication $\left(\sum m_i\otimes
+  _ni\right)s=\sum m_i\otimes\left(sn_i\right)$. It is clear that
+$M\otimes_R N$ is an $R$-module via multiplication on the left
+and an $S$-module via multiplication on the right. Now, take
+$r\in R$, $s\in S$ then for $t=\sum m_i\otimes n_i$ in the tensor
+$M\otimes_R N$, then we have
+\[
+(rt)s=\left(\sum\left(r m_i\right)\otimes
+  s_i\right)s=\left(\sum\left(r m_i\right)\otimes\left(s
+    n_i\right)\right)
+=r\left(\sum m_i\otimes\left(s n_i\right)\right)=r(ts).
+\]
 \\\\
-(ii)
+(b) Let $Q$ be an $R$-$S$ bimodule and define the trilinear map
+$\phi\colon M\times N\times P\to Q$
 \end{proof}
 \newpage
 \begin{problem}
@@ -153,9 +195,15 @@ module. Then $S\otimes M$ is an $S$-module (by Proposition
 2.8) and $\mu\colon M\to S\otimes M$ with $\mu(m)=1\otimes m$
 is an $R$-linear map. Moreover, for every $R$-linear map
 $\phi\colon M\to N$, where $N$ is any $S$-module, there exists a
-unique $S$-linear map $f$ so that $\phi=f\circ\mu$, i.e, the
-diagram commmutes
+unique $S$-linear map $f$ so that $\phi=f\circ\mu$.
 \end{theorem*}
+\noindent
+Define a bilinear map $\phi\colon R\times M\to N$ via
+$(r,m)\mapsto\psi(r)\phi(m)$. Then $\phi$ induces a homomorphism
+$f\colon R\otimes M\to N$ via $s\otimes m\mapsto s\phi(m)$. This
+map is clearly $S$-linear since $f((s\otimes
+s'm))=ss'm=s'(sm)=s'f(s,m)$ and $\phi=f\circ\mu$ follows from the
+UMP of the tensor product.
 \end{proof}
 \newpage
 \begin{problem}
@@ -168,6 +216,22 @@ Let $S$ and $T$ be $R$-algebras. Then there is an $R$-algebra
 structure on $S\otimes T$ with $(s_1\otimes t_1)(s_2\otimes
 t_2)=(s_1s_2)\otimes (t_1t_2)$.
 \end{proposition*}
+Let $\alpha\colon R\to S$ and $\beta\colon R\to T$ be the
+structure maps of $S$ and $T$, respectively, as $R$-algebras.
+Define a map $\phi\colon S\times T\times S\times S\to S\otimes T$
+by $(s_1,t_1,s_2,t_2)\mapsto(s_1s_2)\otimes (t_1t_2)$. This map
+is clearly bilinear so it induces a bilinear map
+\[
+\phi^*\colon(S\otimes T)\times(S\otimes T)\to S\otimes S
+\quad\text{by}\quad
+(s_1\otimes t_1,s_2\otimes
+t_2)\mapsto(s_1s_2)\otimes (t_1t_2).
+\]
+Now we check that $S\otimes T$ is an $R$-algebra. $S$ is clearly
+a commutative ring with product prescribed above, namely
+$\varphi^*$, and identity $1\otimes 1$. Moreover, the structure
+map $\psi\colon R\to S\otimes T$ is given by
+$r\mapsto\alpha(r)\otimes\beta(r)$.
 \end{proof}
 
 %%% Local Variables:

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Arch Linux) (preloaded format=xelatex 2015.9.14)  21 SEP 2015 12:50
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Arch Linux) (preloaded format=xelatex 2015.9.14)  21 SEP 2015 17:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1589,60 +1589,36 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ] [2
 
 ]
-\openout2 = `psets/ma557-pset2.aux'.
+\openout2 = `psets/ma557-pset3.aux'.
 
 
-(./psets/ma557-pset2.tex
+(./psets/ma557-pset3.tex
 
 LaTeX Font Warning: Font shape `EU1/LatinModernRoman(0)/bx/sc' undefined
 (Font)              using `EU1/LatinModernRoman(0)/bx/n' instead on input line 
 2.
 
 LaTeX Font Info:    Font shape `EU1/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 10.00015pt on input line 2.
+(Font)              scaled to size 10.00015pt on input line 4.
 LaTeX Font Info:    Font shape `EU1/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 7.00006pt on input line 2.
+(Font)              scaled to size 7.00006pt on input line 4.
 LaTeX Font Info:    Font shape `EU1/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 5.00008pt on input line 2.
+(Font)              scaled to size 5.00008pt on input line 4.
 LaTeX Font Info:    Font shape `EU1/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 9.99985pt on input line 2.
+(Font)              scaled to size 9.99985pt on input line 4.
 LaTeX Font Info:    Font shape `EU1/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 6.99986pt on input line 2.
+(Font)              scaled to size 6.99986pt on input line 4.
 LaTeX Font Info:    Font shape `EU1/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 4.99992pt on input line 2.
+(Font)              scaled to size 4.99992pt on input line 4.
 [1
 
 
 
-] [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 82--103
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 82--103
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 113--122
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 113--122
-
- []
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 140--143
-
- []
-
-[5] [6]) [7]
+] [2] [3] [4] [5] [6] [7]) [8]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 180.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 180.
- (./MA557-HW-Current.aux (./psets/ma557-pset2.aux))
+ (./MA557-HW-Current.aux
+(./psets/ma557-pset3.aux))
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 180.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 180.
 
@@ -1652,12 +1628,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 180.
  ) 
 Here is how much of TeX's memory you used:
- 33627 strings out of 493706
- 579017 string characters out of 6150888
- 758530 words of memory out of 5000000
- 36657 multiletter control sequences out of 15000+600000
- 9955 words of font info for 79 fonts, out of 8000000 for 9000
+ 33615 strings out of 493706
+ 578659 string characters out of 6150888
+ 750530 words of memory out of 5000000
+ 36645 multiletter control sequences out of 15000+600000
+ 9947 words of font info for 78 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 50i,12n,59p,10374b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 50i,12n,59p,10374b,358s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on MA557-HW-Current.pdf (9 pages).
+Output written on MA557-HW-Current.pdf (10 pages).
