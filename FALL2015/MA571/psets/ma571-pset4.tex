@@ -438,9 +438,40 @@ X\overset{p}{\longrightarrow}Y\overset{f}{\longrightarrow}Z
 is continuous.
 \end{proposition*}
 Identify $Y$ with the quotient $X/{\sim_p}$ via the homeomorphism
-$\bar p\colon X/{\sim_p}\to Y$ given in above in Problem 4.5
+$\bar p\colon X/{\sim_p}\to Y$ given above in Problem 4.5
 (Proposition Q.5) then apply Problem 4.4 (Theorem Q.2).
+
+More precisely, we have
+\[
+X\overset{q}{\longrightarrow}X/{\sim_p}\overset{\cong}{\longrightarrow}Y\overset{f}{\longrightarrow}Z
+\]
+where $\bar p\circ q=p$ and we see that the map $f\circ \bar p$
+is continuous if and only if the composition $\left(f\circ\bar
+  p\right)\circ q$ is continuous. Then $\bar p$ is a quotient map
+(because it is an homeomorphism) since $U$ is open in $Y$ if and
+only if $\bar p^{-1}(U)$ is open in $X/{\sim_p}$. Thus, by
+Problem 4.4 (Theorem Q.2), the map $f$ is continuous if and only
+if the composition $f\circ\bar p$ is continuous. Now we tie in
+the chain of implications: $f$ is continuous $\implies$ $f\circ
+\bar p$ is continuous $\implies$ $(f\circ \bar p)\circ q=f\circ
+(\bar p\circ q)=f\circ p$ is continuous. Conversely $f\circ
+p=f\circ \bar p\circ q=(f\circ \bar p)\circ q$ is continuous
+$\implies$ $f\circ\bar p$ is continuous $\implies$ $\bar f$ is
+continuous.
 \end{proof}
+\begin{remarks*}
+Here's an alternative way I thought about doing this before I
+realized $\bar p$ being a homeomorphism implies it is a quotient
+map and so we can apply Theorem Q.2 on it.
+
+Here's the idea: Since $X/{\sim_p}\cong Y$, there exists a
+continuous inverse $\bar p^{-1}\colon Y\to X/{\sim_p}$ to $\bar
+p$. Then we can prove that $f$ is continuous, which is the
+difficult direction, by invoking Theorem 18.2(c) on $f\circ\bar
+p$ and $\bar p^{-1}$ (since they are continuous by hypothesis)
+then $\left(f\circ\bar p\right)\circ\bar p^{-1}=f\circ\left(\bar
+  p\circ\bar p^{-1}\right)=f$ is continuous.
+\end{remarks*}
 \newpage
 \begin{problem}[D]
 (Do not use Problem E to do this problem). Let $\sim$ be the
@@ -450,23 +481,6 @@ have to prove that this is an equivalence relation). Prove that
 $[-1,1]/{\sim}$ is not Hausdorff.
 \end{problem}
 \begin{proof}
-% We will show that for any open neighborhood $U$ of $[-1]$ and $V$
-% of $[1]$ in $[-1,1]/{\sim}$ the intersection $U\cap V$ is
-% nonempty. Let $U$ and $V$ be as above, then their preimages under
-% the quotient map $q\colon [-1,1]\to[-1,1]/{\sim}$ are open in
-% $[-1,1]$, in other words, $q^{-1}(U)$ and $q^{-1}(V)$ are open
-% neighborhoods of $-1$ and $1$ respectively. Thus, $[-1,-1+\epsilon_1)\subset
-% q^{-1}(U)$ and $(b,1]\subset q^{-1}(V)$ for sufficiently small
-% $\epsilon,\delta>0$. Then, $q([-1,-1+\epsilon_1))\subset U$ and
-% $q((b,1])\subset V$ and we have that
-% \[
-% q^{-1}(q([-1,-a))\cap q^{-1}(q((b,1]))
-% =
-% \left([-1,a)\cup (a,1)\right)\cap\left((-1,-b)\cup(b,1]\right)\\
-% \neq\emptyset,
-% \]
-% in particular $\pm\min\{\epsilon_1,\epsilon_2\}$ is in the intersection above so
-% $q[-1,a)\cap q((b,1])\subset U\cap V$ is nonempty.
 We will show that for any open neighborhood $U$ and $V$ of $[1]$
 and $[-1]$ respectively, the intersection $U\cap
 V\neq\emptyset$. Let $U$ and $V$ be as above, then by the
@@ -589,7 +603,11 @@ If we can show that $U/A$ is open in $X/A$, it follows from Lemma
 12 that $\iota^*$ is an open map. Looking at the diagram in part
 (i) above, the we have that
 \[
-\iota(q^{-1}(U/A))=\iota(U)=U=p^{-1}(U/A)
+\iota\left(q^{-1}\left(\iota^*\right)^{-1}(U/A)\right)
+=\iota(q^{-1}(U/A))
+=\iota(U)=
+U=p^{-1}(U/A)
+=p^{-1}\left(\iota^*(U/A)\right)
 \]
 is open in $X$, hence, by the definition of the quotient map,
 $U/A$ is open in $X/A$. Thus, the map $\iota^*$ is open in
@@ -604,25 +622,24 @@ sequence in $A$ which converges to $x$ (see the top of page 131
 for a hint).
 \end{problem}
 \begin{proof}
-Suppose that $X$ satisfies the first countability axiom. Let
-$x\in\clsr A$. We will construct a sequence $\left\{x_n\right\}$
-which converges to $x$. Since $x$ is in the closure of $A$, for
-every neighborhood $U$ of $x$ the intersection $U\cap A$ is
-nonempty. In particular, since $X$ is first countable, there is a
-countable collection $\left\{U_n\right\}$ of neighborhoods of $x$
-with $U_n\cap A\neq\emptyset$ for all $n$. Now, define a nested
-sequence of sets $V_1\supset V_2\supset\cdots\supset
-V_n\supset\cdots$ where $V_n=\bigcap_{i=1}^n U_i$ and let $x_n\in
-V_n\cap A$. (Note that $V_n$ is nonempty since it is a
-neighborhood of $x$ so for some positive integer $N$ the
-neighborhood $U_N\subset V_n$. Moreover $V_n\cap A$ is nonempty
-since $V_n$ is a neighborhood of $x$ which is in the closure of
-$A$.) We claim that the sequence we just created,
-$\left\{x_n\right\}$, converges to $x$. Let $U$ be any neighborhood of
-$x$. Then $U_N\subset U$ for some positive integer $N$. Hence
-$x_n\in U$ for every $n\geq N$ (by construction). Thus, the
-sequence $x_n\to
-x$.
+Suppose that $X$ satisfies the first countability axiom
+(cf.\,Munkres, \S21, pp.\,130-131). Let $x\in\clsr A$. We will
+construct a sequence $\left\{x_n\right\}$ which converges to
+$x$. Since $x$ is in the closure of $A$, for every neighborhood
+$U$ of $x$ the intersection $U\cap A$ is nonempty. In particular,
+since $X$ is first countable, there is a countable collection
+$\left\{U_n\right\}$ of neighborhoods of $x$ with $U_n\cap
+A\neq\emptyset$ for all $n$. Now, define a nested sequence of
+sets $V_1\supset V_2\supset\cdots\supset V_n\supset\cdots$ where
+$V_n=\bigcap_{i=1}^n U_i$ and let $x_n\in V_n\cap A$. (Note that
+$V_n$ is nonempty since it is a neighborhood of $x$ so for some
+positive integer $N$ the neighborhood $U_N\subset V_n$. Moreover
+$V_n\cap A$ is nonempty since $V_n$ is a neighborhood of $x$
+which is in the closure of $A$.) We claim that the sequence we
+just created, $\left\{x_n\right\}$, converges to $x$. Let $U$ be
+any neighborhood of $x$. Then $U_N\subset U$ for some positive
+integer $N$. Hence $x_n\in U$ for every $n\geq N$ (by
+construction). Thus, the sequence $x_n\to x$.
 \end{proof}
 
 %%% Local Variables:

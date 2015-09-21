@@ -17,8 +17,8 @@ M$. But $x'\in\sqrt{\ann(M)+\mathfrak{a}}$ if $x'^n=n+y$ for
 $n\in\ann(M)$, $y\in\mathfrak{a}$, or $x'^nm=(n+y)m=nm+ym=ym$, in
 particular, $x'^nm\in\mathfrak{a}M$ so
 $x'\in\sqrt{\ann(M/\mathfrak{a}M)}$. To see the reverse inclusion
-note that [cf.\,Matsumura, Theorem 2.1] if
-$x^n\in\ann(M/\mathfrak{a}M)$ then there exists a
+note that [cf.Atiyah \& MacDonald, Proposition 2.4 or Matsumura,
+Theorem 2.1] if $x^n\in\ann(M/\mathfrak{a}M)$ then there exists a
 $y\in\mathfrak{a}$ such that $(x^n+y)M=0$ or
 $x^nM=-yM\subset\mathfrak{a}M$ so
 $x\in\sqrt{\ann(M/\mathfrak{a}M)}$. Thus,
@@ -28,31 +28,36 @@ and we have equality.
 \newpage
 \begin{problem}
 Let $R$ be a local ring and $M,N$ finite $R$-modules. Show that
-$M\otimes_R N=0$ if and only if $M=0$ or $N=0$.
+$M\otimes N=0$ if and only if $M=0$ or $N=0$.
 \end{problem}
 \begin{proof}
-$\impliedby$: If $M=0$ or $N=0$, it is immediate that $M\otimes_R
-N=0$.
+$\impliedby$ If either $M=0$ or $N=0$ it is immediate that
+$M\otimes N=0$.
 
-$\implies$: Let $\mathfrak{m}$ be a maximal ideal of $R$. Since
-$M\otimes_R N=0$, by Theorem 2.7, we have
-
-% Let m b e the maximal ideal of A. Since M ⊗ A N = 0 we have 0 =
-% (M ⊗ A N ) ⊗ A (A/m. However, this module is isomorphic to (M ⊗ A
-% A/m) ⊗ A/m (N ⊗ A A/m).  Thus, this module is 0. Note that the
-% factors are isomorphic to M/mM and N/mN by a previous homework
-% problem. Also, it is a tensor product of vector spaces over the
-% field A/m, and each factor is finitely generated, hence
-% finite-dimensional. By the dimension formula dim(V ⊗ F W ) =
-% dim(V ) dim(W ) for finite-dimensional vector spaces over a field
-% F , we get 0 = dim(M/mM ) dim(N/mN ), which forces M/mM = 0 or
-% N/mN = 0.  By Nakayama, we get M = 0 or N = 0.
+$\implies$ To see the forward direction, we take Atiyah and
+MacDonald's hint and let $\mathfrak{m}$ be the maximal ideal of
+$R$ and let $k=R/\mathfrak{m}$ denote its residue field. Let
+$M_k=k\otimes M\cong M/\mathfrak{m}M$ by Theorem 2.13. But
+$M\otimes N=0$ implies $M_k\otimes_k N_k=0$ as vector spaces so
+$M_k=0$ or $N_k=0$. Thus, by Nakayama's lemma, $M=0$ or $N=0$
+since $M_k=0$ or $N_k=0$, in other words, since $\mathfrak{m}M=M$
+or $\mathfrak{m}N=N$ and $\mathfrak{m}=\rad(R)$.
 \end{proof}
 \newpage
 \begin{problem}
 Show that $R^n\cong R^m$ if and only if $n=m$.
 \end{problem}
 \begin{proof}
+$\impliedby$ If $n=m$ then the isomorphism $R^n\cong R^m$ is
+canonical.
+
+$\implies$ Suppose that $R^n\cong R^m$. Let $\varphi\colon R^n\to
+R^m$ be a $R$-linear isomorphism. Let $\mathfrak{m}$ be a maximal
+ideal of $R$ and let $k=R/\mathfrak{m}$ be its residue
+field. Then there is an induced $k$-linear isomorphism
+$\varphi^*\colon k^n\to k^m$. By the Rank-Nullity theorem and
+since $\varphi^*$ is a bijection, we have that the dimension of
+$k^n$ and $k^m$ are equal, i.e., $n=m$.
 \end{proof}
 \newpage
 \begin{problem}
@@ -62,17 +67,58 @@ Prove 2.7.
 Recall the statement of Theorem 2.7:
 \begin{theorem*}
 \begin{enumerate}[noitemsep,label=(\alph*)]
-\item $M\otimes_R N\cong N\otimes_R M$ via $x\otimes y\mapsto
+\item $M\otimes N\cong N\otimes M$ via $x\otimes y\mapsto
   y\otimes x$.
-\item $(M\otimes_R N)\otimes_R P\cong M\otimes_R N\otimes_R
-  P\cong M\otimes_R(N\otimes_R P)$ via $(x\otimes y)\otimes
+\item $(M\otimes N)\otimes P\cong M\otimes N\otimes
+  P\cong M\otimes(N\otimes P)$ via $(x\otimes y)\otimes
   z\mapsto x\otimes y\otimes z\mapsto x\otimes (y\otimes z)$.
-\item $(M\oplus N)\otimes_R P\cong (M\otimes_R P)\oplus
-  (N\otimes_R P)$ via $(x+y)\otimes z\mapsto x\otimes z+y\otimes
+\item $(M\oplus N)\otimes P\cong (M\otimes P)\oplus
+  (N\otimes P)$ via $(x+y)\otimes z\mapsto x\otimes z+y\otimes
   z$.
-\item $R\otimes_R M\cong M$ via $r\otimes x\mapsto rx$.
+\item $R\otimes M\cong M$ via $r\otimes x\mapsto rx$.
 \end{enumerate}
 \end{theorem*}
+\vspace{.25in}
+\noindent
+In all cases we must show that the prescribed mapping is well
+defined.
+\\\\
+(a) The map $\phi\colon M\times N\to N\times M$ given by
+$(x,y)\mapsto(y,x)$ is a homomorphism. Therefore $\phi$ induces a
+homomorphism $R^{\bigoplus (M\times
+  N)}\overset{\cong}{\longrightarrow}R^{\bigoplus(N\times M)}$
+which preserves the elements in the tensor quotient. Thus, we
+conclude that the map $x\otimes y\to y\otimes x$ is well
+defined.
+\\\\
+(b) Fix an element $z\in P$. Then the mapping $(x,y)\mapsto
+x\otimes y\otimes z$ is bilinear in $x$ and $y$ and so induces a
+homomorphism $\phi_z\colon M\otimes N\to M\otimes P$ such
+that $\phi_z(x\otimes y)=x\otimes y\otimes z$. Next we consider
+the mapping $(t,z)\mapsto\phi_z(t)$ of $(M\otimes N)\times P\to
+M\otimes N\otimes P$. This is bilinear and therefore induces a
+homomorphism $\phi\colon (M\otimes N)\otimes P\to M\otimes
+N\otimes P$ such that $\phi((x\otimes y)\otimes z)=x\otimes
+y\otimes z$.
+
+Similarly we can construct a map $\psi_0\colon M\times N\times
+P\mapsto (M\otimes N)\otimes P$ which sends $(x,y,z)\mapsto
+(x\otimes y)\otimes z$. This is a trilinear map and so it induces
+a homomorphism $\psi\colon M\otimes N\otimes P\to(M\otimes
+N)\otimes P$ such that $\psi(x\otimes y\otimes z)=(x\otimes
+y)\otimes z$. It is clear that $\phi$ and $\psi$ are inverses of
+each other. Therefore, we have that $(M\otimes N)\otimes P\cong
+M\otimes N\otimes P$.
+
+The proof that $M\otimes (N\otimes P)\cong M\otimes N\otimes P$
+is analogous, fixing an element $x\in M$ and repeating the whole
+process above.
+\\\\
+(c) Consider the map $\phi\colon(M\oplus N)\times P\to (M\otimes
+P)\oplus (N\otimes P)$ which sends an element $(x+y,z)\mapsto
+x\otimes z+y\otimes z$.
+\\\\
+(d)
 \end{proof}
 \newpage
 \begin{problem}
@@ -84,13 +130,16 @@ Recall the statement of Proposition 2.8:
 Let $M$ be an $R$-module, $N$ an $R$-$S$-bimodule and $P$ an
 $S$-module. Then:
 \begin{enumerate}[noitemsep,label=(\alph*)]
-\item $M\otimes_R N$ is an $R$-$S$-bimodule via $\left(\sum
+\item $M\otimes N$ is an $R$-$S$-bimodule via $\left(\sum
     m_i\otimes n_i\right)s=\sum m_i\otimes (sn_i).$
-\item The free module $(M\otimes_R N)\otimes_S P\cong M\otimes_R
+\item The free module $(M\otimes N)\otimes_S P\cong M\otimes
   (N\otimes_S P)$ as $R$-$S$-bimodules via $(x\otimes y)\otimes
   z\mapsto x\otimes (y\otimes z)$.
 \end{enumerate}
 \end{proposition*}
+(i)
+\\\\
+(ii)
 \end{proof}
 \newpage
 \begin{problem}
@@ -100,8 +149,8 @@ Prove 2.9.
 Recall the statement of Theorem 2.9:
 \begin{theorem*}
 Let $\psi\colon R\to S$ be a ring map and $M$ and $R$
-module. Then $S\otimes_R M$ is an $S$-module (by Proposition
-2.8) and $\mu\colon M\to S\otimes_R M$ with $\mu(m)=1\otimes m$
+module. Then $S\otimes M$ is an $S$-module (by Proposition
+2.8) and $\mu\colon M\to S\otimes M$ with $\mu(m)=1\otimes m$
 is an $R$-linear map. Moreover, for every $R$-linear map
 $\phi\colon M\to N$, where $N$ is any $S$-module, there exists a
 unique $S$-linear map $f$ so that $\phi=f\circ\mu$, i.e, the
@@ -116,7 +165,7 @@ Prove 2.10.
 Recall the statement of Proposition 2.10:
 \begin{proposition*}
 Let $S$ and $T$ be $R$-algebras. Then there is an $R$-algebra
-structure on $S\otimes_R T$ with $(s_1\otimes t_1)(s_2\otimes
+structure on $S\otimes T$ with $(s_1\otimes t_1)(s_2\otimes
 t_2)=(s_1s_2)\otimes (t_1t_2)$.
 \end{proposition*}
 \end{proof}

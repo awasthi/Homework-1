@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Arch Linux) (preloaded format=xelatex 2015.9.14)  20 SEP 2015 03:38
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Arch Linux) (preloaded format=xelatex 2015.9.14)  21 SEP 2015 00:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1319,15 +1319,15 @@ Variant \seq_if_in:NVTF already defined; not changing it on line 68
 . 
 .................................................
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `normal' on input line 66.
+(Font)              `operators' in the math version `normal' on input line 54.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> EU1/LatinModernMath(0)/m/n on input lin
-e 66.
+e 54.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `bold' on input line 66.
+(Font)              `operators' in the math version `bold' on input line 54.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> EU1/LatinModernMath(0)/bx/n on input l
-ine 66.
+ine 54.
 .................................................
 . fontspec info: "no-font-shape"
 . 
@@ -1373,15 +1373,15 @@ ine 66.
 . =2.5pt\relax \relax 
 .................................................
 LaTeX Font Info:    Encoding `OMS' has changed to `EU1' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 66.
+(Font)              `symbols' in the math version `normal' on input line 54.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/cmsy/m/n --> EU1/LatinModernMath(1)/m/n on input li
-ne 66.
+ne 54.
 LaTeX Font Info:    Encoding `OMS' has changed to `EU1' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 66.
+(Font)              `symbols' in the math version `bold' on input line 54.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/cmsy/b/n --> EU1/LatinModernMath(1)/bx/n on input l
-ine 66.
+ine 54.
 .................................................
 . fontspec info: "no-font-shape"
 . 
@@ -1416,17 +1416,17 @@ ine 66.
 . \relax \fontdimen 12\font =6.0pt\relax \relax \fontdimen 13\font =0pt\relax 
 .................................................
 LaTeX Font Info:    Encoding `OMX' has changed to `EU1' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 6
-6.
+(Font)              `largesymbols' in the math version `normal' on input line 5
+4.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/cmex/m/n --> EU1/LatinModernMath(2)/m/n on input li
-ne 66.
+ne 54.
 LaTeX Font Info:    Encoding `OMX' has changed to `EU1' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 66.
+(Font)              `largesymbols' in the math version `bold' on input line 54.
 
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> EU1/LatinModernMath(2)/bx/n on input l
-ine 66.
+ine 54.
 Normal \count register pool exhausted, switching to extended pool.
 \c@theorem=\count277
 \c@definition=\count278
@@ -1437,33 +1437,33 @@ Normal \count register pool exhausted, switching to extended pool.
 (./MA571/lectures/kaufmann-problems.aux) (./MA553/ma553-qual-problems.aux))
 \openout1 = `FALL15-Notes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 147.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 147.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 128.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 128.
 
 (/usr/share/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1500,7 +1500,7 @@ LaTeX Font Info:    ... okay on input line 147.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box76
-Package hyperref Info: Link coloring ON on input line 147.
+Package hyperref Info: Link coloring ON on input line 128.
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -1511,10 +1511,10 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 147.
-LaTeX Info: Redefining \ref on input line 147.
-LaTeX Info: Redefining \pageref on input line 147.
-LaTeX Info: Redefining \nameref on input line 147.
+LaTeX Info: Redefining \nameref on input line 128.
+LaTeX Info: Redefining \ref on input line 128.
+LaTeX Info: Redefining \pageref on input line 128.
+LaTeX Info: Redefining \nameref on input line 128.
 (./FALL15-Notes.out) (./FALL15-Notes.out)
 \@outlinefile=\write4
 \openout4 = `FALL15-Notes.out'.
@@ -1524,7 +1524,7 @@ LaTeX Info: Redefining \nameref on input line 147.
 Package hyperref Warning: Rerun to get /PageLabels entry.
 
 \c@lstlisting=\count283
-LaTeX Info: Redefining \microtypecontext on input line 147.
+LaTeX Info: Redefining \microtypecontext on input line 128.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
@@ -1549,25 +1549,25 @@ Package microtype Info: Character `\dj ' is missing
 (microtype)             in font `\EU1/LatinModernMath(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `EU1/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 10.95015pt on input line 159.
+(Font)              scaled to size 10.95015pt on input line 140.
 LaTeX Font Info:    Font shape `EU1/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 8.00012pt on input line 159.
+(Font)              scaled to size 8.00012pt on input line 140.
 LaTeX Font Info:    Font shape `EU1/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 6.00009pt on input line 159.
+(Font)              scaled to size 6.00009pt on input line 140.
 LaTeX Font Info:    Font shape `EU1/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 10.94983pt on input line 159.
+(Font)              scaled to size 10.94983pt on input line 140.
 LaTeX Font Info:    Font shape `EU1/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 7.99988pt on input line 159.
+(Font)              scaled to size 7.99988pt on input line 140.
 LaTeX Font Info:    Font shape `EU1/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 5.99991pt on input line 159.
-LaTeX Font Info:    Try loading font information for U+msa on input line 159.
+(Font)              scaled to size 5.99991pt on input line 140.
+LaTeX Font Info:    Try loading font information for U+msa on input line 140.
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 (/usr/share/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 159.
+LaTeX Font Info:    Try loading font information for U+msb on input line 140.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1617,14 +1617,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 117--126
 \tf@toc=\write5
 \openout5 = `FALL15-Notes.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 193.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 193.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 174.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 174.
  (./FALL15-Notes.aux
 (./MA571/lectures/mcclure-problems.aux) (./MA571/lectures/kaufmann-problems.aux
 ) (./MA553/ma553-qual-problems.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 193.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 193.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 193.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 174.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 174.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 174.
  ) 
 Here is how much of TeX's memory you used:
  33428 strings out of 493706
