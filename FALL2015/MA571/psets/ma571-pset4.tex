@@ -530,7 +530,21 @@ is a closed subset of $X\times X$.
 \end{problem}
 \begin{proof}
 We will show that $(X\times X)\setminus S$ is open in $X\times
-X$.
+X$. Let $x\times y\in (X\times X)\setminus S$. Then $q(x)\neq
+q(y)$ in the quotient $X/{\sim}$ since $x\nsim y$. Hence, there
+exist open neighborhoods $U$ and $V$ of $q(x)$ and $q(y)$,
+respectively, such that $U\cap V=\emptyset$. Then $q^{-1}(U)$ and
+$q^{-1}(V)$ are open neighborhoods of $x$ and $y$ respectively
+with $q^{-1}(U)\cap q^{-1}(V)=q^{-1}(U\cap V)=\emptyset$. Then
+$q^{-1}(U)\times q^{-1}(V)$ is a basis element of $X\times X$
+containing $x\times y$ with $q^{-1}(U)\times q^{-1}(V)\subset
+(X\times X)\setminus S$ (otherwise there is an $x'\times y'\in
+q^{-1}(U)\times q^{-1}(V)$ with $x'\sim y'$, but then
+$q\left(x'\right)=q\left(y'\right)\in U\cap V$ which contradicts
+our choice of $U$ and $V$). Since $x\times y$ was chosen
+arbitrarily, we conclude that $(X\times X)\setminus S$ is open in
+$X\times X$ and therefore, its complement $S$ is closed in
+$X\times X$.
 \end{proof}
 \newpage
 \begin{problem}[F]
@@ -542,18 +556,44 @@ is obtained from $Y$ by collapsing $S$ to a point.)
 \\\\
 Let $X$ be a topological space. Let $U$ be an open set in $X$,
 and let $A$ be a subset of $U$. Give $U$ the subspace
-topology. Let $\iota\colon U/A\to X/A$ be the map which takes
+topology. Let $\iota^*\colon U/A\to X/A$ be the map which takes
 $[x]$ to $[x]$ (you do not have to prove that this is
 well-defined).
 \begin{enumerate}[noitemsep,label=(\roman*)]
-\item Prove that $\iota$ is continuous.
-\item Prove that $\iota$ is an open map.
+\item Prove that $\iota^*$ is continuous.
+\item Prove that $\iota^*$ is an open map.
 \end{enumerate}
 \end{problem}
 \begin{proof}
-(i)
+(i) Since the composition $p\circ\iota\colon U\to X/A$ in
+the diagram below is continuous by Theorem 18.2(b) and by the
+definition of the quotient map $p$
+\begin{center}
+\includegraphics{figures/hw4-quotient-diagram}
+\end{center}
+it follows by Problem 4.4 (Theorem Q.2) that $\iota^*$ is
+continuous. Alternatively, we note that $\iota^*\colon U/A\to
+X/A$ is the inclusion map, and therefore, is continuous.
 \\\\
-(ii)
+(ii) We prove the following stronger but simple (to prove) result:
+\begin{lemma}
+Suppose $Y\subset X$ is open. The inclusion $\iota\colon Y\hookrightarrow X$ is
+an open map.
+\end{lemma}
+\begin{proof}
+\renewcommand\qedsymbol{$\clubsuit$}
+Let $U$ be an open in $Y$. Then, by Lemma 16.2, $\iota(U)=U$ is open in
+$X$. Thus $\iota$ is an open map.
+\end{proof}
+If we can show that $U/A$ is open in $X/A$, it follows from Lemma
+12 that $\iota^*$ is an open map. Looking at the diagram in part
+(i) above, the we have that
+\[
+\iota(q^{-1}(U/A))=\iota(U)=U=p^{-1}(U/A)
+\]
+is open in $X$, hence, by the definition of the quotient map,
+$U/A$ is open in $X/A$. Thus, the map $\iota^*$ is open in
+$X/A$.
 \end{proof}
 \newpage
 \begin{problem}[G]
@@ -564,8 +604,24 @@ sequence in $A$ which converges to $x$ (see the top of page 131
 for a hint).
 \end{problem}
 \begin{proof}
+Suppose that $X$ satisfies the first countability axiom. Let
+$x\in\clsr A$. We will construct a sequence $\left\{x_n\right\}$
+which converges to $x$. Since $x$ is in the closure of $A$, for
+every neighborhood $U$ of $x$ the intersection $U\cap A$ is
+nonempty. In particular, since $X$ is first countable, there is a
+countable collection $\left\{U_n\right\}$ of neighborhoods of $x$
+with $U_n\cap A\neq\emptyset$ for all $n$. Now, define a nested
+sequence of sets $V_1\supset V_2\supset\cdots\supset
+V_n\supset\cdots$ where $V_n=\bigcap_{i=1}^n U_i$ and let $x_n\in
+V_n\cap A$. }Note that $V_n$ is nonempty since it is a
+neighborhood of $x$ so for some positive integer $N$ the
+neighborhood $U_N\subset V_n$. Moreover $V_n\cap A$ is nonempty
+since $V_n$ is a neighborhood of $x$ which is in the closure of
+$A$.) We claim that $x_n\to x$. Let $U$ be any neighborhood of
+$x$. Then $U_N\subset U$ for some positive integer $N$. Hence
+$x_n\in U$ for every $n\geq N$ (by construction). Thus, $x_n\to
+x$.
 \end{proof}
-
 
 %%% Local Variables:
 %%% mode: latex

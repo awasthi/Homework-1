@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Arch Linux) (preloaded format=xelatex 2015.9.14)  20 SEP 2015 17:30
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Arch Linux) (preloaded format=xelatex 2015.9.14)  20 SEP 2015 21:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1319,15 +1319,15 @@ Variant \seq_if_in:NVTF already defined; not changing it on line 68
 . 
 .................................................
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `normal' on input line 68.
+(Font)              `operators' in the math version `normal' on input line 67.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> EU1/LatinModernMath(0)/m/n on input lin
-e 68.
+e 67.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `bold' on input line 68.
+(Font)              `operators' in the math version `bold' on input line 67.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> EU1/LatinModernMath(0)/bx/n on input l
-ine 68.
+ine 67.
 .................................................
 . fontspec info: "no-font-shape"
 . 
@@ -1373,15 +1373,15 @@ ine 68.
 . =2.5pt\relax \relax 
 .................................................
 LaTeX Font Info:    Encoding `OMS' has changed to `EU1' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 68.
+(Font)              `symbols' in the math version `normal' on input line 67.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/cmsy/m/n --> EU1/LatinModernMath(1)/m/n on input li
-ne 68.
+ne 67.
 LaTeX Font Info:    Encoding `OMS' has changed to `EU1' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 68.
+(Font)              `symbols' in the math version `bold' on input line 67.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/cmsy/b/n --> EU1/LatinModernMath(1)/bx/n on input l
-ine 68.
+ine 67.
 .................................................
 . fontspec info: "no-font-shape"
 . 
@@ -1417,16 +1417,16 @@ ine 68.
 .................................................
 LaTeX Font Info:    Encoding `OMX' has changed to `EU1' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 6
-8.
+7.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/cmex/m/n --> EU1/LatinModernMath(2)/m/n on input li
-ne 68.
+ne 67.
 LaTeX Font Info:    Encoding `OMX' has changed to `EU1' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 68.
+(Font)              `largesymbols' in the math version `bold' on input line 67.
 
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> EU1/LatinModernMath(2)/bx/n on input l
-ine 68.
+ine 67.
 Normal \count register pool exhausted, switching to extended pool.
 \c@theorem=\count277
 \c@definition=\count278
@@ -1449,33 +1449,33 @@ Normal \dimen register pool exhausted, switching to extended pool.
 (./MA571-HW-Current.aux (./psets/ma571-pset4.aux))
 \openout1 = `MA571-HW-Current.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 157.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 157.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 156.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 156.
 
 (/usr/share/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 156.
+LaTeX Font Info:    ... okay on input line 156.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1512,7 +1512,7 @@ LaTeX Font Info:    ... okay on input line 157.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box77
-Package hyperref Info: Link coloring ON on input line 157.
+Package hyperref Info: Link coloring ON on input line 156.
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -1523,16 +1523,16 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 157.
-LaTeX Info: Redefining \ref on input line 157.
-LaTeX Info: Redefining \pageref on input line 157.
-LaTeX Info: Redefining \nameref on input line 157.
+LaTeX Info: Redefining \nameref on input line 156.
+LaTeX Info: Redefining \ref on input line 156.
+LaTeX Info: Redefining \pageref on input line 156.
+LaTeX Info: Redefining \nameref on input line 156.
 (./MA571-HW-Current.out) (./MA571-HW-Current.out)
 \@outlinefile=\write4
 \openout4 = `MA571-HW-Current.out'.
 
 \c@lstlisting=\count282
-LaTeX Info: Redefining \microtypecontext on input line 157.
+LaTeX Info: Redefining \microtypecontext on input line 156.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
@@ -1558,25 +1558,25 @@ Package microtype Info: Character `\dj ' is missing
 (microtype)             in font `\EU1/LatinModernMath(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `EU1/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 10.95015pt on input line 172.
+(Font)              scaled to size 10.95015pt on input line 171.
 LaTeX Font Info:    Font shape `EU1/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 8.00012pt on input line 172.
+(Font)              scaled to size 8.00012pt on input line 171.
 LaTeX Font Info:    Font shape `EU1/LatinModernMath(1)/m/n' will be
-(Font)              scaled to size 6.00009pt on input line 172.
+(Font)              scaled to size 6.00009pt on input line 171.
 LaTeX Font Info:    Font shape `EU1/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 10.94983pt on input line 172.
+(Font)              scaled to size 10.94983pt on input line 171.
 LaTeX Font Info:    Font shape `EU1/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 7.99988pt on input line 172.
+(Font)              scaled to size 7.99988pt on input line 171.
 LaTeX Font Info:    Font shape `EU1/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 5.99991pt on input line 172.
-LaTeX Font Info:    Try loading font information for U+msa on input line 172.
+(Font)              scaled to size 5.99991pt on input line 171.
+LaTeX Font Info:    Try loading font information for U+msa on input line 171.
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 (/usr/share/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 172.
+LaTeX Font Info:    Try loading font information for U+msb on input line 171.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1647,32 +1647,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 521--526
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 536--548
+Underfull \hbox (badness 10000) in paragraph at lines 550--562
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 554--557
+File: figures/hw4-quotient-diagram.pdf Graphic file (type QTm)
+<use  "figures/hw4-quotient-diagram.pdf" >
+Underfull \hbox (badness 10000) in paragraph at lines 574--579
 
  []
 
-[11]) [12]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 195.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 195.
+[11]
+./psets/ma571-pset4.tex:616: Extra }, or forgotten \endgroup.
+l.616 V_n\cap A$. }
+                   Note that $V_n$ is nonempty since it is a
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+) [12]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 194.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 194.
  (./MA571-HW-Current.aux (./psets/ma571-pset4.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 195.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 195.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 194.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 194.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 195.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 194.
  ) 
 Here is how much of TeX's memory you used:
- 33657 strings out of 493706
- 580426 string characters out of 6150888
+ 33662 strings out of 493706
+ 580509 string characters out of 6150888
  766458 words of memory out of 5000000
- 36679 multiletter control sequences out of 15000+600000
+ 36680 multiletter control sequences out of 15000+600000
  11905 words of font info for 93 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  50i,15n,59p,10374b,768s stack positions out of 5000i,500n,10000p,200000b,80000s
