@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Arch Linux) (preloaded format=xelatex 2015.9.14)  20 SEP 2015 21:04
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Arch Linux) (preloaded format=xelatex 2015.9.14)  20 SEP 2015 21:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1657,17 +1657,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 574--579
 
  []
 
-[11]
-./psets/ma571-pset4.tex:616: Extra }, or forgotten \endgroup.
-l.616 V_n\cap A$. }
-                   Note that $V_n$ is nonempty since it is a
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-) [12]
+[11]) [12]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 194.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 194.
  (./MA571-HW-Current.aux (./psets/ma571-pset4.aux))
