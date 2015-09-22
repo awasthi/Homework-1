@@ -111,6 +111,15 @@
 \newtheorem*{observation*}{**Observation**}
 \newtheorem*{observations*}{**Observations**}
 
+%% Patch arrows
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
+\patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
+\patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
+\patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
+\makeatother
+
 %% Redefinitions & commands
 \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
 % \renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}

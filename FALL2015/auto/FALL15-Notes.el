@@ -26,7 +26,8 @@
     "amsthm"
     "amssymb"
     "mathtools"
-    "unicode-math")
+    "unicode-math"
+    "etoolbox")
    (TeX-add-symbols
     '("clsr" 1)
     '("restr" 2)

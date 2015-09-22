@@ -25,7 +25,8 @@
     "amssymb"
     "mathtools"
     "unicode-math"
-    "titlesec")
+    "titlesec"
+    "etoolbox")
    (TeX-add-symbols
     '("clsr" 1)
     '("restr" 2)
