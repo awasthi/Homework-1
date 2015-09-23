@@ -4,7 +4,7 @@
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("memoir" "article" "oneside" "10pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("xcolor" "dvipsnames") ("enumitem" "inline") ("titlesec" "explicit")))
+                     '(("xcolor" "dvipsnames") ("enumitem" "inline") ("fontenc" "T1") ("titlesec" "explicit")))
    (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
@@ -24,9 +24,12 @@
     "amsthm"
     "amssymb"
     "mathtools"
+    "fontenc"
+    "lmodern"
+    "ifxetex"
     "unicode-math"
-    "titlesec"
-    "etoolbox")
+    "etoolbox"
+    "titlesec")
    (TeX-add-symbols
     '("clsr" 1)
     '("restr" 2)

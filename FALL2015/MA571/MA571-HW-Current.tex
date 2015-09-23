@@ -43,8 +43,14 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{mathtools}
-% \usepackage[T1]{fontenc}
-% \usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
+
+\usepackage{ifxetex}
+%% XeTeX specific
+\ifxetex
 \usepackage{unicode-math}
 
 \setmainfont[Ligatures=TeX]{Latin Modern Roman}
@@ -52,6 +58,19 @@
 \setmonofont{Latin Modern Mono}
 \setmathfont{Latin Modern Math}
 
+%% Patch arrows for XeTeX
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
+\patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
+\patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
+\patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
+\makeatother
+
+\renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
+\fi
+
+%% Theorems and definitions
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}[theorem]{Proposition}
@@ -111,19 +130,7 @@
 \newtheorem*{observation*}{**Observation**}
 \newtheorem*{observations*}{**Observations**}
 
-%% Patch arrows
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
-\patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
-\patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
-\patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
-\makeatother
-
 %% Redefinitions & commands
-\renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
-% \renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
-
 \newcommand\restr[2]{{% we make the whole thing an ordinary symbol
   \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
   {#1} % the function
