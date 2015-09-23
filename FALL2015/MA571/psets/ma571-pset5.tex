@@ -18,8 +18,11 @@ $\beta$. Therefore, $\left\{B_\alpha\right\}$ is a collection of
 connected subspaces of $X$ that have a point in common. Applying
 Theorem 23.3 one last time, we see that the union
 \[
-\bigcup B_\alpha=\bigcup\left(A\cup
-  A_\alpha\right)=A\cup\left(\bigcup A_\alpha\right)
+\bigcup B_\alpha
+=
+\bigcup\left(A\cup A_\alpha\right)
+=
+A\cup\left(\bigcup A_\alpha\right)
 \]
 is connected.
 \end{proof}
@@ -30,80 +33,15 @@ that intersects both $A$ and $X\setminus A$, then $C$ intersects
 $\partial A$.
 \end{problem}
 \begin{proof}
-% We shall proceed by contradiction. Suppose that $C\cap\partial
-% A=\emptyset$, then we shall show that $C\cap A$ and
-% $C\cap\left(X\setminus A\right)$ forms a separation of $C$. First
-% we will prove that $C\cap A$ and $C\cap\left(X\setminus A\right)$
-% are open. Recall that by definition (see Munkres \S17, p.\,102)
-% the boundary $\partial A=\clsr A\cap\clsr{X\setminus A}$. Then we
-% claim that $\partial A\cap\Int A=\emptyset$ and $\clsr A=\partial
-% A\cup\Int A$:
-% \begin{lemma}
-% Let $X$ be a topological space and $A\subset X$. Then $\partial
-% A$ and $\Int A$ are disjoint and $\clsr{A}=\partial A\cup\Int
-% A$.
-% \end{lemma}
-% \begin{proof}[Proof of lemma]
-% \renewcommand\qedsymbol{$\clubsuit$}
-% The point $x\in\partial A$ if and only if $x\in\clsr A$ and
-% $x\in\clsr{X\setminus A}$. Thus, for every neighborhood $U$ of
-% $x$, the intersection $U\cap X\setminus A\neq\emptyset$, in
-% particular $U\nsubset A$ so $x$ is not an interior point of
-% $A$. Hence, we see that $\partial A\cap\Int A=\emptyset$. To
-% prove the last statement note that $\partial A\subset\clsr A$ and
-% $\Int A\subset A\subset\clsr A$ (cf.\,Munkres \S17, p.\,95), so
-% that $\partial A\cup\Int A\subset\clsr A$ hence, it suffices to
-% show the reverse inclusion, namely, $\clsr A\subset\partial
-% A\cup\Int A$. Let $x\in\clsr A$. If $x\in\Int A$, then clearly
-% $x\in\partial A\cup\Int A$. Suppose $x\notin\Int A$. Then, by
-% Theorem 17.5(a), for every neighborhood $U$ of $x$, the
-% intersection $U\cap A\neq\emptyset$ and $U\nsubset A$. Thus,
-% $U\cap (X\setminus A)\neq\emptyset$ so $x\in\clsr{X\setminus
-%   A}$. It follows that $x\in\clsr{A}\cap\clsr{X\setminus
-%   A}=\partial A$.
-% \end{proof}
-% \begin{lemma}
-% Let $X$ be a topological space and $A\subset X$. Then $\partial
-% A=\partial\left(X\setminus A\right)$.
-% \end{lemma}
-% \begin{proof}[Proof of lemma]
-% \renewcommand\qedsymbol{$\clubsuit$}
-% Replace $A$ by $X\setminus A$ in the definition of the boundary
-% of $A$. Then we have:
-% \begin{align*}
-% \partial\left(X\setminus A\right)&=\clsr{X\setminus A}\cap
-%                              \clsr{X\setminus\left(X\setminus A\right)}\\
-% &=\clsr{X\setminus A}\cap\clsr{A}\\
-% &=\clsr A\cap\clsr{X\setminus A}\\
-% &=\partial A.
-% \end{align*}
-% \end{proof}
-% Apply Lemma 13 to the closure of $X\setminus A$ and we have
-% $\clsr{X\setminus A}=\partial\left(X\setminus
-%   A\right)\cap\Int\left(X\setminus A\right)$. But by Lemma 14 this
-% is just $\clsr{X\setminus A}=\partial A\cap\Int\left(X\setminus
-%   A\right)$. Then, since $C\cap A\subset A\subset\clsr A$ and
-% $C\cap A\cap\partial A=\emptyset$ then $C\cap A\subset\Int
-% A$. Similarly $C\cap\left(X\setminus
-%   A\right)\subset\Int\left(X\setminus A\right)$. In particular,
-% both $C\cap A$ and $C\cap\left(X\setminus A\right)$ are
-% open. Lastly note that, by Theorem 17.4, that the closure
-% $\clsr{C\cap A}=C\cap \clsr A=C\cap\left(\partial A\cup\Int
-%   A\right)$ so $\clsr{C\cap A}\cap\left(C\cap\left(X\setminus
-%     A\right)\right)=\emptyset$ since $\partial
-% A\cap\left(C\cap\left(X\setminus
-%     A\right)\right)=\emptyset$. Similarly, $\left(C\cap
-%   A\right)\cap\clsr{C\cap\left(X\setminus
-%     A\right)}=\emptyset$. Thus, by Lemma 23.1, the
 We shall proceed by contradiction. Suppose that $C\cap\partial
 A=\emptyset$, then we shall show that the pair $C\cap A$ and
-$C\cap\left(X\setminus A\right)$ forms a separation of
+$C\cap(X\setminus A)$ forms a separation of
 $C$. Recall that by definition (see Munkres \S17, p.\,102) the
 boundary $\partial A=\clsr A\cap\clsr{X\setminus A}$. Then we
-claim that $\clsr A=\partial A\cup\Int A$:
+claim that $\clsr A=\partial A\cup \Int A$:
 \begin{lemma}
 Let $X$ be a topological space and $A\subset X$. Then $\partial
-A$ and $\Int A$ are disjoint and $\clsr{A}=\partial A\cup\Int
+A$ and $\Int{A}$ are disjoint and $\clsr{A}=\partial A\cup\Int
 A$.
 \end{lemma}
 \begin{proof}[Proof of lemma]
@@ -127,45 +65,45 @@ $U\cap (X\setminus A)\neq\emptyset$ so $x\in\clsr{X\setminus
 \end{proof}
 \begin{lemma}
 Let $X$ be a topological space and $A\subset X$. Then $\partial
-A=\partial\left(X\setminus A\right)$.
+A=\partial(X\setminus A)$.
 \end{lemma}
 \begin{proof}[Proof of lemma]
 \renewcommand\qedsymbol{$\clubsuit$}
 Replace $A$ by $X\setminus A$ in the definition of the boundary
 of $A$. Then we have:
 \begin{align*}
-\partial\left(X\setminus A\right)&=\clsr{X\setminus A}\cap
-                             \clsr{X\setminus\left(X\setminus A\right)}\\
+\partial(X\setminus A)&=\clsr{X\setminus A}\cap
+                             \clsr{X\setminus(X\setminus A)}\\
 &=\clsr{X\setminus A}\cap\clsr{A}\\
 &=\clsr A\cap\clsr{X\setminus A}\\
 &=\partial A.
 \end{align*}
 \end{proof}
 Now, by Theorem 17.4, we have that $\clsr{C\cap A}=C\cap\clsr A$
-and $\clsr{C\cap\left(X\setminus A\right)}=C\cap\clsr{X\setminus
+and $\clsr{C\cap(X\setminus A)}=C\cap\clsr{X\setminus
   A}$. But by Lemma 13 and Lemma 14, the latter sets are
-equivalent to $\clsr{C\cap A}=C\cap\left(\partial A\cup\Int
-  A\right)$ and $\clsr{C\cap\left(X\setminus
-    A\right)}=C\cap\left(\partial A\cup\Int\left(X\setminus
-    A\right)\right)$. But since $C\cap\partial A=\emptyset$ by
+equivalent to $\clsr{C\cap A}=C\cap(\partial A\cup\Int
+  A)$ and $\clsr{C\cap(X\setminus
+    A)}=C\cap(\partial A\cup\Int(X\setminus
+    A))$. But since $C\cap\partial A=\emptyset$ by
 assumption, we have
 \begin{align*}
-\clsr{C\cap A}\cap\left(C\cap\left(X\setminus A\right)\right)
-&=\left(C\cap\left(\partial A\cup\Int A\right)\right)
-\cap\left(C\cap\left(X\setminus A\right)\right)\\
-&=\left(\left(C\cap\partial A\right)
+\clsr{C\cap A}\cap(C\cap(X\setminus A))
+&=(C\cap(\partial A\cup\Int A))
+\cap(C\cap(X\setminus A))\\
+&=((C\cap\partial A)
 \cup
-\left(C\cap\Int A\right)\right)
+(C\cap\Int A))
 \cap
-\left(C\cap\left(X\setminus A\right)\right)\\
-&=\left(C\cap\Int A\right)\cap\left(C\cap\left(X\setminus A\right)\right)\\
+(C\cap(X\setminus A))\\
+&=(C\cap\Int A)\cap(C\cap(X\setminus A))\\
 &=\emptyset
 \end{align*}
-since $C\cap\Int A\subset A$ and $C\cap\left(X\setminus
-  A\right)\subset X\setminus A$. Similarly, we have that the intersection
-$\clsr{C\cap\left(X\setminus A\right)}\cap\left(C\cap
-  A\right)=\emptyset$. So by Lemma 23.1, $C\cap A$ and
-$C\cap\left(X\setminus A\right)$ form a separation of $C$. This
+since $C\cap\Int A\subset A$ and $C\cap(X\setminus
+  A)\subset X\setminus A$. Similarly, we have that the intersection
+$\clsr{C\cap(X\setminus A)}\cap(C\cap
+  A)=\emptyset$. So by Lemma 23.1, $C\cap A$ and
+$C\cap(X\setminus A)$ form a separation of $C$. This
 contradicts the assumption that $C$ is connected. Therefore, we
 conclude that $C\cap\partial A\neq\emptyset$.
 \end{proof}
@@ -242,7 +180,7 @@ point $x$ of $S^1$ such that $f(x)=f(-x)$.
   that $\mathbf{x}$ and $\mathbf{y}$ lie in the same component of
   $\RR^\omega$ if and only if the sequence
   \[
-    \mathbf{x}-\mathbf{y}=\left(x_1-y_1,x_2-y_2,...\right)
+    \mathbf{x}-\mathbf{y}=(x_1-y_1,x_2-y_2,...)
   \]
   is bounded. [\emph{Hint:} It suffices to consider the case
   where $\mathbf{y}=\mathbf{0}$.]

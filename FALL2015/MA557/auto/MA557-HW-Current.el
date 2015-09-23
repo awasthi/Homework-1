@@ -4,7 +4,7 @@
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("memoir" "article" "oneside" "10pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("xcolor" "dvipsnames") ("enumitem" "inline") ("fontenc" "T1") ("titlesec" "explicit")))
+                     '(("xcolor" "dvipsnames") ("enumitem" "inline") ("euscript" "mathcal") ("fontenc" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "ngerman" "russian" "spanish" "english") ("titlesec" "explicit")))
    (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
@@ -24,14 +24,15 @@
     "amsthm"
     "amssymb"
     "mathtools"
+    "euscript"
+    "mathrsfs"
     "fontenc"
-    "lmodern"
-    "ifxetex"
-    "unicode-math"
-    "etoolbox"
+    "inputenc"
+    "babel"
     "titlesec")
    (TeX-add-symbols
     '("restr" 2)
+    "nsubset"
     "ann"
     "colim"
     "id"

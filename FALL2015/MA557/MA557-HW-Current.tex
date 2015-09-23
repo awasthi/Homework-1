@@ -43,32 +43,36 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{mathtools}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
+\usepackage[mathcal]{euscript}
+\usepackage{mathrsfs}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french,ngerman,russian,spanish,english]{babel}
 
+\newcommand\nsubset{\ensuremath{\not\subset}}
 \renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
 
-\usepackage{ifxetex}
-%% XeTeX specific
-\ifxetex
-\usepackage{unicode-math}
+% \usepackage{ifxetex}
+% %% XeTeX specific
+% \ifxetex
+% \usepackage{unicode-math}
 
-\setmainfont[Ligatures=TeX]{Latin Modern Roman}
-\setsansfont[Ligatures=TeX]{Latin Modern Sans}
-\setmonofont{Latin Modern Mono}
-\setmathfont{Latin Modern Math}
+% \setmainfont[Ligatures=TeX]{Latin Modern Roman}
+% \setsansfont[Ligatures=TeX]{Latin Modern Sans}
+% \setmonofont{Latin Modern Mono}
+% \setmathfont{Latin Modern Math}
 
-%% Patch arrows for XeTeX
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
-\patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
-\patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
-\patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
-\makeatother
+% %% Patch arrows for XeTeX
+% \usepackage{etoolbox}
+% \makeatletter
+% \patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
+% \patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
+% \patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
+% \patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
+% \makeatother
 
-\renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
-\fi
+% \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
+% \fi
 
 %% Theorems and definitions
 \theoremstyle{plain}
