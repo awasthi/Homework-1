@@ -13,10 +13,11 @@ A_\alpha\neq\emptyset$ and both $A$ and $A_\alpha$ are
 connected. Next observe that the intersection $B_\alpha\cap
 B_\beta\neq\emptyset$ for all $\alpha$ and $\beta$, in
 particular, the subspace $A$ is contained in the intersection
-since $A\subset B_\alpha$ and $B_\beta$ for all $\alpha$ and
-$\beta$. Therefore, $\left\{B_\alpha\right\}$ is a collection of
-connected subspaces of $X$ that have a point in common. Applying
-Theorem 23.3 one last time, we see that the union
+since $A\subset B_\alpha$ and $A\subset B_\beta$ for all $\alpha$
+and $\beta$. Therefore, $\left\{B_\alpha\right\}$ is a collection
+of connected subspaces of $X$ that have a point in
+common. Applying Theorem 23.3 one last time, we see that the
+union
 \[
 \bigcup B_\alpha
 =
@@ -135,25 +136,43 @@ of $Y$. If $X$ and $Y$ are connected, show that
 is connected.
 \end{problem}
 \begin{proof}
-We shall proceed by contradiction. Let $C$ and $D$ form a
-separation of $(X\times Y)\setminus (A\times B)$. Now, consider
-the embedding $X\hookrightarrow X\times Y$ at a point $y_0\in
-Y\setminus B$, i.e, the map $x\mapsto x\times y_0$. Its image in
-$X\times Y$ is the subspace $X\times y_0$. Note that $X\times
-y_0\subset(X\times Y)\setminus(A\times B)$ since
+% We shall proceed by contradiction. Let $C$ and $D$ form a
+% separation of $(X\times Y)\setminus (A\times B)$. Now, consider
+% the embedding $X\hookrightarrow X\times Y$ at a point $y_0\in
+% Y\setminus B$, i.e, the map $x\mapsto x\times y_0$. Its image in
+% $X\times Y$ is the subspace $X\times y_0$. Note that $X\times
+% y_0\subset(X\times Y)\setminus(A\times B)$ since
+% \[
+% (X\times Y)\setminus(A\times B)=\left\{\,x\times y\in X\times
+%  Y\;\middle|\;\text{$x\in X\setminus A$ and $y\in Y\setminus
+%  B$}\,\right\},
+% \]
+% but $y_0\notin B$ so $x\times y_0\notin A\times B$ for all $x\in
+% X$. By Problem 2.8 (Munkres \S18, Ex.\,4), the latter map is
+% continuous. Moreover, by Theorem 18.2(e), the restriction of its
+% codomain to $(X\times Y)\setminus (A\times B)$ yields a continuous
+% injection $X\hookrightarrow (X\times Y)\setminus(A\times
+% B)$. Then by Theorem 23.5, we have that $X\times y_0$ is a
+% connected subspace of $(X\times Y)\setminus(A\times B)$. Thus, by
+% Theorem 23.2, $X\times y_0\subset C$ or $X\times y_0\subset D$.
+Consider the family of embeddings $\left\{\iota_\alpha\right\}$
+where $i_\alpha\colon X\hookrightarrow X\times Y$ maps
+$x\mapsto x\times y_\alpha$ for $y_\alpha\notin B$, for all
+$\alpha$. By Theorem 23.2, $i_\alpha(X)=X\times y_\alpha$ is
+connected subspace of $X\times Y$. Moreover $X\times
+y_\alpha\subset(X\times Y)\setminus(A\times B)$ so $X\times y_0$,
+in particular, we have that is a connected subspace of $(X\times
+Y)\setminus(A\times B)$. Similarly, consider the family of
+embeddigs $\left\{j_\alpha\right\}$ where $j_\alpha\colon
+Y\hookrightarrow X\times Y$ maps $y\mapsto x_\alpha\times y$ for
+$x_\alpha\notin A$. We similarly have that
+$j_\alpha(Y)=x_\alpha\times Y$ is a connected subspace of
+$(X\times Y)\setminus(A\times B)$. Then we claim that
 \[
-(X\times Y)\setminus(A\times B)=\left\{\,x\times y\in X\times
- Y\;\middle|\;\text{$x\in X\setminus A$ and $y\in Y\setminus
- B$}\,\right\},
+(X\times Y)\setminus(A\times B)
+=\left(\bigcup X\times y_\alpha\right)\cup\left(\bigcup x_\alpha\times Y\right).
 \]
-but $y_0\notin B$ so $x\times y_0\notin A\times B$ for all $x\in
-X$. By Problem 2.8 (Munkres \S18, Ex.\,4), the latter map is
-continuous. Moreover, by Theorem 18.2(e), the restriction of its
-codomain to $(X\times Y)\setminus (A\times B)$ yields a continuous
-injection $X\hookrightarrow (X\times Y)\setminus(A\times
-B)$. Then by Theorem 23.5, we have that $X\times y_0$ is a
-connected subspace of $(X\times Y)\setminus(A\times B)$. Thus, by
-Theorem 23.2, $X\times y_0\subset C$ or $X\times y_0\subset D$.
+
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S24, Ex.\,1(ac)]
