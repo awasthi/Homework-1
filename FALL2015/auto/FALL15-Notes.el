@@ -4,7 +4,7 @@
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("memoir" "article" "oneside" "10pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("xcolor" "dvipsnames") ("enumitem" "inline") ("euscript" "mathcal") ("fontenc" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "ngerman" "russian" "spanish" "english")))
+                     '(("xcolor" "dvipsnames") ("euscript" "mathcal") ("fontenc" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "german" "russian" "spanish" "english") ("enumitem" "inline")))
    (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
@@ -18,40 +18,37 @@
     "geometry"
     "xcolor"
     "graphicx"
-    "multicol"
-    "enumitem"
-    "listings"
-    "mleftright"
-    "microtype"
-    "amsthm"
-    "amssymb"
-    "mathtools"
     "euscript"
     "mathrsfs"
     "fontenc"
     "inputenc"
-    "babel")
+    "babel"
+    "CJKutf8"
+    "microtype"
+    "multicol"
+    "enumitem"
+    "listings"
+    "mleftright"
+    "amsthm"
+    "amssymb"
+    "mathtools"
+    "ifxetex"
+    "unicode-math"
+    "etoolbox")
    (TeX-add-symbols
     '("clsr" 1)
     '("restr" 2)
+    '("textko" 1)
+    '("textzh" 1)
     "nsubset"
     "id"
     "im"
-    "GL"
-    "GO"
-    "OO"
-    "SL"
-    "SO"
+    "Int"
+    "Cl"
     "CC"
-    "CP"
-    "GG"
     "NN"
-    "PP"
     "QQ"
-    "RP"
     "RR"
-    "Sphere"
-    "Torus"
     "ZZ"
     "documentauthor"
     "documenttitle"
@@ -59,6 +56,9 @@
     "shorttitle"
     "documentsubject"
     "authoremail"
+    "spanishoptions"
+    "upint"
+    "lowint"
     "setminus"
     "phi"
     "epsilon")

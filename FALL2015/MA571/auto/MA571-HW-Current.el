@@ -4,7 +4,7 @@
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("memoir" "article" "oneside" "10pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("xcolor" "dvipsnames") ("enumitem" "inline") ("euscript" "mathcal") ("fontenc" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "ngerman" "russian" "spanish" "english") ("titlesec" "explicit")))
+                     '(("xcolor" "dvipsnames") ("fontenc" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "german" "russian" "spanish" "english") ("enumitem" "inline") ("euscript" "mathcal") ("titlesec" "explicit")))
    (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
@@ -16,23 +16,27 @@
     "geometry"
     "xcolor"
     "graphicx"
+    "cmap"
+    "fontenc"
+    "inputenc"
+    "babel"
+    "CJKutf8"
+    "microtype"
     "multicol"
     "enumitem"
     "listings"
     "mleftright"
-    "microtype"
     "amsthm"
     "amssymb"
     "mathtools"
     "euscript"
     "mathrsfs"
-    "fontenc"
-    "inputenc"
-    "babel"
     "titlesec")
    (TeX-add-symbols
     '("clsr" 1)
     '("restr" 2)
+    '("textko" 1)
+    '("textzh" 1)
     "nsubset"
     "id"
     "im"
@@ -50,6 +54,9 @@
     "coursename"
     "documentsubject"
     "authoremail"
+    "spanishoptions"
+    "upint"
+    "lowint"
     "exercisename"
     "setminus"
     "phi"

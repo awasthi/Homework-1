@@ -32,27 +32,49 @@
 \usepackage{graphicx}
 \graphicspath{{figures/}}
 
+%% PDFLaTeX
+\usepackage{cmap}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french,german,russian,spanish,english]{babel}
+\babeltags{fr=french,
+           de=german,
+           ru=russian,
+           es=spanish,
+           en=english}
+\def\spanishoptions{mexico}
+\usepackage{CJKutf8}
+\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
+\newcommand{\textko}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
+
+% Misc
+\usepackage{microtype}
 \usepackage{multicol}
 \usepackage[inline]{enumitem}
 \usepackage{listings}
 \usepackage{mleftright}
 \mleftright
 
-\usepackage{microtype}
-
+%% Math
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{mathtools}
 \usepackage[mathcal]{euscript}
 \usepackage{mathrsfs}
-\usepackage[T2A,T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[french,ngerman,russian,spanish,english]{babel}
+
 \newcommand\nsubset{\ensuremath{\not\subset}}
 \renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
 
-% \usepackage{ifxetex}
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
 % %% XeTeX specific
+% \usepackage{ifxetex}
 % \ifxetex
 % \usepackage{unicode-math}
 

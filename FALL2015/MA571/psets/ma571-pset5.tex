@@ -155,10 +155,10 @@ is connected.
 % B)$. Then by Theorem 23.5, we have that $X\times y_0$ is a
 % connected subspace of $(X\times Y)\setminus(A\times B)$. Thus, by
 % Theorem 23.2, $X\times y_0\subset C$ or $X\times y_0\subset D$.
-Consider the family of embeddings $\left\{\iota_\alpha\right\}$
+Consider the family of embeddings $\left\{i_\alpha\right\}$
 where $i_\alpha\colon X\hookrightarrow X\times Y$ maps
 $x\mapsto x\times y_\alpha$ for $y_\alpha\notin B$, for all
-$\alpha$. By Theorem 23.2, $i_\alpha(X)=X\times y_\alpha$ is
+$\alpha$. By Theorem 23.5, $i_\alpha(X)=X\times y_\alpha$ is
 connected subspace of $X\times Y$. Moreover $X\times
 y_\alpha\subset(X\times Y)\setminus(A\times B)$ so $X\times y_0$,
 in particular, we have that is a connected subspace of $(X\times
@@ -170,9 +170,27 @@ $j_\alpha(Y)=x_\alpha\times Y$ is a connected subspace of
 $(X\times Y)\setminus(A\times B)$. Then we claim that
 \[
 (X\times Y)\setminus(A\times B)
-=\left(\bigcup X\times y_\alpha\right)\cup\left(\bigcup x_\alpha\times Y\right).
+=\bigcup (X\times y_\alpha)\cup(x_\beta\times Y).
 \]
-
+It is clear that the union on the right is a subset of $(X\times
+Y)\setminus(A\times B)$ since each $X\times y_\alpha$ and
+$x_\beta\times Y$ is a subset of $(X\times Y)\setminus(A\times
+B)$. To see the reverse containment, take $x\times y$ in the
+union $\bigcup (X\times y_\alpha)\cup(x_\beta\times Y)$. Then
+$x\times y$ is in some $(X\times y_\alpha)\cup(x_\beta\times Y)$
+so $x\times y\in X\times y_\alpha$ or $x\times y\in x_\beta\times
+Y$. If $x\times y\in\bigcup X\times y_\alpha$, then
+$y_\alpha\notin B$ so $x\times y\notin A\times B$, hence $x\times
+y\in(X\times Y)\setminus(A\times B)$. If $x\times y\in\bigcup
+x_\beta\times Y$ then $x\notin A$, hence $x\times y\notin
+A\times B$ so $x\times y\in(X\times Y)\setminus(A\times
+B)$. Thus, we have that $(X\times Y)\setminus(A\times
+B)=\bigcup (X\times y_\alpha)\cup(x_\beta\times Y)$. Then, note
+that by Theorem 23.3, since $X\cap  y_\alpha\cap x_\beta\cap
+Y\neq\emptyset$, in particular, $x_\beta\times y_\alpha$ is in
+the intersection, $(X\times y_\alpha)\cup(x_\beta\times Y)$ is
+connected for all $\alpha$ and all $\beta$. Thus, the subspace
+$(X\times Y)\setminus(A\times B)$ is connected.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S24, Ex.\,1(ac)]
@@ -184,6 +202,25 @@ $(X\times Y)\setminus(A\times B)$. Then we claim that
 \end{enumerate}
 \end{problem}
 \begin{proof}
+(a) Suppose $\phi\colon (0,1]\to (0,1)$ is a homeomorphism. We
+claim that the restriction of $\phi$ to $(0,1)\subset(0,1]$ gives
+a homeomorphism to $(0,1)\setminus\{\phi(1)\}$:
+\begin{lemma}
+Suppose $\phi\colon X\to Y$ is a homeomorphism. Then the
+restricted map $\phi_0\colon X\setminus{x_0}\to
+Y\setminus\{\phi(x_0)\}$ of $\phi$ is a homeomorphism.
+\end{lemma}
+\begin{proof}[Proof of lemma]
+\renewcommand\qedsymbol{$\clubsuit$}
+at
+\end{proof}
+Now remove $1$ from $(0,1]$. Then, since $\phi(1)$ is bijective,
+there exists $y\in(0,1)$ such that $\phi(1)=y$. Then
+$(0,1)\setminus\{y\}=(0,y)\cup(y,1)$ is disconnected, but
+$(0,1)\setminus\{1\}=(0,1)$ is connected. This contradicts
+Theorem 23.5 that the image of.
+\\\\
+(b)
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S24, Ex.\,2]
