@@ -31,20 +31,13 @@
     "mleftright"
     "amsthm"
     "amssymb"
-    "mathtools"
-    "ifxetex"
-    "unicode-math"
-    "etoolbox")
+    "mathtools")
    (TeX-add-symbols
     '("clsr" 1)
     '("restr" 2)
     '("textko" 1)
     '("textzh" 1)
     "nsubset"
-    "id"
-    "im"
-    "Int"
-    "Cl"
     "CC"
     "NN"
     "QQ"

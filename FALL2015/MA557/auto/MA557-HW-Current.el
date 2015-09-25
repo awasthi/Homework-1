@@ -36,8 +36,11 @@
     '("textko" 1)
     '("textzh" 1)
     "nsubset"
+    "lBrak"
+    "rBrak"
     "ann"
     "colim"
+    "coker"
     "id"
     "im"
     "lcm"

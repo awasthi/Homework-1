@@ -73,26 +73,26 @@
 \def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
 
 %% XeTeX specific
-\usepackage{ifxetex}
-\ifxetex
-\usepackage{unicode-math}
+% \usepackage{ifxetex}
+% \ifxetex
+% \usepackage{unicode-math}
 
-\setmainfont[Ligatures=TeX]{Latin Modern Roman}
-\setsansfont[Ligatures=TeX]{Latin Modern Sans}
-\setmonofont{Latin Modern Mono}
-\setmathfont{Latin Modern Math}
+% \setmainfont[Ligatures=TeX]{Latin Modern Roman}
+% \setsansfont[Ligatures=TeX]{Latin Modern Sans}
+% \setmonofont{Latin Modern Mono}
+% \setmathfont{Latin Modern Math}
 
-%% Patch arrows for XeTeX
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
-\patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
-\patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
-\patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
-\makeatother
+% %% Patch arrows for XeTeX
+% \usepackage{etoolbox}
+% \makeatletter
+% \patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
+% \patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
+% \patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
+% \patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
+% \makeatother
 
-\renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
-\fi
+% \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
+% \fi
 
 %% Theorems and definitions
 \theoremstyle{plain}

@@ -5,13 +5,73 @@ only if $\Gamma$ satisfies the ascending chain condition and
 every irreducible element of $R$ is prime.
 \end{problem}
 \begin{proof}
+$\implies$ Suppose that $R$ is a UFD and let
+$\mathfrak{a}_1\subset\mathfrak{a}_2\subset\cdots$ be an
+ascending chain of ideals in $\Gamma$. Then
+$\mathfrak{a}_1=\langle a_1\rangle$ for some $a_i\in R$ since
+every ideal belonging to $\Gamma$ is principal. Now, since $R$ is
+a UFD, $a_1$ factors uniquely (up to associates) as the finite
+product $a_1=p_1\cdots p_k$ of (not necessarily distinct)
+irreducible elements $p_1,...,p_k\in R$. If $a_1$ is irreducible
+we are done (because in such a case $a_2\mid a_1$ if and only if
+$a_2=ua_1$ where $u$ is a unit, hence
+$\mathfrak{a}_1=\mathfrak{a}_2=\cdots$). Suppose $a_1$ is not
+irreducible. Then since $a_2\mid a_1$, the irreducible factors of
+$a_2$ consist of some (or all) of the irreducible factors of
+$a_1$ (more precisely we can write $a_2=p_{\sigma(1)}\cdots
+p_{\sigma(\ell)}$ for some injection
+$\sigma\colon\{1,...,\ell\}\hookrightarrow\{1,...,k\}$ where
+$\ell\leq k$). Inductively applying this argument to $a_n$ for
+$n\geq 1$, we see that the process (of factoring $a_n$'s from
+$a_1$) must terminate for some positive $r$ for otherwise we have
+that
+\[
+a_1
+=
+a_2b_2=(a_3b_3)b_2
+=
+\cdots
+=
+(a_nb_n)b_{n-1}\cdots
+b_2
+=
+\cdots,
+\]
+but every factorization of $a_1$ into irreducibles must have
+length $k$. Thus, the ascending chain
+$\mathfrak{a}_1\subset\mathfrak{a}_2\subset\cdots\subset\mathfrak{a}_r=\mathfrak{a}_{r+1}=\cdots$
+is stationary for some positive integer $r$ and we say that
+$\Gamma$ satisfies the acc.
+\\\\
+$\impliedby$ Conversely, suppose that $\Gamma$ satisfies the
+acc. Let $a_1\in R$. If $a_1$ is irreducible we are done. Suppose
+$a_1$ is reducible, then $a_1=a_2b_2$ for some non-units
+$a_2,b_{11}\in R$. If both $a_2$ and $b_2$ are irreducible, we
+are done. Without loss of generality we may assume $a_2$ is
+reducible (as the argument to follow may be applied to the
+$b_i$'s in case they are not irreducible). Then $a_2=a_3b_3$ (and
+so $a_1=a_2b_2=(a_3b_3)b_2$) for some non-units $a_3,b_3\in
+R$. Then we get the ascending chain of principal ideals
+\[
+\langle a_1\rangle\subset\langle a_2\rangle\subset\langle a_3\rangle\subset\cdots
+\]
+which must stabilize for some positive integer $r$ since $\Gamma$
+satisfies the acc. This argument shows that there exits a
+factorization of $a_1$ into irreducibles. We must now prove that
+this factorization in unique (up to associates).
+
+Suppose $a=p_1\cdots p_k=q_1\cdots q_\ell$ where
+$p_1,...,p_k,q_1,...,q_\ell\in R$ are irreducibles.
 \end{proof}
 \newpage
 \begin{problem}
 Let $M$ be an Artinian $R$-module. Show that every injective
-$R$-lnear map $\phi\colon M\to M$ is an isomorphism.
+$R$-linear map $\phi\colon M\to M$ is an isomorphism.
 \end{problem}
 \begin{proof}
+Suppose $\phi$ is not surjective. Then, there is some element
+$x\in M$ that is not in the image of $\phi$. Now consider
+cokernels $\coker(\phi^n)=M/\im(\phi^n)$
 \end{proof}
 \newpage
 \begin{problem}
@@ -19,6 +79,8 @@ Let $M$ be a finitely generated Artinian module. Show that $M$ is
 Noetherian.
 \end{problem}
 \begin{proof}
+Suppose that $M$ is not Noetherian. Let $\Gamma$ be the set of
+all non-finitely generated submodules $N$ of $M$.
 \end{proof}
 \newpage
 \begin{problem}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.14)  24 SEP 2015 13:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.14)  25 SEP 2015 03:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1631,26 +1631,26 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removed on input line 255.
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 265--273
+Underfull \hbox (badness 10000) in paragraph at lines 266--274
 
  []
 
-[10]) [11]
+) [10]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 217.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 217.
  (./MA571-HW-Current.aux (./psets/ma571-pset5.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 217.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 217.
 Package rerunfilecheck Info: File `MA571-HW-Current.out' has not changed.
-(rerunfilecheck)             Checksum: 4A85EEDED8B1578CBF15B79B00B0C8B7;794.
+(rerunfilecheck)             Checksum: F1BFFF280B33456D85C8E818D8207AC1;725.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 217.
  ) 
 Here is how much of TeX's memory you used:
- 17983 strings out of 493089
- 253441 string characters out of 6140694
- 448950 words of memory out of 5000000
- 21035 multiletter control sequences out of 15000+600000
- 21969 words of font info for 95 fonts, out of 8000000 for 9000
+ 17974 strings out of 493089
+ 253315 string characters out of 6140694
+ 448948 words of memory out of 5000000
+ 21032 multiletter control sequences out of 15000+600000
+ 21911 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,12n,43p,286b,481s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/t
@@ -1660,18 +1660,17 @@ s/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public
 mmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
 share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
-symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/m
-sbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr
-/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-di
-st/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/
-public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super
-/sfti0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb><
-/usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb>
-Output written on MA571-HW-Current.pdf (13 pages, 238476 bytes).
+ublic/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/ams
+fonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfb
+x1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr
+/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-di
+st/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/
+public/cm-super/sfti0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super
+/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb>
+Output written on MA571-HW-Current.pdf (12 pages, 224809 bytes).
 PDF statistics:
- 181 PDF objects out of 1000 (max. 8388607)
- 142 compressed objects within 2 object streams
- 18 named destinations out of 1000 (max. 500000)
- 22125 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 166 PDF objects out of 1000 (max. 8388607)
+ 129 compressed objects within 2 object streams
+ 14 named destinations out of 1000 (max. 500000)
+ 22117 words of extra memory for PDF output out of 24883 (max. 10000000)
 
