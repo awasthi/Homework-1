@@ -4,7 +4,7 @@
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("memoir" "article" "oneside" "10pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("xcolor" "dvipsnames") ("fontenc" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "german" "russian" "spanish" "english") ("enumitem" "inline") ("euscript" "mathcal") ("titlesec" "explicit")))
+                     '(("xcolor" "dvipsnames") ("enumitem" "inline") ("euscript" "mathcal") ("fontenc" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "german" "russian" "spanish" "english") ("titlesec" "explicit")))
    (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
@@ -16,10 +16,6 @@
     "geometry"
     "xcolor"
     "graphicx"
-    "fontenc"
-    "inputenc"
-    "babel"
-    "CJKutf8"
     "microtype"
     "multicol"
     "enumitem"
@@ -30,28 +26,31 @@
     "mathtools"
     "euscript"
     "mathrsfs"
-    "titlesec")
+    "iftex"
+    "cmap"
+    "fontenc"
+    "inputenc"
+    "babel"
+    "CJKutf8"
+    "unicode-math"
+    "titlesec"
+    "etoolbox")
    (TeX-add-symbols
     '("restr" 2)
     '("textko" 1)
     '("textzh" 1)
     "nsubset"
-    "lBrak"
-    "rBrak"
-    "ann"
-    "colim"
-    "coker"
+    "hooklongrightarrow"
+    "twoheadlongrightarrow"
     "id"
     "im"
-    "lcm"
-    "nil"
-    "rad"
+    "coker"
+    "ann"
     "CC"
     "NN"
     "QQ"
     "RR"
     "ZZ"
-    "FF"
     "documentauthor"
     "documenttitle"
     "hwnum"
@@ -60,12 +59,9 @@
     "documentsubject"
     "authoremail"
     "spanishoptions"
-    "upint"
-    "lowint"
     "exercisename"
-    "setminus"
-    "phi"
-    "epsilon")
+    "upint"
+    "lowint")
    (LaTeX-add-environments
     '("problem" LaTeX-env-args ["argument"] 0)
     "theorem"

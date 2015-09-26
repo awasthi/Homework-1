@@ -79,23 +79,48 @@ Let $M$ be a finitely generated Artinian module. Show that $M$ is
 Noetherian.
 \end{problem}
 \begin{proof}
-Suppose that $M$ is not Noetherian. Let $\Gamma$ be the set of
-all non-finitely generated submodules $N$ of $M$.
+We shall induct on $n$ the number of generators of $M$.
+
+Base case: Suppose that $M=Rx$. Then $M$ is cyclic and $M\cong
+R/{\ann(x)}$ is an Artinian $R$-module, hence an Artinian
+$R/{\ann(x)}$-module (if $N_0\supset N_2\supset\cdots$ is a
+descending chain in $M$ as an $R/{\ann(x)}$-module, then it is a
+descendig chain in $M$ as an $R$-model, hence is stationary for
+nome $n$). Then $M$ is an Artinian ring. By (3.17) $M$ is
+Noetherian hence, $M$ is Noetherian as an $R$-module.
+
+Induction step: Assume that every Artinian module with a minimal
+generating set of cardinality $\leq n$ is Noetherian. Let
+$M=Rx_1+\cdots+Rx_{n+1}$. Then
+\[
+0
+\longrightarrow
+Rx_1
+\hooklongrightarrow
+M=Rx_1+\cdots+Rx_n
+\twoheadlongrightarrow
+M/Rx_1
+\rightarrow
+0
+\]
+is exact. Since $Rx_1$ is Noetherian and $M/Rx_1$ is Noetherian
+(since its minimal generating set has cardinality $\leq n$), by
+(3.5)  $M$ is Noetherian.
 \end{proof}
 \newpage
 \begin{problem}
 Let $R$ be a ring that is Artinian or Noetherian, and $x\in
-R$. Show that for some $n>0$, the image of $x$ in $R/(0:x)^n$ is
+R$. Show that for some $n>0$, the image of $x$ in $R/(\ann x)^n$ is
 a nonzero-divisor on that ring.
 \end{problem}
 \begin{proof}
+By 3.7 it is sufficient to prove this for $R$ Noetherian.
 \end{proof}
 \newpage
 \begin{problem}
-Let $R$ be an Artinian ring. Show that $R\cong
-R_1\times\cdots\times R_n$ with $R_i$ Artinian local rings.
 \end{problem}
 \begin{proof}
+\textzh{撒嘎失ㄊ如} \textko{책이예요}
 \end{proof}
 \newpage
 \begin{problem}
@@ -106,40 +131,14 @@ principal. Show that every ideal in $R$ is principal.
 \end{proof}
 \newpage
 \begin{problem}
-Prove 2.12.
+Prove 2.13.
 \end{problem}
 \begin{proof}
-Recall the statement of Theorem 2.12:
-\begin{theorem*}
-Let $R$ be a ring, $M$, $M'$ and $M''$ be $R$-modules. Then
-\begin{enumerate}[noitemsep,label=(\alph*)]
-\item The following are equivalent:
-\begin{enumerate}[noitemsep,label=(\arabic*)]
-\item $\displaystyle 0\xrightarrow{}
-  M'\xrightarrow{\phi}M\xrightarrow{\psi}M''$
-  is exact
-\item $\displaystyle
-  0\xrightarrow{}\hom(N,M')\xrightarrow{\hom(N,\phi)}\hom(N,M)\xrightarrow{\hom(N,\psi)}\hom(N,M'')$
-  is exact for all modules $N$.
-\end{enumerate}
-\item The following are equivalent:
-\begin{enumerate}[noitemsep,label=(\arabic*)]
-\item $\displaystyle
-  M'\xrightarrow{\phi}M\xrightarrow{\psi}M''\xrightarrow{}
-  0$ is exact.
-\item $\displaystyle
-  0\xrightarrow{}\hom(M'',N)\xrightarrow{\hom(\psi,N)}\hom(M,N)\xrightarrow{\hom(\psi,N)}\hom(M',N)$
-  is exact for all modules $N$.
-\item $\displaystyle M'\otimes N\xrightarrow{\phi\otimes
-    N}M\otimes N\xrightarrow{\psi\otimes
-    N}M''\otimes N\xrightarrow{} 0$ is exact
-  for all modules $N$.
-\end{enumerate}
-\end{enumerate}
-\end{theorem*}
+Recall the statement of 2.13:
 \end{proof}
 
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../MA557-HW-Current"
+%%% TeX-engine: default
 %%% End:

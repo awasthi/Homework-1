@@ -30,15 +30,15 @@ is connected.
 \newpage
 \begin{problem}[Munkres \S23, Ex.\,6]
 Let $A\subset X$. Show that if $C$ is a connected subspace of $X$
-that intersects both $A$ and $X\setminus A$, then $C$ intersects
+that intersects both $A$ and $X\complement A$, then $C$ intersects
 $\partial A$.
 \end{problem}
 \begin{proof}
 We shall proceed by contradiction. Suppose that $C\cap\partial
 A=\emptyset$, then we shall show that the pair $C\cap A$ and
-$C\cap(X\setminus A)$ forms a separation of
+$C\cap(X\complement A)$ forms a separation of
 $C$. Recall that by definition (see Munkres \S17, p.\,102) the
-boundary $\partial A=\clsr A\cap\clsr{X\setminus A}$. Then we
+boundary $\partial A=\clsr A\cap\clsr{X\complement A}$. Then we
 claim that $\clsr A=\partial A\cup \Int A$:
 \begin{lemma}
 Let $X$ be a topological space and $A\subset X$. Then $\partial
@@ -48,8 +48,8 @@ A$.
 \begin{proof}[Proof of lemma]
 \renewcommand\qedsymbol{$\clubsuit$}
 The point $x\in\partial A$ if and only if $x\in\clsr A$ and
-$x\in\clsr{X\setminus A}$. Thus, for every neighborhood $U$ of
-$x$, the intersection $U\cap X\setminus A\neq\emptyset$, in
+$x\in\clsr{X\complement A}$. Thus, for every neighborhood $U$ of
+$x$, the intersection $U\cap X\complement A\neq\emptyset$, in
 particular $U\nsubset A$ so $x$ is not an interior point of
 $A$. Hence, we see that $\partial A\cap\Int A=\emptyset$. To
 prove the last statement note that $\partial A\subset\clsr A$ and
@@ -60,51 +60,51 @@ A\cup\Int A$. Let $x\in\clsr A$. If $x\in\Int A$, then clearly
 $x\in\partial A\cup\Int A$. Suppose $x\notin\Int A$. Then, by
 Theorem 17.5(a), for every neighborhood $U$ of $x$, the
 intersection $U\cap A\neq\emptyset$ and $U\nsubset A$. Thus,
-$U\cap (X\setminus A)\neq\emptyset$ so $x\in\clsr{X\setminus
-  A}$. It follows that $x\in\clsr{A}\cap\clsr{X\setminus
+$U\cap (X\complement A)\neq\emptyset$ so $x\in\clsr{X\complement
+  A}$. It follows that $x\in\clsr{A}\cap\clsr{X\complement
   A}=\partial A$.
 \end{proof}
 \begin{lemma}
 Let $X$ be a topological space and $A\subset X$. Then $\partial
-A=\partial(X\setminus A)$.
+A=\partial(X\complement A)$.
 \end{lemma}
 \begin{proof}[Proof of lemma]
 \renewcommand\qedsymbol{$\clubsuit$}
-Replace $A$ by $X\setminus A$ in the definition of the boundary
+Replace $A$ by $X\complement A$ in the definition of the boundary
 of $A$. Then we have:
 \begin{align*}
-\partial(X\setminus A)&=\clsr{X\setminus A}\cap
-                             \clsr{X\setminus(X\setminus A)}\\
-&=\clsr{X\setminus A}\cap\clsr{A}\\
-&=\clsr A\cap\clsr{X\setminus A}\\
+\partial(X\complement A)&=\clsr{X\complement A}\cap
+                             \clsr{X\complement(X\complement A)}\\
+&=\clsr{X\complement A}\cap\clsr{A}\\
+&=\clsr A\cap\clsr{X\complement A}\\
 &=\partial A.
 \end{align*}
 \end{proof}
 Now, by Theorem 17.4, we have that $\clsr{C\cap A}=C\cap\clsr A$
-and $\clsr{C\cap(X\setminus A)}=C\cap\clsr{X\setminus
+and $\clsr{C\cap(X\complement A)}=C\cap\clsr{X\complement
   A}$. But by Lemma 13 and Lemma 14, the latter sets are
 equivalent to $\clsr{C\cap A}=C\cap(\partial A\cup\Int
-  A)$ and $\clsr{C\cap(X\setminus
-    A)}=C\cap(\partial A\cup\Int(X\setminus
+  A)$ and $\clsr{C\cap(X\complement
+    A)}=C\cap(\partial A\cup\Int(X\complement
     A))$. But since $C\cap\partial A=\emptyset$ by
 assumption, we have
 \begin{align*}
-\clsr{C\cap A}\cap(C\cap(X\setminus A))
+\clsr{C\cap A}\cap(C\cap(X\complement A))
 &=(C\cap(\partial A\cup\Int A))
-\cap(C\cap(X\setminus A))\\
+\cap(C\cap(X\complement A))\\
 &=((C\cap\partial A)
 \cup
 (C\cap\Int A))
 \cap
-(C\cap(X\setminus A))\\
-&=(C\cap\Int A)\cap(C\cap(X\setminus A))\\
+(C\cap(X\complement A))\\
+&=(C\cap\Int A)\cap(C\cap(X\complement A))\\
 &=\emptyset
 \end{align*}
-since $C\cap\Int A\subset A$ and $C\cap(X\setminus
-  A)\subset X\setminus A$. Similarly, we have that the intersection
-$\clsr{C\cap(X\setminus A)}\cap(C\cap
+since $C\cap\Int A\subset A$ and $C\cap(X\complement
+  A)\subset X\complement A$. Similarly, we have that the intersection
+$\clsr{C\cap(X\complement A)}\cap(C\cap
   A)=\emptyset$. So by Lemma 23.1, $C\cap A$ and
-$C\cap(X\setminus A)$ form a separation of $C$. This
+$C\cap(X\complement A)$ form a separation of $C$. This
 contradicts the assumption that $C$ is connected. Therefore, we
 conclude that $C\cap\partial A\neq\emptyset$.
 \end{proof}
@@ -121,7 +121,7 @@ $[0,\infty)$ form a separation of $\RR$ with the lower limit
 topology.
 \\\\
 Alternatively, one may note that
-$\RR\setminus(-\infty,0)=[0,\infty)$ is open in $\RR_\ell$ so
+$\RR\complement(-\infty,0)=[0,\infty)$ is open in $\RR_\ell$ so
 $(-\infty,0)$ is both open and closed. Hence, by Munkres's
 alternative formulation of connectedness (cf.\,Munkres \S23,
 p.\,148 the italicized paragraph), $\RR_\ell$ is disconnected.
@@ -131,66 +131,66 @@ p.\,148 the italicized paragraph), $\RR_\ell$ is disconnected.
 Let $A$ be a proper subset of $X$, and let $B$ be a proper subset
 of $Y$. If $X$ and $Y$ are connected, show that
 \[
-(X\times Y)\setminus(A\times B)
+(X\times Y)\complement(A\times B)
 \]
 is connected.
 \end{problem}
 \begin{proof}
 % We shall proceed by contradiction. Let $C$ and $D$ form a
-% separation of $(X\times Y)\setminus (A\times B)$. Now, consider
+% separation of $(X\times Y)\complement (A\times B)$. Now, consider
 % the embedding $X\hookrightarrow X\times Y$ at a point $y_0\in
-% Y\setminus B$, i.e, the map $x\mapsto x\times y_0$. Its image in
+% Y\complement B$, i.e, the map $x\mapsto x\times y_0$. Its image in
 % $X\times Y$ is the subspace $X\times y_0$. Note that $X\times
-% y_0\subset(X\times Y)\setminus(A\times B)$ since
+% y_0\subset(X\times Y)\complement(A\times B)$ since
 % \[
-% (X\times Y)\setminus(A\times B)=\left\{\,x\times y\in X\times
-%  Y\;\middle|\;\text{$x\in X\setminus A$ and $y\in Y\setminus
+% (X\times Y)\complement(A\times B)=\left\{\,x\times y\in X\times
+%  Y\;\middle|\;\text{$x\in X\complement A$ and $y\in Y\complement
 %  B$}\,\right\},
 % \]
 % but $y_0\notin B$ so $x\times y_0\notin A\times B$ for all $x\in
 % X$. By Problem 2.8 (Munkres \S18, Ex.\,4), the latter map is
 % continuous. Moreover, by Theorem 18.2(e), the restriction of its
-% codomain to $(X\times Y)\setminus (A\times B)$ yields a continuous
-% injection $X\hookrightarrow (X\times Y)\setminus(A\times
+% codomain to $(X\times Y)\complement (A\times B)$ yields a continuous
+% injection $X\hookrightarrow (X\times Y)\complement(A\times
 % B)$. Then by Theorem 23.5, we have that $X\times y_0$ is a
-% connected subspace of $(X\times Y)\setminus(A\times B)$. Thus, by
+% connected subspace of $(X\times Y)\complement(A\times B)$. Thus, by
 % Theorem 23.2, $X\times y_0\subset C$ or $X\times y_0\subset D$.
 Consider the family of embeddings $\left\{i_\alpha\right\}$
 where $i_\alpha\colon X\hookrightarrow X\times Y$ maps
 $x\mapsto x\times y_\alpha$ for $y_\alpha\notin B$, for all
 $\alpha$. By Theorem 23.5, $i_\alpha(X)=X\times y_\alpha$ is
 connected subspace of $X\times Y$. Moreover $X\times
-y_\alpha\subset(X\times Y)\setminus(A\times B)$ so $X\times y_0$,
+y_\alpha\subset(X\times Y)\complement(A\times B)$ so $X\times y_0$,
 in particular, we have that is a connected subspace of $(X\times
-Y)\setminus(A\times B)$. Similarly, consider the family of
+Y)\complement(A\times B)$. Similarly, consider the family of
 embeddigs $\left\{j_\alpha\right\}$ where $j_\alpha\colon
 Y\hookrightarrow X\times Y$ maps $y\mapsto x_\alpha\times y$ for
 $x_\alpha\notin A$. We similarly have that
 $j_\alpha(Y)=x_\alpha\times Y$ is a connected subspace of
-$(X\times Y)\setminus(A\times B)$. Then we claim that
+$(X\times Y)\complement(A\times B)$. Then we claim that
 \[
-(X\times Y)\setminus(A\times B)
+(X\times Y)\complement(A\times B)
 =\bigcup (X\times y_\alpha)\cup(x_\beta\times Y).
 \]
 It is clear that the union on the right is a subset of $(X\times
-Y)\setminus(A\times B)$ since each $X\times y_\alpha$ and
-$x_\beta\times Y$ is a subset of $(X\times Y)\setminus(A\times
+Y)\complement(A\times B)$ since each $X\times y_\alpha$ and
+$x_\beta\times Y$ is a subset of $(X\times Y)\complement(A\times
 B)$. To see the reverse containment, take $x\times y$ in the
 union $\bigcup (X\times y_\alpha)\cup(x_\beta\times Y)$. Then
 $x\times y$ is in some $(X\times y_\alpha)\cup(x_\beta\times Y)$
 so $x\times y\in X\times y_\alpha$ or $x\times y\in x_\beta\times
 Y$. If $x\times y\in\bigcup X\times y_\alpha$, then
 $y_\alpha\notin B$ so $x\times y\notin A\times B$, hence $x\times
-y\in(X\times Y)\setminus(A\times B)$. If $x\times y\in\bigcup
+y\in(X\times Y)\complement(A\times B)$. If $x\times y\in\bigcup
 x_\beta\times Y$ then $x\notin A$, hence $x\times y\notin
-A\times B$ so $x\times y\in(X\times Y)\setminus(A\times
-B)$. Thus, we have that $(X\times Y)\setminus(A\times
+A\times B$ so $x\times y\in(X\times Y)\complement(A\times
+B)$. Thus, we have that $(X\times Y)\complement(A\times
 B)=\bigcup (X\times y_\alpha)\cup(x_\beta\times Y)$. Then, note
 that by Theorem 23.3, since $X\cap  y_\alpha\cap x_\beta\cap
 Y\neq\emptyset$, in particular, $x_\beta\times y_\alpha$ is in
 the intersection, $(X\times y_\alpha)\cup(x_\beta\times Y)$ is
 connected for all $\alpha$ and all $\beta$. Thus, the subspace
-$(X\times Y)\setminus(A\times B)$ is connected.
+$(X\times Y)\complement(A\times B)$ is connected.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S24, Ex.\,1(ac)]
@@ -204,11 +204,11 @@ $(X\times Y)\setminus(A\times B)$ is connected.
 \begin{proof}
 (a) Suppose $\phi\colon (0,1]\to (0,1)$ is a homeomorphism. We
 claim that the restriction of $\phi$ to $(0,1)\subset(0,1]$ gives
-a homeomorphism to $(0,1)\setminus\{\phi(1)\}$:
+a homeomorphism to $(0,1)\complement\{\phi(1)\}$:
 \begin{lemma}
 Suppose $\phi\colon X\to Y$ is a homeomorphism. Then the
-restricted map $\phi_0\colon X\setminus{x_0}\to
-Y\setminus\{\phi(x_0)\}$ of $\phi$ is a homeomorphism.
+restricted map $\phi_0\colon X\complement{x_0}\to
+Y\complement\{\phi(x_0)\}$ of $\phi$ is a homeomorphism.
 \end{lemma}
 \begin{proof}[Proof of lemma]
 \renewcommand\qedsymbol{$\clubsuit$}
@@ -216,8 +216,8 @@ at
 \end{proof}
 Now remove $1$ from $(0,1]$. Then, since $\phi(1)$ is bijective,
 there exists $y\in(0,1)$ such that $\phi(1)=y$. Then
-$(0,1)\setminus\{y\}=(0,y)\cup(y,1)$ is disconnected, but
-$(0,1)\setminus\{1\}=(0,1)$ is connected. This contradicts
+$(0,1)\complement\{y\}=(0,y)\cup(y,1)$ is disconnected, but
+$(0,1)\complement\{1\}=(0,1)$ is connected. This contradicts
 Theorem 23.5 that the image of.
 \\\\
 (b)
@@ -295,4 +295,5 @@ directions).
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../MA571-HW-Current"
+%%% TeX-engine: default
 %%% End:

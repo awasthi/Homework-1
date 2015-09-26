@@ -32,20 +32,6 @@
 \usepackage{graphicx}
 \graphicspath{{figures/}}
 
-%% PDFLaTeX
-\usepackage[T2A,T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[french,german,russian,spanish,english]{babel}
-\babeltags{fr=french,
-           de=german,
-           ru=russian,
-           es=spanish,
-           en=english}
-\def\spanishoptions{mexico}
-\usepackage{CJKutf8}
-\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
-\newcommand{\textko}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
-
 % Misc
 \usepackage{microtype}
 \usepackage{multicol}
@@ -61,40 +47,33 @@
 \usepackage[mathcal]{euscript}
 \usepackage{mathrsfs}
 
-\newcommand\nsubset{\ensuremath{\not\subset}}
-\newcommand\lBrak{\ensuremath{[\![}}
-\newcommand\rBrak{\ensuremath{]\!]}}
-\renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
+%% PDFTeX specific
+\usepackage{iftex}
+\ifPDFTeX
+\usepackage{cmap}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french,german,russian,spanish,english]{babel}
+\babeltags{fr=french,
+           de=german,
+           ru=russian,
+           es=spanish,
+           en=english}
+\def\spanishoptions{mexico}
+\usepackage{CJKutf8}
+\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
+\newcommand{\textko}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
+\fi
 
-\def\upint{\mathchoice%
-    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-  \int}
-\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+%% XeTeX specific
+\ifXeTeX
+\usepackage{unicode-math}
 
-% %%  XeTeX specific
-% \usepackage{ifxetex}
-% \ifxetex
-% \usepackage{unicode-math}
-
-% \setmainfont[Ligatures=TeX]{Latin Modern Roman}
-% \setsansfont[Ligatures=TeX]{Latin Modern Sans}
-% \setmonofont{Latin Modern Mono}
-% \setmathfont{Latin Modern Math}
-
-% %% Patch arrows for XeTeX
-% \usepackage{etoolbox}
-% \makeatletter
-% \patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
-% \patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
-% \patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
-% \patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
-% \makeatother
-
-% \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
-% \fi
+\setmainfont[Ligatures=TeX]{Latin Modern Roman}
+\setsansfont[Ligatures=TeX]{Latin Modern Sans}
+\setmonofont{Latin Modern Mono}
+\setmathfont{Latin Modern Math}
+\fi
 
 %% Theorems and definitions
 \theoremstyle{plain}
@@ -164,15 +143,41 @@
   \right|{#2} % this is the delimiter
   }}
 
+\ifPDFTeX
+\newcommand{\nsubset}{\ensuremath{\not\subset}}
+\newcommand{\hooklongrightarrow}{\lhook\joinrel\longrightarrow}
+\newcommand{\twoheadlongrightarrow}{\relbar\joinrel\twoheadrightarrow}
+
+\renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
+
+%% upint and loint
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+\fi
+
+\ifXeTeX
+%% Patch arrows for XeTeX
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
+\patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
+\patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
+\patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
+\makeatother
+
+\renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
+\fi
+
 %% Commands and operators
-\DeclareMathOperator{\ann}{ann}
-\DeclareMathOperator*{\colim}{colim}
-\DeclareMathOperator*{\coker}{coker}
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\lcm}{lcm}
-\DeclareMathOperator{\nil}{nil}
-\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\ann}{ann}
 
 \newcommand{\CC}{\mathbf{C}}
 \newcommand{\NN}{\mathbf{N}}
@@ -180,16 +185,11 @@
 \newcommand{\RR}{\mathbf{R}}
 \newcommand{\ZZ}{\mathbf{Z}}
 
-%% Fields
-\DeclareMathOperator{\FF}{\mathbf{F}}
-
 \begin{document}
-\let\setminus\relax
-\let\phi\relax
-\let\epsilon\relax
-\newcommand\setminus{\smallsetminus}
-\newcommand\phi{\varphi}
-\newcommand\epsilon{\varepsilon}
+% Renewcommands
+\renewcommand\complement{\smallsetminus}
+\renewcommand\phi{\varphi}
+\renewcommand\epsilon{\varepsilon}
 
 \frontmatter
 \aliaspagestyle{title}{empty}
