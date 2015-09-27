@@ -69,9 +69,19 @@ Let $M$ be an Artinian $R$-module. Show that every injective
 $R$-linear map $\phi\colon M\to M$ is an isomorphism.
 \end{problem}
 \begin{proof}
-Suppose $\phi$ is not surjective. Then, there is some element
-$x\in M$ that is not in the image of $\phi$. Now consider
-cokernels $\coker(\phi^n)=M/\im(\phi^n)$
+Suppose, towards a contradiction, that $\phi$ is not
+surjective. Then $M\complement\im\phi\neq\emptyset$. Let $x\in
+M\complement\im\phi$ and consider the descending chain of
+submodules $\im\phi\supset\im\phi^2\supset\cdots$ (the
+containment is clear since for any endomorphism $f\colon R\to R$
+we have $f(R)\subset R$ so $f^2(R)=f(f(R))\subset f(R)$). By the
+dcc on $R$, this chain must stabilize for some positive integer
+$n$, i.e., $\im\phi^n=\im\phi^{n+1}=\cdots$. Then
+$\phi^n(x)\in\im\phi^n$, but $\phi^n(x)\in\im\phi^{n+1}$ so that
+$\phi^n(x)=\phi^{n+1}(y)$ for some $y\in M$. However, since
+$\phi$ is injective $\phi^n(x)=\phi^{n+1}(y)=\phi^n(\phi(y))$
+implies that $x=\phi(y)$ contrary to our choice of
+$x$. Therefore, $\phi$ is an isomorphism.
 \end{proof}
 \newpage
 \begin{problem}
@@ -105,22 +115,92 @@ M/Rx_1
 \]
 is exact. Since $Rx_1$ is Noetherian and $M/Rx_1$ is Noetherian
 (since its minimal generating set has cardinality $\leq n$), by
-(3.5)  $M$ is Noetherian.
+3.5,  $M$ is Noetherian.
 \end{proof}
 \newpage
 \begin{problem}
 Let $R$ be a ring that is Artinian or Noetherian, and $x\in
-R$. Show that for some $n>0$, the image of $x$ in $R/(\ann x)^n$ is
-a nonzero-divisor on that ring.
+R$. Show that for some $n>0$, the image of $x$ in $R/(\ann x^n)$
+is a non-zerodivisor on that ring.
 \end{problem}
 \begin{proof}
-By 3.7 it is sufficient to prove this for $R$ Noetherian.
+By 3.7 it suffices to show the result for $R$ a Noetherian
+module. Consider the ascending chain of submodules
+$\ann x\subset\ann x^2\subset\cdots$ (this containment is clear
+since if $y\in\ann x^n$ then $yx^n=0$ so $yx^{n+1}=0$). By the
+acc on $R$, this chain stabilizes for some positive integer $n$,
+i.e., $\ann x^n=\ann x^{n+1}=\cdots$. We claim that $x$ is a
+non-zerodivisor in $R/{\ann x^n}$. Suppose $\bar x\bar y=0$ in
+$R/{\ann x^n}$. Then $xy\in\ann x^n$ so
+$(xy)x^n=x^{n+1}y=0$. Hence, $y\in\ann x^{n+1}$. But $\ann
+x^{n+1}=\ann x^n$ so $y\in\ann x^n$, i.e., $\bar y=0$. Thus, $x$
+is a non-zerodivisor in $R/{\ann x^n}$.
 \end{proof}
 \newpage
 \begin{problem}
+Let $R$ be an Artinian ring. Show that $R\cong
+R_1\times\cdots\times R_n$ with $R_i$ Artinian local rings.
 \end{problem}
 \begin{proof}
-\textzh{撒嘎失ㄊ如} \textko{책이예요}
+Since $R$ is Artinian, it is semilocal (this was shown in the proof
+of 3.16, but not given as a proposition). Let us prove this:
+\begin{proposition*}
+Let $R$ be an Artinian ring. Then $R$ is semilocal.
+\end{proposition*}
+\begin{proof}[Proof of proposition]
+\renewcommand\qedsymbol{$\clubsuit$}
+Let $\Gamma$ be the set of all maximal ideals of $R$ (which is
+nonempty by 1.4). Suppose, towards a contradiction, that
+$|\Gamma|=\infty$ and consider the descending chain of ideals
+$\mathfrak{m}_1\supset\mathfrak{m}_1\cap\mathfrak{m}_2\supset\cdots$
+where $\mathfrak{m}_i\in\Gamma$. By the dcc on $R$, this chain
+stabilizes for some $n$, i.e.,
+$\mathfrak{m}_1\cap\cdots\cap\mathfrak{m}_n=\left(\mathfrak{m}_1\cap\cdots\cap\mathfrak{m}_n\right)\cap\mathfrak{m}_{n+1}$. Since
+$\mathfrak{m}_1\cdots\mathfrak{m}_n\subset\mathfrak{m}_1\cap\cdots\cap\mathfrak{m}_n$
+then
+$\mathfrak{m}_1\cdots\mathfrak{m}_n\subset\mathfrak{m}_{n+1}$. Then
+since $\mathfrak{m}_{n+1}$ is maximal, it is prime so, by 1.8,
+$\mathfrak{m}_i\subset\mathfrak{m}_{n+1}$ for some $1\leq i\leq
+n$. This is a contradiction. Thus, $|\Gamma|<\infty$, i.e, $R$ is
+semilocal.
+\end{proof}
+Then $\rad R=\mathfrak{m}_1\cap\cdots\cap\mathfrak{m}_n$. So, by
+the Chinese remainder theorem, $\rad
+R=\mathfrak{m}_1\cdots\mathfrak{m}_n$. By 3.15, $\rad R$ is
+nilpotent so $(\rad
+R)^k=\left(\mathfrak{m}_1\cdots\mathfrak{m}_n\right)^k=\mathfrak{m}_1^k\cdots\mathfrak{m}_n^k=0$
+for some positive integer $k$. Then the $\mathfrak{m}_i^k$'s are
+pairwise comaximal since the $\mathfrak{m}_i$'s are pairwise
+comaximal (a consequence of the following lemma)
+\begin{lemma*}
+Let $\mathfrak{a}$ and $\mathfrak{b}$ be ideals. Then
+$\sqrt{\mathfrak{a}^m+\mathfrak{b}^n}\supset\mathfrak{a}+\mathfrak{b}$.
+\end{lemma*}
+\begin{proof}[Proof of lemma]
+\renewcommand\qedsymbol{$\clubsuit$}
+Suppose $x\in\mathfrak{a}+\mathfrak{b}$. Then $x=a+b$ for
+$a\in\mathfrak{a}$, $b\in\mathfrak{b}$. Then
+$(a+b)^{m+n-1}\in\mathfrak{a}^m+\mathfrak{b}^n$ so
+$a+b\in\sqrt{\mathfrak{a}^m+\mathfrak{b}^n}$. Thus,
+$\sqrt{\mathfrak{a}^m+\mathfrak{b}^m}\supset\mathfrak{a}+\mathfrak{b}$.
+\end{proof}
+It follows immediately from the lemma that
+$\rad{\mathfrak{m}_i^k+\mathfrak{m}_j^k}\sup\mathfrak{m}_i+\mathfrak{m}_j=R$
+so $\mathfrak{m}_i^k+\mathfrak{m}_j^k=R$. Thus, by the Chinese
+remainder theorem, there is an isomorphism $R\cong R/(\rad
+R)^k\cong R/\mathfrak{m}_1^k\times\cdots\times
+R/\mathfrak{m}_n^k$. We claim that each $R/\mathfrak{m}_i^k$ is
+local.
+
+By 1.2, there is a one-one correspondence between the ideals of
+$R/\mathfrak{m}_i^k$ and the ideals of $\mathfrak{m}$ of $R$
+containing $\mathfrak{m}_i^k$. In particular, if $\mathfrak{m}$
+is a maximal ideal containing $\mathfrak{m}_i^k$, then
+$\mathfrak{m}_i\subset\mathfrak{m}$ (since $\mathfrak{m}$ is
+prime). Thus, $\mathfrak{m}=\mathfrak{m}_i$ by the maximality of
+$\mathfrak{m}_i$. Passing to the quotient, we see that
+$\mathfrak{m}_i/\mathfrak{m}_i^k$ is the unique maximal ideal of
+$R/\mathfrak{m}_i^k$. Hence, $R/\mathfrak{m}_i$ is local.
 \end{proof}
 \newpage
 \begin{problem}
@@ -131,10 +211,9 @@ principal. Show that every ideal in $R$ is principal.
 \end{proof}
 \newpage
 \begin{problem}
-Prove 2.13.
+Prove 2.11 (the snake lemma).
 \end{problem}
 \begin{proof}
-Recall the statement of 2.13:
 \end{proof}
 
 %%% Local Variables:

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.14)  26 SEP 2015 02:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.14)  26 SEP 2015 17:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1607,10 +1607,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \kern 1.66661pt
-(hyperref)                removed on input line 196.
+(hyperref)                removed on input line 177.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--224
+Underfull \hbox (badness 10000) in paragraph at lines 198--205
 
  []
 
@@ -1618,28 +1618,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 217--224
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \kern 1.66661pt
-(hyperref)                removed on input line 226.
+(hyperref)                removed on input line 207.
 
 [6]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \kern 1.66661pt
-(hyperref)                removed on input line 233.
+(hyperref)                removed on input line 214.
 
 [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \kern 1.66661pt
-(hyperref)                removed on input line 248.
+(hyperref)                removed on input line 229.
 
 [8]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \kern 1.66661pt
-(hyperref)                removed on input line 255.
+(hyperref)                removed on input line 236.
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 266--274
+Underfull \hbox (badness 10000) in paragraph at lines 247--255
 
  []
 

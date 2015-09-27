@@ -136,25 +136,6 @@ of $Y$. If $X$ and $Y$ are connected, show that
 is connected.
 \end{problem}
 \begin{proof}
-% We shall proceed by contradiction. Let $C$ and $D$ form a
-% separation of $(X\times Y)\complement (A\times B)$. Now, consider
-% the embedding $X\hookrightarrow X\times Y$ at a point $y_0\in
-% Y\complement B$, i.e, the map $x\mapsto x\times y_0$. Its image in
-% $X\times Y$ is the subspace $X\times y_0$. Note that $X\times
-% y_0\subset(X\times Y)\complement(A\times B)$ since
-% \[
-% (X\times Y)\complement(A\times B)=\left\{\,x\times y\in X\times
-%  Y\;\middle|\;\text{$x\in X\complement A$ and $y\in Y\complement
-%  B$}\,\right\},
-% \]
-% but $y_0\notin B$ so $x\times y_0\notin A\times B$ for all $x\in
-% X$. By Problem 2.8 (Munkres \S18, Ex.\,4), the latter map is
-% continuous. Moreover, by Theorem 18.2(e), the restriction of its
-% codomain to $(X\times Y)\complement (A\times B)$ yields a continuous
-% injection $X\hookrightarrow (X\times Y)\complement(A\times
-% B)$. Then by Theorem 23.5, we have that $X\times y_0$ is a
-% connected subspace of $(X\times Y)\complement(A\times B)$. Thus, by
-% Theorem 23.2, $X\times y_0\subset C$ or $X\times y_0\subset D$.
 Consider the family of embeddings $\left\{i_\alpha\right\}$
 where $i_\alpha\colon X\hookrightarrow X\times Y$ maps
 $x\mapsto x\times y_\alpha$ for $y_\alpha\notin B$, for all
@@ -274,23 +255,6 @@ directions).
 \end{problem}
 \begin{proof}
 \end{proof}
-% \newpage
-% \begin{problem}[Extra problem]
-% Notation: for positive integers $i,n,I,N$, let us write
-% $(i,n)\gg(I,N)$ if $i>I$ and $n>N$.
-% \begin{theorem}
-% A sequence $\left\{\mathbf{x}_n\right\}$ in $\RR^\omega$
-% converges to $\mathbf{0}$ in the box topology if and only if two
-% conditions hold:
-% \begin{enumerate}[noitemsep,label=(\roman*)]
-% \item for each $k$, $\lim_{n\to\infty} x_n^{(k)}=0$, and
-% \item there is a pair $(I,N)$ with $x_n^{(k)}=0$ whenever
-%   $(i,n)\gg(I,N)$.
-% \end{enumerate}
-% \end{theorem}
-% \end{problem}
-% \begin{proof}
-% \end{proof}
 
 %%% Local Variables:
 %%% mode: latex

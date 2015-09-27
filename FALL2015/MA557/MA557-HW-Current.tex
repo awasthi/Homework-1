@@ -61,8 +61,9 @@
            en=english}
 \def\spanishoptions{mexico}
 \usepackage{CJKutf8}
+\newcommand{\textha}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
+\newcommand{\textni}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
-\newcommand{\textko}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
 \fi
 
 %% XeTeX specific
@@ -174,10 +175,13 @@
 \fi
 
 %% Commands and operators
+\DeclareMathOperator{\ann}{ann}
+\DeclareMathOperator{\coker}{coker}
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\coker}{coker}
-\DeclareMathOperator{\ann}{ann}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\nil}{nil}
+\DeclareMathOperator{\rad}{rad}
 
 \newcommand{\CC}{\mathbf{C}}
 \newcommand{\NN}{\mathbf{N}}

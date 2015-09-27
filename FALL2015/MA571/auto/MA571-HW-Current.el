@@ -38,8 +38,9 @@
    (TeX-add-symbols
     '("clsr" 1)
     '("restr" 2)
-    '("textko" 1)
     '("textzh" 1)
+    '("textni" 1)
+    '("textha" 1)
     "nsubset"
     "hooklongrightarrow"
     "twoheadlongrightarrow"

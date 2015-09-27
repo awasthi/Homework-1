@@ -37,15 +37,19 @@
     "etoolbox")
    (TeX-add-symbols
     '("restr" 2)
-    '("textko" 1)
     '("textzh" 1)
+    '("textni" 1)
+    '("textha" 1)
     "nsubset"
     "hooklongrightarrow"
     "twoheadlongrightarrow"
+    "ann"
+    "coker"
     "id"
     "im"
-    "coker"
-    "ann"
+    "lcm"
+    "nil"
+    "rad"
     "CC"
     "NN"
     "QQ"
