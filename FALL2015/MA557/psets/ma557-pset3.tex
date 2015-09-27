@@ -174,15 +174,23 @@ pairwise comaximal since the $\mathfrak{m}_i$'s are pairwise
 comaximal (a consequence of the following lemma)
 \begin{lemma*}
 Let $\mathfrak{a}$ and $\mathfrak{b}$ be ideals. Then
-$\sqrt{\mathfrak{a}^m+\mathfrak{b}^n}\supset\mathfrak{a}+\mathfrak{b}$.
+$\sqrt{\mathfrak{a}^n+\mathfrak{b}^m}\supset\mathfrak{a}+\mathfrak{b}$.
 \end{lemma*}
 \begin{proof}[Proof of lemma]
 \renewcommand\qedsymbol{$\clubsuit$}
-Suppose $x\in\mathfrak{a}+\mathfrak{b}$. Then $x=a+b$ for
-$a\in\mathfrak{a}$, $b\in\mathfrak{b}$. Then
-$(a+b)^{m+n-1}\in\mathfrak{a}^m+\mathfrak{b}^n$ so
-$a+b\in\sqrt{\mathfrak{a}^m+\mathfrak{b}^n}$. Thus,
-$\sqrt{\mathfrak{a}^m+\mathfrak{b}^m}\supset\mathfrak{a}+\mathfrak{b}$.
+Without loss of generality, suppose $n>m$. Let
+$x\in\mathfrak{a}+\mathfrak{b}$. Then $x=a+b$ for some
+$a\in\mathfrak{a}$, $b\in\mathfrak{b}$. Then by the binomial
+expansion theorem
+\[
+x^{m+n-1}=(a+b)^{m+n-1}=\sum_{i+j=m+n-1}\binom{n+m-1}{j}x^iy^j\in\sqrt{\mathfrak{a}^n+\mathfrak{b}^m}
+\]
+since (ignoring coefficients) the product $x^iy^j$ is in
+$\mathfrak{a}^n+\mathfrak{b}^m$ since if $i\leq n-1$ and $j\leq
+m-1$ then $i+j\leq m+n-2$. Thus,
+$x\in\sqrt{\mathfrak{a}^n+\mathfrak{b}^m}$ and the containment
+$\sqrt{\mathfrak{a}^n+\mathfrak{b}^m}\supset\mathfrak{a}+\mathfrak{b}$
+holds.
 \end{proof}
 It follows immediately from the lemma that
 $\rad{\mathfrak{m}_i^k+\mathfrak{m}_j^k}\sup\mathfrak{m}_i+\mathfrak{m}_j=R$
