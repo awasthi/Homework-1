@@ -32,9 +32,7 @@
     "inputenc"
     "babel"
     "CJKutf8"
-    "unicode-math"
-    "titlesec"
-    "etoolbox")
+    "titlesec")
    (TeX-add-symbols
     '("restr" 2)
     '("textzh" 1)

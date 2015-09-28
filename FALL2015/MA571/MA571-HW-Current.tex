@@ -67,14 +67,14 @@
 \fi
 
 %% XeTeX specific
-\ifXeTeX
-\usepackage{unicode-math}
+% \ifXeTeX
+% \usepackage{unicode-math}
 
-\setmainfont[Ligatures=TeX]{Latin Modern Roman}
-\setsansfont[Ligatures=TeX]{Latin Modern Sans}
-\setmonofont{Latin Modern Mono}
-\setmathfont{Latin Modern Math}
-\fi
+% \setmainfont[Ligatures=TeX]{Latin Modern Roman}
+% \setsansfont[Ligatures=TeX]{Latin Modern Sans}
+% \setmonofont{Latin Modern Mono}
+% \setmathfont{Latin Modern Math}
+% \fi
 
 %% Theorems and definitions
 \theoremstyle{plain}
@@ -141,7 +141,7 @@
   \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
   {#1} % the function
   % \vphantom{\big|} % pretend it's a little taller at normal size
-  \right|{#2} % this is the delimiter
+  \right|_{#2} % this is the delimiter
   }}
 
 \ifPDFTeX
@@ -160,18 +160,18 @@
 \def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
 \fi
 
-\ifXeTeX
-%% Patch arrows for XeTeX
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
-\patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
-\patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
-\patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
-\makeatother
+% \ifXeTeX
+% %% Patch arrows for XeTeX
+% \usepackage{etoolbox}
+% \makeatletter
+% \patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
+% \patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
+% \patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
+% \patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
+% \makeatother
 
-\renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
-\fi
+% \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
+% \fi
 
 %% Commands and operators
 \DeclareMathOperator{\id}{id}
@@ -187,7 +187,8 @@
 \newcommand{\ZZ}{\mathbf{Z}}
 
 \begin{document}
-\renewcommand\complement{\smallsetminus}
+% \renewcommand\complement{\smallsetminus}
+\renewcommand\setminus{\smallsetminus}
 \renewcommand\phi{\varphi}
 \renewcommand\epsilon{\varepsilon}
 
