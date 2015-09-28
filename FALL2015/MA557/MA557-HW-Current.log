@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.14)  27 SEP 2015 17:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.14)  28 SEP 2015 01:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1599,11 +1599,11 @@ Package rerunfilecheck Info: File `MA557-HW-Current.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 228.
  ) 
 Here is how much of TeX's memory you used:
- 18009 strings out of 493089
- 253870 string characters out of 6140694
+ 18013 strings out of 493089
+ 253904 string characters out of 6140694
  448867 words of memory out of 5000000
  21052 multiletter control sequences out of 15000+600000
- 21948 words of font info for 101 fonts, out of 8000000 for 9000
+ 22057 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,12n,43p,286b,481s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/t
@@ -1621,7 +1621,7 @@ usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf
 e1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-su
 per/sfti0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pf
 b></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb>
-Output written on MA557-HW-Current.pdf (9 pages, 214622 bytes).
+Output written on MA557-HW-Current.pdf (9 pages, 214753 bytes).
 PDF statistics:
  145 PDF objects out of 1000 (max. 8388607)
  110 compressed objects within 2 object streams

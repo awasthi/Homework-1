@@ -193,7 +193,7 @@ $\sqrt{\mathfrak{a}^n+\mathfrak{b}^m}\supset\mathfrak{a}+\mathfrak{b}$
 holds.
 \end{proof}
 It follows immediately from the lemma that
-$\rad{\mathfrak{m}_i^k+\mathfrak{m}_j^k}\sup\mathfrak{m}_i+\mathfrak{m}_j=R$
+$\sqrt{\mathfrak{m}_i^k+\mathfrak{m}_j^k}\supset\mathfrak{m}_i+\mathfrak{m}_j=R$
 so $\mathfrak{m}_i^k+\mathfrak{m}_j^k=R$. Thus, by the Chinese
 remainder theorem, there is an isomorphism $R\cong R/(\rad
 R)^k\cong R/\mathfrak{m}_1^k\times\cdots\times
@@ -208,7 +208,8 @@ $\mathfrak{m}_i\subset\mathfrak{m}$ (since $\mathfrak{m}$ is
 prime). Thus, $\mathfrak{m}=\mathfrak{m}_i$ by the maximality of
 $\mathfrak{m}_i$. Passing to the quotient, we see that
 $\mathfrak{m}_i/\mathfrak{m}_i^k$ is the unique maximal ideal of
-$R/\mathfrak{m}_i^k$. Hence, $R/\mathfrak{m}_i$ is local.
+$R/\mathfrak{m}_i^k$. Hence, $R/\mathfrak{m}_i^k$ is a local (and
+by 3.7) Artinian.
 \end{proof}
 \newpage
 \begin{problem}
@@ -216,7 +217,12 @@ Let $R$ be an Artinian ring all of whose maximal ideals are
 principal. Show that every ideal in $R$ is principal.
 \end{problem}
 \begin{proof}
-Let $\Gamma$ be the collection of all ideals of $R$.
+Since $R$ is Artinian, by 3.17, it is Noetherian. Therefore,
+every ideal $\mathfrak{a}$ of $R$ is finitely generated. Without
+loss of generality, suppose $\mathfrak{a}=a_1R+a_2R$. Then, by
+1.4, there exists a maximal ideal
+$\mathfrak{m}\supset\mathfrak{a}$. By assumption,
+$\mathfrak{a}=mR$ so we have $a_1R+a_2R\subset mR$.
 \end{proof}
 \newpage
 \begin{problem}

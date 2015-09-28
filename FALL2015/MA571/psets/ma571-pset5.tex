@@ -222,6 +222,10 @@ precisely, if $\RR^n\approx\RR$ via $\phi$, by Lemma 15,
 $\RR^n\setminus\{0\}\approx\RR\setminus\{\phi(0)\}$, but
 $\RR\setminus\{\phi(0)\}$ is disconnected, contradicting Theorem 23.5.
 \end{proof}
+\begin{remarks*}
+I realized too late that Lemma 15 here is the same as Lemma A
+given to us in lecture.
+\end{remarks*}
 \newpage
 \begin{problem}[Munkres \S24, Ex.\,2]
 Let $f\colon S^1\to\RR$ be a continuous map. Show there exists a
@@ -259,6 +263,34 @@ i.e, $f(y)=f(-y)$.
 \end{enumerate}
 \end{problem}
 \begin{proof}
+$\implies$ Suppose that $\mathbf{x}$ and $\mathbf{y}$ lie in the
+same connected component. Consider the sets
+\[
+U=\left\{\,
+\mathbf{z}
+\;\middle|\;
+\text{$\mathbf{x}-\mathbf{z}$ is bounded}\,\right\}
+\quad
+\text{and}
+\quad
+V=\left\{\,\mathbf{z}
+\;\middle|\;
+\text{$\mathbf{y}-\mathbf{z}$ is bounded}\,\right\}.
+\]
+These sets are open in the uniform topology since for any
+$\mathbf{z}\in U$ for $\epsilon\leq 1$, the open ball
+$B_{\bar\rho}(\mathbf{z},\epsilon)\subset U$ since for every
+$\mathbf{z}'\in B_{\bar\rho}(\mathbf{z},\epsilon)$ the difference
+$\mathbf{x}-\mathbf{z}'$ is bounded, i.e.,
+\begin{align*}
+\bar\rho(\mathbf{x},\mathbf{z}')
+&\leq\bar\rho(\mathbf{x},\mathbf{z})+\bar\rho(\mathbf{z},\mathbf{z}')\\
+&\leq M+\epsilon
+\end{align*}
+for some positive real number $M<\infty$. A similar argument
+shows that $V$ is open. Now, suppose that
+
+$\impliedby$
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S25, Ex.\,4]
@@ -295,15 +327,15 @@ points, then $X$ is locally connected. [\emph{Hint:} Show that
 components of open sets are open.]
 \end{problem}
 \begin{proof}
-By Theorem 25.4, it suffices to show that for every open set $U$
-of $X$, each path component of $U$ is open in $X$. Let $x\in
-U$. Then, by Theorem 25.2, $x$ lies in some path component of
-$U$, say $C$. Since $X$ is weakly locally path-connected, there
-is a connected subspace, say $C_x$, contained in $U$ that
-contains a neighborhood $V_x$ of $x$. Then by Theorem 25.2,
-$C_x\subset C$. In particular, for every $x\in C$ we have a
-neighborhood $V_x$ of $x$ contained in $C$. Thus, $C$ is open in
-$X$.
+By Theorem 25.5, it suffices to show that for every open set $U$
+of $X$, each component of $U$ is open in $X$. Let $x\in U$. Then,
+by Theorem 25.2, $x$ lies in some component of $U$, say
+$C$. Since $X$ is weakly locally path-connected, there is a
+connected subspace, say $C_x$, contained in $U$ that contains a
+neighborhood $V_x$ of $x$. Then by Theorem 25.2, $C_x\subset
+C$. In particular, for every $x\in C$ we have a neighborhood
+$V_x$ of $x$ contained in $C$,i.e., $C$ is the union
+$C=\bigcup_{x\in C}V_x$ of open subsets. Thus, $C$ is open in $X$.
 \end{proof}
 \newpage
 \begin{problem}[A]
