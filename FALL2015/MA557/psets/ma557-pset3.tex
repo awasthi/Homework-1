@@ -217,12 +217,48 @@ Let $R$ be an Artinian ring all of whose maximal ideals are
 principal. Show that every ideal in $R$ is principal.
 \end{problem}
 \begin{proof}
-Since $R$ is Artinian, by 3.17, it is Noetherian. Therefore,
-every ideal $\mathfrak{a}$ of $R$ is finitely generated. Without
-loss of generality, suppose $\mathfrak{a}=a_1R+a_2R$. Then, by
-1.4, there exists a maximal ideal
-$\mathfrak{m}\supset\mathfrak{a}$. By assumption,
-$\mathfrak{a}=mR$ so we have $a_1R+a_2R\subset mR$.
+% Let $\mathfrak{a}$ be an ideal of $R$. Then $\mathfrak{a}$ is
+% contained in a maximal ideal, say $\mathfrak{m}$. Then
+% $\mathfrak{m}=\langle a\rangle$, i.e, $\mathfrak{m}$ is
+% principal. By the previous problem, we have that $R\cong
+% R_1\times\cdots\times R_n$ where each $R_i$ is a local Artinian
+% ring. Then $\mathfrak{a}\cong\prod\mathfrak{a}_i$ for
+% $\mathfrak{a}_i\subset R_i$.
+
+By the previous problem, we have that $R\cong
+R_1\times\cdots\times R_n$ where each $R_i$ is a local Artinian
+ring with maximal ideals $\mathfrak{m}_i$. Then each maximal
+ideal of $R$ corresponds tho the maximal ideal
+$R\times\cdots\times\mathfrak{m}_i\times\cdots\times R_n$,
+moreover since every maximal ideal of $R$ is finitely generated
+we have that $R\times\cdots\times\mathfrak{m}_i\times\cdots\times
+R_n$ moreover, since every maximal ideal of $R$ is principal, we
+have that $R_1\times\cdots\mathfrak{m}_i\times\cdots\times
+R_n=R\times\cdots\times m_iR_i\times\cdots\times R_n$ for some
+$m_i\in R_i$. Let $\mathfrak{a}$ be an ideal of $R$, then
+$\mathfrak{a}$ is in one-one correspondence to an ideal
+$\mathfrak{a}_1\times\cdots\times\mathfrak{a}_n$ in
+$R_1\times\cdots\times R_n$. Moreover, since
+$\mathfrak{a}_1\times\cdots\times\mathfrak{a}_n$ is contained in
+a maximal ideal
+$\mathfrak{a}_1\times\cdots\times\mathfrak{a}_n=R_1\times\cdots\times\mathfrak{a}_i\times\cdots\times
+R_n$. Therefore, it suffices to show that every local Artinian
+ring $R_i$ is a PIR.
+
+To this end, we will show that every non-unit $0\neq x\in R_i$ is
+a power of $m_i$ times a unit, i.e., $x=um_i^{\ell}$ for some
+$\ell<k$ where $k$ is the nilpotent degree of $m_iR_i$. It is
+clear that $m_i\mid x$ so $x$ has the form $x=um_i^\ell$. If $u$
+is not a unit, repeat this procedure and we have
+$x=u'm_i^{\ell+m}$. This must terminate for otherwise we have
+$x=u''m^K=0$ for some $K\geq k$. Now, let $\mathfrak{a}$ be a
+nontrivial ideal of $R_i$. Then $\mathfrak{a}\subset m_i^\ell R$
+for some $\ell<k$ where $k$ is, as before, the nilpotency of
+$m_iR_i$. Now, since every nonzero element of $R_i$ is either a
+unit or a potency of $m_i$ times a unit and $\mathfrak{a}\neq
+R_i$ then $\mathfrak{a}$ contains a minimal power of $m_i$, say
+$m_i^\ell$. It follows that $\mathfrak{a}=m_i^\ell R_i$, hence
+$R_i$ is a PIR.
 \end{proof}
 \newpage
 \begin{problem}

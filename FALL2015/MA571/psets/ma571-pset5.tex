@@ -264,7 +264,7 @@ i.e, $f(y)=f(-y)$.
 \end{problem}
 \begin{proof}
 $\implies$ Suppose that $\mathbf{x}$ and $\mathbf{y}$ lie in the
-same connected component. Consider the sets
+same connected component, call it $C$. Consider the set
 \[
 U=\left\{\,
 \mathbf{z}
@@ -273,24 +273,65 @@ U=\left\{\,
 \quad
 \text{and}
 \quad
-V=\left\{\,\mathbf{z}
+X\setminus
+U=\left\{\,\mathbf{z}
 \;\middle|\;
-\text{$\mathbf{y}-\mathbf{z}$ is bounded}\,\right\}.
+\text{$\mathbf{z}-\mathbf{z}$ is unbounded}\,\right\}.
 \]
-These sets are open in the uniform topology since for any
-$\mathbf{z}\in U$ for $\epsilon\leq 1$, the open ball
+These sets are open in the uniform topology since, in the case
+of $U$: for any $\mathbf{z}\in U$ for $\epsilon=1/2$, the open ball
 $B_{\bar\rho}(\mathbf{z},\epsilon)\subset U$ since for every
 $\mathbf{z}'\in B_{\bar\rho}(\mathbf{z},\epsilon)$ the difference
 $\mathbf{x}-\mathbf{z}'$ is bounded, i.e.,
 \begin{align*}
 \bar\rho(\mathbf{x},\mathbf{z}')
 &\leq\bar\rho(\mathbf{x},\mathbf{z})+\bar\rho(\mathbf{z},\mathbf{z}')\\
-&\leq M+\epsilon
+&\leq M+\epsilon\\
+&=M+\frac{1}{2}
 \end{align*}
-for some positive real number $M<\infty$. A similar argument
-shows that $V$ is open. Now, suppose that
+for some positive real number $M<\infty$. In the case of
+$X\setminus U$: Take $\mathbf{z}\in X\setminus U$ and take the
+open ball of radius $1/2$, $B_{\bar\rho}(\mathbf{z},1/2)$ then if
+$\mathbf{z}'\in B_{\bar\rho}(\mathbf{z},1/2)$ then, by the
+Reverse Triangle Inequality, the sequence
+\begin{align*}
+|x_n-z_n'|
+&\geq\left||x_n-z_n|-|x_n-z_n'|\right|\\
+&\geq\left||x_n-z_n|-\frac{1}{2}\right|\\
+&>\left|M-\frac{1}{2}\right|
+\end{align*}
+for every positive real number $M$, hence
+$\mathbf{x}-\mathbf{z}'$ is unbounded. Then, by Theorem 23.2,
+$C\subset U$ or $C\subset (X\setminus U)$. But $\mathbf{x}\in U$
+so $C\subset U$, i.e., $\mathbf{x}-\mathbf{y}$ is bounded.
 
-$\impliedby$
+$\impliedby$ Suppose $\mathbf{x}-\mathbf{y}$ is bounded. Then for
+every $\epsilon>0$, there exists a positive integer $N$ such that
+$|x_n-y_n|<\epsilon$ for all $n\geq N$. We will show that there
+exists a path $f\colon [0,1]\to\RR^\omega$ from $\mathbf{x}$ to
+$\mathbf{y}$. Consider the path
+\[
+f(t)=\mathbf{x}-t(\mathbf{x}-\mathbf{y}).
+\]
+Note that $f(0)=\mathbf{x}$ and $f(1)=\mathbf{y}$. Now we show
+that $f$ is indeed continuous. By Lemma 8 (the equivalence of the
+$\epsilon$-$\delta$ definition to the metric topology which I
+proved on Homework 4) it suffices to show that for every
+$\epsilon>0$ there exists a $\delta>0$ such that $s,s'\in B(t,\delta)$
+implies $f(s),f(s')\in B_{\bar\rho}(\mathbf{z},\epsilon)$. In
+particular, chose $\delta=\epsilon/M$ where $M>|x_n-y_n|$ for all
+$n$, then we have
+\begin{align*}
+\left|f(s)-f(s)'\right|
+&=\left|\mathbf{x}-s(\mathbf{x}-\mathbf{y})-
+(\mathbf{x}-s'(\mathbf{x}-\mathbf{y}))\right|\\
+&=\left|(s-s')(\mathbf{x}-\mathbf{y})\right|\\
+&=\left|(s-s')\right|\left|\mathbf{x}-\mathbf{y}\right|\\
+&<\delta\left|\mathbf{x}-\mathbf{y}\right|\\
+&<\epsilon.
+\end{align*}
+Thus $x$ and $y$ are path-connected, in particular, by Theorem
+25.2, $x$ and $y$ lie in the same connected component.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S25, Ex.\,4]
@@ -312,7 +353,7 @@ $x$ contained in $V$, hence contained in $U$. Thus, $U$ is
 locally path-connected.
 \end{proof}
 Now, suppose $U$ is a connected open subset of $X$. Then $U$ has
-one component. Moreover, by Theorem 25.5, since $U$ is locally
+one component by Theorem 25.2. Moreover, by Theorem 25.5, since $U$ is locally
 path-connected the components of $U$ and path-components are
 equivalent. Thus, $U$ has exactly one path component, i.e, $U$ is
 path-connected.
