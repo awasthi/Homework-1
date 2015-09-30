@@ -1,0 +1,23 @@
+\documentclass[crop,tikz,10pt]{standalone}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{microtype}
+
+\usepackage{tikz}
+\usetikzlibrary{cd}
+
+\begin{document}
+\begin{tikzcd}[row sep=3em, column sep=3em]
+0\arrow{r}&
+R\times_T S\arrow[hookrightarrow]{r}{\iota}&
+R\times S\arrow[twoheadrightarrow]{r}{\Phi^*}&
+\displaystyle\frac{T\times T}{\Delta_T}\arrow{r}&
+0.
+\end{tikzcd}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

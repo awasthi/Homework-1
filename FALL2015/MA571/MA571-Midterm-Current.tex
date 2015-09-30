@@ -1,9 +1,9 @@
 \def\documentauthor{Carlos Salinas}
-\def\documenttitle{MA557 Problem Set \hwnum}
-\def\hwnum{3}
-\def\shorttitle{MA557 PSet \hwnum}
-\def\coursename{MA557}
-\def\documentsubject{commutative algebra i}
+\def\documenttitle{MA571 Midterm \hwnum Practice Problems}
+\def\hwnum{1}
+\def\shorttitle{MA571 Midterm \hwnum}
+\def\coursename{MA571}
+\def\documentsubject{point-set topology}
 \def\authoremail{salinac@purdue.edu}
 
 \documentclass[article,oneside,10pt]{memoir}
@@ -141,14 +141,13 @@
   \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
   {#1} % the function
   % \vphantom{\big|} % pretend it's a little taller at normal size
-  \right|{#2} % this is the delimiter
+  \right|_{#2} % this is the delimiter
   }}
 
 \ifPDFTeX
 \newcommand{\nsubset}{\ensuremath{\not\subset}}
 \newcommand{\hooklongrightarrow}{\lhook\joinrel\longrightarrow}
 \newcommand{\twoheadlongrightarrow}{\relbar\joinrel\twoheadrightarrow}
-
 \renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
 
 %% upint and loint
@@ -175,16 +174,12 @@
 % \fi
 
 %% Commands and operators
-\DeclareMathOperator{\ann}{ann}
-\DeclareMathOperator{\ass}{ass}
-\DeclareMathOperator{\End}{end}
-\DeclareMathOperator{\coker}{coker}
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\lcm}{lcm}
-\DeclareMathOperator{\nil}{nil}
-\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\Int}{int}
+\DeclareMathOperator{\Cl}{cl}
 
+\newcommand{\clsr}[1]{\overline{#1}}
 \newcommand{\CC}{\mathbf{C}}
 \newcommand{\NN}{\mathbf{N}}
 \newcommand{\QQ}{\mathbf{Q}}
@@ -192,7 +187,6 @@
 \newcommand{\ZZ}{\mathbf{Z}}
 
 \begin{document}
-% Renewcommands
 % \renewcommand\complement{\smallsetminus}
 \renewcommand\setminus{\smallsetminus}
 \renewcommand\phi{\varphi}
@@ -226,7 +220,7 @@
 \pagestyle{headings}
 
 \mainmatter
-\include{psets/ma557-pset4}
+\include{psets/ma571-midterm-1}
 \end{document}
 
 %%% Local Variables:

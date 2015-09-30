@@ -3,7 +3,6 @@ Find an example of a finitely generated ring extension $R\subset
 S$ where $S$ is a Noetherian ring, but $R$ is not.
 \end{problem}
 \begin{proof}
-
 \end{proof}
 \newpage
 \begin{problem}
@@ -18,6 +17,43 @@ that if $R$ and $S$ are Noetherian rings then so is $R\times_T
 S$.
 \end{problem}
 \begin{proof}
+Suppose that $R$ and $S$ are Noetherian rings with surjective
+ring maps $\phi\colon R\to T$ and $\psi\colon S\to T$. Then, by
+(3.5), the product $R\times S$ is Noetherian. Define the ring map
+$\Phi\colon R\times S\to T\times T$ by $\Phi=(\phi,\psi)$. Then
+the diagonal, $\Delta_T=\left\{\,(t,t)\;\middle|\; t\in
+  T\,\right\}$, of $T\times T$ is exactly the image of the fiber
+product of $R$ and $S$ under the ring map $\Phi$. And this is not
+terribly difficult to see: It is clear, by the definition of the
+fiber product, that $\Phi(R\times_T S)\subset\Delta_T$. To show
+the reverse containment, take an element
+$(t,t)\in\Delta_T$. Then, since $\phi$ and $\psi$ are surjective,
+there are corresponding elements $r$ and $s$ of the rings $R$ and
+$S$, respectively, such that $\phi(r)=t$ and $\psi(s)=t$. Hence,
+$(t,t)$ are in the image $R\times_T S$ under $\Phi$.
+
+Now, consider the quotient $R\times S$-module $T\times
+T/\Delta_T$. Define the homomorphism $\Phi^*\colon R\times S\to
+T\times T/\Delta_T$ given by the composition
+$\Phi^*=\pi\circ\Phi$ where $\pi$ is the canonical projection map
+of $T\times T$ onto the quotient module $T\times
+T/\Delta_T$. This map is an $R\times S$-linear map, i.e., take
+$(r,s)\in R\times S$ as a ring and $(r_1,s_1),(r_2,s_2)\in
+R\times S$ as a module, then
+\begin{align*}
+\Phi^*((r_1,s_1)+(r,s)(r_2,s_2))
+&=\Phi^*((r_1,s_1)+(rr_2,ss_2))\\
+&=\Phi^*(r_1+rr_2,s_1+ss_2)\\
+&=\pi(\phi(r_1+rr_2),\psi(s_1+ss_2))\\
+&=\pi(\phi(r_1)+\phi(r)\phi(r_2)),\psi(s_1)+\psi(s)\psi(s_2)))\\
+&=\Phi^*((r_1,s_1))+\Phi^*((r,s))\Phi^*((r_2,s_2)),
+\end{align*}
+with $\ker\Phi^*=R\times_T S$. Therefore, we have the following
+exact sequence
+\begin{center}
+\includegraphics{figures/ps4-p2-short-exact-seq}
+\end{center}
+By (3.4), $R\times_T S$ are Noetherian.
 \end{proof}
 \newpage
 \begin{problem}
@@ -27,6 +63,9 @@ $R_{\mathfrak{m}}$-module for every maximal ideal $\mathfrak{m}$
 of $R$.
 \end{problem}
 \begin{proof}
+$\implies$: Suppose that $M$ is a flat $R$-module.
+
+$\impliedby$:
 \end{proof}
 \newpage
 \begin{problem}

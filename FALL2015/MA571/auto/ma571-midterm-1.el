@@ -1,5 +1,5 @@
 (TeX-add-style-hook
- "kaufmann-problems"
+ "ma571-midterm-1"
  (lambda ()
    (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
