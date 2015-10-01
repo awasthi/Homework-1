@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.14)  30 SEP 2015 22:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.14)  1 OCT 2015 11:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1576,30 +1576,16 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 
 
-]
+] [2] [3]
+LaTeX Font Info:    Try loading font information for U+eus on input line 174.
 
-./psets/ma571-midterm-1.tex:87: Package inputenc Error: Unicode char \u8:ŷ not
- set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.87   Nŷ
-          gger
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[2] [3]
-LaTeX Font Info:    Try loading font information for U+eus on input line 171.
- (/usr/share/texmf-dist/tex/latex/amsfonts/ueus.fd
+(/usr/share/texmf-dist/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2013/01/14 v3.01 Euler Script
 )
 (/usr/share/texmf-dist/tex/latex/microtype/mt-eus.cfg
 File: mt-eus.cfg 2006/07/28 v1.2 microtype config. file: AMS Euler Script (RS)
 )
-Underfull \hbox (badness 10000) in paragraph at lines 169--178
+Underfull \hbox (badness 10000) in paragraph at lines 172--181
 
  []
 
@@ -1615,10 +1601,10 @@ Package rerunfilecheck Info: File `MA571-Midterm-Current.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 235.
  ) 
 Here is how much of TeX's memory you used:
- 18115 strings out of 493089
- 255434 string characters out of 6140694
+ 18114 strings out of 493089
+ 255429 string characters out of 6140694
  450912 words of memory out of 5000000
- 21094 multiletter control sequences out of 15000+600000
+ 21093 multiletter control sequences out of 15000+600000
  25159 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,13n,43p,291b,626s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1638,7 +1624,7 @@ pe1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-s
 uper/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti0900.p
 fb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/
 texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb>
-Output written on MA571-Midterm-Current.pdf (11 pages, 228961 bytes).
+Output written on MA571-Midterm-Current.pdf (11 pages, 228828 bytes).
 PDF statistics:
  262 PDF objects out of 1000 (max. 8388607)
  223 compressed objects within 3 object streams
