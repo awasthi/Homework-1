@@ -66,14 +66,25 @@
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 \fi
 
-%% XeTeX specific
+% %% XeTeX specific
 % \ifXeTeX
 % \usepackage{unicode-math}
 
-% \setmainfont[Ligatures=TeX]{Latin Modern Roman}
-% \setsansfont[Ligatures=TeX]{Latin Modern Sans}
-% \setmonofont{Latin Modern Mono}
-% \setmathfont{Latin Modern Math}
+% % \setmainfont[Ligatures=TeX]{Latin Modern Roman}
+% % \setsansfont[Ligatures=TeX]{Latin Modern Sans}
+% % \setmonofont{Latin Modern Mono}
+% % \setmathfont{Latin Modern Math}
+
+% \usepackage{unicode-minionmath}
+% \setmainfont[Ligatures=TeX]{Minion Pro}
+% \setsansfont[Ligatures=TeX]{Myriad Pro}
+% \setmonofont[Scale=.85]{Courier Std}
+
+% \setmathfont{Minion Math}
+% \setmathfont[range={\mathfrak}]{XITS Math}
+% \setmathfont[range={\mathcal},StylisticSet=1]{XITS Math}
+% \setmathfont[range={\mathscr}]{XITS Math}
+% \setmathfont[range={}]{Minion Math}
 % \fi
 
 %% Theorems and definitions
@@ -141,13 +152,14 @@
   \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
   {#1} % the function
   % \vphantom{\big|} % pretend it's a little taller at normal size
-  \right|_{#2} % this is the delimiter
+  \right|{#2} % this is the delimiter
   }}
 
 \ifPDFTeX
 \newcommand{\nsubset}{\ensuremath{\not\subset}}
 \newcommand{\hooklongrightarrow}{\lhook\joinrel\longrightarrow}
 \newcommand{\twoheadlongrightarrow}{\relbar\joinrel\twoheadrightarrow}
+
 \renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
 
 %% upint and loint
@@ -174,12 +186,16 @@
 % \fi
 
 %% Commands and operators
+\DeclareMathOperator{\ann}{ann}
+\DeclareMathOperator{\ass}{ass}
+\DeclareMathOperator{\End}{end}
+\DeclareMathOperator{\coker}{coker}
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\Int}{int}
-\DeclareMathOperator{\Cl}{cl}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\nil}{nil}
+\DeclareMathOperator{\rad}{rad}
 
-\newcommand{\clsr}[1]{\overline{#1}}
 \newcommand{\CC}{\mathbf{C}}
 \newcommand{\NN}{\mathbf{N}}
 \newcommand{\QQ}{\mathbf{Q}}
@@ -187,6 +203,7 @@
 \newcommand{\ZZ}{\mathbf{Z}}
 
 \begin{document}
+% Renewcommands
 % \renewcommand\complement{\smallsetminus}
 \renewcommand\setminus{\smallsetminus}
 \renewcommand\phi{\varphi}
@@ -220,11 +237,11 @@
 \pagestyle{headings}
 
 \mainmatter
-\include{goins/}
-\include{goldberg/}
-\include{heinzer/}
-\include{shahidi/}
-\include{ulrich/}
+% \include{goins/}
+% \include{goldberg/}
+% \include{heinzer/}
+\include{shahidi/MA553-AUG15}
+% \include{ulrich/}
 \end{document}
 
 %%% Local Variables:

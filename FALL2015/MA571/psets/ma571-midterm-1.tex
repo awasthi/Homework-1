@@ -74,7 +74,11 @@ $G_f$ is closed.
 \end{problem}
 \begin{proof}
 We will show that the complement of $G_f$ in $X\times Y$ is
-open. Let $(x,y)\in X\times Y$ and
+open. Let $(x,y)\in(X\times Y)\setminus G_f$. Since $Y$ is
+Hausdorff, choose neighborhoods $U$ and $V$ of $y$ and $f(x)$
+respectively, such that $U\cap V=\emptyset$. Then $U\times
+V\ni(x,y)$ is contained in the complement of $G_f$ so, by Lemma
+C, $G_f$ is open.
 \end{proof}
 \begin{problem}
 Let $X$ be a topological space and let $f,g\colon X\to\RR$ be
@@ -86,6 +90,31 @@ Use the pasting lemma to prove that $h$ is continuous. (You will
 not get full credit for any other method.)
 \end{problem}
 \begin{proof}
+Define the sets
+\[
+A=\left\{\,x\in X\;\middle|\;f(x)\leq g(x)\,\right\}
+\quad\text{and}\quad
+B=\left\{\,x\in X\;\middle|\;f(x)\geq g(x)\,\right\}.
+\]
+Note $X=A\cup B$ and $f(x)=g(x)$ for every $x\in A\cap
+B$. Moreover, we have that
+\[
+h(x)
+=\min\{f(x),g(x)\}
+=\begin{cases}
+f(x)&\text{if $x\in A$}\\
+g(x)&\text{if $x\in B$}
+\end{cases}.
+\]
+Thus, by the pasting lemma, $h$ is continuous if we can show that
+$A$ and $B$ are closed in $X$. We will prove that the complement
+of $A$ in $X$ is open; the proof of $B$ is similar. Let $x\in
+X\setminus A$. Then $f(x)>g(x)$. Take the interval
+$I=(g(x),f(x))\subset\RR$ then since $f$ and $g$ are continuous
+$f^{-1}(I)$ and $g^{-1}(I)$ are neighborhoods of
+$x$. Then we claim that $f^{-1}(I)\cap g^{-1}(I)$ is a
+neighborhood of $X$ with $f^{-1}(I)\cap g^{-1}(I)\subset
+X\setminus A$.
 \end{proof}
 \begin{problem}
 Let $X$ and $Y$ be topological spaces and let $f\colon X\to Y$ be

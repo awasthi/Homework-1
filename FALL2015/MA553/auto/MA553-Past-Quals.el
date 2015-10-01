@@ -5,13 +5,12 @@
                      '(("memoir" "article" "oneside" "10pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("xcolor" "dvipsnames") ("enumitem" "inline") ("euscript" "mathcal") ("fontenc" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "german" "russian" "spanish" "english") ("titlesec" "explicit")))
+   (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
+   (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
    (TeX-run-style-hooks
     "latex2e"
-    "goins/"
-    "goldberg/"
-    "heinzer/"
-    "shahidi/"
-    "ulrich/"
+    "shahidi/MA553-AUG15"
     "memoir"
     "memoir10"
     "geometry"
@@ -35,7 +34,6 @@
     "CJKutf8"
     "titlesec")
    (TeX-add-symbols
-    '("clsr" 1)
     '("restr" 2)
     '("textzh" 1)
     '("textni" 1)
@@ -43,10 +41,15 @@
     "nsubset"
     "hooklongrightarrow"
     "twoheadlongrightarrow"
+    "ann"
+    "ass"
+    "End"
+    "coker"
     "id"
     "im"
-    "Int"
-    "Cl"
+    "lcm"
+    "nil"
+    "rad"
     "CC"
     "NN"
     "QQ"
