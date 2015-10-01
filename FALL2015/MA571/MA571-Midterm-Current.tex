@@ -1,5 +1,5 @@
 \def\documentauthor{Carlos Salinas}
-\def\documenttitle{MA571 Midterm \hwnum Practice Problems}
+\def\documenttitle{MA571 Midterm \hwnum: Practice Problems}
 \def\hwnum{1}
 \def\shorttitle{MA571 Midterm \hwnum}
 \def\coursename{MA571}
@@ -66,14 +66,25 @@
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 \fi
 
-%% XeTeX specific
+% %% XeTeX specific
 % \ifXeTeX
 % \usepackage{unicode-math}
 
-% \setmainfont[Ligatures=TeX]{Latin Modern Roman}
-% \setsansfont[Ligatures=TeX]{Latin Modern Sans}
-% \setmonofont{Latin Modern Mono}
-% \setmathfont{Latin Modern Math}
+% % \setmainfont[Ligatures=TeX]{Latin Modern Roman}
+% % \setsansfont[Ligatures=TeX]{Latin Modern Sans}
+% % \setmonofont{Latin Modern Mono}
+% % \setmathfont{Latin Modern Math}
+
+% \usepackage{unicode-minionmath}
+% \setmainfont[Ligatures=TeX]{Minion Pro}
+% \setsansfont[Ligatures=TeX]{Myriad Pro}
+% \setmonofont[Scale=.85]{Courier Std}
+
+% \setmathfont{Minion Math}
+% \setmathfont[range={\mathfrak}]{XITS Math}
+% \setmathfont[range={\mathcal},StylisticSet=1]{XITS Math}
+% \setmathfont[range={\mathscr}]{XITS Math}
+% \setmathfont[range={}]{Minion Math}
 % \fi
 
 %% Theorems and definitions
@@ -105,11 +116,11 @@
 {% begin code
   \par\vspace{\baselineskip}\noindent
   \ifx &#1&%
-  \section{Problem~\hwnum.\thesection}
-  \global\def\exercisename{Problem \hwnum.\thesection}%
+  \section{Problem~Mid-\hwnum.\thesection}
+  \global\def\exercisename{Problem Mid-\hwnum.\thesection}%
   \else
-  \section{Problem~\hwnum.\thesection~(#1)}
-  \global\def\exercisename{Problem \hwnum.\thesection(#1)}
+  \section{Problem~Mid-\hwnum.\thesection~(#1)}
+  \global\def\exercisename{Problem Mid-\hwnum.\thesection(#1)}
   \fi
   \par\vspace{\baselineskip}%
   \noindent\ignorespaces

@@ -39,13 +39,16 @@ $\Phi^*=\pi\circ\Phi$ where $\pi$ is the canonical projection map
 of $T\times T$ onto the quotient module $T\times
 T/\Delta_T$. This map is an $R\times S$-linear map, i.e., take
 $(r,s)\in R\times S$ as a ring and $(r_1,s_1),(r_2,s_2)\in
-R\times S$ as a module, then
+R\times S$ as an $R\times S$-module, then
 \begin{align*}
 \Phi^*((r_1,s_1)+(r,s)(r_2,s_2))
 &=\Phi^*((r_1,s_1)+(rr_2,ss_2))\\
 &=\Phi^*(r_1+rr_2,s_1+ss_2)\\
 &=\pi(\phi(r_1+rr_2),\psi(s_1+ss_2))\\
 &=\pi(\phi(r_1)+\phi(r)\phi(r_2)),\psi(s_1)+\psi(s)\psi(s_2)))\\
+&=\left(\pi\circ\phi(r_1)+(\pi\circ\phi(r))(\pi\circ\phi(r_2))),
+\pi\circ\psi(s_1)+(\pi\circ\psi(s))(\pi\circ\psi(s_2)))\right)\\
+&=\pi\circ\phi((r_1,s_1))+\pi\circ\phi((r,s))\pi\circ\phi((r_2,s_2)),\\
 &=\Phi^*((r_1,s_1))+\Phi^*((r,s))\Phi^*((r_2,s_2)),
 \end{align*}
 with $\ker\Phi^*=R\times_T S$. Therefore, we have the following

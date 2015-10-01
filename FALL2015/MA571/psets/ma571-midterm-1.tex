@@ -3,16 +3,67 @@ Let $A\subset X$ and $B\subset Y$. Show that the space $X\times Y$,
 \[\clsr{A\times B}=\clsr A\times\clsr B.\]
 \end{problem}
 \begin{proof}
-One containment is clear, namely ``$\supset$'' since
-$A\subset\clsr A$ and $B\subset\clsr B$ so $A\times B\subset\clsr
-A\times\clsr B$.
+Before we proceed, we need to prove the following nontrivial facts:
+\begin{claim}[Munkres \S17, Ex.\,3]
+If $A$ is closed in $X$ and $B$ is closed in $Y$, then $A\times
+B$ is closed in $X\times Y$.
+\end{claim}
+\begin{proof}[Proof of claim]
+\renewcommand\qedsymbol{$\clubsuit$}
+We will show that the complement of $A\times B$ is open in
+$X\times Y$. Let $(x,y)\in (X\times Y)\setminus(A\times B)$. Then
+$x\notin A$ and $y\notin B$. Since $A$ and $B$ are closed in $X$
+and $Y$, respectively, there exist neighborhoods $U$ and $V$ of
+$x$ and $y$, respectively, such that $U\subset X\setminus A$ and
+$V\subset Y\setminus B$. Then $U\times V\subset (X\times
+Y)\setminus(A\times B)$ is a neighborhood of $(x,y)$ so, by Lemma
+C, $(X\times Y)\setminus(A\times B)$ is open. Thus, $A\times B$
+is closed.
+\end{proof}
+\begin{claim}[Munkres \S17, Ex.\,6(a)]
+If $A\subset B$, then $\clsr A\subset\clsr B$.
+\end{claim}
+\begin{proof}[Proof of claim]
+\renewcommand\qedsymbol{$\clubsuit$}
+By Theorem 17.5(a), $x\in\clsr A$ if and only if for every
+neighborhood $U\ni x$, $U\cap A\neq\emptyset$. In particular,
+since $A\subset B$, $U\cap B\neq\emptyset$ for every neighborhood
+$U\ni x$ for every $x\in\clsr A$. Thus, $x\in\clsr B$ and we have
+the following containment $\clsr A\subset\clsr B$.
+\end{proof}
+\noindent
+Since $A\subset\clsr A$ and $B\subset\clsr B$ then $A\times
+B\subset\clsr A\times\clsr B$. Then by Claim 2
+$\clsr{A\times B}\subset\clsr{\clsr{A}\times\clsr{B}}$, but by
+Claim 1 $\clsr{\clsr{A}\times\clsr{B}}=\clsr A\times\clsr B$ so
+$\clsr{A\times B}\subset\clsr A\times\clsr B$. To see the reverse
+containment, take an element $(x,y)\in \clsr A\times\clsr B$ then
+for $x\in\clsr A$ and $y\in\clsr B$. Thus, by Theorem 17.5(a) for
+every neighborhood $U\ni x$ and $V\ni y$, we have $U\cap
+A\neq\emptyset$ and $V\cap B\neq\emptyset$. Thus, $U\times V\cap
+A\times B\neq\emptyset$ so by Theorem 17.5(b), since $U\times V$
+is a basis element for the topology on $X\times Y$,
+$(x,y)\in\clsr{A\times B}$. Thus, $\clsr{A\times B}\supset\clsr
+A\times\clsr B$ and the equality $\clsr{A\times B}=\clsr
+A\times\clsr B$ holds.
 \end{proof}
 \begin{problem}
-Let $X$ bea topological space and let $A$ be a dense subset of
+Let $X$ be a topological space and let $A$ be a dense subset of
 $X$. Let $Y$ be a Hausdorff space and let $g,h\colon X\to Y$ be
 continuous functions which agree on $A$. Prove that $g=h$.
 \end{problem}
 \begin{proof}
+Suppose, towards a contradiction, that $g\neq h$. Then $g(x)\neq
+h(x)$ for some $x\in X\setminus A$. Since $Y$ is Hausdorff, there
+exists neighborhoods $U\ni g(x)$ and $V\ni h(x)$ with $U\cap
+V=\emptyset$. Since $g$ and $h$ are continuous, $g^{-1}(U)$ and
+$h^{-1}(V)$ are neighborhoods of $x$. In particular,
+$g^{-1}(U)\cap h^{-1}(U)$ is a nonempty neighborhood of
+$x$. Since $\clsr A=X$, by Theorem 17.5(a), $\left(g^{-1}(U)\cap
+h^{-1}(V)\right)\cap A\neq\emptyset$. Let $y\in\left(g^{-1}(U)\cap
+h^{-1}(V)\right)\cap A$. Then $g(y)=h(y)\in U\cap V$. This
+contradicts the fact that $U$ and $V$ were chosen to be
+disjoint.
 \end{proof}
 \begin{problem}
 Let $X$ and $Y$ be topological spaces and let $f\colon X\to Y$
@@ -22,6 +73,7 @@ $f$) be the subspace $\left\{\,x\times f(x)\;\middle|\;x\in
 $G_f$ is closed.
 \end{problem}
 \begin{proof}
+
 \end{proof}
 \begin{problem}
 Let $X$ be a topological space and let $f,g\colon X\to\RR$ be
@@ -231,7 +283,7 @@ definitions).
 \begin{proof}
 \end{proof}
 \begin{problem}
-Give:
+Given:
 \begin{enumerate}[noitemsep,label=(\roman*)]
 \item $p\colon X\to Y$ is a quotient map.
 \item $Y$ is connected.

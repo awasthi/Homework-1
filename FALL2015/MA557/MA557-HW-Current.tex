@@ -66,14 +66,25 @@
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 \fi
 
-%% XeTeX specific
+% %% XeTeX specific
 % \ifXeTeX
 % \usepackage{unicode-math}
 
-% \setmainfont[Ligatures=TeX]{Latin Modern Roman}
-% \setsansfont[Ligatures=TeX]{Latin Modern Sans}
-% \setmonofont{Latin Modern Mono}
-% \setmathfont{Latin Modern Math}
+% % \setmainfont[Ligatures=TeX]{Latin Modern Roman}
+% % \setsansfont[Ligatures=TeX]{Latin Modern Sans}
+% % \setmonofont{Latin Modern Mono}
+% % \setmathfont{Latin Modern Math}
+
+% \usepackage{unicode-minionmath}
+% \setmainfont[Ligatures=TeX]{Minion Pro}
+% \setsansfont[Ligatures=TeX]{Myriad Pro}
+% \setmonofont[Scale=.85]{Courier Std}
+
+% \setmathfont{Minion Math}
+% \setmathfont[range={\mathfrak}]{XITS Math}
+% \setmathfont[range={\mathcal},StylisticSet=1]{XITS Math}
+% \setmathfont[range={\mathscr}]{XITS Math}
+% \setmathfont[range={}]{Minion Math}
 % \fi
 
 %% Theorems and definitions
