@@ -32,27 +32,30 @@ there are corresponding elements $r$ and $s$ of the rings $R$ and
 $S$, respectively, such that $\phi(r)=t$ and $\psi(s)=t$. Hence,
 $(t,t)$ are in the image $R\times_T S$ under $\Phi$.
 
-Now, consider the quotient $R\times S$-module $T\times
-T/\Delta_T$. Define the homomorphism $\Phi^*\colon R\times S\to
-T\times T/\Delta_T$ given by the composition
-$\Phi^*=\pi\circ\Phi$ where $\pi$ is the canonical projection map
-of $T\times T$ onto the quotient module $T\times
-T/\Delta_T$. This map is an $R\times S$-linear map, i.e., take
-$(r,s)\in R\times S$ as a ring and $(r_1,s_1),(r_2,s_2)\in
-R\times S$ as an $R\times S$-module, then
+Now, it is clear that $R\times S$ and $T\times T$ have an
+$R\times S$-module structure ($R\times S$ by the usual ring
+multiplication and $T\times T$ by
+$(r,s)(t,t')=(\phi(r)t,\psi(s)t')$) so they have an $R\times_T
+S$-module structure by restriction to the subring $R\times_T S$
+of $R\times S$. Consider the quotient module $T\times
+T/\Delta_T$. $T\times T/\Delta_T$ also inherits an $R\times_T
+S$-module structure from $T\times T$. Note that the map
+$\Phi\colon R\times S\to T\times T$ is an $R\times_T S$-linear
+map: It is clear that $\Phi$ is linear with respect to ``$+$'', what
+is not so obvious is that multiplication by scalars is preserved
+so take $(r',s')\in R\times_T S$ and $(r,s)\in R\times S$, then
 \begin{align*}
-\Phi^*((r_1,s_1)+(r,s)(r_2,s_2))
-&=\Phi^*((r_1,s_1)+(rr_2,ss_2))\\
-&=\Phi^*(r_1+rr_2,s_1+ss_2)\\
-&=\pi(\phi(r_1+rr_2),\psi(s_1+ss_2))\\
-&=\pi(\phi(r_1)+\phi(r)\phi(r_2)),\psi(s_1)+\psi(s)\psi(s_2)))\\
-&=\left(\pi\circ\phi(r_1)+(\pi\circ\phi(r))(\pi\circ\phi(r_2))),
-\pi\circ\psi(s_1)+(\pi\circ\psi(s))(\pi\circ\psi(s_2)))\right)\\
-&=\pi\circ\phi((r_1,s_1))+\pi\circ\phi((r,s))\pi\circ\phi((r_2,s_2)),\\
-&=\Phi^*((r_1,s_1))+\Phi^*((r,s))\Phi^*((r_2,s_2)),
+\Phi((r',s')(r,s)&=
+\Phi(r'r,s's)\\
+&=(\phi(r'r),\psi(s's'))\\
+&=(\phi(r')\phi(r),\psi(s')\psi(s))\\
+&=(\phi(r'),\psi(s'))(\phi(r),\psi(s))\\
+&=\Phi(r',s')\Phi(s,r)
 \end{align*}
-with $\ker\Phi^*=R\times_T S$. Therefore, we have the following
-exact sequence
+as desired. Therefore, $\Phi$ induces an $R\times_T S$-linear map
+$\Phi^*\colon R\times S\to T\times T/\Delta_T$ via composition
+with the quotient map, i.e., $\Phi^*=\pi\circ\Phi$ and we have
+the following exact sequence of $R\times_T S$-modules
 \begin{center}
 \includegraphics{figures/ps4-p2-short-exact-seq}
 \end{center}
@@ -80,6 +83,8 @@ Let $M$ be an $R$-module and $\mathfrak{a}$ an $R$-ideal.
 \end{enumerate}
 \end{problem}
 \begin{proof}
+(a) Suppose that $M_{\mathfrak{m}}$ for every maximal ideal
+$\mathfrak{m}$ containing $\mathfrak{a}$.
 \end{proof}
 \newpage
 \begin{problem}

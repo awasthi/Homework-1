@@ -106,29 +106,27 @@
 \newtheorem{definition}{Definition}
 \newtheorem{example}{Examples}
 \newtheorem{examples}[example]{Examples}
-% \newtheorem{exercise}{Exercise}[section]
-% \newtheorem{problem}[exercise]{Problem}
+\newtheorem{exercise}{Exercise}
+\newtheorem{problem}[exercise]{Problem}
 
-\counterwithout{section}{chapter}
-\usepackage[explicit]{titlesec}
-\titleformat{\section}{\normalfont\Large\bfseries\scshape}{}{0em}{#1}
-\newenvironment{problem}[1][]% environment name
-{% begin code
-  \par\vspace{\baselineskip}\noindent
-  \ifx &#1&%
-  \section{Problem~Mid-\hwnum.\thesection}
-  \global\def\exercisename{Problem Mid-\hwnum.\thesection}%
-  \else
-  \section{Problem~Mid-\hwnum.\thesection~(#1)}
-  \global\def\exercisename{Problem Mid-\hwnum.\thesection(#1)}
-  \fi
-  \par\vspace{\baselineskip}%
-  \noindent\ignorespaces
-}%
-{% end code
-  \par\vspace{\baselineskip}%
-  \noindent\ignorespacesafterend
-}
+% \newcounter{problem}
+% \newenvironment{problem}[1][]% environment name
+% {% begin code
+%   \par\vspace{\baselineskip}\noindent
+%   \ifx &#1&%
+%   {\normalfont\Large\bfseries\scshape Problem~Mid-\hwnum.\theproblem}
+%   \global\def\exercisename{Problem Mid-\hwnum.\theproblem}%
+%   \else
+%   {\normalfont\Large\bfseries\scshape Problem~Mid-\hwnum.\theproblem~(#1)}
+%   \global\def\exercisename{Problem Mid-\hwnum.\theproblem(#1)}
+%   \fi
+%   \par\vspace{\baselineskip}%
+%   \noindent\ignorespaces
+% }%
+% {% end code
+%   \par\vspace{\baselineskip}%
+%   \noindent\ignorespacesafterend
+% }
 
 \newtheorem*{definition*}{Definition}
 \newtheorem*{example*}{Examples}
@@ -215,14 +213,14 @@
 \makeoddhead{headings}
         {\small{\MakeUppercase{\itshape\documentauthor}}}
         {}
-        {\small{\MakeUppercase{\itshape\exercisename}}}
+        {\small{\MakeUppercase{\itshape Problem~\theexercise}}}
 \makeoddfoot{headings}{{\itshape\documenttitle}}
                       {}
                       {\thepage}
 \makeevenhead{headings}
         {\small{\MakeUppercase{\itshape\documentauthor}}}
         {}
-        {\small{\MakeUppercase{\itshape\exercisename}}}
+        {\small{\MakeUppercase{\itshape Problem~\theexercise}}}
 \makeevenfoot{headings}{{\itshape\documenttitle}}
                       {}
                       {\thepage}

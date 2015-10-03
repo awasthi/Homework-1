@@ -4,7 +4,7 @@
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("memoir" "article" "oneside" "10pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("xcolor" "dvipsnames") ("enumitem" "inline") ("euscript" "mathcal") ("fontenc" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "german" "russian" "spanish" "english") ("titlesec" "explicit")))
+                     '(("xcolor" "dvipsnames") ("enumitem" "inline") ("euscript" "mathcal") ("fontenc" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "german" "russian" "spanish" "english")))
    (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
@@ -31,8 +31,7 @@
     "fontenc"
     "inputenc"
     "babel"
-    "CJKutf8"
-    "titlesec")
+    "CJKutf8")
    (TeX-add-symbols
     '("clsr" 1)
     '("restr" 2)
@@ -59,7 +58,6 @@
     "documentsubject"
     "authoremail"
     "spanishoptions"
-    "exercisename"
     "upint"
     "lowint")
    (LaTeX-add-environments
@@ -73,6 +71,8 @@
     "definition"
     "example"
     "examples"
+    "exercise"
+    "problem"
     "remark"
     "remarks"
     "observation"

@@ -20,20 +20,20 @@ Y)\setminus(A\times B)$ is a neighborhood of $(x,y)$ so, by Lemma
 C, $(X\times Y)\setminus(A\times B)$ is open. Thus, $A\times B$
 is closed.
 \end{proof}
-\begin{claim}[Munkres \S17, Ex.\,6(a)]
-If $A\subset B$, then $\clsr A\subset\clsr B$.
-\end{claim}
-\begin{proof}[Proof of claim]
-\renewcommand\qedsymbol{$\clubsuit$}
-By Theorem 17.5(a), $x\in\clsr A$ if and only if for every
-neighborhood $U\ni x$, $U\cap A\neq\emptyset$. In particular,
-since $A\subset B$, $U\cap B\neq\emptyset$ for every neighborhood
-$U\ni x$ for every $x\in\clsr A$. Thus, $x\in\clsr B$ and we have
-the following containment $\clsr A\subset\clsr B$.
-\end{proof}
-\noindent
+% \begin{claim}[Munkres \S17, Ex.\,6(a)]
+% If $A\subset B$, then $\clsr A\subset\clsr B$.
+% \end{claim}
+% \begin{proof}[Proof of claim]
+% \renewcommand\qedsymbol{$\clubsuit$}
+% By Theorem 17.5(a), $x\in\clsr A$ if and only if for every
+% neighborhood $U\ni x$, $U\cap A\neq\emptyset$. In particular,
+% since $A\subset B$, $U\cap B\neq\emptyset$ for every neighborhood
+% $U\ni x$ for every $x\in\clsr A$. Thus, $x\in\clsr B$ and we have
+% the following containment $\clsr A\subset\clsr B$.
+% \end{proof}
+
 Since $A\subset\clsr A$ and $B\subset\clsr B$ then $A\times
-B\subset\clsr A\times\clsr B$. Then by Claim 2
+B\subset\clsr A\times\clsr B$. Then by Lemma B
 $\clsr{A\times B}\subset\clsr{\clsr{A}\times\clsr{B}}$, but by
 Claim 1 $\clsr{\clsr{A}\times\clsr{B}}=\clsr A\times\clsr B$ so
 $\clsr{A\times B}\subset\clsr A\times\clsr B$. To see the reverse
@@ -76,9 +76,9 @@ $G_f$ is closed.
 We will show that the complement of $G_f$ in $X\times Y$ is
 open. Let $(x,y)\in(X\times Y)\setminus G_f$. Since $Y$ is
 Hausdorff, choose neighborhoods $U$ and $V$ of $y$ and $f(x)$
-respectively, such that $U\cap V=\emptyset$. Then $U\times
-V\ni(x,y)$ is contained in the complement of $G_f$ so, by Lemma
-C, $G_f$ is open.
+respectively, such that $f^{-1}(U)\cap V=\emptyset$. Then
+$f^{-1}(U)\times V\ni(x,y)$ is contained in the complement of
+$G_f$ so, by Lemma C, $G_f$ is open.
 \end{proof}
 \begin{problem}
 Let $X$ be a topological space and let $f,g\colon X\to\RR$ be
@@ -107,14 +107,40 @@ g(x)&\text{if $x\in B$}
 \end{cases}.
 \]
 Thus, by the pasting lemma, $h$ is continuous if we can show that
-$A$ and $B$ are closed in $X$. We will prove that the complement
-of $A$ in $X$ is open; the proof of $B$ is similar. Let $x\in
-X\setminus A$. Then $f(x)>g(x)$. Take the interval
-$I=(g(x),f(x))\subset\RR$ then since $f$ and $g$ are continuous
-$f^{-1}(I)$ and $g^{-1}(I)$ are neighborhoods of
-$x$. Then we claim that $f^{-1}(I)\cap g^{-1}(I)$ is a
-neighborhood of $X$ with $f^{-1}(I)\cap g^{-1}(I)\subset
-X\setminus A$.
+$A$ and $B$ are closed in $X$.
+
+We will prove that the complement of $A$ in $X$ is open; the
+proof of $B$ is similar. Let $x\in X\setminus A$. Then
+$f(x)>g(x)$. Thus we have the following result
+\begin{lemma}
+Let $x,y\in X$ with the order topology. Then there exists a
+neighborhood $U\ni x$, $V\ni y$ with $U\cap V=\emptyset$ and
+$x'<y'$ for all $x'\in U$, $y'\in V$.
+\end{lemma}
+\begin{proof}[Proof of lemma]
+\renewcommand\qedsymbol{$\clubsuit$}
+We break the demonstration into the following cases:
+\\\\
+Case 1: Suppose there exists $z\in X$ with $x<z<y$, i.e.,
+$z\in(x,y)$. Let $U$ be the ray $U=(-\infty,z)$ and $V$ be the
+ray $V=(z,\infty)$. Then $U\cap V=\emptyset$ and for every $x'\in
+V$, $y'\in U$ $x'<c<y'$, in particular, $x'<y'$.
+\\\\
+Case 2: Suppose that there does not exists $z\in X$ with $x<z<y$,
+i.e., $(x,y)=\emptyset$. Let $U$ be the ray $U=(-\infty,x)$ and
+$V$ be the ray $V=(y,\infty)$. Then $U\cap V=\emptyset$ and for
+every $x'\in U$, $y'\in V$ we have $x'<x<y<y'$, in particular,
+$x'<y'$.
+\end{proof}
+
+By Lemma 2, choose $U\ni g(x)$ and $V\ni f(x)$ as above. Then
+$g^{-1}(U)\cap f^{-1}(V)$ is a neighborhood of $x$ with
+$g(x)<f(x)$ for all. Hence $g^{-1}(U)\cap f^{-1}(V)\subset
+X\setminus A$ and, by Lemma C, $X\setminus A$ is open. Thus, $A$
+is closed.
+
+Having satisfied the conditions of the pasting lemma, it follows
+that $h$ is continuous.
 \end{proof}
 \begin{problem}
 Let $X$ and $Y$ be topological spaces and let $f\colon X\to Y$ be
@@ -125,6 +151,21 @@ f(\clsr A)\subset\clsr{f(A)}
 for all subsets $A$ of $X$. Prove that $f$ is continuous.
 \end{problem}
 \begin{proof}
+Suppose that $f$ has the property given above then, we claim that
+\begin{claim}[Munkres \S18, Theorem 18.1(3)]
+For every closed set $B$ of $Y$, $f^{-1}(B)$ is closed in $X$.
+\end{claim}
+\begin{proof}[Proof of claim]
+\renewcommand\qedsymbol{$\clubsuit$}
+Let $B$ be closed in $Y$. Then we have $f(f^{-1}(B))\subset B$ so
+if $x\in\clsr{f^{-1}(B)}$ then
+\[
+f(x)\in f(f^{-1}(B))\subset\clsr{f(f^{-1}(B))}\subset\clsr B=B,
+\]
+so that $x\in f^{-1}(B)$. Thus $\clsr f^{-1}(B)\subset f^{-1}(B)$
+and $\clsr{f^{-1}(B)}=f^{-1}(B)$ as desired.
+\end{proof}
+
 \end{proof}
 \begin{problem}
 Let $X$ and $Y$ be topological spaces and let $f\colon X\to Y$ be
