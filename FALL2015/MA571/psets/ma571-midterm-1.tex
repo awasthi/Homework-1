@@ -484,7 +484,7 @@ P^{-1}(\Delta_{X/{\sim}})
 &=
 \left\{\,(x,y)\in X\times X\;\middle|\;p(x)=p(y)\,\right\}\\
 &=
-\left\{\,(x,y)\in X\times X\;\middle|\;x\sim y\right\}\\
+\left\{\,(x,y)\in X\times X\;\middle|\;x\sim y\,\right\}\\
 &=S,
 \end{align*}
 so by Theorem 18.1(3), $S$ is closed in $X$.
@@ -498,19 +498,55 @@ set $V$ with $p^{-1}(y)\subset V\subset U$. Prove that $p$ takes
 closed sets to closed sets.
 \end{problem}
 \begin{proof}
-
+Suppose that $W\neq X$ is closed so $X\setminus W$ is open. If
+$p(W)=Y$ we are done. Suppose $p(W)\neq Y$. Then there exists
+some $y\in Y\setminus p(W)$ so $p^{-1}(y)\subset X\setminus
+W$. Then, for some open $V\in Y$, $p^{-1}(y)\subset
+p^{-1}(V)\subset X\setminus W$. Thus, $y\in V\subset p(X\setminus
+W)$, but $p(X\setminus W)\subset Y\setminus p(W)$ since $y\in
+p(X\setminus W)$ if and only if $y=p(x)$ for $x\notin W$, but
+$y\in Y\setminus p(W)$ if and only if $y\neq p(x)$ for $x\in
+W$. Thus, $Y\setminus p(W)$ is open so $p(W)$ is closed.
 \end{proof}
 \begin{problem}
 Let $X$ be a topological space, let $D$ be a connected subset of
 $X$, and let $\left\{E_\alpha\right\}$ be a collection of
 connected subsets of $X$.
+\\\\
+Prove that if $D\cap E_\alpha\neq\emptyset$ for all $\alpha$,
+then $D\cup\left(\bigcup E_\alpha\right)$ is connected.
 \end{problem}
 \begin{proof}
+Consider the collection $\left\{D_\alpha\right\}$ where
+$D_\alpha=D\cup E_\alpha$. By Theorem 23.3, $D\cup E_\alpha$ is
+connected so every $D_\alpha$ is connected. Moreover
+$D_\alpha\cap D_\beta\supset D\neq\emptyset$ so by Theorem 23.3,
+\[
+\bigcup D_\alpha=\bigcup D\cup E_\alpha=D\cup\left(\bigcup E_\alpha\right)
+\]
+is connected.
 \end{proof}
 \begin{problem}
 Let $X$ and $Y$ be connected. Prove that $X\times Y$ is connected.
 \end{problem}
 \begin{proof}
+Seeking a contradiction, suppose $C,D$ is a separation of
+$X\times Y$. Fix an $y_0\in Y$. Then the map
+$X\hookrightarrow X\times Y$ given by $x\mapsto (x,y_0)$ is
+continuous (by Theorem 18.4) so by Theorem 23.5 its image,
+$X\times y_0$, is connected. Similarly, the maps $y\mapsto
+(x,y)$ for fixed $x\in X$ are continuous and hence their images,
+$x\times Y$ are connected. Since $X\times y_0$ is connected, by
+Theorem 23.2, $X\times y_0\subset C$ or $D$. Without loss of
+generality, suppose $X\times y_0\subset C$. Then, since $x\times
+Y\cap X\times y_0\ni (x,y_0)\neq\emptyset$ then $x\times Y\subset
+C$ for all $x$. Thus,
+\[
+X\times y_0\cup\left(\bigcup_{x\in X}x\times Y\right)=X\times
+Y\subset C
+\]
+implies that $D=\emptyset$. This contradicts the assumption
+that $C,D$ is a separation of $X\times Y$.
 \end{proof}
 \begin{problem}
 For any space $X$, let us say that two points are ``inseparable''
@@ -520,10 +556,11 @@ are inseparable. Then $\sim$ is an equivalence relation (you
 don't have to prove this). Now suppose that $X$ is locally
 connected (this means that for every point $x$ and every open
 neighborhood $U$ of $x$, there is a connected open neighborhood
-$V$ of $x$ contained in $U$). Prove that ecah equivalence class
+$V$ of $x$ contained in $U$). Prove that each equivalence class
 of the relation $\sim$ is connected.
 \end{problem}
 \begin{proof}
+
 \end{proof}
 \begin{problem}
 Let $X$ be a topological space. Let $A\subset X$ be
