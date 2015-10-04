@@ -139,7 +139,7 @@ $g(x)<f(x)$ for all. Hence $g^{-1}(U)\cap f^{-1}(V)\subset
 X\setminus A$ and, by Lemma C, $X\setminus A$ is open. Thus, $A$
 is closed.
 
-Having satisfied the conditions of the pasting lemma, it follows
+Having satisfied the conditions of the pasting lemma (Theorem 18.3), it follows
 that $h$ is continuous.
 \end{proof}
 \begin{problem}
@@ -151,21 +151,31 @@ f(\clsr A)\subset\clsr{f(A)}
 for all subsets $A$ of $X$. Prove that $f$ is continuous.
 \end{problem}
 \begin{proof}
-Suppose that $f$ has the property given above then, we claim that
-\begin{claim}[Munkres \S18, Theorem 18.1(3)]
-For every closed set $B$ of $Y$, $f^{-1}(B)$ is closed in $X$.
+Suppose that $f$ has the property given above. Then we claim that:
+\begin{claim}
+For every closed set $B$ of $Y$, $f^{-1}(B)$, $f^{-1}(B)$ is
+closed in $X$.
 \end{claim}
 \begin{proof}[Proof of claim]
 \renewcommand\qedsymbol{$\clubsuit$}
-Let $B$ be closed in $Y$. Then we have $f(f^{-1}(B))\subset B$ so
-if $x\in\clsr{f^{-1}(B)}$ then
+Let $B$ be closed in $Y$. We will show that
+$\clsr{f^{-1}(B)}=f^{-1}(B)$. To that end, it suffices to show
+that $\clsr{f^{-1}(B)}\subset f^{-1}(B)$ since the containment
+$\clsr{f^{-1}(B)}\supset f^{-1}(B)$ is immediate (from the
+definition of the closure). By Munkres \S2 Ex.\,1(b), we have
+that $f(f^{-1}(B))\subset B$ so if $x\in\clsr{f^{-1}(B)}$ then
+$f(x)\in B$ since, by our assumption on $f$ together with Lemma
+C, we have
 \[
-f(x)\in f(f^{-1}(B))\subset\clsr{f(f^{-1}(B))}\subset\clsr B=B,
+f\bigl(\clsr{f^{-1}(B)}\bigr)\subset\clsr{f(f^{-1}(B))}\subset B.
 \]
-so that $x\in f^{-1}(B)$. Thus $\clsr f^{-1}(B)\subset f^{-1}(B)$
-and $\clsr{f^{-1}(B)}=f^{-1}(B)$ as desired.
+Thus, $x\in f^{-1}(B)$ so $\clsr{f^{-1}(B)}\subset f^{-1}(B)$ as
+desired.
 \end{proof}
-
+Let $U$ be open in $Y$. Then $Y\setminus U$ is closed in
+$Y$. Then, by Claim 3, $f^{-1}(Y\setminus U)=X\setminus
+f^{-1}(U)$ is closed in $X$ so $X\setminus (X\setminus
+f^{-1}(U))=f^{-1}(U)$ is open in $X$. Thus, $f$ is continuous.
 \end{proof}
 \begin{problem}
 Let $X$ and $Y$ be topological spaces and let $f\colon X\to Y$ be
@@ -176,6 +186,26 @@ f(\clsr A)\subset\clsr{f(A)}
 for all subsets $A$ of $X$.
 \end{problem}
 \begin{proof}
+Suppose $f$ is continuous. Then, for every $U$ open in $Y$,
+$f^{-1}(U)$ is open in $X$. Let $A\subset X$ and consider
+$\clsr{f(A)}$. Then, $f^{-1}\bigl(Y\setminus\clsr{f(A)}\bigr)=X\setminus
+f^{-1}\bigl(\clsr{f(A)}\bigr)$ is open in $X$ so its complement
+$f^{-1}\bigl(\clsr{f(A)}\bigr)$ is closed in $X$. Moreover, by
+Munkres \S2 Ex.\,1(a), we we have $A\subset f^{-1}(f(A))$ and
+since, by Theorem 17.6, $\clsr{f(A)}=f(A)\cup f(A)'$ we have that
+\[
+A\subset f^{-1}\bigl(\clsr{f(A)}\bigr)=f^{-1}(f(A)\cup
+f(A)')=f^{-1}(f(A))\cup f^{-1}(f(A)').
+\]
+In particular, by Lemma C, $\clsr A\subset
+f^{-1}\bigl(\clsr{f(A)}\bigr)$ so, by Munkres \S2 Ex.\,1(b), we have
+\[
+f\bigl(\clsr A\bigr)\subset
+f\bigl(f^{-1}\bigl(\clsr{f(A)}\bigr)\bigr)
+\subset
+\clsr{f(A)},
+\]
+as desired.
 \end{proof}
 \begin{problem}
 Let $X$ be any topological space and let $Y$ be a Hausdorff
@@ -184,6 +214,22 @@ the set $\left\{\,x\in X\;\middle|\;f(x)=g(x)\,\right\}$ is
 closed.
 \end{problem}
 \begin{proof}
+By Munkres \S17 Ex.\,13, $Y$ is Hausdorff if and only if
+$\Delta_Y=\left\{\,(y,y)\;\middle|\;y\in Y\,\right\}$ is closed in
+$Y\times Y$. By Theorem 18.4, the map $F=(f,g)\colon X\to Y\times
+Y$ is continuous since $f$ and $g$ are continuous. We claim that
+$F^{-1}(\Delta_Y)=\left\{\,x\in
+  X\;\middle|\;f(x)=g(x)\,\right\}$.
+
+It is clear that if $f(x)=g(x)=y$ then $F(x)=(y,y)\in\Delta_Y$ so
+$F^{-1}(\Delta_Y)\supset\left\{\,x\in
+  X\;\middle|\;f(x)=g(x)\,\right\}$. Now suppose $x\in
+F^{-1}(\Delta_Y)$ then $F(x)=(f(x),g(x))=(y,y)\in\Delta_Y$ so
+$f(x)=g(x)=y$ so $x\in\left\{\,x\in
+  X\;\middle|\;f(x)=g(x)\,\right\}$. Thus, $F^{-1}(\Delta_Y)=\left\{\,x\in
+  X\;\middle|\;f(x)=g(x)\,\right\}$ so, by Theorem 18.1(3), it
+follows that $\left\{\,x\in X\;\middle|\;f(x)=g(x)\,\right\}$ is
+closed in $X$.
 \end{proof}
 \begin{problem}
 Let $X$ be a topological space and $A$ a subset of $X$. Suppose that
@@ -193,6 +239,14 @@ A\subset\clsr{X\setminus\clsr A}.
 Prove that $\clsr{A}$ does not contain any nonempty open set.
 \end{problem}
 \begin{proof}
+Suppose, seeking a contradiction, that $\Int A\neq\emptyset$. Then there
+exists $x\in\Int A\subset A$ and a neighborhood $U\ni x$ with
+$U\subset A$. Then $U\subset\clsr{X\setminus\clsr A}$. In
+particular, $x\in\clsr{X\setminus\clsr A}$ so
+$U\cap\clsr{X\setminus\clsr A}\neq\emptyset$. But $U\subset
+A\subset\clsr A$ so $U\cap \bigl(X\setminus\clsr
+A\bigr)=\emptyset$. This is a contradiction since
+$x\in\clsr{X\setminus\clsr A}$. Thus, $\Int A=\emptyset$.
 \end{proof}
 \begin{problem}
 Let $X$ be a topological space with a countable basis. Prove that
@@ -210,6 +264,48 @@ Let $X_\alpha$ be an infinite family of topological spaces.
 \end{enumerate}
 \end{problem}
 \begin{proof}
+(a)From Munkres \S19, p.\,114:
+\begin{definition*}
+Let $\mathcal{S}_\beta$ denote the collection
+\[
+\mathcal{S}_\beta=\left\{\,\pi_\beta^{-1}(U_\beta)\;\middle|\;\text{$U_\beta$
+  open in $X_\beta$}\,\right\},
+\]
+and let $\mathcal{S}$ denote the union of these collections,
+\[
+\mathcal{S}=\bigcup\mathcal{S}_\beta.
+\]
+The topology generated by the subbasis $\mathcal{S}$ is called
+the \emph{product topology}.
+\end{definition*}
+Alternatively, we have the theorem:
+\begin{theorem*}[Munkres, Thm.\,19.2]
+Suppose the topology on each space $X_\alpha$ is given by a basis
+$\mathcal{B}_\alpha$. The collection of all sets of the form
+\[
+\prod B_\alpha,
+\]
+where $B_\alpha\in\mathcal{B}_\alpha$ for finitely many indicel
+$\alpha$ and $B_\alpha=X_\alpha$ for all the remaining indices is
+a basis for the product topology on $\prod X_\alpha$.
+\end{theorem*}
+
+(b) (cf.\,Munkres \S19, Theorem 19.5) Let
+$\mathbf{x}=(x_\alpha)\in\prod\clsr A_\alpha$; we show that
+$\mathbf{x}\in\clsr{\prod A_\alpha}$. Let $U=\prod U_\alpha\ni x$ be a
+basis element. Since $x_\alpha\in\clsr A_\alpha$, there exists
+$y_\alpha\in U_\alpha\cap A_\alpha$ for each $\alpha$. Then
+$\mathbf{y}=(y_\alpha)$ belongs to both $U$ and $\prod
+A_\alpha$. Since $U$ is arbitrary, it follows that
+$\mathbf{x}\in\clsr{\prod A_\alpha}$.
+
+Conversely, suppose that $\mathbf{x}=(x_\alpha)\in\clsr{\prod
+  A_\alpha}$; we show that $x_\beta\in\clsr A_\beta$ for any
+index $\beta$. Let $V_\beta\ni x_\beta$ be an arbitrary
+neighborhood in $X_\beta$. Since $\pi_\beta^{-1}(V_\beta)$ is
+open in $\prod X_\alpha$, it contains a point
+$\mathbf{y}=(y_\alpha)$ of $\prod A_\alpha$. Then $y_\beta\in
+V_\beta\cap A_\beta$. It follows that $x_\beta\in\clsr A_\beta$.
 \end{proof}
 \begin{problem}
 Suppose that we are given an indexing set $A$, and for each
@@ -225,6 +321,16 @@ S=\left\{\,y\in Y\;\middle|\;\text{$\pi_\alpha(y)=b_\alpha$ except for
 is dense in $Y$ (that is, its closure is $Y$).
 \end{problem}
 \begin{proof}
+We want to show that $\clsr S=X$ therefore, we will show that for
+every open subset $U$ of $X$, $U\cap S\neq\emptyset$. By Theorem
+17.5(b), it suffices to show this for basis elements. Let
+$\mathcal{B}_\alpha$ be a basis for $X_\alpha$ and $U=\prod
+U_\alpha$ be a basis element in the product topology on $\prod
+X_\alpha$. Then, by Theorem 19.2, $U_\alpha\in\mathcal{B}_\alpha$
+for finitely many indices $\alpha$ and $U_\alpha=X_\alpha$ for
+all the remaining indices. Hence, at least one $X_\alpha\ni
+b_\alpha$ so $U\cap S\neq\emptyset$. Since $U$ was arbitrary, we
+conclude that $\clsr S=X$.
 \end{proof}
 \begin{problem}
 Let $X$ be the Cartesian product
@@ -235,6 +341,19 @@ $f\colon\RR\to X$ be the function which takes $t$ to
 $(t,t,t,...)$. Prove that $f$ is not continuous.
 \end{problem}
 \begin{proof}
+(cf.\,Example 2 in Munkres \S19) It suffices to show that the
+preimage of a basis element $U$ in the box topology is not open
+in $\RR$. Let
+\[
+U=\prod\left(-\frac{1}{n},\frac{1}{n}\right).
+\]
+Suppose that $f$ is continuous. Then $f^{-1}(U)$ is open. Then by
+18.1(4), for some $\delta>0$, $(-\delta,\delta)\ni 0\subset
+f^{-1}(U)$, $f((-\delta,\delta))=\prod (-\delta,\delta)\subset
+B$. But, by the Archimedean principle, there exists $n\in\ZZ_+$
+such that $1/n<\delta$ so $(-\delta,\delta)\nsubset(-1/N,1/N)$
+for any $N\geq n$. This is a contradiction. Therefore, $f$ is not
+continuous on $\RR^\omega$ with the box topology.
 \end{proof}
 \begin{problem}
 Prove that the countable product $\RR^\omega$ (with the product
@@ -248,18 +367,56 @@ you may not use this in your proof. Use the definition of the
 product topology.
 \end{problem}
 \begin{proof}
+Define $\mathcal{F}$ to be the collection of all sets
+$U_{k,\ell}=\prod U_n$ where $U_n=(-1/k,1/k)$ for $1\leq
+n\leq\ell$ and $U_n=\RR$ otherwise. Then we want to show that for
+every neighborhood $V$ of $\mathbf{0}$, there exists
+$U\in\mathcal{F}$ with $U\subset V$. By Theorem 17.5(b) it
+suffices to prove this for basis elements containing
+$\mathbf{0}$. Hence, let $V=\prod V_n$ be a basis element
+containing $\mathbf{0}$. Then, by Theorem 19.2, $V_n$ is a basis
+element for the standard topology on $\RR$ containing $0$, i.e,
+$V_n=(a_n,b_n)$ for $a_n<0<b_n$, for finitely many $n$ and
+$V_n=\RR$ otherwise. Without loss of generality, we may assume
+that $V=(a_1,b_1)\times\cdots(a_N,b_N)\times\RR\times\cdots$. Let
+$\delta=\min\left\{|a_1|,b_1,...,|a_N|,b_N\right\}$. Then by the
+Archimedean principle, there exists a positive integer $m$ such
+that $1/m<\delta$. Thus, $U_{m,N}\subset V$.
 \end{proof}
 \begin{problem}
 Let $X$ be the two-point set $\{0,1\}$ with the discrete
 topology. Let $Y$ be a countable product of copies of $X$, thus
 an element of $Y$ is a sequence of $0$'s and $1$'s. For each
-$n\geq 1$, let $y_0\in Y$ be the element
-$(1,1,1,...,1,0,0,0,..)$, with $n$ $1$'s at the beginning and all
-other entries $0$. Let $y\in Y$ be the element with all
-$1$s. Prove that the set $\left\{y_n\right\}_{n\geq 1}\cup\{y\}$
-is closed. Give a clear explanation. Do not use a metric.
+$n\geq 1$, let $y_0\in Y$ be the element $(1,...,1,0,..)$, with
+$n$ $1$'s at the beginning and all other entries $0$. Let $y\in
+Y$ be the element with all $1$s. Prove that the set
+$\left\{y_n\right\}_{n\geq 1}\cup\{y\}$ is closed. Give a clear
+explanation. Do not use a metric.
 \end{problem}
 \begin{proof}
+Let $A=\left\{y_n\right\}_{n\geq 1}\cup\{y\}$. We will show that
+the complement of $A$ in $Y$ is open. By Lemma C, it suffices to
+find a basis element $U\ni\mathbf{x}$ with $U\cap
+A=\emptyset$. Let $\mathbf{x}\in  Y\setminus A$. Then
+$\mathbf{x}$ is a sequence of $0$'s and $1$'s where, say the
+first $n$ terms, are not all $1$. Let $k$, for $1\leq k\leq n$,
+be the first zero to appear in the sequence $\mathbf{x}$ and
+$\ell$, for $\ell>k$, be the first one to appear right
+after. Then the product $U=\prod U_n$ where
+\[
+U_n=
+\begin{cases}
+\{0\}&\text{if $n=k$,}\\
+\{1\}&\text{if $n=\ell$,}\\
+X&\text{otherwise},
+\end{cases}
+\]
+is a basis element containing $\mathbf{x}$, but $U\cap
+A=\emptyset$ for otherwise there is a sequence $\mathbf{y}\in A$
+with $y_k=0$, but $y_\ell=1$ which is impossible since $\ell>k$
+and $A$ consists of sequences $\mathbf{y}$ with the property that
+if $y_N=1$ then $y_n=1$ for all $n\leq N$. Thus, $Y\setminus A$
+is open so $A$ is closed.
 \end{proof}
 \begin{problem}
 Let $X$ be the two-point set $\{0,1\}$ with the discrete
@@ -269,6 +426,8 @@ the subset of $Y$ consisting of sequences with only a finite
 number of $1$'s. Is $A$ closed? Prove or disprove.
 \end{problem}
 \begin{proof}
+Let $A$ denote the set of all sequences in $Y$ with only a finite
+number of $1$'s.
 \end{proof}
 \begin{problem}
 Let $Y$ be a topological space.Let $X$ be a set and let $f\colon
@@ -279,6 +438,12 @@ be a closed set in $X$ not containing $a$. Prove that $f(a)$ is
 not in the closure of $f(B)$.
 \end{problem}
 \begin{proof}
+Suppose $B$ is closed in $X$ and $a\in X\setminus B$. Then
+$X\setminus B$ is open in $X$ so $X\setminus B=f^{-1}(V)$ for
+some $V$ open in $Y$. Then $f(X\setminus B)\subset V\ni f(a)$
+with $V\cap f(B)=\emptyset$ (otherwise $f(b)\in V$ for some $b\in
+B$, but the preimage of $V$ lies in the complement of $B$). By
+Theorem 17.5(a), $f(a)\notin\clsr{f(B)}$.
 \end{proof}
 \begin{problem}
 Let $f\colon X\to Y$ be a function that takes closed sets to
@@ -287,6 +452,14 @@ $f^{-1}(y)$. Prove that there is an open set $V$ containing $y$
 such that $f^{-1}(V)$ is contained in $U$.
 \end{problem}
 \begin{proof}
+Since $U$ is open in $X$, $X\setminus U$ is closed in $X$. Since
+$f$ is a closed mapping, $f(X\setminus U)$ is closed in $Y$ so
+$Y\setminus f(X\setminus U)$ is open in $Y$. Moreover, $y\in
+Y\setminus f(X\setminus U)$ since $y\notin f(X\setminus U)$. Let
+$V\ni y$ open in $Y$. Then we claim that $f^{-1}(V)\subset
+U$. Otherwise, there exists $x\in f^{-1}(V)\cap(X\setminus U)$ so
+$f(x)\in V\cap f(X\setminus U)$, but this contradicts that
+$V\subset X\setminus f(X\setminus U)$.
 \end{proof}
 \begin{problem}
 Let $X$ be a topological space with an equivalence relation
@@ -296,6 +469,25 @@ Hausdorff. Prove that the set $S=\left\{\,x\times y\in X\times
 X$.
 \end{problem}
 \begin{proof}
+Recall that a space $Y$ is Hausdorff if and only if $\Delta_Y$ is
+closed in $Y\times Y$. Therefore, $X/{\sim}$ is Hausdorff implies
+$\Delta_{X/{\sim}}$ is closed in $X/{\sim}\times X/{\sim}$. Now
+consider the map $P=(p,p)\colon X\to X/{\sim}\times
+X/{\sim}$ where $p\colon X\to X/{\sim}$ is the quotient map on
+$X$. $p$ is continuous by the definition of the quotient topology
+so by Theorem 18.4, the composite map $P$ is continuous since it
+is continuous in each factor. Hence, we have that
+\begin{align*}
+P^{-1}(\Delta_{X/{\sim}})
+&=
+\left\{\,(x,y)\in X\times X\;\middle|\;P(x,y)\in\Delta_{X/{\sim}}\,\right\}\\
+&=
+\left\{\,(x,y)\in X\times X\;\middle|\;p(x)=p(y)\,\right\}\\
+&=
+\left\{\,(x,y)\in X\times X\;\middle|\;x\sim y\right\}\\
+&=S,
+\end{align*}
+so by Theorem 18.1(3), $S$ is closed in $X$.
 \end{proof}
 \begin{problem}
 Let $p\colon X\to Y$ be a quotient map. Let us say that a subset
@@ -306,6 +498,7 @@ set $V$ with $p^{-1}(y)\subset V\subset U$. Prove that $p$ takes
 closed sets to closed sets.
 \end{problem}
 \begin{proof}
+
 \end{proof}
 \begin{problem}
 Let $X$ be a topological space, let $D$ be a connected subset of

@@ -36,7 +36,6 @@
 \usepackage{microtype}
 \usepackage{multicol}
 \usepackage[inline]{enumitem}
-\usepackage{listings}
 \usepackage{mleftright}
 \mleftright
 
@@ -51,20 +50,23 @@
 \usepackage{iftex}
 \ifPDFTeX
 \usepackage{cmap}
-\usepackage[T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage[T2A,T1]{fontenc}
 \usepackage[french,german,russian,spanish,english]{babel}
-\babeltags{fr=french,
-           de=german,
-           ru=russian,
+\babeltags{en=english,
            es=spanish,
-           en=english}
+           fr=french,
+           de=german,
+           ru=russian
+           }
 \def\spanishoptions{mexico}
 \usepackage{CJKutf8}
 \newcommand{\textha}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
 \newcommand{\textni}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 \fi
+
+\usepackage{listings}
 
 % %% XeTeX specific
 % \ifXeTeX
