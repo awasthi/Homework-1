@@ -69,13 +69,13 @@
 \usepackage{listings}
 
 % %% XeTeX specific
-% \ifXeTeX
-% \usepackage{unicode-math}
+\ifXeTeX
+\usepackage{unicode-math}
 
-% % \setmainfont[Ligatures=TeX]{Latin Modern Roman}
-% % \setsansfont[Ligatures=TeX]{Latin Modern Sans}
-% % \setmonofont{Latin Modern Mono}
-% % \setmathfont{Latin Modern Math}
+\setmainfont[Ligatures=TeX]{Latin Modern Roman}
+\setsansfont[Ligatures=TeX]{Latin Modern Sans}
+\setmonofont{Latin Modern Mono}
+\setmathfont{Latin Modern Math}
 
 % \usepackage{unicode-minionmath}
 % \setmainfont[Ligatures=TeX]{Minion Pro}
@@ -87,7 +87,7 @@
 % \setmathfont[range={\mathcal},StylisticSet=1]{XITS Math}
 % \setmathfont[range={\mathscr}]{XITS Math}
 % \setmathfont[range={}]{Minion Math}
-% \fi
+\fi
 
 %% Theorems and definitions
 \theoremstyle{plain}
@@ -171,18 +171,18 @@
 \def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
 \fi
 
-% \ifXeTeX
-% %% Patch arrows for XeTeX
-% \usepackage{etoolbox}
-% \makeatletter
-% \patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
-% \patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
-% \patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
-% \patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
-% \makeatother
+\ifXeTeX
+%% Patch arrows for XeTeX
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
+\patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
+\patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
+\patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
+\makeatother
 
-% \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
-% \fi
+\renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
+\fi
 
 %% Commands and operators
 \DeclareMathOperator{\id}{id}

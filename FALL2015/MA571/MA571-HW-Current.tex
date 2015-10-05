@@ -44,12 +44,13 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{mathtools}
-\usepackage[mathcal]{euscript}
-\usepackage{mathrsfs}
 
 %% PDFTeX specific
 \usepackage{iftex}
 \ifPDFTeX
+\usepackage[mathcal]{euscript}
+\usepackage{mathrsfs}
+
 \usepackage{cmap}
 \usepackage[T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -66,15 +67,26 @@
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 \fi
 
-%% XeTeX specific
-% \ifXeTeX
-% \usepackage{unicode-math}
+% %% XeTeX specific
+\ifXeTeX
+\usepackage{unicode-math}
 
-% \setmainfont[Ligatures=TeX]{Latin Modern Roman}
-% \setsansfont[Ligatures=TeX]{Latin Modern Sans}
-% \setmonofont{Latin Modern Mono}
-% \setmathfont{Latin Modern Math}
-% \fi
+\setmainfont[Ligatures=TeX]{Latin Modern Roman}
+\setsansfont[Ligatures=TeX]{Latin Modern Sans}
+\setmonofont{Latin Modern Mono}
+\setmathfont{Latin Modern Math}
+
+% \usepackage{unicode-minionmath}
+% \setmainfont[Ligatures=TeX]{Minion Pro}
+% \setsansfont[Ligatures=TeX]{Myriad Pro}
+% \setmonofont[Scale=.85]{Courier Std}
+
+% \setmathfont{Minion Math}
+% \setmathfont[range={\mathfrak}]{XITS Math}
+% \setmathfont[range={\mathcal},StylisticSet=1]{XITS Math}
+% \setmathfont[range={\mathscr}]{XITS Math}
+% \setmathfont[range={}]{Minion Math}
+\fi
 
 %% Theorems and definitions
 \theoremstyle{plain}
@@ -98,18 +110,16 @@
 % \newtheorem{exercise}{Exercise}[section]
 % \newtheorem{problem}[exercise]{Problem}
 
-\counterwithout{section}{chapter}
-\usepackage[explicit]{titlesec}
-\titleformat{\section}{\normalfont\Large\bfseries\scshape}{}{0em}{#1}
+\newcounter{problem}
 \newenvironment{problem}[1][]% environment name
 {% begin code
   \par\vspace{\baselineskip}\noindent
   \ifx &#1&%
-  \section{Problem~\hwnum.\thesection}
-  \global\def\exercisename{Problem \hwnum.\thesection}%
+  {\normalfont\Large\bfseries\scshape Problem~Mid-\hwnum.\theproblem}
+  \global\def\exercisename{Problem Mid-\hwnum.\theproblem}%
   \else
-  \section{Problem~\hwnum.\thesection~(#1)}
-  \global\def\exercisename{Problem \hwnum.\thesection(#1)}
+  {\normalfont\Large\bfseries\scshape Problem~Mid-\hwnum.\theproblem~(#1)}
+  \global\def\exercisename{Problem Mid-\hwnum.\theproblem(#1)}
   \fi
   \par\vspace{\baselineskip}%
   \noindent\ignorespaces
@@ -141,13 +151,14 @@
   \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
   {#1} % the function
   % \vphantom{\big|} % pretend it's a little taller at normal size
-  \right|_{#2} % this is the delimiter
+  \right|{#2} % this is the delimiter
   }}
 
 \ifPDFTeX
 \newcommand{\nsubset}{\ensuremath{\not\subset}}
 \newcommand{\hooklongrightarrow}{\lhook\joinrel\longrightarrow}
 \newcommand{\twoheadlongrightarrow}{\relbar\joinrel\twoheadrightarrow}
+
 \renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
 
 %% upint and loint
@@ -160,18 +171,18 @@
 \def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
 \fi
 
-% \ifXeTeX
-% %% Patch arrows for XeTeX
-% \usepackage{etoolbox}
-% \makeatletter
-% \patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
-% \patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
-% \patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
-% \patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
-% \makeatother
+\ifXeTeX
+%% Patch arrows for XeTeX
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
+\patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
+\patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
+\patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
+\makeatother
 
-% \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
-% \fi
+\renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
+\fi
 
 %% Commands and operators
 \DeclareMathOperator{\id}{id}

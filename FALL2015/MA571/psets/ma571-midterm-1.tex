@@ -426,8 +426,9 @@ the subset of $Y$ consisting of sequences with only a finite
 number of $1$'s. Is $A$ closed? Prove or disprove.
 \end{problem}
 \begin{proof}
-Let $A$ denote the set of all sequences in $Y$ with only a finite
-number of $1$'s.
+$A$ is not closed. Consider the point $\mathbf{1}=(1,1,...)\notin
+A$. But for every basis element $U=\prod U_n\ni\mathbf{1}$ where
+$U_n=X_n$ except for finitely many $n$'s, $U\cap A\neq\emptyset$.
 \end{proof}
 \begin{problem}
 Let $Y$ be a topological space.Let $X$ be a set and let $f\colon
@@ -551,32 +552,59 @@ that $C,D$ is a separation of $X\times Y$.
 \begin{problem}
 For any space $X$, let us say that two points are ``inseparable''
 if there is no separation $X=U\cup V$ into disjoint open sets
-such that $x\in U$ and $y\in V$. Write $x\sim y$ if $x$ and $y$
+such that $x\in U$ and $y\in V$.
+\\\\
+Write $x\sim y$ if $x$ and $y$
 are inseparable. Then $\sim$ is an equivalence relation (you
-don't have to prove this). Now suppose that $X$ is locally
-connected (this means that for every point $x$ and every open
-neighborhood $U$ of $x$, there is a connected open neighborhood
-$V$ of $x$ contained in $U$). Prove that each equivalence class
-of the relation $\sim$ is connected.
+don't have to prove this).
+\\\\
+Now suppose that $X$ is locally connected (this means that for
+every point $x$ and every open neighborhood $U$ of $x$, there is
+a connected open neighborhood $V$ of $x$ contained in $U$).
+\\\\
+Prove that each equivalence class of the relation $\sim$ is connected.
 \end{problem}
 \begin{proof}
+Let $x$ and $C_x$ be the equivalence class of $x$. Then we claim
+that $C_x$ is both closed and open.
 
+To see that $C_x$ is closed we will prove that for every
+$y\in\clsr C_x$ is in $C_x$. Suppose not, then there exists some
+neighborhood $U$ of $y$ and $V$ of $x$ for some $x$ such that
+$U\cap V=\emptyset$ and $X=U\cup V$. This contradicts Theorem
+17.5(a) that $y\in\clsr C_x$ if and only if for every
+neighborhood $U$ of $y$, $U\cap C_x\neq\emptyset$.
+
+To see that $C_x$ is open we will prove that its complement,
+$X\setminus C_x$ is closed. Let $y\in\clsr{X\setminus C_x}$
 \end{proof}
 \begin{problem}
 Let $X$ be a topological space. Let $A\subset X$ be
 connected. Prove $\clsr A$ is connected.
 \end{problem}
 \begin{proof}
+Seeking a contradiction, suppose $C,D$ is a separation of $\clsr
+A$. Then, by Theorem 23.2, $A\subset C$ or $A\subset D$. Suppose,
+without loss of generality, that $A\subset C$. Let $B$ denote the
+closure of $A$ in $\clsr A$ with the subspace topology. Then by
+Theorem 17.4, $B=\clsr A\cap\clsr A=\clsr A$. Let $x\in
+B\setminus C$. Then, for every neighborhood $U\ni x\subset D$,
+$U\cap A\neq\emptyset$. But $D\cap C=\emptyset$. This is a
+contradiction. Thus, $\clsr A$ is connected.
 \end{proof}
 \begin{problem}
 Let $X_1,X_2,...$ be topological spaces. Suppose
-$\prod_{n=1}^\infty X_n$ is locally connected. Prove that al lbut
+$\prod_{n=1}^\infty X_n$ is locally connected. Prove that all but
 finitely many $X_n$ are connected.
 \end{problem}
 \begin{proof}
+Let $U=\prod U_n$ be a basis element. Then, by Theorem 19.2,
+$U_n=X_n$ except for finitely many $X_n$. Let $C$ be a component
+of $U$, then by Theorem 25.3 $C$ is open in $X$. Let $V\subset C$
+be a basic open set.
 \end{proof}
 \begin{problem}
-LEt $X$ be a connected space and let $f\colon X\to Y$ be a
+Let $X$ be a connected space and let $f\colon X\to Y$ be a
 function which is continuous and onto. Prove that $Y$ is
 connected. (This is a theorem in Munkres---prove it from the
 definitions).

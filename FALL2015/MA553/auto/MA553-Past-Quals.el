@@ -4,7 +4,7 @@
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("memoir" "article" "oneside" "10pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("xcolor" "dvipsnames") ("enumitem" "inline") ("euscript" "mathcal") ("fontenc" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "german" "russian" "spanish" "english") ("titlesec" "explicit")))
+                     '(("xcolor" "dvipsnames") ("enumitem" "inline") ("euscript" "mathcal") ("fontenc" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "german" "russian" "spanish" "english")))
    (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
@@ -24,15 +24,16 @@
     "amsthm"
     "amssymb"
     "mathtools"
+    "iftex"
     "euscript"
     "mathrsfs"
-    "iftex"
     "cmap"
     "fontenc"
     "inputenc"
     "babel"
     "CJKutf8"
-    "titlesec")
+    "unicode-math"
+    "etoolbox")
    (TeX-add-symbols
     '("restr" 2)
     '("textzh" 1)
@@ -41,15 +42,6 @@
     "nsubset"
     "hooklongrightarrow"
     "twoheadlongrightarrow"
-    "ann"
-    "ass"
-    "End"
-    "coker"
-    "id"
-    "im"
-    "lcm"
-    "nil"
-    "rad"
     "CC"
     "NN"
     "QQ"
@@ -80,5 +72,7 @@
     "remark"
     "remarks"
     "observation"
-    "observations")))
+    "observations")
+   (LaTeX-add-counters
+    "problem")))
 
