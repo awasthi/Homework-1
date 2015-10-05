@@ -113,13 +113,14 @@
 \newcounter{problem}
 \newenvironment{problem}[1][]% environment name
 {% begin code
+  \stepcounter{problem}
   \par\vspace{\baselineskip}\noindent
   \ifx &#1&%
-  {\normalfont\Large\bfseries\scshape Problem~Mid-\hwnum.\theproblem}
-  \global\def\exercisename{Problem Mid-\hwnum.\theproblem}%
+  {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem}
+  \global\def\exercisename{Problem~\hwnum.\theproblem}%
   \else
-  {\normalfont\Large\bfseries\scshape Problem~Mid-\hwnum.\theproblem~(#1)}
-  \global\def\exercisename{Problem Mid-\hwnum.\theproblem(#1)}
+  {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem~(#1)}
+  \global\def\exercisename{Problem~\hwnum.\theproblem(#1)}
   \fi
   \par\vspace{\baselineskip}%
   \noindent\ignorespaces

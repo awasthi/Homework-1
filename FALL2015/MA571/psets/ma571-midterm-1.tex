@@ -570,13 +570,16 @@ that $C_x$ is both closed and open.
 
 To see that $C_x$ is closed we will prove that for every
 $y\in\clsr C_x$ is in $C_x$. Suppose not, then there exists some
-neighborhood $U$ of $y$ and $V$ of $x$ for some $x$ such that
-$U\cap V=\emptyset$ and $X=U\cup V$. This contradicts Theorem
-17.5(a) that $y\in\clsr C_x$ if and only if for every
-neighborhood $U$ of $y$, $U\cap C_x\neq\emptyset$.
+neighborhood $U$ of $y$ and $V$ of $x$ such that $U\cap
+V=\emptyset$ and $X=U\cup V$. This contradicts Theorem 17.5(a)
+that $y\in\clsr C_x$ if and only if for every neighborhood $U$ of
+$y$, $U\cap C_x\neq\emptyset$.
 
 To see that $C_x$ is open we will prove that its complement,
-$X\setminus C_x$ is closed. Let $y\in\clsr{X\setminus C_x}$
+$X\setminus C_x$ is closed. Let $y\in\clsr{X\setminus C_x}$. Then
+if $y\notin X\setminus C_x$, $y\in C_x$. Thus for any $z\in
+X\setminus C_x$ there exists a neighborhood $U\ni z$ and $V\ni y$
+with $U\cap V=\emptyset$ and $X=U\cup V$.
 \end{proof}
 \begin{problem}
 Let $X$ be a topological space. Let $A\subset X$ be
