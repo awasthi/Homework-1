@@ -31,9 +31,7 @@
     "fontenc"
     "inputenc"
     "babel"
-    "CJKutf8"
-    "unicode-math"
-    "etoolbox")
+    "CJKutf8")
    (TeX-add-symbols
     '("clsr" 1)
     '("restr" 2)

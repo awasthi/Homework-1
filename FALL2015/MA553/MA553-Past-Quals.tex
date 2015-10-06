@@ -68,25 +68,25 @@
 \fi
 
 % %% XeTeX specific
-\ifXeTeX
-\usepackage{unicode-math}
+% \ifXeTeX
+% \usepackage{unicode-math}
 
-\setmainfont[Ligatures=TeX]{Latin Modern Roman}
-\setsansfont[Ligatures=TeX]{Latin Modern Sans}
-\setmonofont{Latin Modern Mono}
-\setmathfont{Latin Modern Math}
+% \setmainfont[Ligatures=TeX]{Latin Modern Roman}
+% \setsansfont[Ligatures=TeX]{Latin Modern Sans}
+% \setmonofont{Latin Modern Mono}
+% \setmathfont{Latin Modern Math}
 
-% \usepackage{unicode-minionmath}
-% \setmainfont[Ligatures=TeX]{Minion Pro}
-% \setsansfont[Ligatures=TeX]{Myriad Pro}
-% \setmonofont[Scale=.85]{Courier Std}
+% % \usepackage{unicode-minionmath}
+% % \setmainfont[Ligatures=TeX]{Minion Pro}
+% % \setsansfont[Ligatures=TeX]{Myriad Pro}
+% % \setmonofont[Scale=.85]{Courier Std}
 
-% \setmathfont{Minion Math}
-% \setmathfont[range={\mathfrak}]{XITS Math}
-% \setmathfont[range={\mathcal},StylisticSet=1]{XITS Math}
-% \setmathfont[range={\mathscr}]{XITS Math}
-% \setmathfont[range={}]{Minion Math}
-\fi
+% % \setmathfont{Minion Math}
+% % \setmathfont[range={\mathfrak}]{XITS Math}
+% % \setmathfont[range={\mathcal},StylisticSet=1]{XITS Math}
+% % \setmathfont[range={\mathscr}]{XITS Math}
+% % \setmathfont[range={}]{Minion Math}
+% \fi
 
 %% Theorems and definitions
 \theoremstyle{plain}
@@ -171,43 +171,37 @@
 \def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
 \fi
 
-\ifXeTeX
-%% Patch arrows for XeTeX
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
-\patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
-\patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
-\patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
-\makeatother
+% \ifXeTeX
+% %% Patch arrows for XeTeX
+% \usepackage{etoolbox}
+% \makeatletter
+% \patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
+% \patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
+% \patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
+% \patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
+% \makeatother
 
-\renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
-\fi
+% \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
+% \fi
 
 %% Commands and operators
-\DeclareMathOperator{\ann}{ann}
-\DeclareMathOperator{\ass}{ass}
-\DeclareMathOperator{\End}{end}
-\DeclareMathOperator{\coker}{coker}
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\lcm}{lcm}
-\DeclareMathOperator{\nil}{nil}
-\DeclareMathOperator{\rad}{rad}
 
 \newcommand{\CC}{\mathbf{C}}
+\newcommand{\FF}{\mathbf{F}}
 \newcommand{\NN}{\mathbf{N}}
 \newcommand{\QQ}{\mathbf{Q}}
 \newcommand{\RR}{\mathbf{R}}
 \newcommand{\ZZ}{\mathbf{Z}}
 
-\begin{document}
 % Renewcommands
-% \renewcommand\complement{\smallsetminus}
 \renewcommand\setminus{\smallsetminus}
 \renewcommand\phi{\varphi}
 \renewcommand\epsilon{\varepsilon}
 
+\begin{document}
 \frontmatter
 \aliaspagestyle{title}{empty}
 \pagestyle{title}
@@ -240,6 +234,7 @@
 % \include{goldberg/}
 % \include{heinzer/}
 \include{shahidi/MA553-AUG15}
+\include{shahidi/MA553-AUG10}
 % \include{ulrich/}
 \end{document}
 

@@ -568,18 +568,31 @@ Prove that each equivalence class of the relation $\sim$ is connected.
 Let $x$ and $C_x$ be the equivalence class of $x$. Then we claim
 that $C_x$ is both closed and open.
 
-To see that $C_x$ is closed we will prove that for every
-$y\in\clsr C_x$ is in $C_x$. Suppose not, then there exists some
-neighborhood $U$ of $y$ and $V$ of $x$ such that $U\cap
-V=\emptyset$ and $X=U\cup V$. This contradicts Theorem 17.5(a)
-that $y\in\clsr C_x$ if and only if for every neighborhood $U$ of
-$y$, $U\cap C_x\neq\emptyset$.
+To see that $C_x$ is closed we will show that
+$C_x=\clsr{C_x}$. Let $y\in\clsr{C_x}$. Now, suppose $y\notin
+C_x$. Then, there exists disjoint neighborhoods $U\ni y$, $V\ni
+x$ with $X=U\cup V$. By Theorem 17.5(a), for every neighborhood
+$U\ni y$, $U\cap C_x\neq\emptyset$. Let $x'\in U\cap C_x$, then
+$U\ni x'$, $V\ni x$ is a separation of $X$ so $x'$ and $x$ are
+separable. This contradicts that $x'\in C_x$. Thus, $C_x$ is
+closed.
 
-To see that $C_x$ is open we will prove that its complement,
-$X\setminus C_x$ is closed. Let $y\in\clsr{X\setminus C_x}$. Then
-if $y\notin X\setminus C_x$, $y\in C_x$. Thus for any $z\in
-X\setminus C_x$ there exists a neighborhood $U\ni z$ and $V\ni y$
-with $U\cap V=\emptyset$ and $X=U\cup V$.
+To see that $C_x$ is open we will show that $X\setminus C_x$ is
+closed. Let $y\in\clsr{X\setminus C_x}$ and suppose that $y\notin
+X\setminus X$. Then $y\in C_X$. Let $U\ni y$ be a neighborhood,
+then since $X$ is locally connected, there exists a connected
+neighborhood $V\ni y$. But since $y\in\clsr{X\setminus C_x}$,
+$V\cap X\setminus C_x\neq\emptyset$. Let $z\in V\cap X\setminus
+C_x$. Then there exist a separation $U_z\ni y$, $V_z\ni z$ of
+$X$, i.e., $y$ and $z$ are separable. Then $U_z\cap V$, $V_z\cap
+V$ is a separation of $V$. This is a contradiction. Thus,
+$X\setminus C_x$ is closed so $C_x$ is open.
+
+Now for the contradiction. Let $C,D$ be a separation of
+$C_x$. Then by Theorem 16.2, $C$ and $D$ are open in $X$. Choose
+$x\in C$ and $y\in D$. Then $x\in C\cup(X\setminus C_x)$ and
+$y\in D$ is a separation of $X$ so $x$ and $y$ are
+separable. This contradicts that $x,y\in C_x$, i.e., $x\sim y$.
 \end{proof}
 \begin{problem}
 Let $X$ be a topological space. Let $A\subset X$ be
@@ -601,10 +614,17 @@ $\prod_{n=1}^\infty X_n$ is locally connected. Prove that all but
 finitely many $X_n$ are connected.
 \end{problem}
 \begin{proof}
-Let $U=\prod U_n$ be a basis element. Then, by Theorem 19.2,
-$U_n=X_n$ except for finitely many $X_n$. Let $C$ be a component
-of $U$, then by Theorem 25.3 $C$ is open in $X$. Let $V\subset C$
-be a basic open set.
+Let $X=\prod X_n$ and $U$ be a nonempty open set in $X$ and pick
+an $x\in U$. Then, since $X$ is locally connected, there exist a
+connected open neighborhood $V\ni x\subset U$. Now, since $V$ is
+open let $W=\prod W_n$ be a basis element containing $W$. Then,
+by Theorem 19.2, $W_n=X_n$ for all but finitely many $n$. Then
+\[
+\pi_n(V)\supset \pi_n(W)=W_n
+\]
+is connected by Theorem 23.5. But $W_n=X_n$ for all but finitely
+many $n$ so $\pi_n(V)=X_n$ for all but finitely many $n$. Thus,
+$X_n$ is connected for all but finitely many $n$.
 \end{proof}
 \begin{problem}
 Let $X$ be a connected space and let $f\colon X\to Y$ be a
@@ -613,6 +633,13 @@ connected. (This is a theorem in Munkres---prove it from the
 definitions).
 \end{problem}
 \begin{proof}
+Seeking a contradiction, let $C,D$ be a separation of $Y$. Then,
+since $f$ is continuous and $C$ and $D$ are open, $f^{-1}(C)$ and
+$f^{-1}(D)$ are open. We claim that $f^{-1}(C),f^{-1}(D)$ is a
+separation of $X$. It is clear that $X=f^{-1}(C)\cup
+f^{-1}(D)=f^{-1}(C\cup D)=f^{-1}(Y)$. Moreover, $f^{-1}(C)\cap
+f^{-1}(D)=f^{-1}(C\cap D)=\emptyset$. Thus, $f^{-1}(C),f^{-1}(D)$
+is a separation. But $X$ is connected. This is a contradiction.
 \end{proof}
 \begin{problem}
 Given:
@@ -631,6 +658,14 @@ unit interval $(0,1)$. Prove that $A$ does not contain a nonempty
 set which is open in $\RR^2$.
 \end{problem}
 \begin{proof}
+Without loss of generality, assume that $A$ is centered at the
+origin and contains an open ball $D$ about $0$ (by abuse of
+notation). Let $\phi\colon A\to(0,1)$ be a homeomorphism. Then
+$\phi(D)\subset(0,1)$ is connected. However, since $\phi$ is a
+homeomorphism, by Lemma A,
+$D\setminus\{0\}\approx\phi(D)\setminus\{\phi(0)\}$, but
+$\phi(D)\setminus\{\phi(0)\}$ is disconnected. This is a
+contradiction.
 \end{proof}
 \begin{problem}
 Let $X$ be a connected space. Let $\mathcal{U}$ be an open
@@ -642,6 +677,7 @@ U_{i+1}\neq\emptyset$ for each $i$ from $1$ to $n-1$. Prove that
 every nonempty $V$ in $\mathcal{U}$ is reachable from $U$.
 \end{problem}
 \begin{proof}
+Let
 \end{proof}
 \begin{problem}
 Suppose that $X$ is connected and every point of $X$ has a

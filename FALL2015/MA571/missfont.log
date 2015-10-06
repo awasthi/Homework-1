@@ -8,3 +8,5 @@ mktextfm gbsnub1
 mktextfm gbsnud5
 mktextfm gbsnuc1
 mktextfm gbsnuc6
+mktexpk --mfmode / --bdpi 600 --mag 1+0/600 --dpi 600 cyberb51
+mktexpk --mfmode / --bdpi 600 --mag 1+0/600 --dpi 600 cyberb51

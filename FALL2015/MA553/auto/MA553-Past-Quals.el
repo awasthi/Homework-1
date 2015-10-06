@@ -11,6 +11,7 @@
    (TeX-run-style-hooks
     "latex2e"
     "shahidi/MA553-AUG15"
+    "shahidi/MA553-AUG10"
     "memoir"
     "memoir10"
     "geometry"
@@ -31,9 +32,7 @@
     "fontenc"
     "inputenc"
     "babel"
-    "CJKutf8"
-    "unicode-math"
-    "etoolbox")
+    "CJKutf8")
    (TeX-add-symbols
     '("restr" 2)
     '("textzh" 1)
@@ -42,7 +41,11 @@
     "nsubset"
     "hooklongrightarrow"
     "twoheadlongrightarrow"
+    "id"
+    "im"
+    "lcm"
     "CC"
+    "FF"
     "NN"
     "QQ"
     "RR"

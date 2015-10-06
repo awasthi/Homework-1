@@ -31,9 +31,7 @@
     "fontenc"
     "babel"
     "CJKutf8"
-    "listings"
-    "unicode-math"
-    "etoolbox")
+    "listings")
    (TeX-add-symbols
     '("clsr" 1)
     '("restr" 2)
