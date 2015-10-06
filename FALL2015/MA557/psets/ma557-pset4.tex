@@ -3,6 +3,33 @@ Find an example of a finitely generated ring extension $R\subset
 S$ where $S$ is a Noetherian ring, but $R$ is not.
 \end{problem}
 \begin{proof}
+Let $k$ be a field and consider its polynomial ring $k[X,Y]$ in
+two variables. Then we claim that the subring
+$k[XY,XY^2,...]$ is non-Noetherian but its extension to
+$k[X,Y]$ (by adjoining the indeterminants $X$ and $Y$)
+is Noetherian by Hilbert's basis theorem. Consider the increasing
+chain of ideals
+\[
+(XY)\subsetneq (XY,XY^2)\subsetneq(XY,XY^2,XY^3)\subsetneq\cdots.
+\]
+This chain does not stabilize for suppose that it did, then for
+some positive integer $n$, we have
+$(XY,XY^2,...,XY^n)=(XY,XY^2,...,XY^n,XY^{n+1})$ so
+$XY^{n+1}\in(XY,XY^2,...,XY^n)$. But this implies that
+$XY^{n+1}=p(XY,XY^2,...)q(XY,...,XY^n)$ for some polynomials $q\in
+k[XY,XY^2,...]$, $q\in(XY,...,XY^n)$. Thus, we have that
+\begin{align*}
+\deg_Y(XY^{n+1})
+&=n+1
+&\deg_X(XY^{n+1})
+&=1
+\\
+&=\deg_Y p+\deg_Y q
+&&=\deg_X p+\deg_X q.
+\end{align*}
+Since $\deg_Y q\leq n$, $\deg_Y p\geq 1$. Thus, $\deg_X p=1$ so
+$q\in k$, i.e., $q$ is a unit. This is a contradiction since
+$(XY,...,XY^n)$ is a proper ideal.
 \end{proof}
 \newpage
 \begin{problem}
@@ -17,49 +44,15 @@ that if $R$ and $S$ are Noetherian rings then so is $R\times_T
 S$.
 \end{problem}
 \begin{proof}
-Suppose that $R$ and $S$ are Noetherian rings with surjective
-ring maps $\phi\colon R\to T$ and $\psi\colon S\to T$. Then, by
-(3.5), the product $R\times S$ is Noetherian. Define the ring map
-$\Phi\colon R\times S\to T\times T$ by $\Phi=(\phi,\psi)$. Then
-the diagonal, $\Delta_T=\left\{\,(t,t)\;\middle|\; t\in
-  T\,\right\}$, of $T\times T$ is exactly the image of the fiber
-product of $R$ and $S$ under the ring map $\Phi$. And this is not
-terribly difficult to see: It is clear, by the definition of the
-fiber product, that $\Phi(R\times_T S)\subset\Delta_T$. To show
-the reverse containment, take an element
-$(t,t)\in\Delta_T$. Then, since $\phi$ and $\psi$ are surjective,
-there are corresponding elements $r$ and $s$ of the rings $R$ and
-$S$, respectively, such that $\phi(r)=t$ and $\psi(s)=t$. Hence,
-$(t,t)$ are in the image $R\times_T S$ under $\Phi$.
-
-Now, it is clear that $R\times S$ and $T\times T$ have an
-$R\times S$-module structure ($R\times S$ by the usual ring
-multiplication and $T\times T$ by
-$(r,s)(t,t')=(\phi(r)t,\psi(s)t')$) so they have an $R\times_T
-S$-module structure by restriction to the subring $R\times_T S$
-of $R\times S$. Consider the quotient module $T\times
-T/\Delta_T$. $T\times T/\Delta_T$ also inherits an $R\times_T
-S$-module structure from $T\times T$. Note that the map
-$\Phi\colon R\times S\to T\times T$ is an $R\times_T S$-linear
-map: It is clear that $\Phi$ is linear with respect to ``$+$'', what
-is not so obvious is that multiplication by scalars is preserved
-so take $(r',s')\in R\times_T S$ and $(r,s)\in R\times S$, then
-\begin{align*}
-\Phi((r',s')(r,s)&=
-\Phi(r'r,s's)\\
-&=(\phi(r'r),\psi(s's'))\\
-&=(\phi(r')\phi(r),\psi(s')\psi(s))\\
-&=(\phi(r'),\psi(s'))(\phi(r),\psi(s))\\
-&=\Phi(r',s')\Phi(s,r)
-\end{align*}
-as desired. Therefore, $\Phi$ induces an $R\times_T S$-linear map
-$\Phi^*\colon R\times S\to T\times T/\Delta_T$ via composition
-with the quotient map, i.e., $\Phi^*=\pi\circ\Phi$ and we have
-the following exact sequence of $R\times_T S$-modules
 \begin{center}
+We first prove the following result:
+\begin{lemma*}[Matsumura, Ex.\,3.1]
+Let $\mathfrak{a}_1,...,\mathfrak{a}_n$ be ideals of a ring $A$
+such that $\mathfrak{a}_1\cap\cdots\cap\mathfrak{a}_n=0$. If each
+$A/\mathfrak{a}_i$ is a Noetherian ring then so is $A$.
+\end{lemma*}
 \includegraphics{figures/ps4-p2-short-exact-seq}
 \end{center}
-By (3.4), $R\times_T S$ are Noetherian.
 \end{proof}
 \newpage
 \begin{problem}
