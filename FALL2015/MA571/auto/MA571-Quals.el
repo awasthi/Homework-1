@@ -1,17 +1,13 @@
 (TeX-add-style-hook
- "MA553-Past-Quals"
+ "MA571-Quals"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("memoir" "article" "oneside" "10pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("xcolor" "dvipsnames") ("enumitem" "inline") ("euscript" "mathcal") ("fontenc" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "german" "russian" "spanish" "english")))
-   (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
-   (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
+                     '(("xcolor" "dvipsnames") ("enumitem" "inline") ("euscript" "mathcal") ("inputenc" "utf8") ("fontenc" "T2A" "T1") ("babel" "french" "german" "russian" "spanish" "english")))
    (TeX-run-style-hooks
     "latex2e"
-    "shahidi/MA553-AUG15"
-    "shahidi/MA553-AUG10"
+    "quals/"
     "memoir"
     "memoir10"
     "geometry"
@@ -20,20 +16,21 @@
     "microtype"
     "multicol"
     "enumitem"
-    "listings"
     "mleftright"
     "amsthm"
     "amssymb"
     "mathtools"
-    "iftex"
     "euscript"
     "mathrsfs"
+    "iftex"
     "cmap"
-    "fontenc"
     "inputenc"
+    "fontenc"
     "babel"
-    "CJKutf8")
+    "CJKutf8"
+    "listings")
    (TeX-add-symbols
+    '("clsr" 1)
     '("restr" 2)
     '("textzh" 1)
     '("textni" 1)
@@ -41,21 +38,22 @@
     "nsubset"
     "hooklongrightarrow"
     "twoheadlongrightarrow"
+    "id"
+    "im"
+    "Int"
+    "Cl"
     "CC"
-    "FF"
     "NN"
     "QQ"
     "RR"
     "ZZ"
     "documentauthor"
     "documenttitle"
-    "hwnum"
     "shorttitle"
     "coursename"
     "documentsubject"
     "authoremail"
     "spanishoptions"
-    "exercisename"
     "upint"
     "lowint")
    (LaTeX-add-environments
@@ -69,10 +67,10 @@
     "definition"
     "example"
     "examples"
+    "exercise"
+    "problem"
     "remark"
     "remarks"
     "observation"
-    "observations")
-   (LaTeX-add-counters
-    "problem")))
+    "observations")))
 
