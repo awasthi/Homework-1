@@ -34,13 +34,15 @@
     "babel"
     "CJKutf8")
    (TeX-add-symbols
+    '("overbar" 1)
     '("restr" 2)
     '("textzh" 1)
     '("textni" 1)
     '("textha" 1)
     "nsubset"
-    "hooklongrightarrow"
-    "twoheadlongrightarrow"
+    "id"
+    "im"
+    "lcm"
     "CC"
     "FF"
     "NN"

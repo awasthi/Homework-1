@@ -4,7 +4,10 @@
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("memoir" "article" "oneside" "10pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("xcolor" "dvipsnames") ("enumitem" "inline") ("euscript" "mathcal") ("inputenc" "utf8") ("fontenc" "T2A" "T1") ("babel" "french" "german" "russian" "spanish" "english")))
+                     '(("xcolor" "dvipsnames") ("fontenc" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "german" "russian" "spanish" "english") ("enumitem" "inline") ("euscript" "mathcal")))
+   (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
+   (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
    (TeX-run-style-hooks
     "latex2e"
     "quals/"
@@ -12,23 +15,22 @@
     "memoir10"
     "geometry"
     "xcolor"
+    "cmap"
+    "fontenc"
+    "inputenc"
+    "babel"
+    "CJKutf8"
     "graphicx"
     "microtype"
     "multicol"
     "enumitem"
+    "listings"
     "mleftright"
     "amsthm"
     "amssymb"
     "mathtools"
     "euscript"
-    "mathrsfs"
-    "iftex"
-    "cmap"
-    "inputenc"
-    "fontenc"
-    "babel"
-    "CJKutf8"
-    "listings")
+    "mathrsfs")
    (TeX-add-symbols
     '("clsr" 1)
     '("restr" 2)

@@ -1,5 +1,5 @@
 (TeX-add-style-hook
- "ps4-p2-short-exact-seq"
+ "ps4-p2-short-exact-seqs"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("standalone" "crop" "tikz" "10pt")))

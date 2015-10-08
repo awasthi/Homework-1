@@ -156,8 +156,8 @@
 
 \ifPDFTeX
 \newcommand{\nsubset}{\ensuremath{\not\subset}}
-\newcommand{\hooklongrightarrow}{\lhook\joinrel\longrightarrow}
-\newcommand{\twoheadlongrightarrow}{\relbar\joinrel\twoheadrightarrow}
+% \newcommand{\hooklongrightarrow}{\lhook\joinrel\longrightarrow}
+% \newcommand{\twoheadlongrightarrow}{\relbar\joinrel\twoheadrightarrow}
 
 \renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
 
@@ -188,6 +188,9 @@
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\lcm}{lcm}
+
+\newcommand{\overbar}[1]
+           {\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 
 \newcommand{\CC}{\mathbf{C}}
 \newcommand{\FF}{\mathbf{F}}

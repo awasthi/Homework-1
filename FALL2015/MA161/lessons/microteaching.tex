@@ -1,0 +1,51 @@
+\section{Indeterminate Forms and L'Hospital's Rule}
+Limit of the form
+\[
+\lim_{x\to a}\frac{f(x)}{g(x)}
+\]
+where both $f(x)\to 0$ and $g(x)\to 0$ as $x\to a$ is called an
+\emph{indeterminate form of type $\frac{0}{0}$}.
+\begin{theorem}[L'Hospital's Rule]
+Suppose $f$ and $g$ are differentiable and $g'(x)\neq 0$ on an
+open interval $I$ that contains $a$ (except possibly at
+$a$). Suppose that
+\[
+\lim_{x\to a}f(x)=0\qquad\text{and}\qquad\lim_{x\to a}g(x)=0
+\]
+or that
+\[
+\lim_{x\to a}f(x)=\pm\infty\qquad\text{and}\qquad\lim_{x\to a}g(x)=\pm\infty.
+\]
+(In other words, we have an indeterminate form of type
+$\frac{0}{0}$ or $\frac{\infty}{\infty}$.) Then
+\[
+\lim_{x\to a}\frac{f(x)}{g(x)}=\lim_{x\to a}\frac{f'(x)}{g'(x)}
+\]
+if the limit on the right side exists (or is $\infty$ or $-\infty$).
+\end{theorem}
+\subsection{Indeterminate Products}
+Limit of the form
+\[
+\lim_{x\to a}[f(x)g(x)]
+\]
+where $f(x)\to 0$ and $g(x)\to \pm\infty$ as $x\to a$ is called an
+\emph{indeterminate form of type $0\cdot\infty$}. We can deal
+with it by writing the product $fg$ as a quotient:
+\[
+fg=\frac{f}{1/g}\qquad\text{or}\qquad fg=\frac{g}{1/f}.
+\]
+\subsection{Indeterminate Differences}
+Limit of the form
+\[
+\lim_{x\to a}[f(x)-g(x)]
+\]
+where $f(x)\to \infty$ and $g(x)\to\infty$ as $x\to a$ is called an
+\emph{indeterminate form of type $\infty-\infty$}. Try to convert
+the difference into a quotient (e.g., by using a common
+denominator, or rationalization, or factoring out a common
+factor) so that we have an indeterminate form of type
+$\frac{0}{0}$ or $\frac{\infty}{\infty}$.
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Lesson-Plan-Current"
+%%% End:

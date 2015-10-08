@@ -1,12 +1,12 @@
 \def\documentauthor{Carlos Salinas}
-\def\documenttitle{MA571 Problem Set \hwnum}
-\def\hwnum{6}
-\def\shorttitle{MA571 PSet \hwnum}
-\def\coursename{MA571}
-\def\documentsubject{point-set topology}
+\def\documenttitle{\coursename Lesson Plan \hwnum}
+\def\hwnum{MicroTeachingSession}
+\def\shorttitle{\coursename-Plan-Micro}
+\def\coursename{MA161}
+\def\documentsubject{plane and analytic geometry and calculus i}
 \def\authoremail{salinac@purdue.edu}
 
-\documentclass[article,oneside,10pt]{memoir}
+\documentclass{article}
 \usepackage{geometry}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[
@@ -30,7 +30,7 @@
     ]{hyperref}
 
 %% Language
- \usepackage{cmap}
+\usepackage{cmap}
 \usepackage[T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[french,german,russian,spanish,english]{babel}
@@ -45,11 +45,10 @@
 \newcommand{\textni}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
-%% Graphics
 \usepackage{graphicx}
 \graphicspath{{figures/}}
 
-% Formatting and nice stuff
+% Misc
 \usepackage{microtype}
 \usepackage{multicol}
 \usepackage[inline]{enumitem}
@@ -61,6 +60,8 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{mathtools}
+
+%% PDFTeX specific
 \usepackage[mathcal]{euscript}
 \usepackage{mathrsfs}
 
@@ -83,28 +84,28 @@
 \newtheorem{definition}{Definition}
 \newtheorem{example}{Examples}
 \newtheorem{examples}[example]{Examples}
-% \newtheorem{exercise}{Exercise}[section]
-% \newtheorem{problem}[exercise]{Problem}
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem{problem}[exercise]{Problem}
 
-\newcounter{problem}
-\newenvironment{problem}[1][]% environment name
-{% begin code
-  \stepcounter{problem}
-  \par\vspace{\baselineskip}\noindent
-  \ifx &#1&%
-  {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem}
-  \global\def\exercisename{Problem~\hwnum.\theproblem}%
-  \else
-  {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem~(#1)}
-  \global\def\exercisename{Problem~\hwnum.\theproblem(#1)}
-  \fi
-  \par\vspace{\baselineskip}%
-  \noindent\ignorespaces
-}%
-{% end code
-  \par\vspace{\baselineskip}%
-  \noindent\ignorespacesafterend
-}
+% \newcounter{problem}
+% \newenvironment{problem}[1][]% environment name
+% {% begin code
+%   \stepcounter{problem}
+%   \par\vspace{\baselineskip}\noindent
+%   \ifx &#1&%
+%   {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem}
+%   \global\def\exercisename{Problem~\hwnum.\theproblem}%
+%   \else
+%   {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem~(#1)}
+%   \global\def\exercisename{Problem~\hwnum.\theproblem(#1)}
+%   \fi
+%   \par\vspace{\baselineskip}%
+%   \noindent\ignorespaces
+% }%
+% {% end code
+%   \par\vspace{\baselineskip}%
+%   \noindent\ignorespacesafterend
+% }
 
 \newtheorem*{definition*}{Definition}
 \newtheorem*{example*}{Examples}
@@ -145,16 +146,15 @@
     {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
   \int}
 \def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
-\fi
 
+\newcommand{\overbar}[1]
+           {\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 
 %% Commands and operators
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\Int}{int}
-\DeclareMathOperator{\Cl}{cl}
+\DeclareMathOperator{\lcm}{lcm}
 
-\newcommand{\clsr}[1]{\overbar{#1}}
 \newcommand{\CC}{\mathbf{C}}
 \newcommand{\NN}{\mathbf{N}}
 \newcommand{\QQ}{\mathbf{Q}}
@@ -167,36 +167,12 @@
 \renewcommand\epsilon{\varepsilon}
 
 \begin{document}
-\frontmatter
-\aliaspagestyle{title}{empty}
-\pagestyle{title}
 \author{\href{mailto:\authoremail}{\documentauthor}}
 \title{\documenttitle}
 \date{\today}
 \maketitle
-\cleartooddpage
 
-\makeoddhead{headings}
-        {\small{\MakeUppercase{\itshape\documentauthor}}}
-        {}
-        {\small{\MakeUppercase{\itshape\exercisename}}}
-\makeoddfoot{headings}{{\itshape\documenttitle}}
-                      {}
-                      {\thepage}
-\makeevenhead{headings}
-        {\small{\MakeUppercase{\itshape\documentauthor}}}
-        {}
-        {\small{\MakeUppercase{\itshape\exercisename}}}
-\makeevenfoot{headings}{{\itshape\documenttitle}}
-                      {}
-                      {\thepage}
-\makeheadrule{headings}{\textwidth}{.25pt}
-% \makerunningwidth{headings}{1.15\textwidth}
-\pagestyle{headings}
-
-\mainmatter
-\setcounter{theorem}{13}
-\include{psets/ma571-pset6}
+\include{lessons/microteaching}
 \end{document}
 
 %%% Local Variables:

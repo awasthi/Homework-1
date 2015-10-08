@@ -1,6 +1,6 @@
 \def\documentauthor{Carlos Salinas}
 \def\documenttitle{MA557 Problem Set \hwnum}
-\def\hwnum{3}
+\def\hwnum{5}
 \def\shorttitle{MA557 PSet \hwnum}
 \def\coursename{MA557}
 \def\documentsubject{commutative algebra i}
@@ -29,28 +29,7 @@
     pdfsubject={\coursename}
     ]{hyperref}
 
-\usepackage{graphicx}
-\graphicspath{{figures/}}
-
-% Misc
-\usepackage{microtype}
-\usepackage{multicol}
-\usepackage[inline]{enumitem}
-\usepackage{listings}
-\usepackage{mleftright}
-\mleftright
-
-%% Math
-\usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{mathtools}
-
-%% PDFTeX specific
-\usepackage{iftex}
-\ifPDFTeX
-\usepackage[mathcal]{euscript}
-\usepackage{mathrsfs}
-
+%% Language
 \usepackage{cmap}
 \usepackage[T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -65,28 +44,24 @@
 \newcommand{\textha}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
 \newcommand{\textni}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
-\fi
 
-% %% XeTeX specific
-% \ifXeTeX
-% \usepackage{unicode-math}
+%% Graphics
+\usepackage{graphicx}
+\graphicspath{{figures/}}
 
-% \setmainfont[Ligatures=TeX]{Latin Modern Roman}
-% \setsansfont[Ligatures=TeX]{Latin Modern Sans}
-% \setmonofont{Latin Modern Mono}
-% \setmathfont{Latin Modern Math}
+% Misc
+\usepackage{multicol}
+\usepackage[inline]{enumitem}
+\usepackage{listings}
+\usepackage{mleftright}
+\mleftright
 
-% % \usepackage{unicode-minionmath}
-% % \setmainfont[Ligatures=TeX]{Minion Pro}
-% % \setsansfont[Ligatures=TeX]{Myriad Pro}
-% % \setmonofont[Scale=.85]{Courier Std}
-
-% % \setmathfont{Minion Math}
-% % \setmathfont[range={\mathfrak}]{XITS Math}
-% % \setmathfont[range={\mathcal},StylisticSet=1]{XITS Math}
-% % \setmathfont[range={\mathscr}]{XITS Math}
-% % \setmathfont[range={}]{Minion Math}
-% \fi
+%% Math
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage[mathcal]{euscript}
+\usepackage{mathrsfs}
 
 %% Theorems and definitions
 \theoremstyle{plain}
@@ -155,7 +130,6 @@
   \right|{#2} % this is the delimiter
   }}
 
-\ifPDFTeX
 \newcommand{\nsubset}{\ensuremath{\not\subset}}
 \newcommand{\hooklongrightarrow}{\lhook\joinrel\longrightarrow}
 \newcommand{\twoheadlongrightarrow}{\relbar\joinrel\twoheadrightarrow}
@@ -170,20 +144,9 @@
     {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
   \int}
 \def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
-\fi
 
-% \ifXeTeX
-% %% Patch arrows for XeTeX
-% \usepackage{etoolbox}
-% \makeatletter
-% \patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
-% \patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
-% \patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
-% \patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
-% \makeatother
-
-% \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
-% \fi
+% \newcommand{\overbar}[1]
+%            {\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 
 %% Commands and operators
 \DeclareMathOperator{\ann}{ann}
@@ -236,7 +199,7 @@
 \pagestyle{headings}
 
 \mainmatter
-\include{psets/ma557-pset4}
+\include{psets/ma557-pset5}
 \end{document}
 
 %%% Local Variables:

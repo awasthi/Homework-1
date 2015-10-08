@@ -29,13 +29,31 @@
     pdfsubject={\coursename}
     ]{hyperref}
 
+%% Language
+ \usepackage{cmap}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french,german,russian,spanish,english]{babel}
+\babeltags{fr=french,
+           de=german,
+           ru=russian,
+           es=spanish,
+           en=english}
+\def\spanishoptions{mexico}
+\usepackage{CJKutf8}
+\newcommand{\textha}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
+\newcommand{\textni}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
+\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
+
+%% Graphics
 \usepackage{graphicx}
 \graphicspath{{figures/}}
 
-% Misc
+% Formatting and nice stuff
 \usepackage{microtype}
 \usepackage{multicol}
 \usepackage[inline]{enumitem}
+\usepackage{listings}
 \usepackage{mleftright}
 \mleftright
 
@@ -45,49 +63,6 @@
 \usepackage{mathtools}
 \usepackage[mathcal]{euscript}
 \usepackage{mathrsfs}
-
-%% PDFTeX specific
-\usepackage{iftex}
-\ifPDFTeX
-\usepackage{cmap}
-\usepackage[utf8]{inputenc}
-\usepackage[T2A,T1]{fontenc}
-\usepackage[french,german,russian,spanish,english]{babel}
-\babeltags{en=english,
-           es=spanish,
-           fr=french,
-           de=german,
-           ru=russian
-           }
-\def\spanishoptions{mexico}
-\usepackage{CJKutf8}
-\newcommand{\textha}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
-\newcommand{\textni}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
-\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
-\fi
-
-\usepackage{listings}
-
-% %% XeTeX specific
-% \ifXeTeX
-% \usepackage{unicode-math}
-
-% \setmainfont[Ligatures=TeX]{Latin Modern Roman}
-% \setsansfont[Ligatures=TeX]{Latin Modern Sans}
-% \setmonofont{Latin Modern Mono}
-% \setmathfont{Latin Modern Math}
-
-% % \usepackage{unicode-minionmath}
-% % \setmainfont[Ligatures=TeX]{Minion Pro}
-% % \setsansfont[Ligatures=TeX]{Myriad Pro}
-% % \setmonofont[Scale=.85]{Courier Std}
-
-% % \setmathfont{Minion Math}
-% % \setmathfont[range={\mathfrak}]{XITS Math}
-% % \setmathfont[range={\mathcal},StylisticSet=1]{XITS Math}
-% % \setmathfont[range={\mathscr}]{XITS Math}
-% % \setmathfont[range={}]{Minion Math}
-% \fi
 
 %% Theorems and definitions
 \theoremstyle{plain}
@@ -108,27 +83,8 @@
 \newtheorem{definition}{Definition}
 \newtheorem{example}{Examples}
 \newtheorem{examples}[example]{Examples}
-\newtheorem{exercise}{Exercise}
+\newtheorem{exercise}{Exercise}[section]
 \newtheorem{problem}[exercise]{Problem}
-
-% \newcounter{problem}
-% \newenvironment{problem}[1][]% environment name
-% {% begin code
-%   \par\vspace{\baselineskip}\noindent
-%   \ifx &#1&%
-%   {\normalfont\Large\bfseries\scshape Problem~Mid-\hwnum.\theproblem}
-%   \global\def\exercisename{Problem Mid-\hwnum.\theproblem}%
-%   \else
-%   {\normalfont\Large\bfseries\scshape Problem~Mid-\hwnum.\theproblem~(#1)}
-%   \global\def\exercisename{Problem Mid-\hwnum.\theproblem(#1)}
-%   \fi
-%   \par\vspace{\baselineskip}%
-%   \noindent\ignorespaces
-% }%
-% {% end code
-%   \par\vspace{\baselineskip}%
-%   \noindent\ignorespacesafterend
-% }
 
 \newtheorem*{definition*}{Definition}
 \newtheorem*{example*}{Examples}
@@ -152,13 +108,13 @@
   \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
   {#1} % the function
   % \vphantom{\big|} % pretend it's a little taller at normal size
-  \right|_{#2} % this is the delimiter
+  \right|{#2} % this is the delimiter
   }}
 
-\ifPDFTeX
 \newcommand{\nsubset}{\ensuremath{\not\subset}}
 \newcommand{\hooklongrightarrow}{\lhook\joinrel\longrightarrow}
 \newcommand{\twoheadlongrightarrow}{\relbar\joinrel\twoheadrightarrow}
+
 \renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
 
 %% upint and loint
@@ -171,18 +127,6 @@
 \def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
 \fi
 
-% \ifXeTeX
-% %% Patch arrows for XeTeX
-% \usepackage{etoolbox}
-% \makeatletter
-% \patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
-% \patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
-% \patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
-% \patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
-% \makeatother
-
-% \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
-% \fi
 
 %% Commands and operators
 \DeclareMathOperator{\id}{id}
@@ -190,20 +134,19 @@
 \DeclareMathOperator{\Int}{int}
 \DeclareMathOperator{\Cl}{cl}
 
-\newcommand{\clsr}[1]{\overline{#1}}
+\newcommand{\clsr}[1]{\overbar{#1}}
 \newcommand{\CC}{\mathbf{C}}
 \newcommand{\NN}{\mathbf{N}}
 \newcommand{\QQ}{\mathbf{Q}}
 \newcommand{\RR}{\mathbf{R}}
 \newcommand{\ZZ}{\mathbf{Z}}
 
-%% Renewcommands
+% Renewcommands
 \renewcommand\setminus{\smallsetminus}
 \renewcommand\phi{\varphi}
 \renewcommand\epsilon{\varepsilon}
 
 \begin{document}
-
 \frontmatter
 \aliaspagestyle{title}{empty}
 \pagestyle{title}
@@ -216,14 +159,14 @@
 \makeoddhead{headings}
         {\small{\MakeUppercase{\itshape\documentauthor}}}
         {}
-        {\small{\MakeUppercase{\itshape Problem~\theexercise}}}
+        {\small{\MakeUppercase{\itshape\exercisename}}}
 \makeoddfoot{headings}{{\itshape\documenttitle}}
                       {}
                       {\thepage}
 \makeevenhead{headings}
         {\small{\MakeUppercase{\itshape\documentauthor}}}
         {}
-        {\small{\MakeUppercase{\itshape Problem~\theexercise}}}
+        {\small{\MakeUppercase{\itshape\exercisename}}}
 \makeevenfoot{headings}{{\itshape\documenttitle}}
                       {}
                       {\thepage}
