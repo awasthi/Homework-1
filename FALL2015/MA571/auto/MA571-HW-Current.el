@@ -32,7 +32,6 @@
     "euscript"
     "mathrsfs")
    (TeX-add-symbols
-    '("clsr" 1)
     '("restr" 2)
     '("textzh" 1)
     '("textni" 1)

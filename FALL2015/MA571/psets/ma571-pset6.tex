@@ -5,22 +5,93 @@ If $C$ is a component of the open set $U$ of $Y$, show that
 $p^{-1}(C)$ is a union of components of $p^{-1}(U)$.]
 \end{problem}
 \begin{proof}
-
+We will proceed from the hint. Let $U\subset Y$ be open and let
+$C$ be a component of $U$. Then we will show that $p^{-1}(C)$ is
+the union of components of $p^{-1}(U)$. Now, since $U$ is open in
+$Y$, $p^{-1}(U)$ is open in $X$ and $p^{-1}(C)\subset
+p^{-1}(U)$. Let $x\in p^{-1}(C)$ and let $C_x$ be the component
+of $x$ in $p^{-1}(U)$. Then, by Theorem 25.3, since $X$ is
+locally connected $C_x$ is open in $X$. The, we claim that
+$C_x\subset p^{-1}(C)$. But this claim follows from Theorem 23.5
+and Theorem 25.1 since $p(C_x)$ is connected and contains $p(x)$
+so $p(C_x)\subset C$ so $C_x\subset p^{-1}(C)$. Taking the union
+over every component $C_x$ corresponding to a point $x\in p^{-1}(U)$, we
+have that
+\[
+p^{-1}(U)=\bigcup C_x
+\]
+is a union of components of $p^{-1}(U)$. It follows that
+$p^{-1}(C)$ is open so, by the definition of the quotient
+topology, $C$ is open and hence, it follows from Theorem 25.3
+that $Y$ is locally path connected.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S25, Ex.\,10(a,b)]
 Let $X$ be a space. Let us define $x\sim y$ if there is no
 separation $X=A\cup B$ of $X$ into disjoint open sets such that
 $x\in A$ and $y\in B$.
-\begin{enumerate}[noitemsep,label=(\alph*)]
+\begin{enumerate}[label=(\alph*)]
 \item Show this relation is an equivalence relation. The
   equivalence classes are called \emph{quasicomponents} of $X$.
 \item Show that each component of $X$ lies in a quasicomponent of
   $X$, and that the components and quasicomponents of $X$ are the
   same if $X$ is locally connected.
+\item Let $K$ denote the set
+  $\left\{\,\frac{1}{n}\;\middle|\;n\in\ZZ_+\,\right\}$ and let
+  $-K$ denote the set
+  $\left\{\,-\frac{1}{n}\;\middle|\;n\in\ZZ_+\,\right\}$. Determine
+  the components, path components, and quasicomponents of the
+  following subspaces of $\RR^2$:
+  \begin{align*}
+    A&=(K\times[0,1])\cup\{0\times 0\}\cup\{0\times 1\}.\\
+    B&=A\cup([0,1]\times\{0\}).\\
+  \end{align*}
 \end{enumerate}
 \end{problem}
 \begin{proof}
+(a) To show that $\sim$ is a equivalence relation, we need to
+check three things (i) reflexivity ($x\sim x$); (ii) symmetry (if $x\sim
+y$ then $y\sim x$); and (iii) transitivity (if $x\sim y$ and
+$y\sim z$ then $x\sim z$).
+
+In order:
+\begin{enumerate}[noitemsep,label=(\roman*)]
+\item Seeking a contradiction, suppose that $A,B$ is a separation
+  of $x$ such that $x\in A$ and $x\in B$ then $x\in A\cap B$ but
+  $A\cap B=\emptyset$. Thus, $x\sim x$.
+\item Suppose that $x\sim y$. Then, if $y\nsim x$ there exists a
+  separation $A,B$ of $X$ such that $y\in A$, $x\in B$, but then
+  $x\nsim y$.
+\item Suppose $x\sim y$ and $y\sim z$. Seeking a contradiction,
+  if $x\nsim z$ then there exists a separation $A,B$ of $X$ such
+  that $x\in A$ and $z\in B$. Then, since $y\in X$ either $y\in
+  A$ or $y\in B$. In the former case, $A,B$ is a separation with
+  $y\in A$ and $z\in B$ contradicting $y\sim z$ and in the latter
+  case $A,B$ is a separation with $x\in A$ and $y\in B$
+  contradicting $x\sim y$. Thus, $x\sim z$.
+\end{enumerate}
+Thus, $\sim$ defines an equivalence relation on $X$.
+\\\\
+(b) Let $x\in X$ and let $Q$ and $C$ denote, respectively, the
+quasicomponent and component of $x$. Then, we claim that
+$C\subset Q$. For if $y\in C$ not in $Q$, then there exists a
+separation $A,B$ of $X$ such that $x\in A$ and $y\in B$. But, by
+Theorem 23.2, either since $C$ is connected either $C\subset A$
+or $C\subset A$. In either case, we arrive at a contradiction
+(it the former $C\subset A$ but $y\notin A$ and in the latter
+$C\subset B$ but $x\notin A$). Thus, $C\subset Q$.
+
+Keeping the notation the same as in the previous paragraph,
+suppose $X$ is locally connected. Having shown $C\subset Q$ it
+suffices holds, it suffices to show that $C\supset Q$. Suppose
+not, then there exist some $y\in Q$ not in $C$. Since $X$ is
+locally connected, then $C$ is open and closed so $C$ and
+$X\setminus C$ is a separation of $X$. But then $x\in C$ and
+$y\in X\setminus C$ which contradicts our assumption that $y\in
+Q$, i.e, $x$ and $y$ lie in the same quasiconnected
+component. Thus, $C\supset Q$ and in fact $C=Q$ holds.
+\\\\
+(c)
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S26, Ex.\,4]
@@ -29,6 +100,34 @@ that metric and is closed. Find a metric space in which not every
 closed bounded subspace is compact.
 \end{problem}
 \begin{proof}
+Let $(X,d)$ be a metric space and $Y\subset X$ a compact
+subspace. By Theorem 26.3, $Y$ is closed since $X$ is Hausdorff
+(since for any $x,y\in X$, let $\epsilon=d(x,y)$, then
+$B(x,\epsilon/2)\cap B(y,\epsilon/2)=\emptyset$). Hence, we need
+only show $Y$ is bounded.
+
+Recall from Munkres \S20 that a set $A$ is bounded if there exist
+some positive real number $M$ such that $d(a_1,a_2)\leq M$ for
+every pair $a_1,a_2\in A$. Fix a $x_0\in Y$ and consider the
+collection of open sets
+\[
+\mathcal{A}=\left\{\,B_d(x_0,M)\;\middle|\;M\in[0,\infty)\,\right\}.
+\]
+Then $\mathcal{A}$ is a covering of $Y$ (since for every $x\in
+Y$, $x\in B_d(x_0,d(x_0,x)+1)$ so it is in the union of all of
+them). Since $Y$ is compact $\mathcal{A}$, by Theorem 26.1, there
+is a finite subcollection, say
+$\left\{B(x_0,M_n)\right\}_{n=1}^N$, of $\mathcal{A}$ covering
+$Y$. Let $M=\max\{M_1,...,M_n\}$. Then, for any pair $x,y\in Y$,
+by the triangle inequality, we have
+\begin{align*}
+d(x,y)&\leq d(x_0,y)+d(x_0,y)\\
+\intertext{but $x\in B(x_0,M_k)$ and $y\in B(x_0,M_\ell)$
+  for some $1\leq k,\ell\leq N$ so}
+      &\leq M_k+M_\ell\\
+      &\leq 2M.
+\end{align*}
+Thus, $Y$ is bounded.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S26, Ex.\,5]
@@ -37,6 +136,21 @@ space $X$. Show that there exists disjoint open sets $U$ and $V$
 containing $A$ and $B$, respectively.
 \end{problem}
 \begin{proof}
+Suppose $A$ and $B$ are disjoint compact subpsaces of the
+Hausdorff space $X$. By Theorem 26.4, there for every $x\in B$
+there exists disjoint open sets $U_x\supset A$ and $V_x\ni x$. Then,
+the collection of all such $V_x$, call it $\mathcal{V}$, is a
+covering of $B$. By Theorem 26.1, there exists a finite
+subcollection $\left\{V_n\right\}_{n=1}^N$ of $\mathcal{U}$
+covering $B$. Let $\left\{U_n\right\}_{n=1}^N$ be the collection
+of sets $U_i$ corresponding to $V_i$. Then $U=\bigcap_{i=1}^N
+U_i$ and $V=\bigcup_{i=1}^N V_i$ are disjoint open subsets
+containing $A$ and $B$ respectively since, by the distributive
+property of ``$\cup$'', we have that
+\[
+U\cap V=U\cap\left(\bigcup V_i\right)=\bigcup U\cap V_i=\bigcup
+U_i\cap V_i=\emptyset.
+\]
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S26, Ex.\,7]
@@ -44,6 +158,17 @@ Show that if $Y$ is compact, then the projection $\pi_X\colon
 X\times Y\to X$ is a closed map.
 \end{problem}
 \begin{proof}
+We proceed by the tube lemma (Theorem 26.8). Let $C$ be a closed
+subset of $X\times Y$. Then $N=(X\times Y)\setminus C$ is open in
+$X\times Y$. Let $x_0\in X\setminus\pi_X(C)$. Then $x_0\times
+Y\subset N$. By the tube lemma, there exists some $W$
+neighborhood of $x_0$ in $X$ such that $W\times Y\subset N$. In
+particular, $W\subset X\setminus\pi(C)$ for otherwise there is a
+point $x\in W\cap\pi(C)$ which implies $x\times Y\subset N$ but
+$x\times Y\cap C\neq\emptyset$ as $(x,y)\in x\times Y\cap C$ for
+any $y\in\pi_Y(C)$. It follows, by Lemma C, that
+$X\setminus\pi_X(C)$ is open so $\pi_X(C)$ is closed. Thus,
+$\pi_X$ is a closed map.
 \end{proof}
 \newpage
 \begin{problem}[A]
@@ -56,6 +181,35 @@ is a closed subset of $X\times X$. Prove that the quotient map
 $q\colon X\to X/{\sim}$ is a closed map.
 \end{problem}
 \begin{proof}
+Put $Y=X/{\sim}$.
+We claim that:
+\begin{lemma}
+$B\subset Y$ is closed if and only if $q^{-1}(B)$ is closed in
+$X$.
+\end{lemma}
+\begin{proof}
+\renewcommand\qedsymbol{$\clubsuit$}
+$B\subset Y$ is closed in $Y$ if and only if $Y\setminus B$ is
+open in $Y$ if and only if $q^{-1}(Y\setminus B)=Y\setminus
+q^{-1}(B)$ is open in $X$, i.e., $q^{-1}(B)$ is closed in $X$.
+\end{proof}
+Let $C\subset X$ be closed. By Lemma 14, it suffices to show that
+$q^{-1}(q(C))$ is closed. But note that
+\begin{align*}
+q^{-1}(q(C))
+  &=\left\{\,x\;\middle|\;q(x)\in q(C)\,\right\}\\
+  &=\left\{\,x\;\middle|\;\text{for some $y\in C$, $x\sim
+    y$}\,\right\}\\
+  &=\pi_1(S\cap (X\times B)).
+\end{align*}
+By Problem 6.5, $\pi_1\colon X\times X\to X$ sending
+$(x_1,x_2)\mapsto x_1$ is a closed map, therefore it suffices to
+check that $S\cap (X\times B)$ is closed, in particular, we need
+to check that $X\times B$ is closed (since $S$ closed is
+given). But $\pi_2\colon X\times X\to X$ via $(x_1,x_2)\mapsto
+x_2$ is continuous so $X\times B=\pi_2^{-1}(B)$ is closed. Thus,
+$S\cap (X\times B)$ is closed. Thus, $q^{-1}(q(C))$ is closed so
+by Lemma 14 $q(C)$ is closed.
 \end{proof}
 \newpage
 \begin{problem}[B]
@@ -64,12 +218,14 @@ Let $S^2$ be the sphere
 \left\{\,(x,y,z)\in\RR^3\;\middle|\;x^2+y^2+z^2=1\,\right\}.
 \]
 Let $S_+^2$ be $S^2\cap\{z\geq 0\}$ (the upper hemisphere), let
-$S^2\cap\{z\leq 0\}$ (the lower hemisphere), and let $E$ be
-$S^2\cap\{z=0\}$ (the equator). Recall the definition of $Y/S$
-from Homework \#4. Prove that $S^2/S^2_-$ is homeomorphic to
-$S_+^2/E$. [\emph{Hint:} There are maps in both directions.]
+$S_-^2$ be $S^2\cap\{z\leq 0\}$ (the lower hemisphere), and let
+$E$ be $S^2\cap\{z=0\}$ (the equator). Recall the definition of
+$Y/S$ from Homework \#4. Prove that $S^2/S^2_-$ is homeomorphic
+to $S_+^2/E$. [\emph{Hint:} There are maps in both directions.]
 \end{problem}
 \begin{proof}
+Let us begin by rewriting the sets in question in a more
+descriptive way
 \end{proof}
 
 %%% Local Variables:

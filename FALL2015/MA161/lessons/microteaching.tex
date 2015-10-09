@@ -45,6 +45,212 @@ the difference into a quotient (e.g., by using a common
 denominator, or rationalization, or factoring out a common
 factor) so that we have an indeterminate form of type
 $\frac{0}{0}$ or $\frac{\infty}{\infty}$.
+\subsection{Indeterminate Powers}
+Several indeterminate forms arise from the limit
+\[
+\lim_{x\to a}[f(x)]^{g(x)}.
+\]
+\begin{enumerate}[noitemsep,label=\arabic*.]
+\item $\lim_{x\to a}f(x)=0$ and $\lim_{x\to a}g(x)=0$ type $0^0$.
+\item $\lim_{x\to a}f(x)=\infty$ and $\lim_{x\to a}g(x)=0$ type
+  $\infty^0$.
+\item $\lim_{x\to a}f(x)=1$ and $\lim_{x\to a}g(x)=\pm\infty$
+  type $1^\infty$.
+\end{enumerate}
+Each of these three cases can be treated by taking the natural
+logarithm: let $y=[f(x)]^{g(x)}$, then
+\[
+\ln y=g(x)\ln f(x)
+\]
+or by writing the function as an exponential:
+\[
+[f(x)]^{g(x)}=e^{g(x)\ln f(x)}
+\]
+In either method we are led to the indeterminate product $g(x)\ln
+f(x)$, which is of type $0\cdot\infty$.
+\subsection{Exercises}
+\begin{exercise*}[\S4.4, \#11]
+\[
+\lim_{x\to(\pi/2)^+}\frac{\cos x}{1-\sin x}.
+\]
+\end{exercise*}
+\begin{proof}[Solution]
+Put $f(x)=\cos x$ and $g(x)=1-\sin x$ and note that
+\[
+\lim_{x\to(\pi/2)^+}\cos x=0
+\quad\text{and}\quad
+\lim_{x\to(\pi/2)^+}1-\sin x=0.\]
+So we have
+\begin{itemize}[noitemsep]
+\item Classify: type $\frac{0}{0}$.
+\item Check conditions for using l'Hospital's rules are
+  satisfied: both $f'$ and $g'$ exist and they are
+  \[
+    f'(x)=-\sin x\qquad\text{and}\qquad g'(x)=-\cos x.
+  \]
+Moreover $g'(x)\neq 0$ on $(0,\pi)$, in particular, $g'(0)=-1$
+and $g'(\pi)=1$.
+\item Use l'Hospital's rule:
+\[
+\lim_{x\to(\pi/2)^+}\frac{\cos x}{1-\sin
+  x}=\lim_{x\to(\pi/2)^+}\frac{-\sin x}{-\cos
+  x}=\lim_{x\to(\pi/2)^+}\tan x=0.
+\]
+\end{itemize}
+\end{proof}
+\begin{exercise*}[\S4.4, \#12]
+\[
+\lim_{x\to 0}\frac{\sin 4x}{\tan 5x}.
+\]
+\end{exercise*}
+\begin{proof}[Solution]
+Put $f(x)=\sin 4x$ and $g(x)=\tan 5x$ and note that
+\[
+\lim_{x\to 0}f(x)=0
+\quad\text{and}\quad
+\lim_{x\to 0}g(x)=0.\]
+So we have
+\begin{itemize}[noitemsep]
+\item Classify: type $\frac{0}{0}$.
+\item Check conditions for using l'Hospital's rules are
+  satisfied: both $f'$ and $g'$ exist and they are
+  \[
+    f'(x)=4\cos 4x\qquad\text{and}\qquad g'(x)=5\sec^2 5x.
+  \]
+Moreover $g'(x)\neq 0$ on $(-\pi/2,\pi/2)$.
+\item Use l'Hospital's rule:
+\[
+\lim_{x\to 0}\frac{\sin 4x}{\tan 5x}
+=\lim_{x\to 0}\frac{4\cos 4x}{5\sec^2 5x}
+=\frac{4}{5}\lim_{x\to 0}\frac{\cos 4x}{\sec^2 5x}
+=\frac{4}{5}
+\]
+\end{itemize}
+\end{proof}
+\begin{exercise*}[\S4.4, \#25]
+\[
+\lim_{x\to 0}\frac{e^x-1-x}{x^2}.
+\]
+\end{exercise*}
+\begin{proof}[Solution]
+Put $f(x)=e^x-1-x$ and $g(x)=x^2$ and note that
+\[
+\lim_{x\to 0}f(x)=0
+\quad\text{and}\quad
+\lim_{x\to 0}g(x)=0.\]
+So we have
+\begin{itemize}[noitemsep]
+\item Classify: type $\frac{0}{0}$.
+\item Check conditions for using l'Hospital's rules are
+  satisfied: both $f'$ and $g'$ exist and they are
+  \[
+    f'(x)=e^x-1\qquad\text{and}\qquad g'(x)=2x.
+  \]
+Moreover $g'(x)\neq 0$ on $(-\pi/2,\pi/2)$.
+\item $f'(x)/g'(x)$ is type $\frac{0}{0}$ so we apply
+  L'Hospital's Rule again.
+\item Both $f''$ and $g''$ exist and they are
+  \[
+    f'(x)=e^x\qquad\text{and}\qquad g''(x)=2
+  \]
+\item Use l'Hospital's rule:
+\[
+\lim_{x\to 0}\frac{e^x-1-x}{x^2}=\lim_{x\to 0}\frac{e^x}{2}=\frac{1}{2}.
+\]
+\end{itemize}
+\end{proof}
+\begin{exercise*}[\S4.4, \#30]
+\[
+\lim_{x\to\infty}\frac{(\ln x)^2}{x}.
+\]
+\end{exercise*}
+\begin{proof}[Solution]
+Put $f(x)=(\ln x)^2$ and $g(x)=x$ and note that
+\[
+\lim_{x\to 0}f(x)=\infty
+\quad\text{and}\quad
+\lim_{x\to 0}g(x)=\infty.\]
+So we have
+\begin{itemize}[noitemsep]
+\item Classify: type $\frac{\infty}{\infty}$.
+\item Check conditions for using l'Hospital's rules are
+  satisfied: both $f'$ and $g'$ exist and they are
+  \[
+    f'(x)=\frac{2}{x}\ln x\qquad\text{and}\qquad g'(x)=1.
+  \]
+\item Quotient form, apply l'Hospital's Rule again:
+\[
+ F(x)=2\ln x\qquad\text{and}\qquad G(x)=x,
+\]
+then
+\[
+ F'(x)=2/x\qquad\text{and}\qquad G'(x)=1.
+\]
+\item Use l'Hospital's rule:
+\[
+\lim_{x\to\infty}\frac{(\ln
+  x)^2}{x}=\lim_{x\to\infty}\frac{2/x}{1}=2\lim_{x\to\infty}\frac{1}{x}=2\cdot
+0=0.
+\]
+\end{itemize}
+\end{proof}
+\begin{exercise*}[\S4.4, \#33]
+\[
+\lim_{x\to 1}\frac{x+\sin x}{x+\cos x}.
+\]
+\end{exercise*}
+\begin{proof}[Solution]
+Put $f(x)=x+\sin x$ and $g(x)=x+\cos x$ and note that
+\[
+\lim_{x\to 0}f(x)=
+\quad\text{and}\quad
+\lim_{x\to 0}g(x)=\infty.\]
+So we have
+\begin{itemize}[noitemsep]
+\item Classify: type $\frac{\infty}{\infty}$.
+\item Check conditions for using l'Hospital's rules are
+  satisfied: both $f'$ and $g'$ exist and they are
+  \[
+    f'(x)=\frac{2}{x}\ln x\qquad\text{and}\qquad g'(x)=1.
+  \]
+\item Quotient form, apply l'Hospital's Rule again:
+\[
+ F(x)=2\ln x\qquad\text{and}\qquad G(x)=x,
+\]
+then
+\[
+ F'(x)=2/x\qquad\text{and}\qquad G'(x)=1.
+\]
+\item Use l'Hospital's rule:
+\[
+\lim_{x\to\infty}\frac{(\ln
+  x)^2}{x}=\lim_{x\to\infty}\frac{2/x}{1}=2\lim_{x\to\infty}\frac{1}{x}=2\cdot
+0=0.
+\]
+\end{proof}
+\begin{exercise*}[\S4.4, \#43]
+\[
+\lim_{x\to 0}
+\]
+\end{exercise*}
+\begin{proof}[Solution]
+\end{proof}
+\begin{exercise*}[\S4.4., \#50]
+\[\lim_{x\to 0}\csc x\sec 5x.\]
+\end{exercise*}
+\begin{proof}[Solution]
+\end{proof}
+\begin{exercise*}[\S4.4, \#57]
+\[\lim_{x\to 0}(1-2x)^{1/x}.\]
+\end{exercise*}
+\begin{proof}[Solution]
+\end{proof}
+\begin{exercise*}[\S4.4, \#61]
+\[\lim_{x\to\infty} x^{1/x}.\]
+\end{exercise*}
+\begin{proof}[Solution]
+\end{proof}
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../Lesson-Plan-Current"
