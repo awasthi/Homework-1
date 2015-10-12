@@ -6,7 +6,7 @@
 \def\documentsubject{point-set topology}
 \def\authoremail{salinac@purdue.edu}
 
-\documentclass[article,oneside,10pt]{memoir}
+\documentclass{article}
 \usepackage{geometry}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[
@@ -29,8 +29,27 @@
     pdfsubject={\coursename}
     ]{hyperref}
 
-%% Language
- \usepackage{cmap}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+
+% Misc
+\usepackage{microtype}
+\usepackage{multicol}
+\usepackage[inline]{enumitem}
+\usepackage{listings}
+\usepackage{mleftright}
+\mleftright
+
+%% Math
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+%% PDFTeX specific
+\usepackage[mathcal]{euscript}
+\usepackage{mathrsfs}
+
+\usepackage{cmap}
 \usepackage[T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[french,german,russian,spanish,english]{babel}
@@ -44,25 +63,6 @@
 \newcommand{\textha}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
 \newcommand{\textni}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
-
-%% Graphics
-\usepackage{graphicx}
-\graphicspath{{figures/}}
-
-% Formatting and nice stuff
-\usepackage{microtype}
-\usepackage{multicol}
-\usepackage[inline]{enumitem}
-\usepackage{listings}
-\usepackage{mleftright}
-\mleftright
-
-%% Math
-\usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{mathtools}
-\usepackage[mathcal]{euscript}
-\usepackage{mathrsfs}
 
 %% Theorems and definitions
 \theoremstyle{plain}
@@ -112,21 +112,7 @@
   }}
 
 \newcommand{\nsubset}{\ensuremath{\not\subset}}
-\newcommand{\hooklongrightarrow}{\lhook\joinrel\longrightarrow}
-\newcommand{\twoheadlongrightarrow}{\relbar\joinrel\twoheadrightarrow}
-
 \renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
-
-%% upint and loint
-\def\upint{\mathchoice%
-    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-  \int}
-\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
-\fi
-
 
 %% Commands and operators
 \DeclareMathOperator{\id}{id}
@@ -147,34 +133,9 @@
 \renewcommand\epsilon{\varepsilon}
 
 \begin{document}
-\frontmatter
-\aliaspagestyle{title}{empty}
-\pagestyle{title}
 \author{\href{mailto:\authoremail}{\documentauthor}}
 \title{\documenttitle}
 \date{\today}
-\maketitle
-\cleartooddpage
-
-\makeoddhead{headings}
-        {\small{\MakeUppercase{\itshape\documentauthor}}}
-        {}
-        {\small{\MakeUppercase{\itshape\exercisename}}}
-\makeoddfoot{headings}{{\itshape\documenttitle}}
-                      {}
-                      {\thepage}
-\makeevenhead{headings}
-        {\small{\MakeUppercase{\itshape\documentauthor}}}
-        {}
-        {\small{\MakeUppercase{\itshape\exercisename}}}
-\makeevenfoot{headings}{{\itshape\documenttitle}}
-                      {}
-                      {\thepage}
-\makeheadrule{headings}{\textwidth}{.25pt}
-% \makerunningwidth{headings}{1.15\textwidth}
-\pagestyle{headings}
-
-\mainmatter
 \include{quals/}
 \end{document}
 

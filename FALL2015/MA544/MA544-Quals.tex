@@ -1,12 +1,12 @@
 \def\documentauthor{Carlos Salinas}
-\def\documenttitle{MA557 Problem Set \hwnum}
-\def\hwnum{5}
-\def\shorttitle{MA557 PSet \hwnum}
-\def\coursename{MA557}
-\def\documentsubject{commutative algebra i}
+\def\documenttitle{MA544 Past Qualifying Examinations}
+\def\hwnum{Quals}
+\def\shorttitle{MA571 \hwnum}
+\def\coursename{MA571}
+\def\documentsubject{real analysis, measure theory}
 \def\authoremail{salinac@purdue.edu}
 
-\documentclass[article,oneside,10pt]{memoir}
+\documentclass{article}
 \usepackage{geometry}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[
@@ -83,31 +83,8 @@
 \newtheorem{definition}{Definition}
 \newtheorem{example}{Examples}
 \newtheorem{examples}[example]{Examples}
-% \newtheorem{exercise}{Exercise}[section]
-% \newtheorem{problem}[exercise]{Problem}
-
-% \newtheorem{exercise}{Exercise}[section]
-% \newtheorem{problem}[exercise]{Problem}
-
-\newcounter{problem}
-\newenvironment{problem}[1][]% environment name
-{% begin code
-  \stepcounter{problem}
-  \par\vspace{\baselineskip}\noindent
-  \ifx &#1&%
-  {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem}
-  \global\def\exercisename{Problem~\hwnum.\theproblem}%
-  \else
-  {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem~(#1)}
-  \global\def\exercisename{Problem~\hwnum.\theproblem(#1)}
-  \fi
-  \par\vspace{\baselineskip}%
-  \noindent\ignorespaces
-}%
-{% end code
-  \par\vspace{\baselineskip}%
-  \noindent\ignorespacesafterend
-}
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem{problem}[exercise]{Problem}
 
 \newtheorem*{definition*}{Definition}
 \newtheorem*{example*}{Examples}
@@ -138,63 +115,42 @@
 
 \renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
 
-%% Commands and operators
-\DeclareMathOperator{\Ass}{Ass}
-\DeclareMathOperator{\End}{End}
-\DeclareMathOperator{\Hom}{Hom}
-\DeclareMathOperator{\Spec}{Spec}
-\newcommand{\Speck}[1]{\text{${#1}$-$\Spec$}}
+%% upint and loint
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+\fi
 
-\DeclareMathOperator{\ann}{ann}
-\DeclareMathOperator{\coker}{coker}
+%% Commands and operators
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\lcm}{lcm}
-\DeclareMathOperator{\nil}{nil}
-\DeclareMathOperator{\rad}{rad}
-\DeclareMathOperator{\rk}{rk}
 
 \newcommand{\CC}{\mathbf{C}}
+\newcommand{\FF}{\mathbf{F}}
 \newcommand{\NN}{\mathbf{N}}
 \newcommand{\QQ}{\mathbf{Q}}
 \newcommand{\RR}{\mathbf{R}}
 \newcommand{\ZZ}{\mathbf{Z}}
 
-\begin{document}
 % Renewcommands
 \renewcommand\setminus{\smallsetminus}
 \renewcommand\phi{\varphi}
 \renewcommand\epsilon{\varepsilon}
 
-\frontmatter
-\aliaspagestyle{title}{empty}
+\begin{document}
 \pagestyle{title}
 \author{\href{mailto:\authoremail}{\documentauthor}}
 \title{\documenttitle}
 \date{\today}
 \maketitle
-\cleartooddpage
 
-\makeoddhead{headings}
-        {\small{\MakeUppercase{\itshape\documentauthor}}}
-        {}
-        {\small{\MakeUppercase{\itshape\exercisename}}}
-\makeoddfoot{headings}{{\itshape\documenttitle}}
-                      {}
-                      {\thepage}
-\makeevenhead{headings}
-        {\small{\MakeUppercase{\itshape\documentauthor}}}
-        {}
-        {\small{\MakeUppercase{\itshape\exercisename}}}
-\makeevenfoot{headings}{{\itshape\documenttitle}}
-                      {}
-                      {\thepage}
-\makeheadrule{headings}{\textwidth}{.25pt}
-% \makerunningwidth{headings}{1.15\textwidth}
-\pagestyle{headings}
-
-\mainmatter
-\include{psets/ma557-pset5}
+% \include{banuelos/}
+% \include{lempert/}
+% \include{sa-barreto/}
 \end{document}
 
 %%% Local Variables:

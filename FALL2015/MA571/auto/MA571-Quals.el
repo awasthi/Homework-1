@@ -1,25 +1,18 @@
 (TeX-add-style-hook
  "MA571-Quals"
  (lambda ()
-   (TeX-add-to-alist 'LaTeX-provided-class-options
-                     '(("memoir" "article" "oneside" "10pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("xcolor" "dvipsnames") ("fontenc" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "german" "russian" "spanish" "english") ("enumitem" "inline") ("euscript" "mathcal")))
+                     '(("xcolor" "dvipsnames") ("enumitem" "inline") ("euscript" "mathcal") ("fontenc" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "german" "russian" "spanish" "english")))
    (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
    (TeX-run-style-hooks
     "latex2e"
     "quals/"
-    "memoir"
-    "memoir10"
+    "article"
+    "art10"
     "geometry"
     "xcolor"
-    "cmap"
-    "fontenc"
-    "inputenc"
-    "babel"
-    "CJKutf8"
     "graphicx"
     "microtype"
     "multicol"
@@ -30,7 +23,12 @@
     "amssymb"
     "mathtools"
     "euscript"
-    "mathrsfs")
+    "mathrsfs"
+    "cmap"
+    "fontenc"
+    "inputenc"
+    "babel"
+    "CJKutf8")
    (TeX-add-symbols
     '("clsr" 1)
     '("restr" 2)
@@ -38,8 +36,6 @@
     '("textni" 1)
     '("textha" 1)
     "nsubset"
-    "hooklongrightarrow"
-    "twoheadlongrightarrow"
     "id"
     "im"
     "Int"
@@ -55,9 +51,7 @@
     "coursename"
     "documentsubject"
     "authoremail"
-    "spanishoptions"
-    "upint"
-    "lowint")
+    "spanishoptions")
    (LaTeX-add-environments
     '("problem" LaTeX-env-args ["argument"] 0)
     "theorem"

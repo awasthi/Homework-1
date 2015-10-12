@@ -1,12 +1,12 @@
 \def\documentauthor{Carlos Salinas}
 \def\documenttitle{MA553 Past Qualifying Examinations}
 \def\hwnum{Quals}
-\def\shorttitle{MA571 \hwnum}
-\def\coursename{MA571}
-\def\documentsubject{point-set topology}
+\def\shorttitle{MA553 \hwnum}
+\def\coursename{MA553}
+\def\documentsubject{abstract algebra}
 \def\authoremail{salinac@purdue.edu}
 
-\documentclass[article,oneside,10pt]{memoir}
+\documentclass{article}
 \usepackage{geometry}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[
@@ -46,8 +46,6 @@
 \usepackage{mathtools}
 
 %% PDFTeX specific
-\usepackage{iftex}
-\ifPDFTeX
 \usepackage[mathcal]{euscript}
 \usepackage{mathrsfs}
 
@@ -65,28 +63,6 @@
 \newcommand{\textha}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
 \newcommand{\textni}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
-\fi
-
-% %% XeTeX specific
-% \ifXeTeX
-% \usepackage{unicode-math}
-
-% \setmainfont[Ligatures=TeX]{Latin Modern Roman}
-% \setsansfont[Ligatures=TeX]{Latin Modern Sans}
-% \setmonofont{Latin Modern Mono}
-% \setmathfont{Latin Modern Math}
-
-% % \usepackage{unicode-minionmath}
-% % \setmainfont[Ligatures=TeX]{Minion Pro}
-% % \setsansfont[Ligatures=TeX]{Myriad Pro}
-% % \setmonofont[Scale=.85]{Courier Std}
-
-% % \setmathfont{Minion Math}
-% % \setmathfont[range={\mathfrak}]{XITS Math}
-% % \setmathfont[range={\mathcal},StylisticSet=1]{XITS Math}
-% % \setmathfont[range={\mathscr}]{XITS Math}
-% % \setmathfont[range={}]{Minion Math}
-% \fi
 
 %% Theorems and definitions
 \theoremstyle{plain}
@@ -107,27 +83,8 @@
 \newtheorem{definition}{Definition}
 \newtheorem{example}{Examples}
 \newtheorem{examples}[example]{Examples}
-% \newtheorem{exercise}{Exercise}[section]
-% \newtheorem{problem}[exercise]{Problem}
-
-\newcounter{problem}
-\newenvironment{problem}[1][]% environment name
-{% begin code
-  \par\vspace{\baselineskip}\noindent
-  \ifx &#1&%
-  {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem}
-  \global\def\exercisename{Problem~\hwnum.\theproblem}%
-  \else
-  {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem~(#1)}
-  \global\def\exercisename{Problem~\hwnum.\theproblem(#1)}
-  \fi
-  \par\vspace{\baselineskip}%
-  \noindent\ignorespaces
-}%
-{% end code
-  \par\vspace{\baselineskip}%
-  \noindent\ignorespacesafterend
-}
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem{problem}[exercise]{Problem}
 
 \newtheorem*{definition*}{Definition}
 \newtheorem*{example*}{Examples}
@@ -154,43 +111,13 @@
   \right|{#2} % this is the delimiter
   }}
 
-\ifPDFTeX
 \newcommand{\nsubset}{\ensuremath{\not\subset}}
-% \newcommand{\hooklongrightarrow}{\lhook\joinrel\longrightarrow}
-% \newcommand{\twoheadlongrightarrow}{\relbar\joinrel\twoheadrightarrow}
-
 \renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
-
-%% upint and loint
-\def\upint{\mathchoice%
-    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-  \int}
-\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
-\fi
-
-% \ifXeTeX
-% %% Patch arrows for XeTeX
-% \usepackage{etoolbox}
-% \makeatletter
-% \patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
-% \patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
-% \patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
-% \patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
-% \makeatother
-
-% \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
-% \fi
 
 %% Commands and operators
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\lcm}{lcm}
-
-\newcommand{\overbar}[1]
-           {\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 
 \newcommand{\CC}{\mathbf{C}}
 \newcommand{\FF}{\mathbf{F}}
@@ -205,34 +132,11 @@
 \renewcommand\epsilon{\varepsilon}
 
 \begin{document}
-\frontmatter
-\aliaspagestyle{title}{empty}
-\pagestyle{title}
 \author{\href{mailto:\authoremail}{\documentauthor}}
 \title{\documenttitle}
 \date{\today}
 \maketitle
-\cleartooddpage
 
-\makeoddhead{headings}
-        {\small{\MakeUppercase{\itshape\documentauthor}}}
-        {}
-        {\small{\MakeUppercase{\itshape\exercisename}}}
-\makeoddfoot{headings}{{\itshape\documenttitle}}
-                      {}
-                      {\thepage}
-\makeevenhead{headings}
-        {\small{\MakeUppercase{\itshape\documentauthor}}}
-        {}
-        {\small{\MakeUppercase{\itshape\exercisename}}}
-\makeevenfoot{headings}{{\itshape\documenttitle}}
-                      {}
-                      {\thepage}
-\makeheadrule{headings}{\textwidth}{.25pt}
-% \makerunningwidth{headings}{1.15\textwidth}
-\pagestyle{headings}
-
-\mainmatter
 % \include{goins/}
 % \include{goldberg/}
 % \include{heinzer/}

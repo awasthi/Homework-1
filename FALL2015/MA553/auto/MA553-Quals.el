@@ -1,5 +1,5 @@
 (TeX-add-style-hook
- "MA553-Past-Quals"
+ "MA553-Quals"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("xcolor" "dvipsnames") ("enumitem" "inline") ("euscript" "mathcal") ("fontenc" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "german" "russian" "spanish" "english")))
@@ -8,12 +8,8 @@
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
    (TeX-run-style-hooks
     "latex2e"
-    "goins/"
-    "goldberg/"
-    "heinzer/"
     "shahidi/MA553-AUG15"
     "shahidi/MA553-AUG10"
-    "ulrich/"
     "article"
     "art10"
     "geometry"
@@ -40,6 +36,9 @@
     '("textni" 1)
     '("textha" 1)
     "nsubset"
+    "id"
+    "im"
+    "lcm"
     "CC"
     "FF"
     "NN"
