@@ -221,7 +221,27 @@ W=W_1\cup W_2=\left( \bigcup_{i=1}^\ell W_1^{(i)} \right)\cup\left(
 a contradiction. Thus, every closed subset $V$ can be expressed as the
 finite union of irreducible closed subsets.
 \\\\
-(b)
+(b) We prove the contrapositive. Suppose that $I\subset R$ is not
+prime. Then we can find $x,y\in R$ with $xy\in I$, but $x\notin I$,
+$y\notin I$. Thus,
+\[
+V((I,x))\cup V((I,y))=V((I,x)\cap (I,y))=V(I),
+\]
+but neither $V((I,x))\neq V(I)$ or $V((I,y))\neq V(I)$ so $V(I)$ is
+not irreducible. \qedhere
+% (b) Suppose that $V(\mathfrak{p})=V_1\cup V_2$. Let
+% $I=\bigcap_{\mathfrak{p}\in V_1}$ and $J=\bigcap_{\mathfrak{p}\in
+%   V_1}\mathfrak{p}$. Then $V(I)=V_1$ and $V(J)=V_2$ by the
+% nullstellensatz. Thus,
+% \[
+% V_1\cup V_2=V(I)\cup V(J)=V(IJ)=V(\mathfrak{p})
+% \]
+% so $IJ=\mathfrak{p}$ implies $I\subset\mathfrak{p}$ or
+% $J\subset\mathfrak{p}$. But $V(I)\subset V(\mathfrak{p})$,
+% $V(J)\subsetV(\mathfrak{p})$ implies $I\supset\mathfrak{p}$ and
+% $J\supset\mathfrak{p}$ so $I=\mathfrak{p}$ or $J=\mathfrak{p}$. Hence
+% $V(\mathfrak{p})=V_1$ or $V(\mathfrak{p})=V_2$ and we have that
+% $V(\mathfrak{p})$ is irreducible.
 \end{proof}
 \newpage
 \begin{problem}
@@ -229,6 +249,28 @@ Show that a Noetherian ring has only finitely many minimal prime
 ideals.
 \end{problem}
 \begin{proof}
+Since $R$ is Noetherian, by Problem 5.3, $\Spec(R)$ is a Noetherian
+topological space. Thus, by Problem 5.4, $\Spec(R)$ is the union of
+finitely many irreducible subsets $V(\mathfrak{p}_i)$ where
+$\mathfrak{p}_i$ is prime, i.e., $\Spec(R)=\bigcup_{i=1}^n
+V(\mathfrak{p}_i)$. Then, if $C_i$ denotes the irreducible component
+of $\mathfrak{p}_i$, $V(\mathfrak{p}_i)\subset C_i$ so
+$\Spec(R)=\bigcup_{i=1}^n V(\mathfrak{p}_i)$. We claim that every
+irreducible component corresponds to a minimal prime ideal
+$\mathfrak{q}_i$: Let $C$ be an irreducible component, then we must
+show $\mathfrak{q}=\bigcap_{\mathfrak{p}\in C}\mathfrak{p}$ is minimal
+above $0$. For suppose $0\subset\mathfrak{q'}\subset\mathfrak{q}$ then
+$V(\mathfrak{q}')\supset C$, but $C$ is maximal with respect to being
+irreducible so $V(\mathfrak{q}')=V(\mathfrak{q})$ which implies that
+$\mathfrak{q}'=\mathfrak{q}$. Conversely, if $\mathfrak{q}$ is
+minimal, then $V(\mathfrak{q})$ is maximal with respect to being
+irreducible, for otherwise it is contained in an irreducible set
+$C\supset V(\mathfrak{q})$ which implies that
+$\bigcap_{\mathfrak{p}\in C}\mathfrak{p}\subset\mathfrak{q}$
+contradicting the minimality of $\mathfrak{q}$.
+
+Hence, we can write $\Spec(R)=\bigcup_{i=1}^nV(\mathfrak{q}_i)$ for
+$\mathfrak{q}_i$ a minimal prime ideal.
 \end{proof}
 \newpage
 \begin{problem}
