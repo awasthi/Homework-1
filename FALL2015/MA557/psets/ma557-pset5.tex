@@ -161,26 +161,34 @@ $\mathfrak{p}\supset\sqrt{I}$. But this is clear since if
 $x\in\sqrt{I}$ then $x^k\in I$ for some positive integer $k$ so
 $x^k\in\mathfrak{p}$ and since $\mathfrak{p}$ is prime
 $x\in\mathfrak{p}$. Thus, $V(I)=V(\sqrt{I})$.
-
+\\\\
 (ii) Suppose $I\subset J$. Then every prime ideal
 $\mathfrak{p}\supset J$ must also contain $I$. Thus, $V(I)\supset
 V(J)$.
-
-(iii) Suppose $V(I)\supset V(J)$. Then, by (i),
-$V(\sqrt{I})\supset V(\sqrt{J})$ so for every prime ideal
-$\mathfrak{p}\supset\sqrt{I}$ we have
-$\mathfrak{p}\supset\sqrt{J}$.
+\\\\
+(iii) Suppose $V(I)\supset V(J)$. Then, for every prime ideal
+$\mathfrak{p}\supset J$, $\mathfrak{p}\supset I$ so
+\[
+\sqrt{J}=\bigcap_{\mathfrak{p}\supset J}\mathfrak{p}\supset
+\bigcap_{\mathfrak{p}\supset
+    J}\mathfrak{p}\cap\bigcap_{\substack{\mathfrak{q}\supset
+    I\\\mathfrak{q}\nsupset J}}\mathfrak{q}=\sqrt{I}.\qedhere
+\]
 \end{proof}
-It is clear now that if
+It suffices to reduce to the case of varieties of ideals in
+$R$ since varieties generate the Zariski topology on
+$\Spec(R)$. Suppose
 \[
 V(I_1)\supset V(I_2)\supset\cdots
 \]
-is a descending chain, by (i) and (ii) from the lemma, it is in
-one-to-one correspondence with a chain
+is a descending chain of varieties in $\Spec(R)$. Then, by the (iii)
+of the lemma and the nullstellensatz, the latter chain is in
+one-to-one correspondence with the ascending chain of radical ideals
 \[
 \sqrt{I_1}\subset\sqrt{I_2}\subset\cdots
 \]
-which becomes stationary for some positive integer $n$ since $R$ is
+which must stabilize since $R$ is Noetherian. It follows that the
+chain $V(I_1)\supset V(I_2)\supset\cdots$ stabilizes so $\Spec(R)$ is
 Noetherian.
 \end{proof}
 \newpage
@@ -196,6 +204,24 @@ subset, implies $V_1=V$ or $V_2=V$.
 \end{enumerate}
 \end{problem}
 \begin{proof}
+(a) Let $X$ be a Noetherian topological space. Let
+\[
+\Lambda=\left\{ \,V\subset X\;\middle|\;\text{$V$ is closed and not a
+    finite union of irreducible closed subsets} \right\}.
+\]
+Then, by the dcc, $\Lambda$ contains a minimal element, say $W$. Then
+$W$ is not irreducible so we can write $W=W_1\cup W_2$ where $W_1\neq
+W$ and $W_2\neq W$. By minimality of $W$, $W_1$ and $W_2$ are finite
+unions of irreducible closed subsets so $W_1=\bigcup_{i=1}^k
+W_1^{(i)}$ and $W_2=\bigcup_{i=1}^\ell W_2^{(i)}$ so
+\[
+W=W_1\cup W_2=\left( \bigcup_{i=1}^\ell W_1^{(i)} \right)\cup\left(
+  \bigcup_{i=1}^k W_2^{(i)} \right)
+\]
+a contradiction. Thus, every closed subset $V$ can be expressed as the
+finite union of irreducible closed subsets.
+\\\\
+(b)
 \end{proof}
 \newpage
 \begin{problem}
