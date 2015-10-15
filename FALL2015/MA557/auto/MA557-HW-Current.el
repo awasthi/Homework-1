@@ -32,24 +32,11 @@
     "babel"
     "CJKutf8")
    (TeX-add-symbols
-    '("Speck" 1)
     '("restr" 2)
     '("textzh" 1)
     '("textni" 1)
     '("textha" 1)
     "nsubset"
-    "Ass"
-    "End"
-    "Hom"
-    "Spec"
-    "ann"
-    "coker"
-    "id"
-    "im"
-    "lcm"
-    "nil"
-    "rad"
-    "rk"
     "CC"
     "NN"
     "QQ"
