@@ -5,24 +5,10 @@ closed set $S=1+I$. Show that
 \item $\tilde S=R\setminus\bigcup\mathfrak{m}$, where the
   union is taken over all
   $\mathfrak{m}\in\MSpec(R)\cap V(I)$.
-\item $\MSpec(R/I)$ are homeomorphic.
+\item $\MSpec(S^{-1}R)$ and $\MSpec(R/I)$ are homeomorphic.
 \end{enumerate}
 \end{problem}
 \begin{proof}
-% (a) By 4.19, $\tilde S=R\setminus\bigcup\mathfrak{p}$, where the
-% union is taken over all $\mathfrak{p}\in\Spec R$ with
-% $\mathfrak{p}\cap S=\emptyset$. But $\mathfrak{p}\cap
-% S=\mathfrak{p}\cap(1+I)=\emptyset$ ($\implies$ suppose
-% $\mathfrak{p}\cap (1+I)=\emptyset$ and, seeking a contradiction,
-% $\mathfrak{p}+I=R$; then for some $x\in\mathfrak{p},a\in I$,
-% $x+a\in A$ is a unit, say $x+a=1$; then
-% $x=1-a\in\mathfrak{p}\cap(1+I)$; this is a
-% contradiction. $\impliedby$ Conversely, proving the
-% contrapositive, if $\mathfrak{p}\cap(1+I)\neq\emptyset$ then
-% $1+a\in\mathfrak{p}$ for some $a\in I$ so
-% $(1+a)-a=1\in\mathfrak{p}+I$ so $\mathfrak{p}+I=R$.) if and only
-% if there exists some prime ideal
-% $\mathfrak{q}\supset\mathfrak{p}+I$
 (a) By 4.19, we have
 \[
 \tilde
@@ -31,10 +17,46 @@ S=R\setminus\bigcup_{\substack{\mathfrak{p}\in\Spec(R)\\\mathfrak{p}\cap
 \]
 But $\mathfrak{p}\cap S=\mathfrak{p}\cap (1+I)=\emptyset$ if and
 only if $\mathfrak{p}+I\neq R$ if and only if there is some
-maximal ideal $\mathfrak{m}\supset \mathfrak{p}+I$. For this
-latter equivalence: $\implies$ Suppose
+maximal ideal $\mathfrak{m}\supset \mathfrak{p}+I$.
+
+For the former equivalence: $\implies$ Suppose that
+$\mathfrak{p}\cap S=\mathfrak{p}\cap(1+I)=\emptyset$, then if
+$\mathfrak{p}+I=R$ for some $x\in\mathfrak{p}$, $y\in I$ we have
+$x+y=1$. But then $x=1-y\in\mathfrak{p}\cap S$; this is a
+contradiction. $\impliedby$ Conversely, if
+$\mathfrak{p}\cap S\neq\emptyset$, $x=1+y\in\mathfrak{p}$ for some
+$y\in I$ so $x-y=(1+y)-y=1\in\mathfrak{p}+I$ implies
+$\mathfrak{p}+I=R$.
+
+For the latter equivalence: $\implies$ Suppose $\mathfrak{p}+I\neq R$,
+then $\mathfrak{p}+I$ is a proper ideal of $R$ so, by 1.5, is
+contained in a maximal ideal $\mathfrak{m}$. $\impliedby$ Conversely,
+if $\mathfrak{m}\subsetneq R$ is a maximal ideal containing
+$\mathfrak{p}+I$ then $\mathfrak{p}+I\neq R$ for otherwise
+$\mathfrak{m}=R$. Then it suffices to take the union over all maximal
+ideals $\mathfrak{m}\supset I$.
 \\\\
-(b)
+(b) We will show that $\MSpec(S^{-1}R)\approx\MSpec(R)\cap V(I)$ and
+$\MSpec(R/I)\approx\MSpec(R)\cap V(I)$ so that, by the transitivity of
+homeomorphism, we have $\MSpec(S^{-1}R)\approx\MSpec(R/I)$. By
+4.21(a), $\Spec(R/I)\approx V(I)$ so the restriction
+$\MSpec(R/I)\approx\MSpec(R/I)\cap V(I)$. To see that
+$\MSpec(S^{-1}R)\approx\MSpec(R)\cap V(I)$, let $\varphi\colon R\to
+S^{-1}R$ be the canonical homomorphism sending $x\mapsto x/1$, then
+$\phi$ induces a continuous closed map
+$^a\phi\colon\Spec(S^{-1}R)\to\Spec(R)$ taking
+$\bar{\mathfrak{p}}\mapsto\mathfrak{p}$, i.e., ideal extension. Thus,
+by 4.13(d), there is a one-to-one correspondence between
+$\bar{\mathfrak{p}}\in\Spec(S^{-1}M)$ and its extension
+$\mathfrak{p}\in\Spec(R)$ with $\mathfrak{p}\cap S=\emptyset$ so that
+it suffices to show that $^a\phi(\MSpec(S^{-1}R))=\MSpec(R)\cap
+V(I)$. But this is easy: If $\bar{\mathfrak{m}}\in\MSpec(S^{-1}R)$
+then its contraction is a maximal ideal $\mathfrak{m}\supset I$ by
+part (a), hence is in $\MSpec(R)\cap V(I)$. Conversely, if
+$\mathfrak{m}\in\MSpec(R)\cap V(I)$, again, by part (a),
+$\mathfrak{m}$ is a maximal ideal not meeting $S$ so that by 4.13(d),
+there exist some maximal ideal $\bar{\mathfrak{m}}$ contracting to
+$\mathfrak{m}$. It follows that $\MSpec(S^{-1}R)\approx\MSpec(R/I)$.
 \end{proof}
 \newpage
 \begin{problem}
@@ -149,6 +171,17 @@ $V(\sqrt{I})\supset V(\sqrt{J})$ so for every prime ideal
 $\mathfrak{p}\supset\sqrt{I}$ we have
 $\mathfrak{p}\supset\sqrt{J}$.
 \end{proof}
+It is clear now that if
+\[
+V(I_1)\supset V(I_2)\supset\cdots
+\]
+is a descending chain, by (i) and (ii) from the lemma, it is in
+one-to-one correspondence with a chain
+\[
+\sqrt{I_1}\subset\sqrt{I_2}\subset\cdots
+\]
+which becomes stationary for some positive integer $n$ since $R$ is
+Noetherian.
 \end{proof}
 \newpage
 \begin{problem}
