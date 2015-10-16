@@ -36,9 +36,7 @@
     '("textni" 1)
     '("textha" 1)
     "nsubset"
-    "id"
-    "im"
-    "lcm"
+    "nsupset"
     "CC"
     "FF"
     "NN"

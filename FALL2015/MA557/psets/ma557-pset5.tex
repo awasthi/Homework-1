@@ -249,34 +249,38 @@ Show that a Noetherian ring has only finitely many minimal prime
 ideals.
 \end{problem}
 \begin{proof}
-Since $R$ is Noetherian, by Problem 5.3, $\Spec(R)$ is a Noetherian
-topological space. Thus, by Problem 5.4, $\Spec(R)$ is the union of
-finitely many irreducible subsets $V(\mathfrak{p}_i)$ where
-$\mathfrak{p}_i$ is prime, i.e., $\Spec(R)=\bigcup_{i=1}^n
-V(\mathfrak{p}_i)$. Then, if $C_i$ denotes the irreducible component
-of $\mathfrak{p}_i$, $V(\mathfrak{p}_i)\subset C_i$ so
-$\Spec(R)=\bigcup_{i=1}^n V(\mathfrak{p}_i)$. We claim that every
-irreducible component corresponds to a minimal prime ideal
-$\mathfrak{q}_i$: Let $C$ be an irreducible component, then we must
-show $\mathfrak{q}=\bigcap_{\mathfrak{p}\in C}\mathfrak{p}$ is minimal
-above $0$. For suppose $0\subset\mathfrak{q'}\subset\mathfrak{q}$ then
-$V(\mathfrak{q}')\supset C$, but $C$ is maximal with respect to being
-irreducible so $V(\mathfrak{q}')=V(\mathfrak{q})$ which implies that
-$\mathfrak{q}'=\mathfrak{q}$. Conversely, if $\mathfrak{q}$ is
-minimal, then $V(\mathfrak{q})$ is maximal with respect to being
-irreducible, for otherwise it is contained in an irreducible set
-$C\supset V(\mathfrak{q})$ which implies that
-$\bigcap_{\mathfrak{p}\in C}\mathfrak{p}\subset\mathfrak{q}$
-contradicting the minimality of $\mathfrak{q}$.
-
-Hence, we can write $\Spec(R)=\bigcup_{i=1}^nV(\mathfrak{q}_i)$ for
-$\mathfrak{q}_i$ a minimal prime ideal.
+Since $R$ is Noetherian, by Problem 5.3, $\Spec(R)$ is Notherian, that
+is, it satisfies the dcc. Thus, by Problem 5.4, $\Spec(R)$ is the
+union of finitely many irreducible subsets
+$V(0)=\bigcup_{i=1}^nV(\mathfrak{p}_i)$ where $\mathfrak{p}_i$ is
+prime. Now, suppose $\mathfrak{q}$ is a minimal prime (we are
+guaranteed one if $R\neq 0$ by the next problem). Then
+$\mathfrak{q}\in V(0)$ so $\mathfrak{q}\in V(\mathfrak{p}_i)$ for some
+$1\leq i\leq n$. Then $\mathfrak{q}\supset\mathfrak{p}_i$, but by
+minimality $\mathfrak{q}=\mathfrak{p}_i$. It follows that $R$ contains
+$\leq n$ minimal prime ideals, in particular, finitely many.
 \end{proof}
 \newpage
 \begin{problem}
 Show that a nonzero ring has at least one minimal prime ideal.
 \end{problem}
 \begin{proof}
+First we will prove the following useful result:
+\begin{lemma*}
+Let $\left\{\mathfrak{p}_\alpha\right\}\subset R$ be a chain of prime
+ideals ordered by inclusion. Then $\bigcap\mathfrak{p}_\alpha$ is prime.
+\end{lemma*}
+\begin{proof}[Proof of lemma]
+\renewcommand\qedsymbol{$\clubsuit$}
+Put $\mathfrak{p}=\bigcap\mathfrak{p}_\alpha$. Suppose
+$xy\in\mathfrak{p}$. Then $xy\in\mathfrak{p}_\alpha$ for every
+$\alpha$. Fix an $\alpha$ and, without loss of generality, suppose
+$x\in\mathfrak{p}_\alpha$. Let $\mathfrak{p}_\beta$ be another prime
+ideal. Then $\mathfrak{p}_\beta\subset\mathfrak{p}_\alpha$ or
+$\mathfrak{p}_\beta\supset\mathfrak{p}_\alpha$. If
+$\mathfrak{p}_\beta\supset\mathfrak{p}_\alpha$, we are done
+($x\in\mathfrak{p}_\beta$). Otherwise, suppose $x\n$
+\end{proof}
 \end{proof}
 
 %%% Local Variables:

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.14)  15 OCT 2015 08:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.10.13)  16 OCT 2015 14:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1587,10 +1587,10 @@ Package rerunfilecheck Info: File `MA571-HW-Current.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 190.
  ) 
 Here is how much of TeX's memory you used:
- 17694 strings out of 493089
- 250029 string characters out of 6140694
- 436902 words of memory out of 5000000
- 20788 multiletter control sequences out of 15000+600000
+ 17695 strings out of 493089
+ 250036 string characters out of 6140693
+ 436909 words of memory out of 5000000
+ 20789 multiletter control sequences out of 15000+600000
  21741 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,12n,35p,257b,481s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1610,7 +1610,7 @@ ist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1
 r/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb>
 </usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/tex
 mf-dist/fonts/type1/public/cm-super/sfxc1200.pfb>
-Output written on MA571-HW-Current.pdf (11 pages, 214852 bytes).
+Output written on MA571-HW-Current.pdf (11 pages, 215068 bytes).
 PDF statistics:
  123 PDF objects out of 1000 (max. 8388607)
  86 compressed objects within 1 object stream

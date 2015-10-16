@@ -37,6 +37,7 @@
     '("textni" 1)
     '("textha" 1)
     "nsubset"
+    "nsupset"
     "diam"
     "id"
     "im"
