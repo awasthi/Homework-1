@@ -133,7 +133,19 @@ Moreover
 \[
 A\cap B=V(R_1\times 0)\cap V(0\times R_2)=V(R_1\times 0+0\times R_2)=V(R)=\emptyset.
 \]
-
+Since both $A$ and $B$ are closed, it follows that $A,B$ forms a
+separation of $\Spec(R)$.
+\\\\
+(c) $\implies$ (b)
+As suggested by Matsumura: If $\Spec(R)=V(I_1)\cup V(I_2)$ with
+$V(I_1)\cap V(I_2)\cap=\emptyset$, then $I_1+I_2=R$ and
+$I_1I_2\subset\nil(R)$. So $1=e_1+e_2$ and $(e_1e_2)^n=0$ for
+some $e_1\in I_1$, $e_2\in I_2$. So we have that
+\[
+1=(e_1+e_2)^{2n}=e_1^nx_1+e_2^nx_2
+\]
+with $x_1,x_2\in R$. So $e=e_1^nx_1$ satisfies $e(1-e)=0$, i.e.,
+$e$ is idempotent.
 \end{proof}
 \newpage
 \begin{problem}
@@ -265,22 +277,54 @@ $\leq n$ minimal prime ideals, in particular, finitely many.
 Show that a nonzero ring has at least one minimal prime ideal.
 \end{problem}
 \begin{proof}
-First we will prove the following useful result:
-\begin{lemma*}
-Let $\left\{\mathfrak{p}_\alpha\right\}\subset R$ be a chain of prime
-ideals ordered by inclusion. Then $\bigcap\mathfrak{p}_\alpha$ is prime.
-\end{lemma*}
-\begin{proof}[Proof of lemma]
-\renewcommand\qedsymbol{$\clubsuit$}
-Put $\mathfrak{p}=\bigcap\mathfrak{p}_\alpha$. Suppose
-$xy\in\mathfrak{p}$. Then $xy\in\mathfrak{p}_\alpha$ for every
-$\alpha$. Fix an $\alpha$ and, without loss of generality, suppose
-$x\in\mathfrak{p}_\alpha$. Let $\mathfrak{p}_\beta$ be another prime
-ideal. Then $\mathfrak{p}_\beta\subset\mathfrak{p}_\alpha$ or
-$\mathfrak{p}_\beta\supset\mathfrak{p}_\alpha$. If
-$\mathfrak{p}_\beta\supset\mathfrak{p}_\alpha$, we are done
-($x\in\mathfrak{p}_\beta$). Otherwise, suppose $x\n$
-\end{proof}
+% \begin{lemma*}
+% Let $\left\{\mathfrak{p}_\alpha\right\}\subset R$ be a chain of prime
+% ideals ordered by reverse-inclusion. Then $\bigcap\mathfrak{p}_\alpha$ is prime.
+% \end{lemma*}
+% \begin{proof}[Proof of lemma]
+% \renewcommand\qedsymbol{$\clubsuit$}
+% Put $\mathfrak{p}=\bigcap\mathfrak{p}_\alpha$. Suppose
+% $xy\in\mathfrak{p}$. Then $xy\in\mathfrak{p}_\alpha$ for every
+% $\alpha$. Fix an $\alpha$ and, without loss of generality, suppose
+% $x\in\mathfrak{p}_\alpha$. Let $\mathfrak{p}_\beta$ be another prime
+% ideal. Then $\mathfrak{p}_\beta\subset\mathfrak{p}_\alpha$ or
+% $\mathfrak{p}_\beta\supset\mathfrak{p}_\alpha$. If
+% $\mathfrak{p}_\beta\supset\mathfrak{p}_\alpha$, we are done
+% ($x\in\mathfrak{p}_\beta$). Otherwise, suppose
+% $x\notin\mathfrak{p}_\beta$. Then $y\in\mathfrak{p}_\beta$ so
+% $y\in\mathfrak{p}_\beta$. In either case, $\mathfrak{p}$ is
+% prime.
+% \end{proof}
+% Since R is nonzero, it contains a maximal ideal which is a
+% prime ideal. Thus the set A of all prime ideals of R is
+% nonempty. A is ordered by reverse-inclusion. Let A be a totally
+% ordered subset of A. It's pretty clear that J=⋂I∈AI is in fact
+% an ideal. Not so clear, however, is that it is prime. Let
+% xy∈J. Then xy∈I for all I∈A. Now let B={I∈A|y∈I}. Let
+% K=⋂I∈BI. Since A is totally ordered, either K=J (and we're
+% done, since then y∈J) or K⊃J and for all I∈A such that I is
+% properly contained in K, we have y∉I. But that means that for
+% all those I,x∈I, since they are prime. Hence x∈J. In either
+% case, J is prime as desired. Hence by Zorn's lemma we get a
+% maximal element which in this case is a minimal prime ideal.
+We will proceed by Zorn's lemma. Let $\Lambda$ be the set of all
+prime ideals of $R$. This set is nonempty by 1.4 since every
+nonzero ring contains a maximal ideal, in particular, a prime
+ideal. $\Lambda$ is ordered by reverse-inclusion. Let
+$L\subset\Lambda$ be a totally ordered subset of $\Lambda$. We
+claim that $\mathfrak{q}=\bigcap_{\mathfrak{p}\in L}\mathfrak{p}$
+is a prime ideal: It is clear that $\mathfrak{q}$ is an
+ideal. Suppose $xy\in\mathfrak{q}$. Then
+$\mathfrak{xy}\in\mathfrak{p}$ for every $\mathfrak{p}\in L$. Let
+$K$ be the collection of all $\mathfrak{p}\ni x$. Then either
+$\bigcap_{\mathfrak{p}\in K}\mathfrak{p}=\mathfrak{q}$ (in which
+case we are done) or $\bigcap_{\mathfrak{p}\in
+  K}\mathfrak{p}\supset\mathfrak{q}$ where
+$x\notin\mathfrak{q}$. But then, since every $\mathfrak{p}\in L$
+is prime, they must contain $x$ so $x\in\bigcap_{\mathfrak{p}\in
+  K}\mathfrak{p}$. Thus, $\mathfrak{q}$ is prime. By Zorn's
+lemma, it follows that $\Lambda$ contains a minimal element, in
+this case, a smallest (by reverse-inclusion) prime ideal.
 \end{proof}
 
 %%% Local Variables:

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.10.13)  16 OCT 2015 14:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.14)  16 OCT 2015 16:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1572,22 +1572,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--60
 
 
 
-] [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 157--171
+]
+Underfull \hbox (badness 10000) in paragraph at lines 135--144
+
+ []
+
+[2] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 169--183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--171
+Underfull \hbox (badness 10000) in paragraph at lines 169--183
 
  []
 
 
 Package amsthm Warning: The \qedhere command may not work correctly here on inp
-ut line 175.
+ut line 187.
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 220--227
+Underfull \hbox (badness 10000) in paragraph at lines 232--239
 
  []
 
@@ -1602,13 +1607,13 @@ Package rerunfilecheck Info: File `MA557-HW-Current.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 200.
  ) 
 Here is how much of TeX's memory you used:
- 17746 strings out of 493089
- 250426 string characters out of 6140693
- 445028 words of memory out of 5000000
+ 17752 strings out of 493089
+ 250478 string characters out of 6140694
+ 446028 words of memory out of 5000000
  20806 multiletter control sequences out of 15000+600000
- 23100 words of font info for 95 fonts, out of 8000000 for 9000
+ 23267 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,12n,35p,257b,481s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,13n,35p,257b,519s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/font
 s/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public
@@ -1625,7 +1630,7 @@ type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm
 -super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti0900
 .pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/shar
 e/texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb>
-Output written on MA557-HW-Current.pdf (9 pages, 224348 bytes).
+Output written on MA557-HW-Current.pdf (9 pages, 227373 bytes).
 PDF statistics:
  129 PDF objects out of 1000 (max. 8388607)
  94 compressed objects within 1 object stream
