@@ -39,8 +39,7 @@ $f(x_0)$. Then $Y-V$ is a closed subset of $Y$ so, by Problem 2.1
 $Y\times Y$. In particular, by Theorem 17.1(2), the intersection
 $B=G_f\cap X\times(Y-V)$ is closed in $X\times Y$. Thus, by Problem
 6.5 (Munkres \S26, Ex.\,7), since $Y$ is a compact Hausdorff space,
-the projection $\pi_1(B)$ onto $X$ is a closed subset of $X$. But the
-intersection
+the projection $\pi_1(B)$ onto $X$ is a closed subset of $X$. But
 \begin{align*}
 B
 &=\left\{\,(x,y)\;\middle|\;\text{$(x,y)\in G_f$ and $(x,y)\in X\times
@@ -49,21 +48,12 @@ B
   (Y-V)$}\right\}\\
 &=\left\{\,(x,f(x))\;\middle|\;f(x)\in Y-V\,\right\}
 \end{align*}
-so we have that $\pi_1(B)=f^{-1}(Y-V)$. One
+so we have that $\pi_1(B)=f^{-1}(Y-V)=X-f^{-1}(V)$. One
 containment is easy to see, namely ``$\subset$'': if $x\in B$ then
 $x=\pi_1(x,f(x))$ for at least one $f(x)\in Y-V$. To see the reverse
 inclusion, take $x\in f^{-1}(Y-V)$, then $f(x)\in Y-V$ so $(x,f(x))\in
-U$, thus $x\in\pi_1(U)$. Thus, by Theorem 18.1(3), it follows that $f$
-is continuous.
-% \begin{align*}
-% \pi_1(G_f\cap X\times(Y-V))
-% &=\left\{\,x\;\middle|\;\text{$\pi(x',y)=x$ for at least one
-%   $(x',y)\in G_f\cap X\times(Y-V)$}\,\right\}\\
-% &=\left\{\,x\;\middle|\;\text{$\pi(x',f(x'))=x$ for at least one
-%   $(x,f(x'))\in X\times(Y-V)$}\,\right\}\\
-% &=\left\{\,x\;\middle|\;f(x)\in Y-V \right\}\\
-% &=f^{-1}(Y-V)
-% \end{align*}
+B$, hence $x\in\pi_1(B)$. Thus, $X-\pi_1(B)=f^{-1}(V)$ is open
+so $f$ is continuous.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S26, Ex.\,9]
@@ -77,8 +67,31 @@ $X$ and $Y$, respectively, such that
 \end{theorem*}
 \end{problem}
 \begin{proof}
-Keeping the same notation as the prompt of the theorem: Since $A$ and
-$B$ are compact, by Theorem 26.7, $A\times B$ are compact.
+We first prove the theorem for the case that $A=\{a\}$.
+
+
+% We first show the partially generalized lemma when $A=\{a\}$ is a
+% single point. Since $a\times B\cong B$ is compact, we obtain $$a\times
+% B\subset \bigcup(U_i\times V_i)$$ when $U_i\subset X$ and $V_i\subset
+% Y$ are open, for finitely many indices $i$. We may assume each $U_i$
+% is a neighborhood of $a$. We let $U=\bigcap U_i$ and $V=\bigcup V_i$
+% and claim they satisfy the lemma presented; this is evident since
+% $U\times V_i\subset U_i\times V_i\subset N$ for all $i$ hence $U\times
+% V=\bigcup (U\times V_i)\subset N$, and also $a\times b\in a\times B$
+% implies $b\in V_i$ for some $i$ so $a\times B\subset U\times V$.
+
+% So by this partially generalized tube lemma, for each $a\in A$ let
+% $U_a\subset X$ be a neighborhood of $a$ and $V_a\subset Y$ be open
+% such that $U_a\times V_a\subset N$. Since $A$ is compact, we may
+% choose a finite subset $\mathcal{A}\subset A$ such that $A\subset
+% \bigcup_{\alpha \in\mathcal{A}}U_\alpha $. We let $U=\bigcup U_\alpha
+% $ and $V=\bigcap V_\alpha $ and claim they satisfy the lemma
+% presented. Since $U_\alpha \times V\subset U_\alpha \times V_\alpha
+% \subset N$ we see $U\times V=\bigcup (U_\alpha \times V)\subset N$. As
+% well, for each $\alpha \in\mathcal{A}$ we have $\alpha \times B\subset
+% U_\alpha \times V_\alpha $ so that $B\subset V_\alpha $, implying
+% $B\subset V$. And since the $U_\alpha $ cover $A$ by construction we
+% have $A\times B\subset \bigcup (U_\alpha \times V)\subset U\times V$.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S26, Ex.\,12]

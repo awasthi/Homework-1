@@ -44,25 +44,26 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{mathtools}
+\usepackage{unicode-math}
 
 %% PDFTeX specific
-\usepackage[mathcal]{euscript}
-\usepackage{mathrsfs}
+% \usepackage[mathcal]{euscript}
+% \usepackage{mathrsfs}
 
-\usepackage{cmap}
-\usepackage[T2A,T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[french,german,russian,spanish,english]{babel}
-\babeltags{fr=french,
-           de=german,
-           ru=russian,
-           es=spanish,
-           en=english}
-\def\spanishoptions{mexico}
-\usepackage{CJKutf8}
-\newcommand{\textha}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
-\newcommand{\textni}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
-\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
+% \usepackage{cmap}
+% \usepackage[T2A,T1]{fontenc}
+% \usepackage[utf8]{inputenc}
+% \usepackage[french,german,russian,spanish,english]{babel}
+% \babeltags{fr=french,
+%            de=german,
+%            ru=russian,
+%            es=spanish,
+%            en=english}
+% \def\spanishoptions{mexico}
+% \usepackage{CJKutf8}
+% \newcommand{\textha}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
+% \newcommand{\textni}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
+% \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
 %% Theorems and definitions
 \theoremstyle{plain}
@@ -137,7 +138,8 @@
 \newcommand{\nsubset}{\ensuremath{\not\subset}}
 \newcommand{\nsupset}{\ensuremath{\not\supset}}
 
-\renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
+% \renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
+\renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
 
 %% Commands and operators
 \DeclareMathOperator{\Ass}{Ass}
