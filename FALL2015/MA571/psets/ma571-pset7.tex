@@ -5,19 +5,69 @@ continuous if and only if the \emph{graph} of $f$,
 \[
 G_f=\left\{\,(x,f(x))\;\middle|\;x\in X\,\right\},
 \]
-is closed in $x\times Y$.
+is closed in $X\times Y$.
 \end{theorem*}
 [\emph{Hint:} If $G_f$ is closed and $V$ is a neighborhood of
 $f(x_0)$, then the intersection of $G_f$ and $X\times(Y-V)$ is
 closed. Apply Exercise 7.]
 \end{problem}
 \begin{proof}
+As we demonstrated in Problem 2.7 (Munkres \S18, Ex.\,17) $Y$ is
+Hausdorff if and only if the diagonal,
+$\Delta_Y=\left\{\,(y,y)\;\middle|\;y\in Y\,\right\}$, is a closed
+subset of $Y\times Y$. Consider the map $F\colon X\times Y\to Y\times
+Y$ defined by $(x,y)\mapsto (f(x),y)$. This map is continuous by
+Theorem 18.4 as $f$ is, by assumption, continuous and $\id_Y$ is
+continuous by 18.2(b) (since it is the inclusion $Y\hookrightarrow
+Y$). Then
+\begin{align*}
+F^{-1}(\Delta_Y)
+&=\left\{\,(x,y)\;\middle|\;\text{$F(x,y)\in\Delta_Y$, $x\in X$, $y\in
+  Y$}\,\right\}\\
+&=\left\{\,(x,y)\;\middle|\;\text{$(f(x),y)\in\Delta_Y$, $x\in X$,
+  $y\in Y$}\,\right\}\\
+&=\left\{\,(x,y)\;\middle|\;\text{$f(x)=y$, $x\in X$, $y\in Y$}\,\right\}\\
+&=\left\{\,(x,f(x))\;\middle|\;\text{$x\in X$, $y\in Y$}\,\right\}\\
+&=G_f
+\end{align*}
+is closed by Theorem 18.1(3).
 
+Conversely, suppose $G_f$ is closed in $X\times Y$. Fix a point
+$x_0\in X$ and let $V\subset Y$ be an arbitrary neighborhood of
+$f(x_0)$. Then $Y-V$ is a closed subset of $Y$ so, by Problem 2.1
+(Munkres \S17, Ex.\,3), the product $X\times (Y-V)$ is closed in
+$Y\times Y$. In particular, by Theorem 17.1(2), the intersection
+$B=G_f\cap X\times(Y-V)$ is closed in $X\times Y$. Thus, by Problem
+6.5 (Munkres \S26, Ex.\,7), since $Y$ is a compact Hausdorff space,
+the projection $\pi_1(B)$ onto $X$ is a closed subset of $X$. But the
+intersection
+\begin{align*}
+B
+&=\left\{\,(x,y)\;\middle|\;\text{$(x,y)\in G_f$ and $(x,y)\in X\times
+  (Y-V)$}\,\right\}\\
+&=\left\{\,(x,y)\;\middle|\;\text{$y=f(x)$ and $(x,y)\in X\times
+  (Y-V)$}\right\}\\
+&=\left\{\,(x,f(x))\;\middle|\;f(x)\in Y-V\,\right\}
+\end{align*}
+so we have that $\pi_1(B)=f^{-1}(Y-V)$. One
+containment is easy to see, namely ``$\subset$'': if $x\in B$ then
+$x=\pi_1(x,f(x))$ for at least one $f(x)\in Y-V$. To see the reverse
+inclusion, take $x\in f^{-1}(Y-V)$, then $f(x)\in Y-V$ so $(x,f(x))\in
+U$, thus $x\in\pi_1(U)$. Thus, by Theorem 18.1(3), it follows that $f$
+is continuous.
+% \begin{align*}
+% \pi_1(G_f\cap X\times(Y-V))
+% &=\left\{\,x\;\middle|\;\text{$\pi(x',y)=x$ for at least one
+%   $(x',y)\in G_f\cap X\times(Y-V)$}\,\right\}\\
+% &=\left\{\,x\;\middle|\;\text{$\pi(x',f(x'))=x$ for at least one
+%   $(x,f(x'))\in X\times(Y-V)$}\,\right\}\\
+% &=\left\{\,x\;\middle|\;f(x)\in Y-V \right\}\\
+% &=f^{-1}(Y-V)
+% \end{align*}
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S26, Ex.\,9]
 Generalize the tube lemma as follows:
-\\\\
 \begin{theorem*}
 Let $A$ and $B$ be subspaces of $X$ and $Y$, respectively; let
 $N$ be an open set in $X\times Y$ containing $A\times B$. If $A$
@@ -27,6 +77,8 @@ $X$ and $Y$, respectively, such that
 \end{theorem*}
 \end{problem}
 \begin{proof}
+Keeping the same notation as the prompt of the theorem: Since $A$ and
+$B$ are compact, by Theorem 26.7, $A\times B$ are compact.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S26, Ex.\,12]
