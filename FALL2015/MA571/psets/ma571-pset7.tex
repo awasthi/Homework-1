@@ -154,12 +154,6 @@ nonempty.
 \end{itemize}
 \end{problem}
 \begin{proof}
-% (b) Fix $x\in X$ and consider the map $d_x\colon A\to\RR$ given by
-% $a\mapsto d(x,a)$. We claim that $d_x$ is continuous so, by the
-% intermediate value theorem, $d_x$ reaches a minimum, i.e, there exists
-% points $a,b\in A$ such that $d_x(a)\leq d_x(y)\leq d(b)$ for every
-% $y\in A$, in particular, we have that $d(x,A)=d(x,a)$ (for if $a'\in
-% A$ with $d(x,a')<d(x,a)$ we violate the intermediate value theorem)
 (b) Fix $x\in X$ and consider the map $d_x\colon A\to\RR$ given by
 $a\mapsto d(x,a)$. We claim that $d_x$ is continuous so, assuming this
 has been proven, by the extreme value theorem there exists points
@@ -168,22 +162,30 @@ A$. In particular, we have that $d(x,A)=\inf_{y\in
   A}d(x,y)=d(x,a)=d_x(a)$ ((i) $d_x(a)\leq d_x(y)$ for all $y$; (ii)
 if $d_x(a')\leq d_x(y)$ for all $y\in A$ then $d_x(a)=d_x(a')$ since
 $d_x(a)\leq d_x(y)$ for all $y\in A$).
-\\\\
-(d) The result follows from the Lebesgue number lemma. Consider the
-set of all $\mathcal{A}=\left\{B_d(x,\epsilon)\right\}$ for $x\in U$,
-$\epsilon>0$. Then $\mathcal{A}$ covers $A$ so, by Lemma 26.1 and the
-Lebesgue number lemma, there is a $\delta>0$ such that for each
-$B_d(a,\delta)\subset A$, $B_d(a,\delta)\subset B_d(x,\epsilon)\subset
-U$.
-\end{proof}
-% Now let us prove the following stronger statement about continuity
-% from product spaces:
-% \begin{lemma*}[Munkres \S18, Ex\.,11]
-% Let $f\colon X\times Y\to Z$. We say that $F$ is \emph{continuous in
-%   each variable separately} if for each $y_0$ in $Y$, the map $h\colon
-% X\to Z$ defined by
-% \end{lemma}
 
+That $d_x$ is continuous follows from the following lemma (which we
+shall prove if we have time):
+\begin{lemma*}[Munkres \S18, Ex\.,11]
+Let $f\colon X\times Y\to Z$. We say that $F$ is \emph{continuous in
+  each variable separately} if for each $y_0$ in $Y$, the map $h\colon
+X\to Z$ defined by
+\end{lemma*}
+% (d) Suppose not. Then for every $\epsilon>0$, the open set
+% $U(A,\epsilon)$ contains a point $x\notin U$. By part (c),
+% $U(A,\epsilon)$ is a union of oen balls $B_d(\a,\epsilon)$ for all
+% $a\in A$, so, in particular, this collection covers $A$. Hence, by
+% Lemma 26.1, there is a finite subcollection, say
+% $\left\{B_d(a_i,\epsilon)\right\}_{i=1}^n$ that covers $A$.
+(d) For every $a\in A$, $r>0$ such that $B_d(a,2r)\subset U$ (we are
+guaranteed these exist since $U$ is open in the metric topology)
+consider the collection $\left\{B_d(a,2r)\right\}$. This collection is an open
+cover of $A$, so, by Lemma 26.1, there exists a finite subcollection,
+say $\left\{B_d(a_i,2r_i)\right\}_{i=1}^n$ that covers $A$. Let
+$r=\min\{r_1,...,r_n\}$ and $a$ be the corresponding basepoint for the
+open ball. Then for every $b\in B_d(a_i,r_i)$, we have that
+\[B_d(b,r)\subset B_d(a_i,r_i+\epsilon)\subset B_d(a_i,2r_i)\subset U\]
+so, by part (c), $U(A,\epsilon)=\bigcup_{b\in A}B_d(b,r)\subset U$
+\end{proof}
 \newpage
 \begin{problem}[Munkres \S27, Ex.\,5]
 Let $X$ be a compact Hausdorff space; let $\left\{A_n\right\}$ be
@@ -196,20 +198,6 @@ This is a special case of the \emph{Baire category theorem},
 which we shall study in Chapter 8.
 \end{problem}
 \begin{proof}
-  % Following the idea of Theorem 27.7. If A⊂X is closed, U⊂X is
-  % non-empty and open and U⊄A , then there is a non-empty open
-  % set V⊂X such that V¯¯¯¯⊂U−A . Indeed, since U−A≠∅ , there is
-  % a point x∈U−A , and there are disjoint open neighborhoods W
-  % and V about A∪(X−U) (closed) and x , respectively (Lemma
-  % 26.4), so that x∈V⊂V¯¯¯¯⊂X−(A∪(X−U))=(X−A)∩U=U−A .  We take
-  % any non-empty open set U0 and show that it has a point not in
-  % the union ∪i≥1Ai . For Ai , i≥1 , Ui−1 is non-empty and
-  % Ui−1⊄Ai (Ai has no interior points), hence, there is a
-  % non-empty open set Ui⊂X such that U¯¯¯¯i⊂Ui−1−Ai . We have a
-  % nested sequence of non-empty closed sets U¯¯¯¯i , and their
-  % intersection is nonempty as X is compact, where any point in
-  % the intersection belongs to U¯¯¯¯1⊂U0 but does not belong to
-  % ∪i≥1Ai .
 Mimicking the proof of Theorem 27.7, suppose $A\subset X$ is
 closed and $U\subset X$ is a nonempty open subset such that
 $U\nsubset X$. Then, since $U-A\neq\emptyset$ and $X$ is a
@@ -279,9 +267,12 @@ containing a neighborhood, say $W$, of $x$. Let $U$ be an
 arbitrary neighborhood of $x$. Then $C-U\cap W$ is a closed
 subset of $C$, hence compact in the subspace topology on $C$ so,
 by Lemma 26.1, it is compact in $X$. Moreover, $x\notin C-U\cap
-W$ so by Theorem 26.4, since $X$ is Hausdorff, there exists
+W$ so by Lemma 26.4, since $X$ is Hausdorff, there exists
 disjoint neighborhoods $V_1$ and $V_2$ of $x$ and $C-U\cap W$,
-respectively. Let $V=V_1\cap U\cap W$. Then $V\subset U$ and
+respectively. Now, note that $\overline{V_1}\cap V_2=\emptyset$ for
+otherwise for any point $x\in\overline{V_1}\cap V_2$, $V_2$ is a
+neighborhood of $x$ so $V_1\cap V_2\neq\emptyset$, this is a
+contradiction. Let $V=V_1\cap U\cap W$. Then $V\subset U$ and
 $V\subset C$ and, by Lemma B, $\overline V\subset C$, by Theorem
 26.2, $\overline V$ is compact as desired.
 \end{proof}
@@ -300,16 +291,48 @@ Prove that the quotient space $(S^1\times[0,1])/(S^1\times 0)$
 \end{problem}
 \begin{proof}
 Note that, by Theorem 26.6, it suffices to find a bijective
-continuous function, since $B^2$ is Hausdorff and $CS^1$ is
-compact, by Theorem 26.5. Fix a point $(x_0,y_0,0)\in
-S^1$. Consider the bap $\phi\colon S^1\times[0,1]\to B^2$ given by
-$(x,y,z)\mapsto (1-z)\cdot(x,y)-z(x_0,y_0)$. We will show $\phi$
-is a continuous bijection.
+continuous function $\bar\phi$, since $B^2$ is Hausdorff and $CS^1$ is
+compact, by Theorem 26.5. Consider the map $\phi\colon
+S^1\times[0,1]\to B^2$ given by $(x,y,z)\mapsto (zx,zy)$. We will show
+that the induced map on the quotient space $\bar\phi$ is a continuous
+bijection.
 
-First, to see that $\phi$ is continuous, by Lemma C, it suffices
-to consider only basic open subsets of $B^2$. Therefore, let
-$U=B((x,y),\epsilon)\cap B^2$, for $\epsilon>0$, be a nonempty
-subset of $B^2$. Then $\phi^{-1}(U)$
+To see that $\bar\phi$ is continuous, let $\Phi\colon
+S^1\times[0,1]\to\RR^2$ be $\phi$ with whose codomain has been
+extended. Then, note that $\pi_1\circ\Phi(x,y)=zx$ and
+$\pi_2\circ\Phi(x,y)=zy$ are continuous by Theorem 21.4, so by Theorem
+18.4 and 18.2(e), $\phi$ is continuous. Moreover, if
+$(x_1,y_1,z_1)\sim(x_2,y_2,z_2)$ then $(x_1,y_1,z_1)=(x_2,y_2,z_2)$,
+in which case $\phi(x_1,y_1,z_1)=\phi(x_2,y_2,z_2)$, or
+$(x_1,y_1,0)=(x_2,y_2,0)$ for any $(x_1,y_1,0)\in S^1\times 0$, in
+which case $\phi(x_1,y_1,0)=0=\phi(x_2,y_2,0)$, $\phi$ preserves the
+equivalence relation so by Theorem Q.3, $\bar\phi$ is continuous.
+
+Now we show that $\bar\phi$ is bijective. Surjectivity of $\bar\phi$
+follows from surjectivity of $\phi$. Let $(x,y)\in B^2$ and put
+$z_0=\sqrt{x^2+y^2}$, $y_0=y/z_0$ and $x_0=x/x_0$. Note that
+$x_0^2+y_0^2=x^2/(x^2+y^2)+y^2/(x^2+y^2)=1$ and $\sqrt{x^2+y^2}\leq 1$
+for all $x,y$ so $z\leq 1$ so $(x_0,y_0,z_0)\in S^1\times[0,1]$. Thus,
+$\phi(x_0,y_0,z_0)=(x,y)$ so $\phi$ is surjective. This implies that
+$\bar\phi$ is surjective.
+
+Finally, to see that $\bar\phi$ is injective suppose
+$\bar\phi([x_1,y_1,z_1])=\bar\phi([x_2,y_2,z_2])$ then
+\[
+\tag{(*)}
+(z_1x_1,z_1y_1)=z_1(x_1,y_1)=z_2(x_2,y_2)=(z_2x_2,z_2y_2)
+\]
+so, if $z_1=0$ we must have $z_2=0$ since $(0,0)\notin S^1$, hence
+$(x_1,y_1,z_1)=(x_1,y_1,0)$ and $(x_2,y_2,z_2)=(x_2,y_2,0)$ so
+$(x_1,y_1,z_1)\sim(x_2,y_2,z_2)$, if $z_1\neq 0$ then we can divide by
+$z_1$ on both sides and we must have $z_2=z_1$ since
+$\sqrt{(z_2x_2/z_1)^2+(z_2y/z_1)^2}=|z_2/z_1|\sqrt{x_2^2+y_2^2}=1$ and
+$z_1,z_2\geq 0$ so, in fact, we have $(x_1,y_1,z_1)=(x_2,y_2,z_2)$ so
+in particular $(x_1,y_1,z_1)\sim(x_2,y_2,z_2)$. Thus, $\bar\phi$ is
+injective.
+
+We conclude, by Theorem 26.6, that $\phi$ is a homeomorphism and
+$CS^1\cong B^2$.
 \end{proof}
 
 %%% Local Variables:
