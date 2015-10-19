@@ -196,7 +196,40 @@ This is a special case of the \emph{Baire category theorem},
 which we shall study in Chapter 8.
 \end{problem}
 \begin{proof}
-
+  % Following the idea of Theorem 27.7. If A⊂X is closed, U⊂X is
+  % non-empty and open and U⊄A , then there is a non-empty open
+  % set V⊂X such that V¯¯¯¯⊂U−A . Indeed, since U−A≠∅ , there is
+  % a point x∈U−A , and there are disjoint open neighborhoods W
+  % and V about A∪(X−U) (closed) and x , respectively (Lemma
+  % 26.4), so that x∈V⊂V¯¯¯¯⊂X−(A∪(X−U))=(X−A)∩U=U−A .  We take
+  % any non-empty open set U0 and show that it has a point not in
+  % the union ∪i≥1Ai . For Ai , i≥1 , Ui−1 is non-empty and
+  % Ui−1⊄Ai (Ai has no interior points), hence, there is a
+  % non-empty open set Ui⊂X such that U¯¯¯¯i⊂Ui−1−Ai . We have a
+  % nested sequence of non-empty closed sets U¯¯¯¯i , and their
+  % intersection is nonempty as X is compact, where any point in
+  % the intersection belongs to U¯¯¯¯1⊂U0 but does not belong to
+  % ∪i≥1Ai .
+Mimicking the proof of Theorem 27.7, suppose $A\subset X$ is
+closed and $U\subset X$ is a nonempty open subset such that
+$U\nsubset X$. Then, since $U-A\neq\emptyset$ and $X$ is a
+compact Hausdorff space, by Theorem 26.2, the union $A\cup (X-U)$
+is compact so, by Theorem 26.4, there exist disjoint
+neighborhoods $W$ and $V$ about $A\cup(X-U)$ and $x$,
+respectively, such that
+\[\overline V\subset X-(A\cup(X-U))=(X-A)\cap U=U-A.\]
+Now we show that any nonempty open set, $U_0$, has a point that
+is not in the union $\bigcup A_n$. For $A_i$, $i\geq 1$,
+$U_{i-1}$ is a nonempty open subset such that $U_{i-1}\nsubset
+A_i$, hence, there is a nonempty open set $U_i\subset X$ such
+that $\overline U_i\subset U_{i-1}-A_i$. We thus have a nested
+sequence of nonempty closed subsets
+\[
+\overline{U_1}\subset\overline{U_2}\subset\cdots
+\]
+and their intersection is nonempty since $X$ is compact, such
+that any point $x\in\bigcap\overline{U_i}$ belongs to $U_0$, but
+not to $\bigcup A_n$.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S29, Ex.\,2(a)]
@@ -237,10 +270,20 @@ compact by Lemma 15.
 \begin{problem}[Munkres \S29, Ex.\,10]
 Show that if $X$ is a Hausdorff space that is locally compact at
 the point $x$, then for each neighborhood $U$ of $x$, there is a
-neighborhood $V$ of $x$ such that $V$ is compact and $\overline
-V\subset U$.
+neighborhood $V$ of $x$ such that $\overline V$ is compact and
+$\overline V\subset U$.
 \end{problem}
 \begin{proof}
+Since $x$ is locally compact, there exists a compact set $C$
+containing a neighborhood, say $W$, of $x$. Let $U$ be an
+arbitrary neighborhood of $x$. Then $C-U\cap W$ is a closed
+subset of $C$, hence compact in the subspace topology on $C$ so,
+by Lemma 26.1, it is compact in $X$. Moreover, $x\notin C-U\cap
+W$ so by Theorem 26.4, since $X$ is Hausdorff, there exists
+disjoint neighborhoods $V_1$ and $V_2$ of $x$ and $C-U\cap W$,
+respectively. Let $V=V_1\cap U\cap W$. Then $V\subset U$ and
+$V\subset C$ and, by Lemma B, $\overline V\subset C$, by Theorem
+26.2, $\overline V$ is compact as desired.
 \end{proof}
 \newpage
 \begin{problem}[A]
@@ -256,6 +299,17 @@ Prove that the quotient space $(S^1\times[0,1])/(S^1\times 0)$
 (see HW \#4 for the notation) is homeomorphic to $B^2$.
 \end{problem}
 \begin{proof}
+Note that, by Theorem 26.6, it suffices to find a bijective
+continuous function, since $B^2$ is Hausdorff and $CS^1$ is
+compact, by Theorem 26.5. Fix a point $(x_0,y_0,0)\in
+S^1$. Consider the bap $\phi\colon S^1\times[0,1]\to B^2$ given by
+$(x,y,z)\mapsto (1-z)\cdot(x,y)-z(x_0,y_0)$. We will show $\phi$
+is a continuous bijection.
+
+First, to see that $\phi$ is continuous, by Lemma C, it suffices
+to consider only basic open subsets of $B^2$. Therefore, let
+$U=B((x,y),\epsilon)\cap B^2$, for $\epsilon>0$, be a nonempty
+subset of $B^2$. Then $\phi^{-1}(U)$
 \end{proof}
 
 %%% Local Variables:
