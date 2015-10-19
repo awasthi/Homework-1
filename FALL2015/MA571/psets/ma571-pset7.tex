@@ -67,35 +67,33 @@ $X$ and $Y$, respectively, such that
 \end{theorem*}
 \end{problem}
 \begin{proof}
-We first prove the theorem for the case in which $A=\{a\}$. Since
-$a\times B$ is canonically homeomorphic to $B$, by Theorem 26.5,
-$a\times B$ is compact. Therefore, for every covering by open
-subsets $\left\{ U_\alpha \right\}$ of $a\times B$,
-$U_\alpha\subset X\times Y$, there exists a finite subcollection,
-say $\left\{ U_i \right\}_{i=1}^n$ covering $a\times B$.
+The idea is to construct an appropriate covering of $A\times B$ using
+both compactness of $A$ and compactness of $B$ that will give us the
+open sets that we want. Fix an $a\in A$. Then, for every $b\in B$
+there exists neighborhoods $U_b\subset X$ and $V_b\subset Y$ of $a$
+and $b$, respectively, such that $U_b\times V_b\subset N$ (by the
+definition of the product topology and since $N$ is open). Then, since
+$B$ is compact, by Lemma 26.1, there exists a finite subcollection,
+say $\{V_i\}_{i=1}^{n_a}$, that covers $B$. Let $U_a=\bigcup_{i=1}^{n_a} U_i$
+and $V_a=\bigcup_{i=1}^{n_a} V_i$. Varying this over every $a\in A$,
+we obtain an open cover $\left\{U_a\times V_a\right\}_{a\in A}$; let's
+verify this: Let $(a,b)\in A\times B$, then $a\in
+U_a=\bigcup_{i=1}^{n_a}U_i$ (since each $U_i$ is in fact a
+neighborhood of $a$) and $b\in V_a=\bigcup_{i=1}^{n_a}V_i$ so $b\in
+V_i$ for some $1\leq q\leq n_a$. Thus, by Theorem 26.7, there exists a
+finite subcollection $\left\{ U_i\times V_i \right\}_{i=1}^n$ covering
+$A\times B$. Take $U=\bigcup_{i=1}^n U_i$ and $V=\bigcap_{i=1}^n
+V_i$. Then, we claim that $A\times B\subset U\times V\subset N$.
 
-% We first show the partially generalized lemma when $A=\{a\}$ is a
-% single point. Since $a\times B\cong B$ is compact, we obtain $$a\times
-% B\subset \bigcup(U_i\times V_i)$$ when $U_i\subset X$ and $V_i\subset
-% Y$ are open, for finitely many indices $i$. We may assume each $U_i$
-% is a neighborhood of $a$. We let $U=\bigcap U_i$ and $V=\bigcup V_i$
-% and claim they satisfy the lemma presented; this is evident since
-% $U\times V_i\subset U_i\times V_i\subset N$ for all $i$ hence $U\times
-% V=\bigcup (U\times V_i)\subset N$, and also $a\times b\in a\times B$
-% implies $b\in V_i$ for some $i$ so $a\times B\subset U\times V$.
-
-% So by this partially generalized tube lemma, for each $a\in A$ let
-% $U_a\subset X$ be a neighborhood of $a$ and $V_a\subset Y$ be open
-% such that $U_a\times V_a\subset N$. Since $A$ is compact, we may
-% choose a finite subset $\mathcal{A}\subset A$ such that $A\subset
-% \bigcup_{\alpha \in\mathcal{A}}U_\alpha $. We let $U=\bigcup U_\alpha
-% $ and $V=\bigcap V_\alpha $ and claim they satisfy the lemma
-% presented. Since $U_\alpha \times V\subset U_\alpha \times V_\alpha
-% \subset N$ we see $U\times V=\bigcup (U_\alpha \times V)\subset N$. As
-% well, for each $\alpha \in\mathcal{A}$ we have $\alpha \times B\subset
-% U_\alpha \times V_\alpha $ so that $B\subset V_\alpha $, implying
-% $B\subset V$. And since the $U_\alpha $ cover $A$ by construction we
-% have $A\times B\subset \bigcup (U_\alpha \times V)\subset U\times V$.
+It is clear, by construction of $U$ and $V$, that $U\times V\subset N$
+(and this follows from Lemma 5 proved on Homework 2, i.e.,
+if $A,B\subset C$ then $A\cup B,A\cap B\subset C$). To see that
+$A\times B\subset U\times V$ take $(a,b)\in A\times B$. Then $a\in
+U_i$ for some $1\leq i\leq n$ and $b\in V_i$ for all $i$ (since
+$V_i\supset B$ for all $1\leq i\leq n$)so $(a,b)\in U\times V$. Thus,
+we have
+\[A\times B\subset U\times V\subset N\]
+as desired.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S26, Ex.\,12]
@@ -109,7 +107,39 @@ is a neighborhood $W$ of $y$ such that $p^{-1}(W)$ is contained
 in $U$.]
 \end{problem}
 \begin{proof}
-
+First we shall prove Munkres's hint:
+\begin{claim*}
+Let $p\colon X\to Y$ be a closed map. If $U$ is an open subset
+containing $p^{-1}(y)$ for some $y\in Y$, there exists a neighborhood
+$W$ of $y$ such that $p^{-1}(W)\subset U$.
+\end{claim*}
+\begin{proof}[Proof of claim]
+\renewcommand\qedsymbol{$\clubsuit$}
+Let $y\in Y$. Suppose that $U$ is an open subset containing
+$p^{-1}(y)$. Then, $X-U$ is closed so $p(X-U)$ is closed. In
+particular, $y\notin p(X-U)$ (for if it were, we would have
+$p^{-1}(y)\subset X-U$, but $U\supset p^{-1}(y)$). Thus $Y-p(X-U)$ is
+a neighborhood of $y$ so
+\[
+p^{-1}(Y-p(X-U))=p^{-1}(Y)-p^{-1}(p(X-U))=X-p^{-1}(p(X-U))\subset U
+\]
+since, by Problem 1.1(a) (Munkres \S2, Ex.\,1(a)), we have that
+$p^{-1}(p(X-U))\supset X-U$.
+\end{proof}
+Now let $\left\{ U_\alpha \right\}$ be an open cover of $X$. Then,
+since $p^{-1}(y)\subset X=\bigcup U_\alpha$ is compact, by Lemma 26.1,
+there exists a finite subcollection, say $\{U_i\}_{i=1}^{n_y}$, that
+covers $p^{-1}(y)$. Let $U_y=\bigcup_{i=1}^{n_y} U_i$. Then, by the
+claim, there exists $W_y$ neighborhood of $y$ such that
+$p^{-1}(W_y)\subset\bigcup_{i=1}^{n_y}U_i$. We can do this for every
+$y\in Y$. In particular, we see that the collection $\{W_y\}_{y\in Y}$
+is an open cover of $Y$ so, since $Y$ is compact, there exists a
+finite subcollection, say $\{W_{y_i}\}_{i=1}^n$, that covers $Y$. Then
+$p^{-1}(W_{y_i})\subset U_{y_i}$ and
+\[
+X=p^{-1}(Y)=\bigcup_{i=1}^{n} p^{-1}(W_{y_i})\subset\bigcup_{i=1}^n U_{y_i}.
+\]
+Thus, $X$ is compact.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S27, Ex.\,2(b,d)]
@@ -124,7 +154,36 @@ nonempty.
 \end{itemize}
 \end{problem}
 \begin{proof}
+% (b) Fix $x\in X$ and consider the map $d_x\colon A\to\RR$ given by
+% $a\mapsto d(x,a)$. We claim that $d_x$ is continuous so, by the
+% intermediate value theorem, $d_x$ reaches a minimum, i.e, there exists
+% points $a,b\in A$ such that $d_x(a)\leq d_x(y)\leq d(b)$ for every
+% $y\in A$, in particular, we have that $d(x,A)=d(x,a)$ (for if $a'\in
+% A$ with $d(x,a')<d(x,a)$ we violate the intermediate value theorem)
+(b) Fix $x\in X$ and consider the map $d_x\colon A\to\RR$ given by
+$a\mapsto d(x,a)$. We claim that $d_x$ is continuous so, assuming this
+has been proven, by the extreme value theorem there exists points
+$a,b\in A$ such that $d_x(a)\leq d_x(y)\leq d_x(b)$ for every $y\in
+A$. In particular, we have that $d(x,A)=\inf_{y\in
+  A}d(x,y)=d(x,a)=d_x(a)$ ((i) $d_x(a)\leq d_x(y)$ for all $y$; (ii)
+if $d_x(a')\leq d_x(y)$ for all $y\in A$ then $d_x(a)=d_x(a')$ since
+$d_x(a)\leq d_x(y)$ for all $y\in A$).
+\\\\
+(d) The result follows from the Lebesgue number lemma. Consider the
+set of all $\mathcal{A}=\left\{B_d(x,\epsilon)\right\}$ for $x\in U$,
+$\epsilon>0$. Then $\mathcal{A}$ covers $A$ so, by Lemma 26.1 and the
+Lebesgue number lemma, there is a $\delta>0$ such that for each
+$B_d(a,\delta)\subset A$, $B_d(a,\delta)\subset B_d(x,\epsilon)\subset
+U$.
 \end{proof}
+% Now let us prove the following stronger statement about continuity
+% from product spaces:
+% \begin{lemma*}[Munkres \S18, Ex\.,11]
+% Let $f\colon X\times Y\to Z$. We say that $F$ is \emph{continuous in
+%   each variable separately} if for each $y_0$ in $Y$, the map $h\colon
+% X\to Z$ defined by
+% \end{lemma}
+
 \newpage
 \begin{problem}[Munkres \S27, Ex.\,5]
 Let $X$ be a compact Hausdorff space; let $\left\{A_n\right\}$ be
@@ -137,10 +196,11 @@ This is a special case of the \emph{Baire category theorem},
 which we shall study in Chapter 8.
 \end{problem}
 \begin{proof}
+
 \end{proof}
 \newpage
-\begin{problem}[Munkres \S28, Ex.\,2(a)]
-Let $\left\{X_\alpha\right\}$ be a nindexed family of nonempty
+\begin{problem}[Munkres \S29, Ex.\,2(a)]
+Let $\left\{X_\alpha\right\}$ be an indexed family of nonempty
 spaces.
 \begin{itemize}
 \item[(a)] Show that if $\prod X_\alpha$ is locally compact, then
@@ -148,19 +208,37 @@ spaces.
   for all but finitely many values of $\alpha$.
 \end{itemize}
 \end{problem}
-\begin{proof}
+\begin{proof}[Proof of (a)]
+Suppose $X=\prod X_\alpha$ is locally compact. Then, for every
+$\mathbf{x}\in X$, there exist a compact set $C$ containing an open
+neighborhood $U$ of $\mathbf{x}$. We may, without loss of generality,
+assume $U=\prod U_\alpha$ where $U_\alpha=X_\alpha$ for all but
+finitely many $X_\alpha$. Suppose $U_\beta=X_\beta$. Then
+$\pi_\beta(C)=X_\beta$ is compact by Theorem 26.5. It follows that
+each $X_\alpha$ is compact for all but finitely man $\alpha$. To see
+that each $X_\alpha$ is also locally compact we prove the following
+stronger result:
+\begin{lemma}[Munkres \S20, Ex.\,3]
+If $f\colon X\to Y$ is a continuous and open, then $f(X)$ is locally
+compact.
+\end{lemma}
+\begin{proof}[Proof of lemma]
+\renewcommand\qedsymbol{$\clubsuit$}
+Since $X$ is locally compact, then for every $x\in X$ there exists a
+compact set $C$ containing a neighborhood $U$ of $x$. Then,
+$f(U)\subset f(C)$ is a compact set, by Theorem 26.5, containing a
+neighborhood, namely $f(U)$, of $f(x)$. Thus, $f(X)$ is locally compact.
+\end{proof}
+Now, since $\pi_\alpha$ is an open map (generalization of Munkres
+\S16, Ex.\,4), it follows that $\pi_\alpha(X)=X_\alpha$ is locally
+compact by Lemma 15.
 \end{proof}
 \newpage
-\begin{problem}[Munkres \S28, Ex.\,10]
+\begin{problem}[Munkres \S29, Ex.\,10]
 Show that if $X$ is a Hausdorff space that is locally compact at
 the point $x$, then for each neighborhood $U$ of $x$, there is a
 neighborhood $V$ of $x$ such that $V$ is compact and $\overline
 V\subset U$.
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-\begin{problem}
 \end{problem}
 \begin{proof}
 \end{proof}
