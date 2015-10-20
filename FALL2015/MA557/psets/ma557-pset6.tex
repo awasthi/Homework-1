@@ -26,6 +26,17 @@ contains an $R$-regular element or else $aI=0$ for some $0\neq
 a\in R$.
 \end{problem}
 \begin{proof}
+Suppose $R$ is a Noetherian ring and $I\subset R$ an ideal. Then, by
+3.2, $I$ is finitely generated, say $I=(a_1,...,a_n)$, for
+$a_1,...,a_n\in R$. Then, either $I$ contains an $R$-regular element
+or it does not. If $I$ does not contain an $R$-regular element, then
+for every $a_i$ there exists $x_i\in R$ such that $a_ix_i=0$. Thus,
+$I\subset\bigcup_{i=1}^n\ann(x_i)$, but each
+$\ann(x_i)\subset\mathfrak{p}_i$ for some $\mathfrak{p}\in\Ass(R)$ so
+$I\subse\bigcup_{i=1}^m\mathfrak{p}_i$ for $m\leq n$. By the prime
+avoidance lemma, 1.7, it follows that
+$I\subset\mathfrak{p}_i=\ann(y_i)$ for some $1\leq i\leq m$. Thus,
+$y_iI=0$.
 \end{proof}
 \newpage
 \begin{problem}
@@ -34,6 +45,7 @@ $I_{\mathfrak{p}}=J_{\mathfrak{p}}$ for every associated prime
 $\mathfrak{p}$ of $I$, then $I=J$.
 \end{problem}
 \begin{proof}
+
 \end{proof}
 \newpage
 \begin{problem}
