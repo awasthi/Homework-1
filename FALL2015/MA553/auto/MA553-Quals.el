@@ -2,7 +2,7 @@
  "MA553-Quals"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("xcolor" "dvipsnames") ("enumitem" "inline") ("euscript" "mathcal") ("fontenc" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "german" "russian" "spanish" "english")))
+                     '(("xcolor" "dvipsnames") ("enumitem" "inline") ("fontenc" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "german" "russian" "spanish" "english")))
    (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
@@ -23,8 +23,6 @@
     "amsthm"
     "amssymb"
     "mathtools"
-    "euscript"
-    "mathrsfs"
     "cmap"
     "fontenc"
     "inputenc"
