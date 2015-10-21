@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.10.13)  20 OCT 2015 18:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.14)  21 OCT 2015 01:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1553,17 +1553,8 @@ File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 
 
 
-]
-./psets/ma557-pset6.tex:36: Undefined control sequence.
-l.36 $I\subse
-             \bigcup_{i=1}^m\mathfrak{p}_i$ for $m\leq n$. By the prime
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[2] [3] [4] [5]) [6]
+] [2] [3] [4] [5])
+[6]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 201.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 201.
  (./MA557-HW-Current.aux (./psets/ma557-pset6.aux))
@@ -1575,8 +1566,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 201.
  ) 
 Here is how much of TeX's memory you used:
  17653 strings out of 493089
- 248948 string characters out of 6140693
- 437807 words of memory out of 5000000
+ 248948 string characters out of 6140694
+ 437798 words of memory out of 5000000
  20761 multiletter control sequences out of 15000+600000
  19079 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1596,7 +1587,7 @@ usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf
 e1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-su
 per/sfti0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pf
 b></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb>
-Output written on MA557-HW-Current.pdf (8 pages, 187934 bytes).
+Output written on MA557-HW-Current.pdf (8 pages, 185753 bytes).
 PDF statistics:
  118 PDF objects out of 1000 (max. 8388607)
  85 compressed objects within 1 object stream
