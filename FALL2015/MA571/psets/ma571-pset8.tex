@@ -114,6 +114,22 @@ topology. [\emph{Hint:} The induced map
 $E\colon\mathcal{C}'(X,Y)\to\mathcal{C}(X,Y)$ is continuous.]
 \end{problem}
 \begin{proof}
+Suppose that the evaluation map $e\colon
+X\times\mathcal{C}'(X,Y)\longrightarrow Y$ is continuous. Then,
+by Theorem 46.11 the induced map
+$E\colon\mathcal{C}'(X,Y)\to\mathcal{C}(X,Y)$ in
+\[
+X\times\mathcal{C}'(X,Y)\xrightarrow{\;(\id_X,E)\;}
+X\times\mathcal{C}(X,Y)\xrightarrow{\;e'\;}
+Y
+\]
+is continuous. In fact, it is easy to see that the induced map
+$E$ is the identity map on $\mathcal{C}(X,Y)$ for
+$e(x,f)=f(x)=f'(x)=e'(f',x)=e'(E(f),x)$ for all $x$ so
+$f=f'$. Now, let $S(C,U)$ be a subbasic open set in
+$\mathcal{C}(X,U)$. Then $E^{-1}(S(C,U))=S(C,U)$ is open in
+$\mathcal{C}'(X,Y)$. Thus $\mathcal{T}$ is finer than the
+compact-open topology.
 \end{proof}
 \newpage
 \begin{problem}[(A)]
@@ -129,6 +145,36 @@ $W\neq X$. Prove that the one-point compactification of $W$ is
 homeomorphic to the quotient space $X/(X-W)$.
 \end{problem}
 \begin{proof}
+Let $W_\infty$ denote the one-point compactification of $W$ and
+define the map $p\colon X\to W_\infty$ by
+\[
+p(x)=\begin{cases}x,&x\in W\\\infty,&x\in X-W.\end{cases}
+\]
+By Proposition Q.5, it suffices to show that $p$ is a ``Munkres
+quotient map.'' First, we note that the restriction
+$\restr{p}{W}$ gives a homeomorphism of $W\approx p(W)$ (in fact,
+they are equivalent as sets) so by abuse of notation we will
+omit the preimage notation for subsets of $W$ in the
+compactification since such subsets are identical when viewed as
+subsets of $W$ as a subspace of $X$. Now, it is clear that $p$ is
+surjective for $p(X)=p(W\cup(X-W))=p(W)\cup
+p(X-W)=W\cup\{\infty\}=W_\infty$. Then we must show that $U$ is
+open in $W_\infty$ if and only if $p^{-1}(U)$ is open in
+$X$. Suppose $U$ is a type 1 open subset of $W_\infty$, that is,
+$U$ does not contain the point at infinity. Then $U\subset W$ so
+is open in $X$ by Theorem 16.2. Suppose that $U$ is a type 2 open
+subset of $W_\infty$. Then $C=W_\infty-U$ is a compact subset of
+$W_\infty$. Moreover $C\subset W$ so $C$ is a compact subset of
+$X$, that is to say, if $\{U_\alpha\}$ is an open cover of $C$ in
+$X$, then $\{U_\alpha\cap W\}$ is an open cover of $C$ in $W$ and
+since $C$ is compact in $W$, there exists a finite subcollection
+$\{U_i\cap W\}_{i=1}^n$ in $Y$ that covers $C$ hence, the
+collection $\{U_i\}_{i=1}^n$ is a finite subcollection in $X$
+that covers $C$. It follows by Theorem 26.3 that $C$ is
+closed. Conversely, suppose that $p^{-1}(U)$ is open in
+$X$. Then, either $p^{-1}(U)\subset W$, in which case $U\subset
+W_\infty$ is open by definition of the one-point
+compactification, or $p^{-1}(U)\cap X-W\neq\emptyset$.
 \end{proof}
 \newpage
 \begin{problem}[(B)]
