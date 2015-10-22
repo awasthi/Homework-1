@@ -55,6 +55,52 @@ throughout. [\emph{Hint:} If $g\circ f\in S(C,U)$, find $V$ such
 that $f(C)\subset V$ and $g\bigl(\overline{V}\bigr)\subset U$.]
 \end{problem}
 \begin{proof}
+Let
+$F\colon\mathcal{C}(X,Y)\times\mathcal{C}(Y,Z)\to\mathcal{C}(X,Z)$
+given by $(f,g)\mapsto g\circ f$. Suppose $g\circ f\in
+S(C,U)$. Then $g(f(C))\subset U$ and since is continuous, we have
+that $g^{-1}(U)$ is an open set containing $f(C)$. Thus, by
+theorem 29.2, for every $x\in f(C)$ there exists an open
+neighborhood $V_x$ of $x$ such that $\overline{V_x}\subset
+g^{-1}(U)$ is compact. Then the collection of all such open
+neighborhoods, $\left\{V_x\right\}_{x\in f(C)}$, forms an open
+cover of $f(C)$. Since $f(C)$ is compact, by Theorem 26.5 since
+$C$ is compact and $f$ is continuous, then by Lemma 26.1 there
+exists a finite subcollection, say $\left\{V_i\right\}_{i=1}^n$,
+that covers $C$. Let $V=\bigcup_{i=1}^n V_i$. We claim that
+$\overline{V}\subset U$ and is compact. More generally, we
+have
+\begin{lemma}[Munkres \S 26, Ex.\,3]
+A finite union of compact subspaces of $X$ is compact.
+\end{lemma}
+\begin{proof}[Proof of lemma]
+\renewcommand\qedsymbol{$\clubsuit$}
+Suppose $C_1,...,C_n\subset X$ are compact and write
+$C=\bigcup_{i=1}^n C_i$. Let
+$\mathcal{A}=\left\{U_\alpha\right\}$ be an open cover of
+$C$. Then $C_i\subset\bigcup U_\alpha$ so, since $C_i$ is
+compact, there exists a finite subcollection
+$\mathcal{A}_i=\left\{U_j^i\right\}_{j=1}^{n_i}$ that covers
+$C_i$. Then $\mathcal{B}=\bigcup_{i=1}^n\mathcal{A}_i$ is a
+finite subcollection of $\mathcal{A}$ that covers $C$, i.e., $C$
+is compact.
+\end{proof}
+By Lemma 16, $\overline{V}$ is compact since, by induction on
+Problem 2.2 (Munkres \S 17, Ex.\,6(b)), it is the union of
+finitely many compact sets
+$\overline{V}=\bigcup_{i=1}^n\overline{V_i}$. Moreover, by Lemma
+5 (from HW \# 2\footnote{This states that if $A_\alpha\subset C$
+  then $\bigcup   A_\alpha\subset C$.}) we have that
+$f(C)\subset V\subset\overline{V}\subset g^{-1}(U)$. At last,
+tying these results together, we have
+\[
+F\left(S(C,V)\times\left(\overline{V},U\right)\right)\subset S(C,U),
+\]
+since $f'\in S(C,V)$ if $f'(C)\subset V$ and $g'\in
+S\left(\overline{V},U\right)$ if
+$g'\left(\overline{V}\right)\subset U$ so $g'(f'(C))\subset
+g'\left(\overline{V}\right)\subset U$ so $g'\circ f'\in
+S(C,U)$. It follows, by Theorem 18.1(4), that $F$ is continuous.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S 46, Ex.\,8]
