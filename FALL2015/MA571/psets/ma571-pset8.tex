@@ -5,28 +5,45 @@ regular. [\emph{Hint:} If $\overline U\subset V$, then
 $\overline{S(C,U)}\subset S(C,V)$.]
 \end{problem}
 \begin{proof}
-% We will first prove the following fact:
-% \begin{lemma*}
-% If $C\subset X$ is finite, it is compact.
-% \end{lemma*}
-% \begin{proof}
-% \renewcommand\qedsymbol{$\clubsuit$}
-% Let $C\subset X$ be finite. Put $C=\{x_1,...,x_n\}$ and let
-% $\left\{U_\alpha\right\}$ be an open cover of $C$. Suppose that there is no
-% finite subcollection of $\left\{U_\alpha\right\}$ which covers $C$. Then,
-% for every $U_\alpha$ there is a distinct point $x\in C\cap U_\alpha$. This
-% contradicts the fact that $C$ is finite.
-% \end{proof}
-% Now, suppose $Y$ is Hausdorff. Let $f,g\in\mathcal{C}(X,Y)$ with $f\neq g$,
-% i.e., there exists a point $x_0\in X$ such that $f(x_0)\neq g(x_0)$. Since
-% $Y$ is Hausdorff, there exists disjoint neighborhoods $U$ and $V$ of
-% $f(x_0)$ and $g(x_0)$, respectively. Let $U'=S(\{x_0\},U)$ and
-% $V'=S(\{x_0\},V)$; note that $\{x_0\}$ is compact by the lemma and $U'$ and
-% $V'$ are subbasis elements of the compact-open topology by the definition
-% on Munkres \S 46, p.\,285. Then $U'\cap V'=\emptyset$ for otherwise, there
-% is a function $h\in U'\cap V'$ such that $h(x_0)\in U\cap V$, but this
-% contradicts $U\cap V=\emptyset$. Thus, $\mathcal{C}(X,Y)$ is Hausdorff.
+Suppose that $Y$ is Hausdorff. Let $f$ and $g$ be distinct
+continuous functions from $X$ to $Y$. Then there exists a point
+$x_0\in X$ such that $f(x_0)\neq g(x_0)$. Since $Y$ is Hausdorff
+there exists disjoint neighborhoods $U$ and $V$ of $f(x_0)$ and
+$g(x_0)$, respectively. Now, we claim that
+\begin{claim*}
+If $C\subset X$ is finite, $C$ is compact.
+\end{claim*}
+\begin{proof}
+\renewcommand\qedsymbol{$\clubsuit$}
+Write $C=\{x_1,...,x_n\}$. Let $\mathcal{A}$ be an open cover of
+$C$. Then since $C\subset\bigcup_{U_\alpha\in\mathcal{A}}
+U_\alpha$ we can choose $A_i$ containing $x_i$ for every $1\leq
+i\leq n$. Thus, the subcollection $\left\{U_i\right\}_{i=1}^n$
+covers $C$.
+\end{proof}
+Let $U'=S\left(\left\{x_0\right\},U\right)$ and
+$V'=S\left(\left\{x_0\right\},V\right)$. Note that $U'$ and $V'$
+are nonempty since $f\in U'$ and $g\in V'$. Moreover, their
+intersection is empty for suppose $h\in U'\cap V'$, then
+$h(x_0)\in U\cap V$, but $U\cap V=\emptyset$. Then, since $U'$
+and $V'$ are subbasis elements for the compact-open topology on
+$\mathcal{C}(X,Y)$ and they ``separate'' $f$ and $g$, it follows
+that $\mathcal{C}(X,Y)$ is Hausdorff.
 
+Now, suppose that $Y$ is regular. We shall proceed by the
+hint and Lemma 31.1(b). Consider the subbasis element
+$S(C,U)$. Since $Y$ is regular, there exists a neighborhood
+$V\supset U$ such that $V\supset\overline{U}$. Let
+$f\in\overline{S(C,U)}$. Then, we claim that $f\in S(C,V)$. For
+suppose not, then there exists an element $x_0\in C$ such that
+$f(x_0)\notin V$. Then, since $\overline{U}\subset V$, by
+hypothesis, $f(x_0)\notin\overline{U}$. Consider the subbasic
+neighborhood $S\left(\left\{x_0\right\},Y-\overline{U}\right)$ of
+$f$. Then, $S\left(\left\{x_0\right\},Y-\overline{U}\right)\cap
+S(C,U)$ is nonempty. Let $g$ be in the aforementioned
+intersection. Then $g(x_0)\in g(C)\subset U$, but $g(x_0)\in
+Y-\overline{U}$. This is a contradiction. It follows by Lemma
+31.1(b) that $\mathcal{C}(X,Y)$ is regular.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S 46, Ex.\,7]
