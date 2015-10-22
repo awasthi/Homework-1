@@ -5,30 +5,28 @@ regular. [\emph{Hint:} If $\overline U\subset V$, then
 $\overline{S(C,U)}\subset S(C,V)$.]
 \end{problem}
 \begin{proof}
-We will first prove the following fact:
-\begin{lemma*}
-If $C\subset X$ is finite, it is compact.
-\end{lemma*}
-\begin{proof}
-\renewcommand\qedsymbol{$\clubsuit$}
-Let $C\subset X$ be finite. Put $C=\{x_1,...,x_n\}$ and let
-$\left\{U_\alpha\right\}$ be an open cover of $C$. Suppose that there is no
-finite subcollection of $\left\{U_\alpha\right\}$ which covers $C$. Then,
-for every $U_\alpha$ there is a distinct point $x\in C\cap U_\alpha$. This
-contradicts the fact that $C$ is finite.
-\end{proof}
-Now, suppose $Y$ is Hausdorff. Let $f,g\in\mathcal{C}(X,Y)$ with $f\neq g$,
-i.e., there exists a point $x_0\in X$ such that $f(x_0)\neq g(x_0)$. Since
-$Y$ is Hausdorff, there exists disjoint neighborhoods $U$ and $V$ of
-$f(x_0)$ and $g(x_0)$, respectively. Let $U'=S(\{x_0\},U)$ and
-$V'=S(\{x_0\},V)$; note that $\{x_0\}$ is compact by the lemma and $U'$ and
-$V'$ are subbasis elements of the compact-open topology by the definition
-on Munkres \S 46, p.\,285. Then $U'\cap V'=\emptyset$ for otherwise, there
-is a function $h\in U'\cap V'$ such that $h(x_0)\in U\cap V$, but this
-contradicts $U\cap V=\emptyset$. Thus, $\mathcal{C}(X,Y)$ is Hausdorff.
+% We will first prove the following fact:
+% \begin{lemma*}
+% If $C\subset X$ is finite, it is compact.
+% \end{lemma*}
+% \begin{proof}
+% \renewcommand\qedsymbol{$\clubsuit$}
+% Let $C\subset X$ be finite. Put $C=\{x_1,...,x_n\}$ and let
+% $\left\{U_\alpha\right\}$ be an open cover of $C$. Suppose that there is no
+% finite subcollection of $\left\{U_\alpha\right\}$ which covers $C$. Then,
+% for every $U_\alpha$ there is a distinct point $x\in C\cap U_\alpha$. This
+% contradicts the fact that $C$ is finite.
+% \end{proof}
+% Now, suppose $Y$ is Hausdorff. Let $f,g\in\mathcal{C}(X,Y)$ with $f\neq g$,
+% i.e., there exists a point $x_0\in X$ such that $f(x_0)\neq g(x_0)$. Since
+% $Y$ is Hausdorff, there exists disjoint neighborhoods $U$ and $V$ of
+% $f(x_0)$ and $g(x_0)$, respectively. Let $U'=S(\{x_0\},U)$ and
+% $V'=S(\{x_0\},V)$; note that $\{x_0\}$ is compact by the lemma and $U'$ and
+% $V'$ are subbasis elements of the compact-open topology by the definition
+% on Munkres \S 46, p.\,285. Then $U'\cap V'=\emptyset$ for otherwise, there
+% is a function $h\in U'\cap V'$ such that $h(x_0)\in U\cap V$, but this
+% contradicts $U\cap V=\emptyset$. Thus, $\mathcal{C}(X,Y)$ is Hausdorff.
 
-Now, suppose $Y$ is regular. We will proceed by the hint. Let $U$ and $V$
-be disjoint
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S 46, Ex.\,7]
