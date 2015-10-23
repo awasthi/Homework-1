@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.10.13)  23 OCT 2015 13:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.9.14)  23 OCT 2015 14:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1326,7 +1326,7 @@ Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 \c@problem=\count199
 \c@remark=\count200
  (./MA571-HW-Current.aux
-(./psets/ma571-pset8.aux))
+(./psets/ma571-pset9.aux))
 \openout1 = `MA571-HW-Current.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 160.
@@ -1538,22 +1538,17 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ]
-\openout2 = `psets/ma571-pset8.aux'.
+\openout2 = `psets/ma571-pset9.aux'.
 
- (./psets/ma571-pset8.tex [1
+ (./psets/ma571-pset9.tex [1
 
 
 
 ] [2] [3]
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 181--190
-
- []
-
-[5] [6]) [7]
+[4]) [5]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 191.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 191.
- (./MA571-HW-Current.aux (./psets/ma571-pset8.aux))
+ (./MA571-HW-Current.aux (./psets/ma571-pset9.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 191.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 191.
 Package rerunfilecheck Info: File `MA571-HW-Current.out' has not changed.
@@ -1561,39 +1556,31 @@ Package rerunfilecheck Info: File `MA571-HW-Current.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 191.
  ) 
 Here is how much of TeX's memory you used:
- 17701 strings out of 493089
- 249348 string characters out of 6140693
- 442650 words of memory out of 5000000
- 20729 multiletter control sequences out of 15000+600000
- 24653 words of font info for 117 fonts, out of 8000000 for 9000
+ 17640 strings out of 493089
+ 248754 string characters out of 6140694
+ 437650 words of memory out of 5000000
+ 20731 multiletter control sequences out of 15000+600000
+ 20571 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,12n,35p,257b,481s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/font
 s/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public
-/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><
-/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pf
-b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbol
-s/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></
-usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf
--dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/typ
-e1/public/cm-super/sfrm0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-su
-per/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pf
-b></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/t
-exmf-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf-dist/fonts
-/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/c
-m-super/sfxc1200.pfb>
-Output written on MA571-HW-Current.pdf (9 pages, 319134 bytes).
+/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
+symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.
+pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share
+/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fon
+ts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public
+/cm-super/sfti0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1
+000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb>
+Output written on MA571-HW-Current.pdf (7 pages, 201511 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
- 107 compressed objects within 2 object streams
- 4 named destinations out of 1000 (max. 500000)
- 25109 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 113 PDF objects out of 1000 (max. 8388607)
+ 82 compressed objects within 1 object stream
+ 9 named destinations out of 1000 (max. 500000)
+ 22037 words of extra memory for PDF output out of 24883 (max. 10000000)
 
