@@ -225,6 +225,7 @@ $m$-manifold, where $m$ is a positive whole number, is given at
 the top of page 225.)
 \end{problem}
 \begin{proof}
+
 \end{proof}
 \newpage
 \begin{problem}[(D)]
@@ -232,6 +233,28 @@ Prove that the union of the $x$ and $y$-axes in $\RR^2$ is not a
 $1$-manifold.
 \end{problem}
 \begin{proof}
+Let $X$ denote the union of he $x$ and $y$-axes, that is,
+\[
+X=\left\{\,(x,0)\,\right\}\cup\left\{\,(0,x)\,\right\}
+\]
+for $x\in\RR$. Suppose $X$ is a $1$-manifold. Then around every
+open subset $U$ of $X$, there exists a homeomorphism
+$\phi\colon U\to V$ for some $V$ open in $\RR$. Without loss of
+generality, we may assume $V=(a,b)$ for some real numbers
+$a<b$. Now, consider the open neighborhood
+$U=B((0,0),\epsilon)\cap X=((-\epsilon,\epsilon)\times
+0)\cup(0\times(-\epsilon,\epsilon))$. Since $X$ is a
+$1$-manifold, there exists a homeomorphism $\phi\colon U\to
+(a,b)$. Then, by Lemma A, $\phi(U-0\times 0)\approx
+(a,b)-\phi(0\times 0)$. However,
+\[
+U-0\times 0=((-\epsilon,0)\times 0)\cup((0,\epsilon)\times 0)\cup(0\times(-\epsilon,0))\cup(0\times(0,\epsilon))
+\]
+is a union of four disjoint open subsets of $X$, therefore, $U$
+consists of four connected components. However,
+$(a,b)-\phi(0\times 0)=(a,\phi(0\times 0))\cup(\phi(0\times
+0),b)$ consists of only two connected components. This is a
+contradiction. It follows that $X$ is not a $1$-manifold.
 \end{proof}
 
 %%% Local Variables:
