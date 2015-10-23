@@ -10,7 +10,7 @@
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
    (TeX-run-style-hooks
     "latex2e"
-    "psets/ma571-pset8"
+    "psets/ma571-pset9"
     "memoir"
     "memoir10"
     "geometry"
