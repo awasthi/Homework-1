@@ -150,31 +150,32 @@ define the map $p\colon X\to W_\infty$ by
 \[
 p(x)=\begin{cases}x,&x\in W\\\infty,&x\in X-W.\end{cases}
 \]
-By Proposition Q.5, it suffices to show that $p$ is a ``Munkres
-quotient map.'' First, we note that the restriction
-$\restr{p}{W}$ gives a homeomorphism of $W\approx p(W)$ (in fact,
-they are equivalent as sets) so by abuse of notation we will
-omit the preimage notation for subsets of $W$ in the
-compactification since such subsets are identical when viewed as
-subsets of $W$ as a subspace of $X$. Now, it is clear that $p$ is
-surjective for $p(X)=p(W\cup(X-W))=p(W)\cup
-p(X-W)=W\cup\{\infty\}=W_\infty$. Then we must show that $U$ is
-open in $W_\infty$ if and only if $p^{-1}(U)$ is open in
-$X$. Suppose $U$ is a type 1 open subset of $W_\infty$, that is,
-$U$ does not contain the point at infinity. Then $U\subset W$ so
-is open in $X$ by Theorem 16.2. Suppose that $U$ is a type 2 open
-subset of $W_\infty$. Then $C=W_\infty-U$ is a compact subset of
-$W_\infty$. Moreover $C\subset W$ so $C$ is a compact subset of
-$X$, that is to say, if $\{U_\alpha\}$ is an open cover of $C$ in
-$X$, then $\{U_\alpha\cap W\}$ is an open cover of $C$ in $W$ and
-since $C$ is compact in $W$, there exists a finite subcollection
-$\{U_i\cap W\}_{i=1}^n$ in $Y$ that covers $C$ hence, the
-collection $\{U_i\}_{i=1}^n$ is a finite subcollection in $X$
-that covers $C$. It follows by Theorem 26.3 that $C$ is
-closed. Conversely, suppose that $p^{-1}(U)$ is open in
-$X$. Then, either $p^{-1}(U)\subset W$, in which case $U\subset
-W_\infty$ is open by definition of the one-point
-compactification, or $p^{-1}(U)\cap X-W\neq\emptyset$.
+We claim that $p$ is continuous. It suffices to show that the preimage of a
+basic open set in $W_\infty$ is open in $X$. Suppose $U$ is a type 1 open
+subset of $W_\infty$, that is, $U$ does not contain the point at
+infinity. Then $U\subset W$ so is open in $X$ by Theorem 16.2. Suppose that
+$U$ is a type 2 open subset of $W_\infty$. Then $C=W_\infty-U$ is a compact
+subset of $W_\infty$. Moreover $C\subset W$ so $C$ is a compact subset of
+$X$, that is to say, if $\{U_\alpha\}$ is an open cover of $C$ in $X$, then
+$\{U_\alpha\cap W\}$ is an open cover of $C$ in $W$ and since $C$ is
+compact in $W$, there exists a finite subcollection $\{U_i\cap W\}_{i=1}^n$
+in $Y$ that covers $C$ hence, the collection $\{U_i\}_{i=1}^n$ is a finite
+subcollection in $X$ that covers $C$. It follows by Theorem 26.3 that $C$
+is closed so $p^{-1}(U)=X-C$ is open in $X$. Thus, $p$ is continuous. By
+Theorem Q.3, it follows that the induced map $\bar p\colon X/(X-W)\to
+W_\infty$ is continuous. Moreover, $p$ preserves the equivalence relation:
+Suppose $x\sim y$ then either $x=y\in W$ or $x,y\in X-W$; in the former we
+have $p(x)=x=y=p(y)$; in the latter we have $p(x)=\infty=p(y)$.
+
+By Theorem 26.6, since the quotient $X/(X-W)$ is compact and $W_\infty$ is
+Hauusdorff, it suffices to show that $\bar p$ is bijective. It is clear
+that $\bar p$ is surjective since $p$ is surjective
+($p(X)=p(W\cup(X-W))=p(W)\cup
+p(X-W)=W\cup\left\{\infty\right\}=W_\infty$). To see that $\bar p$ is
+injective suppose $p([x])=p([y])$. Then $p([x])=\infty$ or
+$p([x])\neq\infty$. If $p([x])\neq\infty$, then $p([x])=x=y=p([x])$ or
+$p([x])=\infty=p([y])$. In either case, $x\sim y$ so $[x]=[y]$. Thus, $\bar
+p$ is bijective. It follows that $\bar p$ is a homeomorphism.
 \end{proof}
 \newpage
 \begin{problem}[(B)]
@@ -188,6 +189,30 @@ a necessary and sufficient condition for a quotient of a compact
 Hausdorff space to be Hausdorff.
 \end{problem}
 \begin{proof}
+Let $x$ and $y$ be distinct points in $Y$. Since $p$ is surjective, there
+exist $x_0$ and $y_0$ in $X$ such that $p(x_0)=x$ and $p(y_0)=y$. Then,
+since $X$ is Hausdorff, by Theorem 17.8, $x_0$ and $y_0$ are closed in $X$
+so $x$ and $y$ are closed in $Y$. Then $p^{-1}(x)$ and $p^{-1}(y)$ are
+closed since
+\[
+X-p^{-1}(x)=p^{-1}(Y-x)
+\]
+which is open in $X$ since $Y-x$ is open in $Y$ and $p$ is
+continuous. Moreover, $p^{-1}(x)$ and $p^{-1}(y)$ are clearly disjoint for
+otherwise $p(z)=x=y$, but $x\neq y$. Now, by Theorem 32.3, $X$ is normal
+since it is a compact Hausdorff space (alternatively we may appeal to
+Theorem 26.3 and Munkres \S 26, Ex.\,5 as suggested in the hint) so there
+exist disjoint open sets $U$ and $V$ containing $p^{-1}(x)$ and
+$p^{-1}(y)$, respectively. Then $X-U$ and $X-V$ are closed so $p(X-U)$ and
+$p(X-V)$ are closed in $Y$. Then, we claim $U'=Y-p(X-U)$ and $V'=Y-p(X-V)$
+are disjoint neighborhoods of $x$ and $y$, respectively. It is clear that
+$U'$ and $V'$ are open, since their complements are closed. Moreover,
+$U'\ni x$ and $V'\ni y$ since $Y-U'=p(X-U)$ does not contain $x$ and
+$Y-V'=p(X-V)$ does not contain $y$. Lastly, $U'\cap V'=\emptyset$ for
+otherwise there is $z\in U'\cap V'$ so $z\notin p(X-U)$ and $z\notin
+p(X-V)$ so $z\in Y-(p(X-U)\cup p(X-V))$, but $p(X-U)\cup p(X-V)\supset
+p((X-U)\cup p(X-V))=p(X)$ so $z\in\emptyset$, this is a
+contradiction. Thus, $Y$ is Hausdorff.
 \end{proof}
 \newpage
 \begin{problem}[(C)]
