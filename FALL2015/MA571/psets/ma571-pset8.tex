@@ -225,7 +225,36 @@ $m$-manifold, where $m$ is a positive whole number, is given at
 the top of page 225.)
 \end{problem}
 \begin{proof}
-
+Note that, by Problem 3.9 (A) from HW \# 3, since $\QQ^3$ is a dense
+countable subset of $\RR^3$, $\RR^3$ has a countable basis so $S^2$ has a
+countable basis. Next, we define the following system of charts in $S^2x$
+with inverses
+\begin{align*}
+\phi_z(x,y,z)&=(x,y)&
+\phi_z^{-1}(x,y)&=\left(x,y,\sqrt{1-x^2-y^2}\right)&
+U_z=\left\{\,(x,y,z)\in S^2\;\middle|\;z>0\,\right\}\\
+\phi_{-z}(x,y,z)&=(x,y)&
+\phi_{-z}^{-1}(x,y)&=\left(x,y,-\sqrt{1-x^2-y^2}\right)&
+U_{-z}=\left\{\,(x,y,z)\in S^2\;\middle|\;z<0\,\right\}\\
+\phi_{y}(x,y,z)&=(x,z)&
+\phi_{y}^{-1}(x,z)&=\left(x,\sqrt{1-x^2-z^2},z\right)&
+U_{y}=\left\{\,(x,y,z)\in S^2\;\middle|\;y>0\,\right\}\\
+\phi_{-y}(x,y,z)&=(x,y)&
+\phi_{-y}^{-1}(x,y)&=\left(x,-\sqrt{1-x^2-z^2},z\right)&
+U_{-y}=\left\{\,(x,y,z)\in S^2\;\middle|\;y<0\,\right\}\\
+\phi_x(x,y,z)&=(x,y)&
+\phi_x^{-1}(x,y)&=\left(\sqrt{1-y^2-z^2},y,z\right)&
+U_x=\left\{\,(x,y,z)\in S^2\;\middle|\;x>0\,\right\}\\
+\phi_{-x}(x,y,z)&=(x,y)&
+\phi_{-x}^{-1}(x,y)&=\left(-\sqrt{1-y^2-z^2},y,z\right)&
+U_{-x}=\left\{\,(x,y,z)\in S^2\;\middle|\;x<0\,\right\}
+\end{align*}
+These maps are obviously continuous by Theorem 18.4 and 21.4, invertible,
+and they are is fact homeomorphisms by Theorem 26.6. Now, note
+that the open sets $\left\{U_x,U_{-x},U_y,U_{-y},U_z,U_{-z}\right\}$ cover
+$S^2$ so every point $(x,y,z)\in S^2$ is contained in one. Then, by the
+definition of $m$-manifold in Munkres \S 36, p.\,225, it follows that $S^2$
+is a $2$-manifold, i.e, a surface.
 \end{proof}
 \newpage
 \begin{problem}[(D)]
