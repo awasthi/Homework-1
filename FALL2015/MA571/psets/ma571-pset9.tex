@@ -17,8 +17,13 @@ neighborhood $S\left(\left\{x_0\right\},Y-\overline{U}\right)$ of
 $f$. Then, $S\left(\left\{x_0\right\},Y-\overline{U}\right)\cap
 S(C,U)$ is nonempty. Let $g$ be in the aforementioned
 intersection. Then $g(x_0)\in g(C)\subset U$, but $g(x_0)\in
-Y-\overline{U}$. This is a contradiction. It follows by Lemma
-31.1(b) that $\mathcal{C}(X,Y)$ is regular.
+Y-\overline{U}$. This is a contradiction. Thus, $\overline{S(C,U)}\subset
+S(C,V)$.
+
+Now, let $f\in\mathcal{C}(X,Y)$ and let $V=\bigcap_{i=1}^n S(C_i,V_i)$ be a
+basic neighborhood of $f$. Then, for every $x_i\in C_i$, $f(x_i)\in V_i$
+there exist a neighborhood $U_{x_i}$ of $f(x_i)$ such that
+$\overline{U_{x_i}}\subset V$.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S46, Ex.\,9(a,b,c)]
@@ -121,7 +126,19 @@ $H$ is continuous since it is the sum of a product of continuous
 functions. Hence, $f\simeq g$. Since $f$ and $g$ were arbitrary,
 it follows that $[X,I]$ consists of a single equivalence class.
 \\\\
-(b)
+(b) Note that if $f,g\colon I\to Y$ are constant maps, say $f(x)=x_0$ and
+$g(x)=x_1$ for all $x\in I$, then the path $p\colon I\to Y$ where
+$p(0)=x_0$ and $p(1)=x_1$ defines a homotopy $H(x,t)=p(t)$. This map is
+clearly continuous since for any open neighborhood $U$ of $Y$, since $p$ is
+continuous, by Theorem 18.1(4) there exists a neighborhood $V\subset I$
+such that $p(V)\subset U$ so $H(I\times V)=p(V)\subset U$ implies $H$ is
+continuous by Theorem 18.1(4). Therefore, it suffices to show that given a
+continuous map $f\colon I\to Y$, $f$ is nulhomotopic. Let $H(x,t)$ be the
+map $f((t-1)x)$. The map $(t-1)x$ is continuous by Theorem 25.1 so the
+composition $f\circ((t-1)x)$ is continuous by Theorem 18.2(c). Then,
+observing that $H(x,0)=f(x)$ and $H(x,1)=f(0)$, $H(x,t)$ gives a homotopy
+from $f$ to $f(0)$. It follows by Lemma 51.1 that given any $f,g\colon I\to
+Y$ continuous maps $f\simeq g$ by transitivity of homotopy.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S51, Ex.\,3(a,b,c,)]
@@ -135,6 +152,31 @@ $\id_X\colon X\to X$ is nullhomotopic.
 \end{enumerate}
 \end{problem}
 \begin{proof}
+(a) It is clear that $\id_I\colon I\to I$ is nulhomotopic, say to the
+constant map $0$, via the homotopy $H(x,t)=(1-t)x$. Note that
+$H(x,0)=x=\id_I(x)$ and $H(x,1)=0$ and $H(x,t)$ is continuous since
+$(1-t)x$ is continuous by Theorem 25.1.\footnote{More generally, we showed
+  that products, sums and quotients (when they are defined) of maps from a
+  metric space $(X,d)$ to $\RR$ (or a subspace of $\RR$ by
+  Theorem 18.2(d)) for that matter, are continuous.} In the case of $\RR$
+the previous map $H(x,t)$ also works to show that $\id_{\RR}$ is
+nulhomotopic since $H(x,0)=x=\id_{\RR}$ and $H(x,1)=0$ and $H(x,t)$ is
+continuous by Theorem 25.1.
+\\\\
+(b) Suppose that $X$ is contractible. Then there exists a homotopy $H(x,t)$
+with $H(x,0)=x$ and $H(x,1)=x_0$ for some point $x_0\in X$. Now, let
+$x_1,x_2\in X$. Then the map $p_1(t)=H(x_1,t)$ and $p_2(t)=H(x_2,t)$ are
+path homotopies from $x_1$ to $x_0$ and $x_2$ to $x_0$. It follows by the
+fact that $\simeq_p$ is an equivalence relation that $x_1\simeq_p x_2$.
+\\\\
+(c) Since $Y$ is contractible there exist a homotopy $H(y,t)$ with
+$H(y,0)=x$ and $H(y,1)=y_0$ for some fixed $y_0\in X$. Therefore, it
+suffices to show that an arbitrary continuous map $f\colon X\to Y$ is
+nulhomotopic. Consider the map $K(x,t)=H(f(x),t)$. This map is continuous
+since it is the composition $H\circ (f,\id_I)$. Moreover,
+$K(x,0)=\id_Y(f(x))=f(x)$ and $K(x,1)=e_{y_0}(f(x))=y_0$. Thus, $f$ is
+nulhomotopic and it follows that $[X,Y]$ has a single element (all maps are
+null homotopic and $Y$ is path connected by part (b)).
 \end{proof}
 
 %%% Local Variables:
