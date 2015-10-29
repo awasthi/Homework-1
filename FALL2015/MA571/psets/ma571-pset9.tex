@@ -44,18 +44,64 @@ quotient map.
 \end{proof}
 \end{theorem*}
 \end{problem}
-\begin{proof}
+\begin{proof}[Actual proof]
+(a) First, let us note that $Y$ has the same underlying set as
+the Cartesian product $X\times B$ with the topology induced by
+the map $(\id_X,p)$. Moreover, the quotient map $q$ is (as a map
+between sets) equivalent to $(\id_X,p)$. Thus, the natural
+bijective map to consider between $Y$ and $X\times B$ is the
+identity map $f=\id_{X\times B}=(\id_X,\id_B)$. It is clear that
+$f$ is bijective. To see that $f$ is continuous we note that
+since the composition
+\[
+(f\circ q)(x,a)
+=(\id_X,\id_B)\circ(\id_X,p)(x,a)
+=(\id_X(a),\id_B(p(a)))
+=(x,p(a))
+=(\id_X,p)(x,a)
+\]
+and the map $(\id_X,p)$ is continuous by Theorem 18.4, it
+follows by Theorem Q.2 that $f$ is continuous.
+\\\\
+(b) Recall, from the definition given on Munkres \S46, p.\,287,
+that the induced map $G$ (respectively $Q$) are defined by the
+equation $(G(b))(x)=(x,b)$ (respectively
+$(Q(a))(x)=(x,p(a))$). Then we have that the composition
+\[
+(G\circ p)(a)=G(p(a))=(G(p(a)))(x)=(x,p(a))=(Q(a))(x)=Q(a)
+\]
+as desired.
+\\\\
+(c) By Theorem 46.11, since $q$ is continuous with respect to the
+quotient topology on $Y$, it follows that the induced map $Q$ is
+continuous. Additionally, since $Q$ is equal to the composition
+$G\circ p$ by part (b) so by Theorem Q.2 $G$ is continuous. Since
+$X$ is locally compact Hausdorff, it follows by Theorem 46.11
+that the map $g$ is continuous.
 \end{proof}
 \newpage
-\begin{problem}[Munkres \S52, Ex.\,1]
+\begin{problem}[Munkres \S51, Ex.\,1]
 Show that if $h,h'\colon X\to Y$ are homotopic and $k,k'\colon
 Y\to Z$ are homotopic, then $k\circ h$ and $k'\circ h'$ are
 homotopic.
 \end{problem}
 \begin{proof}
+Let $H\colon X\times I\to Y$ and $K\colon Y\times I\to Z$ denote
+the homotopies from $h$ to $h'$ and $k$ to $k'$,
+respectively. Then, we claim that the map $L(x,t)=K(H(x,t),t)$ is
+a homotopy from $k\circ h$ to $k'\circ h'$. First, we check that
+$L$ starts and ends where we want it to, i.e.,
+$L(x,0)=K(H(x,0),0)=k(h(x))$ and
+$L(x,1)=K(H(x,1),1)=k'(h'(x))$. Lastly, we must assure ourselves
+that $L$ is in fact continuous. But this last claim follows from
+the fact that $L$ can be expressed as the composition $K\circ
+(h_t,t)$ where $h_t$ denotes the continuous map $H(x,t)$ at time
+$t$. Since $K$ is (by assumption) continuous and $(h_t,t)$ are
+continuous by Theorem 18.4, it follows by Theorem 18.2(a) that
+$L$ is continuous. Thus, $k\circ h\simeq k'\circ h'$ as desired.
 \end{proof}
 \newpage
-\begin{problem}[Munkres \S52, Ex.\,2]
+\begin{problem}[Munkres \S51, Ex.\,2]
 Given spaces $X$ and $Y$, let $[X,Y]$ denote the homotopy classes
 of maps of $X$ into $Y$
 \begin{enumerate}[label=(\alph*)]
@@ -66,9 +112,19 @@ of maps of $X$ into $Y$
 \end{enumerate}
 \end{problem}
 \begin{proof}
+(a) Let $f,g\colon X\to I$ be arbitrary continuous maps. Then we
+claim that the straight line homotopy $H(x,t)=(1-t)f(x)+tg(x)$
+gives a homotopy from $f$ to $g$. Note that the image of $H(x,t)$
+stays in the interval $I$ since $(1-t)f(x)+tg(x)\leq (1-t)+t=1$
+for all $x$ and for all $t$. Lastly, note that by Theorem 25.1
+$H$ is continuous since it is the sum of a product of continuous
+functions. Hence, $f\simeq g$. Since $f$ and $g$ were arbitrary,
+it follows that $[X,I]$ consists of a single equivalence class.
+\\\\
+(b)
 \end{proof}
 \newpage
-\begin{problem}[Munkres \S52, Ex.\,3(a,b,c,)]
+\begin{problem}[Munkres \S51, Ex.\,3(a,b,c,)]
 A space $X$ is said to be \emph{contractible} if the identity map
 $\id_X\colon X\to X$ is nullhomotopic.
 \begin{enumerate}[label=(\alph*)]
