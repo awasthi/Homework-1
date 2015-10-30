@@ -81,26 +81,34 @@ quotient map.
 % and the map $(\id_X,p)$ is continuous by Theorem 18.4, it
 % follows by Theorem Q.2 that $f$ is continuous.
 % \\\\
-% (b) Recall, from the definition given on Munkres \S46, p.\,287,
-% that the induced map $G$ (respectively $Q$) are defined by the
-% equation $(G(b))(x)=(x,b)$ (respectively
-% $(Q(a))(x)=(x,p(a))$). Then we have that the composition
-% \[
-% (G\circ p)(a)=G(p(a))=(G(p(a)))(x)=(x,p(a))=(Q(a))(x)=Q(a)
-% \]
-% as desired.
-% \\\\
-% (c) By Theorem 46.11, since $q$ is continuous with respect to the
-% quotient topology on $Y$, it follows that the induced map $Q$ is
-% continuous. Additionally, since $Q$ is equal to the composition
-% $G\circ p$ by part (b) so by Theorem Q.2 $G$ is continuous. Since
-% $X$ is locally compact Hausdorff, it follows by Theorem 46.11
-% that the map $g$ is continuous.
-(a) Let
+(a) Note that, by Munkre's definition of the ``quotient topology induced by
+$(\id_X,p)$,'' i.e., the identification space $X\times A/{\sim}$ where two
+elements $(x_1,a_1)\sim (x_2,a_2)$ if and only if
+$(x_1,p(a_1))=(x_2,p(a_2))$, it follows that the map $(\id_X,p)$ preserves
+the equivalence relation on $X\times A$ so that, by Theorem Q.3, the
+induced map $f\colon Y\to X\times B$ is continuous since $(\id_X,p)$
+is. Lastly, it is clear by Theorem Q.2 that $q\circ f=(\id_X,B)$. This map
+is surjective since $(\id_X,p)$ is subjective. To see that $f$ is
+injective, let $[x_1,a_1],[x_1,a_2]\in Y$ and suppose that
+$f([x_1,a_1])=f([x_2,a_2])$. Then, taking a representative of each
+equivalence class, $(x_1,p(a_1))=(x_2,p(a_2))$ implies $x_1=x_2$ and
+$p(a_1)=p(a_2)$, i.e., $(x_1,a_1)\sim (x_2,a_2)$. Thus, $f$ is invective.
 \\\\
-(b)
+(b) Recall, from the definition given on Munkres \S46, p.\,287,
+that the induced map $G$ (respectively $Q$) are defined by the
+equation $(G(b))(x)=(x,b)$ (respectively
+$(Q(a))(x)=(x,p(a))$). Then we have that the composition
+\[
+(G\circ p)(a)=G(p(a))=(G(p(a)))(x)=(x,p(a))=(Q(a))(x)=Q(a)
+\]
+as desired.
 \\\\
-(c)
+(c) By Theorem 46.11, since $q$ is continuous with respect to the
+quotient topology on $Y$, it follows that the induced map $Q$ is
+continuous. Additionally, since $Q$ is equal to the composition
+$G\circ p$ by part (b) so by Theorem Q.2 $G$ is continuous. Since
+$X$ is locally compact Hausdorff, it follows by Theorem 46.11
+that the map $g$ is continuous.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S51, Ex.\,1]

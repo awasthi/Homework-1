@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.10.13)  29 OCT 2015 20:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.10.13)  29 OCT 2015 20:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1545,27 +1545,27 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 80--88
+Underfull \hbox (badness 10000) in paragraph at lines 84--101
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--99
+Underfull \hbox (badness 10000) in paragraph at lines 103--112
 
  []
 
 [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 133--155
+Underfull \hbox (badness 10000) in paragraph at lines 146--168
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 168--193
+Underfull \hbox (badness 10000) in paragraph at lines 181--206
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 168--193
+Underfull \hbox (badness 10000) in paragraph at lines 181--206
 
  []
 
@@ -1580,11 +1580,11 @@ Package rerunfilecheck Info: File `MA571-HW-Current.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 191.
  ) 
 Here is how much of TeX's memory you used:
- 17707 strings out of 493089
- 249482 string characters out of 6140693
- 440648 words of memory out of 5000000
+ 17709 strings out of 493089
+ 249506 string characters out of 6140693
+ 441648 words of memory out of 5000000
  20741 multiletter control sequences out of 15000+600000
- 24764 words of font info for 111 fonts, out of 8000000 for 9000
+ 24822 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,12n,35p,257b,481s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/t
@@ -1609,7 +1609,7 @@ m1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr
 st/fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf-dist/fonts/type1/
 public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super
 /sfxc1200.pfb>
-Output written on MA571-HW-Current.pdf (7 pages, 311086 bytes).
+Output written on MA571-HW-Current.pdf (7 pages, 311907 bytes).
 PDF statistics:
  152 PDF objects out of 1000 (max. 8388607)
  111 compressed objects within 2 object streams
