@@ -21,9 +21,22 @@ Y-\overline{U}$. This is a contradiction. Thus, $\overline{S(C,U)}\subset
 S(C,V)$.
 
 Now, let $f\in\mathcal{C}(X,Y)$ and let $V=\bigcap_{i=1}^n S(C_i,V_i)$ be a
-basic neighborhood of $f$. Then, for every $x_i\in C_i$, $f(x_i)\in V_i$
-there exist a neighborhood $U_{x_i}$ of $f(x_i)$ such that
-$\overline{U_{x_i}}\subset V$.
+basic neighborhood of $f$. Then, since $Y$ is regular, for every
+$y=f(x_i)\in f(C_i)$ there exists an open neighborhood $U_{x_i}$ such that
+$\overline{U_{x_i}}\subset V_i$. These $U_{x_i}$'s form an open cover of
+$f(C_i)$ which is compact by Theorem 25.6 so there exists a finite
+collection of them, say $\left\{U_{x_i,j}\right\}_{j=1}^{n_i}$ that covers
+$f(C_i)$. Let $U_i=\bigcup_{j=1}^{n_i}U_{x_i,j}$. Then
+$\overline{U}_i=\bigcup_{j=1}^{n_i}\overline{U_{x_i,j}}\subset V_i$ by
+induction on Problem 2.2 (Munkres \S17, Ex. 6(b)). Let
+$U=\bigcap_{i=1}^nS(C_i,U_i)$. We claim that $U$ is the desired
+neighborhood of $f$ that, by Theorem 31.1(b), shows that $\mathcal{C}(X,Y)$
+is regular. Let us verify this. First, note that $f\in U$ since
+$f(C_i)\subset U_i$ for all $i$ so $U$ is indeed a neighborhood of
+$U$. Moreover, by the hint, we have that $\overline{S(C_i,U_i)}\subset
+S(C_i,V_i)$ since $\overline{U_i}\subset V_i$. Then
+$\overline{U}\subset\bigcap_{i=1}^n\overline{S(C_i,U_i)}\subset V$ by Lemma
+B. It follows, by Theorem 31.1(b), that $\mathcal{C}(X,Y)$ is regular.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S46, Ex.\,9(a,b,c)]
@@ -50,39 +63,44 @@ quotient map.
 \end{theorem*}
 \end{problem}
 \begin{proof}[Actual proof]
-(a) First, let us note that $Y$ has the same underlying set as
-the Cartesian product $X\times B$ with the topology induced by
-the map $(\id_X,p)$. Moreover, the quotient map $q$ is (as a map
-between sets) equivalent to $(\id_X,p)$. Thus, the natural
-bijective map to consider between $Y$ and $X\times B$ is the
-identity map $f=\id_{X\times B}=(\id_X,\id_B)$. It is clear that
-$f$ is bijective. To see that $f$ is continuous we note that
-since the composition
-\[
-(f\circ q)(x,a)
-=(\id_X,\id_B)\circ(\id_X,p)(x,a)
-=(\id_X(a),\id_B(p(a)))
-=(x,p(a))
-=(\id_X,p)(x,a)
-\]
-and the map $(\id_X,p)$ is continuous by Theorem 18.4, it
-follows by Theorem Q.2 that $f$ is continuous.
+% (a) First, let us note that $Y$ has the same underlying set as
+% the Cartesian product $X\times B$ with the topology induced by
+% the map $(\id_X,p)$. Moreover, the quotient map $q$ is (as a map
+% between sets) equivalent to $(\id_X,p)$. Thus, the natural
+% bijective map to consider between $Y$ and $X\times B$ is the
+% identity map $f=\id_{X\times B}=(\id_X,\id_B)$. It is clear that
+% $f$ is bijective. To see that $f$ is continuous we note that
+% since the composition
+% \[
+% (f\circ q)(x,a)
+% =(\id_X,\id_B)\circ(\id_X,p)(x,a)
+% =(\id_X(a),\id_B(p(a)))
+% =(x,p(a))
+% =(\id_X,p)(x,a)
+% \]
+% and the map $(\id_X,p)$ is continuous by Theorem 18.4, it
+% follows by Theorem Q.2 that $f$ is continuous.
+% \\\\
+% (b) Recall, from the definition given on Munkres \S46, p.\,287,
+% that the induced map $G$ (respectively $Q$) are defined by the
+% equation $(G(b))(x)=(x,b)$ (respectively
+% $(Q(a))(x)=(x,p(a))$). Then we have that the composition
+% \[
+% (G\circ p)(a)=G(p(a))=(G(p(a)))(x)=(x,p(a))=(Q(a))(x)=Q(a)
+% \]
+% as desired.
+% \\\\
+% (c) By Theorem 46.11, since $q$ is continuous with respect to the
+% quotient topology on $Y$, it follows that the induced map $Q$ is
+% continuous. Additionally, since $Q$ is equal to the composition
+% $G\circ p$ by part (b) so by Theorem Q.2 $G$ is continuous. Since
+% $X$ is locally compact Hausdorff, it follows by Theorem 46.11
+% that the map $g$ is continuous.
+(a) Let
 \\\\
-(b) Recall, from the definition given on Munkres \S46, p.\,287,
-that the induced map $G$ (respectively $Q$) are defined by the
-equation $(G(b))(x)=(x,b)$ (respectively
-$(Q(a))(x)=(x,p(a))$). Then we have that the composition
-\[
-(G\circ p)(a)=G(p(a))=(G(p(a)))(x)=(x,p(a))=(Q(a))(x)=Q(a)
-\]
-as desired.
+(b)
 \\\\
-(c) By Theorem 46.11, since $q$ is continuous with respect to the
-quotient topology on $Y$, it follows that the induced map $Q$ is
-continuous. Additionally, since $Q$ is equal to the composition
-$G\circ p$ by part (b) so by Theorem Q.2 $G$ is continuous. Since
-$X$ is locally compact Hausdorff, it follows by Theorem 46.11
-that the map $g$ is continuous.
+(c)
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S51, Ex.\,1]
