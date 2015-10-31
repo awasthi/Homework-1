@@ -4,13 +4,13 @@
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("memoir" "article" "oneside" "10pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("xcolor" "dvipsnames") ("enumitem" "inline") ("fontenc" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "german" "russian" "spanish" "english")))
+                     '(("xcolor" "dvipsnames") ("enumitem" "inline") ("euscript" "mathcal") ("fontenc" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "german" "russian" "spanish" "english")))
    (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
    (TeX-run-style-hooks
     "latex2e"
-    "psets/ma557-pset6"
+    "psets/ma557-pset7"
     "memoir"
     "memoir10"
     "geometry"
@@ -24,6 +24,8 @@
     "amsthm"
     "amssymb"
     "mathtools"
+    "euscript"
+    "mathrsfs"
     "cmap"
     "fontenc"
     "inputenc"
@@ -37,9 +39,11 @@
     "nsubset"
     "nsupset"
     "Ass"
+    "Aut"
     "End"
     "Fitt"
     "Hom"
+    "Quot"
     "Spec"
     "MSpec"
     "Supp"

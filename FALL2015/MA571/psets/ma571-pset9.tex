@@ -87,19 +87,20 @@ elements $(x_1,a_1)\sim (x_2,a_2)$ if and only if
 $(x_1,p(a_1))=(x_2,p(a_2))$, it follows that the map $(\id_X,p)$ preserves
 the equivalence relation on $X\times A$ so that, by Theorem Q.3, the
 induced map $f\colon Y\to X\times B$ is continuous since $(\id_X,p)$
-is. Lastly, it is clear by Theorem Q.2 that $q\circ f=(\id_X,B)$. This map
+is. Lastly, it is clear by Theorem Q.2 that $f\circ q=(\id_X,p)$. This map
 is surjective since $(\id_X,p)$ is subjective. To see that $f$ is
 injective, let $[x_1,a_1],[x_1,a_2]\in Y$ and suppose that
 $f([x_1,a_1])=f([x_2,a_2])$. Then, taking a representative of each
 equivalence class, $(x_1,p(a_1))=(x_2,p(a_2))$ implies $x_1=x_2$ and
-$p(a_1)=p(a_2)$, i.e., $(x_1,a_1)\sim (x_2,a_2)$. Thus, $f$ is invective.
+$p(a_1)=p(a_2)$, i.e., $(x_1,a_1)\sim (x_2,a_2)$. Thus, $f$ is
+injective.
 \\\\
-(b) Recall, from the definition given on Munkres \S46, p.\,287,
-that the induced map $G$ (respectively $Q$) are defined by the
-equation $(G(b))(x)=(x,b)$ (respectively
-$(Q(a))(x)=(x,p(a))$). Then we have that the composition
+(b) Recall from the definition given on Munkres \S46, p.\,287,
+that the induced map $G$ (resp.\,$Q$) are defined by the equation
+$(G(b))(x)=f^{-1}(x,b)$ (resp.\,$(Q(a))(x)=q(x,a)$). Then we have
+that the composition
 \[
-(G\circ p)(a)=G(p(a))=(G(p(a)))(x)=(x,p(a))=(Q(a))(x)=Q(a)
+(G\circ p)(a)(x)=G(p(a))(x)=f^{-1}(x,p(a))=(f^{-1}\circ(\id_X,p))(x,a)=Q(x,a)
 \]
 as desired.
 \\\\
@@ -178,6 +179,31 @@ $\id_X\colon X\to X$ is nullhomotopic.
 \end{enumerate}
 \end{problem}
 \begin{proof}
+Let us prove once an for all an exercise from Munkres that
+should have been assigned at the beginning of the semester:
+\begin{lemma}[Munkres, \S18, Ex.\,11]
+Let $F\colon X\times Y\to Z$. We say that $F$ is \emph{continuous
+in each variable separately} if for each $y_0$ in $Y$ the map
+$h\colon X\to Z$ defined by
+$h(x)=F(x,y_0)$ is continuous, and for each $x_0$ in $X$ the map
+$k\colon Y\to Z$ defined by $k(y)=F(x_0,y)$ is continuous. If $F$
+is continuous, then $f$ is continuous in each variable.
+\end{lemma}
+\begin{proof}
+\renewcommand\qedsymbol{$\clubsuit$}
+We will prove this only for the case of $h$; the proof of $k$ is
+similar. Fix $y_0\in Y$ and let $W$ b an open neighborhood of
+$F(x,y_0)$. Then, by Theorem 18.1(4), there exists an open
+neighborhood $W'$ of $(x,y_0)$ such that $F(W')\subset W$. By
+Lemma C, we may restrict to a basic open neighborhood $U\times
+V$, $U$ open in $X$ and $V$ open in $Y$, of $(x,y_0)$ contained
+in $W'$. Then we have
+\[
+h(U)=F(U\times y_0)\subset F(U\times V)\subset F(W')\subset W
+\]
+so $h$ is continuous.
+\end{proof}
+
 (a) It is clear that $\id_I\colon I\to I$ is nulhomotopic, say to the
 constant map $0$, via the homotopy $H(x,t)=(1-t)x$. Note that
 $H(x,0)=x=\id_I(x)$ and $H(x,1)=0$ and $H(x,t)$ is continuous since
@@ -191,9 +217,10 @@ continuous by Theorem 25.1.
 \\\\
 (b) Suppose that $X$ is contractible. Then there exists a homotopy $H(x,t)$
 with $H(x,0)=x$ and $H(x,1)=x_0$ for some point $x_0\in X$. Now, let
-$x_1,x_2\in X$. Then the map $p_1(t)=H(x_1,t)$ and $p_2(t)=H(x_2,t)$ are
-path homotopies from $x_1$ to $x_0$ and $x_2$ to $x_0$. It follows by the
-fact that $\simeq_p$ is an equivalence relation that $x_1\simeq_p x_2$.
+$x_1,x_2\in X$. Then the maps $p_1(t)=H(x_1,t)$ and $p_2(t)=H(x_2,t)$ are
+path homotopies from $x_1$ to $x_0$ and $x_2$ to $x_0$ by Lemma
+1. It follows by the fact that $\simeq_p$ is an equivalence
+relation that $x_1\simeq_p x_2$.
 \\\\
 (c) Since $Y$ is contractible there exist a homotopy $H(y,t)$ with
 $H(y,0)=x$ and $H(y,1)=y_0$ for some fixed $y_0\in X$. Therefore, it
