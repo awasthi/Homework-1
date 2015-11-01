@@ -3,15 +3,40 @@ Let $R$ be a Noetherian ring and $I,J$ $R$-ideals. Write
 $I^{\langle  J \rangle}=\bigcup_{n\geq 1}(I:J^n)$, which is
 called the \emph{saturation} of $I$ with respect to $J$. Show:
 \begin{enumerate}[label=(\alph*)]
-\item If $I=\bigcap_{i=1}^m\mathcal{q}_i$ with $\mathcal{q}_i$
-  $\mathcal{p}_i$-primary, then $I^{\langle
-    J\rangle}=\bigcap_{J\nsubset\mathcal{p}_i}\mathcal{q}_i$.
+\item If $I=\bigcap_{i=1}^m\mathfrak{q}_i$ with $\mathfrak{q}_i$
+  $\mathfrak{p}_i$-primary, then $I^{\langle
+    J\rangle}=\bigcap_{J\nsubset\mathfrak{p}_i}\mathfrak{q}_i$.
 \item $I^{\langle  J \rangle}$ is the unique largest $R$-ideal
   that coincides with $I$ locally on the open set
-  $\Spec(R)\setminus V(J)$.
+  $\Spec(R)\smallsetminus V(J)$.
 \end{enumerate}
 \end{problem}
 \begin{proof}
+(a) We first prove the following lemma
+\begin{lemma}[Atiyah \& Macdonald, Ex.\,1.12]
+\begin{itemize}[noitemsep]
+\item[\normalfont(i)] $I\subset (I:J)$
+\item[\normalfont(iv)] $\left(\bigcap_{i=1}^m
+    I_i:J\right)=\bigcap_{i=1}^m(I:J)$.
+\end{itemize}
+\end{lemma}
+\begin{proof}[Proof of Lemma 1]
+\renewcommand\qedsymbol{$\clubsuit$}
+Both are very short proofs: (i) If $x\in I$, then $xJ\subset I$ hence,
+$x\in (I:J)$. (ii) $x\in\left(\bigcap_{i=1}^m I:J\right)$ if and only if
+$xJ\subset I_i$ for all $i$ if and only if $x\in\bigcap_{i=1}^m(I:J)$.
+\end{proof}
+Now, suppose that $\bigcap_{i=1}^m\mathfrak{q}_i$ is a primary
+decomposition of $I$. Then by Lemma 1(i), $I\subset I^{\langle J\rangle}$
+since $I\subset (I:J^n)$ for all $n\geq 1$. Moreover, by Lemma 1(iv) we
+have that
+$\left(\bigcap_{i=1}^m\mathfrak{q}_i:J^n\right)=\bigcap_{i=1}^m(\mathfrak{q}_i:J^n)$
+so that
+\[
+I^{\langle  J\rangle}=\bigcup_{n\geq 1}\left(\bigcap_{i=1}^m(\mathfrak{q}_i:J^n)\right)
+\]
+\\\\
+(b)
 \end{proof}
 \newpage
 \begin{problem}
@@ -19,6 +44,7 @@ Let $R$ be a Noetherian ring. Show that $R$ is reduced if and
 only if $\Quot(R)$ is a finite direct product of fields.
 \end{problem}
 \begin{proof}
+$\implies$ Suppose $R$ is reduced. Then $\nil(R)=0$. Since $R$ is Noetherian
 \end{proof}
 \newpage
 \begin{problem}
