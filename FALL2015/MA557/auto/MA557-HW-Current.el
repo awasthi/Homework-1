@@ -32,6 +32,7 @@
     "babel"
     "CJKutf8")
    (TeX-add-symbols
+    '("xtwoheadrightarrow" ["argument"] 1)
     '("restr" 2)
     '("textzh" 1)
     '("textni" 1)

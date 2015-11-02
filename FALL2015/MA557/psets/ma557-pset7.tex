@@ -64,15 +64,46 @@ Let $R$ be a Noetherian ring. Show that $R$ is reduced if and
 only if $\Quot(R)$ is a finite direct product of fields.
 \end{problem}
 \begin{proof}
-$\implies$ Suppose that $R$ is reduced then the nilradical of $R$ is
-precisely the $0$ ideal. By 5.1(b), we know that the nilradical is
-equivalent to the union
-$\bigcup_{\mathfrak{p}\in\Ass R}\mathfrak{p}$. Moreover, by 5.4, we know
-that the set of associated primes of $R$ is finite, say
-$\Ass R=\{\mathfrak{p}_1,...,\mathfrak{p}_n\}$. Therefore,
-$\Quot(R)=S^{-1}R$ where $S=R\smallsetminus\bigcup_{i=1}^n\mathfrak{p}_i$.
-Now, observe that by 5.3 the prime ideals of $\Quot(R)$
-are precisely the ideals $S^{-1}\mathfrak{p}_i$
+$\implies$ Suppose that $R$ is reduced. Then $\sqrt{0}=0$. Since
+$R$ is Noetherian, by 5.13 every ideal has a primary
+decomposition. Let $\bigcap_{i=1}^n\mathfrak{q_i}$, where
+$\mathfrak{q}_i$ is $\mathfrak{p}_i$-primary, be such a
+decomposition for $0$. Then we have that
+$0=\sqrt{0}=\sqrt{\bigcap_{i=1}^n\mathfrak{q}_i}=\bigcap_{i=1}^n\sqrt{\mathfrak{q}_i}=\bigcap_{i=1}^n\mathfrak{p}_i$
+so that $\mathfrak{q}_i=\mathfrak{p}_i$. In particular,
+$\mathfrak{p}_i$ are minimal over $0$ so by 5.15 the
+decomposition is unique. Thus, by the Chinese remainder theorem
+we have an exact sequence
+\[
+0
+\longrightarrow
+R
+\xhookrightarrow{\;\phi\;}
+\prod_{i=1}^n R/\mathfrak{p}_i
+\xtwoheadrightarrow{\;\pi\;}
+\coker\phi
+\longrightarrow
+0.
+\]
+Now, consider
+$\Quot(R)=S^{-1}R$ where $S=R\smallsetminus 0$. By 4.6, since
+$S^{-1}R$ is a flat $R$-module, we have an exact sequence
+\[
+0
+\longrightarrow
+S^{-1}R
+\xhookrightarrow{\;\phi\;}
+S^{-1}\left(\prod_{i=1}^nR/\mathfrak{p}_i\right)
+\cong
+\prod_{i=1}^nS^{-1}R/S^{-1}\mathfrak{p}_i
+\xtwoheadrightarrow{\;\pi\;}
+S^{-1}\coker\phi
+\longrightarrow
+0
+.
+\]
+In fact, $\phi$ is an $R$-linear isomorphism since $\coker(\phi)$
+is annihilated by an element of $S$
 \end{proof}
 \newpage
 \begin{problem}
