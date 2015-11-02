@@ -64,9 +64,15 @@ Let $R$ be a Noetherian ring. Show that $R$ is reduced if and
 only if $\Quot(R)$ is a finite direct product of fields.
 \end{problem}
 \begin{proof}
-$\implies$ Suppose that $R$ is reduced. Then $\nil(R)=0$. Let
-$\bigcap_{i=1}^n\mathfrak{q}_i$ be a minimal decomposition of
-$0$. Then, by the Chinese remainder theorem, the
+$\implies$ Suppose that $R$ is reduced then the nilradical of $R$ is
+precisely the $0$ ideal. By 5.1(b), we know that the nilradical is
+equivalent to the union
+$\bigcup_{\mathfrak{p}\in\Ass R}\mathfrak{p}$. Moreover, by 5.4, we know
+that the set of associated primes of $R$ is finite, say
+$\Ass R=\{\mathfrak{p}_1,...,\mathfrak{p}_n\}$. Therefore,
+$\Quot(R)=S^{-1}R$ where $S=R\smallsetminus\bigcup_{i=1}^n\mathfrak{p}_i$.
+Now, observe that by 5.3 the prime ideals of $\Quot(R)$
+are precisely the ideals $S^{-1}\mathfrak{p}_i$
 \end{proof}
 \newpage
 \begin{problem}
