@@ -1,7 +1,7 @@
 \begin{problem}
 Let $R$ be a Noetherian ring and $I,J$ $R$-ideals. Write
 $I^{\langle  J \rangle}=\bigcup_{n\geq 1}(I:J^n)$, which is
-called the \emph{saturation} of $I$ with respect to $J$. Show:
+called the \emph{saturation of $I$ with respect to $J$}. Show:
 \begin{enumerate}[label=(\alph*)]
 \item If $I=\bigcap_{i=1}^m\mathfrak{q}_i$ with $\mathfrak{q}_i$
   $\mathfrak{p}_i$-primary, then $I^{\langle
@@ -12,31 +12,28 @@ called the \emph{saturation} of $I$ with respect to $J$. Show:
 \end{enumerate}
 \end{problem}
 \begin{proof}
-(a) We first prove the following lemma
-\begin{lemma}[Atiyah \& Macdonald, Ex.\,1.12]
-\begin{itemize}[noitemsep]
-\item[\normalfont(i)] $I\subset (I:J)$
-\item[\normalfont(iv)] $\left(\bigcap_{i=1}^m
-    I_i:J\right)=\bigcap_{i=1}^m(I:J)$.
-\end{itemize}
-\end{lemma}
-\begin{proof}[Proof of Lemma 1]
-\renewcommand\qedsymbol{$\clubsuit$}
-Both are very short proofs: (i) If $x\in I$, then $xJ\subset I$ hence,
-$x\in (I:J)$. (ii) $x\in\left(\bigcap_{i=1}^m I:J\right)$ if and only if
-$xJ\subset I_i$ for all $i$ if and only if $x\in\bigcap_{i=1}^m(I:J)$.
-\end{proof}
-Now, suppose that $\bigcap_{i=1}^m\mathfrak{q}_i$ is a primary
-decomposition of $I$. Then by Lemma 1(i), $I\subset I^{\langle J\rangle}$
-since $I\subset (I:J^n)$ for all $n\geq 1$. Moreover, by Lemma 1(iv) we
-have that
-$\left(\bigcap_{i=1}^m\mathfrak{q}_i:J^n\right)=\bigcap_{i=1}^m(\mathfrak{q}_i:J^n)$
-so that
-\[
-I^{\langle  J\rangle}=\bigcup_{n\geq 1}\left(\bigcap_{i=1}^m(\mathfrak{q}_i:J^n)\right)
-\]
-\\\\
-(b)
+(a) We shall demonstrate double inclusion: Let
+$\bigcap_{i=1}^m\mathfrak{q}_i$ be a minimal decomposition of $I$ into
+primary ideals where $\mathfrak{q}_i$ is
+$\mathfrak{p}_i$-primary. $\implies$ Suppose $x\in I^{\langle J\rangle}$
+then $xJ^n\subset I$ for some $n\geq 1$. Given $i$ such that
+$\mathfrak{p}_i\nsupset J$\footnote{Why does such an ideal exist? Well,
+  suppose that $\mathfrak{p}_i\supset J$ for all $1\leq i\leq m$. Then} take $y\in J\smallsetminus\mathfrak{p}_i$. Then
+$xy^n\in\mathfrak{q}_i$ so $x\in\mathfrak{q}_i$ since $\mathfrak{q}_i$ is
+primary and $y\notin\mathfrak{p}_i$. Hence, $I^{\langle
+  J\rangle}\subset\bigcap_{J\nsubset\mathfrak{p}_i}\mathfrak{q}_i$. $\impliedby$
+Conversely, suppose that
+$x\in\bigcap_{J\nsubset\mathfrak{p}_i}\mathfrak{q}_i$ then
+$x\in\mathfrak{q}_i$ for all $\mathfrak{q}_i\nsupset J$. Take any
+$\mathfrak{p}_j$ containing $J$. Then
+$\mathfrak{p}_j=\nil(R/\mathfrak{q}_j)^c$ (this is easily seen from the
+fact that $\mathfrak{p}_i=\sqrt{\mathfrak{q}_i}$, i.e., $\mathfrak{q}_i$ is
+$\mathfrak{p}_i$-primary and the correspondence theorem for ideals) so
+there exists $n_j$ with $xJ^{n_j}\subset\mathfrak{q}_j$ (since, in the
+quotient, $\bar J$ is nilpotent). Let $n$ be the maximum of all such
+$n_j$ then we claim that $xJ^n\subset\mathfrak{q}_i$ for all $i$. We have
+already seen what happens in case that $\mathfrak{p}_i\supset J$ so let us
+consider the case that $\mathfrak{p}_i\nsupset J$.
 \end{proof}
 \newpage
 \begin{problem}
@@ -44,7 +41,7 @@ Let $R$ be a Noetherian ring. Show that $R$ is reduced if and
 only if $\Quot(R)$ is a finite direct product of fields.
 \end{problem}
 \begin{proof}
-$\implies$ Suppose $R$ is reduced. Then $\nil(R)=0$. Since $R$ is Noetherian
+$\implies$ Suppose that $R$ is reduced.
 \end{proof}
 \newpage
 \begin{problem}

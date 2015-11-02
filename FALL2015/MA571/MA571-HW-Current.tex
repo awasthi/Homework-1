@@ -29,6 +29,9 @@
     pdfsubject={\coursename}
     ]{hyperref}
 
+% Use symbols instead of numbers
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
 \usepackage{graphicx}
 \graphicspath{{figures/}}
 
@@ -153,7 +156,7 @@
 \newcommand{\ZZ}{\mathbb{Z}}
 
 % Renewcommands
-\renewcommand\setminus{\smallsetminus}
+% \renewcommand\setminus{\smallsetminus}
 \renewcommand\phi{\varphi}
 \renewcommand\epsilon{\varepsilon}
 
