@@ -17,11 +17,11 @@ $\bigcap_{i=1}^m\mathfrak{q}_i$ be a minimal decomposition of $I$ into
 primary ideals where $\mathfrak{q}_i$ is
 $\mathfrak{p}_i$-primary. $\implies$ Suppose $x\in I^{\langle J\rangle}$
 then $xJ^n\subset I$ for some $n\geq 1$. Given $i$ such that
-$\mathfrak{p}_i\nsupset J$\footnote{Why does such an ideal exist? Well,
-  suppose that $\mathfrak{p}_i\supset J$ for all $1\leq i\leq
-  m$. Then
-  $J\subset\bigcap_{i=1}^m\mathfrak{p}_i=\bigcap_{i=1}^m\sqrt{\mathfrak{q}_i}=\sqrt{\bigcap_{i=1}^m\mathfrak{q}_i}=\sqrt{I}$
-so that }
+$\mathfrak{p}_i\nsupset J$\footnote{\textcolor{Red}{Why does such
+    an ideal exist? Well, suppose that $\mathfrak{p}_i\supset J$
+    for all $1\leq i\leq   m$. Then
+  $J\subset\bigcap_{i=1}^m\mathfrak{p}_i=\bigcap_{i=1}^m\sqrt{\mathfrak{q}_i}=\sqrt{\bigcap_{i=1}^m\mathfrak{q}_i}=\sqrt{I}$.
+What next?}}
 take $y\in
 J\smallsetminus\mathfrak{p}_i$. Then $xy^n\in\mathfrak{q}_i$ so
 $x\in\mathfrak{q}_i$ since $\mathfrak{q}_i$ is primary and
@@ -86,7 +86,8 @@ R
 0.
 \]
 Now, consider
-$\Quot(R)=S^{-1}R$ where $S=R\smallsetminus 0$. By 4.6, since
+$\Quot(R)=S^{-1}R$ where
+$S=R\smallsetminus\bigcup_{i=1}^n\mathfrak{p}_i$. By 4.6, since
 $S^{-1}R$ is a flat $R$-module, we have an exact sequence
 \[
 0
@@ -102,8 +103,15 @@ S^{-1}\coker\phi
 0
 .
 \]
-In fact, $\phi$ is an $R$-linear isomorphism since $\coker(\phi)$
-is annihilated by an element of $S$
+In fact, $\phi$ is an $R$-linear isomorphism since $\coker\phi$
+is annihilated by an element of
+$S$.\footnote{\textcolor{Red}{Why? We need to show that the set
+$\ann_R(\coker\phi)$ is nonempty.}}
+It follows that $\Quot(R)\cong \prod_{i=1}^n k_1$ where
+$k_i=\Quot(R_{\mathfrak{p}_i})$.
+
+$\impliedby$ Conversely, suppose that $\Quot(R)\cong\prod_{i=1}^n
+k_i$ where $k_i$ is a field.
 \end{proof}
 \newpage
 \begin{problem}
@@ -112,6 +120,12 @@ element. Show that $\Ass_R\left(R/(x^n)\right)=\Ass_R(R/(x))$ for
 every $n\geq 1$.
 \end{problem}
 \begin{proof}
+Suppose that $x$ is an $R$-regular element then $x\notin\nil(R)$,
+i.e., $x$ is not a nilpotent element. Recall that the associated
+of $(x^n)$ are precisely $\Ass_R(R/(x^n))$. We will show double
+inclusion: One direction is easy namely $\implies$ uppose that
+$\mathfrak{p}\in\Ass_R(R/(x^n))$. Then $\mathfrak{p}=\ann(\bar
+y)=((x^n):y)$ for some $y\in R$. Then $\sqrt{}$
 \end{proof}
 \newpage
 \begin{problem}
