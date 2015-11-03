@@ -4,6 +4,30 @@ a path in $X$ from $x_1$ to $x_2$. Show that if
 $\gamma=\alpha*\beta$, then $\hat\gamma=\hat\beta\circ\hat\alpha$.
 \end{problem}
 \begin{proof}
+By Theorem 52.1, the paths $\alpha$ and $\beta$ induce a group homomorphism
+$\hat\alpha\colon\pi_1(X,x_0)\to\pi_1(X,x_1)$ and
+$\hat\beta\colon\pi_1(X,x_1)\to\pi_1(X,x_2)$, respectively. We want to
+show therefore that the induced homomorphism
+$\hat\gamma=\widehat{\alpha*\beta}$ is in fact equivalent to the
+composition $\hat\beta\circ\hat\alpha$. Let $[f]$ be a loop based at $x_0$
+then
+\begin{align*}
+\hat\gamma([f])&=\widehat{\alpha*\beta}([f])\\
+               &=\bigl[\,\overline{\alpha*\beta}\,\bigr]*[f]*[\alpha*\beta]\\
+               &=\bigl[\bar\beta*\bar\alpha\bigr]*[f]*[\alpha]*[\beta]\\
+\shortintertext{by the well-definedness of the path product operation, we have}
+               &=[\bar\beta]*[\bar\alpha]*[f]*[\alpha]*[\beta]\\
+\shortintertext{by associativity of the path product,}
+               &=[\bar\beta]*([\bar\alpha]*[f]*[\alpha])*[\beta]\\
+               &=[\bar\beta]*\hat\alpha([f])*[\beta]\\
+\shortintertext{where $\alpha([f])$ is a loop based at $x_1$ so}
+               &=\hat\beta\left(\hat\alpha([f])\right)\\
+               &=\bigl(\hat\beta\circ\hat\alpha\bigr)([f]).
+\end{align*}
+Thus, the following diagram commutes
+\begin{center}
+\includegraphics{figures/hw-10-pi-1-path-diagram}
+\end{center}
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S52, Ex.\,3]
@@ -79,6 +103,12 @@ functions. (Note: this shows in particular that there is no
 $\iota\colon S^1\to\RR$ with $p\circ\iota$ equal to the identity
 map, where $p$ is the map in the note on the Fundamental Group of
 the Circle.)
+\end{problem}
+\begin{proof}
+\end{proof}
+\newpage
+\begin{problem}[(D)]
+Prove Proposition C from the note on the Fundamental Group of the Circle.
 \end{problem}
 \begin{proof}
 \end{proof}

@@ -3,8 +3,8 @@ entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**\input hw-10-path-connected-hom-indep.tex
-(./hw-10-path-connected-hom-indep.tex
+**\input hw-10-pi-1-path-diagram.tex
+(./hw-10-pi-1-path-diagram.tex
 (/usr/share/texmf-dist/tex/latex/standalone/standalone.cls
 Document Class: standalone 2012/09/15 v1.1b Class to compile TeX sub-files stan
 dalone
@@ -485,8 +485,8 @@ File: pgflibraryarrows.meta.code.tex 2013/12/13 v3.0.0 (rcs-revision 1.12)
 \pgfarrowlength=\dimen171
 \pgfarrowwidth=\dimen172
 \pgfarrowlinewidth=\dimen173
-)) (./hw-10-path-connected-hom-indep.aux)
-\openout1 = `hw-10-path-connected-hom-indep.aux'.
+)) (./hw-10-pi-1-path-diagram.aux)
+\openout1 = `hw-10-pi-1-path-diagram.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
@@ -500,8 +500,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
-
-ABD: EveryShipout initializing macros
+ ABD: EveryShipout initializing macros
 (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count127
@@ -586,26 +585,26 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./hw-10-path-connected-ho
-m-indep.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./hw-10-pi-1-path-diagram
+.aux) ) 
 Here is how much of TeX's memory you used:
- 15626 strings out of 493089
- 312333 string characters out of 6140693
- 387302 words of memory out of 5000000
- 18816 multiletter control sequences out of 15000+600000
+ 15622 strings out of 493089
+ 312146 string characters out of 6140693
+ 386295 words of memory out of 5000000
+ 18812 multiletter control sequences out of 15000+600000
  5441 words of font info for 24 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,15n,82p,441b,944s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pf
-b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb>
-Output written on hw-10-path-connected-hom-indep.pdf (1 page, 55324 bytes).
+ 62i,15n,82p,434b,944s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb
+>
+Output written on hw-10-pi-1-path-diagram.pdf (1 page, 42148 bytes).
 PDF statistics:
- 39 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 35 PDF objects out of 1000 (max. 8388607)
+ 25 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  3085 words of extra memory for PDF output out of 10000 (max. 10000000)
 

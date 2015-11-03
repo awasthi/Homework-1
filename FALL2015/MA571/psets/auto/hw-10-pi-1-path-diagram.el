@@ -1,8 +1,8 @@
 (TeX-add-style-hook
- "hw-10-path-connected-hom-indep"
+ "hw-10-pi-1-path-diagram"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
-                     '(("standalone" "crop" "tikz")))
+                     '(("standalone" "crop" "tikz" "10pt")))
    (TeX-run-style-hooks
     "latex2e"
     "standalone"
