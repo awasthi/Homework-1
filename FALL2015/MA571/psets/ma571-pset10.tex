@@ -75,10 +75,41 @@ since $X$ is path connected. Now we claim that the following
 H(x,t)\coloneqq f_1(x)*\alpha(tx)*\bar\alpha((1-t)x)*f_2(x)
 \]
 is a homotopy from $f=f_1*f_2$ to the extended loop $\tilde
-f=f_1*\alpha*\bar\alpha*f_2$. It is clear that $H$ is continuous since it is
-a path products and multiplication on the interval $I$, $tx$, is
-continuous. Lastly, $H(x,0)=f_1(x)*\alpha(0)*\bar\alpha(0)*f_2(x)$ and
-$H(x,1)=f_1(x)*\alpha(x)*\bar\alpha(x)*f_2(x)$. Now
+f=f_1*\alpha*\bar\alpha*f_2$.
+\begin{proof}[Proof of claim]
+\renewcommand{\qedsymbol}{$\clubsuit$}
+It is clear that $H$ is continuous since it is
+a path products and multiplication on the unit interval $I$ is
+continuous so $tx$ is continuous. Lastly,
+$H(x,0)=f_1(x)*\alpha(0)*\bar\alpha(0)*f_2(x)$ and
+$H(x,1)=f_1(x)*\alpha(x)*\bar\alpha(x)*f_2(x)$.
+\end{proof}
+Now, let $f\simeq_p\alpha_1*\bar\beta_1$ and
+$g\simeq_p\alpha_2*\bar\beta_2$ where $\alpha_i,\beta_i$ are
+paths from $x_0$ to $x_1$. Then we have
+\begingroup
+\allowdisplaybreaks
+\begin{align*}
+[f]*[g]*[\bar f]*[\bar g]
+&=
+[\alpha_1*\bar\beta_1]*[\alpha_2*\bar\beta_2]*
+\bigl[\overline{\alpha_1*\bar\beta_1}\bigr]*
+\bigl[\overline{\alpha_2*\bar\beta_2}\bigr]\\
+&=
+[\alpha_1*\bar\beta_1]*[\alpha_2*\bar\beta_2]*
+[\beta_1*\bar\alpha_1]*[\beta_2*\bar\alpha_2]\\
+&=
+[\alpha_1]*[\bar\beta_1]*[\alpha_2]*[\bar\beta_2]*
+[\beta_1]*[\bar\alpha_1]*[\beta_2]*[\bar\alpha_2]\\
+&=\hat{\bar{\alpha}}_1\bigl([\bar\beta_1]*[\alpha_2]*[\bar\beta_2]*[\beta_1]\bigr)*[\beta_2]*[\alpha_2]\\
+&=\hat{\bar{\alpha}}_1\bigl(\hat\beta_2([\alpha_2]*[\bar\beta_2])\bigr)*[\beta_2]*[\bar\alpha_2]\\
+&=[\alpha_2]*[\bar\beta_2]*[\beta_2]*[\bar\alpha_2]\\
+&=[\alpha_2]*[e_{x_0}]*[\bar\alpha_2]\\
+&=[\alpha_2]*[\bar\alpha_2]\\
+&=[e_{x_0}].
+\end{align*}
+\endgroup
+Thus, $\pi_1(X,x_0)$ is Abelian.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S52, Ex.\,4]
