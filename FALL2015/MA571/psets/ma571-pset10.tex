@@ -37,19 +37,47 @@ pair $\alpha$ and $\beta$ of paths from $x_0$ to $x_1$, we have
 $\hat\alpha=\hat\beta$.
 \end{problem}
 \begin{proof}
-$\implies$ Let $f$ and $g$ be loops about $x_0$. Then, since $X$
-is path-connected, we claim that $f$ and $g$ are homotopic to the
-path product of two paths $\alpha$ and $\beta$ from $x_0$ to
-$x_1$, say, $\alpha_1*\bar\beta_1$ and
-$\alpha_2*\bar\beta_2$. More precisely, split $f$ into the path
-$f_1=f(t/2)$ from $x_0$ to $x_2$ and $f_2=f((t+1)/2)$ from $x_2$
-to $x_0$  and let $x_2$ be the point at $f(1/2)$. Then there
-exists a path, say $\alpha$, from $x_2$ to $x_1$. Now we
-construct the homotopy
-\[H(x,t)=f_1(x/2)*\alpha(2tx)*\bar\alpha*((2t-1)x)*f_2((x+1)/2)\]
-from $f=f_1*f_2$ to the loop $f=f_1*\alpha*\bar\alpha*f_2$.
+$\implies$ Suppose that $\pi_1(X,x_0)$ is Abelian. Then for any class of
+loops about $x_0$, say $[f]$ and $[g]$, the product $[f]*[g]=[g]*[f]$. Let
+$\alpha$ and $\beta$ be paths from $x_0$ to $x_1$. Then the induced map on
+fundamental groups $\hat\alpha$ and $\hat\beta$ yield isomorphism by
+Theorem 52.1 so that the map $\hat{\bar\beta}\circ\hat\alpha$ is an
+automorphism of $\pi_1(X,x_0)$. Moreover, we have
+\begin{align*}
+\hat{\bar{\beta}}\circ\hat\alpha([f])
+&=
+\hat{\bar{\beta}}\bigl(\hat\alpha([f])\bigr)\\
+&=
+\hat{\bar{\beta}}\bigl([\bar\alpha]*[f]*[\alpha]\bigr)\\
+&=
+[\beta]*\bigl([\bar\alpha]*[f]*[\alpha]\bigr)*[\bar\beta]\\
+\shortintertext{by associativity of the path product, we may rewrite the
+  above expression as}
+&=([\beta]*[\bar\alpha])*[f]*([\alpha]*[\bar\beta])
+\shortintertext{noting that $[\beta]*[\bar\alpha]$ and
+  $[\alpha]*[\bar\beta]$ are loops based at $x_0$, since $\pi_1(X,x_0)$ is
+  Abelian, we have}
+&=([\beta]*[\bar\alpha])*([\alpha]*[\bar\beta])*[f]\\
+&=[e_{x_0}]*[f]\\
+&=[f].
+\end{align*}
+Thus, $\hat{\bar{\beta}}\circ\hat\alpha=\id_{\pi_1(X,x_0)}$, i.e.,
+$\hat\alpha=\hat\beta$.
 
-$\impliedby$
+$\impliedby$ Let $f$ and $g$ be loops about $x_0$. Then, since $X$ is path
+connected, we claim that $f$ and $g$ are homotopic to the path product
+$\alpha_1*\bar\beta_1$ and $\alpha_2*\bar\beta_2$ where $\alpha_i,\beta_i$
+are paths from $x_0$ to $x_1$. More precisely, split $f$ into the paths
+$f_1=f(t/2)$ and $f_2=f((t+1)/2)$; it is clear that $f=f_1*f_2$. Let
+$x_2\coloneqq f_1(1)$ then there exists a path $\alpha$ from $x_2$ to $x_1$
+since $X$ is path connected. Now we claim that the following
+\[
+H(x,t)\coloneqq f_1(x)*\alpha(tx)*\bar\alpha(tx)*f_2(x)
+\]
+is a homotopy from $f=f_1*f_2$ to the extended loop $\tilde
+f=f_1*\alpha*\bar\alpha*f_2$. It is clear that $H$ is continuous since it is
+a path products and multiplication on the interval $I$, $tx$, is
+continuous. Lastly, $H(x,0)=f_1(x)*\alpha(0)*\bar\alpha(0)*f_2()$
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S52, Ex.\,4]
