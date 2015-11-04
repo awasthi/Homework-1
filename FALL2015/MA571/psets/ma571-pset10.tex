@@ -37,6 +37,19 @@ pair $\alpha$ and $\beta$ of paths from $x_0$ to $x_1$, we have
 $\hat\alpha=\hat\beta$.
 \end{problem}
 \begin{proof}
+$\implies$ Let $f$ and $g$ be loops about $x_0$. Then, since $X$
+is path-connected, we claim that $f$ and $g$ are homotopic to the
+path product of two paths $\alpha$ and $\beta$ from $x_0$ to
+$x_1$, say, $\alpha_1*\bar\beta_1$ and
+$\alpha_2*\bar\beta_2$. More precisely, split $f$ into the path
+$f_1=f(t/2)$ from $x_0$ to $x_2$ and $f_2=f((t+1)/2)$ from $x_2$
+to $x_0$  and let $x_2$ be the point at $f(1/2)$. Then there
+exists a path, say $\alpha$, from $x_2$ to $x_1$. Now we
+construct the homotopy
+\[H(x,t)=f_1(x/2)*\alpha(2tx)*\bar\alpha*((2t-1)x)*f_2((x+1)/2)\]
+from $f=f_1*f_2$ to the loop $f=f_1*\alpha*\bar\alpha*f_2$.
+
+$\impliedby$
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S52, Ex.\,4]
