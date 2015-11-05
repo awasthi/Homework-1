@@ -136,7 +136,7 @@ X\to Y$ be continuous, with $h(x_0)=y_0$ and $h(x_1)=y_1$. Let
 $\alpha$ be a path in $X$ from $x_0$ to $x_1$, and let
 $\beta=h\circ\alpha$. Show that
 \[
-\hat\beta\circ(h_{x_0})_*=(h_{x_1})\circ\hat\alpha.
+\hat\beta\circ(h_{x_0})_*=(h_{x_1})_*\circ\hat\alpha.
 \]
 This equation expresses the fact that the following diagram of
 maps ``commutes''
@@ -145,6 +145,19 @@ maps ``commutes''
 \end{center}
 \end{problem}
 \begin{proof}
+Unpacking the expression on the left, we have the following
+sequence of equalities: Let $f$ be a loop in $X$ based at $x_0$
+then
+\begin{align*}
+\bigl(\hat\beta\circ(h_{x_0})_*\bigr)([f])
+&=\hat\beta\bigl((h_{x_0})_*([f])\bigr)\\
+&=\hat\beta\bigl([h(f)]\bigr)\\
+&=[\bar\beta]*[h(f)]*[\beta]\\
+&=\bigl[\,\overline{h\circ\alpha}\,\bigr]*[h(f)]*[h\circ\alpha]\\
+&=[h\circ\bar\alpha]*[h(f)]*[h\circ\alpha]\\
+\shortintertext{since $h(f)$ is a loop in $Y$ based at $y_0$}
+&=(h_{x_1})
+\end{align*}
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S55, Ex.\,1]
