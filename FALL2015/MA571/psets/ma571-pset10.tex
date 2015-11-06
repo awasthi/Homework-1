@@ -190,9 +190,28 @@ fixed point and $h$ maps some point $x$ to its antipode $-x$.
 Prove that every $m$-manifold is locally path-connected.
 \end{problem}
 \begin{proof}
-Suppose $M$ is an $m$-manifold. Let $x\in M$. Then there exists a
-neighborhood $U$ of $x$ homeomorphic to an open subset, say $W$, of
-$\RR^m$. Let $h\colon U\to V$ be a homeomorphism.
+Suppose $M$ is an $m$-manifold. Let $x\in M$ and $U'$ be an arbitrary
+neighborhood of $x$. Then, since $M$ is a manifold, there exists an open
+neighborhood $U$ of $x$ that is homeomorphic to an open subset, say $V$, of
+$\RR^m$. Let $h\colon U\to V$ be a homeomorphism. Then $h(U\cap U')$ is
+open in $U$ so by Theorem 16.2, $h(U\cap U')$ is open in
+$\RR^m$. Therefore, for sufficiently small values of $\delta>0$, we have
+the inclusion $B(h(x),\delta)\subset h(U\cap U')$. We claim that
+$W\coloneqq h^{-1}(B(h(x),\delta))$ is a path-connected neighborhood of $x$
+contained in $U'$.
+
+Containment is clear for $h$ is a bijection and we have that $W\subset
+U\cap U'\subset U'$. By Example 3 in Munkres \S24 we know that open balls
+in $\RR^m$ are path-connected therefore given $y_0=h(x_0),y_1=h(x_1)\in
+h(W)$, there exists a path $p\colon I\to h(W)$ with $p(0)=y_0$ and
+$p(1)=y_1$. Then $q\coloneqq \left(\bigl.(h^{-1})\bigr|_{h(W)}\circ
+  p\right)\colon I\to W$ is a path in $W$ from $x_0$ to $x_1$. It is clear
+that $q$ is continuous by Theorem 18.2(c) since it is a composition of
+continuous functions (where $\bigl.(h^{-1})\bigr|_{h(W)}$ is continuous by
+Theorem 18.2(d) since it is the restriction of a continuous
+function). Lastly, $q(0)=x_0$ and $q(1)=x_1$. Since $x_0$ and $x_1$ were
+arbitrary, it follows that $W$ is path-connected. Therefore, $M$ is locally
+path-connected.
 \end{proof}
 \newpage
 \begin{problem}[(B)]
