@@ -218,6 +218,15 @@ path-connected.
 Prove that every $m$-manifold is regular.
 \end{problem}
 \begin{proof}
+Let $x\in M$ and $U'$ be an arbitrary
+neighborhood of $x$. Then, since $M$ is a manifold, there exists an open
+neighborhood $U$ of $x$ that is homeomorphic to an open subset, say $V$, of
+$\RR^m$. Let $h\colon U\to V$ be a homeomorphism. Then $h(U\cap U')$ is
+open in $U$ so by Theorem 16.2, $h(U\cap U')$ is open in
+$\RR^m$. Since $\RR^m$ is regular, there exist an neighborhood
+$W$ of $h(x)$ such that $\overline W\subset h(U\cap U')$. We
+claim that $h^{-1}(W)\subset U'$ is a neighborhood of $x$ such
+that $\overline{h^{-1}(W)}\subset U'$.
 \end{proof}
 \newpage
 \begin{problem}[(C)]
