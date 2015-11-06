@@ -155,8 +155,10 @@ then
 &=[\bar\beta]*[h(f)]*[\beta]\\
 &=\bigl[\,\overline{h\circ\alpha}\,\bigr]*[h(f)]*[h\circ\alpha]\\
 &=[h\circ\bar\alpha]*[h(f)]*[h\circ\alpha]\\
-\shortintertext{since $h(f)$ is a loop in $Y$ based at $y_0$}
-&=(h_{x_1})
+\shortintertext{but since $(h_{x_1})_*$ is a homomorphism}
+&=(h_{x_0})_*(\bar\alpha*f*\alpha)\\
+&=(h_{x_1})_*\bigl(\hat\alpha([f])\bigr)\\
+&=\bigl((h_{x_1})_*\circ\hat\alpha\bigr)([f]).
 \end{align*}
 \end{proof}
 \newpage
@@ -165,6 +167,16 @@ Show that if $A$ is a retract of $B^2$, then every continuous map
 $f\colon A\to A$ has a fixed point.
 \end{problem}
 \begin{proof}
+Suppose that $A$ is a retract of $B^2$. Let $r\colon B^2\to A$ one such
+retraction. If $f\colon A\to A$ is a continuous map, then $f\circ r$ is a
+continuous map, by Theorem 18.2(c), from $B^2$ to $A$. Expanding the
+codomain of $f$ to $B^2$, i.e., composing with the canonical injection
+$\iota\colon A\hookrightarrow B^2$, we have a continuous mapping
+$\tilde{f}\colon B^2\to B^2$ that coincides with $f$ in $A$. Then, by
+Theorem 55.6, $\tilde f$ has a fixed point, i.e., $\tilde{f}(x)=x$ for some
+$x\in B^2$. By the Brouwer fixed-point theorem for the disc, there exists a
+point $x\in B^2$ such that $\tilde{f}(x)=x$, but $\im{\tilde{f}}=\im
+f\subset A$ so $x\in A$. It follows that $f$ has a fixed point.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S55, Ex.\,2]
@@ -178,6 +190,9 @@ fixed point and $h$ maps some point $x$ to its antipode $-x$.
 Prove that every $m$-manifold is locally path-connected.
 \end{problem}
 \begin{proof}
+Suppose $M$ is an $m$-manifold. Let $x\in M$. Then there exists a
+neighborhood $U$ of $x$ homeomorphic to an open subset, say $W$, of
+$\RR^m$. Let $h\colon U\to V$ be a homeomorphism.
 \end{proof}
 \newpage
 \begin{problem}[(B)]

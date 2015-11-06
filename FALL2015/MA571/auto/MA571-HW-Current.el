@@ -32,17 +32,11 @@
     "babel"
     "CJKutf8")
    (TeX-add-symbols
-    '("restr" 2)
     '("textzh" 1)
     '("textni" 1)
     '("textha" 1)
     "nsubset"
     "nsupset"
-    "diam"
-    "id"
-    "im"
-    "Int"
-    "Cl"
     "CC"
     "NN"
     "QQ"
