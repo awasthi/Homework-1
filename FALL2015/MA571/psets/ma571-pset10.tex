@@ -223,10 +223,19 @@ neighborhood of $x$. Then, since $M$ is a manifold, there exists an open
 neighborhood $U$ of $x$ that is homeomorphic to an open subset, say $V$, of
 $\RR^m$. Let $h\colon U\to V$ be a homeomorphism. Then $h(U\cap U')$ is
 open in $U$ so by Theorem 16.2, $h(U\cap U')$ is open in
-$\RR^m$. Since $\RR^m$ is regular, there exist an neighborhood
-$W$ of $h(x)$ such that $\overline W\subset h(U\cap U')$. We
+$\RR^m$. Since $\RR^m$ is regular, by Lemma 31.1(a), there exist an
+neighborhood $W$ of $h(x)$ such that $\overline W\subset h(U\cap U')$. We
 claim that $h^{-1}(W)\subset U'$ is a neighborhood of $x$ such
 that $\overline{h^{-1}(W)}\subset U'$.
+
+That $h^{-1}(W)$ is contained in $U'$ is clear since $h$ is a
+homeomorphism and $W$ is contained in the image of $U\cap U'$. It is also
+easy to see that $h^{-1}(\overline{W})\subset U'$ since, again $h$ is a
+homeomorphism and $\overline W\subset U\cap U'$. Now, since $h$ is a
+homeomorphism it is a closed map so $h^{-1}(\overline W)$ is a closed
+subset of $U$ containing $h^{-1}(W)$. Therefore, by Lemma B,
+$\overline{h^{-1}(W)}\subset h^{-1}(\overline{W})\subset U'$. Thus, by
+Lemma 31.1, $M$ is regular.
 \end{proof}
 \newpage
 \begin{problem}[(C)]
@@ -238,6 +247,24 @@ map, where $p$ is the map in the note on the Fundamental Group of
 the Circle.)
 \end{problem}
 \begin{proof}
+Seeking a contradiction, suppose that $\iota\colon S^1\to\RR$ is a
+continuous injection. Then $\iota$ cannot be a surjection since Theorem
+26.6 would imply $S^1\approx\RR$, but $S^1$ is compact whereas $\RR$ is
+not, contradicting Theorem 26.5. Therefore, by homework Problem 2.8
+(Munkres \S18, Ex.\,4) $\iota$ is an imbedding of $S^1$ into $\RR$ and
+$\im\iota=[a,b]$ for some $a,b\in\RR$ with $a<b$, since $S^1$ is compact
+and connected. Define $\tilde{\iota}=\left.\iota\right|_{[a,b]}$ then
+$\tilde\iota$ is a homeomorphism (it is continuous by Theorem 18.2(e),
+and bijective since $[a,b]$ is the image of $S^1$ under $\iota$ so is a
+homeomorphism by Theorem 26.6 since $S^1$ is compact and $[a,b]$ is
+Hausdorff). Now, take the point $x\coloneqq (a+b)/2$ in the interval
+$[a,b]$. By Lemma $A$, $S^1\smallsetminus\tilde\iota(x)$ and
+$[a,b]\smallsetminus x$ are homeomorphic. But $[a,b]\smallsetminus x$ is
+disconnected, in particular $[a,x),(x,b]$ are open and closed and
+$[a,x)\cup(x,b]=[a,b]\setminus x$ hence, form a disconnection, but
+$S^1\smallsetminus\tilde\iota(x)$ is connected (the map
+$(x,y,z)\mapsto(x\cos z+y\sin z,-x\sin z+y\cos z)$, i.e., the rotation map,
+yields a homomorphism).
 \end{proof}
 \newpage
 \begin{problem}[(D)]
