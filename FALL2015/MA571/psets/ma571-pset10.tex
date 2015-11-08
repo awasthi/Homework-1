@@ -184,6 +184,40 @@ Show that if $h\colon S^1\to S^1$ is nulhomotopic, then $h$ has a
 fixed point and $h$ maps some point $x$ to its antipode $-x$.
 \end{problem}
 \begin{proof}
+By Lemma 55.3 $h\colon S^1\to X$ is nulhomotopic if and only if $h$ extends
+to a continuous function $k\colon B^2\to S^1$. By Theorem 18.2(e), we may
+expand the codomain of $k$ to $B^2$ giving us a map $\tilde k\colon B^2\to
+B^2$. By the Brouwer fixed-point theorem, there exists a point $x\in B^2$
+such that $\tilde k(x)=x$. But $x\in \tilde k(B^2)\subset S^1$ so $x\in
+S^1$. Since $k$ restricts to $h$ on $S^1$, it follows that $h(x)=x$.
+
+Since $S^1\subset\RR^2$, write $h(x)=(h_1(x),h_2(x))$ where $h_1=\pi_1\circ
+h$ and $h_2=\pi_2\circ h$. Let $H(x,t)\colon S^1\times I\to S^1$ be the map
+\[
+H(x,t)\coloneqq
+\begin{bmatrix}
+\cos\pi t&-\sin\pi t\\
+\sin\pi t&\cos\pi t
+\end{bmatrix}
+\begin{bmatrix}
+h_1(x)\\
+h_2(x)
+\end{bmatrix}
+\]
+Note that $H(x,t)$ is continuous since multiplication is continuous in
+$\RR$ by Theorem 21.5 and each component is continuous so by Theorem 18.4
+together with 18.2(e) $H(x,t)$ is continuous. Moreover, we have
+\begin{align*}
+H(x,0)&=((\cos 0)h_1(x)-(\sin 0)h_2(x),(\sin 0)h_1(x)+(\cos 0)h_2(x))\\
+      &=h(x)\\
+H(x,1)&=((\cos \pi)h_1(x)-(\sin \pi)h_2(x),(\sin \pi)h_1(x)+(\cos
+        \pi)h_2(x))\\
+      &=(-h_1(x),-h_2(x))\\
+      &=-(h_1(x),h_2(x))\\
+      &=-h(x).
+\end{align*}
+Therefore, $h\simeq -h$. By the previous argument, there exists $x\in S^1$
+such that $-h(x)=x$, i.e., $h(x)=-x$.
 \end{proof}
 \newpage
 \begin{problem}[(A)]
@@ -319,8 +353,31 @@ $\alpha,\beta\colon A\to\RR$ have the property that $\alpha(a)=\beta(a)$
 and $p\circ\alpha=p\circ\beta$ (where $p(u)=(\cos 2\pi u,\sin 2\pi u)$)
 then $\alpha=\beta$.
 \end{proposition*}
-We shall proceed by contradiction. Keeping $\alpha$ and $\beta$ as above,
-suppose that $\alpha\neq\beta$.
+First note that
+\begin{align*}
+p\circ\alpha(x)&=p\circ\beta(x)\\
+p(\alpha(x))&=p(\beta(x))\\
+(\cos 2\pi\alpha(x),\sin 2\pi\alpha(x))&=(\cos 2\pi\beta(x),\sin
+                                         2\pi\beta(x))\\
+\intertext{by the sum-to-product identity, we have}
+\cos 2\pi\alpha(x)-\cos 2\pi\beta(x)
+&=-2\sin(\pi(\alpha(x)-\beta(x)))\sin(\pi(\alpha(x)+\beta(x)))\\
+&=0\\
+\sin 2\pi\alpha(x)-\sin 2\pi\beta(x)
+&=2\sin(\pi(\alpha(x)-\beta(x)))\cos(\pi(\alpha(x)+\beta(x)))\\
+&=0.
+\end{align*}
+These in turn imply that $\sin(\pi(\alpha(x)-\beta(x)))=0$ which happens if
+and only if $\alpha(x)-\beta(x)\in\ZZ$. By Theorem 21.5,
+$(\alpha-\beta)(x)$ is continuous so
+$(\alpha-\beta)(A)\subset\ZZ\subset\RR$ is connected. Since $\ZZ$ the only
+connected subsets of $\ZZ$ are singleton sets (for suppose $B\subset\ZZ$
+has two elements, say $x$ and $y$ with $x<y$, then $\left\{\,z\in
+  B\;\middle|\;z\leq x\,\right\}$ and $\left\{\,z\in B\;\middle|\;z\geq
+  y\right\}$ are open since $\ZZ$ has the discrete topology and union up to
+$B$ hence form a separation of $B$). Then, since $\alpha(a)=\beta(a)$ for
+some $a\in A$, $0\in(\alpha-\beta)(A)$ so $(\alpha-\beta)(A)=\{0\}$. It
+follows that $\alpha=\beta$.
 \end{proof}
 
 %%% Local Variables:
