@@ -68,6 +68,14 @@
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
 %% Theorems and definitions
+%% remove parentheses
+\makeatletter
+\def\thmhead@plain#1#2#3{%
+  \thmname{#1}\thmnumber{\@ifnotempty{#1}{ }\@upn{#2}}%
+  \thmnote{ {\the\thm@notefont#3}}}
+\let\thmhead\thmhead@plain
+\makeatother
+
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}[theorem]{Proposition}
@@ -130,12 +138,12 @@
 \newtheorem*{observations*}{**Observations**}
 
 %% Redefinitions & commands
-\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
-  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
-  {#1} % the function
-  % \vphantom{\big|} % pretend it's a little taller at normal size
-  \right|{#2} % this is the delimiter
-  }}
+% \newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+%   \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+%   {#1} % the function
+%   % \vphantom{\big|} % pretend it's a little taller at normal size
+%   \right|{#2} % this is the delimiter
+%   }}
 
 \newcommand\xtwoheadrightarrow[2][]{%
   \mathrel{\ooalign{$\xrightarrow[#1\mkern4mu]{#2\mkern4mu}$\cr%
@@ -175,8 +183,8 @@
 \begin{document}
 % Renewcommands
 % \renewcommand\setminus{\smallsetminus}
-\renewcommand\phi{\varphi}
-\renewcommand\epsilon{\varepsilon}
+% \renewcommand\phi{\varphi}
+% \renewcommand\epsilon{\varepsilon}
 
 \frontmatter
 \aliaspagestyle{title}{empty}

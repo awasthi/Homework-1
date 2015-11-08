@@ -258,19 +258,69 @@ $\tilde\iota$ is a homeomorphism (it is continuous by Theorem 18.2(e),
 and bijective since $[a,b]$ is the image of $S^1$ under $\iota$ so is a
 homeomorphism by Theorem 26.6 since $S^1$ is compact and $[a,b]$ is
 Hausdorff). Now, take the point $x\coloneqq (a+b)/2$ in the interval
-$[a,b]$. By Lemma $A$, $S^1\smallsetminus\tilde\iota(x)$ and
+$[a,b]$. By Lemma $A$, $S^1\smallsetminus\tilde\iota^{-1}(x)$ and
 $[a,b]\smallsetminus x$ are homeomorphic. But $[a,b]\smallsetminus x$ is
 disconnected, in particular $[a,x),(x,b]$ are open and closed and
 $[a,x)\cup(x,b]=[a,b]\setminus x$ hence, form a disconnection, but
-$S^1\smallsetminus\tilde\iota(x)$ is connected (the map
-$(x,y,z)\mapsto(x\cos z+y\sin z,-x\sin z+y\cos z)$, i.e., the rotation map,
-yields a homomorphism).
+$S^1\smallsetminus\tilde\iota(x)$ is (path) connected: Let
+$(x_0,y_0)\in S^1$. We rotate the circle $S^1$ so that
+$(x_0,y_0)$ gets moved to the point $(1,0)$ clockwise via the the map from
+$\RR^2\to\RR^2$
+\[
+R_\theta(x,y)=
+\begin{bmatrix}
+\cos\theta&\sin\theta\\
+-\sin\theta&\cos\theta
+\end{bmatrix}
+\begin{bmatrix}
+x\\y
+\end{bmatrix}
+\qquad\text{where $\theta=\arctan(y_0/x_0)$}.
+\]
+Note that
+\begin{align*}
+R_\theta(x_0,y_0)
+&=\left(\cos\theta x_0+\sin\theta y_0,-\sin\theta x_0+\cos\theta
+  y_0\right)\\
+&=\left(\frac{x_0^2}{\sqrt{x_0^2+y_0^2}}+\frac{y_0^2}{\sqrt{x_0^2+y_0^2}}
+  ,-\frac{x_0y_0}{\sqrt{x_0^2+y_0^2}}+\frac{x_0y_0}{\sqrt{x_0^2+y_0^2}}\right)\\
+&=(1,0)
+\end{align*}
+The map is continuous since multiplication is continuous by Theorem
+21.5 and since $R_\theta$ is bijective (in particular, the matrix
+$\left[\begin{smallmatrix}\cos\theta&\sin\theta\\-\sin\theta&\cos\theta\end{smallmatrix}\right]$
+has determinant equal to $1$ so is invertible), $R_\theta$ is a
+homeomorphism by Theorem 26.6 so by Lemma A, its restriction to $S^1$ is a
+homeomorphism onto its image $R_\theta(S^1)$. Without loss of generality,
+we may assume that $\iota^{-1}(x)=(1,0)$. Take any $(x_1,y_1),(x_2,y_2)\in
+S^1\smallsetminus(0,1)$. Let $\phi_1=\arctan(y_1/x_1)/2\pi$ and
+$\phi_2=\arctan(y_2/x_2)/2\pi$. Then the map $p(t)=(\cos 2\pi q(t),\sin
+2\pi q(t))$ where $q(t)=(1-t)\phi_1+t\phi_2$ (counterclockwise, avoiding
+$(0,1)$) is a path from $(x_1,y_1)$ to $(x_2,y_2)$. Thus $S^1\smallsetminus
+(0,1)$ is path connected so is connected (as demonstrated by Munkres in
+p.\,155 although he does not actually assign the result to a corollary as
+he should).
+
+To recap, if $\iota$ is an injection of $S^1$ into $\RR$ Theorem 26.6 tells
+us that $S^1\approx\iota(S^1)$. But we have just shown that the circle
+$S^1$ minus a point is (path) connected whereas the closed interval $[a,b]$
+minus a point is not contradicting Lemma A. Therefore, no such imbedding
+may exists for supposing so has led to a contradiction.
 \end{proof}
 \newpage
 \begin{problem}[(D)]
 Prove Proposition C from the note on the Fundamental Group of the Circle.
 \end{problem}
 \begin{proof}
+The statement of Proposition C is as follows:
+\begin{proposition*}[\textbf{C}]
+Let $A$ be a connected space and let $a\in A$. If two continuous functions
+$\alpha,\beta\colon A\to\RR$ have the property that $\alpha(a)=\beta(a)$
+and $p\circ\alpha=p\circ\beta$ (where $p(u)=(\cos 2\pi u,\sin 2\pi u)$)
+then $\alpha=\beta$.
+\end{proposition*}
+We shall proceed by contradiction. Keeping $\alpha$ and $\beta$ as above,
+suppose that $\alpha\neq\beta$.
 \end{proof}
 
 %%% Local Variables:

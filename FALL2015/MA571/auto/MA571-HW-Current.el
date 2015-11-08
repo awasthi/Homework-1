@@ -37,6 +37,11 @@
     '("textha" 1)
     "nsubset"
     "nsupset"
+    "diam"
+    "id"
+    "im"
+    "Int"
+    "Cl"
     "CC"
     "NN"
     "QQ"
@@ -50,6 +55,7 @@
     "documentsubject"
     "authoremail"
     "spanishoptions"
+    "thmhead"
     "exercisename")
    (LaTeX-add-environments
     '("problem" LaTeX-env-args ["argument"] 0)

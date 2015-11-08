@@ -69,6 +69,14 @@
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
 %% Theorems and definitions
+%% remove parentheses
+\makeatletter
+\def\thmhead@plain#1#2#3{%
+  \thmname{#1}\thmnumber{\@ifnotempty{#1}{ }\@upn{#2}}%
+  \thmnote{ {\the\thm@notefont#3}}}
+\let\thmhead\thmhead@plain
+\makeatother
+
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}[theorem]{Proposition}
@@ -138,6 +146,7 @@
 %   \right|{#2} % this is the delimiter
 %   }}
 
+
 \newcommand{\nsubset}{\ensuremath{\not\subset}}
 \newcommand{\nsupset}{\ensuremath{\not\supset}}
 \renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
@@ -157,8 +166,8 @@
 
 % Renewcommands
 % \renewcommand\setminus{\smallsetminus}
-\renewcommand\phi{\varphi}
-\renewcommand\epsilon{\varepsilon}
+% \renewcommand\phi{\varphi}
+% \renewcommand\epsilon{\varepsilon}
 
 \begin{document}
 \frontmatter

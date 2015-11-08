@@ -33,7 +33,6 @@
     "CJKutf8")
    (TeX-add-symbols
     '("xtwoheadrightarrow" ["argument"] 1)
-    '("restr" 2)
     '("textzh" 1)
     '("textni" 1)
     '("textha" 1)
@@ -69,6 +68,7 @@
     "documentsubject"
     "authoremail"
     "spanishoptions"
+    "thmhead"
     "exercisename")
    (LaTeX-add-environments
     '("problem" LaTeX-env-args ["argument"] 0)
