@@ -126,12 +126,26 @@ of $(x^n)$ are precisely $\Ass_R(R/(x^n))$. We will show double
 inclusion: One direction is easy namely $\implies$ suppose that
 $\mathfrak{p}\in\Ass_R(R/(x^n))$. Then $\mathfrak{p}=\ann(\bar
 y)=((x^n):y)$ for some $y\in R$. Then
-<<<<<<< HEAD
 $\sqrt{\mathfrak{p}}=\sqrt{((x^n):y)}=\bigl(\sqrt{(x^n)}:y\bigr)=((x):y)$
-so $\mathfrak{p}\in\Ass_R(R/(x))$. $\impliedby$ Conversely, suppose that
-$\mathfrak{p}$ an associated prime of $(x)$.
-=======
->>>>>>> acf2410f09b4be05fffb9c9ac1e4904ac6247b9a
+so $\mathfrak{p}\in\Ass_R(R/(x))$.
+
+$\impliedby$ Conversely, and this idea we owe to Matsumura,
+since $(x)/(x^n)\cong R/(x^{n-1})$ (just take the map
+$\varphi\colon y\mapsto xy/(x^n)$ from $R$ into $(x)/(x^n)$; it
+is clear that $(x^{n-1})\subset \ker\varphi$; now take an element
+$z\in\ker\varphi$, $\phi(z)=xz=\bar 0$ so $xz=x^ny$ for some $y$,
+but since $x$ is regular $z=x^{n-1}y$ hence, $z\in(x^n)$) we have
+the short exact sequence of $R$-modules
+\[
+0\longrightarrow
+R/(x^{n-1})\longrightarrow
+R/(x^n)\longrightarrow
+R/(x)\longrightarrow
+0,
+\]
+i.e., $R/(x^n)$ splits. Then
+$\Ass(x^n)=\Ass(x^{n-1})\cup\Ass(x)$. In particular, by induction
+on $n$, we have $\Ass(x^n)=\bigcup_{i=1}^n\Ass(x)=\Ass(x)$.
 \end{proof}
 \newpage
 \begin{problem}
@@ -145,6 +159,9 @@ and let $N$ be a $T$-module. Show:
 \end{enumerate}
 \end{problem}
 \begin{proof}
+(a)
+\\\\
+(b)
 \end{proof}
 \newpage
 \begin{problem}
@@ -152,6 +169,11 @@ Let $K$ be a field that is a finitely generated
 $\ZZ$-algebra. Show that $K$ is a finite field.
 \end{problem}
 \begin{proof}
+Write $K\coloneqq\ZZ[X_1,...,X_n]$. It suffices to show that the
+characteristic of $K$ is finite. It is clear that the
+characteristic of $K$ is not zero, for otherwise we may embed
+$\QQ$ into $K$, but $\QQ$ is infinitely generated as a
+$\ZZ$-algebra.
 \end{proof}
 \newpage
 \begin{problem}
@@ -164,6 +186,13 @@ $R^G=\left\{\,x\in R\;\middle|\;\text{$\sigma(x)=x$ for every
 finitely generated $k$-algebra (and hence a Noetherian ring).
 \end{problem}
 \begin{proof}
+First, we note that $R$ is integral over $R^G$ since, given $x\in
+R$, $x$ is the root of a monic polynomial $p(X)=\prod_{\sigma\in
+  G}(X-\sigma(x))$. Then $p(X)\in R^G[X]$ since the elements of
+$G$ act trivially on $R^G$, hence the coefficients of $p(X)$ must
+be in $R^G$. It follows that $R=R^G[X_1,...,X_n]$ is a finitely
+generated $R^G$-module hence a finitely generated $k$-algebra so
+is Noetherian.
 \end{proof}
 
 %%% Local Variables:
