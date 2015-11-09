@@ -5,6 +5,21 @@ every $\mathfrak{m}\in\MSpec R$ and for every $f\in R$, $f\neq
 with $f\in\mathfrak{m}$. Show that $R$ is Noetherian.
 \end{problem}
 \begin{proof}
+As suggested by Atiyah and MacDonald, we will attempt to show that if
+$I$ is a proper ideal of $R$ it is finitely generated. Since $I\subsetneq
+R$ is proper, there are finitely many maximal ideals which contain it since
+given any point $f\in I$ there are only finitely many ideals which
+contain $f$. Let $\mathfrak{m}_1,...,\mathfrak{m}_r$ be the maximal
+ideals containing $I$ and let $\mathfrak{m}_1,...,\mathfrak{m}_{r+s}$ be
+the finitely many maximal ideals which contain $f\in I$. Supposing
+$\mathfrak{m}_{r+1},...,\mathfrak{m}_{r+s}$ do not contain $I$, then take
+$x_j\in I\smallsetminus\mathfrak{m}_j$ for $r<j\leq r+s$. Since each
+$R_{\mathfrak{m}_i}$ is Noetherian, the extension $I_{\mathfrak{m}_i}$ is
+finitely generated in $R_{\mathfrak{m}_i}$, say by $x_i^j$ for $1\leq i\leq
+r$ and $1\leq j\leq n_i$ where $n_i$ depends on $i$. Then the ideal
+$J\coloneqq (x_0,\left\{x_i^j\right\},x_{r+1},...,x_{r+s})$ and $I$
+coincide on $R_{\mathfrak{m}}$ for all $\mathfrak{m}\in\MSpec R$. Therefore
+$J=I$.
 \end{proof}
 \newpage
 \begin{problem}
