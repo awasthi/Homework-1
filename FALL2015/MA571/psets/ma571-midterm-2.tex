@@ -3,6 +3,23 @@ Let $X$ be a Hausdorff space and let $A$ be a compact subset of
 $X$. Prove from the definitions that $A$ is closed.
 \end{problem}
 \begin{proof}
+This is Theorem 26.3 from Munkres, p.\,165.
+\\\\
+We shall prove that $X-A$ is open, so that $A$ is closed. Let $x_0\in
+X-A$. We show there is a neighborhood of $x_0$ disjoint from $A$. For each
+point $a\in A$, let us choose disjoint neighborhoods $U_a$ and $V_a$ of the
+points $x_0$ and $a$, respectively (using the Hausdorff condition). The
+collection
+\[
+\left\{\,V_a\;\middle|\;a\in A\,\right\}
+\]
+is a covering of $Y$ by sets open in $X$; therefore, finitely many of them
+$V_{a_1},...,V_{a_n}$ cover $A$. The open set $V=V_{a_1}\cup\cdots\cup
+V_{a_n}$ contains $Y$, and is disjoint from the open set
+$U=U_{a_1}\cap\cdots\cap U_{a_n}$ formed by taking the intersection of the
+corresponding neighbrohoods of $x_0$. For if $z$ a point of $V$, then $z\in
+V_{a_i}$ for some $i$, hence $z\notin U_{a_i}$ so $z\notin U$. Then $U$ is
+a neighborhood of $x_0$ disjoint from $Y$, as desired.
 \end{proof}
 \begin{problem}
 Let $X$ be a Hausdorff space and let $A$ and $B$ be disjoint
@@ -11,6 +28,9 @@ $V$ such that $U$ and $V$ are disjoint, $A\subset U$ and
 $B\subset V$.
 \end{problem}
 \begin{proof}
+Suppose that $A$ and $B$ are disjoint compact subsets of $X$. By Theorem
+26.4 for every $x\in B$ there exists disjoint open sets $U_x\supset A$ and
+$V_x$ a neighborhood of $x$.
 \end{proof}
 \begin{problem}
 Prove the Tube Lemma: Let $X$ and $Y$ be topological spaces with
