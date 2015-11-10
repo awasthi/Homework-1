@@ -55,8 +55,7 @@
     "coursename"
     "documentsubject"
     "authoremail"
-    "spanishoptions"
-    "exercisename")
+    "spanishoptions")
    (LaTeX-add-environments
     '("problem" LaTeX-env-args ["argument"] 0)
     "theorem"
@@ -68,10 +67,10 @@
     "definition"
     "example"
     "examples"
+    "exercise"
+    "problem"
     "remark"
     "remarks"
     "observation"
-    "observations")
-   (LaTeX-add-counters
-    "problem")))
+    "observations")))
 
