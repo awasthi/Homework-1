@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.10.13)  12 NOV 2015 16:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.10.13)  12 NOV 2015 17:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1607,7 +1607,7 @@ File: figures/mid-2-rp-1-s-1.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/mid-2-rp-1-s-1.pdf used on input line 183.
 (pdftex.def)             Requested size: 79.16656pt x 54.49245pt.
  [3 <./figures/mid-2-rp-1-s-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 292--300
+Underfull \hbox (badness 10000) in paragraph at lines 294--302
 
  []
 
@@ -1644,7 +1644,7 @@ e1/public/amsfonts/euler/eusm10.pfb></usr/share/texmf-dist/fonts/type1/public/a
 msfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/s
 ymbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
 bm7.pfb>
-Output written on MA571-MID-Current.pdf (7 pages, 190757 bytes).
+Output written on MA571-MID-Current.pdf (7 pages, 191335 bytes).
 PDF statistics:
  143 PDF objects out of 1000 (max. 8388607)
  110 compressed objects within 2 object streams
