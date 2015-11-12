@@ -88,7 +88,12 @@ X\to X$ is a closed map.
 We shall proceed by the tube lemma, i.e, Theorem 26.8. Let $C$ be a closed
 subset of $X\times Y$ then $N=(X\times Y)-C$ is open. Choose $x_0\in
 X-\pi_1(C)$. Then $x_0\times Y$ is contained in $N$ so by the tube lemma,
-there exists a neighborhood $W$ of $x_0$ such that $W\times Y\subset N$.
+there exists a neighborhood $W$ of $x_0$ such that $W\times
+Y\subset N$. In particular, $W\subset X-\pi_1(C)$ otherwise if
+$x\in W\cap\pi_1(C)$ then $x\times Y\subset N$ and $(x,y)\in C$
+for some $y\in Y$, but $N\cap C=\emptyset$. It follows by Lemma C
+that $X-\pi_1(C)$ is open so $\pi_1(C)$ is closed. Since $C$ was
+chosen arbitrarily we see that $\pi_1$ is a closed map.
 \end{proof}
 \begin{problem}
 Let $X$ be a compact space and suppose we are given a nested
@@ -97,6 +102,15 @@ closed. Let $U$ be an open set containing $\bigcap C_i$. Prove
 that there is an $i_0$ with $C_{i_0}\subset U$.
 \end{problem}
 \begin{proof}
+Consider the family of open sets $U_i\coloneqq X-C_i$. Since $U$
+is open $X-U$ is closed so by Theorem 26.2 is compact. We claim
+that $U_i$ forms an open cover of $X-U$. To see note that by De
+Morgan's laws
+\[
+\bigcup_{i\in\NN} U_i=\bigcup_{i\in\NN} X-C_i=X-\bigcap_{i\in\NN}
+C_i\supset X-U
+\]
+since $\bigcap_{i\in\NN} C_i\subset U$.
 \end{proof}
 \begin{problem}
 Let $X$ be a compact space, and suppose there is a finite family
@@ -106,6 +120,16 @@ that $f_i(x)\neq f_i(y)$. Prove that $X$ is homeomorphic to a
 subspace of $\RR^n$.
 \end{problem}
 \begin{proof}
+Consider the map $f\colon X\to\RR^n$ defined by
+$f\coloneqq(f_1,...,f_n)$. This map is continuous by Theorem 18.4
+since each component $f_i$ is continuous. We claim that $X\approx
+f(X)$. To prove this it suffices to show that $f$ is injective so
+that its restriction to $f(X)$ will be surjective and lastly
+invoke Theorem 26.6. Suppose $f(x)=f(y)$ but $x\neq y$. Then
+$f_i(x)\neq f_i(y)$ for some $i$, but this implies that $f(x)\neq
+f(y)$. This is a contradiction therefore, $x=y$. It follows that
+$f$ is a bijection from a compact space $X$ into
+$f(X)\subset\RR^n$ so by Theorem 26.6, we have $X\approx f(X)$.
 \end{proof}
 \begin{problem}
 Let $X$ be a compact metric space and let $\mathcal{U}$ be a
