@@ -3,23 +3,22 @@ Let $X$ be a Hausdorff space and let $A$ be a compact subset of
 $X$. Prove from the definitions that $A$ is closed.
 \end{problem}
 \begin{proof}
-This is Theorem 26.3 from Munkres, p.\,165.
+This is Theorem 26.3 from Munkers \S26, p.\,165; we shall paraphrase it.
 \\\\
-We shall prove that $X-A$ is open, so that $A$ is closed. Let $x_0\in
-X-A$. We show there is a neighborhood of $x_0$ disjoint from $A$. For each
-point $a\in A$, let us choose disjoint neighborhoods $U_a$ and $V_a$ of the
-points $x_0$ and $a$, respectively (using the Hausdorff condition). The
-collection
-\[
-\left\{\,V_a\;\middle|\;a\in A\,\right\}
-\]
-is a covering of $Y$ by sets open in $X$; therefore, finitely many of them
-$V_{a_1},...,V_{a_n}$ cover $A$. The open set $V=V_{a_1}\cup\cdots\cup
-V_{a_n}$ contains $Y$, and is disjoint from the open set
-$U=U_{a_1}\cap\cdots\cap U_{a_n}$ formed by taking the intersection of the
-corresponding neighbrohoods of $x_0$. For if $z$ a point of $V$, then $z\in
-V_{a_i}$ for some $i$, hence $z\notin U_{a_i}$ so $z\notin U$. Then $U$ is
-a neighborhood of $x_0$ disjoint from $Y$, as desired.
+We show that $X-A$ is open. To that end we will show that, given a point
+$x_0\in X-A$, there is neighborhood $U$ of $x_0$ disjoint from $A$. For
+each point $a\in A$, by the Hausdorff property of $X$, choose disjoint
+neighborhoods $U_a$ and $V_a$ of $x_0$ and $a$, respectively. Then the
+collection $\left\{\,V_a\;\middle|\;a\in A\,\right\}$ forms an open cover
+of $A$ so, by Lemma 26.1, only finitely many of the $V_a$'s cover $A$, say
+$V_{a_1},...,V_{a_n}$. Define $U\coloneqq U_{a_1}\cap\cdots\cap
+U_{a_n}$. We claim that $U$ is a neighborhood of $x_0$ disjoint from
+$A$. First, it is clear that $U$ is a neighborhood of $x_0$ since each
+$U_a$ contains $x_0$ and $U$ is an intersection of finitely many of
+these. Second, note that if $z\in U\cap A$ then $z\in U_{a_i}$ for all $i$
+and $z\in V_{a_j}$ for some $j\in\{1,...,n\}$, but $U_{a_j}\cap
+V_{a_j}=\emptyset$. Therefore, $U\cap A=\emptyset$. By Lemma C, it follows
+that $X-A$ is open.
 \end{proof}
 \begin{problem}
 Let $X$ be a Hausdorff space and let $A$ and $B$ be disjoint
@@ -28,9 +27,29 @@ $V$ such that $U$ and $V$ are disjoint, $A\subset U$ and
 $B\subset V$.
 \end{problem}
 \begin{proof}
-Suppose that $A$ and $B$ are disjoint compact subsets of $X$. By Theorem
-26.4 for every $x\in B$ there exists disjoint open sets $U_x\supset A$ and
-$V_x$ a neighborhood of $x$.
+This is Ex.\,5 from Munkres \S26, p.\,171.
+\\\\
+Suppose $A$ and $B$ are disjoint compact subspaces of $X$. Since $X$ is
+Hausdorff, by Theorem 26.4, for every $x\in B$ there exists disjoint open
+sets $U_x$ and $V_x$ where $U_x\supset A$ and $V_x$ is a neighborhood of
+$x$. Then the collection $\left\{\,V_x\;\middle|\;x\in B\right\}$ is an
+open cover of $B$ so by Lemma 26.1, only finitely many of the $V_x$'s cover
+$B$, say $V_{x_1},...,V_{x_n}$. Define $U\coloneqq U_{x_1}\cap\cdots\cap
+U_{x_n}$ and $V\coloneqq V_{x_1}\cup\cdots\cup V_{x_n}$. We claim that $U$
+and $V$ are disjoint neighborhood containing $A$ and $B$, respectively. It
+is clear that $U$ and $V$ are open since $U$ is a finite intersection of
+open sets and $V$ is a union of open sets and that they contain $A$ and
+$B$, respectively, since each of the $U_x$'s contain $A$ and
+$V_{x_1},...,V_{x_n}$ is an open cover of $B$. Lastly, $U$ and $V$ are
+disjoint since intersection distributes over union, i.e., we have
+\[
+U\cap V=
+\left(\bigcap_{i=1}^nU_{x_i}\right)\cap\left(\bigcup_{j=1}^n
+  V_{x_j}\right)=
+\bigcup\left(\bigcap_{i=1}^nU_{x_i}\cap V_{x_j}\right)=\emptyset
+\]
+since $U_{x_i}\cap V_{x_i}=\emptyset$ so
+$\left(\bigcap_{i=1}^nU_{x_j}\right)\cap V_{x_i}=\emptyset$.
 \end{proof}
 \begin{problem}
 Prove the Tube Lemma: Let $X$ and $Y$ be topological spaces with
@@ -40,12 +59,36 @@ $W$ of $X$ containing $x_0$ with $W\times Y\subset
 N$.
 \end{problem}
 \begin{proof}
+This is Lemma 26.8 from Munkres \S26, p.\,168, but is proved in \emph{Step
+  1} in the process of showing Theorem 26.7; we paraphrase the proof here.
+\\\\
+Let $x_0\in X$, and let $N$ be an open set of $X\times Y$ containing
+$x_0\times Y$. Cover $x_0\times Y$ by basic open sets $U\times V$ lying in
+$N$. Note that $x_0\times Y$ is compact, since it is an imbedding of $Y$
+given by the map $y\mapsto (x_0,y)$ from $Y$ into $X\times Y$ therefore, by
+Lemma 26.1, only finitely many of the $U\times V$'s, say $U_1\times
+V_1,...,U_n\times V_n$, cover $x_0\times Y$. Define $W\coloneqq
+U_1\cap\cdots\cap U_n$. We claim that $W$ is a neighborhood of $x_0$ such
+that $W\times Y\subset N$. First, it is clear that $W$ is a neighborhood of
+$x_0$ since it is the finite intersection of open sets and each $U_i\times
+V_i$ intersects $x_0\times Y$ hence contains a point of the form $(x_0,y)$
+so $U_i=\pi_1(U_i\times V_i)$ contains $x_0$. Lastly, $W\times Y\subset N$
+since $W\times Y\subset\bigcup_{i=1}^n U_i\times V_i$. To see this let
+$(x,y)\in W\times Y$ and consider the point $(x_0,y)\in x_0\times Y$. Since
+$(x_0,y)$ is in $U_i\times V_i$ for some $i$, we have $y\in V_i$. But $x\in
+U_j$ for every $j$ since $x\in W$. Thus $(x,y)\in U_i\times V_i$ as
+desired. It follows that, $W$ is a neighborhood of $x_0$ with $W\times
+Y\subset N$ as desired.
 \end{proof}
 \begin{problem}
 Show that if $Y$ is compact, then the projection map $X\times
 X\to X$ is a closed map.
 \end{problem}
 \begin{proof}
+We shall proceed by the tube lemma, i.e, Theorem 26.8. Let $C$ be a closed
+subset of $X\times Y$ then $N=(X\times Y)-C$ is open. Choose $x_0\in
+X-\pi_1(C)$. Then $x_0\times Y$ is contained in $N$ so by the tube lemma,
+there exists a neighborhood $W$ of $x_0$ such that $W\times Y\subset N$.
 \end{proof}
 \begin{problem}
 Let $X$ be a compact space and suppose we are given a nested
