@@ -175,13 +175,40 @@ One way to do this is by using complex numbers.
 \end{problem}
 \begin{proof}
 Since Dr.\,McClure said that we can assume anything from complex analysis
-(and we don't need much) we shall assume that $S^1$ is imbedded in
-$\CC$. Now, define the map $\phi\colon S^1\to S^1$ by $\phi(z)\coloneqq
-z^2$. This map is continuous since it is a polynomial in $\CC$ and it is a
-bijection on $\CC$. Now note that this map preserves the relation
+(and we don't need much) to begin with we shall assume that
+$S^1\subset\CC$. Now, the situation is as follows we want to find a map
+$f\colon S^1\to S^1$ which preserves $\sim$ that makes the following
+diagram commute
 \begin{center}
 \includegraphics{figures/mid-2-rp-1-s-1}
 \end{center}
+Define $f(z)\coloneqq z^2$. We claim that $f$ is continuous and preserves
+$\sim$. First, it is clear that $f(x+iy)=f(x+iy)$ and
+if $x'+iy'=-x-iy$ then
+\begin{align*}
+f(x+iy)&=(x+iy)^2\\
+       &=(-x-iy)^2\\
+       &=f(-x-iy)\\
+       &=f(x'+iy')
+\end{align*}
+so $f$ preserves $\sim$. Since $z^2$ is multiplication on $\CC$ by Theorem
+21.5 $f$ is continuous (or at least the argument can be extended to make
+this operation continuous). Thus, by Theorem Q.3 the induced map on the
+quotient $\bar f\colon S^1/{\sim}\to S^1$ is continuous. By Theorem 26.6 it
+suffices to show that $\bar f$ is bijective. It is clear that $\bar f$ is
+surjective since $f$ is surjective; that is, take an element $x+iy\in S^1$
+then by elementary properties of the complex numbers we have
+\[
+f\left(\|x+iy\|e^{i\pi\theta/2}\right)=x+iy
+\]
+where $\theta=\arg(x+iy)$. To see that this map is injective
+simply note that if $f(x+iy)=f(x'+iy')$ then
+\[
+x^2-y^2-((x')^2+(y')^2)=i2(x'y'-xy)
+\]
+if and only if $x'=x$ and $y'=y$ or $x'=-x$ and $y'=-y$ so $\bar f$ is
+injective. It follows that $\bar f$ is a homeomorphism so
+$S^1/{\sim}\approx S^1$.
 \end{proof}
 \begin{problem}
 Let $X$ be a nonempty compact Hausdorff space and let $f\colon
@@ -191,6 +218,12 @@ hypothesis that $f$ is $1$-$1$ is not actually needed, but it
 makes the proof a little easier.)
 \end{problem}
 \begin{proof}
+We prove the more general case. First, we will show that the $f$ is a
+closed map. Suppose $C$ is a closed subset of $X$ then, since $X$ is
+compact, by Theorem 26.2 $C$ is compact. Then since $f$ is continuous
+$f(C)$ is compact in $X$ so $f(C)$ is closed by Theorem 26.3. Thus, $f$ is
+a closed map. Now consider the countable collection of nested closed
+subsets $X\supset f(X)\supset f^2(X)\supset\cdots$.
 \end{proof}
 \begin{problem}
 Let $\sim$ be the equivalence relation on $\RR^2$ defined by
