@@ -223,7 +223,23 @@ closed map. Suppose $C$ is a closed subset of $X$ then, since $X$ is
 compact, by Theorem 26.2 $C$ is compact. Then since $f$ is continuous
 $f(C)$ is compact in $X$ so $f(C)$ is closed by Theorem 26.3. Thus, $f$ is
 a closed map. Now consider the countable collection of nested closed
-subsets $X\supset f(X)\supset f^2(X)\supset\cdots$.
+subsets $X\supset f(X)\supset f^2(X)\supset\cdots$. Indeed, $f^i(X)\supset
+f^{i+1}(X)$ since if $x\in f^{i+1}(X)$ then there exists $y\in X$ such that
+$f^{i+1}(y)=x$. Let $z\coloneqq f(y)$ then $f^i(z)=f^{i+1}(y)=x\in
+f^i(X)$. We claim that
+$f\left(\bigcap_{i\in\NN}f^i(X)\right)=\bigcap_{i\in\NN}f^{i}(X)$ is the
+set we are looking for. First, since $f$ is a closed map and each $f^i(X)$
+is closed (since $X$ is compact Hausdorff) then the intersection
+$A\coloneqq\bigcap_{i\in\NN} f^i(X)$ is closed. By the finite intersection
+property, Theorem 26.9, $F$ is nonempty since $X$ is nonempty and $f$ is a
+function (for recall that a function from $X$ to $X$ is an element of the
+set $X^X$ and if the codomain of such an element is empty then
+$X^X=\emptyset$, but that would imply $X=\emptyset$) and for any finite
+subcollection $\left\{f^i(X)\right\}_{i\in I}$ the intersection
+$\bigcap_{i\in I}f^i(X)=f^m(X)$ where $m=\max\{i\in I\}$. Lastly, we show
+that $f(A)=A$. One containment is clear, namely
+$f\left(A\right)\subset A$ for if $x\in f(A)$ then $x=f(y)$ for some $y\in
+A$
 \end{proof}
 \begin{problem}
 Let $\sim$ be the equivalence relation on $\RR^2$ defined by
