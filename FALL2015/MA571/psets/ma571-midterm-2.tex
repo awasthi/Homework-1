@@ -142,6 +142,26 @@ diameter $<\varepsilon$, there is a $U\in\mathcal{U}$ with
 $S\subset U$. (This fact is known as the ``Lebesgue number lemma.'')
 \end{problem}
 \begin{proof}
+This is Lemma 27.5 from Munkres \S27, p.\,175; we will paraphrase the
+proof.
+\\\\
+Let $\mathcal{U}$ be an open cover of $X$. If $X\in\mathcal{U}$, then any
+positive number is a Lebesgue number for $\mathcal{U}$. Suppose
+$X\notin\mathcal{U}$. Choose a finite subcollection $U_1,...,U_n$ of
+$\mathcal{U}$ that covers $X$. For each $i$, set $C_i\coloneqq X-U_i$ and
+define the map $f\colon X\to\RR$ via
+$f(x)\coloneqq\frac{1}{n}\sum_{i=1}^nd(x,C_i)$. We show that $f(x)>0$ for all
+$x$. Given $x\in X$, choose $i$ so that $x\in U_i$. Then choose
+$\varepsilon$ so that the $\varepsilon$-neighborhood of $x$ lies in
+$U_i$. Then $d(x,C_i)\geq\varepsilon$, so that $f(x)\geq\varepsilon/n$.
+
+Since $f$ is continuous, it has a minimum value $\delta$; we show that
+$\delta$ is our required Lebesgue number. Let $B$ be a subset of $X$ of
+diameter less that $\delta$. Choose a point $x_0$ of $B$; then $B$ lies in
+a $\delta$-neighborhood of $x_0$. Now $\delta\leq f(x_0)\leq d(x_0,C_m)$,
+where $d(x_0,C_m)$ is the largest of the numbers $d(x_0,C_i)$. Then the
+$\delta$-neighborhood of $x_0$ is contained in the element $U_m=X-C_m$ of
+the covering $\mathcal{U}$.
 \end{proof}
 \begin{problem}
 Let $S^1$ denote the circle $\left\{\,x^2+y^2=1\,\right\}$ in
@@ -150,10 +170,18 @@ $\RR^2$. Define an equivalence relation on $S^1$ by
 (you do not have to prove that this is an equivalence
 relation). Prove that the quotient space $S^1/{\sim}$ is
 homeomorphic to $S^1$.
-\\\\
+
 One way to do this is by using complex numbers.
 \end{problem}
 \begin{proof}
+Since Dr.\,McClure said that we can assume anything from complex analysis
+(and we don't need much) we shall assume that $S^1$ is imbedded in
+$\CC$. Now, define the map $\phi\colon S^1\to S^1$ by $\phi(z)\coloneqq
+z^2$. This map is continuous since it is a polynomial in $\CC$ and it is a
+bijection on $\CC$. Now note that this map preserves the relation
+\begin{center}
+\includegraphics{figures/mid-2-rp-1-s-1}
+\end{center}
 \end{proof}
 \begin{problem}
 Let $X$ be a nonempty compact Hausdorff space and let $f\colon

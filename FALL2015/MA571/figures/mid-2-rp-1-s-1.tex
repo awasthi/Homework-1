@@ -1,0 +1,20 @@
+\documentclass[crop,tikz]{standalone}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{microtype}
+
+\usepackage{tikz}
+\usetikzlibrary{cd}
+
+\begin{document}
+\begin{tikzcd}% [column sep= 2em, row sep= 3em]
+S^1\arrow{d}{q}\arrow{rd}{\varphi(z)}\\
+S^1/{\sim}\arrow{r}[swap]{\bar\varphi}&S^1.
+\end{tikzcd}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
