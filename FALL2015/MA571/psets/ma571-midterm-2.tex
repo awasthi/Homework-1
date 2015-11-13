@@ -306,6 +306,17 @@ each $X_n$ is nonempty), then each $X_n$ is locally compact and
 $X_n$ is compact for all but finitely many $n$.
 \end{problem}
 \begin{proof}
+Define $X\coloneqq\prod_{n=1}^\infty X_n$ and let $\mathbf{x}\in
+X$. Since $X$ is locally compact, there exists a compact set $C$
+and an open neighborhood $U$ of $\mathbf{x}$ such that $C\supset
+U$. Without loss of generality, we may assume that $U=\prod U_n$
+where $U_n$ is open in $X_n$ and $U_n=X_n$ for all but finitely
+many $n$'s. Now, since the projection maps, $\pi_n\colon X\to
+X_n$, are continuous and by Theorem 26.5, $\pi_n(C)\supset U_n$
+is compact. Since $U_n=X_n$ for all but finitely many $n$'s,
+$\pi_n(C)=X_n$ is compact for all but finitely many
+$n$'s. Otherwise, $\pi_n(C)\supset U_n$ so $X_n$ is locally
+compact.
 \end{proof}
 \begin{problem}
 Let $X$ be a locally compact Hausdorff space, let $Y$ be any
@@ -317,12 +328,32 @@ e\colon X\times\mathcal{C}(X,Y)\to Y
 define by the equation $e(x,f)=f(x)$ is continuous.
 \end{problem}
 \begin{proof}
+This is Theorem 46.10 from Munkres \S46, p.\,286. We paraphrase
+the proof here.
+\\\\
+Given a pair $(x,f)\in\mathcal{C}(X,Y)$ and an open set $V$ in
+$Y$ containing $e(x,f)=f(x)$, by Theorem 18.1(4) we wish to find
+an open set about $(x,f)$ that $e$ maps into $V$. First, using
+the continuity of $f$ and the fact that $X$ is locally compact
+Hausdorff, we can choose an open set $U$ about $x$ having compact
+closure $\overline U$, such that $f$ carries $\overline U$ into
+$V$. Then, consider the open set $U\times S(\overline U,V)\subset
+X\times\mathcal{C}(X,Y)$. It is an open set containing $(x,f)$
+and if $(x',f')$ is in this set, then $e(x',f')=f'(x')\in V$, as
+desired.
 \end{proof}
 \begin{problem}
 Let $I$ be the unit interval, and let $Y$ be a path-connected
 space. Prove that any two maps from $I$ to $Y$ are homotopic.
 \end{problem}
 \begin{proof}
+This is Ex.\,2(b) from Munkres \S51.
+\\\\
+% Let $f,g\colon I\to Y$. Note that $I$ is path-connected. In
+% particular, if $x,y\in I$ then the map $p\colon I\to I$ given by
+% $p(t)\coloneqq (1-t)x+ty$ is a path from $x$ to $y$. Thus, the
+% constant maps $e_x\colon$ and $e_y$ are homotopic
+
 \end{proof}
 \begin{problem}
 Let $X$ be a topological space and $f\colon[0,1]\to X$ any
