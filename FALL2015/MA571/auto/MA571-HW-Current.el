@@ -37,11 +37,6 @@
     '("textha" 1)
     "nsubset"
     "nsupset"
-    "diam"
-    "id"
-    "im"
-    "Int"
-    "Cl"
     "CC"
     "NN"
     "QQ"

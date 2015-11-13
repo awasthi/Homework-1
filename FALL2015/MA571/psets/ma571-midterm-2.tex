@@ -250,8 +250,29 @@ $(x,y)=(tx',ty')$. Prove that the quotient space $\RR^2/{\sim}$
 is compact but not Hausdorff.
 \end{problem}
 \begin{proof}
-We first show that the quotient space is not Hausdorff. Consider the open
-neighborhood
+We first show that the quotient space is not Hausdorff. Let
+$q\colon\RR^2\to\RR^2/{\sim}$ denote the quotient map. We show that for any
+point $[(x,y)]$ in the quotient, for any neighborhood $V$ of $[(x,y)]$, for
+any neighborhood $U$ of $[(0,0)]$ the intersection $U\cap
+V\neq\emptyset$. Let $U$ be a neighborhood of $[(0,0)]$ and $V$ be a
+neighborhood of $[(x,y)]$. Then $p^{-1}(U)$ is a neighborhood of $(0,0)$
+and $p^{-1}(V)\supset\left\{\,(tx,ty)\;\middle|\;t\neq 0\,\right\}$ is a
+neighborhood of $(x,y)$. But since $p^{-1}(U)$ is open, it contains an
+$\varepsilon$-ball about $(0,0)$, say $B((0,0),\varepsilon)$ for
+$\varepsilon>0$. But for sufficiently small values of $|t|$, $(tx,ty)\in
+B((0,0),\varepsilon)$ for any $\varepsilon>0$ (for example
+$t^2x^2+t^2y^2\leq\varepsilon$ if $|t|\leq \sqrt{\varepsilon/(x^2+y^2)}$ so
+$(tx,ty)\in B((0,0),\varepsilon)$). Hence $[(x,y)]\in U$ so $U\cap V\neq
+\emptyset$. Since $U$ and $V$ were arbitrary, we conclude that
+$\RR^2/{\sim}$ is not Hausdorff.
+
+To see that $\RR^2/{\sim}$ is in fact compact let $\mathcal{U}$ be an open
+cover of $\RR^2/{\sim}$. Then at least one $U\in\mathcal{U}$ contains the
+equivalence class of $(0,0)$. Thus, by the previous argument $q^{-1}(U)$
+contains an open ball $B((0,0),\varepsilon)$ for $\varepsilon>0$ and this
+open ball contains $(tx,ty)$ for sufficiently small values of $|t|$, hence
+$U$ contains every equivalence class of $\RR^2/{\sim}$. Thus,
+$\RR^2/{\sim}$ is compact.
 \end{proof}
 \begin{problem}
 Let $X$ be a locally compact Hausdorff space. Explain how to
@@ -260,6 +281,24 @@ the space you construct is really compact (you do not have to
 prove anything else for this problem.)
 \end{problem}
 \begin{proof}
+This is Theorem 29.1 from Munkres \S29, p.\,183. We will summarize his
+argument.
+\\\\
+Munkres's construction really only begins in step 2 of his argument. Let
+$Y$ denote the one-point compactification of $X$. We topologize $Y$ by
+defining the topology on $Y$ to be (1) all sets $U$ open in $X$ and (2)
+all sets of the form $U=Y-C$, where $C$ is a compact subspace of $X$.
+
+To prove compactness, let $\mathcal{U}$ be an open cover of $Y$. Isolate an
+open set of type (2) in the cover, say $U$, which must exist for otherwise
+$\infty\notin\bigcup_{U_\alpha\in\mathcal{U}}U_\alpha$ so $\mathcal{U}$
+does not cover $Y$. Given $U$, let $C\coloneqq Y-U$. Then $C$ is a compact
+subset of $X$ and is covered by the union of all open sets of type 1 in
+$\mathcal{U}$. By Lemma 26.1, only finitely many of these $U_\alpha$'s
+cover $C$, say $U_1,...,U_n$. Then $U_1,...,U_n,U$ is an open cover of
+$Y$ since $C\subset\bigcup_{i=1}^n U_i$ and $C\cup (Y-C)=Y$ so
+$Y\subset\left(\bigcup_{i=1}^n U_i\right)\cup U$. Therefore, $Y$ is
+compact.
 \end{proof}
 \begin{problem}
 Show that if $\prod_{n=1}^\infty X_n$ is locally compact (and

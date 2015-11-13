@@ -52,7 +52,7 @@
     "id"
     "im"
     "lcm"
-    "ht"
+    "Ht"
     "nil"
     "rad"
     "rk"
