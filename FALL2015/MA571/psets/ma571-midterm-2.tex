@@ -349,11 +349,18 @@ space. Prove that any two maps from $I$ to $Y$ are homotopic.
 \begin{proof}
 This is Ex.\,2(b) from Munkres \S51.
 \\\\
-% Let $f,g\colon I\to Y$. Note that $I$ is path-connected. In
-% particular, if $x,y\in I$ then the map $p\colon I\to I$ given by
-% $p(t)\coloneqq (1-t)x+ty$ is a path from $x$ to $y$. Thus, the
-% constant maps $e_x\colon$ and $e_y$ are homotopic
-
+It suffices to show that a map $f\colon I\to Y$ is homotopic to a constant
+map $e_{y_0}\colon I\to Y$. Set $y_0\coloneqq f(0)$. Consider the map
+$H(x,t)\coloneqq f((1-t)x)$. This map is continuous since it is the
+composition of continuous map $f$ (by hypothesis) and $(1-t)x$ (by Theorem
+25.1, multiplication is continuous in $\RR$ hence in $I$). Moreover,
+$H(x,0)=f(x)$ and $H(x,1)=f(0\cdot x)=y_0=e_{y_0}$. Thus, $f\simeq
+e_{y_0}$. Now, let $g\colon I\to Y$ be continuous. Then by the argument we
+presented above, $g\simeq e_{y_1}$. But $Y$ is path connected so there
+exists a path $p\colon I\to Y$ such that $p(0)=y_0$ and $p(1)=y_1$. Then
+the map $K(x,t)=p(t)$ is a homotopy from $e_{y_0}$ to $e_{y_1}$. Since
+$\simeq$ is an equivalence relation, it follows by symmetry that $f\simeq
+g$.
 \end{proof}
 \begin{problem}
 Let $X$ be a topological space and $f\colon[0,1]\to X$ any
@@ -361,9 +368,31 @@ continuous function. Define $\bar f$ by $\bar f(t)=f(1-t)$. Prove
 that $f*\bar f$ is path-homotopic to the constant path at $f(0)$.
 \end{problem}
 \begin{proof}
+By the definition of the product path, we have
+\begin{align*}
+f*\bar f&=
+\begin{cases}
+\bar f(2s)&\text{for $s\in [0,1/2]$}\\
+f(2s-1)&\text{for $s\in[1/2,1]$}
+\end{cases}\\
+&=
+\begin{cases}
+f(1-2s)&\text{for $s\in [0,1/2]$}\\
+f(2s-1)&\text{for $s\in[1/2,1]$}
+\end{cases}.
+\end{align*}
+Now, consider the map $H(x,t)\coloneqq(f*\bar f)(tx)$. This map is
+continuous since $tx$ is continuous in $I$ and $f*\bar f$ is
+continuous. Now, note that
+\begin{align*}
+H(x,0)&=(f*\bar f)(0)\\
+      &=f(0)\\
+H(x,1)&=(f*\bar f)(x).
+\end{align*}
+Hence $f*\bar f\simeq f(0)$.
 \end{proof}
 \begin{problem}
-LEt $X$ be a path-connected topological space and let $x_0,x_1\in
+Let $X$ be a path-connected topological space and let $x_0,x_1\in
 X$. Recall that any path $\alpha$ from $x_0$ to $x_1$  gives an
 isomorphism $\hat\alpha$ from $\pi_1(X,x_0)$ to $\pi_1(X,x_1)$
 (you do not have to prove this.)
@@ -373,6 +402,16 @@ $x_0$ to $x_1$ the isomorphisms $\hat\alpha$ and $\hat\beta$  are
 the same. Prove that $\pi_1(X,x_0)$ is Abelian.
 \end{problem}
 \begin{proof}
+Let $[f],[g]\in\pi_1(X,x_0)$. Let $\alpha\colon I\to X$ be a path from
+$x_0$ to $x_1$ and define $\beta=g*\alpha$. Then, by assumption
+$\hat\alpha=\hat\beta$ so
+\begin{align*}
+\hat\beta([f])&=[\bar \alpha*\bar g]*[f]*[g*\alpha]\\
+              &=[\bar\alpha]*[\bar g*f*g]*[\alpha]\\
+              &=[\bar\alpha]*[f]*[\alpha]\\
+              &=\hat\alpha([f])
+\end{align*}
+so $[\bar g]*[f]*[g]=[f]$. Hence $\pi_1(X,x_0)$ is Abelian.
 \end{proof}
 
 %%% Local Variables:
