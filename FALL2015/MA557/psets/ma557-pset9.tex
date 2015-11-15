@@ -5,6 +5,35 @@ for every minimal prime $\mathfrak{q}$ of $S$, the image of $x$
 in $S/\mathfrak{q}$ is integral over $R/\mathfrak{q}\cap R$.
 \end{problem}
 \begin{proof}
+$\implies$ Suppose that $x$ is integral over $R$. Then $x$ satisfies a
+monic polynomial of degree $n$, say $f(X)=X^n+a_1X^{n-1}+\cdots+a_n$. Let
+$\mathfrak{q}$ be a minimal prime of $S$ and consider the quotient ring
+$S/\mathfrak{q}$. If $x\in\mathfrak{q}$ there is nothing to show as $\bar
+x=\bar 0$ hence satisfies the polynomial $X$ over $R/\mathfrak{q}\cap
+S$. Suppose $x\notin\mathfrak{q}$. Then
+\[
+\bar 0=\overline{x^n+a_1x^{n-1}+\cdots+a_n}
+=\bar x^n+\bar a_1\bar x^{n-1}+\cdots+\bar a_n
+\]
+so $\bar x$ satisfies the polynomial $\bar f(X)$. Hence, $\bar x$ is
+integral over $R/\mathfrak{q}\cap S$.
+\\\\
+$\impliedby$ Conversely, suppose that for $x\in S$ the image of $x$ in
+$S/\mathfrak{q}$ is integral over $R/\mathfrak{q}\cap S$. Then we shall
+show that $x$ is integral over $R$. For this, it suffices to show that
+$R[x]$ is a finite $R$-module.
+
+Since I've not been successful at showing my assertion let us make an extra
+assumption on $S$. In particular, we shall assume that $S$ is
+Noetherian. Since $S$ is Noetherian, $S$ contains finitely many minimal
+primes $\mathfrak{q}_1,...,\mathfrak{q}_n$. Let $f_i(X)\in R[X]$ be the
+minimal polynomial of $x$ in $S/\mathfrak{q}_i$, i.e.,
+$f_i(x)\mathfrak{q}_i$. Then
+\[
+f(x)=f_1(x)\cdots f_n(x)\in\mathfrak{q}_1\cap\cdots\cap\mathfrak{q}_n=\nil S.
+\]
+Since $\nil S$ is nilpotent, $f(x)^m=0$ for some positive integer
+$m$. Thus, $x$ is integral over $R$.
 \end{proof}
 \newpage
 \begin{problem}
@@ -25,8 +54,8 @@ R=
 Let $R\subset S$ be an integral extension of rings and $I$ and
 $R$-ideal. Show that
 \begin{enumerate}[label=(\alph*)]
-\item $\ht IS\leq\ht I$
-\item $\ht IS=\ht I$ if $S$ is a domain and $R$ is normal.
+\item $\Ht IS\leq\Ht I$
+\item $\Ht IS=\Ht I$ if $S$ is a domain and $R$ is normal.
 \end{enumerate}
 \end{problem}
 \begin{proof}
