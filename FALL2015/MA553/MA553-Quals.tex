@@ -6,7 +6,7 @@
 \def\documentsubject{abstract algebra}
 \def\authoremail{salinac@purdue.edu}
 
-\documentclass{article}
+\documentclass[article,oneside,10pt]{memoir}
 \usepackage{geometry}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[
@@ -29,6 +29,37 @@
     pdfsubject={\coursename}
     ]{hyperref}
 
+% Use symbols instead of numbers
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+%% Math
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+% \usepackage{unicode-math}
+
+%% PDFTeX specific
+\usepackage[mathcal]{euscript}
+\usepackage{mathrsfs}
+
+\usepackage{cmap}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french,german,spanish,dutch,russian,swedish,english]{babel}
+\babeltags{fr=french,
+           de=german,
+           es=spanish,
+           nl=dutch,
+           ru=russian,
+           sv=swedish,
+           en=english}
+\def\spanishoptions{mexico}
+
+\usepackage{CJKutf8}
+\newcommand{\textha}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
+\newcommand{\textni}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
+\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
+
 \usepackage{graphicx}
 \graphicspath{{figures/}}
 
@@ -40,31 +71,15 @@
 \usepackage{mleftright}
 \mleftright
 
-%% Math
-\usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{mathtools}
-
-%% PDFTeX specific
-% \usepackage[mathcal]{euscript}
-% \usepackage{mathrsfs}
-
-\usepackage{cmap}
-\usepackage[T2A,T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[french,german,russian,spanish,english]{babel}
-\babeltags{fr=french,
-           de=german,
-           ru=russian,
-           es=spanish,
-           en=english}
-\def\spanishoptions{mexico}
-\usepackage{CJKutf8}
-\newcommand{\textha}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
-\newcommand{\textni}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
-\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
-
 %% Theorems and definitions
+%% remove parentheses
+\makeatletter
+\def\thmhead@plain#1#2#3{%
+  \thmname{#1}\thmnumber{\@ifnotempty{#1}{ }\@upn{#2}}%
+  \thmnote{ {\the\thm@notefont#3}}}
+\let\thmhead\thmhead@plain
+\makeatother
+
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}[theorem]{Proposition}
@@ -104,12 +119,12 @@
 \newtheorem*{observations*}{**Observations**}
 
 %% Redefinitions & commands
-\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
-  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
-  {#1} % the function
-  % \vphantom{\big|} % pretend it's a little taller at normal size
-  \right|{#2} % this is the delimiter
-  }}
+% \newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+%   \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+%   {#1} % the function
+%   % \vphantom{\big|} % pretend it's a little taller at normal size
+%   \right|{#2} % this is the delimiter
+%   }}
 
 \newcommand{\nsubset}{\ensuremath{\not\subset}}
 \newcommand{\nsupset}{\ensuremath{\not\supset}}

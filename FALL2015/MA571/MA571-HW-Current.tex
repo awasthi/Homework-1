@@ -32,17 +32,6 @@
 % Use symbols instead of numbers
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
-\usepackage{graphicx}
-\graphicspath{{figures/}}
-
-% Misc
-\usepackage{microtype}
-\usepackage{multicol}
-\usepackage[inline]{enumitem}
-\usepackage{listings}
-\usepackage{mleftright}
-\mleftright
-
 %% Math
 \usepackage{amsthm}
 \usepackage{amssymb}
@@ -56,17 +45,31 @@
 \usepackage{cmap}
 \usepackage[T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[french,german,russian,spanish,english]{babel}
+\usepackage[french,german,spanish,dutch,russian,swedish,english]{babel}
 \babeltags{fr=french,
            de=german,
-           ru=russian,
            es=spanish,
+           nl=dutch,
+           ru=russian,
+           sv=swedish,
            en=english}
 \def\spanishoptions{mexico}
+
 \usepackage{CJKutf8}
 \newcommand{\textha}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
 \newcommand{\textni}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
+
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+
+% Misc
+\usepackage{microtype}
+\usepackage{multicol}
+\usepackage[inline]{enumitem}
+\usepackage{listings}
+\usepackage{mleftright}
+\mleftright
 
 %% Theorems and definitions
 %% remove parentheses
@@ -95,9 +98,6 @@
 \newtheorem{definition}{Definition}
 \newtheorem{example}{Examples}
 \newtheorem{examples}[example]{Examples}
-% \newtheorem{exercise}{Exercise}[section]
-% \newtheorem{problem}[exercise]{Problem}
-
 % \newtheorem{exercise}{Exercise}[section]
 % \newtheorem{problem}[exercise]{Problem}
 
@@ -145,7 +145,6 @@
 %   % \vphantom{\big|} % pretend it's a little taller at normal size
 %   \right|{#2} % this is the delimiter
 %   }}
-
 
 \newcommand{\nsubset}{\ensuremath{\not\subset}}
 \newcommand{\nsupset}{\ensuremath{\not\supset}}
