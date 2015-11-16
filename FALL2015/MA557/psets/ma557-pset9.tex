@@ -42,12 +42,31 @@ $\ZZ$ in $\QQ(\sqrt{d})$. Show that
 \[
 R=
 \begin{cases}
-\ZZ[\sqrt{d}]&\text{if $d\not\cong 1\mod 4$}\\
-\ZZ\bigl[\frac{1+\sqrt{d}}{2}\bigr]&\text{if $d\cong 1\mod 4$}
+\ZZ[\sqrt{d}]&\text{if $d\not\equiv 1\mod 4$}\\
+\ZZ\bigl[\frac{1+\sqrt{d}}{2}\bigr]&\text{if $d\equiv 1\mod 4$}
 \end{cases}.
 \]
 \end{problem}
 \begin{proof}
+Courtesy of Dummit \& Foote: Since $d$ satisfies the polynomial $X^2-d$,
+respectively $X^2-X+(1-d)/4$ for $d\equiv 2$ or $3\mod 4$, it follows that
+$\sqrt{d}$ is integral in $\QQ(\sqrt{d})$ so $\ZZ[\sqrt{d}]$ is contained
+in the integral closure of $\ZZ$ in $\QQ(\sqrt{d})$. To see the reverse
+containment let $\alpha=a+b\sqrt{d}$ with $a,b\in\QQ$ and suppose that
+$\alpha$ is integral. If $b=0$, then $\alpha\in\QQ$ so $a\in\ZZ$. So
+suppose $b\neq 0$. Then the minimal polynomial of $\alpha$ is
+$X^2-2aX+(a^2-b^2d)$ and $2a,a^2-b^2d\in\ZZ$. Thus,
+\[
+4(a^2-b^2d)=(2a)^2-(2b)^2d
+\]
+so $4b^2d\in\ZZ$. Since $d$ is square-free it follows that $2b$ is an
+integer, $x^2-y^2d\equiv 0\mod 4$. Since $0$ and $1$ are the only squares
+mod $4$ and $d$ is not divisible by $4$, it we claim that (i) $d\equiv 2$
+or $3\mod 4$ and $x,y$ are both even, or (2) $d\equiv 1\mod 4$ and $x,y$
+are both odd. In the first case, $a,b\in \ZZ$ and
+$\alpha\in\ZZ[\sqrt{d}]$. In the latter case, $a+b\sqrt{d}=r+s\sqrt{d}$
+where $r=(x-y)/2$ and $s=y$ are both integers, so again
+$\alpha\in\ZZ[\sqrt{d}]$.
 \end{proof}
 \newpage
 \begin{problem}
@@ -59,6 +78,32 @@ $R$-ideal. Show that
 \end{enumerate}
 \end{problem}
 \begin{proof}
+(a) Let $s=\Ht I$ and let $\mathfrak{q}\supset I$ be a prime ideal in $R$
+with height $s$, i.e., there exists a proper chain of ideals
+\[
+\mathfrak{q}_0\subsetneq\mathfrak{q}_1\subsetneq\cdots\subsetneq\mathfrak{q}_s=\mathfrak{q}.
+\]
+Then by lying over there exists a prime ideal $\mathfrak{p}_0\subset S$ which
+contracts to $\mathfrak{q}_0$ so that by going up we get the chain
+\begin{equation}
+\label{eq:going-up-chain}
+\mathfrak{p}_0\subsetneq\mathfrak{p}_1\subsetneq\cdots\subsetneq\mathfrak{p}_s=\mathfrak{p}
+\end{equation}
+where $\mathfrak{p}\cap R=\mathfrak{q}$. We claim that
+$\Ht\mathfrak{q}=s$. It is clear that $\Ht\mathfrak{q}\geq s$ by
+(\ref{eq:going-up-chain}). To see that $\Ht\mathfrak{q}\leq s$ suppose that
+we have the refinement
+\[
+\mathfrak{p}_0'\subsetneq\mathfrak{p}_1'\subsetneq\cdots\subsetneq\mathfrak{p}_r'=\mathfrak{p}.
+\]
+Write $\mathfrak{q}_i'=(\mathfrak{p}_i')^c$. Then the contracted chain
+\[
+\mathfrak{q}_0'\subsetneq\mathfrak{q}_1'\subsetneq\cdots\subsetneq\mathfrak{q}_r'=\mathfrak{q}
+\]
+is a refinement of $\mathfrak{q}$. Hence, $r\leq s$. It follows that $\Ht
+p=s$. Thus, $\Ht IS\leq\Ht I$.
+
+(b)
 \end{proof}
 
 %%% Local Variables:

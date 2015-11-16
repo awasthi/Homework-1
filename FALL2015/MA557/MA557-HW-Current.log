@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.11.15)  15 NOV 2015 17:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.11.15)  15 NOV 2015 23:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1603,13 +1603,13 @@ Package rerunfilecheck Info: File `MA557-HW-Current.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 220.
  ) 
 Here is how much of TeX's memory you used:
- 17785 strings out of 493054
- 251189 string characters out of 6140585
- 439461 words of memory out of 5000000
- 20912 multiletter control sequences out of 15000+600000
- 22420 words of font info for 83 fonts, out of 8000000 for 9000
+ 17809 strings out of 493054
+ 251428 string characters out of 6140585
+ 440489 words of memory out of 5000000
+ 20913 multiletter control sequences out of 15000+600000
+ 23023 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,18n,35p,257b,481s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,13n,35p,257b,481s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/font
 s/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public
@@ -1619,15 +1619,16 @@ share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
 euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msa
-m10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/s
-hare/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist
-/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/pu
-blic/cm-super/sfti0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/s
-fti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb>
-Output written on MA557-HW-Current.pdf (5 pages, 177060 bytes).
+m10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><
+/usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texm
+f-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/ty
+pe1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-s
+uper/sfti0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.p
+fb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb>
+Output written on MA557-HW-Current.pdf (5 pages, 187107 bytes).
 PDF statistics:
- 97 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
- 3 named destinations out of 1000 (max. 500000)
+ 103 PDF objects out of 1000 (max. 8388607)
+ 73 compressed objects within 1 object stream
+ 4 named destinations out of 1000 (max. 500000)
  22549 words of extra memory for PDF output out of 24883 (max. 10000000)
 
