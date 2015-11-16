@@ -34,6 +34,21 @@ f(x)=f_1(x)\cdots f_n(x)\in\mathfrak{q}_1\cap\cdots\cap\mathfrak{q}_n=\nil S.
 \]
 Since $\nil S$ is nilpotent, $f(x)^m=0$ for some positive integer
 $m$. Thus, $x$ is integral over $R$.
+
+More generally, that is, not assuming $S$ is Noetherian, consider the set
+\[
+W=\left\{\,x^n+a_1x^{n-1}+\cdots+a_n\;\middle|\;a_i\in R\,\right\}\cup\{1\},
+\]
+i.e., the set of all monic polynomials in $x$ union $1$. Note that this set
+is multiplicatively closed since for any two polynomials $p(x)$ and $q(x)$
+in $W$ their product $p(x)q(x)$ is another monic polynomial in $x$. Now, it
+suffices to show that $0\in W$. We shall proceed by contradiction. Suppose
+$0\notin W$. Then $(0)\cap W=\emptyset$. Therefore, there exists a minimal
+prime $\mathfrak{q}$ over $(0)$ such that $\mathfrak{q}\cap
+W=\emptyset$. But $\bar x$ is integral over $R/\mathfrak{q}\cap R$, i.e.,
+$f(x)\in\mathfrak{q}$ for some monic polynomial $f\in R[X]$. Thus,
+$f(x)\in\mathfrak{q}\cap W$ this is a contradiction. Therefore, $0\in W$
+and it follows that $x$ is integral over $R$.
 \end{proof}
 \newpage
 \begin{problem}
@@ -96,14 +111,37 @@ we have the refinement
 \[
 \mathfrak{p}_0'\subsetneq\mathfrak{p}_1'\subsetneq\cdots\subsetneq\mathfrak{p}_r'=\mathfrak{p}.
 \]
-Write $\mathfrak{q}_i'=(\mathfrak{p}_i')^c$. Then the contracted chain
+Write $\mathfrak{q}_i'=(\mathfrak{p}_i')\cap R$. Then the contracted chain
 \[
 \mathfrak{q}_0'\subsetneq\mathfrak{q}_1'\subsetneq\cdots\subsetneq\mathfrak{q}_r'=\mathfrak{q}
 \]
 is a refinement of $\mathfrak{q}$. Hence, $r\leq s$. It follows that $\Ht
 p=s$. Thus, $\Ht IS\leq\Ht I$.
 
-(b)
+(b) By part (a) it suffices to show that $\Ht IS\geq\Ht I$. Without loss of
+generality, assume $\Ht IS<\infty$, say $\Ht IS=s$. Suppose
+$\mathfrak{p}\supset IS$ with $\Ht\mathfrak{p}=\Ht IS=s$. Then
+\[
+\mathfrak{p}_0\subsetneq\mathfrak{p}_1\subsetneq\cdots\subsetneq\mathfrak{p}_s=\mathfrak{p}.
+\]
+Then, setting $\mathfrak{q}_i\coloneqq\mathfrak{p}_i\cap R$ and
+$\mathfrak{q}\coloneqq\mathfrak{p}\cap R$, we get a chain
+\[
+\mathfrak{q}_0\subsetneq\mathfrak{q}_1\subsetneq\cdots\subsetneq\mathfrak{q}_s=\mathfrak{q}
+\]
+where, by 7.12(b), this chain cannot be made smaller. Now, suppose
+we have another chain of prime ideals leading up to $\mathfrak{q}_s$, say
+\[
+\mathfrak{q}_0'\subsetneq\mathfrak{q}_1'\subsetneq\cdots\subsetneq\mathfrak{q}_t'=\mathfrak{q}_s.
+\]
+Then, by going up since $R$ is normal, this lifts to a chain
+\[
+\mathfrak{q}_0'S\subsetneq\mathfrak{q}_1'S\subsetneq
+\cdots
+\subsetneq\mathfrak{q}_t'S=\mathfrak{p}.
+\]
+But $\Ht\mathfrak{p}=s$ so $t\leq s$. Thus, $\Ht
+I\leq\Ht\mathfrak{q}\leq\Ht IS$ so in particular we have $\Ht I=\Ht IS$.
 \end{proof}
 
 %%% Local Variables:
