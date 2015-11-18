@@ -58,7 +58,10 @@
     "thmhead"
     "exercisename")
    (LaTeX-add-environments
-    '("problem" LaTeX-env-args ["argument"] 0)
+    '("problem" LaTeX-env-args ["argument"] 0))
+   (LaTeX-add-counters
+    "problem")
+   (LaTeX-add-amsthm-newtheorems
     "theorem"
     "proposition"
     "corollary"
@@ -71,7 +74,5 @@
     "remark"
     "remarks"
     "observation"
-    "observations")
-   (LaTeX-add-counters
-    "problem")))
+    "observations")))
 

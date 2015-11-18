@@ -76,7 +76,7 @@
 \makeatletter
 \def\thmhead@plain#1#2#3{%
   \thmname{#1}\thmnumber{\@ifnotempty{#1}{ }\@upn{#2}}%
-  \thmnote{ {\the\thm@notefont#3}}}
+  \thmnote{ {\the\thm@notefont\textbf{#3}}}}
 \let\thmhead\thmhead@plain
 \makeatother
 
