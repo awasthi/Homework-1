@@ -157,10 +157,53 @@ f_n(s)),\sin(2\pi\tilde f_n(s)))
 \]
 and $\tilde f_n(0)=0=n\cdot 0$, by Proposition C, it follows that
 $f_n(s)=ns$. Thus, $\tilde f(1)=n$.
-
-(ii) Suppose $f_1,f_2\colon I\to S^1$ and $\tilde f_1(1)=\tilde f_2(1)$
-
-(iii)
+\\\\
+(ii) Let $f\colon I\to S^1$ be a loop at $x_0$. It suffices to show that if
+$W([f])=n$ then $f\simeq_p f_n$. Let $\tilde f\colon I\to\RR$ be the lift
+of $f$ and consider the path-homotopy $H\colon I\times I\to\RR$ defined by
+$H(s,t)\coloneqq (1-t)\tilde f(s)+t(ns)$. This map is continuous by
+Theorem 21.5 since it is multiplication from a topological space $I\times
+I$ into $\RR$. Moreover, we have that
+\begin{align*}
+H(0,s)&=\tilde f(s)&H(1,s)&=ns
+\end{align*}
+and $H$ fixes the endpoints, i.e.,
+\begin{align*}
+H(t,0)&=(1-t)\cdot 0+t\cdot 0&
+H(t,1)&=(1-t)n+tn\\
+&=0&
+&=n.
+\end{align*}
+At last, define the map $K\coloneqq p\circ H\colon I\times I\to S^1$. We
+claim that this map is a path-homotopy from the class $f\simeq_p
+f_n$. First, this map is continuous by Theorem 18.2(c) since it is a
+composition of continuous maps. Secondly, we have that
+\begin{align*}
+K(0,s)&=p(H(0,s))&
+K(1,s)&=p(H(0,s))\\
+&=(\cos(2\pi\tilde f(s)),\sin(2\pi\tilde f(s)))&
+&=(\cos(2\pi ns),\sin(2\pi ns))\\
+&=f(s)&
+&=f_n(s).
+\end{align*}
+and $K$ fixes the endpoints, i.e.,
+\begin{align*}
+K(t,0)&=p(H(t,0))&
+K(t,1)&=p(H(t,1))\\
+&=(\cos 0,\sin 0)&
+&=(\cos 2\pi n,\sin 2\pi n)\\
+&=x_0&
+&=x_0.
+\end{align*}
+Thus, $f\simeq_p f_n$. It follows that if $W([f])=W([g])$ then $[f]=[g]$,
+i.e., $W$ is one-to-one.
+\\\\
+(iii) Last but not least, we will show that $W$ is in fact a homomorphism
+thus, proving that $W$ is an isomorphism $\pi_1(X,x_0)\cong\ZZ$. Let $f$
+and $g$ be loops in $S^1$ at $x_0$ and let $\tilde f$ and $\tilde g$ be
+their respective lifts to paths on $\RR$. Let $n\coloneqq W([f])$ and
+$m\coloneqq W([g])$. Let $G\colon I\to\RR$ be the path $G(s)\coloneqq
+n+\tilde g(s)$.
 \end{proof}
 \newpage
 \begin{problem}[(B)]
