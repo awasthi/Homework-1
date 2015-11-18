@@ -193,7 +193,13 @@ thus, proving that $W$ is an isomorphism $\pi_1(X,x_0)\cong\ZZ$. Let $f$
 and $g$ be loops in $S^1$ at $x_0$ and let $\tilde f$ and $\tilde g$ be
 their respective lifts to paths on $\RR$. Let $n\coloneqq W([f])$ and
 $m\coloneqq W([g])$. Let $G\colon I\to\RR$ be the path $G(s)\coloneqq
-n+\tilde g(s)$.
+n+\tilde g(s)$. Now, since $p(n+s)=p(s)$ for all $s\in\RR$, the path $G$ is
+a lifting of $g$ begining at $n$. Thus, $\tilde f*G$ is defined, and
+it is the lifting of $f*g$ that begins at $0$ and ends at $n+m$ so
+\[
+W([f]*[g])=n+m=W([f])+W([g]).
+\]
+Thus, $W$ is a homomorphism.
 \end{proof}
 \newpage
 \begin{problem}[(B)]
@@ -208,15 +214,34 @@ Recall the statement of Lemma G:
 \begin{lemma*}[G]
 For each $a\in\RR$, the map
 \[
-p_a\colon(a,a+1)\longrightarrow S^1-p(a)
+p_a\colon(a,a+1)\longrightarrow S^1-\{p(a)\}
 \]
 given by $p_a(u)=p(u)$ is a homomorphism.
 \end{lemma*}
 We shall proceed by the hint. If $\sim$ is the equivalence
 relation on $[a,a+1]$ which identifies $a$ and $a+1$ then the
-restriction of $p$ induces a homeomorphism $[a,a+1]/{\sim}\to
-S^1$. Then, we claim that
-$[a,a+1]/{\sim}-\{[a]\}\approx(a,a+1)$.
+restriction\footnote{\textcolor{Red}{What restriction? I'm not sure this
+actually makes sense.}} of $p$ induces a homeomorphism $[a,a+1]/{\sim}\to
+S^1$. Then, we claim that $[a,a+1]/{\sim}-\{[a]\}\approx(a,a+1)$ via the
+restriction of $q\colon[a,a+1]\to[a,a+1]/{\sim}$ to $(a,a+1)$. Note that
+$\left.q\right|_{(a,a+1)}$ is bijective: for every
+$[x]\in[a,a+1]/{\sim}-\{[a]\}$, $x\in(a,a+1)$ so
+$\left.q\right|_{(a,a+1)}(x)=[x]$ and if $[x]=[y]$ and $x\neq a$ or $a+1$
+then $x=y$. Lastly, we show that $\left.q\right|_{(a,a+1)}$ is an open
+map. By Lemma $C$, it suffices to prove this for basic open subsets of
+$(a,a+1)$ so let us consider the open interval
+$(b,c)\subset(a,a+1)$. Then
+\[
+\bigr(\left.q\right|_{(a,a+1)}\bigl)^{-1}\left(\left.q\right|_{(a,a+1)}((b,c))\right)
+=\left\{\,x\in(a,a+1)\;\middle|\;\left.q\right|_{(a,a+1)}(x)\in\left.q\right|_{(a,a+1)}((b,c))\,\right\}
+=(b,c)
+\]
+since $(b,c)$ is a saturated set, that is, it contains every
+$\left.q\right|_{(a,a+1)}^{-1}([x])$ where
+$[x]\in\left.q\right|_{(a,a+1)}(a,b)$ since the equivalence class of $x$
+for $x\in(a,a+1)$ consists of the singleton $\{x\}$. It follows that
+$(a,a+1)\approx[a,a+1]/{\sim}-\{[a]\}$ which, by Lemma A, is in turn
+homeomorphic to $S^{-1}-\{\bar p([a])\}=S^{-1}-\{p(a)\}$.
 \end{proof}
 \newpage
 \begin{problem}[(C)]
