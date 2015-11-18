@@ -17,16 +17,120 @@ rule
 \end{enumerate}
 \end{problem}
 \begin{proof}
-For part (a) we need to show that the operation (0) $\otimes$ is associative,
-(1) $\Omega(G,x_0)$ is closed under $\otimes$, (2) $\Omega(G,x_0)$ contains
-an identity element $e$ and (3) for every $f\in\Omega(G,x_0)$ there
-exists an element $\bar f\in\Omega(G,x_0)$ such that $f\otimes\bar f=\bar
-f\otimes f=e$. We shall proceed in order: (0) Let
-$f,g,h\in\Omega(G,x_0)$. Then $(f\otimes g)\otimes h=f\otimes(g\otimes f)$
-since the multiplication $\cdot$ is associative in $G$, i.e., since given
-$t\in I$ we have $(f(t)\cdot g(t))\cdot h(t)=f(t)\cdot (g(t)\cdot h(t))$,
-in particular this holds for all $\in I$. (1) Let $f$ and $g$ be loops at
-$x_0$ then $f\otimes g=f(s)\cdot g(s)$
+% For part (a) we need to show that the operation (0) $\otimes$ is associative,
+% (1) $\Omega(G,x_0)$ is closed under $\otimes$, (2) $\Omega(G,x_0)$ contains
+% an identity element $e$ and (3) for every $f\in\Omega(G,x_0)$ there
+% exists an element $\bar f\in\Omega(G,x_0)$ such that $f\otimes\bar f=\bar
+% f\otimes f=e$. We shall proceed in order: (0) Let
+% $f,g,h\in\Omega(G,x_0)$. Then $(f\otimes g)\otimes h=f\otimes(g\otimes f)$
+% since the multiplication $\cdot$ is associative in $G$, i.e., since given
+% $t\in I$ we have $(f(t)\cdot g(t))\cdot h(t)=f(t)\cdot (g(t)\cdot h(t))$,
+% in particular this holds for all $\in I$. (1) Let $f$ and $g$ be loops at
+% $x_0$ then $f\otimes g=f(s)\cdot g(s)$
+For part (a) we need to show that the operation (i) $\otimes$ is
+associtive, (ii) $\Omega(G,x_0)$ is closed under $\otimes$, (iii)
+$\Omega(G,x_0)$ contains an identity element $e$ and (iv) for every
+$f\in\Omega(G,x_0)$ there exists an element $f^{-1}$ such that $f\otimes
+f^{-1}=f^{-1}\otimes f=e$. We shall proceed in order: (i) is easy since
+the operation $\otimes$ is associative so for any triple
+$f,g,h\in\Omega(G,x_0)$ we have
+\[
+(f\otimes g)\otimes h=(f(s)\cdot g(s))\otimes h=(f(s)\cdot g(s))\cdot h(s)
+\]
+which one clearly sees, by asociativity of $\cdot$, is the same as
+$f\otimes(g\otimes h)$. (ii) Let $f,g\in\Omega(G,x_0)$ then, since $\cdot$
+is continuous, the map $f\otimes g\colon I\to G$ is continuous and
+\[
+(f\otimes g)(0)=f(0)\cdot g(0)=x_0\cdot x_0=f(1)\cdot g(1)
+=(f\otimes g)(1).
+\]
+Thus, $f\otimes g\in\Omega(G,x_0)$. Next, for (iii) consider the constant
+loop $e_{x_0}(s)$. This map is clearly the identity on $\Omega(G,x_0)$ for
+if $f\in\Omega(G,x_0)$ then $e_{x_0}\otimes f=e_{x_0}(s)\cdot f(s)=x_0\cdot
+f(s)=f(s)$ for all $s$; similarly for $f\otimes e_{x_0}$. Lastly, (iv)
+consider the map $f^{-1}(s)\coloneqq (f(s))^{-1}\colon I\to G$. This map is
+continuous since taking the inverse in $G$ is continuous and composition of
+continuous maps is continuous by Theorem 18.2(c). Lastly, note that
+$f^{-1}(0)=x_0^{-1}=x_0$ similarly for $f^{-1}(1)$. Thus, $f^{-1}$ is a
+loop and
+\[
+f^{-1}\otimes f=(f(s))^{-1}\cdot f(s)=x_0=f(s)\cdot(f(s))^{-1}=f\otimes f^{-1}
+\]
+so $\Omega(G,x_0)$ is closed under inverses. Thus, $\Omega(G,x_0)$ is a group.
+\\\\
+(b) The map $\otimes\colon\Omega(G,x_0)\times\Omega(G,x_0)\to\Omega(G,x_0)$
+clearly induces a group operation on $\Pi_1(X,x_0)$ given by
+$[f]\otimes[g]=[f\otimes g]$. All we need to check is that this operation
+is in fact well defined on the equivalence class of loops based at $x_0$,
+i.e., if $f_1\simeq_p f_2$ with path homotopy $H$ and $g_1\simeq_p g_2$
+with path homotopy $K$ we want that $f_1\otimes g_1\simeq_p f_2\otimes
+g_2$. But this is immediate via the homotopy $L(s,t)\coloneqq H(s,t)\cdot
+K(s,t)\colon G\times I\to G$. This map is continuous since it can be
+realized as the sequence of compositions
+\[
+(s,t)\longmapsto (H(s,t),K(s,t))\longmapsto H(s,t)\cdot H(s,t)
+\]
+where the intermediate step in the composition, i.e., the map from $I\times
+I\to G\times G$, is continuous by Theorem 18.4 since $H$ and $K$ are
+continuous and lastly $L(s,0)=H(s,0)\cdot K(s,0)=f_1(s)\cdot
+g_1(s)=f_1\otimes g_1$ and $L(s,1)=H(s,1)\cdot K(s,1)=f_2(s)\cdot
+g_2(s)=f_2\otimes g_2$. Thus, $f_1\otimes g_1\simeq_p f_2\otimes g_2$. It
+follows that $\otimes$ is a well-defined binary operation on
+$\pi_1(X,x_0)$.
+\\\\
+(c) Following the hint, we shall compute $(f*e_{x_0})\otimes(e_{x_0}*g)$.
+Recall that
+\[
+f*e_{x_0}=
+\begin{cases}
+f(2s)&\text{for $s\in[0,1/2]$}\\
+e_{x_0}(2s-1)&\text{for $s\in[1/2,1]$}
+\end{cases}
+\qquad\text{and}\qquad
+e_{x_0}*g=
+\begin{cases}
+e_{x_0}(2s)&\text{for $s\in[0,1/2]$}\\
+g(2s-1)&\text{for $s\in[1/2,1]$}
+\end{cases}.
+\]
+Then
+\begin{align*}
+(f*e_{x_0})\otimes(e_{x_0}*g)
+&=(f*e_{x_0})(s)\cdot (e_{x_0}*g)(s)\\
+&=
+\begin{cases}
+f(2s)\cdot e_{x_0}(2s)&\text{for $s\in[0,1/2]$}\\
+e_{x_0}(2s-1)\cdot g(2s-1)&\text{for $s\in[1/2,1]$}
+\end{cases}\\
+&=
+\begin{cases}
+f(2s)&\text{for $s\in[0,1/2]$}\\
+g(2s-1)&\text{for $s\in[1/2,1]$}
+\end{cases}\\
+&=f*g.
+\end{align*}
+Since $f*e_{x_0}\simeq_p f$ and $e_{x_0}*g\simeq_p g$, we have at last that
+\[
+[f\otimes g]=[(f*e_{x_0})\otimes(e_{x_0}*g)]=[f*g].
+\]
+\\\\
+(d) Lastly, we show that $\pi_1(X,x_0)$ must be Abelian. It suffices to
+show that given a class of loop $[f]$ at $x_0$, the conjugacy class of
+$[f]$ consists of the singleton $\{[f]\}$. First, note that if
+$[g]\in\pi_1(X,x_0)$ then $[g^{-1}]\otimes [g]=[e_{x_0}]=[\bar g]*[g]$ so
+$[g^{-1}]=[g^{-1}]\otimes ([g]*[\bar g])=[\bar g]$. Thus, we have
+\begin{align*}
+[\bar g]*[f]*[g]
+&=\left([g^{-1}]*[f]\right)*[g*e_{x_0}]\\
+&=\left([g^{-1}]*[f]\right)\otimes [g*e_{x_0}]\\
+&=\begin{cases}
+g^{-1}(2s)\cdot g(2s)&\text{for $s\in[0,1/2]$}\\
+f(2s-1)\cdot e_{x_0}(2s-1)&\text{for $s\in[1/2,1]$}
+\end{cases}\\
+&=[e_{x_0}*f]\\
+&=[f].
+\end{align*}
+It follows that $\pi_1(X,x_0)$ is Abelian.
 \end{proof}
 \newpage
 \begin{problem}[(A)]
