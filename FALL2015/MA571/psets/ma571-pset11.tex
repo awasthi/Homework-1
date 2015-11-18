@@ -17,16 +17,6 @@ rule
 \end{enumerate}
 \end{problem}
 \begin{proof}
-% For part (a) we need to show that the operation (0) $\otimes$ is associative,
-% (1) $\Omega(G,x_0)$ is closed under $\otimes$, (2) $\Omega(G,x_0)$ contains
-% an identity element $e$ and (3) for every $f\in\Omega(G,x_0)$ there
-% exists an element $\bar f\in\Omega(G,x_0)$ such that $f\otimes\bar f=\bar
-% f\otimes f=e$. We shall proceed in order: (0) Let
-% $f,g,h\in\Omega(G,x_0)$. Then $(f\otimes g)\otimes h=f\otimes(g\otimes f)$
-% since the multiplication $\cdot$ is associative in $G$, i.e., since given
-% $t\in I$ we have $(f(t)\cdot g(t))\cdot h(t)=f(t)\cdot (g(t)\cdot h(t))$,
-% in particular this holds for all $\in I$. (1) Let $f$ and $g$ be loops at
-% $x_0$ then $f\otimes g=f(s)\cdot g(s)$
 For part (a) we need to show that the operation (i) $\otimes$ is
 associtive, (ii) $\Omega(G,x_0)$ is closed under $\otimes$, (iii)
 $\Omega(G,x_0)$ contains an identity element $e$ and (iv) for every
@@ -222,16 +212,43 @@ p_a\colon(a,a+1)\longrightarrow S^1-p(a)
 \]
 given by $p_a(u)=p(u)$ is a homomorphism.
 \end{lemma*}
-We shall proceed by the hint.
+We shall proceed by the hint. If $\sim$ is the equivalence
+relation on $[a,a+1]$ which identifies $a$ and $a+1$ then the
+restriction of $p$ induces a homeomorphism $[a,a+1]/{\sim}\to
+S^1$. Then, we claim that
+$[a,a+1]/{\sim}-\{[a]\}\approx(a,a+1)$.
 \end{proof}
 \newpage
 \begin{problem}[(C)]
-Show that for every point $x\in S^n$ the space $S^n-x$ is homeomorphic to
+Show that for every point $x\in S^n$ the space $S^n-\{x\}$ is homeomorphic to
 $\RR^n$. You may use the fact, shown in Step 1 of the proof of Theorem
 59.3, that $S^n$ with the \emph{north pole} removed is homeomorphic to
 $\RR^n$. (Hint: linear algebra.)
 \end{problem}
 \begin{proof}
+By elementary linear algebra, extend the sets $\{x\}$ and
+$\{(0,...,0,1)\}$ to orthonormal bases $\mathcal{B}_1$ and
+$\mathcal{B}_2$ for $\RR^{n+1}$ (by Gram-Schmidt). Then, the
+change of basis matrices from the strandard basis on $\RR^{n+1}$,
+say $A_1$ and $A_2$ corresponding to $\mathcal{B}_1$ and
+$\mathcal{B}_2$, respectively, are unitary linear
+transformations. Then the composition $A\coloneqq
+A_2A_1^{-1}\colon\RR^{n+1}\to\RR^{n+1}$ is a continuous map since
+it is a bounded linear operator on $\RR^{n+1}$ with inverse
+$A_1A_2^{-1}$ (which is also continuous since it is a bounded
+linear operator on $\RR^{n+1}$) hence is a
+homeomorphism. Moreover, since $A_1$ and $A_2$ are unitary then
+$A_2A_1^{-1}=A$ is unitary, i.e., preserves the Euclidean
+norm. It follows that the restriction
+$\varphi\coloneqq\left.A\right|_{S^n}$ is a map from $S^1$ to $S^1$
+is a homeomorphism by Lemma A with $\varphi(x)=(0,...,0,1)$. Now,
+by Lemma A, the restriction
+$\left.\varphi\right|_{S^n-\{x\}}\colon S^n-\{x\}\to
+S^n-\{(0,...,0,1)\}$ is a homeomorphism. Thus, the composition
+$\Phi\circ\bigl(\left.\varphi\right|_{S^1-\{x\}}\bigr)\colon
+S^n-\{x\}\to\RR^n$, where $\Phi\colon S^n-\{(0,...,0,1)\}\to\RR^n$
+is the stereographic projection from the north pole, gives a
+homeomorphism from $S^n-\{x\}$ to $\RR^n$.
 \end{proof}
 \newpage
 \begin{problem}[(D)]
@@ -239,6 +256,16 @@ Show that every loop in $S^n$ which is not onto is path-homotopic to a
 constant path. (Hint: use Problem C).
 \end{problem}
 \begin{proof}
+Fix $x_0\in S^n$ and let $f\colon I\to S^n$ be a loop at
+$x_0$. If $f$ is not surjective, then there exists a point $x\in
+S^{n}$ that does not get hit by $f$, i.e., $f(t)\neq x$ for all
+$t\in I$. By Problem C, $S^n-\{x\}\approx\RR^n$ with
+homeomorphism $\varphi$. Then $\varphi\circ f\colon I\to\RR^n$ is
+a loop based at $\varphi(x_0)$. Since $\RR^n$ is
+simply-connected, $\phi\circ f\simeq_p e_{\phi(x_0)}$ via the
+homotopy $H$. Then $\varphi^{-1}\circ H\colon I\times I\to
+S^n-\{x\}$ is a path homotopy from $f$ to $e_{x_0}$. Thus, if
+$f\colon I\to S^n$ is not surjective, $[f]=[e_{x_0}]$.
 \end{proof}
 \newpage
 \begin{problem}[(E)]
