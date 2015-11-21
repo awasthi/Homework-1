@@ -2,7 +2,7 @@
  "MA553-Quals"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
-                     '(("memoir" "article" "oneside" "10pt")))
+                     '(("article" "10pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("xcolor" "dvipsnames") ("euscript" "mathcal") ("fontenc" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "german" "spanish" "dutch" "russian" "swedish" "english") ("enumitem" "inline")))
    (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
@@ -12,8 +12,8 @@
     "latex2e"
     "shahidi/MA553-AUG15"
     "shahidi/MA553-AUG10"
-    "memoir"
-    "memoir10"
+    "article"
+    "art10"
     "geometry"
     "xcolor"
     "amsthm"
@@ -54,7 +54,8 @@
     "spanishoptions"
     "thmhead")
    (LaTeX-add-environments
-    '("problem" LaTeX-env-args ["argument"] 0)
+    '("problem" LaTeX-env-args ["argument"] 0))
+   (LaTeX-add-amsthm-newtheorems
     "theorem"
     "proposition"
     "corollary"
