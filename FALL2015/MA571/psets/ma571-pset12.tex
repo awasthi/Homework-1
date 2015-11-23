@@ -156,18 +156,18 @@ since they are projection maps. The second map, $\pi^-$, is continuous
 since it is the composition $\pi^+\circ\bigl(\left.a\right|_{U^-}\bigr)$
 where $\left.a\right|_{U^-}\colon U^-\to U^+$ is the restriction of the
 antipodal map $a((x,y,z))\coloneqq(-x,-y,-z)$ to $U^-$ which is continuous
-by theorem 18.2(d). moreover, note that $u^+$ and $u^-$ are closed subsets
+by theorem 18.2(d). moreover, note that $U^+$ and $U^-$ are closed subsets
 of $s^2$, since in the case of the former set,
-$s^2-u^+=\left\{\,(x,y,z)\in\RR^3\;\middle|\;z<1\,\right\}\cap s^2$ hence,
-is open and similarly, $s^2-u^-$ is open in $s^-$. lastly, we note that for
-any point $(x,y,0)\in u^+\cap u^-$, we have
+$s^2-U^+=\left\{\,(x,y,z)\in\RR^3\;\middle|\;z<1\,\right\}\cap s^2$ hence,
+is open and similarly, $s^2-U^-$ is open in $s^-$. lastly, we note that for
+any point $(x,y,0)\in U^+\cap U^-$, we have
 $q(\pi^+(x,y,0))=[x,y]=[-x,-y]=q(\pi^-(-x,-y,0))$. thus, by the pasting
 lemma, the map $f\colon s^2\to b^2/{\sim}$ defined by
 \[
 f(x,y,z)\coloneqq
 \begin{cases}
-q\circ\pi^+(x,y,z)&\text{if $(x,y,z)\in u^+$}\\
-q\circ\pi^-(x,y,z)&\text{if $(x,y,z)\in u^-$}
+q\circ\pi^+(x,y,z)&\text{if $(x,y,z)\in U^+$}\\
+q\circ\pi^-(x,y,z)&\text{if $(x,y,z)\in U^-$}
 \end{cases}
 \]
 is continuous and preserves $\sim$ (if $(x_0,y_0,z_0)\sim (x_1,y_1,z_1)$
@@ -296,22 +296,32 @@ $h^{-1}(H(0,s))=h^{-1}\circ h\circ g(s)=g(s)$ to
 $h^{-1}(H(1,s))=h^{-1}\circ f(s)$. Hence, $g$ is path-homotopic to a
 quasi-linear path.
 \\\\
-(ii) (We assume throughout that $M$ is a metric space, perhaps something
-Prof.\,McClure failed to mention, for otherwise the Lebesgue number
-approach is of no use). Note that by Theorem 34.1 (the Urysohn metrization
-theorem) and by Problem 10.8 (Ex.\,B from Hw.\,10) $M$ is metrizable. Let
+% (ii) (We assume throughout that $M$ is a metric space, perhaps something
+% Prof.\,McClure failed to mention, for otherwise the Lebesgue number
+% approach is of no use). Note that by Theorem 34.1 (the Urysohn metrization
+% theorem) and by Problem 10.8 (Ex.\,B from Hw.\,10) $M$ is metrizable.
+(ii) Let
 $\mathcal{U}$ be a covering by open neighborhoods $U_x$ of $x$ such that
 $U_x\approx V_x$ where $V_x$ is an open ball in $\RR^m$ (such a covering
 can be constructed for example by Lemma A since every point $x\in M$ has a
 neighborhood $U$ homeomorphic to an open subset of $\RR^m$, then restrict
 to an open ball contained in said neighborhood and restrict the domain of
 the homeomorphism to the preimage of this open ball and the codomain to the
-open ball; the resulting map is still a homeomorphism by Lemma A). By the
+open ball; the resulting map is still a homeomorphism by Lemma A). Now,
+given this cover define a cover $\mathcal{A}$ where we define
+$V_x\in\mathcal{A}$ to be the preimage of $U_x$ under $f$. By the
 Lebesgue covering lemma, there exists a positive real number $\delta$ such
-that for any subset $A$ of $X$ such that $\diam A<\delta$ there exists an
-element $U$ of the cover containing $A$. Let $g\colon[a,b]\to M$ be a path
-in $M$. Starting at $x_0\coloneqq g(a)$, we chop off the path $g([a,b])$ by
-taking the intersection of $g([a,b])$ with the closed ball $\overline{B(x_0,\delta)}$.
+that for any subset $A$ of $[a,b]$ such that $\diam A<\delta$ there exists an
+element $V\in\mathcal{A}$ containing $A$. Now chop the interval $[a,b]$
+into closed intervals $[a_{i-1},a_i]$ of length $\delta$. There are at most
+$k\coloneqq\lceil(b-a)/\delta\rceil$\footnote{\textcolor{Red}{Where the
+    symbol     $\lceil x\rceil$ denote the smallest integer $k>x$.}} such
+segments each contained in an open set, say $V_{x_i}$. Then
+$f([a_{i-1},a_i])\subset f(V_{x_i})\subset U_{x_i}$. By part (i), $f$
+restricted to $[a_{i-1},a_i]$ is path-homotopic to a quasi-linear path
+$g_i$. Joining up these paths by Theorem 51.3, i.e., setting $g\coloneqq
+g_k*\cdots*g_1$ we have that $f\simeq_p g$. Thus, $f$ is piecewise
+quasi-linear.
 \end{proof}
 \newpage
 \begin{problem}[B]
@@ -325,7 +335,7 @@ Suppose $g\colon[a,b]\to M$ is a piecewise quasi-linear path. The there
 exists a finite partition $a=a_0<a_1<\cdots<a_n=b$ of $[a,b]$ such that the
 restriction $\left.g\right|_{[a_i,a_{i+1}]}$ is quasi-linear, i.e.,
 $g([a_i,a_{i+1}])$ is contained in an open set $U$ which is homeomorphic to
-an open ball $V$ in $\RR^m$ via the homeomorphism $h_{i+1}$. Then
+an open ball $B$ in $\RR^m$ via the homeomorphism $h_{i+1}$. Then
 $g_{i+1}\coloneqq h_{i+1}\circ \left.g\right|_{[a_i,a_{i+1}]}$ is a linear
 path in $\RR^m$ so $\Int g_{i+1}([a_i,a_{i+1}])=\emptyset$. Then,
 $g_{i+1}([a_i,a_{i+1}])$ is compact subset of $\RR^m$ by Theorem 26.5
@@ -333,11 +343,43 @@ hence, is closed and bounded in $\RR^m$ by Theorem 27.3. Let
 $U_{i+1}\coloneqq\RR^m-g_{i+1}([a_i,a_{i+1}])$. Then $U_{i+1}$ is dense in
 $\RR^m$ since for every $x\in g_{i+1}([a_i,a_{i+1}])$ for every
 neighborhood $U$ of $x$, $U\not\subset g_{i+1}([a_i,a_{i+1}])$ so $U\cap
-U_{i+1}\neq\emptyset$. Thus, $\overline{U_{i+1}}=\RR^m$. By Problem A from
-HW 2, the intersection $U\coloneqq U_1\cap\cdots\cap U_n$ is dense in $\RR^m$. In
-particular, $U$ is nonempty for otherwise $U_i\cap U_j=\emptyset$ for some
-$1\leq i,j\leq n$. But this implies that $U_i\subset X-U_j$ which is a
-contradiction. It follows by De Morgan's that $h\circ g([a,b])=X-U$ and
+V_{i+1}\neq\emptyset$. Thus, $\overline{V_{i+1}}=\RR^m$. By Problem A from
+HW 2, the intersection $V\coloneqq V_1\cap\cdots\cap V_n$ is dense in $\RR^m$. In
+particular, $V$ is nonempty for otherwise $V_i\cap V_j=\emptyset$ for some
+$1\leq i,j\leq n$. But this implies that $V_i\subset\RR^m-V_j$ which is a
+contradiction. Now, we want to show that $U-f([a,b])$ is dense in $U$, but
+the latter is equal the the set
+\begin{align*}
+\bigcup_{i=1}^n h_i^{-1}(V_i)
+&=
+\bigcup_{i=1}^n h_i^{-1}(\RR^m-h_i(f([a_{i-1},a_i])))\\
+&=
+\bigcup_{i=1}^nh_i^{-1}(\RR^m)-f([a_{i-1},a_i])\\
+&=\bigcup_{i=1}^n U_i-f([a_{i-1},a_i]).
+\end{align*}
+Let us demonstrate this explicitly. Let $x\in U-f([a,b])$. Then $x\in
+U_i-f([a,b])$. But $U_i-f([a,b])=U_i-U_i\cap f([a,b])=U_i-f([a_{i-1},a_i])$
+by the definition of the set difference so $x\in\bigcup_{i=1}^n
+U_i-f([a_{i-1},a_i])$. The reverse containment is similar. Thus, we have
+\begingroup
+\allowdisplaybreaks
+\begin{align*}
+\overline{U-f([a,b])}
+&=
+\overline{\bigcup_{i=1}^n h_i^{-1}(V_i)}
+\\
+&=
+\bigcap_{i=1}^n\overline{h_i^{-1}(V_i)}
+\shortintertext{since $h_i$ is a homeomorphism from $U_i$ to $B_i$ and
+  $h_i(f([a_{i-1},a_i]))$ is closed in $\RR^m$, $h_i(V_i)$ is open in $U_i$
+  so is open in $U$ thus,}
+&=\bigcap_{i=1}^nh_i^{-1}(\overline{V_i})\\
+&=\bigcap_{i=1}^nh_i^{-1}(\RR^m)\\
+&=\bigcap_{i=1}^nU_i\\
+&=U_i.
+\end{align*}
+\endgroup
+Thus, $f\colon[a,b]\to M$ is not onto.
 \end{proof}
 \newpage
 \begin{problem}[C]
