@@ -1,0 +1,23 @@
+\documentclass[crop,tikz]{standalone}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{microtype}
+
+\DeclareMathOperator{\id}{id}
+
+\usepackage{tikz}
+\usetikzlibrary{cd}
+
+\begin{document}
+\begin{tikzcd}% [column sep= 2em, row sep= 3em]
+\pi_1(S^1,x_0)\arrow{r}[]{h_*}\arrow{d}[swap]{\hat\beta}&
+\pi_1(S^1,x_1)\arrow{d}[]{\widehat{h\circ\beta}}\\
+\pi_1(S^1,y_0)\arrow{r}[swap]{h_*}&\pi_1(S^1,y_1).
+\end{tikzcd}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
