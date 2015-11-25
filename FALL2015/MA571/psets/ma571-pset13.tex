@@ -1,19 +1,76 @@
-\begin{problem}[Munkres \S60, Ex.]
+\begin{problem}[Munkres \S58, Ex.9(a,b,c)]
+We define the \emph{degree} of a continuous map $h\colon S^1\to S^1$ as
+follows:
+\\\\
+Let $b_0$ be the point $(0,1)$ of $S^1$; choose a generator $\gamma$ for
+the infinite cyclic group $\pi_1(S^1,b_0)$. If $x_0$ is any point of $S^1$,
+choose a path $\alpha$ in $S^1$ from $b_0$ to $x_0$ and define
+$\gamma(x_0)\coloneqq\hat\alpha(\gamma)$. Then $\gamma(x_0)$ generates
+$\pi_1(S^1,x_0)$. The element $\gamma(x_0)$ is independent of the choice of
+the path $\alpha$, since the fundamental group of $S^1$ is Abelian.
+
+Now given $h\colon S^1\to S^1$, choose $x_0\in S^1$ and let
+$h(x_0)=x_1$. Consider the homomorphism
+\[
+h_*\colon\pi_1(S^1,x_0)\longrightarrow\pi_1(S^1,x_1).
+\]
+Since both groups are infinite cyclic, we have
+\begin{equation}
+\label{eq:1}
+\tag{*}
+h_*(\gamma(x_0))=d\cdot\gamma(x_1)
+\end{equation}
+for some integer $d$, if the group is written additively. The integer $d$
+is called the \emph{degree} of $h$ and is denoted by $\deg h$.
+
+The degree of $h$ is independent of the choice of the generator $\gamma$;
+choosing the other generator woul merely change the sign of both sides of
+(\ref{eq:1}).
+\begin{enumerate}
+\item[(e)] Show that if $h,k\colon S^1\to S^1$ have the same degree, they
+  are homotopic.
+\end{enumerate}
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
-\begin{problem}
+\begin{problem}[Munkres \S69, Ex.\,1]
+Check the details of Example 1.
+\end{problem}
+\begin{proof}
+The following is the statement of Example 1 as found in the book:
+\begin{example*}[1]
+Consider the group $P$ of bijections of the set $\{0,1,2\}$ with
+itself. For $i=1,2$, define an element $\pi_1$ of $P$ by setting
+$\pi_i(i)=i-1$ and $\pi_i(i-1)=i$ and $\pi_i(j)=j$ otherwise. Then $\pi_i$
+generates a subgroup $G_i$ of $P$ of order $2$. The group $G_1$and $G_2$
+generate $P$, as you can check. But $P$ is not their free product. The
+reduced words $(\pi_1,\pi_2,\pi_1)$ and $(\pi_2,\pi_1,\pi_2)$, for
+instance, represent the same element of $P$.
+\end{example*}
+\end{proof}
+\newpage
+\begin{problem}[Munkres \S69, Ex.\,2(a,b,c)]
+Let $G=G_1*G_2$, where $G_1$ and $G_2$ are nontrivial groups.
+\begin{enumerate}[label=(\alph*)]
+\item Show $G$ is not Abelian.
+\item If $x\in G$, define the \emph{length} of $x$ to be the length of the
+  unique reduced word in the elements of $G_1$ and $G_2$ that represents
+  $x$. Show that if $x$ has even length (at least $2$), then $x$ does not
+  have finite order. Show that if $x$ has odd length (at least $3$), then
+  $x$ is conjugate to an element of shorter length.
+\item Show that the only elements of $G$ that have finite order are the
+  elements of $G_1$ and $G_2$ that have finite order, and their
+  conjugates.
+\end{enumerate}
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
-\begin{problem}
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-\begin{problem}
+\begin{problem}[Munkres \S69, Ex.\,3]
+Let $G=G_1*G_2$. Given $c\in G$, let $cG_1c^{-1}$ denrote the set of all
+elements of the form $cxc^{-1}$, for $x\in G_1$. It is a subgroup of $G$;
+show that the intersection with $G_2$ is the identity alone.
 \end{problem}
 \begin{proof}
 \end{proof}
