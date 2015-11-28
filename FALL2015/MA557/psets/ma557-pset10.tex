@@ -30,7 +30,27 @@ $\Spec(S\otimes_R k(\mathfrak{p}))$.
 % \]
 % which is exactly $\prescript{a}{}{\varphi}^{-1}(\mathfrak{p})$
 This is demonstrated (to some extent) by Matsumura, following Theorem 7.2
-on p.\,47. We try to provide some of the details here.
+on p.\,47, we shall attempt to supply the missing details
+here. Recall, from the definition of the pre-image, that
+\[
+(\prescript{a}{}{\varphi})^{-1}(\mathfrak{p})=
+\left\{\,\mathfrak{q}\in\Spec S\;\middle|\;\,\mathfrak{q}\cap R=\mathfrak{p}\right\}.
+\]
+Define a ring homomorphism $\psi\colon S\to S\otimes
+k(\mathfrak{p})$ via $\psi(s)\coloneqq s\otimes 1$. We claim that
+the induced map on the spectra, i.e., the map
+$\prescript{a}{}{\psi}\colon\Spec(S\otimes
+k(\mathfrak{p}))\to\Spec S$, is a homeomorphism onto its image
+and that
+$\im\prescript{a}{}{\psi}=(\prescript{a}{}{\varphi})^{-1}$. First
+we will show the latter, that is,
+\begin{align*}
+\im\prescript{a}{}{\psi}
+&=\left\{\,\mathfrak{q}\in\Spec
+  S\;\middle|\;\text{$\mathfrak{q}=\mathfrak{r}\cap S$ for
+  $\mathfrak{r}\in\Spec(S\otimes k(\mathfrak{p}))$}\,\right\}\\
+&=
+\end{align*}
 \end{proof}
 \newpage
 \begin{problem}
@@ -39,6 +59,10 @@ ring, and let $\mathfrak{p}\in\Spec R$. Show that there are only finitely
 many primes in $S$ lying over $\mathfrak{p}$.
 \end{problem}
 \begin{proof}
+This is the same as Exercise 9.3 from Matsumura, where he
+suggests the following approach: Taking a prime ideal
+$\mathfrak{p}\in\Spec R$ and localizing at $\mathfrak{p}$ we may
+assume that $\mathfrak{p}$ is maximal.
 \end{proof}
 \newpage
 \begin{problem}

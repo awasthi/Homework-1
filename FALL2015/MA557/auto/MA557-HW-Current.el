@@ -4,7 +4,7 @@
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("memoir" "article" "oneside" "10pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("xcolor" "dvipsnames") ("euscript" "mathcal") ("fontenc" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "german" "spanish" "dutch" "russian" "swedish" "english") ("enumitem" "inline")))
+                     '(("xcolor" "dvipsnames") ("euscript" "mathcal") ("fontenc" "LGR" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "german" "spanish" "dutch" "russian" "swedish" "english") ("enumitem" "inline")))
    (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
@@ -20,10 +20,10 @@
     "mathtools"
     "euscript"
     "mathrsfs"
-    "cmap"
     "fontenc"
     "inputenc"
     "babel"
+    "cmap"
     "CJKutf8"
     "graphicx"
     "microtype"
@@ -39,24 +39,6 @@
     "minus"
     "nsubset"
     "nsupset"
-    "Ass"
-    "Aut"
-    "End"
-    "Fitt"
-    "Hom"
-    "Quot"
-    "Spec"
-    "MSpec"
-    "Supp"
-    "ann"
-    "coker"
-    "id"
-    "im"
-    "lcm"
-    "Ht"
-    "nil"
-    "rad"
-    "rk"
     "CC"
     "NN"
     "QQ"
