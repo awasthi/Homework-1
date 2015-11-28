@@ -4,7 +4,7 @@
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("article" "10pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("xcolor" "dvipsnames") ("euscript" "mathcal") ("fontenc" "T2A" "T1") ("inputenc" "utf8") ("babel" "french" "german" "spanish" "dutch" "russian" "swedish" "english") ("enumitem" "inline")))
+                     '(("xcolor" "dvipsnames") ("euscript" "mathcal") ("fontenc" "LAE" "LFE" "T2A" "T1") ("inputenc" "utf8") ("babel" "farsi" "french" "german" "spanish" "dutch" "russian" "swedish" "english") ("enumitem" "inline")))
    (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
@@ -21,10 +21,10 @@
     "mathtools"
     "euscript"
     "mathrsfs"
-    "cmap"
     "fontenc"
     "inputenc"
     "babel"
+    "cmap"
     "CJKutf8"
     "graphicx"
     "microtype"
@@ -36,8 +36,12 @@
     '("textzh" 1)
     '("textni" 1)
     '("textha" 1)
+    '("textfa" 1)
     "nsubset"
     "nsupset"
+    "id"
+    "im"
+    "lcm"
     "CC"
     "FF"
     "NN"

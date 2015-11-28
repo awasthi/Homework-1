@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.11.15)  24 NOV 2015 23:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.11.15)  28 NOV 2015 14:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -634,19 +634,24 @@ LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup6
 )
-(/usr/share/texmf-dist/tex/latex/cmap/cmap.sty
-Package: cmap 2008/03/06 v1.0h CMap support: searchable PDF
-)
 (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
+(/usr/share/texmf-dist/tex/latex/arabi/laeenc.def
+File: laeenc.def 2006/01/01 v0.1 Local Arabic font encoding (test version: may 
+change)
+)
+(/usr/share/texmf-dist/tex/latex/arabi/lfeenc.def
+File: lfeenc.def 2006/01/01 v0.1 Local Farsi font encoding (test version: may c
+hange)
+)
 (/usr/share/texmf-dist/tex/latex/cyrillic/t2aenc.def
 File: t2aenc.def 2005/09/27 v1.0i Cyrillic encoding definition file
 )
 (/usr/share/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
-)<<t1.cmap>>)
+))
 (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks36
@@ -875,6 +880,92 @@ Now handling font encoding U ...
 ... no UTF-8 mapping file for font encoding U
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
+Now handling font encoding LAE ...
+... processing UTF-8 mapping file for font encoding LAE
+
+(/usr/share/texmf-dist/tex/latex/arabi/laeenc.dfu
+File: laeenc.dfu 2006/01/01 v1.0 UTF-8 support for Arabic and Farsi for use wit
+h inputenc
+   defining Unicode char U+066A (decimal 1642)
+   defining Unicode char U+060C (decimal 1548)
+   defining Unicode char U+0660 (decimal 1632)
+   defining Unicode char U+0661 (decimal 1633)
+   defining Unicode char U+0662 (decimal 1634)
+   defining Unicode char U+0663 (decimal 1635)
+   defining Unicode char U+0664 (decimal 1636)
+   defining Unicode char U+0665 (decimal 1637)
+   defining Unicode char U+0666 (decimal 1638)
+   defining Unicode char U+0667 (decimal 1639)
+   defining Unicode char U+0668 (decimal 1640)
+   defining Unicode char U+0669 (decimal 1641)
+   defining Unicode char U+061B (decimal 1563)
+   defining Unicode char U+061F (decimal 1567)
+   defining Unicode char U+0621 (decimal 1569)
+   defining Unicode char U+0622 (decimal 1570)
+   defining Unicode char U+0623 (decimal 1571)
+   defining Unicode char U+0624 (decimal 1572)
+   defining Unicode char U+0625 (decimal 1573)
+   defining Unicode char U+0626 (decimal 1574)
+   defining Unicode char U+0627 (decimal 1575)
+   defining Unicode char U+0628 (decimal 1576)
+   defining Unicode char U+0629 (decimal 1577)
+   defining Unicode char U+062A (decimal 1578)
+   defining Unicode char U+062B (decimal 1579)
+   defining Unicode char U+062C (decimal 1580)
+   defining Unicode char U+062D (decimal 1581)
+   defining Unicode char U+062E (decimal 1582)
+   defining Unicode char U+062F (decimal 1583)
+   defining Unicode char U+0630 (decimal 1584)
+   defining Unicode char U+0631 (decimal 1585)
+   defining Unicode char U+0632 (decimal 1586)
+   defining Unicode char U+0633 (decimal 1587)
+   defining Unicode char U+0634 (decimal 1588)
+   defining Unicode char U+0635 (decimal 1589)
+   defining Unicode char U+0636 (decimal 1590)
+   defining Unicode char U+0637 (decimal 1591)
+   defining Unicode char U+0638 (decimal 1592)
+   defining Unicode char U+0639 (decimal 1593)
+   defining Unicode char U+063A (decimal 1594)
+   defining Unicode char U+0640 (decimal 1600)
+   defining Unicode char U+0641 (decimal 1601)
+   defining Unicode char U+0642 (decimal 1602)
+   defining Unicode char U+0643 (decimal 1603)
+   defining Unicode char U+0644 (decimal 1604)
+   defining Unicode char U+0645 (decimal 1605)
+   defining Unicode char U+0646 (decimal 1606)
+   defining Unicode char U+0647 (decimal 1607)
+   defining Unicode char U+0648 (decimal 1608)
+   defining Unicode char U+0649 (decimal 1609)
+   defining Unicode char U+064A (decimal 1610)
+   defining Unicode char U+064B (decimal 1611)
+   defining Unicode char U+064C (decimal 1612)
+   defining Unicode char U+064D (decimal 1613)
+   defining Unicode char U+064E (decimal 1614)
+   defining Unicode char U+064F (decimal 1615)
+   defining Unicode char U+0650 (decimal 1616)
+   defining Unicode char U+0651 (decimal 1617)
+   defining Unicode char U+0652 (decimal 1618)
+   defining Unicode char U+067E (decimal 1662)
+   defining Unicode char U+0686 (decimal 1670)
+   defining Unicode char U+0698 (decimal 1688)
+   defining Unicode char U+06A9 (decimal 1705)
+   defining Unicode char U+06AF (decimal 1711)
+   defining Unicode char U+06CC (decimal 1740)
+   defining Unicode char U+06F0 (decimal 1776)
+   defining Unicode char U+06F1 (decimal 1777)
+   defining Unicode char U+06F2 (decimal 1778)
+   defining Unicode char U+06F3 (decimal 1779)
+   defining Unicode char U+06F4 (decimal 1780)
+   defining Unicode char U+06F5 (decimal 1781)
+   defining Unicode char U+06F6 (decimal 1782)
+   defining Unicode char U+06F7 (decimal 1783)
+   defining Unicode char U+06F8 (decimal 1784)
+   defining Unicode char U+06F9 (decimal 1785)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+06D5 (decimal 1749)
+)
+Now handling font encoding LFE ...
+... no UTF-8 mapping file for font encoding LFE
 Now handling font encoding T2A ...
 ... processing UTF-8 mapping file for font encoding T2A
 
@@ -1081,31 +1172,122 @@ File: t2aenc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
 (/usr/share/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2015/08/03 3.9m The Babel package
 
-(/usr/share/texmf-dist/tex/generic/babel-french/frenchb.ldf
-Language: frenchb 2015/10/04 v3.1i French support from the babel system
+(/usr/share/texmf-dist/tex/latex/arabi/farsi.ldf
+File: farsi.ldf 
+Language: farsi 2006/01/01 v0.1 Farsi support for the babel system
 
 (/usr/share/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2015/08/03 3.9m Babel common definitions
 \babel@savecnt=\count169
 \U@D=\dimen177
 )
+Loading the definitions for the LaTeX{} Farsi encoding
+(/usr/share/texmf-dist/tex/latex/arabi/lfeenc.def
+File: lfeenc.def 2006/01/01 v0.1 Local Farsi font encoding (test version: may c
+hange)
+LaTeX Font Info:    Redeclaring font encoding LFE on input line 27.
+)
+Loading the definitions for the Jalali calendar
+(/usr/share/texmf-dist/tex/latex/arabi/arabiftoday.sty
+\FT@i=\count170
+\FT@y=\count171
+\FT@m=\count172
+\FT@d=\count173
+\FT@latini=\count174
+\FT@farsii=\count175
+\FT@latinii=\count176
+\FT@farsiii=\count177
+\FT@latiniii=\count178
+\FT@farsiiii=\count179
+\FT@latiniv=\count180
+\FT@farsiiv=\count181
+\FT@latinv=\count182
+\FT@farsiv=\count183
+\FT@latinvi=\count184
+\FT@farsivi=\count185
+\FT@latinvii=\count186
+\FT@farsivii=\count187
+\FT@latinviii=\count188
+\FT@farsiviii=\count189
+\FT@latinix=\count190
+\FT@farsiix=\count191
+\FT@latinx=\count192
+\FT@farsix=\count193
+\FT@latinxi=\count194
+\FT@farsixi=\count266
+\FT@latinxii=\count267
+\FT@farsixii=\count268
+\FT@farsixiii=\count269
+\FT@temp=\count270
+\FT@temptwo=\count271
+\FT@tempthree=\count272
+\FT@yModHundred=\count273
+\FT@thirtytwo=\count274
+\FT@dn=\count275
+\FT@sn=\count276
+\FT@mminusone=\count277
+)
+Loading the Common definitions for Arabic and Farsi
+(/usr/share/texmf-dist/tex/latex/arabi/arabicore.sty
+  Arabi Core switching commands v1.0  2006/01/01   (may still change)  
+\n@everypar=\toks38
+\@Arabitempboxa=\box31
+\llahheight=\skip257
+\Decimalheight=\skip258
+)
+LaTeX Font Info:    Redeclaring font encoding LFE on input line 152.
+\rialheight=\skip259
+
+Loading the Arabi fonts definitions for Farsi
+(/usr/share/texmf-dist/tex/latex/arabi/farsifnt.sty
+  Farsi font switching commands v1.0  2006/01/01   (may still change)  )
+Loading the Common definitions for Arabic and Farsi
+(/usr/share/texmf-dist/tex/latex/arabi/arabnovowel.sty
+File: arabnovowel.sty 2005/09/07 v0.1 Arabic dummy vowel slots when needed
+\ArabiStruthightOFF=\skip260
+\ArabiStrutdepthOFF=\skip261
+\ArabiStruthightON=\skip262
+\ArabiStrutdepthON=\skip263
+LaTeX Font Info:    Try loading font information for LAE+cmr on input line 133.
+
+
+(/usr/share/texmf-dist/tex/latex/arabi/laecmr.fd
+File: laecmr.fd 2006/01/01 v0.1 LaTeX Arabic default font description (test ver
+sion: may change)
+)
+LaTeX Font Info:    Font shape `LAE/cmr/m/n' will be
+(Font)              scaled to size 12.5pt on input line 133.
+)
+\c@mv@farsimath=\count278
+\symfarsiletters=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `farsiletters' in version `farsimat
+h'
+(Font)                  LFE/nazli/m/n --> LFE/nazli/m/n on input line 310.
+LaTeX Font Info:    Encoding `LFE' has changed to `OT1' for symbol font
+(Font)              `farsiletters' in the math version `normal' on input line 3
+13.
+LaTeX Font Info:    Overwriting symbol font `farsiletters' in version `normal'
+(Font)                  LFE/nazli/m/n --> OT1/cmr/m/n on input line 313.
+)
+(/usr/share/texmf-dist/tex/generic/babel-french/frenchb.ldf
+Language: frenchb 2015/10/04 v3.1i French support from the babel system
 \l@acadian = a dialect from \language\l@french 
 \l@canadien = a dialect from \language\l@french 
-\FBcolonskip=\skip257
-\FBthinskip=\skip258
-\FB@interchartokenstateORI=\count170
+\FBcolonskip=\skip264
+\FBthinskip=\skip265
+\FB@interchartokenstateORI=\count279
 Package babel Info: Making : an active character on input line 356.
 Package babel Info: Making ; an active character on input line 357.
 Package babel Info: Making ! an active character on input line 358.
 Package babel Info: Making ? an active character on input line 359.
-\FBguillskip=\skip259
-\FBguill@level=\count171
+\FBguillskip=\skip266
+\FBguill@level=\count280
 \FB@Mht=\dimen178
-\std@mcc=\count172
-\dec@mcc=\count173
-\listindentFB=\skip260
-\labelwidthFB=\skip261
-\leftmarginFB=\skip262
+\std@mcc=\count281
+\dec@mcc=\count282
+\listindentFB=\skip267
+\labelwidthFB=\skip268
+\leftmarginFB=\skip269
 \parindentFFN=\dimen179
 )
 (/usr/share/texmf-dist/tex/generic/babel-german/german.ldf
@@ -1120,8 +1302,8 @@ Package babel Info: Making " an active character on input line 110.
 ))
 (/usr/share/texmf-dist/tex/generic/babel-spanish/spanish.ldf
 Language: spanish.ldf 2014/04/24 v5.0n Spanish support from the babel system
-\es@quottoks=\toks38
-\es@quotdepth=\count174
+\es@quottoks=\toks39
+\es@quotdepth=\count283
 Package babel Info: Making . an active character on input line 617.
 Package babel Info: Making < an active character on input line 662.
 Package babel Info: Making > an active character on input line 662.
@@ -1142,7 +1324,13 @@ Language: english 2012/08/20 v3.3p English support from the babel system
 \l@newzealand = a dialect from \language\l@british 
 ))
 (/usr/share/texmf-dist/tex/latex/carlisle/scalefnt.sty)
-(/usr/share/texmf-dist/tex/latex/cjk/texinput/CJKutf8.sty
+(/usr/share/texmf-dist/tex/latex/cmap/cmap.sty
+Package: cmap 2008/03/06 v1.0h CMap support: searchable PDF
+
+
+Package cmap Warning: fontenc already loaded - some fonts may be unprocessed.
+
+) (/usr/share/texmf-dist/tex/latex/cjk/texinput/CJKutf8.sty
 Package: CJKutf8 2015/04/18 4.8.4
 
 (/usr/share/texmf-dist/tex/latex/cjk/texinput/CJK.sty
@@ -1219,7 +1407,7 @@ Now handling font encoding C62 ...
 ... no UTF-8 mapping file for font encoding C62
 )
 LaTeX Info: Redefining \selectfont on input line 755.
-\CJK@indent=\box31
+\CJK@indent=\box32
 )
 (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
@@ -1243,19 +1431,19 @@ Package graphics Info: Driver file: pdftex.def on input line 94.
 )
 (/usr/share/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2013/05/23 v2.5a Micro-typographical refinements (RS)
-\MT@toks=\toks39
-\MT@count=\count175
+\MT@toks=\toks40
+\MT@count=\count284
 LaTeX Info: Redefining \textls on input line 766.
 \MT@outer@kern=\dimen182
 LaTeX Info: Redefining \textmicrotypecontext on input line 1285.
-\MT@listname@count=\count176
+\MT@listname@count=\count285
 
 (/usr/share/texmf-dist/tex/latex/microtype/microtype-pdftex.def
 File: microtype-pdftex.def 2013/05/23 v2.5a Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 915.
 LaTeX Info: Redefining \lslig on input line 915.
-\MT@outer@space=\skip263
+\MT@outer@space=\skip270
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
@@ -1264,28 +1452,27 @@ File: microtype.cfg 2013/05/23 v2.5a microtype main configuration file (RS)
 ))
 (/usr/share/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2015/08/19 v1.8n multicolumn formatting (FMi)
-\c@tracingmulticols=\count177
-\mult@box=\box32
+\c@tracingmulticols=\count286
+\mult@box=\box33
 \multicol@leftmargin=\dimen183
-\c@unbalance=\count178
-\c@collectmore=\count179
-\doublecol@number=\count180
-\multicoltolerance=\count181
-\multicolpretolerance=\count182
+\c@unbalance=\count287
+\c@collectmore=\count288
+\doublecol@number=\count289
+\multicoltolerance=\count290
+\multicolpretolerance=\count291
 \full@width=\dimen184
 \page@free=\dimen185
 \premulticols=\dimen186
 \postmulticols=\dimen187
-\multicolsep=\skip264
-\multicolbaselineskip=\skip265
-\partial@page=\box33
-\last@line=\box34
+\multicolsep=\skip271
+\multicolbaselineskip=\skip272
+\partial@page=\box34
+\last@line=\box35
 \maxbalancingoverflow=\dimen188
-\mult@rightbox=\box35
-\mult@grightbox=\box36
-\mult@gfirstbox=\box37
-\mult@firstbox=\box38
-\@tempa=\box39
+\mult@rightbox=\box36
+\mult@grightbox=\box37
+\mult@gfirstbox=\box38
+\mult@firstbox=\box39
 \@tempa=\box40
 \@tempa=\box41
 \@tempa=\box42
@@ -1302,42 +1489,43 @@ Package: multicol 2015/08/19 v1.8n multicolumn formatting (FMi)
 \@tempa=\box53
 \@tempa=\box54
 \@tempa=\box55
-\c@columnbadness=\count183
-\c@finalcolumnbadness=\count184
+\@tempa=\box56
+\c@columnbadness=\count292
+\c@finalcolumnbadness=\count293
 \last@try=\dimen189
 \multicolovershoot=\dimen190
 \multicolundershoot=\dimen191
-\mult@nat@firstbox=\box56
-\colbreak@box=\box57
-\mc@col@check@num=\count185
+\mult@nat@firstbox=\box57
+\colbreak@box=\box58
+\mc@col@check@num=\count294
 )
 (/usr/share/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
-\labelindent=\skip266
+\labelindent=\skip273
 \enit@outerparindent=\dimen192
-\enit@toks=\toks40
-\enit@inbox=\box58
-\enitdp@description=\count186
+\enit@toks=\toks41
+\enit@inbox=\box59
+\enitdp@description=\count295
 )
 (/usr/share/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count187
-\lst@gtempboxa=\box59
-\lst@token=\toks41
-\lst@length=\count188
+\lst@mode=\count296
+\lst@gtempboxa=\box60
+\lst@token=\toks42
+\lst@length=\count297
 \lst@currlwidth=\dimen193
-\lst@column=\count189
-\lst@pos=\count190
+\lst@column=\count298
+\lst@pos=\count299
 \lst@lostspace=\dimen194
 \lst@width=\dimen256
-\lst@newlines=\count191
-\lst@lineno=\count192
+\lst@newlines=\count300
+\lst@lineno=\count301
 \lst@maxwidth=\dimen257
 
 (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count193
-\lst@skipnumbers=\count194
-\lst@framebox=\box60
+\c@lstnumber=\count302
+\lst@skipnumbers=\count303
+\lst@framebox=\box61
 )
 (/usr/share/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2015/06/04 1.6 listings configuration
@@ -1347,101 +1535,112 @@ Package: listings 2015/06/04 1.6 (Carsten Heinz)
 (/usr/share/texmf-dist/tex/generic/oberdiek/mleftright.sty
 Package: mleftright 2010/09/25 v1.0 Math left/right delim. as open/close (HO)
 )
-\c@theorem=\count266
-\c@definition=\count267
-\c@example=\count268
-\c@problem=\count269
-\c@remark=\count270
+\c@theorem=\count304
+\c@definition=\count305
+\c@example=\count306
+\c@problem=\count307
+\c@remark=\count308
 
 (./MA571-HW-Current.aux (./psets/ma571-pset13.aux))
 \openout1 = `MA571-HW-Current.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 171.
-LaTeX Font Info:    Try loading font information for T2A+cmr on input line 171.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for LAE/cmr/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for LFE/cmr/m/n on input line 178.
+LaTeX Font Info:    Try loading font information for LFE+cmr on input line 178.
+
+
+(/usr/share/texmf-dist/tex/latex/arabi/lfecmr.fd
+File: lfecmr.fd 2006/12/01 v0.1a LaTeX default Farsi font description (test ver
+sion: may change)
+)
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 178.
+LaTeX Font Info:    Try loading font information for T2A+cmr on input line 178.
 
 
 (/usr/share/texmf-dist/tex/latex/cyrillic/t2acmr.fd
 File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1479,41 +1678,45 @@ LaTeX Font Info:    ... okay on input line 171.
 
 (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count271
+\scratchcounter=\count309
 \scratchdimen=\dimen258
-\scratchbox=\box61
-\nofMPsegments=\count272
-\nofMParguments=\count273
-\everyMPshowfont=\toks42
-\MPscratchCnt=\count274
+\scratchbox=\box62
+\nofMPsegments=\count310
+\nofMParguments=\count311
+\everyMPshowfont=\toks43
+\MPscratchCnt=\count312
 \MPscratchDim=\dimen259
-\MPnumerator=\count275
-\makeMPintoPDFobject=\count276
-\everyMPtoPDFconversion=\toks43
+\MPnumerator=\count313
+\makeMPintoPDFobject=\count314
+\everyMPtoPDFconversion=\toks44
 )
-\AtBeginShipoutBox=\box62
-Package hyperref Info: Link coloring ON on input line 171.
+\AtBeginShipoutBox=\box63
+Package hyperref Info: Link coloring ON on input line 178.
  (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count277
+\c@section@level=\count315
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 171.
-LaTeX Info: Redefining \ref on input line 171.
-LaTeX Info: Redefining \pageref on input line 171.
-LaTeX Info: Redefining \nameref on input line 171.
+LaTeX Info: Redefining \nameref on input line 178.
+LaTeX Info: Redefining \ref on input line 178.
+LaTeX Info: Redefining \pageref on input line 178.
+LaTeX Info: Redefining \nameref on input line 178.
 (./MA571-HW-Current.out) (./MA571-HW-Current.out)
 \@outlinefile=\write4
 \openout4 = `MA571-HW-Current.out'.
 
-LaTeX Info: Redefining \degres on input line 171.
-LaTeX Info: Redefining \dots on input line 171.
-LaTeX Info: Redefining \up on input line 171.
+
+(/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+LaTeX Info: Redefining \degres on input line 178.
+LaTeX Info: Redefining \dots on input line 178.
+LaTeX Info: Redefining \up on input line 178.
 
 (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -1530,7 +1733,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 171.
+LaTeX Info: Redefining \microtypecontext on input line 178.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1545,16 +1748,17 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-\c@lstlisting=\count278
-<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
-LaTeX Font Info:    Try loading font information for U+msa on input line 179.
- (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+\c@lstlisting=\count316
+<<t1.cmap>><<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
+LaTeX Font Info:    Try loading font information for U+msa on input line 186.
+
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 (/usr/share/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 179.
+LaTeX Font Info:    Try loading font information for U+msb on input line 186.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1562,7 +1766,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/share/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 179.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 186.
 
 (/usr/share/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -1583,42 +1787,51 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--11
 
 
 
-] [2] [3] [4] [5] [6] [7]) [8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 202.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 202.
- (./MA571-HW-Current.aux
-(./psets/ma571-pset13.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 202.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 202.
+] [2] [3] [4] [5]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 97.
+ (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 97.
+ [6])
+[7]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 209.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 209.
+ (./MA571-HW-Current.aux (./psets/ma571-pset13.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 209.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 209.
 Package rerunfilecheck Info: File `MA571-HW-Current.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 202.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 209.
  ) 
 Here is how much of TeX's memory you used:
- 17737 strings out of 493054
- 250541 string characters out of 6140585
- 439253 words of memory out of 5000000
- 20859 multiletter control sequences out of 15000+600000
- 20708 words of font info for 86 fonts, out of 8000000 for 9000
+ 18574 strings out of 493054
+ 259872 string characters out of 6140585
+ 446716 words of memory out of 5000000
+ 21657 multiletter control sequences out of 15000+600000
+ 25762 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,12n,35p,257b,481s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,10n,35p,257b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sh
-are/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/
-fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/typ
-e1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-su
-per/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pf
-b></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/t
-exmf-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf-dist/fonts
-/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/c
-m-super/sfxc1200.pfb>
-Output written on MA571-HW-Current.pdf (10 pages, 191545 bytes).
+exmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/font
+s/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.p
+fb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/
+share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dis
+t/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/p
+ublic/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/
+sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></
+usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1200.pfb>
+Output written on MA571-HW-Current.pdf (9 pages, 195446 bytes).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
- 5 named destinations out of 1000 (max. 500000)
- 20501 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 119 PDF objects out of 1000 (max. 8388607)
+ 85 compressed objects within 1 object stream
+ 6 named destinations out of 1000 (max. 500000)
+ 18965 words of extra memory for PDF output out of 20736 (max. 10000000)
 

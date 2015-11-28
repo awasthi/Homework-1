@@ -42,11 +42,11 @@
 \usepackage[mathcal]{euscript}
 \usepackage{mathrsfs}
 
-\usepackage{cmap}
-\usepackage[T2A,T1]{fontenc}
+\usepackage[LAE,LFE,T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[french,german,spanish,dutch,russian,swedish,english]{babel}
-\babeltags{fr=french,
+\usepackage[farsi,french,german,spanish,dutch,russian,swedish,english]{babel}
+\babeltags{pa=farsi,
+           fr=french,
            de=german,
            es=spanish,
            nl=dutch,
@@ -55,6 +55,11 @@
            en=english}
 \def\spanishoptions{mexico}
 
+\selectlanguage{english}
+
+\newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
+
+\usepackage{cmap}
 \usepackage{CJKutf8}
 \newcommand{\textha}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
 \newcommand{\textni}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
