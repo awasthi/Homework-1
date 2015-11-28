@@ -35,6 +35,7 @@
     '("textzh" 1)
     '("textni" 1)
     '("textha" 1)
+    "minus"
     "nsubset"
     "nsupset"
     "diam"

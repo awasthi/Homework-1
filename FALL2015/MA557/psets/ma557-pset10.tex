@@ -6,7 +6,31 @@ $(\prescript{a}{}{\varphi})^{-1}(\mathfrak{p})$ is homeomorphic to
 $\Spec(S\otimes_R k(\mathfrak{p}))$.
 \end{problem}
 \begin{proof}
-
+% This is demonstrated in Matsumura following Theorem 7.2. We try to provide
+% some of the details here. From the definition of the pre-image we have that
+% \[
+% \prescript{a}{}{\varphi}^{-1}(\mathfrak{p})=
+% \left\{\,\mathfrak{q}\in\Spec S\;\middle|\;\,\mathfrak{q}\cap R=\mathfrak{p}\right\}.
+% \]
+% Now, define a ring homomorphism $f\colon S\to S\otimes k(\mathfrak{p})$ by
+% $f(s)\coloneqq s\otimes 1$. Then, since
+% $k(\mathfrak{p})=(R/\mathfrak{p})\otimes R_{\mathfrak{p}}$ we have that
+% \[
+% S\otimes_R \left((R/\mathfrak{p})\otimes_R R_\mathfrak{p}\right)
+% \cong(S/\mathfrak{p}S)_{\mathfrak{p}}
+% =(S/\mathfrak{p}S)_{\varphi(\mathfrak{p})}.
+% \]
+% Thus, $\prescript{a}{}{f}\colon\Spec(S\otimes k(\mathfrak{p}))\to S$ has
+% image
+% \[
+% \im\prescript{a}{}{f}=\left\{\,\mathfrak{q}\in\Spec
+%   S\;\text{$\mathfrak{q}\supset\mathfrak{p}S$ and $\mathfrak{q}\cap
+%     f(R-\mathfrak{p})=\emptyset$}\,\right\}
+% =\left\{\,\mathfrak{q}\in\Spec B\;\middle|\;\mathfrak{q}\cap R=\mathfrak{p}\,\right\},
+% \]
+% which is exactly $\prescript{a}{}{\varphi}^{-1}(\mathfrak{p})$
+This is demonstrated (to some extent) by Matsumura, following Theorem 7.2
+on p.\,47. We try to provide some of the details here.
 \end{proof}
 \newpage
 \begin{problem}
