@@ -234,11 +234,29 @@ words $(y_1,...,y_k)$ and $()$
 \end{enumerate}
 \end{problem}
 \begin{proof}
-(i) Suppose that $\deg h=\deg k\coloneqq d$. Then the induced maps on the fundamental
-group, $h_*\colon\pi_1(S^1,x_0)\to\pi_1(S^1,h(x_0))$ and
-$k_*\colon\pi_1(S^1,x_0)\to\pi_1(S^1,k(x_0))$, are equivalent since
-\[h_*(\gamma(x_0))=d\cdot\gamma(x_1)=k_*(\gamma(x_0)).\]
-Thus, by Theorem
+(i) Let $x_0\in S^1$. Set $d\coloneqq\deg h$ and suppose that
+$\deg h=\deg k$. Then the induced map on the fundamental group,
+i.e., $h_*\colon\pi_1(S^1,x_0)\to\pi_1(S^1,h(x_0))$ and
+$k_*\colon\pi_1(S^1,x_0)\to\pi_1(S^1,k(x_0))$, are equivalent
+since
+\[
+h_*(\gamma(x_0))=d\cdot\gamma(h(x_0))=k_*(\gamma(x_0)),
+\]
+that is, they send the generator of $\pi_1(S^1,x_0)$ to $d$ times
+the generator of $\pi_1(S^1,h(x_0))$. Define
+$p(s)\coloneqq(\cos(2\pi s),\sin(2\pi s))$. From the notes about
+``The fundamental group of $S^1$,'' we know that $p$ is a
+quotient map so, by a previous problem (Prob.\,9.2 [Munkres \S46,
+Ex.\,9]), the map $(p,\id_I)\colon I\times I\to S^1\times I$ is a
+quotient map. Therefore, the diagram below commutes
+\begin{center}
+\includegraphics{figures/hw-13-degree-diagram}
+\end{center}
+so, by Theorem Q.2, the map $H\colon I\times I\to S^1$ is
+continuous since the map $h\circ\pi_1$, where $\pi_1\colon
+S^1\times I\to S^1$ is the canonical projection $\pi_1(x,s)=x$
+(Theorem 18.4), is a composition of continuous maps (Theorem
+18.2(c)).
 \\\\
 (ii)
 \\\\

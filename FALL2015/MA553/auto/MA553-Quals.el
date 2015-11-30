@@ -39,9 +39,6 @@
     '("textfa" 1)
     "nsubset"
     "nsupset"
-    "id"
-    "im"
-    "lcm"
     "CC"
     "FF"
     "NN"
