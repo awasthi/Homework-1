@@ -197,23 +197,29 @@ elements of the form $cxc^{-1}$, for $x\in G_1$. It is a subgroup of $G$;
 show that the intersection with $G_2$ is the identity alone.
 \end{problem}
 \begin{proof}
-Let $x\in cG_1c^{-1}\cap G_2$. Then $x\in G_2$ and $x=cyc^{-1}$ for some
-$y\in G_1$ or $c=xcy^{-1}$. Now, we break up $c$ into the following cases:
-$c=y_1\cdots y_k$ where $y_1\in G_1$ and $y_k\in G_2$, $y_1\in G_2$ and
-$y_k\in G_1$ or $y_1,y_k\in G_i$, where we assume, of course, that $c$ is
-reduced. In the first case we have $c=y_1\cdots y_k=xy_1\cdots y_ky^{-1}$
-which implies that
-\[
-1=(y_k^{-1}\cdots y_1^{-1})(xy_1\cdots y_ky^{-1})=
-y_k^{-1}\cdots y_1^{-1}xy_1\cdots y_ky^{-1}
-\]
-this implies that $y_1^{-1}x=1$ or $y_1^{-1}xy_1=1$. If $y_1^{-1}x=1$, then
-$x\in G_1$ which is a contradiction. Thus, $y^{-1}xy_1=1$ which implies
-that $x=1$. For the second case, $c=y_1\cdots y_k$ and $xy_1\cdots
-y_ky^{-1}$ so by the uniqueness of representation $xy_1=y_1$ and
-$y_ky^{-1}=y_k$ so $x=y=1$. For the last case we may suppose that
-$y_1,y_k\in G_1$. Then, again by uniqueness of representation, $c=y_1\cdots
-y_k=xy_1\cdots y_ky^{-1}$, but
+Let $y\in cG_1c^{-1}\cap G_2$, then $y=cxc^{-1}\in G_2$ for some word $x$
+in $G_1$. Hence, we have that $c=ycx^{-1}$. Let us deal with the trivial
+case first. If $c=1$ then, since $G$ is the free product of $G_1$ and
+$G_2$, we have $1\cdot G_1\cdot 1^{-1}=G_1$ so $(1\cdot G_1\cdot
+1^{-1})\cap G_2=G_1\cap G_2=1$. Now, suppose that $c\neq 1$, say $c$ is
+represented by the reduced word $(y_1,...,y_k)$ for $k\in\NN$. Then we show
+that for the following cases (i) $y_1,y_k\in G_i$, (ii)$y_1\in G_1$ and
+$y_2\in G_2$ or (iii) $y_1\in G_2$ and $y_2\in G_1$, the intersection
+$cG_1c^{-1}\cap G_2=1$.
+
+In the first case, we have $c=ycx^{-1}$ so $c$ is represented by
+$(y_1,...,y_k)$ and $(y,y_1,...,y_k,x^{-1})$, where the latter is
+unreduced. Reducing the word $(y,y_1,...,y_k,x^{-1})$ we have
+$(y,y_1,...,y_kx^{-1})$ if $y_1,y_2\in G_1$ or $(yy_1,...,y_k,x^{-1})$ if
+$y_1,y_2\in G_2$. Without loss of generality, we assume that $y_1,y_2\in
+G_2$ as the argument for $y_1,y_2\in G_1$ is similar. Then,
+$(yy_1,...,y_k,x^{-1})=(y_1,...,y_k)$. Since the left-hand side is the
+unique representation of $c$ and has length $k$ while the right-hand side
+has length $k+1$ and both words are reduced, it must be that $x^{-1}=1$ and
+consequently $y=1$.
+
+In the second case, we have the two representations of $c$ by the reduced
+words $(y_1,...,y_k)$ and $()$
 \end{proof}
 \newpage
 \begin{problem}[A]
@@ -228,7 +234,11 @@ y_k=xy_1\cdots y_ky^{-1}$, but
 \end{enumerate}
 \end{problem}
 \begin{proof}
-(i)
+(i) Suppose that $\deg h=\deg k\coloneqq d$. Then the induced maps on the fundamental
+group, $h_*\colon\pi_1(S^1,x_0)\to\pi_1(S^1,h(x_0))$ and
+$k_*\colon\pi_1(S^1,x_0)\to\pi_1(S^1,k(x_0))$, are equivalent since
+\[h_*(\gamma(x_0))=d\cdot\gamma(x_1)=k_*(\gamma(x_0)).\]
+Thus, by Theorem
 \\\\
 (ii)
 \\\\
