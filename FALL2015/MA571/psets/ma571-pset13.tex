@@ -312,39 +312,7 @@ if and only if $y=x$ or $y=-x$. We will show that $f*f\simeq_p e_{x_0}$ by
 constructing a homotopy between $f*f$ and $e_{x_0}$. Define $\tilde f\colon
 S^2\to I$ by $\tilde f(s)\coloneqq(\cos(\pi s),\sin(\pi s),0)$. Note that
 $q(\tilde f)=f$ and that, by the equivalence relation on $S^2$, $q(\tilde
-f)=q(-\tilde f)$. Now, let us compute the path product $f*f$:
-\begin{align*}
-f*f(s)&=
-\begin{cases}
-f(2s)&s\in[0,1/2]\\
-f(1-2s)&s\in[1/2,1]
-\end{cases}\\
-&=
-\begin{cases}
-q(\tilde f(2s))&s\in[0,1/2]\\
-q(\tilde f(1-2s))&s\in[1/2,1]
-\end{cases}\\
-&=
-\begin{cases}
-q(\tilde f(2s))&s\in[0,1/2]\\
-q(-\tilde f(1-2s))&s\in[1/2,1]
-\end{cases}\\
-&=
-\begin{cases}
-q(\cos(2\pi s),\sin(2\pi s),0)&s\in[0,1/2]\\
-q(-\cos(\pi(1-2s)),-\sin(\pi(1-2s)),0)&s\in[1/2,1]
-\end{cases}\\
-\intertext{which, by basic trigonometry, simplifies into}
-&=
-\begin{cases}
-q(\cos(2\pi s),\sin(2\pi s),0)&s\in[0,1/2]\\
-q(\cos(2\pi s),-\sin(2\pi s),0)&s\in[1/2,1]
-\end{cases}.\\
-\end{align*}
-This in turn is really just the path
-\[
-q(\tilde f*(\cos))
-\]
+f)=q(-\tilde f)$. We show that $f*f\simeq_p e_{x_0}$ via homotopy.
 \end{proof}
 \newpage
 \begin{problem}[C]
@@ -363,7 +331,39 @@ associated to the partition of $Y$ into the following sets:
 Prove that $Y/{\sim}$ is a wedge of two circles.
 \end{problem}
 \begin{proof}
-
+Let $q\colon Y\to Y/{\sim}$ denote the quotient map. Recall from the
+definition at the top of Munkres \S71, p.\,434, that the wedge of two
+circles $S^1\vee S^1$ is the union of two subspaces, say $S_1$ and $S_2$A,
+which are homeomorphic to $S^1$ such that $S_1\cap S_2=\{p\}$. Since
+translation in $\RR^2$ is an isometry, in particular, a homeomorphism, we
+may as well assume that $p=(0,0)$ and that $S_1=S^1-(1,0)$ and
+$S_2=S^1+(1,0)$. The plan of attack is as follows, we define a continuous
+map $f\colon Y\to S^1\vee S^1$ and show that the induced map on the
+quotient, $\bar f\colon Y/{\sim}\to S^1\vee S^1$ is a homeomorphism. Define
+\[
+f(s,t)\coloneqq
+\begin{cases}
+(\cos(2\pi s),\sin(2\pi s))-(1,0)&\text{if $t=0$}\\
+(\cos(2\pi t+\pi),\sin(2\pi t+\pi))+(1,0)&\text{if $s=1$}\\
+(\cos(-2\pi s),\sin(-2\pi s))-(1,0)&\text{if $t=1$}\\
+(\cos(-2\pi t-\pi),\sin(2\pi t-\pi))+(1,0)&\text{if $s=0$}.
+\end{cases}
+\]
+Note that these maps are continuous on their respective intervals since
+their projections are trigonometric functions plus constants, and addition
+is continuous in $\RR$ by Theorem 25.1, hence the pieces are continuous by
+Theorem 18.4. Moreover, note that on the intersection, that is, on the
+points $(0,0)$, $(1,0)$, $(1,1)$ and $(0,1)$ we have
+\begin{align*}
+(\cos(0),\sin(0))-(1,0)&=(0,0)
+&(\cos(2\pi),\sin(2\pi))-(1,0)&=(0,0)\\
+&=(\cos(-\pi),\sin(-\pi))+(1,0)&
+&=(\cos(\pi),\sin(\pi))+(1,0)\\\\
+(\cos(2\pi+\pi),\sin(2\pi+\pi))+(1,0)&=(0,0)&
+(\cos(0),\sin(0))&=\\
+&=(\cos(-2\pi),\sin(-2\pi))-(1,0)&
+&=()
+\end{align*}
 \end{proof}
 % \newpage
 % \begin{problem}[Optional Problem]
