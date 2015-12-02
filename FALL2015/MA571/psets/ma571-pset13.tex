@@ -33,8 +33,7 @@ $1$, $\pi_1$ and $\pi_2$ (the latter two have order $2$, e.g.,
 i-1&\text{if $j=i$}\\
 i&\text{if $j=i-1$}\\
 j&\text{otherwise}
-\end{cases}
-\right)
+\end{cases}\right)
 =
 \begin{cases}
 i&\text{if $j=i$}\\
@@ -307,9 +306,45 @@ for $0\leq s\leq 1$. Then $f\colon I\to P^2$ is a loop at
 $x_0$. Prove that $[f]*[f]=[e_{x_0}]$.
 \end{problem}
 \begin{proof}
-Set $f(s)\coloneqq(\cos(\pi s),\sin(\pi s),0)$. Recall that the projective
-plane is constructed from $S^2$ by identifying antipodal points, i.e., the
-equivalence class $[x]$ consists of $x$ and $-x$. Then $q(f)=q(-f)$.
+Recall that the projective plane is constructed from the sphere by
+identifying antipodal points, i.e., $P^2\approx S^2/{\sim}$ where $x\sim y$
+if and only if $y=x$ or $y=-x$. We will show that $f*f\simeq_p e_{x_0}$ by
+constructing a homotopy between $f*f$ and $e_{x_0}$. Define $\tilde f\colon
+S^2\to I$ by $\tilde f(s)\coloneqq(\cos(\pi s),\sin(\pi s),0)$. Note that
+$q(\tilde f)=f$ and that, by the equivalence relation on $S^2$, $q(\tilde
+f)=q(-\tilde f)$. Now, let us compute the path product $f*f$:
+\begin{align*}
+f*f(s)&=
+\begin{cases}
+f(2s)&s\in[0,1/2]\\
+f(1-2s)&s\in[1/2,1]
+\end{cases}\\
+&=
+\begin{cases}
+q(\tilde f(2s))&s\in[0,1/2]\\
+q(\tilde f(1-2s))&s\in[1/2,1]
+\end{cases}\\
+&=
+\begin{cases}
+q(\tilde f(2s))&s\in[0,1/2]\\
+q(-\tilde f(1-2s))&s\in[1/2,1]
+\end{cases}\\
+&=
+\begin{cases}
+q(\cos(2\pi s),\sin(2\pi s),0)&s\in[0,1/2]\\
+q(-\cos(\pi(1-2s)),-\sin(\pi(1-2s)),0)&s\in[1/2,1]
+\end{cases}\\
+\intertext{which, by basic trigonometry, simplifies into}
+&=
+\begin{cases}
+q(\cos(2\pi s),\sin(2\pi s),0)&s\in[0,1/2]\\
+q(\cos(2\pi s),-\sin(2\pi s),0)&s\in[1/2,1]
+\end{cases}.\\
+\end{align*}
+This in turn is really just the path
+\[
+q(\tilde f*(\cos))
+\]
 \end{proof}
 \newpage
 \begin{problem}[C]
@@ -325,45 +360,41 @@ associated to the partition of $Y$ into the following sets:
 \item for each $t\notin\{0,1\}$, the set $\{(t,0),(t,1)\}$,
 \item the set $\{0,1\}\times\{0,1\}$.
 \end{itemize}
-Prove that $Y/\sim$ is a wedge of two circles.
+Prove that $Y/{\sim}$ is a wedge of two circles.
 \end{problem}
 \begin{proof}
-\end{proof}
-\newpage
-\begin{problem}[Optional Problem]
-Let $B^2$ denote the unit disk
-$\left\{\,(x,y)\in\RR^2\;\middle|\;\,x^2+y^2\leq 1\right\}$ and
-let $S^1$ denote the unit circle. Let $\mathbf{a}\in B^2-S^1$. In
-this problem we will show that there is a homeomorphism $h\colon
-B^2\to B^2$a which takes $(0,0)$ to $\mathbf{a}$ and fixes $S^1$.
-\begin{enumerate}[label=(\roman*)]
-\item Let $h\colon B^2\to B^2$ be the function defined as
-  follows: note that every point in $B^2$ is of the form
-  $t\mathbf{y}$ for some $\mathbf{y}\in S^1$ and $t\in[0,1]$, and
-  define
-  $h(t\mathbf{y})\coloneqq(1-t)\mathbf{a}+t\mathbf{y}$. Prove
-  that this is well-defined, continuous and lands in
-  $B^2$. (\emph{Hint:} to show continuity, you can give a more
-  explicit formula or you can use a quotient map.)
-\item Show that $h(0,0)=\mathbf{a}$ and that $h$ fixes $S^1$.
-\item Prove that $h$ is one-to-one. (\emph{Hint:} first use the
-  dot product and the quadratic formula to show that if
-  $\mathbf{u}$, $\mathbf{v}$ are vectors with $|\mathbf{u}|<1$
-  then there is a unique positive $s$ with
-  $|\mathbf{u}+s\mathbf{v}|=1$; geometrically this just says that
-  any ray that starts inside the unit circle has exactly one
-  point on the unit circle.)
-\item Prove that $h$ is onto. (\emph{Hint:} if $|\mathbf{u}|<1$,
-  $|\mathbf{u}+\mathbf{v}|\leq 1$ and
-  $|\mathbf{u}+s\mathbf{v}|=1$ with $s$ positive, show that
-  $s\geq 1$).
-\item Prove that $h$ is a homeomorphism.
-\end{enumerate}
-\end{problem}
-\begin{proof}
+
 \end{proof}
 % \newpage
-% \begin{problem}
+% \begin{problem}[Optional Problem]
+% Let $B^2$ denote the unit disk
+% $\left\{\,(x,y)\in\RR^2\;\middle|\;\,x^2+y^2\leq 1\right\}$ and
+% let $S^1$ denote the unit circle. Let $\mathbf{a}\in B^2-S^1$. In
+% this problem we will show that there is a homeomorphism $h\colon
+% B^2\to B^2$a which takes $(0,0)$ to $\mathbf{a}$ and fixes $S^1$.
+% \begin{enumerate}[label=(\roman*)]
+% \item Let $h\colon B^2\to B^2$ be the function defined as
+%   follows: note that every point in $B^2$ is of the form
+%   $t\mathbf{y}$ for some $\mathbf{y}\in S^1$ and $t\in[0,1]$, and
+%   define
+%   $h(t\mathbf{y})\coloneqq(1-t)\mathbf{a}+t\mathbf{y}$. Prove
+%   that this is well-defined, continuous and lands in
+%   $B^2$. (\emph{Hint:} to show continuity, you can give a more
+%   explicit formula or you can use a quotient map.)
+% \item Show that $h(0,0)=\mathbf{a}$ and that $h$ fixes $S^1$.
+% \item Prove that $h$ is one-to-one. (\emph{Hint:} first use the
+%   dot product and the quadratic formula to show that if
+%   $\mathbf{u}$, $\mathbf{v}$ are vectors with $|\mathbf{u}|<1$
+%   then there is a unique positive $s$ with
+%   $|\mathbf{u}+s\mathbf{v}|=1$; geometrically this just says that
+%   any ray that starts inside the unit circle has exactly one
+%   point on the unit circle.)
+% \item Prove that $h$ is onto. (\emph{Hint:} if $|\mathbf{u}|<1$,
+%   $|\mathbf{u}+\mathbf{v}|\leq 1$ and
+%   $|\mathbf{u}+s\mathbf{v}|=1$ with $s$ positive, show that
+%   $s\geq 1$).
+% \item Prove that $h$ is a homeomorphism.
+% \end{enumerate}
 % \end{problem}
 % \begin{proof}
 % \end{proof}
