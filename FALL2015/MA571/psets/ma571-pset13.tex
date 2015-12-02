@@ -306,14 +306,44 @@ for $0\leq s\leq 1$. Then $f\colon I\to P^2$ is a loop at
 $x_0$. Prove that $[f]*[f]=[e_{x_0}]$.
 \end{problem}
 \begin{proof}
-Recall that the projective plane is constructed from the sphere by
-identifying antipodal points, i.e., $P^2\approx S^2/{\sim}$ where $x\sim y$
-if and only if $y=x$ or $y=-x$. We will show that $f*f\simeq_p e_{x_0}$ by
-constructing a homotopy between $f*f$ and $e_{x_0}$. Define $\tilde f\colon
-S^2\to I$ by $\tilde f(s)\coloneqq(\cos(\pi s),\sin(\pi s),0)$. Note that
-$q(\tilde f)=f$ and that, by the equivalence relation on $S^2$, $q(\tilde
-f)=q(-\tilde f)$. Now, we want to show that $f*f\simeq_p e_{x_0}$ so we
-shall construct a homotopy $\tilde f*\tilde f\simeq_p e_{(1,0,0)}$
+% Recall that the projective plane is constructed from the sphere by
+% identifying antipodal points, i.e., $P^2\approx S^2/{\sim}$ where $x\sim y$
+% if and only if $y=x$ or $y=-x$. We will show that $f*f\simeq_p e_{x_0}$ by
+% constructing a homotopy between $f*f$ and $e_{x_0}$. Define $\tilde f\colon
+% S^2\to I$ by $\tilde f(s)\coloneqq(\cos(\pi s),\sin(\pi s),0)$. Note that
+% $q(\tilde f)=f$ and that, by the equivalence relation on $S^2$, $q(\tilde
+% f)=q(-\tilde f)$. Now, we want to show that $f*f\simeq_p e_{x_0}$ so we
+% shall construct a homotopy $H\colon I\times I\to S^2$ from $\tilde f*\tilde
+% f$ to $e_{(1,0,0)}$ and ``push'' it to a homotopy $\overline{H}\colon
+% I\times I\to P^2$.
+
+Can't figure this problem out, going to try some \emph{experimental maths}
+at the last minute here: Let us begin by calculating the path product
+$f*f$:
+\[
+f*f(s)=\begin{cases}
+q(\cos(2\pi s),\sin(2\pi s),0)&s\in[0,1/2]\\
+q(\cos(\pi(1-2s)),\sin(\pi(1-2s)),0)&s\in[1/2,1]
+\end{cases}.
+\]
+But since antipodal points are identified in $P^2$, the lowermost case
+above is just equal to $q(-\cos(\pi(1-2s)),-\sin(\pi(1-2s)),0)$ where the
+expression inside $q$ is the path going counterclockwise from $(-1,0,0)$ to
+$(1,0,0)$. Rewrite $f*f$ as
+\[
+f*f(s)=\begin{cases}
+q(\cos(2\pi s),\sin(2\pi s),0)&s\in[0,1/2]\\
+q(-\cos(\pi(1-2s)),-\sin(\pi(1-2s)),0)&s\in[1/2,1]
+\end{cases}.
+\]
+Then $f*f(s)=q(\cos(2\pi s),\sin(2\pi s),0)$. This, i.e., $(\cos(2\pi
+s),\sin(2\pi s),0)$, is a loop based at $(1,0,0)$ in $S^2$ so is homotopic
+to the constant map $e_{(1,0,0)}$ via, say $H\colon I\times I\to S^2$ (this
+is by Homework 11, Problem D), i.e., $H(s,0)=(\cos(2\pi s),\sin(2\pi s),0)$
+and $H(s,1)=e_{(1,0,0)}$. Then $q\circ H\colon I\times I\to P^2$ is
+continuous and furthermore $q(H(s,0))=q(\cos(2\pi s),\sin(2\pi
+s),0)=f*f(s)$ while $q(H(s,1))=q(e_{(1,0,0)})=e_{x_0}$. Thus,
+$f*f(s)\simeq_p e_{x_0}$.
 \end{proof}
 \newpage
 \begin{problem}[C]
