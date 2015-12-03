@@ -1,6 +1,6 @@
 \def\documentauthor{Carlos Salinas}
 \def\documenttitle{MA557 Homework \hwnum}
-\def\hwnum{10}
+\def\hwnum{12}
 \def\shorttitle{MA557 HW \hwnum}
 \def\coursename{MA557}
 \def\documentsubject{commutative algebra i}
@@ -167,6 +167,7 @@
 %% Commands and operators
 \DeclareMathOperator{\Ass}{Ass}
 \DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Cl}{Cl}
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Fitt}{Fitt}
 \DeclareMathOperator{\Hom}{Hom}
@@ -192,10 +193,6 @@
 \newcommand{\ZZ}{\mathbf{Z}}
 
 \begin{document}
-% Renewcommands
-% \renewcommand\phi{\varphi}
-% \renewcommand\epsilon{\varepsilon}
-
 \frontmatter
 \aliaspagestyle{title}{empty}
 \pagestyle{title}
@@ -204,27 +201,27 @@
 \date{\today}
 \maketitle
 \cleartooddpage
-
-\makeoddhead{headings}
+\makepagestyle{my-headings}
+\makeoddhead{my-headings}
         {\small{\MakeUppercase{\itshape\documentauthor}}}
         {}
         {\small{\MakeUppercase{\itshape\exercisename}}}
-\makeoddfoot{headings}{{\itshape\documenttitle}}
+\makeoddfoot{my-headings}{{\itshape\documenttitle}}
                       {}
                       {\thepage}
-\makeevenhead{headings}
+\makeevenhead{my-headings}
         {\small{\MakeUppercase{\itshape\documentauthor}}}
         {}
         {\small{\MakeUppercase{\itshape\exercisename}}}
-\makeevenfoot{headings}{{\itshape\documenttitle}}
+\makeevenfoot{my-headings}{{\itshape\documenttitle}}
                       {}
                       {\thepage}
-\makeheadrule{headings}{\textwidth}{.25pt}
+\makeheadrule{my-headings}{\textwidth}{.25pt}
+\pagestyle{my-headings}
 % \makerunningwidth{headings}{1.15\textwidth}
-\pagestyle{headings}
-
 \mainmatter
-\include{psets/ma557-pset10}
+
+\include{psets/ma557-pset12}
 \end{document}
 
 %%% Local Variables:
