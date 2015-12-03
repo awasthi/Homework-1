@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.11.15)  2 DEC 2015 22:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.11.15)  3 DEC 2015 12:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1541,7 +1541,7 @@ Package: mleftright 2010/09/25 v1.0 Math left/right delim. as open/close (HO)
 \c@problem=\count307
 \c@remark=\count308
 
-(./MA557-HW-Current.aux (./psets/ma557-pset12.aux))
+(./MA557-HW-Current.aux (./psets/ma557-pset11.aux))
 \openout1 = `MA557-HW-Current.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 195.
@@ -1799,11 +1799,11 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 (/usr/share/texmf-dist/tex/latex/microtype/mt-euf.cfg
 File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 
-) [3] [4] [5] [6] [7])
-[8]
+)) [3]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 225.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 225.
- (./MA557-HW-Current.aux (./psets/ma557-pset12.aux))
+
+(./MA557-HW-Current.aux (./psets/ma557-pset12.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 225.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 225.
 Package rerunfilecheck Info: File `MA557-HW-Current.out' has not changed.
@@ -1811,9 +1811,9 @@ Package rerunfilecheck Info: File `MA557-HW-Current.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 225.
  ) 
 Here is how much of TeX's memory you used:
- 18649 strings out of 493054
- 261150 string characters out of 6140585
- 446942 words of memory out of 5000000
+ 18650 strings out of 493054
+ 261162 string characters out of 6140585
+ 446941 words of memory out of 5000000
  21738 multiletter control sequences out of 15000+600000
  26270 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1833,10 +1833,10 @@ xmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/
 type1/public/cm-super/sfti0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm
 -super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfxc1200
 .pfb>
-Output written on MA557-HW-Current.pdf (10 pages, 170261 bytes).
+Output written on MA557-HW-Current.pdf (5 pages, 165113 bytes).
 PDF statistics:
- 123 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
+ 106 PDF objects out of 1000 (max. 8388607)
+ 77 compressed objects within 1 object stream
  10 named destinations out of 1000 (max. 500000)
  21013 words of extra memory for PDF output out of 24883 (max. 10000000)
 
