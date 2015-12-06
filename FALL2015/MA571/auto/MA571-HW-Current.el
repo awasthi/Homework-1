@@ -4,7 +4,7 @@
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("memoir" "article" "oneside" "10pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("xcolor" "dvipsnames") ("euscript" "mathcal") ("fontenc" "LAE" "LFE" "T2A" "T1") ("inputenc" "utf8") ("babel" "farsi" "french" "german" "spanish" "dutch" "russian" "swedish" "english") ("enumitem" "inline")))
+                     '(("xcolor" "dvipsnames") ("enumitem" "inline") ("mathdesign" "charter") ("fontspec" "no-math") ("ruby" "overlap")))
    (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "lstinline")
@@ -15,27 +15,21 @@
     "memoir10"
     "geometry"
     "xcolor"
-    "amsthm"
-    "amssymb"
-    "mathtools"
-    "euscript"
-    "mathrsfs"
-    "fontenc"
-    "inputenc"
-    "babel"
-    "cmap"
-    "CJKutf8"
-    "graphicx"
     "microtype"
     "multicol"
     "enumitem"
     "listings"
-    "mleftright")
+    "mleftright"
+    "graphicx"
+    "amsthm"
+    "amssymb"
+    "mathtools"
+    "mathdesign"
+    "fontspec"
+    "polyglossia"
+    "xeCJK"
+    "ruby")
    (TeX-add-symbols
-    '("textzh" 1)
-    '("textni" 1)
-    '("textha" 1)
-    '("textfa" 1)
     "minus"
     "nsubset"
     "nsupset"
@@ -59,7 +53,6 @@
     "coursename"
     "documentsubject"
     "authoremail"
-    "spanishoptions"
     "thmhead"
     "exercisename")
    (LaTeX-add-environments
@@ -79,5 +72,12 @@
     "remark"
     "remarks"
     "observation"
-    "observations")))
+    "observations")
+   (LaTeX-add-polyglossia-langs
+    '("english" "mainlanguage" "variant=american")
+    '("farsi" "otherlanguage" "")
+    '("french" "otherlanguage" "")
+    '("german" "otherlanguage" "spelling=new,latesthyphen,babelshorthands")
+    '("spanish" "otherlanguage" "")
+    '("russian" "otherlanguage" "spelling=modern,babelshorthands"))))
 

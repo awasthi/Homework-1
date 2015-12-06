@@ -32,71 +32,44 @@
 % Use symbols instead of numbers
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
-%% Math
-\usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{mathtools}
-
-%%PDFTeX specific
-\usepackage[mathcal]{euscript}
-\usepackage{mathrsfs}
-
-\usepackage[LAE,LFE,T2A,T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[farsi,french,german,spanish,dutch,russian,swedish,english]{babel}
-\babeltags{pa=farsi,
-           fr=french,
-           de=german,
-           es=spanish,
-           nl=dutch,
-           ru=russian,
-           sv=swedish,
-           en=english}
-\def\spanishoptions{mexico}
-
-\selectlanguage{english}
-
-\newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
-
-\usepackage{cmap}
-\usepackage{CJKutf8}
-\newcommand{\textha}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
-\newcommand{\textni}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
-\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
-
-%%% XeTeX/LuaTeX
-% \usepackage{unicode-math}
-% \setmainfont[RawFeature={% +ss02,+cv01,
-%                          +ss05,+dlig},
-%              ItalicFeatures={RawFeature=+cv04,CharacterVariant=5:2},
-%              Numbers=Lining,
-%              Ligatures=TeX]{EB Garamond}
-% \setmathfont{Minion Math}
-% \setmathfont[range={\mathfrak}]{XITS Math}
-% \setmathfont[range={\mathcal},StylisticSet=1]{XITS Math}
-% \setmathfont[range={\mathscr}]{XITS Math}
-% % \setmathfont[range={\mathfrak}]{Latin Modern Math}
-% % \setmathfont[range={\mathcal}]{Latin Modern Math}
-% \setmathfont[range={}]{Minion Math}
-
-% \usepackage{polyglossia}
-
-% \setmainlanguage[variant=american]{english}
-% \setotherlanguage{french}
-% \setotherlanguage[spelling=new,latesthyphen,babelshorthands]{german}
-% \setotherlanguage{spanish}
-% \setotherlanguage[spelling=modern,babelshorthands]{russian}
-
-%% Misc
-\usepackage{graphicx}
-\graphicspath{{figures/}}
-
+% Misc
 \usepackage{microtype}
 \usepackage{multicol}
 \usepackage[inline]{enumitem}
 \usepackage{listings}
 \usepackage{mleftright}
 \mleftright
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+
+%% Math
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+%% Math font
+\usepackage[charter]{mathdesign}
+\usepackage[no-math]{fontspec}
+% \usepackage{unicode-math}
+\setmainfont[Ligatures=TeX]{Khartiya}
+
+%% Language
+\usepackage{polyglossia}
+
+\newfontfamily\cyrillicfont[Script=Cyrillic]{Khartiya}
+\newfontfamily\farsifont[Script=Arabic,
+                         Scale=MatchUppercase]{Amiri}
+\setmainlanguage[variant=american]{english}
+\setotherlanguage{farsi}
+\setotherlanguage{french}
+\setotherlanguage[spelling=new,latesthyphen,babelshorthands]{german}
+\setotherlanguage{spanish}
+\setotherlanguage[spelling=modern,babelshorthands]{russian}
+
+\usepackage{xeCJK}
+\usepackage[overlap]{ruby}
+\renewcommand\rubysep{-0.2ex}
+\setCJKmainfont{AR PL UMing TW}
 
 %% Theorems and definitions
 %% remove parentheses
