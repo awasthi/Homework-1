@@ -1,0 +1,13 @@
+## Ignore jabref backup files:
+*.bak
+
+## Ignore emacs backups and files created when edits are not saved
+*~
+[.][#]~
+[#]*[#]
+*.el
+
+## Ignore files created by PDFLaTeX and AucTeX
+*.aux
+*.log
+*.out
