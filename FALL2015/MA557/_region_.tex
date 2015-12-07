@@ -1,0 +1,250 @@
+\message{ !name(../MA557-HW-Current.tex)}\def\documentauthor{Carlos Salinas}
+\def\documenttitle{MA557 Homework \hwnum}
+\def\hwnum{12}
+\def\shorttitle{MA557 HW \hwnum}
+\def\coursename{MA557}
+\def\documentsubject{commutative algebra i}
+\def\authoremail{salinac@purdue.edu}
+
+\documentclass[article,oneside,10pt]{memoir}
+\usepackage{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[
+    breaklinks,
+    bookmarks=true,
+    colorlinks=true,
+    pageanchor=false,
+    linkcolor=black,
+    anchorcolor=black,
+    citecolor=black,
+    filecolor=black,
+    menucolor=black,
+    runcolor=black,
+    urlcolor=black,
+    hyperindex=false,
+    hyperfootnotes=true,
+    pdftitle={\shorttitle},
+    pdfauthor={\documentauthor},
+    pdfkeywords={\documentsubject},
+    pdfsubject={\coursename}
+    ]{hyperref}
+
+% Use symbols instead of numbers
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+% Misc
+\usepackage{microtype}
+\usepackage{multicol}
+\usepackage[inline]{enumitem}
+\usepackage{listings}
+\usepackage{mleftright}
+\mleftright
+
+%% Math
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+%% PDFTeX specific
+% \usepackage[mathcal]{euscript}
+% \usepackage{mathrsfs}
+% \usepackage[charter]{mathdesign}
+
+% \usepackage[LAE,LFE,T2A,T1]{fontenc}
+% \usepackage[utf8]{inputenc}
+% \usepackage[farsi,french,german,spanish,dutch,russian,swedish,english]{babel}
+% \babeltags{pa=farsi,
+%            fr=french,
+%            de=german,
+%            es=spanish,
+%            nl=dutch,
+%            ru=russian,
+%            sv=swedish,
+%            en=english}
+% \def\spanishoptions{mexico}
+
+% \selectlanguage{english}
+
+% \newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
+% % \usepackage{newtxtext,newtxmath}
+% % \usepackage{stix}
+% % \usepackage[free]{frfonts}
+
+% \usepackage{cmap}
+% \usepackage{CJKutf8}
+% \newcommand{\textha}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
+% \newcommand{\textni}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
+% \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
+
+%% Math font
+\usepackage[charter]{mathdesign}
+\usepackage[no-math]{fontspec}
+% \usepackage{unicode-math}
+\setmainfont[Ligatures=TeX]{Khartiya}
+
+%% Language
+\usepackage{polyglossia}
+
+\newfontfamily\cyrillicfont[Script=Cyrillic]{Khartiya}
+\newfontfamily\farsifont[Script=Arabic,
+                         Scale=MatchUppercase]{Amiri}
+\setmainlanguage[variant=american]{english}
+\setotherlanguage{farsi}
+\setotherlanguage{french}
+\setotherlanguage[spelling=new,latesthyphen,babelshorthands]{german}
+\setotherlanguage{spanish}
+\setotherlanguage[spelling=modern,babelshorthands]{russian}
+
+\usepackage{xeCJK}
+\usepackage[overlap]{ruby}
+\renewcommand\rubysep{-0.2ex}
+% \setCJKmainfont[% BoldFont=AR PL UKai TW,
+%                 % ItalicFont=AR PL Ukai TW
+%                 ]{AR PL UMing TW}
+\setCJKmainfont[BoldFont=IPAGothic]{IPAMincho}
+
+
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+
+%% Theorems and definitions
+%% remove parentheses
+\makeatletter
+\def\thmhead@plain#1#2#3{%
+  \thmname{#1}\thmnumber{\@ifnotempty{#1}{ }\@upn{#2}}%
+  \thmnote{ {\the\thm@notefont#3}}}
+\let\thmhead\thmhead@plain
+\makeatother
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{axiom}[theorem]{Axiom}
+
+\newtheorem*{corollary*}{Corollary}
+\newtheorem*{claim*}{Claim}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem*{theorem*}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Examples}
+\newtheorem{examples}[example]{Examples}
+% \newtheorem{exercise}{Exercise}[section]
+% \newtheorem{problem}[exercise]{Problem}
+
+\newcounter{problem}
+\newenvironment{problem}[1][]% environment name
+{% begin code
+  \stepcounter{problem}
+  \par\vspace{\baselineskip}\noindent
+  \ifx &#1&%
+  {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem}
+  \global\def\exercisename{Problem~\hwnum.\theproblem}%
+  \else
+  {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem~(#1)}
+  \global\def\exercisename{Problem~\hwnum.\theproblem(#1)}
+  \fi
+  \par\vspace{\baselineskip}%
+  \noindent\ignorespaces
+}%
+{% end code
+  \par\vspace{\baselineskip}%
+  \noindent\ignorespacesafterend
+}
+
+\newtheorem*{definition*}{Definition}
+\newtheorem*{example*}{Examples}
+\newtheorem*{examples*}{Examples}
+\newtheorem*{exercise*}{Exercise}
+\newtheorem*{problem*}{Problem}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{remarks}[remark]{Remarks}
+\newtheorem{observation}[remark]{Observation}
+\newtheorem{observations}[remark]{Observations}
+
+\newtheorem*{remark*}{**Remark**}
+\newtheorem*{remarks*}{**Remarks**}
+\newtheorem*{observation*}{**Observation**}
+\newtheorem*{observations*}{**Observations**}
+
+%% Redefinitions & commands
+% \newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+%   \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+%   {#1} % the function
+%   % \vphantom{\big|} % pretend it's a little taller at normal size
+%   \right|{#2} % this is the delimiter
+%   }}
+
+% \newcommand\xtwoheadrightarrow[2][]{%
+%   \mathrel{\ooalign{$\xrightarrow[#1\mkern4mu]{#2\mkern4mu}$\cr%
+%   \hidewidth$\rightarrow\mkern4mu$}}}
+
+\newcommand\minus{\smallsetminus}
+\newcommand{\nsubset}{\ensuremath{\not\subset}}
+\newcommand{\nsupset}{\ensuremath{\not\supset}}
+
+\renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
+
+%% Commands and operators
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Fitt}{Fitt}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Quot}{Quot}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\MSpec}{\mathfrak{m}-Spec}
+\DeclareMathOperator{\Supp}{Supp}
+
+\DeclareMathOperator{\ann}{ann}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Ht}{ht}
+\DeclareMathOperator{\nil}{nil}
+\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\rk}{rk}
+
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\ZZ}{\mathbf{Z}}
+
+\begin{document}
+
+\message{ !name(psets/ma557-pset12.tex) !offset(-198) }
+prime.
+\end{proof}
+\newpage
+\begin{problem}
+Let $R$ be a ring with total ring of quotients $K$, $M$ an $R$-module, and
+\[
+\mathcal{T}(M)=\left\{\,x\in M\;\middle|\;\text{$ax=0$ for some non zero-divisor $a$
+    of $RR$}\,\right\}.
+\]
+The submodule $\mathcal{T}(M)$ is called the \emph{torsion of $M$}, and $M$ is called
+\emph{torsion free} if $\mathcal{T}(M)=0$. Show
+\begin{enumerate}[label=(\alph*)]
+\item $\mathcal{T}(M)=\ker(M\to K\otimes_R M)$
+\item $M/\mathcal{T}(M)$ is torsion free.
+\end{enumerate}
+\end{
+\message{ !name(../MA557-HW-Current.tex) !offset(9) }
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% TeX-engine: xetex
+%%% End:
