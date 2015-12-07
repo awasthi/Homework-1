@@ -32,11 +32,10 @@
 % Use symbols instead of numbers
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
-% Misc
+%% Misc
 \usepackage{microtype}
 \usepackage{multicol}
 \usepackage[inline]{enumitem}
-\usepackage{listings}
 \usepackage{mleftright}
 \mleftright
 \usepackage{graphicx}
@@ -47,29 +46,39 @@
 \usepackage{amssymb}
 \usepackage{mathtools}
 
-%% Math font
-\usepackage[charter]{mathdesign}
-\usepackage[no-math]{fontspec}
-% \usepackage{unicode-math}
-\setmainfont[Ligatures=TeX]{Khartiya}
+%% PDFTeX specific
+\usepackage[mathcal]{euscript}
+\usepackage{mathrsfs}
+% \usepackage[charter]{mathdesign}
 
-%% Language
-\usepackage{polyglossia}
+\usepackage[LAE,LFE,T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[farsi,french,german,spanish,dutch,russian,swedish,english]{babel}
+\babeltags{pa=farsi,
+           fr=french,
+           de=german,
+           es=spanish,
+           nl=dutch,
+           ru=russian,
+           sv=swedish,
+           en=english}
+\def\spanishoptions{mexico}
 
-\newfontfamily\cyrillicfont[Script=Cyrillic]{Khartiya}
-\newfontfamily\farsifont[Script=Arabic,
-                         Scale=MatchUppercase]{Amiri}
-\setmainlanguage[variant=american]{english}
-\setotherlanguage{farsi}
-\setotherlanguage{french}
-\setotherlanguage[spelling=new,latesthyphen,babelshorthands]{german}
-\setotherlanguage{spanish}
-\setotherlanguage[spelling=modern,babelshorthands]{russian}
+\selectlanguage{english}
 
-\usepackage{xeCJK}
-\usepackage[overlap]{ruby}
-\renewcommand\rubysep{-0.2ex}
-\setCJKmainfont{AR PL UMing TW}
+\newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
+% \usepackage{newtxtext,newtxmath}
+% \usepackage{stix}
+% \usepackage[free]{frfonts}
+
+\usepackage{cmap}
+\usepackage{CJKutf8}
+\newcommand{\textha}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
+\newcommand{\textni}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
+\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
+
+%% Because French
+\usepackage{listings}
 
 %% Theorems and definitions
 %% remove parentheses
