@@ -37,17 +37,43 @@ D(R)/F(R)$.
 \begin{problem}
 Let $R$ be a ring with total ring of quotients $K$, $M$ an $R$-module, and
 \[
-\mathcal{T}(M)=\left\{\,x\in M\;\middle|\;\text{$ax=0$ for some non zero-divisor $a$
-    of $RR$}\,\right\}.
+\mathcal{T}(M)=
+\left\{\,x\in M\;\middle|\;
+\text{$ax=0$ for some non zero-divisor $a$ of $R$}\,\right\}.
 \]
-The submodule $\mathcal{T}(M)$ is called the \emph{torsion of $M$}, and $M$ is called
-\emph{torsion free} if $\mathcal{T}(M)=0$. Show
+The submodule $\mathcal{T}(M)$ is called the \emph{torsion of $M$}, and $M$
+is called \emph{torsion free} if $\mathcal{T}(M)=0$. Show
 \begin{enumerate}[label=(\alph*)]
 \item $\mathcal{T}(M)=\ker(M\to K\otimes_R M)$
 \item $M/\mathcal{T}(M)$ is torsion free.
 \end{enumerate}
 \end{problem}
 \begin{proof}
+Let $S$ denote the set of all regular elements of $R$ and let
+$\varphi\colon R\to K$, where $K\coloneqq S^{-1}R$, be the canonical
+localization map $a\mapsto a/1$. We show, by way of double inclusion, that
+$\mathcal{T}(M)=\ker\Phi$, where $\Phi\colon M\to K\otimes_R M$ is the
+canonical map $x\mapsto 1\otimes x$. Note that this map, $\Phi$, is well
+defined by the UMP of the tensor product (HW 2). Now let us show the
+containment $\mathcal{T}(M)\subset\ker\Phi$: Let $x\in\mathcal{T}(M)$, then
+$x$ is a non-zero divisor of $R$ such that $ax=0$. Since $a$ is a non-zero
+divisior, $a\in S$ so $a/1=0/1$ in $K$. Thus, we have
+\[
+\Phi(xm)=1\otimes x=a/1\otimes x=0\otimes x=0,
+\]
+so $x\in\ker\Phi$. Conversely, suppose that $x\in\ker(\Phi)$. By some
+theorem from the localization section\footnote{Sorry! I misplaced my
+notebook and I've been taking notes on sheets of computer paper so I hate
+going through the mess.} we have $K\otimes_R M\cong S^{-1}M$. Thus
+$1\otimes x=0$ implies that $x=0$ in the localization $S^{-1}M$. This is
+true if and only if $ax=0$ for some non-zero divisor $a$ of $R$. Thus,
+$x\in\ker\Phi$ and equality holds.
+\\\\
+(b) Let $N\coloneqqM/\mathcal{T}(M)$. We show that $\mathcal{T}(N)=0$. For
+that is suffices to show that every element $x\in\mathcal{T}(N)=0$. But, if
+$x$ is, as before, an element of $\mathcal{T}(N)$, then $x$ is in the
+kernel $\ker\Phi$, where $\Phi\colon N\to K\otimes_R N$ is the canonical
+map.
 \end{proof}
 \newpage
 \begin{problem}
