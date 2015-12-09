@@ -39,7 +39,15 @@ and $F(R)$ denote the set of all principal fractional ideals. Then the
 \emph{divisor class group of $R$} is the quotient $\Cl(R)\coloneqq
 D(R)/F(R)$.
 
-We show $(i)\iff(iii)$. That is, we show that
+We show $(i)\iff(iii)$. That is, we show that a fractional ideal $I$ is
+invertible if and only if it is principal and nonzero. Suppose $I$ is
+principal. Then $I=xR$ so $(xR)((1/x)R)=R$ so $I$ is
+invertible. Conversely, if $I$ is nonzero and invertible with inverse $J$,
+then $1=\sum x_iy_i$ for $x_i\in I$, $y_i\in J$. Fix a nonzero $x\in
+I$. Then $x=\sum x_iy_ix$. But $y_ix\in R$ since $x\in I$ and $y_i\in
+J$. Since $R$ is a UFD, we have a division algorithm, so set
+$d\coloneqq\gcd\{x_ix\}$ and $x'\coloneqq\sum (y_ix/d)x_i$. Then $x=dx'$,
+so $I$ is principal.
 \end{proof}
 \newpage
 \begin{problem}
