@@ -7,13 +7,25 @@ sends $\alpha_1$ and $\beta_1$ to $\gamma$ and all other $\alpha_i$ and
 $\beta_i$ to $\delta$.]
 \end{problem}
 \begin{proof}
-Let $\bfT^n$ denote the $n$-fold torus and let $x_0\in\bfT^n$. By Theorem
-74.3, the $\pi_1(\bfT^n,x_0)$ is isomorphic to the quotient of the free
-group on $2n$ letters, say $\alpha_1,\beta_1,...,\alpha_n,\beta_n$, by the
-least normal subgroup, $N$, containing
-$[\alpha_1,\beta_1][\alpha_2,\beta_2]\cdots[\alpha_n,\beta_n]$ where
-$[\alpha,\beta]=\alpha\beta\alpha^{-1}\beta^{-1}$, i.e., the commutator of
-$\alpha$ and $\beta$.
+Let $\bfT^n$ denote the $n$-fold torus and let us fix a base-point
+$x_0\in\bfT^n$. By Theorem 74.3, the fundamental group of $\bfT^n$,
+$\pi_1(\bfT^n,x_0)$, is isomorphic to the quotient of the free group $G$ on
+the set $\{\alpha_1,\beta_1,...,\alpha_n,\beta_n\}$, by the least normal
+subgroup $N$ containing
+\[
+\alpha_1\beta_1\alpha_1^{-1}\beta_1^{-1}
+\cdots
+\alpha_n\beta_n\alpha_n^{-1}\beta_n^{-1}.
+\]
+Now we proceed by the hint. Let $F$ be the free group on the set
+$\{\gamma,\delta\}$. We define a homomorphism $\varphi\colon G\to F$ by the
+rule $\alpha_1\mapsto\gamma$, $\beta_1\mapsto\gamma$ and
+$\alpha_i\mapsto\delta$ and $\beta_i\mapsto\delta$ for all $i\neq
+1$. By Lemma 69.1, $\varphi$ determines a homomorphism $G\to F$. Moreover,
+note that $\varphi$ is surjective since each generator is mapped onto by an
+element of $G$ so by the 1st isomorphism theorem, the induced map
+$\bar\varphi\colon G/\ker\varphi\to F$ is an isomorphism. Now, we claim
+that it suffices to show that $\ker\varphi>N$ since
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S76, Ex.\,1]
@@ -46,10 +58,10 @@ $acadbcb^{-1}d$.
 \end{proof}
 \newpage
 \begin{problem}[A]
-Define $P^n$ to be the space $S^n/{\sim}$ where $z\sim z'$ if and only if
-$z=z'$ or $z=-z'$. Use the Seifert--van Kampen Theorem to calculate
-$\pi_1(P^n)$. (Hint: induction starting from the case $n=2$ that was done
-in class.)
+Define $P^n$ to be the space $\bfS^n/{\sim}$ where $z\sim z'$ if and only
+if $z=z'$ or $z=-z'$. Use the Seifert--van Kampen Theorem to calculate
+$\pi_1(\bfP^n)$. (Hint: induction starting from the case $n=2$ that was
+done in class.)
 \end{problem}
 \begin{proof}
 \end{proof}
