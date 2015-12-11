@@ -192,11 +192,6 @@ order $n$ (Theorem 73.4).
 
 Suppose $\pi_1(\bfP^m)\cong\bfZ/(2)$ for all $m\leq n$. Let
 $q\colon\bfS^n\to\bfP^n$ denote the quotient map and define
-$U\coloneqq\{[0,z_2,...,z_n]\}$ and $V\coloneqq\{[z_1,0,z_3,...,z_n]\}$
-subsets of $\bfP^n$. First, note that $\bfP^n=U\cup V$. One containment is
-free since both $U$ and $V$ are subsets of $\bfP^n$, so $U\cup
-V\subset\bfP^n$. Let $[z_1,z_2,...,z_n]\in\bfP^n$. Then
-$[z_1,z_2,...,z_n]=[z_1,0,...,0]+[0,z_2,...,z_n]$.
 \end{proof}
 \newpage
 \begin{problem}[B]
@@ -206,6 +201,15 @@ $\varphi(x)=y$. Prove that every connected $2$-manifold is
 homogeneous. (Hint: use the optional problem from the previous assignment.)
 \end{problem}
 \begin{proof}
+Let $x\in X$ and let $A$ be the set of all points $y\in A$ homogeneous with
+$x$ and $B\coloneqq X\minus A$. We will show that if $B$ is nonempty, the
+pair $A,B$ constitutes a separation of $X$ contradicting that $X$ is a
+connected and hence, that it is a manifold. First, it is clear that $A\cap
+B=\emptyset$ and $A\cup B=X$ by definition. Next, we need to show that $A$
+and $B$ are open. Let $z\in A$. Then, since $X$ is a manifold, there exists
+an open neighborhood $U_z$ of $z$ homeomorphic to the unit ball
+$\bfB^2\minus\bfS$ via the homeomorphism $h$. Let $y\in U_z$. Then
+$h(y),h(z)$
 \end{proof}
 % \newpage
 % \begin{problem}[Optional problem]
