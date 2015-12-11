@@ -207,9 +207,21 @@ pair $A,B$ constitutes a separation of $X$ contradicting that $X$ is a
 connected and hence, that it is a manifold. First, it is clear that $A\cap
 B=\emptyset$ and $A\cup B=X$ by definition. Next, we need to show that $A$
 and $B$ are open. Let $z\in A$. Then, since $X$ is a manifold, there exists
-an open neighborhood $U_z$ of $z$ homeomorphic to the unit ball
-$\bfB^2\minus\bfS$ via the homeomorphism $h$. Let $y\in U_z$. Then
-$h(y),h(z)$
+an open neighborhood $U$ of $z$ homeomorphic to the unit disk
+$(\bfB^2)^\circ$ via the homeomorphism $h$. Let $y\in U$. Then
+$h(y),h(z)\in (\bfB^2)^\circ$. Since $\bfR^2$ is normal, there exists a
+closed disk, say $D$, containing $h(y)$ and $h(z)$ contained in
+$(\bfB^2)^\circ$. Then, by Lemma A, the restriction $\tilde
+h\coloneqq\left.\,h\,\right|_{h^{-1}(D)}$ is a homeomorphism. It is clear
+that $D\approx\bfB^2$ by an appropriate homeomorphism $k\colon D\to\bfB^2$,
+scaling and translation. Now, by the optional problem from Hw 13, there
+exists a homeomorphism $f\colon\bfB^2\to\bfB^2$ taking $k(\tilde h(z))$ to
+$k(\tilde h(y))$ and fixing $\bfS$. Define the map
+\begin{equation}
+\label{eq:7}
+\alpha\coloneqq\tilde h^{-1}\circ k^{-1}\circ f\circ k\circ\tilde h.
+\end{equation}
+Let $w\in\partial\tilde h^{-1}(D)$.
 \end{proof}
 % \newpage
 % \begin{problem}[Optional problem]
