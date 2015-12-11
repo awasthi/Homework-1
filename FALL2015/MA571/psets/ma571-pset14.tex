@@ -82,7 +82,7 @@ Corollary 75.2, the Abelianization of $\pi_1(\bfP^2\#bfT)$ is isomorphic to
 \begin{align}
 H_1(\bfP^2\#\bfT)
 &\cong\frac{\bfZ(p(a))\times\bfZ(p(b))\times\bfZ(p(c))}
-{p\left(\left<aabcb^{-1}c^{-1}\right>\right)}
+{p\left(\left<aabcb^{-1}c^{-1}\right>\right)}\nonumber
 \intertext{and simplifying the quotient above taking note that $p$ is a
   homomorphism whose image is lies inside an Abelian group, we have}
 \label{eq:3}
@@ -108,6 +108,26 @@ homeomorphic to $\bfP^2\#\bfP^2$.
 If $\bfK$ is the Klein bottle, calculate $H_1(\bfK)$ directly.
 \end{problem}
 \begin{proof}
+For this problem, we use the labeling provided my Munkres on Ex.\,3 of \S74
+(p.\,454) and that is
+\begin{equation}
+\label{eq:5}
+aba^{-1}b.
+\end{equation}
+We proceed exactly as in Problem 14.2: Given (\ref{eq:5}), by Theorem 74.3,
+the fundamental group of $\bfK$ is the quotient of the free group on the
+set $\{a,b\}$, $G$, by the least normal subgroup $N$ containing
+(\ref{eq:5}). Now, by Corollary 75.2, the Abelianization of $\pi_1(\bfK)$
+is isomorphic to
+\begin{align}
+H_1(\bfK)
+&\cong\frac{\bfZ(p(a))\times\bfZ(p(b))}{p\left(\left<aba^{-1}b\right>\right)}\nonumber
+\intertext{and simplifying the quotient above taking note that $p$ is a
+  homomorphism whose image is lies inside an Abelian group, we have}
+\label{eq:3}
+&=\frac{\bfZ(p(a))\times\bfZ(p(b))}{\left<2p(b)\right>}\nonumber
+\end{align}
+the latter being homeomorphic to $\bfZ\times\bfZ/(2)$.
 \end{proof}
 \newpage
 \begin{problem}[Munkres \S75, Ex.\,3(a,b,c)]
@@ -119,10 +139,41 @@ $acadbcb^{-1}d$.
   quotient space $X$ by the pasting map.
 \item Calculate $H_1(X)$.
 \item Assuming $X$ is homeomorphic to one of the surfaces given in Theorem
-  75.5 (which it is), which surface is it ?
+  75.5 (which it is), which surface is it?
 \end{enumerate}
 \end{problem}
 \begin{proof}
+(a) Let $\{p_1,...,p_8\}$ denote the $8$ vertices of $P$ and $p\colon P\to
+X$ denote the quotient map. Then, we want to show hat
+$p^{-1}([p_1])=\{p_1,...,p_8\}$.
+\\\\
+(b) To compute $H_1(X)$ we will proceed exactly as in Problem 14.3: The
+labeling scheme is given by
+\begin{equation}
+\label{eq:6}
+acadbcb^{-1}d.
+\end{equation}
+By Theorem 74.3, the fundamental group of $X$ is the quotient of the free
+group on the set $\{a,b,c,d\}$, $G$, by the least normal subgroup $N$
+containing (\ref{eq:6}). Now, by Corollary 75.2, the Abelianization of
+$\pi_1(X)$ is isomorphic to
+\begin{equation}
+\label{eq:7}
+H_1(X)\cong
+\frac{\bfZ(p(a))\times\bfZ(p(b))\times\bfZ(p(c))\times\bfZ(p(d))}
+{\left<2(p(a)+p(c)+p(d))\right>}.
+\end{equation}
+Now we make a change of basis, like Munkres does in the proof of Theorem
+74.4, i.e., we define an $\bfZ$-linear isomorphism which sends $a\mapsto a$,
+$b\mapsto b$, $c\mapsto c$, and $d\mapsto a+b+d$. Thus, (\ref{eq:7}) is
+isomorphic to
+\[
+\frac{\bfZ(p(a))\times\bfZ(p(b))\times\bfZ(p(c))\times\bfZ(p(d))}
+{\left<2(p(a)+p(c)+p(d))\right>}\cong\bfZ\times\bfZ\times\bfZ\times\bfZ/(2).
+\]
+\\\\
+(c) From the list given in Theorem 75.5, we see that
+$X\approx\bfP^2\#\bfP^2\#\bfP^2\#\bfP^2$.
 \end{proof}
 \newpage
 \begin{problem}[A]
@@ -132,6 +183,20 @@ $\pi_1(\bfP^n)$. (Hint: induction starting from the case $n=2$ that was
 done in class.)
 \end{problem}
 \begin{proof}
+We shall prove, by induction on $n$, that
+$\pi_1(\bfP^n)\approx\bfZ/(2)$. The base cased was proven in class,
+although if the grader wishes to see, it is show on \S73, p.\,444 that
+$P^2$ is homeomorphic to the $2$-dunce cap and a bit later Munkres shows
+that the fundamental group of the $n$-fold dunce cap is a cyclic group of
+order $n$ (Theorem 73.4).
+
+Suppose $\pi_1(\bfP^m)\cong\bfZ/(2)$ for all $m\leq n$. Let
+$q\colon\bfS^n\to\bfP^n$ denote the quotient map and define
+$U\coloneqq\{[0,z_2,...,z_n]\}$ and $V\coloneqq\{[z_1,0,z_3,...,z_n]\}$
+subsets of $\bfP^n$. First, note that $\bfP^n=U\cup V$. One containment is
+free since both $U$ and $V$ are subsets of $\bfP^n$, so $U\cup
+V\subset\bfP^n$. Let $[z_1,z_2,...,z_n]\in\bfP^n$. Then
+$[z_1,z_2,...,z_n]=[z_1,0,...,0]+[0,z_2,...,z_n]$.
 \end{proof}
 \newpage
 \begin{problem}[B]
@@ -142,28 +207,28 @@ homogeneous. (Hint: use the optional problem from the previous assignment.)
 \end{problem}
 \begin{proof}
 \end{proof}
-\newpage
-\begin{problem}[Optional problem]
-\begin{enumerate}[label=(\roman*)]
-\item Let $x\subset\bfR^3$ be the cylinder
-\[
-\left\{\,(x,y,z)\;\middle|\;
-\text{$x^2+y^2=\tfrac{1}{\sqrt{2}}$ and $|z|\leq \tfrac{1}{\sqrt{2}}$}\,\right\}
-\]
-and let $f\colon X\to\bfR^3$ be the map
-\[
-f(x,y,z)=\left(2^{1/4}x\sqrt{1-z^2},2^{1/4},y\sqrt{1-z^2},z\right).
-\]
-Prove that $f$ is a homeomorphism from $X$ to the subspace
-\[
-Y=\bfS^2\cap\left\{\,(x,y,z)\;\middle|\;|z|\leq\tfrac{1}{\sqrt{2}}\,\right\}.
-\]
-\item Prove that the \textde{Möbius} band is homeomorphic to $P^2$ with an
-  open disk removed (think of $\bfP^2$ as $\bfS^2/{\sim}$ and use part (i)).
-\end{enumerate}
-\end{problem}
-\begin{proof}
-\end{proof}
+% \newpage
+% \begin{problem}[Optional problem]
+% \begin{enumerate}[label=(\roman*)]
+% \item Let $x\subset\bfR^3$ be the cylinder
+% \[
+% \left\{\,(x,y,z)\;\middle|\;
+% \text{$x^2+y^2=\tfrac{1}{\sqrt{2}}$ and $|z|\leq \tfrac{1}{\sqrt{2}}$}\,\right\}
+% \]
+% and let $f\colon X\to\bfR^3$ be the map
+% \[
+% f(x,y,z)=\left(2^{1/4}x\sqrt{1-z^2},2^{1/4},y\sqrt{1-z^2},z\right).
+% \]
+% Prove that $f$ is a homeomorphism from $X$ to the subspace
+% \[
+% Y=\bfS^2\cap\left\{\,(x,y,z)\;\middle|\;|z|\leq\tfrac{1}{\sqrt{2}}\,\right\}.
+% \]
+% \item Prove that the \textde{Möbius} band is homeomorphic to $P^2$ with an
+%   open disk removed (think of $\bfP^2$ as $\bfS^2/{\sim}$ and use part (i)).
+% \end{enumerate}
+% \end{problem}
+% \begin{proof}
+% \end{proof}
 % \textru{Татарстаннын кызлары миңа бик килеше!}
 
 %%% Local Variables:
