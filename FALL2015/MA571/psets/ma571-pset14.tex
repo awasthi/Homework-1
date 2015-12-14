@@ -190,8 +190,10 @@ $P^2$ is homeomorphic to the $2$-dunce cap and a bit later Munkres shows
 that the fundamental group of the $n$-fold dunce cap is a cyclic group of
 order $n$ (Theorem 73.4).
 
-Suppose $\pi_1(\bfP^m)\cong\bfZ/(2)$ for all $m\leq n$. Let
-$q\colon\bfS^n\to\bfP^n$ denote the quotient map and define
+Suppose $\pi_1(\bfP^m)\cong\bfZ/(2)$ for all $m\leq n$. We generalize the
+$n=2$ case to the general case. Let $q\colon\bfS^n\to\bfP^n$ denote the
+quotient map and define $U\coloneqq q(\bfB^n\minus\mathbf{0})$ and
+$V\coloneqq q(D^n)$. Then $U\cap V=q(D^n\minus\mathbf{0})$.
 \end{proof}
 \newpage
 \begin{problem}[B]
@@ -219,9 +221,33 @@ exists a homeomorphism $f\colon\bfB^2\to\bfB^2$ taking $k(\tilde h(z))$ to
 $k(\tilde h(y))$ and fixing $\bfS$. Define the map
 \begin{equation}
 \label{eq:7}
-\alpha\coloneqq\tilde h^{-1}\circ k^{-1}\circ f\circ k\circ\tilde h.
+\psi\coloneqq\tilde h^{-1}\circ k^{-1}\circ f\circ k\circ\tilde h.
 \end{equation}
-Let $w\in\partial\tilde h^{-1}(D)$.
+Then we define a map on $X$ by
+\begin{equation}
+\label{eq:8}
+\varphi(x)\coloneqq
+\begin{cases}
+\id_X(x)&\text{if $x\in X\minus(\tilde h^{-1}(D))^\circ$}\\
+\psi(x)&\text{otherwise}
+\end{cases}.
+\end{equation}
+This map is continuous by the pasting lemma since $X\minus(\tilde
+h^{-1}(D))^\circ=\partial\tilde h^{-1}(D)$ so if $w\in\partial\tilde
+h^{-1}(D)$ then
+\[
+\psi(w)=\tilde h^{-1}\left(k^{1}\left(f\left(k\left(\tilde h(w)\right)\right)\right)\right)=w=\id_X(w),
+\]
+and each map, restricted to that particular subset, the identity by Theorem
+18.2 and the latter by construction. Let $\tilde\varphi\colon X\to X$ be
+the homeomorphism which sends $x$ to $z$. Thus,
+$\tilde\varphi\circ\varphi(x)=y$ so $y\in A$. This implies that $U\subset
+A$ so $A$ is open by Lemma C. Now, we can also show that $A$ is closed by
+the same method. If $z\in\overline{A}$ then for every neighborhood $U$ of
+$z$, $U\cap A$ is nonempty. In particular, if $U$ is a neighborhood of
+$z$ homeomorphic to $\bfB^2\minus\bfS$ then we can apply the same argument
+to show that $z$ is homogeneous to $x$, hence in $A$. Thus, $A$ is an open
+and closed subset of $X$. Since $X$ is connected, it follows that $A=X$.
 \end{proof}
 % \newpage
 % \begin{problem}[Optional problem]

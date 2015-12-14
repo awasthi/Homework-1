@@ -6,7 +6,7 @@
 \def\documentsubject{abstract algebra}
 \def\authoremail{salinac@purdue.edu}
 
-\documentclass[10pt]{article}
+\documentclass[article,oneside,10pt]{memoir}
 \usepackage{geometry}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[
@@ -61,8 +61,8 @@
 
 \usepackage{cmap}
 \usepackage{CJKutf8}
-\newcommand{\textha}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
-\newcommand{\textni}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
+\newcommand{\textko}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
+\newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
 \usepackage{graphicx}
@@ -103,7 +103,7 @@
 \newtheorem{definition}{Definition}
 \newtheorem{example}{Examples}
 \newtheorem{examples}[example]{Examples}
-\newtheorem{exercise}{Exercise}[section]
+\newtheorem{exercise}{Exercise}[chapter]
 \newtheorem{problem}[exercise]{Problem}
 
 \newtheorem*{definition*}{Definition}
