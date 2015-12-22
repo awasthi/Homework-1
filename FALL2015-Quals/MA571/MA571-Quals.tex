@@ -61,8 +61,8 @@
 
 \usepackage{cmap}
 \usepackage{CJKutf8}
-\newcommand{\textha}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
-\newcommand{\textni}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
+\newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
+\newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
 \usepackage{graphicx}
@@ -103,7 +103,7 @@
 \newtheorem{definition}{Definition}
 \newtheorem{example}{Examples}
 \newtheorem{examples}[example]{Examples}
-\newtheorem{exercise}{Exercise}[section]
+\newtheorem{exercise}{Exercise}[chapter]
 \newtheorem{problem}[exercise]{Problem}
 
 % \newcounter{problem}
@@ -145,11 +145,16 @@
 \DeclareMathOperator{\Cl}{cl}
 
 \newcommand{\clsr}[1]{\overbar{#1}}
-\newcommand{\CC}{\mathbf{C}}
-\newcommand{\NN}{\mathbf{N}}
-\newcommand{\QQ}{\mathbf{Q}}
-\newcommand{\RR}{\mathbf{R}}
-\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bfC}{\mathbf{C}}
+\newcommand{\bfN}{\mathbf{N}}
+\newcommand{\bfQ}{\mathbf{Q}}
+\newcommand{\bfR}{\mathbf{R}}
+\newcommand{\bfZ}{\mathbf{Z}}
 
 % Renewcommands
 \renewcommand\setminus{\smallsetminus}
@@ -160,7 +165,8 @@
 \author{\href{mailto:\authoremail}{\documentauthor}}
 \title{\documenttitle}
 \date{\today}
-\include{quals/MA571-AUG14}
+\include{kaufmann}
+\include{mcclure}
 \end{document}
 
 %%% Local Variables:

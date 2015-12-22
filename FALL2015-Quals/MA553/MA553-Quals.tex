@@ -6,7 +6,7 @@
 \def\documentsubject{abstract algebra}
 \def\authoremail{salinac@purdue.edu}
 
-\documentclass[10pt]{article}
+\documentclass[article,oneside,10pt]{memoir}
 \usepackage{geometry}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[
@@ -61,8 +61,8 @@
 
 \usepackage{cmap}
 \usepackage{CJKutf8}
-\newcommand{\textha}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
-\newcommand{\textni}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
+\newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
+\newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
 \usepackage{graphicx}
@@ -103,7 +103,7 @@
 \newtheorem{definition}{Definition}
 \newtheorem{example}{Examples}
 \newtheorem{examples}[example]{Examples}
-\newtheorem{exercise}{Exercise}[section]
+\newtheorem{exercise}{Exercise}[chapter]
 \newtheorem{problem}[exercise]{Problem}
 
 \newtheorem*{definition*}{Definition}
@@ -131,6 +131,8 @@
 %   \right|{#2} % this is the delimiter
 %   }}
 
+% \newcommand{\nle}{\ensuremath{\triangleleft}}
+% \newcommand{\nge}{\ensuremath{\triangleright}}
 \newcommand{\nsubset}{\ensuremath{\not\subset}}
 \newcommand{\nsupset}{\ensuremath{\not\supset}}
 \renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
@@ -140,12 +142,18 @@
 \DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\lcm}{lcm}
 
-\newcommand{\CC}{\mathbf{C}}
-\newcommand{\FF}{\mathbf{F}}
-\newcommand{\NN}{\mathbf{N}}
-\newcommand{\QQ}{\mathbf{Q}}
-\newcommand{\RR}{\mathbf{R}}
-\newcommand{\ZZ}{\mathbf{Z}}
+\DeclareMathOperator{\Syl}{Syl}
+
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bfC}{\mathbf{C}}
+\newcommand{\bfN}{\mathbf{N}}
+\newcommand{\bfQ}{\mathbf{Q}}
+\newcommand{\bfR}{\mathbf{R}}
+\newcommand{\bfZ}{\mathbf{Z}}
 
 % Renewcommands
 \renewcommand\setminus{\smallsetminus}
@@ -158,7 +166,7 @@
 \date{\today}
 \maketitle
 
-% \include{goins/}
+\include{goins/MA553-AUG08}
 % \include{goldberg/}
 % \include{heinzer/}
 \include{shahidi/MA553-AUG15}
