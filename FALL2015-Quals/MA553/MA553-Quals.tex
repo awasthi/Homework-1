@@ -81,7 +81,7 @@
 \makeatletter
 \def\thmhead@plain#1#2#3{%
   \thmname{#1}\thmnumber{\@ifnotempty{#1}{ }\@upn{#2}}%
-  \thmnote{ {\the\thm@notefont#3}}}
+  \thmnote{{\the\thm@notefont\bfseries{#3}}}}
 \let\thmhead\thmhead@plain
 \makeatother
 
@@ -142,14 +142,22 @@
 \DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\lcm}{lcm}
 
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Eval}{Eval}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
 \DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tor}{Tor}
 
 \newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbF}{\mathbb{F}}
 \newcommand{\bbN}{\mathbb{N}}
 \newcommand{\bbQ}{\mathbb{Q}}
 \newcommand{\bbR}{\mathbb{R}}
 \newcommand{\bbZ}{\mathbb{Z}}
 \newcommand{\bfC}{\mathbf{C}}
+\newcommand{\bfF}{\mathbf{F}}
 \newcommand{\bfN}{\mathbf{N}}
 \newcommand{\bfQ}{\mathbf{Q}}
 \newcommand{\bfR}{\mathbf{R}}
@@ -165,7 +173,13 @@
 \title{\documenttitle}
 \date{\today}
 \maketitle
+
+% \include{groups/notes-on-groups}
+% \include{rings/notes-on-rings}
+% \include{fields/notes-on-fields}
+
 \include{goins/MA553-AUG08}
+\include{goins/MA553-JAN07}
 % \include{goldberg/}
 % \include{heinzer/}
 \include{shahidi/MA553-AUG15}

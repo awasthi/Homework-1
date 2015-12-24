@@ -1,4 +1,214 @@
-\message{ !name(../MA553-Past-Quals.tex)}
-\message{ !name(shahidi/MA553-AUG15.tex) !offset(4) }
+\message{ !name(../MA553-Quals.tex)}\def\documentauthor{Carlos Salinas}
+\def\documenttitle{MA553 Past Qualifying Examinations}
+\def\hwnum{Quals}
+\def\shorttitle{MA553 \hwnum}
+\def\coursename{MA553}
+\def\documentsubject{abstract algebra}
+\def\authoremail{salinac@purdue.edu}
+
+\documentclass[article,oneside,10pt]{memoir}
+\usepackage{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[
+    breaklinks,
+    bookmarks=true,
+    colorlinks=true,
+    pageanchor=false,
+    linkcolor=black,
+    anchorcolor=black,
+    citecolor=black,
+    filecolor=black,
+    menucolor=black,
+    runcolor=black,
+    urlcolor=black,
+    hyperindex=false,
+    hyperfootnotes=true,
+    pdftitle={\shorttitle},
+    pdfauthor={\documentauthor},
+    pdfkeywords={\documentsubject},
+    pdfsubject={\coursename}
+    ]{hyperref}
+
+% Use symbols instead of numbers
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+%% Math
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+% \usepackage{unicode-math}
+
+%% PDFTeX specific
+\usepackage[mathcal]{euscript}
+\usepackage{mathrsfs}
+
+\usepackage[LAE,LFE,T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[farsi,french,german,spanish,dutch,russian,swedish,english]{babel}
+\babeltags{pa=farsi,
+           fr=french,
+           de=german,
+           es=spanish,
+           nl=dutch,
+           ru=russian,
+           sv=swedish,
+           en=english}
+\def\spanishoptions{mexico}
+
+\selectlanguage{english}
+
+\newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
+
+\usepackage{cmap}
+\usepackage{CJKutf8}
+\newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
+\newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
+\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
+
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+
+% Misc
+\usepackage{microtype}
+\usepackage{multicol}
+\usepackage[inline]{enumitem}
+\usepackage{listings}
+\usepackage{mleftright}
+\mleftright
+
+%% Theorems and definitions
+%% remove parentheses
+\makeatletter
+\def\thmhead@plain#1#2#3{%
+  \thmname{#1}\thmnumber{\@ifnotempty{#1}{ }\@upn{#2}}%
+  \thmnote{ {\the\thm@notefont#3}}}
+\let\thmhead\thmhead@plain
+\makeatother
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{axiom}[theorem]{Axiom}
+
+\newtheorem*{corollary*}{Corollary}
+\newtheorem*{claim*}{Claim}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem*{theorem*}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Examples}
+\newtheorem{examples}[example]{Examples}
+\newtheorem{exercise}{Exercise}[chapter]
+\newtheorem{problem}[exercise]{Problem}
+
+\newtheorem*{definition*}{Definition}
+\newtheorem*{example*}{Examples}
+\newtheorem*{examples*}{Examples}
+\newtheorem*{exercise*}{Exercise}
+\newtheorem*{problem*}{Problem}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{remarks}[remark]{Remarks}
+\newtheorem{observation}[remark]{Observation}
+\newtheorem{observations}[remark]{Observations}
+
+\newtheorem*{remark*}{**Remark**}
+\newtheorem*{remarks*}{**Remarks**}
+\newtheorem*{observation*}{**Observation**}
+\newtheorem*{observations*}{**Observations**}
+
+%% Redefinitions & commands
+% \newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+%   \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+%   {#1} % the function
+%   % \vphantom{\big|} % pretend it's a little taller at normal size
+%   \right|{#2} % this is the delimiter
+%   }}
+
+% \newcommand{\nle}{\ensuremath{\triangleleft}}
+% \newcommand{\nge}{\ensuremath{\triangleright}}
+\newcommand{\nsubset}{\ensuremath{\not\subset}}
+\newcommand{\nsupset}{\ensuremath{\not\supset}}
+\renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
+
+%% Commands and operators
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\lcm}{lcm}
+
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tor}{Tor}
+
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bfC}{\mathbf{C}}
+\newcommand{\bfF}{\mathbf{F}}
+\newcommand{\bfN}{\mathbf{N}}
+\newcommand{\bfQ}{\mathbf{Q}}
+\newcommand{\bfR}{\mathbf{R}}
+\newcommand{\bfZ}{\mathbf{Z}}
+
+% Renewcommands
+\renewcommand\setminus{\smallsetminus}
+\renewcommand\phi{\varphi}
+\renewcommand\epsilon{\varepsilon}
+
+\begin{document}
+
+\message{ !name(goins/MA553-JAN07.tex) !offset(-172) }
+\begin{problem}
+Let $(G,\cdot)$  be a group. Show that $G$ is Abelian whenever $\Aut(G)$ is
+a cyclic group under composition.
+\end{problem}
+\begin{proof}
 \end{proof}
-\message{ !name(../MA553-Past-Quals.tex) !offset(-4) }
+
+\begin{problem}
+Let $(G,\cdot)$ be an Abelian group. The \emph{torsion subgroup of $G$} is
+defined as the collection of elements of finite order:
+\[
+\Tor(G)\coloneqq
+\left\{\,g\in G\;\middle|\;\text{$g^m=e$ for some integer $m>0$}\,\right\}.
+\]
+\begin{enumerate}[noitemsep,label=(\alph*)]
+\item Show that the quotient group $G/{\Tor(G)}$ is \emph{torsion free},
+  i.e., it contains no nontrivial elements of finite order.
+\item Show that $\Tor(G)$ is finite whenever $G$ is finitely generated. (Do
+  not assume that $G$ is finite.)
+\end{enumerate}
+\end{problem}
+\begin{proof}
+\end{proof}
+
+\begin{problem}
+Let $(G,\cdot)$ be a group of order $|G|=351$. Show that $G$ is solvable.
+\end{problem}
+\begin{proof}
+\end{proof}
+
+\begin{problem}
+Let $(G,\cdot)$ be a group, and $H<G$ a subgroup of finite index. Show that
+there exists a normal subgroup $N\lhd G$ contained in $H$ which is also of
+finite index. (Do not assume that $G$ is finite
+\message{ !name(../MA553-Quals.tex) !offset(-27) }
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

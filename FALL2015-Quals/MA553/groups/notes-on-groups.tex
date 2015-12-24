@@ -1,0 +1,39 @@
+\chapter{Some Group Theory}
+We will not start from the very basics. Instead, we supply important
+theorems from D.\,\& F.
+\section{Quotient Groups and Homomorphisms}
+\subsection{The Isomorphism Theorems}
+\begin{theorem*}[16]
+If $\varphi\colon G\to H$ is a homomorphism of groups, then
+$\ker\varphi\lhd G$ and $G/{\ker\varphi}\cong\varphi(G)$.
+\end{theorem*}
+\begin{theorem*}[17]
+Let $\varphi\colon G\to H$ be a homomorphism of groups.
+\begin{enumerate}[noitemsep,label=(\alph*)]
+\item $\varphi$ is injective if and only if $\ker\varphi=1$.
+\item $|G:\ker\varphi|=|\varphi(G)|$.
+\end{enumerate}
+\end{theorem*}
+\begin{theorem*}[18]
+Let $G$ be a group, let $A$ and $B$ be subgroups of $G$ and assume
+$A<N_G(B)$. Then $AB$ is a subgroup of $G$, $B\lhd AB$, $A\cap B\lhd A$ and
+$AB/B\cong A/A\cap B$.
+\end{theorem*}
+recall that $n_g(b)$, i.e., the normalizer of $b$ in $g$ is the set
+\[
+n_g(b)\coloneqq\left\{\,g\in g\;\middle|\;gbg^{-1}\subset a\,\right\}.
+\]
+incidentally, $n_g(b)$ is a subgroup of $g$: Associativity follows easily
+from associativity of the binary operation on $G$ and the identity element,
+$e_G$, is trivially in $N_G(B)$ since $e_GBe_G^{-1}=B\subse B$. Next we
+check that it is closed under multiplication (the binary operation): let
+$g_1,g_2\in n_g(b)$ then $g_1bg_1^{-1}\subset b$ and $g_2bg_2^{-1}\subset
+b$ so $g_1(g_2 bg_2^{-1})g_1^{-1}\subset b$ so $g_1g_2\in n_g(b)$. Next we
+show $N_G(B)$ is closed under inverses
+
+While we are at it, let us define the following important subgroups
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA553-Quals"
+%%% End:
