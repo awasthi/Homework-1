@@ -44,15 +44,14 @@
 
 \usepackage[LAE,LFE,T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[farsi,french,german,spanish,dutch,russian,swedish,english]{babel}
-\babeltags{pa=farsi,
-           fr=french,
+\usepackage[farsi,french,german,spanish,russian,english]{babel}
+\babeltags{fr=french,
            de=german,
+           en=english,
            es=spanish,
-           nl=dutch,
-           ru=russian,
-           sv=swedish,
-           en=english}
+           pa=farsi,
+           ru=russian
+           }
 \def\spanishoptions{mexico}
 
 \selectlanguage{english}
@@ -156,18 +155,14 @@
 \newcommand{\bfR}{\mathbf{R}}
 \newcommand{\bfZ}{\mathbf{Z}}
 
-% Renewcommands
-\renewcommand\setminus{\smallsetminus}
-\renewcommand\phi{\varphi}
-\renewcommand\epsilon{\varepsilon}
-
 \begin{document}
 \author{\href{mailto:\authoremail}{\documentauthor}}
 \title{\documenttitle}
 \date{\today}
 \maketitle
-\include{kaufmann/MA571-Mid-JAN15}
-\include{kaufmann/MA571-Final-JAN15}
+% \include{kaufmann/MA571-Mid-JAN15}
+% \include{kaufmann/MA571-Final-JAN15}
+\include{mcclure/covering-space-problems}
 \include{mcclure/MA571-AUG14}
 \end{document}
 

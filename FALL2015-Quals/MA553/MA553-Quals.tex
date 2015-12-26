@@ -44,15 +44,14 @@
 
 \usepackage[LAE,LFE,T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[farsi,french,german,spanish,dutch,russian,swedish,english]{babel}
-\babeltags{pa=farsi,
-           fr=french,
+\usepackage[farsi,french,german,spanish,russian,english]{babel}
+\babeltags{fr=french,
            de=german,
+           en=english,
            es=spanish,
-           nl=dutch,
-           ru=russian,
-           sv=swedish,
-           en=english}
+           pa=farsi,
+           ru=russian
+           }
 \def\spanishoptions{mexico}
 
 \selectlanguage{english}
@@ -146,6 +145,7 @@
 \DeclareMathOperator{\Eval}{Eval}
 \DeclareMathOperator{\Gal}{Gal}
 \DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\Inn}{Inn}
 \DeclareMathOperator{\SL}{SL}
 \DeclareMathOperator{\Syl}{Syl}
 \DeclareMathOperator{\Tor}{Tor}
@@ -163,11 +163,6 @@
 \newcommand{\bfR}{\mathbf{R}}
 \newcommand{\bfZ}{\mathbf{Z}}
 
-% Renewcommands
-\renewcommand\setminus{\smallsetminus}
-\renewcommand\phi{\varphi}
-\renewcommand\epsilon{\varepsilon}
-
 \begin{document}
 \author{\href{mailto:\authoremail}{\documentauthor}}
 \title{\documenttitle}
@@ -178,8 +173,8 @@
 % \include{rings/notes-on-rings}
 % \include{fields/notes-on-fields}
 
-\include{goins/MA553-AUG08}
 \include{goins/MA553-JAN07}
+\include{goins/MA553-AUG08}
 % \include{goldberg/}
 % \include{heinzer/}
 \include{shahidi/MA553-AUG15}

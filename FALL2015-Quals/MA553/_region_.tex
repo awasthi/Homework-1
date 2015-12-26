@@ -44,20 +44,21 @@
 
 \usepackage[LAE,LFE,T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[farsi,french,german,spanish,dutch,russian,swedish,english]{babel}
-\babeltags{pa=farsi,
+\usepackage[arabic,farsi,french,german,spanish,russian,english]{babel}
+\babeltags{ara=arabic,
            fr=french,
            de=german,
+           en=english,
            es=spanish,
-           nl=dutch,
-           ru=russian,
-           sv=swedish,
-           en=english}
+           pa=farsi,
+           ru=russian
+           }
 \def\spanishoptions{mexico}
 
 \selectlanguage{english}
 
 \newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
+\newcommand{\textar}[1]{\beginR\textara{#1}\endR}
 
 \usepackage{cmap}
 \usepackage{CJKutf8}
@@ -81,7 +82,7 @@
 \makeatletter
 \def\thmhead@plain#1#2#3{%
   \thmname{#1}\thmnumber{\@ifnotempty{#1}{ }\@upn{#2}}%
-  \thmnote{ {\the\thm@notefont#3}}}
+  \thmnote{{\the\thm@notefont\bfseries{#3}}}}
 \let\thmhead\thmhead@plain
 \makeatother
 
@@ -143,8 +144,10 @@
 \DeclareMathOperator{\lcm}{lcm}
 
 \DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Eval}{Eval}
 \DeclareMathOperator{\Gal}{Gal}
 \DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\Inn}{Inn}
 \DeclareMathOperator{\SL}{SL}
 \DeclareMathOperator{\Syl}{Syl}
 \DeclareMathOperator{\Tor}{Tor}
@@ -162,49 +165,16 @@
 \newcommand{\bfR}{\mathbf{R}}
 \newcommand{\bfZ}{\mathbf{Z}}
 
-% Renewcommands
-\renewcommand\setminus{\smallsetminus}
-\renewcommand\phi{\varphi}
-\renewcommand\epsilon{\varepsilon}
-
 \begin{document}
 
-\message{ !name(goins/MA553-JAN07.tex) !offset(-172) }
-\begin{problem}
-Let $(G,\cdot)$  be a group. Show that $G$ is Abelian whenever $\Aut(G)$ is
-a cyclic group under composition.
-\end{problem}
-\begin{proof}
-\end{proof}
-
-\begin{problem}
-Let $(G,\cdot)$ be an Abelian group. The \emph{torsion subgroup of $G$} is
-defined as the collection of elements of finite order:
-\[
-\Tor(G)\coloneqq
-\left\{\,g\in G\;\middle|\;\text{$g^m=e$ for some integer $m>0$}\,\right\}.
-\]
-\begin{enumerate}[noitemsep,label=(\alph*)]
-\item Show that the quotient group $G/{\Tor(G)}$ is \emph{torsion free},
-  i.e., it contains no nontrivial elements of finite order.
-\item Show that $\Tor(G)$ is finite whenever $G$ is finitely generated. (Do
-  not assume that $G$ is finite.)
-\end{enumerate}
-\end{problem}
-\begin{proof}
-\end{proof}
-
-\begin{problem}
-Let $(G,\cdot)$ be a group of order $|G|=351$. Show that $G$ is solvable.
-\end{problem}
-\begin{proof}
-\end{proof}
-
-\begin{problem}
-Let $(G,\cdot)$ be a group, and $H<G$ a subgroup of finite index. Show that
-there exists a normal subgroup $N\lhd G$ contained in $H$ which is also of
-finite index. (Do not assume that $G$ is finite
-\message{ !name(../MA553-Quals.tex) !offset(-27) }
+\message{ !name(goins/MA553-JAN07.tex) !offset(-125) }
+m)^n=g^{mn}e$ for some positive integer
+$n$. Thus, $g\in\Tor(G)$ so we must have $\bar g=\bar e$.
+\\\\
+(b) Suppose that $G$ is finitely generated. By the fundamental theorem of
+finitely generated Abelian groups, $G\cong\bbZ^r\times
+Z_{s_1}\times\cdots\times
+\message{ !name(../MA553-Quals.tex) !offset(6) }
 
 \end{document}
 
