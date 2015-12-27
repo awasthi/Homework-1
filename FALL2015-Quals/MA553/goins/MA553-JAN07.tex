@@ -99,7 +99,7 @@ finite index. (Do not assume that $G$ is finite.)
 \begin{proof}
 Suppose $H<G$ is a subgroup of finite index, i.e., $H$ partitions $G$ into
 a finite number of cosets, say $G/H\coloneqq
-\{H,g_1H,...,g_{k-1}H\}$. Define a homomorphism$\varphi\colon G\to
+\{H,g_1H,...,g_{k-1}H\}$. Define a homomorphism $\varphi\colon G\to
 S_{G/H}$ by $g\mapsto gH$ (this is clearly a homomorphism: take $g_1,g_2\in
 G$ then
 $\varphi(g_1g_2)=g_1g_2H=(g_1H)(g_2H)=\varphi(g_1)\varphi(g_2)$). Thus,
@@ -115,7 +115,11 @@ homomorphism. Show that for all normal Sylow $p$-subgroups $P\lhd G$ we
 have $\varphi(P)<P$.
 \end{problem}
 \begin{proof}
-
+Suppose $|G|<\infty$ and let $P\in\Syl_p(G)$ be normal in $G$. Then $P$ is
+unique of order $p^\alpha$ for some $\alpha$. By the 1st isomorphism
+theorem, $\varphi(P)\mid p^\alpha$ so $\varphi(P)$ must be contained in a
+Sylow $p$-subgroup of $G$. Since $P$ is the unique Sylow $p$-subgroup of
+$G$, $\varphi(P)<P$.
 \end{proof}
 
 \begin{problem}
@@ -127,6 +131,13 @@ Let $(R,+,\cdot)$ be a commutative ring with $1\neq 0$.
 \end{enumerate}
 \end{problem}
 \begin{proof}
+(a) $\impliedby$ Suppose that $(0)$ is a prime ideal. Then $R/(0)$ is a
+domain. But $R/(0)\cong R$ (canonically i.e., the map $\bar r\mapsto r$ is a
+bijective homomorphism) hence, $R$ is a domain.
+
+$\impliedby$ Conversely, suppose that $R$ is a domain.
+\\\\
+(b)
 \end{proof}
 
 \begin{problem}
