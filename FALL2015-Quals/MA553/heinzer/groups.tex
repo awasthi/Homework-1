@@ -283,13 +283,76 @@ is cyclic.
 Prove that there is no simple group of order $4125$.
 \end{problem}
 \begin{proof}
+Suppose $G$ is a group of order $4125=3\cdot 5^3\cdot 11$. We need to show
+that $G$ contains at least one nontrivial normal subgroup. We shall proceed
+by Sylow's theorem. By Sylow's theorem, $n_3\equiv 1\pmod{3}$ and $n_3\mid
+5^3\cdot 11$ thus, $n_3=1$, $25$, and $55$. Similarly $n_5=1$ and $11$ and
+$n_{11}=1$ and $375$.
 
+Forget that. Let us do something tricky. Suppose $G$ is simple. Then $G$
+has no nontrivial normal subgroup. By Sylow's theorem, $n_5=1$ or $11$ so
+$n_5=11$ for otherwise $G$ has a unique hence, normal Sylow
+$5$-subgroup. Also by Sylow's theorem, recall that
+$\left[G:N_G(P)\right]=11$ for any $P\in\Syl_5(G)$. Let $A$ denote the
+collection of left cosets of $N_G$. By Lagrange's theorem,
+$|A|=\left[G:N_G(P)\right]=11$. Let $G$ act on $A$ by left
+multiplication. This action is transitive and hence, induces a homomorphism
+$\varphi\colon G\to S_{11}$. Moreover, since $\ker\varphi\lhd G$ and $G$ is
+simple, $\ker\varphi$ is the identity subgroup. Thus, by the 1st
+isomorphism theorem, $G\cong\varphi(G)$ so, by Lagrange's theorem,
+$3\cdot 5^3\cdot 11\mid 11!$. However, the highest power of $5$ to divide
+$11!$ is $5^2$. This leads to a contradiction. Thus, $G$ is not simple.
 \end{proof}
 
 \begin{problem}
 Show that $P$ is abelian whenever $\Aut(P)$ is cyclic.
 \end{problem}
 \begin{proof}
+The problem follows quickly from the following results
+\begin{lemma}
+Any subgroup of a cyclic group is cyclic.
+\end{lemma}
+\begin{proof}
+\renewcommand\qedsymbol{$\clubsuit$}
+% Suppose $G$ is cyclic, i.e., $G=\langle  x\rangle$ for some element $x\in
+% G$ and let $H<G$ be nontrivial. Since every element of $G$ is of the form
+% $x^k$ for some positive integer $k$ each element $h\in H$ is of the form
+% $x^\ell$ for some positive integer
+Suppose that $G$ is cyclic, i.e., $G=\langle x\rangle$ for some element
+$x\in G$. Let $H<G$. If $H$ is the identity subgroup then $H=\langle e_G
+\rangle$. Suppose $H$ is nontrivial. Since every element of $G$ is some
+power of $x$, every element of $H$ is of the form $x^k$ for some positive
+integer $k$. Put $y\coloneqq x^k$ where $k$ is the smallest power of $x$
+such that $x^k\in H$. We show that $\langle y\rangle=H$.
+
+First, it is immediate that $\langle x\rangle<H$. To see the reverse, let
+$z\in H$. Then $z=x^\ell$ for some positive integer $\ell$. By our previous
+assumption, we have $k<\ell$ so by the Euclidean algorithm, there exists
+positive integers $q$ and $r$ such that $\ell=qk+r$ where $r<k$ so
+\[
+z=x^\ell=x^{qk}x^r=\left(x^k\right)^qx^r=y^qx^r.
+\]
+But since $H$ is a group, we have $y^{-q}z=x^r\in H$. But we made the
+assumption that $k$ is the smallest integer such that $x^k\in H$. Thus,
+$r=0$ and we have $z=y^q$. It follows that $H=\langle y\rangle$, i.e., $H$
+is cyclic.
+\end{proof}
+\begin{lemma}
+If $G/Z(G)$ is cyclic, then $G$ is Abelian.
+\end{lemma}
+\begin{proof}
+\renewcommand\qedsymbol{$\clubsuit$}
+Suppose $G/Z(G)$ is cyclic. Then $G/Z(G)=\langle\bar x\rangle$ for some
+$x\in G$. Thus, for every element $g\in G$, $g=x^kz$ for some $z\in
+Z(G)$ for some positive integer $k$. Let $x^{k_1}z_1,x^{k_2}z_2\in G$. Then
+\[
+(x^{k_1}z_1)(x^{k_2}z_2)=x^{k_1}x^{k_2}z_1z_2=x^{k_1+k_2}z_2z_1=x^{k_2+k_1}z_2z_1
+=(x^{k_2}z_2)(x^{k_1}z_1).
+\]
+Thus, $G$ is Abelian.
+\end{proof}
+Suppose $\Aut(P)$ is cyclic. Then $\Inn(P)<\Aut(P)$ is cyclic. But since,
+$G/Z(G)\cong\Inn(P)$, we have that $G$ is Abelian.
 \end{proof}
 
 \begin{problem}
@@ -303,6 +366,9 @@ prove that $G$ has at least $q^2$ elements of order $q$.
 \end{enumerate}
 \end{problem}
 \begin{proof}
+(a) We shall proceed by Sylow's theorem. Suppose that
+\\\\
+(b)
 \end{proof}
 
 \begin{problem}
