@@ -361,34 +361,106 @@ prime.
 \begin{enumerate}[label=(\alph*)]
 \item If $G$ fails to have a normal subgroup of order $p$,
 determine the number of elements in $G$ of order $p$.
-\item If $G$ fails to have a normal subgroup of order $q$,
-prove that $G$ has at least $q^2$ elements of order $q$.
+\item If $G$ fails to have a normal subgroup of order $q$, prove that $G$
+  has at least $q^2$ elements of order $q$.
+\item Prove that $G$ has a nontrivial normal subgroup.
 \end{enumerate}
 \end{problem}
 \begin{proof}
-(a) We shall proceed by Sylow's theorem. Suppose that
+(a) By Sylow's theorem, $n_p\equiv 1\pmod{p}$ and $n_p\mid qr$ so either
+$n_p=1$ or $n_p=qr$. Since we are assuming that $G$  does not have a normal
+subgroup of order $p$, $n_p=qr$. Since every subgroup of order $p$ is
+cyclic, for every pair $P,Q\in\Syl_p(G)$, $P\cap Q=\{e_G\}$. Thus, the
+number of elements of order $p$ must be $qr(p-1)$.
 \\\\
-(b)
+(b) Again, by Sylow's theorem, $n_q\equiv 1\pmod{q}$ and $n_q\mid pr$ so
+either $n_q=1$, $p$, or $pr$. Since we are assuming that $G$ does not have
+a normal subgroup of order $p$, $n_q=p$ or $n_q=pr$. Thus, we may assume
+that $n_q=p$. Now since every subgroup of order $q$ is cyclic, the
+the Sylow $q$-subgroups of $G$ intersect pairwise at the identity
+subgroup. Thus, there are at most $p(q-1)$ elements of order $q$. Now,
+since $p>r>q$, $p>q+2$ so $(q+2)(q-1)=q^2+q-1>q^2$ since $q>1$. Thus, $G$ has
+at least $q^2$ elements of order $q$.
+\\\\
+(c) Lastly we will show that $G$ has at least one nontrivial normal
+subgroup. Seeking a contradiction, suppose that $G$ does not have a normal
+Sylow $r$-subgroup or a Sylow $q$-subgroup. By Sylow's theorem, $n_r\equiv
+1$ and $n_r\mid pq$ thus, $n_r=1$, $q$, $p$ or $pq$. Since we are assuming
+that $G$ does not have a normal Sylow $r$-subgroup, then $n_r$ is at least
+$q$. Thus, there are $q(r-1)$ elements of order $r$. By parts (a) and (b)
+we have a total of
+\[
+qr(p-1)+q^2+q(r-1)+1=pqr-qr+q^2+qr-q+1=pqr+q(q-1)+1
+\]
+elements of order $p$, $q$, and $r$ together with the identity element
+$e$. But $q(q-1)+1>0$ so we have $pqr+q(q-1)+1>pqr=|G|$. This is a
+contradiction. Thus, at least one of $n_p$, $n_q$ or $n_r$ must equal $1$
+and hence, at least one of the $p$, $q$, or $r$ Sylow subgroups is normal
+in $G$.
 \end{proof}
 
 \begin{problem}
-Find all abelian groups of order $60$. Find the number of
-elements of order $6$ in each group. % order $6$, a in each ?
+Find all abelian groups of order $60$. Find the number of elements of order
+$6$ in each group.
 \end{problem}
 \begin{proof}
+Suppose $G$ is an Abelian group of order $|G|=2^2\cdot 3\cdot 5$. By the
+fundamental theorem of finitely generated abelian groups, we have that $G$
+is isomorphic to one of
+\[
+Z_{2\cdot 3\cdot 5}\times Z_2=Z_{30}\times Z_2
+\qquad\text{or}\qquad
+Z_{2^2\cdot 3\cdot 5}=Z_{60}.
+\]
+
+For $G\cong Z_{60}$, recall that since $G$ is Abelian, $G$ has a subgroup
+of order $m$ for every positive integer $n$ dividing $m$. Thus, $G$ has a
+subgroup of order $6$. Moreover, since $Z_{60}$ is cyclic, this subgroup
+too is cyclic. Therefore, by Euler's totient theorem, this subgroup
+contains a total of $\varphi(6)=\varphi(3)\varphi(2)=(3-1)(2-1)=2$ elements
+of order $6$.
+
+For $G\cong Z_{30}\times Z_2$, if $(z_1,z_2)\in G$ is an element of order
+$6$ then $z_1$ must be an element of order $3$ or order $6$ and $z_2$ must
+be an (the only) element of order $2$ (since
+$|(z_1,z_2)|=\lcm(|z_1|,|z_2|)$). Therefore, it suffices to count the
+elements of order $3$ and $6$ in $Z_{30}$ and pair them up with an element
+of order $2$ and an element of order $1$ or $2$, respectively. For the same
+reasons as above, $G$ must contain a subgroup of order $3$ and a subgroup
+of order $6$. By Euler's totient theorem, $\varphi(3)=2$ and
+$\varphi(6)=2$. Thus, there are $2\cdot 1+2\cdot 1+2\cdot 1=6$ elements of
+order $6$ in $G\cong Z_{30}\times Z_2$.
 \end{proof}
 
 \begin{problem}
 Show that any group $G$ of order $80$ is solvable.
 \end{problem}
 \begin{proof}
+Suppose $G$ is a group of order $80=2^4\cdot 5$. By Sylow's theorem,
+$n_5\equiv 1\pmod{5}$ and $n_5\mid 2^4$. Thus, $n_5=1$, $16$. Similarly,
+$n_2=1$ or $n_2=5$.
+
+If $n_5=1$ we are done since $P_5\in\Syl_5(G)$ is the unique Sylow
+$5$-subgroup of $G$ hence, $P_5\lhd G$ and $G/P_5$ is a group of order
+$2^4$, i.e., a $p$-group hence, $P_5$ and $G/P_5$ are solvable. Thus, $G$
+is solvable.
+
+Suppose $n_5\neq 1$, then we must show that $n_2=1$. Since $n_5\neq 1$, we
+have $n_5=16$ and we have $16(5-1)=16\cdot 4=64$ elements of order $5$
+which leaves $80-64-1=15$ elements unaccounted for. Thus, $n_2=1$ so
+$P_2\in\Syl_2(G)$ is a normal subgroup of $G$. Thus, $P_2\lhd G$ and
+$|P_2|=2^4$ is a $p$-group hence, solvable. Moreover, $|G/P_2|=5$ hence, is
+Abelian thus, solvable. Therefore, $G$ is solvable.
 \end{proof}
 
 \begin{problem}
-Let $G$ be a finite group and suppose that $\Aut(G)$ is
-solvable. Show that $G$ is solvable.
+Let $G$ be a finite group and suppose that $\Aut(G)$ is solvable. Show that
+$G$ is solvable.
 \end{problem}
 \begin{proof}
+Suppose that $\Aut(G)$ is solvable. Then $\Inn(G)<\Aut(G)$ is solvable. But
+$\Inn(G)\cong G/Z(G)$. Thus, $G/Z(G)$ is solvable. Since $Z(G)\lhd G$ is
+Abelian, $Z(G)$ is solvable. Thus, $G$ is solvable.
 \end{proof}
 
 %%% Local Variables:
