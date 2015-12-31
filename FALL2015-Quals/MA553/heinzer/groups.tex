@@ -154,15 +154,44 @@ hence, it is contained in a Sylow $p$-subgroup $R$ of $H$. Thus, $Q<P\cap
 H<R$. But since $|Q|=|R|$ and $|Q|\mid |P\cap H|$ and $|P\cap H|\mid |R|$,
 we must have that $Q=P\cap H$.
 \\\\
-(b)
-\end{proof}
+(b) We will begin by showing that if $P\in\Syl_p(G)$ then
+$PH/H\in\Syl_p(G/H)$. Put $|G|=p^\alpha m$ and $|H|=p^\beta n$ where
+$p\nmid m$ and $p\nmid n$ and $n\mid m$ (where the last necessarily true by
+Lagrange's theorem, since $H$ is a subgroup of $G$). By the 2nd isomorphism
+theorem, since $H\lhd G$, we have $PH/H\cong P/P\cap H$ so that
+\[
+|PH/H|=|P/P\cap H|=|P|/|P\cap H|=p^{\alpha-\beta};
+\]
+this is by part (a) since $P\cap H$ is a Sylow $p$-subgroup of $H$ hence,
+$|P\cap H|=p^\beta$. Since $|G/H|=p^{\alpha-\beta}n/m$, it follows that if
+$Q\in\Syl_p(G/H)$, then $|Q|=p^{\alpha-\beta}$. Thus, by a simple order
+argument, it must be that $PH/H\in\Syl_p(G/H)$ ($PH/H$ is a $p$-group
+hence, it is contained in a Sylow $p$-subgroup $Q$ of $G/H$, but
+$|PH/H|=|Q|=p^{\alpha-\beta}$ thus, $PH/H=Q$).
 
+Now, suppose that $Q\in\Syl_p(G/H)$. By Sylow's theorem, $Q$ is conjugate
+to a subgroup of the form $RH/H$ where $R\in\Syl_p(G)$. By the 4th
+isomorphism theorem, there exists a subgroup $K>H$ such that
+$K/H=Q$. Moreover, since $Q$ is conjugate to $RH/H$, $K$ is conjugate to
+$RH$. Thus, $K=gRHg^{-1}$ for some $g\in G$. But since $H\lhd G$ for any
+$h\in H$, $r\in R$, we have $grhg^{-1}=grg^{-1}(ghg^{-1})=grg^{-1}h'$ for
+some $h'\in H$. Hence, $K=gRg^{-1} H$. But $R\in\Syl_p(G)$ thus,
+$gRg^{-1}=P$ for some Sylow $p$-subgroup $P$ of $G$. Thus, $K/H=PH/H=Q$.
+\end{proof}
 \begin{problem}
 Let $H$ be a normal subgroup of a finite group $G$, and let
-$N\subset H$ be a normal Sylow subgroup of $H$. Prove that $N$
-is a normal subgroup of $G$.
+$N<H$ be a normal Sylow subgroup of $H$. Prove that $N$ is a normal
+subgroup of $G$.
 \end{problem}
 \begin{proof}
+This is an important result, what is says is that normal Sylow
+$p$-subgroups are \emph{characteristic subgroups}, i.e., if $K$ is
+characteristic in $H$ and $K\lhd G$ then $K\lhd H$ and $K\lhd G$.
+
+Suppose $N$ is a normal Sylow $p$-subgroup of $H$. Then $N$ is the unique
+Sylow $p$-subgroup of $H$. Since $H\lhd G$, for every $g\in G$,
+$gHg^{-1}=H$. In particular, $gNg^{-1}<H$. Since conjugation preserves
+order, $|gNg^{-1}|=|N|$ hence, $gNg^{-1}=N$. Thus, $N\lhd G$.
 \end{proof}
 
 \begin{problem}
@@ -175,6 +204,24 @@ normal $p$-subgroup of $G$.
 \end{enumerate}
 \end{problem}
 \begin{proof}
+(a) Suppose that $H$ is a normal $p$-subgroup of $G$. Then $H$ is contained
+in some Sylow $p$-subgroup $P$ of $H$. Moreover, since
+$gHg^{-1}=H<gPg^{-1}$ for all $g\in G$, and since every Sylow $p$-subgroup
+of $G$ is conjugate, $H<Q$ for every $Q\in\Syl_p(G)$.
+\\\\
+(b) First, note that since $H$ and $K$ are normal subgroups of $G$,
+$HK<G$. Moreover, $|HK|=|H||K|/|H\cap K|$. If $|H\cap K|\neq 1$ then $H\cap
+K$ is not the identity subgroup hence, must contain at least one element of
+order $p^\alpha$ for $\alpha\geq 1$. By Lagrange's theorem, $p\mid |H\cap
+K|$ and $|H\cap K|\mid |H|,|K|$ so $|H\cap K|=p^\beta$ for some $\beta\geq
+1$. It follows that $|HK|=p^\gamma$ for some $\gamma\geq 1$, i.e., $HK$ is
+a $p$-subgroup of $G$.
+
+Lastly, we need to show that $HK\lhd G$. Let $g\in G$. Then for any $h\in
+H$, $k\in K$ we have $ghkg^{-1}=(ghg^{-1})(gkg^{-1})=h'k'$ where $h'\in H$
+and $k'\in K$ since $H\lhd G$ and $K\lhd G$. Thus, $HK\lhd G$. Note that
+the latter is true regardless of whether $H$ and $K$ are $p$-subgroups of
+$G$.
 \end{proof}
 
 \begin{problem}
@@ -182,6 +229,9 @@ Prove that the order of the automorphism group $(\bbZ/3\bbZ)^4$
 is $80\times 78\times 72\times 54$.
 \end{problem}
 \begin{proof}
+This is from an early section of Dummit and Foote. The idea is that
+$\Aut\left(\bbZ/3\bbZ)^4\right)\cong\GL_4(\bbZ/3\bbZ)$ which has
+$(3^4-1)(3^4-3)(3^4-9)(3^4-27)=80\cdot 78\cdot 72\cdot 54$ elements.
 \end{proof}
 
 \begin{problem}
@@ -194,12 +244,46 @@ integer $>1$).
 \end{enumerate}
 \end{problem}
 \begin{proof}
+(a) $\implies$ (b) Suppose that every Abelian group of order $n$ is
+cyclic. Let $G$ be an Abelian group of order $n$. Then $G=\langle
+x\rangle\cong Z_n$ for some element $x\in G$ of order $n$. By the
+fundamental theorem of finitely generated Abelian groups, we have
+\[
+G\cong Z_{n_1}\times\cdots\times Z_{n_r}\cong Z_n
+\]
+where $n_i$ are elementary divisors. Seeking a contradiction, suppose that
+$n$ is not square free, i.e., $n=k^2m$. Then, we have
+\[
+Z_n\cong Z_k\times Z_{km},
+\]
+but the group on the left is cyclic, whereas the group on the right is not
+(suppose $(z_1,z_2)\in Z_k\times Z_{km}$ is a generator for $Z_k\times
+Z_{km}$; then $|(z_1,z_2)|=k^2m$, but $z_1^k=1$ and $z_2^{km}=1$ hence
+$(z_1,z_2)^{km}=(z_1^{km},z_2^{km})=(1,1)$; i.e., the order of every
+element $(z_1,z_2)$ is at most $\lcm(k,km)=km$). This contradicts the
+assumption that $G$ is cyclic. Thus, $n$ must be square free.
+
+(b) $\implies$ (a) Conversely, suppose that $n$ is square free. Then, by
+the fundamental theorem of finitely generated abelian groups, we have
+\[
+G\cong Z_{n_1}\times\cdots\times Z_{n_r}
+\]
+where $n=n_1\cdots n_r$ and each $n_i$ is an elementary divisor of $n$,
+i.e., $n_{i+1}\mid n_i$ which implies that $n_1=n_2 k$ for some
+positive integer $k\mid n$. Thus, $n=n_1^2k n_3\cdots n_s$. But $n$ is
+square free thus, $n_1=1$. Proceeding in this manner, we see than $n_i=1$
+for all $i\neq s$ and $n_s=n$. Thus,
+\[
+G\cong 1\times\cdots 1\times Z_n\cong Z_n
+\]
+is cyclic.
 \end{proof}
 
 \begin{problem}
 Prove that there is no simple group of order $4125$.
 \end{problem}
 \begin{proof}
+
 \end{proof}
 
 \begin{problem}
