@@ -192,23 +192,71 @@ $D=\left\{\,a+b\sqrt{2}\;\middle|\;a,b\in\bbQ\,\right\}$.
 \end{enumerate}
 \end{problem}
 \begin{proof}
-(a) First we define a Euclidean norm $d\colon D\to\bbZ_{\geq 0}$ via
-$d\left(a+b\sqrt{2}\right)\coloneqq a^2+2b^2$. Let $I\subset D$ be a proper
-ideal. Let $x=a+b\sqrt{2}\in I$ be minimal with respect to the Euclidean
-norm, i.e., $d(x)\leq d(y)$ for all $y\in I$. We wi
+(a) We prove the following stronger result (which is, incidentally, easier
+to prove than what we are asked to prove): $D$ is a field (in fact, it is
+the extension $\bbQ(\sqrt{2})$). Let $a+b\sqrt{2}\in D$ be a nonzero
+element. To show that $a+b\sqrt{2}$ is a unit, it suffices to find an
+inverse for it. Hence, we have
+\[
+\frac{1}{a+b\sqrt{2}}=\frac{a-b\sqrt{2}}{a^2-2b^2}=\frac{a}{a^2-2b^2}-\frac{b}{a^2-2b^2}\sqrt{2}.
+\]
+Note that $a^2-2b^2\neq 0$ if and only if $a^2=2b^2$, but this implies that
+$a=\sqrt{2}b$ which is impossible since $\sqrt{2}\notin\bbQ$ so that the
+above is indeed in $D$. Now, we have
+\begin{align*}
+(a+b\sqrt{2})\left(\frac{a}{a^2-2b^2}-\frac{b}{a^2-2b^2}\sqrt{2}\right)
+&=\frac{1}{a^2-2b^2}\left(a^2+ab\sqrt{2}-2b^2+-ba\sqrt{2}\right)\\
+&=\frac{a^2-2b^2}{a^2-2b^2}\\
+&=1.
+\end{align*}
+Thus, $D$ is a field.
 \\\\
-(b)
+(b) We shall proceed by contradiction. Suppose that $\sqrt{3}\in D$. Then
+\[
+\sqrt{3}=a+b\sqrt{2}
+\]
+for some $a,b\in\bbQ$. Squaring both sides, we have
+\begin{align*}
+3&=a^2+2b^2+2ab\sqrt{2}\\
+3-a^2-2b^2&=2ab\sqrt{2}\\
+\sqrt{2}&=\frac{3-a^2-2b^2}{2ab}.
+\end{align*}
+This implies that $\sqrt{2}\in\bbQ$, which is a contradiction.
 \end{proof}
 
 \begin{problem}
-Show that if $p$ is a prime such that $p\equiv 1\mod 4$, then $x^2+1$ is
+Show that if $p$ is a prime such that $p\equiv 1\pmod{4}$, then $x^2+1$ is
 not irreducible in $\bbZ_p[x]$.
 \end{problem}
 \begin{proof}
+This is very useful theorem in number theory.
+
+Assuming the conditions above, if $x^2+1$ is reducible, then it is the
+product of linear polynomials
+\[
+x^2+1=(x+a)(x+b)
+\]
+for $a,b\in\bbZ_p$. But then, we have
+\[
+x^2+1=x^2+2(a+b)x+ab.
+\]
+Thus, $ab\equiv 1\pmod{p}$ and $2(a+b)\equiv 0\pmod{p}$. This means than
+\[
+ab=kp+1
+\qquad\text{and}\qquad
+2(a+b)=\ell p
+\]
+for some integers $k$ and $\ell$. Thus,
+\[
+2(a+b)+ab=(k+\ell)p+1
+\]
+so $p\mid 2(a+b)+ab-1$. But since $p\equiv 1\pmod{4}$, $p=2^2\cdot m+1$ for
+some integer $m$. Thus, $2^2\cdot m+1\mid 2(a+b)+ab-1$ so $2^2\cdot m\mid
+2(a+b-1)+ab$.
 \end{proof}
 
 \begin{problem}
-Show that if $p$ is a prime such that $p\equiv 3\mod 4$, then $x^2+1$ is
+Show that if $p$ is a prime such that $p\equiv 3\pmod{4}$, then $x^2+1$ is
 irreducible in $\bbZ_p[x]$.
 \end{problem}
 \begin{proof}
