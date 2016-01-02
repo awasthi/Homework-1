@@ -20,19 +20,52 @@ G=\SL_2(\bbZ/(5))\coloneqq
 \begin{enumerate}[label=(\alph*)]
 \item Show $|G|=120$.
 \item Show
-\[
-N\coloneqq\left\{\,\begin{bmatrix}1&b\\0&1\end{bmatrix}\;\middle|\;b\in\bbZ/(5)\,\right\}
-\]
-is a Sylow $5$-subgroup of $G$.
+  $N\coloneqq\left\{\,\left[\begin{smallmatrix}1&b\\0&1\end{smallmatrix}\right]\;\middle|\;b\in\bbZ/(5)\,\right\}$
+  is a Sylow $5$-subgroup of $G$.
+
+Suppose $a,b,c$ have been chosen. Then $d\equiv
+(ab-1)d^{-1}\pmod{5}$. Then, there are $5^2+4=28$ possible choices for
+these and $4$ possible ways to choose fix one of $a,b,c,d$. Thus, there are
+at least $4\cdot 28=2^2\cdot 3\cdot 7$.
 \item Find the number of Sylow $5$-subgroups of $G$.
 \end{enumerate}
 \end{problem}
 \begin{proof}
-(a) Let us count the number of elements in $\SL_2(\bbZ/(5))$.
+(a) We know the since of $\GL_2(\bbZ/(5))$. This is $(5^2-1)(5^2-5)=24\cdot
+20=2^5\cdot 3\cdot 5$.
 \\\\
-(b)
+(b) It suffices to show that the order of $N$ is $5$ since $1$ is the
+largest exponent of $5$ dividing $120=2^3\cdot 3\cdot 5$. But this is
+clear, since $N$ must satisfy $1-b\cdot 0\equiv 1\equiv 1\pmod{5}$ which is
+true for any $b\in\bbZ$. Hence, there are $5$ elements in $N$. Thus, $N$ is
+a Sylow $5$-subgroup.
 \\\\
-(b)
+(c) By Sylow's theorem, there are $n_5=1$ or $6$. We will show that $N$ is
+not normal in $\SL_2(\bbZ/(5))$ so that $n_5\neq 1$. Let
+$\left[\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\right]\in\SL_2(\bbZ/(5))$. Then,
+for any matrix in $N$ we have
+\[
+\begin{bmatrix}
+a&b\\c&d
+\end{bmatrix}
+\begin{bmatrix}
+1&1\\0&1
+\end{bmatrix}
+\begin{bmatrix}
+d&-b\\
+-c&a
+\end{bmatrix}
+=
+\begin{bmatrix}
+1-ac&a^2\\-bc&1+ba
+\end{bmatrix}
+\]
+is in $N$ if and only if $ac=ba=0$ and $-bc=0$. But $ad\equiv
+1+bc\pmod{5}$. Implies $bc=0$ so $b=0$ or $c=0$ so either $b=0$ and $c=0$
+or $c=0$. The former implies that $ad=1\equiv\pmod{5}$ so $a=d=1$. This
+would imply that
+$\left[\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\right]$. Thus,
+$N\centernot\nlhd\SL_2(\bbZ/(5))$ so $n_5=6$.
 \end{proof}
 
 \begin{problem}
