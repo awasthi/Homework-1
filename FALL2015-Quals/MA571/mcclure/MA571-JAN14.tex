@@ -1,4 +1,4 @@
-\chapter{MA 571 January 2014}
+\chapter{MA 571: Qualifying Exam, January 2014}
 \begin{problem}
 Let $X$ be a topological space, let $A$ be a subset of $X$, and let $U$ be
 an open subset of $X$. Prove that $U\cap\bar A\subset\overline{U\cap A}$.
@@ -13,42 +13,42 @@ $x\in\bar A$ so $V\cap A\neq\emptyset$. Thus, $V\cap(U\cap
 A)\neq\emptyset$. Thus, $x\in\overline{U\cap A}$.
 \end{proof}
 \begin{problem}
-Let $\sim$ be an equivalence relation on $\bbR^2$ defined by
+Let $\sim$ be an equivalence relation on $\bfR^2$ defined by
 $(x,y)\sim(x',y')$ if and only if there is a nonzero $t$ with
-$(x,y)=(tx',ty')$. Prove that the quotient space $\bbR^2/{\sim}$ is compact
+$(x,y)=(tx',ty')$. Prove that the quotient space $\bfR^2/{\sim}$ is compact
 but not Hausdorff.
 \end{problem}
 \begin{proof}
-To show that $\bbR^2/{\sim}$ is compact, we need to show that for every
-open covering $\calA$ of $\bbR^2/{\sim}$, there is a finite subcover
-$\calA'\subset\calA$. Let $q\colon\bbR^2\to\bbR^2/{\sim}$ denote the
-quotient map. Then, since $q$ is continuous and onto $\bbR^2/{\sim}$, the
+To show that $\bfR^2/{\sim}$ is compact, we need to show that for every
+open covering $\calA$ of $\bfR^2/{\sim}$, there is a finite subcover
+$\calA'\subset\calA$. Let $q\colon\bfR^2\to\bfR^2/{\sim}$ denote the
+quotient map. Then, since $q$ is continuous and onto $\bfR^2/{\sim}$, the
 set $\left\{q^{-1}(A_\alpha)\right\}_{A_\alpha\in\calA}$ is an open cover
-of $\bbR^2$. In particular, there exists at least one $A_\alpha$ such that
+of $\bfR^2$. In particular, there exists at least one $A_\alpha$ such that
 $q^{-1}(A_\alpha)$ is a neighborhood of $(0,0)$. By Lemma C, there exists a
 basic open neighborhood, i.e., an open ball $B((0,0),\varepsilon)\subset
 q^{-1}(A_\alpha)$ for $\varepsilon>0$. Now, for any point
-$[(x,y)]\in\bbR^2$ pick a representative $(x,y)\in\bbR^2$. Then, by the
+$[(x,y)]\in\bfR^2$ pick a representative $(x,y)\in\bfR^2$. Then, by the
 Archimedean principle, there exists a positive real numbers $t',t''>0$ such
 that $t'x<\sqrt{\varepsilon}$ and $t''y<\sqrt{\varepsilon}$. Define
 $t\coloneqq\min\{t',t''\}$. Then $tx<\sqrt{\varepsilon}$ and
 $ty<\varepsilon$. Thus, $(tx,ty)\in A_\alpha$ (since
 $t^2x^2+t^2y^2<\varepsilon$). Since we can do this for any point
-$[x]\in\bbR^2/{\sim}$, it follows that
-$A_\alpha\supset\bbR^2/{\sim}$. Thus,
+$[x]\in\bfR^2/{\sim}$, it follows that
+$A_\alpha\supset\bfR^2/{\sim}$. Thus,
 $\calA'\coloneqq\left\{A_\alpha\right\}$ is a finite subset of $\calA$
-which covers $\bbR^2/{\sim}$. Thus, $\bbR^2/{\sim}$ is compact.
+which covers $\bfR^2/{\sim}$. Thus, $\bfR^2/{\sim}$ is compact.
 
-To show that $\bbR^2/{\sim}$ is not compact, we will employ a very similar
+To show that $\bfR^2/{\sim}$ is not compact, we will employ a very similar
 strategy, that is, we will show that every neighborhood of the point
-$[0,0]\in\bbR^2/{\sim}$, contains every point $[x,y]\in\bbR^2/{\sim}$. Let
-$[x,y]\in\bbR^2/{\sim}$ and let $U$ be a neighborhood of $[0,0]$. Then
+$[0,0]\in\bfR^2/{\sim}$, contains every point $[x,y]\in\bfR^2/{\sim}$. Let
+$[x,y]\in\bfR^2/{\sim}$ and let $U$ be a neighborhood of $[0,0]$. Then
 $q^{-1}(U)$ is an open neighborhood of $(0,0)$, i.e., there exists an open
 ball $B((0,0),\varepsilon)\subset q^{-1}(U)$. But as we have just shown,
 for sufficiently small values of $t>0$, $(tx,ty)\in
 B((0,0),\varepsilon)\subset q^{-1}(U)$. Thus, $[x,y]\in U$. In particular,
 for any open neighborhood $V$ of $[x,y]$, $V\cap U\neq\emptyset$. Thus,
-$\bbR^2/{\sim}$ is not Hausdorff.
+$\bfR^2/{\sim}$ is not Hausdorff.
 \end{proof}
 \begin{problem}
 Let $X$ and $Y$ be topological spaces. Let $x_0\in X$ and let $C$ be a
