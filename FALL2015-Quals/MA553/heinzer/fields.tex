@@ -177,9 +177,7 @@ Z_p$.
 
 Since $f$ is a monic polynomial of degree
 $p=\left[\bbF_p(a):\bbF_p\right]$, with $a$ as root, it follows that
-$f(X)=m_{\alpha,\bbF_p}(X)$.
-
-Hence, $f$ is irreducible in $\bbF_p[X]$.
+$f(X)=m_{\alpha,\bbF_p}(X)$. Hence, $f$ is irreducible in $\bbF_p[X]$.
 
 Since $\bbZ$ is an integral domain, $f$ is a nonconstant monic polynomial
 in $\bbZ[X]$ and $(p)$ is a proper ideol of $\bbZ$, and $\bar f=f$ is
@@ -189,10 +187,47 @@ $\bbZ[X]$.
 
 \begin{problem}
 Let $x$ and $y$ be indeterminates over the field $\bbF_2$. Prove that there
-exists infinitely many subfields of $L=\bbF_2(x,y)$ that contain the field
-$K=\bbF_2(x^2,y^2)$.
+exists infinitely many subfields of $L=\bbF_2(X,Y)$ that contain the field
+$K=\bbF_2(X^2,Y^2)$.
 \end{problem}
 \begin{proof}
+This is from Dummit and Foote:
+\\\\
+Consider the polynomial $f(T)=T^2-X^2\in\bbF_2(X^2,Y^2)[T]$. The roots of
+this polynomial are $X$, $-X$, neither of which are contained in
+$\bbF_2(X^2,Y^2)$. Thus, $T^2-X^2$ is irreducible in
+$\bbF_2(X^2,Y^2)[T]$. Thus,
+$\left[\bbF_2(X,Y):\bbF_2(X^2,Y^2)\right]=2$. Similarly, $T^2-Y^2$ is
+irreducible over $\bbF_2(X,Y^2)[T]$, so by the tower theorem, we have
+\[
+\left[\bbF_2(X,Y):\bbF_2(X^2,Y^2)\right]=\left[\bbF_2(X,Y):\bbF_2(X,Y^2)\right]\left[\bbF_2(X,Y^2):\bbF_2(X^2,Y^2)\right]=2\cdot 2=4.
+\]
+
+for $c\in\bbF_2(X^2,Y^2)$, consider the subfield $\bbF_2(X+cY)$. Since
+$(X+cY)^2=X^2+c^2Y^2$ (by the freshman's dream), we have
+\[
+\bbF_2(X^2,Y^2)\subset\bbF_2(X+cY),\qquad\text{and}\qquad
+\bbF_2(X+cY)\subset\bbF_2(X,Y).
+\]
+Now, $T^2-X^2-c^2-Y^2$ has $X+CY$ as a root, so
+\[
+\left[\bbF_2(X+cY):\bbF_2(X^2,Y^2)\right]\leq 2.
+\]
+Bit if there were only finitely many subfields, then for some $c\neq
+c'\in\bbF_2(X^2,Y^2)$, $\bbF_2(X+cY)=\bbF_2(X+c'Y)$, so
+$x+cy,x+c'y\in\bbF_2(X^2,Y^2)$. Thus,
+$(X+cY)-(X+c'Y)=(c-c')Y\in\bbF_2(X+cY)$ so $Y\in\bbF_2(X+cY)$. Thus,
+$X\in\bbF_2(X+cY)$. Thus,
+\[
+\bbF_2(X+cY)\subset\bbF_2(X,Y)\subset\bbF_2(X+cY),
+\]
+so $\bbF_2(X,Y)=\bbF_2(X+cY)$. But this is absurd since
+\[
+\left[\bbF_2(X,Y):\bbF_2(X^2,Y^2)\right]=4\neq 2=
+\left[\bbF_2(X+cY):\bbF_2(X^2,Y^2)\right],
+\]
+so $\bbF_2(X,Y)=\bbF_2(X+cY)$. This is a contradiction. Thus, there are
+infinitely many intermediate subfields.
 \end{proof}
 
 \begin{problem}
@@ -200,6 +235,7 @@ Let $K/F$ be an algebraic field extension. If $K=F(a)$ for some $a\in K$,
 prove that there are only finitely many subfields of $K$ that contain $F$.
 \end{problem}
 \begin{proof}
+
 \end{proof}
 
 \begin{problem}
