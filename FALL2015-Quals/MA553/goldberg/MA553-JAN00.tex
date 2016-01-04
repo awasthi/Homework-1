@@ -4,7 +4,24 @@ Find all groups of order $7\cdot 11^3$ which have a cyclic subgroup of
 order $11^3$.
 \end{problem}
 \begin{proof}
+Suppose $G$ is a group of order $7\cdot 11^3$. By Sylow's theorem,
+$n_{11}\equiv 1\pmod{11}$ and $n_{11}\mid 7$, thus $n_{11}=1$ and we see
+that $G$ must have a unique, therefore normal, Sylow $11$-subgroup $P$ of
+order $11^3$. Also by Sylow's theorem, we see than $n_7=1$ or $11^3=1331$
+(what an outrageous number!!!).
 
+If $n_7=1$, again the Sylow $7$-subgroup $Q$ is unique hence, normal in $G$
+and we must have $PQ=QP=G$ (since $P\cap Q=\{e\}$ and
+$|PQ|=|P||Q|/|P\cap Q|=11^3\cdot 7/1=|G|$). Thus,
+$G\cong Z_7\times Z_{11^3}$.
+
+Otherwise, $n_7=11^3$. Thus, there are $6\cdot 11^3+1$ elements of order
+$7$ plus the identity plus $11^3-1$ elements in $P$. Thus, there are a
+total of $6\cdot 11^3+1+11^3-1=7\cdot 11^3$ elements of order $7$, in $Q$,
+plus the identity. No contradiction here. But we still have $P\cap Q=\{e\}$
+for any $Q\in\Syl_7(G)$. Therefore, I suspect that the only other
+(nonabelian) group that has a cyclic subgroup of order $11^3$ must be the
+semidirect product $Z_7\rtimes Z_{11^3}$.
 \end{proof}
 
 \begin{problem}

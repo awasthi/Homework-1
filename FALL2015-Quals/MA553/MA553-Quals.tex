@@ -124,21 +124,11 @@
 \newtheorem*{observations*}{**Observations**}
 
 %% Redefinitions & commands
-% \newcommand\restr[2]{{% we make the whole thing an ordinary symbol
-%   \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
-%   {#1} % the function
-%   % \vphantom{\big|} % pretend it's a little taller at normal size
-%   \right|{#2} % this is the delimiter
-%   }}
-
-% \newcommand{\nle}{\ensuremath{\triangleleft}}
-% \newcommand{\nge}{\ensuremath{\triangleright}}
 \newcommand{\nlhd}{\ensuremath{\centernot\lhd}}
+\newcommand{\nrhd}{\ensuremath{\centernot\rhd}}
 \newcommand{\nequiv}{\ensuremath{\not\equiv}}
-% \newcommand{\ncong}{\ensuremath{\not\cong}}
 \newcommand{\nsubset}{\ensuremath{\not\subset}}
 \newcommand{\nsupset}{\ensuremath{\not\supset}}
-
 \newcommand\minus{\ensuremath{\null\smallsetminus}}
 \renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
 
@@ -151,10 +141,12 @@
 \DeclareMathOperator{\rad}{rad}
 
 \DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Ass}{Ass}
 \DeclareMathOperator{\Eval}{Eval}
 \DeclareMathOperator{\Gal}{Gal}
 \DeclareMathOperator{\GL}{GL}
 \DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\MSpec}{MSpec}
 \DeclareMathOperator{\SL}{SL}
 \DeclareMathOperator{\Stab}{Stab}
 \DeclareMathOperator{\Spec}{Spec}
@@ -175,13 +167,15 @@
 \newcommand{\bfR}{\mathbf{R}}
 \newcommand{\bfZ}{\mathbf{Z}}
 
-
 \newcommand{\frakm}{\mathfrak{m}}
-\newcommand{\frakM}{\mathfrak{M}}
 \newcommand{\frakp}{\mathfrak{p}}
-\newcommand{\frakP}{\mathfrak{P}}
 \newcommand{\frakq}{\mathfrak{q}}
+\newcommand{\frakr}{\mathfrak{r}}
+
+\newcommand{\frakM}{\mathfrak{M}}
+\newcommand{\frakP}{\mathfrak{P}}
 \newcommand{\frakQ}{\mathfrak{Q}}
+\newcommand{\frakR}{\mathfrak{R}}
 
 \begin{document}
 \author{\href{mailto:\authoremail}{\documentauthor}}
