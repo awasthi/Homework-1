@@ -35,7 +35,7 @@
 %% Math
 \usepackage{amsthm}
 \usepackage{amssymb}
-\usepackage{centernot}
+% \usepackage{centernot}
 \usepackage{mathtools}
 % \usepackage{unicode-math}
 
@@ -124,8 +124,15 @@
 \newtheorem*{observations*}{**Observations**}
 
 %% Redefinitions & commands
-\newcommand{\nlhd}{\ensuremath{\centernot\lhd}}
-\newcommand{\nrhd}{\ensuremath{\centernot\rhd}}
+\newcommand{\nlhd}{%
+  \mathrel{{\ooalign{\hidewidth$\not\phantom{..}$\hidewidth\cr$\lhd$}}}}
+\newcommand{\nrhd}{%
+  \mathrel{{\ooalign{\hidewidth$\not\phantom{..}$\hidewidth\cr$\rhd$}}}}
+\newcommand{\nimplies}{%
+  \mathrel{{\ooalign{\hidewidth$\not\phantom{=}$\hidewidth\cr$\implies$}}}}
+\newcommand{\nimpliedby}{%
+  \mathrel{{\ooalign{\hidewidth$\not\phantom{=}$\hidewidth\cr$\impliedby$}}}}
+
 \newcommand{\nequiv}{\ensuremath{\not\equiv}}
 \newcommand{\nsubset}{\ensuremath{\not\subset}}
 \newcommand{\nsupset}{\ensuremath{\not\supset}}
@@ -137,8 +144,6 @@
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\lcm}{lcm}
-\DeclareMathOperator{\nil}{nil}
-\DeclareMathOperator{\rad}{rad}
 
 \DeclareMathOperator{\Aut}{Aut}
 \DeclareMathOperator{\Ass}{Ass}
@@ -147,6 +152,8 @@
 \DeclareMathOperator{\GL}{GL}
 \DeclareMathOperator{\Inn}{Inn}
 \DeclareMathOperator{\MSpec}{MSpec}
+\DeclareMathOperator{\Nil}{Nil}
+\DeclareMathOperator{\Rad}{Jac}
 \DeclareMathOperator{\SL}{SL}
 \DeclareMathOperator{\Stab}{Stab}
 \DeclareMathOperator{\Spec}{Spec}
@@ -177,18 +184,21 @@
 \newcommand{\frakQ}{\mathfrak{Q}}
 \newcommand{\frakR}{\mathfrak{R}}
 
+%% Units
+\usepackage[amssymb]{SIunits}
+
 \begin{document}
 \author{\href{mailto:\authoremail}{\documentauthor}}
 \title{\documenttitle}
 \date{\today}
 \maketitle
 
-\include{heinzer/groups}
-\include{heinzer/rings}
-\include{heinzer/fields}
+% \include{heinzer/groups}
+% \include{heinzer/rings}
+% \include{heinzer/fields}
 
-% \include{goins/MA553-JAN07}
-% \include{goins/MA553-AUG08}
+\include{goins/MA553-JAN07}
+\include{goins/MA553-AUG08}
 \include{goldberg/midterm-FALL15}
 \include{goldberg/final-FALL15}
 \include{goldberg/MA553-JAN00}
