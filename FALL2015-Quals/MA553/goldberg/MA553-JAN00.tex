@@ -22,6 +22,17 @@ plus the identity. No contradiction here. But we still have $P\cap Q=\{e\}$
 for any $Q\in\Syl_7(G)$. Therefore, I suspect that the only other
 (nonabelian) group that has a cyclic subgroup of order $11^3$ must be the
 semidirect product $Z_7\rtimes Z_{11^3}$.
+
+This is what \textkr{성준} had to say about the matter:
+
+Suppose $Q$ is a group of order $7$ and $P$ is a cyclic group of order
+$11^3$. If $\varphi\colon Q\to\Aut(P)$ is a homomorphism, then
+$\varphi(Q)\mid 7$ so $\varphi(Q)=1$ or $\varphi(Q)=7$. But if
+$\psi\in\Aut(P)$, then $\psi$ must send a generator $g$ of $P$ to another
+generator of $P$. Since there are only
+$\varphi(11^3)=11^3-11^2=1331-121=1220$ which is not divisible by $7$. Thus
+$\varphi$ can only be the trivial homomorphism and $Q\rtimes_\varphi P\cong
+Z_7\times Z_{11^3}$.
 \end{proof}
 
 \begin{problem}
@@ -39,7 +50,18 @@ conditions:
 \end{enumerate}
 \end{problem}
 \begin{proof}
-
+(i) $\implies$ (ii) Suppose that $ab=0$ implies $ba=0$. Let $c,d\in R$ such
+that $cd=1$. Then consider the product
+\[
+d(cd-1)c=0
+\]
+Since $ab=0$ implies $ba=0$ and multiplication is associative in $R$, we
+may rewrite the expression above as
+\[
+dc(cd-1)=0.
+\]
+Hence, we have $dccd=dc$.
+\\\\
 (ii) $\nimplies$ (ii)
 \end{proof}
 
