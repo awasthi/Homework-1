@@ -1,0 +1,215 @@
+\def\documentauthor{Carlos Salinas}
+\def\documenttitle{MA572 Homework \hwnum}
+\def\hwnum{1}
+\def\shorttitle{MA572 HW \hwnum}
+\def\coursename{MA572}
+\def\documentsubject{introduction to algebraic topology}
+\def\authoremail{salinac@purdue.edu}
+
+\documentclass[article,oneside,10pt]{memoir}
+\usepackage{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[
+    breaklinks,
+    bookmarks=true,
+    colorlinks=true,
+    pageanchor=false,
+    linkcolor=black,
+    anchorcolor=black,
+    citecolor=black,
+    filecolor=black,
+    menucolor=black,
+    runcolor=black,
+    urlcolor=black,
+    hyperindex=false,
+    hyperfootnotes=true,
+    pdftitle={\shorttitle},
+    pdfauthor={\documentauthor},
+    pdfkeywords={\documentsubject},
+    pdfsubject={\coursename}
+    ]{hyperref}
+
+% Use symbols instead of numbers
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+%% Math
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+%%PDFTeX specific
+\usepackage[mathcal]{euscript}
+\usepackage{mathrsfs}
+
+\usepackage[LAE,LFE,T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[farsi,french,german,spanish,dutch,russian,swedish,english]{babel}
+\babeltags{pa=farsi,
+           fr=french,
+           de=german,
+           es=spanish,
+           nl=dutch,
+           ru=russian,
+           sv=swedish,
+           en=english}
+\def\spanishoptions{mexico}
+
+\selectlanguage{english}
+
+\newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
+
+\usepackage{cmap}
+\usepackage{CJKutf8}
+\newcommand{\textha}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
+\newcommand{\textni}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
+\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
+
+%% Misc
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+
+\usepackage{microtype}
+\usepackage{multicol}
+\usepackage[inline]{enumitem}
+\usepackage{listings}
+\usepackage{mleftright}
+\mleftright
+
+%% Theorems and definitions
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{axiom}[theorem]{Axiom}
+
+\newtheorem*{corollary*}{Corollary}
+\newtheorem*{claim*}{Claim}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem*{theorem*}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Examples}
+\newtheorem{examples}[example]{Examples}
+% \newtheorem{exercise}{Exercise}[section]
+% \newtheorem{problem}[exercise]{Problem}
+
+\newcounter{problem}
+\newenvironment{problem}[1][]% environment name
+{% begin code
+  \stepcounter{problem}
+  \par\vspace{\baselineskip}\noindent
+  \ifx &#1&%
+  {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem}
+  \global\def\exercisename{Problem~\hwnum.\theproblem}%
+  \else
+  {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem~(#1)}
+  \global\def\exercisename{Problem~\hwnum.\theproblem(#1)}
+  \fi
+  \par\vspace{\baselineskip}%
+  \noindent\ignorespaces
+}%
+{% end code
+  \par\vspace{\baselineskip}%
+  \noindent\ignorespacesafterend
+}
+
+\newtheorem*{definition*}{Definition}
+\newtheorem*{example*}{Examples}
+\newtheorem*{examples*}{Examples}
+\newtheorem*{exercise*}{Exercise}
+\newtheorem*{problem*}{Problem}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{remarks}[remark]{Remarks}
+\newtheorem{observation}[remark]{Observation}
+\newtheorem{observations}[remark]{Observations}
+
+\newtheorem*{remark*}{**Remark**}
+\newtheorem*{remarks*}{**Remarks**}
+\newtheorem*{observation*}{**Observation**}
+\newtheorem*{observations*}{**Observations**}
+
+%% Commands and operators
+%% Redefinitions & commands
+\newcommand{\nsubset}{\ensuremath{\not\subset}}
+\newcommand{\nsupset}{\ensuremath{\not\supset}}
+\newcommand\minus{\ensuremath{\null\smallsetminus}}
+\renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
+
+%% Commands and operators
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Int}{int}
+\DeclareMathOperator{\Cl}{cl}
+
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bfC}{\mathbf{C}}
+\newcommand{\bfN}{\mathbf{N}}
+\newcommand{\bfQ}{\mathbf{Q}}
+\newcommand{\bfR}{\mathbf{R}}
+\newcommand{\bfZ}{\mathbf{Z}}
+
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calU}{\mathcal{U}}
+\newcommand{\calV}{\mathcal{U}}
+
+\newcommand{\scrL}{\mathscr{L}}
+\newcommand{\scrO}{\mathscr{O}}
+\newcommand{\scrS}{\mathscr{S}}
+
+%Categories
+\newcommand{\Grp}{Grp}
+\newcommand{\Ring}{Ring}
+\newcommand{\Mod}{Mod}
+\newcommand{\bfZMod}{\bfZ-Mod}
+\newcommand{\bbZMod}{\bbZ-Mod}
+\newcommand{\Top}{Top}
+\newcommand{\Haus}{Haus}
+
+\begin{document}
+\frontmatter
+\aliaspagestyle{title}{empty}
+\pagestyle{title}
+\author{\href{mailto:\authoremail}{\documentauthor}}
+\title{\documenttitle}
+\date{\today}
+\maketitle
+\cleartooddpage
+
+\makeoddhead{headings}
+        {\small{\MakeUppercase{\itshape\documentauthor}}}
+        {}
+        {\small{\MakeUppercase{\itshape\exercisename}}}
+\makeoddfoot{headings}{{\itshape\documenttitle}}
+                      {}
+                      {\thepage}
+\makeevenhead{headings}
+        {\small{\MakeUppercase{\itshape\documentauthor}}}
+        {}
+        {\small{\MakeUppercase{\itshape\exercisename}}}
+\makeevenfoot{headings}{{\itshape\documenttitle}}
+                      {}
+                      {\thepage}
+\makeheadrule{headings}{\textwidth}{.25pt}
+% \makerunningwidth{headings}{1.15\textwidth}
+\pagestyle{headings}
+
+\mainmatter
+\include{homeworks/ma572-hw-1}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
