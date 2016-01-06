@@ -1,7 +1,7 @@
 \def\documentauthor{Carlos Salinas}
-\def\documenttitle{MA544 Homework \hwnum}
+\def\documenttitle{MA 544: Homework \hwnum}
 \def\hwnum{1}
-\def\shorttitle{MA544 HW \hwnum}
+\def\shorttitle{MA 544 HW \hwnum}
 \def\coursename{MA544}
 \def\documentsubject{introduction to measure theory}
 \def\authoremail{salinac@purdue.edu}
@@ -177,26 +177,26 @@
 \date{\today}
 \maketitle
 \cleartooddpage
-
-\makeoddhead{headings}
+\makepagestyle{my-headings}
+\makeoddhead{my-headings}
         {\small{\MakeUppercase{\itshape\documentauthor}}}
         {}
         {\small{\MakeUppercase{\itshape\exercisename}}}
-\makeoddfoot{headings}{{\itshape\documenttitle}}
+\makeoddfoot{my-headings}{{\itshape\documenttitle}}
                       {}
                       {\thepage}
-\makeevenhead{headings}
+\makeevenhead{my-headings}
         {\small{\MakeUppercase{\itshape\documentauthor}}}
         {}
         {\small{\MakeUppercase{\itshape\exercisename}}}
-\makeevenfoot{headings}{{\itshape\documenttitle}}
+\makeevenfoot{my-headings}{{\itshape\documenttitle}}
                       {}
                       {\thepage}
-\makeheadrule{headings}{\textwidth}{.25pt}
+\makeheadrule{my-headings}{\textwidth}{.25pt}
+\pagestyle{my-headings}
 % \makerunningwidth{headings}{1.15\textwidth}
-\pagestyle{headings}
-
 \mainmatter
+
 \include{homeworks/ma544-hw-1}
 \end{document}
 

@@ -1,8 +1,8 @@
 \def\documentauthor{Carlos Salinas}
-\def\documenttitle{MA572 Homework \hwnum}
+\def\documenttitle{MA 572: Homework \hwnum}
 \def\hwnum{1}
-\def\shorttitle{MA572 HW \hwnum}
-\def\coursename{MA572}
+\def\shorttitle{MA 572 HW \hwnum}
+\def\coursename{MA 572}
 \def\documentsubject{introduction to algebraic topology}
 \def\authoremail{salinac@purdue.edu}
 
@@ -186,26 +186,26 @@
 \date{\today}
 \maketitle
 \cleartooddpage
-
-\makeoddhead{headings}
+\makepagestyle{my-headings}
+\makeoddhead{my-headings}
         {\small{\MakeUppercase{\itshape\documentauthor}}}
         {}
         {\small{\MakeUppercase{\itshape\exercisename}}}
-\makeoddfoot{headings}{{\itshape\documenttitle}}
+\makeoddfoot{my-headings}{{\itshape\documenttitle}}
                       {}
                       {\thepage}
-\makeevenhead{headings}
+\makeevenhead{my-headings}
         {\small{\MakeUppercase{\itshape\documentauthor}}}
         {}
         {\small{\MakeUppercase{\itshape\exercisename}}}
-\makeevenfoot{headings}{{\itshape\documenttitle}}
+\makeevenfoot{my-headings}{{\itshape\documenttitle}}
                       {}
                       {\thepage}
-\makeheadrule{headings}{\textwidth}{.25pt}
+\makeheadrule{my-headings}{\textwidth}{.25pt}
+\pagestyle{my-headings}
 % \makerunningwidth{headings}{1.15\textwidth}
-\pagestyle{headings}
-
 \mainmatter
+
 \include{homeworks/ma572-hw-1}
 \end{document}
 
