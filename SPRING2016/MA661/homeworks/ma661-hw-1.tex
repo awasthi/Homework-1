@@ -1,32 +1,101 @@
 \begin{problem}[Lee, Prob.\,3-1]
-Suppose $(\tilde M,\tilde g)$ is a riemannian $m$-manifold, $M\subset\tilde
-M$ is an embedded $n$-dimensional submanifold, and $g$ is the induced
-riemannian metric on $M$. For any point $p$ show that there is a
-neighborhood $\tilde U$ of $p$ in $\tilde M$
+Suppose $(\widetilde M,\tilde g)$ is a Riemannian $m$-manifold,
+$M\subset\widetilde M$ is an embedded $n$-dimensional submanifold, and $g$
+is the induced Riemannian metric on $M$. For any point $p$ show that there
+is a neighborhood $\widetilde U$ of $p$ in $\widetilde M$ and a smooth
+orthonormal frame $(E_1,...,E_m)$ on $\widetilde U$ such that
+$(E_1,...,E_m)$ form an orthonormal basis for $T_qM$ at each
+$q\in\widetilde{U}\cap M$. Any such frame is called an adapted orthonormal
+frame. [Hint: Apply the Gram--Schmidt algorithm to the coordinate frame
+$\left\{\partial_i\right\}$ in slice coordinates.]
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
 
 \begin{problem}[Lee, Prob.\,3-2]
+Suppose $g$ is a pseudo-Riemannian metric on an $n$-manifold $M$. For any
+$p\in M$, show there is a smooth local frame $(E_1,...,E_n)$ defined in a
+neighborhood of $p$ such that $g$ can be written locally in the form
+(3.4). Conclude that the index of $g$ is constant on each component of
+$M$.
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
 
 \begin{problem}[Lee, Prob.\,3-3]
+Let $(M,g)$ be an oriented Riemannian manifold with volume element
+$dV$. The divergence operator $\Div\colon\calT(M)\to C^\infty(M)$ is
+defined by
+\[
+d(i_X\,dV)=(\Div X)\,dV,
+\]
+where $i_x$ denotes interior multiplication by $X$: for any $k$-form
+$\omega$, $i_x\omega$ is the $(k-1)$-form defined by
+\[
+i_X\omega(V_1,...,V_{k_1})=\omega(X,V_1,...,V_{k-1}).
+\]
+\begin{enumerate}[label=(\alph*)]
+\item Suppose $M$ is a compact, oriented Riemannian manifold with
+  boundary. Prove the following divergence theorem for $X\in\calT(M)$:
+\[
+\int_M\Div X\,dV=\int_{\partial M}\langle X,N \rangle\,d\widetilde V.
+\]
+where $N$ is the outward unit normal to $\partial M$ and $d\widetilde V$ is
+the Riemannian volume element of the induced metric on $\partial M$.
+\item Show that the divergence operator satisfies the following product
+  rule for a smooth function $u\in C^\infty(M)$:
+\[
+\Div(uX)=u\Div X+\langle\Grad u,X\rangle,
+\]
+and deduce the following ``integration by parts'' formula:
+\[
+\int_M\langle\Grad u,X\rangle\,dV=-\int_M u\Div X\,dV+\int{\partial M}
+u\langle X,N\rangle\,d\widetilde{V}.
+\]
+\end{enumerate}
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
 
 \begin{problem}[Lee, Prob.\,3-4]
+Let $(M,g)$ be a compact, connected, oriented Riemannian manifold with
+boundary. For $u\in C^\infty M$, the Laplacian of $u$, denoted $\Lap u$,
+is defined to be the function $\Lap u\coloneqq \Div(\Grad u)$. A function
+$u\in C^\infty(m)$ is said to be harmonic if $\Lap u=0$.
+\begin{enumerate}[label=(\alph*)]
+\item Prove Green's identities:
+\begin{align*}
+\int_M u\Lap v\,dV+\int_M\langle\Grad u,\Grad v\rangle
+&=\int_{\partial M}uNv\,d\widetilde V\\
+\int_M\left(u\Lap v-v\Lap u\right)\,dV
+&=\int_{\partial M}\left(uNv-vNu\right)\,d\widetilde V
+\end{align*}
+\item Show if $\partial M\neq\emptyset$, and $u$, $v$ are harmonic
+  functions on $M$ whose restriction to $\partial M$ agree, then $u\equiv
+  v$.
+\item If $\partial M=\emptyset$ show that the only harmonic functions on
+  $M$ are the constants.
+\end{enumerate}
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
 
 \begin{problem}[Lee, Prob.\,3-5]
+Let $M$ be a compact oriented Riemannian manifold (without boundary). A
+real number $\lambda$ is called an eigenvalue of the Laplacian if
+there exists a smooth function $u$ on $M$, not identically zero, such
+that $\Lap u=\lambda u$. In this case, $u$ is called an eigenfunction
+corresponding to $\lambda$.
+\begin{enumerate}[label=(\alph*)]
+\item Prove that $0$ is an eigenvalue of $\Lap$, and that all other
+  eigenvalues are strictly negative.
+\item If $u$ and $v$ are eigenfunctions corresponding to distinct
+  eigenvalues, show that $\int_M uv\,dV=0$.
+\end{enumerate}
 \end{problem}
 \begin{proof}
 \end{proof}

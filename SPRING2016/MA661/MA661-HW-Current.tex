@@ -33,6 +33,7 @@
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
 %% Math
+\usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{mathtools}
@@ -46,14 +47,12 @@
 
 \usepackage[LAE,LFE,T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[farsi,french,german,spanish,dutch,russian,swedish,english]{babel}
+\usepackage[farsi,french,german,spanish,russian,english]{babel}
 \babeltags{pa=farsi,
            fr=french,
            de=german,
            es=spanish,
-           nl=dutch,
            ru=russian,
-           sv=swedish,
            en=english}
 \def\spanishoptions{mexico}
 
@@ -63,8 +62,8 @@
 
 \usepackage{cmap}
 \usepackage{CJKutf8}
-\newcommand{\textha}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
-\newcommand{\textni}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
+\newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
+\newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
 %% Misc
@@ -150,6 +149,12 @@
 \DeclareMathOperator{\Int}{int}
 \DeclareMathOperator{\Cl}{cl}
 
+%% Differential operators
+\DeclareMathOperator{\Curl}{curl}
+\DeclareMathOperator{\Div}{div}
+\DeclareMathOperator{\Grad}{grad}
+\DeclareMathOperator{\Lap}{\Delta}
+
 \newcommand{\bbC}{\mathbb{C}}
 \newcommand{\bbN}{\mathbb{N}}
 \newcommand{\bbQ}{\mathbb{Q}}
@@ -165,7 +170,8 @@
 \newcommand{\calB}{\mathcal{B}}
 \newcommand{\calC}{\mathcal{C}}
 \newcommand{\calU}{\mathcal{U}}
-\newcommand{\calV}{\mathcal{U}}
+\newcommand{\calV}{\mathcal{V}}
+\newcommand{\calT}{\mathcal{T}}
 
 \newcommand{\scrL}{\mathscr{L}}
 \newcommand{\scrO}{\mathscr{O}}
