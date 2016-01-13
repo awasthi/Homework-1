@@ -26,10 +26,10 @@ $M$.
 
 \begin{problem}[Lee, Prob.\,3-3]
 Let $(M,g)$ be an oriented Riemannian manifold with volume element
-$dV$. The divergence operator $\Div\colon\calT(M)\to C^\infty(M)$ is
+$\diff V$. The divergence operator $\Div\colon\calT(M)\to C^\infty(M)$ is
 defined by
 \[
-d(i_X\,dV)=(\Div X)\,dV,
+d(i_X\,\diff V)=(\Div X)\,\diff V,
 \]
 where $i_x$ denotes interior multiplication by $X$: for any $k$-form
 $\omega$, $i_x\omega$ is the $(k-1)$-form defined by
@@ -40,9 +40,9 @@ i_X\omega(V_1,...,V_{k_1})=\omega(X,V_1,...,V_{k-1}).
 \item Suppose $M$ is a compact, oriented Riemannian manifold with
   boundary. Prove the following divergence theorem for $X\in\calT(M)$:
 \[
-\int_M\Div X\,dV=\int_{\partial M}\langle X,N \rangle\,d\widetilde V.
+\int_M\Div X\,\diff V=\int_{\partial M}\langle X,N \rangle\,\diff\widetilde V.
 \]
-where $N$ is the outward unit normal to $\partial M$ and $d\widetilde V$ is
+where $N$ is the outward unit normal to $\partial M$ and $\diff\widetilde V$ is
 the Riemannian volume element of the induced metric on $\partial M$.
 \item Show that the divergence operator satisfies the following product
   rule for a smooth function $u\in C^\infty(M)$:
@@ -51,7 +51,7 @@ the Riemannian volume element of the induced metric on $\partial M$.
 \]
 and deduce the following ``integration by parts'' formula:
 \[
-\int_M\langle\Grad u,X\rangle\,dV=-\int_M u\Div X\,dV+\int{\partial M}
+\int_M\langle\Grad u,X\rangle\,\diff V=-\int_M u\Div X\,\diff V+\int{\partial M}
 u\langle X,N\rangle\,d\widetilde{V}.
 \]
 \end{enumerate}
@@ -68,10 +68,10 @@ $u\in C^\infty(m)$ is said to be harmonic if $\Lap u=0$.
 \begin{enumerate}[label=(\alph*)]
 \item Prove Green's identities:
 \begin{align*}
-\int_M u\Lap v\,dV+\int_M\langle\Grad u,\Grad v\rangle
-&=\int_{\partial M}uNv\,d\widetilde V\\
-\int_M\left(u\Lap v-v\Lap u\right)\,dV
-&=\int_{\partial M}\left(uNv-vNu\right)\,d\widetilde V
+\int_M u\Lap v\,\diff V+\int_M\langle\Grad u,\Grad v\rangle
+&=\int_{\partial M}uNv\,\diff\widetilde V\\
+\int_M\left(u\Lap v-v\Lap u\right)\,\diff V
+&=\int_{\partial M}\left(uNv-vNu\right)\,\diff\widetilde V
 \end{align*}
 \item Show if $\partial M\neq\emptyset$, and $u$, $v$ are harmonic
   functions on $M$ whose restriction to $\partial M$ agree, then $u\equiv
@@ -94,7 +94,7 @@ corresponding to $\lambda$.
 \item Prove that $0$ is an eigenvalue of $\Lap$, and that all other
   eigenvalues are strictly negative.
 \item If $u$ and $v$ are eigenfunctions corresponding to distinct
-  eigenvalues, show that $\int_M uv\,dV=0$.
+  eigenvalues, show that $\int_M uv\,\diff V=0$.
 \end{enumerate}
 \end{problem}
 \begin{proof}

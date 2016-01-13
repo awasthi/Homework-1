@@ -1,8 +1,7 @@
 \def\documentauthor{Carlos Salinas}
-\def\documenttitle{MA 661: Homework \hwnum}
-\def\hwnum{1}
-\def\shorttitle{MA 661 HW \hwnum}
-\def\coursename{MA661}
+\def\documenttitle{MA 562: Notes}
+\def\shorttitle{MA 562 Notes}
+\def\coursename{MA562}
 \def\documentsubject{differential geometry}
 \def\authoremail{salinac@purdue.edu}
 
@@ -46,12 +45,14 @@
 
 \usepackage[LAE,LFE,T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[farsi,french,german,spanish,russian,english]{babel}
+\usepackage[farsi,french,german,spanish,dutch,russian,swedish,english]{babel}
 \babeltags{pa=farsi,
            fr=french,
            de=german,
            es=spanish,
+           nl=dutch,
            ru=russian,
+           sv=swedish,
            en=english}
 \def\spanishoptions{mexico}
 
@@ -61,8 +62,8 @@
 
 \usepackage{cmap}
 \usepackage{CJKutf8}
-\newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
-\newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
+\newcommand{\textha}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
+\newcommand{\textni}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
 %% Misc
@@ -148,18 +149,6 @@
 \DeclareMathOperator{\Int}{int}
 \DeclareMathOperator{\Cl}{cl}
 
-%% Linear algebra
-\DeclareMathOperator{\coker}{coker}
-\DeclareMathOperator{\Alt}{Alt}
-
-%% Differential operators
-\DeclareMathOperator{\Curl}{curl}
-\DeclareMathOperator{\Div}{div}
-\DeclareMathOperator{\Grad}{grad}
-\DeclareMathOperator{\Lap}{\Delta}
-\DeclareMathOperator{\diff}{d\!}
-
-%% Misc
 \newcommand{\bbC}{\mathbb{C}}
 \newcommand{\bbCP}{\mathbb{CP}}
 \newcommand{\bbH}{\mathbb{H}}
@@ -198,28 +187,10 @@
 \title{\documenttitle}
 \date{\today}
 \maketitle
-\cleartooddpage
-\makepagestyle{my-headings}
-\makeoddhead{my-headings}
-        {\small{\MakeUppercase{\itshape\documentauthor}}}
-        {}
-        {\small{\MakeUppercase{\itshape\exercisename}}}
-\makeoddfoot{my-headings}{{\itshape\documenttitle}}
-                      {}
-                      {\thepage}
-\makeevenhead{my-headings}
-        {\small{\MakeUppercase{\itshape\documentauthor}}}
-        {}
-        {\small{\MakeUppercase{\itshape\exercisename}}}
-\makeevenfoot{my-headings}{{\itshape\documenttitle}}
-                      {}
-                      {\thepage}
-\makeheadrule{my-headings}{\textwidth}{.25pt}
-\pagestyle{my-headings}
-% \makerunningwidth{headings}{1.15\textwidth}
-\mainmatter
+\pagestyle{ruled}
 
-\include{homeworks/ma661-hw-1}
+\mainmatter
+\include{notes/preliminaries}
 \end{document}
 
 %%% Local Variables:
