@@ -94,30 +94,10 @@
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
-\newtheorem{example}{Examples}
+\newtheorem{example}{Example}
 \newtheorem{examples}[example]{Examples}
-% \newtheorem{exercise}{Exercise}[section]
-% \newtheorem{problem}[exercise]{Problem}
-
-\newcounter{problem}
-\newenvironment{problem}[1][]% environment name
-{% begin code
-  \stepcounter{problem}
-  \par\vspace{\baselineskip}\noindent
-  \ifx &#1&%
-  {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem}
-  \global\def\exercisename{Problem~\hwnum.\theproblem}%
-  \else
-  {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem~(#1)}
-  \global\def\exercisename{Problem~\hwnum.\theproblem(#1)}
-  \fi
-  \par\vspace{\baselineskip}%
-  \noindent\ignorespaces
-}%
-{% end code
-  \par\vspace{\baselineskip}%
-  \noindent\ignorespacesafterend
-}
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem{problem}[exercise]{Problem}
 
 \newtheorem*{definition*}{Definition}
 \newtheorem*{example*}{Examples}
@@ -149,22 +129,34 @@
 \DeclareMathOperator{\Int}{int}
 \DeclareMathOperator{\Cl}{cl}
 
+%% Linear algebra
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\Alt}{Alt}
+
+%% Differential operators
+\DeclareMathOperator{\Curl}{curl}
+\DeclareMathOperator{\Div}{div}
+\DeclareMathOperator{\Grad}{grad}
+\DeclareMathOperator{\Lap}{\Delta}
+\DeclareMathOperator{\diff}{d\!}
+
+%% Misc
 \newcommand{\bbC}{\mathbb{C}}
-\newcommand{\bbCP}{\mathbb{CP}}
+\newcommand{\bbCP}{\mathbb{C}P}
 \newcommand{\bbH}{\mathbb{H}}
 \newcommand{\bbN}{\mathbb{N}}
 \newcommand{\bbQ}{\mathbb{Q}}
 \newcommand{\bbR}{\mathbb{R}}
-\newcommand{\bbRP}{\mathbb{RP}}
+\newcommand{\bbRP}{\mathbb{R}P}
 \newcommand{\bbZ}{\mathbb{Z}}
 
 \newcommand{\bfC}{\mathbf{C}}
-\newcommand{\bfCP}{\mathbf{CP}}
+\newcommand{\bfCP}{\mathbf{C}P}
 \newcommand{\bfH}{\mathbf{H}}
 \newcommand{\bfN}{\mathbf{N}}
 \newcommand{\bfQ}{\mathbf{Q}}
 \newcommand{\bfR}{\mathbf{R}}
-\newcommand{\bfRP}{\mathbf{RP}}
+\newcommand{\bfRP}{\mathbf{R}P}
 \newcommand{\bfZ}{\mathbf{Z}}
 
 \newcommand{\calA}{\mathcal{A}}

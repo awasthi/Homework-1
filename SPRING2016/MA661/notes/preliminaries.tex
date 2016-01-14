@@ -1,6 +1,7 @@
 \chapter{Preliminaries}
 These set of notes are based off of Boothby's \emph{Differential Geometry}
 book, chapters 1 through 6.
+\\\\
 \begin{definition}
 A \emph{topological space} $M$ is a pair $(X,\calT)$, where $X$ is a set,
 $\calT$ is a collection of subsets of $X$ such that
@@ -91,7 +92,7 @@ locally compact, and normal).
 \end{enumerate}
 \end{definition}
 
-\section[Unit Quaternions and Rotations in R3]{Unit Quaternions and Rotations in $\bfR^3$}
+\begin{example}[Unit Quaternions and Rotations in $\bfR^3$]
 \[
 f(v)=z\wedge z^{-1}\qquad
 v=(v_1,v_2,v_3)=v_1i+v_2j+v_3k
@@ -109,12 +110,14 @@ Topologically, unit quaternions $\simeq
 S^3=\left\{\,x\in\bfR^4\;\middle|\;\|x\|=1\right\}$ and rotations $\simeq
 S^3/{\sim}$, $z\sim -z$
 \[
-\bfRP^3\simeq\bfR^4\minus\{0\}/\left\{\,x\sim\lambda x\,\right\}.
+\bfRP^3\approx\left(\bfR^4\minus\{0\}\right)/x\sim\lambda x.
 \]
 for all $\bfR^{n+1}\minus\{0\}$ can always find $\lambda$ such that
-$\lambdax$ has norm $1$. There are precisely $2$ such $\lambda$ which
+$\lambda x$ has norm $1$. There are precisely $2$ such $\lambda$ which
 differ by a sign. Therefore, $\bfRP^n$ can be constructed by identifying
 antipodal points of $S^n$ in $\bfR^{n+1}$.
+\end{example}
+
 
 %%% Local Variables:
 %%% mode: latex
