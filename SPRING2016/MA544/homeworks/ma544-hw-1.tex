@@ -3,6 +3,18 @@ Let $f(x)=x\sin(1/x)$ for $0<x\leq 1$ and $f(0)=0$. Show that $f$ is
 bounded and continuous on $[0,1]$, but that $V[f;0,1]=+\infty$.
 \end{problem}
 \begin{proof}
+It is straightforward to see that $f$ is bounded and continuous on
+$[0,1]$. To see that $f$ is continuous we will appeal to an
+$\varepsilon$-$\delta$ argument. Let $\varepsilon>0$, then for $\delta>$
+for any $x\in[0,1]$, any $y\in(\delta-x,x+\delta)$ we have
+\begin{align*}
+\left|f(x)-f(y)\right|&\leq|x\sin(1/x)-y\sin(1/y)|\\
+&=\left|(x-y)\left(\sin(1/x)-\sin(1/y)\right)\right|\\
+&=|x-y|\left|\sin(1/x)-\sin(1/y)\right|\\
+&\leq\delta\cdot|\sin(1/x)-\sin(1/y)\right|\\
+\intertext{now recall the Taylor expansion of $\sin$ about $0$,
+  $\sin(x)=\sum_{k=0}^\infty\frac{(-1)^k}{(2k+1)!}x^{2k+1}$, then}
+\end{align*}
 \end{proof}
 \newpage
 
