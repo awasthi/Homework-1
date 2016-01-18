@@ -3,6 +3,45 @@ Let $f(x)=x\sin(1/x)$ for $0<x\leq 1$ and $f(0)=0$. Show that $f$ is
 bounded and continuous on $[0,1]$, but that $V[f;0,1]=+\infty$.
 \end{problem}
 \begin{proof}
+Moreover, $f$ is continuous on $(0,1]$ since it is the product of
+continuous functions on $(0,1]$. To see that $f$ is continuous at $0$ is
+suffices to show that $f(0+)=f(0)=0$. To that end, let
+$\left\{x_n\right\}\subset[0,1]$ be a sequence such that $x_n\to 0$ and
+consider $\lim_{n\to\infty} f\left(x_n\right)$. Since $x_n\to 0$, for every
+$\varepsilon>0$, there exists a natural number $N$ such that $n\geq N$
+implies $|0-x_n|<\varepsilon$. Thus, for $n\geq N$ we have
+\[
+\left|0-f(x_n)\right|=\left|f(x_n)\right|=
+\left|x_n\right|\left|\sin(1/x_n)\right|\leq
+\varepsilon\left|\sin(1/\varepsilon)\right|\leq
+\varepsilon.
+\]
+Thus, $f(x_n)\to 0$ and we see that $f(0+)=0$. Hence, $f$ is continuous on
+$[0,1]$.
+
+
+It is easy to see that $f$ is bounded since $|\sin(1/x)|\leq 1$ for all
+$x\in(0,1]$. More explicitly, we have that
+\[
+|f(x)|\leq |x\sin(1/x)|=|x|\cdot|\sin(1/x)|\leq 1\cdot 1.
+\]
+Thus, $|f(x)|\leq 1$ and we see that $f$ is bounded.
+
+Moreover, $f$ is continuous on $(0,1]$ since it is the product of
+continuous functions on $(0,1]$. To see that $f$ is continuous at $0$, it
+suffices to show that $f(0+)=0$. To that end, we shall use the following
+limiting argument: Let $\varepsilon>0$ and consider the limit (from the
+right) of $f(\varepsilon)$ as $\varepsilon\to 0$. This is
+\[
+\lim_{\varepsilon\to 0}f(\varepsilon)
+\lim_{\varepsilon\to 0}\varepsilon\sin(1/\varepsilon)\leq
+\lim_{\varepsilon\to 0}\left|\varepsilon\right|\left|\sin(1/\varepsilon)\right|
+\leq\lim_{\varepsilon\to 0}\left|\varepsilon\right|\cdot 1=0.
+\]
+Thus, $f(0+)=0$ and we see that $f$ is continuous on $[0,1]$.
+
+Last but not least, we show that $f$ is BV. Define the family of partitions
+$\left\{\Gamma_n\right\}_{n=1}^\infty$ by $x_i\coloneqq$
 \end{proof}
 \newpage
 
@@ -22,6 +61,26 @@ Recall the statement of theorem (2.1):
   $x\in[a,b]$.
 \end{enumerate}
 \end{theorem*}
+\bigskip
+
+(a) We shall proceed by contradiction. Suppose that $f$ is not bounded,
+i.e., for every positive real number $M>0$, there exists $x\in[a,b]$ such
+that $|f(x)|>M$. In particular, if $V$ is the variation of $f$, then
+$|f(x_0)|>V+(f(a)+f(b))/2$ for some $x_0\in[a,b]$. Then, putting
+$\Gamma=\left\{a,x_0,b\right\}\subset[a,b]$, we have
+\begin{align*}
+S_\Gamma&=\left|f(b)-f(x_0)\right|+\left|f(x_0)-f(a)\right|\\
+&=\left|f(x_0)-f(b)|+|f(x_0)-f(a)\right|\\
+&\geq\left|2f(x_0)-f(a)-f(b)\right|\\
+&=\left|2\left(V+(f(a)+f(b))/2\right)-f(a)-f(b)\right|\\
+&=\left|2V+f(a)+f(b)-f(a)-f(b)\right|\\
+&=2V\\
+&>V.
+\end{align*}
+This is a contradiction since $V$ is the supremum over all such sums.
+\\\\
+(b) Let $f$ and $g$ be BV on $[a,b]$ and $c$ a real number. Then, for every
+partition $\Gamma$ of $[a,b]$, we have $V[f;a,b]\geq S_\Gamma[f;a,b]$
 \end{proof}
 \newpage
 
