@@ -1,9 +1,9 @@
 \def\documentauthor{Carlos Salinas}
-\def\documenttitle{MA 661: Homework \hwnum}
+\def\documenttitle{MA 598 PG: Homework \hwnum}
 \def\hwnum{1}
-\def\shorttitle{MA 661 HW \hwnum}
-\def\coursename{MA661}
-\def\documentsubject{differential geometry}
+\def\shorttitle{MA 598 PG HW \hwnum}
+\def\coursename{MA598-PG}
+\def\documentsubject{profinite groups}
 \def\authoremail{salinac@purdue.edu}
 
 \documentclass[article,oneside,10pt]{memoir}
@@ -46,12 +46,14 @@
 
 \usepackage[LAE,LFE,T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[farsi,french,german,spanish,russian,english]{babel}
+\usepackage[farsi,french,german,spanish,dutch,russian,swedish,english]{babel}
 \babeltags{pa=farsi,
            fr=french,
            de=german,
            es=spanish,
+           nl=dutch,
            ru=russian,
+           sv=swedish,
            en=english}
 \def\spanishoptions{mexico}
 
@@ -61,8 +63,8 @@
 
 \usepackage{cmap}
 \usepackage{CJKutf8}
-\newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
-\newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
+\newcommand{\textha}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
+\newcommand{\textni}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
 %% Misc
@@ -148,15 +150,7 @@
 \DeclareMathOperator{\Int}{int}
 \DeclareMathOperator{\Cl}{cl}
 
-%% Linear algebra
-\DeclareMathOperator{\coker}{coker}
-\DeclareMathOperator{\Alt}{Alt}
-
-%% Differential operators
-\DeclareMathOperator{\Curl}{curl}
-\DeclareMathOperator{\Div}{div}
-\DeclareMathOperator{\Grad}{grad}
-\DeclareMathOperator{\Lap}{\Delta}
+%% Calculus operators
 \newcommand{\diff}{\;\mathrm{d}}
 
 %% Misc operators
@@ -169,34 +163,31 @@
 
 %% Symbols
 \newcommand{\bbC}{\mathbb{C}}
-\newcommand{\bbCP}{\mathbb{C}P}
-\newcommand{\bbH}{\mathbb{H}}
 \newcommand{\bbN}{\mathbb{N}}
 \newcommand{\bbQ}{\mathbb{Q}}
 \newcommand{\bbR}{\mathbb{R}}
-\newcommand{\bbRP}{\mathbb{R}P}
 \newcommand{\bbZ}{\mathbb{Z}}
 
 \newcommand{\bfC}{\mathbf{C}}
-\newcommand{\bfCP}{\mathbf{C}P}
-\newcommand{\bfH}{\mathbf{H}}
 \newcommand{\bfN}{\mathbf{N}}
 \newcommand{\bfQ}{\mathbf{Q}}
 \newcommand{\bfR}{\mathbf{R}}
-\newcommand{\bfRP}{\mathbf{R}P}
 \newcommand{\bfZ}{\mathbf{Z}}
 
 \newcommand{\calA}{\mathcal{A}}
 \newcommand{\calB}{\mathcal{B}}
 \newcommand{\calC}{\mathcal{C}}
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\calO}{\mathcal{O}}
 \newcommand{\calS}{\mathcal{S}}
-\newcommand{\calT}{\mathcal{T}}
-\newcommand{\calU}{\mathcal{U}}
-\newcommand{\calV}{\mathcal{V}}
+\newcommand{\calU}{\mathcal{V}}
+\newcommand{\calV}{\mathcal{U}}
 
+\newcommand{\scrF}{\mathscr{F}}
 \newcommand{\scrL}{\mathscr{L}}
 \newcommand{\scrO}{\mathscr{O}}
 \newcommand{\scrS}{\mathscr{S}}
+\newcommand{\scrT}{\mathscr{T}}
 
 \begin{document}
 \frontmatter
@@ -227,7 +218,7 @@
 % \makerunningwidth{headings}{1.15\textwidth}
 \mainmatter
 
-\include{homeworks/ma661-hw-1}
+\include{homeworks/ma598-pg-hw-1}
 \end{document}
 
 %%% Local Variables:
