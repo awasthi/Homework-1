@@ -153,6 +153,15 @@
 %% Calculus operators
 \newcommand{\diff}{\;\mathrm{d}}
 
+%% Misc operators
+\newcommand\restrict[2]{{
+  \left.\kern-\nulldelimiterspace
+  #1
+  % \vphantom{\big|}
+  \,\right|\,{#2}
+  }}
+
+%% Symbols
 \newcommand{\bbC}{\mathbb{C}}
 \newcommand{\bbN}{\mathbb{N}}
 \newcommand{\bbQ}{\mathbb{Q}}

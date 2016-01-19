@@ -1,0 +1,26 @@
+\documentclass[crop,tikz,10pt]{standalone}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{microtype}
+\usepackage{unicode-math}
+
+\setmainfont[Ligatures=TeX]{Latin Modern Roman}
+\setsansfont[Ligatures=TeX]{Latin Modern Sans}
+\setmonofont{Latin Modern Mono}
+\setmathfont{Latin Modern Math}
+
+\usepackage{tikz}
+\usetikzlibrary{cd}
+
+\begin{document}
+  \begin{tikzcd}[column sep= 2em, row sep= 3em]
+    U\arrow[d,two heads,"q"]\arrow[r,hook,"\iota"]&X\arrow[d,two heads,"p"]\\
+    U/A\arrow[r,"\iota^*"]&X/A,
+  \end{tikzcd}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

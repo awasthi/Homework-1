@@ -159,7 +159,15 @@
 \DeclareMathOperator{\Lap}{\Delta}
 \newcommand{\diff}{\;\mathrm{d}}
 
-%% Misc
+%% Misc operators
+\newcommand\restrict[2]{{
+  \left.\kern-\nulldelimiterspace
+  #1
+  % \vphantom{\big|}
+  \,\right|\,{#2}
+  }}
+
+%% Symbols
 \newcommand{\bbC}{\mathbb{C}}
 \newcommand{\bbCP}{\mathbb{C}P}
 \newcommand{\bbH}{\mathbb{H}}
