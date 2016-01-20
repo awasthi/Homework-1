@@ -21,7 +21,7 @@ $[0,1]$.
 
 
 It is easy to see that $f$ is bounded since $|\sin(1/x)|\leq 1$ for all
-$x\in(0,1]$. More explicitly, we have that
+$x\in(0,1]$. More explicitly, we have
 \[
 |f(x)|\leq |x\sin(1/x)|=|x|\cdot|\sin(1/x)|\leq 1\cdot 1.
 \]
@@ -81,11 +81,80 @@ This is a contradiction since $V$ is the supremum over all such sums.
 \\\\
 (b) We shall prove these in the order in which they are listed above.
 \begin{enumerate}[label=(\roman*)]
-\item The constant map $g(x)\coloneqq c$ for some real number $c$ is of BV
-  on $[a,b]$. Therefore, by (iii) $gf=cf$ is of BV.
-\item
-\item
-\item
+\item The constant map $g(x)\coloneqq c$ for some real number $c$ is of
+  BV on $[a,b]$ and this is easy to see: take any two partitions
+    $\Gamma=\left\{x_0,...,x_m\right\}$, and
+    $\Gamma'=\left\{y_0,...,y_n\right\}$ of $[a,b]$,  then
+    \[
+      S_\Gamma
+      =\sum_{i=0}^m\left|g(x_i)-g(x_{i-1})\right|
+      =\sum_{i=0}^m\left|ct-c\right|
+      =0
+      =\sum_{i=0}^m\left|c-c\right|
+      =\sum_{i=0}^n\left|g(y_i)-g(y_{i-1})\right|
+      =S_{\Gamma'}.
+    \]
+    It takes just a few more steps in logic to see that
+    $V[g;a,b]=0$. Therefore, by (iii) $gf=cf$ is of BV.
+\item This result follows quite effortlessly from Jordan's theorem, so we
+  shall not trouble ourselves with picking partitions. By Jordan's theorem,
+  there exist bounded increasing functions $f_1,f_2$, and $g_1,g_2$ such
+  that $f=f_1-f_2$ and $g=g_1-g_2$. Now, since since $f_1,f_2,g_1,g_2$ are
+  bounded and increasing, the sums $h_1=f_1+g_1$ and $h_2=f_2+g_2$ are
+  bounded and increasing. Thus,
+  \[
+    f+g=f_1-f_2+g_1-g_2=(f_1+g_1)-(f_2+g_2)=h_1-h_2,
+  \]
+  so by Jordan's theorem $f+g$ is BV on $[a,b]$.
+\item For this result, Jordan's theorem is not very helpful so we rely on
+  the definition of BV. First, note that by the triangle inequality, for
+  any $x<y$ in $[a,b]$, we have
+  \begin{align}
+    \label{eq:1}
+    |f(x)g(x)-f(y)g(y)|&=|(f(x)g(x)-f(x)g(y))+(f(x)g(y)-f(y)g(y))|\nonumber\\
+                       &\leq|f(x)||g(x)-g(y)|+|g(y)||f(x)-f(y)|\nonumber\\
+                       &\leq M|g(x)-g(y)|+N|f(x)-f(y)|,
+  \end{align}
+  by part (a), where $|f|\leq M$ and $|g|\leq M$ for all $x\in[a,b]$. By
+  (\ref{eq:1}), it follows that for any partition $\Gamma$ of $[a,b]$, we have
+  \[
+    S_\Gamma[fg;a,b]\leq
+    MS_\Gamma[g;a,b]+NS_\Gamma[f;a,b].
+  \]
+  Thus, passing to the supremum, we see that
+  \[
+    V[fg;a,b]\leq MV[g;a,b]+NV[f;a,b]<+\infty,
+  \]
+  so $fg$ is BV on $[a,b]$.
+\item Suppose $|g(x)|>\varepsilon$ for some $\varepsilon>0$ for all
+  $x\in[a,b]$. Then, by the triangle inequality, the following estimate
+  holds
+  \begin{align}
+    \label{eq:2}
+    \left|\frac{f(x)}{g(x)}-\frac{f(y)}{g(y)}\right|
+    &\leq\left|\frac{g(y)f(x)-g(x)f(y)}{g(x)g(y)}\right|\nonumber\\
+    &=\frac{1}{|g(x)g(y)|}\left|g(y)f(x)-g(x)f(y)\right|\nonumber\\
+    &<\frac{1}{\varepsilon^2}\left|g(y)f(x)-g(x)f(y)\right|\nonumber\\
+    &<\frac{1}{\varepsilon^2}\left|g(y)f(x)-g(y)f(y)
+                                  +g(y)f(y)-g(x)f(y)\right|\nonumber\\
+    &=\frac{1}{\varepsilon^2}\left|(g(y)f(x)-g(y)f(y))
+                                  -(g(x)f(y)-g(y)f(y))\right|\nonumber\\
+    &\leq\frac{1}{\varepsilon^2}\left(|g(y)|\left|f(x)-f(y)\right|
+                                +|f(y)|\left|g(x)-g(y)\right|\right)\nonumber\\
+    &\leq\frac{1}{\varepsilon^2}\left(|g(y)|\left|f(x)-f(y)\right|
+      +|f(y)|(\left|g(x)\right|-\left|g(y)\right|)\right)\nonumber\\
+    &\leq\frac{1}{\varepsilon^2}\left(N|f(x)-f(y)|+M|g(x)-g(y)|\right).
+  \end{align}
+  Hence, for any partition $\Gamma$ of $[a,b]$, we have
+  \[
+    S_\Gamma[f/g;a,b]\leq \frac{1}{\varepsilon^2}
+                          \left(NS_\Gamma[f;a,b]+MS_\Gamma[g;a,b]\right).
+  \]
+  Thus, passing to the supremum, we see that
+  \[
+  V[f/g;a,b]\leq\frac{1}{\varepsilon^2}(NV[f;a,b]+MV[g;a,b])<+\infty,
+  \]
+  so $f/g$ is BV on $[a,b]$.
 \end{enumerate}
 \end{proof}
 \newpage
@@ -95,6 +164,26 @@ If $[a',b']$ is a subinterval of $[a,b]$ show that $P[a',b']\leq P[a,b]$
 and $N[a',b']\leq N[a,b]$.
 \end{problem}
 \begin{proof}
+Let $f\colon[a,b]\to\bfR$. If $f$ is unbounded, then $V[f;a,b]=+\infty$
+and, by theorem 2.6, the result holds trivially.
+
+Suppose $f$ is BV on $[a,b]$. Then $V[f;a,b]<+\infty$. Hence, by theorem
+2.2, we have
+\begin{equation}
+\label{eq:3}
+V[f;a',b']\leq V[f;a,b].
+\end{equation}
+By theorem 2.6, we have
+\begin{align*}
+N[f;a',b']&=\tfrac{1}{2}\left(V[f;a',b']+f(b')-f(a')\right)&
+P[f;a',b']&=\tfrac{1}{2}\left(V[f;a',b']-f(b')+f(a')\right)\\
+\intertext{which, by theorem 2.2, are bounded by}
+&\leq\tfrac{1}{2}\left(V[f;a,b]-f(b)+f(a)\right)&
+&\leq\tfrac{1}{2}\left(V[f;a,b]-f(b)+f(a)\right)\\
+&=N[f;a,b]&
+&=P[f;a,b],
+\end{align*}
+as desired.
 \end{proof}
 \newpage
 
@@ -105,6 +194,34 @@ $\left|R_\Gamma-R_{\Gamma'}\right|<\varepsilon$ if
 $|\Gamma|,|\Gamma'|<\delta$.
 \end{problem}
 \begin{proof}
+$\implies$ Suppose that $I\coloneqq \int_a^bf\diff\phi$ exists. Then, for
+every $\varepsilon>0$ there exits $\delta>0$ such that for any partition
+$\Gamma''$ of $[a,b]$ with $|\Gamma''|<\delta/2$,
+$|I-R_{\Gamma''}|<\varepsilon$. Let $\Gamma$ and $\Gamma'$ be a partitions
+with $|\Gamma|,|\Gamma'|<\delta/2$. Then, for the given $\varepsilon$, we
+have $|I-R_\Gamma|<\varepsilon$ and $|I-R_{\Gamma'}|<\varepsilon$ from
+which we have the estimates
+\begin{align*}
+|R_\Gamma-R_{\Gamma'}|
+&=\left|-(I-R_\Gamma)+(I-R_{\Gamma'})\right|\\
+&\leq\left|-(I-R_\Gamma)\right|+\left|I-R_{\Gamma'}\right|\\
+&=\left|I-R_\Gamma\right|+\left|I-R_{\Gamma'}\right|\\
+&\leq\delta/2+\delta/2\\
+&=\delta,
+\end{align*}
+as desired.
+
+$\impliedby$ Conversely, suppose that given $\varepsilon>0$ there exists
+$\delta>0$ such that for any two partitions $\Gamma,\Gamma'$ with
+$|\Gamma|,|\Gamma'|<\delta$ we have
+$|R_\Gamma-R_{\Gamma'}|<\varepsilon/2$. Put $I\coloneqq\int_a^b
+f\diff\phi$. Then, we have the following estimates
+\begin{align*}
+|I-R_\Gamma|
+&=\left|(I-R_{\Gamma'})-(R_{\Gamma}-R_{\Gamma'})\right|\\
+&\leq\left|I-R_{\Gamma'}\right|+\left|R_{\Gamma}-R_{\Gamma'}\right|\\
+&\leq\left|I-R_{\Gamma'}\right|+\varepsilon/2
+\end{align*}
 \end{proof}
 \newpage
 
@@ -131,6 +248,102 @@ Prove theorem (2.16).
 \]
 \end{enumerate}
 \end{theorem*}
+(i) Suppose that $I\coloneqq \int_a^b f\diff\phi$ exists and let $c$ be a
+constant. Then, for every $\varepsilon>0$ there exists $\delta>0$ such that
+$|\Gamma|<\delta$ implies $|I-R_\Gamma|<\varepsilon/|c|$. Then, we have
+\begin{equation}
+\label{eq:4}
+R_\Gamma[cf;a,b]=\sum_{i=1}^n cf(\xi_i)\left[\phi(x_i)-\phi(x_{i-1})\right]
+=c\left(\sum_{i=1}^nf(\xi_i)\left[\phi(x_i)-\phi(x_{i-1})\right]\right)
+=cR_\Gamma
+\end{equation}
+and
+\begin{equation}
+\label{eq:5}
+R_\Gamma[f;c\phi;a,b]=\sum_{i=1}^n
+f(\xi_i)\left[c\phi(x_i)-c\phi(x_{i-1})\right]
+=c\left(\sum_{i=1}^nf(\xi_i)\left[\phi(x_i)-\phi(x_{i-1})\right]\right)
+=cR_\Gamma
+\end{equation}
+for $\Gamma=\{x_0,...,x_n\}$.\footnote{The $R_\Gamma[f;c\phi;a,b]$ is just
+made up notation. I can't think of what else to call it.} Hence, we have
+the estimates
+\begin{align*}
+\left|cI-R_\Gamma[cf;a,b]\right|
+&=\left|cI-cR_\Gamma\right|\\
+&=\left|c(I-R_\Gamma)\right|\\
+&=|c||I-R_\Gamma|\\
+&\leq |c|\left(\varepsilon/|c|\right)\\
+&=\varepsilon
+\end{align*}
+for $\delta$ as given. A similar argument (in fact, the same) works for
+$R[f;c\phi;a,b]$. Thus, we have
+\[
+\int_a^bcf\diff\phi=\int_a^bf\diff(c\phi)=c\int_a^bf\diff\phi,
+\]
+as desired.
+\\\\
+(ii) Suppose that $I_1\coloneqq \int_a^b f_1\diff\phi$ and
+$I_2\coloneqq\int_a^b f_2\diff\phi$ exits. Then, for every $\varepsilon>0$
+there exists $\delta$ such that if $\Gamma$ is a partition of $[a,b]$ with
+$|\Gamma|<\delta$ then $\left|I_1-R_\Gamma[f_1;a,b]\right|<\varepsilon/2$
+and $\left|I_2-R_\Gamma[f_2;a,b]\right|<\varepsilon/2$. Now, note that
+\begin{align}
+\label{eq:6}
+R_\Gamma[f_1+f_2;a,b]
+&=\sum_{i=0}^m(f_1(\xi_i)+f_2(\xi_i))\left[\phi(x_i)-\phi(x_{i-1})\right]\nonumber\\
+&=\sum_{i=0}^m\left(f_1(\xi_i)\left[\phi(x_i)-\phi(x_{i-1})\right]
+  +f_2(\xi_i)\left[\phi(x_i)-\phi(x_{i-1})\right]\right)\nonumber\\
+&=\sum_{i=0}^mf_1(\xi_i)\left[\phi(x_i)-\phi(x_{i-1})\right]
+  +\sum_{i=0}^mf_2(\xi_i)\left[\phi(x_i)-\phi(x_{i-1})\right]\nonumber\\
+&=R_\Gamma[f_1;a,b]+R_\Gamma[f_2;a,b].
+\end{align}
+Thus, by (6), we have the following estimates
+\begin{align*}
+\left|(I_1+I_2)-R_\Gamma[f_1+f_2;a,b]\right|
+&=\left|(I_1+I_2)-R_\Gamma[f_1+f_2;a,b]\right|\\
+&=\left|(I_1+I_2)-(R_\Gamma[f_1;a,b]+R_\Gamma[f_2;a,b])\right|\\
+&=\left|(I_1-R_\Gamma[f_1;a,b])+(I_2-R_\Gamma[f_2;a,b])\right|\\
+\intertext{which, by the triangle inequality, is}
+&\leq\left|(I_1-R_\Gamma[f_1;a,b])\right|+\left|(I_2-R_\Gamma[f_2;a,b])\right|\\
+&\leq\varepsilon/2+\varepsilon/2\\
+&=\varepsilon
+\end{align*}
+or $\delta$ as given. Thus, $\int_a^b f_1+f_2\diff\phi$ exists and is equal
+to $\int_a^bf_1\diff\phi+\int_a^bf_2\diff\phi$.
+\\\\
+(iii) Suppose $I_1\coloneqq\int_a^bf\diff\phi_1$ and
+$I_2\coloneqq\int_a^bf\diff\phi_2$ exist then for every $\varepsilon>0$
+there exists $\delta_1,\delta_2>0$ such that for every partition
+$\Gamma_1,\Gamma_2$ of $[a,b]$ with $|\Gamma_1|<\delta_1$ and
+$|\Gamma_2|<\delta_2$ we have
+$|I_1-R_{\Gamma_1}[f;\phi_1;a,b]|<\varepsilon/2$ and
+$|I_2-R_{\Gamma_2}[f;\phi_2;a,b]|<\varepsilon/2$. Put
+$\delta\coloneqq\min\{\delta_1,\delta_2\}$. Now, note that
+\begin{align}
+  \label{eq:7}
+R_{\Gamma}[f;\phi_1+\phi_2;a,b]
+&=\sum_{i=0}^mf\left[(\phi_1(x_i)+\phi_2(x_i))
+                   -(\phi_1(x_{i-1})+\phi_2(x_{i-1}))\right]\nonumber\\
+&=\sum_{i=0}^mf\left[(\phi_1(x_i)-\phi_1(x_{i-1}))
+                   +(\phi_2(x_i)-\phi_2(x_{i-1}))\right]\nonumber\\
+&=\sum_{i=0}^mf\left[(\phi_1(x_i)-\phi_1(x_{i-1}))\right]
++\sum_{i=0}^mf\left[(\phi_1(x_i)-\phi_1(x_{i-1}))\right]\nonumber\\
+&=R_\Gamma[f;\phi_1;a,b]+R_\Gamma[f;\phi_2;a,b].
+\end{align}
+Hence, we have the following estimates
+\begin{align*}
+\left|(I_1+I_2)-R_{\Gamma}[f;\phi_1+\phi_2;a,b]\right|
+&=\left|(I_1+I_2)-(R_\Gamma[f;\phi_1;a,b]+R_\Gamma[f;\phi_2;a,b])\right|\\
+&=\left|(I_1-R_\Gamma[f;\phi_1;a,b])+(I_2-R_\Gamma[f;\phi_2;a,b])\right|\\
+\intertext{which, by the triangle inequality, is}
+&\leq\left|I_1-R_\Gamma[f;\phi_1;a,b]\right|+
+  \left|I_2-R_\Gamma[f;\phi_2;a,b]\right|\\
+&<\varepsilon/2+\varepsilon/2\\
+&=\varepsilon.
+\end{align*}
+Thus, $\int_a^bf\diff(\phi_1+\phi_2)$ exists and it is equal to the sum
+$\int_a^bf\diff\phi_1+\int_a^bf\diff\phi_2$.
 \end{proof}
 \newpage
 
