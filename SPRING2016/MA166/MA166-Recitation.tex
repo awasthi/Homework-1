@@ -1,9 +1,9 @@
 \def\documentauthor{Carlos Salinas}
-\def\documenttitle{MA571: Qual Problems}
+\def\documenttitle{MA166 Recitation Notes and Exercises}
 % \def\hwnum{1}
-\def\shorttitle{MA571 Quals}
-\def\coursename{MA571}
-\def\documentsubject{point-set topology}
+\def\shorttitle{MA166-Notes}
+\def\coursename{MA166}
+\def\documentsubject{calculus ii}
 \def\authoremail{salinac@purdue.edu}
 
 \documentclass[article,oneside,10pt]{memoir}
@@ -110,6 +110,8 @@
 \newtheorem*{problem*}{Problem}
 
 %% Redefinitions & commands
+\newcommand{\nle}{\ensuremath{\not<}}
+\newcommand{\nge}{\ensuremath{\not>}}
 \newcommand{\nsubset}{\ensuremath{\not\subset}}
 \newcommand{\nsupset}{\ensuremath{\not\supset}}
 \newcommand\minus{\ensuremath{\null\smallsetminus}}
@@ -118,8 +120,6 @@
 %% Commands and operators
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\Int}{int}
-\DeclareMathOperator{\Cl}{cl}
 
 \newcommand{\bbC}{\mathbb{C}}
 \newcommand{\bbN}{\mathbb{N}}
@@ -132,29 +132,13 @@
 \newcommand{\bfR}{\mathbf{R}}
 \newcommand{\bfZ}{\mathbf{Z}}
 
-\newcommand{\calA}{\mathcal{A}}
-\newcommand{\calB}{\mathcal{B}}
-\newcommand{\calC}{\mathcal{C}}
-\newcommand{\calU}{\mathcal{U}}
-\newcommand{\calV}{\mathcal{U}}
-
-\newcommand{\scrL}{\mathscr{L}}
-\newcommand{\scrO}{\mathscr{O}}
-\newcommand{\scrS}{\mathscr{S}}
-
 \begin{document}
 \author{\href{mailto:\authoremail}{\documentauthor}}
 \title{\documenttitle}
 \date{\today}
 \maketitle
-% \include{kaufmann/MA571-Mid-JAN15}
-% \include{kaufmann/MA571-Final-JAN15}
-\input{bredon/general-topology-exercises}
-\input{bredon/metric-spaces}
-\include{mcclure/MA571-AUG14}
-\include{mcclure/MA571-JAN14}
-\include{mcclure/MA571-JAN12}
-\include{mcclure/MA571-JAN11}
+\include{notes/recitation-1}
+\include{exercises/exercises-1}
 \end{document}
 
 %%% Local Variables:

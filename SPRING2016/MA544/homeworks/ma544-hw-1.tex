@@ -3,10 +3,10 @@ Let $f(x)=x\sin(1/x)$ for $0<x\leq 1$ and $f(0)=0$. Show that $f$ is
 bounded and continuous on $[0,1]$, but that $V[f;0,1]=+\infty$.
 \end{problem}
 \begin{proof}
-Moreover, $f$ is continuous on $(0,1]$ since it is the product of
-continuous functions on $(0,1]$. To see that $f$ is continuous at $0$ is
-suffices to show that $f(0+)=f(0)=0$. To that end, let
-$\left\{x_n\right\}\subset[0,1]$ be a sequence such that $x_n\to 0$ and
+By properties of continuous functions, we have $f$ is continuous on $(0,1]$
+since it is the product of continuous functions on $(0,1]$. To see that $f$
+is continuous at $0$ is suffices to show that $f(0+)=f(0)=0$. To that end,
+let $\left\{x_n\right\}\subset[0,1]$ be a sequence such that $x_n\to 0$ and
 consider $\lim_{n\to\infty} f\left(x_n\right)$. Since $x_n\to 0$, for every
 $\varepsilon>0$, there exists a natural number $N$ such that $n\geq N$
 implies $|0-x_n|<\varepsilon$. Thus, for $n\geq N$ we have
@@ -40,8 +40,30 @@ right) of $f(\varepsilon)$ as $\varepsilon\to 0$. This is
 \]
 Thus, $f(0+)=0$ and we see that $f$ is continuous on $[0,1]$.
 
-Last but not least, we show that $f$ is BV. Define the family of partitions
-$\left\{\Gamma_n\right\}_{n=1}^\infty$ by $x_i\coloneqq$
+Last but not least, we show that $f$ is BV. As of now, I've not been able
+to find the correct partition to show that the variation of $f$ blows up,
+but the informal idea is the following: For any $M$, we (should be able to)
+find a partition $\Gamma$ of $[0,1]$ such that $\sin(1/x_i)=1$ for every
+$x_i\in\Gamma$, so we have
+\[
+S_\Gamma=\sum_{i=0}^m x_i\sin(1/x_i)>M
+\]
+and hence, $V[f;a,b]=+\infty$. I read online and they show, for the very
+same problem, that the partition
+$\Gamma\coloneqq\left\{x_n\right\}=\left\{((2n+1)\pi/2)^{-1}\right\}$ as
+$n\to\infty$ gives $\int_0^1f\diff\phi\to\infty$, but I cannot see how
+$\Gamma$ is a partition of the interval $[0,1]$. Anyway, it is fairly clear
+that if we have such a partition then
+\[
+\lim_{n\to\infty}\sum_{i=0}^{n-1}\frac{2}{(2n+1)\pi}
+\sin\left(\frac{(2n+1)\pi}{2}\right)=
+\lim_{n\to\infty}\sum_{i=0}^{n-1}\frac{2}{(2n+1)\pi}=+\infty,
+\]
+by the ratio test since
+\[
+\frac{2/((2n+1)\pi)}{2/((2(n+1)+1)\pi)}=\frac{2n+1}{2n+3}=\frac{n+1}{n+3/2}...
+\]
+wait! This doesn't work.
 \end{proof}
 \newpage
 
@@ -222,6 +244,9 @@ f\diff\phi$. Then, we have the following estimates
 &\leq\left|I-R_{\Gamma'}\right|+\left|R_{\Gamma}-R_{\Gamma'}\right|\\
 &\leq\left|I-R_{\Gamma'}\right|+\varepsilon/2
 \end{align*}
+
+Maybe you do something with a common refinement? Take
+$\Gamma''=\Gamma\cup\Gamma'$. Then
 \end{proof}
 \newpage
 
