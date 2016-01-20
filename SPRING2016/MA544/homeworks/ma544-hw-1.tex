@@ -63,7 +63,7 @@ by the ratio test since
 \[
 \frac{2/((2n+1)\pi)}{2/((2(n+1)+1)\pi)}=\frac{2n+1}{2n+3}=\frac{n+1}{n+3/2}...
 \]
-wait! This doesn't work.
+which converges to $1$ as $n\to\infty$.
 \end{proof}
 \newpage
 
@@ -237,16 +237,22 @@ $\impliedby$ Conversely, suppose that given $\varepsilon>0$ there exists
 $\delta>0$ such that for any two partitions $\Gamma,\Gamma'$ with
 $|\Gamma|,|\Gamma'|<\delta$ we have
 $|R_\Gamma-R_{\Gamma'}|<\varepsilon/2$. Put $I\coloneqq\int_a^b
-f\diff\phi$. Then, we have the following estimates
-\begin{align*}
-|I-R_\Gamma|
-&=\left|(I-R_{\Gamma'})-(R_{\Gamma}-R_{\Gamma'})\right|\\
-&\leq\left|I-R_{\Gamma'}\right|+\left|R_{\Gamma}-R_{\Gamma'}\right|\\
-&\leq\left|I-R_{\Gamma'}\right|+\varepsilon/2
-\end{align*}
-
-Maybe you do something with a common refinement? Take
-$\Gamma''=\Gamma\cup\Gamma'$. Then
+f\diff\phi$. Let $\Gamma''\coloneqq\Gamma\cup\Gamma'$. By Lemma 2.23, we
+have the following estimates on $R_{\Gamma''}$
+\[
+L_{\Gamma}\leq L_{\Gamma''}\leq R_{\Gamma''}\leq U_{\Gamma''}\leq U_{\Gamma}.
+\]
+Since $L_{\Gamma''}-L_{\Gamma}<\varepsilon$ and
+$U_{\Gamma''}-L_{\Gamma}<\varepsilon$, then
+\[
+R_{\Gamma''}-U_{\Gamma''}\leq U_{\Gamma}-U_{\Gamma''}\leq \varepsilon
+\]
+and
+\[
+\varepsilon\geq L_{\Gamma''}-L_{\Gamma}\geq L_{\Gamma''}-R_{\Gamma''}L_{\Gamma''}
+\]
+it follows that $R_{\Gamma''}\to I$ as $|\Gamma''|\to 0$... No, this is not
+clear at all.
 \end{proof}
 \newpage
 
