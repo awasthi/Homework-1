@@ -1,7 +1,36 @@
 \chapter{Notes: Vectors and the Geometry of Spaces}
 Material found in Stewart \S12.
+\\\\
+\section{Three-Dimensional Coordinate Systems}
+Here are some of the most important concepts, equations, and theorems from
+this section.
 
-
+The distance between two points $P_1(x,y,z)$ and $P_2(x,y,z)$ in $\bbR^3$
+is given by the formula
+\begin{equation}
+  \label{eq:distance-between-points}
+|P_1P_2|=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}.
+\end{equation}
+This is also called the \emph{Euclidean norm} and generalizes to all
+dimensions. Note that equation (\ref{eq:distance-between-points}) is
+equivalent to
+\[
+\sqrt{(x_1-x_2)^2+(y_1-y_2)^2+(z_1-z_2)^2}=|P_2P_1|
+\]
+so that the distance between point does not depend on your point-of-view,
+i.e, whether you think of the line starting connecting $P_1$ and $P_2$ as
+starting at $P_1$ and ending at $P_2$ or vice-a-versa.
+\\\\
+The equation of a sphere with $C(h,k,l)$ and radius $r$ is
+\begin{equation}
+  \label{eq:equation-of-a-sphere}
+(x-h)^2+(y-k)^2+(z-l)^2=r^2.
+\end{equation}
+In particular, if the center is the origin $O$, then the equation
+(\ref{eq:equation-of-sphere}) reduces to
+\[
+x^2+y^2+z^2=r^2.
+\]
 
 %%% Local Variables:
 %%% mode: latex
