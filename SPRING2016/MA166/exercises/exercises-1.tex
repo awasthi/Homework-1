@@ -1,294 +1,73 @@
 \chapter{Exercises Week 2}
-\begin{exercise}[Stewart {\S}12.2, {\#}6]
-\begin{enumerate}[label=(\alph*)]
- \item What does the equation $x=4$ represent in $\bbR^2$? What does it
-   represent in $\bbR^3$? Illustrate with sketches.
-\item What does the equation $y=3$ represent in $\bbR^3$? What does $z=5$
-  represent? What does the pair of equations $y=3$, $z=5$ represent? In
-  other words, describe the set of points $(x,y,z)$ such that $y=3$ and
-  $z=5$.  Illustrate with a sketch.
-\end{enumerate}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}[Stewart {\S}12.2, {\#}16]
-Show that the equation represents a circle and find its center
+Interesting exercises (by that, the professor usually means, tricky or had
+exercises).
+\begin{exercise}[Stewart {\S}12.3, 31]
+Find the acute angles at the points of intersection
 \[
-x^2+y^2+z^2+8x+6y+2z+17=0.
+y=x^2,\quad y=x^3.
 \]
 \end{exercise}
 \begin{proof}[Solution]
-\end{proof}
+Remember that the angle between two curves at a point of intersection is
+the angle made by the tangent lines to those curves at that point.
 
-\begin{exercise}[Stewart {\S}12.2, {\#}31]
-Describe in words the region of $\bbR^3$ enclosed represented by the
-inequality
+Let me explain how to do this. In the given exercise we are asked to find
+the acute angles at the points of intersection of the curves $y=x^2$ and
+$y=x^3$. We first need to find the points where they intersect, i.e., where
+\begin{equation}
+\label{eq:ex-12-3-31-1}
+x^3=x^2.
+\end{equation}
+A little algebra and we can turn (\ref{eq:ex-12-3-31-1}) into
+$0=x^3-x^2=x^2(x-1)$ so the solutions to (\ref{eq:ex-12-3-31-1}) are $x=0$
+or $x=1$. Now we need to find the tangent line to the curve $y=x^3$ and
+$y=x^2$ at $x=0$ and $x=1$.
+
+Remember that to find the tangent line of a function $f(x)$ whose
+derivative exists, at a point $x_0$ we have to first, compute its
+derivative, and second, compute $f(x_0)$. After that, the tangent line of
+$f(x)$ at $x_0$ will have the form
 \[
-x^2+y^2+z^2\leq 3.
+y-f(x_0)=f'(x_0)(x-x_0).
 \]
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
 
-\begin{exercise}[Stewart {\S}12.2, {\#}33]
-Describe in words the region of $\bbR^3$ enclosed represented by the
-inequality
+To avoid confusing $y=x^3$, $y=x^2$ with their tangent lines, let's call
+the first one $f_1(x)$ and the second one $f_2(x)$; I mean, $f_1(x)=x^3$
+and $f_2(x)=x^2$; this is function notation and you should be familiar with
+it.
+
+Moving on, we'll start with the intersection at $x=1$. At $x=1$, $f_1(1)=1$
+and $f_2(1)=1$. Moreover, the derivatives of $f_1$ and $f_2$ are
+\begin{align*}
+f_1'(x)&=3x^2&f_2'(x)&=2x\\
+f_1'(1)&=3\cdot 1^2&f_2'(1)&=2\cdot 1.
+\end{align*}
+Hence, $f_1'(1)=3$ and $f_2'(1)=2$. So the tangent lines to $f_1$ and $f_2$
+at $1$ are
+\begin{align}
+\label{eq:ex-12-3-31-2}
+y-1&=3(x-1)&y-1&=2(x-1)\nonumber\\
+\intertext{which, in more standard form, is}
+y&=3x-2&y&=2x-1.
+\end{align}
+
+As if that wasn't enough we still have to find the $y$-intercept for these
+tangent lines and find the vector pointing from the their $y$-intercept to
+the point of intersection. To find the $y$-intercept of the tangent lines
+in \ref{eq:ex-12-3-31-2} we simply plug in $0$ for $x$ and we have $y=-2$
+and $y=-1$ so the $y$-intercepts are $(0,-2)$ and $(0,-1)$ for the tangent
+line of $f_1(x)$ at $1$ and the tangent line of $f_2(x)$ at $1$,
+respectively. Then, we have the vectors $\langle 1,1\rangle-\langle
+0,-2\rangle=\langle1,3\rangle$ and $\langle 1,1\rangle-\langle
+0,-1\rangle=\langle 1,2\rangle$ so we compute the angle between them by the
+dot-product formula, i.e.,
 \[
-x^2+z^2\leq 9.
+\cos\theta=\frac{\langle\langle1,3\rangle\cdot\langle 1,2\rangle\rangle}
+                {|\langle1,3\rangle|\cdot |\langle
+                  1,2\rangle|}=\frac{1+6}{\sqrt{10}\cdot\sqrt{5}}=\frac{7}{5\sqrt{2}}.
 \]
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}[Stewart {\S}12.2, {\#}38]
-Write inequalities to describe the region: The solid upper hemisphere of
-the sphere of radius $2$ centered at the origin.
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}[Stewart {\S}12.3, {\#}3]
-Name all the equal vectors in the parallelogram shown
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}[Stewart {\S}12.3, {\#}5]
-
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}[Stewart {\S}12.3, {\#}11]
-
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}[Stewart {\S}12.3, {\#}13]
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}[Stewart {\S}12.3, {\#}17]
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}[Stewart {\S}12.3, {\#}19]
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}[Stewart {\S}12.3, {\#}25]
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}[Stewart {\S}12.3, {\#}26]
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
-\end{proof}
-
-\begin{exercise}
-\end{exercise}
-\begin{proof}[Solution]
+Now just take $\cos^{-1}$ of both sides and we have
+$\theta=\tan^{-1}(7/5\sqrt{2})\approx 8.13^\circ$.
 \end{proof}
 
 %%% Local Variables:

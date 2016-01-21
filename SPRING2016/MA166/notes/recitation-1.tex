@@ -45,6 +45,60 @@ If $\bfu$ and $\bfv$ are vectors positioned so the initial point of $\bfv$
 is at the terminal point of $\bfu$, then the sum $\bfu+\bfv$ is the vector
 from the initial point of $\bfu$ to the terminal point of $\bfv$.
 
+\section{The Cross Product}
+\begin{definition}
+If $\bfu=\langle u_1,u_2,u_3\rangle$ and $\bfv=\langle v_1,v_2,v_3\rangle$,
+then the \emph{cross product} of $\bfu$ and $\bfv$ is the vector
+\[
+\bfu\times\bfv=\langle u_2v_3-u_3v_2,u_3v_1-u_1v_3,u_1v_2-u_2v_1\rangle.
+\]
+\end{definition}
+\begin{theorem}
+The vector $\bfw=\bfu\times\bfv$ is orthogonal to both $\bfu$ and $\bfv$,
+i.e., $\bfw\cdot\bfv=0$  and $\bfw\cdot\bfu$.
+\end{theorem}
+\begin{theorem}
+If $\theta$ is the angle between $\bfu$ and $\bfv$ (so
+$0\leq\theta\leq\pi$), then
+\[
+|\bfu\times\bfv|=|\bfu||\bfv|\sin\theta.
+\]
+\end{theorem}
+\begin{theorem}
+Two nonzero vectors $\bfu$ and $\bfv$ are parallel if and only if
+\[
+\bfv\times\bfu=\mathbf{0}
+\]
+\end{theorem}
+The length of the product $\bfv\times\bfu$ is equal to the area of the
+parallelogram determined by $\bfu$ and $\bfv$.
+\begin{theorem}
+If $\bfu$, $\bfv$, and $c$ are vectors and $c$ is a scalar, then
+\begin{enumerate}[label=\textnormal{(\alph*)}]
+\item $\bfu\times\bfv=-\bfv\times\bfu$.
+\item $(c\bfu)\times\bfv=c(\bfu\times\bfv)=\bfu\times(c\bfv)$.
+\item $\bfu\times(\bfv+\bfw)=\bfu\times\bfv+\bfu\times\bfw$.
+\item $(\bfu+\bfv)\times\bfw=\bfu\times\bfw+\bfv\times\bfw$.
+\item $\bfu\cdot(\bfv\times\bfw)=(\bfu\times\bfv)\cdot\bfw$.
+\item $\bfu\times(\bfv\times\bfw)=(\bfu\cdot\bfw)\bfv-(\bfu\cdot\bfv)\bfw$.
+\end{enumerate}
+\end{theorem}
+\bigskip
+The volume of a parallelepiped determined by $\bfu$, $\bfv$, and $\bfv$ and
+is the magnitude of their scalar triple product:
+\begin{equation}
+\label{eq:volume-of-a-parallelepiped}
+V=|\bfu\cdot(\bfv\times\bfw)|.
+\end{equation}
+\subsection{Torque}
+Consider a force $\mathbf{F}$ acting on a rigid body at a point given by
+the position vector $\mathbf{r}$. The torque (relative to the origin) is
+defined to be
+\begin{equation}
+\label{eq:torque}
+\bm{\mathrm{\tau}}=\mathbf{r}\times\mathbf{F}.
+\end{equation}
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../MA166-Recitation"
