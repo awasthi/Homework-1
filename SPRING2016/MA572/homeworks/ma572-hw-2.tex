@@ -1,56 +1,77 @@
-\begin{problem}
+\begin{problem}[Hatcher {\S}2.1, Ex.\,16]
+\begin{enumerate}[label=(\alph*)]
+\item Show that $H_0(X,A)=0$ iff $A$ meets each path-component of $X$.
+\item Show that $H_1(X,A)=0$ iff $H_1(A)\to H_1(X)$ is surjective and each
+  path-component of $X$ contains at most one path-component of $A$.
+\end{enumerate}
 \end{problem}
 \begin{proof}
+(a) $\implies$ Suppose that the relative $0$th homology of $X$ with respect
+to $A$, $H_0(X,A)$, is trivial. Let $\left\{X_\alpha\right\}$ be the set of
+path-components of $X$. We aim to show that $A\cap X_\alpha\neq\emptyset$
+for all $\alpha$. Let $i\colon A\hookrightarrow X$ denote the canonical
+inclusion map $A\subset X$. Now, the map $i$ can be extended to a chain map
+between chain complexes which, by proposition 2.9, induces a homomorphism
+$i_*\colon H_n(A)\to H_n(X)$ between the homology groups of $A$ and
+$X$. Similarly, the map $j\colon C_n(X)\to C_n(X,A)$ induces a map
+$j_*\colon H_n(X)\to H_n(X,A)$ so, by theorem 2.16, we have a long exact
+sequence
+\begin{equation}
+\label{eq:relative-long-exact-sequence}
+\cdots\xrightarrow{\;\;\partial\;\;}
+H_0(A)\xrightarrow{\;\;i_*\;\;}
+H_0(X)\xrightarrow{\;\;j_*\;\;}
+H_0(X,A)\xrightarrow{\;\;0\;\;}
+0.
+\end{equation}
+In particular, the short exact sequence
+\begin{equation}
+\label{eq:relative-short-exact-sequence}
+0\xrightarrow{\;\;0\;\;}
+H_0(A)\xrightarrow{\;\;i_*\;\;}
+H_0(X)\xrightarrow{\;\;j_*\;\;}
+H_0(X,A)\xrightarrow{\;\;0\;\;}
+0.
+\end{equation}
+But $H_0(X,A)=0$ so the map $j_*=0$. By short exactness of
+(\ref{eq:relative-short-exact-sequence}) we have $\im i_*=\ker j_*=H_0(X)$,
+so $i_*$ is surjective.
+\\\\
+(b)
 \end{proof}
 \newpage
 
-\begin{problem}
+\begin{problem}[Hatcher {\S}2.1, Ex.\,17]
+\begin{enumerate}[label=(\alph*)]
+\item Compute the homology groups $H_n(X,A)$ when $X$ is $\bfS^2$ or
+  $\bfS^1\times\bfS^1$ and $A$ is a finite set of points in $X$.
+\item Compute the groups $H_n(X,A)$ and $H_n(X,B)$ for $X$ a closed
+  orientable surface of genus two with $A$ and $B$ the circles shown. [What
+  are $X/A$ and $X/B$?]
+\end{enumerate}
 \end{problem}
 \begin{proof}
+(a) Since $A$ is a finite collection of points in $\bfS^2$, let us enumerate
+the set $A$ via $\left\{ a_1,...,a_n \right\}$ and denote by $A_k$ the
+subset $\left\{a_1,...,a_k\right\}$ of $A$, where $k\leq n$. Now, by the
+generalization of theorem 2.16 to triples, we have the long exact sequence
+\begin{equation}
+\label{eq:long-exact-sequence-triples}
+\cdots\longrightarrow H_m(A_n,A_{n-1})\longrightarrow
+H_m(\bfS^2,A_{n-1})\longrightarrow H_m(\bfS^2,A_n)
+\longrightarrow H_{m-1}(A_n,A_{n-1})\longrightarrow\cdots.
+\end{equation}
+Exactness of (\ref{eq:long-exact-sequence-triples}) tells us that for
+$m\geq 2$ we have $H(\bfS^2,A_{n-1})\cong H(\bfS^2,A_n)$ since
+\[
+H_m(A_n,A_{n-1})=0\longrightarrow H_m(\bfS^2,A_{n-1})\longrightarrow
+H_m(\bfS^2,A_n)\longrightarrow 0=H_{m-1}(A_n,A_{n-1})
+\]
+is exact. Evidently, $H_m(A_n,A_{n-1})=0$ for $m>1$.\footnote{I will prove
+  this if time permits.}
+\\\\
+(b)
 \end{proof}
-\newpage
-
-\begin{problem}
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-
-\begin{problem}
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-
-\begin{problem}
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-
-\begin{problem}
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-
-\begin{problem}
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-
-\begin{problem}
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-
-\begin{problem}
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
 
 \begin{problem}
 \end{problem}
