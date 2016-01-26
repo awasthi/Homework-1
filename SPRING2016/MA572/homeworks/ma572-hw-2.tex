@@ -1,4 +1,4 @@
-begin{problem}[Hatcher {\S}2.1, Ex.\,16]
+\begin{problem}[Hatcher {\S}2.1, Ex.\,16]
 \begin{enumerate}[label=(\alph*)]
 \item Show that $H_0(X,A)=0$ iff $A$ meets each path-component of $X$.
 \item Show that $H_1(X,A)=0$ iff $H_1(A)\to H_1(X)$ is surjective and each
@@ -43,29 +43,29 @@ so $i_*$ is surjective.
 
 \begin{problem}[Hatcher {\S}2.1, Ex.\,17]
 \begin{enumerate}[label=(\alph*)]
-\item Compute the homology groups $H_n(X,A)$ when $X$ is $\bfS^2$ or
-  $\bfS^1\times\bfS^1$ and $A$ is a finite set of points in $X$.
+\item Compute the homology groups $H_n(X,A)$ when $X$ is $S^2$ or
+  $S^1\times S^1$ and $A$ is a finite set of points in $X$.
 \item Compute the groups $H_n(X,A)$ and $H_n(X,B)$ for $X$ a closed
   orientable surface of genus two with $A$ and $B$ the circles shown. [What
   are $X/A$ and $X/B$?]
 \end{enumerate}
 \end{problem}
 \begin{proof}
-(a) Since $A$ is a finite collection of points in $\bfS^2$, let us enumerate
+(a) Since $A$ is a finite collection of points in $S^2$, let us enumerate
 the set $A$ via $\left\{ a_1,...,a_n \right\}$ and denote by $A_k$ the
 subset $\left\{a_1,...,a_k\right\}$ of $A$, where $k\leq n$. Now, by the
 generalization of theorem 2.16 to triples, we have the long exact sequence
 \begin{equation}
 \label{eq:long-exact-sequence-triples}
 \cdots\longrightarrow H_m(A_n,A_{n-1})\longrightarrow
-H_m(\bfS^2,A_{n-1})\longrightarrow H_m(\bfS^2,A_n)
+H_m(S^2,A_{n-1})\longrightarrow H_m(S^2,A_n)
 \longrightarrow H_{m-1}(A_n,A_{n-1})\longrightarrow\cdots.
 \end{equation}
 Exactness of (\ref{eq:long-exact-sequence-triples}) tells us that for
-$m\geq 2$ we have $H(\bfS^2,A_{n-1})\cong H(\bfS^2,A_n)$ since
+$m\geq 2$ we have $H(S^2,A_{n-1})\cong H(S^2,A_n)$ since
 \[
-H_m(A_n,A_{n-1})=0\longrightarrow H_m(\bfS^2,A_{n-1})\longrightarrow
-H_m(\bfS^2,A_n)\longrightarrow 0=H_{m-1}(A_n,A_{n-1})
+H_m(A_n,A_{n-1})=0\longrightarrow H_m(S^2,A_{n-1})\longrightarrow
+H_m(S^2,A_n)\longrightarrow 0=H_{m-1}(A_n,A_{n-1})
 \]
 is exact. Evidently, $H_m(A_n,A_{n-1})=0$ for $m>1$.\footnote{I will prove
   this if time permits.}
