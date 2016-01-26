@@ -41,43 +41,19 @@ so $i_*$ is surjective.
 \end{proof}
 \newpage
 
-\begin{problem}[Hatcher {\S}2.1, Ex.\,17]
-\begin{enumerate}[label=(\alph*)]
-\item Compute the homology groups $H_n(X,A)$ when $X$ is $S^2$ or
-  $S^1\times S^1$ and $A$ is a finite set of points in $X$.
-\item Compute the groups $H_n(X,A)$ and $H_n(X,B)$ for $X$ a closed
-  orientable surface of genus two with $A$ and $B$ the circles shown. [What
-  are $X/A$ and $X/B$?]
-\end{enumerate}
+\begin{problem}[Hatcher {\S}2.1, Ex.\,18]
+Show that for the subspace $\bfQ\subset\bfR$, the relative homology group
+$H_1(\bfR,\bfQ)$ is free abelian and find a basis.
 \end{problem}
 \begin{proof}
-(a) Since $A$ is a finite collection of points in $S^2$, let us enumerate
-the set $A$ via $\left\{ a_1,...,a_n \right\}$ and denote by $A_k$ the
-subset $\left\{a_1,...,a_k\right\}$ of $A$, where $k\leq n$. Now, by the
-generalization of theorem 2.16 to triples, we have the long exact sequence
-\begin{equation}
-\label{eq:long-exact-sequence-triples}
-\cdots\longrightarrow H_m(A_n,A_{n-1})\longrightarrow
-H_m(S^2,A_{n-1})\longrightarrow H_m(S^2,A_n)
-\longrightarrow H_{m-1}(A_n,A_{n-1})\longrightarrow\cdots.
-\end{equation}
-Exactness of (\ref{eq:long-exact-sequence-triples}) tells us that for
-$m\geq 2$ we have $H(S^2,A_{n-1})\cong H(S^2,A_n)$ since
-\[
-H_m(A_n,A_{n-1})=0\longrightarrow H_m(S^2,A_{n-1})\longrightarrow
-H_m(S^2,A_n)\longrightarrow 0=H_{m-1}(A_n,A_{n-1})
-\]
-is exact. Evidently, $H_m(A_n,A_{n-1})=0$ for $m>1$.\footnote{I will prove
-  this if time permits.}
-\\\\
-(b)
 \end{proof}
 
+\newpage
 \begin{problem}
+Homotopy invariance of homology.
 \end{problem}
 \begin{proof}
 \end{proof}
-\newpage
 
 %%% Local Variables:
 %%% mode: latex
