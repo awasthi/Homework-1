@@ -72,7 +72,12 @@ $H_0(\bfQ)\cong \bfZ[\bfQ]\cong H_1(\bfR,\bfQ)$.
 Homotopy invariance of homology.
 \end{problem}
 \begin{proof}
-
+The proof of this follows immediately from corollary 2.10 for if $f\colon
+X\to Y$ and $g\colon Y\to X$ are maps with $g\circ f\simeq\id_X$ and
+$f\circ g\simeq \id_Y$ then by corollary 2.10 we have $(g\circ
+f)_*=\id_{H_*(Y)}$ and $(f\circ g)_*=\id_{H_*(X)}$, but $(f\circ
+g)_*=f_*\circ g_*$ and $(g\circ f)_*=g_*\circ f_*$ so $g_*=f_*^{-1}$ and we
+see that $H_*(X)\cong H_*(Y)$.
 \end{proof}
 
 %%% Local Variables:
