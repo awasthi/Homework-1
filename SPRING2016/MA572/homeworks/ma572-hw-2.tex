@@ -47,24 +47,26 @@ Show that for the subspace $\bfQ\subset\bfR$, the relative homology group
 $H_1(\bfR,\bfQ)$ is free abelian and find a basis.
 \end{problem}
 \begin{proof}
-Consider the long exact sequence of homology groups
+Consider the long exact sequence of homology reduced groups
 \begin{equation}
   \label{eq:relative-short-exact-sequence-3}
 \cdots\xrightarrow{\;\partial_*\;}
-H_1(\bfQ)\xrightarrow{\;i_*\;}
-H_1(\bfR)\xrightarrow{\;j_*\;}
-H_1(\bfR,\bfQ)\xrightarrow{\;\partial_*\;}
-H_0(\bfQ)\xrightarrow{\;i_*\;}
-H_0(\bfR)\xrightarrow{\;j_*\;}
-H_0(\bfR,\bfQ)\xrightarrow{\;0\;}0.
+\widetilde H_1(\bfQ)\xrightarrow{\;i_*\;}
+\widetilde H_1(\bfR)\xrightarrow{\;j_*\;}
+\widetilde H_1(\bfR,\bfQ)\xrightarrow{\;\partial_*\;}
+\widetilde H_0(\bfQ)\xrightarrow{\;i_*\;}
+\widetilde H_0(\bfR)\xrightarrow{\;j_*\;}
+\widetilde H_0(\bfR,\bfQ)\xrightarrow{\;0\;}0.
 \end{equation}
-Since the space $\bfR$ is contractible, $H_1(\bfR)=0$ which implies that
-the map $j_*=0$ on $H_1(\bfR)\to H_1(\bfR,\bfQ)$, respectively.
-
-Thus,
-$H_1(\bfR,\bfQ)\cong H_0(\bfQ)$. Since, $\bfQ$ is totally disconnected,
-i.e., every connected component and hence, path-component of $\bfQ$ is a
-singleton set, we have $H_0(\bfQ)\cong \bfZ[\bfQ]\cong H_1(\bfR,\bfQ)$.
+Since the space $\bfR$ is contractible, $\widetilde H_*(\bfR)=0$ which
+implies that the maps $i_*=0$ and $j_*=0$ on $\widetilde
+H_0(\bfQ)\to\widetilde H_0(\bfR)$ and $\widetilde H_1(\bfR)\to\widetilde
+H_1(\bfR,\bfQ)$, respectively. Thus, $\widetilde
+H_1(\bfR,\bfQ)\cong\widetilde H_0(\bfQ)$, i.e.,
+$H_0(\bfQ)=H_1(\bfR,\bfQ)\oplus\bfZ$. Since, $\bfQ$ is totally
+disconnected, i.e., every connected component and hence, path-component of
+$\bfQ$ is a singleton set, we have $H_0(\bfQ)\cong \bfZ[\bfQ]$. So,
+$H_1(\bfR,\bfQ)\cong H_0(\bfQ)$.
 \end{proof}
 
 \newpage
