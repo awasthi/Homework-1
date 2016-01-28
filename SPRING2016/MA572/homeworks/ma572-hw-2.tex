@@ -6,38 +6,39 @@
 \end{enumerate}
 \end{problem}
 \begin{proof}
-(a) $\implies$ Suppose that the relative $0$th homology of $X$ with respect
-to $A$, $H_0(X,A)$, is trivial. Let $\left\{X_\alpha\right\}$ be the set of
-path-components of $X$. We aim to show that $A\cap X_\alpha\neq\emptyset$
-for all $\alpha$. Let $i\colon A\hookrightarrow X$ denote the canonical
-inclusion map $A\subset X$. Now, the map $i$ can be extended to a chain map
-between chain complexes which, by proposition 2.9, induces a homomorphism
-$i_*\colon H_n(A)\to H_n(X)$ between the homology groups of $A$ and
-$X$. Similarly, the map $j\colon C_n(X)\to C_n(X,A)$ induces a map
-$j_*\colon H_n(X)\to H_n(X,A)$ so, by theorem 2.16, we have a long exact
+(a) Let $i\colon A\hookrightarrow X$ denote the inclusion map. Then, the
+map $i$ can be extended to a chain map between chain complexes so, by
+proposition 2.9, induces a homomorphism $i_*\colon H_*(A)\to H_*(X)$ on
+homology. Similarly, the map $j_\#\colon C_*(X)\to C_*(X,A)$ induces a map
+$j_*\colon H_*(X)\to H_*(X,A)$ so, by theorem 2.16, we have a long exact
 sequence
 \begin{equation}
 \label{eq:relative-long-exact-sequence}
-\cdots\xrightarrow{\;\;\partial\;\;}
+\cdots\xrightarrow{\;\;\partial_*\;\;}
 H_0(A)\xrightarrow{\;\;i_*\;\;}
 H_0(X)\xrightarrow{\;\;j_*\;\;}
 H_0(X,A)\xrightarrow{\;\;0\;\;}
-0.
+0
 \end{equation}
-In particular, the short exact sequence
-\begin{equation}
-\label{eq:relative-short-exact-sequence}
-0\xrightarrow{\;\;0\;\;}
-H_0(A)\xrightarrow{\;\;i_*\;\;}
-H_0(X)\xrightarrow{\;\;j_*\;\;}
-H_0(X,A)\xrightarrow{\;\;0\;\;}
-0.
-\end{equation}
-But $H_0(X,A)=0$ so the map $j_*=0$. By short exactness of
-(\ref{eq:relative-short-exact-sequence}) we have $\im i_*=\ker j_*=H_0(X)$,
-so $i_*$ is surjective.
+on homology. Thus, we see that $H_0(X,A)=0$ if and only if $i_*$ is
+injective which, by proposition 2.6, happens if and only if $A$ meets each
+path-component of $X$.
 \\\\
-(b)
+(b) Let us extend to the left the long exact sequence of homology groups in
+(\ref{eq:relative-long-exact-sequence}) as follows
+\begin{equation}
+  \label{eq:relative-short-exact-sequence-2}
+\cdots\xrightarrow{\;\partial_*\;}
+H_1(A)\xrightarrow{\;i_*\;}
+H_1(X)\xrightarrow{\;j_*\;}
+H_1(X,A)\xrightarrow{\;\partial_*\;}
+H_0(A)\xrightarrow{\;i_*\;}
+H_0(X)\xrightarrow{\;j_*\;}
+H_0(X,A)\xrightarrow{\;0\;}0.
+\end{equation}
+Hence, $H_1(X,A)=0$ if and only if $j_*=0$ and $\partial_*=0$ if and only
+if $i_*$ is surjective and $i_*$ is injective on $H_0(A)\to H_0(X)$, i.e,
+each path-component of $X$ contains at most one path-component of $A$.
 \end{proof}
 \newpage
 
@@ -46,6 +47,24 @@ Show that for the subspace $\bfQ\subset\bfR$, the relative homology group
 $H_1(\bfR,\bfQ)$ is free abelian and find a basis.
 \end{problem}
 \begin{proof}
+Consider the long exact sequence of homology groups
+\begin{equation}
+  \label{eq:relative-short-exact-sequence-3}
+\cdots\xrightarrow{\;\partial_*\;}
+H_1(\bfQ)\xrightarrow{\;i_*\;}
+H_1(\bfR)\xrightarrow{\;j_*\;}
+H_1(\bfR,\bfQ)\xrightarrow{\;\partial_*\;}
+H_0(\bfQ)\xrightarrow{\;i_*\;}
+H_0(\bfR)\xrightarrow{\;j_*\;}
+H_0(\bfR,\bfQ)\xrightarrow{\;0\;}0.
+\end{equation}
+Since the space $\bfR$ is contractible, $H_*(\bfR)=0$ which implies that
+the map $i_*=0$ and $j_*=0$ on $H_0(\bfQ)\to H_0(\bfR)$ and $H_1(\bfR)\to
+H_1(\bfR,\bfQ)$, respectively. Hence, $\partial_*\colon H_1(\bfR,\bfQ)\to
+H_0(\bfQ)$ is surjective. Thus, $H_1(\bfR,\bfQ)\cong H_0(\bfQ)$. Since,
+$\bfQ$ is totally disconnected, i.e., every connected component and hence,
+path-component of $\bfQ$ is a singleton set, we have
+$H_0(\bfQ)\cong \bfZ[\bfQ]\cong H_1(\bfR,\bfQ)$.
 \end{proof}
 
 \newpage
@@ -53,6 +72,7 @@ $H_1(\bfR,\bfQ)$ is free abelian and find a basis.
 Homotopy invariance of homology.
 \end{problem}
 \begin{proof}
+
 \end{proof}
 
 %%% Local Variables:
