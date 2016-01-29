@@ -1,7 +1,7 @@
 \def\documentauthor{Carlos Salinas}
-\def\documenttitle{MA166 Recitation Notes and Exercises}
-% \def\hwnum{1}
-\def\shorttitle{MA166-Notes}
+\def\hwnum{1}
+\def\documenttitle{MA166: Review Sheet for Exam {\hwnum}}
+\def\shorttitle{MA166-Notes-Exam-\hwnum}
 \def\coursename{MA166}
 \def\documentsubject{calculus ii}
 \def\authoremail{salinac@purdue.edu}
@@ -33,10 +33,10 @@
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
 %% Math
+\usepackage{bm}
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{mathtools}
-\usepackage{bm}
 % \usepackage{unicode-math}
 
 %% PDFTeX specific
@@ -119,19 +119,14 @@
 \renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
 
 %% Commands and operators
-\DeclareMathOperator{\id}{id}
-\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\comp}{comp}
+\DeclareMathOperator{\proj}{proj}
 
 \newcommand{\bbC}{\mathbb{C}}
 \newcommand{\bbN}{\mathbb{N}}
 \newcommand{\bbQ}{\mathbb{Q}}
 \newcommand{\bbR}{\mathbb{R}}
 \newcommand{\bbZ}{\mathbb{Z}}
-\newcommand{\bfC}{\mathbf{C}}
-\newcommand{\bfN}{\mathbf{N}}
-\newcommand{\bfQ}{\mathbf{Q}}
-\newcommand{\bfR}{\mathbf{R}}
-\newcommand{\bfZ}{\mathbf{Z}}
 
 \newcommand{\bfu}{\mathbf{u}}
 \newcommand{\bfv}{\mathbf{v}}
@@ -142,9 +137,8 @@
 \title{\documenttitle}
 \date{\today}
 \maketitle
-\include{notes/recitation-1}
-\include{exercises/exercises-1}
-\include{exercises/exercises-2}
+\include{notes/ma166-exam-1}
+% \include{notes/ma166-solutions-1}
 \end{document}
 
 %%% Local Variables:
