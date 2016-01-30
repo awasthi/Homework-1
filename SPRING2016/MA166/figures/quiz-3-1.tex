@@ -1,0 +1,38 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{width=8cm,compat=1.12}
+\usepgfplotslibrary{fillbetween}
+\pgfmathdeclarefunction{poly1}{0}{\pgfmathparse{x^3}}
+\pgfmathdeclarefunction{poly2}{0}{\pgfmathparse{abs(x)}}
+\begin{document}
+\begin{tikzpicture}
+  \begin{axis}[
+    axis y line = left,
+    axis x line = bottom,
+    xtick       = {0,1},
+    xticklabels = {$0$,$1$},
+    ytick       = {0,1},
+    yticklabels = {$0$,$1$},
+    samples     = 160,
+    domain      = -.5:1.5,
+    xmin = -.5, xmax = 1.5,
+    ymin = -.5, ymax = 1.5,
+  ]
+  \addplot[name path=poly, black] {poly1}
+           node[pos=0.25,pin=-45:{$y=x^3$}] {};
+  \addplot[name path=line, black, mark={$y=|x|$}] {poly2}
+           node[pos=0.5,pin=135:{$y=|x|$}] {};
+  \addplot fill between[
+    of = poly and line,
+    split, % calculate segments
+    every even segment/.style = white,
+    every odd segment/.style  = {orange!70}
+  ];
+\end{axis}
+\end{tikzpicture}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

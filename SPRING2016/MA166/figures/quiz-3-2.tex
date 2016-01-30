@@ -1,0 +1,43 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{width=8cm,compat=1.12}
+\usepgfplotslibrary{fillbetween}
+\pgfmathdeclarefunction{exp1}{0}{\pgfmathparse{exp(x)}}
+\pgfmathdeclarefunction{exp2}{0}{\pgfmathparse{exp(2*x)}}
+\begin{document}
+\begin{tikzpicture}
+  \begin{axis}[
+    axis y line = left,
+    axis x line = bottom,
+    xtick       = {0,1,0.6931471805599453},
+    xticklabels = {$0$,$1$, $\ln 2$},
+    ytick       = {1,2},
+    yticklabels = {$1$,$2$},
+    samples     = 160,
+    domain      = -.5:1.5,
+    xmin = -1, xmax = 2,
+    ymin = -.25, ymax = 5,
+  ]
+  \addplot +[mark=none, black] coordinates
+                        {(0.6931471805599453, -.75)
+                         (0.6931471805599453, 5)}
+           node[pos=.45,pin=0:{$x=\ln 2$}] {};
+  \addplot[name path=exp1, black] {exp1}
+           node[pos=0.175,pin={[fill=white,fill opacity=.75,text opacity=1]-45:{$y=e^x$}}] {};
+  \addplot[name path=exp2, black] {exp2}
+           node[pos=0.1,pin={[fill=white]135:{$y=e^{2x}$}}] {};
+    \addplot fill between[
+    of = exp1 and exp2,
+    soft clip={domain=0:0.6931471805599453},
+    split, % calculate segments
+    every even segment/.style = white,
+    every odd segment/.style  = {orange!70}
+  ];
+\end{axis}
+\end{tikzpicture}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
