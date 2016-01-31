@@ -1,26 +1,93 @@
 \chapter{Review Notes for Exam 1}
-\section{}
+This is a review sheet for Exam 1 for MA 166. This is by no means the only
+resource you should use to study for the exam, but I hope it will serve as
+a good review for some of the techniques you have learned thus far.
+\section{Vectors and the Geometry of Space}
+\subsection{Three-Dimensional Coordinate Systems}
+In this section you first learn about the
+\href{https://en.wikipedia.org/wiki/Right-hand_rule}{right-hand rule} and
+right handed coordinate systems. This is really just a mathematical
+\emph{convention} that we follow because we like the cross product of two
+``positive'' vectors, i.e.\,vectors in the first quadrant of the
+$xy$-plane, to point out of the plane. Keep this in mind as you continue
+studying the natural sciences.
+
+A cute way to figure out whether you have a right-handed coordinate system
+is this:
+\begin{quote}
+If you are right-handed, imagine holding a coffee mug with your
+right hand, your thumb pointing up towards the $z$-axis, then your fingers
+wrapped around the handle of the mug will traverse first the $x$-axis, then
+end up on the $y$-axis.
+\end{quote}
+I noticed a lot of students were having trouble with describing equations
+and inequalities in $\bbR^2$ and $\bbR^3$. When you see an equation like
+``What does the equation $x=3$ represent in $\bbR^3$?'' your first thought
+should be, what is a point in the graph of this equation? The equation is
+telling us, no matter what choice of $y$ and $z$ we make, $x$ will always
+be $3$. Thus, the points $(3,1,0)$ and $(3,0,1)$ are in the graph of the
+equation $x=3$, but $(2,0,0)$ is not because we have the constraint that
+$x$ must equal $3$. You can already more or less see what this is going to
+look like. If you draw the line from $(3,1,0)$ to $(3,0,1)$ every point on
+the line will be in the graph of $x=3$ and if you pick any other point in
+$x=3$ and draw the line from $(3,1,0)$ to it, the same will be true, so
+$x=3$ must be a plane perpendicular to the $x$-axis which intersects the
+$x$-axis at $(3,0,0)$.
+
+Now, what does the equation $x=3$ represent in $\bbR^2$?
+
+Of course, you should also know the general equation of a sphere centered at
+$(x_0,y_0,z_0)$ with radius $r$:
+\begin{equation}
+  \label{eq:sphere}
+(x-x_0)^2+(y-y_0)^2+(z-z_0)^2=r^2.
+\end{equation}
+When you see a quadratic equation, i.e.,an equation with terms like $x^2$,
+$y^2$, $z^2$, you should try completing the square and simplifying it. For
+example, suppose we are asked what the following expression represents
+\[
+x^2+y^2+z^2-6x-4y+6z=0?
+\]
+First, you gather all your like terms and put them next to each other like
+this
+\[
+\left(x^2-6x\right)+\left(y^2-4y\right)+\left(z^2+6z\right)=0.
+\]
+Next, you complete the square, i.e., you add whatever terms you need to add
+to the parenthesized polynomials to turn it into the square of a linear
+polynomial (a linear polynomial looks like $ax+b$, or $a'y+b'$, or
+$a''z+b''$, etc.) so we have
+\[
+(x^2-6x+9)^2+(y^2-4y+4)+(z^2+6z+9)=9+4+9.
+\]
+\textbf{Don't forget} than when you are completing the square, you are
+adding terms, so you are changing your original equation, you must add the
+same terms to the right-hand side to balance the equation! Now you just
+need to recognize that, because the coefficient in front of $x$ is negative
+(the same for $y$) and $(x+a)^2=x^2+2ax+a^2$, then we must be looking at
+the square of negative $-3$ (the same is true of the coefficient in front
+of $y$) so we have
+\[
+(x-3)^2+(y-2)^2+(z+3)^2=22.
+\]
+Now we can read off the values: The equation $x^2+y^2+z^2-6x-4y+6z=0$
+represents a sphere of radius $\sqrt{22}$ centered at $(3,2,-3)$
+
+\subsection{}
 Now, if you find it a little difficult to remember \underline{$\comp$} and
 \underline{$\proj$} perhaps the following equation will help you see the
 relationship between the scalar projection and the projection
 \begin{equation}
   \label{eq:comp-to-proj}
-\proj_{\bfa}\bfb=
-\frac{\bfa\cdot\bfb}{|\bfa|^2}\bfa=
-\left(\frac{\bfa\cdot\bfb}{|\bfa|}\right)\frac{\bfa}{|\bfa|}
-=\comp_{\bfa}\bfb\frac{\bfa}{|\bfa|}.
+\proj_{\bfv}\bfw=
+\frac{\bfv\cdot\bfw}{|\bfv|^2}\bfv=
+\left(\frac{\bfv\cdot\bfw}{|\bfv|}\right)\frac{\bfv}{|\bfv|}
+=\comp_{\bfv}\bfw\frac{\bfv}{|\bfv|}.
 \end{equation}
 In fact, the scalar projection is just the \emph{signed} magnitude of
-$\proj_{\bfa}\bfb$ since
-\begin{align*}
-\left|\proj_{\bfa}\bfb\right|&=\sqrt{\proj_{\bfa}\bfb\cdot\proj_{\bfa}\bfb}\\
-&=\sqrt{\left(\comp_{\bfa}\bfb\frac{\bfa}{|\bfa|}\right)\cdot
-\left(\comp_{\bfa}\bfb\frac{\bfa}{|\bfa|}\right)}\\
-\text{which, by properties of the dot product}
-\section{}
-\section{}
-\section{}
-\section{}
+$\proj_{\bfv}\bfw$ since
+
+\section{Integration}
 
 %%% Local Variables:
 %%% mode: latex
