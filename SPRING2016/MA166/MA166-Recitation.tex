@@ -9,14 +9,24 @@
 \documentclass[article,oneside,10pt]{memoir}
 \usepackage{geometry}
 \usepackage[dvipsnames]{xcolor}
+
+\newcommand\myshade{85}
+\colorlet{mylinkcolor}{violet}
+\colorlet{mycitecolor}{YellowOrange}
+\colorlet{myurlcolor}{Aquamarine}
+
 \usepackage[
     breaklinks,
     bookmarks=true,
-    colorlinks=true,
+    % colorlinks=true,
     pageanchor=false,
-    linkcolor=violet!80!black,
-    citecolor=YellowOrange!80!black,
-    urlcolor=Aquamarine!80!black,
+    linkcolor=black,
+    anchorcolor=black,
+    citecolor=black,
+    filecolor=black,
+    menucolor=black,
+    runcolor=black,
+    urlcolor=black,
     hyperindex=false,
     hyperfootnotes=true,
     pdftitle={\shorttitle},
@@ -24,7 +34,6 @@
     pdfkeywords={\documentsubject},
     pdfsubject={\coursename}
     ]{hyperref}
-\usepackage{cleveref}
 
 % Use symbols instead of numbers
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
