@@ -5,12 +5,16 @@ $0<\delta<1$. Show that the resulting set is perfect, has measure
 $1-\delta$, and contains no interval.
 \end{problem}
 \begin{proof}
-Let $1>\delta>0$ be given. Subdivide the interval $[0,1]$ into thirds,
-$\left[1,\tfrac{1}{3}\right]$, $\left[\tfrac{1}{3},\tfrac{2}{3}\right]$,
-and $\left[\tfrac{2}{3},1\right]$ and remove the open subset
-$\left(\tfrac{1}{2}-\delta,\tfrac{1}{2}+\delta\right)$ from the middle
-third $\left[\tfrac{1}{3},\tfrac{2}{3}\right]$. Repeat this process ad
-infinitum.
+Let $0<\delta<1$ be given. We begin by removing the open set
+$\left(\frac{\delta}{3},1-\frac{\delta}{3}\right)$ from the closed interval
+$[0,1]$. This leaves us with two closed subsets of $[0,1]$, the sets
+$I_1^1\coloneqq\left[0,\tfrac{\delta}{3}\right]$ and
+$I_2^1\coloneqq\left[1-\tfrac{\delta}{3},1\right]$. Define $C_1\coloneqq
+I_1^1\cup I_1^2$. Continue this process ad infinitum, e.g., remove the open
+interval $\left(\tfrac{\delta}{9},\frac{\delta}{3}-\frac{\delta}{9}\right)$
+from $\left[0,\tfrac{\delta}{3}\right]$ and the open interval
+$\left(1-\tfrac{\delta}{3}+\tfrac{\delta}{9},1-\tfrac{\delta}{9}\right)$
+and so on, letting $C_k$ be the union of the remaining closed intervals.
 \end{proof}
 \newpage
 
@@ -26,6 +30,14 @@ intervals, then $\bigcup I_k$ is measurable and $\left|\bigcup
 \end{proof}
 \newpage
 
+\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\,8]
+Show that the Borel algebra $\calB$ in $\bfR^n$ is the smallest
+$\sigma$-algebra containing the closed sets in $\bfR^n$.
+\end{problem}
+\begin{proof}
+\end{proof}
+\newpage
+
 \begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\,9]
 If $\left\{E_k\right\}_{k=1}^\infty$ is a sequence of sets with
 $\sum\left|E_k\right|_e<+\infty$, show that $\limsup E_k$ (and
@@ -35,83 +47,10 @@ also $\liminf E_k$) has measure zero.
 \end{proof}
 \newpage
 
-\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\,12]
-If $E_1$ and $E_2$ are measurable subsets of $\bfR^1$, show that $E_1\times
-E_2$ is measurable subset of $\bfR^2$ and $\left|E_1\times
-  E_2\right|_e=\left|E_1\right|\left|E_2\right|_e$. (Interpret
-$0\cdot\infty$ as $0$) [\textsc{Hint:} Use a characterization of
-measurability.]
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-
-\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\,13]
-Motivated by (3.7), define the \emph{inner measure of $E$} to by
-$\left|E\right|_i\coloneqq\sup\left|F\right|$, where the supremum is taken
-over all closed subsets $F$ of $E$. Show that
-\begin{enumerate}[label=(\roman*)]
-\item $\left|E\right|_i\leq\left|E\right|_e$, and
-\item if $\left|E\right|_e<+\infty$, then $E$ is measurable if and only if
-  $\left|E\right|_e=\left|E\right|_i$. [Use (3.22).]
-\end{enumerate}
-
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-
-\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\,14]
-Show that the conclusion of part  (ii) of Exercise 13 (Problem) is false if
-$\left|E\right|_e=+\infty$.
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-
-\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\,8]
-Show that the Borel $\sigma$-algebra $\calB$ in $\bfR^n$ is the smallest
-$\sigma$-algebra containing the closed sets in $\bfR^n$.
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-
 \begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\,10]
-If $E_1$ and $E_2$ are measurable, show that $\left|E_1\cup
-  E_2\right|+\left|E_1\cap E_2\right|=\left|E_1\right|+\left|E_2\right|$.
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-
-\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\,15]
-If $E$ is measurable and $A$ is any subset of $E$, show that
-$\left|E\right|=\left|A\right|_i+\left|E\minus A\right|_e$. [See Exercise
-13 for the definition of $\left|A\right|_i$.]
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-
-\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\,16]
-Prove (3.34).
-\end{problem}
-\begin{proof}
-\begin{lemma*}
-$\left|P\right|=v(P)$.
-\end{lemma*}
-\end{proof}
-\newpage
-
-\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\,18]
-Prove that outer measure is \emph{translation invariant}; that is, if
-$E_{\textbf{h}}\coloneqq\left\{\,\mathbf{x}+\mathbf{h}\;\middle|\;\mathbf{x}\in
-  E\,\right\}$ is the translate of $E$ by $\mathbf{h}$,
-$\mathbf{h}\in\bfR^n$, show that
-$\left|E_{\mathbf{h}}\right|_e=\left|E\right|_e$. If $E$ is measurable,
-show that $E_{\mathbf{h}}$ is also measurable. [This fact was used in
-proving (3.37).]
+If $E_1$ and $E_2$ are measurable, show that
+$\left|E_1\cup E_2\right|+\left|E_1\cap
+  E_2\right|=\left|E_1\right|+\left|E_2\right|$.
 \end{problem}
 \begin{proof}
 \end{proof}
