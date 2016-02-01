@@ -98,7 +98,24 @@ also $\liminf E_k$) has measure zero.
 \begin{proof}
 Define $E\coloneqq\limsup E_k$ and $E'_\ell\coloneqq\bigcup_{k=\ell}^\infty
 E_k$. Then $E'_\ell$ is a decreasing (with respect to inclusion) sequence
-of sets with $\lim_\ell E_\ell'=E$.
+of sets with $\lim_\ell E_\ell'=E$. Then $E$ is contained in the
+intersection $\bigcap_{\ell=n}^\infty E_\ell'$ for all $n$, so by the
+monotonicity of the outer measure we have
+\[
+\left|E\right|_e\leq\left|E_\ell'\right|_e.
+\]
+On the other hand, we also have
+\[
+\left|E_n'\right|_e\leq\sum_{k=n}^\infty\left|E_k\right|_e
+\]
+for all $n$. Since, by assumption, the sum $\sum\left|E_k\right|_e$
+converges, we have, for every $\varepsilon>0$, there exists $N$
+sufficiently large such that the sum
+$\sum_{k=n}^\infty\left|E_k\right|_e<\varepsilon$ for every $n\geq
+N$. Thus, $\left|E\right|_e\leq\varepsilon$ for every $\varepsilon>0$. Let
+$\varepsilon\to 0$ and we have $\left|E\right|_e=0$ as desired. Lastly, we
+note that for any sequence $\left\{a_k\right\}\subset\bfR$ we have
+$\liminf a_n\leq\limsup a_n$ so, naturally, $\liminf E_k=0$.
 \end{proof}
 \newpage
 
@@ -108,6 +125,28 @@ $\left|E_1\cup E_2\right|+\left|E_1\cap
   E_2\right|=\left|E_1\right|+\left|E_2\right|$.
 \end{problem}
 \begin{proof}
+Without loss of generality, we may assume that
+$\left|E_1\right|,\left|E_2\right|<\infty$, for otherwise the result holds
+trivially.
+
+By Carathéodory, we have that
+
+\begin{equation}
+\label{eq:1}
+\left|E_1\right|=\left|E_1\cap
+  E_2\right|+\left|E_1\minus E_2\right|
+\quad\text{and}\quad
+\left|E_2\right|=\left|E_1\cap
+  E_2\right|+\left|E_2\minus E_1\right|.
+\end{equation}
+Moreover, by elementary set theory, we have $\left(E_1\cup E_2\right)\minus
+E_2=E_1\minus\left(E_1\cap E_2\right)$ and $E_1\subset E_1\cup E_2$, and
+$E_1\cap E_2\subset E_1$ so by rearranging (\ref{eq:1}) we have
+\[
+\left|E_1\cup E_2\right|+\left|E_1\cap
+  E_2\right|=\left|E_1\right|+\left|E_2\right|,
+\]
+as desired.
 \end{proof}
 
 %%% Local Variables:
