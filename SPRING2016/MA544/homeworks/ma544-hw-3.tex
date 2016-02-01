@@ -74,11 +74,29 @@ is strictly greater than $0$.
 Prove (3.15).
 \end{problem}
 \begin{proof}
+Recall the statement of 3.15:
 \begin{lemma*}[Wheeden \& Zygmund (3.15)]
 If $\left\{I_k\right\}_k^N$ is a finite collection of nonoverlapping
 intervals, then $\bigcup I_k$ is measurable and $\left|\bigcup
   I_k\right|=\sum\left|I_k\right|$.
 \end{lemma*}
+Note that the proof follows exactly as corollary 3.24. By theorem 3.14,
+since $\bigcup I_k$ is a finite union of closed sets, $\bigcup I_k$ is
+measurable. To see that $\left|\bigcup I_k\right|=\sum\left|I_k\right|$. By
+subadditivity, we have
+\[
+\left|\bigcup I_k\right|\leq\sum\left|I_k\right|.
+\]
+On the other hand, since
+$\left|{I_k}^\circ\right|=\left|{I_k}^\circ\right|+\left|\partial
+  I_k\right|=\left|{I_k}^\circ\cup\partial I\right|=\left|I_k\right|$, we
+have
+\[
+\sum\left|I_k\right|=
+\sum\left|{I_k}^\circ\right|\leq
+\left|\bigcup I_k\right|.
+\]
+Hence, $\left|\bigcup I_k\right|=\sum\left|I_k\right|$.
 \end{proof}
 \newpage
 
@@ -87,26 +105,36 @@ Show that the Borel algebra $\calB$ in $\bfR^n$ is the smallest
 $\sigma$-algebra containing the closed sets in $\bfR^n$.
 \end{problem}
 \begin{proof}
+  We defined the Borel algebra $\calB$ in $\bfR^n$ to be the smallest
+  $\sigma$-algebra containing the open sets in $\bfR^n$. Since $\calB$
+  contains all the closed subsets of $\bfR^n$, theorem 3.17, it suffices to
+  show that $\calB$ is the smallest such $\sigma$-algebra. Suppose $\calB'$
+  is another $\sigma$-algebra containing all of the closed sets in
+  $\bfR^n$. Then, by theorem 3.17, $\calB'$ contains all of the open sets
+  of $\bfR^n$ and, since $\calB$ is the smallest $\sigma$-algebra
+  containing the open subsets of $\bfR^n$, we have $\calB\subset\calB'$, as
+  desired.
 \end{proof}
 \newpage
 
 \begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\,9]
-If $\left\{E_k\right\}_{k=1}^\infty$ is a sequence of sets with
-$\sum\left|E_k\right|_e<+\infty$, show that $\limsup E_k$ (and
-also $\liminf E_k$) has measure zero.
+  If $\left\{E_k\right\}_{k=1}^\infty$ is a sequence of sets with
+  $\sum\left|E_k\right|_e<+\infty$, show that $\limsup E_k$ (and also
+  $\liminf E_k$) has measure zero.
 \end{problem}
 \begin{proof}
-Define $E\coloneqq\limsup E_k$ and $E'_\ell\coloneqq\bigcup_{k=\ell}^\infty
-E_k$. Then $E'_\ell$ is a decreasing (with respect to inclusion) sequence
-of sets with $\lim_\ell E_\ell'=E$. Then $E$ is contained in the
-intersection $\bigcap_{\ell=n}^\infty E_\ell'$ for all $n$, so by the
-monotonicity of the outer measure we have
-\[
-\left|E\right|_e\leq\left|E_\ell'\right|_e.
+  Define $E\coloneqq\limsup E_k$ and
+  $E'_\ell\coloneqq\bigcup_{k=\ell}^\infty E_k$. Then $E'_\ell$ is a
+  decreasing (with respect to inclusion) sequence of sets with
+  $\lim_\ell E_\ell'=E$. Then $E$ is contained in the intersection
+  $\bigcap_{\ell=n}^\infty E_\ell'$ for all $n$, so by the monotonicity of
+  the outer measure we have
+  \[
+  \left|E\right|_e\leq\left|E_\ell'\right|_e.
 \]
 On the other hand, we also have
 \[
-\left|E_n'\right|_e\leq\sum_{k=n}^\infty\left|E_k\right|_e
+  \left|E_n'\right|_e\leq\sum_{k=n}^\infty\left|E_k\right|_e
 \]
 for all $n$. Since, by assumption, the sum $\sum\left|E_k\right|_e$
 converges, we have, for every $\varepsilon>0$, there exists $N$
