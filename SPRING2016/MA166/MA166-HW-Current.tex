@@ -1,5 +1,5 @@
 \def\documentauthor{Carlos Salinas}
-\def\hwnum{6-8}
+\def\hwnum{1-10}
 \def\documenttitle{MA166: Solutions to Homework {\hwnum}}
 \def\shorttitle{MA166-HW-\hwnum-Sols}
 \def\coursename{MA166}
@@ -34,6 +34,7 @@
 
 %% Math
 \usepackage{bm}
+\usepackage{soul}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
@@ -111,6 +112,14 @@
 \newtheorem*{exercise*}{Exercise}
 \newtheorem*{problem*}{Problem}
 
+\theoremstyle{remark}
+\newtheorem{remark}{remark}
+\newtheorem{remarks}{Remarks}
+
+\newtheorem*{remark*}{remark}
+\newtheorem*{remarks*}{Remarks}
+
+
 %% Redefinitions & commands
 \newcommand{\nle}{\ensuremath{\not<}}
 \newcommand{\nge}{\ensuremath{\not>}}
@@ -122,6 +131,8 @@
 %% Commands and operators
 \DeclareMathOperator{\comp}{comp}
 \DeclareMathOperator{\proj}{proj}
+
+\newcommand{\diff}{\,\mathrm{d}}
 
 \newcommand{\bbC}{\mathbb{C}}
 \newcommand{\bbN}{\mathbb{N}}
@@ -138,8 +149,13 @@
 \title{\documenttitle}
 \date{\today}
 \maketitle
-% \include{homework/ma166-hw-6}
-% \include{homework/ma166-hw-7}
+\include{homework/ma166-hw-1}
+\include{homework/ma166-hw-2}
+\include{homework/ma166-hw-3}
+\include{homework/ma166-hw-4}
+\include{homework/ma166-hw-5}
+\include{homework/ma166-hw-6}
+\include{homework/ma166-hw-7}
 \include{homework/ma166-hw-8}
 \include{homework/ma166-hw-9}
 \include{homework/ma166-hw-10}
