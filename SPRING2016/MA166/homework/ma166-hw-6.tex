@@ -1,145 +1,100 @@
 \chapter{Homework 6 Solutions}
-Sorry, no pictures. Unless I can get a hang of
-\href{https://inkscape.org/}{Inkscape}'s graphing syntax, I won't be able
-to generate all of these images with just
-\href{http://www.texample.net/tikz/}{Ti$k$Z}; it is simply too much work. I
-am willing to plot integrals, cross-sectional areas, etc., but no shells
-and solids of revolution.
-
-\begin{problem}[Stewart \S{6.2}, Exercise 2]
-Find the volume of the solid obtained by rotating the region bounded by the
-given curves about the specified line. Sketch the region, the solid, and a
-typical washer.
-\\\\
-$y=1-x^2$, $y=0$; about the $x$-axis
-\end{problem}
-\begin{proof}[Solution]
-  We first need to figure out an equation for the cross-sectional area
-  $A(y)$ for our solid. Since we are rotating about the $x$-axis, our
-  problem is most easily approached by solving for $A$ in terms of
-  $x$. Since we are rotating, $A(y)=\pi y^2$ will be the area of a
-  circle. Solving for $A(y)$ in terms of $x$, we have $A(x)=\pi
-  (1-x^2)^2$.
-
-  Next we need to find the points where the graph $y=1-x^2$ intersects the
-  line $y=0$, i.e., where $1-x^2=0$. This is easy as, $-x^2=-1$ so $x^2=1$
-  hence, $x=-1$ or $1$.
-
-  Now we are ready to start calculating the volume of the solid of
-  revolution: Since the graph of $y$ is symmetric about the $y$-axis, it
-  suffices to compute the following integral from $0$ to $1$ and multiply
-  by $2$. Hence, we have
-  \begin{align*}
-    2\pi\int_0^1\left(1-x^2\right)^2\diff x
-    &=2\pi\int_0^11-2x^2+x^4\diff x\\
-    &=2\pi\left(\left.x-\frac{2x^3}{3}+\frac{x^5}{5}\right|_0^1\right)\\
-    &=2\pi\left(1-\frac{2}{3}+\frac{1}{5}-(0-0+0)\right)\\
-    &=2\pi\left(\frac{6}{15}\right)\\
-    &=\boxed{\frac{12\pi}{15}.}
-  \end{align*}
-\end{proof}
-
-\begin{problem}[Stewart \S{6.2}, Exercise 3]
-$y=\sqrt{x-1}$, $y=0$, $x=5$; about the $x$-axis.
-\end{problem}
-\begin{proof}[Solution]
-Same procedure, set $A(x)=\pi y^2=\pi\left(\sqrt{x-1}\right)^2$. Find the
-point $x$ where $y=\sqrt{x-1}$ intersects the lines $y=0$ and $x=5$. These
-values are $x=1$ and $x=5$. Now we are ready to compute the integral:
-\begin{align*}
-\pi\int_1^5x-1\diff x
-&=\pi\left(\left.\frac{x^2}{2}-x\right|_1^5\right)\\
-&=\pi\left(\frac{25}{2}-5-\frac{1}{2}+1\right)\\
-&=\boxed{8\pi.}
-\end{align*}
-\end{proof}
-
-\begin{problem}[Stewart \S{6.2}, Exercise 8]
-$y=\frac{1}{4}x^2$, $y=5-x^2$; about the $x$-axis.
-\end{problem}
-\begin{proof}[Solution]
-First, let us find the points of intersection of the graphs
-$y=\frac{1}{4}x^2$, $y=5-x^2$ as such
-\begin{align*}
-\frac{1}{4}x^2&=5-x^2\\
-x^2&=20-4x^2\\
-5x^2&=20\\
-x^2&=4
-\end{align*}
-so $x=\pm 2$. Now, since $y=5-x^2$ is above $y=\frac{1}{4}x^2$ for all
-$-2\leq x\leq 2$, the cross-section $A(y)=\pi y^2$ varies as the difference
-$5-x^2-\frac{1}{4}x^2=5-\frac{5}{4}x^2$ so
+\begin{problem}[WebAssign, HW 6, 1]
+Find the volume of the solid obtained by rotating the region bounded by
+the given curves about the x-axis.
 \[
-A(x)=\pi\left(5-\frac{5}{4}x^2\right)^2
+ y=2-2x^2,\quad y=0.
 \]
-and we have
+\end{problem}
+\begin{proof}[Solution]
+A good way to start the problem is to sketch the curve $y=2-x^2$ and the
+area under the curve as as you can see in Figure \ref{fig:hw-6-1}.
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.5]{hw-6-1}
+\caption{Sketch of the area under the curve of $y=2-2x^2$.}
+\label{fig:hw-6-1}
+\end{figure}
+Now, we are rotating about the $x$-axis so we want to find an expression
+for the cross-sectional area, which depends on $y$, in terms of $x$
+(remember, when we are rotating about an line or axis, our area $A$ will
+depend on the variable perpendicular to our line or axis of rotation, in
+this case $y$) in terms of our the variable we are varying over, i.e.,
+$x$. Hence,
+\[
+  A(y)=\pi y^2=\pi\left(2-2x^2\right)^2.
+\]
+Hence, the volume of our solid, rotating about the $x$-axis will be given
+by the integral
 \begin{align*}
-\pi\int_{-2}^2 \left(5-\frac{5}{4}x^2\right)^2\diff x
-&=\pi\int_{-2}^225-\frac{5}{2}x^2+\frac{25}{16}x^4\diff x
-\\
-&=2\pi\int_0^225-\frac{5}{2}x^2+\frac{25}{16}x^4\diff x
-\\
-&=2\pi\left(\left.25x-\frac{5}{6}x^3+\frac{5}{16}x^5\right|_0^2\right)\\
-&=2\pi\left(25\cdot 2-\frac{5\cdot 8}{6}+\frac{5\cdot 2^5}{16}\right)\\
-&=2\pi\left(50-\frac{20}{3}+10\right)\\
-&=2\pi\left(\frac{150-20+30}{3}\right)\\
-&=\boxed{\frac{320\pi}{3}}
+V=\int_{-1}^1 A(x)\diff x
+&=\int_{-1}^1 \pi\left(2-2x^2\right)^2\diff x\\
+&=\pi\int_{-1}^1 4-8x^2+4x^4\diff x\\
+&=\pi\left(\left.4x-\frac{8}{3}x^3+\frac{4}{5}x^5\right|_{-1}^1\right),\\
+\shortintertext{but since our graph is symmetric about the $y$-axis, we
+  only need to integrate from $0$ to $1$ and then double the value}
+&=2\pi\left(\left.4x-\frac{8}{3}x^3+\frac{4}{5}x^5\right|_{-1}^1\right)\\
+&=2\pi\left(4-\frac{8}{3}+\frac{4}{5}-\left(4\cdot 0-\frac{8}{3}\cdot
+  0^3-\frac{4}{5}\cdot 0^5\right)\right)\\
+&=2\pi\left(4-\frac{8}{3}+\frac{4}{5}\right)\\
+&=2\pi\left(\frac{4\cdot 3\cdot 5-8\cdot 5+4\cdot 3}{3\cdot 5}\right)\\
+&=2\pi\left(\frac{60-40+12}{15}\right)\\
+&=\frac{64\pi}{15}
 \end{align*}
 \end{proof}
 
-\begin{problem}[Stewart \S{6.2}, Exercise 9]
-$y^2=x$, $x=2y$; about the $y$-axis.
+
+\begin{problem}[WebAssign, HW 6, 2]
+  Find the volume $V$ of the solid obtained by rotating the region bounded by
+  the given curves about the specified line.
+  \[
+    y=2\sqrt{49-x^2},\quad y=0,\quad x=4,\quad x=5;\text{ about the $x$-axis.}
+  \]
 \end{problem}
 \begin{proof}[Solution]
-Since we are rotating about the $y$-axis, we want to consider the
-cross-sectional area $A$ perpendicular to the $y$-axis. Therefore, we want
-to solve for $A$ in terms of $x$. Now, let us find the values of $y$ where
-the equations $x=y^2$ and $x=2y$ intersect. These points are
-\begin{align*}
-y^2&=2y\\
-y^2-2y&=0\\
-y(y-2)&=0
-\end{align*}
-so $y=0$ or $y=2$. Now that we have our bounds, let us express the radius
-of our cross-sectional area in terms of $y$, i.e., it will be the
-difference $y^2-2y$ so that $A(y)=\pi (y(y-2))^2$ and we are ready to
-integrate:
-\begin{align*}
-\pi\int_0^2y^2(y-2)^2\diff y
-&=\pi\int_0^2y^2(y^2-2y+4)\diff y\\
-&=\pi\int_0^2y^4-2y^3+4y^2\diff y\\
-&=\pi\left(\left.\frac{y^5}{5}-\frac{y^4}{2}+\frac{4y^3}{3}\right|_0^2\right)\\
-&=\pi\left(\frac{2^5}{5}-\frac{2^4}{4}+\frac{4\cdot 2^3}{3}\right)\\
-&=\boxed{\frac{196\pi}{15}.}
-\end{align*}
+We begin by sketching the region like so
+[htbp]
+\begin{figure}[htbp]
+  \centering
+ \includegraphics{mhw-6-2}
+  \caption{Volume of solid obtain by rotating the region bounded by
+    $y=2\sqrt{49-x^2}$, $y=0$, $x=4$, and $x=5$.}
+  \label{fig:hw-6-2}
+\end{figure}
 \end{proof}
 
-\begin{problem}[Stewart \S{6.2}, Exercise 19]
 
+\begin{problem}[WebAssign, HW 6, 3]
 \end{problem}
 \begin{proof}[Solution]
 \end{proof}
 
-\begin{problem}[Stewart \S{6.2}, Exercise 21]
 
+\begin{problem}[WebAssign, HW 6, 4]
 \end{problem}
 \begin{proof}[Solution]
 \end{proof}
 
-\begin{problem}[Stewart \S{6.2}, Exercise 24]
 
+\begin{problem}[WebAssign, HW 6, 5]
 \end{problem}
 \begin{proof}[Solution]
 \end{proof}
 
-\begin{problem}[Stewart \S{6.2}, Exercise 26]
 
+\begin{problem}[WebAssign, HW 6, 6]
 \end{problem}
 \begin{proof}[Solution]
 \end{proof}
 
-\begin{problem}[Stewart \S{6.2}, Exercise 27]
 
+\begin{problem}[WebAssign, HW 6, 7]
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+
+
+\begin{problem}[WebAssign, HW 6, 8]
 \end{problem}
 \begin{proof}[Solution]
 \end{proof}
