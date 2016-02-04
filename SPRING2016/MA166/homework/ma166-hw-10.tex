@@ -1,43 +1,202 @@
 \chapter{Homework 10 Solutions}
-\begin{problem}[Stewart \S{7.2}, Exercise 1]
+\begin{problem}[WebAssign HW 10, 1]
+Evaluate the integral. (Use $C$ for the constant of integration.)
+\[
+\int 2\sin^2 x\cos^3 x\diff x
+\]
 \end{problem}
 \begin{proof}[Solution]
+First, note that $\cos^2 x=1-\sin^2 x$ so the integral above can be written
+as
+\begin{align*}
+\int 2\sin^2 x\cos^3 x\diff x
+&=\int 2\sin^2 x\cos^2 x\cos x\diff x\\
+&=\int 2\sin^2x(1-\sin^2 x)\cos x\diff x.
+\end{align*}
+Now, make the substitution $u=\sin x$. Then $\diff u=\cos x\diff x$ so our
+integral is now
+\begin{align*}
+\int 2u^2(1-u^2)\cos x\frac{\diff u}{\cos x}
+&=\int 2u^2(1-u^2)\diff u\\
+&=\int 2u^2-2u^4\diff u\\
+&=\tfrac{2}{3}u^3-\tfrac{2}{5}u^5+C\\
+&=\boxed{\tfrac{2}{3}\sin^3 x-\tfrac{2}{5}\sin^5 x+C.}
+\end{align*}
 \end{proof}
 
-\begin{problem}[Stewart \S{7.2}, Exercise 7]
+\begin{problem}[WebAssign HW 10, 2]
+Evaluate the integral
+\[
+\int_0^{\pi/2}5\cos^2\theta\diff\theta.
+\]
 \end{problem}
 \begin{proof}[Solution]
+For this problem, we can use the double-angle identity, i.e.,
+\begin{equation}
+  \label{eq:cosine-double-angle}
+\cos 2\theta=2\cos^2\theta-1=1-2\sin^2 x
+\end{equation}
+Substituting Equation (\ref{eq:cosine-double-angle}) into our integral, we
+have
+\begin{align*}
+\int_0^{\pi/2}5\cos^2\theta\diff\theta&=
+\int_0^{\pi/2}\tfrac{5}{2}(1+\cos 2\theta)\diff\theta\\
+&=\tfrac{5}{2}\int_0^{\pi/2}(1+\cos 2\theta)\diff\theta\\
+&=\tfrac{5}{2}\left(\left.\theta+\tfrac{1}{2}\sin
+  2\theta\right|_0^{\pi/2}\right)\\
+&=\tfrac{5}{2}\left(\frac{\pi}{2}+0-(0+0)\right)\\
+&=\boxed{\frac{5\pi}{4}.}
+\end{align*}
 \end{proof}
 
-\begin{problem}[Stewart \S{7.2}, Exercise 11]
+\begin{problem}[WebAssign HW 10, 3]
+Evaluate the integral.
+\[
+\int_0^{\pi/2}5\sin^2 x\cos^2 x\diff x.
+\]
 \end{problem}
 \begin{proof}[Solution]
+Again, we just use a trigonometric identity, specifically
+\begin{equation}
+  \label{eq:sine-double-angle}
+\sin 2 x =2\sin  x \cos x .
+\end{equation}
+Using Equation (\ref{eq:sine-double-angle}) our integral turns into
+\begin{align*}
+\int_0^{\pi/2}5\sin^2x\cos^2x\diff x
+&=5\int_0^{\pi/2}\tfrac{1}{4}(4\sin^2 x\cos^2x)\diff x\\
+&=\frac{5}{4}\int_0^{\pi/2}(2\sin x\cos x)^2\diff x\\
+&=\frac{5}{4}\int_0^{\pi/2}(\sin 2x)^2\diff x\\
+&=\frac{5}{4}\int_0^{\pi/2}\sin^2 2x\diff x\\
+&=\frac{5}{4}\int_0^{\pi/2}\sin^2 2x\diff x\\
+\shortintertext{now we use this identity $2\sin^2 x =1-\cos 2 x $
+  to get}
+&=\frac{5}{4}\int_0^{\pi/2}\frac{1}{2}(1-\cos 4 x )\diff x \\
+&=\frac{5}{8}\int_0^{\pi/2}1-\cos 4 x \diff x \\
+&=\frac{5}{8}\left(\left. x -\tfrac{1}{4}\sin
+  4 x \right|_0^{\pi/2}\right)\\
+&=\boxed{\tfrac{5\pi}{16}.}
+\end{align*}
 \end{proof}
 
-\begin{problem}[Stewart \S{7.2}, Exercise 17]
+\begin{problem}[WebAssign HW 10, 4]
+Evaluate the integral. (Remember to use $\ln(|u|)$ where appropriate. Use
+$C$ for constant of integration.)
+\[
+\int 9\cos^2 x\tan^3 x\diff x.
+\]
 \end{problem}
 \begin{proof}[Solution]
+Let's make the substitution $u=\cos x$ so $\diff u=-\sin x\diff x$ and we
+have
+\begingroup
+\allowdisplaybreaks
+\begin{align*}
+\int 9\cos^2 x\tan^3 x\diff x
+&=9\int \cos^2 x\tan^3 x\diff x\\
+&=9\int\frac{\cos^2 x\sin^3 x}{\cos^3 x}\diff x\\
+&=9\int\frac{\sin^3 x}{\cos x}\diff x\\
+&=9\int\frac{\sin x(1-\cos^2 x)}{\cos x}\diff x\\
+\shortintertext{now, for the substitution,}
+&=9\int\frac{\sin x(1-u^2)}{u}\frac{\diff u}{-\sin x}\\
+&=9\int\frac{u^2-1}{u}\diff u\\
+&=9\int u-\frac{1}{u}\diff u\\
+&=\tfrac{9}{2}u^2-9\ln|u|+C\\
+\shortintertext{and back, we have}
+&=\boxed{\tfrac{9}{2}\cos^2 x-9\ln|\cos x|+C.}
+\end{align*}
+\endgroup
 \end{proof}
 
-\begin{problem}[Stewart \S{7.2}, Exercise 23]
+\begin{problem}[WebAssign HW 10, 5]
+Evaluate the integral. (Use $C$ for the constant of integration.)
+\[
+\int 5\tan^2 x\diff x.
+\]
 \end{problem}
 \begin{proof}[Solution]
+The easiest one so far. Recall the identity
+\begin{equation}
+  \label{eq:tangent-identity}
+\sec^2 x -\tan^2 x =1.
+\end{equation}
+Then, we gave
+\[
+\int 5\tan^2x\diff x=5\int(\sec^2 x -1)\diff x =
+\boxed{5\tan x -5 x +C.}
+\]
 \end{proof}
 
 % p476:1,7,11,17,23,24,35,61
-\begin{problem}[Stewart \S{7.2}, Exercise 24]
+\begin{problem}[WebAssign HW 10, 6]
+\[
+\int 8\left(\tan^2x+\tan^4x\right)\diff x.
+\]
 \end{problem}
 \begin{proof}[Solution]
+We'll make the substitution $u=\tan x$, so $\diff u=\sec^2x\diff
+x$. Proceeding, we have
+\begin{align*}
+\int 8\left(\tan^2 x+\tan^4x\right)\diff x
+&=8\int\tan^2 x(1+\tan^2 x)\diff x\\
+\shortintertext{by Equation (\ref{eq:tangent-identity}), we have}
+&=8\int\tan^2 x\sec^2 x\diff x\\
+&=8\int u^2\diff u\\
+&=\tfrac{8}{3}u^3+C\\
+&=\boxed{\tfrac{8}{3}\tan^3 x+C.}
+\end{align*}
 \end{proof}
 
-\begin{problem}[Stewart \S{7.2}, Exercise 35]
+\begin{problem}[WebAssign HW 10, 7]
+Evaluate the integral
+\[
+\int_{\pi/6}^{\pi/2}\cot^2 x\diff x
+\]
 \end{problem}
 \begin{proof}[Solution]
+Remember that, like Equation (\ref{eq:tangent-identity}), there is a
+cotangent-identity
+\begin{equation}
+  \label{eq:cotangent-identity}
+1+\cot^2 x=\csc^2 x.
+\end{equation}
+With the help of this equation, we have
+\begin{align*}
+\int_{\pi/6}^{\pi/2}\cot^2 x\diff x&=
+\int_{\pi/6}^{\pi/2}(\csc^2-1)\diff x\\
+&=\left.-\cot x-x\right|_{\pi/6}^{\pi/2}\\
+&=0-\frac{\pi}{2}-\left(\sqrt{3}-\frac{\pi}{6}\right)\\
+&=\boxed{\sqrt{3}-\frac{\pi}{3}.}
+\end{align*}
 \end{proof}
 
-\begin{problem}[Stewart \S{7.2}, Exercise 61]
+\begin{problem}[WebAssign HW 10, 8]
+Find the volume $V$ obtained by rotating the region bounded by the given
+curves about the specified axis.
+\[
+y=9\sin x,\quad
+y=0,\quad
+\frac{\pi}{2}\leq x\leq\pi;\qquad
+\text{about the $x$-axis.}
+\]
 \end{problem}
 \begin{proof}[Solution]
+Since we are rotating about the $x$-axis, we need to find the
+cross-sectional area in terms of $y$ in terms of $x$, hence we have
+\[
+A(x)=\pi y^2=81\pi\sin^2 x.
+\]
+Now, integrating from $\pi/2$ to $\pi$, we get
+\begin{align*}
+\int_{\pi/2}^\pi A(x)\diff x
+&=81\pi\int_{\pi/2}^\pi \sin^2 x\\
+\shortintertext{using the double-angle identity for cosine, Equation
+  (\ref{eq:cosine-double-angle}), we get}
+&=81\pi\int_{\pi/2}^\pi \tfrac{1}{2}(1-\cos 2x)\diff x\\
+&=\tfrac{81\pi}{2}\left(\left.x-\tfrac{1}{2}\sin 2x\right|_{\pi/2}^\pi\right)\\
+&=\tfrac{81\pi}{2}\left(\pi-0-(\tfrac{1}{2}\pi)\right)\\
+&=\boxed{\frac{81\pi^2}{4}.}
+\end{align*}
 \end{proof}
 
 %%% Local Variables:
