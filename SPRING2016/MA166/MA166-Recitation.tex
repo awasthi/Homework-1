@@ -39,11 +39,9 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{mathtools}
-% \usepackage{unicode-math}
-
-%% PDFTeX specific
 \usepackage[mathcal]{euscript}
 \usepackage{mathrsfs}
+\usepackage{wasysym}
 
 \usepackage[LAE,LFE,T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -72,11 +70,14 @@
 
 % Misc
 \usepackage{microtype}
+\usepackage{soul}
 \usepackage{multicol}
 \usepackage[inline]{enumitem}
 \usepackage{listings}
 \usepackage{mleftright}
 \mleftright
+
+\usepackage{siunitx}
 
 %% Theorems and definitions
 %% remove parentheses
@@ -118,11 +119,13 @@
 \newcommand{\nsubset}{\ensuremath{\not\subset}}
 \newcommand{\nsupset}{\ensuremath{\not\supset}}
 \newcommand\minus{\ensuremath{\null\smallsetminus}}
-\renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
+\renewcommand\qedsymbol{\ensuremath{\null\hfill\smiley{}}}
 
 %% Commands and operators
 \DeclareMathOperator{\comp}{comp}
 \DeclareMathOperator{\proj}{proj}
+
+\newcommand{\diff}{\,\mathrm{r}}
 
 \newcommand{\bbC}{\mathbb{C}}
 \newcommand{\bbN}{\mathbb{N}}

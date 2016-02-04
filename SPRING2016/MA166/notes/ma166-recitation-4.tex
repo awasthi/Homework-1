@@ -1,5 +1,56 @@
-\section*{Script for Recitation 4}
+\chapter{Script for Recitation 4}
 
+\chapter{Exam Problems}
+\begin{problem}[Fall 2015, \# 6]
+The base of a solid is a circular disc in the $xy$-plane of radius
+$1$. Its cross sections perpendicular to the $x$–axis are isosceles
+right triangles, with hypotenuse in the base. Find the volume of this
+solid.
+\end{problem}
+\begin{proof}[Solution]
+We need a few equations to set this problem up. First, we need to find the
+base, height, and area of a right isosceles triangle. Since two of the
+sides of the isosceles triangle are the same and the angle between them is
+$\pi/2$, by the Pythagorean theorem we have
+\begin{equation}
+\label{eq:base-height-of-isosceles}
+b^2+h^2=b^2+b^2=2b^2={h'}^2
+\end{equation}
+where $b$ is the base, $h$ is the height (which in this case is equal to
+the base $b$), and $h'$ is the hypotenuse. Then $b=h=h'/\sqrt{2}$. Hence,
+the area of the triangle is
+\begin{equation}
+  \label{eq:area-of-isosceles-triangle}
+\tfrac{1}{2}bh=\frac{1}{2}\left(\frac{{h'}^2}{2}\right)=\tfrac{1}{4}{h'}^2.
+\end{equation}
+Exploiting the geometry of the base, let us consider the right \ul{half}
+of the circular base, find the area, and double our result to get the total
+area. Now, how does the hypotenuse change of the isosceles triangle
+changes as we move from left to right on the interval $0\leq x\leq 1$. At
+$x=0$, the base of the hypotenuse will be $2$. If we move a little to the
+right $x$, the hypotenuse will be given by the equation
+\[
+{h'}=2\sqrt{1-x^2}.
+\]
+Then, plugging in this value into our equation for the area (Equation
+(\ref{eq:area-of-isosceles-triangle})) we have
+\[
+\tfrac{1}{4}{h'}^2=\tfrac{1}{4}\left(2\sqrt{1-x^2}\right)^2=1-x^2.
+\]
+Now, approximating the volume by the Riemann sum and taking the limit, we
+get the volume over $0\leq x\leq 1$
+\[
+\int_0^1 1-x^2\diff x=\left.x-\tfrac{1}{3}x^3\right|_0^1=1-\frac{1}{3}=\frac{2}{3}.
+\]
+Last but not least, let us double the volume to get a total of
+\[
+V=2\left(\frac{2}{3}\right)=\boxed{\frac{4}{3}.}
+\]
+\end{proof}
+
+\input{homework/ma166-hw-8}
+\input{homework/ma166-hw-7}
+\input{homework/ma166-hw-10}
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../MA166-Recitation"
