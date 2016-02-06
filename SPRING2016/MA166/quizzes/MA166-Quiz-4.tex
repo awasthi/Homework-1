@@ -1,6 +1,6 @@
 \def\documentauthor{Carlos Salinas}
 \def\documenttitle{MA 166: Quiz {\hwnum} Solutions}
-\def\hwnum{3}
+\def\hwnum{4}
 \def\shorttitle{MA 166 HW {\hwnum} Sols}
 \def\coursename{MA166}
 \def\documentsubject{calculus ii}
@@ -12,7 +12,7 @@
 \usepackage[
     breaklinks,
     bookmarks=true,
-    colorlinks=true,
+    % colorlinks=true,
     pageanchor=false,
     linkcolor=black,
     anchorcolor=black,
@@ -321,12 +321,14 @@ the integral keeping the limits of integration the same throughout. This is
 wrong, but if your goal is to find the integral and then substitute back
 your original variable, this will give you the same answer. Just, be wary.
 \\\\
-(c) It's a good thing I taught you how to do tabular integration. Tabular
-integration is really just a neat way to organize your your integration by
-parts steps: Since I don't know how to draw arrows in \LaTeX, I am going to
-write a table and shift my right column up by one and multiply across this
-is not how it is usually done, but you guys are sharp $\smiley$ and I know
-you won't be confused by this. On our left we put $x^5$ since its $6$th
+(c) It's a good thing I taught you how to do
+\href{https://en.wikipedia.org/wiki/Integration_by_parts#Tabular_integration_by_parts}{tabular
+  integration}. Tabular integration is really just a neat way to organize
+your your integration by parts steps: Since I don't know how to draw arrows
+in \href{https://en.wikipedia.org/wiki/LaTeX}{\LaTeX}, I am going to write
+a table and shift my right column up by one and multiply across this is not
+how it is usually done, but you guys are sharp $\smiley$ and I know you
+won't be confused by this. On our left we put $x^5$ since its $6$th
 derivative is $0$ and on our right we put $e^{-x}$. Then we make the table
 \begin{center}
 \begin{tabular}{|c|c|c|}
@@ -485,11 +487,11 @@ sides is lying on the square. Since the side does not change as we move
 from $0$ to $1$, our cross sectional area will be constant and equal to the
 area of the equilateral triangle
 \[
-A(x)=\sqrt{3}{4}1^2=\sqrt{3}{4}.
+A(x)=\frac{\sqrt{3}}{4}\cdot 1^2=\frac{\sqrt{3}}{4}.
 \]
 Now, integrating this against $x$ we get
 \[
-\int_0^1 A(x)\diff x=\int_0^1\sqrt{3}{4}\diff
+\int_0^1 A(x)\diff x=\int_0^1\frac{\sqrt{3}}{4}\diff
 x=\frac{\sqrt{3}}{4}\left(\left.x\right|_0^1\right)=\boxed{\frac{\sqrt{3}}{4}.}
 \]
 This is similar to Spring 2015 Problem 9. That one is a bit harder because
