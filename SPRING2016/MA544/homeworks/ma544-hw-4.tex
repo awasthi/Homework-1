@@ -1,65 +1,110 @@
 % #4 - Due Feb. 8 Read Sections 3.5, 4.1. Chapter 3: # 12, 13, 14, 15 (16,
 % 18), (Chapter 4: # 1, 2
 
-\begin{problem}
+\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\,12]
+If $E_1$ and $E_2$ are measurable sets in $\bbR^1$, show $E_1\times E_2$ is
+a measurable subset of $\bbR^2$ and $\left|E_1\times
+  E_2\right|=\left|E_1\right|\left|E_2\right|$. (Interpret $0\cdot\infty$
+as $0$.) [\textsc{Hint:} Use a characterization of measurability.]
+\end{problem}
+\begin{proof}
+By (3.28) (i) we may write $E_1$ and $E_2$ as the unions $H_1\cup Z_1$ and
+$H_2\cup Z_2$, respectively, where $H_1$ and $H_2$ are $F_\sigma$ and $Z_1$
+and $Z_2$ are measure zero. Now, by elementary set theory, the Cartesian
+product $E_1\times E_2$ can then be written as
+\begin{equation}
+\label{eq:1}
+E_1\times E_2=(H_1\cup Z_1)\times (H_2\cup Z_2)=
+\underbrace{H_1\times H_2}_H\cup
+\underbrace{H_1\times Z_2\cup Z_1\times H_2\cup Z_1\times Z_2}_Z.
+\end{equation}
+Hence, we win by (3.28) (i) if we can show that the Cartesian of two
+$F_\sigma$ sets is an $F_\sigma$ set and if the Cartesian product of a
+measurable set with a set of measure zero is measure zero.
+
+First, we prove the former, since the argument to be made is little more
+than elementary set theory. Let $F_1$ and $F_2$ be $F_\sigma$. Write
+$F_1=\bigcup F_k'$ and $F_2=\bigcup F_k''$ where the $F_k'$'s and the
+$F_k''$'s are closed subsets of $\bbR$. Then, $F_k'\times F_\ell''$ are
+closed subsets of $\bbR^2$ by elementary topology. Moreover,
+$F_k'\times F_\ell''\subset F_1\times F_2$ hence,
+$\bigcup_{k,\ell} F_k'\times F_\ell''\subset F_1\times F_2$. Thus, it
+suffices to show that
+$\bigcup_{k,\ell} F_k'\times F_\ell''\supset F_1\times F_2$. Let
+$(x,y)\in F_1\times F_2$. Then $x\in F_1$ and $y\in F_2$. But since
+$F_1=\bigcup F_k'$ and $F_2=\bigcup F_k''$ then $x\in F_k'$ and
+$x\in F_\ell''$ for some $k$, $\ell$. In other words,
+$(x,y)\in F_k'\times F_\ell''$ so $(x,y)$ is in the union
+$\bigcup_{k,\ell}F_k'\times F_\ell''$. Hence, we have
+$F_1\times F_2=\bigcup_{k,\ell} F_k'\times F_\ell''$. We conclude that if
+$F_1$ and $F_2$ are $F_\sigma$, then so is their Cartesian product
+$F_1\times F_2$.
+
+Let $E$ be a measurable set with $\left|E\right|<\infty$ and $Z$ a set of
+measure zero. Then, for every $\varepsilon>0$ there exists a countable
+collection of intervals $\left\{I_k\right\}$ containing $Z$ such that
+$\sum\Vol\left(I_k\right)<\varepsilon$. Similarly, we can find a collection
+$\left\{I_k'\right\}$ of intervals containing $E$ such that
+$\sum\Vol\left(I_k'\right)<\left|E\right|+\varepsilon$. Then,
+$\left\{I_k'\times I_\ell\right\}$ is a countable collection of
+$2$-intervals containing $E\times Z$ with
+\begin{align*}
+\sum\Vol\left(I_k'\times I_\ell\right)
+&=\sum\Vol\left(I_k'\right)\Vol\left(I_\ell\right)\\
+&=\sum_k\sum_\ell\Vol\left(I_k'\right)\Vol\left(I_\ell\right)\\
+&=\left(\sum_k\Vol\left(I_k'\right)\right)
+\left(\sum_\ell\Vol\left(I_\ell\right)\right)\\
+&=\left(\left|E\right|+\varepsilon\right)\varepsilon
+\end{align*}
+Letting $\varepsilon\to 0$, we have $E\times Z$ is measure zero. If
+$\left|E\right|=\infty$, partition $E$ into disjoint finite measure subsets
+of $\bbR$ by taking the following intersection
+\[
+E_k=E\cap\left(B(0,k)\setminus B(0,k-1)\right)
+\]
+for $k\in\bfN$. By our previous argument, $E_k\times Z$ is measure zero so
+$\left\{E_k\times Z\right\}$ is a cover of $E\times Z$
+
+Then, $E=\bigcup E_k$ so by subadditivity we have
+\begin{align*}
+\left|E\right|
+\end{align*}
+\end{proof}
+\newpage
+
+\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\,13]
+Motivated by (3.7), define the \emph{inner measure} of $E$ by
+$\left|E\right|_i=\sup\left|F\right|$, where the supremum is taken over all
+closed subsets $F$ of $E$. Show that
+\begin{enumerate}[label=(\roman*)]
+\item $\left|E\right|_t\leq\left|E\right|_e$, and
+\item if $\left|E\right|_e<+\infty$, then $E$ is measurable if and only if
+  $\left|E\right|_i=\left|E\right|_e$.
+\end{enumerate}
+[Use (3.22).]
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
 
-\begin{problem}
+\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\,14]
+  Show that the conclusion of part (ii) of Exercise 13 is false if
+  $\left|E\right|_e=+\infty$.
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
 
-\begin{problem}
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
 
-\begin{problem}
+\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\,15]
+If $E$ is measurable and $A$ is any subset of $E$, show that
+$\left|E\right|=\left|A\right|_i+\left|E-A\right|_e$. (See Exercise 13 for
+the definition of $\left|A\right|_i$.)
 \end{problem}
 \begin{proof}
 \end{proof}
-\newpage
 
-\begin{problem}
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-
-\begin{problem}
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-
-\begin{problem}
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-
-\begin{problem}
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-
-\begin{problem}
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-
-\begin{problem}
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-%%% Local Variables:%+% mode: latex
+%%% Local Variables:
+%%% mode: latex
 %%% TeX-master: "../MA544-HW-Current"
 %%% End:
