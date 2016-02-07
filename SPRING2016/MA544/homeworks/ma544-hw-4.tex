@@ -1,7 +1,7 @@
 % #4 - Due Feb. 8 Read Sections 3.5, 4.1. Chapter 3: # 12, 13, 14, 15 (16,
 % 18), (Chapter 4: # 1, 2
 
-\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\,12]
+\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\@ 12]
 If $E_1$ and $E_2$ are measurable sets in $\bbR^1$, show $E_1\times E_2$ is
 a measurable subset of $\bbR^2$ and $\left|E_1\times
   E_2\right|=\left|E_1\right|\left|E_2\right|$. (Interpret $0\cdot\infty$
@@ -49,8 +49,8 @@ $\sum\Vol\left(I_k'\right)<\left|E\right|+\varepsilon$. Then,
 $\left\{I_k'\times I_\ell\right\}$ is a countable collection of
 $2$-intervals containing $E\times Z$ with
 \begin{align*}
-\sum\Vol\left(I_k'\times I_\ell\right)
-&=\sum\Vol\left(I_k'\right)\Vol\left(I_\ell\right)\\
+\sum_{k,\ell}\Vol\left(I_k'\times I_\ell\right)
+&=\sum_{k,\ell}\Vol\left(I_k'\right)\Vol\left(I_\ell\right)\\
 &=\sum_k\sum_\ell\Vol\left(I_k'\right)\Vol\left(I_\ell\right)\\
 &=\left(\sum_k\Vol\left(I_k'\right)\right)
 \left(\sum_\ell\Vol\left(I_\ell\right)\right)\\
@@ -62,32 +62,71 @@ of $\bbR$ by taking the following intersection
 \[
 E_k=E\cap\left(B(0,k)\setminus B(0,k-1)\right)
 \]
-for $k\in\bfN$. By our previous argument, $E_k\times Z$ is measure zero so
-$\left\{E_k\times Z\right\}$ is a cover of $E\times Z$
-
-Then, $E=\bigcup E_k$ so by subadditivity we have
+for $k\in\bbN$. By our previous argument, $E_k\times Z$ is measure zero so
+$\left\{E_k\times Z\right\}$ is a cover of $E\times Z$ hence, by
+(3.24), we have
 \begin{align*}
-\left|E\right|
+\left|E\times Z\right|
+&=\left|\left(\bigcup_k E_k\right)\times Z\right|\\
+&=\left|\bigcup_k E_k\times Z\right|\\
+&=\sum_k \left|E_k\times Z\right|\\
+&=0.
 \end{align*}
+Thus, $E\times Z$ is measure zero.
+
+Hence, $E_1\times E_2$ is measurable with $\left|E_1\times
+E_2\right|=\left|H_1\times H_2\right|$. It's left to show is
+that $\left|H_1\times H_2\right|=\left|H_1\right|\left|H_2\right|$.
+
+Let $H_1$ and $H_2$ be $F_\sigma$ sets of finite measure. Then, for every
+$\varepsilon>0$, there exists a collection of intervals
+$\left\{I_k\right\}$ and $\left\{I_k'\right\}$ covering $H_1$ and $H_2$
+respectively such that
+\begin{align*}
+\sum_k\Vol\left(I_k\right)&<\left|H_1\right|+\varepsilon&
+\sum_k\Vol\left(I_k'\right)&<\left|H_2\right|+\varepsilon.
+\end{align*}
+Then the collection $\left\{I_k\times I_\ell'\right\}$ is a
+cover of $H_1\times H_2$ by $2$-intervals and we have
 \end{proof}
 \newpage
 
-\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\,13]
+\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\@ 13]
 Motivated by (3.7), define the \emph{inner measure} of $E$ by
 $\left|E\right|_i=\sup\left|F\right|$, where the supremum is taken over all
 closed subsets $F$ of $E$. Show that
 \begin{enumerate}[label=(\roman*)]
-\item $\left|E\right|_t\leq\left|E\right|_e$, and
+\item $\left|E\right|_i\leq\left|E\right|_e$, and
 \item if $\left|E\right|_e<+\infty$, then $E$ is measurable if and only if
   $\left|E\right|_i=\left|E\right|_e$.
 \end{enumerate}
 [Use (3.22).]
 \end{problem}
 \begin{proof}
+(i) If the outer measure of $E$ is infinite, the inequality holds
+trivially. Suppose $|E|_e<\infty$. Since closed sets are measurable and
+their outer measure is equal to their Lebesgue measure, then we may replace
+$\left|F\right|$ by $\left|F\right|_e$ to mirror the definition of the
+outer-measure and, by the monotonicity of the outer measure, we have
+\begin{equation}
+\label{eq:monotonicity-outer-measure}
+\left|F\right|=\left|F\right|_e\leq\left|E\right|_e.
+\end{equation}
+Taking the supremum on both sides of (\ref{eq:monotonicity-outer-measure}),
+we obtain the desired inequality
+\begin{equation}
+\label{eq:inner-outer-measure}
+\left|E\right|_i\leq\left|E\right|_e.
+\end{equation}
+\\\\
+(ii) $\implies$ Suppose $E$ is measurable with
+$\left|E\right|<\infty$. Then we have
+
+$\impliedby$ Suppose that $\left|E\right|_i=\left|E\right|_e$. Then
 \end{proof}
 \newpage
 
-\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\,14]
+\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\@ 14]
   Show that the conclusion of part (ii) of Exercise 13 is false if
   $\left|E\right|_e=+\infty$.
 \end{problem}
@@ -96,7 +135,7 @@ closed subsets $F$ of $E$. Show that
 \newpage
 
 
-\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\,15]
+\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\@ 15]
 If $E$ is measurable and $A$ is any subset of $E$, show that
 $\left|E\right|=\left|A\right|_i+\left|E-A\right|_e$. (See Exercise 13 for
 the definition of $\left|A\right|_i$.)
