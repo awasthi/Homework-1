@@ -163,10 +163,17 @@ since $H_k'\supset E_1$ and $H_k''\supset E_2$ are open so $\bigcap
 H_k'\supset E_1$ and $\bigcap H_k''\supset E_2$ and their outer measure
 approach the outer measure of $E_1$ and $E_2$ as $k\to\infty$.
 \end{proof}
-Putting together our results, by lemma
-\ref{lem:measure-of-product-of-measure-zero} and
-\ref{lem:measure-of-product-of-g-delta}, we have $\left|E_1\times
-  E_2\right|=\left|E_1\right|\left|E_2\right|$, as desired.
+Putting together our results, by equation \ref{eq:1},
+lemma \ref{lem:measure-of-product-of-measure-zero}, and
+lemma \ref{lem:measure-of-product-of-g-delta}, we can express
+$E_1\times E_2$ as a $G_\delta$ set $H$ minus a set of measure zero $Z$
+and its measure is
+\[
+ \left|E_1\times E_2\right|=
+\left|H_1\right|\left|H_2\right|=
+\left|E_1\right|\left|E_2\right|,
+\]
+as desired.
 \end{proof}
 \newpage
 
@@ -199,11 +206,38 @@ we obtain the desired inequality
 \end{equation}
 \\\\
 (ii) $\implies$ Suppose $E$ is measurable with
-$\left|E\right|<\infty$. Then for every $\varepsilon>0$ there exists an
-open set $G\supset E$ such that
-$\left|G\right|_e<\left|E\right|_e+\varepsilon$.
+$\left|E\right|<\infty$. By (3.22), given $\varepsilon>0$, there exists a
+closed set $F\subset E$ such that $\left|E\minus
+  F\right|_e<\varepsilon$. Since $F$ is measurable, by (3.31), we have
+\begin{equation}
+\label{eq:applied-caratheodory}
+\left|E\minus F\right|_e=\left|E\right|_e-\left|F\right|.
+\end{equation}
+But $E$ is also measurable, so equation (\ref{eq:applied-caratheodory})
+becomes
+\begin{equation}
+  \label{eq:becomes-this}
+\left|E\minus F\right|_e+\left|F\right|=\left|E\right|<\varepsilon+\left|F\right|.
+\end{equation}
+Taking the supremum of (\ref{eq:becomes-this}) over all $F$, we gave
+\[
+\left|E\right|_e=\left|E\right|\leq \left|F\right|+\varepsilon=\left|E\right|_i+\varepsilon
+\]
+for all $\varepsilon>0$. By equation (\ref{eq:inner-outer-measure}), we
+achieve equality of the inner and outer measure, i.e.,
+$\left|E\right|_i=\left|E\right|_e$.
 
-$\impliedby$ Suppose that $\left|E\right|_i=\left|E\right|_e$. Then
+$\impliedby$ Conversely, suppose that
+$\left|E\right|_i=\left|E\right|_e$. Then, given $\varepsilon>0$, by the
+definition of outer measure, there exists an open set $G\supset E$ and, by
+the definition of inner measure, closed set $F\subset E$ such that
+\begin{equation}
+  \label{eq:inner-outer-approximation}
+\left|G\right|-\left|E\right|_e<\frac{\varepsilon}{2}\qquad\text{and}\qquad
+\left|E\right|_i-\left|F\right|=
+\left|E\right|_e-\left|F\right|<\frac{\varepsilon}{2}.
+\end{equation}
+
 \end{proof}
 \newpage
 
