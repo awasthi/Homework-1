@@ -93,9 +93,9 @@ Thus, $E\times Z$ is measure zero.
 \end{proof}
 
 By lemma \ref{lem:product-of-g-delta} and
-\ref{lem:product-of-measure-zero}, $E_1\times E_2$ is measurable with
-$\left|E_1\times E_2\right|=\left|H_1\times H_2\right|$. It's left to show
-is that $\left|H_1\times H_2\right|=\left|H_1\right|\left|H_2\right|$.
+\ref{lem:measure-of-product-of-measure-zero}, $E_1\times E_2$ is measurable
+with $\left|E_1\times E_2\right|=\left|H_1\times H_2\right|$. It's left to
+show is that $\left|H_1\times H_2\right|=\left|H_1\right|\left|H_2\right|$.
 
 \begin{lemma}
 \label{lem:measure-of-product-of-g-delta}
@@ -237,25 +237,91 @@ the definition of inner measure, closed set $F\subset E$ such that
 \left|E\right|_i-\left|F\right|=
 \left|E\right|_e-\left|F\right|<\frac{\varepsilon}{2}.
 \end{equation}
-
+Then
+\[
+\left|E\minus F\right|_e
+<\left|G\minus F\right|_e
+=\left|G\right|_e-\left|G\cap F\right|_e
+=\left|G\right|_e-\left|F\right|_e
+<2\left(\frac{\varepsilon}{2}\right)=\varepsilon.
+\]
+So by (3.22) $E$ is measurable.
 \end{proof}
 \newpage
 
-\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\@ 14]
-  Show that the conclusion of part (ii) of Exercise 13 is false if
-  $\left|E\right|_e=+\infty$.
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-
+% \begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\@ 14]
+%   Show that the conclusion of part (ii) of Exercise 13 is false if
+%   $\left|E\right|_e=+\infty$.
+% \end{problem}
+% \begin{proof}
+% \end{proof}
+% \newpage
 
 \begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\@ 15]
 If $E$ is measurable and $A$ is any subset of $E$, show that
-$\left|E\right|=\left|A\right|_i+\left|E-A\right|_e$. (See Exercise 13 for
+$\left|E\right|=\left|A\right|_i+\left|E\minus A\right|_e$. (See Exercise 13 for
 the definition of $\left|A\right|_i$.)
 \end{problem}
 \begin{proof}
+If $A$ is measurable, by our previous problem,
+$\left|A\right|_e=\left|A\right|=\left|A\right|_i$ so by (3.31), we have
+\[
+|E\minus A|_e=|E|_e-|A|=|E|-|A|_i,
+\]
+so $\left|E\right|=\left|A\right|_i+\left|E\minus A\right|_e$.
+
+If $A$ is not measurable and $\left|E\right|<\infty$ then $|A|_e$ and
+$\left|E\minus A\right|_e<\infty$ since $E\minus A\subset E$. Hence, we can
+subtract the quantity $\left|E\minus A\right|_e$ from
+$\left|E\right|_e=\left|E\right|$ and we get
+\begin{align*}
+\left|E\right|-\left|E\minus A\right|_e
+&=\left|E\right|-\inf\left\{\,\left|G\right|:\text{$G\supset E\minus A$ is open}\,\right\}\\
+&=\left|E\right|-\inf\left\{\,\left|G\right|:\text{$G\supset E\minus A$ is open}\,\right\}\\
+&=\left|E\right|-\inf\left\{\,\left|G\right|:\text{$E\supset G\supset E\minus
+  A$ is open}\,\right\}\\
+&=\left|E\right|-\inf\left\{\,\left|E\right|-\left|F\right|:\text{$E\minus
+  G\subset A$, $G\supset E\minus A$ is open}\,\right\}\\
+\intertext{pulling the $|E|$ inside of the infimum we get}
+&=-\inf\left\{\,-\left|F\right|:\text{$F\subset A$, where $F\coloneqq
+  E\minus G$ and $G\supset A$ is open}\,\right\}\\
+&=\sup\left\{\,\left|F\right|:\text{$F\subset A$, where $F\coloneqq
+  E\minus G$ and $G\supset A$ is open}\,\right\}\\
+&=\left|A\right|_i,
+\end{align*}
+so $\left|E\right|=\left|A\right|_i+\left|E\minus A\right|_e$ as desired.
+
+More generally, if $E$ is measurable we can establish the following lower
+bound on $|E|$: By definition of the inner measure, for every $F\subset A$
+closed we have
+\begin{equation}
+\label{eq:inner-measure-lower-bound}
+|E|=|F|+|E\minus F|\geq |F|+\left|E\minus A\right|_e,
+\end{equation}
+which follows from (3.31), since $F\subset A\subset E$ is measurable,
+$E\minus A\subset E\minus F$, and the monotonicity of outer measure. Taking
+the supremum on both sides of equation (\ref{eq:inner-measure-lower-bound})
+over all closed $F\subset A$ we achieve the desired lower bound
+\begin{equation}
+  \label{eq:lower-bound}
+|E|\geq |A|_i+|E\minus A|_e.
+\end{equation}
+
+Now, let $E$ be measurable. Then, we have
+\begin{align}
+\label{eq:upper-bound}
+|A|_i+|E\minus A|_e
+&\geq\sup\left\{\,|F\cap A|_i+|F\minus A|_e:\text{$F\subset E$ is closed, $|F|<\infty$}\,\right\}\nonumber\\
+&=\sup\left\{\,|F|:\text{$F\subset E$ closed, $|F|<\infty$}\,\right\}\nonumber\\
+&=|E|_i\nonumber\\
+\intertext{which by our last problem is just}
+&=|E|,
+\end{align}
+since $E$ is measurable. Having bounded $|E|$ by equations
+(\ref{eq:lower-bound}) and (\ref{eq:upper-bound}) we achieve the equality
+\[
+|E|=|A|_i+|E\minus A|_e.\qedhere
+\]
 \end{proof}
 
 %%% Local Variables:
