@@ -120,6 +120,15 @@
 % \newtheorem{exercise-ru}{\textru{Упражнение}}[chapter]
 % \newtheorem{problem-ru}[exercise-ru]{\textru{Проблема}}
 
+\newenvironment{demostracion}[1][]% environment name
+{% begin code
+\begin{proof}[Demostración{~#1}]
+}%
+{% end code
+\end{proof}
+}
+
+
 %% Redefinitions & commands
 \newcommand{\nsubset}{\ensuremath{\not\subset}}
 \newcommand{\nsupset}{\ensuremath{\not\supset}}
@@ -129,8 +138,11 @@
 %% Commands and operators
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\nuc}{\textes{núc}}
-\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\nucleo}{núc}
+\DeclareMathOperator*{\infimo}{ínf}
+\DeclareMathOperator*{\maximo}{máx}
+\DeclareMathOperator{\mcd}{mcd}
+\DeclareMathOperator{\mcm}{mcm}
 
 \newcommand{\bbC}{\mathbb{C}}
 \newcommand{\bbN}{\mathbb{N}}
