@@ -1,0 +1,94 @@
+\chapter{Notes}
+Let's just turn this file into notes.
+
+\section{Preliminaries}
+\subsection{Topological spaces}
+By a topological space we mean a pair $(X,\calT)$, where $X$ is a set and
+$\calT$ is a set of subsets of $X$ satisfying:
+\begin{enumerate}[label=(\roman*)]
+\item $\emptyset,X\in\calT$.
+\item If $U_1,U_2\in\calT$, then $U_1\cap U_2\in\calT$.
+\item For any subset $\calS\subset\calT$, $\bigcup_{U\in\calS} U\in\calT$.
+\end{enumerate}
+
+The sets $U\in\calT$ are referred to as \emph{$\calT$-open sets} or,
+simply, \emph{open sets} when the topology $\calT$ is understood. A subset
+$C\subset X$ is \emph{$\calT$-closed} or, simply, \emph{closed} if
+$X\minus C\in\calT$. Given a subset $Y\subset X$, we define the
+\emph{closure} of $Y$ in $X$ to be the intersection of all closed sets
+$C\subset X$ such that $Y\subset C$. We denote the closure of $Y$ by
+$\overline Y$. We say $Y\subset X$ is \emph{dense} if $\overline Y=X$. For
+each $x\in X$, we say $U\in\calT$ is an \emph{open neighborhood} of $x$ or,
+simply, a \emph{neighborhood} of $x$ if $x\in U$. A \emph{base} for a
+topology $\calT$ is any subset $\calB$ of $\calT$ such that every
+$U\in\calT$ can be expressed as a union of open sets in $\calB$. A
+\emph{neighborhood base} at $x$ is any collection $\calB_x$ of
+neighborhoods of $x$ such that every every neighborhood of $x$ can be
+expressed as a union of sets in $\calB_x$.
+
+\begin{example}[Discrete topology]
+If $\calT$ is the power set $\calP(x)$ of $X$ then $\calT$ is a
+topology. This topology is called the \emph{discrete topology}. Every set
+of $X$ is both open and closed.
+\end{example}
+
+Given a topological space $(X,\calT)$ and a subset $Y\subset X$, we define
+the \emph{subspace topology $\calT_{X,Y}$} on $Y$ by
+\begin{equation}
+  \label{eq:subspace-topology}
+\calT_{X,Y}\coloneqq\left\{\,U\cap Y:U\in\calT\,\right\}.
+\end{equation}
+We will refer to $(Y,\calT_{X,Y})$ as a subspace of $(X,\calT)$. We say
+that $(X,\calT)$ is \emph{compact} if given any subset $\calS\subset\calT$
+such that $X=\bigcup_{U\in\calS} U$, there exists a finite subset
+$\calS_0\subset\calS$ such that $X=\bigcup_{U\in\calS_0} U$. We will say
+that a subset $Y\subset(X,\calT)$ is compact if $(Y,\calT_{X,Y})$ is a
+compact space. The following lemma is immediate from the definition of
+closed and compact.
+
+\begin{lemma}
+Let $(X,\calT)$ be a compact space. If $\calS$ is a collection of closed
+sets of $X$ such that for any finite subset $\calS_0\subset\calS$, we have
+$\bigcap_{C\in\calS_0}C\neq\emptyset$, then $\bigcap_{C\in\calS}C\neq\emptyset$.
+\end{lemma}
+
+We say a space $(X,\calT)$ is \emph{Hausdorff} if given distinct
+$x_1,x_2\in X$, there exist disjoint open sets $U_1,U_2\in\calT$ such that
+$x_i\in U_i$ for $i=1,2$. If $X$ is a Hausdorff space, then $\{x\}$ is
+closed for all $x\in X$. We say a space $(X,\calT)$ is \emph{connected} if
+$X$ cannot be expressed as the union of two disjoint closed sets. We say a
+space $(X,\calT)$ is totally disconnected if every connected subspace has
+at most one element.
+
+\begin{lemma}
+Let $X$ be a compact Hausdorff space.
+\begin{enumerate}[label=(\alph*)]
+\item If $C_1,C_2$ are disjoint closed subsets of $X$, then there exists
+  disjoint open subsets $U_1,U_2$ of $X$ such that $C_i\subset U_i$ for
+  $i=1,2$.
+\item If $x\in X$ and $A_x$ is the intersection of all sets $U$ containing
+  $x$ such that are both open and closed, then $A_x$ is connected.
+\item If $X$ is also totally disconnected, then every open set is a union
+  of sets that are both open and closed.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+We start with (a). First, we assert that for each $x\in C_1$ there exists
+disjoint open sets $U_x$ and $V_x$ such that $x\in U_x$ and $C_2\subset
+V_x$. For each $y\in C_2$, there exists disjoint open sets $U_{x,y}$ and
+$V_{x,y}$ such that $x\in U_{x,y}$, and $y\in V_{x,y}$. The set of open
+sets $\calC_x=\left\{X\minus C_2\right\}\cup\left\{V_{x,y}\right\}_{y\in
+  C_2}$ is an open cover of $X$. Since $X$ is compact, there exists a
+finite subset $\left\{y_1,...,y_n\right\}$ of $C_2$ such that $X$ is a
+union of $X-C_2$ and the sets $V_{x,y_i}$. Taking
+\[
+U_x\coloneqq\bigcap_{i=1}^n U_{x,y_i}\quad\text{, and}\quad
+V_x\coloneqq\bigcup_{i=1}^n V_{x,y_i},
+\]
+verifies our first assertion.
+\end{proof}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA598-PG-HW-Current"
+%%% End:

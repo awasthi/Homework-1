@@ -6,7 +6,7 @@
 \def\documentsubject{profinite groups}
 \def\authoremail{salinac@purdue.edu}
 
-\documentclass[article,oneside,10pt]{memoir}
+\documentclass[article,oneside,11pt]{memoir}
 \usepackage{geometry}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[
@@ -179,7 +179,10 @@
 \newcommand{\calC}{\mathcal{C}}
 \newcommand{\calF}{\mathcal{F}}
 \newcommand{\calO}{\mathcal{O}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calQ}{\mathcal{Q}}
 \newcommand{\calS}{\mathcal{S}}
+\newcommand{\calT}{\mathcal{T}}
 \newcommand{\calU}{\mathcal{V}}
 \newcommand{\calV}{\mathcal{U}}
 
@@ -197,28 +200,29 @@
 \title{\documenttitle}
 \date{\today}
 \maketitle
-\cleartooddpage
-\makepagestyle{my-headings}
-\makeoddhead{my-headings}
-        {\small{\MakeUppercase{\itshape\documentauthor}}}
-        {}
-        {\small{\MakeUppercase{\itshape\exercisename}}}
-\makeoddfoot{my-headings}{{\itshape\documenttitle}}
-                      {}
-                      {\thepage}
-\makeevenhead{my-headings}
-        {\small{\MakeUppercase{\itshape\documentauthor}}}
-        {}
-        {\small{\MakeUppercase{\itshape\exercisename}}}
-\makeevenfoot{my-headings}{{\itshape\documenttitle}}
-                      {}
-                      {\thepage}
-\makeheadrule{my-headings}{\textwidth}{.25pt}
-\pagestyle{my-headings}
+% \cleartooddpage
+% \makepagestyle{my-headings}
+% \makeoddhead{my-headings}
+%         {\small{\MakeUppercase{\itshape\documentauthor}}}
+%         {}
+%         {\small{\MakeUppercase{\itshape\exercisename}}}
+% \makeoddfoot{my-headings}{{\itshape\documenttitle}}
+%                       {}
+%                       {\thepage}
+% \makeevenhead{my-headings}
+%         {\small{\MakeUppercase{\itshape\documentauthor}}}
+%         {}
+%         {\small{\MakeUppercase{\itshape\exercisename}}}
+% \makeevenfoot{my-headings}{{\itshape\documenttitle}}
+%                       {}
+%                       {\thepage}
+% \makeheadrule{my-headings}{\textwidth}{.25pt}
+% \pagestyle{my-headings}
 % \makerunningwidth{headings}{1.15\textwidth}
 \mainmatter
 
-\include{homeworks/ma598-pg-hw-1}
+% \include{homeworks/ma598-pg-hw-1}
+\include{homeworks/ma598-notes}
 \end{document}
 
 %%% Local Variables:
