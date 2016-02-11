@@ -1,12 +1,12 @@
 \def\documentauthor{Carlos Salinas}
-\def\documenttitle{MA 598 PG: Homework \hwnum}
+\def\documenttitle{MA 598 PG: Notes \hwnum}
 \def\hwnum{1}
-\def\shorttitle{MA 598 PG HW \hwnum}
+\def\shorttitle{MA 598 PG Notes \hwnum}
 \def\coursename{MA598-PG}
 \def\documentsubject{profinite groups}
 \def\authoremail{salinac@purdue.edu}
 
-\documentclass[article,oneside,11pt]{memoir}
+\documentclass[10pt]{article}
 \usepackage{geometry}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[
@@ -97,28 +97,8 @@
 \newtheorem{definition}{Definition}
 \newtheorem{example}{Examples}
 \newtheorem{examples}[example]{Examples}
-% \newtheorem{exercise}{Exercise}[section]
-% \newtheorem{problem}[exercise]{Problem}
-
-\newcounter{problem}
-\newenvironment{problem}[1][]% environment name
-{% begin code
-  \stepcounter{problem}
-  \par\vspace{\baselineskip}\noindent
-  \ifx &#1&%
-  {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem}
-  \global\def\exercisename{Problem~\hwnum.\theproblem}%
-  \else
-  {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem~(#1)}
-  \global\def\exercisename{Problem~\hwnum.\theproblem(#1)}
-  \fi
-  \par\vspace{\baselineskip}%
-  \noindent\ignorespaces
-}%
-{% end code
-  \par\vspace{\baselineskip}%
-  \noindent\ignorespacesafterend
-}
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem{problem}[exercise]{Problem}
 
 \newtheorem*{definition*}{Definition}
 \newtheorem*{example*}{Examples}
@@ -200,28 +180,8 @@
 \title{\documenttitle}
 \date{\today}
 \maketitle
-% \cleartooddpage
-% \makepagestyle{my-headings}
-% \makeoddhead{my-headings}
-%         {\small{\MakeUppercase{\itshape\documentauthor}}}
-%         {}
-%         {\small{\MakeUppercase{\itshape\exercisename}}}
-% \makeoddfoot{my-headings}{{\itshape\documenttitle}}
-%                       {}
-%                       {\thepage}
-% \makeevenhead{my-headings}
-%         {\small{\MakeUppercase{\itshape\documentauthor}}}
-%         {}
-%         {\small{\MakeUppercase{\itshape\exercisename}}}
-% \makeevenfoot{my-headings}{{\itshape\documenttitle}}
-%                       {}
-%                       {\thepage}
-% \makeheadrule{my-headings}{\textwidth}{.25pt}
-% \pagestyle{my-headings}
-% \makerunningwidth{headings}{1.15\textwidth}
 \mainmatter
 
-% \include{homeworks/ma598-pg-hw-1}
 \include{homeworks/ma598-notes}
 \end{document}
 
