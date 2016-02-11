@@ -1,0 +1,24 @@
+\documentclass[crop,tikz,10pt]{standalone}
+\usetikzlibrary{cd}
+
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage[mathcal]{euscript}
+
+\DeclareMathOperator{\Tor}{Tor}
+
+\begin{document}
+\begin{tikzcd}
+  \cdots \rar   & H_2(A) \rar & H_2(S^2) \rar & H_2(S^2,A)
+          \ar[out=0, in=180, looseness=2, overlay]{dll}   & \\
+        & H_1(A) \rar & H_1(S^2) \rar & H_1(S^2,A)
+          \ar[out=0, in=180, looseness=2, overlay]{dll}   & \\
+        & H_0(A)  \rar & H_0(S^2) \rar & H_0(S^2,A) \rar & 0,
+\end{tikzcd}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
