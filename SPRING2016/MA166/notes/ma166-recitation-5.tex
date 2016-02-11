@@ -1,193 +1,190 @@
-\def\documentauthor{Carlos Salinas}
-\def\documenttitle{MA 166: Exam {\hwnum} Solutions}
-\def\hwnum{1}
-\def\shorttitle{MA 166 Exam {\hwnum} Sols}
-\def\coursename{MA166}
-\def\documentsubject{calculus ii}
-\def\authoremail{salinac@purdue.edu}
+\chapter{Recitation 5 Script}
+Here are the recitation notes for the 11th of February, 2016.
+\section{Homework for the week}
 
-\documentclass{article}
-\usepackage{geometry}
-\usepackage[dvipsnames]{xcolor}
-\usepackage[
-    breaklinks,
-    bookmarks=true,
-    % colorlinks=true,
-    pageanchor=false,
-    linkcolor=black,
-    anchorcolor=black,
-    citecolor=black,
-    filecolor=black,
-    menucolor=black,
-    runcolor=black,
-    urlcolor=black,
-    hyperindex=false,
-    hyperfootnotes=true,
-    pdftitle={\shorttitle},
-    pdfauthor={\documentauthor},
-    pdfkeywords={\documentsubject},
-    pdfsubject={\coursename}
-    ]{hyperref}
+\subsection{Homework 11}
+\begin{problem}[WebAssign, HW 11, \#1]
+Evaluate the integral using the indicated trigonometric substitution. (Use
+$C$ for the constant of integration.)
+\[
+\int\frac{x^3}{\sqrt{x^2+49}}\diff x\quad x=7\tan\theta.
+\]
+\end{problem}
+\begin{proof}
+We solve this problem by using the suggested trigonometric substitution
+$x=7\tan\theta$. Using this substitution, we have $\diff
+x=7\sec^2\theta\diff\theta$ and
+\begingroup
+\allowdisplaybreaks
+\begin{align*}
+\int\frac{x^3}{\sqrt{x^2+49}}\diff
+  x&=\int\frac{343\tan^3\theta}{\sqrt{49\tan^2\theta+49}}7\sec^2\theta\diff\theta\\
+   &=\int\frac{2401\tan^3\theta\sec^2\theta}{\sqrt{49\tan^2\theta+49}}\diff\theta\\
+   &=\int\frac{2401\tan^3\theta\sec^2\theta}{\sqrt{49(\tan^2\theta+1)}}\diff\theta\\
+   &=\int\frac{2401\tan^3\theta\sec^2\theta}{7\sqrt{\tan^2\theta+1}}\diff\theta\\
+   &=\int\frac{343\tan^3\theta\sec^2\theta}{\sqrt{\tan^2\theta+1}}\diff\theta\\
+\intertext{now, recall the trigonometric identity for tangent
+  $\tan^2\theta+1=\sec^2\theta$, so the integral above turns into}
+   &=\int\frac{343\tan^3\theta\sec^2\theta}{\sqrt{\sec^2\theta}}\diff\theta\\
+   &=\int\frac{343\tan^3\theta\sec^2\theta}{\sec\theta}\diff\theta\\
+   &=343\int\tan^3\theta\sec\theta\diff\theta\\
+\intertext{Now, what? Use the tangent identity again, and we get}
+   &=343\int\tan^2\theta\tan\theta\sec\theta\diff\theta\\
+   &=343\int(\sec^2\theta-1)\tan\theta\sec\theta\diff\theta\\
+\intertext{So far so god, but now what? Make the substitution
+  $u=\sec\theta$ since $\diff u=\sec\theta\tan\theta\diff\theta$ which
+  turns our integral into}
+   &=343\int(u^2-1)\tan\theta\sec\theta\frac{\diff u}{\sec\theta\tan\theta}
+\end{align*}
+\endgroup
+\end{proof}
 
-% Use symbols instead of numbers
-\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+\begin{problem}[WebAssign, HW 11, \#2]
+Evaluate the integral
+\[
+2\int_0^1 x^3\sqrt{1-x^2}\diff x.
+\]
+\end{problem}
+\begin{proof}
+Make the substitution $x=\sin\theta$ so that $\diff
+x=\cos\theta\diff\theta$. Replacing our original bounds for $x$ in terms of
+$\sin^1(0)=0$ and $\sin^{-1}(1)=\pi/2$ we have the following integral
+\begin{align*}
+I&=2\int_0^1 x^3\sqrt{1-x^2}\diff x\\
+ &=2\int_0^{\pi/2}\sin^3\theta\sqrt{1-\sin^2\theta}\cos\theta\diff\theta\\
+\intertext{which, by the Pythagorean identity
+  $\cos^2\theta+\sin^2\theta=1$, turns into}
+ &=2\int_0^{\pi/2}\sin^3\theta\cos\theta\cos\theta\diff\theta\\
+ &=2\int_0^{\pi/2}\sin^3\theta\cos^2\theta\diff\theta\\
+ &=2\int_0^{\pi/2}\sin^2\theta\sin\theta\cos^2\theta\diff\theta\\
+ &=2\int_0^{\pi/2}(1-\cos^2\theta)\sin\theta\cos^2\theta\diff\theta\\
+\intertext{Now we make the substitution $u=\cos\theta$ so $\diff
+  u=-\cos\theta\iff\theta$ and we have}
+ &=2\int_1^0(1-u^2)\sin\theta u^2\theta\frac{\diff u}{-\sin\theta}\\
+ &=2\int_1^0-(1-u^2)u^2\diff u\\
+ &=2\int_0^1(1-u^2)u^2\diff u\\
+ &=2\int_0^t1 u^2-u^4\diff u\\
+ &=2\left[\tfrac{1}{3}u^3-\tfrac{1}{5}u^5\right]_0^1\\
+ &=2\left(\tfrac{1}{3}-\tfrac{1}{5}-(0-0)\right)\\
+ &=\boxed{\frac{4}{15}.}\qedhere
+\end{align*}
+\end{proof}
 
-%% Math
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{mathtools}
+\begin{problem}[WebAssign, HW 11, \#3]
+Evaluate the integral. (Use $C$ for the constant of integration.)
+\[
+\int\frac{\diff x}{\sqrt{x^2+49}}.
+\]
+\end{problem}
+\begin{proof}
+This is essentially the same as problem 1 with no pesky $x^3$ in the
+numerator. Make the substitution $x=7\tan\theta$ so $\diff
+x=7\sec^2\theta\diff\theta$ and we have
+\begingroup
+\allowdisplaybreaks
+\begin{align*}
+\int\frac{\diff x}{\sqrt{x^2+49}}
+&=\int\frac{7\sec^2\theta\diff\theta}{\sqrt{49\tan^2\theta+49}}\\
+&=\int\frac{7\sec^2\theta\diff\theta}{\sqrt{49(\tan^2\theta+1)}}\\
+&=\int\frac{7\sec^2\theta\diff\theta}{7\sqrt{\tan^2\theta+1}}\\
+&=\int\frac{\sec^2\theta\diff\theta}{\sqrt{\tan^2\theta+1}}\\
+&=\int\frac{\sec^2\theta\diff\theta}{\sqrt{\sec^2\theta}}\\
+&=\int\frac{\sec^2\theta\diff\theta}{\sec\theta}\\
+&=\int\frac{\sec^2\theta\diff\theta}{\sec\theta}\\
+&=\int\sec\theta\diff\theta\\
+&=\ln\left|\sec\theta+\tan\theta\right|+C'\\
+\intertext{Now, substituting back into our original integral, we have}
+&=\ln\left|\frac{\sqrt{x^2+49}}{7}+\frac{x}{7}\right|+C'\\
+&=\ln\left|\sqrt{x^2+49}+x\right|-\ln 7+C'\\
+\intertext{and we can group $C'$ and $\ln 7$ into a constant $C$ tho get
+  our answer}
+&=\boxed{\ln\left|\sqrt{x^2+49}+x\right|+C.}\qedhere
+\end{align*}
+\endgroup
+\end{proof}
 
-%%PDFTeX specific
-\usepackage[mathcal]{euscript}
-\usepackage{mathrsfs}
-\usepackage{dsfont}
-\usepackage{wasysym}
+\begin{problem}[WebAssign, HW 11, \#4]
+Evaluate the integral.
+\[
+\int_0^a 3x^2\sqrt{a^2-x^2}\diff x.
+\]
+\end{problem}
+\begin{proof}
+Alright! Make the substitution $x=a\sin\theta$. Then $\diff
+x=a\cos\theta\diff\theta$ and the integral above turns into
+\begingroup
+\allowdisplaybreaks
+\begin{align*}
+\int_0^a 3x^2\sqrt{a^2-x^2}\diff x
+&=\int_0^{\pi/2}3a^2\sin^2\theta\sqrt{a^2-a^2\sin^2\theta}a\cos\theta\diff\theta\\
+&=\int_0^{\pi/2}3a^3\sin^2\theta\sqrt{a^2-a^2\sin^2\theta}a\cos\theta\diff\theta\\
+&=3a^3\int_0^{\pi/2}\sin^2\theta\sqrt{a^2-a^2\sin^2\theta}\cos\theta\diff\theta\\
+&=3a^3\int_0^{\pi/2}\sin^2\theta\sqrt{a^2(1-\sin^2\theta)}\cos\theta\diff\theta\\
+&=3a^3\int_0^{\pi/2}\sin^2\theta\left(a\sqrt{1-\sin^2\theta}\right)\cos\theta\diff\theta\\
+&=3a^4\int_0^{\pi/2}\sin^2\theta\sqrt{1-\sin^2\theta}\cos\theta\diff\theta\\
+\intertext{using he Pythagorean identity, we have}
+&=\int_0^{\pi/2}\sin^2\theta\sqrt{\cos^2\theta}\cos\theta\diff\theta\\
+&=\int_0^{\pi/2}\sin^2\theta\cos^2\theta\diff\theta\\
+&=\int_0^{\pi/2}(\sin\theta\cos\theta)^2\diff\theta\\
+\intertext{use the identity $2\sin\theta\cos\theta=\sin^22\theta$}
+&=3a^4\int_0^{\pi/2}\tfrac{1}{4}\left(2\sin\theta\cos\theta\right)^2\diff\theta\\
+&=3a^4\int_0^{\pi/2}\tfrac{1}{4}(\sin 2\theta)^2\diff\theta\\
+&=3a^4\int_0^{\pi/2}\tfrac{1}{4}\sin^2 2\theta\diff\theta\\
+&=\frac{3a^4}{4}\int_0^{\pi/2}\sin^2 2\theta\diff\theta\\
+\intertext{use another trig substitution $\sin^2\theta=1-\cos 2\theta$ so}
+&=\frac{3a^4}{4}\int_0^{\pi/2}\tfrac{1}{2}(1-\cos 2(2\theta))\diff\theta\\
+&=\frac{3a^4}{8}\int_0^{\pi/2}1-\cos 4\theta\diff\theta\\
+&=\frac{3a^4}{8}\left[\theta-\tfrac{1}{4}\sin 4\theta\right]_0^{\pi/2}\\
+&=\frac{3a^4}{8}\left[\frac{\pi}{2}-\sin 2\pi-(0-0)\right]\\
+&=\frac{3a^4}{8}\left[\frac{\pi}{2}-0-(0-0)\right]\\
+&=\boxed{\frac{3a^4\pi}{16}.}
+\end{align*}
+\endgroup
+\end{proof}
 
-\usepackage[LAE,LFE,T2A,T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[farsi,french,german,spanish,russian,english]{babel}
-\babeltags{pa=farsi,
-           fr=french,
-           de=german,
-           es=spanish,
-           ru=russian,
-           en=english}
-\def\spanishoptions{mexico}
-
-\selectlanguage{english}
-
-\newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
-
-\usepackage{cmap}
-\usepackage{CJKutf8}
-\newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
-\newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
-\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
-
-%% Misc
-\usepackage{graphicx}
-\usepackage{cutwin}
-\graphicspath{{figures/}}
-
-\usepackage{microtype}
-\usepackage{multicol}
-\usepackage[inline]{enumitem}
-\usepackage{listings}
-\usepackage{mleftright}
-\mleftright
-
-%% Theorems and definitions
-\theoremstyle{plain}
-\newtheorem{theorem}{Theorem}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{claim}[theorem]{Claim}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{axiom}[theorem]{Axiom}
-
-\newtheorem*{corollary*}{Corollary}
-\newtheorem*{claim*}{Claim}
-\newtheorem*{lemma*}{Lemma}
-\newtheorem*{proposition*}{Proposition}
-\newtheorem*{theorem*}{Theorem}
-
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}
-\newtheorem{example}{Examples}
-\newtheorem{examples}[example]{Examples}
-\newtheorem{exercise}{Exercise}
-\newtheorem{problem}[exercise]{Problem}
-
-\newtheorem*{definition*}{Definition}
-\newtheorem*{example*}{Examples}
-\newtheorem*{examples*}{Examples}
-\newtheorem*{exercise*}{Exercise}
-\newtheorem*{problem*}{Problem}
-
-\theoremstyle{remark}
-\newtheorem{remark}{Remark}
-\newtheorem{remarks}[remark]{Remarks}
-\newtheorem{observation}[remark]{Observation}
-\newtheorem{observations}[remark]{Observations}
-
-\newtheorem*{remark*}{**Remark**}
-\newtheorem*{remarks*}{**Remarks**}
-\newtheorem*{observation*}{**Observation**}
-\newtheorem*{observations*}{**Observations**}
-
-%% Commands and operators
-%% Redefinitions & commands
-\newcommand{\nsubset}{\ensuremath{\not\subset}}
-\newcommand{\nsupset}{\ensuremath{\not\supset}}
-\newcommand\minus{\ensuremath{\null\smallsetminus}}
-\renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
-
-%% Commands and operators
-\DeclareMathOperator{\id}{id}
-\DeclareMathOperator{\im}{im}
-
-%% Linear algebra
-\DeclareMathOperator{\proj}{proj}
-\DeclareMathOperator{\comp}{comp}
-
-%% Differential operators
-\DeclareMathOperator{\Curl}{curl}
-\DeclareMathOperator{\Div}{div}
-\DeclareMathOperator{\Grad}{grad}
-\DeclareMathOperator{\Lap}{\Delta}
-\DeclareMathOperator{\diff}{d\!}
-
-%% Misc
-\newcommand{\bbC}{\mathbb{C}}
-\newcommand{\bbCP}{\mathbb{CP}}
-\newcommand{\bbH}{\mathbb{H}}
-\newcommand{\bbN}{\mathbb{N}}
-\newcommand{\bbQ}{\mathbb{Q}}
-\newcommand{\bbR}{\mathbb{R}}
-\newcommand{\bbRP}{\mathbb{RP}}
-\newcommand{\bbZ}{\mathbb{Z}}
-
-\newcommand{\bfC}{\mathbf{C}}
-\newcommand{\bfCP}{\mathbf{CP}}
-\newcommand{\bfH}{\mathbf{H}}
-\newcommand{\bfN}{\mathbf{N}}
-\newcommand{\bfQ}{\mathbf{Q}}
-\newcommand{\bfR}{\mathbf{R}}
-\newcommand{\bfRP}{\mathbf{RP}}
-\newcommand{\bfZ}{\mathbf{Z}}
-
-\newcommand{\calA}{\mathcal{A}}
-\newcommand{\calB}{\mathcal{B}}
-\newcommand{\calC}{\mathcal{C}}
-\newcommand{\calS}{\mathcal{S}}
-\newcommand{\calT}{\mathcal{T}}
-\newcommand{\calU}{\mathcal{U}}
-\newcommand{\calV}{\mathcal{V}}
-
-\newcommand{\scrL}{\mathscr{L}}
-\newcommand{\scrO}{\mathscr{O}}
-\newcommand{\scrS}{\mathscr{S}}
-
-\newcommand{\bfa}{\mathbf{a}}
-\newcommand{\bfb}{\mathbf{b}}
-\newcommand{\bfc}{\mathbf{c}}
-\newcommand{\bfu}{\mathbf{u}}
-\newcommand{\bfv}{\mathbf{v}}
-\newcommand{\bfw}{\mathbf{w}}
-
-\begin{document}
-\author{TA: \href{mailto:\authoremail}{\documentauthor}}
-\title{\documenttitle}
-\date{\today}
-\maketitle
-Here are the solutions to Exam 1. I've provided as much detail as I can
-muster. If you find any mistake or you feel that I am skipping a step,
-please be sure to let me know. The {\color{Green}green booklet} and
-{\color{Red}red booklet} are similar so I've highlighted the corresponding
-problem number in {\color{Green}green} for the {\color{Green}green booklet}
-and in {\color{Red}red} for the {\color{Red}red booklet}.
-
+\begin{problem}[WebAssign, HW 11, \#5]
+Evaluate the integral.
+\[
+\int_0^7\sqrt{x^2+49}\diff x.
+\]
+\end{problem}
+\begin{proof}
+Like in problem 1, let $x=7\tan\theta$. Then $\diff
+x=7\sec^2\theta\diff\theta$ and
+\begingroup
+\allowdisplaybreaks
+\begin{align*}
+\int_0^7\sqrt{x^2+49}\diff x
+&=\int_0^{\pi/4}\sqrt{49\tan^2\theta+49}7\sec^2\theta\diff\theta\\
+&=\int_0^{\pi/4}\sqrt{49(\tan^2\theta+1)}7\sec^2\theta\diff\theta\\
+&=\int_0^{\pi/4}7\sqrt{\tan^2\theta+1}7\sec^2\theta\diff\theta\\
+&=\int_0^{\pi/4}49\sqrt{\tan^2\theta+1}\sec^2\theta\diff\theta\\
+&=49\int_0^{\pi/4}\sqrt{\tan^2\theta+1}\sec^2\theta\diff\theta\\
+&=49\int_0^{\pi/4}\sqrt{\sec^2\theta}\sec^2\theta\diff\theta\\
+&=49\int_0^{\pi/4}\sec\theta\sec^2\theta\diff\theta\\
+&=49\int_0^{\pi/4}\sec^3\theta\diff\theta\\
+&=49\int_0^{\pi/4}\sec\theta\sec^2\theta\diff\theta\\
+\intertext{here we use integration by parts with $u=\sec\theta$ and
+  $\diff v=\sec^2\theta$ so we have $\diff
+  u=\sec\theta\tan\theta\diff\theta$ and $v=\tan\theta$}
+&=49\left(\left[\sec\theta\tan\theta\right]_0^{\pi/4}
+  -\int_0^{\pi/4}\sec\theta\tan^2\theta\right)\\
+&=49\left(\left[\sec\theta\tan\theta\right]_0^{\pi/4}
+  -\int_0^{\pi/4}\sec\theta(\sec^2\theta-1)\theta\right)\\
+&=49\left(\left[\sec\theta\tan\theta\right]_0^{\pi/4}
+  -\int_0^{\pi/4}\sec^3-\sec\theta\diff\theta\right)\\
+\intertext{now, move the $\int_0^{\pi/4}\sec^3\theta\diff\theta$ to the
+  left and divide by $2$ and we get}
+&=\frac{49}{2}\left(\left[\sec\theta\tan\theta\right]_0^{\pi/4}
+  +\int_0^{\pi/4}\sec\theta\diff\theta\right)\\
+&=\frac{49}{2}\left[\sec\theta\tan\theta+\ln\left|\sec\theta+\tan\theta\right|\right]_0^{\pi/4}\\
+&=\frac{49}{2}\left(\sqrt{2}\cdot 1+\ln\left(1+\sqrt{2}\right)-(0+\ln(1+0))\right)\\
+&=\frac{49}{2}\left(\sqrt{2}+\ln\left(1+\sqrt{2}\right)\right)\\
+&=\boxed{\frac{49}{2}\left(\sqrt{2}+\ln\left(1+\sqrt{2}\right)\right).}\qedhere
+\end{align*}
+\endgroup
+\end{proof}
+\section{Solutions to Exam 1}
 \begin{problem}[{\color{Green}\#1}, {\color{Red}\#11}]
 If $a$ and $b$ are the values of $k$ for which the angle between $\langle
 1,2,2 \rangle$ and $\langle 1,0,k \rangle$ equals $\pi/4$, then $a+b=$?
@@ -345,7 +342,7 @@ need to take the negative of the vector above and we call this $\vec w$
 Now, all we need to do is take the sum of the entries of the vector
 $\vec w$ above and we are done!
 \[
-\boxed{a+b+c=\frac{2}{7}-\frac{6}{7}+\frac{3}{7}=
+\boxed{a+b+c\frac{2}{7}-\frac{6}{7}+\frac{3}{7}=
 \frac{2-6+3}{7}=
 -\frac{1}{7}.}\qedhere
 \]
@@ -451,7 +448,7 @@ get the area of your bounded region, or you can plot the curves and notice
 that the areas are symmetric and double Int.\@ 2 to get our total area
 $\boxed{2(10/3)=20/3}$.
 
-Let's compute Int.\@ 2 just to make sure
+Let's compute Int.\@ 1 just to make sure
 \begingroup
 \allowdisplaybreaks
 \begin{align*}
@@ -740,9 +737,8 @@ so our integral turns into
 &=\boxed{\frac{1}{4}+\frac{\pi}{8}\text{ or }\frac{\pi}{8}+\frac{1}{4}.}\qedhere
 \end{align*}
 \end{proof}
-\end{document}
 
-%%% Local Variable
+%%% Local Variables:
 %%% mode: latex
-%%% TeX-master: t
+%%% TeX-master: "../MA166-Recitation"
 %%% End:
