@@ -33,6 +33,15 @@
 % Use symbols instead of numbers
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
+%% Sectioning
+\usepackage{titlesec}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries}
+  {}
+  {0pt}
+  {Section \thesection:\quad}
+
 %% Math
 \usepackage{bm}
 \usepackage{amsmath}
@@ -124,8 +133,7 @@
 %% Commands and operators
 \DeclareMathOperator{\comp}{comp}
 \DeclareMathOperator{\proj}{proj}
-
-\newcommand{\diff}{\,\mathrm{r}}
+\DeclareMathOperator{\diff}{d}
 
 \newcommand{\bbC}{\mathbb{C}}
 \newcommand{\bbN}{\mathbb{N}}
@@ -142,7 +150,7 @@
 \title{\documenttitle}
 \date{\today}
 \maketitle
-\include{exams/ma166-recitation-5}
+\include{notes/ma166-recitation-5}
 \end{document}
 
 %%% Local Variables:
