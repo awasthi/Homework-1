@@ -1,6 +1,6 @@
 \def\documentauthor{Carlos Salinas}
 \def\documenttitle{MA 572: Homework \hwnum}
-\def\hwnum{3}
+\def\hwnum{4}
 \def\shorttitle{MA 572 HW \hwnum}
 \def\coursename{MA 572}
 \def\documentsubject{introduction to algebraic topology}
@@ -137,10 +137,15 @@
 
 %% Commands and operators
 %% Redefinitions & commands
+\renewcommand{\restriction}{\mathord{\upharpoonright}}
 \newcommand{\nsubset}{\ensuremath{\not\subset}}
 \newcommand{\nsupset}{\ensuremath{\not\supset}}
 \newcommand\minus{\ensuremath{\null\smallsetminus}}
 \renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
+
+\newcommand\rightarrowsim{\xrightarrow{\smash{\raisebox{-0.65ex}{\ensuremath{\scriptstyle\sim}}}}}
+\newcommand\rightarrowapprox{\xrightarrow{\smash{\raisebox{-0.55ex}{\ensuremath{\scriptstyle\approx}}}}}
+\newcommand\rightarrowcong{\xrightarrow{\smash{\raisebox{-0.55ex}{\ensuremath{\scriptstyle\cong}}}}}
 
 %% Commands and operators
 \DeclareMathOperator{\id}{id}
@@ -150,14 +155,6 @@
 
 %% Linear algebra
 \DeclareMathOperator{\coker}{coker}
-
-%% Misc operators
-\newcommand\restrict[2]{{
-  \left.\kern-\nulldelimiterspace
-  #1
-  % \vphantom{\big|}
-  \,\right|\,{#2}
-  }}
 
 %% Symbols
 \newcommand{\bbC}{\mathbb{C}}
@@ -177,6 +174,14 @@
 \newcommand{\bfR}{\mathbf{R}}
 \newcommand{\bfRP}{\mathbf{R}\mathrm{P}}
 \newcommand{\bfZ}{\mathbf{Z}}
+
+
+\newcommand{\bfu}{\mathbf{u}}
+\newcommand{\bfv}{\mathbf{v}}
+\newcommand{\bfw}{\mathbf{w}}
+\newcommand{\bfx}{\mathbf{x}}
+\newcommand{\bfy}{\mathbf{y}}
+\newcommand{\bfz}{\mathbf{z}}
 
 \newcommand{\calA}{\mathcal{A}}
 \newcommand{\calB}{\mathcal{B}}

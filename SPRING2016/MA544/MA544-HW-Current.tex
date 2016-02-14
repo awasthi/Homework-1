@@ -46,14 +46,12 @@
 
 \usepackage[LAE,LFE,T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[farsi,french,german,spanish,dutch,russian,swedish,english]{babel}
+\usepackage[farsi,french,german,spanish,russian,english]{babel}
 \babeltags{pa=farsi,
            fr=french,
            de=german,
            es=spanish,
-           nl=dutch,
            ru=russian,
-           sv=swedish,
            en=english}
 \def\spanishoptions{mexico}
 
@@ -145,14 +143,7 @@
 \newcommand{\nge}{\ensuremath{\not>}}
 \newcommand\minus{\ensuremath{\null\smallsetminus}}
 \renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
-
-%% Misc operators
-\newcommand\restrict[2]{{
-  \left.\kern-\nulldelimiterspace
-  #1
-  % \vphantom{\big|}
-  \,\right|\,{#2}
-  }}
+\renewcommand{\restriction}{\mathord{\upharpoonright}}
 
 %% Commands and operators
 \DeclareMathOperator{\id}{id}
