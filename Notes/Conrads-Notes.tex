@@ -1,9 +1,10 @@
 \def\documentauthor{Carlos Salinas}
-\def\documenttitle{MA553: Qual Problems}
+\def\documenttitle{Mathematics Notes}
 % \def\hwnum{1}
-\def\shorttitle{MA553 Quals}
-\def\coursename{MA553}
-\def\documentsubject{abstract algebra}
+\def\shorttitle{Math-Notes}
+\def\coursename{mathematics}
+\def\documentsubject{abstract algebra, real analysis, complex analysis,
+  topology, hyperbolic geometry}
 \def\authoremail{salinac@purdue.edu}
 
 \documentclass[article,oneside,10pt]{memoir}
@@ -125,22 +126,40 @@
 \DeclareMathOperator{\Rad}{rad}
 \DeclareMathOperator{\Nil}{nil}
 
+
+%% Symbols
 \newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbCP}{\mathbb{C}\mathrm{P}}
+\newcommand{\bbH}{\mathbb{H}}
 \newcommand{\bbN}{\mathbb{N}}
 \newcommand{\bbQ}{\mathbb{Q}}
 \newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbRP}{\mathbb{R}\mathrm{P}}
 \newcommand{\bbZ}{\mathbb{Z}}
+
 \newcommand{\bfC}{\mathbf{C}}
+\newcommand{\bfCP}{\mathbf{C}\mathrm{P}}
+\newcommand{\bfH}{\mathbf{H}}
 \newcommand{\bfN}{\mathbf{N}}
 \newcommand{\bfQ}{\mathbf{Q}}
 \newcommand{\bfR}{\mathbf{R}}
+\newcommand{\bfRP}{\mathbf{R}\mathrm{P}}
 \newcommand{\bfZ}{\mathbf{Z}}
+
+\newcommand{\bfu}{\mathbf{u}}
+\newcommand{\bfv}{\mathbf{v}}
+\newcommand{\bfw}{\mathbf{w}}
+\newcommand{\bfx}{\mathbf{x}}
+\newcommand{\bfy}{\mathbf{y}}
+\newcommand{\bfz}{\mathbf{z}}
 
 \newcommand{\calA}{\mathcal{A}}
 \newcommand{\calB}{\mathcal{B}}
 \newcommand{\calC}{\mathcal{C}}
+\newcommand{\calS}{\mathcal{S}}
+\newcommand{\calT}{\mathcal{T}}
 \newcommand{\calU}{\mathcal{U}}
-\newcommand{\calV}{\mathcal{U}}
+\newcommand{\calV}{\mathcal{V}}
 
 \newcommand{\scrL}{\mathscr{L}}
 \newcommand{\scrO}{\mathscr{O}}
@@ -156,6 +175,10 @@
 % \include{rings/}
 
 % \include{fields/}
+
+\include{mcmullen/real-analysis}
+\include{mcmullen/complex-analysis}
+\include{mcmullen/topology}
 \end{document}
 
 %%% Local Variables:

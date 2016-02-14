@@ -4,7 +4,10 @@ Show that the conclusion of part  (ii) of Exercise 13 (Problem) is false if
 $\left|E\right|_e=+\infty$.
 \end{problem}
 \begin{proof}
-
+Let $V\subset[0,1]$ denote the Vitali set defined in 3.38 and consider the
+union $E\coloneqq V\cup(2,\infty)$. It is clear that the inner and outer
+measure of $E$ is $\infty$. However, $E$ itself is unmeasurable since
+otherwise $E\cap[0,1]=V\cap[0,1]=V$ would be measurable.
 \end{proof}
 \newpage
 
@@ -15,12 +18,21 @@ Prove (3.34).
 \begin{lemma*}
 $\left|P\right|=v(P)$.
 \end{lemma*}
+Let $\left\{\mathbf{e}_k\right\}_{k=1}^n$ be a set of orthogonal vectors
+emenating from a point in $\bbR^n$. The closed parallelapiped corresponding
+to $\left\{\mathbf{e}_k\right\}_{k=1}^n$ is the set
+\begin{equation}
+\label{eq:closed-parallelapiped}
+P=
+\left\{\,\bfx\;\middle|\;
+\text{$\bfx=\sum_{k=1}^nt_k\mathbf{e}_k$, $0\leq t\leq 1$}\,\right\}.
+\end{equation}
 \end{proof}
 \newpage
 
 \begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\@ 18]
 Prove that outer measure is \emph{translation invariant}; that is, if
-$E_{\textbf{h}}\coloneqq\left\{\,\bfx+\mathbf{h}\;\middle|\;\mathbb{x}\in
+$E_{\textbf{h}}\coloneqq\left\{\,\bfx+\mathbf{h}\;\middle|\;\bfx\in
   E\,\right\}$ is the translate of $E$ by $\mathbf{h}$,
 $\mathbf{h}\in\bbR^n$, show that
 $\left|E_{\mathbf{h}}\right|_e=\left|E\right|_e$. If $E$ is measurable,
@@ -28,6 +40,25 @@ show that $E_{\mathbf{h}}$ is also measurable. [This fact was used in
 proving (3.37).]
 \end{problem}
 \begin{proof}
+First, note that $E_{\mathbf{h}}=T(E)$ where $T\colon\bbR^n\to\bbR^n$ is
+the linear transformation $\bfx\mapsto\bfx+\mathbf{h}$. By 3.36, we know
+that $\left|E_{\mathbf{h}}\right|_e\leq\delta |E|_e=|E|_e$ since
+$\delta=\left|\det T\right|=1$.\footnote{This can be computed classically,
+or if we view the translation map $T$ as the matrix
+\[
+\begin{bmatrix}
+1&&\cdots&h_1\\
+&1&\cdots&h_2\\
+&&\ddots&\vdots\\
+&&&1
+\end{bmatrix}
+\]
+which clearly has determinant equal to $1$, every other term in the sum
+$\sum_{\sigma\in S_n}(\sgn\sigma)a_{1,\sigma(i)}\cdots a_{n,\sigma(n)}$
+besides the diagonal having at least one $a_{i,j}=0$.} Therefore, to prove
+equality, it suffices to demonstrate the reverse inequality. First, let us
+observe that if $G\subset\bbR^n$ is open, then $G_{\mathbf{h}}$ is open so
+that if $F$ is a $G_\delta$ set, then $F_{\mathbf{h}}$ is $G_\delta$.
 \end{proof}
 \newpage
 
@@ -35,6 +66,18 @@ proving (3.37).]
 Prove corollary (4.2) and theorem (4.8)
 \end{problem}
 \begin{proof}
+\begin{corollary*}[Wheeden \& Zygmund, 4.2]
+If $f$ is measurable, then $\left\{\,f>-\infty\,\right\}$,
+$\left\{\,f<+\infty\,\right\}$, $\left\{\,f=+\infty\,\right\}$,
+$\left\{\,a\leq f\leq b\,\right\}$, $\left\{\,f=a\,\right\}$, etc., are all
+measurable. Moreover $f$ is measurable if and only if $\left\{\,a\leq
+  f<+\infty\,\right\}$ is measurable for every finite $a$.
+\end{corollary*}
+
+\begin{theorem*}[Wheeden \& Zygmund, 4.8]
+If $f$ is measurable and $\lambda$ is any real number, then $f+\lambda$ and
+$\lambda f$ are measurable.
+\end{theorem*}
 \end{proof}
 \newpage
 
