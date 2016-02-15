@@ -40,25 +40,34 @@ show that $E_{\mathbf{h}}$ is also measurable. [This fact was used in
 proving (3.37).]
 \end{problem}
 \begin{proof}
-First, note that $E_{\mathbf{h}}=T(E)$ where $T\colon\bbR^n\to\bbR^n$ is
-the linear transformation $\bfx\mapsto\bfx+\mathbf{h}$. By 3.36, we know
-that $\left|E_{\mathbf{h}}\right|_e\leq\delta |E|_e=|E|_e$ since
-$\delta=\left|\det T\right|=1$.\footnote{This can be computed classically,
-or if we view the translation map $T$ as the matrix
+By 3.6, given $\varepsilon>0$, there exists an open set $G\supset E$ with
+$|G|_e\leq|E|_e+\varepsilon$. Let $T\colon\bbR^n\to\bbR^n$ denote the
+linear transformation $\bfx\mapsto\bfx+\mathbf{h}$,
+$\mathbf{h}\in\bbR^n$. By 3.35 we have $|G|_e=|G|=|T(G)|=|T(G)|_e$ and
+$T(G)$ is an open set containing $E_{\mathbf{h}}$. Hence, we have an upper
+bound on the outer measure of $E_{\mathbf{h}}$ given by the inequality
+\begin{equation}
+\label{eq:upper-bound}
+\left|E_{\mathbf{h}}\right|_e\leq|T(G)|_e=|G|_e\leq |E|_e+\varepsilon.
+\end{equation}
+
+On the other hand, by 3.6 there exists an open set $H\supset
+E_{\mathbf{h}}$ with
+$|H|_e\leq\left|E_{\mathbf{h}}\right|+\varepsilon$. Then by 3.35, we get
+the inequality
+\begin{equation}
+\label{eq:lower-bound}
+|E|_e\leq\left|T^{-1}(H)\right|_e=|H|_e\leq\left|E_{\mathbf{h}}\right|_e+\varepsilon.
+\end{equation}
+Putting \eqref{eq:upper-bound} and \eqref{eq:lower-bound} we have
 \[
-\begin{bmatrix}
-1&&\cdots&h_1\\
-&1&\cdots&h_2\\
-&&\ddots&\vdots\\
-&&&1
-\end{bmatrix}
+|E|_e-\varepsilon\leq\left|E_{\mathbf{h}}\right|_e\leq|E|_e+\varepsilon.
 \]
-which clearly has determinant equal to $1$, every other term in the sum
-$\sum_{\sigma\in S_n}(\sgn\sigma)a_{1,\sigma(i)}\cdots a_{n,\sigma(n)}$
-besides the diagonal having at least one $a_{i,j}=0$.} Therefore, to prove
-equality, it suffices to demonstrate the reverse inequality. First, let us
-observe that if $G\subset\bbR^n$ is open, then $G_{\mathbf{h}}$ is open so
-that if $F$ is a $G_\delta$ set, then $F_{\mathbf{h}}$ is $G_\delta$.
+Letting $\varepsilon\to 0$, we have
+$|E|_e=\left|E_{\mathbf{h}}\right|_e$. It then follows that if $E$ is
+measurable then $E_{\mathbf{h}}$ is measurable since $E_{\mathbf{h}}=T(E)$
+and $T$ is a Lipschitz transformation and
+$|E|=\left|E_{\mathbf{h}}\right|$.
 \end{proof}
 \newpage
 
@@ -70,14 +79,82 @@ Prove corollary (4.2) and theorem (4.8)
 If $f$ is measurable, then $\left\{\,f>-\infty\,\right\}$,
 $\left\{\,f<+\infty\,\right\}$, $\left\{\,f=+\infty\,\right\}$,
 $\left\{\,a\leq f\leq b\,\right\}$, $\left\{\,f=a\,\right\}$, etc., are all
-measurable. Moreover $f$ is measurable if and only if $\left\{\,a\leq
-  f<+\infty\,\right\}$ is measurable for every finite $a$.
+measurable. Moreover $f$ is measurable if and only if
+$\left\{\,a<f<+\infty\,\right\}$ is measurable for every finite $a$.
 \end{corollary*}
+Suppose that $f$ is measurable. By 4.1, we have $\left\{\,f\geq
+  a\,\right\}$ and $\left\{\,f\leq a\,\right\}$ are measurable so
+\begin{equation}
+\label{eq:equals}
+\left\{\,f=a\,\right\}=
+\left\{\,f\geq a\,\right\}\cap\left\{\,f\leq a\,\right\}
+\end{equation}
+is measurable and for $b>a$
+\begin{equation}
+\label{eq:between}
+\left\{\,a\leq f\leq b\,\right\}
+=\left\{\,f\geq a\,\right\}\cap\left\{\,f\leq b\,\right\}.
+\end{equation}
+\begin{proof}[Proof of corollary 4.2]
+\renewcommand\qedsymbol{$\clubsuit$}
+Now, consider the sequence of measurable sets
+$\left\{E_k\right\}_{k=0}^\infty$ where
+$E_k\coloneqq\left\{\,f<a+k\,\right\}$. Then
+$\left\{\,f<\infty\,\right\}=\bigcup_{k=0}^\infty E_k$ and since
+$E_k\nearrow\left\{\,f<\infty\,\right\}$ (take $\bfx\in E_k$ then
+$f(\bfx)<a+k$ so $f(\bfx)<a+k+1$ $\implies$ $\bfx\in E_{k+1}$), by 3.26, we
+have $\left\{\,f<\infty\,\right\}$ is measurable.
 
+Similarly for $\left\{\,f>-\infty\,\right\}$ we may consider the family
+$\left\{E_k\right\}_{k=0}^\infty$ where
+$E_k\coloneqq\left\{\,f>a-k\,\right\}$ (take $\bfx\in E_k$ then
+$f(\bfx)>a-k$ so $f(\bfx)>a-k-1$ $\implies$ $\bfx\in E_{k+1}$) and taking
+the limit as $k\to\infty$ we have $\left\{\,f>-\infty\,\right\}$ is
+measurable.
+
+Last but not least, since $\left\{\,f<\infty\,\right\}$ is measurable,
+$\left\{\,f=\infty\,\right\}=\left\{\,f<\infty\,\right\}^\complement$ is
+measurable.
+
+Now, $\implies$ suppose $f$ is measurable. Then $\left\{\,a<
+  f<b\,\right\}=\left\{\,a\leq f\leq
+  b\,\right\}\cap\left\{\,f=a\,\right\}^\complement\cap\left\{\,f=b\,\right\}^\complement$
+is measurable for all finite
+$a<b$. Moreover, the family $\left\{E_k\right\}_{k=0}^\infty$ of sets
+$\left\{E_k\right\}_{k=0}^\infty$ where $E_k\coloneqq\left\{\,a\leq
+f<b+k\,\right\}$ is measurable for all $k$ so, by 3.26, $\left\{\,a\leq
+f<\infty\,\right\}$ is measurable since $E_k\nearrow\left\{\,a\leq
+f<\infty\,\right\}$.
+
+$\impliedby$ On the other hand, suppose that $\left\{\,a\leq
+  f<\infty\,\right\}$ is measurable for every finite $a$. Then, for fixed
+$a\in\bbR$ the family $\left\{E_k\right\}_{k=0}^\infty$ where
+$E_k\coloneqq\left\{a-k\leq f<\infty\right\}$ is measurable. By 3.26,
+$\{\,f<\infty\,\}$ is measurable so
+$\left\{\,f=\infty\,\right\}=\left\{\,f<\infty\,\right\}^\complement$ is
+measurable. Thus,
+\[
+\left\{\,f>a\,\right\}=\left\{\,a<f<\infty\,\right\}\cup\left\{\,f=\infty\,\right\}
+\]
+is measurable so $f$ is measurable.
+\end{proof}
 \begin{theorem*}[Wheeden \& Zygmund, 4.8]
 If $f$ is measurable and $\lambda$ is any real number, then $f+\lambda$ and
 $\lambda f$ are measurable.
 \end{theorem*}
+\begin{proof}[Proof of theorem 4.8]
+\renewcommand\qedsymbol{$\clubsuit$}
+If $f$ is measurable, then $\left\{\,f>a\,\right\}$ is measurable for all
+$a$ so $\left\{\,f>a-\lambda\,\right\}=\left\{\,f+\lambda>a\,\right\}$ is
+measurable for all $a$. Hence, $f+\lambda$ is measurable.
+
+If $\lambda\neq 0$, then $\left\{\,f>a/\lambda\,\right\}$ is measurable for
+all $a$ so $\lambda f$ is measurable. If $\lambda=0$ then $\lambda f=0$ is
+clearly measurable since $\left\{\,0>a\,\right\}=(a,0)$ is open for all
+$a$ (possibly empty if $a\geq 0$, but still an open set).
+
+Thus, $f+\lambda$ and $\lambda f$ are measurable.
+\end{proof}
 \end{proof}
 \newpage
 
@@ -87,6 +164,18 @@ $E_1,...,E_N$. Show that $f$ is measurable if and only if $E_1,...,E_N$ are
 measurable.
 \end{problem}
 \begin{proof}
+$\implies$ Suppose $f$ is a simple function taking distinct values on
+disjoint sets $E_1,...,E_N$. Then $f=\sum_{k=1}^N a_k\chi_{E_k}$. If $f$ is
+measurable, $\left\{\,f>a\,\right\}$ is measurable for all finite $a$. In
+particular, $\left\{\,f>a_k\,\right\}=E_k$ is measurable.
+
+$\impliedby$ On the other hand, suppose that $E_k$ is measurable for all
+$1\leq k\leq N$. Then $\chi_{E_k}$ is measurable and by Problem 5.4, the
+sum
+\[
+f=\sum_{k=1}^N a_k\chi_{E_k}
+\]
+is measurable.
 \end{proof}
 
 %%% Local Variables:
