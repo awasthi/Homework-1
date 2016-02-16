@@ -6,6 +6,19 @@ $rE=\left\{\,r\bfx\;\middle|\;\bfx\in E\,\right\}$. Prove that $rE$ is
 measurable, and that $|rE|=|r|^n|E|$.
 \end{problem}
 \begin{proof}
+Define a linear map $T\colon\bbR^n\to\bbR^n$ by $\bfx\mapsto r\bfx$. Using
+the standard basis for $\bbR^n$, this map has the matrix presentation
+\begin{equation}
+\label{eq:matrix-presentation}
+T\bfx=
+\begin{bmatrix}
+r&\\
+&\ddots\\
+&&r
+\end{bmatrix}\bfx
+\end{equation}
+which has determinant $\det T=r^n$. By 3.35, we have
+$|E|=|T(E)|=r^n|E|=|rE|$.
 \end{proof}
 
 \begin{problem}
@@ -21,6 +34,7 @@ Show that
 \]
 \end{problem}
 \begin{proof}
+Suppose that
 \end{proof}
 
 \begin{problem}
