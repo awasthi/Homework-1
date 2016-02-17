@@ -148,19 +148,18 @@
 \newcommand\rightarrowcong{\xrightarrow{\smash{\raisebox{-0.55ex}{\ensuremath{\scriptstyle\cong}}}}}
 
 %% Commands and operators
-\DeclareMathOperator{\id}{id}
-\DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\Int}{int}
-\DeclareMathOperator{\Cl}{cl}
-
-\DeclareMathOperator{\Id}{Id}
-\DeclareMathOperator{\Im}{Im}
-\DeclareMathOperator{\Ker}{Ker}
-\DeclareMathOperator{\Coker}{Coker}
-
 \DeclareMathOperator{\Int}{Int}
 \DeclareMathOperator{\Cl}{Cl}
 
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\im}{im}
+
+\DeclareMathOperator{\Coker}{Coker}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\Img}{Im}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Tor}{Tor}
 
 %% Linear algebra
 \DeclareMathOperator{\coker}{coker}
@@ -168,6 +167,7 @@
 %% Symbols
 \newcommand{\bbC}{\mathbb{C}}
 \newcommand{\bbCP}{\mathbb{C}\mathrm{P}}
+\newcommand{\bbF}{\mathbb{F}}
 \newcommand{\bbH}{\mathbb{H}}
 \newcommand{\bbN}{\mathbb{N}}
 \newcommand{\bbQ}{\mathbb{Q}}
@@ -177,6 +177,7 @@
 
 \newcommand{\bfC}{\mathbf{C}}
 \newcommand{\bfCP}{\mathbf{C}\mathrm{P}}
+\newcommand{\bfF}{\mathbf{F}}
 \newcommand{\bfH}{\mathbf{H}}
 \newcommand{\bfN}{\mathbf{N}}
 \newcommand{\bfQ}{\mathbf{Q}}
@@ -208,15 +209,17 @@
 \newcommand{\scrT}{\mathscr{T}}
 
 %Categories
-\newcommand{\Grp}{\mathbf{Grp}}
-\newcommand{\Ring}{\mathbf{Ring}}
-\newcommand{\kVec}{\mathit{k}-\mathbf{Vec}}
-\newcommand{\Mod}{\mathbf{Mod}}
-\newcommand{\bfZMod}{\bfZ-\mathbf{Mod}}
-\newcommand{\bbZMod}{\bbZ-\mathbf{Mod}}
-\newcommand{\Top}{\mathbf{Top}}
-\newcommand{\Topp}{\mathbf{Top}_*}
-\newcommand{\Haus}{\mathbf{Haus}}
+\newcommand{\AbGrp}{\text{\textbf{AbGrp}}}
+\newcommand{\Grp}{\text{\textbf{Grp}}}
+\newcommand{\Ring}{\text{\textbf{Ring}}}
+\newcommand{\Vect}[1]{\text{$#1$-\textbf{Vec}}}
+\newcommand{\Mod}{\textbf{Mod}}
+\newcommand{\bfZMod}{\text{$\bfZ$-\textbf{Mod}}}
+\newcommand{\bbZMod}{\text{$\bbZ$-\textbf{Mod}}}
+\newcommand{\Top}{\text{\textbf{Top}}}
+\newcommand{\Topp}{\text{\textbf{Top}}_*}
+\newcommand{\Haus}{\text{\textbf{Haus}}}
+\newcommand{\Set}{\text{\textbf{Set}}}
 
 \begin{document}
 \frontmatter

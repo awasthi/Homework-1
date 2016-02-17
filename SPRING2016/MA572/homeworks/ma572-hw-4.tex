@@ -6,7 +6,21 @@ homology groups of the union of any finite number of cones $CX$ with their
 bases identified.
 \end{problem}
 \begin{proof}
-Write $SX$ as the disjoint union of two cones $CX\sqcup CX$
+First note that the reduced suspension of $X$, $\Sigma X$, which is
+homotopy equivalent to $SX$, can be realized as the quotient space
+$CX/X$. Given the imbedding $X\hookrightarrow CX$, by 2.16 and excision (or
+2.22) we have the long exact sequence in
+\begin{equation}
+\label{eq:suspension-long-exact-sequence}
+\includegraphics{hw-4-long-exact-sequence-suspension}
+\end{equation}
+where $\widetilde H_n(CX,X)\cong\widetilde H_n(CX/X)\cong\widetilde
+H_n(SX)$. Since $CX$ is contractible, we have $H_n(CX)=0$ for all
+$n$ and the long exact sequence \eqref{eq:suspension-long-exact-sequence}
+yields an isomorphism
+\[
+\widetilde H_n(SX)\cong\widetilde H_{n-1}(X).\qedhere
+\]
 \end{proof}
 \newpage
 
