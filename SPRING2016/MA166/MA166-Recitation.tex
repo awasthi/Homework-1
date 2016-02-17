@@ -74,29 +74,21 @@
 \newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
-\usepackage{graphicx}
-\graphicspath{{figures/}}
-
-% Misc
+%% Misc niceness
 \usepackage{microtype}
+\usepackage{mleftright}
+\mleftright
+
+%% Misc useful
+\usepackage{caption}
 \usepackage{soul}
 \usepackage{multicol}
 \usepackage[inline]{enumitem}
 \usepackage{listings}
-\usepackage{mleftright}
-\mleftright
-
-\usepackage{siunitx}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
 
 %% Theorems and definitions
-%% remove parentheses
-% \makeatletter
-% \def\thmhead@plain#1#2#3{%
-%   \thmname{#1}\thmnumber{\@ifnotempty{#1}{ }\@upn{#2}}%
-%   \thmnote{ {\the\thm@notefont#3}}}
-% \let\thmhead\thmhead@plain
-% \makeatother
-
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}[theorem]{Proposition}
@@ -134,7 +126,6 @@
 %% Commands and operators
 \DeclareMathOperator{\comp}{comp}
 \DeclareMathOperator{\proj}{proj}
-\DeclareMathOperator{\diff}{d}
 
 \newcommand{\bbC}{\mathbb{C}}
 \newcommand{\bbN}{\mathbb{N}}
