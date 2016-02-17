@@ -36,8 +36,22 @@ $\sec^{-1}\left(\sqrt{2}\right)=\pi/4$ and the upper bound is
 $\sec^{-1}(2)=\pi/3$
 \begin{align*}
 \int_{3\sqrt{2}}^6\frac{1}{t^3\sqrt{t^2-9}}\;dt
-&=\int_{\pi/4}^{\pi/3}\frac{1}{\sec^3\theta\tan\theta}3\sec\theta\tan\theta\;d\theta\\
-&=3\int_{\pi/4}^{\pi/3}\frac{\tan\theta}{\sec^2\theta}\;dø
+&=\int_{\pi/4}^{\pi/3}
+\frac{3\sec\theta\tan\theta}{3^3\sec^3\theta\sqrt{3^2\sec^2\theta-9}}\;d\theta\\
+&=\int_{\pi/4}^{\pi/3}
+\frac{\tan\theta}{3^2\sec^3\theta\sqrt{3^2\sec^2\theta-3^2}}\;d\theta\\
+&=\int_{\pi/4}^{\pi/3}
+\frac{\tan\theta}{3^2\sec^2\theta\sqrt{3^2(\sec^2\theta-1)}}\;d\theta\\
+&=\frac{1}{27}\int_{\pi/4}^{\pi/3}
+\frac{\tan\theta}{\sec^2\theta\sqrt{\tan^2\theta}}\;d\theta\\
+&=\frac{1}{27}\int_{\pi/4}^{\pi/3}
+\frac{1}{\sec^2\theta}\;d\theta\\
+&=\frac{1}{27}\int_{\pi/4}^{\pi/3}\cos^2\theta\;d\theta\\
+&=\frac{1}{27}\int_{\pi/4}^{\pi/3}\frac{1+\cos2\theta}{2}\;d\theta\\
+&=\frac{1}{54}\int_{\pi/4}^{\pi/3}1+\cos2\theta\;d\theta\\
+&=\frac{1}{54}\left(\left.\theta+\frac{\sin
+  2\theta}{2}\right|_{\pi/4}^{\pi/3}\right)\\
+&=\boxed{\frac{\pi}{648}+\frac{\sqrt{3}-2}{108}.}\qedhere
 \end{align*}
 \end{proof}
 
@@ -48,6 +62,26 @@ Evaluate the integral. (Use $C$ for the constant of integration.)
 \]
 \end{problem}
 \begin{proof}[Solution]
+First, make the substitution $u=5x$. Then the integral above turns into
+\[
+\frac{1}{5}\int\sqrt{1-u^2}\;du.
+\]
+Now we make the trig substitution $\cos\theta=u$ so
+$-\sin\theta\;d\theta=du$ and the integral above turns into
+\begin{align*}
+\frac{1}{5}\int\sqrt{1-u^2}\;du&=\frac{1}{5}\int\sin\theta(-\sin\theta)\;d\theta\\
+&=-\frac{1}{5}\int\sin^2\theta\;d\theta\\
+&=-\frac{1}{5}\int\left(\frac{1-\cos2\theta}{2}\right)\;d\theta\\
+&=-\frac{1}{10}\int 1-\cos2\theta\;d\theta\\
+&=\frac{1}{10}\int\cos2\theta-1\;d\theta\\
+&=\frac{1}{10}\left(\frac{1}{2}\sin2\theta-\theta\right)\\
+&=\frac{1}{20}\sin 2\theta-\frac{1}{2}\theta+C\\
+&=\frac{1}{20}2\sin\theta\cos\theta-\frac{1}{2}\theta+C\\
+\intertext{substituting back $u$ then $x$, we have}
+&=\frac{1}{10}\sqrt{1-u^2}u-\frac{1}{2}\cos^{-1}(u)+C\\
+&=\frac{1}{10}\sqrt{1-25x^2}(5x)-\frac{1}{2}\cos^{-1}(5x)+C\\
+&=\boxed{\frac{\sqrt{1-25x^2}x-\cos^{-1}(5x)}{2}+C.}\qedhere
+\end{align*}
 \end{proof}
 
 \begin{problem}[WebAssign, HW 12, \# 3]
@@ -57,6 +91,39 @@ Evaluate the integral. (Use $C$ for the constant of integration.)
 \]
 \end{problem}
 \begin{proof}[Solution]
+First we need to complete the square
+\begin{align*}
+(x-3)^2-9&=x^2-6x+9-9\\
+         &=x^2-6x.
+\end{align*}
+Then, the integral above turns into
+\[
+\int\sqrt{16+x-x^2}\;dx=\int\sqrt{25+(x-3)^2}\;dx
+\]
+and now we can use the substitution $5u=x-3$ to simplify our integral into
+\[
+\frac{1}{5}\int\sqrt{25-(5u)^2}\;du=
+\frac{1}{5}\int\sqrt{5^2-5^2u^2}\;du=
+\int\sqrt{1-u^2}\;du.
+\]
+Now we can use the substitution $\cos\theta=u$ and
+$-\sin\theta\;d\theta=du$ to get
+\begin{align*}
+\int\sqrt{1-u^2}\;du
+&=\int\sqrt{1-\cos^2\theta}(-\sin\theta)\;d\theta\\
+&=-\int\sqrt{\sin^2\theta}\sin\theta\;d\theta\\
+&=-\int\sin^2\theta\;d\theta\\
+\intertext{which, from our previous problem, we know to be}
+&=\frac{1}{2}\sin 2\theta-\theta+C.
+\end{align*}
+Substututing back first $u$ then $x$ we get
+\begin{align*}
+\frac{1}{2}\sin 2\theta-\theta+C
+&=\sin\theta\cos\theta-\theta+C\\
+&=\sqrt{1-u^2}u-\cos^{-1}(u)+C\\
+&=\sqrt{1-\left(\frac{x-3}{5}\right)^2}\left(\frac{x-3}{5}\right)-\cos^{-1}\left(\frac{x-3}{5}\right)+C\\
+&=\boxed{\frac{x-3}{25}\sqrt{16+6x-x^2}-\cos^{-1}\left(\frac{x-3}{5}\right)+C.}\qedhere
+\end{align*}
 \end{proof}
 
 \begin{problem}[WebAssign, HW 12, \# 4]

@@ -15,8 +15,18 @@ Section | Location | Time ||
 
 ~~~
 {Announcements}
-Exam results are on WebAssign. I will distribute your exam booklets next week and we will return to our regular schedule quiz schedule next week.
+Exam results are on WebAssign. I will distribute your exam booklets next week and we will return to our regular schedule quiz schedule next week. Here are the section averages
 ~~~
+
+*Exam 1 Averages*
+~~~
+{Exam 1 Average}{table}{exam-1-avgs}
+Section | Average ||
+294 | 71.00 ||
+151 | 76.66 ||
+112 | 60.82
+~~~
+
 
 === Recitation
 Here are lecture notes and solutions to recitation quizzes, for those of you who would like something to study from for the exams. I take many of my quiz questions from [http://www.math.purdue.edu/academic/courses/oldexams?course=MA16600 past exams].
@@ -37,3 +47,4 @@ Here are lecture notes and solutions to recitation quizzes, for those of you who
 - [files/MA166-HW-Current.pdf Solutions ] to the problems in the [https://www.math.purdue.edu/academic/files/courses/2016spring/MA16600/166assignr1.pdf assignment sheet]. The problems on WebAssign roughly correspond to the problems listed on the assignment sheet. I will update the solutions weekly.
 
 - Review for Exam 1.
+- [trig-identities.html Trig identities!]
