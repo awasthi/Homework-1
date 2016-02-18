@@ -38,7 +38,24 @@ $X^n/X^{n-1}$ is a wedge sum of $n$-spheres:
 \end{enumerate}
 \end{problem}
 \begin{proof}
-\textbf{(a)}
+To make Hatcher's comment more precise, if $X=\bigcup X^k$ is a
+finite-dimensional CW-complex, by excision the relative homology
+\begin{equation}
+\label{eq:hw-4-excision-wedgesum-k-spheres}
+H_n\left(X^k,X^{k-1}\right)\cong
+\widetilde H_n\left(X^k/X^{k-1}\right)
+\cong
+\widetilde H_n\left(\textstyle{\bigvee_{\alpha_k}
+    S^k}\right)=\bigoplus_{\alpha_k}\widetilde H_n\left(S^k\right)
+=\begin{cases}
+\bigoplus_{\alpha_k}\bfZ&\text{if $n=k$}\\
+0&\text{otherwise}
+\end{cases}
+\end{equation}
+where $\alpha_k$ is the index over the $k$-dimensional cells of $X$.
+\\\\
+\textbf{(a)} By induction on $d$, if $d=0$ then $X^0$ is a collection of
+points.
 \\\\
 \textbf{(b)}
 \\\\
