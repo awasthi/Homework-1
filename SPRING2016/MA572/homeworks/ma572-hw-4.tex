@@ -38,26 +38,86 @@ $X^n/X^{n-1}$ is a wedge sum of $n$-spheres:
 \end{enumerate}
 \end{problem}
 \begin{proof}
-To make Hatcher's comment more precise, if $X=\bigcup X^k$ is a
-finite-dimensional CW-complex, by excision the relative homology
+To make Hatcher's comment more precise, if $X=\bigcup_{k=0}^n X^k$ is a
+$n$-dimensional CW-complex, by excision the relative homology
 \begin{equation}
 \label{eq:hw-4-excision-wedgesum-k-spheres}
-H_n\left(X^k,X^{k-1}\right)\cong
-\widetilde H_n\left(X^k/X^{k-1}\right)
+H_i\left(X^k,X^{k-1}\right)\cong
+\widetilde H_i\left(X^k/X^{k-1}\right)
 \cong
-\widetilde H_n\left(\textstyle{\bigvee_{\alpha_k}
-    S^k}\right)=\bigoplus_{\alpha_k}\widetilde H_n\left(S^k\right)
-=\begin{cases}
-\bigoplus_{\alpha_k}\bfZ&\text{if $n=k$}\\
+\widetilde H_i\left(\textstyle{\bigvee_{\alpha_k} S^k}\right)
+\cong
+\bigoplus_{\alpha_k}\widetilde H_i\left(S^k\right)
+\cong
+\begin{cases}
+\bigoplus_{\alpha_k}\bfZ&\text{if $i=k$}\\
 0&\text{otherwise}
 \end{cases}
 \end{equation}
 where $\alpha_k$ is the index over the $k$-dimensional cells of $X$.
 \\\\
-\textbf{(a)} By induction on $d$, if $d=0$ then $X^0$ is a collection of
-points.
+\textbf{(a)} We proceed by induction on $n$ the dimension of $X$. If $n=0$
+then $X^0$ is a collection of points and we know that $H_i(X^0)=0$ for all
+$i>0$ and $H_0=\oplus_\alpha\bfZ$ where $\alpha$ runs over all $X^0$.
+
+Now for the inductive step, suppose $H_i(X^{n-1})=0$ for all $i>n-1$. Then,
+we have the long exact sequence
+\begin{equation}
+\label{eq:exact-sequence-induction}
+\includegraphics{hw-4-induction-d-cells}
+\end{equation}
+But by the induction hypothesis, $H_i\left(X^{n-1}\right)=0$ for
+all $i>n-1$ and $H_{n-1}\left(X^{n-1}\right)=\bigoplus_\alpha\bfZ$ over
+some index $\alpha$. Then \eqref{eq:exact-sequence-induction} becomes
+\begin{equation}
+\label{eq:hw-4-induction-last}
+\includegraphics{hw-4-induction-d-cells-filled}
+\end{equation}
+It's easy to see, if we extend \eqref{eq:hw-4-induction-last} to the left,
+i.e., by adding $H_{n+1}$ etc., that $H_i\left(X^n\right)=0$ since it is
+sandwiched between two $0$'s. Moreover, by exactness at
+$H_n\left(X^n/X^{n-1}\right)$, we have an injection
+$H_n\left(X^n\right)\hookrightarrow\bigoplus_{\alpha_n}\bfZ$ so
+$H_n\left(X^n\right)$ is free abelian.
 \\\\
-\textbf{(b)}
+Now, note that if $m>i$ the $H_i(X)\cong H_i\left(X^m\right)$.
+\begin{proof}[Proof of observation]
+\renewcommand\qedsymbol{$\clubsuit$}
+Since $X$ is $n$-dimensional all we need to show is that
+$H_i\left(X^m\right)\cong H_i\left(X^{i+1}\right)$. By induction on $m$,
+the base case $m=i+1$ is clear. Now for the inductive step, suppose
+$H_i\bigl(X^{m'}\bigr)\cong H_i\left(X^{i+1}\right)$ for $m>i$. Then we
+have
+\begin{equation}
+\label{eq:lemma-1}
+\cdots\longrightarrow
+H_{i+1}\bigl(X^{m+1},X^m\bigr)\longrightarrow
+H_i\bigl(X^m\bigr)\longrightarrow
+H_i\bigl(X^{m+1}\bigr)\longrightarrow
+H_i\bigl(X^{m+1},X^m\bigr)\longrightarrow
+\cdots.
+\end{equation}
+But $H_{i+1}\bigl(X^{m+1},X^m\bigr)\cong
+H_{i+1}\bigl(X^{m+1},X^m\bigr)\cong 0$ so $H_i\bigl(X^m\bigr)\cong
+H_i\bigl(X^{m+1}\bigr)$, as desired.
+\end{proof}
+\\\\
+\textbf{(b)} If $n<1$ in the case $n=0$ there are no $1$-cells and in the
+case $n=1$ there are no $0$-cells so we cannot say anything. Therefore, we
+begin at $n>1$. By our observation, we have $H_n(X)\cong H_n(X^n)$ and by
+part \textbf{(a)} we have
+\begin{equation}
+  \label{eq:short-exact-cells}
+\cdots\longrightarrow
+H_n\bigl(X^{n-2}\bigr)\longrightarrow
+H_n\bigl(X^n\bigr)\longrightarrow
+H_n\bigl(X^n,X^{n-2}\bigr)\longrightarrow
+H_{n-1}\bigl(X^{n-2}\bigr)\longrightarrow
+\cdots,
+\end{equation}
+where $H_n\left(X^{n-2}\right)\cong H_{n-1}\left(X^{n-2}\right)\cong
+0$. Hence, by exactness at $H_n\left(X^n\right)$, we have
+$H_n\left(X^n\right)\cong H_n\left(X^n,X^{n-2}\right)$
 \\\\
 \textbf{(c)}
 \end{proof}
