@@ -101,7 +101,6 @@ But $H_{i+1}\bigl(X^{m+1},X^m\bigr)\cong
 H_{i+1}\bigl(X^{m+1},X^m\bigr)\cong 0$ so $H_i\bigl(X^m\bigr)\cong
 H_i\bigl(X^{m+1}\bigr)$, as desired.
 \end{proof}
-\\\\
 \textbf{(b)} If $n<1$ in the case $n=0$ there are no $1$-cells and in the
 case $n=1$ there are no $0$-cells so we cannot say anything. Therefore, we
 begin at $n>1$. By our observation, we have $H_n(X)\cong H_n(X^n)$ and by
@@ -117,9 +116,31 @@ H_{n-1}\bigl(X^{n-2}\bigr)\longrightarrow
 \end{equation}
 where $H_n\left(X^{n-2}\right)\cong H_{n-1}\left(X^{n-2}\right)\cong
 0$. Hence, by exactness at $H_n\left(X^n\right)$, we have
-$H_n\left(X^n\right)\cong H_n\left(X^n,X^{n-2}\right)$
+$H_n\left(X^n\right)\cong H_n\left(X^n,X^{n-2}\right)$ so by 2.34 (a), we
+have
+\[
+H_n\left(X^n\right)\cong
+H_n\left(X^n,X^{n-1}\right)\cong
+H_n\left(X^n,X^{n-2}\right)\cong\bigoplus_\alpha\bfZ
+\]
+where $\alpha$ is an index over the $n$-cells of $X$.
 \\\\
-\textbf{(c)}
+\textbf{(c)} By the observation $H_n(X)\cong
+H_n\left(X^{n+1}\right)$. Moreover, we have the following exact sequence
+\begin{equation}
+  \label{eq:short-exact-cells-2}
+\cdots\longrightarrow
+H_n\left(X^{n+1},X^n\right)\longrightarrow
+H_n\left(X^n\right)\longrightarrow
+H_n\left(X^{n+1}\right)\longrightarrow
+H_n\left(X^{n+1},X^n\right)\longrightarrow\cdots
+\end{equation}
+where $H_{n+1}\left(X^{n+1},X^n\right)\cong
+H_n\left(X^{n+1},X^n\right)\cong 0$ giving us an injection
+$H_n\left(X^n\right)\hookrightarrow H_n\left(X^{n+1}\right)$. By part
+\textbf{(a)}, $H_n\left(X^n\right)$ is free abelian and has rank at most
+the the number of $n$-cells of $X$. Thus, $H_n\left(X\right)$ is free abelian
+and has rank at most the number of $n$-cells of $X$.
 \end{proof}
 \newpage
 
@@ -131,6 +152,16 @@ $\bfRP^{2n-1}\to\bfRP^{2n-1}$ without fixed points from linear
 transformations $\bfR^{2n}\to\bfR^{2n}$ without eigenvectors.
 \end{problem}
 \begin{proof}
+Given a map $f\colon S^{2n}\to S^{2n}$, either $f$ has a fixed point or it
+does not. If $f$ does not have a fixed point then $f\simeq a$ so $\deg
+f=(-1)^{2n+1}=-1$ so $\deg(-f)=\deg(-\Id\circ f)=1$ has a fixed point for
+otherwise we may homotope $f$  to the antipodal map $a$ and so, by
+transitivity, $\Id\simeq a$, but this is nonsense.
+
+Realize $\bfRP^{2n}$ as the quotient $S^{2n}/\sim$ where $x\sim -x$.
+
+Note that $p\colon S^{2n}\to\bfR^{2n}$ is a cover of $\bfR^{2n}$.
+Let $f\colon\bfRP^{2n}\to\bfRP^{2n}$. By
 \end{proof}
 
 %%% Local Variables:

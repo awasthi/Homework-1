@@ -738,6 +738,84 @@ integral as
 \end{proof}
 
 \section{Exam 2 Problems}
+\begin{problem}[Spring 2015, \# 5]
+We would like to compute
+\[
+\int\sec^3\theta\;d\theta=\int\frac{\cos\theta}{\cos^4\theta}\;d\theta
+\]
+by using the substitution $u=\sin\theta$.
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+
+\begin{problem}[Spring 2014, \# 5]
+It is know that
+\[
+\int\frac{2x-3}{x(x^2+1)}\;dx=a\ln x+b\ln(x^2+1)+c\tan x+C.
+\]
+for some constants $a$, $b$, $c$ and $C$. What is $b$?
+\end{problem}
+\begin{proof}[Solution]
+Let's work more abstractly, consider the integral
+\[
+\int\frac{ax+b}{x(x^2+c^2)}.
+\]
+Then, by the method of partial fractions, since the degree of $ax+b$ is
+less than the degree of $x(x^2+c^2)$, we can rewrite the integral as
+\[
+\int\frac{A}{x}+\frac{Bx+C}{x^2+c^2}\;dx.
+\]
+Let's split the integral and find a general formula for it
+\begin{equation}
+\label{eq:partial-fractions-integral}
+\int\frac{A}{x}+\frac{Bx+C}{x^2+c^2}\;dx
+=A\underbrace{\int\frac{1}{x}\;dx}_{I_1}
++B\underbrace{\int\frac{x}{x^2+c^2}\;dx}_{I_2}
++C\underbrace{\int\frac{1}{x^2+c^2}\;dx}_{I_3},
+\end{equation}
+and compute $I_1$, $I_2$ and $I_3$ separately.
+
+Computing $I_1$ is easy enough, we've done it so many times
+$I_1=\ln x+C_1$.
+
+$I_2$ is a tad more complicated, but we have seen this before. Making the
+$u$-substitution $u=x^2+c^2$ then $du=2x\;dx$ and we have
+\begin{align*}
+I_2&=\int\frac{x}{x^2+c^2}\;dx\\
+   &=\int\frac{x}{u}\frac{dx}{2x}\\
+   &=\frac{1}{2}\int\frac{1}{u}\;dx\\
+   &=\frac{1}{2}\ln\left|x^2+c^2\right|+C_2.
+\end{align*}
+
+Last but not least we compute $I_3$ by making the substitution $u=x/c$ so
+$du=c\;dx$ and
+\begin{align*}
+I_3&=\int\frac{1}{x^2+c^2}\;dx\\
+   &=\int\frac{c}{c^2(u^2+1)}\;du\\
+   &=\frac{1}{c}\int\frac{1}{u^2+1}\;du\\
+\intertext{and $1/(u^2+1)$ is the well known integral of $\tan^{-1}(us)$}
+   &=\frac{1}{c}\tan^{-1}(u)+C_3\\
+   &=\frac{1}{c}\tan^{-1}\left|\frac{x}{c}\right|+C_3.
+\end{align*}
+Putting everything together into \eqref{eq:partial-fractions-integral}, we
+get
+\begin{equation}
+\label{eq:total-partial-int}
+I_1+I_2+I_3=A\ln
+x+\frac{B}{2}\ln\left|x^2+c^2\right|+\frac{C}{c}\tan^{-1}\left|\frac{x}{c}\right|+C_1+C_2+C_3.
+\end{equation}
+Now we can say with certainty that $b$ in the coefficient in the problem
+will be $B/2$ where $B$ is the term derived from the partial fraction
+decomposition of $2x-3/(x(x^2+1))$. Now all we need to do is find this
+partial fraction decomposition. We have
+\[
+2x-3=A(x^2+1)+(Bx+C)x=(A+B)x^2+Cx+A
+\]
+so $A=-3$, $B=-A=3$ and $C=2$ giving us
+\[
+\boxed{b=\frac{B}{2}=\frac{3}{2}}.\qedhere
+\]
+\end{proof}
 
 %%% Local Variables:
 %%% mode: latex
