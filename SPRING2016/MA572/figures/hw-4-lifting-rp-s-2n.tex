@@ -1,0 +1,21 @@
+\documentclass[crop,tikz,10pt]{standalone}
+\usetikzlibrary{cd}
+
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage[mathcal]{euscript}
+\usepackage{mleftright}
+\mleftright
+
+\begin{document}
+\begin{tikzcd}
+  S^{2n}\arrow{r}{\tilde f}\arrow{d}{p}&S^{2n}\arrow{d}{p\circ\tilde f}\\
+  \mathbf{R}\mathrm{P}^{2n}\arrow{r}{f}&\mathbf{R}\mathrm{P}^{2n}.
+\end{tikzcd}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

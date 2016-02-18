@@ -158,10 +158,34 @@ f=(-1)^{2n+1}=-1$ so $\deg(-f)=\deg(-\Id\circ f)=1$ has a fixed point for
 otherwise we may homotope $f$  to the antipodal map $a$ and so, by
 transitivity, $\Id\simeq a$, but this is nonsense.
 
-Realize $\bfRP^{2n}$ as the quotient $S^{2n}/\sim$ where $x\sim -x$.
+Note that, by example 1.43, $p\colon S^{2n}\to\bfRP^{2n}$ is a cover of
+$\bfR^{2n}$. Let $f\colon\bfRP^{2n}\to\bfRP^{2n}$. By the lifting property,
+there exists a map $\tilde f$ making the diagram below commute
+\begin{equation}
+\label{eq:commutative-lifting-property}
+\includegraphics{hw-4-lifting-rp-s-2n}
+\end{equation}
+Now, by the first part to this problem, we know that for some $x\in
+S^{2n}$, $f(x)=x$ or $f(x)=-x$. But under the quotient map $p$,
+$[x]=[-x]$. Hence, every map $f\colon\bfRP^{2n}\to\bfRP^{2n}$ has a fixed
+point.
 
-Note that $p\colon S^{2n}\to\bfR^{2n}$ is a cover of $\bfR^{2n}$.
-Let $f\colon\bfRP^{2n}\to\bfRP^{2n}$. By
+For this last part, all we need to do is find a matrix with nonreal
+eigenvalues like the linear map
+\begin{equation}
+\label{eq:linear-map-with-complex-eigenvalues}
+T=
+\begin{bmatrix}
+0_n&-I_n\\
+I_n&0_n
+\end{bmatrix}.
+\end{equation}
+Then the characteristic polynomial of $T$ is $x^2+1$ which has nonreal
+roots so $T$ has no invariant subspaces besides $\{0\}$ and
+$\bfR^{2n}$. Since $\bfRP^{2n-1}$ can be realized as a quotient of
+$\bfR^{2n}$, by the UMP of the quotient topology, this map induces a
+continuous map $[T]\colon\bfRP^{2n-1}\to\bfRP^{2n-1}$ which fixes no
+$1$-dimensinoal subspaces. Thus $[T]$ has no fixed points.
 \end{proof}
 
 %%% Local Variables:
