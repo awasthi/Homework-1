@@ -25,8 +25,8 @@ $|E|=|T(E)|=r^n|E|=|rE|$.
 Let $\left\{ E_k \right\}$, $k\in\bfN$ be a collection of measurable
 sets. Define the set
 \[
-\liminf_{k\to\infty} E_k=\bigcup_{k=1}^\infty\left(\bigcap_{n=k}^\infty
-  E_n\right).
+\liminf_{k\to\infty} E_k
+=\bigcup_{k=1}^\infty\left(\bigcap_{n=k}^\infty E_n\right).
 \]
 Show that
 \[
@@ -34,31 +34,83 @@ Show that
 \]
 \end{problem}
 \begin{proof}
-Suppose that
-\end{proof}
-
-\begin{problem}
-Let $E\subset\bfR^n$ be a measurable set, with $|E|=\infty$. Show that for
-any $C>0$ there exists a measurable set $F\subset E$ such that
-$C<|F|<\infty$.
-\end{problem}
-\begin{proof}
+If the $\varliminf\left|E_k\right|=\infty$ the inequality holds
+trivially. Hence, we may, without loss of generality, assume that
+$\varliminf\left|E_k\right|<\infty$. By 3.20, the set $\varliminf E_k$ is
+measurable and we have
+\begin{equation}
+  \label{eq:limsup-rewrite}
+\left|\varliminf_{k\to\infty} E_k\right|
+=\left|\bigcup_{k=1}^\infty F_k\right|,
+\end{equation}
+where $F_k\coloneqq\bigcap_{n=k}^\infty E_n$. Now, note that the collection
+of sets $F_k'\coloneqq\bigcup_{\ell=1}^k F_\ell$ forms an increasing
+sequence of measurable sets $F_k'\nearrow F'$, where
+$F'=\bigcup_{k=1}^\infty F_k=\varliminf E_k$. Then, by 3.26 (i), we have
+\begin{equation}
+  \label{eq:monotone-increasing-limit}
+\lim_{k\to\infty}\left|F_k'\right|
+=\left|F'\right|
+=\left|\varliminf_{k\to\infty} E_k\right|.
+\end{equation}
+Hence, it suffices to show that $\left|F_k'\right|\leq\left|E_k\right|$ for
+all $k$, but this follows by monotonicity of the outer measure, 3.3, since
+$F_k'\subset E_k$. Thus, we have the desired inequality
+\begin{equation}
+  \label{eq:meas-liminf-liminf-meas}
+\left|\varliminf_{k\to\infty} E_k\right|
+\leq\varliminf_{k\to\infty}\left|E_k\right|.
+\end{equation}
 \end{proof}
 
 \begin{problem}
 Consider the function
 \[
-F(\bfx)\coloneqq
+F(x)\coloneqq
 \begin{cases}
-|B(x,0)|&\bfx>0\\
-0&\bfx=0
+|B(\mathbf{0},x)|&x>0\\
+0&x=0
 \end{cases}.
 \]
 Here
-$B(r,0)\coloneqq\left\{\,\bfy\in\bfR^n\;\middle|\;|\bfy|<r\,\right\}$. Prove
+$B(\mathbf{0},r)\coloneqq\left\{\,\bfy\in\bfR^n\;\middle|\;|\bfy|<r\,\right\}$. Prove
 that $F$ is monotonic increasing and continuous.
 \end{problem}
 \begin{proof}
+That $F$ is increasing is immediate from the monotonicity of the outer
+measure since for $x<x'$ we have $B(\mathbf{0},x)\subset B(\mathbf{0},x')$
+so, by 3.2, we have
+\[
+F(x)\left|B(\mathbf{0},x)\right|\leq\left|B(\mathbf{0},x')\right|=F(x')
+\]
+as desired.
+
+To see that $F$ is continuous, we will prove the following lemma
+\begin{lemma}
+\label{lem:one}
+For any $x>0$, $xB(\mathbf{0},1)=B(\mathbf{0},x)$.
+\end{lemma}
+\begin{proof}[Proof of lemma]
+\renewcommand\qedsymbol{$\clubsuit$}
+If $\bfy\in xB(\mathbf{0},1)$ then $\bfy=x\bfy'$ for $\bfy'\in
+B(\mathbf{0},1)$. Thus, $|\bfy'|=|\bfy|/x<1$ so $|\bfy|<x$ implies that
+$\bfy\in B(\mathbf{0},x)$. Hence, we have the containment
+$xB(\mathbf{0},1)\subset B(\mathbf{0},x)$.
+
+On the other hand, if $\bfy\in B(\mathbf{0},x)$ then $|\bfy|<x$ so
+$\left|\bfy/x\right|<1$. Hence, $\bfy/x\in B(\mathbf{0},1)$ so
+$x(\bfy/x)=\bfy\in B(\mathbf{0},x)$. Thus, $B(\mathbf{0},x)\subset
+xB(\mathbf{0},)$ and equality holds.
+\end{proof}
+In light of Lemma \ref{lem:one} and 3.35, for $x>0$, we have
+\begin{equation}
+\label{eq:scale-map}
+F(x)=\left|B(\mathbf{0},x)\right|
+=\left|xB(\mathbf{0},1)\right|
+=x^n\left|B(\mathbf{0},1)\right|.
+\end{equation}
+It is clear that $F$ is continuous on the interval $[0,\infty)$ since $F$
+is a polynomial in $x$.
 \end{proof}
 
 \begin{problem}
@@ -66,14 +118,66 @@ Let $f\colon\bfR\to\bfR$ be a function. Let $C$ be the set of all points
 at which $f$ is continuous. Show that $C$ is a set of type $G_\delta$.
 \end{problem}
 \begin{proof}
+From the topological definition of continuity, $f$ is continuous at $x\in
+C$ if and only if for every neighborhood $U$ of $f(x)$, the preimage
+$f^{-1}(U)$ is a neighborhood of $x$. Now,
 \end{proof}
+Let $x\in C$. Then, by the definition of continuity, for every natural
+number $n>0$ there exists $\delta>0$ such that $|x-x'|<\delta$ implies
+\begin{equation}
+\label{eq:continuity-2n}
+\left|f(x)-f(x')\right|<\frac{1}{2n}.
+\end{equation}
+Let $x'',x'\in B(x,\delta)$. Then, by the triangle inequality, we have
+\begin{equation}
+\label{eq:n-estimates}
+\begin{aligned}
+|f(x')-f(x)''|&=\left|f(x')-f(x)-(f(x'')-f(x))\right|\\
+              &\leq\left|f(x')-f(x)\right|+\left|f(x'')-f(x)\right|\\
+              &<\frac{1}{2n}+\frac{1}{2n}\\
+              &=\frac{1}{n}.
+\end{aligned}
+\end{equation}
+In view of these estimates, define the set
+\begin{equation}
+\label{eq:a-n}
+A_n\coloneqq
+\left\{\,
+x\in\bfR
+\;\middle|\;
+\text{
+there exists $\delta>0$ such that $x',x''\in B(x,\delta)$ implies
+$\left|f(x')-f(x'')\right|<\frac{1}{n}$
+}
+\,\right\}.
+\end{equation}
+Good Lord, that was a long definition! We claim that
+$C=\bigcap_{n=1}^\infty A_n$ and that $A_n$ is open for all $n$.
 
+First, let us show that $C=\bigcap_{n=1}^\infty A_n$. Let $x\in C$. Then for
+every $n>0$, there exists $\delta>0$ such that $|x-x'|<\delta$ implies
+$|f(x)-f(x')|<1/n$. Thus, $x\in A_n$ for all $n$ so $x\in\bigcap A_n$. On
+the other hand, if $x\in\bigcap A_n$ for every $n>0$, there exists
+$\delta>0$ such that $|x-x'|<\delta$ implies $|f(x)-f(x')|<1/n$. Fix
+$\varepsilon>0$. By the Archimedean principle, there exists $N>0$ such that
+$\varepsilon>1/N$. Then, since $x\in A_N$ it follows that for some
+$\delta'>0$, $|x-x'|<\delta'$ implies
+$\left|f(x)-f(x')\right|<1/N<\varepsilon$. Thus, $x\in C$ and we conclude
+that $C=\bigcap_{n=1}^\infty A_n$.
+
+Lastly, we show that $A_n$ is open. Let $x\in A_n$. Then there exists
+$\delta>0$ such that $|x-x'|<\delta$ implies $|f(x)-f(x')|<1/n$. In
+particular, this means that $B(x,\delta)\subset A_n$ for any $x'\in
+B(x,\delta)$ satisfies $|f(x)-f(x')|<1/n$. Thus, $A_n$ is open and we
+conclude that $C=\bigcap_{n=1}^\infty A_n$ is a $G_\delta$ set.
 \begin{problem}
 Let $f\colon\bfR\to\bfR$ be a function. Is it true that if the sets
 $\left\{\,f=r\,\right\}$ are measurable for all $r\in\bfR$, then $f$ is
 measurable?
 \end{problem}
 \begin{proof}
+No. Recall that, by definition, or 4.1, $f$ is measurable if and only if
+$\left\{\,f>a\,\right\}$ for all $a\in\bfR$.
 \end{proof}
 
 \begin{problem}
@@ -83,6 +187,29 @@ $\left\{\,x\;\middle|\;\text{$\lim_{k\to\infty} f_k(x)$ exists}\,\right\}$
 is measurable.
 \end{problem}
 \begin{proof}
+The idea here should be to rewrite
+\begin{equation}
+  \label{eq:measurable-lim-set}
+E\coloneqq\left\{\,x\;\middle|\;\text{$\lim_{k\to\infty} f_k(x)$ exists}\,\right\}
+\end{equation}
+as a countable union/intersection of measurable sets. Let $x\in E$. By the
+Cauchy criterion, for every $N>0$ there exists a positive integer
+$M$ such that $m,n\geq M$ implies
+$\left|f_n(x)-f_m(x)\right|<1/N$. With this in mind, define
+\begin{equation}
+  \label{eq:countable-lim-set}
+E_N\coloneqq
+\left\{\,
+x
+\;\middle|\;
+\text{
+there exists $M$ such that $m,n\geq M$ implies $\left|f_n(x)-f_m(x)\right|<\frac{1}{N}$
+}
+\,\right\}.
+\end{equation}
+Then, like for Problem 1.4, it is not too hard to see that the $E_n$'s are
+open and that $E=\bigcap_{n=1}^\infty E_n$. Thus, $E$ is a $G_\delta$ set
+and therefore measurable.
 \end{proof}
 
 \begin{problem}
@@ -96,6 +223,7 @@ absolutely continuous function on $[a,b]$ is of bounded variation on
 $[a,b]$.
 \end{problem}
 \begin{proof}
+
 \end{proof}
 
 \begin{problem}
@@ -114,7 +242,6 @@ f(a)&\text{if $c=b$}
 \end{problem}
 \begin{proof}
 \end{proof}
-
 
 %%% Local Variables:
 %%% mode: latex
