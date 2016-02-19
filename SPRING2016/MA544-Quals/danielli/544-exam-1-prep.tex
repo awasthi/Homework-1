@@ -223,7 +223,22 @@ absolutely continuous function on $[a,b]$ is of bounded variation on
 $[a,b]$.
 \end{problem}
 \begin{proof}
-
+Suppose $f\colon[a,b]\to\bfR$ is absolutely continuous. Then for fixed
+$\varepsilon=1$, there exists a $\delta>0$ such that for every finite
+disjoint collection $\left\{ (a_kb_k) \right\}_{k=1}^N$ of open intervals
+in $(a,b)$ satisfying $\sum_{k=1}^Nb_k-a_k<\delta$, we have
+$\sum_{k=1}^N\left|f(b_k)-f(a_k)\right|<\varepsilon$. Let
+$\Gamma\coloneqq\left\{x_k\right\}_{k=1}^N$ be a partition of $[a,b]$ into closed
+intervals such that $x_{k+1}-x_k<\delta$, then by absolute continuity we have
+\begin{equation}
+\label{eq:absolute-continuity-variation}
+\begin{aligned}
+V[f;\Gamma]
+&=\sum_{k=1}^N\left|f(x_{k+1})-f(x_k)\right|\\
+&<1.
+\end{aligned}
+\end{equation}
+Thus, $f\in\BV[a,b]$.
 \end{proof}
 
 \begin{problem}
