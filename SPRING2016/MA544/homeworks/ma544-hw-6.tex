@@ -74,7 +74,7 @@ given $M>f(\bfx_0),g(\bfx_0)$ there exists $\delta_f,\delta_g>0$ such that
 $f\left(\bfx_1\right),g\left(\bfx_2\right)<M/2$ for all
 $\left|\bfx_1-\bfx_0\right|<\delta_f,\left|\bfx_2-\bfx_0\right|<\delta_g$. Set
 $\delta\coloneqq\min\{\delta_f,\delta_g\}$. Then for any $\bfx\in
-B(\delta,\bfx_0)$ we have
+B_\delta(\bfx_0)$ we have
 \begin{align*}
 \left|f(\bfx)+g(\bfx)-\left(f(\bfx_0)+g(\bfx_0)\right)\right|
 &=\left|\left(f(\bfx)-f(\bfx_0)\right)+\left(g(\bfx)-g(\bfx_0)\right)\right|\\
@@ -109,24 +109,60 @@ u(x)\coloneqq\begin{cases}
 \end{cases}.
 \end{equation}
 Now, note that $u$ being usc at $x_0$ implies that for $1/2>f(x_0)=0$ there
-exists $\delta>0$ such that $f(x)<1/2$ for all $x\in B(\delta,x_0)$. But
-for any $x=x_0+\delta'$ in $B(\delta,x_0)$, for some $0<\delta'<\delta$,
+exists $\delta>0$ such that $f(x)<1/2$ for all $x\in B_\delta(x_0)$. But
+for any $x=x_0+\delta'$ in $B_\delta(x_0)$, for some $0<\delta'<\delta$,
 $u(x)=1>1/2$. Thus, $u$ is not usc at $x_0$.
+
+A sufficient condition is that $f,g\geq 0$ for all $\bfx$. For if $f$ and
+$g$ are usc, then $\varlimsup f_k(\bfx)\leq f(\bfx_0)$ and $\varlimsup
+g_k(\bfx)\leq g(\bfx_0)$ for all sequences $\bfx\to\bfx_0$. Thus, we have
+\[
+\varlimsup fg(\bfx)\leq
+\left(\varlimsup f\right)
+\left(\varlimsup g\right)\leq
+fg(\bfx_0).
+\]
+Thus, $fg$ is usc at $\bfx_0$.
 \\\\
 (b) Suppose that $\left\{f_k\right\}$ is a sequence of functions that are
-usc at $\bfx_0$. Then, for every $M>f_k(\bfx_0)$ there exists $\delta_k>0$
-such that $f_k(\bfx)<M$ for all $\bfx\in B\left(\delta_k,\bfx_0\right)$. Set
-$\delta\coloneqq \inf_k\{\delta_k\}$. Then $f_k(\bfx)<M$ for all $\bfx\in
-B\left(\delta,\bfx_0\right)$ for all $k$. Thus, $\inf_k f_k(\bfx)<M$ for
-all $\bfx\in B\left(\delta,\bfx_0\right)$ so $\inf_k f_k(\bfx)$ is usc at
-$\bfx_0$.
+usc at $\bfx_0$. Set $f\coloneqq\inf f_k$. Then for every $\varepsilon>0$,
+$f_k(\bfx_0)<f(\bfx_0)+\varepsilon$. Since $f_k$ is usc, for every sequence
+$\bfx\to\bfx_0$, we have $\varlimsup f_k(\bfx)\leq f(\bfx_0)$ and $\varlimsup
+g_k(\bfx)\leq g(\bfx_0)$.
+\begin{equation}
+  \label{eq:infimum-estimate}
+f(\bfx)\leq f_k(\bfx)\leq f(\bfx_0)+\varepsilon.
+\end{equation}
+Now, let $\varepsilon\to 0$ and we see that $f$ is usc at $\bfx_0$.
 \\\\
-(c) By near, we will assume topological proximity, i.e., on some small
-neighborhood $U$ of $\bfx_0$. Suppose $f_k\to f$ uniformly on $U$. Then for
-every $\varepsilon>0$, there exists a positive integer $K$ such that $k>K$
-implies $\left|f_k(\bfx)-f(\bfx)\right|<\varepsilon$. Since the $f_k$'s are
-usc at $\bfx_0$, for every $M>f_k(\bfx_0)$ there exists $\delta_k>0$ such
-that $f_k(\bfx)<M$ for all $\bfx\in B\left(\delta_k,\bfx_0\right)$.
+(c) By near, we will assume topological proximity, i.e., on some open ball
+$B_\delta(\bfx_0)$ where $\delta>0$. Suppose $f_k\to f$ uniformly on
+$B_\delta(\bfx_0)$. Then, for every $\varepsilon>0$ there exists a positive
+integer $N$ such that $n\geq N$ implies
+$\left|f_k(\bfx)-f(\bfx)\right|<\varepsilon$. Fix $\varepsilon>0$. Then, by
+uniform convergence of $f_k$ on $B_\delta(\bfx_0)$, we have
+\begin{equation}
+  \label{eq:uniform-convergence-estimate}
+f_k(\bfx)-\frac{\varepsilon}{2}<f(\bfx)<f_k(\bfx)+\frac{\varepsilon}{2}.
+\end{equation}
+Since the $f_k$'s are usc on $\bfx_0$, for each $k$ there exists
+$\delta_k>0$ such that $f_k(\bfx)<f_k(\bfx_0)+\varepsilon/2$ whenever
+$\bfx\in B_{\delta_k}(\bfx_0)$. Thus, we have
+\begin{equation}
+\label{eq:take-limsup}
+f(\bfx)<
+f_k(\bfx)+\frac{\varepsilon}{2}<
+\left(f_k(\bfx_0)+\frac{\varepsilon}{2}\right)+\frac{\varepsilon}{2}=
+f_k(\bfx_0)+\varepsilon
+\end{equation}
+whenever $\bfx\in B_{\delta'}(\bfx_0)$ where
+$\delta'\coloneqq\min\{\delta,\delta_k\}$. Now, taking the $\limsup$ on
+both sides of the inequality \eqref{eq:take-limsup}, we have
+\[
+\varlimsup f(\bfx)\leq f(\bfx_0)+\varepsilon.
+\]
+Thus, letting $\varepsilon\to 0$, we see that $f$ is usc at
+$\bfx_0$.
 \end{proof}
 
 %%% Local Variables:
