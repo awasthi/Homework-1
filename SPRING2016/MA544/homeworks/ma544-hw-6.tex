@@ -3,9 +3,25 @@
 Let $f$ be defined and measurable in $\bfR^n$. If $T$ is a nonsingular
 linear transformation of $\bfR^n$, show that $f(T\bfx)$ is measurable. [If
 $E_1=\left\{\,\bfx\;\middle|\; f(\bfx)>a\,\right\}$ and
-$E_2=\left\{\,\bfx\;\middle|\;f(T\bfx)>a\,\right\}$.]
+$E_2=\left\{\,\bfx\;\middle|\;f(T\bfx)>a\,\right\}$, show $E_2=T^{-1}E_1$.]
 \end{problem}
 \begin{proof}
+We shall proceed as in the hint. Suppose $f$ is measurable. Then for every
+finite $a$ in $\bfR$, the set $\left\{f>a\right\}$ is measurable. Since
+$T\colon\bfR^n\to\bfR^n$ is nonsingular it is invertible. Let
+$E_1\coloneqq\left\{\,\bfx\;\middle|\; f(\bfx)>a\,\right\}$ and
+$E_2\coloneqq\left\{\,\bfx\;\middle|\;f(T\bfx)>a\,\right\}$. Then, we show
+that $E_2=T^{-1}E_1$.
+
+Let $\bfx\in E_2$. Then $f(T\bfx)>a$. Since $T$ is nonsingular, it is
+surjective so for some $\bfx'\in\bfR^n$, $\bfx=T^{-1}\bfx'$ so
+$f\left(TT^{-1}\bfx'\right)=f\left(\bfx'\right)>a$. Thus, $\bfx\in
+T^{-1}E_1$. Similarly, if $\bfx\in T^{-1}E_1$ then $\bfx=T^{-1}\bfx'$ for
+some $\bfx'\in E_2$. Then
+$f\left(T\bfx\right)=f\left(TT^{-1}\bfx'\right)=f(\bfx')>a$. Thus, $\bfx\in
+E_2$. It follows that since $E_1$ is measurable for all $a$ and $T^{-1}$ is
+Lipschitz, by 3.33, $E_2$ is measurable for all $a$ so $f\circ T$ is
+measurable.
 \end{proof}
 \newpage
 
@@ -16,13 +32,34 @@ i.e., that there exists $\bfx_0\in E$ such that $f(\bfx_0)\geq f(\bfx)$ for
 all $\bfx\in E$.
 \end{problem}
 \begin{proof}
+First we shall demonstrate boundedness. Suppose that $f$ is usc on $E$. By
+4.14 (i), the set $\left\{\,\bfx\;\middle|\;f(\bfx)<a\,\right\}$ is
+relatively open. Set $\calG\coloneqq\left\{G_k\right\}_{k=1}^\infty$ where
+$G_k\coloneqq\left\{\,\bfx\;\middle|\;f(\bfx)<k\,\right\}$. Then $\calG$ is
+a cover of $E$ by relativeley open sets so there exists a finite subcover
+$\left\{G_{k_\ell}\right\}_{\ell=1}^N$ of $E$ by relatively open sets. Set
+$M\coloneqq\max\{k_1,...,k_N\}$. Then $f(\bfx)<M$ for all $\bfx\in E$.
+
+Also by 4.14, the set $\left\{\,\bfx\;\middle|\;f(\bfx)\geq a\,\right\}$ is
+relatively closed in $E$. Consider the collection of relatively closed sets
+$\left\{H_\bfx\right\}_{\bfx\in E}$ where
+$H_\bfx\coloneqq\left\{\,\bfx'\;\middle|\;f(\bfx')\geq
+  f(\bfx)\,\right\}$. Moreover, if we take any finite collection of the
+$H_\bfx$'s, say $H_{\bfx_1},...,H_{\bfx_N}$, then
+$\bigcap_{k=1}^N H_{\bfx_k}\neq\emptyset$ since $f(\bfx)\geq M$ for all
+$\bfx\in H_{\bfx_i}$ where
+$M\coloneqq\min\left\{f(\bfx_1),...,f(\bfx_N)\right\}$. Thus,
+$\left\{H_\bfx\right\}$ has the finite intersection property, so, since $E$
+is compact, the intersection $H\coloneqq \bigcap_{\bfx\in E}
+H_\bfx\neq\emptyset$. Let $\bfx_0\in H$. Then $f(\bfx_0)\geq f(\bfx)$ for
+all $\bfx\in E$, as desired.
 \end{proof}
 \newpage
 
 \begin{problem}[Wheeden \& Zygmund {\S}4, Ex.\@ 8]
 \begin{enumerate}[label=(\alph*)]
 \item Let $f$ and $g$ be two functions which are usc at $\bfx_0$. Show that
-  $f+g$ is usc at $\bfx_0$. If $f-g$ usc at $\bfx_0$? When is $fg$ usc at
+  $f+g$ is usc at $\bfx_0$. Is $f-g$ usc at $\bfx_0$? When is $fg$ usc at
   $\bfx_0$?
 \item If $\left\{f_k\right\}$ is a sequence of functions are usc at
   $\bfx_0$, show that $\inf f_k(\bfx)$ is usc at $\bfx_0$.
@@ -32,6 +69,64 @@ all $\bfx\in E$.
 \end{enumerate}
 \end{problem}
 \begin{proof}
+(a) Suppose that $f$ and $g$ are usc at $\bfx_0$. Then, by definition,
+given $M>f(\bfx_0),g(\bfx_0)$ there exists $\delta_f,\delta_g>0$ such that
+$f\left(\bfx_1\right),g\left(\bfx_2\right)<M/2$ for all
+$\left|\bfx_1-\bfx_0\right|<\delta_f,\left|\bfx_2-\bfx_0\right|<\delta_g$. Set
+$\delta\coloneqq\min\{\delta_f,\delta_g\}$. Then for any $\bfx\in
+B(\delta,\bfx_0)$ we have
+\begin{align*}
+\left|f(\bfx)+g(\bfx)-\left(f(\bfx_0)+g(\bfx_0)\right)\right|
+&=\left|\left(f(\bfx)-f(\bfx_0)\right)+\left(g(\bfx)-g(\bfx_0)\right)\right|\\
+&\leq\left|f(\bfx)-f(\bfx_0)\right|+\left|g(\bfx)-g(\bfx_0)\right|\\
+&<\frac{M}{2}+\frac{M}{2}=M.
+\end{align*}
+Thus, $f+g$ is usc.
+
+For the second part of this problem, we provide a counter example. Recall
+the functions $u_1$ and $u_2$ from the text
+\begin{equation}
+\label{eq:u-1-u-2-usc}
+u_1(x)\coloneqq
+\begin{cases}
+0&\text{if $x<x_0$}\\
+1&\text{if $x\geq x_0$}
+\end{cases}
+\qquad\qquad
+u_2(x)\coloneqq
+\begin{cases}
+0&\text{if $x\neq x_0$}\\
+1&\text{if $x=x_0$}
+\end{cases}.
+\end{equation}
+Consider the difference $u\coloneqq u_1-u_2$ which is piecewise defined to
+be
+\begin{equation}
+  \label{eq:u-piecewise}
+u(x)\coloneqq\begin{cases}
+0&\text{if $x\leq x_0$}\\
+1&\text{if $x>x_0$}
+\end{cases}.
+\end{equation}
+Now, note that $u$ being usc at $x_0$ implies that for $1/2>f(x_0)=0$ there
+exists $\delta>0$ such that $f(x)<1/2$ for all $x\in B(\delta,x_0)$. But
+for any $x=x_0+\delta'$ in $B(\delta,x_0)$, for some $0<\delta'<\delta$,
+$u(x)=1>1/2$. Thus, $u$ is not usc at $x_0$.
+\\\\
+(b) Suppose that $\left\{f_k\right\}$ is a sequence of functions that are
+usc at $\bfx_0$. Then, for every $M>f_k(\bfx_0)$ there exists $\delta_k>0$
+such that $f_k(\bfx)<M$ for all $\bfx\in B\left(\delta_k,\bfx_0\right)$. Set
+$\delta\coloneqq \inf_k\{\delta_k\}$. Then $f_k(\bfx)<M$ for all $\bfx\in
+B\left(\delta,\bfx_0\right)$ for all $k$. Thus, $\inf_k f_k(\bfx)<M$ for
+all $\bfx\in B\left(\delta,\bfx_0\right)$ so $\inf_k f_k(\bfx)$ is usc at
+$\bfx_0$.
+\\\\
+(c) By near, we will assume topological proximity, i.e., on some small
+neighborhood $U$ of $\bfx_0$. Suppose $f_k\to f$ uniformly on $U$. Then for
+every $\varepsilon>0$, there exists a positive integer $K$ such that $k>K$
+implies $\left|f_k(\bfx)-f(\bfx)\right|<\varepsilon$. Since the $f_k$'s are
+usc at $\bfx_0$, for every $M>f_k(\bfx_0)$ there exists $\delta_k>0$ such
+that $f_k(\bfx)<M$ for all $\bfx\in B\left(\delta_k,\bfx_0\right)$.
 \end{proof}
 
 %%% Local Variables:
