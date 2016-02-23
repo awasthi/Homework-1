@@ -1,7 +1,14 @@
 % #7 - Due Feb. 29 Read Sections 5.1-2. Chapter 4: #9, 11, 15, 18 (ignore
 % the second part concerning convergence in measure);
 \begin{problem}[Wheeden \& Zygmund {\S}4, Ex.\@ 9]
-
+\begin{enumerate}[label=(\alph*)]
+\item Show that the limit of a decreasing (increasing) sequence of
+  functions usc (lsc) at $\bfx_0$ is usc (lsc) at $\bfx_0$. In particular,
+  the limit of a decreasing (increasing) sequence of functions continuous
+  at $\bfx_0$ is usc (lsc) at $\bfx_0$.
+\item Let $f$ be usc and less than $\infty$ on $[a,b]$. Show that there
+  exists continuous $f_k$ on $[a,b]$ such that $f_k\searrow f$.
+\end{enumerate}
 \end{problem}
 \begin{proof}
 \end{proof}
@@ -9,19 +16,38 @@
 
 
 \begin{problem}[Wheeden \& Zygmund {\S}4, Ex.\@ 11]
+Let $f$ be defined on $\bfR^n$ and let $B(\bfx)$ denote the open ball
+$\left\{\,\bfy\;\middle|\;\left|\bfx-\bfy\right|<r\,\right\}$ with center
+$\bfx$ and fixed radius $r$. Show that the function
+$g(\bfx)=\sup\left\{\,f(\bfy)\;\middle|\;\bfy\in B(\bfx)\,\right\}$ is usc
+on $\bfR^n$. Is the same true for the closed ball
+$\left\{\,\bfy\;\middle|\;\left|\bfx-\bfy\right|\leq r\,\right\}$?
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
 
 \begin{problem}[Wheeden \& Zygmund {\S}4, Ex.\@ 15]
+Let $\left\{f_k\right\}$ be a sequence of measurable functions defined on a
+measurable set $E$ with $|E|<\infty$. If $|f_k(M)|\leq M<\infty$ for all
+$k$ for each $\bfx\in E$, show that given $\varepsilon>0$, there is closed
+$F\subset E$ and finite $M$ such that $|E\minus F|<\varepsilon$ and
+$|f-k(\bfx)|\leq M$ for all $\bfx\in F$.
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
 
-
 \begin{problem}[Wheeden \& Zygmund {\S}4, Ex.\@ 18]
+If $f$ is measurable on $E$, define
+$\omega_f(a)=\left|\left\{\,f>a\,\right\}\right|$ for
+$-\infty<a<\infty$. If $f_k\nearrow f$, show that
+$\omega_{f_k}\nearrow\omega_f$. If $f_k\to f$, show that
+$\omega_{f_k}\to\omega_f$ at each point of continuity of $\omega_f$. [For
+the second part, show that if $f_k\to f$, then
+$\varlimsup_{k\to\infty}\omega_{f_k}(a)\leq\omega_f(a-\varepsilon)$ and
+$\varliminf_{k\to\infty}\omega_{f_k}(a)\geq\omega_f(a+\varepsilon)$ for every
+$\varepsilon>0$.]
 \end{problem}
 \begin{proof}
 \end{proof}
@@ -29,24 +55,34 @@
 
 % (Chapter 5: # 1, 2, 3, 4).
 \begin{problem}[Wheeden \& Zygmund {\S}5, Ex.\@ 1]
+If $f$ is a simple measurable function (not necessarily positive) taking
+values $a_j$ on $E_j$, $j=1,...,N$, show that $\int_E f=\sum_{j=1}^N
+a_j\left|E_j\right|$. [Use (5.24)].
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
 
 \begin{problem}[Wheeden \& Zygmund {\S}5, Ex.\@ 2]
+Show that the conclusion of (5.32) are not true without the assumption that
+$\varphi\in L(E)$. [In part (ii), for example, take $f_k=\chi_{(k,\infty)}$.]
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
 
 \begin{problem}[Wheeden \& Zygmund {\S}5, Ex.\@ 3]
+Let $\left\{f_k\right\}$ be a sequence of nonnegative measurable functions
+defined on $E$. If $f_k\to f$ and $f_k\leq f$ a.e.\@ on $E$, show that
+$\int_E f_k\to\int_E f$.
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
 
 \begin{problem}[Wheeden \& Zygmund {\S}5, Ex.\@ 4]
+If $f\in L(0,1)$, show that $x^kf(x)\in L(0,1)$ for $k=1,2,...$, and
+$\int_0^1 x^kf(x)\,dx\to 0$.
 \end{problem}
 \begin{proof}
 \end{proof}
