@@ -10,13 +10,22 @@ D$ where $F$ points radially outward and another point on $\partial D^n$
 where  $F$ points radially inward.
 \end{problem}
 \begin{proof}
+Since $\deg f=0\neq (-1)^n=\deg a$, then $f\nsimeq a$ and so must have a
+fixed point $x\in S^n$. Now, consider the map $g\coloneqq a\circ f$. Since
+$\deg g=\deg a\circ f=(\deg a)(\deg f)=0$, $g$ must have a fixed point
+$y\in S^n$. Since $g(y)=a\circ f(y)=y$, then $f(y)=-y$.
+
+Suppose $F$ is a continuous nonzero vector field on $S^n$, i.e., a map
+$S^n\to\bfR^n$ which assigns to each point $x\in S^n$ a tangent vector
+$\bfv(x)$ at $x$. Then, the map $f\colon\partial D^n\to\bfR^n$ given by
+$f(\bfv(x))=\bfv(x)/\|\bfv(x)\|$ is well defined and nowhere zero.
 \end{proof}
 \newpage
 
 \begin{problem}[Hatcher {\S}2.2, Ex.\@ 7]
 For an invertible linear transformation $f\colon\bfR^n\to\bfR^n$ show that
 the induced map $H_n\left(\bfR^n,\bfR^n\minus\{0\}\right)\cong\widetilde
-H_{n-1}\left(\bfR^n\minus\{0\}\right)\cong\bfZ$ is $\Id$ or $-\Id$
+H_{n-1}\left(\bfR^n\minus\{0\}\right)\cong\bfZ$ is $\id$ or $-\id$
 according to whether the determinant of $f$ is positive or negative. [Use
 Gaußian elimination to show that the matrix of $f$ can be joined by a path
 of invertible matrices to a diagonal matrix with $\pm 1$'s on the
