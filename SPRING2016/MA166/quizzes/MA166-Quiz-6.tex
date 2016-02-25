@@ -1,18 +1,18 @@
 \def\documentauthor{Carlos Salinas}
-\def\documenttitle{MA 572: Homework \hwnum}
-\def\hwnum{5}
-\def\shorttitle{MA 572 HW \hwnum}
-\def\coursename{MA 572}
-\def\documentsubject{introduction to algebraic topology}
+\def\documenttitle{MA 166: Quiz {\hwnum} Solutions}
+\def\hwnum{6}
+\def\shorttitle{MA 166 HW {\hwnum} Sols}
+\def\coursename{MA166}
+\def\documentsubject{calculus ii}
 \def\authoremail{salinac@purdue.edu}
 
-\documentclass[article,oneside,10pt]{memoir}
+\documentclass[12pt]{article}
 \usepackage{geometry}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[
     breaklinks,
     bookmarks=true,
-    colorlinks=true,
+    % colorlinks=true,
     pageanchor=false,
     linkcolor=black,
     anchorcolor=black,
@@ -67,6 +67,7 @@
 
 %% Misc
 \usepackage{graphicx}
+\usepackage{cutwin}
 \graphicspath{{figures/}}
 
 \usepackage{microtype}
@@ -95,28 +96,8 @@
 \newtheorem{definition}{Definition}
 \newtheorem{example}{Examples}
 \newtheorem{examples}[example]{Examples}
-% \newtheorem{exercise}{Exercise}[section]
-% \newtheorem{problem}[exercise]{Problem}
-
-\newcounter{problem}
-\newenvironment{problem}[1][]% environment name
-{% begin code
-  \stepcounter{problem}
-  \par\vspace{\baselineskip}\noindent
-  \ifx &#1&%
-  {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem}
-  \global\def\exercisename{Problem~\hwnum.\theproblem}%
-  \else
-  {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem~(#1)}
-  \global\def\exercisename{Problem~\hwnum.\theproblem(#1)}
-  \fi
-  \par\vspace{\baselineskip}%
-  \noindent\ignorespaces
-}%
-{% end code
-  \par\vspace{\baselineskip}%
-  \noindent\ignorespacesafterend
-}
+\newtheorem{exercise}{Exercise}
+\newtheorem{problem}[exercise]{Problem}
 
 \newtheorem*{definition*}{Definition}
 \newtheorem*{example*}{Examples}
@@ -137,64 +118,44 @@
 
 %% Commands and operators
 %% Redefinitions & commands
-\renewcommand{\restriction}{\mathord{\upharpoonright}}
 \newcommand{\nsubset}{\ensuremath{\not\subset}}
 \newcommand{\nsupset}{\ensuremath{\not\supset}}
-\newcommand{\nsimeq}{\ensuremath{\not\simeq}}
 \newcommand\minus{\ensuremath{\null\smallsetminus}}
 \renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
 
-\newcommand\rightarrowsim{\xrightarrow{\smash{\raisebox{-0.65ex}{\ensuremath{\scriptstyle\sim}}}}}
-\newcommand\rightarrowapprox{\xrightarrow{\smash{\raisebox{-0.55ex}{\ensuremath{\scriptstyle\approx}}}}}
-\newcommand\rightarrowcong{\xrightarrow{\smash{\raisebox{-0.55ex}{\ensuremath{\scriptstyle\cong}}}}}
-
 %% Commands and operators
-
-\DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\coker}{coker}
-
 \DeclareMathOperator{\id}{id}
-\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\im}{im}
 
-\DeclareMathOperator{\Det}{Det}
-\DeclareMathOperator{\Id}{Id}
-\DeclareMathOperator{\Tr}{Tr}
+%% Linear algebra
+\DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\comp}{comp}
 
-\DeclareMathOperator{\Cl}{Cl}
-\DeclareMathOperator{\Coker}{Coker}
-\DeclareMathOperator{\Int}{Int}
-\DeclareMathOperator{\Img}{Im}
-\DeclareMathOperator{\Hom}{Hom}
-\DeclareMathOperator{\Ker}{Ker}
-\DeclareMathOperator{\Tor}{Tor}
+%% Differential operators
+\DeclareMathOperator{\Curl}{curl}
+\DeclareMathOperator{\Div}{div}
+\DeclareMathOperator{\Grad}{grad}
+\DeclareMathOperator{\Lap}{\Delta}
+\DeclareMathOperator{\diff}{d\!}
 
-%% Symbols
+%% Misc
 \newcommand{\bbC}{\mathbb{C}}
-\newcommand{\bbCP}{\mathbb{C}\mathrm{P}}
-\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbCP}{\mathbb{CP}}
 \newcommand{\bbH}{\mathbb{H}}
 \newcommand{\bbN}{\mathbb{N}}
 \newcommand{\bbQ}{\mathbb{Q}}
 \newcommand{\bbR}{\mathbb{R}}
-\newcommand{\bbRP}{\mathbb{R}\mathrm{P}}
+\newcommand{\bbRP}{\mathbb{RP}}
 \newcommand{\bbZ}{\mathbb{Z}}
 
 \newcommand{\bfC}{\mathbf{C}}
-\newcommand{\bfCP}{\mathbf{C}\mathrm{P}}
-\newcommand{\bfF}{\mathbf{F}}
+\newcommand{\bfCP}{\mathbf{CP}}
 \newcommand{\bfH}{\mathbf{H}}
 \newcommand{\bfN}{\mathbf{N}}
 \newcommand{\bfQ}{\mathbf{Q}}
 \newcommand{\bfR}{\mathbf{R}}
-\newcommand{\bfRP}{\mathbf{R}\mathrm{P}}
+\newcommand{\bfRP}{\mathbf{RP}}
 \newcommand{\bfZ}{\mathbf{Z}}
-
-\newcommand{\bfu}{\mathbf{u}}
-\newcommand{\bfv}{\mathbf{v}}
-\newcommand{\bfw}{\mathbf{w}}
-\newcommand{\bfx}{\mathbf{x}}
-\newcommand{\bfy}{\mathbf{y}}
-\newcommand{\bfz}{\mathbf{z}}
 
 \newcommand{\calA}{\mathcal{A}}
 \newcommand{\calB}{\mathcal{B}}
@@ -204,64 +165,35 @@
 \newcommand{\calU}{\mathcal{U}}
 \newcommand{\calV}{\mathcal{V}}
 
-\newcommand{\scrA}{\mathscr{A}}
-\newcommand{\scrB}{\mathscr{B}}
-\newcommand{\scrC}{\mathscr{C}}
 \newcommand{\scrL}{\mathscr{L}}
 \newcommand{\scrO}{\mathscr{O}}
 \newcommand{\scrS}{\mathscr{S}}
-\newcommand{\scrT}{\mathscr{T}}
 
-%Categories
-\newcommand{\catname}[1]{\text{\normalfont\textbf{#1}}}
-\newcommand{\Mod}{\catname{Mod}}
-\newcommand{\Modp}[1]{\text{$#1$-\Mod}}
-\newcommand{\Vect}{\catname{Vec}}
-\newcommand{\Vectp}[1]{\text{$#1$-\Vect}}
-\newcommand{\Man}{\catname{Man}}
-\newcommand{\Manp}[1]{\Man^{#1}}
-\newcommand{\Set}{\catname{Set}}
-\newcommand{\Pos}{\catname{Pos}}
-\newcommand{\Top}{\catname{Top}}
-\newcommand{\Topp}{\catname{Top}_*}
-\newcommand{\Haus}{\catname{Haus}}
-\newcommand{\Met}{\catname{Met}}
-\newcommand{\Grp}{\catname{Grp}}
-\newcommand{\Ab}{\catname{Ab}}
-\newcommand{\Ring}{\catname{Ring}}
+\newcommand{\bfa}{\mathbf{a}}
+\newcommand{\bfb}{\mathbf{b}}
+\newcommand{\bfc}{\mathbf{c}}
+\newcommand{\bfu}{\mathbf{u}}
+\newcommand{\bfv}{\mathbf{v}}
+\newcommand{\bfw}{\mathbf{w}}
 
 \begin{document}
-\frontmatter
-\aliaspagestyle{title}{empty}
-\pagestyle{title}
-\author{\href{mailto:\authoremail}{\documentauthor}}
+\author{TA: \href{mailto:\authoremail}{\documentauthor}}
 \title{\documenttitle}
 \date{\today}
 \maketitle
-\cleartooddpage
-\makepagestyle{my-headings}
-\makeoddhead{my-headings}
-        {\small{\MakeUppercase{\itshape\documentauthor}}}
-        {}
-        {\small{\MakeUppercase{\itshape\exercisename}}}
-\makeoddfoot{my-headings}{{\itshape\documenttitle}}
-                      {}
-                      {\thepage}
-\makeevenhead{my-headings}
-        {\small{\MakeUppercase{\itshape\documentauthor}}}
-        {}
-        {\small{\MakeUppercase{\itshape\exercisename}}}
-\makeevenfoot{my-headings}{{\itshape\documenttitle}}
-                      {}
-                      {\thepage}
-\makeheadrule{my-headings}{\textwidth}{.25pt}
-\pagestyle{my-headings}
-% \makerunningwidth{headings}{1.15\textwidth}
-\mainmatter
 
-\include{homeworks/ma572-hw-\hwnum}
+You have \textbf{15 minutes} to complete this quiz. You may work in groups,
+but you are not allowed to use any other resources.
+\\\\
+\begin{problem}
+Compute \textbf{two} of the following integrals of your choice
+\begin{enumerate}[label=(\alph*)]
+\item $\displaystyle\int\frac{x^2}{x^2-1}\;dx$
+\item $\displaystyle\int\frac{x}{x^2+6x+9}\;dx$
+\item $\displaystyle\int\frac{dx}{x^3+x}\;dx.$
+\end{enumerate}
+\end{problem}
 \end{document}
-
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t

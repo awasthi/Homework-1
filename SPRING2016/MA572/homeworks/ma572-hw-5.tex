@@ -24,14 +24,20 @@ $f(\bfv(x))=\bfv(x)/\|\bfv(x)\|$ is well defined and nowhere zero.
 
 \begin{problem}[Hatcher {\S}2.2, Ex.\@ 7]
 For an invertible linear transformation $f\colon\bfR^n\to\bfR^n$ show that
-the induced map $H_n\left(\bfR^n,\bfR^n\minus\{0\}\right)\cong\widetilde
-H_{n-1}\left(\bfR^n\minus\{0\}\right)\cong\bfZ$ is $\id$ or $-\id$
+the induced map
+$H_n\left(\bfR^n,\bfR^n\minus\{\mathbf{0}\}\right)\cong\widetilde
+H_{n-1}\left(\bfR^n\minus\{\mathbf{0}\}\right)\cong\bfZ$ is $\id$ or $-\id$
 according to whether the determinant of $f$ is positive or negative. [Use
 Gaußian elimination to show that the matrix of $f$ can be joined by a path
 of invertible matrices to a diagonal matrix with $\pm 1$'s on the
 diagonal.]
 \end{problem}
 \begin{proof}
+Let $f\colon\bfR^n\to\bfR^n$ be an invertible linear map. Then $\det f\neq
+0$. Following the hint, we aim to construct a chain homotopy $P\colon
+C_*(\bfR^n)\to C_*(\bfR^n)$ such that $\partial\circ
+P+P\circ\partial=f_\#+g_\#$ where $g_\#$ has a matrix representation with
+$\pm 1$'s in the diagonal.
 \end{proof}
 \newpage
 
