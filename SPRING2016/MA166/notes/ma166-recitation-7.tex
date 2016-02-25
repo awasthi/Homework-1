@@ -8,6 +8,19 @@ $\ln|u|$ where appropriate. Use $C$ for the constant of integration.)
 \]
 \end{problem}
 \begin{proof}[Solution]
+First make the substitution $u=\sin x$. Then from the table, we have the
+formula
+\begin{equation}
+\label{eq:table-formula-20}
+\int\frac{du}{u^2-a^2}=\frac{1}{2a}\ln\left|\frac{u-a}{u+a}\right|+C.
+\end{equation}
+So
+\begin{align*}
+\int\frac{\cos x}{\sin^2x-36}
+&=\int\frac{du}{u^2-6^2}\;du\\
+&=\frac{1}{12}\ln\left|\frac{u-6}{u+6}\right|+C\\
+&=\boxed{\frac{1}{12}\ln\left|\frac{\sin x-6}{\sin x+6}\right|+C.}
+\end{align*}
 \end{proof}
 
 \begin{problem}[WebAssign, HW 15, \# 2]
@@ -18,6 +31,19 @@ $\ln|u|$ where appropriate. Use $C$ for the constant of integration.)
 \]
 \end{problem}
 \begin{proof}[Solution]
+First make the substitution $u=9x$. Then from the table, we have the formula
+\begin{equation}
+  \label{eq:table-formula-28}
+\int\frac{du}{u^2\sqrt{a^2+u^2}}=-\frac{\sqrt{a^2+u^2}}{a^2u}+C.
+\end{equation}
+So
+\begin{align*}
+\int\frac{1}{x^2\sqrt{81x^2+4}}\;dx
+&=\frac{1}{9}\int\frac{1}{\frac{1}{81}u^2\sqrt{u^2+2^2}}\;dx\\
+&=9\int\frac{1}{u^2\sqrt{u^2+2^2}}\;du\\
+&=-\frac{9\sqrt{u^2+4}}{4u}+C\\
+&=\boxed{-\frac{\sqrt{81x^2+4}}{4x}+C.}
+\end{align*}
 \end{proof}
 
 \begin{problem}[WebAssign, HW 15, \# 3]
@@ -28,6 +54,19 @@ $\ln|u|$ where appropriate. Use $C$ for the constant of integration.)
 \]
 \end{problem}
 \begin{proof}[Solution]
+First make the substitution $u=6/z$. Then from the table, we have the
+formula
+\begin{equation}
+  \label{eq:table-formula-69}
+\int\tan^3 u\;du=\frac{1}{2}\tan^2 u+\ln|\cos u|+C.
+\end{equation}
+So
+\begin{align*}
+\int\frac{\tan^3(6/z)}{z^2}\;dz
+&=-\frac{1}{6}\int\tan^3 u\;du\\
+&=-\frac{1}{12}\tan^2 u-\frac{1}{6}\ln|\cos u|+C\\
+&=\boxed{-\frac{1}{12}\tan^2(6/z)-\frac{1}{6}\ln|\cos(6/z)|+C.}
+\end{align*}
 \end{proof}
 
 \begin{problem}[WebAssign, HW 15, \# 4]
@@ -38,6 +77,19 @@ $\ln|u|$ where appropriate. Use $C$ for the constant of integration.)
 \]
 \end{problem}
 \begin{proof}[Solution]
+Make the substitution $u=e^{2x}$. Then, from the table of integrals we have
+the formula
+\begin{equation}
+  \label{eq:table-formula-19}
+\int\frac{du}{a^2-u^2}=\frac{1}{2a}\ln\left|\frac{u+a}{u-a}\right|+C.
+\end{equation}
+So
+\begin{align*}
+\int\frac{e^{2x}}{13-e^{4x}}\;dx
+&=\frac{1}{2}\int\frac{1}{13-u^2}\;du\\
+&=\frac{1}{4\sqrt{13}}\ln\left|\frac{u+\sqrt{13}}{u-\sqrt{13}}\right|+C.\\
+&=\boxed{\frac{1}{4\sqrt{13}}\ln\left|\frac{e^{2x}+\sqrt{13}}{e^{2x}-\sqrt{13}}\right|+C.}
+\end{align*}
 \end{proof}
 
 \begin{problem}[WebAssign, HW 15, \# 5]
@@ -49,6 +101,23 @@ to six decimal places).
 \]
 \end{problem}
 \begin{proof}[Solution]
+These problems take too long, just remember the formulas
+\begin{equation}
+\label{eq:trapezoidal-rule}
+\int_a^b f(x)\;dx\approx(b-a)\left[\frac{f(a)+f(b)}{2}\right]
+\end{equation}
+for the trapezoidal rule,
+\begin{equation}
+  \label{eq:midpoint-rule}
+\int_a^b\approx\frac{b-a}{N}\sum_{n=0}^{N-1}f\left(a+\tfrac{n(b-a)}{N}\right)
+\end{equation}
+for the midpoint rule and
+\begin{equation}
+  \label{eq:simpsons-rule}
+\int_a^b f(x)\;dx\approx
+\frac{b-a}{6}\left[f(a)+4f\left(\tfrac{a+b}{2}\right)+f(b)\right].
+\end{equation}
+for Simpson's rule.
 \end{proof}
 
 \begin{problem}[WebAssign, HW 15, \# 6]
@@ -60,16 +129,37 @@ to six decimal places).
 \]
 \end{problem}
 \begin{proof}[Solution]
+Look at my comment above.
 \end{proof}
 
 \section{Homework 16}
 \begin{problem}[WebAssign, HW 16, \# 1]
 Determine whether the integral is convergent or divergent.
 \[
-\int_{-\infty}^0\frac{1}{4-7x}\;dx.
+\int_{-\infty}^0\frac{dx}{4-7x}.
 \]
 \end{problem}
 \begin{proof}[Solution]
+Let's develop some strategies for attacking these problems. First of all,
+we like to work with positive numbers whenever possible, so let's make the
+substitution $u=-x$. This changes the bounds  from $(-\infty,0)$ to
+$(\infty,0)$. Now, remember that
+\begin{equation}
+\label{eq:reverse-integration}
+\int_a^b f(x)\;dx=-\int_b^a f(x)\;dx.
+\end{equation}
+Thus, our integral turns into
+\[
+\int_{-\infty}^0\frac{dx}{4-7x}=
+-\int_0^\infty\frac{-du}{4+7u}=
+\int_0^\infty\frac{du}{4+7u}.
+\]
+Finding the integral of this, we have
+\[
+\int_0^\infty\frac{du}{4+7u}=\left.\frac{1}{7}\ln|4+7u|\right|_0^\infty.
+\]
+Now, what happens as $u\to\infty$? The value of $\frac{1}{7}\ln|4+7u|$ gets
+bigger and bigger so the integral diverges.
 \end{proof}
 
 \begin{problem}[WebAssign, HW 16, \# 2]
@@ -79,6 +169,16 @@ Determine whether the integral is convergent or divergent.
 \]
 \end{problem}
 \begin{proof}[Solution]
+Compute the integral
+\[
+\int_2^\infty
+e^{-9p}\;dp=\left.-\frac{1}{9}e^{-9p}\right|_2^\infty=-\frac{1}{9}e^{-9p}+\frac{1}{9}e^{-18}.
+\]
+What happens as $p\to\infty$? The value of $-\frac{1}{9}e^{-9p}$ gets
+closer and closer to $0$ so the integral converges and is equal to
+\[
+\boxed{\frac{1}{9e^{18}}.}
+\]
 \end{proof}
 
 \begin{problem}[WebAssign, HW 16, \# 3]
@@ -88,6 +188,22 @@ Determine whether the integral is convergent or divergent.
 \]
 \end{problem}
 \begin{proof}[Solution]
+Remember that if we have three points $a<c<b$ in the real line, we can
+rewrite the integral of $f(x)$ as
+\begin{equation}
+  \label{eq:integral-midpoint}
+\int_a^b f(x)\;dx=\int_a^cf(x)\;dx+\int_c^bf(x)\;dx.
+\end{equation}
+Rewrite the integral above as
+\[
+\int_{-\infty}^\infty 3xe^{-x^2}\;dx=
+\int_{-\infty}^0 3xe^{-x^2}\;dx+\int_0^\infty 3e^{-x^2}\;dx
+-\underbrace{\int_0^\infty 3ue^{-u^2}\;du}_{I_1}+\underbrace{\int_0^\infty
+  3xe^{-x^2}\;dx}_{I_2}
+\]
+where $u=-x$. For the same reasons as the previous problem, $I_1$ and $I_2$
+converge. Moreover, it is easy to see that $I_1=I_2$ so the integral
+$\boxed{-I_1+I_2=0}$.
 \end{proof}
 
 \begin{problem}[WebAssign, HW 16, \# 4]
@@ -97,6 +213,14 @@ Determine whether the integral is convergent or divergent.
 \]
 \end{problem}
 \begin{proof}[Solution]
+Compute the integral by using the substitution $u=\sqrt{x}$
+\[
+\int_1^\infty 37\frac{e^{-\sqrt{x}}}{\sqrt{x}}\;dx
+=\int_1^\infty 74e^{-u}\;du
+=\left.-74e^{-u}\right|_1^\infty
+\]
+which converges for similar reasons as problem 1 from this homework. Thus,
+the integral is $\boxed{74/e}$.
 \end{proof}
 
 \begin{problem}[WebAssign, HW 16, \# 5]
@@ -111,10 +235,20 @@ Determine whether the integral is convergent or divergent.
 \begin{problem}[WebAssign, HW 16, \# 6]
 Determine whether the integral is convergent or divergent.
 \[
-\int_2^\infty\frac{1}{v^2+5v-6}\;dv.
+\int_2^\infty\frac{dv}{v^2+5v-6}.
 \]
 \end{problem}
 \begin{proof}[Solution]
+Factor and use partial fractions
+\begin{align*}
+\int_2^\infty\frac{dv}{v^2+5v-6}
+&=\int_2^\infty\frac{dv}{(v+6)(v-1)}\\
+&=\int_2^{\infty}\left(\frac{-\frac{1}{7}}{v+6}+\frac{\frac{1}{7}}{v-1}\right)\;dv\\
+&=\left.-\frac{1}{7}\ln|v+6|+\frac{1}{7}\ln|v-1|\right|_2^\infty\\
+&=\left.\frac{1}{7}\ln\left|\frac{v-1}{v+6}\right|\right|_2^\infty\\
+&=-\frac{1}{7}\ln\left|\frac{1}{8}\right|\\
+&=\boxed{\frac{1}{7}\ln 8.}
+\end{align*}
 \end{proof}
 
 \begin{problem}[WebAssign, HW 16, \# 7]
@@ -124,6 +258,15 @@ Determine whether the integral is convergent or divergent.
 \]
 \end{problem}
 \begin{proof}[Solution]
+Use the substitution $u=\ln x$ then rewrite the integral and compute
+\begin{align*}
+\int_1^\infty 25\frac{\ln x}{x}\;dx
+&=25\int_0^\infty u\;du\\
+&=25\left.\frac{1}{2}u^2\right|_0^\infty\\
+&=\frac{25}{2}\left.u^2\right|_0^\infty
+\end{align*}
+which clearly diverges as $u\to\infty$ since $u^2$ keeps getting bigger and
+bigger.
 \end{proof}
 
 \begin{problem}[WebAssign, HW 16, \# 8]
@@ -133,15 +276,35 @@ Determine whether the integral is convergent or divergent.
 \]
 \end{problem}
 \begin{proof}[Solution]
+Rewrite the integral as
+\[
+\int_{-2}^3\frac{45}{x^4}\;dx=
+\int_{-2}^0\frac{45}{x^4}\;dx+\int_0^3\frac{45}{x^4}\;dx=
+\underbrace{45\int_{-2}^0\frac{dx}{x^4}}_{I_1}+\underbrace{45\int_3^0\frac{du}{u^4}}_{I_2}
+\]
+where we let $u=-x$. Now, computing $I_1$ and $I_2$ we have
+\[
+I_1=-\frac{45}{3}\left.x^{-3}\right|_{-2}^0.
+\]
+It is clear that as $x\to 0$, the integral grows closer and closer to
+$-\infty$. The same is true of $I_2$ so the integral diverges.
 \end{proof}
 
 \begin{problem}[WebAssign, HW 16, \# 9]
 Determine whether the integral is convergent or divergent.
 \[
-\int_0^9\frac{7}{\sqrt{x-1}}\;dx.
+\int_0^9\frac{7}{\sqrt[3]{x-1}}\;dx.
 \]
 \end{problem}
 \begin{proof}[Solution]
+By straight calculation
+\begin{align*}
+\int_0^9\frac{7}{\sqrt[3]{x-1}}\;dx
+&=7\int_0^0(x-1)^{-1/3}\;dx\\
+&=\frac{21}{2}\left.\sqrt{x-1}\right|_0^9\\
+&=\frac{21}{2}\left(4-0\right)\\
+&=\boxed{48.}
+\end{align*}
 \end{proof}
 
 \section{Homework 17}
@@ -152,6 +315,19 @@ y=2+2x^{3/2},\qquad 0\leq x\leq 1.
 \]
 \end{problem}
 \begin{proof}[Solution]
+Remember the arclength formula
+\begin{equation}
+  \label{eq:arclength}
+L(a,b)=\int_a^b\sqrt{1+\frac{dy}{dx}^2}\;dx.
+\end{equation}
+So let's find $dy/dx$, $dy/dx=3x^{1/2}$ by the power rule so we have
+\begin{align*}
+L(0,1)&=\int_0^1\sqrt{1+\left(3x^{1/2}\right)^2}\;dx\\
+&=\int_0^1\sqrt{1+9x}\;dx\\
+&=\int_0^1(1+9x)^{1/2}\;dx\\
+&=\frac{2}{3}\left.(1+9x)^{3/2}\right|_0^1\\
+      &=\boxed{\frac{2}{3}\left(10\sqrt{10}+1\right).}
+\end{align*}
 \end{proof}
 
 \begin{problem}[WebAssign, HW 17, \# 2]
@@ -161,6 +337,20 @@ x=\frac{\sqrt{y}(y-3)}{3},\qquad 9\leq y\leq 25.
 \]
 \end{problem}
 \begin{proof}[Solution]
+By straight computation,
+\[
+\frac{dx}{dy}=
+\frac{1}{3}\left(\tfrac{3}{2}y^{1/2}-\frac{3}{2}y^{-1/2}\right)=
+\frac{1}{2}y^{1/2}-\frac{1}{2}y^{-1/2}.
+\]
+Thus, the archlength is
+\begin{align*}
+L(9,25)
+&=\int_9^{25}\sqrt{1+\left(\frac{1}{2}y^{1/2}-\frac{1}{2}y^{-1/2}\right)^2}\;dy\\
+&=\frac{1}{2}\int_9^{25}\left(y^{1/2}+y^{-1/2}\right)\;dy\\
+&=\left.\frac{1}{3}y^{3/2}+y^{1/2}\right|_9^{25}\\
+&=\boxed{\frac{104}{3}.}
+\end{align*}
 \end{proof}
 
 \begin{problem}[WebAssign, HW 17, \# 3]
@@ -170,6 +360,18 @@ y=\ln|\sec x|,\qquad 0\leq x\leq\frac{\pi}{3}.
 \]
 \end{problem}
 \begin{proof}[Solution]
+Compute
+\[
+\frac{dy}{dx}=\frac{\sec x\tan x}{\sec x}=\tan x.
+\]
+So
+\begin{align*}
+L(0,\pi/3)
+&=\int_0^{\pi/3}\sqrt{1+\tan^2 x}\;dx\\
+&=\int_0^{\pi/3}\sec x\;dx\\
+&=\left.\ln|\sec x+\tan x|\right|_0^{\pi/3}\\
+&=\boxed{\ln 3}.
+\end{align*}
 \end{proof}
 
 \begin{problem}[WebAssign, HW 17, \# 4]
@@ -179,6 +381,20 @@ y=\ln\left(1-x^2\right),\qquad 0\leq x\leq\frac{1}{3}.
 \]
 \end{problem}
 \begin{proof}[Solution]
+Find
+\[
+\frac{dy}{dx}=-\frac{2x}{1-x^2}.
+\]
+Then, by partial fractions etc., we have
+\begin{align*}
+L(0,1/3)
+&=\int_0^{1/3}\sqrt{1+\frac{4x^2}{\left(1-x^2\right)^2}}\;dx\\
+&=\int_0^{1/3}\frac{1+x^2}{1-x^2}\;dx\\
+&=\int_0^{1/3}\left(-1+\frac{2}{1-x^2}\right)\\
+&=\int_0^{1/3}-1+\frac{1}{1+x}+\frac{1}{1-x}\;dx\\
+&=\left.-x+\ln\left|\frac{1+x}{1-x}\right|\right|_0^{1/3}\\
+&=\boxed{\ln(2)-\frac{1}{3}.}
+\end{align*}
 \end{proof}
 
 \begin{problem}[WebAssign, HW 17, \# 5]
@@ -189,6 +405,16 @@ y=x^3,\qquad 0\leq x\leq 3.
 \]
 \end{problem}
 \begin{proof}[Solution]
+Using the cylinder method, set $y=x^3$ to your length and the change in the
+arc will be $\sqrt{1+(dy/dx)^2}\;dx=\sqrt{1+3x^2}$ so our surface area will be
+\begin{align*}
+S(0,3)
+&=\int_0^32\pi x^3\sqrt{1+9x^4}\;dx\\
+\intertext{make the substitution $u=1+9x^4$}
+&=\frac{2\pi}{36}\int_1^{730}\sqrt{u}\;du\\
+&=\frac{\pi}{18}\left.\frac{2}{3}u^{3/2}\right|_1^{730}\\
+&=\boxed{\frac{\pi}{27}(730\sqrt{730}-1).}
+\end{align*}
 \end{proof}
 
 \begin{problem}[WebAssign, HW 17, \# 6]
@@ -199,6 +425,26 @@ y=\sin\left(\frac{\pi x}{3}\right),\qquad 0\leq x\leq 3.
 \]
 \end{problem}
 \begin{proof}[Solution]
+Find
+\[
+\frac{dy}{dx}=\frac{\pi}{3}\cos\frac{\pi x}{3}.
+\]
+So
+\begin{align*}
+S(0,3)
+&=2\pi\int_0^3y\sqrt{1+(dy/dx)^2}\;dx\\
+&=2\pi\int_0^3\sin\left(\frac{\pi
+  x}{3}\right)\sqrt{1+\frac{\pi^2}{9}\cos^2\left(\frac{\pi
+  x}{3}\right)}\;dx\\
+\intertext{make the substitution $u=(\pi/3)\cos(\pi x/3)$}
+&=-\frac{18}{\pi}\int_{\pi/3}^{-\pi/3}\sqrt{1+u^2}\;du\\
+&=\frac{18}{\pi}\int_{-\pi/3}^{\pi/3}\sqrt{1+u^2}\;du\\
+&=\frac{36}{\pi}\int_0^{\pi/3}\sqrt{1+u^2}\;du\\
+&=\frac{36}{\pi}\int_0^{\pi/3}\sqrt{1+u^2}\;du\\
+\intertext{use a trig substitution}
+&=\frac{36}{\pi}\left[\frac{u\sqrt{1+u^2}}{2}-\frac{1}{2}\ln\left(u+\sqrt{1+u^2}\right)\right]_0^{\pi/3}\\
+&=\boxed{6\sqrt{1+\frac{\pi^2}{9}}+\frac{18}{\pi}\left(\frac{\pi}{3}+\sqrt{1+\frac{\pi^2}{9}}\right).}
+\end{align*}
 \end{proof}
 
 \begin{problem}[WebAssign, HW 17, \# 7]
@@ -209,6 +455,20 @@ y=\sqrt[3]{x},\qquad 2\leq y\leq 4.
 \]
 \end{problem}
 \begin{proof}[Solution]
+Express $x$ in terms of $y$, $x=y^3$ and find
+\[
+\frac{dx}{dy}=3y^2.
+\]
+Then
+\begin{align*}
+S&=2\pi\int_2^4x\sqrt{1+(dx/dy)^2}\;dy\\
+&=2\pi\int_2^4y^3\sqrt{1+9y^4}\;dy\\
+&=\frac{2\pi}{36}\int_2^4(36y^3)\sqrt{1+9y^4}\;dy\\
+\intertext{make the substitution $u=1+9y^4$, then}
+&=\frac{\pi}{18}\int_{145}^{2305}\sqrt{1+u}\;du\\
+&=\frac{\pi}{27}\left[u^{3/2}\right]_{145}^{2305}\\
+&=\boxed{\frac{\pi}{2}\left(2305\sqrt{2305}-145\sqrt{145}\right).}
+\end{align*}
 \end{proof}
 
 \begin{problem}[WebAssign, HW 17, \# 8]
@@ -219,9 +479,22 @@ resulting surface.
 \]
 \end{problem}
 \begin{proof}[Solution]
+Fird
+\[
+\frac{dy}{dx}=2x.
+\]
+Then
+\begin{align*}
+S(0,5)
+&=2\pi\int_0^5 x\sqrt{1+4x^2}\;dx\\
+\intertext{make the substitution $u=1+4x^2$, then}
+&=\frac{\pi}{4}\int_1^{101}\sqrt{u}\;du\\
+&=\frac{3\pi}{8}\left[u^{3/2}\right]_1^{101}\\
+&=\boxed{\frac{3\pi}{8}(101\sqrt{101}-1).}
+\end{align*}
 \end{proof}
-
 \chapter{Exam II Problems}
+Relevant exam problems
 
 %%% Local Variables:
 %%% mode: latex
