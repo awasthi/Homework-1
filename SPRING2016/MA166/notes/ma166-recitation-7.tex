@@ -504,12 +504,50 @@ Which of the following improper integrals converge?
 \end{enumerate}
 \end{problem}
 \begin{proof}[Solution]
+First, let's compute the integrals I, II and III. Here's I
+\begin{align*}
+I_1&=\int_0^\infty xe^{-x^2}\;dx\\
+   &=\frac{1}{2}\int_0^\infty e^{-u}\;du\\
+   &=\left[-\frac{1}{2}e^{-u}\right]_0^\infty\\
+   &=\frac{1}{2}.
+\end{align*}
+Here's II
+\begin{align*}
+I_2&=\int_{-\infty}^\infty\frac{dx}{x}\\
+&=\int_{-\infty}^0\frac{dx}{x}+\int_0^\infty\frac{dx}{x}\\
+&=-\int_\infty^0\frac{du}{u}+\int_0^\infty\frac{dx}{x}\\
+&=\int_0^\infty\frac{du}{u}+\int_0^\infty\frac{dx}{x}\\
+&=\left[\ln u\right]_0^\infty+\left[\ln x\right]_0^\infty
+\end{align*}
+this clearly divereges since $\ln x\to\-\infty$ as $x\to 0$ and $ln
+x\to\infty$ as $x\to\infty$. The same goes for $\ln u$. You can't
+win. Here's III
+\begin{align*}
+I_3&=\int_{-1}^1\frac{dx}{\sqrt[3]{x}}\\
+   &=\int_{-1}^1x^{1/3}\;dx\\
+   &=\frac{3}{4}\left[x^{4/3}\right]_{-1}^1\\
+   &=0.
+\end{align*}
+Hence, I and III converge, but III does not.
 \end{proof}
 
 \begin{problem}[Spring 2014, \# 9]
 Find the exact length of the curve $y=\ln(\sec x)$, $0\leq x\leq\pi/3$.
 \end{problem}
 \begin{proof}[Solution]
+First find the derivative with respect to $x$
+\[
+\frac{dy}{dx}=\tan x.
+\]
+Then
+\begin{align*}
+S(0,\pi/3)
+&=\int_0^{\pi/3}\sqrt{1+\tan^2x}\;dx\\
+&=\int_0^{\pi/3}\sec x\;dx\\
+&=\left[\ln|\sec x+\tan x|\right]_0^{\pi/3}\\
+&=\ln\left(2+\sqrt{3}\right)-\ln(1-0)\\
+&=\boxed{\ln\left(2+\sqrt{3}\right).}
+\end{align*}
 \end{proof}
 
 \begin{problem}[Spring 2015, \# 9]
@@ -518,6 +556,23 @@ $x$-axis to generate an ellipsoid $S$, then the surface area of $S$ is
 given by?
 \end{problem}
 \begin{proof}[Solution]
+Let's just consider the portion on that lies on the first quadrant and
+double the result. Using the cylindrical method, we have to rewrite
+\[
+y=\sqrt{4-\frac{x^2}{4}}
+\]
+and
+\[
+\frac{dy}{dx}=\frac{x}{4\sqrt{4-\frac{x^2}{4}}}.
+\]
+\begin{align*}
+S(0,1)
+&=\int_0^1\sqrt{1+\left(\frac{x}{4\sqrt{4-\frac{x^2}{4}}}\right)^2}\;dx\\
+&=\int_0^1\sqrt{1+\frac{x^2}{16(4-x^2/4)^2}}\;dx\\
+&=\int_0^1\sqrt{1+\frac{x^2}{8(16-x^2)^2}}\;dx\\
+&=\int_0^1\sqrt{\frac{8x^4-287x^4+2048}{8(16-x^2)^2}}\;dx\\
+&=
+\end{align*}
 \end{proof}
 
 %%% Local Variables:
