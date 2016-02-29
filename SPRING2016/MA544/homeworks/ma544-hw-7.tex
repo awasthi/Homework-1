@@ -11,6 +11,27 @@
 \end{enumerate}
 \end{problem}
 \begin{proof}
+(a) Without loss of generality, assume that the sequence of $f_k$'s are
+define in all of $\bfR^n$. Suppose
+$\left\{f_k\colon\bfR^n\to\bfR\right\}_{k=1}^\infty$ is a sequence of
+decreasing functions which are usc at $\bfx_0$ and put $f\coloneqq\lim
+f_k$. Then, since the $f_k$'s are decreasing, we have
+\begin{equation}
+  \label{eq:decreasing-estimate-on-f}
+f(\bfx)\leq f_k(\bfx)\qquad\text{for all $\bfx\in\bfR^n$.}
+\end{equation}
+Moreover, $f_k$ being usc at $\bfx_0$ means that for any sequence
+$\bfx\to\bfx_0$, $\varlimsup_{\bfx\to\bfx_0} f_k(\bfx)\leq
+f_k(\bfx_0)$. Thus, by \eqref{eq:decreasing-estimate-on-f} we have
+\begin{equation}
+  \label{eq:limit-estimate-on-f}
+\varlimsup_{\bfx\to\bfx_0}f(\bfx)\leq\varlimsup_{\bfx\to\bfx_0}
+f_k(\bfx)\leq f_k(\bfx_0).
+\end{equation}
+Now, let $k\to\infty$ and we have $\varlimsup_{\bfx\to\bfx_0} f(\bfx)\leq
+f(\bfx_0)$. Thus, $f$ is usc at $\bfx_0$.
+\\\\
+(b) Suppose $f$ is usc and bounded on $[a,b]$.
 \end{proof}
 \newpage
 
@@ -18,11 +39,29 @@
 Let $f$ be defined on $\bfR^n$ and let $B(\bfx)$ denote the open ball
 $\left\{\,\bfy\;\middle|\;\left|\bfx-\bfy\right|<r\,\right\}$ with center
 $\bfx$ and fixed radius $r$. Show that the function
-$g(\bfx)=\sup\left\{\,f(\bfy)\;\middle|\;\bfy\in B(\bfx)\,\right\}$ is usc
-on $\bfR^n$. Is the same true for the closed ball
+$g(\bfx)=\sup\left\{\,f(\bfy)\;\middle|\;\bfy\in B(\bfx)\,\right\}$ is lsc
+and the function $h(\bfx)=\inf\left\{\,f(\bfy)\;\middle|\;\bfy\in
+B(\bfx)\,\right\}$ is usc on $\bfR^n$. Is the same true for the closed ball
 $\left\{\,\bfy\;\middle|\;\left|\bfx-\bfy\right|\leq r\,\right\}$?
 \end{problem}
 \begin{proof}
+Fix $\bfx_0\in\bfR^n$. Given any sequence $\bfx\to\bfx_0$, we must show
+that $\varliminf_{x\to\bfx_0} g(\bfx)\geq g(\bfx_0)$. Take any such
+sequence $\bfx_k\to\bfx_0$ then convergence of such sequence means that for
+any $\varepsilon>0$, the sequence $\{\bfx_k\}$ is eventually in
+$B_\delta(\bfx_0)$, i.e., for some index $N\in\bfN$ depending on
+$\varepsilon$, $\bfx_n\in B_\delta(\bfx_0)$ for all $n\geq N$. Hence, we
+have $g(\bfx_0)\leq f(\bfx_n)\leq g(\bfx_n)$. Passing to the $\limsup$, we
+have $g(\bfx_0)\leq\varlimsup_{\bfx_k\to\bfx_0} g(\bfx)$. Thus, $g$ is lsc.
+
+Fix $\bfx_0\in\bfR^n$. Then, given any sequence $\bfx_k\to\bfx_0$ we must
+show that $\varliminf_{\bfx_k\to\bfx_0}g(\bfx_k)\geq g(\bfx_0)$. Let
+$\bfx_k\to\bfx_0$ be a convergent sequence then convergence of said
+sequence means that for any $\varepsilon>0$, $\bfx_k$ is eventually in
+$B_\varepsilon(\bfx_0)$, i.e., for some index $N\in\bfN$ depending on
+$\varepsilon$, $\bfx_n\in B_\varepsilon(\bfx_0)$ for $n\geq N$. By the
+definition of the supremum we have there exists $\bfy\in B(\bfx_0)$ such
+that $g(\bfx_0)<f(\bfy)+\varepsilon$.
 \end{proof}
 \newpage
 
@@ -31,9 +70,27 @@ Let $\left\{f_k\right\}$ be a sequence of measurable functions defined on a
 measurable set $E$ with $|E|<\infty$. If $|f_k(M)|\leq M<\infty$ for all
 $k$ for each $\bfx\in E$, show that given $\varepsilon>0$, there is closed
 $F\subset E$ and finite $M$ such that $|E\minus F|<\varepsilon$ and
-$|f-k(\bfx)|\leq M$ for all $\bfx\in F$.
+$|f_k(\bfx)|\leq M$ for all $\bfx\in F$.
 \end{problem}
 \begin{proof}
+Define $f\coloneqq\sup|f_k|$. Note that, since $|f_k|=f^++f^-$ and $f^+$
+and $f^-$ are measurable, $|f_k|$ is measurable hence, by 4.11, $f$ is
+measurable. Now, given $\varepsilon>0$ by Lusin's theorem $f$ has the
+$\calC$-property on $E$, i.e., there exists a closed subset $F$ of $E$ such
+that $|E\minus F|<\varepsilon/2$ and $f$ is continuous when restricted to
+$F$. Take the $\delta>0$ such that
+$\bigl|E\minus\overline{B_\delta(\mathbf{0})}\bigr|<\varepsilon/2$. Then
+$F\cap\overline{B_\delta(\mathbf{0})}$ is closed and compact and we have
+\begin{align*}
+\left|E\minus(F\cap\overline{B_\delta(\mathbf{0})})\right|
+&=\left|E\minus F\cup
+  \bigl(E\minus\overline{B_\delta(\mathbf{0})}\bigr)\right|\\
+&\leq|E\minus F|+\bigl|E\minus\overline{B_\delta(\mathbf{0})}\bigr|\\
+&<\varepsilon.
+\end{align*}
+By Problem 6.2 (W\&Z, 4.7) $f$ achieves its maximum $M$ on
+$F\cap\overline{B_\delta(\mathbf{0})}$. Thus, $|f_k|\leq M$ for all
+$\bfx\in F\cap\overline{B_\delta(\mathbf{0})}$.
 \end{proof}
 \newpage
 
@@ -59,14 +116,12 @@ values $a_j$ on $E_j$, $j=1,...,N$, show that $\int_E f=\sum_{j=1}^N
 a_j\left|E_j\right|$. [Use (5.24)].
 \end{problem}
 \begin{proof}
-\end{proof}
-\newpage
-
-\begin{problem}[Wheeden \& Zygmund {\S}5, Ex.\@ 2]
-Show that the conclusion of (5.32) are not true without the assumption that
-$\varphi\in L(E)$. [In part (ii), for example, take $f_k=\chi_{(k,\infty)}$.]
-\end{problem}
-\begin{proof}
+Since $f$ is a simple measurable function $E_k\cap E_\ell=\emptyset$ for
+$k\neq\ell$. Since $E\coloneqq\bigcup_{j=1}^N E_j$ is countable, by 5.24 we
+have
+\[
+\int_E f=\sum_{j=1}^N\int_{E_j} f=\sum_{j=1}^N\int a_j\chi_{E_j}=\sum_{j=1}^N a_j|E_j|.
+\]
 \end{proof}
 \newpage
 
@@ -74,14 +129,6 @@ $\varphi\in L(E)$. [In part (ii), for example, take $f_k=\chi_{(k,\infty)}$.]
 Let $\left\{f_k\right\}$ be a sequence of nonnegative measurable functions
 defined on $E$. If $f_k\to f$ and $f_k\leq f$ a.e.\@ on $E$, show that
 $\int_E f_k\to\int_E f$.
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-
-\begin{problem}[Wheeden \& Zygmund {\S}5, Ex.\@ 4]
-If $f\in L(0,1)$, show that $x^kf(x)\in L(0,1)$ for $k=1,2,...$, and
-$\int_0^1 x^kf(x)\,dx\to 0$.
 \end{problem}
 \begin{proof}
 \end{proof}

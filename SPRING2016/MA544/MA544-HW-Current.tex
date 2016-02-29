@@ -29,14 +29,15 @@
     pdfsubject={\coursename}
     ]{hyperref}
 
-% Use symbols instead of numbers
-\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
-
 %% Math
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{mathtools}
+
+% Use symbols instead of numbers
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand{\theequation}{\hwnum.\arabic{equation}}
 
 %%PDFTeX specific
 \usepackage[mathcal]{euscript}
