@@ -21,7 +21,7 @@ f_k$. Then, since the $f_k$'s are decreasing, we have
 f(\bfx)\leq f_k(\bfx)\qquad\text{for all $\bfx\in\bfR^n$.}
 \end{equation}
 Moreover, $f_k$ being usc at $\bfx_0$ means that for any sequence
-$\bfx\to\bfx_0$, $\varlimsup_{\bfx\to\bfx_0} f_k(\bfx)\leq
+$\bfx_k\to\bfx_0$, $\varlimsup_{\bfx\to\bfx_0} f_k(\bfx)\leq
 f_k(\bfx_0)$. Thus, by \eqref{eq:decreasing-estimate-on-f} we have
 \begin{equation}
   \label{eq:limit-estimate-on-f}
@@ -31,7 +31,15 @@ f_k(\bfx)\leq f_k(\bfx_0).
 Now, let $k\to\infty$ and we have $\varlimsup_{\bfx\to\bfx_0} f(\bfx)\leq
 f(\bfx_0)$. Thus, $f$ is usc at $\bfx_0$.
 \\\\
-(b) Suppose $f$ is usc and bounded on $[a,b]$.
+(b) Mimicking the construction of the function associated to the cantor set
+divide the interval into $2n$ closed intervals
+$I_1\coloneqq[y_0,y_1],...,I_{2n}\coloneqq[y_{2n-1},y_{2n}]$ and define
+\begin{equation}
+  \label{eq:define-fn}
+f_n(y_k)\coloneqq\max_{I_{k}\cup I_{k+1}} f(x)
+\end{equation}
+and $f_n(x)$ is linear on $I_n$. Then the function $f_n$ is clearly
+continuous on $[a,b]$. Moreover, we claim that $f_n\to f$.
 \end{proof}
 \newpage
 
@@ -45,23 +53,58 @@ B(\bfx)\,\right\}$ is usc on $\bfR^n$. Is the same true for the closed ball
 $\left\{\,\bfy\;\middle|\;\left|\bfx-\bfy\right|\leq r\,\right\}$?
 \end{problem}
 \begin{proof}
-Fix $\bfx_0\in\bfR^n$. Given any sequence $\bfx\to\bfx_0$, we must show
-that $\varliminf_{x\to\bfx_0} g(\bfx)\geq g(\bfx_0)$. Take any such
-sequence $\bfx_k\to\bfx_0$ then convergence of such sequence means that for
-any $\varepsilon>0$, the sequence $\{\bfx_k\}$ is eventually in
-$B_\delta(\bfx_0)$, i.e., for some index $N\in\bfN$ depending on
-$\varepsilon$, $\bfx_n\in B_\delta(\bfx_0)$ for all $n\geq N$. Hence, we
-have $g(\bfx_0)\leq f(\bfx_n)\leq g(\bfx_n)$. Passing to the $\limsup$, we
-have $g(\bfx_0)\leq\varlimsup_{\bfx_k\to\bfx_0} g(\bfx)$. Thus, $g$ is lsc.
+% Fix $\bfx_0\in\bfR^n$ and let $\left\{\bfx_k\right\}$ be any sequence
+% converging to $\bfx_0$. Then since $g(\bfx_0)$ is the supremum of $f(\bfx)$
+% for all $\bfx\in B(\bfx_0)$, given $\varepsilon>0$ there exists $\bfy\in
+% B(\bfx_0)$ such that $f(\bfy)>g(\bfx_0)-\varepsilon$. Let
+% $\delta\coloneqq\frac{1}{2}(r-|\bfy-\bfx_0|)$ ($\delta$ is positive since
+% $\bfy\in B(\bfx_0)$ hence $|\bfy-\bfx_0|<r$). Then $\bfx_k\to\bfx_0$ means
+% that for our chosen $\delta$ there exists an index $N\in\bfN$ such that
+% $\bfx_n\in B_\delta(\bfx_0)$ for every $n\geq N$. Now, note that for
+% $\bfx_n\in B_\delta(\bfx_0)$ we have
+% \begin{equation}
+% \label{eq:ball-estimates-x-y}
+% \begin{aligned}
+% |\bfx_n-\bfy|&=|\bfx_n-\bfx_0-(\bfy-\bfx_0)|\\
+%            &\leq|\bfx_n-\bfx_0|+|\bfy-\bfx_0|\\
+%            &=\tfrac{1}{2}(r-|\bfy-\bfx_0|)+|\bfy-\bfx_0|\\
+%            &=\tfrac{1}{2}r+\tfrac{1}{2}|\bfy-\bfx_0|\\
+%            &<r
+% \end{aligned}
+% \end{equation}
+% so $\bfy\in B(\bfx_n)$ hence, $g(\bfx_n)\geq f(\bfy)>g(\bfx_0)-\varepsilon$
+% so $\varliminf_{\bfx_k\to\bfx_0} g(\bfx_n)>g(\bfx_0)-\varepsilon$ since
+% $\varliminf g(\bfx_0)=\lim_{j\to\infty}\left\{\,\inf_{k\geq
+%     j}g(\bfx_0)\,\right\}$ by definition. Now let $\varepsilon\to 0$.
+Fix $\bfx_0\in\bfR^n$. By 4.14(ii), given a real number $m$ such that
+$f(\bfx_0)>m$, it suffices to show that there exists $\delta>0$ such that
+for every $\bfx\in B_\delta(\bfx_0)$ we have $g(\bfx)>m$. Since $g(\bfx_0)$
+is the supremum of $f(\bfx)$ for all $\bfx\in B(\bfx_0)$, given
+$\varepsilon>0$ such that $g(\bfx_0)-\varepsilon>m$ there exists $\bfy\in
+B(\bfx_0)$ such that $f(\bfy)>g(\bfx_0)-\varepsilon$. Let
+$\delta\coloneqq\frac{1}{2}(r-|\bfy-\bfx_0|)$ ($\delta$ is positive since
+$\bfy\in B(\bfx_0)$ hence $|\bfy-\bfx_0|<r$). Then for any $\bfx\in
+B_\delta(\bfx_0)$ we have
+\begin{equation}
+\label{eq:ball-estimates-x-y}
+\begin{aligned}
+|\bfx-\bfy|&=|\bfx-\bfx_0-(\bfy-\bfx_0)|\\
+           &\leq|\bfx-\bfx_0|+|\bfy-\bfx_0|\\
+           &=\tfrac{1}{2}(r-|\bfy-\bfx_0|)+|\bfy-\bfx_0|\\
+           &=\tfrac{1}{2}r+\tfrac{1}{2}|\bfy-\bfx_0|\\
+           &<r
+\end{aligned}
+\end{equation}
+so $\bfy\in B(\bfx)$. Hence, $g(\bfx)\geq f(\bfy)>g(\bfx_0)-\varepsilon>m$,
+i.e.,
+$B_\delta(\bfx_0)\subset\left\{\,\bfx\;\middle|\;f(\bfx)>m\,\right\}$. Thus,
+$g$ is lsc on $\bfR^n$.
 
-Fix $\bfx_0\in\bfR^n$. Then, given any sequence $\bfx_k\to\bfx_0$ we must
-show that $\varliminf_{\bfx_k\to\bfx_0}g(\bfx_k)\geq g(\bfx_0)$. Let
-$\bfx_k\to\bfx_0$ be a convergent sequence then convergence of said
-sequence means that for any $\varepsilon>0$, $\bfx_k$ is eventually in
-$B_\varepsilon(\bfx_0)$, i.e., for some index $N\in\bfN$ depending on
-$\varepsilon$, $\bfx_n\in B_\varepsilon(\bfx_0)$ for $n\geq N$. By the
-definition of the supremum we have there exists $\bfy\in B(\bfx_0)$ such
-that $g(\bfx_0)<f(\bfy)+\varepsilon$.
+The proof for $h$ is similar to $g$. In fact, note that for any set
+$E\subset\bfR$ we have $\inf E=-\sup(-E)$ so that if we set $f'\coloneqq
+-f$ and define $g'(\bfx)\coloneqq\sup\left\{\,f'(\bfy)\;\middle|\;\bfy\in
+  B(\bfx)\,\right\}$. By the above, $g'$ is lsc in $\bfR^n$ so $h=-g'$ is
+usc in $\bfR^n$.
 \end{proof}
 \newpage
 
@@ -106,6 +149,19 @@ $\varliminf_{k\to\infty}\omega_{f_k}(a)\geq\omega_f(a+\varepsilon)$ for every
 $\varepsilon>0$.]
 \end{problem}
 \begin{proof}
+For fixed $a$ define $E_k\coloneqq\left\{\,f_k>a\,\right\}$. Then we have
+$E_1\subset E_2\subset\cdots$ so $E_k\nearrow\bigcup E_k$. Now, it is clear
+that $\left\{\,f>a\,\right\}\supset\bigcup E_k$ since $\bfx\in\bigcup E_k$
+implies that $\bfx\in E_k$ for some $k$ so $f_k(\bfx)>a$ for all $K\geq
+k$. In particular, $f(\bfx)>a$. Thus, $\bfx\in\left\{\,f>a\,\right\}$. On the
+other hand, if $\bfx\in\left\{\,f>a\,\right\}$ then $f(\bfx)>a$ so
+$f_k\nearrow f$ implies that for sufficiently large $N$ we have
+$f_N(\bfx)>a$. Thus, $\bfx\in E_N$ so $\bfx\in\bigcup E_k$ and we have
+\begin{equation}
+\label{eq:equality-of-f-a}
+\left\{\,f>a\,\right\}=\bigcup E_k.
+\end{equation}
+It follows by 3.26(i) that $\omega_{f_k}\nearrow\omega_f$ point-wise.
 \end{proof}
 \newpage
 
@@ -131,6 +187,19 @@ defined on $E$. If $f_k\to f$ and $f_k\leq f$ a.e.\@ on $E$, show that
 $\int_E f_k\to\int_E f$.
 \end{problem}
 \begin{proof}
+By Fatou's lemma we have
+\begin{equation}
+  \label{eq:fatou-lower-bound}
+\int_E f=\int_E\varliminf_{k\to\infty} f_k\leq\varliminf_{k\to\infty}\int_E f_k.
+\end{equation}
+Now, by 5.10 since $f_k\leq f$ a.e.\@ on $E$ we have $\int_E
+f_k\leq\int_E f$ so
+\begin{equation}
+  \label{eq:upper-bound}
+\varlimsup_{k\to\infty}\int f_k\leq\int_E f.
+\end{equation}
+But $\varliminf\int_E f_k\leq\varlimsup\int_E f_k$ so we must have
+$\lim\int_E f_k\to\int_E f$ as $k\to\infty$.
 \end{proof}
 
 %%% Local Variables:
