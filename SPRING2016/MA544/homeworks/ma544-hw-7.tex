@@ -33,13 +33,16 @@ f(\bfx_0)$. Thus, $f$ is usc at $\bfx_0$.
 \\\\
 (b) Mimicking the construction of the function associated to the cantor set
 divide the interval into $2n$ closed intervals
-$I_1\coloneqq[y_0,y_1],...,I_{2n}\coloneqq[y_{2n-1},y_{2n}]$ and define
+$I_1\coloneqq[y_0,y_1],...,I_{2n}\coloneqq[y_{2n-1},y_{2n}]$ where $y_0=a$,
+$y_{2n}=b$. Define
 \begin{equation}
   \label{eq:define-fn}
 f_n(y_k)\coloneqq\max_{I_{k}\cup I_{k+1}} f(x)
 \end{equation}
-and $f_n(x)$ is linear on $I_n$. Then the function $f_n$ is clearly
-continuous on $[a,b]$. Moreover, we claim that $f_n\to f$.
+and $f_n(x)$ is linear on $I_n$, i.e., is a line connecting $f(y_{n-1})$ to
+$f(y_n)$. Then the function $f_n$ is clearly continuous on $[a,b]$ since it
+is peice-wise linear. We claim that $f_n\to f$. Fix $x\in[a,b]$. Given
+$\varepsilon>0$, for sufficiently large $N$ we have
 \end{proof}
 \newpage
 
