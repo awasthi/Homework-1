@@ -11,14 +11,12 @@
 \end{enumerate}
 \end{problem}
 \begin{proof}
-(a) Without loss of generality, assume that the sequence of $f_k$'s are
-define in all of $\bfR^n$. Suppose
-$\left\{f_k\colon\bfR^n\to\bfR\right\}_{k=1}^\infty$ is a sequence of
-decreasing functions which are usc at $\bfx_0$ and put $f\coloneqq\lim
+(a) Suppose $\left\{f_k\colon E\to\bfR\right\}_{k=1}^\infty$ is a sequence
+of decreasing functions which are usc at $\bfx_0\in E$ and put $f\coloneqq\lim
 f_k$. Then, since the $f_k$'s are decreasing, we have
 \begin{equation}
   \label{eq:decreasing-estimate-on-f}
-f(\bfx)\leq f_k(\bfx)\qquad\text{for all $\bfx\in\bfR^n$.}
+f(\bfx)\leq f_k(\bfx)\qquad\text{for all $\bfx\in E$.}
 \end{equation}
 Moreover, $f_k$ being usc at $\bfx_0$ means that for any sequence
 $\bfx_k\to\bfx_0$, $\varlimsup_{\bfx\to\bfx_0} f_k(\bfx)\leq
@@ -31,8 +29,8 @@ f_k(\bfx)\leq f_k(\bfx_0).
 Now, let $k\to\infty$ and we have $\varlimsup_{\bfx\to\bfx_0} f(\bfx)\leq
 f(\bfx_0)$. Thus, $f$ is usc at $\bfx_0$.
 \\\\
-(b) Mimicking the construction of the function associated to the cantor set
-divide the interval into $2n$ closed intervals
+(b) Mimicking the construction of the Cantor--Lebesgue function, divide the
+interval into $2n$ closed intervals
 $I_1\coloneqq[y_0,y_1],...,I_{2n}\coloneqq[y_{2n-1},y_{2n}]$ where $y_0=a$,
 $y_{2n}=b$. Define
 \begin{equation}
@@ -41,8 +39,17 @@ f_n(y_k)\coloneqq\max_{I_{k}\cup I_{k+1}} f(x)
 \end{equation}
 and $f_n(x)$ is linear on $I_n$, i.e., is a line connecting $f(y_{n-1})$ to
 $f(y_n)$. Then the function $f_n$ is clearly continuous on $[a,b]$ since it
-is peice-wise linear. We claim that $f_n\to f$. Fix $x\in[a,b]$. Given
-$\varepsilon>0$, for sufficiently large $N$ we have
+is piece-wise linear and it is decreasing since $f$ is usc (on smaller
+intervals, the jumps are smaller). We claim that $f_n\to f$.  Fix
+$x\in[a,b]$. Given $\varepsilon>0$, for sufficiently large index $N\in\bfN$
+for every $n\geq N$ we have
+\begin{align*}
+|f(x)-f_n(x)|&<\left|f(x)-f_n(y_{k-1})\right|\\
+\shortintertext{for $x\in I_{k-1}\cup I_k$}
+             &=\bigl|f(x)-{\textstyle\max_{y\in I_{k-1}\cup I_{k}}}f(y)\bigr|\\
+             &<\varepsilon
+\end{align*}
+for sufficiently small $I_k$'s (I'm sure).
 \end{proof}
 \newpage
 
@@ -108,6 +115,21 @@ $E\subset\bfR$ we have $\inf E=-\sup(-E)$ so that if we set $f'\coloneqq
 -f$ and define $g'(\bfx)\coloneqq\sup\left\{\,f'(\bfy)\;\middle|\;\bfy\in
   B(\bfx)\,\right\}$. By the above, $g'$ is lsc in $\bfR^n$ so $h=-g'$ is
 usc in $\bfR^n$.
+
+For the last part consider the map
+\begin{equation}
+  \label{eq:non-usc-map}
+f(x)\coloneqq
+\begin{cases}
+1&\text{if $x<x_0$}\\
+0&\text{if $x\geq x_0$}
+\end{cases}
+\end{equation}
+defined earlier in the section. Let
+$h(x)\coloneqq\inf\bigl\{\,f(y)\bigm|y\in\overline{B(x)}\,\bigr\}$. Let
+$x$ be a distance of $r$ to the right of $x_0$. Then $1/2>h(x)=0$. However,
+for any $\delta>0$, $y\in B_\delta(x)$ we have $x'\in\overline{B(y)}$ such
+that $x'<x_0$. Hence, $h(y)=1>1/2$ so $h$ is not usc.
 \end{proof}
 \newpage
 

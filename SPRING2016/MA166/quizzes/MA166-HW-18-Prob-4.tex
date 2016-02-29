@@ -1,0 +1,253 @@
+\def\documentauthor{Carlos Salinas}
+\def\documenttitle{MA 166: HW {\hwnum} Problem 4 Solution}
+\def\hwnum{18}
+\def\shorttitle{MA 166 HW {\hwnum} Sol}
+\def\coursename{MA166}
+\def\documentsubject{calculus ii}
+\def\authoremail{salinac@purdue.edu}
+
+\documentclass[10pt]{article}
+\usepackage{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[
+    breaklinks,
+    bookmarks=true,
+    % colorlinks=true,
+    pageanchor=false,
+    linkcolor=black,
+    anchorcolor=black,
+    citecolor=black,
+    filecolor=black,
+    menucolor=black,
+    runcolor=black,
+    urlcolor=black,
+    hyperindex=false,
+    hyperfootnotes=true,
+    pdftitle={\shorttitle},
+    pdfauthor={\documentauthor},
+    pdfkeywords={\documentsubject},
+    pdfsubject={\coursename}
+    ]{hyperref}
+
+% Use symbols instead of numbers
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+%% Math
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+%%PDFTeX specific
+\usepackage[mathcal]{euscript}
+\usepackage{mathrsfs}
+\usepackage{dsfont}
+\usepackage{wasysym}
+
+\usepackage[LAE,LFE,T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[farsi,french,german,spanish,russian,english]{babel}
+\babeltags{pa=farsi,
+           fr=french,
+           de=german,
+           es=spanish,
+           ru=russian,
+           en=english}
+\def\spanishoptions{mexico}
+
+\selectlanguage{english}
+
+\newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
+
+\usepackage{cmap}
+\usepackage{CJKutf8}
+\newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
+\newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
+\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
+
+%% Misc
+\usepackage{graphicx}
+\usepackage{cutwin}
+\graphicspath{{figures/}}
+
+\usepackage{microtype}
+\usepackage{multicol}
+\usepackage[inline]{enumitem}
+\usepackage{listings}
+\usepackage{mleftright}
+\mleftright
+
+%% Theorems and definitions
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{axiom}[theorem]{Axiom}
+
+\newtheorem*{corollary*}{Corollary}
+\newtheorem*{claim*}{Claim}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem*{theorem*}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Examples}
+\newtheorem{examples}[example]{Examples}
+\newtheorem{exercise}{Exercise}
+\newtheorem{problem}[exercise]{Problem}
+
+\newtheorem*{definition*}{Definition}
+\newtheorem*{example*}{Examples}
+\newtheorem*{examples*}{Examples}
+\newtheorem*{exercise*}{Exercise}
+\newtheorem*{problem*}{Problem}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{remarks}[remark]{Remarks}
+\newtheorem{observation}[remark]{Observation}
+\newtheorem{observations}[remark]{Observations}
+
+\newtheorem*{remark*}{**Remark**}
+\newtheorem*{remarks*}{**Remarks**}
+\newtheorem*{observation*}{**Observation**}
+\newtheorem*{observations*}{**Observations**}
+
+%% Commands and operators
+%% Redefinitions & commands
+\newcommand{\nsubset}{\ensuremath{\not\subset}}
+\newcommand{\nsupset}{\ensuremath{\not\supset}}
+\newcommand\minus{\ensuremath{\null\smallsetminus}}
+\renewcommand\qedsymbol{\ensuremath{\null\hfill\smiley}}
+
+%% Commands and operators
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\im}{im}
+
+%% Linear algebra
+\DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\comp}{comp}
+
+%% Differential operators
+\DeclareMathOperator{\Curl}{curl}
+\DeclareMathOperator{\Div}{div}
+\DeclareMathOperator{\Grad}{grad}
+\DeclareMathOperator{\Lap}{\Delta}
+\DeclareMathOperator{\diff}{d\!}
+
+%% Misc
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbCP}{\mathbb{CP}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbRP}{\mathbb{RP}}
+\newcommand{\bbZ}{\mathbb{Z}}
+
+\newcommand{\bfC}{\mathbf{C}}
+\newcommand{\bfCP}{\mathbf{CP}}
+\newcommand{\bfH}{\mathbf{H}}
+\newcommand{\bfN}{\mathbf{N}}
+\newcommand{\bfQ}{\mathbf{Q}}
+\newcommand{\bfR}{\mathbf{R}}
+\newcommand{\bfRP}{\mathbf{RP}}
+\newcommand{\bfZ}{\mathbf{Z}}
+
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calS}{\mathcal{S}}
+\newcommand{\calT}{\mathcal{T}}
+\newcommand{\calU}{\mathcal{U}}
+\newcommand{\calV}{\mathcal{V}}
+
+\newcommand{\scrL}{\mathscr{L}}
+\newcommand{\scrO}{\mathscr{O}}
+\newcommand{\scrS}{\mathscr{S}}
+
+\newcommand{\bfa}{\mathbf{a}}
+\newcommand{\bfb}{\mathbf{b}}
+\newcommand{\bfc}{\mathbf{c}}
+\newcommand{\bfu}{\mathbf{u}}
+\newcommand{\bfv}{\mathbf{v}}
+\newcommand{\bfw}{\mathbf{w}}
+
+\begin{document}
+\author{TA: \href{mailto:\authoremail}{\documentauthor}}
+\title{\documenttitle}
+\date{\today}
+\maketitle
+\begin{problem}[HW \#18, \#4]
+Find the centroid of the region bounded by the given curves.
+\[
+y=6\sin 4x,\qquad y=6\cos 4x,\qquad x=0,\qquad x=\pi/16.
+\]
+\end{problem}
+\begin{proof}[Solution]
+So I made a mistake when I calculated $M_x$ on the board, but this should
+be correct now. Hope that you can adapt it to your specific problem.
+
+First we find the area
+\begin{align*}
+A&=\int_0^{\pi/16}6\cos 4x-6\sin 4x\;dx\\
+ &=6\int_0^{\pi/16}\cos 4x-\sin 4x\;dx\\
+ &=6\left[\frac{\sin 4x+\cos 4x}{4}\right]_0^{\pi/16}\\
+ &=\frac{6}{4}\left[\frac{\sin 4x+\cos 4x}{4}\right]_0^{\pi/16}\\
+ &=\frac{3}{2}\left(\sin \left(4\pi/16\right)+
+   \cos\left(4\pi/16\right)-(\sin 4\cdot 0+\cos 4\cdot
+   0)\right)\\
+ &=\frac{3}{2}\left(\sin \pi/4+\cos \pi/4-\sin 0 -\cos 0\right)\\
+ &=\frac{3}{2}\left(\frac{\sqrt{2}}{2}+\frac{\sqrt{2}}{2}-0-1\right)\\
+ &=\boxed{\frac{3}{2}\left(\sqrt{2}-1\right).}
+\end{align*}
+
+Now we find $\bar x$ and $\bar y$
+\begin{align*}
+\bar x&=\frac{1}{A}\int_0^{\pi/16}x(6\cos 4x-6\sin 4x)\;dx\\
+      &=\frac{6}{A}\int_0^{\pi/16}x\cos +x-x\sin 4x\;dx
+\intertext{Now use integration by parts or tabular integration to get that
+        $\int x\cos x=(x\sin 4x)/4+(\cos 4x)/16$ and $\int -x\sin 4x=(x\cos
+        4x)/4-(\sin 4x)/16$}
+      &=\frac{6}{A}\left[\frac{x\sin 4 x}{4}+\frac{\cos 4x}{16}+\frac{x\cos
+        4x}{4}-\frac{\sin 4x}{16}\right]_0^{\pi/16}\\
+      &=\frac{6}{A}\left[\frac{1}{4}\left(x\sin 4 x+\frac{\cos
+        4x}{4}+x\cos 4x-\frac{\sin 4x}{4}\right)\right]_0^{\pi/16}\\
+      &=\frac{3}{2A}\left[x\sin 4x +\frac{\cos
+        4x}{4}+x\cos 4x-\frac{\sin 4x}{4}\right]_0^{\pi/16}\\
+      &=\frac{3}{2A}\left[x(\sin 4x+\cos 4x)-\frac{1}{4}(\cos 4x-\sin
+        4x)\right]_0^{\pi/16}\\
+      &=\frac{3}{2\bigl(3/2(\sqrt{2}-1)\bigr)}\left[x(\sin 4x+\cos
+        4x)-\frac{1}{4}(\cos 4x-\sin 4x)\right]_0^{\pi/16}\\
+      &=\frac{1}{\sqrt{2}-1}\left(\frac{\pi\sqrt{2}}{16}-\frac{1}{4}\right)\\
+      &=\frac{1}{\sqrt{2}-1}\left(\frac{\pi\sqrt{2}}{16}-\frac{4}{16}\right)\\
+      &=\frac{1}{\sqrt{2}-1}\frac{\pi\sqrt{2}-4}{16}\\
+      &=\boxed{\frac{\pi\sqrt{2}-4}{16\bigl(\sqrt{2}-1\bigr)}}
+\end{align*}
+and
+\begin{align*}
+\bar y&=\frac{1}{A}\int_0^{\pi/16}\frac{(6\cos 4x)^2-(6\sin 4x)^2}{2}\;dx\\
+      &=\frac{1}{A}\int_0^{\pi/16}\frac{36\cos^2 4x-36\sin^2 4x}{2}\;dx\\
+      &=\frac{1}{A}\int_0^{\pi/16}\frac{36}{2}\left(\cos^2 4x-\sin^2 4x\right)\;dx\\
+      &=\frac{18}{A}\int_0^{\pi/16}\cos^2 4x-\sin 4x^2\;dx\\
+\intertext{use the identity $\cos^2\theta-\sin^2\theta=\cos 2\theta$}
+      &=\frac{18}{A}\int_0^{\pi/16}\cos 8x\;dx\\
+      &=\frac{18}{A}\left[\frac{\sin 8x}{8}\right]_0^{\pi/16}\\
+      &=\frac{18}{(3/2)\bigl(\sqrt{2}-1\bigr)}\left(\frac{\sin(8(\pi/16))}{8}-\frac{\sin
+       (8\cdot 0)}{8}\right)\\
+      &=\frac{18}{(3/2)\bigl(\sqrt{2}-1\bigr)}\left(\frac{\sin(\pi/2)}{8}-\frac{\sin
+        0}{8}\right)\\
+      &=\frac{18}{(3/2)\bigl(\sqrt{2}-1\bigr)}\left(\frac{1}{8}-0\right)\\
+      &=\frac{2\cdot 3\cdot 3}{(3/2)2\cdot 2\cdot
+        2\bigl(\sqrt{2}-1\bigr)}\\
+      &=\boxed{\frac{3}{2\bigl(\sqrt{2}-1\bigr)}.}
+\end{align*}
+\end{proof}
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
