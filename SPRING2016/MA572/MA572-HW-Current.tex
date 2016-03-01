@@ -65,6 +65,7 @@
 \graphicspath{{figures/}}
 
 \usepackage{microtype}
+\usepackage{lineno}
 \usepackage{multicol}
 \usepackage[inline]{enumitem}
 \usepackage{listings}
@@ -107,10 +108,21 @@
   \fi
   \par\vspace{\baselineskip}%
   \noindent\ignorespaces
+  \begin{linenumbers}
 }%
 {% end code
   \par\vspace{\baselineskip}%
   \noindent\ignorespacesafterend
+  \end{linenumbers}
+}
+
+\renewenvironment{proof}[1][\proofname]
+{
+  {\textit #1.}
+\begin{linenumbers}
+}{
+\qedsymbol
+\end{linenumbers}
 }
 
 \newtheorem*{definition*}{Definition}
@@ -166,6 +178,12 @@
 \DeclareMathOperator{\St}{St}
 
 %% Symbols
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\O}{\mathrm{O}}
+\newcommand{\Unit}{\mathrm{U}}
+\newcommand{\Simp}{\mathrm{S}}
+\newcommand{\SL}{\mathrm{SL}}
+
 \newcommand{\bbC}{\mathbb{C}}
 \newcommand{\bbCP}{\mathbb{C}\mathrm{P}}
 \newcommand{\bbF}{\mathbb{F}}
@@ -255,7 +273,6 @@
 \pagestyle{my-headings}
 % \makerunningwidth{headings}{1.15\textwidth}
 \mainmatter
-
 \include{homeworks/ma572-hw-\hwnum}
 \end{document}
 

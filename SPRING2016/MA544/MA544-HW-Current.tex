@@ -1,6 +1,6 @@
 \def\documentauthor{Carlos Salinas}
 \def\documenttitle{MA 544: Homework \hwnum}
-\def\hwnum{7}
+\def\hwnum{8}
 \def\shorttitle{MA 544 HW \hwnum}
 \def\coursename{MA544}
 \def\documentsubject{introduction to measure theory}
@@ -71,6 +71,7 @@
 \graphicspath{{figures/}}
 
 \usepackage{microtype}
+\usepackage{lineno}
 \usepackage{multicol}
 \usepackage[inline]{enumitem}
 \usepackage{listings}
@@ -113,10 +114,21 @@
   \fi
   \par\vspace{\baselineskip}%
   \noindent\ignorespaces
+  \begin{linenumbers}
 }%
 {% end code
   \par\vspace{\baselineskip}%
   \noindent\ignorespacesafterend
+  \end{linenumbers}
+}
+
+\renewenvironment{proof}[1][\proofname]
+{
+  {\textit #1.}
+\begin{linenumbers}
+}{
+\qedsymbol
+\end{linenumbers}
 }
 
 \newtheorem*{definition*}{Definition}
@@ -230,7 +242,6 @@
 \pagestyle{my-headings}
 % \makerunningwidth{headings}{1.15\textwidth}
 \mainmatter
-
 \include{homeworks/ma544-hw-\hwnum}
 \end{document}
 

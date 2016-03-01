@@ -1,0 +1,95 @@
+\chapter{Hatcher Algebraic Topology Notes}
+\section{Homology}
+\subsection{Simplicial and Singular Homology}
+\subsubsection[Delta-complexes]{$\Delta$-complexes}
+The idea of the $\Delta$-complex generalizes the construction of a
+topological space via the quotient of some triangularization of a polygon
+in $\bfR^n$. The $n$-dimensional analogue of the triangle is called the
+\emph{$n$-simplex}. This is the smallest convex set in a Euclidean space
+$\bfR^m$ containing $n+1$ points $v_0,...,v_n$ that do not lie in a less
+than $n$ dimensional hyperplane. An equivalent condition is that the
+difference vectors $v_1-v_0,...,v_n-v_0$ are linearly independent. The
+points $v_i$ are the \emph{vertices} of the simplex, and the simplex itself
+is denoted $[v_0,...,v_n]$. For example, there is a standard $n$-simplex
+\[
+\Delta^n=\left\{\,(t_0,...,t_n)\in\bfR^n\;\middle|\;\text{$\sum_it_i$
+and $t_i\geq 0$ for all $i$}\,\right\}
+\]
+whose vertices are the unit vectors along the coordinate axes. For the
+purposes of homology, it is important that we keep track of the ordering on
+the vertices $v_i$, so an `$n$-simplex' will always mean an `$n$-simplex
+with an ordering on its vertices.' As a consequence, there is a natural
+ordering on the edges $[v_i,v_j]$ according to increasing
+subscripts.\footnote{I'm not sure what Hatcher means here, unless he is
+  choosing the natural ordering on the indices $I\subset\bfN$, i.e., the
+  ordering $1<2<\cdots$} Specifying the ordering of the vertices also
+determines a canonical linear homeomorphism from the standard $n$-simplex
+$\Delta^n$ onto any other $n$-simplex $[v_0,...,v_n]$, preserving the order
+of the vertices, namely, $(t_0,...,t_n)\mapsto\sum_it_iv_i$. The
+coefficients $t_i$ are \emph{barycentric coordinates} of the point
+$\sum_it_iv_i$ in $[v_0,...,v_i]$.
+
+If we delete one of the $n+1$ vertices of the $n$-simplex $[v_0,...,v_n]$,
+then the remaining $n$-vertices span an $(n-1)$-simplex called a
+\emph{face} of $[v_0,...,v_n]$. We adopt the following convention
+\begin{quotation}
+The vertices of a face, or of any complex spanned by a subset of the
+vertices, will always be ordered according to their order in the larger
+simplex.
+\end{quotation}
+The union of the faces of $\Delta^n$ is the \emph{boundary} of $\Delta^n$,
+written $\\partial\Delta^n$. The \emph{open simplex}
+$\left.\Delta^n\right.^\circ$ is $\Delta^n\minus\partial\Delta^n$.
+
+A $\Delta$-complex structure on a space $X$ is a collection of maps
+$\sigma_\alpha\colon\Delta^n\to X$ with $n$-depending on the index of
+$\alpha$ such that:
+\begin{enumerate}[label=(\roman*)]
+\item The restriction
+  $\sigma_\alpha\restriction\left.\Delta^n\right.^\circ$ is
+  injective, and each point of $X$ is in the image of exactly one such
+  restriction.
+\item Each restriction of $\sigma_\alpha$ to a face of $\Delta^n$ is one of
+  the maps $\sigma_\beta\colon\Delta^{n-1}\to X$. Here we are
+  identifying the face of $\Delta^n$ with $\Delta^{n-1}$ by the canonical
+  linear homeomorphism between them that preserves the ordering of the
+  vertices.
+\item A set $A\subset X$is open iff ${\sigma_\alpha}^{-1}(A)$ is open in
+  $\Delta^n$ for each $\sigma_\alpha$.
+\end{enumerate}
+Among other things, this last condition rules out trivialities like
+regarding all of the points in $X$ as individual vertices.
+
+A consequence of (iii) is that $X$ can be built as a quotient space of a
+collection of disjoint simplices $\Delta_\alpha^n$, one for each
+$\sigma_\alpha\colon\Delta^n\to X$, the quotient space obtained by
+identifying each face of $\Delta_\alpha^n$ with the $\Delta_\beta^{n-1}$
+corresponding to the restriction $\sigma_\beta$ of $\sigma_\alpha$ to the
+face in question, as in (ii). One can think of building the quotient space
+inductively: starting with a discrete set of vertices, then attaching edges
+to these to produce a graph, the attaching $2$-simplices to the graph, and
+so on. From this viewpoint we see that the data specifying a
+$\Delta$-complex can be described in a purely combinatorial way as
+collections of $n$-simplices $\Delta_\alpha^n$ for each $n$ together with
+functions associating to each face of each $n$-simplex $\Delta_\alpha^n$ an
+$(n-1)$-simplex $\Delta_\beta^{n-1}$.
+
+More generally, $\Delta$-complexes can be built from collections of
+disjoint simplices by identifying varies subsimplices spanned by a subsets
+of the vertices, where the identifications are performed using the
+canonical linear homeomorphism that preserve the ordering of the
+vertices.
+
+Thinking of a $\Delta$-complex $X$ as the quotient space of a collection of
+disjoint simplices, it's not hard to see that $X$ must be a Hausdorff
+space. Indeed, if $x,y\in X$ they lie in the image of the same simplex
+$\Img\sigma_\alpha$ we may take their preimage ${\sigma_\alpha}^{-1}(x)$
+and ${\sigma_\alpha}^{-1}(y)$ and find disjoint neighborhoods $U_x$ and
+$U_y$ containing these subsets of $\Delta^k$. Then $\sigma_\alpha(U_x)$ and
+$\sigma_\alpha(U_y)$ are disjoint and contain $x$ and $y$.
+\section{Cohomology}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Sp16-Notes"
+%%% End:

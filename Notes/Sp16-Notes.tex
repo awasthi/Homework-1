@@ -1,13 +1,12 @@
 \def\documentauthor{Carlos Salinas}
-\def\documenttitle{Mathematics Notes}
-% \def\hwnum{1}
-\def\shorttitle{Math-Notes}
-\def\coursename{mathematics}
-\def\documentsubject{abstract algebra, real analysis, complex analysis,
-  topology, hyperbolic geometry}
+\def\documenttitle{Spring 2016 Notes}
+\def\shorttitle{SP16-Notes}
+\def\coursename{math}
+\def\documentsubject{abstract algebra, algebraic topology, measure theory,
+  profinite groups}
 \def\authoremail{salinac@purdue.edu}
 
-\documentclass[article,oneside,10pt]{memoir}
+\documentclass[10pt]{memoir}
 \usepackage{geometry}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[
@@ -30,29 +29,25 @@
     pdfsubject={\coursename}
     ]{hyperref}
 
-% Use symbols instead of numbers
-\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
-
 %% Math
+\usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{mathtools}
-% \usepackage{unicode-math}
 
-%% PDFTeX specific
-\usepackage[mathcal]{euscript}
-\usepackage{mathrsfs}
+% Use symbols instead of numbers
+% \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+% \renewcommand{\theequation}{\hwnum.\arabic{equation}}
 
 \usepackage[LAE,LFE,T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[farsi,french,german,spanish,russian,english]{babel}
-\babeltags{fr=french,
+\babeltags{pa=farsi,
+           fr=french,
            de=german,
-           en=english,
            es=spanish,
-           pa=farsi,
-           ru=russian
-           }
+           ru=russian,
+           en=english}
 \def\spanishoptions{mexico}
 
 \selectlanguage{english}
@@ -65,10 +60,10 @@
 \newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
+%% Misc
 \usepackage{graphicx}
 \graphicspath{{figures/}}
 
-% Misc
 \usepackage{microtype}
 \usepackage{multicol}
 \usepackage[inline]{enumitem}
@@ -77,14 +72,6 @@
 \mleftright
 
 %% Theorems and definitions
-%% remove parentheses
-% \makeatletter
-% \def\thmhead@plain#1#2#3{%
-%   \thmname{#1}\thmnumber{\@ifnotempty{#1}{ }\@upn{#2}}%
-%   \thmnote{ {\the\thm@notefont#3}}}
-% \let\thmhead\thmhead@plain
-% \makeatother
-
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}[theorem]{Proposition}
@@ -103,33 +90,66 @@
 \newtheorem{definition}{Definition}
 \newtheorem{example}{Examples}
 \newtheorem{examples}[example]{Examples}
-\newtheorem{exercise}{Exercise}[chapter]
+\newtheorem{exercise}{Exercise}[section]
 \newtheorem{problem}[exercise]{Problem}
 
-\newtheorem*{example*}{Example}
+\newtheorem*{definition*}{Definition}
+\newtheorem*{example*}{Examples}
+\newtheorem*{examples*}{Examples}
 \newtheorem*{exercise*}{Exercise}
 \newtheorem*{problem*}{Problem}
 
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{remarks}[remark]{Remarks}
+\newtheorem{observation}[remark]{Observation}
+\newtheorem{observations}[remark]{Observations}
+
+\newtheorem*{remark*}{**Remark**}
+\newtheorem*{remarks*}{**Remarks**}
+\newtheorem*{observation*}{**Observation**}
+\newtheorem*{observations*}{**Observations**}
+
+%% Commands and operators
 %% Redefinitions & commands
+\renewcommand{\restriction}{\mathord{\upharpoonright}}
 \newcommand{\nsubset}{\ensuremath{\not\subset}}
 \newcommand{\nsupset}{\ensuremath{\not\supset}}
+\newcommand{\nsimeq}{\ensuremath{\not\simeq}}
 \newcommand\minus{\ensuremath{\null\smallsetminus}}
 \renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
 
+\newcommand\rightarrowsim{\xrightarrow{\smash{\raisebox{-0.65ex}{\ensuremath{\scriptstyle\sim}}}}}
+\newcommand\rightarrowapprox{\xrightarrow{\smash{\raisebox{-0.55ex}{\ensuremath{\scriptstyle\approx}}}}}
+\newcommand\rightarrowcong{\xrightarrow{\smash{\raisebox{-0.55ex}{\ensuremath{\scriptstyle\cong}}}}}
+
 %% Commands and operators
 \DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\diff}{d}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\tr}{tr}
+
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\coker}{coker}
 
-\DeclareMathOperator{\Aut}{Aut}
-\DeclareMathOperator{\Gal}{Gal}
-\DeclareMathOperator{\Rad}{rad}
-\DeclareMathOperator{\Nil}{nil}
+\DeclareMathOperator{\Det}{Det}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\Tr}{Tr}
 
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Coker}{Coker}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\Img}{Im}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\Sdv}{Sdv}
+\DeclareMathOperator{\St}{St}
 
 %% Symbols
 \newcommand{\bbC}{\mathbb{C}}
 \newcommand{\bbCP}{\mathbb{C}\mathrm{P}}
+\newcommand{\bbF}{\mathbb{F}}
 \newcommand{\bbH}{\mathbb{H}}
 \newcommand{\bbN}{\mathbb{N}}
 \newcommand{\bbQ}{\mathbb{Q}}
@@ -139,6 +159,7 @@
 
 \newcommand{\bfC}{\mathbf{C}}
 \newcommand{\bfCP}{\mathbf{C}\mathrm{P}}
+\newcommand{\bfF}{\mathbf{F}}
 \newcommand{\bfH}{\mathbf{H}}
 \newcommand{\bfN}{\mathbf{N}}
 \newcommand{\bfQ}{\mathbf{Q}}
@@ -156,29 +177,54 @@
 \newcommand{\calA}{\mathcal{A}}
 \newcommand{\calB}{\mathcal{B}}
 \newcommand{\calC}{\mathcal{C}}
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\calE}{\mathcal{E}}
+\newcommand{\calF}{\mathcal{F}}
 \newcommand{\calS}{\mathcal{S}}
 \newcommand{\calT}{\mathcal{T}}
 \newcommand{\calU}{\mathcal{U}}
 \newcommand{\calV}{\mathcal{V}}
 
+\newcommand{\scrA}{\mathscr{A}}
+\newcommand{\scrB}{\mathscr{B}}
+\newcommand{\scrC}{\mathscr{C}}
+\newcommand{\scrD}{\mathscr{D}}
+\newcommand{\scrE}{\mathscr{E}}
+\newcommand{\scrF}{\mathscr{F}}
 \newcommand{\scrL}{\mathscr{L}}
 \newcommand{\scrO}{\mathscr{O}}
 \newcommand{\scrS}{\mathscr{S}}
+\newcommand{\scrT}{\mathscr{T}}
+
+%Categories
+\newcommand{\catname}[1]{\text{\normalfont\textbf{#1}}}
+\newcommand{\Mod}{\catname{Mod}}
+\newcommand{\Modp}[1]{\text{$#1$-\Mod}}
+\newcommand{\Vect}{\catname{Vec}}
+\newcommand{\Vectp}[1]{\text{$#1$-\Vect}}
+\newcommand{\Man}{\catname{Man}}
+\newcommand{\Manp}[1]{\Man^{#1}}
+\newcommand{\Set}{\catname{Set}}
+\newcommand{\Pos}{\catname{Pos}}
+\newcommand{\Top}{\catname{Top}}
+\newcommand{\Topp}{\catname{Top}_*}
+\newcommand{\Haus}{\catname{Haus}}
+\newcommand{\Met}{\catname{Met}}
+\newcommand{\Grp}{\catname{Grp}}
+\newcommand{\Ab}{\catname{Ab}}
+\newcommand{\Ring}{\catname{Ring}}
 
 \begin{document}
+\pagestyle{title}
 \author{\href{mailto:\authoremail}{\documentauthor}}
 \title{\documenttitle}
 \date{\today}
 \maketitle
-\include{groups/sign}
 
-% \include{rings/}
-
-% \include{fields/}
-
-\include{mcmullen/real-analysis}
-\include{mcmullen/complex-analysis}
-\include{mcmullen/topology}
+\include{anal/wz-measure}
+% \include{alg/hung-alg}
+\include{algtop/hatch-hom-cohom}
+% \include{prof/wilson-prof}
 \end{document}
 
 %%% Local Variables:
