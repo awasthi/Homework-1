@@ -35,7 +35,40 @@ diagonal.]
 \begin{proof}
 We show that $\Orth_n(\bfR)$ is a deformation retraction of $\GL_n(\bfR)$
 and prove the result there. This procedure is adapted from a hint in
-\emph{\textru{Элементарная топология}} by \textru{Виро и др.} BY
+\emph{\textru{Элементарная топология}} by \textru{Виро, Нецветаев и
+  Харламов, стр.\@ 338, номер 39.11.} Suppose $f\colon\bfR^n\to\bfR^n$ is
+an invertible linear transformation. Let
+$\left\{\mathbf{f}_1,...,\mathbf{f}_n\right\}$ be the set of columns
+vectors of the matrix representation $F$ of $f$. By Gram--Schmidt
+orthogonalization construct the vectors
+\begin{equation}
+\label{eq:gram-schmidt-orth}
+\begin{aligned}
+\mathbf{e}_1&\coloneqq\lambda_{11}\mathbf{f}_1\\
+\mathbf{e}_2&\coloneqq\lambda_{21}\mathbf{f}_1+\lambda_{22}\mathbf{f}_2\\
+&\vdotswithin{{}\coloneqq{}}\\
+\mathbf{e}_n&\coloneqq\lambda_{n1}\mathbf{f}_1+\cdots+\lambda_{nn}\mathbf{f}_n
+\end{aligned}
+\end{equation}
+where the $\lambda_{kk}>0$ for $k=1,...,n$. Now set
+\begin{equation}
+\label{eq:vectors-as-function-of-t}
+\mathbf{g}_k(t)\coloneqq
+t\left(\lambda_{n1}\mathbf{f}_1+\lambda_{n2}\mathbf{f}_2+\cdots+\lambda_{kk-1}\mathbf{f}_{k-1}\right)+(t\lambda_{kk}+1-t)\mathbf{f}_k.
+\end{equation}
+Let $g(t,A)$ be the matrix whose columns are the vectors $\mathbf{g}_k(t)$
+and define a homotopy $H\colon I\times\GL_n(\bfR)\to\GL_n(\bfR)$ by mapping
+the pair $(t,A)\mapsto g(t,A)$. Continuity of $H$ follows from the fact
+that $H$ it is multiplication in $\bfR^n$ followed by a linear
+mapping. It's not hard to see that $H$ stays in $\GL_n(\bfR)$ for all $t$
+and $H(1,A)$ is in $\Orth_n(\bfR)$.
+
+Last but not least, we show that $\Orth_n(\bfR)$ consists of two connected
+components and that membership of $f$ to one of these components is
+determined by $\det f$. First note that
+$\det\left(\Orth_n(\bfR)\right)=\{-1,1\}$ which is disconnected in
+$\bfR$. Hence, $\Orth_n(\bfR)$ is disconnected. If $f\in\Orth_n(\bfR)$,
+either $\det f=1$ or $-1$. Suppose it is the former. Then
 \end{proof}
 \newpage
 

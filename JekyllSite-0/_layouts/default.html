@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>
+            {{ site.name }}{% if page.title %}: {{ page.title }}{% endif %}
+        </title>
+
+        <link rel="stylesheet" href="{{ site.base }}/media/main.css">
+        <link rel="alternate" type="application/rss+xml" href="{{ site.base }}/blog.xml" title="Atom">
+
+        {% if page.date %}
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="{{ site.twitter }}">
+        <meta name="twitter:creator" content="{{ site.twitter }}">
+        <meta name="twitter:title" content="{{ page.title }}">
+        <meta name="twitter:description"
+            content="{{ page.excerpt | markdownify | strip_html | strip_newlines }}">
+
+        <meta name="og:type" content="article">
+        <meta name="og:title" content="{{ page.title }}">
+        <meta name="og:description"
+            content="{{ page.excerpt | markdownify | strip_html | strip_newlines }}">
+        {% endif %}
+
+        {% if page.mathjax %}
+        <!-- KaTeX -->
+        <link rel="stylesheet" href="{{ site.base }}/media/katex/katex.min.css">
+        {% endif %}
+
+        {% if page.highlight %}
+        <!-- highlight.js -->
+        <link rel="stylesheet" href="{{ site.base }}/media/highlightjs/github-gist.css">
+        {% endif %}
+    </head>
+    <body>
+        <div class="container{% if page.class %} {{ page.class }}{% endif %}">
+
+            {% if page.plain != true %}
+            <header>
+                <div id="leader">
+                    <h1>
+                        <a href="{{ site.base }}/">{{ site.name }}</a>
+                    </h1>
+                    <address>
+                        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+                    </address>
+                </div>
+                <nav>
+                    {% assign shorturl = page.url | replace:'index.html','' %}
+                    {% for item in site.navigation %}
+                    <a
+                        {% if item.link == shorturl or (item.link == '/blog/' and page.date) %}
+                            class="active"
+                        {% endif %}
+                        href="{{ site.base }}{{ item.link }}">
+                        {{ item.title }}
+                    </a>
+                    {% endfor %}
+                </nav>
+            </header>
+            {% endif %}
+
+            {{ content }}
+
+        </div>
+
+        {% if page.mathjax %}
+        <!-- KaTeX -->
+        <script src="{{ site.base }}/media/katex/katex.min.js"></script>
+        <script src="{{ site.base }}/media/katex/contrib/auto-render.min.js"></script>
+        <script>
+            // KaTeX auto-render.
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        </script>
+        {% endif %}
+
+        {% if page.highlight %}
+        <!-- highlight.js -->
+        <script src="{{ site.base }}/media/highlightjs/highlight.min.js"></script>
+        <script>
+            hljs.configure({
+                languages: ['c', 'cpp', 'python', 'sh', 'typescript'],
+            });
+            hljs.initHighlightingOnLoad();
+        </script>
+        {% endif %}
+    </body>
+</html>
