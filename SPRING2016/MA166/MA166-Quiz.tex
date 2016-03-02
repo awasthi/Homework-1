@@ -1,15 +1,14 @@
 \def\documentauthor{Carlos Salinas}
-\def\hwnum{8}
-\def\documenttitle{MA166: Recitation {\hwnum} Prep}
-\def\shorttitle{MA166-Recitation-{\hwnum}-Prep}
+\def\documenttitle{MA 166: Quiz {\quiznum} Solutions}
+\def\quiznum{6}
+\def\shorttitle{MA 166 HW {\quiznum} Sols}
 \def\coursename{MA166}
 \def\documentsubject{calculus ii}
 \def\authoremail{salinac@purdue.edu}
 
-\documentclass[article,oneside,10pt]{memoir}
+\documentclass[12pt]{article}
 \usepackage{geometry}
 \usepackage[dvipsnames]{xcolor}
-
 \usepackage[
     breaklinks,
     bookmarks=true,
@@ -33,35 +32,27 @@
 % Use symbols instead of numbers
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
-%% Sectioning
-\usepackage{titlesec}
-
-\titleformat{\section}
-  {\normalfont\Large\bfseries}
-  {}
-  {0pt}
-  {Section \thesection:\quad}
-
 %% Math
-\usepackage{bm}
 \usepackage{amsmath}
-\usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage{amssymb}
 \usepackage{mathtools}
+
+%%PDFTeX specific
 \usepackage[mathcal]{euscript}
 \usepackage{mathrsfs}
+\usepackage{dsfont}
 \usepackage{wasysym}
 
 \usepackage[LAE,LFE,T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[farsi,french,german,spanish,russian,english]{babel}
-\babeltags{fr=french,
+\babeltags{pa=farsi,
+           fr=french,
            de=german,
-           en=english,
            es=spanish,
-           pa=farsi,
-           ru=russian
-           }
+           ru=russian,
+           en=english}
 \def\spanishoptions{mexico}
 
 \selectlanguage{english}
@@ -74,20 +65,17 @@
 \newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
-%% Misc niceness
-\usepackage{microtype}
-\usepackage{lineno}
-\usepackage{mleftright}
-\mleftright
+%% Misc
+\usepackage{graphicx}
+\usepackage{cutwin}
+\graphicspath{{figures/}}
 
-%% Misc useful
-\usepackage{caption}
-\usepackage{soul}
+\usepackage{microtype}
 \usepackage{multicol}
 \usepackage[inline]{enumitem}
 \usepackage{listings}
-\usepackage{graphicx}
-\graphicspath{{figures/}}
+\usepackage{mleftright}
+\mleftright
 
 %% Theorems and definitions
 \theoremstyle{plain}
@@ -108,57 +96,102 @@
 \newtheorem{definition}{Definition}
 \newtheorem{example}{Examples}
 \newtheorem{examples}[example]{Examples}
-\newtheorem{exercise}{Exercise}[chapter]
+\newtheorem{exercise}{Exercise}
 \newtheorem{problem}[exercise]{Problem}
 
-\newtheorem*{example*}{Example}
+\newtheorem*{definition*}{Definition}
+\newtheorem*{example*}{Examples}
+\newtheorem*{examples*}{Examples}
 \newtheorem*{exercise*}{Exercise}
 \newtheorem*{problem*}{Problem}
 
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{remarks}[remark]{Remarks}
+\newtheorem{observation}[remark]{Observation}
+\newtheorem{observations}[remark]{Observations}
+
+\newtheorem*{remark*}{**Remark**}
+\newtheorem*{remarks*}{**Remarks**}
+\newtheorem*{observation*}{**Observation**}
+\newtheorem*{observations*}{**Observations**}
+
+%% Commands and operators
 %% Redefinitions & commands
-\renewcommand{\restriction}{\mathord{\upharpoonright}}
-\newcommand{\nle}{\ensuremath{\not<}}
-\newcommand{\nge}{\ensuremath{\not>}}
 \newcommand{\nsubset}{\ensuremath{\not\subset}}
 \newcommand{\nsupset}{\ensuremath{\not\supset}}
 \newcommand\minus{\ensuremath{\null\smallsetminus}}
-\renewcommand\qedsymbol{\ensuremath{\null\hfill\smiley{}}}
+\renewcommand\qedsymbol{\ensuremath{\null\hfill\smiley}}
 
 %% Commands and operators
-\DeclareMathOperator{\comp}{comp}
-\DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\im}{im}
 
+%% Linear algebra
+\DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\comp}{comp}
+
+%% Differential operators
+\DeclareMathOperator{\Curl}{curl}
+\DeclareMathOperator{\Div}{div}
+\DeclareMathOperator{\Grad}{grad}
+\DeclareMathOperator{\Lap}{\Delta}
+\DeclareMathOperator{\diff}{d\!}
+
+%% Misc
 \newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbCP}{\mathbb{CP}}
+\newcommand{\bbH}{\mathbb{H}}
 \newcommand{\bbN}{\mathbb{N}}
 \newcommand{\bbQ}{\mathbb{Q}}
 \newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbRP}{\mathbb{RP}}
 \newcommand{\bbZ}{\mathbb{Z}}
 
+\newcommand{\bfC}{\mathbf{C}}
+\newcommand{\bfCP}{\mathbf{CP}}
+\newcommand{\bfH}{\mathbf{H}}
+\newcommand{\bfN}{\mathbf{N}}
+\newcommand{\bfQ}{\mathbf{Q}}
+\newcommand{\bfR}{\mathbf{R}}
+\newcommand{\bfRP}{\mathbf{RP}}
+\newcommand{\bfZ}{\mathbf{Z}}
+
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calS}{\mathcal{S}}
+\newcommand{\calT}{\mathcal{T}}
+\newcommand{\calU}{\mathcal{U}}
+\newcommand{\calV}{\mathcal{V}}
+
+\newcommand{\scrL}{\mathscr{L}}
+\newcommand{\scrO}{\mathscr{O}}
+\newcommand{\scrS}{\mathscr{S}}
+
+\newcommand{\bfa}{\mathbf{a}}
+\newcommand{\bfb}{\mathbf{b}}
+\newcommand{\bfc}{\mathbf{c}}
 \newcommand{\bfu}{\mathbf{u}}
 \newcommand{\bfv}{\mathbf{v}}
 \newcommand{\bfw}{\mathbf{w}}
 
-\newenvironment{apmatrix}[1]{%
-  \left(\begin{array}{@{}*{#1}{c}|c@{}}
-}{%
-  \end{array}\right)
-}
-
-\newenvironment{abmatrix}[1]{%
-  \left[\begin{array}{@{}*{#1}{c}|c@{}}
-}{%
-  \end{array}\right]
-}
-
 \begin{document}
-\author{\href{mailto:\authoremail}{\documentauthor}}
+\author{TA: \href{mailto:\authoremail}{\documentauthor}}
 \title{\documenttitle}
 \date{\today}
 \maketitle
-\allowdisplaybreaks
-\include{notes/ma166-recitation-\hwnum}
-\end{document}
 
+You have \textbf{15 minutes} to complete this quiz. You may work in groups,
+but you are not allowed to use any other resources.
+\\\\
+%%
+\input{quizzes/ma166-quiz-\quiznum}
+%% Solutions
+% \newpage
+% \section*{Solutions}
+% \input{quizzes/ma166-quiz-sol-\quiznum}
+\end{document}
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
