@@ -1,9 +1,54 @@
 \section*{Solutions}
 Here are the solutions to the quiz.
 \begin{proof}[Solution]
+For the following problems, let $t$ be a dummy variable.
+
+(a) Take the limit as $t\to 0$ of the indefinite integral
+\begin{align*}
+I_1&=\lim_{t\to 0}\int_t^1\frac{dx}{\sqrt{x}}\\
+   &=\lim_{t\to 0}\int_t^1x^{-1/2}\;dx\\
+   &=\lim_{t\to 0}\left[\frac{1}{2}x^{1/2}\right]_t^1\\
+   &=\lim_{t\to 0}\frac{1}{2}-\frac{1}{2}t^{1/2}\\
+   &=\frac{1}{2}.
+\end{align*}
+So the integral converges and its value is $1/2$.
+\\\\
+(b) Take the limit as $t\to 5$ of the indefinite integral
+\begin{align*}
+I_2&=\lim_{t\to 5}\int_t^1\frac{dx}{(5-x)^2}\\
+   &=\lim_{t\to 5}\int_1^t(5-x)^{-2}\;dx\\
+\shortintertext{make the substitution $u=5-x$, $du=-dx$}
+   &=\lim_{t\to 5}-\int_{5-t}^4u^{-2}\;du\\
+   &=\lim_{t\to 5}\int_{5-t}^4 u^{-2}\;du\\
+   &=\lim_{t\to 5}-\left[-u^{-1}\right]_{5-t}^4\\
+   &=\lim_{t\to 5}\left[u^{-1}\right]_{5-t}^4\\
+   &=\lim_{t\to 5}\frac{1}{4}-\frac{1}{5-t}\\
+   &=\frac{1}{4}-\lim_{t\to 5}\frac{1}{5-t}\\
+\end{align*}
+So the integral does not exist because for any number you can think of $N$,
+we can pick a value $t$ such that $(5-t)^{-1}$ is bigger than $N$, in
+fact let's see just when $(5-t)^{-1}=N$
+\begin{align*}
+\frac{1}{5-t}&=N\\
+5-t&=\frac{1}{N}\\
+t&=5-\frac{1}{N}.
+\end{align*}
+
+\\\\
+(c) Take the limit as $t\to 0$ of the indefinite integral
+\begin{align*}
+I_3&=\lim_{t\to 0}\int_t^1\frac{dx}{\sqrt{x}}\\
+   &=\lim_{t\to 0}\int_t^1x^{-1/2}\;dx\\
+   &=\lim_{t\to 0}\left[\frac{1}{2}x^{1/2}\right]_t^1\\
+   &=\lim_{t\to 0}\frac{1}{2}-\frac{1}{2}t^{1/2}\\
+   &=\frac{1}{2}.
+\end{align*}
+So the integral converges and its value is $1/2$.
 \end{proof}
 \begin{proof}[Solution]
+
 \end{proof}
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../MA166-Quiz"
