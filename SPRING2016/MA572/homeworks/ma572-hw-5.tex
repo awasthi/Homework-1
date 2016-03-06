@@ -67,15 +67,13 @@ Last but not least, we show that $\Orth_n(\bfR)$ consists of two connected
 components and that membership of $f$ to one of these components is
 determined by $\det f$. First note that
 $\det\left(\Orth_n(\bfR)\right)=\{-1,1\}$ which is disconnected in
-$\bfR$. Hence, $\Orth_n(\bfR)$ is disconnected. If $f\in\Orth_n(\bfR)$,
-either $\det f=1$ or $-1$. Suppose it is the former. Then we construct a
-homotopy from $f$ to the identity map $\id$. Consider the homotopy
+$\bfR$. Hence, $\Orth_n(\bfR)$ is disconnected. Now, if
+$f\in\Orth_n(\bfR)$, either $\det f=1$ or $\det f=-1$. Without loss of
+generality, we may assume $\det f=1$ since if $r$ is a reflection. Consider
+the map $k \colon I\times \Orth_n(\bfR)\to\Orth_n(\bfR)$ given by
 \begin{equation}
-  \label{eq:homotopy}
-k(t,A)\coloneqq
-\begin{cases}
-At
-\end{cases}
+  \label{eq:homotopy-det-1}
+k(t,A)\coloneqq e^{At}
 \end{equation}
 \end{proof}
 \newpage
