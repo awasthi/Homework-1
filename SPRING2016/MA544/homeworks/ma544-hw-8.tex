@@ -155,7 +155,35 @@ classical $\beta$-function and so can be expressed in terms of the
 $\Gamma$-function: $\Gamma(s)=\int_0^\infty e^{-t}t^{s-1}\;dt$, $s>0$.)
 \end{problem}
 \begin{proof}
+We prove this by induction. Since $V_0=0$ (unless we set $V_0\coloneqq 1$
+we cannot start induction at $n=1$), we start induction at $n=2$. For $n=2$
+we have
+\begin{equation}
+\label{eq:n-2-case}
+V_2=2V_1\int_0^1\sqrt{1-t^2}\;dt=4\int_0^1\sqrt{1-t^2}=\pi.
+\end{equation}
 
+Assume by induction that for $k<n$
+\begin{equation}
+\label{eq:inductive-step-ball}
+V_k=2V_{k-1}\int_0^1\left(1-t^2\right)^{(k-1)/2}\;dt
+\end{equation}
+holds. Then, since $B_1(\mathbf{0})$ is the set of all points
+$\bfx\in\bfR^n$ such that ${x_1}^2+\cdots+{x_n}^2\leq 1$ we have
+\begin{align*}
+V_n&=\idotsint_{{x_1}^2+\cdots+{x_n}^2\leq 1}\;dx_1\cdots dx_n\\
+   &=\int_{-1}^1\idotsint_{{x_2}^2+\cdots+{x_n}^2\leq 1-{x_1}^2}\;dx_1\cdots dx_n.
+\intertext{now, make the change of variables $u_i=x_i/\sqrt{1-{x_1}^2}$, $du_i=d
+x_i/\sqrt{1-{x_1}^2}$ and we have}
+   &=\int_{-1}^1\idotsint_{{y_2}^2+\cdots+{y_n}^2\leq 1}
+     \left(1-{x_1}^2\right)^{(n-1)/2}\;dx_1dy_2\cdots dy_n\\
+\intertext{then by Fubini's theorem}
+   &=\int_{-1}^1\left[\idotsint_{{y_2}^2+\cdots+{y_n}^2\leq 1}\;dy_2\cdots
+     dy_n\right]\left(1-{x_1}^2\right)^{(n-1)/2}\;dx_1\\
+   &=V_{n-1}\int_{-1}^1\left(1-{x_1}^2\right)^{(n-1)/2}\;dx_1\\
+   &=2V_{n-1}\int_0^1\left(1-{x_1}^2\right)^{(n-1)/2}\;dx_1
+\end{align*}
+as desired.
 \end{proof}
 \newpage
 
@@ -199,11 +227,11 @@ e^{-|\bfx|^2}=\idotsint_{\bfR^n}e^{-{x_1}^2}\cdots e^{-{x_n}^2}\;dx_1\cdots dx_n
 Then by Fubini's theorem
 \begin{align*}
 \idotsint_{\bfR^n}e^{-{x_1}^2}\cdots e^{-{x_n}^2}dx_1\cdots dx_n
-&=\int_\bfR\left(\idotsint_{\bfR^{n-1}}e^{-{x_1}^2}\cdots e^{-{x_n}^2}\right)dx_1\\
-&=\int_\bfR\left(\idotsint_{\bfR^{n-1}}e^{-{x_1}^2}\cdots
-  e^{-{x_n}^2}\right)dx_1\\
-&=\int_\bfR\left(\idotsint_{\bfR^{n-1}}e^{-{x_2}^2}\cdots
-  e^{-{x_n}^2}\right)e^{-{x_1}^2}\;dx_1\\
+&=\int_\bfR\left[\idotsint_{\bfR^{n-1}}e^{-{x_1}^2}\cdots e^{-{x_n}^2}\right]dx_1\\
+&=\int_\bfR\left[\idotsint_{\bfR^{n-1}}e^{-{x_1}^2}\cdots
+  e^{-{x_n}^2}\right]dx_1\\
+&=\int_\bfR\left[\idotsint_{\bfR^{n-1}}e^{-{x_2}^2}\cdots
+  e^{-{x_n}^2}\right]e^{-{x_1}^2}\;dx_1\\
 &=\pi^{(n-1)/2}\int_\bfR e^{-{x_1}^2}\;dx_1\\
 &=\pi^{(n-1)/2}\pi^{1/2}\\
 &=\pi^{n/2}
