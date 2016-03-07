@@ -4,7 +4,16 @@ Show that the conclusion of (5.32) are not true without the assumption that
 $\varphi\in L(E)$. [In part (ii), for example, take $f_k=\chi_{(k,\infty)}$.]
 \end{problem}
 \begin{proof}
-
+(ii) Following the hint, consider the family of decreasing functions
+$f_k=\chi_{(k,\infty)}$ on $\bfR$ which converge pointwise to $0$. Since
+$\int_\bfR f_k=\int_\bfR\chi_{(k,\infty)}=\left|(k,\infty)\right|=\infty$
+for all $k$, the sequence of integrals $\int_\bfR f_k\to\infty$, but
+$\int_\bfR 0=0$.
+\\\\
+For part (i) we may again consider the indicator function
+$\chi_{(k,\infty)}$ and define $f_k\coloneqq -\chi_{(k,\infty)}$. Then
+$f_k\nearrow 0$, but $\int_\bfR f_k=-\int_\bfR\chi_{(k,\infty)}=-\infty$
+for all $k$.
 \end{proof}
 \newpage
 
@@ -13,20 +22,72 @@ If $f\in L(0,1)$, show that $x^kf(x)\in L(0,1)$ for $k=1,2,...$, and
 $\int_0^1 x^kf(x)\,dx\to 0$.
 \end{problem}
 \begin{proof}
+Since $x^k$ is a polynomial and therefore continuous, $x^k$ is measurable
+as a consequence of Theorem 4.3. Moreover, since $\bigl|x^k\bigr|\leq 1$
+for all $k$, by Theorem 5.30, $x^kf\in L(0,1)$.
+
+Now, by the Stone--Weistraß approximation theorem, given $\varepsilon>0$
+there exists a polynomial $p$ such that
+$|p-f|<\varepsilon$ for every $x\in[0,1]$. Hence, we have
+\begin{align*}
+\left|x^kf\right|&=\left|x^kf+x^kp-x^kp\right|\\
+                 &=\left|x^k(f-p)\right|+\left|x^kp\right|\\
+                 &=\left|x^k\right|\left(\varepsilon+|p|\right)
+\end{align*}
+which goes to $0$ as $k\to\infty$ a.e.\@ except at $x=1$. Thus, by
+Lebesgue's dominated convergence theorem, since $x^kf\to 0$ a.e.\@ on
+$[0,1]$ and $\left|x^kf\right|\leq|f|$ a.e.\@ in $[0,1]$ for all $k$, we
+have $\int_0^1 x^kf\to 0$ as desired.
 \end{proof}
 \newpage
 
 \begin{problem}[Wheeden \& Zygmund {\S}5, Ex.\@ 6]
 Let $f(x,y)$, $0\leq x,y\leq 1$, satisfy the following conditions: for each
 $x$, $f(x,y)$ is an integrable function of $y$, and
-$(\partial(x,y)/\partial x)$ is a bounded function of $(x,y)$. Show that
-$(\partial(x,y)\partial x)$ is a measurable function of $y$ for each $x$
+$\partial f(x,y)/\partial x$ is a bounded function of $(x,y)$. Show that
+$\partial f(x,y)/\partial x$ is a measurable function of $y$ for each $x$
 and
 \[
 \frac{d}{dx}\int_0^1f(x,y)\;dy=\int_0^1\frac{\partial}{\partial x}f(x,y)\;dy.
 \]
 \end{problem}
 \begin{proof}
+First we will show that $\partial f/\partial x$ is measurable as a function
+of $y$. Since $\int_0^1 f(x,y)\;dy$ exists for every $x$, by Theorem 5.1
+$f(x,y)$ is measurable as a function of $y$ so $\partial f/\partial x$ is
+measurable by Theorem 4.12 since it is limit of the sequence
+\begin{equation}
+\label{eq:diff-sequence}
+f_n(x,y)\coloneqq\frac{f(x+(1/n),y)-f(x,y)}{1/n}
+\end{equation}
+which is a sum of measurable functions of $y$.
+
+To prove the second half we will show that the sequence
+\begin{equation}
+\label{eq:seq-derivatives-of-ints}
+g_n\coloneqq\int_0^1 f_n(x)\;dy\longrightarrow
+\frac{d}{dx}\int_0^1 f(x,y)\;dy.
+\end{equation}
+Since $\partial f/\partial x$ is bounded, there exists $M$ such that
+$\left|\partial f/\partial x\right|<M$ so convergence of $f_n$ to $\partial
+f/\partial x$ means that for every $\varepsilon>0$, there exists $N$ such
+that $n\geq N$ implies $\left|f_n\right|<M+\varepsilon$. Then by the
+bounded convergence theorem, $\int_0^1 f_n\to\int_0^1\to\partial f/\partial
+x$. But by definition the limit as $n\to\infty$ of
+\begin{align*}
+\int_0^1f_n(x)\;dy
+&=\int_0^1\frac{f(x+1/n,y)-f(x,y)}{1/n}\;dy\\
+&=\frac{\int_0^1 f(x+1/n,y)\;dy-\int_0^1 f(x,y)\;dy}{1/n}
+\end{align*}
+is
+\[
+\frac{d}{dx}\int_0^1 f(x,y)\;dy.
+\]
+Hence, by the uniqueness of limit, we have
+\[
+\frac{d}{dx}\int_0^1f(x,y)\;dy=\int_0^1\frac{\partial}{\partial x}f(x,y)\;dy
+\]
+a.e.\@ on $[0,1]$.
 \end{proof}
 \newpage
 
@@ -35,6 +96,29 @@ Give an example of an $f$ that is not integrable, but whose improper
 Riemann integral exists and is finite.
 \end{problem}
 \begin{proof}
+The following is a standard example of a function $f$ that is improperly
+Riemann integrable, but not Lebesgue integrable. Set $f\coloneqq
+\sin(x)/x$. Then the Riemann $\int_{-\infty}^\infty f\;dx=2\pi$ may be computed
+fairly easily by contour integration noting that
+$f=\Im\left(e^{ix}/x\right)$ and applying Jordan's lemma.
+
+However, by Theorem 5.21, $f$ is Lebesgue integrable if and only if $|f|$
+is Lebesgue integrable however, we show that
+$\int_{\bfR}|f|\;dx=\infty$. To see this note that
+\begin{align*}
+\int_{\pi}^{(n+1)\pi}\left|\frac{\sin x}{x}\right|\;dx
+&=\sum_{k=1}^n\int_{k\pi}^{(k+1)\pi}\left|\frac{\sin x}{x}\right|\;dx\\
+\intertext{make the substitution $x=t+k\pi$, then}
+&=\sum_{k=1}^n\int_0^\pi\left|\frac{\sin(t+k\pi)}{t+k\pi}\right|\;dt\\
+&=\sum_{k=1}^n\int_0^\pi\left|\frac{\sin(t+k\pi)}{t+k\pi}\right|\;dt\\
+\intertext{and since $t+k\pi\leq \pi+k\pi$ for $0\leq t\leq\pi$ we have}
+&\geq\sum_{k=1}^n\int_0^\pi\left|\frac{\sin(t+k\pi)}{\pi+k\pi}\right|\;dt\\
+&\geq\sum_{k=1}^n\frac{1}{\pi(k+1)}\int_0^\pi\sin(t+k\pi)\;dt\\
+&\geq\sum_{k=1}^n\frac{2}{\pi(k+1)}
+\end{align*}
+which clearly diverges as $n\to\infty$ since the lower bound above is the
+scaled harmonic series starting at $2$. Thus, $|f|$ is not integrable over
+$\bfR$ so $f$ is not integrable over $\bfR$.
 \end{proof}
 \newpage
 
@@ -43,6 +127,20 @@ If $\int_A f=0$ for every measurable subset A of a measurable set $E$, show
 that $f=0$ a.e.\@ in $E$.
 \end{problem}
 \begin{proof}
+Since $E$ is measurable, $\int_E f=0$ so $f$ is measurable. Write $E$ as
+the union
+\begin{equation}
+\label{eq:rewrite-e}
+E=\left\{\,f>0\,\right\}\cup\left\{f=0\right\}\cup\left\{\,f<0\,\right\}.
+\end{equation}
+Then
+\begin{align*}
+\int_{\left\{\,f>a\,\right\}}f\;dx&=\int_Ef^+\;dx&
+\int_{\left\{\,f<0\,\right\}}f\;dx&=-\int_Ef^-\;dx\\
+&=0&&=0.
+\end{align*}
+Hence, by Theorem 5.11, $f^+=0$ and $f^-=0$ a.e.\@ on $E$. Thus,
+$f=f^+-f^-=0$ a.e.\@ on $E$
 \end{proof}
 \newpage
 
@@ -57,6 +155,7 @@ classical $\beta$-function and so can be expressed in terms of the
 $\Gamma$-function: $\Gamma(s)=\int_0^\infty e^{-t}t^{s-1}\;dt$, $s>0$.)
 \end{problem}
 \begin{proof}
+
 \end{proof}
 \newpage
 
@@ -65,12 +164,51 @@ Use Fubini's theorem to prove that
 \[
 \int_{\bfR^n}e^{-|\bfx|^2}\;d\bfx=\pi^{n/2}.
 \]
-(For $n=1$, write $\int_{-\infty}^\infty
-e^{-x^2}\;dx=\int_{-\infty}^\infty\int_{-\infty}^\infty e^{-x^2-y^2}\;dxdy$
+(For $n=1$, write $\left(\int_{-\infty}^\infty
+e^{-x^2}\;dx\right)^2=\int_{-\infty}^\infty\int_{-\infty}^\infty e^{-x^2-y^2}\;dxdy$
 and use polar. For $n>1$, use the formula $e^{-|\bfx|^2}=e^{-{x_1}^2}\cdots
 e^{-{x_n}^2}$ and Fubini's theorem to reduce the case $n=1$.)
 \end{problem}
 \begin{proof}
+Using the hint, by induction for $n=1$ we have
+\begin{equation}
+\label{eq:e-x^2-n-1}
+\left(\int_{-\infty}^\infty e^{-x^2}\;dx\right)^2
+=\int_{-\infty}^\infty\int_{-\infty}^\infty e^{-x^2-y^2}\;dxdy.
+\end{equation}
+Now we make a change of $x=r\cos\theta$, $y=r\sin\theta$, $0\leq
+r\leq\infty$, $0\leq\theta\leq\pi$ and the determinant of the Jacobian is
+$r$ so we have
+\begin{align*}
+\int_{-\infty}^\infty\int_{-\infty}^\infty e^{-x^2-y^2}\;dxdy
+&=\int_{0}^{2\pi}\int_{0}^\infty re^{-r^2}\;drd\theta\\
+&=2\pi\int_0^\infty re^{-r^2}\;dr\\
+\intertext{by making the substitution, $u=r^2$}
+&=\pi\int_0^\infty e^{-u}\;du\\
+&=\pi
+\end{align*}
+so $\int_\bfR e^{-x^2}=\sqrt{\pi}$.
+
+Assume by induction that $\int_{\bfR^k}e^{-|\bfx|^2}\;d\bfx=\pi^{k/2}$ for
+all $k<n$. Then writing
+\begin{equation}
+\label{eq:e-x^n-boldface}
+\int_{\bfR^n}e^{-|\bfx|^2}\;d\bfx=
+e^{-|\bfx|^2}=\idotsint_{\bfR^n}e^{-{x_1}^2}\cdots e^{-{x_n}^2}\;dx_1\cdots dx_n
+\end{equation}
+Then by Fubini's theorem
+\begin{align*}
+\idotsint_{\bfR^n}e^{-{x_1}^2}\cdots e^{-{x_n}^2}dx_1\cdots dx_n
+&=\int_\bfR\left(\idotsint_{\bfR^{n-1}}e^{-{x_1}^2}\cdots e^{-{x_n}^2}\right)dx_1\\
+&=\int_\bfR\left(\idotsint_{\bfR^{n-1}}e^{-{x_1}^2}\cdots
+  e^{-{x_n}^2}\right)dx_1\\
+&=\int_\bfR\left(\idotsint_{\bfR^{n-1}}e^{-{x_2}^2}\cdots
+  e^{-{x_n}^2}\right)e^{-{x_1}^2}\;dx_1\\
+&=\pi^{(n-1)/2}\int_\bfR e^{-{x_1}^2}\;dx_1\\
+&=\pi^{(n-1)/2}\pi^{1/2}\\
+&=\pi^{n/2}
+\end{align*}
+as desired.
 \end{proof}
 
 %%% Local Variables:
