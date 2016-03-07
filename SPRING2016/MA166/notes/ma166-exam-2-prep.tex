@@ -1,0 +1,174 @@
+As I promised, here are somewhat detailed solutions to two of the last Exam
+2's for MA 166.
+\chapter{MA 166 Exam 2, Spring 2015}
+\begin{problem}
+Evaluate the following integral
+\[
+\int_0^\pi \sin^2x \cos^2 x\;dx
+\]
+\end{problem}
+\begin{proof}[Solution]
+The following trig identities are useful
+\begin{equation}
+  \label{eq:sine-double-angle-formula}
+\sin 2\theta=2\sin\theta\cos\theta
+\end{equation}
+\begin{equation}
+\label{eq:sine-square-formula}
+\sin^2\theta=\frac{1-\cos 2\theta}{2}.
+\end{equation}
+With that in mind we compute the integral
+\begin{align*}
+\int_0^\pi \sin^2x \cos^2 x\;dx
+&=\int_0^\pi\left(\sin x\cos x\right)^2\;dx\\
+&=\int_0^\pi\left(\frac{1}{2}\sin 2x\right)^2\;dx\\
+&=\frac{1}{4}\int_0^\pi\sin^2 2x\;dx\\
+&=\frac{1}{4}\int_0^\pi\frac{1-\cos 4x}{2}\;dx\\
+&=\frac{1}{8}\int_0^\pi 1-\cos 4x\;dx\\
+&=\frac{1}{8}\left[x-\frac{1}{4}\sin 4x\right]_0^\pi\\
+&=\frac{1}{8}\left[\pi-0-(0-0)\right]\\
+&=\boxed{\frac{\pi}{8}.}
+\end{align*}
+Answer: B.
+\end{proof}
+\begin{problem}
+Evaluate the following integral
+\[
+\int_0^{\pi/4}\sec^4 x\tan x\;dx.
+\]
+\end{problem}
+\begin{proof}[Solution]
+The following identities are useful
+\begin{equation}
+  \label{eq:tangent-pythagorean-identity}
+\sec^2\theta-\tan^2\theta=1.
+\end{equation}
+Substitute $u=\tan x$, $du=\sec^2 x\;dx$
+\begin{align*}
+\int_0^{\pi/4}\sec^4 x\tan x\;dx
+&=\int_0^{\pi/4}\sec^2 x\sec^2 x\tan x\;dx\\
+&=\int_0^{\pi/4}\sec^2 x(1+\tan^2 x)\tan x\;dx\\
+&=\int_0^1(1+u^2)u\;dx\\
+&=\int_0^1u+u^3\;dx\\
+&=\left[\frac{1}{2}u^2+\frac{1}{4}u^4\right]_0^1\\
+&=\frac{1}{2}+\frac{1}{4}-0-0\\
+&=\boxed{\frac{3}{4}.}
+\end{align*}
+Answer: A.
+\end{proof}
+\begin{problem}
+After the appropriate trigonometric substitution, the integral
+\[
+\int_2^5\frac{dx}{\sqrt{x^2-4x+13}}
+\]
+becomes
+\end{problem}
+\begin{proof}[Solution]
+The general strategy for these types of problems is to complete the square
+in the denominator and make some sort of trig substitution
+\[
+x^2-4x+13=
+\left(x^2-4x+4\right)+9=
+(x-2)^2+9.
+\]
+Make the $u$-substitution $u=(x-2)/3$, $du=dx/3$
+\begin{align*}
+\int_2^5\frac{dx}{\sqrt{x^2-4x+13}}
+&=\int_2^5\frac{dx}{3\sqrt{(x-2)^2/9+1}}\\
+&=\frac{1}{3}\int_2^5\frac{dx}{\sqrt{\left(\frac{x-2}{3}\right)^2+1}}\\
+&=\int_0^1\frac{du}{\sqrt{u^2+1}}\\
+\intertext{follow it up with the trig substitution $\sec\theta=u$,
+  $\sec\theta\tan\theta\;d\theta=du$}
+&=\int_{\pi/2}^0
+\end{align*}
+\end{proof}
+\begin{problem}
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+
+\chapter{MA 166 Exam 2, Spring 2014}
+\begin{problem}
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+
+%%% Local Variables:
+%%% TeX-master: "../MA166-Recitation"
+%%% End:
