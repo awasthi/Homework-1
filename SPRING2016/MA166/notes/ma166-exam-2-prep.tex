@@ -1,6 +1,6 @@
 As I promised, here are somewhat detailed solutions to two of the last Exam
 2's for MA 166.
-\chapter{MA 166 Exam 2, Spring 2015}
+\chapter{MA 166 Exam 2, Spring 2014}
 \begin{problem}
 Evaluate the following integral
 \[
@@ -77,22 +77,92 @@ Make the $u$-substitution $u=(x-2)/3$, $du=dx/3$
 &=\int_2^5\frac{dx}{3\sqrt{(x-2)^2/9+1}}\\
 &=\frac{1}{3}\int_2^5\frac{dx}{\sqrt{\left(\frac{x-2}{3}\right)^2+1}}\\
 &=\int_0^1\frac{du}{\sqrt{u^2+1}}\\
-\intertext{follow it up with the trig substitution $\sec\theta=u$,
-  $\sec\theta\tan\theta\;d\theta=du$}
-&=\int_{\pi/2}^0
+\intertext{follow it up with the trig substitution $\tan\theta=u$,
+  $\sec^2\theta\;d\theta=du$, $0\leq\theta\leq\pi/4$}
+&=\int_0^{\pi/4}\sec^2\theta\cos\theta\;d\theta\\
+&=\int_0^{\pi/4}\sec\theta\;d\theta\\
+&=\left[\ln|\sec\theta+\tan\theta|\right]_0^{\pi/4}\\
+&=\ln\left|\frac{\sec\pi/4+\tan\pi/4}{\sec 0+\tan 0}\right|\\
+&=\ln\left|\frac{\sqrt{2}+1}{1+0}\right|\\
+&=\boxed{\ln\left|\sqrt{2}+1\right|}
 \end{align*}
+Answer: A.
 \end{proof}
 \begin{problem}
+Compute
+\[
+\int_3^4\frac{3}{x^2-x-2}\;dx.
+\]
 \end{problem}
 \begin{proof}[Solution]
+Factor
+\[
+x^2-x-2=(x-2)(x+1)
+\]
+and use partial fractions
+\begin{align*}
+\frac{3}{(x-2)(x+1)}&=\frac{A}{x-2}+\frac{B}{x+1}\\
+3&=A(x+1)+B(x-2)\\
+0x+3&=(A+B)x+A-2B
+\end{align*}
+gives you $A-2B=3$, $A+B=0$ so $A=-B$, $-B-2B=3$, $B=-1$ and $A=1$. Now we
+can compute the integral
+\begin{align*}
+\int_3^4\frac{3}{x^2-x-2}\;dx
+&=\int_3^4\left[\frac{1}{x-2}-\frac{1}{x+1}\right]dx\\
+&=\left[\ln|x-2|-\ln|x+1|\right]_3^4\\
+&=\left[\ln\left|\frac{x-2}{x+1}\right|\right]_3^4\\
+&=\ln\left|\frac{2}{5}\right|-\ln\left|\frac{1}{4}\right|\\
+&=\ln\left|\frac{2/5}{1/4}\right|\\
+&=\boxed{\ln\left|\frac{8}{5}\right|.}
+\end{align*}
+Remember your log properties!
+\\\\
+Answer: B.
 \end{proof}
 \begin{problem}
+It is known that
+\[
+\int\frac{2x-3}{x\left(x^2+1\right)}dx=a\ln x+b\ln\left(x^2+1\right)+c\tan x+C
+\]
+for some constants $a$, $b$, $c$ and $C$. What is $b$?
 \end{problem}
 \begin{proof}[Solution]
+There is a typo in the original problem; instead of $c\tan x$ it should be
+a $c\tan^{-1}x$. One thing you can do is use the fundamental theorem of
+calculus
+\begin{equation}
+  \label{eq:fundamental-theorem-of-calculus}
+f(x)=\frac{d}{dt}\int_a^x f(t)\;dt.
+\end{equation}
+Applying the fundamental theorem on our function, we get
+\begin{align*}
+\frac{2x-3}{x\left(x^2+1\right)}
+&=\frac{a}{x}+\frac{2bx}{x^2+1}+\frac{c}{x^2+1}\\
+&=\frac{a}{x}+\frac{2bx+c}{x^2+1}\\
+&=\frac{a\left(x^2+1\right)+(2bx+c)x}{x\left(x^2+1\right)}\\
+&=\frac{(a+2b)x^2+cx+a}{x\left(x^2+1\right)}.
+\end{align*}
+Now we solve for the values in the numerator by noting that $a+2b=0$, $c=2$
+and $a=-3$, so $b=3/2$.
+\\\\
+Answer: E.
 \end{proof}
 \begin{problem}
+Evaluate the integral
+\[
+\int\frac{x^2+5x+1}{\left(x^2+1\right)^2}dx.
+\]
 \end{problem}
 \begin{proof}[Solution]
+Remember, you cannot use the method of partial fractions if the highest
+term in the numerator is greater than or equal to the highest term in the
+denominator, here we have $x^2$ on the top and $x^4$ on the bottom, if you
+expand the square, so we should be okay. Then by partial fractions, we can
+write
+\[
+\frac{x^2+5x+1}{\left(x^2+1\right)^2}=\frac{A}{x^2+1}+\frac{B}{\left(x^2+1\right)^2}
+\]
 \end{proof}
 \begin{problem}
 \end{problem}
@@ -119,7 +189,7 @@ Make the $u$-substitution $u=(x-2)/3$, $du=dx/3$
 \begin{proof}[Solution]
 \end{proof}
 
-\chapter{MA 166 Exam 2, Spring 2014}
+\chapter{MA 166 Exam 2, Spring 2015}
 \begin{problem}
 \end{problem}
 \begin{proof}[Solution]
