@@ -69,12 +69,16 @@ determined by $\det f$. First note that
 $\det\left(\Orth_n(\bfR)\right)=\{-1,1\}$ which is disconnected in
 $\bfR$. Hence, $\Orth_n(\bfR)$ is disconnected. Now, if
 $f\in\Orth_n(\bfR)$, either $\det f=1$ or $\det f=-1$. Without loss of
-generality, we may assume $\det f=1$ since if $r$ is a reflection. Consider
-the map $k \colon I\times \Orth_n(\bfR)\to\Orth_n(\bfR)$ given by
-\begin{equation}
-  \label{eq:homotopy-det-1}
-k(t,A)\coloneqq e^{At}
-\end{equation}
+generality, we may assume $\det f=1$ since if $r$ is a reflection.
+
+Constructing the homotopy is hard. I can't think of a way of doing it and I
+don't have the time right now, so I'll skip this part. There are other ways
+to prove this indirectly, but I'm afraid I'm not familiar with Lie groups
+and I am not willing to state a bunch of results from that subject.
+
+Now that we have established that either $f\simeq \id$ or $-\id$, the map
+$f$ on $\bfR^n$ induces a map $f_*=\pm\id_*$ on the homology groups
+$H_n\left(\bfR^n,\bfR^n\minus\{\mathbf{0}\}\right)$.
 \end{proof}
 \newpage
 
@@ -91,7 +95,64 @@ respectively.
 \end{enumerate}
 \end{problem}
 \begin{proof}
-
+(a) Write $X$ as the union $e^0\cup e^1$ of a $0$-cell and a $1$-cell. Let
+$e^2_1$, $e^2_2$ be $2$-cells attached to $X$ via maps $f_1,f_2\colon
+S^2\to X$ of degrees $2$ and $3$, respectively. We use Lemma 2.34 to
+compute the cellular homology of the new CW complex $X'$, it then follows
+from Theorem 2.35 that the cellular homology is isomorphic to the singular
+homology of $X'$. First, we write down the cellular chain complex for
+$X'=X^2$
+\begin{equation}
+\label{eq:cellular-chain-x}
+\cdots\longrightarrow
+H_3^\CW(X^3)\longrightarrow
+H_2^\CW(X^2)\longrightarrow
+H_1^\CW(X^1)\longrightarrow
+H_0^\CW(X^0)\longrightarrow
+0.
+\end{equation}
+Filling in some of the values for $H_n^\CW(X^n)$ we have the chain
+\begin{equation}
+\label{eq:cellular-chain-x-2}
+\cdots\longrightarrow
+0\longrightarrow
+\bfZ\oplus\bfZ\longrightarrow
+\bfZ\longrightarrow
+\bfZ\longrightarrow
+0.
+\end{equation}
+Now recall that by definition a subcomplex of $X'$, $A$, is a closed
+subspace that is the union of cells in $X$. Since we have the following
+inclusion $e^0\subset e^1\subset e_1^2,e_2^2$ this makes for the following
+candidates $A_0\coloneqq e^0$, $A_1\coloneqq e^0\cup e^1$, $A_{12}\coloneqq
+e^0\cup e^1\cup e_1^2$,
+$A_{22}\coloneqq e^0\cup e^1\cup e_2^2$, $X'$. Let's compute the homology
+of these spaces.
+\begin{itemize}
+\item Case $A_0$: The cellular homology of $A_0$ is easy enough since it
+is a $0$-cell. It's homology will be that of a point $H_n^\CW(A_0)=\bfZ$
+for $n=0$ and $H_n^\CW(A_0)=0$ otherwise.
+\item Case $A_1$: The subcomplex $A_1$ is homeomorphic to a circle $S^1$ so
+  its cellular homology is isomorphic to that of a circle, i.e.,
+  $H_n^\CW(A_1)=\bfZ$ if $n=0,1$ and $H_n^\CW(A_1)=0$ otherwise.
+\item Case $A_{21}$: The cellular homology of $A_{21}$ is more
+  interesting since we have the attaching map of degree $2$. This map $f_1$
+  induces a map on homology $f_{1*}=2$ giving us the chain complex
+  \begin{equation}
+  \label{eq:chain-complex-a-1-2}
+  \cdots\longrightarrow
+  0\longrightarrow
+  \bfZ\overset{2}{\longrightarrow}
+  \bfZ\longrightarrow
+  \bfZ\longrightarrow
+  0
+  \end{equation}
+\item Case $A_{22}$:
+\item Case $X$:
+\end{itemize}
+That concludes this part of the problem.
+\\\\
+(b)
 \end{proof}
 \newpage
 
