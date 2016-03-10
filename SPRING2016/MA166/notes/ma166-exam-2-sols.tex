@@ -1,0 +1,331 @@
+\section*{Exam 2 Solutions}
+\begin{problem}[{\color{Red} \# 1}, {\color{Green} \#}]
+Find the sum of the series
+\[
+\sum_{n=1}^\infty \frac{4^n}{5\left(3^{2n-1}\right)}
+\]
+\end{problem}
+\begin{proof}[Solution]
+This is a geometric series and it's not hard to see that. The first thing
+you should do is factor it
+\begin{align*}
+\sum_{n=1}^\infty \frac{4^n}{5\left(3^{2n-1}\right)}
+&=\frac{4}{15}\sum_{n=1}^\infty\frac{4^{n-1}}{3^{2n-2}}\\
+&=\frac{4}{15}\sum_{n=1}^\infty\frac{4^{n-1}}{3^{2(n-1)}}\\
+\intertext{now shift it back to turn it into a geometric series}
+&=\frac{4}{15}\sum_{n=0}^\infty\frac{4^{n}}{3^{2n}}\\
+&=\frac{4}{15}\sum_{n=0}^\infty\left(\frac{4}{3^2}\right)^n\\
+&=\frac{4}{15}\sum_{n=0}^\infty\left(\frac{4}{9}\right)^n
+\intertext{since $|4/9|<1$, this sequence converges and it converges to }
+&=\frac{4}{15}\left(\frac{1}{1-\frac{4}{9}}\right)\\
+&=\frac{4}{15}\left(\frac{1}{\frac{5}{9}}\right)\\
+&=\boxed{\frac{12}{25}.}
+\end{align*}
+Answer: {\color{Red} D}, {\color{Green}}
+\end{proof}
+
+\begin{problem}[{\color{Red} \# 2}, {\color{Green} \#}]
+Evaluate the integral
+\[
+\int_0^1\frac{x^2+1}{(x+1)^2}dx.
+\]
+\end{problem}
+\begin{proof}[Solution]
+Rewrite the integral and use partial fractions
+\begin{align*}
+\int_0^1\frac{x^2+1}{(x+1)^2}dx
+&=\int_0^1\frac{(x^2+1+2x)-2x}{(x+1)^2}dx\\
+&=\int_0^1\left[\frac{(x^2+1+2x)}{(x+1)^2}-\frac{2x}{(x+1)^2}\right]dx\\
+&=\int_0^1\left[\frac{(x+1)^2}{(x+1)^2}-\frac{2x}{(x+1)^2}\right]dx\\
+&=\int_0^1\left[1-\frac{2x}{(x+1)^2}\right]dx\\
+&=\underbrace{\int_0^11dx}_{I_1}-\underbrace{\int_0^1\frac{2x}{(x+1)^2}dx}_{I_2}.
+\end{align*}
+Now, rewrite $I_1=1$ and that's easy. To find $I_2$ we use partial
+fractions
+\begin{align*}
+\frac{2x}{(x+1)^2}&=\frac{A}{x+1}\frac{B}{(x+1)^2}\\
+2x&=A(x+1)+B\\
+ &=Ax+(A+B).
+\end{align*}
+So $A+B=0$ and $A=2$ so $B=-2$. Now we compute $I_2$
+\begin{align*}
+I_2&=\int_0^1\frac{2x}{(x+1)^2}dx\\
+   &=\int_0^1\left[\frac{2}{x+1}-\frac{2}{(x+1)^2}\right]dx\\
+   &=\int_0^1\frac{2}{x+1}dx-\int_0^1\frac{2}{(x+1)^2}dx\\
+   &=\left[2\ln|x+1|+\frac{2}{x+1}\right]_0^1\\
+   &=2\ln 2-1.
+\end{align*}
+Hence the integral is
+\[
+I_1-I_2=1-(2\ln 2-1)=\boxed{2-2\ln 2.}
+\]
+Answer: {\color{Red} E}.
+\end{proof}
+
+\begin{problem}[{\color{Red} \# 3}, {\color{Green} \#}]
+Evaluate the integral
+\[
+\int_0^1 \frac{x^2}{x^2+1}dx.
+\]
+\end{problem}
+\begin{proof}[Solution]
+Factor and use partial fractions
+\begin{align*}
+\int_0^1 \frac{x^2}{x^2+1}dx
+&=\int_0^1\frac{x^2+1-1}{x^2+1}dx\\
+&=\int_0^1\frac{\left(x^2+1\right)-1}{x^2+1}dx\\
+&=\int_0^1\left[\frac{x^2+1}{x^2+1}-\frac{1}{x^2+1}\right]dx\\
+&=\int_0^1\left[1-\frac{1}{x^2+1}\right]dx\\
+&=\underbrace{\int_0^11dx}_{I_1}-\underbrace{\int_0^1\frac{1}{x^2+1}dx}_{I_2}.
+\end{align*}
+It's easy to compute $I_1=1$. To compute $I_2$ you can either use a trig
+substitution or realize that the integral of $1/(x^2+1)$ is
+$\tan^{-1}(x)$.
+
+Using the trig substitution, let $x=\tan\theta$, $dx=\sec^2\theta d\theta$
+we have
+\begin{align*}
+\int_0^{/pi/4}\frac{1}{x^2+1}dx
+&=\int_0^{\pi/4}\sec^2\theta\cos^2\theta d\theta\\
+&=\int_0^11d\theta\\
+&=\left[\theta\right]_0^{\pi/4}\\
+&=\frac{\pi}{4}.
+\end{align*}
+Then the integral is
+\[
+I_1-I_2=\boxed{1-\frac{\pi}{4}.}
+\]
+Answer: {\color{Red} B}.
+\end{proof}
+
+\begin{problem}[{\color{Red} \#}, {\color{Green} \#}]
+Which of the following statements are true?
+\begin{enumerate}[label=(\MakeUppercase{\roman*})]
+\item The sequence $\displaystyle a_n=\sin(n\pi)$ is convergent.
+\item The sequence $\displaystyle a_n=\frac{2n^3+1}{n-n^3}$ is divergent.
+\item The sequence $\displaystyle a_n=e^{\left(\frac{2n}{n+2}\right)}$ is
+  convergent.
+\end{enumerate}
+\end{problem}
+\begin{proof}[Solution]
+(II) clearly converges. First rewrite
+\begin{align*}
+\frac{2n^3+1}{n-n^3}
+&=-\frac{2n^3+1}{n^3-n}
+\intertext{make the substitution $n=x$ and use l'Hôpital's rule}
+&=-\frac{6x^2}{3x^2-1}\\
+&=-\frac{12x}{6x}\\
+&=-2.
+\end{align*}
+\\\\
+(III) converges because the sequence $2n/(n+2)$ converges to $2$, so
+$a_n\to e^2$.
+\\\\
+(I) is well known to not converge since $\sin
+\pi x$ changes value from $-1$ to $1$ and as we get closer and closer to
+infinity, it keeps on moving between these two values.
+\\\\
+Answer: {\color{Red} E.}
+\end{proof}
+
+\begin{problem}[{\color{Red} \# 5}, {\color{Green} \#}]
+Which of the following statements are true?
+\begin{enumerate}[label=(\MakeUppercase{\roman*})]
+\item Every positive bounded sequence is convergent.
+\item The sequence $\displaystyle a_n=\frac{n\cos n}{n^2+3}$ is
+  convergent.
+\item The sequence $\displaystyle a_n=\frac{3^n}{2^{n+1}}$ is convergent.
+\end{enumerate}
+\end{problem}
+\begin{proof}[Solution]
+(I) is false. Just consider $|\sin(\pi n/2)|$. This sequence goes from $0$
+to $1$, $0$ to $1$, $0$ to $1$ indefinitely. This sequence is positive and
+bounded, but it does not converge.
+\\\\
+(II) By l'Hôpital's as $n\to\infty$, $1+3/n^2\to 1$ and
+$n(1+3/n^2)\to\infty$ as $n\to\infty$ so
+\[
+\lim_{n\to\infty}\frac{\cos n}{n(1+\frac{3}{n^2})}\to 0.
+\]
+\end{proof}
+
+\begin{problem}[{\color{Red} \# 6}, {\color{Green} \#}]
+Evaluate the integral
+$\displaystyle\int_0^1\frac{x^2}{\sqrt{1-x^2}}dx$. Hint:
+$\cos(2t)=1-2\sin^2 t$.
+\end{problem}
+\begin{proof}[Solution]
+Use a trigonometric substitution $\sin t=x$, $\cos t\;dt= x$ so $0\leq
+t\leq\pi/2$
+\begin{align*}
+\int_0^1\frac{x^2}{\sqrt{1-x^2}}dx
+&=\int_0^{\pi/2}\frac{\sin^2 t}{\cos t}\cos t\;dt\\
+&=\int_0^{\pi/2}\sin^2 t\;dt\\
+&=\frac{1}{2}\left[\int_0^{\pi/2}1-\cos 2t\right]\;dt\\
+&=\frac{1}{2}\left[\int_0^{\pi/2}1\;dt-\int_0^{\pi/2}\cos 2t\;dt\right]\\
+&=\frac{1}{2}\left[t-\frac{1}{2}\cos 2t\right]_0^{\pi/2}\\
+&=\frac{1}{2}\left[\frac{\pi}{2}-(-1)-\left(0-1\right)\right]_0^{\pi/2}\\
+&=\boxed{\frac{\pi}{4}.}
+\end{align*}
+Answer: {\color{Red} E.}
+\end{proof}
+
+\begin{problem}[{\color{Red} \# 7}, {\color{Green} \#}]
+Evaluate the integral
+\[
+\int_4^9\frac{\sqrt{x}}{x-1}dx.
+\]
+Hints: $\displaystyle\frac{d}{dx}\sqrt{x}=\frac{1}{2\sqrt{x}}$,
+$\displaystyle\frac{2}{u^2-1}=\frac{1}{u-1}-\frac{1}{u+1}$.
+\end{problem}
+\begin{proof}[Solution]
+Make the substitution $u^2=x$, $2u\;du=dx$. Then
+\begin{align*}
+\int_4^9\frac{\sqrt{x}}{x-1}dx
+&=\int_2^3\frac{u}{u^2-1}2u\;du\\
+&=\int_2^3\frac{2u^2}{u^2-1}du\\
+&=2\int_2^3\frac{u^2}{u^2-1}du\\
+&=2\int_2^3\frac{u^2-1+1}{u^2-1}du\\
+&=2\left[\int_2^3\left(1+\frac{1}{u^2-1}\right)\;du\right]\\
+&=2\int_2^3 1\;du+\int_2^3\frac{2}{u^2-1}du\\
+&=2\int_2^3 1\;du+\int_2^3\left[\frac{1}{u-1}-\frac{1}{u+1}\right]du\\
+&=\left[2u+\ln\left|\frac{u-1}{u+1}\right|\right]_2^3\\
+&=\left[6+\ln\left|\frac{2}{4}\right|-4-\ln\left|\frac{1}{3}\right|\right]\\
+&=\boxed{2+\ln(3/2)}.
+\end{align*}
+Answer: {\color{Red} A.}
+\end{proof}
+
+\begin{problem}[{\color{Red} \# 8}, {\color{Green} \#}]
+Find the arc length of the curve $y=2x^{3/2}$, $0\leq x\leq 3$.
+\end{problem}
+\begin{proof}[Solution]
+Find the derivative
+\[
+\frac{dy}{dx}=3\sqrt{x}.
+\]
+Then
+\begin{align*}
+\int_0^3\sqrt{1+\left(\frac{dy}{dx}\right)^2}\;dx
+&=\int_0^3\sqrt{1+\left(3\sqrt{x}\right)^2}\;dx\\
+&=\int_0^3\sqrt{1+9x}\;dx\\
+\intertext{make the substitution $u=1+9x$, $du=9\;dx$, $1\leq u\leq 28$}
+&=\frac{1}{9}\int_1^{28}\sqrt{u}\;du\\
+&=\int_1^{28}u^{1/2}\;du\\
+&=\frac{2}{27}\left[u^{3/2}\right]_1^{28}\\
+&=\boxed{\frac{2}{27}\left(28^{3/2}-1\right).}
+\end{align*}
+Answer: {\color{Red} E.}
+\end{proof}
+
+\begin{problem}[{\color{Red} \# 9}, {\color{Green} \#}]
+The curve
+\[
+x=\frac{1}{3}\left(y^2+2\right)^{3/2},\qquad 1\leq y\leq 2,
+\]
+is rotated about the $y$-axis. The area of the resulting surface is
+\[
+\int_1^2\frac{2\pi}{3}\left( y^2+2\right)^{3/2}(y^2+k)\;dy
+\]
+for some constant $k$. What is $k$?
+\end{problem}
+\begin{proof}[Solution]
+What we are really looking for is the simplification of
+\[
+\sqrt{1+\left(\frac{dx}{dy}\right)^2}.
+\]
+We need to find
+\[
+\frac{dx}{dy}=y\sqrt{y^2+1}
+\]
+so
+\begin{align*}
+\sqrt{1+\left(\frac{dx}{dy}\right)^2}
+&=\sqrt{1+\left(y\sqrt{y^2+2}\right)^2}\\
+&=\sqrt{1+y^2\left(y^2+2\right)}\\
+&=\sqrt{1+y^4+2y^2}\\
+&=\sqrt{y^4+2y^2+1}\\
+&=\sqrt{\left(y^2+1\right)^2}\\
+&=y^2+1.
+\end{align*}
+If we compare this to
+$\displaystyle\int_1^2\frac{2\pi}{3}\left(y^2+2\right)^{3/2}\left(y^2+k\right)$
+we see that $k=1$.
+\\\\
+Answer: {\color{Red} C.}
+\end{proof}
+
+\begin{problem}[{\color{Red} \# 10}, {\color{Green} \#}]
+Find the $x$-coordinate, $\bar x$, of the centroid of the region bounded by
+$y=-2x+3$, $y=0$, $x=0$ and $x=1$.
+\end{problem}
+\begin{proof}[Solution]
+First we compute the area of the region
+\begin{align*}
+A&=\int_0^1-2x+3\\
+ &=\left[-x^2+3x\right]_0^1\\
+ &=2.
+\end{align*}
+Then the mass is $2\rho $ and the moment about the $y$-axis is
+\begin{align*}
+M_y&=\rho\int_0^1 x(-2x+3)\;dx\\
+   &=\rho\int_0^1 -2x^2+3x\;dx\\
+   &=\rho\left[-\frac{2}{3}x^3+\frac{3}{2}x^2\right]_0^1\\
+   &=\rho\left[-\frac{2}{3}+\frac{3}{2}\right]_0^1\\
+   &=\frac{5}{6}\rho.
+\end{align*}
+So
+\[
+\bar x=\frac{M_y}{m}=\frac{(5/6)rho}{2\rho}=\boxed{\frac{5}{12}.}
+\]
+Answer: {\color{Red} D}.
+\end{proof}
+
+\begin{problem}[{\color{Red} \#}, {\color{Green} \#}]
+Evaluate the integral
+\[
+\int_0^{\pi/3}\tan^3 x\sec x\;dx.
+\]
+\end{problem}
+\begin{proof}[Solution]
+Use the following trig identity
+\[
+\sec^2 x-\tan ^2x=1.
+\]
+Rewrite the integral
+\begin{align*}
+\int_0^{\pi/3}\tan^3 x\sec x\;dx
+&=\int_0^{\pi/3}\left(\tan^2 x\right)\tan x\sec x\;dx\\
+&=\int_0^{\pi/3}\left(\sec^2 x-1\right)\tan x\sec x\;dx\\
+\intertext{make the substitution $u=\sec x$, $du =\tan x\sec x\;dx$}
+&=\int_1^2\left(u^2-1\right)\tan x\sec x\frac{du}{\tan x\sec x}\\
+&=\int_1^2 u^2-1\;du\\
+&=\left[\frac{1}{3}u^3-u \right]_1^2\\
+&=\frac{8}{3}-2-\frac{1}{3}+1\\
+&=\frac{7}{3}-1\\
+&=\boxed{\frac{4}{3}.}
+\end{align*}
+Answer: {\color{Red} C.}
+\end{proof}
+
+\begin{problem}[{\color{Red} \# 12}, {\color{Green} \#}]
+Evaluate the integral $\displaystyle\int_0^{\pi/2}\frac{\cos
+  t}{\sqrt{1+\sin^2 t}}\;dt$ using the table of integrals formula
+$\displaystyle\int \frac{du}{1+u^2}=\ln\left(u+\sqrt{1+u^2}\right)+C$.
+\end{problem}
+\begin{proof}[Solution]
+Set $u=\sin t$, $du=\cos t\;dt$, then we have the integral
+\begin{align*}
+\int_0^{\pi/2}\frac{\cos t}{\sqrt{1+\sin^2 t}}\;dt
+&=\int_0^1\frac{1}{1+u^2}\;dt\\
+&=\left[\ln\left(u+\sqrt{1+u^2}\right)\right]_0^1\\
+&=\ln\left(1+\sqrt{2}\right)-\ln \left(0+\sqrt{1+0}\right)\\
+&=\boxed{\ln\left( 1+\sqrt{2} \right).}
+\end{align*}
+Answer: {\color{Red} A.}
+\end{proof}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA166-Recitation"
+%%% End:
