@@ -1,0 +1,96 @@
+\section{Exam 2 Prep}
+\begin{problem}
+Define for $\bfx\in\bbR^n$,
+\[
+f(\bfx)\coloneqq
+\begin{cases}
+\left|\bfx\right|^{-(n+1)}&\text{if $x\neq 0$,}\\
+0&\text{if $x=0$.}
+\end{cases}
+\]
+Prove that $f$ is integrable outside any ball $B(0,\varepsilon)$, and that
+there exists a constant $C>0$ such that
+\[
+\int_{\bbR^n\minus B(0,\varepsilon)}f(x)\;dx\leq\frac{C}{\varepsilon}.
+\]
+\end{problem}
+\begin{proof}
+\end{proof}
+
+\begin{problem}
+Let $\left\{f_k\right\}$ be a sequence of nonnegative measurable functions
+on $\bbR^n$, and assume that $f_k$ converges pointwise almost everywhere to
+a function $f$. If
+\[
+\int_{\bbR^n} f=\lim_{k\to\infty}\int_{\bbR^n} f_k<\infty,
+\]
+show that
+\[
+\int_E f=\lim_{k\to\infty}\int_E f_k
+\]
+for all measurable subsets $E$ of $\bbR^n$. Moreover, show that this is not
+necessarily true if $\int_{\bbR^n} f=\lim_{k\to\infty} f_k=\infty$.
+\end{problem}
+\begin{proof}
+\end{proof}
+
+\begin{problem}
+Assume that $E$ is a measurable set of $\bbR^n$, with $\lambda(E)<\infty$. Prove
+that a nonnegative function $f$ defined on $E$ is integrable if and only if
+\[
+\sum_{k=0}^\infty\lambda\left(\left\{\,\bfx\in E\;\middle|\;f(\bfx)\geq
+    k\,\right\}\right)<\infty.
+\]
+\end{problem}
+\begin{proof}
+\end{proof}
+
+\begin{problem}
+Suppose that $E$ is a measurable subset of $\bbR^n$, with
+$\lambda(E)<\infty$. If $f$ and $g$ are measurable functions on $E$, define
+\[
+\rho(f,g)=\int_E\frac{|f-g|}{1+|f-g|}.
+\]
+Prove that $\rho(f_k,g)\to 0$ as $k\to\infty$ if and only if $f_k$
+converges to $f$ as $k\to\infty$.
+\end{problem}
+\begin{proof}
+\end{proof}
+
+\begin{problem}
+Define the \emph{gamma function} $\Gamma\colon[0,\infty)\to\bbR$ by
+\[
+\Gamma(y)\coloneqq\int_0^\infty e^{-u}u^{y-1}\;du,
+\]
+and the \emph{beta function} $\beta\colon[0,\infty)\times[0,\infty)\to\bbR$
+by
+\[
+\beta(x,y)\coloneqq\int_0^1 t^{x-1}(1-t)^{y-1}\;dt.
+\]
+\begin{enumerate}[label=(\alph*)]
+\item Prove that the definition of the gamma function is well-posed, i.e.,
+  the function $u\mapsto e^{-u}u^{y-1}$ is in $L([0,\infty))$ for all
+  $y\in[0,\infty)$.
+\item Show that
+\[
+\beta(x,y)=\frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}.
+\]
+\end{enumerate}
+\end{problem}
+\begin{proof}
+\end{proof}
+
+\begin{problem}
+\end{problem}
+\begin{proof}
+\end{proof}
+
+\begin{problem}
+\end{problem}
+\begin{proof}
+\end{proof}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA544-Quals"
+%%% End:
