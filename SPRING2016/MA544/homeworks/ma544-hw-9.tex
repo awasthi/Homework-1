@@ -3,9 +3,9 @@
 \begin{problem}[Wheeden \& Zygmund {\S}6, Ex.\@ 1]
 \begin{enumerate}[label=(\alph*)]
 \item Let $E$ be a measurable subset of $\bbR^2$ such that for almost every
-  $x\in\bbR^1$, $\left\{\,y\;\middle|\;(x,y)\in E\,\right\}$ has
+  $x\in\bbR^1$, $\left\{\,y:(x,y)\in E\,\right\}$ has
   $\bbR^1$-measure zero. Show that $E$ has measure zero and that for almost
-  every $y\in\bbR^1$, $\left\{\,x\;\middle|\;(x,y)\in E\,\right\}$ has
+  every $y\in\bbR^1$, $\left\{\,x:(x,y)\in E\,\right\}$ has
   measure zero.
 \item Let $f(x,y)$ be nonnegative and measurable in $\bbR^2$. Suppose that
   for almost every $y\in\bbR^1$, $f(x,y)$ is finite for almost every
@@ -14,7 +14,12 @@
 \end{enumerate}
 \end{problem}
 \begin{proof}
-(a)
+(a) Let $\chi_E$ be the characteristic function of $E$. By Fubini's
+theorem, we have
+\begin{equation}
+\label{eq:application-of-fubinis}
+\iint_E\chi_E\;dxdy=\int_{E_1}\left[\int_{E_2} dy\right]\;dx=\lambda(E_1)\lambda(E_2).
+\end{equation}
 \\\\
 (b)
 \end{proof}
