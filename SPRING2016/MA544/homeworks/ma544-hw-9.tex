@@ -8,19 +8,21 @@
   every $y\in\bbR^1$, $\left\{\,x:(x,y)\in E\,\right\}$ has
   measure zero.
 \item Let $f(x,y)$ be nonnegative and measurable in $\bbR^2$. Suppose that
-  for almost every $y\in\bbR^1$, $f(x,y)$ is finite for almost every
+  for almost every $x\in\bbR^1$, $f(x,y)$ is finite for almost every
   $y$. Show that for almost $y\in\bbR^1$, $f(x,y)$ is finite for almost
   every $x$.
 \end{enumerate}
 \end{problem}
 \begin{proof}
-(a) By Fubini's theorem (Theorem 6.8) we have
+(a) This follows from Fubini's theorem. Let $E_\bfx=\left\{\,x:(x,y)\in
+  E\,\right\}$ then by Theorem 6.8 we have
 \begin{equation}
-\label{eq:application-of-fubinis}
-|E|=\iint_{\bbR^2}\chi_E\;dxdy=\int_{\bbR}\left[\int_{E_\bfx}\;dy\right]\;dx=0
+\label{eq:application-of-fubini}
+|E|=\iint_{\bbR^2}\chi_E\;dxdy=\int_\bbR\left[\int_{E_\bfx} dy\right]dx=0.
 \end{equation}
+Hence, $|E|=\left|E_\bfx\right|=0$ for æ\@ $y\in\bbR$.
 \\\\
-(b)
+(b) Suppose that $f(x,y)<\infty$ for a.e.\@ $x\in\bbR$, for almost every $y\in\bbR$.
 \end{proof}
 \newpage
 
@@ -30,6 +32,12 @@ integrable over the square $0\leq x\leq 1$, $0\leq y\leq 1$, show that
 $f\in L[0,1]$.
 \end{problem}
 \begin{proof}
+Suppose that $f$ is measurable and finite a.e.\@ on $[0,1]$ and such that
+$f(x)-f(y)\in L([0,1]\times[0,1])$. Then, by Fubini's theorem we have
+\begin{equation}
+\label{eq:consequence-of-fubini}
+\iint\limits_{I\times I}f(x)-f(y)\,dxdy=\int_I\left[\int_I f(x)-f(y)\,dy\right]dx
+\end{equation}
 \end{proof}
 \newpage
 
