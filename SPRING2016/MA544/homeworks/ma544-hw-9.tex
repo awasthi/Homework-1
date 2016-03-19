@@ -48,6 +48,17 @@ Put $I\coloneqq[0,1]$. By Fubini's theorem, we have
 \iint_{I\times I}f(x)-f(y)\,\diff x\diff y=
 \int_I\left[\int_If(x)-f(y)\,\diff y\right]\diff x<\infty.
 \end{equation}
+
+Here are some ideas. I suspect that in fact
+\[
+\iint_{I\times I}f(x)-f(y)\,\diff x\diff y=0
+\]
+since we can do the following: Since $f(x)$ is a function of $x$, not of
+$y$, the integral
+\[
+\int_I f(x)-f(y)=f(x)-M
+\]
+where $M\coloneqq\int_I f(y)\,\diff y=\int_I f(x)\,\diff x$.
 \end{proof}
 \newpage
 
