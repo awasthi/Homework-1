@@ -14,15 +14,22 @@
 \end{enumerate}
 \end{problem}
 \begin{proof}
-(a) This follows from Fubini's theorem. Let $E_\bfx=\left\{\,x:(x,y)\in
-  E\,\right\}$ then by Theorem 6.8 we have
+(a) That $E$ has measure zero is a consequence of Fubini's theorem. Set
+$E_x\coloneqq\left\{\,y:(x,y)\in E\,\right\}$ and
+$E_y\coloneqq\left\{\,x:(x,y)\in E\,\right\}$ then, by Theorem 6.8, we have
 \begin{equation}
-\label{eq:application-of-fubini}
-|E|=\iint_{\bbR^2}\chi_E\;dxdy=\int_\bbR\left[\int_{E_\bfx} dy\right]dx=0.
+\label{eq:consequence-of-fubini}
+|E|=
+\iint_{\bbR^2}\chi_E\,\diff x\diff y=
+\int_\bbR\left[\int_{E_x}1\,\diff y\right]\diff x=
+\int_\bbR\biggl[\int_{E_y}1\,\diff x\biggr]\diff y=
+0.
 \end{equation}
-Hence, $|E|=\left|E_\bfx\right|=0$ for æ\@ $y\in\bbR$.
+Hence, $E$ has measure zero. Moreover, we see that
+$\int_\bbR\bigl[\int_{E_y}1\,\diff x\bigr]\diff y=0$ which means that for
+a.e.\@ $y\in\bbR$, $E_y$ has $\bbR^1$-measure zero.
 \\\\
-(b) Suppose that $f(x,y)<\infty$ for a.e.\@ $x\in\bbR$, for almost every $y\in\bbR$.
+(b) We show that the set $E$
 \end{proof}
 \newpage
 
@@ -45,13 +52,14 @@ $f(x)-f(y)\in L([0,1]\times[0,1])$. Then, by Fubini's theorem we have
 Let $f$ be measurable and periodic with period $1$: $f(t+1)=f(t)$. Suppose
 there is a finite $c$ such that
 \[
-\int_0^1\left|f(a+t)-f(b+t)\right|dt\leq c
+\int_0^1\left|f(a+t)-f(b+t)\right|\,dt\leq c
 \]
 for all $a$ and $b$. Show that $f\in L[0,1]$. (Set $a=x$, $b=-x$, integrate
 with respect to $x$, and make the change of variables $\chi=x+t$,
 $\eta=-x+t$.)
 \end{problem}
 \begin{proof}
+
 \end{proof}
 \newpage
 
@@ -59,7 +67,7 @@ $\eta=-x+t$.)
 For $f\in L(\bbR^1)$, define the \emph{Fourier transform $\hat f$} of $f$
 by
 \[
-\hat f(x)=\frac{1}{2\pi}\int_{-\infty}^\infty f(t)e^{-ixt}\;dt
+\hat f(x)=\frac{1}{2\pi}\int_{-\infty}^\infty f(t)e^{-ixt}\,dt
 \]
 for $x\in\bbR^1$. (For complex-valued function $F=F_0+iF_1$ whose real and
 imaginary parts $F_0$ and $F_1$ are integrable, we define $\int F=\int
@@ -77,7 +85,7 @@ Let $F$ be a closd subset of $\bbR^1$ and let $\delta(x)=\delta(x,F)$ be
 the corresponding distance function. If $\lambda>0$ and $f$ is nonnegative
 and integrable over the complement of $F$, prove that the function
 \[
-\int_{\bbR^1}\frac{\delta^\lambda(y)f(y)}{\left|x-y\right|^{1+\lambda}}\;dt
+\int_{\bbR^1}\frac{\delta^\lambda(y)f(y)}{\left|x-y\right|^{1+\lambda}}\,dt
 \]
 is integrable over $F$ and so is finite a.e.\@ in $F$. (In case
 $f=\chi_{(a,b)}$, this reduces to Theorem 6.17.)
