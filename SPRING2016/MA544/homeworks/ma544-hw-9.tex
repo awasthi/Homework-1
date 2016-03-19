@@ -29,7 +29,10 @@ Hence, $E$ has measure zero. Moreover, we see that
 $\int_\bbR\bigl[\int_{E_y}1\,\diff x\bigr]\diff y=0$ which means that for
 a.e.\@ $y\in\bbR$, $E_y$ has $\bbR^1$-measure zero.
 \\\\
-(b) We show that the set $E$
+(b) Let $E$ be the set of all pairs $(x,y)\in\bbR^2$ such that $f(x,y)$ is
+not finite. By hypothesis, the set $E_x$ has $\bbR^1$-measure zero for
+a.e.\@ $x$. Therefore, by part (a) the set $E_y$ has measure zero. Hence,
+for a.e.\@ $y$, $f(x,y)$ is finite for a.e.\@ $x$.
 \end{proof}
 \newpage
 
@@ -39,11 +42,11 @@ integrable over the square $0\leq x\leq 1$, $0\leq y\leq 1$, show that
 $f\in L[0,1]$.
 \end{problem}
 \begin{proof}
-Suppose that $f$ is measurable and finite a.e.\@ on $[0,1]$ and such that
-$f(x)-f(y)\in L([0,1]\times[0,1])$. Then, by Fubini's theorem we have
+Put $I\coloneqq[0,1]$. By Fubini's theorem, we have
 \begin{equation}
-\label{eq:consequence-of-fubini}
-\iint\limits_{I\times I}f(x)-f(y)\,dxdy=\int_I\left[\int_I f(x)-f(y)\,dy\right]dx
+\label{eq:apply-fubini}
+\iint_{I\times I}f(x)-f(y)\,\diff x\diff y=
+\int_I\left[\int_If(x)-f(y)\,\diff y\right]\diff x<\infty.
 \end{equation}
 \end{proof}
 \newpage
