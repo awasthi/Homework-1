@@ -110,19 +110,25 @@
 %% Redefinitions & commands
 \newcommand{\nsubset}{\ensuremath{\not\subset}}
 \newcommand{\nsupset}{\ensuremath{\not\supset}}
-\newcommand\minus{\ensuremath{\null\smallsetminus}}
 \renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
 
 %% Commands and operators
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\diff}{d}
 
 \DeclareMathOperator{\Id}{Id}
 \DeclareMathOperator{\Img}{Im}
 \DeclareMathOperator{\Int}{Int}
 \DeclareMathOperator{\Cl}{Cl}
 \DeclareMathOperator{\BV}{BV}
+
+%% Differential calculus
+\DeclareMathOperator{\Curl}{curl}
+\DeclareMathOperator{\Div}{div}
+\DeclareMathOperator{\Grad}{grad}
+\newcommand\diff{\mathop{}\!\mathrm{d}}
+\newcommand\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+\newcommand\Jac{\mathbf{J}}
 
 %% Symbols
 \newcommand{\bbC}{\mathbb{C}}

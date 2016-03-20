@@ -11,7 +11,7 @@ f(\bfx)\coloneqq
 Prove that $f$ is integrable outside any ball $B(0,\varepsilon)$, and that
 there exists a constant $C>0$ such that
 \[
-\int_{\bbR^n\minus B(0,\varepsilon)}f(x)\;dx\leq\frac{C}{\varepsilon}.
+\int_{\bbR^n\smallsetminus B(0,\varepsilon)}f(x)\diff x\leq\frac{C}{\varepsilon}.
 \]
 \end{problem}
 \begin{proof}
@@ -60,12 +60,12 @@ converges to $f$ as $k\to\infty$.
 \begin{problem}
 Define the \emph{gamma function} $\Gamma\colon[0,\infty)\to\bbR$ by
 \[
-\Gamma(y)\coloneqq\int_0^\infty e^{-u}u^{y-1}\;du,
+\Gamma(y)\coloneqq\int_0^\infty e^{-u}u^{y-1}\diff u,
 \]
 and the \emph{beta function} $\beta\colon[0,\infty)\times[0,\infty)\to\bbR$
 by
 \[
-\beta(x,y)\coloneqq\int_0^1 t^{x-1}(1-t)^{y-1}\;dt.
+\beta(x,y)\coloneqq\int_0^1 t^{x-1}(1-t)^{y-1}\diff t.
 \]
 \begin{enumerate}[label=(\alph*)]
 \item Prove that the definition of the gamma function is well-posed, i.e.,

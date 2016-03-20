@@ -20,13 +20,13 @@ $E_y\coloneqq\left\{\,x:(x,y)\in E\,\right\}$ then, by Theorem 6.8, we have
 \begin{equation}
 \label{eq:consequence-of-fubini}
 |E|=
-\iint_{\bbR^2}\chi_E\,\diff x\diff y=
-\int_\bbR\left[\int_{E_x}1\,\diff y\right]\diff x=
-\int_\bbR\biggl[\int_{E_y}1\,\diff x\biggr]\diff y=
+\iint_{\bbR^2}\chi_E\diff x\diff y=
+\int_\bbR\left[\int_{E_x}1\diff y\right]\diff x=
+\int_\bbR\biggl[\int_{E_y}1\diff x\biggr]\diff y=
 0.
 \end{equation}
 Hence, $E$ has measure zero. Moreover, we see that
-$\int_\bbR\bigl[\int_{E_y}1\,\diff x\bigr]\diff y=0$ which means that for
+$\int_\bbR\bigl[\int_{E_y}1\diff x\bigr]\diff y=0$ which means that for
 a.e.\@ $y\in\bbR$, $E_y$ has $\bbR^1$-measure zero.
 \\\\
 (b) Let $E$ be the set of all pairs $(x,y)\in\bbR^2$ such that $f(x,y)$ is
@@ -42,23 +42,16 @@ integrable over the square $0\leq x\leq 1$, $0\leq y\leq 1$, show that
 $f\in L[0,1]$.
 \end{problem}
 \begin{proof}
-Put $I\coloneqq[0,1]$. By Fubini's theorem, we have
+Set $I\coloneqq[0,1]$. Suppose that $f(x)-f(y)\in L(I\times I)$. Then by
+Fubini's theorem we have
 \begin{equation}
-\label{eq:apply-fubini}
-\iint_{I\times I}f(x)-f(y)\,\diff x\diff y=
-\int_I\left[\int_If(x)-f(y)\,\diff y\right]\diff x<\infty.
+  \label{eq:double-integral}
+\iint_{I\times I}f(x)-f(y)\diff x\diff y=
+\int_I\left[\int_I f(x)-f(y)\diff x\right]\diff y=
+\int_I\left[\int_I f(x)-f(y)\diff y\right]\diff x<\infty.
 \end{equation}
-
-Here are some ideas. I suspect that in fact
-\[
-\iint_{I\times I}f(x)-f(y)\,\diff x\diff y=0
-\]
-since we can do the following: Since $f(x)$ is a function of $x$, not of
-$y$, the integral
-\[
-\int_I f(x)-f(y)=f(x)-M
-\]
-where $M\coloneqq\int_I f(y)\,\diff y=\int_I f(x)\,\diff x$.
+Hence, for a.e. $y\in\bbR$, $f(x)-f(y)$ is integrable so $f(x)$ is
+integrable.
 \end{proof}
 \newpage
 
@@ -66,14 +59,45 @@ where $M\coloneqq\int_I f(y)\,\diff y=\int_I f(x)\,\diff x$.
 Let $f$ be measurable and periodic with period $1$: $f(t+1)=f(t)$. Suppose
 there is a finite $c$ such that
 \[
-\int_0^1\left|f(a+t)-f(b+t)\right|\,dt\leq c
+\int_0^1\left|f(a+t)-f(b+t)\right|\diff t\leq c
 \]
 for all $a$ and $b$. Show that $f\in L[0,1]$. (Set $a=x$, $b=-x$, integrate
-with respect to $x$, and make the change of variables $\chi=x+t$,
+with respect to $x$, and make the change of variables $\xi=x+t$,
 $\eta=-x+t$.)
 \end{problem}
 \begin{proof}
-
+Following the hint, write
+\begin{align*}
+c&\geq\int_0^1\int_0^1|f(x+t)-f(-x+t)|\diff x\diff t
+\intertext{making the change of variables $\xi=x+t$, $\eta=-x+t$ and
+  appropriate modification to the bounds of integration, i.e.,
+  $0\leq\xi\leq 2$, $-1\leq\eta\leq 1$ we have}
+ &=\int_{-1}^1\int_0^2|f(\xi)-f(\eta)|(\det\Jac(\xi,\eta))\diff\xi\diff\eta
+\shortintertext{by Fubini's theorem}
+ &=\int_0^2\int_{-1}^1|f(\xi)-f(\eta)|(\det\Jac(\xi,\eta))\diff\eta\diff\xi
+\intertext{where
+$
+\Jac(\xi,\eta)=
+\left[
+\begin{smallmatrix}
+\partial x/\partial\xi&\partial x/\partial\eta\\
+\partial t/\partial\xi&\partial t/\partial\eta
+\end{smallmatrix}
+\right]
+=
+\left[
+\begin{smallmatrix}
+1/2&-1/2\\
+1/2&1/2
+\end{smallmatrix}
+\right]
+$ is the Jacobian of the linear transformation which sends
+the pair $(\xi,\eta)$ to $(1/2(\xi-\eta),1/2(\xi+\eta))$, hence we have}
+&=\frac{1}{2}\int_0^2\int_{-1}^1|f(\xi)-f(\eta)|\diff\xi\diff\eta\\
+\intertext{here we split the integral}
+&=\frac{1}{2}\int_0^2\int_{-\xi}^\xi|f(\xi)-f(\eta)|\diff\eta\diff\xi
++\frac{1}{2}\int_0^2\int_{-1+\xi}^{1-\xi}|f(\xi)-f(\eta)|\diff\eta\diff\xi
+\end{align*}
 \end{proof}
 \newpage
 
@@ -81,7 +105,7 @@ $\eta=-x+t$.)
 For $f\in L(\bbR^1)$, define the \emph{Fourier transform $\hat f$} of $f$
 by
 \[
-\hat f(x)=\frac{1}{2\pi}\int_{-\infty}^\infty f(t)e^{-ixt}\,dt
+\hat f(x)=\frac{1}{2\pi}\int_{-\infty}^\infty f(t)e^{-ixt}\diff t
 \]
 for $x\in\bbR^1$. (For complex-valued function $F=F_0+iF_1$ whose real and
 imaginary parts $F_0$ and $F_1$ are integrable, we define $\int F=\int
