@@ -94,10 +94,23 @@ $
 $ is the Jacobian of the linear transformation which sends
 the pair $(\xi,\eta)$ to $(1/2(\xi-\eta),1/2(\xi+\eta))$, hence we have}
 &=\frac{1}{2}\int_0^2\int_{-1}^1|f(\xi)-f(\eta)|\diff\xi\diff\eta\\
-\intertext{here we split the integral}
-&=\frac{1}{2}\int_0^2\int_{-\xi}^\xi|f(\xi)-f(\eta)|\diff\eta\diff\xi
-+\frac{1}{2}\int_0^2\int_{-1+\xi}^{1-\xi}|f(\xi)-f(\eta)|\diff\eta\diff\xi
+&=\frac{1}{2}\int_0^2\int_{-1}^0|f(\xi)-f(\eta)|\diff\xi\diff\eta+
++\frac{1}{2}\int_0^2\int_0^1|f(\xi)-f(\eta)|\diff\xi\diff\eta
+\intertext{
+Here we use Theorem 3.35 to note that the translation $\eta\mapsto\eta+1$
+and the fact that $f$ is periodic with period $1$ gives us
+}
+&=\int_0^2\int_0^1|f(\xi)-f(\eta)|\diff\xi\diff\eta
+\intertext{similarly, we have}
+&=2\int_0^1\int_0^1|f(\xi)-f(\eta)|\diff\xi\diff\eta.
 \end{align*}
+Hence, the inequality
+\begin{equation}
+  \label{eq:desired-inequality}
+\int_0^1\int_0^1|f(\xi)-f(\eta)|\diff\xi\diff\eta\leq\frac{c}{2}
+\end{equation}
+holds so by Problem 9.2 (\S6, Ex.\@ 3), $|f|\in L[0,1]$ hence, $f\in
+L[0,1]$.
 \end{proof}
 \newpage
 
