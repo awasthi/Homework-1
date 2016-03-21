@@ -165,9 +165,39 @@ $f=\chi_{(a,b)}$, this reduces to Theorem 6.17.)
 Set $G\coloneqq\bbR\minus F$. By assumption, we have
 \begin{equation}
   \label{eq:hypothesis-of-integrability}
-\int_{\bbR\minus F}f(x)\diff x<\infty.
+\int_Gf(x)\diff x<\infty.
 \end{equation}
-
+By Tonelli's theorem, since $\delta(y)=0$ for $y\in F$, we have
+\begin{equation}
+\label{eq:application-of-tonelli}
+\begin{aligned}[t]
+\int_F\left[\int_\bbR\frac{\delta^\lambda(y)f(y)}{|x-y|^{1+\lambda}}\diff
+  y\right]\diff x
+&=\int_F\left[\int_G\frac{\delta^\lambda(y)f(y)}{|x-y|^{1+\lambda}}\diff
+  y\right]\diff x\\
+&=\int_G\delta^\lambda(y)f(y)\left[\int_F\frac{\diff
+    x}{|x-y|^{1+\lambda}}\right]\diff y.
+\end{aligned}
+\end{equation}
+Now, by Marcinkiewwicz's theorem, we have
+\begin{equation}
+  \label{eq:application-of-marcinkiewicz}
+\int_F\frac{\diff x}{|x-y|^{1+\lambda}}\leq
+2\lambda^{-1}\delta(y)^{-\lambda}.
+\end{equation}
+Then, by \eqref{eq:hypothesis-of-integrability}, we have
+\begin{equation}
+\label{eq:application-of-fubini-2}
+\begin{aligned}[t]
+ \int_F\left[\int_\bbR\frac{\delta^{\lambda}(y)f(y)}{|x-y|^{1+\lambda}}\diff
+y\right]\diff x
+&\leq\int_G\delta^\lambda(y)f(y)\left[2\lambda^{-1}\delta(y)^{-\lambda}\right]\diff
+y\\
+&=2\lambda^{-1}\int_Gf(y)\diff y\\
+&<\infty
+\end{aligned}
+\end{equation}
+as desired.
 \end{proof}
 \newpage
 
@@ -182,6 +212,28 @@ Set $G\coloneqq\bbR\minus F$. By assumption, we have
 \end{enumerate}
 \end{problem}
 \begin{proof}
+(a) Put $G\coloneqq(a,b)\minus F$. Since $\delta(y)=0$ for $y\in F$, by
+Tonelli's theorem we have
+\begin{equation}
+  \label{eq:application-of-tonelli-2}
+M_\lambda(x)=\int_G\frac{\delta^\lambda(y)}{|x-y|^{1+\lambda}}\diff y.
+\end{equation}
+If $x\notin F$, then since $G$ is open, there exists a sufficiently small
+$\varepsilon>0$ such that $B_\varepsilon(x)\subset G$ and
+$m\coloneqq\inf_{y\in B_\varepsilon(x)}\delta(y)>0$. Since
+$\delta^\lambda(y)/|x-y|^{1+\lambda}$ is nonnegative, we have
+\begin{align*}
+\int_G\frac{\delta^\lambda(y)}{|x-y|^{1+\lambda}}\diff y
+&\geq
+  \int_{B_\varepsilon(x)}\frac{\delta^\lambda(y)}{|x-y|^{1+\lambda}}\diff
+  y\\
+&\geq m^\lambda\int_{|x-y|<\varepsilon}\frac{1}{|x-y|^{1+\lambda}}\diff y\\
+&=2m^\lambda\int_0^\varepsilon\frac{1}{u^{1+\lambda}}\diff u\\
+&=\left[2m^\lambda\lambda^{-1}u^{-\lambda}\right]_0^\varepsilon\\
+&=\infty.
+\end{align*}
+\\\\
+(b)
 \end{proof}
 
 %%% Local Variables:
