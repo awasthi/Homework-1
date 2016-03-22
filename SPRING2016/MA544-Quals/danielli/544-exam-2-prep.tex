@@ -32,12 +32,15 @@ inequality
 \end{equation}
 to show that $f$ belongs to $L^1(E)$. Hence, we proceed in this
 spirit. First, let us jot down some estimates on the integral. For any
-$\bfx\in B_\varepsilon(\mathbf{0})$, $|\bfx|<\varepsilon$ so
-\[
-\int_{B_\varepsilon(\mathbf{0})} f(\bfx)\diff\bfx\leq
-\int_{B_\varepsilon(\mathbf{0})}\varepsilon\mathbf{1}\diff\bfx=
-\varepsilon\Vol B_\varepsilon(\mathbf{0}).
-\]
+$\bfx\in B_\varepsilon(\mathbf{0})$, $|\bfx|<\varepsilon$ so the integral
+\begin{equation}
+\label{eq:divergent-estimate-1}
+\int_{B_\varepsilon(\mathbf{0})}f(\bfx)\diff\bfx=
+\int_{B_\varepsilon(\mathbf{0})}\frac{\diff\bfx}{|\bfx|^{n+1}}\geq
+\int_{B_\varepsilon(\mathbf{0})}\frac{\diff\bfx}{\varepsilon^{n+1}}=
+\frac{\Vol B_\varepsilon(\mathbf{0})}{\varepsilon^{n+1}}
+\end{equation}
+for every $\varepsilon>0$, hence it diverges.
 \end{proof}
 
 \begin{problem}
