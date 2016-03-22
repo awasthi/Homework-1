@@ -1,61 +1,64 @@
 \section{Exam 2 Prep}
 \begin{problem}
-Define for $\bfx\in\bbR^n$,
+Define for $\bfx\in\bfR^n$,
 \[
 f(\bfx)\coloneqq
 \begin{cases}
-\left|\bfx\right|^{-(n+1)}&\text{if $x\neq 0$,}\\
-0&\text{if $x=0$.}
+\left|\bfx\right|^{-(n+1)}&\text{if $\bfx\neq \mathbf{0}$,}\\
+0&\text{if $\bfx=\mathbf{0}$.}
 \end{cases}
 \]
 Prove that $f$ is integrable outside any ball $B(0,\varepsilon)$, and that
 there exists a constant $C>0$ such that
 \[
-\int_{\bbR^n\minus B(0,\varepsilon)}f(x)\diff x\leq\frac{C}{\varepsilon}.
+\int_{\bfR^n\minus B_\varepsilon(\mathbf{0})}f(\bfx)\diff\bfx\leq\frac{C}{\varepsilon}.
 \]
 \end{problem}
 \begin{proof}
 What does it mean for a measurable function $f$ to be integrable over a set
-$E\subset\bbR^n$, i.e., that $f$ belong to $L^1(E)$? It means that
+$E\subset\bfR^n$, i.e., that $f$ belong to $L^1(E)$? It means that
 \[
-\int_E f(x)\diff x<\infty,
+\int_E f(\bfx)\diff\bfx<\infty,
 \]
 or equivalently that the integral of the absolute value of $f$ be
 finite.
 
-Now, suppose $f$ is given as in the statement of the problem. It is enough
-to prove the inequality
+Put $E\coloneqq\bfR^n\minus B_\varepsilon(\mathbf{0})$. Now, suppose $f$ is
+given as in the statement of the problem. It is enough to prove the
+inequality
 \begin{equation}
   \label{eq:given-inequality-1}
-\int_{\bbR^n\minus B_\varepsilon(0)} f(x)\diff x<\frac{C}{\varepsilon}
+\int_E f(\bfx)\diff\bfx<\frac{C}{\varepsilon}
 \end{equation}
-to prove that $f\in L^1\left(\bbR^n\minus B_\varepsilon(0)\right)$. Hence,
-we proceed in this spirit. First, let us jot some estimates down. For any
-$x\in B_\varepsilon(0)$, $|x|<\varepsilon$ so
+to show that $f$ belongs to $L^1(E)$. Hence, we proceed in this
+spirit. First, let us jot down some estimates on the integral. For any
+$\bfx\in B_\varepsilon(\mathbf{0})$, $|\bfx|<\varepsilon$ so
 \[
-\int_{\bbR^n}
+\int_{B_\varepsilon(\mathbf{0})} f(\bfx)\diff\bfx\leq
+\int_{B_\varepsilon(\mathbf{0})}\varepsilon\mathbf{1}\diff\bfx=
+\varepsilon\Vol B_\varepsilon(\mathbf{0}).
 \]
 \end{proof}
 
 \begin{problem}
 Let $\left\{f_k\right\}$ be a sequence of nonnegative measurable functions
-on $\bbR^n$, and assume that $f_k$ converges pointwise almost everywhere to
+on $\bfR^n$, and assume that $f_k$ converges pointwise almost everywhere to
 a function $f$. If
 \[
-\int_{\bbR^n} f=\lim_{k\to\infty}\int_{\bbR^n} f_k<\infty,
+\int_{\bfR^n} f=\lim_{k\to\infty}\int_{\bfR^n} f_k<\infty,
 \]
 show that
 \[
 \int_E f=\lim_{k\to\infty}\int_E f_k
 \]
-for all measurable subsets $E$ of $\bbR^n$. Moreover, show that this is not
-necessarily true if $\int_{\bbR^n} f=\lim_{k\to\infty} f_k=\infty$.
+for all measurable subsets $E$ of $\bfR^n$. Moreover, show that this is not
+necessarily true if $\int_{\bfR^n} f=\lim_{k\to\infty} f_k=\infty$.
 \end{problem}
 \begin{proof}
 \end{proof}
 
 \begin{problem}
-Assume that $E$ is a measurable set of $\bbR^n$, with $\lambda(E)<\infty$. Prove
+Assume that $E$ is a measurable set of $\bfR^n$, with $\lambda(E)<\infty$. Prove
 that a nonnegative function $f$ defined on $E$ is integrable if and only if
 \[
 \sum_{k=0}^\infty\lambda\left(\left\{\,\bfx\in E:f(\bfx)\geq
@@ -66,7 +69,7 @@ that a nonnegative function $f$ defined on $E$ is integrable if and only if
 \end{proof}
 
 \begin{problem}
-Suppose that $E$ is a measurable subset of $\bbR^n$, with
+Suppose that $E$ is a measurable subset of $\bfR^n$, with
 $\lambda(E)<\infty$. If $f$ and $g$ are measurable functions on $E$, define
 \[
 \rho(f,g)=\int_E\frac{|f-g|}{1+|f-g|}.
@@ -78,11 +81,11 @@ converges to $f$ as $k\to\infty$.
 \end{proof}
 
 \begin{problem}
-Define the \emph{gamma function} $\Gamma\colon[0,\infty)\to\bbR$ by
+Define the \emph{gamma function} $\Gamma\colon[0,\infty)\to\bfR$ by
 \[
 \Gamma(y)\coloneqq\int_0^\infty e^{-u}u^{y-1}\diff u,
 \]
-and the \emph{beta function} $\beta\colon[0,\infty)\times[0,\infty)\to\bbR$
+and the \emph{beta function} $\beta\colon[0,\infty)\times[0,\infty)\to\bfR$
 by
 \[
 \beta(x,y)\coloneqq\int_0^1 t^{x-1}(1-t)^{y-1}\diff t.
