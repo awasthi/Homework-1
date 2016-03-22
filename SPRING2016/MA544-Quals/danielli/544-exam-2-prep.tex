@@ -11,10 +11,30 @@ f(\bfx)\coloneqq
 Prove that $f$ is integrable outside any ball $B(0,\varepsilon)$, and that
 there exists a constant $C>0$ such that
 \[
-\int_{\bbR^n\smallsetminus B(0,\varepsilon)}f(x)\diff x\leq\frac{C}{\varepsilon}.
+\int_{\bbR^n\minus B(0,\varepsilon)}f(x)\diff x\leq\frac{C}{\varepsilon}.
 \]
 \end{problem}
 \begin{proof}
+What does it mean for a measurable function $f$ to be integrable over a set
+$E\subset\bbR^n$, i.e., that $f$ belong to $L^1(E)$? It means that
+\[
+\int_E f(x)\diff x<\infty,
+\]
+or equivalently that the integral of the absolute value of $f$ be
+finite.
+
+Now, suppose $f$ is given as in the statement of the problem. It is enough
+to prove the inequality
+\begin{equation}
+  \label{eq:given-inequality-1}
+\int_{\bbR^n\minus B_\varepsilon(0)} f(x)\diff x<\frac{C}{\varepsilon}
+\end{equation}
+to prove that $f\in L^1\left(\bbR^n\minus B_\varepsilon(0)\right)$. Hence,
+we proceed in this spirit. First, let us jot some estimates down. For any
+$x\in B_\varepsilon(0)$, $|x|<\varepsilon$ so
+\[
+\int_{\bbR^n}
+\]
 \end{proof}
 
 \begin{problem}
