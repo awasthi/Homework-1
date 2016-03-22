@@ -23,9 +23,9 @@ $E\subset\bfR^n$, i.e., that $f$ belong to $L^1(E)$? It means that
 or equivalently that the integral of the absolute value of $f$ be
 finite.
 
-Put $E\coloneqq\bfR^n\minus B_\varepsilon(\mathbf{0})$. Now, suppose $f$ is
-given as in the statement of the problem. It is enough to prove the
-inequality
+Put $E\coloneqq\bfR^n\minus B_\varepsilon(\mathbf{0})$ and
+$E'\coloneqq\bfR\minus B_\varepsilon(0)$. Now, suppose $f$ is given as in
+the statement of the problem. It is enough to prove the inequality
 \begin{equation}
   \label{eq:given-inequality-1}
 \int_E f(\bfx)\diff\bfx<\frac{C}{\varepsilon}
@@ -41,6 +41,25 @@ $\bfx\in B_\varepsilon(\mathbf{0})$, $|\bfx|<\varepsilon$ so the integral
 \frac{\Vol B_\varepsilon(\mathbf{0})}{\varepsilon^{n+1}}
 \end{equation}
 for every $\varepsilon>0$, hence it diverges.
+
+Now, taking the integral of $f$ directly we have
+\begin{align*}
+\int_E f(\bfx)\diff\bfx
+&=\int_E\frac{\diff\bfx}{|\bfx|^{n+1}}\\
+&=\int_E\frac{\diff\bfx}{\left(\sqrt{{x_1}^2+\cdots+{x_n}^2}\right)^{n+1}}\\
+&=\idotsint_{E'}\frac{\diff x_1\cdots\diff x_n}
+{\left(\sqrt{{x_1}^2+\cdots+{x_n}^2}\right)^{n+1}}\\
+&=\idotsint_{E'}
+\left[\int_{E'}\frac{\diff x_1}
+{\left(\sqrt{{x_1}^2+\cdots+{x_n}^2}\right)^{n+1}}
+\right]\diff x_2\cdots\diff x_n
+\intertext{make the substitution,
+  $\tan\theta_1=x_1/\sqrt{{x_2}^2+\cdots+{x_n}^2}$ with $\theta_1\in(-\infty,\tan^{-1}(-\varepsilon))\cup(\tan^{-1}(\varepsilon),\infty)$}
+&=\idotsint_{E'}
+\left[\int_{E'}\sec^2\theta_1\cos\theta_1\diff \theta_1\right]\diff x_2\cdots\diff x_n\\
+&=\idotsint_{E'}\left[\int_{E'}\sec\theta_1\diff \theta_1\right]\diff x_2\cdots\diff x_n\\
+\end{align*}
+
 \end{proof}
 
 \begin{problem}
