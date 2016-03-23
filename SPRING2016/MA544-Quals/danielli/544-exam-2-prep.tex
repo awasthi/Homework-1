@@ -74,7 +74,7 @@ where
 Proceeding in this fashion, we arrive at the desired inequality.
 
 Here is the approach taken by Prof.\@ Danielli: Using spherical coordinates
-$(x_1,...,x_n)\mapsto\left(\sqrt{{x_1}^2+\cdots+{x_n}^2},\arrow{\theta}\right)$
+$(x_1,...,x_n)\mapsto\left(\sqrt{{x_1}^2+\cdots+{x_n}^2},\vec\theta\right)$
 \end{proof}
 
 \begin{problem}
@@ -142,11 +142,37 @@ by
 \end{proof}
 
 \begin{problem}
+Let $f\in L^1(\bfR^n)$ and for $\mathbf{h}\in\bfR^n$ define
+$f_{\mathbf{h}}\colon\bfR^n\to\bfR$ be $f_{\mathbf{h}}(x)\coloneqq
+f(\bfx-\mathbf{h})$. Prove that
+\[
+\lim_{\mathbf{h}\to\mathbf{0}}\int_{\bfR^n}\left|f_{\mathbf{h}}-f\right|=0.
+\]
 \end{problem}
 \begin{proof}
 \end{proof}
 
 \begin{problem}
+\begin{enumerate}[label=(\alph*)]
+\item If $f_k,g_k,f,g\in L^1(\bfR^n)$, $f_k\to f$ and $g_k\to g$ a.e.\@ in
+  $\bfR^n$, $|f_k|\leq g_k$ and
+\[
+\int_{\bfR^n}g_k\to\int_{\bfR^n}g,
+\]
+prove that
+\[
+\int_{\bfR^n} f_k\to\int_{\bfR^n}f.
+\]
+\item Using part (a) show that if $f_k,f\in L^1(\bfR^n)$ and $f_k\to f$
+  a.e.\@ in $\bfR^n$, then
+\[
+\int_{\bfR^n}|f_k-f|\to 0\qquad\text{as}\qquad k\to\infty
+\]
+if and only if
+\[
+\int_{\bfR^n}|f_k|\to\int_{\bfR^n}|f|\qquad\text{as}\qquad k\to\infty.
+\]
+\end{enumerate}
 \end{problem}
 \begin{proof}
 \end{proof}
