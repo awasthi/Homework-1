@@ -24,8 +24,9 @@ or equivalently that the integral of the absolute value of $f$ be
 finite.
 
 Put $E\coloneqq\bfR^n\minus B_\varepsilon(\mathbf{0})$ and
-$E'\coloneqq\bfR\minus B_\varepsilon(0)$. Now, suppose $f$ is given as in
-the statement of the problem. It is enough to prove the inequality
+$E_i\coloneqq\bfR\minus B_\varepsilon(0)$ for $i=1,...,n$. Now, suppose $f$
+is given as in the statement of the problem. It is enough to prove the
+inequality
 \begin{equation}
   \label{eq:given-inequality-1}
 \int_E f(\bfx)\diff\bfx<\frac{C}{\varepsilon}
@@ -49,17 +50,31 @@ Now, taking the integral of $f$ directly we have
 &=\int_E\frac{\diff\bfx}{\left(\sqrt{{x_1}^2+\cdots+{x_n}^2}\right)^{n+1}}\\
 &=\idotsint_{E'}\frac{\diff x_1\cdots\diff x_n}
 {\left(\sqrt{{x_1}^2+\cdots+{x_n}^2}\right)^{n+1}}\\
-&=\idotsint_{E'}
-\left[\int_{E'}\frac{\diff x_1}
+&=\idotsint_{E_1}
+\left[\int_{E_1}\frac{\diff x_1}
 {\left(\sqrt{{x_1}^2+\cdots+{x_n}^2}\right)^{n+1}}
 \right]\diff x_2\cdots\diff x_n
 \intertext{make the substitution,
-  $\tan\theta_1=x_1/\sqrt{{x_2}^2+\cdots+{x_n}^2}$ with $\theta_1\in(-\infty,\tan^{-1}(-\varepsilon))\cup(\tan^{-1}(\varepsilon),\infty)$}
-&=\idotsint_{E'}
-\left[\int_{E'}\sec^2\theta_1\cos\theta_1\diff \theta_1\right]\diff x_2\cdots\diff x_n\\
-&=\idotsint_{E'}\left[\int_{E'}\sec\theta_1\diff \theta_1\right]\diff x_2\cdots\diff x_n\\
+  $\tan\theta=x_1/\sqrt{{x_2}^2+\cdots+{x_n}^2}$ and put
+  $E_\theta\coloneqq(-\pi/2,\arctan(-\varepsilon))\cup(\arctan\varepsilon,\pi/2)$}
+&=\int_{E_n}\cdots\int_{E_2}
+\left[\int_{E_\theta}\frac{\cos^{n+1}\theta}{\left({x_2}^2+\cdots+{x_n}^2\right)^{(n+1)/2}}
+({x_2}^2+\cdots+{x_n}^2)^{1/2}\sec^2\theta\diff\theta\right]\diff
+  x_2\cdots\diff x_n\\
+&=\int_{E_n}\cdots\int_{E_2}
+\left[\int_{E_\theta}\frac{\cos^{n-1}\theta}{\left({x_2}^2+\cdots+{x_n}^2\right)^{n/2}}\diff\theta\right]\diff
+  x_2\cdots\diff x_n\\
+&=\int_{E_n}\cdots\int_{E_2}\frac{\diff x_2\cdots\diff
+  x_n}{\left({x_2}^2+\cdots+{x_n}^2\right)^{n/2}}\left[\int_{E_\theta}\cos^{n-1}\theta\diff\diff\theta\right]
 \end{align*}
+where
+\[
+\int_{E_\theta}\cos^{n-1}\theta\diff\diff\theta<\infty.
+\]
+Proceeding in this fashion, we arrive at the desired inequality.
 
+Here is the approach taken by Prof.\@ Danielli: Using spherical coordinates
+$(x_1,...,x_n)\mapsto\left(\sqrt{{x_1}^2+\cdots+{x_n}^2},\arrow{\theta}\right)$
 \end{proof}
 
 \begin{problem}
@@ -77,6 +92,7 @@ for all measurable subsets $E$ of $\bfR^n$. Moreover, show that this is not
 necessarily true if $\int_{\bfR^n} f=\lim_{k\to\infty} f_k=\infty$.
 \end{problem}
 \begin{proof}
+
 \end{proof}
 
 \begin{problem}
