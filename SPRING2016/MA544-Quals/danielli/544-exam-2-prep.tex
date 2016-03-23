@@ -85,54 +85,127 @@ necessarily true if $\int_{\bbR^n} f=\lim_{k\to\infty} f_k=\infty$.
 \begin{proof}
 This is probably some theorem I can't remember right now. But anyway, first
 we shall establish that the limit $f$ of $\left\{f_k\right\}$ must be
-nonnegative. For assume otherwise then there exists a point $\bfx$ in
-$\bbR^n$ such that $f(\bfx)<0$. But $f_k(\bfx)\geq 0$ for all
-$k\in\bbN$. Set $\varepsilon>f(\bfx)$ then we have
+nonnegative a.e. in $\bbR^n$. For assume otherwise. Then there exists a
+collection of points $\bfx$ in $\bbR^n$ of nonzero $\bbR^n$-Lebesgue
+measure such that $f(\bfx)<0$. But $f_k(\bfx)\geq 0$ for all
+$k\in\bbN$. Set $0<\varepsilon<|f(\bfx)|$ then we have
 \begin{equation}
 \label{eq:estimate-contradiction-1}
-|f(\bfx)-f_k(\bfx)|
+|f(\bfx)-f_k(\bfx)|>|f(\bfx)|>\varepsilon
 \end{equation}
+for all $k$ which contradicts our assumption that $f_k\to f$ a.e.\@ on
+$\bbR^n$. Therefore, the set of points $\bfx\in\bbR^n$ where $f(\bfx)<0$
+must have measure zero.
 
 Now, based on pointwise convergence a.e.\@ to $f$, given $\varepsilon>0$
-and $\bfx\in\bbR^n$ we have the following estimate
+for a.e.\@ $\bfx\in\bbR^n$ we have the following estimate
 \begin{equation}
 \label{eq:estimate-2}
 |f(\bfx)-f_k(\bfx)|<\varepsilon
 \end{equation}
-for sufficiently large $k$. Moreover, we are given that
+for sufficiently large $k$; say $k$ greater than or equal to some index
+$N\in\bbN$. Moreover, we are given convergence in $L^1(\bbR^n)$ of $f_k$ to
+$f$
 \begin{equation}
-  \label{eq:integral-estimate-1}
-\int_{\bbR^n} f\diff\bfx=\lim_{k\to\infty}\int_{\bbR^n}f_k<\infty.
+\label{eq:integral-estimate-1}
+\int_{\bbR^n}f_k\to\int_{\bbR^n}f<\infty.
 \end{equation}
-
-Now, by monotonicity of the Lebesgue integral (Theorem 5.5(iii)) we have
+By monotonicity of the Lebesgue integral (Theorem 5.5(iii)), this implies
+that
 \begin{equation}
 \label{eq:estimate-monotonicity-2}
-\int_E f\leq\int_{\bbR^n} f<\infty.
+\int_E f\leq\int_{\bbR^n} f<\infty
 \end{equation}
+and
+\begin{equation}
+\label{eq:estimate-monotonicity-k-2}
+\int_E f_k\leq\int_{\bbR^n}f_k<\infty
+\end{equation}
+for all $k\in\bbN$. By Theorem 5.5(ii), $f$ and the $f_k$'s are finite
+a.e.\@ in $\bbR^n$ so for some sufficiently large real number $M$,
+$|f|,|f_k|\leq M$ for a.e.\@ $\bfx\in\bbR^n$. In particular, for any
+measurable subset $E$ of $\bbR^n$, $|f|,|f_k|\leq M$ for a.e.\@ $\bfx\in E$
+so, by the bounded convergence theorem, we have the desired convergence
+\begin{equation}
+\label{eq:desired-convergence-2}
+\int_E f_k\to\int_E f<\infty.
+\end{equation}
+
+However, if $f$ does not belong to $L^1(\bbR^n)$, i.e., its integral over
+$\bbR^n$ is infinity, there is no guarantee that $f$ will be finite a.e.\@
+in $\bbR^n$. This means that the bounded convergence theorem will fail to
+ensure convergence in integral for any measurable subset $E$ of
+$\bbR^n$. Let us demonstrate this with an example. Consider the sequence of
+functions
 \end{proof}
 
 \begin{problem}
-Assume that $E$ is a measurable set of $\bbR^n$, with $\lambda(E)<\infty$. Prove
-that a nonnegative function $f$ defined on $E$ is integrable if and only if
+Assume that $E$ is a measurable set of $\bbR^n$, with
+$\lambda_{\bbR^n}(E)<\infty$. Prove that a nonnegative function $f$ defined
+on $E$ is integrable if and only if
 \[
-\sum_{k=0}^\infty\lambda\left(\left\{\,\bfx\in E:f(\bfx)\geq
+\sum_{k=0}^\infty\lambda_{\bbR^n}\left(\left\{\,\bfx\in E:f(\bfx)\geq
     k\,\right\}\right)<\infty.
 \]
 \end{problem}
 \begin{proof}
+$\implies$: Suppose that $f$ is integrable over a measurable subset $E$ of
+$\bbR^n$. Then
+\begin{equation}
+\label{eq:integrability-3}
+\int_E f(\bfx)\diff\bfx<\infty.
+\end{equation}
+Since $f$ is nonnegative, by Theorem 5.5(ii), this means that $f$ is finite
+a.e.\@ in $E$. Hence, the subset $\left\{\,f=\infty\,\right\}\subset E$ has
+measure zero. Set $E_k\coloneqq\left\{\,\bfx\in E:k+1>f(\bfx)\geq
+  k\,\right\}$ and $F_k\coloneqq\left\{\,\bfx\in E:f(\bfx)\geq
+  k\,\right\}$. Note that the $E_k$'s are pairwise disjoint and that
+$E=\bigcup_{k\in\bbN} E_k$ and $F_k=\bigcup_{\ell=k}^\infty E_\ell$. By
+Theorem 3.23, we have
+\begin{equation}
+  \label{eq:disjoint-measurable-sets-3}
+\lambda_{\bbR^n}(E)=\sum_{k\in\bbN}\lambda_{\bbR^n}(E_k)<\infty.
+\end{equation}
+and
+\begin{equation}
+\label{eq:monotonicity-of-lebesgue-3}
+\lambda_{\bbR^n}(F_k)=\sum_{\ell=k}^\infty\lambda_{\bbR^n}(E_k).
+\end{equation}
+In particular, by Chebyshev's inequality, we have
+\begin{equation}
+\label{eq:chebyshevs-3}
+\int_Ef(\bfx)\diff\bfx\geq
+k\lambda_{\bbR^n}(F_k)=k\sum_{\ell=k}^\infty\lambda_{\bbR^n}(E_k)
+\end{equation}
+$\impliedby$:
 \end{proof}
 
 \begin{problem}
 Suppose that $E$ is a measurable subset of $\bbR^n$, with
-$\lambda(E)<\infty$. If $f$ and $g$ are measurable functions on $E$, define
+$\lambda_{\bbR^n}(E)<\infty$. If $f$ and $g$ are measurable functions on
+$E$, define
 \[
-\rho(f,g)=\int_E\frac{|f-g|}{1+|f-g|}.
+\rho(f,g)\coloneqq\int_E\frac{|f-g|}{1+|f-g|}.
 \]
-Prove that $\rho(f_k,g)\to 0$ as $k\to\infty$ if and only if $f_k$
+Prove that $\rho(f_k,f)\to 0$ as $k\to\infty$ if and only if $f_k$
 converges to $f$ as $k\to\infty$.
 \end{problem}
 \begin{proof}
+$\implies$: First note that $\rho$ is strictly greater than or equal to
+zero since it is the integral of a nonnegative function. Suppose that
+$\rho(f_k,f)\to 0$ as $k\to\infty$. Then, given $\varepsilon>0$ there exist
+an sufficiently large index $N$ such that for every $k\geq N$ we have
+\begin{equation}
+\label{eq:hypothesis-4}
+\rho(f_k,g)=\int_E\frac{|f_k-f|}{1+|f_k-f|}<\varepsilon.
+\end{equation}
+By Theorem 5.11, this means that the map
+\[
+\frac{|f_k-f|}{1+|f_k-f|}
+\]
+is zero a.e.\@ in $E$ which happens if $|f_k-f|=0$ a.e.\@ in $E$.
+
+$\impliedby$: Suppose that $f_k\to f$ as $k\to\infty$.
 \end{proof}
 
 \begin{problem}
