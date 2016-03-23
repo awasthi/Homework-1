@@ -1,6 +1,6 @@
 \section{Exam 2 Prep}
 \begin{problem}
-Define for $\bfx\in\bfR^n$,
+Define for $\bfx\in\bbR^n$,
 \[
 f(\bfx)\coloneqq
 \begin{cases}
@@ -8,95 +8,109 @@ f(\bfx)\coloneqq
 0&\text{if $\bfx=\mathbf{0}$.}
 \end{cases}
 \]
-Prove that $f$ is integrable outside any ball $B(0,\varepsilon)$, and that
-there exists a constant $C>0$ such that
+Prove that $f$ is integrable outside any ball $B_\varepsilon(\mathbf{0})$,
+and that there exists a constant $C>0$ such that
 \[
-\int_{\bfR^n\minus B_\varepsilon(\mathbf{0})}f(\bfx)\diff\bfx\leq\frac{C}{\varepsilon}.
+\int_{\bbR^n\minus B_\varepsilon(\mathbf{0})}f(\bfx)\diff\bfx\leq\frac{C}{\varepsilon}.
 \]
 \end{problem}
 \begin{proof}
-What does it mean for a measurable function $f$ to be integrable over a set
-$E\subset\bfR^n$, i.e., that $f$ belong to $L^1(E)$? It means that
+Recall that a real-valued function $f\colon\bbR^n\to\bbR$ is (Lebesgue)
+integrable over a subset $E$ of $\bbR^n$ (or $f$ belongs to $L(E)$) if
 \[
-\int_E f(\bfx)\diff\bfx<\infty,
+\int_E f(\bfx)\diff\bfx<\infty.
 \]
-or equivalently that the integral of the absolute value of $f$ be
-finite.
 
-Put $E\coloneqq\bfR^n\minus B_\varepsilon(\mathbf{0})$ and
-$E_i\coloneqq\bfR\minus B_\varepsilon(0)$ for $i=1,...,n$. Now, suppose $f$
-is given as in the statement of the problem. It is enough to prove the
-inequality
+Put $E\coloneqq\bbR^n\minus B_\varepsilon(\mathbf{0})$. Then to show that
+$f$ belongs to $L(E)$ it suffices to show the inequality
 \begin{equation}
-  \label{eq:given-inequality-1}
+\label{eq:eq:inequality-1}
 \int_E f(\bfx)\diff\bfx<\frac{C}{\varepsilon}
 \end{equation}
-to show that $f$ belongs to $L^1(E)$. Hence, we proceed in this
-spirit. First, let us jot down some estimates on the integral. For any
-$\bfx\in B_\varepsilon(\mathbf{0})$, $|\bfx|<\varepsilon$ so the integral
-\begin{equation}
-\label{eq:divergent-estimate-1}
-\int_{B_\varepsilon(\mathbf{0})}f(\bfx)\diff\bfx=
-\int_{B_\varepsilon(\mathbf{0})}\frac{\diff\bfx}{|\bfx|^{n+1}}\geq
-\int_{B_\varepsilon(\mathbf{0})}\frac{\diff\bfx}{\varepsilon^{n+1}}=
-\frac{\Vol B_\varepsilon(\mathbf{0})}{\varepsilon^{n+1}}
-\end{equation}
-for every $\varepsilon>0$, hence it diverges.
-
-Now, taking the integral of $f$ directly we have
+for some appropriate constant $C$. We proceed by directly computing the
+Lebesgue integral of $f$:
+\begingroup
+\allowdisplaybreaks
 \begin{align*}
-\int_E f(\bfx)\diff\bfx
+\int_Ef(\bfx)\diff\bfx
 &=\int_E\frac{\diff\bfx}{|\bfx|^{n+1}}\\
-&=\int_E\frac{\diff\bfx}{\left(\sqrt{{x_1}^2+\cdots+{x_n}^2}\right)^{n+1}}\\
-&=\idotsint_{E'}\frac{\diff x_1\cdots\diff x_n}
-{\left(\sqrt{{x_1}^2+\cdots+{x_n}^2}\right)^{n+1}}\\
-&=\idotsint_{E_1}
-\left[\int_{E_1}\frac{\diff x_1}
-{\left(\sqrt{{x_1}^2+\cdots+{x_n}^2}\right)^{n+1}}
-\right]\diff x_2\cdots\diff x_n
-\intertext{make the substitution,
-  $\tan\theta=x_1/\sqrt{{x_2}^2+\cdots+{x_n}^2}$ and put
-  $E_\theta\coloneqq(-\pi/2,\arctan(-\varepsilon))\cup(\arctan\varepsilon,\pi/2)$}
+&=\idotsint_E\frac{\diff x_1\cdots\diff
+  x_n}{\left({x_1}^2+\cdots+{x_n}^2\right)^{(n+1)/2}}
+\intertext{let $E_i$ denote the projection of $E$ onto its $i$-th
+  coordinate and make the trigonometric substitution
+  $x_1=\sqrt{{x_2}^2+\cdots+{x_n}^2}\tan\theta$, $\diff
+  x_1=\sqrt{{x_2}^2+\cdots+{x_n}^2}\sec^2\theta\diff\theta$ with
+  $\theta\in(-\pi/2,-\tan^{-1}(\varepsilon))\cup(\tan^{-1}(\varepsilon),\pi/2)$
+  giving us the integral}
+&=\int_{E_n}\cdots\int_{E_2}\left[\frac{\cos^{n-1}\theta}{\left({x_2}^2+\cdots+{x_n}^2\right)^{n/2}}\diff\theta\right]\diff
+  x_2\cdots\diff x_n
+\intertext{which, by Tonelli's theorem, is}
 &=\int_{E_n}\cdots\int_{E_2}
-\left[\int_{E_\theta}\frac{\cos^{n+1}\theta}{\left({x_2}^2+\cdots+{x_n}^2\right)^{(n+1)/2}}
-({x_2}^2+\cdots+{x_n}^2)^{1/2}\sec^2\theta\diff\theta\right]\diff
-  x_2\cdots\diff x_n\\
-&=\int_{E_n}\cdots\int_{E_2}
-\left[\int_{E_\theta}\frac{\cos^{n-1}\theta}{\left({x_2}^2+\cdots+{x_n}^2\right)^{n/2}}\diff\theta\right]\diff
-  x_2\cdots\diff x_n\\
-&=\int_{E_n}\cdots\int_{E_2}\frac{\diff x_2\cdots\diff
-  x_n}{\left({x_2}^2+\cdots+{x_n}^2\right)^{n/2}}\left[\int_{E_\theta}\cos^{n-1}\theta\diff\diff\theta\right]
+\frac{\diff x_2\cdots\diff x_n}{\left({x_2}^2+\cdots+{x_n}^2\right)^{n/2}}
+\left[\int_{E_\theta}\cos^{n-1}\theta\diff\theta\right]
 \end{align*}
-where
-\[
-\int_{E_\theta}\cos^{n-1}\theta\diff\diff\theta<\infty.
-\]
-Proceeding in this fashion, we arrive at the desired inequality.
-
-Here is the approach taken by Prof.\@ Danielli: Using spherical coordinates
-$(x_1,...,x_n)\mapsto\left(\sqrt{{x_1}^2+\cdots+{x_n}^2},\vec\theta\right)$
+\endgroup
+where the integral
+\begin{equation}
+\label{eq:finite-int-1}
+\int_{E_\theta}\cos^{n-1}\theta\diff\theta<\infty.
+\end{equation}
+Proceeding in this manner, we eventually achieve the inequality
+\begin{equation}
+\label{eq:desired-inequality-1}
+\begin{aligned}
+\idotsint_Ef(\bfx)\diff\bfx
+&<C'\int_{E_n}\frac{\diff x_n}{{x_n}^2}\\
+&=2C'\int_\varepsilon^\infty\frac{\diff x_n}{{x_n}^2}\\
+&=\frac{C}{\varepsilon}
+\end{aligned}
+\end{equation}
+as desired.
 \end{proof}
 
 \begin{problem}
 Let $\left\{f_k\right\}$ be a sequence of nonnegative measurable functions
-on $\bfR^n$, and assume that $f_k$ converges pointwise almost everywhere to
+on $\bbR^n$, and assume that $f_k$ converges pointwise almost everywhere to
 a function $f$. If
 \[
-\int_{\bfR^n} f=\lim_{k\to\infty}\int_{\bfR^n} f_k<\infty,
+\int_{\bbR^n} f=\lim_{k\to\infty}\int_{\bbR^n} f_k<\infty,
 \]
 show that
 \[
 \int_E f=\lim_{k\to\infty}\int_E f_k
 \]
-for all measurable subsets $E$ of $\bfR^n$. Moreover, show that this is not
-necessarily true if $\int_{\bfR^n} f=\lim_{k\to\infty} f_k=\infty$.
+for all measurable subsets $E$ of $\bbR^n$. Moreover, show that this is not
+necessarily true if $\int_{\bbR^n} f=\lim_{k\to\infty} f_k=\infty$.
 \end{problem}
 \begin{proof}
+This is probably some theorem I can't remember right now. But anyway, first
+we shall establish that the limit $f$ of $\left\{f_k\right\}$ must be
+nonnegative a.e.\@ in $\bbR^n$. Let
+$F\coloneqq\left\{\,f<0\,\right\}$. This set is measurable since $f$ is the
+limit of a sequence of measurable functions. Hence, we must show that the
+$\bbR^n$-Lebesgue measure of $F$ is zero.
 
+Now, based on pointwise convergence a.e.\@ to $f$, given $\varepsilon>0$
+and $\bfx\in\bbR^n$ we have the following estimate
+\begin{equation}
+\label{eq:estimate-2}
+|f(\bfx)-f_k(\bfx)|<\varepsilon
+\end{equation}
+for sufficiently large $k$. Moreover, we are given that
+\begin{equation}
+  \label{eq:integral-estimate-1}
+\int_{\bbR^n} f\diff\bfx=\lim_{k\to\infty}\int_{\bbR^n}f_k<\infty.
+\end{equation}
+
+Now, by monotonicity of the Lebesgue integral (Theorem 5.5(iii)) we have
+\begin{equation}
+\label{eq:estimate-monotonicity-2}
+\int_E f\leq\int_{\bbR^n} f<\infty.
+\end{equation}
 \end{proof}
 
 \begin{problem}
-Assume that $E$ is a measurable set of $\bfR^n$, with $\lambda(E)<\infty$. Prove
+Assume that $E$ is a measurable set of $\bbR^n$, with $\lambda(E)<\infty$. Prove
 that a nonnegative function $f$ defined on $E$ is integrable if and only if
 \[
 \sum_{k=0}^\infty\lambda\left(\left\{\,\bfx\in E:f(\bfx)\geq
@@ -107,7 +121,7 @@ that a nonnegative function $f$ defined on $E$ is integrable if and only if
 \end{proof}
 
 \begin{problem}
-Suppose that $E$ is a measurable subset of $\bfR^n$, with
+Suppose that $E$ is a measurable subset of $\bbR^n$, with
 $\lambda(E)<\infty$. If $f$ and $g$ are measurable functions on $E$, define
 \[
 \rho(f,g)=\int_E\frac{|f-g|}{1+|f-g|}.
@@ -119,11 +133,11 @@ converges to $f$ as $k\to\infty$.
 \end{proof}
 
 \begin{problem}
-Define the \emph{gamma function} $\Gamma\colon[0,\infty)\to\bfR$ by
+Define the \emph{gamma function} $\Gamma\colon[0,\infty)\to\bbR$ by
 \[
 \Gamma(y)\coloneqq\int_0^\infty e^{-u}u^{y-1}\diff u,
 \]
-and the \emph{beta function} $\beta\colon[0,\infty)\times[0,\infty)\to\bfR$
+and the \emph{beta function} $\beta\colon[0,\infty)\times[0,\infty)\to\bbR$
 by
 \[
 \beta(x,y)\coloneqq\int_0^1 t^{x-1}(1-t)^{y-1}\diff t.
@@ -142,11 +156,11 @@ by
 \end{proof}
 
 \begin{problem}
-Let $f\in L^1(\bfR^n)$ and for $\mathbf{h}\in\bfR^n$ define
-$f_{\mathbf{h}}\colon\bfR^n\to\bfR$ be $f_{\mathbf{h}}(x)\coloneqq
+Let $f\in L^1(\bbR^n)$ and for $\mathbf{h}\in\bbR^n$ define
+$f_{\mathbf{h}}\colon\bbR^n\to\bbR$ be $f_{\mathbf{h}}(x)\coloneqq
 f(\bfx-\mathbf{h})$. Prove that
 \[
-\lim_{\mathbf{h}\to\mathbf{0}}\int_{\bfR^n}\left|f_{\mathbf{h}}-f\right|=0.
+\lim_{\mathbf{h}\to\mathbf{0}}\int_{\bbR^n}\left|f_{\mathbf{h}}-f\right|=0.
 \]
 \end{problem}
 \begin{proof}
@@ -154,23 +168,23 @@ f(\bfx-\mathbf{h})$. Prove that
 
 \begin{problem}
 \begin{enumerate}[label=(\alph*)]
-\item If $f_k,g_k,f,g\in L^1(\bfR^n)$, $f_k\to f$ and $g_k\to g$ a.e.\@ in
-  $\bfR^n$, $|f_k|\leq g_k$ and
+\item If $f_k,g_k,f,g\in L^1(\bbR^n)$, $f_k\to f$ and $g_k\to g$ a.e.\@ in
+  $\bbR^n$, $|f_k|\leq g_k$ and
 \[
-\int_{\bfR^n}g_k\to\int_{\bfR^n}g,
+\int_{\bbR^n}g_k\to\int_{\bbR^n}g,
 \]
 prove that
 \[
-\int_{\bfR^n} f_k\to\int_{\bfR^n}f.
+\int_{\bbR^n} f_k\to\int_{\bbR^n}f.
 \]
-\item Using part (a) show that if $f_k,f\in L^1(\bfR^n)$ and $f_k\to f$
-  a.e.\@ in $\bfR^n$, then
+\item Using part (a) show that if $f_k,f\in L^1(\bbR^n)$ and $f_k\to f$
+  a.e.\@ in $\bbR^n$, then
 \[
-\int_{\bfR^n}|f_k-f|\to 0\qquad\text{as}\qquad k\to\infty
+\int_{\bbR^n}|f_k-f|\to 0\qquad\text{as}\qquad k\to\infty
 \]
 if and only if
 \[
-\int_{\bfR^n}|f_k|\to\int_{\bfR^n}|f|\qquad\text{as}\qquad k\to\infty.
+\int_{\bbR^n}|f_k|\to\int_{\bbR^n}|f|\qquad\text{as}\qquad k\to\infty.
 \]
 \end{enumerate}
 \end{problem}
