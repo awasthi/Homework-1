@@ -85,10 +85,13 @@ necessarily true if $\int_{\bbR^n} f=\lim_{k\to\infty} f_k=\infty$.
 \begin{proof}
 This is probably some theorem I can't remember right now. But anyway, first
 we shall establish that the limit $f$ of $\left\{f_k\right\}$ must be
-nonnegative a.e.\@ in $\bbR^n$. Let
-$F\coloneqq\left\{\,f<0\,\right\}$. This set is measurable since $f$ is the
-limit of a sequence of measurable functions. Hence, we must show that the
-$\bbR^n$-Lebesgue measure of $F$ is zero.
+nonnegative. For assume otherwise then there exists a point $\bfx$ in
+$\bbR^n$ such that $f(\bfx)<0$. But $f_k(\bfx)\geq 0$ for all
+$k\in\bbN$. Set $\varepsilon>f(\bfx)$ then we have
+\begin{equation}
+\label{eq:estimate-contradiction-1}
+|f(\bfx)-f_k(\bfx)|
+\end{equation}
 
 Now, based on pointwise convergence a.e.\@ to $f$, given $\varepsilon>0$
 and $\bfx\in\bbR^n$ we have the following estimate
