@@ -16,19 +16,20 @@ and that there exists a constant $C>0$ such that
 \end{problem}
 \begin{proof}
 Recall that a real-valued function $f\colon\bbR^n\to\bbR$ is (Lebesgue)
-integrable over a subset $E$ of $\bbR^n$ (or $f$ belongs to $L(E)$) if
+integrable over a subset $E$ of $\bbR^n$ (or, alternatively, $f$ belongs to
+$L^1(E)$) if
 \[
 \int_E f(\bfx)\diff\bfx<\infty.
 \]
 
-Put $E\coloneqq\bbR^n\minus B_\varepsilon(\mathbf{0})$. Then to show that
-$f$ belongs to $L(E)$ it suffices to show the inequality
+Put $E\coloneqq\bbR^n\minus B_\varepsilon(\mathbf{0})$. Then, to show that
+$f$ belongs to $L^1(E)$ it suffices to prove the inequality
 \begin{equation}
 \label{eq:eq:inequality-1}
 \int_E f(\bfx)\diff\bfx<\frac{C}{\varepsilon}
 \end{equation}
 for some appropriate constant $C$. We proceed by directly computing the
-Lebesgue integral of $f$:
+Lebesgue integral of $f$ and employing Tonelli's theorem:
 \begingroup
 \allowdisplaybreaks
 \begin{align*}
@@ -209,19 +210,19 @@ $\impliedby$: Suppose that $f_k\to f$ as $k\to\infty$.
 \end{proof}
 
 \begin{problem}
-Define the \emph{gamma function} $\Gamma\colon[0,\infty)\to\bbR$ by
+Define the \emph{gamma function} $\Gamma\colon\bbR_{\geq 0}\to\bbR$ by
 \[
 \Gamma(y)\coloneqq\int_0^\infty e^{-u}u^{y-1}\diff u,
 \]
-and the \emph{beta function} $\beta\colon[0,\infty)\times[0,\infty)\to\bbR$
+and the \emph{beta function} $\beta\colon\bbR_{\geq 0}\times\bbR_{\geq 0}\to\bbR$
 by
 \[
 \beta(x,y)\coloneqq\int_0^1 t^{x-1}(1-t)^{y-1}\diff t.
 \]
 \begin{enumerate}[label=(\alph*)]
 \item Prove that the definition of the gamma function is well-posed, i.e.,
-  the function $u\mapsto e^{-u}u^{y-1}$ is in $L([0,\infty))$ for all
-  $y\in[0,\infty)$.
+the function $u\mapsto e^{-u}u^{y-1}$ is in $L(\bbR_{\geq 0})$ for all
+$y\in\bbR_{\geq 0}$.
 \item Show that
 \[
 \beta(x,y)=\frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}.
@@ -229,6 +230,15 @@ by
 \end{enumerate}
 \end{problem}
 \begin{proof}
+(a) Fix $y\in[0,\infty)$. Then we must show that
+\begin{equation}
+\label{eq:desired-inequality-5}
+\int_0^\infty\Gamma(y)\diff y=\int_0^\infty\left[\int_0^\infty
+  e^{-u}u^{y-1}\diff u\right]\diff y<\infty.
+\end{equation}
+Consider the extension $\overline\bbR_q/\bbR_q$
+\\\\
+(b)
 \end{proof}
 
 \begin{problem}
