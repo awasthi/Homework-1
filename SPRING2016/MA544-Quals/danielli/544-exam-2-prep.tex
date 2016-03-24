@@ -150,37 +150,80 @@ on $E$ is integrable if and only if
 \]
 \end{problem}
 \begin{proof}
-$\implies$: Suppose that $f$ is integrable over a measurable subset $E$ of
-$\bbR^n$. Then
+If $f$ is integrable over a measurable subset $E$ of $\bbR^n$, then
 \begin{equation}
 \label{eq:integrability-3}
 \int_E f(\bfx)\diff\bfx<\infty.
 \end{equation}
-Since $f$ is nonnegative, by Theorem 5.5(ii), this means that $f$ is finite
-a.e.\@ in $E$. Hence, the subset $\left\{\,f=\infty\,\right\}\subset E$ has
-measure zero. Set $E_k\coloneqq\left\{\,\bfx\in E:k+1>f(\bfx)\geq
-  k\,\right\}$ and $F_k\coloneqq\left\{\,\bfx\in E:f(\bfx)\geq
-  k\,\right\}$. Note that the $E_k$'s are pairwise disjoint and that
-$E=\bigcup_{k\in\bbN} E_k$ and $F_k=\bigcup_{\ell=k}^\infty E_\ell$. By
-Theorem 3.23, we have
+Set $E_k\coloneqq\left\{\,\bfx\in E:k+1>f(\bfx)\geq k\,\right\}$ and
+$F_k\coloneqq\left\{\,\bfx\in E:f(\bfx)\geq k\,\right\}$. Note the
+following properties about the sets we have just defined: first, the
+$E_k$'s are pairwise disjoint and the $F_k$'s are nested in the following
+way $F_{k+1}\subset F_k$; second, $E=\bigcup_{k=1}^\infty E_k$ and
+$E_k=F_k\minus F_{k+1}$. By Theorem 3.23, since the $E_k$'s are disjoint,
+we have
 \begin{equation}
   \label{eq:disjoint-measurable-sets-3}
-|E|=\sum_{k\in\bbN}|E_k|<\infty.
+|E|=\sum_{k=1}^\infty|E_k|<\infty.
+\end{equation}
+Now, by Chebyshev's inequality, we have
+\begin{equation}
+\label{eq:chebyshevs-3}
+\int_{E_k}f(\bfx)\diff\bfx\geq k|E_k|.
+\end{equation}
+But $f(\bfx)\leq (k+1)\chi_{E_k}(\bfx)$ on $E_k$ so
+\begin{equation}
+\label{eq:upper-estimate-3}
+\int_{E_k}f(\bfx)\diff\bfx\leq \int_{E_k}(k+1)\mathbf{1}\diff\bfx=(k+1)|E_k|.
+\end{equation}
+Then we have the following upper and lower estimates on the integral of $f$
+over $E$
+\begin{equation}
+\label{eq:upper-lower-estimates-3}
+\sum_{k=0}^\infty k|E_k|\leq\int_E f(\bfx)\diff\bfx\leq\sum_{k=0}^\infty(k+1)|E_k|.
+\end{equation}
+But note that $|E_k|=|F_k\minus F_{k+1}|=|F_k|-|F_{k+1}|$ by Corollary 3.25
+since the measures of $E_k$, $F_k$, and $F_{k+1}$ are all finite. Hence,
+\eqref{eq:upper-lower-estimates-3} becomes
+\begin{equation}
+\label{eq:new-upper-lower-estimates-3}
+\sum_{k=0}^\infty k\left(|F_k|-|F_{k+1}|\right)\leq
+\int_E f(\bfx)\diff\bfx\leq
+\sum_{k=0}^\infty (k+1)\left(|F_k|-|F_{k+1}|\right).
+\end{equation}
+A little manipulation of the series in the leftmost estimate gives us
+\begin{equation}
+\label{eq:leftmost-estimate-3}
+\begin{aligned}
+\sum_{k=0}^\infty k\left(|F_k|-|F_{k+1}|\right)
+&=\sum_{k=1}^\infty k|F_k|-\sum_{k=1}^\infty k|F_{k+1}|\\
+&=|F_1|+\sum_{k=2}^\infty k|F_k|-\sum_{k=1}^\infty k|F_{k+1}|\\
+&=|F_1|+\sum_{k=1}^\infty(k+1)|F_{k+1}|-\sum_{k=1}^\infty k|F_{k+1}\\
+&=|F_1|+\sum_{k=1}^\infty |F_{k+1}|\\
+&=\sum_{k=1}^\infty|F_{k+1}|
+\end{aligned}
 \end{equation}
 and
 \begin{equation}
-\label{eq:monotonicity-of-lebesgue-3}
-|F_k|=\sum_{\ell=k}^\infty|E_k|.
+\label{eq:rightmost-estimate-3}
+\begin{aligned}
+\sum_{k=0}^\infty(k+1)\left(|F_k|-|F_{k+1}|\right)
+&=\sum_{k=0}^\infty(k+1)|F_k|-\sum_{k=0}^\infty(k+1)|F_{k+1}|\\
+&=|F_0|+\sum_{k=1}^\infty(k+1)|F_k|-\sum_{k=0}^\infty(k+1)|F_{k+1}|\\
+&=|F_0|+\sum_{k=0}^\infty(k+2)|F_{k+1}|-\sum_{k=0}^\infty(k+1)|F_{k+1}|\\
+&=|F_0|+\sum_{k=0}^\infty|F_{k+1}|\\
+&=\sum_{k=0}^\infty|F_k|.
+\end{aligned}
 \end{equation}
-In particular, by Chebyshev's inequality, we have
+Thus, from \eqref{eq:leftmost-estimate-3} and
+\eqref{eq:rightmost-estimate-3}
 \begin{equation}
-\label{eq:chebyshevs-3}
-\int_Ef(\bfx)\diff\bfx\geq
-k|F_k|=k\sum_{\ell=k}^\infty|E_k|
+\label{eq:final-upper-lower-estimates-3}
+\sum_{k=1}^\infty|F_k|\leq\int_E f(\bfx)\diff\bfx\leq\sum_{k=0}^\infty|F_k|
 \end{equation}
-$\impliedby$:
+so the integral $\int_E f$ converges if and only if the sum
+$\sum_{k=0}^\infty|F_k|$ converges.
 \end{proof}
-
 \begin{problem}
 Suppose that $E$ is a measurable subset of $\bbR^n$, with
 $|E|<\infty$. If $f$ and $g$ are measurable functions on
@@ -210,19 +253,19 @@ $\impliedby$: Suppose that $f_k\to f$ as $k\to\infty$.
 \end{proof}
 
 \begin{problem}
-Define the \emph{gamma function} $\Gamma\colon\bbR_{\geq 0}\to\bbR$ by
+Define the \emph{gamma function} $\Gamma\colon\bbR^+\to\bbR$ by
 \[
 \Gamma(y)\coloneqq\int_0^\infty e^{-u}u^{y-1}\diff u,
 \]
-and the \emph{beta function} $\beta\colon\bbR_{\geq 0}\times\bbR_{\geq 0}\to\bbR$
+and the \emph{beta function} $\beta\colon\bbR^+\times\bbR^+\to\bbR$
 by
 \[
 \beta(x,y)\coloneqq\int_0^1 t^{x-1}(1-t)^{y-1}\diff t.
 \]
 \begin{enumerate}[label=(\alph*)]
 \item Prove that the definition of the gamma function is well-posed, i.e.,
-the function $u\mapsto e^{-u}u^{y-1}$ is in $L(\bbR_{\geq 0})$ for all
-$y\in\bbR_{\geq 0}$.
+the function $u\mapsto e^{-u}u^{y-1}$ is in $L(\bbR^+)$ for all
+$y\in\bbR^+$.
 \item Show that
 \[
 \beta(x,y)=\frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}.
@@ -233,10 +276,16 @@ $y\in\bbR_{\geq 0}$.
 (a) Fix $y\in[0,\infty)$. Then we must show that
 \begin{equation}
 \label{eq:desired-inequality-5}
-\int_0^\infty\Gamma(y)\diff y=\int_0^\infty\left[\int_0^\infty
+\int_{\bbR^+}\Gamma(y)\diff y=\int_{\bbR^+}\left[\int_{\bbR^+}
   e^{-u}u^{y-1}\diff u\right]\diff y<\infty.
 \end{equation}
-Consider the extension $\overline\bbR_q/\bbR_q$
+By directly manipulating the given integral, we get
+\begin{align*}
+\int_{\bbR^+}\Gamma(y)\diff y
+&=\int_{\bbR^+}\left[\int_{\bbR^+}
+  e^{-u}u^{y-1}\diff u\right]\diff y\\
+&=
+\end{align*}
 \\\\
 (b)
 \end{proof}
