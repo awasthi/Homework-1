@@ -166,15 +166,11 @@ we have
   \label{eq:disjoint-measurable-sets-3}
 |E|=\sum_{k=1}^\infty|E_k|<\infty.
 \end{equation}
-Now, by Chebyshev's inequality, we have
+Now, since $k\chi_{E_k}(\bfx)\leq f(\bfx)\leq (k+1)\chi_{E_k}(\bfx)$ on
+$E_k$, we have
 \begin{equation}
-\label{eq:chebyshevs-3}
-\int_{E_k}f(\bfx)\diff\bfx\geq k|E_k|.
-\end{equation}
-But $f(\bfx)\leq (k+1)\chi_{E_k}(\bfx)$ on $E_k$ so
-\begin{equation}
-\label{eq:upper-estimate-3}
-\int_{E_k}f(\bfx)\diff\bfx\leq \int_{E_k}(k+1)\mathbf{1}\diff\bfx=(k+1)|E_k|.
+\label{eq:estimates-E-k-3}
+k|E_k|\leq\int_{E_k}f(\bfx)\diff\bfx\leq (k+1)|E_k|.
 \end{equation}
 Then we have the following upper and lower estimates on the integral of $f$
 over $E$
