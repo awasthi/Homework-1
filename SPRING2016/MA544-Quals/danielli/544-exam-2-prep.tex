@@ -249,19 +249,19 @@ $\impliedby$: Suppose that $f_k\to f$ as $k\to\infty$.
 \end{proof}
 
 \begin{problem}
-Define the \emph{gamma function} $\Gamma\colon\bbR^+\to\bbR$ by
+Define the \emph{gamma function} $\Gamma\colon\bbR_{>0}\to\bbR$ by
 \[
 \Gamma(y)\coloneqq\int_0^\infty e^{-u}u^{y-1}\diff u,
 \]
-and the \emph{beta function} $\beta\colon\bbR^+\times\bbR^+\to\bbR$
+and the \emph{beta function} $\beta\colon\bbR_{>0}\times\bbR_{>0}\to\bbR$
 by
 \[
 \beta(x,y)\coloneqq\int_0^1 t^{x-1}(1-t)^{y-1}\diff t.
 \]
 \begin{enumerate}[label=(\alph*)]
 \item Prove that the definition of the gamma function is well-posed, i.e.,
-the function $u\mapsto e^{-u}u^{y-1}$ is in $L(\bbR^+)$ for all
-$y\in\bbR^+$.
+the function $u\mapsto e^{-u}u^{y-1}$ is in $L(\bbR_{>0})$ for all
+$y\in\bbR_{>0}$.
 \item Show that
 \[
 \beta(x,y)=\frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}.
@@ -269,32 +269,62 @@ $y\in\bbR^+$.
 \end{enumerate}
 \end{problem}
 \begin{proof}
-(a) Fix $y\in[0,\infty)$. Then we must show that
+(a) Fix $y\in\bbR_{>0}$. Then we must show that $\Gamma(y)<\infty$. First,
+since $(0,1)$ and $[1,\infty)$ are disjoint measurable subsets of $\bbR$,
+by Theorem 5.7 we can split the integral $\Gamma(y)$ into
 \begin{equation}
-\label{eq:desired-inequality-5}
-\int_{\bbR^+}\Gamma(y)\diff y=\int_{\bbR^+}\left[\int_{\bbR^+}
-  e^{-u}u^{y-1}\diff u\right]\diff y<\infty.
+\label{eq:split-integral-5}
+\Gamma(y)=\underbrace{\int_0^1 e^{-u}u^{y-1}\diff u}_{I_1}
++\underbrace{\int_1^\infty e^{-u}u^{y-1}\diff u}_{I_2}.
 \end{equation}
-By directly manipulating the given integral, we get
-\begin{align*}
-\int_{\bbR^+}\Gamma(y)\diff y
-&=\int_{\bbR^+}\left[\int_{\bbR^+}
-  e^{-u}u^{y-1}\diff u\right]\diff y\\
-&=
-\end{align*}
+We will show, separately, that $I_1$ and $I_2$ are finite.
+
+To see that $I_1$ is finite, note that
+\begin{equation}
+\label{eq:estimate-1-5}
+\begin{aligned}
+e^{-u}u^{y-1}&=e^{-u}e^{(y-1)\log u}\\
+&=e^{-u+(y-1)\log u}\\
+&\leq e^{(y-1)\log u}\\
+&=u^{y-1}
+\end{aligned}
+\end{equation}
+since $0<u<1$
+\begin{equation}
+\label{eq:estimate-i-1-5}
+\begin{aligned}
+I_1&=\int_0^1 e^{-u}u^{y-1}\diff u\\
+&\leq\int_0^1 u^{y-1}\diff u\\
+&=\left[\frac{u^y}{y}\right]_0^1\\
+&=\frac{1}{y}\\
+&<\infty.
+\end{aligned}
+\end{equation}
+
+To see that $I_2$ is finite, note that
+\begin{equation}
+\label{eq:estimate-2-5}
+e
+\end{equation}
 \\\\
 (b)
 \end{proof}
 
 \begin{problem}
 Let $f\in L^1(\bbR^n)$ and for $\mathbf{h}\in\bbR^n$ define
-$f_{\mathbf{h}}\colon\bbR^n\to\bbR$ be $f_{\mathbf{h}}(x)\coloneqq
+$f_{\mathbf{h}}\colon\bbR^n\to\bbR$ be $f_{\mathbf{h}}(\bfx)\coloneqq
 f(\bfx-\mathbf{h})$. Prove that
 \[
 \lim_{\mathbf{h}\to\mathbf{0}}\int_{\bbR^n}\left|f_{\mathbf{h}}-f\right|=0.
 \]
 \end{problem}
 \begin{proof}
+Note that by the triangle inequality, we have the following estimate on the
+integral
+\begin{equation}
+\label{eq:minokwski-estimate-6}
+\int_{\bbR^n}|f_{\mathbf{h}}(\bfx)-f(\bfx)|\diff\bfx\leq
+\end{equation}
 \end{proof}
 
 \begin{problem}
