@@ -246,6 +246,64 @@ By Theorem 5.11, this means that the map
 is zero a.e.\@ in $E$ which happens if $|f_k-f|=0$ a.e.\@ in $E$.
 
 $\impliedby$: Suppose that $f_k\to f$ as $k\to\infty$.
+
+\bigskip
+
+I don't know how to solve this. This is the intended solution:
+
+$\implies$: Given $\varepsilon>0$, $\rho(f_k,f)\to 0$ implies that
+\[
+\int_{\left\{\,x\in
+    E:|f_k(x)-f(x)|>\varepsilon\,\right\}}\frac{|f_k-f|}{1+|f_k-f}\diff
+x\longrightarrow 0.
+\]
+Observe that the function $\Phi\colon\bbR_{>0}\to\bbR$ given by
+$\Phi(x)\coloneqq x/(1+x)$ is increasing on $\bbR_{>0}$ and $0<\Psi(x)<1$,
+hence
+\[
+\begin{aligned}
+  \int_{\left\{\,x\in
+      E:|f_k(x)-f(x)|>\varepsilon\,\right\}}\frac{|f_k-f|}{1+|f_k-f|}\diff
+  x
+&\geq\int_{\left\{\,x\in
+    E:|f_k(x)-f(x)|>\varepsilon\,\right\}}\frac{\varepsilon}{1+\varepsilon}\diff
+x\\
+&=\frac{\varepsilon}{1+\varepsilon}
+\left|\left\{\,x\in E:|f_k(x)-f(x)|>\varepsilon\,\right\}\right|.
+\end{aligned}
+\]
+Therefore,
+\[
+\left|\left\{\,x\in E:|f_k(x)-f(x)|>\varepsilon\,\right\}\right|
+\leq\frac{1+\varepsilon}{\varepsilon}
+\int_{\left\{\,x\in
+    E:|f_k(x)-f(x)|>\varepsilon\,\right\}}\frac{|f_k-f|}{1+|f_k-f|}\diff x
+\longrightarrow 0
+\]
+as $k\to\infty$.
+
+$\impliedby$: Conversely, given $\delta>0$, we have
+\[
+\begin{aligned}
+\rho(f_k,f)
+&=\int_{\left\{\,x\in E:|f_k(x)-f(x)|>\delta\,\right\}}\frac{|f_k-f|}{1+|f_k-f|}\diff x\\
+&\phantom{{}={}}+\int_{\left\{\,x\in
+    E:|f_k(x)-f(x)|\leq\delta\,\right\}}\frac{|f_k-f|}{1+|f_k-f|}\diff x\\
+&\leq\left|\left\{\,x\in
+    E:|f_k(x)-f(x)|>\delta\,\right\}\right|+\frac{\delta}{1+\delta}|E|.
+\end{aligned}
+\]
+Since $|E|<\infty$ and $\delta/(1+\delta)\searrow 0$, then for any
+$\varepsilon>0$, there exists $\delta'>0$ such that
+\[
+\frac{\delta'}{1+\delta'}|E|<\frac{\varepsilon}{2}.
+\]
+If $f_k\to f$ as $k\to\infty$ in measure, then for the above $\delta'$
+there is an index $N>0$ such that $k\geq N$ implies
+\[
+\left|\left\{\,x\in E:|f_k(x)-f(x)|>\delta'\,\right\}\right|<\frac{\varepsilon}{2}.
+\]
+Therefore, $f_k\to f$ in measure implies $\rho(f_k,f)\to 0$ as $k\to\infty$.
 \end{proof}
 
 \begin{problem}
@@ -306,6 +364,8 @@ To see that $I_2$ is finite, note that
 \label{eq:estimate-2-5}
 e
 \end{equation}
+
+\textbf{Intended solution:}
 \\\\
 (b)
 \end{proof}
@@ -325,6 +385,7 @@ integral
 \label{eq:minokwski-estimate-6}
 \int_{\bbR^n}|f_{\mathbf{h}}(\bfx)-f(\bfx)|\diff\bfx\leq
 \end{equation}
+
 \end{proof}
 
 \begin{problem}
@@ -350,6 +411,39 @@ if and only if
 \end{enumerate}
 \end{problem}
 \begin{proof}
+(a) Since $f_k\to f$ and $g_k\to g$ a.e.\@ and $|f_k|\leq g_k$, then by
+Fatou's theorem,
+\begin{align*}
+\int_{\bbR^n}(g-f)
+&=\int_{\bbR^n}\liminf_{k\to\infty} g_k-f_k
+\leq\liminf_{k\to\infty}\int_{\bbR^n}g_k-f_k,\\
+\int_{\bbR^n}g+f&\int_{\bbR^n}\liminf_{k\to\infty}g_k+f_k\leq\liminf_{k\to\infty}\int_{\bbR^n}g_k+f_k.
+\end{align*}
+Since $f_k,g_k,f,g\in L^1(\bbR^n)$ and $\int_{\bbR^n}g_k\to\int_{\bbR^n}g$,
+then using the similar argument as problem 2, we have
+\[
+  \begin{aligned}
+   \int_{\bbR^n}f\geq\limsup_{k\to\infty}\int_{\bbR^n}f_k,\\
+   \int_{\bbR^n}f\leq\liminf_{k\to\infty}\int_{\bbR^n} f_k.
+  \end{aligned}
+\]
+Therefore, $\int_{\bbR^n}f_k\to\int_{\bbR^n} f$.
+\\\\
+(b) $\implies$: This direction is obvious by the inequality
+\[
+\left|\int_{\bbR^n}|f_k|-|f|\right|\leq\int_{\bbR^n}\left||f_k|-|f|\right|\leq\int_{\bbR^n}|f_k-f|.
+\]
+
+$\impliedby$: Let $g_k\coloneqq |f_k|+|f|$ and $g\coloneqq 2|f|$. Since
+$f_k,f\in L^1(\bbR^n)$ and $f_k\to f$ a.e., then $g_k,g\in L^1(\bbR^n)$ and
+$g_k\to g$ a.e.\@ in $\bbR^n$. By the assumption, $\int_{\bbR^n}
+g_k\to\int_{\bbR^n}g$.
+
+Let $\tilde f_k\coloneqq|f_k-f|$. Then $\tilde f_k\to 0$ a.e.\@ in $\bbR^n$
+and $\tilde f_k\leq g_k$. Applying part (a) to $\tilde f_k$ we have
+\[
+\lim_{k\to\infty}\int_{\bbR^n}\tilde f_k=\lim_{k\to\infty}\int_{\bbR^n}|f_k-f|=0.
+\]
 \end{proof}
 \subsection{Review of concepts}
 To conclude this review sheet, here are some important lemmas, theorems,
@@ -531,7 +625,7 @@ that $f_k\to f$ a.e.\@ in $E$. If there exists a measurable function
 $\varphi$ such that $f_k\leq\varphi$ a.e.\@ for all $k$ and if
 $\int_E\varphi$ is finite, then
 \[
-\int_E f_k\to\int_E f.
+\int_E f_k\longrightarrow\int_E f.
 \]
 \end{theorem*}
 \begin{theorem*}[5.21]
@@ -563,7 +657,7 @@ Let $\{f_k\}$ be a sequence of measurable functions on $E$:
 \end{enumerate}
 \end{theorem*}
 \begin{theorem*}[5.33, uniform convergence theorem]
-Let $f_k\in L^1(e)$ for $k\in\bbN$ and let $\{f_k\}$ converge uniformly to
+Let $f_k\in L^1(E)$ for $k\in\bbN$ and let $\{f_k\}$ converge uniformly to
 $f$ on $E$, $|E|<\infty$. Then $f\in L^1(E)$ and $\int_E f_k\to\int_E f$.
 \end{theorem*}
 \begin{theorem*}[5.34, Fatou's lemma]
