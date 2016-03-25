@@ -1,0 +1,57 @@
+\section{MA 544 - Midterm 2}
+\begin{problem}
+Assume that $f\in L^1(\bbR^n)$. Show that for every $\varepsilon>0$ there
+exists a ball $B$, centered at the origin, such that
+\[
+\int_{\bbR^n\minus B}|f|<\varepsilon.
+\]
+\end{problem}
+\begin{proof}
+Recall that $f\in L^1(\bbR^n)$ if and only if $|f|\in L^1(\bbR^n)$. Since
+$|f|$ is nonnegative, $|f|\in L^1(\bbR^n)$ implies that $|f|$ is finite
+a.e.\@ on $\bbR^n$. Pick some sufficiently large real number $M$ such that
+$M>|f|$ a.e.\@ on $\bbR^n$.
+\end{proof}
+
+\begin{problem}
+Let $f\in L^1(E)$, and let $\{E_j\}$ be a countable collection of pairwise
+disjoint measurable subsets of $E$, such that $E=\bigcup_{j=1}^\infty
+E_j$. Prove that
+\[
+\int_E f=\sum_{j=1}^\infty\int_{E_j}f.
+\]
+\end{problem}
+\begin{proof}
+\end{proof}
+
+\begin{problem}
+Let $\{f_k\}$ be a family in $L^1(E)$ satisfying the following property:
+For any $\varepsilon>0$ there exits $\delta>0$ such that $|A|<\delta$
+implies
+\[
+\int_A |f_k|<\varepsilon
+\]
+for all $k\in\bbN$. Assume $|E|<\infty$, and $f_k(x)\to f(x)$ as
+$k\to\infty$ for a.e.\@ $x\in E$. Show that
+\[
+\lim_{k\to\infty}\int_E f_k=\int_E f.
+\]
+(\emph{Hint:} Use Egorov's theorem.)
+\end{problem}
+\begin{proof}
+\end{proof}
+
+\begin{problem}
+Let $I\coloneqq[0,1]$, $f\in L^1(I)$, and define $g(x)\coloneqq\int_x^1
+t^{-1}f(t)\diff t$ for $x\in I$. Prove that $g\in L^1(I)$ and
+\[
+\int_I g=\int_I f.
+\]
+\end{problem}
+\begin{proof}
+\end{proof}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA544-Quals"
+%%% End:
