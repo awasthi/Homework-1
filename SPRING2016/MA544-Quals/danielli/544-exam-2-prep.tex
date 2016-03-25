@@ -351,7 +351,7 @@ if and only if
 \end{problem}
 \begin{proof}
 \end{proof}
-
+\subsection{Review of concepts}
 To conclude this review sheet, here are some important lemmas, theorems,
 and corollaries from the book:
 
@@ -593,7 +593,20 @@ Let $\{f_k\}$ be a sequence of measurable functions on $E$ such  that
 $f_k\to f$ a.e.\@ in $E$. If $|E|<\infty$ there is a finite constant $M$
 such that $|f_k|\leq M$ a.e.\@ in $E$, then $\int_E f_k\to\int_E f$.
 \end{corollary*}
-\begin{theorem*}[6.8, Fubini's theorem]
+\begin{theorem*}[6.1 Fubini's theorem]
+Let $f(\bfx,\bfy)\in L^1(I)$, $I\coloneqq I_1\times I_2$. Then
+\begin{enumerate}[label=\textnormal{(\roman*)}]
+\item For almost every $\bfx\in I_1$, $f(\bfx,\bfy)$ is measurable and
+  integrable on $I_2$ as a function of $\bfy$;
+\item As a function of $\bfx$, $\int_{I_2} f(\bfx,\bfy)\diff\bfy$ is
+  measurable and integrable on $I_1$, and
+\[
+\iint_I f(\bfx,\bfy)\diff\bfx\diff\bfy=
+\int_{I_1}\left[\int_{I_2}f(\bfx,\bfy)\diff\bfy\right]\!\diff\bfx.
+\]
+\end{enumerate}
+\end{theorem*}
+\begin{theorem*}[6.8]
 Let $f(\bfx,\bfy)$ be a measurable function defined on a measurable subset
 $E$ of $\bbR^{n+m}$, and let $E_\bfx\coloneqq\left\{ \,\bfy:(\bfx,\bfy)\in
   E \right\}$.
@@ -611,13 +624,54 @@ $E$ of $\bbR^{n+m}$, and let $E_\bfx\coloneqq\left\{ \,\bfy:(\bfx,\bfy)\in
 \end{theorem*}
 \begin{theorem*}[6.10, Tonelli's theorem]
 Let $f(\bfx,\bfy)$ be nonnegative and measurable on an interval
-$I=I_1\times I_2$ of $\bfR^{n+m}$. Then, for almost every $\bfx\in I_1$,
+$I=I_1\times I_2$ of $\bbR^{n+m}$. Then, for almost every $\bfx\in I_1$,
 $f(\bfx,\bfy)$ is a measurable function of $\bfy$ on $I_2$. Moreover, as a
 function of $\bfx$, $\int_{I_2}f(\bfx,\bfy)\diff \bfy$ is measurable on
 $I_1$, and
 \[
 \iint_I f(\bfx,\bfy)\diff\bfx\diff\bfy=\int_{I_1}\left[\int_{I_2}f(\bfx,\bfy)\diff\bfy\right]\!\diff\bfx
 \]
+\end{theorem*}
+If $f$ and $g$ are measurable in $\bbR^n$, their \emph{convolution
+  $(f*g)(\bfx)$} is defined by
+\[
+(f*g)(\bfx)\coloneqq\int_{\bbR^n}f(\bfx-\bfy)g(\bfy)\diff\bfy,
+\]
+provided the integral exists.
+\begin{theorem*}[6.14]
+If $f\in L^1(\bbR^n)$ and $g\in L^1(\bbR^n)$, then $(f*g)(\bfx)$ exists for
+almost every $\bfx\in\bbR^n$ and is measurable. Moreover, $f*\in
+L^1(\bbR^n)$ and
+\[
+\begin{aligned}
+\int_{\bbR^n}|f*g|\diff\bfx
+&\leq\left(\int_{\bbR^n}|f|\diff\bfx\right)\left(\int_{\bbR^n}|g|\diff\bfx\right)\\
+\int_{\bbR^n}(f*g)(\bfx)\diff\bfx
+&=\left(\int_{\bbR^n}f\diff\bfx\right)\left(\int_{\bbR^n}g\diff\bfx\right).
+\end{aligned}
+\]
+\end{theorem*}
+\begin{corollary*}[6.16]
+If $f$ and $g$ are nonnegative and measurable on $\bbR^n$, then $f*g$ is
+measurable on $\bbR^n$ and
+\[
+\int_{\bbR^n}(f*g)\diff\bfx=
+\left(\int_{\bbR^n} f\diff\bfx\right)
+\left(\int_{\bbR^n}g\diff\bfx\right).
+\]
+\end{corollary*}
+\begin{theorem*}[6.17, Marcinkiewicz]
+Let $F$ be a closed subset of a bounded open interval $(a,b)$, and let
+$\delta(x)\coloneqq\delta(x,F)$ be the corresponding distance
+function. Then, given $\lambda>0$, the integral
+\[
+M_\lambda(x)\coloneqq\int_a^b\frac{\delta(y)^\lambda}{|x-y|^{1+\lambda}}\diff y
+\]
+is finite a.e.\@ in $F$. Moreover, $M_\lambda\in L^1(F)$ and
+\[
+\int_F M_\lambda\diff x\leq 2\lambda^{-1}|G|,
+\]
+where $G\coloneqq(a,b)\minus F$.
 \end{theorem*}
 
 %%% Local Variables:
