@@ -2,7 +2,7 @@
 \section{Exam 1 Prep}
 \begin{problem}
 Let $E\subset\bfR^n$ be a measurable set, $r\in\bfR$ and define the set
-$rE=\left\{\,r\bfx\;\middle|\;\bfx\in E\,\right\}$. Prove that $rE$ is
+$rE=\left\{\,r\bfx:\bfx\in E\,\right\}$. Prove that $rE$ is
 measurable, and that $|rE|=|r|^n|E|$.
 \end{problem}
 \begin{proof}
@@ -34,32 +34,32 @@ Show that
 \]
 \end{problem}
 \begin{proof}
-If the $\varliminf\left|E_k\right|=\infty$ the inequality holds
+If the $\liminf\left|E_k\right|=\infty$ the inequality holds
 trivially. Hence, we may, without loss of generality, assume that
-$\varliminf\left|E_k\right|<\infty$. By 3.20, the set $\varliminf E_k$ is
+$\liminf\left|E_k\right|<\infty$. By 3.20, the set $\liminf E_k$ is
 measurable and we have
 \begin{equation}
   \label{eq:limsup-rewrite}
-\left|\varliminf_{k\to\infty} E_k\right|
+\left|\liminf_{k\to\infty} E_k\right|
 =\left|\bigcup_{k=1}^\infty F_k\right|,
 \end{equation}
 where $F_k\coloneqq\bigcap_{n=k}^\infty E_n$. Now, note that the collection
 of sets $F_k'\coloneqq\bigcup_{\ell=1}^k F_\ell$ forms an increasing
 sequence of measurable sets $F_k'\nearrow F'$, where
-$F'=\bigcup_{k=1}^\infty F_k=\varliminf E_k$. Then, by 3.26 (i), we have
+$F'=\bigcup_{k=1}^\infty F_k=\liminf E_k$. Then, by 3.26 (i), we have
 \begin{equation}
   \label{eq:monotone-increasing-limit}
 \lim_{k\to\infty}\left|F_k'\right|
 =\left|F'\right|
-=\left|\varliminf_{k\to\infty} E_k\right|.
+=\left|\liminf_{k\to\infty} E_k\right|.
 \end{equation}
 Hence, it suffices to show that $\left|F_k'\right|\leq\left|E_k\right|$ for
 all $k$, but this follows by monotonicity of the outer measure, 3.3, since
 $F_k'\subset E_k$. Thus, we have the desired inequality
 \begin{equation}
   \label{eq:meas-liminf-liminf-meas}
-\left|\varliminf_{k\to\infty} E_k\right|
-\leq\varliminf_{k\to\infty}\left|E_k\right|.
+\left|\liminf_{k\to\infty} E_k\right|
+\leq\liminf_{k\to\infty}\left|E_k\right|.
 \end{equation}
 \end{proof}
 
@@ -73,7 +73,7 @@ F(x)\coloneqq
 \end{cases}.
 \]
 Here
-$B(\mathbf{0},r)\coloneqq\left\{\,\bfy\in\bfR^n\;\middle|\;|\bfy|<r\,\right\}$. Prove
+$B(\mathbf{0},r)\coloneqq\left\{\,\bfy\in\bfR^n:|\bfy|<r\,\right\}$. Prove
 that $F$ is monotonic increasing and continuous.
 \end{problem}
 \begin{proof}
@@ -143,12 +143,7 @@ In view of these estimates, define the set
 \label{eq:a-n}
 A_n\coloneqq
 \left\{\,
-x\in\bfR
-\;\middle|\;
-\text{
-there exists $\delta>0$ such that $x',x''\in B(x,\delta)$ implies
-$\left|f(x')-f(x'')\right|<\frac{1}{n}$
-}
+x\in\bfR :\text{there exists $\delta>0$ such that $x',x''\in B(x,\delta)$ implies $\left|f(x')-f(x'')\right|<\frac{1}{n}$ }
 \,\right\}.
 \end{equation}
 Good Lord, that was a long definition! We claim that
@@ -183,14 +178,14 @@ $\left\{\,f>a\,\right\}$ for all $a\in\bfR$.
 \begin{problem}
 Let $\left\{f_k\right\}_{k=1}^\infty$ be a sequence of measurable functions
 on $\bfR$. Prove that the set
-$\left\{\,x\;\middle|\;\text{$\lim_{k\to\infty} f_k(x)$ exists}\,\right\}$
+$\left\{\,x:\text{$\lim_{k\to\infty} f_k(x)$ exists}\,\right\}$
 is measurable.
 \end{problem}
 \begin{proof}
 The idea here should be to rewrite
 \begin{equation}
   \label{eq:measurable-lim-set}
-E\coloneqq\left\{\,x\;\middle|\;\text{$\lim_{k\to\infty} f_k(x)$ exists}\,\right\}
+E\coloneqq\left\{\,x:\text{$\lim_{k\to\infty} f_k(x)$ exists}\,\right\}
 \end{equation}
 as a countable union/intersection of measurable sets. Let $x\in E$. By the
 Cauchy criterion, for every $N>0$ there exists a positive integer
@@ -200,11 +195,7 @@ $\left|f_n(x)-f_m(x)\right|<1/N$. With this in mind, define
   \label{eq:countable-lim-set}
 E_N\coloneqq
 \left\{\,
-x
-\;\middle|\;
-\text{
-there exists $M$ such that $m,n\geq M$ implies $\left|f_n(x)-f_m(x)\right|<\frac{1}{N}$
-}
+x:\text{there exists $M$ such that $m,n\geq M$ implies $\left|f_n(x)-f_m(x)\right|<\frac{1}{N}$}
 \,\right\}.
 \end{equation}
 Then, like for Problem 1.4, it is not too hard to see that the $E_n$'s are
