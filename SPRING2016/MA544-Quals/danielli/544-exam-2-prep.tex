@@ -257,8 +257,8 @@ $\implies$: Given $\varepsilon>0$, $\rho(f_k,f)\to 0$ implies that
     E:|f_k(x)-f(x)|>\varepsilon\,\right\}}\frac{|f_k-f|}{1+|f_k-f}\diff
 x\longrightarrow 0.
 \]
-Observe that the function $\Phi\colon\bfR_{>0}\to\bfR$ given by
-$\Phi(x)\coloneqq x/(1+x)$ is increasing on $\bfR_{>0}$ and $0<\Psi(x)<1$,
+Observe that the function $\Phi\colon\bfR^+\to\bfR$ given by
+$\Phi(x)\coloneqq x/(1+x)$ is increasing on $\bfR^+$ and $0<\Psi(x)<1$,
 hence
 \[
 \begin{aligned}
@@ -307,19 +307,19 @@ Therefore, $f_k\to f$ in measure implies $\rho(f_k,f)\to 0$ as $k\to\infty$.
 \end{proof}
 
 \begin{problem}
-Define the \emph{gamma function} $\Gamma\colon\bfR_{>0}\to\bfR$ by
+Define the \emph{gamma function} $\Gamma\colon\bfR^+\to\bfR$ by
 \[
 \Gamma(y)\coloneqq\int_0^\infty e^{-u}u^{y-1}\diff u,
 \]
-and the \emph{beta function} $\beta\colon\bfR_{>0}\times\bfR_{>0}\to\bfR$
+and the \emph{beta function} $\beta\colon\bfR^+\times\bfR^+\to\bfR$
 by
 \[
 \beta(x,y)\coloneqq\int_0^1 t^{x-1}(1-t)^{y-1}\diff t.
 \]
 \begin{enumerate}[label=(\alph*)]
 \item Prove that the definition of the gamma function is well-posed, i.e.,
-the function $u\mapsto e^{-u}u^{y-1}$ is in $L(\bfR_{>0})$ for all
-$y\in\bfR_{>0}$.
+the function $u\mapsto e^{-u}u^{y-1}$ is in $L(\bfR^+)$ for all
+$y\in\bfR^+$.
 \item Show that
 \[
 \beta(x,y)=\frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}.
@@ -327,7 +327,7 @@ $y\in\bfR_{>0}$.
 \end{enumerate}
 \end{problem}
 \begin{proof}
-(a) Fix $y\in\bfR_{>0}$. Then we must show that $\Gamma(y)<\infty$. First,
+(a) Fix $y\in\bfR^+$. Then we must show that $\Gamma(y)<\infty$. First,
 since $(0,1)$ and $[1,\infty)$ are disjoint measurable subsets of $\bfR$,
 by Theorem 5.7 we can split the integral $\Gamma(y)$ into
 \begin{equation}
