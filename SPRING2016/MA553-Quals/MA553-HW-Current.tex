@@ -43,27 +43,18 @@
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 \renewcommand{\theequation}{\hwnum.\arabic{equation}}
 
-\usepackage[LAE,LFE,T2A,T1]{fontenc}
+\usepackage{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[farsi,french,german,spanish,russian,english]{babel}
+\usepackage[french,german,greek,spanish,russian,english]{babel}
 \babeltags{fr=french,
            de=german,
            en=english,
            es=spanish,
-           pa=farsi,
+           he=greek,
            ru=russian
            }
 \def\spanishoptions{mexico}
-
 \selectlanguage{english}
-
-\newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
-
-\usepackage{cmap}
-\usepackage{CJKutf8}
-\newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
-\newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
-\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
 \usepackage{graphicx}
 \graphicspath{{figures/}}
