@@ -1,16 +1,35 @@
 \section{MA 544 - Midterm 2}
 \begin{problem}
-Assume that $f\in L^1(\bfR^n)$. Show that for every $\varepsilon>0$ there
+Assume that $f\in L^1(\bbR^n)$. Show that for every $\varepsilon>0$ there
 exists a ball $B$, centered at the origin, such that
 \[
-\int_{\bfR^n\minus B}|f|<\varepsilon.
+\int_{\bbR^n\minus B}|f|<\varepsilon.
 \]
 \end{problem}
 \begin{proof}
-Recall that $f\in L^1(\bfR^n)$ if and only if $|f|\in L^1(\bfR^n)$. Since
-$|f|$ is nonnegative, $|f|\in L^1(\bfR^n)$ implies that $|f|$ is finite
-a.e.\@ on $\bfR^n$. Pick some sufficiently large real number $M$ such that
-$M>|f|$ a.e.\@ on $\bfR^n$.
+Recall that $f\in L^1(\bbR^n)$ if and only if $|f|\in
+L^1(\bbR^n)$. Let $B_k\coloneqq B(\mathbf{0},k)$ for $k\in\bbN$ and
+$\chi_{B_k}$ be the indicator function associated with $B_k$. Then, the
+sequence of maps $\left\{|f_k|\right\}$ defined $f_k\coloneqq f\chi_{B_k}$
+converge pointwise to $|f_k|$. Since $|f|\in L^1(\bbR^n)$, by the monotone
+convergence theorem, we have
+\begin{equation}
+\label{eq:monotonicity-2-1}
+\int_{\bbR^n} |f_k|=\int_{B_k}|f|\longrightarrow\int_{\bbR^n}|f|.
+\end{equation}
+But this means, exactly, that for every $\varepsilon>0$ there exists
+sufficiently large $N\in\bbN$ such that
+\begin{equation}
+  \label{eq:desired-inequality-2-1}
+\begin{aligned}
+\varepsilon&>\left|\int_{\bbR^n}|f_k|-\int_{\bbR^n}|f|\right|\\
+&=-\int_{\bbR^n}|f_k|+\int_{\bbR^n}|f|\\
+&=-\int_{\bbR^n}|f|+\int_{\bbR^n}|f|\\
+&=-\int_{B_k}|f|+\int_{\bbR^n}|f|\\
+&=\int_{\bbR^n\minus B_k}|f|
+\end{aligned}
+\end{equation}
+as desired.
 \end{proof}
 
 \begin{problem}
@@ -22,6 +41,20 @@ E_j$. Prove that
 \]
 \end{problem}
 \begin{proof}
+First, since the $E_j$'s are pairwise disjoint, by Theorem 3.23, we have
+\begin{equation}
+\label{eq:disjoint-measure-2-2}
+|E|=\sum_{j=1}^\infty|E_j|.
+\end{equation}
+Let $\chi_{E_j}$ be the characteristic function of the subset $E_j$ of
+$E$ and define $f_j\coloneqq f\chi_{E_j}$ for $j\in\bbN$. Note that, since
+both $f$ and $\chi_{E_j}$ are measurable on $E$, $f\chi_{E_j}$ is
+measurable on $E$ and $\sum_{j=1}^\infty f_j=f$. Moreover, since
+$E_j\subset E$, by monotonicity of the integral we have
+\begin{equation}
+\label{eq:monotonicity-2-2}
+\int_{E_j} f\diff x=\int_E f_j\leq\int_{E} f\diff x.
+\end{equation}
 \end{proof}
 
 \begin{problem}
