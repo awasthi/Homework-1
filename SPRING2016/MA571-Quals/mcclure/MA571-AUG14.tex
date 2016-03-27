@@ -14,7 +14,7 @@ A\neq\emptyset$ so $V\cap(U\cap A)\neq\emptyset$.
 \end{proof}
 
 \begin{problem}
-Let $X$ be the following subspace of $\bfR^2$:
+Let $X$ be the following subspace of $\bbR^2$:
 \[
 ((0,1]\times[0,1])\cup([2,3)\times[0,1]).
 \]
@@ -45,7 +45,7 @@ quotient space, $h'\colon X/{\sim}\to (0,2)\times[0,1]$ will be
 continuous. To that end, we will use the pasting lemma. First, note that
 $(0,1]\times[0,1]$ and $[2,3)\times[0,1]$ are closed subsets of $X$ since
 $(0,1]\times[0,1]$ is the complement of $((1,\infty)\times (-2,2))\cap X$
-which is open in $X$ (since $X$ inherits its topology from $\bfR^2$),
+which is open in $X$ (since $X$ inherits its topology from $\bbR^2$),
 similarly, $[2,3)\times[0,1]$ is closed in $X$ since it is the complement
 of $((-\infty,2)\times(-2,2))\cap X$ which is open in $X$ for the same
 reasons. It is clear that the maps $x\mapsto x$ and $x\mapsto x-1$ are
@@ -99,13 +99,13 @@ relation $\sim$ on $[0,1]$.
 \end{proof}
 
 \begin{problem}
-Let $D$ be the closed unit disk in $\bfR^2$, that is, the set
+Let $D$ be the closed unit disk in $\bbR^2$, that is, the set
 \[
-\left\{\,(x,y)\;\middle|\;x^2+y^2\leq 1\,\right\}.
+\left\{\,(x,y):x^2+y^2\leq 1\,\right\}.
 \]
 Let $E$ be the open unit disk
 \[
-\left\{\,(x,y)\;\middle|\;x^2+y^2<1\,\right\}.
+\left\{\,(x,y):x^2+y^2<1\,\right\}.
 \]
 Let $X$ be the one-point compactification of $E$, and let $f\colon D\to X$
 be the map defined by
@@ -173,32 +173,32 @@ $f(X)$. Since we can do this for any point $y\in Y$, it follows, since
 path-connectedness is an equivalence relation, that $Y$ is path-connected.
 \end{proof}
 \begin{problem}
-Let $a$ and $b$ denote the points $(-1,0)$ and $(1,0)$ in $\bfR^2$. Let
+Let $a$ and $b$ denote the points $(-1,0)$ and $(1,0)$ in $\bbR^2$. Let
 $x_0$ denote the origin $(0,0)$. Use the Seifert--van Kampen theorem to
-calculate $\pi_1\left(\bfR^2-\{a,b\},x_0\right)$. You may not use any other
+calculate $\pi_1\left(\bbR^2-\{a,b\},x_0\right)$. You may not use any other
 method.
 \end{problem}
 \begin{proof}
 We'll use Theorem 70.2's version of the Seifert--van Kampen theorem. Define
 \[
-U\coloneqq\left(-\infty,\tfrac{1}{2}\right)\times\bfR
+U\coloneqq\left(-\infty,\tfrac{1}{2}\right)\times\bbR
 \quad\text{and}\quad
-V\coloneqq\left(-\tfrac{1}{2},\infty\right)\times\bfR.
+V\coloneqq\left(-\tfrac{1}{2},\infty\right)\times\bbR.
 \]
-Then $U\cap V=(-1/2,1/2)\times\bfR$ is clearly path-connected since it is a
-convex set. Moreover, note that $U\simeq\bfR^2\minus\{x_0\}$ and
-$V\simeq\bfR^2\minus\{x_0\}$ (in the case of $U$, first consider the
+Then $U\cap V=(-1/2,1/2)\times\bbR$ is clearly path-connected since it is a
+convex set. Moreover, note that $U\simeq\bbR^2\minus\{x_0\}$ and
+$V\simeq\bbR^2\minus\{x_0\}$ (in the case of $U$, first consider the
 homeomorphism $(x,y)\mapsto(x+1,y)$ which sends $a$ to $(0,0)$ and then the
 homotopy $(x,y)\mapsto\tfrac{1}{t}(x,ys)$).
 
 Once we have established the above, since the fundamental group of a space
 is invariant under homotopy-equivalence,
-$\pi_1(U,x_0)\cong\pi_1\left(\bfR^2\minus\{x_0\},y_0\right)\cong\bfZ$ for some
-arbitrary $y_0\neq x_0$ and similarly $\pi_1(V,x_0)\cong\bfZ$. Thus, by the
+$\pi_1(U,x_0)\cong\pi_1\left(\bbR^2\minus\{x_0\},y_0\right)\cong\bbZ$ for some
+arbitrary $y_0\neq x_0$ and similarly $\pi_1(V,x_0)\cong\bbZ$. Thus, by the
 classical version of the Seifert--van Kampen theorem
 \[
-\pi_1\left(\bfR^2\minus\{a,b\},x_0\right)\cong
-\frac{\bfZ*\bfZ}{N}
+\pi_1\left(\bbR^2\minus\{a,b\},x_0\right)\cong
+\frac{\bbZ*\bbZ}{N}
 \]
 where $N$ is the least normal subgroup
 \end{proof}

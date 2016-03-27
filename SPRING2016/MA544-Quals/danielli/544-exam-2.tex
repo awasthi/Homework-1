@@ -48,13 +48,22 @@ First, since the $E_j$'s are pairwise disjoint, by Theorem 3.23, we have
 \end{equation}
 Let $\chi_{E_j}$ be the characteristic function of the subset $E_j$ of
 $E$ and define $f_j\coloneqq f\chi_{E_j}$ for $j\in\bbN$. Note that, since
-both $f$ and $\chi_{E_j}$ are measurable on $E$, $f\chi_{E_j}$ is
+both $f$ and $\chi_{E_j}$ are measurable on $E$, $f_j$ is
 measurable on $E$ and $\sum_{j=1}^\infty f_j=f$. Moreover, since
 $E_j\subset E$, by monotonicity of the integral we have
 \begin{equation}
 \label{eq:monotonicity-2-2}
-\int_{E_j} f\diff x=\int_E f_j\leq\int_{E} f\diff x.
+\int_{E} f=
+\int_{E_j} f+\int_{E\minus E_j}f=
+\int_E f_j+\int_{E\minus E_j}f.
 \end{equation}
+Hence, because the $E_j$'s are disjoint $(E\minus E_k)\minus
+E_\ell=(E\minus E_\ell)\minus E_k$ so
+\begin{equation}
+\label{eq:desired-sum-2}
+\int_E f=\sum_{j=1}^\infty\int_E f_j=\sum_{j=1}^\infty\int_{E_j}f
+\end{equation}
+as desired.
 \end{proof}
 
 \begin{problem}
@@ -72,6 +81,7 @@ $k\to\infty$ for a.e.\@ $x\in E$. Show that
 (\emph{Hint:} Use Egorov's theorem.)
 \end{problem}
 \begin{proof}
+
 \end{proof}
 
 \begin{problem}
