@@ -2,14 +2,14 @@
 
 \begin{problem}[Wheeden \& Zygmund {\S}6, Ex.\@ 1]
 \begin{enumerate}[label=(\alph*)]
-\item Let $E$ be a measurable subset of $\bbR^2$ such that for almost every
-  $x\in\bbR^1$, $\left\{\,y:(x,y)\in E\,\right\}$ has
-  $\bbR^1$-measure zero. Show that $E$ has measure zero and that for almost
-  every $y\in\bbR^1$, $\left\{\,x:(x,y)\in E\,\right\}$ has
+\item Let $E$ be a measurable subset of $\bfR^2$ such that for almost every
+  $x\in\bfR^1$, $\left\{\,y:(x,y)\in E\,\right\}$ has
+  $\bfR^1$-measure zero. Show that $E$ has measure zero and that for almost
+  every $y\in\bfR^1$, $\left\{\,x:(x,y)\in E\,\right\}$ has
   measure zero.
-\item Let $f(x,y)$ be nonnegative and measurable in $\bbR^2$. Suppose that
-  for almost every $x\in\bbR^1$, $f(x,y)$ is finite for almost every
-  $y$. Show that for almost $y\in\bbR^1$, $f(x,y)$ is finite for almost
+\item Let $f(x,y)$ be nonnegative and measurable in $\bfR^2$. Suppose that
+  for almost every $x\in\bfR^1$, $f(x,y)$ is finite for almost every
+  $y$. Show that for almost $y\in\bfR^1$, $f(x,y)$ is finite for almost
   every $x$.
 \end{enumerate}
 \end{problem}
@@ -20,17 +20,17 @@ $E_y\coloneqq\left\{\,x:(x,y)\in E\,\right\}$ then, by Theorem 6.8, we have
 \begin{equation}
 \label{eq:consequence-of-fubini}
 |E|=
-\iint_{\bbR^2}\chi_E\diff x\diff y=
-\int_\bbR\left[\int_{E_x}1\diff y\right]\diff x=
-\int_\bbR\biggl[\int_{E_y}1\diff x\biggr]\diff y=
+\iint_{\bfR^2}\chi_E\diff x\diff y=
+\int_\bfR\left[\int_{E_x}1\diff y\right]\diff x=
+\int_\bfR\biggl[\int_{E_y}1\diff x\biggr]\diff y=
 0.
 \end{equation}
 Hence, $E$ has measure zero. Moreover, we see that
-$\int_\bbR\bigl[\int_{E_y}1\diff x\bigr]\diff y=0$ which means that for
-a.e.\@ $y\in\bbR$, $E_y$ has $\bbR^1$-measure zero.
+$\int_\bfR\bigl[\int_{E_y}1\diff x\bigr]\diff y=0$ which means that for
+a.e.\@ $y\in\bfR$, $E_y$ has $\bfR^1$-measure zero.
 \\\\
-(b) Let $E$ be the set of all pairs $(x,y)\in\bbR^2$ such that $f(x,y)$ is
-not finite. By hypothesis, the set $E_x$ has $\bbR^1$-measure zero for
+(b) Let $E$ be the set of all pairs $(x,y)\in\bfR^2$ such that $f(x,y)$ is
+not finite. By hypothesis, the set $E_x$ has $\bfR^1$-measure zero for
 a.e.\@ $x$. Therefore, by part (a) the set $E_y$ has measure zero. Hence,
 for a.e.\@ $y$, $f(x,y)$ is finite for a.e.\@ $x$.
 \end{proof}
@@ -50,7 +50,7 @@ Fubini's theorem we have
 \int_I\left[\int_I f(x)-f(y)\diff x\right]\diff y=
 \int_I\left[\int_I f(x)-f(y)\diff y\right]\diff x<\infty.
 \end{equation}
-Hence, for a.e. $y\in\bbR$, $f(x)-f(y)$ is integrable so $f(x)$ is
+Hence, for a.e. $y\in\bfR$, $f(x)-f(y)$ is integrable so $f(x)$ is
 integrable.
 \end{proof}
 \newpage
@@ -115,14 +115,14 @@ L[0,1]$.
 \newpage
 
 \begin{problem}[Wheeden \& Zygmund {\S}6, Ex.\@ 6]
-For $f\in L(\bbR^1)$, define the \emph{Fourier transform $\hat f$} of $f$
+For $f\in L(\bfR^1)$, define the \emph{Fourier transform $\hat f$} of $f$
 by
 \[
 \hat f(x)=\frac{1}{2\pi}\int_{-\infty}^\infty f(t)e^{-ixt}\diff t
 \]
-for $x\in\bbR^1$. (For complex-valued function $F=F_0+iF_1$ whose real and
+for $x\in\bfR^1$. (For complex-valued function $F=F_0+iF_1$ whose real and
 imaginary parts $F_0$ and $F_1$ are integrable, we define $\int F=\int
-F_0+i\int F_1$.) Show that if $f$ and $g$ belong to $L(\bbR^1)$, then
+F_0+i\int F_1$.) Show that if $f$ and $g$ belong to $L(\bfR^1)$, then
 \[
 \widehat{(f*g)}(x)=2\pi\hat f(x)\hat g(x).
 \]
@@ -151,18 +151,18 @@ as desired.
 \newpage
 
 \begin{problem}[Wheeden \& Zygmund {\S}6, Ex.\@ 7]
-Let $F$ be a closed subset of $\bbR^1$ and let $\delta(x)=\delta(x,F)$ be
+Let $F$ be a closed subset of $\bfR^1$ and let $\delta(x)=\delta(x,F)$ be
 the corresponding distance function. If $\lambda>0$ and $f$ is nonnegative
 and integrable over the complement of $F$, prove that the function
 \[
-\int_{\bbR^1}\frac{\delta^\lambda(y)f(y)}{\left|x-y\right|^{1+\lambda}}\diff
+\int_{\bfR^1}\frac{\delta^\lambda(y)f(y)}{\left|x-y\right|^{1+\lambda}}\diff
 t
 \]
 is integrable over $F$ and so is finite a.e.\@ in $F$. (In case
 $f=\chi_{(a,b)}$, this reduces to Theorem 6.17.)
 \end{problem}
 \begin{proof}
-Set $G\coloneqq\bbR\minus F$. By assumption, we have
+Set $G\coloneqq\bfR\minus F$. By assumption, we have
 \begin{equation}
   \label{eq:hypothesis-of-integrability}
 \int_Gf(x)\diff x<\infty.
@@ -171,7 +171,7 @@ By Tonelli's theorem, since $\delta(y)=0$ for $y\in F$, we have
 \begin{equation}
 \label{eq:application-of-tonelli}
 \begin{aligned}[t]
-\int_F\left[\int_\bbR\frac{\delta^\lambda(y)f(y)}{|x-y|^{1+\lambda}}\diff
+\int_F\left[\int_\bfR\frac{\delta^\lambda(y)f(y)}{|x-y|^{1+\lambda}}\diff
   y\right]\diff x
 &=\int_F\left[\int_G\frac{\delta^\lambda(y)f(y)}{|x-y|^{1+\lambda}}\diff
   y\right]\diff x\\
@@ -189,7 +189,7 @@ Then, by \eqref{eq:hypothesis-of-integrability}, we have
 \begin{equation}
 \label{eq:application-of-fubini-2}
 \begin{aligned}[t]
- \int_F\left[\int_\bbR\frac{\delta^{\lambda}(y)f(y)}{|x-y|^{1+\lambda}}\diff
+ \int_F\left[\int_\bfR\frac{\delta^{\lambda}(y)f(y)}{|x-y|^{1+\lambda}}\diff
 y\right]\diff x
 &\leq\int_G\delta^\lambda(y)f(y)\left[2\lambda^{-1}\delta(y)^{-\lambda}\right]\diff
 y\\
@@ -205,7 +205,7 @@ as desired.
 \begin{enumerate}[label=(\alph*)]
 \item Show that $M_\lambda(x;F)=+\infty$ if $x\notin F$, $\lambda>0$.
 \item Let $F=[c,d]$ be a closed subinterval of a bounded open interval
-  $(a,b)\subset\bbR^1$, and let $M_\alpha$ be the corresponding
+  $(a,b)\subset\bfR^1$, and let $M_\alpha$ be the corresponding
   Marcinkiewicz integral, $\lambda>0$. Show that $M_\lambda$ is finite for
   every $x\in(c,d)$ and that $M_\lambda(c)=M_\lambda(d)=\infty$. Show also
   that $\int M_\lambda\leq\lambda^{-1}|G|$, where $G=(a,b)-[c,d]$.
