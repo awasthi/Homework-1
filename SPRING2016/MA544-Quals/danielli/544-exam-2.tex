@@ -81,7 +81,27 @@ $k\to\infty$ for a.e.\@ $x\in E$. Show that
 (\emph{Hint:} Use Egorov's theorem.)
 \end{problem}
 \begin{proof}
-
+Let $\varepsilon>0$ be given. Then, by the hypothesis, there exists
+$\delta>0$ such that
+such that $|A|<\delta$
+implies
+\begin{equation}
+  \label{eq:hypothesis-2-3}
+\int_A |f_k|<\varepsilon
+\end{equation}
+for all $k\in\bfN$. By Egorov's theorem, there exists a closed subset $F$
+of $E$ such that $|E\minus F|<\delta$ and $f_k\to f$ uniformly on
+$F$. Then, by the uniform convergence theorem,
+\begin{equation}
+\label{eq:uniform-convergence-2-3}
+\int_F f_k\to \int_F f
+\end{equation}
+as $k\to\infty$. But by hypothesis, we have
+\begin{equation}
+\label{eq:need-to-show-2-}
+\int_{E\minus F} |f_k|<\varepsilon.
+\end{equation}
+Letting $\varepsilon\to 0$, we achieved the desired convergence.
 \end{proof}
 
 \begin{problem}
@@ -92,6 +112,28 @@ t^{-1}f(t)\diff t$ for $x\in I$. Prove that $g\in L^1(I)$ and
 \]
 \end{problem}
 \begin{proof}
+By Lusin's theorem, there exists a closed subset $F$ of $I$ with $|I\minus
+F|<\varepsilon$ such that the restriction of $f$ to $F\coloneqq I\minus E$
+is continuous. Now, since $F$ is closed in $I$ and $I$ is compact, it
+follows that $I$ is compact. Hence, by the Stone--Weierstraß approximation
+theorem, there exist a sequence of polynomials $\left\{ p_k \right\}$ such
+that $p_k\to f$ uniformly on $F$. Then, by the uniform convergence theorem,
+we have
+\begin{equation}
+  \label{eq:uniform-convergence-2-4}
+\int_F p_k\to \int_F f
+\end{equation}
+so
+\begin{equation}
+  \label{eq:uniform-convergence-2-2-4}
+\begin{aligned}
+\int_F\int_x^1t^{-1}p_k(t)\diff t\diff x
+&=\int_F\int_x^1 at^{-1}+q_k(t)\diff t\diff x\\
+&=\int_F q_k'(x)-a\log(x)\diff x\\
+&<\infty
+\end{aligned}
+\end{equation}
+for all $k$ and converges uniformly to $g$ so $g\in L^1(I)$.
 \end{proof}
 
 %%% Local Variables:
