@@ -1,0 +1,14 @@
+\documentclass[crop,tikz,10pt]{standalone}
+\usetikzlibrary{cd}
+\begin{document}
+\begin{tikzcd}[row sep=scriptsize, column sep=scriptsize]
+& f^* E_v \arrow[dl]\arrow[rr]\arrow[dd]&& E_v\arrow[dd]\arrow[dl]\\
+f^* E \arrow[rr,crossing over]\arrow[dd] && E\\
+& U\arrow[dl] \arrow[rr]&& V\arrow[dl]\\
+M\arrow[rr] && N\arrow[uu, crossing over, leftarrow]\\
+\end{tikzcd}
+\end{document}
+
+%%% Local Variables:
+%%% TeX-master: t
+%%% End:
