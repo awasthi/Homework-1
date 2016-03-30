@@ -41,7 +41,10 @@
 %% PDFTeX specific
 \usepackage[mathcal]{euscript}
 \usepackage{mathrsfs}
+\usepackage[nointegrals]{wasysym}
 
+%% Languages
+\usepackage{cmap}
 \usepackage[LAE,LFE,T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[farsi,french,german,spanish,russian,english]{babel}
@@ -58,7 +61,6 @@
 
 \newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
 
-\usepackage{cmap}
 \usepackage{CJKutf8}
 \newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
 \newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}

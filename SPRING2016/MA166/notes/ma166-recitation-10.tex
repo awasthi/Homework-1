@@ -1,0 +1,303 @@
+\chapter{Homework}
+Here is this week's WebAssign homework and outlines of the solutions to the
+problems.
+
+\bigskip
+
+\textkr{성준아}, here is the material you need to know to give this
+recitation tomorrow. The subject for tomorrow's recitation are the
+different convergence tests for series found in sections \S 11.6
+to 11.8 of Stewart's book. Here is a rough summary of the material on those
+sections:
+\section*{Stewart \S 11.6--\S 11.8 Summary}
+\subsection*{\S 11.6: Absolute Convergence and the Ratio and Root Tests}
+\begin{definition}
+A series $\sum a_n$ is called \emph{absolutely convergent} if the series of
+absolute values $\sum |a_n|$ is convergent.
+\end{definition}
+\begin{definition}
+A series $\sum a_n$ is called \emph{conditionally convergent} if it is
+convergent but not absolutely convergent.
+\end{definition}
+\begin{theorem}
+If a series $\sum a_n$ is absolutely convergent, then it is conditionally
+convergent.
+\end{theorem}
+\begin{theorem}[The Ratio Test]
+\begin{enumerate}[label=\textnormal{(\roman*)},noitemsep]
+\item If $\lim\left|a_{n+1}/a_n\right|=L<1$, then the series
+  $\sum a_n$ is absolutely convergent (and therefore convergent).
+\item If $\lim\left|a_{n+1}/a_n\right|=L>1$ or $\infty$, then the series
+  $\sum a_n$ is divergent.
+\item If $\lim\left|a_{n+1}/a_n\right|=L=1$, the \emph{ratio test} is
+  inconclusive; that is, conclusion can be drawn about the convergence or
+  divergence of $sum a_n$.
+\end{enumerate}
+\end{theorem}
+\begin{theorem}[The Root Test]
+\begin{enumerate}[label=\textnormal{(\roman*)},noitemsep]
+\item If $\lim\sqrt[n]{|a_n|}=L<1$, the series $\sum a_n$ is is absolutely
+  convergent (and therefore convergent).
+\item If $\lim\sqrt[n]{|a_n|}=L>1$ or $\infty$, then the series $\sum
+  a_n$ is divergent.
+\item If $\lim\sqrt[n]{|a_n|}=L=1$, the \emph{root test} is inconclusive.
+\end{enumerate}
+\end{theorem}
+\subsection*{\S 11.7: Strategy for Testing Series}
+\begin{enumerate}[label=\textbf{\roman*.}]
+\item If the series is of the form $\sum 1/n^p$, it is a $p$-series, which
+  we know to be convergent if $p>1$ and divergent if $p\leq 1$.
+\item If the series has the form $\sum ar^{n-1}$ or $\sum ar^n$, it is a
+  geometric series, which converges if $|r|<1$ and diverges if $|r|\geq
+  1$.
+\item If the series has a form similar to a $p$-series or geometric series,
+  then one of the comparison tests should be considered.
+\item If you can see $\lim a_n\neq 0$, then the test for divergence should
+  be used.
+\item If the series has the form $\sum(-1)^{n+1} b_n$ or $\sum (-1)^n b_n$,
+  the alternating test is an obvious choice.
+\item Series that involve factorials and other products are handled
+  conveniently with the ratio test.
+\item If $a_n$ has the form ${b_n}^n$, then the root test may be useful.
+\item If $a_n=f(n)$, where $\int_1^\infty f(x)\diff x$ is easily evaluated,
+  the integral test is effective.
+\end{enumerate}
+\subsection*{\S 11.8: Power Series}
+\begin{definition}
+A \emph{power series} is a series of the form
+\[
+\sum_{n=0}^\infty c_nx^n=c_0+c_1x+c_2x^2+\dotsb
+\]
+where $x$ is a variable and the $c_n$'s are constants called
+\emph{coefficients} of the series.
+\end{definition}
+\begin{definition}
+More generally, a series of the form
+\[
+\sum_{n=0}^\infty c_n(x-a)^n=c_0+c_1(x-a)+c_2+(x-a)^2+\dotsb
+\]
+is called a \emph{power series in $(x-a)$} or a \emph{power series centered
+at $a$} or a \emph{power series series about $a$}.
+\end{definition}
+\newpage
+\section*{Homework 25}
+\begin{problem}[WebAssign HW 25, \# 1]
+Determine whether the series is absolutely convergent, conditionally
+convergent, or divergent.
+\[
+\sum_{n=1}^\infty\frac{n}{\sqrt{n^3-9}}.
+\]
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}[WebAssign HW 25, \# 2]
+Determine whether the series is absolutely convergent, conditionally
+convergent, or divergent.
+\[
+\sum_{n=1}^\infty\frac{\sin 7n}{5^n}.
+\]
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}[WebAssign HW 25, \# 3]
+Determine whether the series is absolutely convergent, conditionally
+convergent, or divergent.
+\[
+\sum_{n=1}^\infty\frac{12^n}{(n+1) 5^{2n+1}}.
+\]
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}[WebAssign HW 25, \# 4]
+Determine whether the series is absolutely convergent, conditionally
+convergent, or divergent.
+\[
+\sum_{n=2}^\infty\frac{(-1)^n}{\ln 6n}.
+\]
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}[WebAssign HW 25, \# 5]
+The terms of a series are defined recursively by the equations
+\[
+a_1=4\qquad a_{n+1}=\frac{7n+1}{3n+9}\cdot a_n.
+\]
+Determine whether $\sum a_n$ is absolutely convergent, conditionally
+convergent, or divergent.
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+
+\section*{Homework 27}
+\begin{problem}[WebAssign HW 27, \# 1]
+Determine whether the series is absolutely convergent, conditionally
+convergent, or divergent.
+\[
+\sum_{n=1}^\infty\left(\frac{n^2+4}{5n^2+2}\right)^n.
+\]
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}[WebAssign HW 27, \# 2]
+Test the series for convergence or divergence.
+\[
+\sum_{n=1}^\infty\frac{1}{n+6^n}
+\]
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}[WebAssign HW 27, \# 3]
+Test the series for convergence or divergence.
+\[
+\sum_{n=1}^\infty\frac{(4n+1)^n}{n^{5n}}.
+\]
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}[WebAssign HW 27, \# 4]
+Test the series for convergence or divergence.
+\[
+\sum_{n=1}^\infty (-1)^n\frac{5n}{n+3}.
+\]
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}[WebAssign HW 27, \# 5]
+Test the series for convergence or divergence.
+\[
+\sum_{n=1}^\infty\frac{n^28^{n-1}}{(-9)^n}.
+\]
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}[WebAssign HW 27, \# 6]
+Test the series for convergence or divergence.
+\[
+\sum_{n=1}^\infty \frac{1}{8n+5}.
+\]
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}[WebAssign HW 27, \# 7]
+Test the series for convergence or divergence.
+\[
+\sum_{n=2}^\infty\frac{1}{n\sqrt{\ln 7n}}.
+\]
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}[WebAssign HW 27, \# 8]
+Test the series for convergence or divergence.
+\[
+\sum_{k=1}^\infty\frac{6^kk!}{(k+2)!}.
+\]
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}[WebAssign HW 27, \# 9]
+Test the series for convergence or divergence.
+\[
+\sum_{n=1}^\infty\frac{6n!}{e^{n^2}}.
+\]
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\section*{Homework 28}
+\begin{problem}[WebAssign HW 28, \# 1]
+Find the radius of convergence, $R$, of the series.
+\[
+\sum_{n=2}^\infty\frac{x^{n+1}}{2n!}.
+\]
+Find the interval, $I$, of convergence of the series.
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}[WebAssign HW 28, \# 2]
+Find the radius of convergence, $R$, of the series.
+\[
+\sum_{n=1}^\infty\frac{8^nx^n}{n^3}.
+\]
+Find the interval, $I$, of convergence of the series.
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}[WebAssign HW 28, \# 3]
+Find the radius of convergence, $R$, of the series.
+\[
+\sum_{n=1}^\infty\frac{(-5)^n}{n\sqrt{n}}x^n.
+\]
+Find the interval, $I$, of convergence of the series.
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}[WebAssign HW 28, \# 4]
+Find the radius of convergence, $R$, of the series.
+\[
+\sum_{n=2}^\infty(-1)^n\frac{x^n}{12^n\ln n}.
+\]
+Find the interval, $I$, of convergence of the series.
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}[WebAssign HW 28, \# 5]
+Find the radius of convergence, $R$, of the series.
+\[
+\sum_{n=0}^\infty\frac{(x-4)^n}{n^6+1}.
+\]
+Find the interval, $I$, of convergence of the series.
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}[WebAssign HW 28, \# 6]
+Find the radius of convergence, $R$, of the series.
+\[
+\sum_{n=1}^\infty\frac{6^n(x+4)^n}{\sqrt{n}}.
+\]
+Find the interval, $I$, of convergence of the series.
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}[WebAssign HW 28, \# 7]
+Find the radius of convergence, $R$, of the series.
+\[
+\sum_{n=1}^\infty\frac{(x-6)^n}{n^n}.
+\]
+Find the interval, $I$, of convergence of the series.
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}[WebAssign HW 28, \# 8]
+Find the radius of convergence, $R$, of the series.
+\[
+\sum_{n=1}^\infty\frac{n}{b^n}(x-a)^n, \qquad b>0.
+\]
+Find the interval, $I$, of convergence of the series.
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}[WebAssign HW 28, \# 9]
+Find the radius of convergence, $R$, of the series.
+\[
+\sum_{n=1}^\infty n!(3x-1)^n.
+\]
+Find the interval, $I$, of convergence of the series.
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}[WebAssign HW 28, \# 10]
+Find the radius of convergence, $R$, of the series.
+\[
+\sum_{n=2}^\infty\frac{x^{6n}}{n(\ln n)^8}.
+\]
+Find the interval, $I$, of convergence of the series.
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+
+
+\chapter{Relevant Exam Problems}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA166-Recitation"
+%%% End:

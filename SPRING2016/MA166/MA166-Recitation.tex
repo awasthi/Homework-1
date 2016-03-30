@@ -1,7 +1,7 @@
 \def\documentauthor{Carlos Salinas}
-\def\hwnum{9}
-\def\documenttitle{MA166: Exam {\hwnum} Solutions}
-\def\shorttitle{MA166-Exam-{\hwnum}-Sols}
+\def\hwnum{10}
+\def\documenttitle{MA166: Recitation {\hwnum}}
+\def\shorttitle{MA166-Recitation-{\hwnum}}
 \def\coursename{MA166}
 \def\documentsubject{calculus ii}
 \def\authoremail{salinac@purdue.edu}
@@ -50,8 +50,9 @@
 \usepackage{mathtools}
 \usepackage[mathcal]{euscript}
 \usepackage{mathrsfs}
-\usepackage{wasysym}
+\usepackage[nointegrals]{wasysym}
 
+\usepackage{cmap}
 \usepackage[LAE,LFE,T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[farsi,french,german,spanish,russian,english]{babel}
@@ -68,7 +69,6 @@
 
 \newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
 
-\usepackage{cmap}
 \usepackage{CJKutf8}
 \newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
 \newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
@@ -131,15 +131,22 @@
 \newcommand\diff{\mathop{}\!\mathrm{d}}
 \newcommand\Diff[1]{\mathop{}\!\mathrm{d^#1}}
 
-\newcommand{\bbC}{\mathbb{C}}
 \newcommand{\bbN}{\mathbb{N}}
 \newcommand{\bbQ}{\mathbb{Q}}
 \newcommand{\bbR}{\mathbb{R}}
 \newcommand{\bbZ}{\mathbb{Z}}
 
+\newcommand{\bfN}{\mathbf{N}}
+\newcommand{\bfQ}{\mathbf{Q}}
+\newcommand{\bfR}{\mathbf{R}}
+\newcommand{\bfZ}{\mathbf{Z}}
+
 \newcommand{\bfu}{\mathbf{u}}
 \newcommand{\bfv}{\mathbf{v}}
 \newcommand{\bfw}{\mathbf{w}}
+\newcommand{\bfx}{\mathbf{x}}
+\newcommand{\bfy}{\mathbf{y}}
+\newcommand{\bfz}{\mathbf{z}}
 
 \newenvironment{apmatrix}[1]{%
   \left(\begin{array}{@{}*{#1}{c}|c@{}}
