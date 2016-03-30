@@ -90,9 +90,9 @@ possibilities:
 \end{enumerate}
 \end{theorem}
 The number $R$ in (iii) is called the \emph{radius of convergence} of the
-power series. By convention, $R=0$ in case (i) and $\infty$ in case (ii)>
+power series. By convention, $R=0$ in case (i) and $\infty$ in case (ii).
 The \emph{interval of convergence} of a power series is the interval that
-consists of all values of $x$ fr which the series converges.
+consists of all values of $x$ for which the series converges.
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
 \hline
@@ -277,8 +277,8 @@ Find the interval, $I$, of convergence of the series.
 \end{problem}
 \newpage
 \chapter{Relevant Exam Problems}
-If you run out of things to talk about within the first few minutes, talk
-about these problems
+If you run out of things to talk about within the first fifteen to twenty
+minutes, talk about these
 \begin{problem}[Exam 3, Spring 2015, \# 2]
 The series
 \[
@@ -287,6 +287,17 @@ The series
 if and only if $\alpha$ is?
 \end{problem}
 \begin{proof}[Solution]
+Note that
+\[
+(n^{3\alpha}+9)^{1/8}>n^{3\alpha/8}
+\]
+so that
+\[
+\frac{1}{(n^{3\alpha}+9)^{1/8}}<\frac{1}{n^{3\alpha/8}}
+\]
+the left of which forms a $p$-series with $p=3\alpha/8$. For this
+$p$-series to converge $3\alpha/8>1$ so $\alpha>8/3$. This narrows down the
+answer to exactly one of the choices, in the exam namely C.
 \end{proof}
 \begin{problem}[Exam 3, Spring 2015, \# 3]
 Test the following series for convergence or divergence.
@@ -297,6 +308,43 @@ Test the following series for convergence or divergence.
 \end{enumerate}
 \end{problem}
 \begin{proof}[Solution]
+In the case of (a), you've seen time and time again that the limit of the
+sequence $a_n\coloneqq n\sin(1/n)$ goes to $1$ as $n\to\infty$ (if you are
+not convinced, use l'Hôpital's rule on the limit $x\sin(1/x)$ as
+$x\to\infty$). In particular, since the limit is nonzero, this series
+cannot converge.
+
+In the case of (b), note that $a_n\coloneqq \arctan(\pi/2 n)$ fails to
+satisfy the second condition for the alternating series test, namely, since
+$\pi/2n\to \infty$ as $n\to\infty$, we have $\arctan(\pi/2 n)\to\pi/2\neq
+0$, so the series must diverge.
+
+Lastly, in the case of (c), we have
+\[
+(n^3+4)\sqrt{n}>n^3\sqrt{n}=n^{7/2}
+\]
+so
+\begin{align*}
+\sum_{n=1}^\infty\frac{n^2+9}{(n^3+4)\sqrt{n}}
+&<\sum_{n=1}^\infty\frac{n^2+9}{n^{7/2}}\\
+&=\sum_{n=1}^\infty\frac{n^2}{n^{7/2}}+
+9\sum_{n=1}^\infty\frac{1}{n^{7/2}}\\
+&=\underbrace{\sum_{n=1}^\infty\frac{1}{n^{5/2}}}_{S_1}+
+9\underbrace{\sum_{n=1}^\infty\frac{1}{n^{7/2}}}_{S_2}
+\end{align*}
+Both of which are $p$-series with $p_1=5/2>1$ and $p_2=7/2>1$,
+respectively. This implies that $S_1$ and $S_2$ converge so by the (as
+Stewart calls it) direct comparison test, the original series
+converges. Therefore, the letter answer to this problem is D.
+
+\textbf{Correction!!!} It seems the answer is actually C and the difference
+here is that the test writer is claiming (b) converges. The only
+explanation can see for this is that he meant to write
+$\arctan(\pi/(2n))$. In this case the conditions of the alternating series
+tests are satisfied since (i) $\frac{\diff}{\diff
+  x}(\arctan(\pi/(2x)))=-\pi x^{-2}/(2+\pi^2 x^{-2}/2)<0$ on $1\leq
+x\leq\infty$ so the terms of the series are decreasing and (ii) $\lim
+\arctan(\pi/(2n))=0$ since $\pi/(2n)\to 0$ as $n\to 0$ and $\arctan(0)=0$.
 \end{proof}
 \begin{problem}[Exam 3, Spring 2015, \# 7]
 Suppose that the powers
@@ -316,6 +364,11 @@ conclude to be true?
 \end{enumerate}
 \end{problem}
 \begin{proof}[Solution]
+For case I.\@ just recall what it means to be the radius of
+convergence. It's a real number $R\geq 0$ such that $|x-5|<R$ implies that
+the series converges. In this case, we are told that for $x=2$ and for
+$x=10$, which tells us that the series converges for $|x-5|\leq 3$ and
+diverges $|x-5|\geq 5$
 \end{proof}
 
 \begin{center}
