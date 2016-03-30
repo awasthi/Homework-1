@@ -44,7 +44,7 @@ convergent.
 \end{enumerate}
 \end{theorem}
 \subsection*{\S 11.7: Strategy for Testing Series}
-\begin{enumerate}[label=\textbf{\roman*.}]
+\begin{enumerate}[label=\textbf{\arabic*.}]
 \item If the series is of the form $\sum 1/n^p$, it is a $p$-series, which
   we know to be convergent if $p>1$ and divergent if $p\leq 1$.
 \item If the series has the form $\sum ar^{n-1}$ or $\sum ar^n$, it is a
@@ -79,6 +79,36 @@ More generally, a series of the form
 is called a \emph{power series in $(x-a)$} or a \emph{power series centered
 at $a$} or a \emph{power series series about $a$}.
 \end{definition}
+\begin{theorem}
+For a given power series $\sum c_n(x-a)^n$ there are only three
+possibilities:
+\begin{enumerate}[label=\textnormal{(\roman*)},noitemsep]
+\item The series converges only when $x=a$.
+\item The series converges for all $x$.
+\item There is a positive number $R$ such that the series converges if
+  $|x-a|<R$ and diverges if $|x-a|>R$.
+\end{enumerate}
+\end{theorem}
+The number $R$ in (iii) is called the \emph{radius of convergence} of the
+power series. By convention, $R=0$ in case (i) and $\infty$ in case (ii)>
+The \emph{interval of convergence} of a power series is the interval that
+consists of all values of $x$ fr which the series converges.
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+&Series&Radius of convergence&Interval of convergence\\
+\hline
+&&&\\
+Geometric series&$\displaystyle\sum x^n$&$R=1$&$(-1,1)$\\
+Example 1&$\displaystyle\sum n!x^n$&$r=0$&$\{0\}$\\
+Example 2&$\displaystyle\sum\frac{(x-3)^n}{n}$&$R=1$&$[2,4)$\\
+Example
+  3&$\displaystyle\sum\frac{(-1)^nx^{2n}}{2^{2n}(n!)^2}$&$R=\infty$&$(-\infty,\infty)$\\
+&&&\\
+\hline
+\end{tabular}
+\end{center}
+Now
 \newpage
 \section*{Homework 25}
 \begin{problem}[WebAssign HW 25, \# 1]
@@ -88,8 +118,6 @@ convergent, or divergent.
 \sum_{n=1}^\infty\frac{n}{\sqrt{n^3-9}}.
 \]
 \end{problem}
-\begin{proof}[Solution]
-\end{proof}
 \begin{problem}[WebAssign HW 25, \# 2]
 Determine whether the series is absolutely convergent, conditionally
 convergent, or divergent.
@@ -97,8 +125,6 @@ convergent, or divergent.
 \sum_{n=1}^\infty\frac{\sin 7n}{5^n}.
 \]
 \end{problem}
-\begin{proof}[Solution]
-\end{proof}
 \begin{problem}[WebAssign HW 25, \# 3]
 Determine whether the series is absolutely convergent, conditionally
 convergent, or divergent.
@@ -106,8 +132,6 @@ convergent, or divergent.
 \sum_{n=1}^\infty\frac{12^n}{(n+1) 5^{2n+1}}.
 \]
 \end{problem}
-\begin{proof}[Solution]
-\end{proof}
 \begin{problem}[WebAssign HW 25, \# 4]
 Determine whether the series is absolutely convergent, conditionally
 convergent, or divergent.
@@ -115,8 +139,6 @@ convergent, or divergent.
 \sum_{n=2}^\infty\frac{(-1)^n}{\ln 6n}.
 \]
 \end{problem}
-\begin{proof}[Solution]
-\end{proof}
 \begin{problem}[WebAssign HW 25, \# 5]
 The terms of a series are defined recursively by the equations
 \[
@@ -125,8 +147,6 @@ a_1=4\qquad a_{n+1}=\frac{7n+1}{3n+9}\cdot a_n.
 Determine whether $\sum a_n$ is absolutely convergent, conditionally
 convergent, or divergent.
 \end{problem}
-\begin{proof}[Solution]
-\end{proof}
 
 \section*{Homework 27}
 \begin{problem}[WebAssign HW 27, \# 1]
@@ -136,72 +156,54 @@ convergent, or divergent.
 \sum_{n=1}^\infty\left(\frac{n^2+4}{5n^2+2}\right)^n.
 \]
 \end{problem}
-\begin{proof}[Solution]
-\end{proof}
 \begin{problem}[WebAssign HW 27, \# 2]
 Test the series for convergence or divergence.
 \[
 \sum_{n=1}^\infty\frac{1}{n+6^n}
 \]
 \end{problem}
-\begin{proof}[Solution]
-\end{proof}
 \begin{problem}[WebAssign HW 27, \# 3]
 Test the series for convergence or divergence.
 \[
 \sum_{n=1}^\infty\frac{(4n+1)^n}{n^{5n}}.
 \]
 \end{problem}
-\begin{proof}[Solution]
-\end{proof}
 \begin{problem}[WebAssign HW 27, \# 4]
 Test the series for convergence or divergence.
 \[
 \sum_{n=1}^\infty (-1)^n\frac{5n}{n+3}.
 \]
 \end{problem}
-\begin{proof}[Solution]
-\end{proof}
 \begin{problem}[WebAssign HW 27, \# 5]
 Test the series for convergence or divergence.
 \[
 \sum_{n=1}^\infty\frac{n^28^{n-1}}{(-9)^n}.
 \]
 \end{problem}
-\begin{proof}[Solution]
-\end{proof}
 \begin{problem}[WebAssign HW 27, \# 6]
 Test the series for convergence or divergence.
 \[
 \sum_{n=1}^\infty \frac{1}{8n+5}.
 \]
 \end{problem}
-\begin{proof}[Solution]
-\end{proof}
 \begin{problem}[WebAssign HW 27, \# 7]
 Test the series for convergence or divergence.
 \[
 \sum_{n=2}^\infty\frac{1}{n\sqrt{\ln 7n}}.
 \]
 \end{problem}
-\begin{proof}[Solution]
-\end{proof}
 \begin{problem}[WebAssign HW 27, \# 8]
 Test the series for convergence or divergence.
 \[
 \sum_{k=1}^\infty\frac{6^kk!}{(k+2)!}.
 \]
 \end{problem}
-\begin{proof}[Solution]
-\end{proof}
 \begin{problem}[WebAssign HW 27, \# 9]
 Test the series for convergence or divergence.
 \[
 \sum_{n=1}^\infty\frac{6n!}{e^{n^2}}.
 \]
 \end{problem}
-\begin{proof}[Solution]
-\end{proof}
 \section*{Homework 28}
 \begin{problem}[WebAssign HW 28, \# 1]
 Find the radius of convergence, $R$, of the series.
@@ -210,8 +212,6 @@ Find the radius of convergence, $R$, of the series.
 \]
 Find the interval, $I$, of convergence of the series.
 \end{problem}
-\begin{proof}[Solution]
-\end{proof}
 \begin{problem}[WebAssign HW 28, \# 2]
 Find the radius of convergence, $R$, of the series.
 \[
@@ -219,8 +219,6 @@ Find the radius of convergence, $R$, of the series.
 \]
 Find the interval, $I$, of convergence of the series.
 \end{problem}
-\begin{proof}[Solution]
-\end{proof}
 \begin{problem}[WebAssign HW 28, \# 3]
 Find the radius of convergence, $R$, of the series.
 \[
@@ -228,8 +226,6 @@ Find the radius of convergence, $R$, of the series.
 \]
 Find the interval, $I$, of convergence of the series.
 \end{problem}
-\begin{proof}[Solution]
-\end{proof}
 \begin{problem}[WebAssign HW 28, \# 4]
 Find the radius of convergence, $R$, of the series.
 \[
@@ -237,8 +233,6 @@ Find the radius of convergence, $R$, of the series.
 \]
 Find the interval, $I$, of convergence of the series.
 \end{problem}
-\begin{proof}[Solution]
-\end{proof}
 \begin{problem}[WebAssign HW 28, \# 5]
 Find the radius of convergence, $R$, of the series.
 \[
@@ -246,8 +240,6 @@ Find the radius of convergence, $R$, of the series.
 \]
 Find the interval, $I$, of convergence of the series.
 \end{problem}
-\begin{proof}[Solution]
-\end{proof}
 \begin{problem}[WebAssign HW 28, \# 6]
 Find the radius of convergence, $R$, of the series.
 \[
@@ -255,8 +247,6 @@ Find the radius of convergence, $R$, of the series.
 \]
 Find the interval, $I$, of convergence of the series.
 \end{problem}
-\begin{proof}[Solution]
-\end{proof}
 \begin{problem}[WebAssign HW 28, \# 7]
 Find the radius of convergence, $R$, of the series.
 \[
@@ -264,8 +254,6 @@ Find the radius of convergence, $R$, of the series.
 \]
 Find the interval, $I$, of convergence of the series.
 \end{problem}
-\begin{proof}[Solution]
-\end{proof}
 \begin{problem}[WebAssign HW 28, \# 8]
 Find the radius of convergence, $R$, of the series.
 \[
@@ -273,8 +261,6 @@ Find the radius of convergence, $R$, of the series.
 \]
 Find the interval, $I$, of convergence of the series.
 \end{problem}
-\begin{proof}[Solution]
-\end{proof}
 \begin{problem}[WebAssign HW 28, \# 9]
 Find the radius of convergence, $R$, of the series.
 \[
@@ -282,8 +268,6 @@ Find the radius of convergence, $R$, of the series.
 \]
 Find the interval, $I$, of convergence of the series.
 \end{problem}
-\begin{proof}[Solution]
-\end{proof}
 \begin{problem}[WebAssign HW 28, \# 10]
 Find the radius of convergence, $R$, of the series.
 \[
@@ -291,11 +275,52 @@ Find the radius of convergence, $R$, of the series.
 \]
 Find the interval, $I$, of convergence of the series.
 \end{problem}
+\newpage
+\chapter{Relevant Exam Problems}
+If you run out of things to talk about within the first few minutes, talk
+about these problems
+\begin{problem}[Exam 3, Spring 2015, \# 2]
+The series
+\[
+\sum_{n=1}^\infty\frac{1}{\left( n^{3\alpha}+9 \right)^{1/8}}
+\]
+if and only if $\alpha$ is?
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}[Exam 3, Spring 2015, \# 3]
+Test the following series for convergence or divergence.
+\begin{enumerate}[label=(\alph*)]
+\item $\displaystyle\sum_{n=1}^\infty n\sin\left(\frac{1}{n}\right)$.
+\item $\displaystyle\sum_{n=1}^\infty(-1)^n\arctan(\pi/2n)$.
+\item $\displaystyle\sum_{n=1}^\infty\frac{n^2+9}{(n^3+4)\sqrt{n}}$.
+\end{enumerate}
+\end{problem}
+\begin{proof}[Solution]
+\end{proof}
+\begin{problem}[Exam 3, Spring 2015, \# 7]
+Suppose that the powers
+\[
+\sum_{n=0}^\infty c_n(x-5)^n
+\]
+converges when $x=2$ and diverges when $x=10$.
+
+From the above information, which of the following statements can we
+conclude to be true?
+\begin{enumerate}[label=\MakeUppercase{\roman*}.]
+\item The radius of convergence $R$ satisfies $3\leq R\leq 5$.
+\item We \emph{cannot} determine the interval of convergence from the above
+  information only.
+\item The derivative of the power series is $\sum_{n=1}^\infty
+  nc_n(x-5)^{n-1}$ which converges when $x=3$.
+\end{enumerate}
+\end{problem}
 \begin{proof}[Solution]
 \end{proof}
 
-
-\chapter{Relevant Exam Problems}
+\begin{center}
+{\large\textkr{고마워,성준!}}
+\end{center}
 
 %%% Local Variables:
 %%% mode: latex
