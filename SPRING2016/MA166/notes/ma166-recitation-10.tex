@@ -364,11 +364,22 @@ conclude to be true?
 \end{enumerate}
 \end{problem}
 \begin{proof}[Solution]
-For case I.\@ just recall what it means to be the radius of
+For case I just recall what it means to be the radius of
 convergence. It's a real number $R\geq 0$ such that $|x-5|<R$ implies that
 the series converges. In this case, we are told that for $x=2$ and for
 $x=10$, which tells us that the series converges for $|x-5|\leq 3$ and
-diverges $|x-5|\geq 5$
+diverges $|x-5|\geq 5$ and so we know that the radius of convergence cannot
+exceed $5$ and is at least as big as $3$. Hence, I holds.
+
+For case II, the information cannot be used to determine the interval of
+convergence since, given that $3\leq R\leq 5$ is true, the interval of
+convergence may be any one of the intervals with $(2,8)$ or $(0,10)$ as
+endpoints (possibly including the endpoints).
+
+For case III, given that we know $|2-5|\leq 3$ implies $\sum c_n(2-5)^n$
+converges, by the limit comparison test (as Stewart calls it), since
+$c_n/(nc_n)\to 0$  as $n\to\infty$, this implies that $\sum nc_n(2-5)^n$
+converges. Therefore, the letter answer is D. (I and II are true).
 \end{proof}
 
 \begin{center}
