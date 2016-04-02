@@ -1,9 +1,9 @@
 \def\documentauthor{Carlos Salinas}
-\def\documenttitle{MA 544: Homework \hwnum}
-\def\hwnum{10}
-\def\shorttitle{MA 544 HW \hwnum}
+\def\documenttitle{MA572 Hatcher Notes}
+% \def\hwnum{1}
+\def\shorttitle{MA572-Notes}
 \def\coursename{MA544}
-\def\documentsubject{introduction to measure theory}
+\def\documentsubject{algebraic topology}
 \def\authoremail{salinac@purdue.edu}
 
 \documentclass[article,oneside,10pt]{memoir}
@@ -42,9 +42,8 @@
 
 % Use symbols instead of numbers
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
-\renewcommand{\theequation}{\hwnum.\arabic{equation}}
+% \renewcommand{\theequation}{\arabic{equation}}
 
-%% Languages
 \usepackage{cmap}
 \usepackage[LAE,LFE,T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -67,12 +66,11 @@
 \newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
-%% Misc
 \usepackage{graphicx}
 \graphicspath{{figures/}}
 
+% Misc
 \usepackage{microtype}
-\usepackage{lineno}
 \usepackage{multicol}
 \usepackage[inline]{enumitem}
 \usepackage{listings}
@@ -80,6 +78,14 @@
 \mleftright
 
 %% Theorems and definitions
+%% remove parentheses
+% \makeatletter
+% \def\thmhead@plain#1#2#3{%
+%   \thmname{#1}\thmnumber{\@ifnotempty{#1}{ }\@upn{#2}}%
+%   \thmnote{ {\the\thm@notefont#3}}}
+% \let\thmhead\thmhead@plain
+% \makeatother
+
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}[theorem]{Proposition}
@@ -98,80 +104,29 @@
 \newtheorem{definition}{Definition}
 \newtheorem{example}{Examples}
 \newtheorem{examples}[example]{Examples}
-% \newtheorem{exercise}{Exercise}[section]
-% \newtheorem{problem}[exercise]{Problem}
+\newtheorem{exercise}{Exercise}[chapter]
+\newtheorem{problem}[exercise]{Problem}
 
-\newcounter{problem}
-\newenvironment{problem}[1][]% environment name
-{% begin code
-  \stepcounter{problem}
-  \par\vspace{\baselineskip}\noindent
-  \ifx &#1&%
-  {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem}
-  \global\def\exercisename{Problem~\hwnum.\theproblem}%
-  \else
-  {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem~(#1)}
-  \global\def\exercisename{Problem~\hwnum.\theproblem(#1)}
-  \fi
-  \par\vspace{\baselineskip}%
-  \noindent\ignorespaces
-  % \begin{linenumbers}
-}%
-{% end code
-  \par\vspace{\baselineskip}%
-  \noindent\ignorespacesafterend
-  % \end{linenumbers}
-}
-
-% \renewenvironment{proof}[1][\proofname]
-% {
-%   {\textit #1.}
-% \begin{linenumbers}
-% }{
-% \qedsymbol
-% \end{linenumbers}
-% }
-
-\newtheorem*{definition*}{Definition}
-\newtheorem*{example*}{Examples}
-\newtheorem*{examples*}{Examples}
+\newtheorem*{example*}{Example}
 \newtheorem*{exercise*}{Exercise}
 \newtheorem*{problem*}{Problem}
 
-\theoremstyle{remark}
-\newtheorem{remark}{Remark}
-\newtheorem{remarks}[remark]{Remarks}
-\newtheorem{observation}[remark]{Observation}
-\newtheorem{observations}[remark]{Observations}
-
-\newtheorem*{remark*}{**Remark**}
-\newtheorem*{remarks*}{**Remarks**}
-\newtheorem*{observation*}{**Observation**}
-\newtheorem*{observations*}{**Observations**}
-
-%% Commands and operators
 %% Redefinitions & commands
-\newcommand{\nsubset}{\ensuremath{\not\subset}}
-\newcommand{\nsupset}{\ensuremath{\not\supset}}
-\newcommand{\nle}{\ensuremath{\not<}}
-\newcommand{\nge}{\ensuremath{\not>}}
-\newcommand\minus{\ensuremath{\null\smallsetminus}}
+\newcommand{\minus}{\ensuremath{\smallsetminus}}
+% \newcommand{\nsubset}{\ensuremath{\not\subset}}
+% \newcommand{\nsupset}{\ensuremath{\not\supset}}
 \renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
-\renewcommand{\restriction}{\mathord{\upharpoonright}}
 
 %% Commands and operators
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\vol}{vol}
 
-\DeclareMathOperator{\Coker}{Coker}
-\DeclareMathOperator{\Det}{Det}
 \DeclareMathOperator{\Id}{Id}
 \DeclareMathOperator{\Img}{Im}
-\DeclareMathOperator{\Hom}{Hom}
-\DeclareMathOperator{\Ker}{Ker}
-\DeclareMathOperator{\Tor}{Tor}
-\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Vol}{Vol}
 
 %% Differential calculus
 \DeclareMathOperator{\Curl}{curl}
@@ -180,6 +135,7 @@
 \newcommand\diff{\mathop{}\!\mathrm{d}}
 \newcommand\Diff[1]{\mathop{}\!\mathrm{d^#1}}
 \newcommand\Jac{\mathbf{J}}
+\newcommand{\BV}{\mathrm{BV}}
 \newcommand{\loc}{\mathrm{loc}}
 
 %% Symbols
@@ -206,11 +162,18 @@
 \newcommand{\bfy}{\mathbf{y}}
 \newcommand{\bfz}{\mathbf{z}}
 
-\newcommand{\dsC}{\mathds{C}}
-\newcommand{\dsN}{\mathds{N}}
-\newcommand{\dsQ}{\mathds{Q}}
-\newcommand{\dsR}{\mathds{R}}
-\newcommand{\dsZ}{\mathds{Z}}
+\newcommand{\bfalpha}{\text{\textbf{\texthe{α}}}}
+\newcommand{\bfbeta}{\text{\textbf{\texthe{β}}}}
+\newcommand{\bftheta}{\text{\textbf{\texthe{θ}}}}
+\newcommand{\bfphi}{\text{\textbf{\texthe{φ}}}}
+\newcommand{\bfpsi}{\text{\textbf{\texthe{ψ}}}}
+
+\newcommand{\vecu}{\vec{u}}
+\newcommand{\vecv}{\vec{v}}
+\newcommand{\vecw}{\vec{w}}
+\newcommand{\vecx}{\vec{x}}
+\newcommand{\vecy}{\vec{y}}
+\newcommand{\vecz}{\vec{z}}
 
 \newcommand{\calA}{\mathcal{A}}
 \newcommand{\calB}{\mathcal{B}}
@@ -248,34 +211,11 @@
 \newcommand{\scrT}{\mathscr{T}}
 
 \begin{document}
-\frontmatter
-\aliaspagestyle{title}{empty}
-\pagestyle{title}
 \author{\href{mailto:\authoremail}{\documentauthor}}
 \title{\documenttitle}
 \date{\today}
 \maketitle
-\cleartooddpage
-\makepagestyle{my-headings}
-\makeoddhead{my-headings}
-        {\small{\MakeUppercase{\itshape\documentauthor}}}
-        {}
-        {\small{\MakeUppercase{\itshape\exercisename}}}
-\makeoddfoot{my-headings}{{\itshape\documenttitle}}
-                      {}
-                      {\thepage}
-\makeevenhead{my-headings}
-        {\small{\MakeUppercase{\itshape\documentauthor}}}
-        {}
-        {\small{\MakeUppercase{\itshape\exercisename}}}
-\makeevenfoot{my-headings}{{\itshape\documenttitle}}
-                      {}
-                      {\thepage}
-\makeheadrule{my-headings}{\textwidth}{.25pt}
-\pagestyle{my-headings}
-% \makerunningwidth{headings}{1.15\textwidth}
-\mainmatter
-\include{homeworks/ma544-hw-\hwnum}
+\include{}
 \end{document}
 
 %%% Local Variables:

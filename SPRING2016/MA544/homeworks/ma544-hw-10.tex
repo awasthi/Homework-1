@@ -1,62 +1,82 @@
-begin{problem}
+% #9 – Due Apr. 11 Read Section 7.1-5. Chapter 7: # 1, 2 (6, 8, 9, 11).
+
+\begin{problem}[Wheeden \& Zygmund {\S}7, Ex.\@ 1]
+Let $f$ be measurable in $\bbR^n$ and different from zero in some set of
+positive measure. Show that there is a positive constant $c$ such that
+$f^*(\bfx)\geq c\|\bfx\|^{-n}$ for $\|\bfx\|\geq 1$.
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
 
-\begin{problem}
+\begin{problem}[Wheeden \& Zygmund {\S}7, Ex.\@ 2]
+Let $\varphi(\bfx),\bfx\in\bbR^n$, be a bounded measurable function such
+that $\varphi(\bfx)=0$ for $\|\bfx\|\geq 1$ and $\int\varphi=1$. For
+$\varepsilon>0$, let
+$\varphi_\varepsilon(\bfx)\coloneqq\varepsilon^{-n}\varphi(\bfx/\varepsilon)$. ($\varphi_\varepsilon$
+is called an \emph{approximation to the identity}.) If $f\in L^1(\bbR^n)$,
+show that
+\[
+\lim_{\varepsilon\to 0}(f*\varphi_\varepsilon)(x)=f(\bfx)
+\]
+in the Lebesgue set of $f$. (Note that $\int\varphi_\varepsilon=1$,
+$\varepsilon>0$, so that
+\[
+(f*\varphi_\varepsilon)(\bfx)-f(\bfx)=\int\left[f(\bfx-\bfy)-f(\bfx)\right]\varphi_\varepsilon(\bfy)\diff\bfy.
+\]
+Use Theorem 7.16.)
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
 
-\begin{problem}
+\begin{problem}[Wheeden \& Zygmund {\S}7, Ex.\@ 6]
+Show that if $\alpha>0$, then $x^\alpha$ is absolutely continuous on every
+bounded subinterval of $[0,\infty)$.
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
 
-\begin{problem}
+
+\begin{problem}[Wheeden \& Zygmund {\S}7, Ex.\@ 8]
+Prove the following converse of Theorem 7.31: If $f$ is of bounded
+variation on $[a,b]$, and if the function $V(x)=V[a,x]$ is absolutely
+continuous on $[a,b]$, then $f$ is absolutely continuous on $[a,b]$.
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
 
-\begin{problem}
+
+\begin{problem}[Wheeden \& Zygmund {\S}7, Ex.\@ 9]
+If $f$ is of bounded variation on $[a,b]$, show that
+\[
+\int_a^b|f'|\leq V[a,b].
+\]
+Show that if equality holds in this inequality, then $f$ is absolutely
+continuous on $[a,b]$. (For the second part, use Theorems 2.2(ii) and 7.24
+to show that $V(x)$ is absolutely continuous and then use the result of
+Exercise 8).
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
 
-\begin{problem}
+\begin{problem}[Wheeden \& Zygmund {\S}7, Ex.\@ 11]
+Prove the following result concerning changes of variable. Let $g(t)$ be
+monotone increasing and absolutely continuous on $[\alpha,\beta]$ and let $f$
+be integrable on $[a,b]$, $a\coloneqq g(\alpha)$, $b\coloneqq
+g(\beta)$. Then $f(g(t))g'(t)$ is measurable and integrable on
+$[\alpha,\beta]$, and
+\[
+\int_a^b f(x)\diff x=\int_\alpha^\beta f(g(t))g'(t)\diff t.
+\]
+(Consider the case when $f$ is the characteristic function of an interval,
+an open set, etc.)
 \end{problem}
 \begin{proof}
 \end{proof}
-\newpage
-
-\begin{problem}
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-
-\begin{problem}
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-
-\begin{problem}
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
-
-\begin{problem}
-\end{problem}
-\begin{proof}
-\end{proof}
-\newpage
 
 %%% Local Variables:
 %%% mode: latex
