@@ -4,7 +4,7 @@
 \begin{problem}[Hatcher {\S}2.2, Ex.\@ 3]
 Let $f\colon S^n\to S^n$ be a map of degree zero. Show that there exists
 points $x,y\in S^n$ with $f(x)=x$ and $f(y)=-y$. Use this to show that if
-$F$ is a continuous vector field defined on the unit ball $D^n$ in $\bbR^n$
+$F$ is a continuous vector field defined on the unit ball $D^n$ in $\bfR^n$
 such that $F(x)\neq 0$ for all $x$, then there exists a point on $\partial
 D$ where $F$ points radially outward and another point on $\partial D^n$
 where  $F$ points radially inward.
@@ -16,27 +16,27 @@ $\deg g=\deg a\circ f=(\deg a)(\deg f)=0$, $g$ must have a fixed point
 $y\in S^n$. Since $g(y)=a\circ f(y)=y$, then $f(y)=-y$.
 
 Suppose $F$ is a continuous nonzero vector field on $S^n$, i.e., a map
-$S^n\to\bbR^n$ which assigns to each point $x\in S^n$ a tangent vector
-$\bfv(x)$ at $x$. Then, the map $f\colon\partial D^n\to\bbR^n$ given by
+$S^n\to\bfR^n$ which assigns to each point $x\in S^n$ a tangent vector
+$\bfv(x)$ at $x$. Then, the map $f\colon\partial D^n\to\bfR^n$ given by
 $f(\bfv(x))=\bfv(x)/\|\bfv(x)\|$ is well defined and nowhere zero.
 \end{proof}
 \newpage
 
 \begin{problem}[Hatcher {\S}2.2, Ex.\@ 7]
-For an invertible linear transformation $f\colon\bbR^n\to\bbR^n$ show that
+For an invertible linear transformation $f\colon\bfR^n\to\bfR^n$ show that
 the induced map
-$H_n\left(\bbR^n,\bbR^n\smallsetminus\{\mathbf{0}\}\right)\cong\widetilde
-H_{n-1}\left(\bbR^n\smallsetminus\{\mathbf{0}\}\right)\cong\bbZ$ is $\id$ or $-\id$
+$H_n\left(\bfR^n,\bfR^n\smallsetminus\{\mathbf{0}\}\right)\cong\widetilde
+H_{n-1}\left(\bfR^n\smallsetminus\{\mathbf{0}\}\right)\cong\bfZ$ is $\id$ or $-\id$
 according to whether the determinant of $f$ is positive or negative. [Use
 Gaußian elimination to show that the matrix of $f$ can be joined by a path
 of invertible matrices to a diagonal matrix with $\pm 1$'s on the
 diagonal.]
 \end{problem}
 \begin{proof}
-We show that $\Orth(n,\bbR)$ is a deformation retraction of $\GL(n,\bbR)$
+We show that $\Orth(n,\bfR)$ is a deformation retraction of $\GL(n,\bfR)$
 and prove the result there. This procedure is adapted from a hint in
 \emph{\textru{Элементарная топология}} by \textru{Виро, Нецветаев и
-  Харламов, стр.\@ 338, номер 39.11.} Suppose $f\colon\bbR^n\to\bbR^n$ is
+  Харламов, стр.\@ 338, номер 39.11.} Suppose $f\colon\bfR^n\to\bfR^n$ is
 an invertible linear transformation. Let
 $\left\{\mathbf{f}_1,\dotsc,\mathbf{f}_n\right\}$ be the set of columns
 vectors of the matrix representation $F$ of $f$. By Gram--Schmidt
@@ -57,18 +57,18 @@ where the $\lambda_{kk}>0$ for $k=1,\dotsc,n$. Now set
 t\left(\lambda_{n1}\mathbf{f}_1+\lambda_{n2}\mathbf{f}_2+\dotsb+\lambda_{kk-1}\mathbf{f}_{k-1}\right)+(t\lambda_{kk}+1-t)\mathbf{f}_k.
 \end{equation}
 Let $g(t,A)$ be the matrix whose columns are the vectors $\mathbf{g}_k(t)$
-and define a homotopy $f_t\colon I\times\GL(n,\bbR)\to\GL(n,\bbR)$ by mapping
+and define a homotopy $f_t\colon I\times\GL(n,\bfR)\to\GL(n,\bfR)$ by mapping
 the pair $(t,A)\mapsto g(t,A)$. Continuity of $H$ follows from the fact
-that $H$ it is multiplication in $\bbR^n$ followed by a linear
-mapping. It's not hard to see that $f_t$ stays in $\GL(n,\bbR)$ for all $t$
-and $f_1(A)$ is in $\Orth(n,\bbR)$.
+that $H$ it is multiplication in $\bfR^n$ followed by a linear
+mapping. It's not hard to see that $f_t$ stays in $\GL(n,\bfR)$ for all $t$
+and $f_1(A)$ is in $\Orth(n,\bfR)$.
 
-Last but not least, we show that $\Orth(n,\bbR)$ consists of two connected
+Last but not least, we show that $\Orth(n,\bfR)$ consists of two connected
 components and that membership of $f$ to one of these components is
 determined by $\det f$. First note that
-$\det(\Orth(n,\bbR))=\{-1,1\}$ which is disconnected in
-$\bbR$. Hence, $\Orth(n,\bbR)$ is disconnected. Now, if
-$f\in\Orth_n(\bbR)$, either $\det f=1$ or $\det f=-1$. Without loss of
+$\det(\Orth(n,\bfR))=\{-1,1\}$ which is disconnected in
+$\bfR$. Hence, $\Orth(n,\bfR)$ is disconnected. Now, if
+$f\in\Orth_n(\bfR)$, either $\det f=1$ or $\det f=-1$. Without loss of
 generality, we may assume $\det f=1$ since if $r$ is a reflection.
 
 Constructing the homotopy is hard. I can't think of a way of doing it and I
@@ -77,8 +77,8 @@ to prove this indirectly, but I'm afraid I'm not familiar with Lie groups
 and I am not willing to state a bunch of results from that subject.
 
 Now that we have established that either $f\simeq \id$ or $-\id$, the map
-$f$ on $\bbR^n$ induces a map $f_*=\pm\id_*$ on the homology groups
-$H_n\left(\bbR^n,\bbR^n\minus\{\mathbf{0}\}\right)$.
+$f$ on $\bfR^n$ induces a map $f_*=\pm\id_*$ on the homology groups
+$H_n\left(\bfR^n,\bfR^n\minus\{\mathbf{0}\}\right)$.
 \end{proof}
 \newpage
 
@@ -116,9 +116,9 @@ Filling in some of the values for $H_n^\CW(X^n)$ we have the chain
 \label{eq:cellular-chain-x-2}
 \cdots\longrightarrow
 0\longrightarrow
-\bbZ\oplus\bbZ\longrightarrow
-\bbZ\longrightarrow
-\bbZ\longrightarrow
+\bfZ\oplus\bfZ\longrightarrow
+\bfZ\longrightarrow
+\bfZ\longrightarrow
 0.
 \end{equation}
 Now recall that by definition a subcomplex of $X'$, $A$, is a closed
@@ -130,11 +130,11 @@ $A_{22}\coloneqq e^0\cup e^1\cup e_2^2$, $X'$. Let's compute the homology
 of these spaces.
 \begin{itemize}
 \item Case $A_0$: The cellular homology of $A_0$ is easy enough since it
-is a $0$-cell. It's homology will be that of a point $H_n^\CW(A_0)=\bbZ$
+is a $0$-cell. It's homology will be that of a point $H_n^\CW(A_0)=\bfZ$
 for $n=0$ and $H_n^\CW(A_0)=0$ otherwise.
 \item Case $A_1$: The subcomplex $A_1$ is homeomorphic to a circle $S^1$ so
   its cellular homology is isomorphic to that of a circle, i.e.,
-  $H_n^\CW(A_1)=\bbZ$ if $n=0,1$ and $H_n^\CW(A_1)=0$ otherwise.
+  $H_n^\CW(A_1)=\bfZ$ if $n=0,1$ and $H_n^\CW(A_1)=0$ otherwise.
 \item Case $A_{21}$: The cellular homology of $A_{21}$ is more
   interesting since we have the attaching map of degree $2$. This map $f_1$
   induces a map on homology $f_{1*}=2$ giving us the chain complex
@@ -142,9 +142,9 @@ for $n=0$ and $H_n^\CW(A_0)=0$ otherwise.
   \label{eq:chain-complex-a-1-2}
   \cdots\longrightarrow
   0\longrightarrow
-  \bbZ\overset{2}{\longrightarrow}
-  \bbZ\longrightarrow
-  \bbZ\longrightarrow
+  \bfZ\overset{2}{\longrightarrow}
+  \bfZ\longrightarrow
+  \bfZ\longrightarrow
   0
   \end{equation}
 \item Case $A_{22}$:

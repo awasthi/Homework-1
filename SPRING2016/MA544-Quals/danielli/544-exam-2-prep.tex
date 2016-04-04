@@ -1,6 +1,6 @@
 \section{Exam 2 Prep}
 \begin{problem}
-Define for $\bfx\in\bbR^n$,
+Define for $\bfx\in\bfR^n$,
 \[
 f(\bfx)\coloneqq
 \begin{cases}
@@ -11,18 +11,18 @@ f(\bfx)\coloneqq
 Prove that $f$ is integrable outside any ball $B_\varepsilon(\mathbf{0})$,
 and that there exists a constant $C>0$ such that
 \[
-\int_{\bbR^n\minus B_\varepsilon(\mathbf{0})}f(\bfx)\diff\bfx\leq\frac{C}{\varepsilon}.
+\int_{\bfR^n\minus B_\varepsilon(\mathbf{0})}f(\bfx)\diff\bfx\leq\frac{C}{\varepsilon}.
 \]
 \end{problem}
 \begin{proof}
-Recall that a real-valued function $f\colon\bbR^n\to\bbR$ is (Lebesgue)
-integrable over a subset $E$ of $\bbR^n$ (or, alternatively, $f$ belongs to
+Recall that a real-valued function $f\colon\bfR^n\to\bfR$ is (Lebesgue)
+integrable over a subset $E$ of $\bfR^n$ (or, alternatively, $f$ belongs to
 $L^1(E)$) if
 \[
 \int_E f(\bfx)\diff\bfx<\infty.
 \]
 
-Put $E\coloneqq\bbR^n\minus B_\varepsilon(\mathbf{0})$. Then, to show that
+Put $E\coloneqq\bfR^n\minus B_\varepsilon(\mathbf{0})$. Then, to show that
 $f$ belongs to $L^1(E)$ it suffices to prove the inequality
 \begin{equation}
 \label{eq:eq:inequality-1}
@@ -71,77 +71,77 @@ as desired.
 
 \begin{problem}
 Let $\left\{f_k\right\}$ be a sequence of nonnegative measurable functions
-on $\bbR^n$, and assume that $f_k$ converges pointwise almost everywhere to
+on $\bfR^n$, and assume that $f_k$ converges pointwise almost everywhere to
 a function $f$. If
 \[
-\int_{\bbR^n} f=\lim_{k\to\infty}\int_{\bbR^n} f_k<\infty,
+\int_{\bfR^n} f=\lim_{k\to\infty}\int_{\bfR^n} f_k<\infty,
 \]
 show that
 \[
 \int_E f=\lim_{k\to\infty}\int_E f_k
 \]
-for all measurable subsets $E$ of $\bbR^n$. Moreover, show that this is not
-necessarily true if $\int_{\bbR^n} f=\lim_{k\to\infty} f_k=\infty$.
+for all measurable subsets $E$ of $\bfR^n$. Moreover, show that this is not
+necessarily true if $\int_{\bfR^n} f=\lim_{k\to\infty} f_k=\infty$.
 \end{problem}
 \begin{proof}
 This is probably some theorem I can't remember right now. But anyway, first
 we shall establish that the limit $f$ of $\left\{f_k\right\}$ must be
-nonnegative a.e. in $\bbR^n$. For assume otherwise. Then there exists a
-collection of points $\bfx$ in $\bbR^n$ of nonzero $\bbR^n$-Lebesgue
+nonnegative a.e. in $\bfR^n$. For assume otherwise. Then there exists a
+collection of points $\bfx$ in $\bfR^n$ of nonzero $\bfR^n$-Lebesgue
 measure such that $f(\bfx)<0$. But $f_k(\bfx)\geq 0$ for all
-$k\in\bbN$. Set $0<\varepsilon<|f(\bfx)|$ then we have
+$k\in\bfN$. Set $0<\varepsilon<|f(\bfx)|$ then we have
 \begin{equation}
 \label{eq:estimate-contradiction-1}
 |f(\bfx)-f_k(\bfx)|>|f(\bfx)|>\varepsilon
 \end{equation}
 for all $k$ which contradicts our assumption that $f_k\to f$ a.e.\@ on
-$\bbR^n$. Therefore, the set of points $\bfx\in\bbR^n$ where $f(\bfx)<0$
+$\bfR^n$. Therefore, the set of points $\bfx\in\bfR^n$ where $f(\bfx)<0$
 must have measure zero.
 
 Now, based on pointwise convergence a.e.\@ to $f$, given $\varepsilon>0$
-for a.e.\@ $\bfx\in\bbR^n$ we have the following estimate
+for a.e.\@ $\bfx\in\bfR^n$ we have the following estimate
 \begin{equation}
 \label{eq:estimate-2}
 |f(\bfx)-f_k(\bfx)|<\varepsilon
 \end{equation}
 for sufficiently large $k$; say $k$ greater than or equal to some index
-$N\in\bbN$. Moreover, we are given convergence in $L^1(\bbR^n)$ of $f_k$ to
+$N\in\bfN$. Moreover, we are given convergence in $L^1(\bfR^n)$ of $f_k$ to
 $f$
 \begin{equation}
 \label{eq:integral-estimate-1}
-\int_{\bbR^n}f_k\to\int_{\bbR^n}f<\infty.
+\int_{\bfR^n}f_k\to\int_{\bfR^n}f<\infty.
 \end{equation}
 By monotonicity of the Lebesgue integral (Theorem 5.5(iii)), this implies
 that
 \begin{equation}
 \label{eq:estimate-monotonicity-2}
-\int_E f\leq\int_{\bbR^n} f<\infty
+\int_E f\leq\int_{\bfR^n} f<\infty
 \end{equation}
 and
 \begin{equation}
 \label{eq:estimate-monotonicity-k-2}
-\int_E f_k\leq\int_{\bbR^n}f_k<\infty
+\int_E f_k\leq\int_{\bfR^n}f_k<\infty
 \end{equation}
-for all $k\in\bbN$. By Theorem 5.5(ii), $f$ and the $f_k$'s are finite
-a.e.\@ in $\bbR^n$ so for some sufficiently large real number $M$,
-$|f|,|f_k|\leq M$ for a.e.\@ $\bfx\in\bbR^n$. In particular, for any
-measurable subset $E$ of $\bbR^n$, $|f|,|f_k|\leq M$ for a.e.\@ $\bfx\in E$
+for all $k\in\bfN$. By Theorem 5.5(ii), $f$ and the $f_k$'s are finite
+a.e.\@ in $\bfR^n$ so for some sufficiently large real number $M$,
+$|f|,|f_k|\leq M$ for a.e.\@ $\bfx\in\bfR^n$. In particular, for any
+measurable subset $E$ of $\bfR^n$, $|f|,|f_k|\leq M$ for a.e.\@ $\bfx\in E$
 so, by the bounded convergence theorem, we have the desired convergence
 \begin{equation}
 \label{eq:desired-convergence-2}
 \int_E f_k\to\int_E f<\infty.
 \end{equation}
 
-However, if $f$ does not belong to $L^1(\bbR^n)$, i.e., its integral over
-$\bbR^n$ is infinity, there is no guarantee that $f$ will be finite a.e.\@
-in $\bbR^n$. This means that the bounded convergence theorem will fail to
+However, if $f$ does not belong to $L^1(\bfR^n)$, i.e., its integral over
+$\bfR^n$ is infinity, there is no guarantee that $f$ will be finite a.e.\@
+in $\bfR^n$. This means that the bounded convergence theorem will fail to
 ensure convergence in integral for any measurable subset $E$ of
-$\bbR^n$. Let us demonstrate this with an example. Consider the sequence of
+$\bfR^n$. Let us demonstrate this with an example. Consider the sequence of
 functions
 \end{proof}
 
 \begin{problem}
-Assume that $E$ is a measurable set of $\bbR^n$, with
+Assume that $E$ is a measurable set of $\bfR^n$, with
 $|E|<\infty$. Prove that a nonnegative function $f$ defined
 on $E$ is integrable if and only if
 \[
@@ -150,7 +150,7 @@ on $E$ is integrable if and only if
 \]
 \end{problem}
 \begin{proof}
-If $f$ is integrable over a measurable subset $E$ of $\bbR^n$, then
+If $f$ is integrable over a measurable subset $E$ of $\bfR^n$, then
 \begin{equation}
 \label{eq:integrability-3}
 \int_E f(\bfx)\diff\bfx<\infty.
@@ -221,7 +221,7 @@ so the integral $\int_E f$ converges if and only if the sum
 $\sum_{k=0}^\infty|F_k|$ converges.
 \end{proof}
 \begin{problem}
-Suppose that $E$ is a measurable subset of $\bbR^n$, with
+Suppose that $E$ is a measurable subset of $\bfR^n$, with
 $|E|<\infty$. If $f$ and $g$ are measurable functions on
 $E$, define
 \[
@@ -257,8 +257,8 @@ $\implies$: Given $\varepsilon>0$, $\rho(f_k,f)\to 0$ implies that
     E:|f_k(x)-f(x)|>\varepsilon\,\right\}}\frac{|f_k-f|}{1+|f_k-f}\diff
 x\longrightarrow 0.
 \]
-Observe that the function $\Phi\colon\bbR^+\to\bbR$ given by
-$\Phi(x)\coloneqq x/(1+x)$ is increasing on $\bbR^+$ and $0<\Psi(x)<1$,
+Observe that the function $\Phi\colon\bfR^+\to\bfR$ given by
+$\Phi(x)\coloneqq x/(1+x)$ is increasing on $\bfR^+$ and $0<\Psi(x)<1$,
 hence
 \[
 \begin{aligned}
@@ -307,19 +307,19 @@ Therefore, $f_k\to f$ in measure implies $\rho(f_k,f)\to 0$ as $k\to\infty$.
 \end{proof}
 
 \begin{problem}
-Define the \emph{gamma function} $\Gamma\colon\bbR^+\to\bbR$ by
+Define the \emph{gamma function} $\Gamma\colon\bfR^+\to\bfR$ by
 \[
 \Gamma(y)\coloneqq\int_0^\infty e^{-u}u^{y-1}\diff u,
 \]
-and the \emph{beta function} $\beta\colon\bbR^+\times\bbR^+\to\bbR$
+and the \emph{beta function} $\beta\colon\bfR^+\times\bfR^+\to\bfR$
 by
 \[
 \beta(x,y)\coloneqq\int_0^1 t^{x-1}(1-t)^{y-1}\diff t.
 \]
 \begin{enumerate}[label=(\alph*)]
 \item Prove that the definition of the gamma function is well-posed, i.e.,
-the function $u\mapsto e^{-u}u^{y-1}$ is in $L(\bbR^+)$ for all
-$y\in\bbR^+$.
+the function $u\mapsto e^{-u}u^{y-1}$ is in $L(\bfR^+)$ for all
+$y\in\bfR^+$.
 \item Show that
 \[
 \beta(x,y)=\frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}.
@@ -327,8 +327,8 @@ $y\in\bbR^+$.
 \end{enumerate}
 \end{problem}
 \begin{proof}
-(a) Fix $y\in\bbR^+$. Then we must show that $\Gamma(y)<\infty$. First,
-since $(0,1)$ and $[1,\infty)$ are disjoint measurable subsets of $\bbR$,
+(a) Fix $y\in\bfR^+$. Then we must show that $\Gamma(y)<\infty$. First,
+since $(0,1)$ and $[1,\infty)$ are disjoint measurable subsets of $\bfR$,
 by Theorem 5.7 we can split the integral $\Gamma(y)$ into
 \begin{equation}
 \label{eq:split-integral-5}
@@ -371,11 +371,11 @@ e
 \end{proof}
 
 \begin{problem}
-Let $f\in L^1(\bbR^n)$ and for $\mathbf{h}\in\bbR^n$ define
-$f_{\mathbf{h}}\colon\bbR^n\to\bbR$ be $f_{\mathbf{h}}(\bfx)\coloneqq
+Let $f\in L^1(\bfR^n)$ and for $\mathbf{h}\in\bfR^n$ define
+$f_{\mathbf{h}}\colon\bfR^n\to\bfR$ be $f_{\mathbf{h}}(\bfx)\coloneqq
 f(\bfx-\mathbf{h})$. Prove that
 \[
-\lim_{\mathbf{h}\to\mathbf{0}}\int_{\bbR^n}\left|f_{\mathbf{h}}-f\right|=0.
+\lim_{\mathbf{h}\to\mathbf{0}}\int_{\bfR^n}\left|f_{\mathbf{h}}-f\right|=0.
 \]
 \end{problem}
 \begin{proof}
@@ -383,30 +383,30 @@ Note that by the triangle inequality, we have the following estimate on the
 integral
 \begin{equation}
 \label{eq:minokwski-estimate-6}
-\int_{\bbR^n}|f_{\mathbf{h}}(\bfx)-f(\bfx)|\diff\bfx\leq
+\int_{\bfR^n}|f_{\mathbf{h}}(\bfx)-f(\bfx)|\diff\bfx\leq
 \end{equation}
 
 \end{proof}
 
 \begin{problem}
 \begin{enumerate}[label=(\alph*)]
-\item If $f_k,g_k,f,g\in L^1(\bbR^n)$, $f_k\to f$ and $g_k\to g$ a.e.\@ in
-  $\bbR^n$, $|f_k|\leq g_k$ and
+\item If $f_k,g_k,f,g\in L^1(\bfR^n)$, $f_k\to f$ and $g_k\to g$ a.e.\@ in
+  $\bfR^n$, $|f_k|\leq g_k$ and
 \[
-\int_{\bbR^n}g_k\to\int_{\bbR^n}g,
+\int_{\bfR^n}g_k\to\int_{\bfR^n}g,
 \]
 prove that
 \[
-\int_{\bbR^n} f_k\to\int_{\bbR^n}f.
+\int_{\bfR^n} f_k\to\int_{\bfR^n}f.
 \]
-\item Using part (a) show that if $f_k,f\in L^1(\bbR^n)$ and $f_k\to f$
-  a.e.\@ in $\bbR^n$, then
+\item Using part (a) show that if $f_k,f\in L^1(\bfR^n)$ and $f_k\to f$
+  a.e.\@ in $\bfR^n$, then
 \[
-\int_{\bbR^n}|f_k-f|\to 0\qquad\text{as}\qquad k\to\infty
+\int_{\bfR^n}|f_k-f|\to 0\qquad\text{as}\qquad k\to\infty
 \]
 if and only if
 \[
-\int_{\bbR^n}|f_k|\to\int_{\bbR^n}|f|\qquad\text{as}\qquad k\to\infty.
+\int_{\bfR^n}|f_k|\to\int_{\bfR^n}|f|\qquad\text{as}\qquad k\to\infty.
 \]
 \end{enumerate}
 \end{problem}
@@ -414,35 +414,35 @@ if and only if
 (a) Since $f_k\to f$ and $g_k\to g$ a.e.\@ and $|f_k|\leq g_k$, then by
 Fatou's theorem,
 \begin{align*}
-\int_{\bbR^n}(g-f)
-&=\int_{\bbR^n}\liminf_{k\to\infty} g_k-f_k
-\leq\liminf_{k\to\infty}\int_{\bbR^n}g_k-f_k,\\
-\int_{\bbR^n}g+f&\int_{\bbR^n}\liminf_{k\to\infty}g_k+f_k\leq\liminf_{k\to\infty}\int_{\bbR^n}g_k+f_k.
+\int_{\bfR^n}(g-f)
+&=\int_{\bfR^n}\liminf_{k\to\infty} g_k-f_k
+\leq\liminf_{k\to\infty}\int_{\bfR^n}g_k-f_k,\\
+\int_{\bfR^n}g+f&\int_{\bfR^n}\liminf_{k\to\infty}g_k+f_k\leq\liminf_{k\to\infty}\int_{\bfR^n}g_k+f_k.
 \end{align*}
-Since $f_k,g_k,f,g\in L^1(\bbR^n)$ and $\int_{\bbR^n}g_k\to\int_{\bbR^n}g$,
+Since $f_k,g_k,f,g\in L^1(\bfR^n)$ and $\int_{\bfR^n}g_k\to\int_{\bfR^n}g$,
 then using the similar argument as problem 2, we have
 \[
   \begin{aligned}
-   \int_{\bbR^n}f\geq\limsup_{k\to\infty}\int_{\bbR^n}f_k,\\
-   \int_{\bbR^n}f\leq\liminf_{k\to\infty}\int_{\bbR^n} f_k.
+   \int_{\bfR^n}f\geq\limsup_{k\to\infty}\int_{\bfR^n}f_k,\\
+   \int_{\bfR^n}f\leq\liminf_{k\to\infty}\int_{\bfR^n} f_k.
   \end{aligned}
 \]
-Therefore, $\int_{\bbR^n}f_k\to\int_{\bbR^n} f$.
+Therefore, $\int_{\bfR^n}f_k\to\int_{\bfR^n} f$.
 \\\\
 (b) $\implies$: This direction is obvious by the inequality
 \[
-\left|\int_{\bbR^n}|f_k|-|f|\right|\leq\int_{\bbR^n}\left||f_k|-|f|\right|\leq\int_{\bbR^n}|f_k-f|.
+\left|\int_{\bfR^n}|f_k|-|f|\right|\leq\int_{\bfR^n}\left||f_k|-|f|\right|\leq\int_{\bfR^n}|f_k-f|.
 \]
 
 $\impliedby$: Let $g_k\coloneqq |f_k|+|f|$ and $g\coloneqq 2|f|$. Since
-$f_k,f\in L^1(\bbR^n)$ and $f_k\to f$ a.e., then $g_k,g\in L^1(\bbR^n)$ and
-$g_k\to g$ a.e.\@ in $\bbR^n$. By the assumption, $\int_{\bbR^n}
-g_k\to\int_{\bbR^n}g$.
+$f_k,f\in L^1(\bfR^n)$ and $f_k\to f$ a.e., then $g_k,g\in L^1(\bfR^n)$ and
+$g_k\to g$ a.e.\@ in $\bfR^n$. By the assumption, $\int_{\bfR^n}
+g_k\to\int_{\bfR^n}g$.
 
-Let $\tilde f_k\coloneqq|f_k-f|$. Then $\tilde f_k\to 0$ a.e.\@ in $\bbR^n$
+Let $\tilde f_k\coloneqq|f_k-f|$. Then $\tilde f_k\to 0$ a.e.\@ in $\bfR^n$
 and $\tilde f_k\leq g_k$. Applying part (a) to $\tilde f_k$ we have
 \[
-\lim_{k\to\infty}\int_{\bbR^n}\tilde f_k=\lim_{k\to\infty}\int_{\bbR^n}|f_k-f|=0.
+\lim_{k\to\infty}\int_{\bfR^n}\tilde f_k=\lim_{k\to\infty}\int_{\bfR^n}|f_k-f|=0.
 \]
 \end{proof}
 %%% Local Variables:
