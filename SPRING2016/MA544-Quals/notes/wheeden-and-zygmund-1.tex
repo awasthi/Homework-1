@@ -458,13 +458,80 @@ actually equivalent to the statement that
   \label{eq:upper-lower-rieemann-sums}
 \inf_\Gamma U_\Gamma=\sup_\Gamma L_\Gamma=A.
 \end{equation}
+The integral of course exists if $f$ is continuous on $I$.
+
 
 Let $f$ be a a real-valued function that is defined and finite for all $x$
 in a closed bounded interval $a\leq x\leq b$. Let
 $\Gamma=\{x_0,\dotsc,x_m\}$ be a \emph{partition} of $[a,b]$; that is,
 $\Gamma$ is a collection of points $x_i$, $i=0,1,\dots m$, satisfying
 $x_0=a$, $x_m=b$, and $x_{i-1}<x_i$ for $i=1,\dotsc,m$. With each partition
-$\Gamma$
+$\Gamma$ we associate the sum
+\begin{equation}
+\label{eq:variation-sums}
+S_\Gamma=S_\Gamma[f;a,b]\coloneqq\sum_{i=1}^m|f(x_i)-f(x_{i-1})|.
+\end{equation}
+The \emph{variation of $f$ over $[a,b]$} is defined as
+\begin{equation}
+\label{eq:variation}
+V=V[f;a,b]=\sup_\Gamma S_\Gamma,
+\end{equation}
+where the supremum is taken over all partitions $\Gamma$ of $[a,b]$. The
+variation of $V[f;a,b]$ will sometimes also be denoted by $V[a,b]$ or
+$V(f)$. Since $0\leq S_\Gamma<\infty$, we have $0\leq V\leq\infty$. If
+$V<\infty$, $f$ is said to be of \emph{bounded variation on $[a,b]$}; if
+$V=\infty$, $f$ is of \emph{unbounded variation on $[a,b]$}.
+
+Here are several examples
+\begin{example*}
+Suppose $f$ is monotone in $[a,b]$. Then, clearly, each $S_\Gamma$ equals
+$|f(b)-f(a)|$, and therefore $V=|f(b)-f(a)|$.
+\end{example*}
+\begin{example*}
+Suppose the graph of $f$ can be split into a finite number of monotone
+arcs; that is, suppose $[a,b]=\bigcup_{i=1}^k[a_i,a_{i+1}]$ and $f$
+monotone in each $[a_i,a_{i+1}]$. Then
+$V=\sum_{i=1}^k|f(a_{i+1})-f(a_i)|$. To see this, we use the result of the
+previous example and the fact, to be proved, in Theorem 2.2, that
+$V=\sum_{i=1}^kV[a_i,a_{i+1}]$.
+\end{example*}
+\begin{example*}
+Let $f$ be defined by $f(x)\coloneqq 0$ when $x\neq 0$ and $f(0)\coloneqq
+1$, and let $[a,b]$ be any interval containing $0$ in its interior. Then
+$S_\Gamma$ is either $2$ or $0$ depending on whether $x=0$ is a partition
+point or not. Thus, $V[a,b]=2$.
+\end{example*}
+
+If $\Gamma=\{x_0,x_1,\dotsc,x_m\}$ is a partition of $[a,b]$, let
+$\|\Gamma\|$, called the \emph{norm of $\Gamma$}, be defined as the longest
+subinterval of $\Gamma$:
+\begin{equation}
+\label{eq:eq:partition-norm}
+\|\Gamma\|\coloneqq\max_{i=1,\dotsc,m} x_i-x_{i-1}.
+\end{equation}
+If $f$ is continuous on $[a,b]$ and $\{\Gamma_j\}$ is a sequence of
+partitions $[a,b]$ with $\|\Gamma_j\|\to 0$, we shall see in Theorem 2.9
+that $V=\lim_{j\to\infty} S_{\Gamma_j}$. The example above shows that this
+may fail for functions that are discontinuous even at a single point: if we
+take $f$ and $[a,b]$ is in the example above and choose $\Gamma_j$ such
+that $x=0$ is never a partition in the point, then $\lim S_{\Gamma_j}=0$,
+while if we choose the $\Gamma_j$ such that $x=0$ alternatively is and is
+not a point, then $\lim S_{\Gamma_j}$ does not exist.
+\begin{example*}
+Let $f$ be the \emph{Dirichlet function}, defined by $f(x)\coloneqq 1$ for
+$x$ rational and $f(x)\coloneqq 0$ for $x$ irrational. Then, clearly,
+$V[a,b]=\infty$ for any interval $[a,b]$.
+\end{example*}
+\begin{example*}
+A function that is continuous on an interval is not necessarily of bounded
+variation on the interval. To see this, let $\{a_j\}$ and $\{d_j\}$,
+$j=1,2,\dotsc$, be two monotone decreasing sequences in $(0,1]$ with
+$a_1=1$, $\lim_{j\to\infty} a_j=\lim_{j\to\infty} d_j=0$ and $\sum
+d_j=\infty$. Construct a continuous function $f$ as follows. On each
+subinterval $[a_{j+1},a_j]$, the graph of $f$ consists of sides of the
+isosceles
+\end{example*}
+
 
 %%% Local Variables:
 %%% mode: latex
