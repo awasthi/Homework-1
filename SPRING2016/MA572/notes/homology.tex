@@ -1,7 +1,47 @@
 \chapter{Homology}
 A summary of Hatcher's homology section from his \emph{Algebraic Topology}
 book.
-\section{Simplicial and Sinular Homology}
+\section{Simplicial and Signular Homology}
+Skip all this nonsense. I need to catch up.
+\section{Computations and Applications}
+\subsection{Degree}
+For a map $f\colon S^n\to S^n$ with $n>0$, the induced map $f_*\colon
+H_n(S^n)\to H_n(S^n)$ is a homomorphism from an infinite cyclic group to
+itself and so must be of the form $f_*(\alpha)=df(\alpha)$ for some integer
+$d$ depending only on $f$. This integer is called the \emph{degree} of $f$
+and is denoted by $\deg f$. Here are some basic properties of the degree
+\begin{enumerate}[label=(\arabic*)]
+\item $\deg\id_{S^n}=1$ since $(\id_{S^n})_*=\id_{H_n(S^n)}$.
+\item $\deg f=0$ if $f$ is not injective. For if we choose a point $x_0\in
+  S^n\minus f(S^n)$ then $f$ can be factored as a composition $S^n\to
+  S^n\minus\{x_0\}\hookrightarrow S^n$ and $H_n(S^n\minus\{x_0\})=0$ since
+  $S^n\minus\{x_0\}$ is contractible.
+\item If $f\simeq g$ then $\deg f=\deg g$ since $f_*=g_*$. The converse
+  statement, that if $\deg f=\deg g$, is a fundamental theorem of Hopf from
+  around 1925 which we prove in Corollary 4.25.
+\item $\deg fg=\deg f\deg g$, since $(f\circ g)_*=f_*\circ g_*$. As a
+  consequence, $\deg f=\pm 1$ if $f$ is a homotopy equivalence since
+  $f\circ g\simeq \id_{S^n}$ implies that $\deg f\deg g=\deg\id_{S^n}=1$.
+\item $\deg f=-1$ if $f$ is a reflection of $S^n$, fixing the points in
+  some subsphere $S^{n-1}\subset S^n$ and interchanging the two
+  complementary hemispheres. For we can give $S^n$ a $\Delta$-complex
+  structure with these two hemispheres as its two $n$-simplices
+  $\Delta_1^n$ and $\Delta_2^n$, and the $n$-chain $\Delta_1^n-\Delta_2^n$
+  represents a generator of $H_n(S^n)$ as we saw in Example 2.23, so the
+  reflection interchanging $\Delta_1^n$ and $\Delta_2^n$ sends this
+  generator to its negative.
+\item The antipodal map $a\colon S^n\to S^n$, $x\mapsto -x$, has degree
+  $(-1)^{n+1}$ since it is the composition of $n+1$ reflections, each
+  changing the sign of one coordinate in $\bfR^{n+1}$.
+\item If $f\colon S^n\to S^n$ has no fixed points then $\deg
+  f=(-1)^{n+1}$. For if $f(x)\neq x$ for any $x\in S^n$, then the line
+  segment from $f(x)$ to $-x$, defined by $t\mapsto(1-t)f(x)-tx$ for $0\leq
+  t\leq 1$, does not pass through the origin. Hence if $f$ has no fixed
+  points, the formula $f_t(x)\coloneqq[(1-t)f(x)-tx]/\|(1-t)f(x)-tx\|$
+  defines a homotopy from $f$ to the antipodal map. Note that the antipodal
+  map has no fixed points, so the fact that maps without fixed points are
+  homotopic to the antipodal point is sort of a converse statement.
+\end{enumerate}
 
 
 %%% Local Variables:
