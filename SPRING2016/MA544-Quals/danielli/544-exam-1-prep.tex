@@ -132,10 +132,10 @@ Let $x'',x'\in B(x,\delta)$. Then, by the triangle inequality, we have
 \begin{equation}
 \label{eq:n-estimates}
 \begin{aligned}
-|f(x')-f(x)''|&=\left|f(x')-f(x)-(f(x'')-f(x))\right|\\
-              &\leq\left|f(x')-f(x)\right|+\left|f(x'')-f(x)\right|\\
-              &<\frac{1}{2n}+\frac{1}{2n}\\
-              &=\frac{1}{n}.
+|f(x')-f(x)''|={}&\left|f(x')-f(x)-(f(x'')-f(x))\right|\\
+              \leq{}&\left|f(x')-f(x)\right|+\left|f(x'')-f(x)\right|\\
+              <{}&\frac{1}{2n}+\frac{1}{2n}\\
+              ={}&\frac{1}{n}.
 \end{aligned}
 \end{equation}
 In view of these estimates, define the set
@@ -225,8 +225,8 @@ intervals such that $x_{k+1}-x_k<\delta$, then by absolute continuity we have
 \label{eq:absolute-continuity-variation}
 \begin{aligned}
 V[f;\Gamma]
-&=\sum_{k=1}^N\left|f(x_{k+1})-f(x_k)\right|\\
-&<1.
+={}&\sum_{k=1}^N\left|f(x_{k+1})-f(x_k)\right|\\
+<{}&1.
 \end{aligned}
 \end{equation}
 Thus, $f\in\BV[a,b]$.
@@ -238,7 +238,7 @@ $\chi_{\{c\}}$ be the characteristic function of a singleton
 $\left\{c\right\}$, i.e., $\chi_{\{c\}}(x)=0$ if $x\neq c$ and
 $\chi_{\{c\}}(c)=1$. Show that
 \[
-\int_a^b f\diff\chi_{\{c\}}=
+\int_a^b f d \chi_{\{c\}}=
 \begin{cases}
 0&\text{if $c\in(a,b)$}\\
 -f(a)&\text{if $c=a$}\\

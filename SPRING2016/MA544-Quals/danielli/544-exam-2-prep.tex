@@ -11,7 +11,7 @@ f(\bfx)\coloneqq
 Prove that $f$ is integrable outside any ball $B_\varepsilon(\mathbf{0})$,
 and that there exists a constant $C>0$ such that
 \[
-\int_{\bfR^n\minus B_\varepsilon(\mathbf{0})}f(\bfx)\diff\bfx\leq\frac{C}{\varepsilon}.
+\int_{\bfR^n\minus B_\varepsilon(\mathbf{0})}f(\bfx) d \bfx\leq\frac{C}{\varepsilon}.
 \]
 \end{problem}
 \begin{proof}
@@ -19,51 +19,51 @@ Recall that a real-valued function $f\colon\bfR^n\to\bfR$ is (Lebesgue)
 integrable over a subset $E$ of $\bfR^n$ (or, alternatively, $f$ belongs to
 $L^1(E)$) if
 \[
-\int_E f(\bfx)\diff\bfx<\infty.
+\int_E f(\bfx) d \bfx<\infty.
 \]
 
 Put $E\coloneqq\bfR^n\minus B_\varepsilon(\mathbf{0})$. Then, to show that
 $f$ belongs to $L^1(E)$ it suffices to prove the inequality
 \begin{equation}
 \label{eq:eq:inequality-1}
-\int_E f(\bfx)\diff\bfx<\frac{C}{\varepsilon}
+\int_E f(\bfx) d \bfx<\frac{C}{\varepsilon}
 \end{equation}
 for some appropriate constant $C$. We proceed by directly computing the
 Lebesgue integral of $f$ and employing Tonelli's theorem:
 \begingroup
 \allowdisplaybreaks
 \begin{align*}
-\int_Ef(\bfx)\diff\bfx
-&=\int_E\frac{\diff\bfx}{|\bfx|^{n+1}}\\
-&=\idotsint_E\frac{\diff x_1\cdots\diff
+\int_Ef(\bfx) d \bfx
+={}&\int_E\frac{ d \bfx}{|\bfx|^{n+1}}\\
+={}&\idotsint_E\frac{ d  x_1\cdots d
   x_n}{\left({x_1}^2+\cdots+{x_n}^2\right)^{(n+1)/2}}
 \intertext{let $E_i$ denote the projection of $E$ onto its $i$-th
   coordinate and make the trigonometric substitution
-  $x_1=\sqrt{{x_2}^2+\cdots+{x_n}^2}\tan\theta$, $\diff
-  x_1=\sqrt{{x_2}^2+\cdots+{x_n}^2}\sec^2\theta\diff\theta$ with
+  $x_1=\sqrt{{x_2}^2+\cdots+{x_n}^2}\tan\theta$, $ d
+  x_1=\sqrt{{x_2}^2+\cdots+{x_n}^2}\sec^2\theta d \theta$ with
   $\theta\in(-\pi/2,-\tan^{-1}(\varepsilon))\cup(\tan^{-1}(\varepsilon),\pi/2)$
   giving us the integral}
-&=\int_{E_n}\cdots\int_{E_2}\left[\frac{\cos^{n-1}\theta}{\left({x_2}^2+\cdots+{x_n}^2\right)^{n/2}}\diff\theta\right]\!\diff
-  x_2\cdots\diff x_n
+={}&\int_{E_n}\cdots\int_{E_2}\left[\frac{\cos^{n-1}\theta}{\left({x_2}^2+\cdots+{x_n}^2\right)^{n/2}} d \theta\right] d
+  x_2\cdots d  x_n
 \intertext{which, by Tonelli's theorem, is}
-&=\int_{E_n}\cdots\int_{E_2}
-\frac{\diff x_2\cdots\diff x_n}{\left({x_2}^2+\cdots+{x_n}^2\right)^{n/2}}
-\left[\int_{E_\theta}\cos^{n-1}\theta\diff\theta\right]
+={}&\int_{E_n}\cdots\int_{E_2}
+\frac{ d  x_2\cdots d  x_n}{\left({x_2}^2+\cdots+{x_n}^2\right)^{n/2}}
+\left[\int_{E_\theta}\cos^{n-1}\theta d \theta\right]
 \end{align*}
 \endgroup
 where the integral
 \begin{equation}
 \label{eq:finite-int-1}
-\int_{E_\theta}\cos^{n-1}\theta\diff\theta<\infty.
+\int_{E_\theta}\cos^{n-1}\theta d \theta<\infty.
 \end{equation}
 Proceeding in this manner, we eventually achieve the inequality
 \begin{equation}
 \label{eq:desired-inequality-1}
 \begin{aligned}
-\idotsint_Ef(\bfx)\diff\bfx
-&<C'\int_{E_n}\frac{\diff x_n}{{x_n}^2}\\
-&=2C'\int_\varepsilon^\infty\frac{\diff x_n}{{x_n}^2}\\
-&=\frac{C}{\varepsilon}
+\idotsint_Ef(\bfx) d \bfx
+<{}&C'\int_{E_n}\frac{ d  x_n}{{x_n}^2}\\
+={}&2C'\int_\varepsilon^\infty\frac{ d  x_n}{{x_n}^2}\\
+={}&\frac{C}{\varepsilon}
 \end{aligned}
 \end{equation}
 as desired.
@@ -153,7 +153,7 @@ on $E$ is integrable if and only if
 If $f$ is integrable over a measurable subset $E$ of $\bfR^n$, then
 \begin{equation}
 \label{eq:integrability-3}
-\int_E f(\bfx)\diff\bfx<\infty.
+\int_E f(\bfx) d \bfx<\infty.
 \end{equation}
 Set $E_k\coloneqq\left\{\,\bfx\in E:k+1>f(\bfx)\geq k\,\right\}$ and
 $F_k\coloneqq\left\{\,\bfx\in E:f(\bfx)\geq k\,\right\}$. Note the
@@ -170,13 +170,13 @@ Now, since $k\chi_{E_k}(\bfx)\leq f(\bfx)\leq (k+1)\chi_{E_k}(\bfx)$ on
 $E_k$, we have
 \begin{equation}
 \label{eq:estimates-E-k-3}
-k|E_k|\leq\int_{E_k}f(\bfx)\diff\bfx\leq (k+1)|E_k|.
+k|E_k|\leq\int_{E_k}f(\bfx) d \bfx\leq (k+1)|E_k|.
 \end{equation}
 Then we have the following upper and lower estimates on the integral of $f$
 over $E$
 \begin{equation}
 \label{eq:upper-lower-estimates-3}
-\sum_{k=0}^\infty k|E_k|\leq\int_E f(\bfx)\diff\bfx\leq\sum_{k=0}^\infty(k+1)|E_k|.
+\sum_{k=0}^\infty k|E_k|\leq\int_E f(\bfx) d \bfx\leq\sum_{k=0}^\infty(k+1)|E_k|.
 \end{equation}
 But note that $|E_k|=|F_k\minus F_{k+1}|=|F_k|-|F_{k+1}|$ by Corollary 3.25
 since the measures of $E_k$, $F_k$, and $F_{k+1}$ are all finite. Hence,
@@ -184,7 +184,7 @@ since the measures of $E_k$, $F_k$, and $F_{k+1}$ are all finite. Hence,
 \begin{equation}
 \label{eq:new-upper-lower-estimates-3}
 \sum_{k=0}^\infty k\left(|F_k|-|F_{k+1}|\right)\leq
-\int_E f(\bfx)\diff\bfx\leq
+\int_E f(\bfx) d \bfx\leq
 \sum_{k=0}^\infty (k+1)\left(|F_k|-|F_{k+1}|\right).
 \end{equation}
 A little manipulation of the series in the leftmost estimate gives us
@@ -192,11 +192,11 @@ A little manipulation of the series in the leftmost estimate gives us
 \label{eq:leftmost-estimate-3}
 \begin{aligned}
 \sum_{k=0}^\infty k\left(|F_k|-|F_{k+1}|\right)
-&=\sum_{k=1}^\infty k|F_k|-\sum_{k=1}^\infty k|F_{k+1}|\\
-&=|F_1|+\sum_{k=2}^\infty k|F_k|-\sum_{k=1}^\infty k|F_{k+1}|\\
-&=|F_1|+\sum_{k=1}^\infty(k+1)|F_{k+1}|-\sum_{k=1}^\infty k|F_{k+1}\\
-&=|F_1|+\sum_{k=1}^\infty |F_{k+1}|\\
-&=\sum_{k=1}^\infty|F_{k+1}|
+={}&\sum_{k=1}^\infty k|F_k|-\sum_{k=1}^\infty k|F_{k+1}|\\
+={}&|F_1|+\sum_{k=2}^\infty k|F_k|-\sum_{k=1}^\infty k|F_{k+1}|\\
+={}&|F_1|+\sum_{k=1}^\infty(k+1)|F_{k+1}|-\sum_{k=1}^\infty k|F_{k+1}\\
+={}&|F_1|+\sum_{k=1}^\infty |F_{k+1}|\\
+={}&\sum_{k=1}^\infty|F_{k+1}|
 \end{aligned}
 \end{equation}
 and
@@ -204,18 +204,18 @@ and
 \label{eq:rightmost-estimate-3}
 \begin{aligned}
 \sum_{k=0}^\infty(k+1)\left(|F_k|-|F_{k+1}|\right)
-&=\sum_{k=0}^\infty(k+1)|F_k|-\sum_{k=0}^\infty(k+1)|F_{k+1}|\\
-&=|F_0|+\sum_{k=1}^\infty(k+1)|F_k|-\sum_{k=0}^\infty(k+1)|F_{k+1}|\\
-&=|F_0|+\sum_{k=0}^\infty(k+2)|F_{k+1}|-\sum_{k=0}^\infty(k+1)|F_{k+1}|\\
-&=|F_0|+\sum_{k=0}^\infty|F_{k+1}|\\
-&=\sum_{k=0}^\infty|F_k|.
+={}&\sum_{k=0}^\infty(k+1)|F_k|-\sum_{k=0}^\infty(k+1)|F_{k+1}|\\
+={}&|F_0|+\sum_{k=1}^\infty(k+1)|F_k|-\sum_{k=0}^\infty(k+1)|F_{k+1}|\\
+={}&|F_0|+\sum_{k=0}^\infty(k+2)|F_{k+1}|-\sum_{k=0}^\infty(k+1)|F_{k+1}|\\
+={}&|F_0|+\sum_{k=0}^\infty|F_{k+1}|\\
+={}&\sum_{k=0}^\infty|F_k|.
 \end{aligned}
 \end{equation}
 Thus, from \eqref{eq:leftmost-estimate-3} and
 \eqref{eq:rightmost-estimate-3}
 \begin{equation}
 \label{eq:final-upper-lower-estimates-3}
-\sum_{k=1}^\infty|F_k|\leq\int_E f(\bfx)\diff\bfx\leq\sum_{k=0}^\infty|F_k|
+\sum_{k=1}^\infty|F_k|\leq\int_E f(\bfx) d \bfx\leq\sum_{k=0}^\infty|F_k|
 \end{equation}
 so the integral $\int_E f$ converges if and only if the sum
 $\sum_{k=0}^\infty|F_k|$ converges.
@@ -254,7 +254,7 @@ I don't know how to solve this. This is the intended solution:
 $\implies$: Given $\varepsilon>0$, $\rho(f_k,f)\to 0$ implies that
 \[
 \int_{\left\{\,x\in
-    E:|f_k(x)-f(x)|>\varepsilon\,\right\}}\frac{|f_k-f|}{1+|f_k-f}\diff
+    E:|f_k(x)-f(x)|>\varepsilon\,\right\}}\frac{|f_k-f|}{1+|f_k-f} d
 x\longrightarrow 0.
 \]
 Observe that the function $\Phi\colon\bfR^+\to\bfR$ given by
@@ -263,12 +263,12 @@ hence
 \[
 \begin{aligned}
   \int_{\left\{\,x\in
-      E:|f_k(x)-f(x)|>\varepsilon\,\right\}}\frac{|f_k-f|}{1+|f_k-f|}\diff
+      E:|f_k(x)-f(x)|>\varepsilon\,\right\}}\frac{|f_k-f|}{1+|f_k-f|} d
   x
 &\geq\int_{\left\{\,x\in
-    E:|f_k(x)-f(x)|>\varepsilon\,\right\}}\frac{\varepsilon}{1+\varepsilon}\diff
+    E:|f_k(x)-f(x)|>\varepsilon\,\right\}}\frac{\varepsilon}{1+\varepsilon} d
 x\\
-&=\frac{\varepsilon}{1+\varepsilon}
+={}&\frac{\varepsilon}{1+\varepsilon}
 \left|\left\{\,x\in E:|f_k(x)-f(x)|>\varepsilon\,\right\}\right|.
 \end{aligned}
 \]
@@ -277,7 +277,7 @@ Therefore,
 \left|\left\{\,x\in E:|f_k(x)-f(x)|>\varepsilon\,\right\}\right|
 \leq\frac{1+\varepsilon}{\varepsilon}
 \int_{\left\{\,x\in
-    E:|f_k(x)-f(x)|>\varepsilon\,\right\}}\frac{|f_k-f|}{1+|f_k-f|}\diff x
+    E:|f_k(x)-f(x)|>\varepsilon\,\right\}}\frac{|f_k-f|}{1+|f_k-f|} d  x
 \longrightarrow 0
 \]
 as $k\to\infty$.
@@ -286,10 +286,10 @@ $\impliedby$: Conversely, given $\delta>0$, we have
 \[
 \begin{aligned}
 \rho(f_k,f)
-&=\int_{\left\{\,x\in E:|f_k(x)-f(x)|>\delta\,\right\}}\frac{|f_k-f|}{1+|f_k-f|}\diff x\\
+={}&\int_{\left\{\,x\in E:|f_k(x)-f(x)|>\delta\,\right\}}\frac{|f_k-f|}{1+|f_k-f|} d  x\\
 &\phantom{{}={}}+\int_{\left\{\,x\in
-    E:|f_k(x)-f(x)|\leq\delta\,\right\}}\frac{|f_k-f|}{1+|f_k-f|}\diff x\\
-&\leq\left|\left\{\,x\in
+    E:|f_k(x)-f(x)|\leq\delta\,\right\}}\frac{|f_k-f|}{1+|f_k-f|} d  x\\
+\leq{}&\left|\left\{\,x\in
     E:|f_k(x)-f(x)|>\delta\,\right\}\right|+\frac{\delta}{1+\delta}|E|.
 \end{aligned}
 \]
@@ -309,12 +309,12 @@ Therefore, $f_k\to f$ in measure implies $\rho(f_k,f)\to 0$ as $k\to\infty$.
 \begin{problem}
 Define the \emph{gamma function} $\Gamma\colon\bfR^+\to\bfR$ by
 \[
-\Gamma(y)\coloneqq\int_0^\infty e^{-u}u^{y-1}\diff u,
+\Gamma(y)\coloneqq\int_0^\infty e^{-u}u^{y-1} d  u,
 \]
 and the \emph{beta function} $\beta\colon\bfR^+\times\bfR^+\to\bfR$
 by
 \[
-\beta(x,y)\coloneqq\int_0^1 t^{x-1}(1-t)^{y-1}\diff t.
+\beta(x,y)\coloneqq\int_0^1 t^{x-1}(1-t)^{y-1} d  t.
 \]
 \begin{enumerate}[label=(\alph*)]
 \item Prove that the definition of the gamma function is well-posed, i.e.,
@@ -332,8 +332,8 @@ since $(0,1)$ and $[1,\infty)$ are disjoint measurable subsets of $\bfR$,
 by Theorem 5.7 we can split the integral $\Gamma(y)$ into
 \begin{equation}
 \label{eq:split-integral-5}
-\Gamma(y)=\underbrace{\int_0^1 e^{-u}u^{y-1}\diff u}_{I_1}
-+\underbrace{\int_1^\infty e^{-u}u^{y-1}\diff u}_{I_2}.
+\Gamma(y)=\underbrace{\int_0^1 e^{-u}u^{y-1} d  u}_{I_1}
++\underbrace{\int_1^\infty e^{-u}u^{y-1} d  u}_{I_2}.
 \end{equation}
 We will show, separately, that $I_1$ and $I_2$ are finite.
 
@@ -341,21 +341,21 @@ To see that $I_1$ is finite, note that
 \begin{equation}
 \label{eq:estimate-1-5}
 \begin{aligned}
-e^{-u}u^{y-1}&=e^{-u}e^{(y-1)\log u}\\
-&=e^{-u+(y-1)\log u}\\
-&\leq e^{(y-1)\log u}\\
-&=u^{y-1}
+e^{-u}u^{y-1}={}&e^{-u}e^{(y-1)\log u}\\
+={}&e^{-u+(y-1)\log u}\\
+\leq{}&e^{(y-1)\log u}\\
+={}&u^{y-1}
 \end{aligned}
 \end{equation}
 since $0<u<1$
 \begin{equation}
 \label{eq:estimate-i-1-5}
 \begin{aligned}
-I_1&=\int_0^1 e^{-u}u^{y-1}\diff u\\
-&\leq\int_0^1 u^{y-1}\diff u\\
-&=\left[\frac{u^y}{y}\right]_0^1\\
-&=\frac{1}{y}\\
-&<\infty.
+I_1={}&\int_0^1 e^{-u}u^{y-1} d  u\\
+\leq{}&\int_0^1 u^{y-1} d  u\\
+={}&\left[\frac{u^y}{y}\right]_0^1\\
+={}&\frac{1}{y}\\
+<{}&\infty.
 \end{aligned}
 \end{equation}
 
@@ -383,7 +383,7 @@ Note that by the triangle inequality, we have the following estimate on the
 integral
 \begin{equation}
 \label{eq:minokwski-estimate-6}
-\int_{\bfR^n}|f_{\mathbf{h}}(\bfx)-f(\bfx)|\diff\bfx\leq
+\int_{\bfR^n}|f_{\mathbf{h}}(\bfx)-f(\bfx)| d \bfx\leq
 \end{equation}
 
 \end{proof}
@@ -415,7 +415,7 @@ if and only if
 Fatou's theorem,
 \begin{align*}
 \int_{\bfR^n}(g-f)
-&=\int_{\bfR^n}\liminf_{k\to\infty} g_k-f_k
+={}&\int_{\bfR^n}\liminf_{k\to\infty} g_k-f_k
 \leq\liminf_{k\to\infty}\int_{\bfR^n}g_k-f_k,\\
 \int_{\bfR^n}g+f&\int_{\bfR^n}\liminf_{k\to\infty}g_k+f_k\leq\liminf_{k\to\infty}\int_{\bfR^n}g_k+f_k.
 \end{align*}

@@ -77,7 +77,7 @@ $|R(f,E)|_{\bfR^{n+1}}$ is called the \emph{Lebesgue integral over $E$},
 and we write
 \begin{equation}
 \label{eq:lebesgue-integral}
-\int_E f(\bfx)\diff\bfx\coloneqq|R(f,E)|_{\bfR^{n+1}}.
+\int_E f(\bfx) d \bfx\coloneqq|R(f,E)|_{\bfR^{n+1}}.
 \end{equation}
 This is sometimes written as
 \[
@@ -85,7 +85,7 @@ This is sometimes written as
 \]
 or at times the lengthy notation
 \[
-\idotsint\limits_{E} f(x_1,\dotsc,x_n)\diff x_1\cdots\diff x_n
+\idotsint\limits_{E} f(x_1,\dotsc,x_n) d  x_1\cdots d  x_n
 \]
 is convenient.
 \begin{theorem*}[5.1]
@@ -246,11 +246,11 @@ Let $f(\bfx,\bfy)\in L^1(I)$, $I\coloneqq I_1\times I_2$. Then
 \begin{enumerate}[label=\textnormal{(\roman*)}]
 \item For almost every $\bfx\in I_1$, $f(\bfx,\bfy)$ is measurable and
   integrable on $I_2$ as a function of $\bfy$;
-\item As a function of $\bfx$, $\int_{I_2} f(\bfx,\bfy)\diff\bfy$ is
+\item As a function of $\bfx$, $\int_{I_2} f(\bfx,\bfy) d \bfy$ is
   measurable and integrable on $I_1$, and
 \[
-\iint_I f(\bfx,\bfy)\diff\bfx\diff\bfy=
-\int_{I_1}\left[\int_{I_2}f(\bfx,\bfy)\diff\bfy\right]\!\diff\bfx.
+\iint_I f(\bfx,\bfy) d \bfx d \bfy=
+\int_{I_1}\left[\int_{I_2}f(\bfx,\bfy) d \bfy\right]\! d \bfx.
 \]
 \end{enumerate}
 \end{theorem*}
@@ -263,10 +263,10 @@ $E$ of $\bfR^{n+m}$, and let $E_\bfx\coloneqq\left\{ \,\bfy:(\bfx,\bfy)\in
   function of $\bfy$ on $E_\bfx$.
 \item If $f(\bfx,\bfy)\in L^1(E)$, then for almost every $\bfx\in\bfR^n$,
   $f(\bfx,\bfy)$ is an integrable on $E_\bfx$ with respect to $\bfy$;
-  moreover $\int_{E_\bfx}f(\bfx,\bfy)\diff\bfy$ is an integrable function
+  moreover $\int_{E_\bfx}f(\bfx,\bfy) d \bfy$ is an integrable function
   of $\bfx$ and
 \[
-\iint_E f(\bfx,\bfy)\diff\bfx\diff\bfy=\int_{\bfR^n}\left[\int_{E_\bfx}f(\bfx,\bfy)\diff\bfy\right]\!\diff\bfx.
+\iint_E f(\bfx,\bfy) d \bfx d \bfy=\int_{\bfR^n}\left[\int_{E_\bfx}f(\bfx,\bfy) d \bfy\right]\! d \bfx.
 \]
 \end{enumerate}
 \end{theorem*}
@@ -274,16 +274,16 @@ $E$ of $\bfR^{n+m}$, and let $E_\bfx\coloneqq\left\{ \,\bfy:(\bfx,\bfy)\in
 Let $f(\bfx,\bfy)$ be nonnegative and measurable on an interval
 $I=I_1\times I_2$ of $\bfR^{n+m}$. Then, for almost every $\bfx\in I_1$,
 $f(\bfx,\bfy)$ is a measurable function of $\bfy$ on $I_2$. Moreover, as a
-function of $\bfx$, $\int_{I_2}f(\bfx,\bfy)\diff \bfy$ is measurable on
+function of $\bfx$, $\int_{I_2}f(\bfx,\bfy) d  \bfy$ is measurable on
 $I_1$, and
 \[
-\iint_I f(\bfx,\bfy)\diff\bfx\diff\bfy=\int_{I_1}\left[\int_{I_2}f(\bfx,\bfy)\diff\bfy\right]\!\diff\bfx
+\iint_I f(\bfx,\bfy) d \bfx d \bfy=\int_{I_1}\left[\int_{I_2}f(\bfx,\bfy) d \bfy\right]\! d \bfx
 \]
 \end{theorem*}
 If $f$ and $g$ are measurable in $\bfR^n$, their \emph{convolution
   $(f*g)(\bfx)$} is defined by
 \[
-(f*g)(\bfx)\coloneqq\int_{\bfR^n}f(\bfx-\bfy)g(\bfy)\diff\bfy,
+(f*g)(\bfx)\coloneqq\int_{\bfR^n}f(\bfx-\bfy)g(\bfy) d \bfy,
 \]
 provided the integral exists.
 \begin{theorem*}[6.14]
@@ -292,10 +292,10 @@ almost every $\bfx\in\bfR^n$ and is measurable. Moreover, $f*\in
 L^1(\bfR^n)$ and
 \[
 \begin{aligned}
-\int_{\bfR^n}|f*g|\diff\bfx
-&\leq\left(\int_{\bfR^n}|f|\diff\bfx\right)\left(\int_{\bfR^n}|g|\diff\bfx\right)\\
-\int_{\bfR^n}(f*g)(\bfx)\diff\bfx
-&=\left(\int_{\bfR^n}f\diff\bfx\right)\left(\int_{\bfR^n}g\diff\bfx\right).
+\int_{\bfR^n}|f*g| d \bfx
+\leq{}&\left(\int_{\bfR^n}|f| d \bfx\right)\left(\int_{\bfR^n}|g| d \bfx\right)\\
+\int_{\bfR^n}(f*g)(\bfx) d \bfx
+={}&\left(\int_{\bfR^n}f d \bfx\right)\left(\int_{\bfR^n}g d \bfx\right).
 \end{aligned}
 \]
 \end{theorem*}
@@ -303,9 +303,9 @@ L^1(\bfR^n)$ and
 If $f$ and $g$ are nonnegative and measurable on $\bfR^n$, then $f*g$ is
 measurable on $\bfR^n$ and
 \[
-\int_{\bfR^n}(f*g)\diff\bfx=
-\left(\int_{\bfR^n} f\diff\bfx\right)
-\left(\int_{\bfR^n}g\diff\bfx\right).
+\int_{\bfR^n}(f*g) d \bfx=
+\left(\int_{\bfR^n} f d \bfx\right)
+\left(\int_{\bfR^n}g d \bfx\right).
 \]
 \end{corollary*}
 \begin{theorem*}[6.17, Marcinkiewicz]
@@ -313,11 +313,11 @@ Let $F$ be a closed subset of a bounded open interval $(a,b)$, and let
 $\delta(x)\coloneqq\delta(x,F)$ be the corresponding distance
 function. Then, given $\lambda>0$, the integral
 \[
-M_\lambda(x)\coloneqq\int_a^b\frac{\delta(y)^\lambda}{|x-y|^{1+\lambda}}\diff y
+M_\lambda(x)\coloneqq\int_a^b\frac{\delta(y)^\lambda}{|x-y|^{1+\lambda}} d  y
 \]
 is finite a.e.\@ in $F$. Moreover, $M_\lambda\in L^1(F)$ and
 \[
-\int_F M_\lambda\diff x\leq 2\lambda^{-1}|G|,
+\int_F M_\lambda d  x\leq 2\lambda^{-1}|G|,
 \]
 where $G\coloneqq(a,b)\minus F$.
 \end{theorem*}

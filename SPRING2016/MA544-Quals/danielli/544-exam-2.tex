@@ -23,10 +23,10 @@ sufficiently large $N\in\bfN$ such that
 \label{eq:desired-inequality-2-1}
 \begin{aligned}
 \varepsilon&>\left|\int_{\bfR^n}|f_k|-\int_{\bfR^n}|f|\right|\\
-&=-\int_{\bfR^n}|f_k|+\int_{\bfR^n}|f|\\
-&=-\int_{\bfR^n}|f|+\int_{\bfR^n}|f|\\
-&=-\int_{B_k}|f|+\int_{\bfR^n}|f|\\
-&=\int_{\bfR^n\minus B_k}|f|
+={}&-\int_{\bfR^n}|f_k|+\int_{\bfR^n}|f|\\
+={}&-\int_{\bfR^n}|f|+\int_{\bfR^n}|f|\\
+={}&-\int_{B_k}|f|+\int_{\bfR^n}|f|\\
+={}&\int_{\bfR^n\minus B_k}|f|
 \end{aligned}
 \end{equation}
 as desired.
@@ -106,7 +106,7 @@ Letting $\varepsilon\to 0$, we achieved the desired convergence.
 
 \begin{problem}
 Let $I\coloneqq[0,1]$, $f\in L^1(I)$, and define $g(x)\coloneqq\int_x^1
-t^{-1}f(t)\diff t$ for $x\in I$. Prove that $g\in L^1(I)$ and
+t^{-1}f(t) d  t$ for $x\in I$. Prove that $g\in L^1(I)$ and
 \[
 \int_I g=\int_I f.
 \]
@@ -127,10 +127,10 @@ so
 \begin{equation}
   \label{eq:uniform-convergence-2-2-4}
 \begin{aligned}
-\int_F\left[\int_x^1t^{-1}p_k(t)\diff t\right]\!\diff x
-&=\int_F\left[\int_x^1 at^{-1}+q_k(t)\diff t\right]\!\diff x\\
-&=\int_F q_k'(x)-a\log(x)\diff x\\
-&<\infty
+\int_F\left[\int_x^1t^{-1}p_k(t) d  t\right] d  x
+={}&\int_F\left[\int_x^1 at^{-1}+q_k(t) d  t\right] d  x\\
+={}&\int_F q_k'(x)-a\log(x) d  x\\
+<{}&\infty
 \end{aligned}
 \end{equation}
 for all $k$ and converges uniformly to $g$ so $g\in L^1(I)$. I don't know

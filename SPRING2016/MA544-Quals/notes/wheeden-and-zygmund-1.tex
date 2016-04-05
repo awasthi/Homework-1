@@ -337,9 +337,9 @@ increases, and we define
   \label{eq:ball-limsup-liminf}
 \begin{aligned}
 \limsup_{\substack{\bfx\to\bfx_0\\\bfx\in E}} f(\bfx)
-&=\lim_{\delta\to 0}M(\bfx_0,\delta)\\
+={}&\lim_{\delta\to 0}M(\bfx_0,\delta)\\
 \liminf_{\substack{\bfx\to\bfx_0\\\bfx\in E}} f(\bfx)
-&=\lim_{\delta\to 0}m(\bfx_0,\delta).
+={}&\lim_{\delta\to 0}m(\bfx_0,\delta).
 \end{aligned}
 \end{equation}
 \begin{theorem}[1.14]
@@ -429,10 +429,10 @@ $I\coloneqq\left\{\,\bfx:\text{$\bfx=(x_1,\dotsc,x_n)$, $a_k\leq x_k\leq
 be denoted
 \begin{equation}
   \label{eq:riemann-integral}
-(R)\int_{a_1}^{b_1}\dotsi\int_{a_n}^{b_n}f(x_1,\dotsc,x_n)\diff
-x_1\dotsm\diff x_n
+(R)\int_{a_1}^{b_1}\dotsi\int_{a_n}^{b_n}f(x_1,\dotsc,x_n) d
+x_1\dotsm d  x_n
 \qquad\text{or}\qquad
-(R)\int_I f(\bfx)\diff\bfx
+(R)\int_I f(\bfx) d \bfx
 \end{equation}
 and is defined as follows. Partition $I$ into a finite collection $\Gamma$
 of nonoverlapping intervals, $\Gamma={\{I_k\}}_{k=1}^N$, and define the
@@ -449,7 +449,7 @@ L_\Gamma(\vec\xi_1,\dotsc,\vec\xi_n)&\coloneqq\sum_{k=1}^N\left[\inf_{\bfx\in
 \end{aligned}
 \end{equation}
 We define the Riemann integral by saying that $A\coloneqq (R)\int_I
-f(\bfx)\diff\bfx$ if $\lim_{\|\Gamma\|\to 0}R_\Gamma$ exists and equals
+f(\bfx)d\bfx$ if $\lim_{\|\Gamma\|\to 0}R_\Gamma$ exists and equals
 $A$; that is, if given $\varepsilon>0$, there exists $\varepsilon>0$ such
 that $|A-R_\Gamma|<\varepsilon$ for any $\Gamma$ and any chosen
 $\{\vec\xi_k\}$, provided only that $\|\Gamma\|<\delta$. This definition is
@@ -576,42 +576,61 @@ For (ii), the proofs are simple. Suppose $f$ is of bounded variation on
 $[a,b]$ with variation $V_f$. Let $c$ be a real constant, then
 \begin{align*}
 V[cf;a,b]
-&=\sup_\Gamma\sum_{x_i\in\Gamma}|cf(x_i)-f(x_{i-1})|\\
-&=|c|\sup_\Gamma\sum_{x_i\in\Gamma}|f(x_i)-f(x_{i-1})|\\
-&=|c|V_f\\
-&<\infty.
+={}&\sup_\Gamma\sum_{i=1}^n|cf(x_i)-f(x_{i-1})|\\
+={}&|c|\sup_\Gamma\sum_{i=1}^n|f(x_i)-f(x_{i-1})|\\
+={}&|c|V_f\\
+<{}&\infty.
 \end{align*}
 Hence, $cf$ is of bounded variation on $[a,b]$. Suppose $f$ and $g$ are of
 bounded variation on $[a,b]$ with variation $V_f$ and $V_g$,
 respectively. Then
 \begin{align*}
 V[f+g;a,b]
-&=\sup_\Gamma\sum_{x_i\in\Gamma}|(f+g)(x_i)-(f+g)(x_{i-1})|\\
-&=\sup_\Gamma\sum_{x_i\in\Gamma}\left|{(f(x_i)-f(x_{i-1}))}+{(g(x_i)-g(x_{i-1}))}\right|\\
-&\leq\sup_\Gamma\sum_{x_i\in\Gamma}\bigl[|f(x_i)-f(x_{i-1})|+|g(x_i)-g(x_{i-1})|\bigr]\\
-&=\sup_\Gamma\sum_{x_i\in\Gamma}|f(x_i)-f(x_{i-1})|
-+\sup_\Gamma\sum_{x_i\in\Gamma}|g(x_i)-g(x_{i-1})|\\
-&=V_f+V_g\\
-&<\infty.
+={}&\sup_\Gamma\sum_{i=1}^n|(f+g)(x_i)-(f+g)(x_{i-1})|\\
+={}&\sup_\Gamma\sum_{i=1}^n\left|{(f(x_i)-f(x_{i-1}))}+{(g(x_i)-g(x_{i-1}))}\right|\\
+\leq{}&\sup_\Gamma\sum_{i=1}^n\bigl[|f(x_i)-f(x_{i-1})|+|g(x_i)-g(x_{i-1})|\bigr]\\
+={}&\sup_\Gamma\sum_{i=1}^n|f(x_i)-f(x_{i-1})|
++\sup_\Gamma\sum_{i=1}^n|g(x_i)-g(x_{i-1})|\\
+={}&V_f+V_g\\
+<{}&\infty.
 \end{align*}
 Hence, $f+g$ is of bounded variation. Suppose $f$ and $g$ are of bounded
 variation on $[a,b]$ with variation $V_f$ and $V_g$, respectively. Then
 \begin{align*}
 V[fg;a,b]
-&=\sup_\Gamma\sum_{x_i\in\Gamma}|(fg)(x_i)-(fg)(x_{i-1})|\\
-&=\sup_\Gamma\sum_{x_i\in\Gamma}|f(x_i)g(x_i)-f(x_{i-1})g(x_{i-1})|\\
-&=\sup_\Gamma\sum_{x_i\in\Gamma}|f(x_i)g(x_i)-f(x_{i-1})g(x_i)+f(x_{i-1})g(x_i)-f(x_{i-1})g(x_{i-1})|\\
-&=\sup_\Gamma\sum_{x_i\in\Gamma}|(f(x_i)g(x_i)-f(x_{i-1})g(x_i))
+={}&\sup_\Gamma\sum_{i=1}^n|(fg)(x_i)-(fg)(x_{i-1})|\\
+={}&\sup_\Gamma\sum_{i=1}^n|f(x_i)g(x_i)-f(x_{i-1})g(x_{i-1})|\\
+={}&\sup_\Gamma\sum_{i=1}^n|f(x_i)g(x_i)-f(x_{i-1})g(x_i)+f(x_{i-1})g(x_i)-f(x_{i-1})g(x_{i-1})|\\
+={}&\sup_\Gamma\sum_{i=1}^n|(f(x_i)g(x_i)-f(x_{i-1})g(x_i))
 -(f(x_{i-1})g(x_{i-1})-f(x_{i-1})g(x_i))|\\
-&=\sup_\Gamma\sum_{x_i\in\Gamma}|g(x_i)||f(x_i)-f(x_{i-1})|
-+\sup_\Gamma\sum_{x_i\in\Gamma}|f(x_{i-1})||g(x_i)-g(x_{i-1})|
+={}&\sup_\Gamma\sum_{i=1}^n|g(x_i)||f(x_i)-f(x_{i-1})|
++\sup_\Gamma\sum_{i=1}^n|f(x_{i-1})||g(x_i)-g(x_{i-1})|
 \intertext{by part (i), since $f$ and $g$ are b.v.\@ on $[a,b]$, they are
   bounded so there exists $M$ and $N$ such that $|f(x)|<M$, $|g(x)|<M$ for
   all $x\in[a,b]$}
-&=M V_f+N V_g\\
-&<\infty.
+={}&M V_f+N V_g\\
+<{}&\infty.
 \end{align*}
-Hence, $fg$ is of bounded variation on $[a,b]$.
+Hence, $fg$ is of bounded variation on $[a,b]$. Suppose that $f$ and $g$
+are of bounded variation on $[a,b]$ with variation $V_f$ and $V_g$,
+respectively. Suppose, additionally that there exists $\varepsilon>0$ such
+that $|g(x)|\geq\varepsilon$ for all $x\in[a,b]$. Then, we have
+\begin{align*}
+V[f/g;a,b]
+={}&\sup_\Gamma\sum_{i=1}^n|(f/g)(x_i)-(f/g)(x_{i-1})|\\
+={}&\sup_\Gamma\sum_{i=1}^n
+\left|\frac{f(x_i)}{g(x_i)}-\frac{f(x_{i-1})}{g(x_{i-1})}\right|\\
+={}&\sup_\Gamma\sum_{i=1}^n
+\left|\frac{g(x_{i-1})f(x_i)-g(x_i)f(x_{i-1})}{g(x_i)g(x_{i-1})}\right|
+\intertext{and since we have $g(x)>\varepsilon$ for any $x\in[a,b]$,
+  $1/g(x)<1/\varepsilon$ for any $x\in[a,b]$, so }
+\leq{}&\sup_\Gamma\left[\frac{1}{\varepsilon^2}
+\sum_{i=1}^n|g(x_{i-1})f(x_i)-g(x_i)f(x_{i-1})|\right]\\
+\leq{}&\sup_\Gamma\left[\frac{1}{\varepsilon^2}
+\sum_{i=1}^n|g(x_{i-1})f(x_i)-g(x_{i-1})f(x_{i-1})
+-(g(x_i)f(x_{i-1})-g(x_{i-1})f(x_{i-1}))|\right]\\
+={}&
+\end{align*}
 \end{proof}
 
 %%% Local Variables:
