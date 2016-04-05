@@ -442,9 +442,9 @@ I_k$. Select a point $\vec\xi_k$ in $I_k$ for $k\geq 1$, and let
 \label{eq:riemannian-integral-partitions}
 \begin{aligned}
 R_\Gamma(\vec\xi_1,\dotsc,\vec\xi_n)&\coloneqq\sum_{k=1}^N f(\vec\xi_k)\vol(I_k)\\
-U_\Gamma(\xi_1,\dotsc,\xi_n)&\coloneqq\sum_{k=1}^N\left[\sup_{\bfx\in I}
+U_\Gamma(\vec\xi_1,\dotsc,\vec\xi_n)&\coloneqq\sum_{k=1}^N\left[\sup_{\bfx\in I}
   f(\bfx)\right]\vol(I_k)\\
-L_\Gamma(\xi_1,\dotsc,\xi_n)&\coloneqq\sum_{k=1}^N\left[\inf_{\bfx\in
+L_\Gamma(\vec\xi_1,\dotsc,\vec\xi_n)&\coloneqq\sum_{k=1}^N\left[\inf_{\bfx\in
     I_k}f(\bfx)\right]\vol(I_k).
 \end{aligned}
 \end{equation}
@@ -483,24 +483,24 @@ $V<\infty$, $f$ is said to be of \emph{bounded variation on $[a,b]$}; if
 $V=\infty$, $f$ is of \emph{unbounded variation on $[a,b]$}.
 
 Here are several examples
-\begin{example*}
+\begin{example}
 Suppose $f$ is monotone in $[a,b]$. Then, clearly, each $S_\Gamma$ equals
 $|f(b)-f(a)|$, and therefore $V=|f(b)-f(a)|$.
-\end{example*}
-\begin{example*}
+\end{example}
+\begin{example}
 Suppose the graph of $f$ can be split into a finite number of monotone
 arcs; that is, suppose $[a,b]=\bigcup_{i=1}^k[a_i,a_{i+1}]$ and $f$
 monotone in each $[a_i,a_{i+1}]$. Then
 $V=\sum_{i=1}^k|f(a_{i+1})-f(a_i)|$. To see this, we use the result of the
 previous example and the fact, to be proved, in Theorem 2.2, that
 $V=\sum_{i=1}^kV[a_i,a_{i+1}]$.
-\end{example*}
-\begin{example*}
+\end{example}
+\begin{example}
 Let $f$ be defined by $f(x)\coloneqq 0$ when $x\neq 0$ and $f(0)\coloneqq
 1$, and let $[a,b]$ be any interval containing $0$ in its interior. Then
 $S_\Gamma$ is either $2$ or $0$ depending on whether $x=0$ is a partition
 point or not. Thus, $V[a,b]=2$.
-\end{example*}
+\end{example}
 
 If $\Gamma=\{x_0,x_1,\dotsc,x_m\}$ is a partition of $[a,b]$, let
 $\|\Gamma\|$, called the \emph{norm of $\Gamma$}, be defined as the longest
@@ -517,21 +517,59 @@ take $f$ and $[a,b]$ is in the example above and choose $\Gamma_j$ such
 that $x=0$ is never a partition in the point, then $\lim S_{\Gamma_j}=0$,
 while if we choose the $\Gamma_j$ such that $x=0$ alternatively is and is
 not a point, then $\lim S_{\Gamma_j}$ does not exist.
-\begin{example*}
+\begin{example}
 Let $f$ be the \emph{Dirichlet function}, defined by $f(x)\coloneqq 1$ for
 $x$ rational and $f(x)\coloneqq 0$ for $x$ irrational. Then, clearly,
 $V[a,b]=\infty$ for any interval $[a,b]$.
-\end{example*}
-\begin{example*}
+\end{example}
+\begin{example}
 A function that is continuous on an interval is not necessarily of bounded
 variation on the interval. To see this, let $\{a_j\}$ and $\{d_j\}$,
 $j=1,2,\dotsc$, be two monotone decreasing sequences in $(0,1]$ with
 $a_1=1$, $\lim_{j\to\infty} a_j=\lim_{j\to\infty} d_j=0$ and $\sum
 d_j=\infty$. Construct a continuous function $f$ as follows. On each
 subinterval $[a_{j+1},a_j]$, the graph of $f$ consists of sides of the
-isosceles
-\end{example*}
+isosceles with base $[a_{j+1},a_j]$ and height $d_j$. Thus, $f(a_j)=0$, and
+if $m_j$ denotes the midpoint of $[a_{j+1},a_j]$, then $f(m_j)=d_j$. If we
+further define $f(0)=0$, then $f$ is continuous on $[0,1]$. Taking
+$\Gamma_k$ to the be the partition defined by the points $0$,
+${\{a_j\}}_{j=1}^{k+1}$, and ${\{m_j\}}_{j=1}^k$, we see that
+$S_\Gamma=2\sum_{j=1}^k d_j$. Hence, $V[f;0,1]=\infty$.
+\end{example}
+\begin{example}
+A function $f$ defined on $[a,b]$ is said to satisfy the \emph{Lipschitz
+  condition} on $[a,b]$, or be a \emph{Lipschitz function} on $[a,b]$, if
+there is a constant $C$ such that
+\[
+|f(x)-f(y)|\leq C|x-y|
+\]
+for all $x,y\in[a,b]$. Such a function is clearly of bounded variation,
+with $V[f;a,b]\leq C(b-a)$. For example, if $f$ has a continuous derivative
+on $[a,b]$, or even just a bounded derivative, then (by the mean-value
+theorem) $f$ satisfies the Lipschitz condition on $[a,b]$.
+\end{example}
+\begin{theorem}[2.1]
+\begin{enumerate}[label=\textnormal{(\roman*)}]
+\item If $f$ is of bounded variation on $[a,b]$, then $f$ is bounded on
+  $[a,b]$.
+\item Let $f$ and $g$ be of bounded variation on $[a,b]$. Then $cf$ (for
+  any real constant $c$), $f+g$, and $fg$ are of bounded variation on
+  $[a,b]$. Moreover, $f/g$ is of bounded variation if there exist some
+  $\varepsilon>0$ such that $|g(x)|\geq\varepsilon$ fro $x\in[a,b]$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}[Proof by Carlos]
+And the proof of these two is rather clear.
 
+For (i), we provide the following arguments: First, we prove it by
+contradiction. Suppose that $f$ is of bounded variation on the interval
+$[a,b]$. Then, the variation $V$ of $f$ over $[a,b]$ is finite. But if $f$
+is unbounded on $[a,b]$, for every positive real number $M$, there exists
+some $x\in[a,b]$ such that $|f(x)|>M$. In particular, we have
+\[
+|f(x)|\leq
+\]
+\end{proof}
 
 %%% Local Variables:
 %%% mode: latex
