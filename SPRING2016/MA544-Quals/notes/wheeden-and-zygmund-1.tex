@@ -569,6 +569,19 @@ some $x\in[a,b]$ such that $|f(x)|>M$. In particular, we have
 \[
 |f(x)|\leq
 \]
+
+For (i), we proceed by contradiction. Suppose that $f$ is of bounded
+variation on the interval $[a,b]$. Then the variation $V$ of $f$ over
+$[a,b]$ is finite. However, if $f$ is unbounded on $[a,b]$, for every
+positive real number $M$, there exists some $x\in[a,b]$ such that
+$|f(x)|>M$. In particular, for any $x'\in [a,b]$ we have
+\[
+|f(x)-f(x')|>M.
+\]
+In turn, this tells us that $V>|f(x)-f(x')|>M$ for any partition $\Gamma$
+containing $x$, so $V=\infty$. This yields a contradiction.
+
+For (ii),
 \end{proof}
 
 %%% Local Variables:
