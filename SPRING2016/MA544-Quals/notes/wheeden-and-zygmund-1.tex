@@ -653,7 +653,14 @@ Hence,
 \end{align*}
 as desired.
 
-To see part (ii) of this, consider the following
+To see part (ii) let $f$ be a real-valued function defined on $[a,b]$. If
+$\var[f;a,b]=\infty$, there is nothing to show so suppose
+$\var[f;a,b]<\infty$. Let $c$ be a point in $[a,b]$ not equal to either
+endpoint $a$ or $b$. Then
+\begin{align*}
+\var[f;a,c]&=\sup_{\Gamma_{[a,b]}}\sum_{i}|f(x_i)-f(x_{i-1})|\\
+           &\leq\sup_{\Gamma_{[a,b]}}
+\end{align*}
 \end{proof}
 
 %%% Local Variables:
