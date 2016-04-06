@@ -63,10 +63,49 @@ the property that for some point $y\in S^n$, the preimage $f^{-1}(y)$
 consists of only finitely many points, say $x_1,\dotsc,x_m$. Let
 $U_1,\dotsc,U_m$ be disjoint neighborhoods of these points, mapped by $f$
 into a neighborhood $V$ of $y$. Then $f(U_i\minus\{x_i\})\subset
-V\minus\{y_i\}$ for each $i$, and we have a commutative diagram.
+V\minus\{y_i\}$ for each $i$, and we have a commutative diagram
 \[
 \includegraphics{figures/notes-degree-disjoint-neighborhoods}
 \]
+where all the maps are the obvious ones, and in particular $k_i$ and $p_i$
+are induced by inclusions, so the triangles and squares commute. The two
+isomorphisms in the upper half of the diagram come from excision, while the
+lower two isomorphisms come from exact sequences of pairs. Via these four
+isomorphisms, the top two groups in the diagram can be identified with
+$H_n(S^n)\cong\bfZ$, and the top homomorphism $f_*$ becomes multiplication
+by an integer called the \emph{local degree} of $f$ at $x_i$, written $\deg
+f|_{x_i}$.
+
+For example, if $f$ is a homeomorphism, then $y$ can be any point and there
+is only one corresponding to $x_i$, so all the maps in the diagram are
+isomorphisms and $\deg f|_{x_i}=\deg f=\pm 1$. The situation occurs quite
+often in applications, and it is usually not hard to determine the correct
+signs.
+
+Here is the formula that reduces degree calculations to computing local
+degrees:
+\begin{proposition}[2.30]
+$\deg f=\sum_i\deg f|_{x_i}$.
+\end{proposition}
+\begin{proof}
+By excision the central term $H_n(S^n,S^n\minus\{f^{-1}(y)\})$ in the
+preceding lemma is the direct sum of the groups
+$H_n(U_i,U_i\minus\{x_i\})\cong\bfZ$, with $k_i$ the inclusion of the
+$i$-th  summand and $p_i$ the projection onto the $i$th
+summand. Identifying the outer groups in the diagram with $\bfZ$ as before,
+commutativity of the lower triangle says that that $p_i\circ j(1)=1$, hence
+$j(1)=(1,\dotsc,1)=\sum_ik_i(1)$. Commutativity of the upper square says
+that the middle $f_*$ takes $k_i(1)$ to $\deg f|_{x_i}$, hence the sum
+$\sum_ik_i(1)$ is taken to $\sum_i\deg f|_{x_i}$. Commutativity of the
+lower square then gives the formula $\deg f=\sum_i\deg f|_{x_i}$.
+\end{proof}
+\begin{example}[2.31]
+We can use this result to construct a map $S^n\to S^n$ of any given degree,
+for each $n\geq 1$. Let $q\colon S^n\to \bigvee_k S^n$ be the quotient map
+obtained by collapsing the complement of $k$ disjoint open balls $B_i$ in
+$S^n$ to a point, and let $p\colon\bigvee_k S^n\to S^n$ identifying all the
+summands to a single
+\end{example}
 
 %%% Local Variables:
 %%% mode: latex
