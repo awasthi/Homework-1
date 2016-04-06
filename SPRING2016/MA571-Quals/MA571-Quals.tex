@@ -33,38 +33,49 @@
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
 %% Math
+\usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{mathtools}
-% \usepackage{unicode-math}
+% \usepackage{eucal}
+% \usepackage{mathrsfs}
+% \usepackage[nointegrals]{wasysym}
 
-%% PDFTeX specific
-\usepackage[mathcal]{euscript}
-\usepackage{mathrsfs}
-\usepackage[nointegrals]{wasysym}
+% %% Language
+% \usepackage{cmap}
+% \usepackage[LAE,LFE,T2A,T1]{fontenc}
+% \usepackage[utf8]{inputenc}
+% \usepackage[farsi,french,german,spanish,russian,english]{babel}
+% \babeltags{fr=french,
+%            de=german,
+%            en=english,
+%            es=spanish,
+%            pa=farsi,
+%            ru=russian
+%            }
+% \def\spanishoptions{mexico}
 
-%% Languages
-\usepackage{cmap}
-\usepackage[LAE,LFE,T2A,T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[farsi,french,german,spanish,russian,english]{babel}
-\babeltags{fr=french,
-           de=german,
-           en=english,
-           es=spanish,
-           pa=farsi,
-           ru=russian
-           }
-\def\spanishoptions{mexico}
+% \selectlanguage{english}
 
-\selectlanguage{english}
+% \newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
 
-\newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
+% \usepackage{CJKutf8}
+% \newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
+% \newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
+% \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
-\usepackage{CJKutf8}
-\newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
-\newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
-\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
+%% Unicode math and Polyglossia
+\usepackage{unicode-math}
+% \usepackage{unicode-minionmath}
+
+\setmainfont[Ligatures=TeX]{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmonofont{Libertinus Mono}
+\setmathfont{Minion Math}
+\setmathfont[range={\mathfrak}]{XITS Math}
+\setmathfont[range={\mathcal},StylisticSet=1]{XITS Math}
+\setmathfont[range={\mathscr}]{XITS Math}
+\setmathfont[range={}]{Minion Math}
 
 \usepackage{graphicx}
 \graphicspath{{figures/}}
@@ -113,10 +124,10 @@
 \newtheorem*{problem*}{Problem}
 
 %% Redefinitions & commands
-\newcommand{\nsubset}{\ensuremath{\not\subset}}
-\newcommand{\nsupset}{\ensuremath{\not\supset}}
-\newcommand\minus{\ensuremath{\null\smallsetminus}}
-\renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
+% \newcommand{\nsubset}{\ensuremath{\not\subset}}
+% \newcommand{\nsupset}{\ensuremath{\not\supset}}
+% \newcommand\minus{\ensuremath{\null\smallsetminus}}
+\renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
 
 %% Commands and operators
 \DeclareMathOperator{\id}{id}
