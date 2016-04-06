@@ -34,56 +34,87 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{mathtools}
-% \usepackage{eucal}
-% \usepackage{mathrsfs}
-% \usepackage[nointegrals]{wasysym}
+\usepackage{eucal}
+\usepackage{mathrsfs}
+\usepackage[nointegrals]{wasysym}
 
-% %% Language
-% \usepackage{cmap}
-% \usepackage[LAE,LFE,T2A,T1]{fontenc}
-% \usepackage[utf8]{inputenc}
-% \usepackage[farsi,french,german,spanish,russian,english]{babel}
-% \babeltags{fr=french,
-%            de=german,
-%            en=english,
-%            es=spanish,
-%            pa=farsi,
-%            ru=russian
-%            }
-% \def\spanishoptions{mexico}
+%% Language
+\usepackage{cmap}
+\usepackage[LAE,LFE,T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[farsi,french,german,spanish,russian,english]{babel}
+\babeltags{fr=french,
+           de=german,
+           en=english,
+           es=spanish,
+           pa=farsi,
+           ru=russian
+           }
+\def\spanishoptions{mexico}
 
-% \selectlanguage{english}
+\selectlanguage{english}
 
-% \newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
+\newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
 
-% \usepackage{CJKutf8}
-% \newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
-% \newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
-% \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
+\usepackage{CJKutf8}
+\newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
+\newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
+\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
-%% Unicode math and Polyglossia
-\usepackage{unicode-math}
-% \usepackage{unicode-minionmath}
-
-\setmainfont[Ligatures=TeX]{Libertinus Serif}
-\setsansfont{Libertinus Sans}
-\setmonofont{Libertinus Mono}
-\setmathfont{Minion Math}
-\setmathfont[range={\mathfrak}]{XITS Math}
-\setmathfont[range={\mathcal},StylisticSet=1]{XITS Math}
-\setmathfont[range={\mathscr}]{XITS Math}
-\setmathfont[range={}]{Minion Math}
-
+%% Misc
 \usepackage{graphicx}
 \graphicspath{{figures/}}
 
-% Misc
 \usepackage{microtype}
+\usepackage{lineno}
 \usepackage{multicol}
 \usepackage[inline]{enumitem}
 \usepackage{listings}
 \usepackage{mleftright}
 \mleftright
+
+% %% Unicode math and Polyglossia
+% \usepackage{unicode-math}
+% \usepackage{unicode-minionmath}
+
+% \setmainfont[Ligatures=TeX]{Libertinus Serif}
+% \setsansfont{Libertinus Sans}
+% \setmonofont{Libertinus Mono}
+% \setmathfont{Minion Math}
+% \setmathfont[range={\mathfrak}]{XITS Math}
+% \setmathfont[range={\mathcal},StylisticSet=1]{XITS Math}
+% \setmathfont[range={\mathscr}]{XITS Math}
+% \setmathfont[range={}]{Minion Math}
+
+% \usepackage{polyglossia}
+
+% \newfontfamily\cyrillicfont[Script=Cyrillic]{Libertinus Serif}
+% \newfontfamily\cyrillicfontsf[Script=Cyrillic]{Libertinus Sans}
+
+% \newfontfamily\farsifont[Script=Arabic,
+%                          Scale=MatchUppercase]{Amiri}
+
+% \setmainlanguage[variant=american]{english}
+% \setotherlanguage{farsi}
+% \setotherlanguage{french}
+% \setotherlanguage[spelling=new,latesthyphen,babelshorthands]{german}
+% \setotherlanguage{spanish}
+% \setotherlanguage[spelling=modern,babelshorthands]{russian}
+
+% \makeatletter
+% \@Latintrue
+% \makeatother
+
+% \usepackage{xeCJK}
+% \usepackage[overlap]{ruby}
+% \renewcommand\rubysep{-0.2ex}
+% \xeCJKDeclareSubCJKBlock{Kana}{"3040 -> "309F, "30A0 -> "30FF, "31F0 -> "31FF, "1B000 -> "1B0FF}
+% \xeCJKDeclareSubCJKBlock{Hangul}{"1100 -> "11FF, "3130 -> "318F, "A960 -> "A97F, "AC00 -> "D7AF, "D7B0 -> "D7FF}
+
+% \setCJKmainfont{HanaMinA}
+% \setCJKmainfont[Kana]{HanaMinA}
+% \setCJKmainfont[Hangul]{NanumMyeongjo}
+% \setCJKsansfont[Hangul]{NanumGothic}
 
 %% Theorems and definitions
 %% remove parentheses
@@ -120,35 +151,42 @@
 \newtheorem*{problem*}{Problem}
 
 %% Redefinitions & commands
-% \newcommand{\minus}{\ensuremath{\smallsetminus}}
-% \newcommand{\nsubset}{\ensuremath{\not\subset}}
-% \newcommand{\nsupset}{\ensuremath{\not\supset}}
-\renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
+\newcommand{\nsubset}{\ensuremath{\not\subset}}
+\newcommand{\nsupset}{\ensuremath{\not\supset}}
+\newcommand\minus{\ensuremath{\null\smallsetminus}}
+\renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
 
 %% Commands and operators
-\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\coker}{coker}
 \DeclareMathOperator{\id}{id}
-\DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\lcm}{lcm}
-\DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\vol}{vol}
-
 \DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\Img}{Im}
-\DeclareMathOperator{\Int}{Int}
-\DeclareMathOperator{\Cl}{Cl}
-\DeclareMathOperator{\Tr}{Tr}
-\DeclareMathOperator{\Vol}{Vol}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\nil}{nil}
 
-%% Differential calculus
+%% Algebra
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\Irr}{Irr}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Quot}{Quot}
+\DeclareMathOperator{\Coker}{Coker}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Rad}{Rad}
+
+%% Analysis
 \DeclareMathOperator{\Curl}{curl}
 \DeclareMathOperator{\Div}{div}
 \DeclareMathOperator{\Grad}{grad}
-\newcommand\diff{\mathop{}\!\mathrm{d}}
-\newcommand\Diff[1]{\mathop{}\!\mathrm{d^#1}}
-\newcommand\Jac{\mathbf{J}}
-\newcommand{\BV}{\mathrm{BV}}
-\newcommand{\loc}{\mathrm{loc}}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\diam}{diam}
+
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\SL}{\mathrm{SL}}
 
 %% Math letters
 \newcommand{\bfa}{\mathbf{a}}
@@ -205,32 +243,32 @@
 \newcommand{\fraky}{\mathfrak{y}}
 \newcommand{\frakz}{\mathfrak{z}}
 
-\newcommand{\veca}{\vec{a}}
-\newcommand{\vecb}{\vec{b}}
-\newcommand{\vecc}{\vec{c}}
-\newcommand{\vecd}{\vec{d}}
-\newcommand{\vece}{\vec{e}}
-\newcommand{\vecf}{\vec{f}}
-\newcommand{\vecg}{\vec{g}}
-\newcommand{\vech}{\vec{h}}
-\newcommand{\veci}{\vec{i}}
-\newcommand{\vecj}{\vec{j}}
-\newcommand{\veck}{\vec{k}}
-\newcommand{\vecl}{\vec{l}}
-\newcommand{\vecm}{\vec{m}}
-\newcommand{\vecn}{\vec{n}}
-\newcommand{\veco}{\vec{o}}
-\newcommand{\vecp}{\vec{p}}
-\newcommand{\vecq}{\vec{q}}
-\newcommand{\vecr}{\vec{r}}
-\newcommand{\vecs}{\vec{s}}
-\newcommand{\vect}{\vec{t}}
-\newcommand{\vecu}{\vec{u}}
-\newcommand{\vecv}{\vec{v}}
-\newcommand{\vecw}{\vec{w}}
-\newcommand{\vecx}{\vec{x}}
-\newcommand{\vecy}{\vec{y}}
-\newcommand{\vecz}{\vec{z}}
+\newcommand{\veca}{\mathvec{a}}
+\newcommand{\vecb}{\mathvec{b}}
+\newcommand{\vecc}{\mathvec{c}}
+\newcommand{\vecd}{\mathvec{d}}
+\newcommand{\vece}{\mathvec{e}}
+\newcommand{\vecf}{\mathvec{f}}
+\newcommand{\vecg}{\mathvec{g}}
+\newcommand{\vech}{\mathvec{h}}
+\newcommand{\veci}{\mathvec{i}}
+\newcommand{\vecj}{\mathvec{j}}
+\newcommand{\veck}{\mathvec{k}}
+\newcommand{\vecl}{\mathvec{l}}
+\newcommand{\vecm}{\mathvec{m}}
+\newcommand{\vecn}{\mathvec{n}}
+\newcommand{\veco}{\mathvec{o}}
+\newcommand{\vecp}{\mathvec{p}}
+\newcommand{\vecq}{\mathvec{q}}
+\newcommand{\vecr}{\mathvec{r}}
+\newcommand{\vecs}{\mathvec{s}}
+\newcommand{\vect}{\mathvec{t}}
+\newcommand{\vecu}{\mathvec{u}}
+\newcommand{\vecv}{\mathvec{v}}
+\newcommand{\vecw}{\mathvec{w}}
+\newcommand{\vecx}{\mathvec{x}}
+\newcommand{\vecy}{\mathvec{y}}
+\newcommand{\vecz}{\mathvec{z}}
 
 \newcommand{\bfA}{\mathbf{A}}
 \newcommand{\bfB}{\mathbf{B}}

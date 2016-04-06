@@ -29,58 +29,42 @@
     pdfsubject={\coursename}
     ]{hyperref}
 
-% Use symbols instead of numbers
-\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
-
 %% Math
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{mathtools}
-% \usepackage{eucal}
-% \usepackage{mathrsfs}
-% \usepackage[nointegrals]{wasysym}
+\usepackage{eucal}
+\usepackage{mathrsfs}
+\usepackage[nointegrals]{wasysym}
 
-% %% Language
-% \usepackage{cmap}
-% \usepackage[LAE,LFE,T2A,T1]{fontenc}
-% \usepackage[utf8]{inputenc}
-% \usepackage[farsi,french,german,spanish,russian,english]{babel}
-% \babeltags{fr=french,
-%            de=german,
-%            en=english,
-%            es=spanish,
-%            pa=farsi,
-%            ru=russian
-%            }
-% \def\spanishoptions{mexico}
+%% Language
+\usepackage{cmap}
+\usepackage[LAE,LFE,T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[farsi,french,german,spanish,russian,english]{babel}
+\babeltags{fr=french,
+           de=german,
+           en=english,
+           es=spanish,
+           pa=farsi,
+           ru=russian
+           }
+\def\spanishoptions{mexico}
 
-% \selectlanguage{english}
+\selectlanguage{english}
 
-% \newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
+\newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
 
-% \usepackage{CJKutf8}
-% \newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
-% \newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
-% \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
+\usepackage{CJKutf8}
+\newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
+\newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
+\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
-%% Unicode math and Polyglossia
-\usepackage{unicode-math}
-% \usepackage{unicode-minionmath}
-
-\setmainfont[Ligatures=TeX]{Libertinus Serif}
-\setsansfont{Libertinus Sans}
-\setmonofont{Libertinus Mono}
-\setmathfont{Minion Math}
-\setmathfont[range={\mathfrak}]{XITS Math}
-\setmathfont[range={\mathcal},StylisticSet=1]{XITS Math}
-\setmathfont[range={\mathscr}]{XITS Math}
-\setmathfont[range={}]{Minion Math}
-
+%% Misc
 \usepackage{graphicx}
 \graphicspath{{figures/}}
 
-% Misc
 \usepackage{microtype}
 \usepackage{lineno}
 \usepackage{multicol}
@@ -88,6 +72,49 @@
 \usepackage{listings}
 \usepackage{mleftright}
 \mleftright
+
+% %% Unicode math and Polyglossia
+% \usepackage{unicode-math}
+% \usepackage{unicode-minionmath}
+
+% \setmainfont[Ligatures=TeX]{Libertinus Serif}
+% \setsansfont{Libertinus Sans}
+% \setmonofont{Libertinus Mono}
+% \setmathfont{Minion Math}
+% \setmathfont[range={\mathfrak}]{XITS Math}
+% \setmathfont[range={\mathcal},StylisticSet=1]{XITS Math}
+% \setmathfont[range={\mathscr}]{XITS Math}
+% \setmathfont[range={}]{Minion Math}
+
+% \usepackage{polyglossia}
+
+% \newfontfamily\cyrillicfont[Script=Cyrillic]{Libertinus Serif}
+% \newfontfamily\cyrillicfontsf[Script=Cyrillic]{Libertinus Sans}
+
+% \newfontfamily\farsifont[Script=Arabic,
+%                          Scale=MatchUppercase]{Amiri}
+
+% \setmainlanguage[variant=american]{english}
+% \setotherlanguage{farsi}
+% \setotherlanguage{french}
+% \setotherlanguage[spelling=new,latesthyphen,babelshorthands]{german}
+% \setotherlanguage{spanish}
+% \setotherlanguage[spelling=modern,babelshorthands]{russian}
+
+% \makeatletter
+% \@Latintrue
+% \makeatother
+
+% \usepackage{xeCJK}
+% \usepackage[overlap]{ruby}
+% \renewcommand\rubysep{-0.2ex}
+% \xeCJKDeclareSubCJKBlock{Kana}{"3040 -> "309F, "30A0 -> "30FF, "31F0 -> "31FF, "1B000 -> "1B0FF}
+% \xeCJKDeclareSubCJKBlock{Hangul}{"1100 -> "11FF, "3130 -> "318F, "A960 -> "A97F, "AC00 -> "D7AF, "D7B0 -> "D7FF}
+
+% \setCJKmainfont{HanaMinA}
+% \setCJKmainfont[Kana]{HanaMinA}
+% \setCJKmainfont[Hangul]{NanumMyeongjo}
+% \setCJKsansfont[Hangul]{NanumGothic}
 
 %% Theorems and definitions
 %% remove parentheses
@@ -124,46 +151,268 @@
 \newtheorem*{problem*}{Problem}
 
 %% Redefinitions & commands
-% \newcommand{\nsubset}{\ensuremath{\not\subset}}
-% \newcommand{\nsupset}{\ensuremath{\not\supset}}
-% \newcommand\minus{\ensuremath{\null\smallsetminus}}
-\renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
+\newcommand{\minus}{\ensuremath{\smallsetminus}}
+\newcommand{\nsubset}{\ensuremath{\not\subset}}
+\newcommand{\nsupset}{\ensuremath{\not\supset}}
+\renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
 
 %% Commands and operators
-\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\cl}{cl}
 \DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Int}{int}
+\DeclareMathOperator{\coker}{coker}
 
-\DeclareMathOperator{\Id}{Id}
-\DeclareMathOperator{\Img}{Im}
-\DeclareMathOperator{\Int}{Int}
-\DeclareMathOperator{\Cl}{Cl}
-\DeclareMathOperator{\Fix}{Fix}
-\DeclareMathOperator{\Filter}{Filter}
-\DeclareMathOperator{\Ker}{Ker}
-\DeclareMathOperator{\Coker}{Coker}
-\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\tr}{tr}
+
 \DeclareMathOperator{\Det}{Det}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\Tr}{Tr}
 
-\newcommand{\bbC}{\mathbb{C}}
-\newcommand{\bbN}{\mathbb{N}}
-\newcommand{\bbQ}{\mathbb{Q}}
-\newcommand{\bbR}{\mathbb{R}}
-\newcommand{\bbZ}{\mathbb{Z}}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Coker}{Coker}
+\DeclareMathOperator{\INT}{Int}
+\DeclareMathOperator{\Img}{Im}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Homeo}{Homeo}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Mod}{Mod}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\Sdv}{Sdv}
+\DeclareMathOperator{\St}{St}
+
+%% Special sets
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\Orth}{\mathrm{O}}
+\newcommand{\Unit}{\mathrm{U}}
+\newcommand{\Simp}{\mathrm{S}}
+\newcommand{\SL}{\mathrm{SL}}
+\newcommand{\CW}{\mathrm{CW}}
+\newcommand{\bbCP}{\mathbb{CP}}
+\newcommand{\bbRP}{\mathbb{RP}}
+\newcommand{\varbbCP}{\mathbb{C}\mathrm{P}}
+\newcommand{\varbbRP}{\mathbb{R}\mathrm{P}}
+\newcommand{\bfCP}{\mathbf{CP}}
+\newcommand{\bfRP}{\mathbf{RP}}
+\newcommand{\varbfCP}{\mathbf{C}\mathrm{P}}
+\newcommand{\varbfRP}{\mathbf{R}\mathrm{P}}
+
+%% Math letters
+\newcommand{\bfa}{\mathbf{a}}
+\newcommand{\bfb}{\mathbf{b}}
+\newcommand{\bfc}{\mathbf{c}}
+\newcommand{\bfd}{\mathbf{d}}
+\newcommand{\bfe}{\mathbf{e}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\bfg}{\mathbf{g}}
+\newcommand{\bfh}{\mathbf{h}}
+\newcommand{\bfi}{\mathbf{i}}
+\newcommand{\bfj}{\mathbf{j}}
+\newcommand{\bfk}{\mathbf{k}}
+\newcommand{\bfl}{\mathbf{l}}
+\newcommand{\bfm}{\mathbf{m}}
+\newcommand{\bfn}{\mathbf{n}}
+\newcommand{\bfo}{\mathbf{o}}
+\newcommand{\bfp}{\mathbf{p}}
+\newcommand{\bfq}{\mathbf{q}}
+\newcommand{\bfr}{\mathbf{r}}
+\newcommand{\bfs}{\mathbf{s}}
+\newcommand{\bft}{\mathbf{t}}
+\newcommand{\bfu}{\mathbf{u}}
+\newcommand{\bfv}{\mathbf{v}}
+\newcommand{\bfw}{\mathbf{w}}
+\newcommand{\bfx}{\mathbf{x}}
+\newcommand{\bfy}{\mathbf{y}}
+\newcommand{\bfz}{\mathbf{z}}
+
+\newcommand{\fraka}{\mathfrak{a}}
+\newcommand{\frakb}{\mathfrak{b}}
+\newcommand{\frakc}{\mathfrak{c}}
+\newcommand{\frakd}{\mathfrak{d}}
+\newcommand{\frake}{\mathfrak{e}}
+\newcommand{\frakf}{\mathfrak{f}}
+\newcommand{\frakg}{\mathfrak{g}}
+\newcommand{\frakh}{\mathfrak{h}}
+\newcommand{\fraki}{\mathfrak{i}}
+\newcommand{\frakj}{\mathfrak{j}}
+\newcommand{\frakk}{\mathfrak{k}}
+\newcommand{\frakl}{\mathfrak{l}}
+\newcommand{\frakm}{\mathfrak{m}}
+\newcommand{\frakn}{\mathfrak{n}}
+\newcommand{\frako}{\mathfrak{o}}
+\newcommand{\frakp}{\mathfrak{p}}
+\newcommand{\frakq}{\mathfrak{q}}
+\newcommand{\frakr}{\mathfrak{r}}
+\newcommand{\fraks}{\mathfrak{s}}
+\newcommand{\frakt}{\mathfrak{t}}
+\newcommand{\fraku}{\mathfrak{u}}
+\newcommand{\frakv}{\mathfrak{v}}
+\newcommand{\frakw}{\mathfrak{w}}
+\newcommand{\frakx}{\mathfrak{x}}
+\newcommand{\fraky}{\mathfrak{y}}
+\newcommand{\frakz}{\mathfrak{z}}
+
+\newcommand{\veca}{\vec{a}}
+\newcommand{\vecb}{\vec{b}}
+\newcommand{\vecc}{\vec{c}}
+\newcommand{\vecd}{\vec{d}}
+\newcommand{\vece}{\vec{e}}
+\newcommand{\vecf}{\vec{f}}
+\newcommand{\vecg}{\vec{g}}
+\newcommand{\vech}{\vec{h}}
+\newcommand{\veci}{\vec{i}}
+\newcommand{\vecj}{\vec{j}}
+\newcommand{\veck}{\vec{k}}
+\newcommand{\vecl}{\vec{l}}
+\newcommand{\vecm}{\vec{m}}
+\newcommand{\vecn}{\vec{n}}
+\newcommand{\veco}{\vec{o}}
+\newcommand{\vecp}{\vec{p}}
+\newcommand{\vecq}{\vec{q}}
+\newcommand{\vecr}{\vec{r}}
+\newcommand{\vecs}{\vec{s}}
+\newcommand{\vect}{\vec{t}}
+\newcommand{\vecu}{\vec{u}}
+\newcommand{\vecv}{\vec{v}}
+\newcommand{\vecw}{\vec{w}}
+\newcommand{\vecx}{\vec{x}}
+\newcommand{\vecy}{\vec{y}}
+\newcommand{\vecz}{\vec{z}}
+
+\newcommand{\bfA}{\mathbf{A}}
+\newcommand{\bfB}{\mathbf{B}}
 \newcommand{\bfC}{\mathbf{C}}
+\newcommand{\bfD}{\mathbf{D}}
+\newcommand{\bfE}{\mathbf{E}}
+\newcommand{\bfF}{\mathbf{F}}
+\newcommand{\bfG}{\mathbf{G}}
+\newcommand{\bfH}{\mathbf{H}}
+\newcommand{\bfI}{\mathbf{I}}
+\newcommand{\bfJ}{\mathbf{J}}
+\newcommand{\bfK}{\mathbf{K}}
+\newcommand{\bfL}{\mathbf{L}}
+\newcommand{\bfM}{\mathbf{M}}
 \newcommand{\bfN}{\mathbf{N}}
+\newcommand{\bfO}{\mathbf{O}}
+\newcommand{\bfP}{\mathbf{P}}
 \newcommand{\bfQ}{\mathbf{Q}}
 \newcommand{\bfR}{\mathbf{R}}
+\newcommand{\bfS}{\mathbf{S}}
+\newcommand{\bfT}{\mathbf{T}}
+\newcommand{\bfU}{\mathbf{U}}
+\newcommand{\bfV}{\mathbf{V}}
+\newcommand{\bfW}{\mathbf{W}}
+\newcommand{\bfX}{\mathbf{X}}
+\newcommand{\bfY}{\mathbf{Y}}
 \newcommand{\bfZ}{\mathbf{Z}}
+
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbD}{\mathbb{D}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bbI}{\mathbb{I}}
+\newcommand{\bbJ}{\mathbb{J}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbO}{\mathbb{O}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbS}{\mathbb{S}}
+\newcommand{\bbT}{\mathbb{T}}
+\newcommand{\bbU}{\mathbb{U}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbW}{\mathbb{W}}
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bbY}{\mathbb{Y}}
+\newcommand{\bbZ}{\mathbb{Z}}
+
+\newcommand{\frakA}{\mathfrak{A}}
+\newcommand{\frakB}{\mathfrak{B}}
+\newcommand{\frakC}{\mathfrak{C}}
+\newcommand{\frakD}{\mathfrak{D}}
+\newcommand{\frakE}{\mathfrak{E}}
+\newcommand{\frakF}{\mathfrak{F}}
+\newcommand{\frakG}{\mathfrak{G}}
+\newcommand{\frakH}{\mathfrak{H}}
+\newcommand{\frakI}{\mathfrak{I}}
+\newcommand{\frakJ}{\mathfrak{J}}
+\newcommand{\frakK}{\mathfrak{K}}
+\newcommand{\frakL}{\mathfrak{L}}
+\newcommand{\frakM}{\mathfrak{M}}
+\newcommand{\frakN}{\mathfrak{N}}
+\newcommand{\frakO}{\mathfrak{O}}
+\newcommand{\frakP}{\mathfrak{P}}
+\newcommand{\frakQ}{\mathfrak{Q}}
+\newcommand{\frakR}{\mathfrak{R}}
+\newcommand{\frakS}{\mathfrak{S}}
+\newcommand{\frakT}{\mathfrak{T}}
+\newcommand{\frakU}{\mathfrak{U}}
+\newcommand{\frakV}{\mathfrak{V}}
+\newcommand{\frakW}{\mathfrak{W}}
+\newcommand{\frakX}{\mathfrak{X}}
+\newcommand{\frakY}{\mathfrak{Y}}
+\newcommand{\frakZ}{\mathfrak{Z}}
 
 \newcommand{\calA}{\mathcal{A}}
 \newcommand{\calB}{\mathcal{B}}
 \newcommand{\calC}{\mathcal{C}}
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\calE}{\mathcal{E}}
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\calG}{\mathcal{G}}
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calI}{\mathcal{I}}
+\newcommand{\calJ}{\mathcal{J}}
+\newcommand{\calK}{\mathcal{K}}
+\newcommand{\calL}{\mathcal{L}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\calO}{\mathcal{O}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calQ}{\mathcal{Q}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calS}{\mathcal{S}}
+\newcommand{\calT}{\mathcal{T}}
 \newcommand{\calU}{\mathcal{U}}
-\newcommand{\calV}{\mathcal{U}}
+\newcommand{\calV}{\mathcal{V}}
+\newcommand{\calW}{\mathcal{W}}
+\newcommand{\calX}{\mathcal{X}}
+\newcommand{\calY}{\mathcal{Y}}
+\newcommand{\calZ}{\mathcal{Z}}
 
+\newcommand{\scrA}{\mathscr{A}}
+\newcommand{\scrB}{\mathscr{B}}
+\newcommand{\scrC}{\mathscr{C}}
+\newcommand{\scrD}{\mathscr{D}}
+\newcommand{\scrE}{\mathscr{E}}
+\newcommand{\scrF}{\mathscr{F}}
+\newcommand{\scrG}{\mathscr{G}}
+\newcommand{\scrH}{\mathscr{H}}
+\newcommand{\scrI}{\mathscr{I}}
+\newcommand{\scrJ}{\mathscr{J}}
+\newcommand{\scrK}{\mathscr{K}}
 \newcommand{\scrL}{\mathscr{L}}
+\newcommand{\scrM}{\mathscr{M}}
+\newcommand{\scrN}{\mathscr{N}}
 \newcommand{\scrO}{\mathscr{O}}
+\newcommand{\scrP}{\mathscr{P}}
+\newcommand{\scrQ}{\mathscr{Q}}
+\newcommand{\scrR}{\mathscr{R}}
 \newcommand{\scrS}{\mathscr{S}}
+\newcommand{\scrT}{\mathscr{T}}
+\newcommand{\scrU}{\mathscr{U}}
+\newcommand{\scrV}{\mathscr{V}}
+\newcommand{\scrW}{\mathscr{W}}
+\newcommand{\scrX}{\mathscr{X}}
+\newcommand{\scrY}{\mathscr{Y}}
+\newcommand{\scrZ}{\mathscr{Z}}
 
 \begin{document}
 \author{\href{mailto:\authoremail}{\documentauthor}}

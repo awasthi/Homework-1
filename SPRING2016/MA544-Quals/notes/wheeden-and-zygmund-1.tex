@@ -150,7 +150,7 @@ A set $E$ is called \emph{closed} if $\complement E$ is open. Note that
 $\emptyset$ and $\bfR^n$ are closed. Closed sets will generally be denoted
 by the letter $F$. The union of a set $E$ and all its limit points is
 called the \emph{closure} of $E$ and written $\bar E$. By the
-\emph{boundary} of $E$, we mean $\partial E\coloneqq \bar E\minus
+\emph{boundary} of $E$, we mean $\partial E\coloneqq \bar E\smallsetminus
 E^\circ$.
 \begin{theorem}[1.5]
 \begin{enumerate}[label=\textnormal{(\roman*)}]
@@ -322,7 +322,7 @@ $x<y$ and $x,y\in I$. By \emph{strictly} monotone increasing (decreasing),
 we mean that $f(x)<f(y)$ [$f(x)>f(y)$] if $x<y$ and $x,y\in I$.
 
 Let $f$ be defined on $E\subset\bfR^n$ and let $\bfx_0$ be a limit point of
-$E$. Let $B'(\bfx_0,\delta)\coloneqq B(\bfx_0,\delta)\minus\{\bfx_0\}$
+$E$. Let $B'(\bfx_0,\delta)\coloneqq B(\bfx_0,\delta)\smallsetminus\{\bfx_0\}$
 denote the punctured ball with center $\bfx_0$ and radius $\delta$, and let
 \begin{equation}
 \label{eq:sup-inf-ball}
@@ -345,12 +345,12 @@ increases, and we define
 \begin{theorem}[1.14]
 \begin{enumerate}[label=\textnormal{(\alph*)}]
 \item $M=\limsup_{\bfx\to\bfx_0;\bfx\in E} f(\bfx)$ if and only if
-  \textnormal{(i)} there exist ${\bfx_k}$ in $E\minus\{\bfx_0\}$ such that
+  \textnormal{(i)} there exist ${\bfx_k}$ in $E\smallsetminus\{\bfx_0\}$ such that
   $\bfx_k\to\bfx_0$ and $f(\bfx_k)\to M$ and \textnormal{(ii)} if $M'>M$,
   there exists $\delta>0$ such that $f(\bfx)<M'$ for $\bfx\in
   B'(\bfx_0,\delta)\cap E$.
 \item $m=\liminf_{\bfx\to\bfx_0;\bfx\in E} f(\bfx)$ if and only if
-  \textnormal{(i)} there exist ${\bfx_k}$ in $E\minus\{\bfx_0\}$ such that
+  \textnormal{(i)} there exist ${\bfx_k}$ in $E\smallsetminus\{\bfx_0\}$ such that
   $\bfx_k\to\bfx_0$ and $f(\bfx_k)\to m$ and \textnormal{(ii)} if $m'<m$,
   there exists $\delta>0$ such that $f(\bfx)>m'$ for $\bfx\in
   B'(\bfx_0,\delta)\cap E$.
