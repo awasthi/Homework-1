@@ -23,8 +23,8 @@ sets, we define
 \liminf E_k=\bigcup_{j=1}^\infty\bigcap_{k=j}^\infty E_k,
 \end{equation}
 noting that the sets $U_j\coloneqq\bigcup_{k=j}^\infty E_k$ and
-$V_j\coloneqq\bigcap_{k=j}^\infty E_k$ satisfy $U_j\searrow\limsup E_k$ and
-$V_j\nearrow\liminf E_k$. Then $\limsup E_k$ consists of those points of
+$\var_j\coloneqq\bigcap_{k=j}^\infty E_k$ satisfy $U_j\searrow\limsup E_k$ and
+$\var_j\nearrow\liminf E_k$. Then $\limsup E_k$ consists of those points of
 $\bfR^n$ that belong to infinitely many $E_k$ and $\liminf E_k$ to those
 that belong to all $E_k$ for $k\geq k_0$ (where $k_0$ may vary from point
 to point). Thus $\liminf E_k\subset\limsup E_k$.
@@ -474,32 +474,32 @@ S_\Gamma=S_\Gamma[f;a,b]\coloneqq\sum_{i=1}^m|f(x_i)-f(x_{i-1})|.
 The \emph{variation of $f$ over $[a,b]$} is defined as
 \begin{equation}
 \label{eq:variation}
-V=V[f;a,b]=\sup_\Gamma S_\Gamma,
+\var=\var[f;a,b]=\sup_\Gamma S_\Gamma,
 \end{equation}
 where the supremum is taken over all partitions $\Gamma$ of $[a,b]$. The
-variation of $V[f;a,b]$ will sometimes also be denoted by $V[a,b]$ or
-$V(f)$. Since $0\leq S_\Gamma<\infty$, we have $0\leq V\leq\infty$. If
-$V<\infty$, $f$ is said to be of \emph{bounded variation on $[a,b]$}; if
-$V=\infty$, $f$ is of \emph{unbounded variation on $[a,b]$}.
+variation of $\var[f;a,b]$ will sometimes also be denoted by $\var[a,b]$ or
+$\var(f)$. Since $0\leq S_\Gamma<\infty$, we have $0\leq \var\leq\infty$. If
+$\var<\infty$, $f$ is said to be of \emph{bounded variation on $[a,b]$}; if
+$\var=\infty$, $f$ is of \emph{unbounded variation on $[a,b]$}.
 
 Here are several examples
 \begin{example}
 Suppose $f$ is monotone in $[a,b]$. Then, clearly, each $S_\Gamma$ equals
-$|f(b)-f(a)|$, and therefore $V=|f(b)-f(a)|$.
+$|f(b)-f(a)|$, and therefore $\var=|f(b)-f(a)|$.
 \end{example}
 \begin{example}
 Suppose the graph of $f$ can be split into a finite number of monotone
 arcs; that is, suppose $[a,b]=\bigcup_{i=1}^k[a_i,a_{i+1}]$ and $f$
 monotone in each $[a_i,a_{i+1}]$. Then
-$V=\sum_{i=1}^k|f(a_{i+1})-f(a_i)|$. To see this, we use the result of the
+$\var=\sum_{i=1}^k|f(a_{i+1})-f(a_i)|$. To see this, we use the result of the
 previous example and the fact, to be proved, in Theorem 2.2, that
-$V=\sum_{i=1}^kV[a_i,a_{i+1}]$.
+$\var=\sum_{i=1}^k\var[a_i,a_{i+1}]$.
 \end{example}
 \begin{example}
 Let $f$ be defined by $f(x)\coloneqq 0$ when $x\neq 0$ and $f(0)\coloneqq
 1$, and let $[a,b]$ be any interval containing $0$ in its interior. Then
 $S_\Gamma$ is either $2$ or $0$ depending on whether $x=0$ is a partition
-point or not. Thus, $V[a,b]=2$.
+point or not. Thus, $\var[a,b]=2$.
 \end{example}
 
 If $\Gamma=\{x_0,x_1,\dotsc,x_m\}$ is a partition of $[a,b]$, let
@@ -511,7 +511,7 @@ subinterval of $\Gamma$:
 \end{equation}
 If $f$ is continuous on $[a,b]$ and $\{\Gamma_j\}$ is a sequence of
 partitions $[a,b]$ with $\|\Gamma_j\|\to 0$, we shall see in Theorem 2.9
-that $V=\lim_{j\to\infty} S_{\Gamma_j}$. The example above shows that this
+that $\var=\lim_{j\to\infty} S_{\Gamma_j}$. The example above shows that this
 may fail for functions that are discontinuous even at a single point: if we
 take $f$ and $[a,b]$ is in the example above and choose $\Gamma_j$ such
 that $x=0$ is never a partition in the point, then $\lim S_{\Gamma_j}=0$,
@@ -520,7 +520,7 @@ not a point, then $\lim S_{\Gamma_j}$ does not exist.
 \begin{example}
 Let $f$ be the \emph{Dirichlet function}, defined by $f(x)\coloneqq 1$ for
 $x$ rational and $f(x)\coloneqq 0$ for $x$ irrational. Then, clearly,
-$V[a,b]=\infty$ for any interval $[a,b]$.
+$\var[a,b]=\infty$ for any interval $[a,b]$.
 \end{example}
 \begin{example}
 A function that is continuous on an interval is not necessarily of bounded
@@ -534,7 +534,7 @@ if $m_j$ denotes the midpoint of $[a_{j+1},a_j]$, then $f(m_j)=d_j$. If we
 further define $f(0)=0$, then $f$ is continuous on $[0,1]$. Taking
 $\Gamma_k$ to the be the partition defined by the points $0$,
 ${\{a_j\}}_{j=1}^{k+1}$, and ${\{m_j\}}_{j=1}^k$, we see that
-$S_\Gamma=2\sum_{j=1}^k d_j$. Hence, $V[f;0,1]=\infty$.
+$S_\Gamma=2\sum_{j=1}^k d_j$. Hence, $\var[f;0,1]=\infty$.
 \end{example}
 \begin{example}
 A function $f$ defined on $[a,b]$ is said to satisfy the \emph{Lipschitz
@@ -544,7 +544,7 @@ there is a constant $C$ such that
 |f(x)-f(y)|\leq C|x-y|
 \]
 for all $x,y\in[a,b]$. Such a function is clearly of bounded variation,
-with $V[f;a,b]\leq C(b-a)$. For example, if $f$ has a continuous derivative
+with $\var[f;a,b]\leq C(b-a)$. For example, if $f$ has a continuous derivative
 on $[a,b]$, or even just a bounded derivative, then (by the mean-value
 theorem) $f$ satisfies the Lipschitz condition on $[a,b]$.
 \end{example}
@@ -562,42 +562,42 @@ theorem) $f$ satisfies the Lipschitz condition on $[a,b]$.
 And the proof of these two is rather clear.
 
 For (i), we proceed by contradiction. Suppose that $f$ is of bounded
-variation on the interval $[a,b]$. Then the variation $V$ of $f$ over
+variation on the interval $[a,b]$. Then the variation $\var$ of $f$ over
 $[a,b]$ is finite. However, if $f$ is unbounded on $[a,b]$, for every
 positive real number $M$, there exists some $x\in[a,b]$ such that
 $|f(x)|>M$. In particular, for any $x'\in [a,b]$ we have
 \[
 |f(x)-f(x')|>M.
 \]
-In turn, this tells us that $V>|f(x)-f(x')|>M$ for any partition $\Gamma$
-containing $x$, so $V=\infty$. This yields a contradiction.
+In turn, this tells us that $\var>|f(x)-f(x')|>M$ for any partition $\Gamma$
+containing $x$, so $\var=\infty$. This yields a contradiction.
 
 For (ii), the proofs are simple. Suppose $f$ is of bounded variation on
-$[a,b]$ with variation $V_f$. Let $c$ be a real constant, then
+$[a,b]$ with variation $\var_f$. Let $c$ be a real constant, then
 \begin{align*}
-V[cf;a,b]
+\var[cf;a,b]
 ={}&\sup_\Gamma\sum_{i=1}^n|cf(x_i)-f(x_{i-1})|\\
 ={}&|c|\sup_\Gamma\sum_{i=1}^n|f(x_i)-f(x_{i-1})|\\
-={}&|c|V_f\\
+={}&|c|\var_f\\
 <{}&\infty.
 \end{align*}
 Hence, $cf$ is of bounded variation on $[a,b]$. Suppose $f$ and $g$ are of
-bounded variation on $[a,b]$ with variation $V_f$ and $V_g$,
+bounded variation on $[a,b]$ with variation $\var_f$ and $\var_g$,
 respectively. Then
 \begin{align*}
-V[f+g;a,b]
+\var[f+g;a,b]
 ={}&\sup_\Gamma\sum_{i=1}^n|(f+g)(x_i)-(f+g)(x_{i-1})|\\
 ={}&\sup_\Gamma\sum_{i=1}^n\left|{(f(x_i)-f(x_{i-1}))}+{(g(x_i)-g(x_{i-1}))}\right|\\
 \leq{}&\sup_\Gamma\sum_{i=1}^n\bigl[|f(x_i)-f(x_{i-1})|+|g(x_i)-g(x_{i-1})|\bigr]\\
 ={}&\sup_\Gamma\sum_{i=1}^n|f(x_i)-f(x_{i-1})|
 +\sup_\Gamma\sum_{i=1}^n|g(x_i)-g(x_{i-1})|\\
-={}&V_f+V_g\\
+={}&\var_f+\var_g\\
 <{}&\infty.
 \end{align*}
 Hence, $f+g$ is of bounded variation. Suppose $f$ and $g$ are of bounded
-variation on $[a,b]$ with variation $V_f$ and $V_g$, respectively. Then
+variation on $[a,b]$ with variation $\var_f$ and $\var_g$, respectively. Then
 \begin{align*}
-V[fg;a,b]
+\var[fg;a,b]
 ={}&\sup_\Gamma\sum_{i=1}^n|(fg)(x_i)-(fg)(x_{i-1})|\\
 ={}&\sup_\Gamma\sum_{i=1}^n|f(x_i)g(x_i)-f(x_{i-1})g(x_{i-1})|\\
 ={}&\sup_\Gamma\sum_{i=1}^n|f(x_i)g(x_i)-f(x_{i-1})g(x_i)+f(x_{i-1})g(x_i)-f(x_{i-1})g(x_{i-1})|\\
@@ -608,15 +608,15 @@ V[fg;a,b]
 \intertext{by part (i), since $f$ and $g$ are b.v.\@ on $[a,b]$, they are
   bounded so there exists $M$ and $N$ such that $|f(x)|<M$, $|g(x)|<M$ for
   all $x\in[a,b]$}
-={}&M V_f+N V_g\\
+={}&M \var_f+N \var_g\\
 <{}&\infty.
 \end{align*}
 Hence, $fg$ is of bounded variation on $[a,b]$. Suppose that $f$ and $g$
-are of bounded variation on $[a,b]$ with variation $V_f$ and $V_g$,
+are of bounded variation on $[a,b]$ with variation $\var_f$ and $\var_g$,
 respectively. Suppose, additionally that there exists $\varepsilon>0$ such
 that $|g(x)|\geq\varepsilon$ for all $x\in[a,b]$. Then, we have
 \begin{align*}
-V[f/g;a,b]
+\var[f/g;a,b]
 ={}&\sup_\Gamma\sum_{i=1}^n|(f/g)(x_i)-(f/g)(x_{i-1})|\\
 ={}&\sup_\Gamma\sum_{i=1}^n
 \left|\frac{f(x_i)}{g(x_i)}-\frac{f(x_{i-1})}{g(x_{i-1})}\right|\\
@@ -631,6 +631,19 @@ V[f/g;a,b]
 &\phantom{\sup_\Gamma\biggl[\frac{1}{\varepsilon^2}\sum_{i=1}^n|}-(g(x_i)f(x_{i-1})-g(x_{i-1})f(x_{i-1}))|\biggr]\\
 ={}&
 \end{align*}
+\end{proof}
+
+\begin{theorem}[2.2]
+\begin{enumerate}[label=\textnormal{(\roman*)}]
+\item If $[a',b']$ is a subinterval of $[a,b]$, then
+  $\var[a',b']\leq\var[a,b]$; that is, variation increases with interval.
+\item If $a<c<b$, then $\var[a,b]=\var[a,c]+\var[c,b]$; that is, variation
+  is additive on adjacent intervals.
+\end{enumerate}
+\end{theorem}
+\begin{proof}[Carlos's proof]
+(i) follows from (ii).
+
 \end{proof}
 
 %%% Local Variables:
