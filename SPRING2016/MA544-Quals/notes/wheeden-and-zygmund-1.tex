@@ -642,8 +642,18 @@ that $|g(x)|\geq\varepsilon$ for all $x\in[a,b]$. Then, we have
 \end{enumerate}
 \end{theorem}
 \begin{proof}[Carlos's proof]
-(i) follows from (ii).
+(i) follows from (ii). By recursively applying part (ii), we have
+\[
+\var[a,b]=\var[a,a']+\var[a',b']+\var[b',b].
+\]
+Hence,
+\begin{align*}
+\var[a',b']&=\var[a,b]-\var[a,a']-\var[b',b]\\
+           &\leq\var[a,b]
+\end{align*}
+as desired.
 
+To see part (ii) of this, consider the following
 \end{proof}
 
 %%% Local Variables:
