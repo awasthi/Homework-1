@@ -46,15 +46,27 @@ and is denoted by $\deg f$. Here are some basic properties of the degree
 $S^n$ has a continuous field of nonzero tangent vectors if and only if $n$
 is odd.
 \end{theorem}
-\begin{proof}
-$\imp}lies$: Suppose that $x\maspto\bfv(x)$ is a tangent vector field on
-$S^n$, assigning to a vector $x\in S^n$ the vector $\bfv(x)$ tangent to
-$S^n$ at $x$. Regarding $\bfv(x)$ as a vector at the origin instead of at
-$x$, tangency just means that $x$ and $\bfv(x)$ are orthogonal in
-$\bfR^{n+1}$.
+\begin{proposition*}[2.29]
+$\bfZ/2\bfZ$ is the only nontrivial group that can act freely on $S^n$ if
+$n$ is even.
+\end{proposition*}
 
-$\impliedby$:
-\end{proof}
+Recall that the action of a group $G$ on a space $X$ is a homomorphism from
+$G$ to the group $\Homeo(X)$ of homeomorphisms $X\to X$, and the action is
+free if the homeomorphism corresponding to each nontrivial element of $G$
+has no fixed points. In the case of $S^n$, the antipodal map $x\mapsto -x$
+generates a free action of $\bfZ/2\bfZ$.
+
+Next we describe a technique for computing degrees which can be applied to
+most maps that arise in practice. Suppose $f\colon S^n\to S^n$, $n>0$, has
+the property that for some point $y\in S^n$, the preimage $f^{-1}(y)$
+consists of only finitely many points, say $x_1,\dotsc,x_m$. Let
+$U_1,\dotsc,U_m$ be disjoint neighborhoods of these points, mapped by $f$
+into a neighborhood $V$ of $y$. Then $f(U_i\minus\{x_i\})\subset
+V\minus\{y_i\}$ for each $i$, and we have a commutative diagram.
+\[
+\includegraphics{figures/notes-degree-disjoint-neighborhoods}
+\]
 
 %%% Local Variables:
 %%% mode: latex
