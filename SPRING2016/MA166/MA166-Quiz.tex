@@ -1,6 +1,6 @@
 \def\documentauthor{Carlos Salinas}
 \def\documenttitle{MA 166: Quiz {\quiznum}}
-\def\quiznum{9}
+\def\quiznum{10}
 \def\shorttitle{MA 166 HW {\quiznum}}
 \def\coursename{MA166}
 \def\documentsubject{calculus ii}
@@ -37,29 +37,28 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{mathtools}
-
-% %%PDFTeX specific
-\usepackage[mathcal]{euscript}
+\usepackage{eucal}
 \usepackage{mathrsfs}
-\usepackage{dsfont}
-\usepackage{wasysym}
+\usepackage[nointegrals]{wasysym}
 
+%% Language
+\usepackage{cmap}
 \usepackage[LAE,LFE,T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[farsi,french,german,spanish,russian,english]{babel}
-\babeltags{pa=farsi,
-           fr=french,
+\babeltags{fr=french,
            de=german,
+           en=english,
            es=spanish,
-           ru=russian,
-           en=english}
+           pa=farsi,
+           ru=russian
+           }
 \def\spanishoptions{mexico}
 
 \selectlanguage{english}
 
 \newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
 
-\usepackage{cmap}
 \usepackage{CJKutf8}
 \newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
 \newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
@@ -76,6 +75,7 @@
 \usepackage{listings}
 \usepackage{mleftright}
 \mleftright
+\usepackage{carlos-variables}
 
 % %% Unicode math and Polyglossia
 % \usepackage{unicode-math}
@@ -155,65 +155,8 @@
 \newtheorem*{observation*}{**Observation**}
 \newtheorem*{observations*}{**Observations**}
 
-%% Commands and operators
-%% Redefinitions & commands
-\newcommand{\nsubset}{\ensuremath{\not\subset}}
-\newcommand{\nsupset}{\ensuremath{\not\supset}}
-\newcommand\minus{\ensuremath{\null\smallsetminus}}
-\renewcommand\qedsymbol{\ensuremath{\null\hfill\smiley}}
-
-%% Commands and operators
-\DeclareMathOperator{\id}{id}
-\DeclareMathOperator{\im}{im}
-
-%% Linear algebra
 \DeclareMathOperator{\proj}{proj}
 \DeclareMathOperator{\comp}{comp}
-
-%% Differential operators
-\DeclareMathOperator{\Curl}{curl}
-\DeclareMathOperator{\Div}{div}
-\DeclareMathOperator{\Grad}{grad}
-\DeclareMathOperator{\Lap}{\Delta}
-\DeclareMathOperator{\diff}{d\!}
-
-%% Misc
-\newcommand{\bbC}{\mathbb{C}}
-\newcommand{\bbCP}{\mathbb{CP}}
-\newcommand{\bbH}{\mathbb{H}}
-\newcommand{\bbN}{\mathbb{N}}
-\newcommand{\bbQ}{\mathbb{Q}}
-\newcommand{\bbR}{\mathbb{R}}
-\newcommand{\bbRP}{\mathbb{RP}}
-\newcommand{\bbZ}{\mathbb{Z}}
-
-\newcommand{\bfC}{\mathbf{C}}
-\newcommand{\bfCP}{\mathbf{CP}}
-\newcommand{\bfH}{\mathbf{H}}
-\newcommand{\bfN}{\mathbf{N}}
-\newcommand{\bfQ}{\mathbf{Q}}
-\newcommand{\bfR}{\mathbf{R}}
-\newcommand{\bfRP}{\mathbf{RP}}
-\newcommand{\bfZ}{\mathbf{Z}}
-
-\newcommand{\calA}{\mathcal{A}}
-\newcommand{\calB}{\mathcal{B}}
-\newcommand{\calC}{\mathcal{C}}
-\newcommand{\calS}{\mathcal{S}}
-\newcommand{\calT}{\mathcal{T}}
-\newcommand{\calU}{\mathcal{U}}
-\newcommand{\calV}{\mathcal{V}}
-
-\newcommand{\scrL}{\mathscr{L}}
-\newcommand{\scrO}{\mathscr{O}}
-\newcommand{\scrS}{\mathscr{S}}
-
-\newcommand{\bfa}{\mathbf{a}}
-\newcommand{\bfb}{\mathbf{b}}
-\newcommand{\bfc}{\mathbf{c}}
-\newcommand{\bfu}{\mathbf{u}}
-\newcommand{\bfv}{\mathbf{v}}
-\newcommand{\bfw}{\mathbf{w}}
 
 \begin{document}
 \author{TA: \href{mailto:\authoremail}{\documentauthor}}
@@ -222,13 +165,14 @@
 \maketitle
 
 You have \textbf{15 minutes} to complete this quiz. You may work in groups,
-but you are not allowed to use any other resources.
+but you are not allowed to use any other resources; that means no phones,
+computers, or your notes.
 \\\\
 %%
 \input{quizzes/ma166-quiz-\quiznum}
 %% Solutions
 % \newpage
-\input{quizzes/ma166-quiz-10-sols}
+\include{quizzes/ma166-quiz-sol-\quiznum}
 \end{document}
 
 %%% Local Variables:

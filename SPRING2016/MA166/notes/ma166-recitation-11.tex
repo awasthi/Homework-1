@@ -1,8 +1,180 @@
 \chapter{Homework}
 \section{This Week's Summary}
 Here's a summary of the material that was (presumably) covered this week.
-From Stewart, we have
-\subsection{}
+From Stewart, \S 11.8 to \S 11.10, we have
+\subsection{\S 11.8: Power Series}
+A \emph{power series} is a series of the form
+\begin{equation}
+  \label{eq:power-series-def}
+\sum_{n=0}^\infty c_nx^n=c_0+c_1x+c_2x^2+c_3x^3+\dotsb
+\end{equation}
+where $x$ is a variable and the $c_n$'s are constant called the
+\emph{coefficients} of the series. For each fixed $x$, the series
+\eqref{eq:power-series-def} is a series of constants that we can test for
+convergence or divergence. A power series may converge for some values of
+$x$ and diverge for other values of $x$. The sum of the series is a
+function
+\[
+f(x)=c_0+c_1x+c_2x^2+\dotsb+c_nx^x+\dotsb
+\]
+whose domain is the set of all $x$ for which the series converges. Notice
+that $f$ resembles a polynomial. The only difference is that $f$ has
+infinitely many terms.
+
+\begin{theorem}
+For a given power series $\sum_{n=0}^\infty c_n(x-a)^n$ there are only
+three possibilities:
+\begin{enumerate}[label=\textnormal{(\roman*)}]
+\item The series converges only when $x=a$.
+\item The series converges for all $x$.
+\item There is a positive number $R$ such that the series converges if
+  $|x-a|<R$ and diverges if $|x-a|>R$.
+\end{enumerate}
+\end{theorem}
+
+The number $R$ in case (iii) is called the \emph{radius of convergence} of
+the power series. By convention, the radius of convergence is $R=0$ in case
+(i) and $R=\infty$ in case (ii). The \emph{interval of convergence} of a
+power series is the interval that consists of all values of $x$ for which
+the series converges. In
+
+\subsection{\S 11.9: Representation of Functions as Power Series}
+We start with an equation that we've seen before
+\begin{equation}
+\label{eq:geometri-series-representation}
+\frac{1}{1-x}=1+x+x^2+x^3+\dotsb=\sum_{n=0}^\infty x^n\qquad |x|<1.
+\end{equation}
+\begin{theorem}
+If the power series $\sum c_n(x-a)^n$ has radius of convergence $R>0$ then
+the function $f$ defined by
+\[
+f(x)=c_0+c_1(x-a)+c_2(x-a)^2+\dotsb=\sum_{n=0}^\infty c_n(x-a)^n
+\]
+is differentiable (and therefore continuous) on the interval $(a-R,a+R)$
+and
+\begin{enumerate}[label=\textnormal{(\roman*)}]
+\item $f'(x)=c_1+2c_2(x-a)+3c_3(x-a)^2+\dotsb=\sum_{n=1}^\infty
+  nc_n(x-a)^{n-1}$.
+\item $\int
+  f(x)dx=C+c_0(x-a)+c_1(x-a)^2/2+c_2(x-a)^3/3+\dotsb=C+\sum_{n=0}^\infty
+  (x-a)^{n+1}/(n+1)$.
+\end{enumerate}
+The radii of convergence of the power series in Equations (i) and (ii) are
+both $R$.
+\end{theorem}
+
+\subsection{\S 11.10: Taylor and Maclaurin Series}
+\begin{theorem}
+If $f$ has a power series representation (expansion) at $a$, that is, if
+\[
+f(x)=\sum_{n=0}^\infty c_n(x-a)^n\qquad |x-a|<R
+\]
+then its coefficients are given by the formula
+\[
+c_n=\frac{f^{(n)}(a)}{n!}.
+\]
+\end{theorem}
+
+\begin{equation}
+\label{eq:taylor-series-expansion}
+\begin{aligned}
+f(x)&=\sum_{n=0}^\infty\frac{f^{(n)}(a)}{n!}(x-a)^n\\
+&=f(a)+\frac{f'(a)}{1!}(x-a)+\frac{f''(a)}{2!}(x-a)^2+\frac{f'''(a)}{3!}(x-a)^3+\dotsb.
+\end{aligned}
+\end{equation}
+The series in \eqref{eq:taylor-series-expansion} is called the \emph{Taylor
+series of the function $f$ at $a$} (or \emph{about $a$} or \emph{centered
+at $a$}). For the special case
+\[
+f(x)=\sum_{n=0}^\infty\frac{f^{(n)}(0)}{n!}x^n=f(0)+\frac{f'(0)}{1!}x+\frac{f''(0)}{2!}x^2+\dotsb.
+\]
+This case arises frequently enough that it is given the special name
+\emph{Maclaurin series}.
+
+\begin{theorem}
+If $f(x)=T_n(x)+R_n(x)$, where $T_n$ is the $n$th degree Taylor polynomial
+of $f$ at $a$ and
+\[
+\lim_{n\to\infty}R_n(x)=0
+\]
+for $|x-a|<R$, then $f$ is equal to the sum of its Taylor series on the
+interval $|x-a|<R$.
+\end{theorem}
+
+\begin{theorem}[Taylor's inequality]
+If $|f^{(n+1)}(x)|\leq M$ for $|x-a|\leq d$, then the remainder $R_n(x)$ of
+the Taylor series satisfies the inequality
+\[
+|R_n(x)|\leq \frac{M}{(n+1)!}|x-a|^{n+1}\qquad\text{for $|x-a|\leq d$.}
+\]
+\end{theorem}
+\begin{equation}
+\label{eq:n-factorial-grows-quickly}
+\lim_{n\to\infty}\frac{x^n}{n!}=0\qquad\text{for all $x$.}
+\end{equation}
+
+\begin{equation}
+  \label{eq:exp-equals-its-taylor-ser}
+e^x=\sum_{n=0}^\infty\frac{x^n}{n!}\qquad\text{for all $x$.}
+\end{equation}
+
+\begin{equation}
+\label{eq:sin-taylor-expansion}
+\sin x=\sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{(2n+1)!}\qquad\text{for all
+  $x$.}
+\end{equation}
+
+\begin{equation}
+  \label{eq:cos-taylor-series}
+\cos x=\sum_{n=0}^\infty(-1)^n\frac{x^{2n}}{(2n)!}\qquad\text{for all $x$.}
+\end{equation}
+
+The traditional notation for the coefficients in the binomial series is
+\[
+\binom k n=\frac{k(k-1)(k-2)\dotsm(k-n+1)}{n!}
+\]
+and these numbers are called the \emph{binomial coefficients.}
+
+\begin{theorem}[The binomial series]
+If $k$  is any real number and $|x|<1$, then
+\[
+(1+x)^k=\sum_{n=0}^\infty\binom k n x^n.
+\]
+\end{theorem}
+Table of Taylor series:
+
+\begin{table}
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Function&Taylor series&Radius of convergence\\
+\hline
+$\displaystyle\frac{1}{1-x}$&
+$\displaystyle\sum_{n=0}^\infty x^n$&
+$R=1$\\
+$\displaystyle e^x$&
+$\displaystyle\sum_{n=0}^\infty \frac{x^n}{n!}$&
+$R=\infty$\\
+$\displaystyle\sin x$&
+$\displaystyle\sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{(2n+1)!}$&
+$R=\infty$\\
+$\displaystyle\cos x$&
+$\displaystyle\sum_{n=0}^\infty(-1)^n\frac{x^{2n}}{(2n)!}$&
+$R=\infty$\\
+$\displaystyle\arctan x$&
+$\displaystyle\sum_{n=0}^\infty(-1)^n\frac{x^{2n+1}}{2n+1}$&
+$R=1$\\
+$\displaystyle\ln(1+x)$&
+$\displaystyle\sum_{n=0}^\infty(-1)^{n-1}\frac{x^n}{n}$&
+$R=1$\\
+$\displaystyle(1+x)^k$&
+$\displaystyle\sum_{n=0}^\infty\binom k n x^n$&
+$R=1$\\
+\hline
+\end{tabular}
+\caption{Table of Taylor series.}
+\label{tab:taylor-series}
+\end{table}
 
 \section{WebAssign Homework}
 Solutions to selected problems
@@ -73,7 +245,7 @@ decimal places.
 
 \subsection{Homework 29}
 \begin{problem}[WebAssign HW 29, \# 1]
-Find the MacLaurin series for $f(x)$ using the definition of a MacLaurin
+Find the Maclaurin series for $f(x)$ using the definition of a Maclaurin
 series. [Assume that $f$ has a power series expansion. Do not show that
 $R_n(x)\to 0$.]
 \[
@@ -83,7 +255,7 @@ Find the associated radius of convergence $R$.
 \end{problem}
 
 \begin{problem}[WebAssign HW 29, \# 2]
-Find the MacLaurin series for $f(x)$ using the definition of a MacLaurin
+Find the Maclaurin series for $f(x)$ using the definition of a Maclaurin
 series. [Assume that $f$ has a power series expansion. Do not show that
 $R_n(x)\to 0$.]
 \[
@@ -124,15 +296,16 @@ Find the associated radius of convergence $R$.
 
 \subsection{Homework 30}
 \begin{problem}[WebAssign HW 30, \# 1]
-Use the MacLaurin series in the table (it's somewhere in the book, I'll put
-a link here ) to obtain the MacLaurin series for the given function.
+Use the Maclaurin series in the table (it's somewhere in the book, I'll put
+a link here \ref{tab:taylor-series}) to obtain the Maclaurin series for the
+given function.
 \[
 f(x)=6e^x+e^{4x}.
 \]
 \end{problem}
 
 \begin{problem}[WebAssign HW 30, \# 2]
-Use the MacLaurin series in the table to obtain the MacLaurin series for
+Use the Maclaurin series in the table to obtain the Maclaurin series for
 the given function.
 \[
 f(x)=4x\cos\left(\frac{x^2}{9}\right).
@@ -140,7 +313,7 @@ f(x)=4x\cos\left(\frac{x^2}{9}\right).
 \end{problem}
 
 \begin{problem}[WebAssign HW 30, \# 3]
-Use the MacLaurin series in the table to obtain the MacLaurin series for
+Use the Maclaurin series in the table to obtain the Maclaurin series for
 the given function.
 \[
 f(x)=9\sin^2 x.
@@ -166,13 +339,13 @@ Use series to evaluate the limit.
 
 \begin{problem}[WebAssign HW 30, \# 6]
 Use multiplication or division of power series to find the first three
-nonzero terms in the MacLaurin series for the function.
+nonzero terms in the Maclaurin series for the function.
 \[
 y=e^{-x^2}\cos x.
 \]
 \end{problem}
 \newpage
-\chapter{Exam III Problems}
+\chapter{Exam 3: Problems}
 
 %%% Local Variables:
 %%% mode: latex
