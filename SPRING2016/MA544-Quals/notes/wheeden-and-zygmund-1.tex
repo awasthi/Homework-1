@@ -693,6 +693,22 @@ x^-\coloneqq
 -x&\text{if $x\leq 0$}
 \end{cases}.
 \]
+These are called the \emph{positive} and \emph{negative parts of $x$},
+respectively, and satisfy the relations
+\[
+\begin{aligned}
+x^+,x^-\geq{}&;&|x|={}&x^++x^-;&x&=x^+-x^-.
+\end{aligned}
+\]
+Given a finite function $f$ on $[a,b]$ and a partition
+$\Gamma={\{x_i\}}_{i=0}^\infty$ of $[a,b]$, define
+\[
+\begin{aligned}
+P_\Gamma&=P_\Gamma[f;a,b]=\sum_{i=1}^m{[f(x_i)-f(x_{i-1})]}^+\\
+N_\Gamma&=N_\Gamma[f;a,b]=\sum_{i=1}^m{[f(x_i)-f(x_{i-1})]}^-
+\end{aligned}
+\]
+
 
 %%% Local Variables:
 %%% mode: latex
