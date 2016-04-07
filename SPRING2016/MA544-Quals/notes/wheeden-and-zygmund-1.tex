@@ -154,7 +154,7 @@ called the \emph{closure} of $E$ and written $\bar E$. By the
 E^\circ$.
 \begin{theorem}[1.5]
 \begin{enumerate}[label=\textnormal{(\roman*)}]
-\item $\overline{B(\bfx,\delta)}=\left\{\,\bfy:\|\bfx-\bfy\|\leq\delta\, \right\}$
+\item $\bar{B(\bfx,\delta)}=\left\{\,\bfy:\|\bfx-\bfy\|\leq\delta\, \right\}$
 \item $E$ is closed if and only if $E=\bar E$; that is, $E$ is closed if
   and only if it contains all of its limit points.
 \item $\bar E$ is closed, and $\bar E$ is the smallest closed set
@@ -659,6 +659,40 @@ $V[f;a,b]=\infty$, there is nothing to show so suppose
 $V[f;a,b]<\infty$. Let $c$ be a point in $[a,b]$ not equal to either
 endpoint $a$ or $b$.
 \end{proof}
+\begin{proof}[Proof of (ii)]
+Let $I\coloneqq [a,b]$, $I_I\coloneqq [a,c]$, $I_2\coloneqq [c,b]$,
+$V\coloneqq V[a,b]$, $V_1\coloneqq V[a,c]$, and $V_2\coloneqq V[c,b]$. If
+$\Gamma_1$ and $\Gamma_2$ are any partitions of $I_1$ and $I_2$,
+respectively, then $\Gamma=\Gamma_1\cup\Gamma_2$ is one of $I$, and
+$S_\Gamma[I]=S_{\Gamma_1}[I_1]+S_{\Gamma_2}[I_2]$. Thus,
+$S_{\Gamma_1}[I_1]+S_{\Gamma_2}[I_2]\leq V$. Therefore, taking the supremum
+over $\Gamma_1$ and $\Gamma_2$ separately, we obtain $V_1+V_2\leq V$.
+
+To show the opposite inequality, let $\Gamma$ be any partition $I$, and let
+$\bar\Gamma$ be $\Gamma$ with $c$ adjoined. Then $S_\Gamma[I]\leq
+S_{\bar\Gamma}[I]$, and $\bar\Gamma$ splits into partitions
+$\Gamma_1$ of $I_1$ and $\Gamma_2$ of $I_2$. Thus, we have
+\[
+S_\Gamma[I]\leq
+S_{\bar\Gamma}[I]=S_{\Gamma_1}[I_1]+S_{\Gamma_2}[I_2]\leq V_1+V_2.
+\]
+Therefore, $V\leq V_1+V_2$, which completes the proof of (ii).
+\end{proof}
+
+For any real number $x$, define
+\[
+x^+\coloneqq
+\begin{cases}
+x&\text{if $x>0$}\\
+0&\text{if $x\leq 0$}
+\end{cases},
+\qquad
+x^-\coloneqq
+\begin{cases}
+0&\text{if $x>0$}\\
+-x&\text{if $x\leq 0$}
+\end{cases}.
+\]
 
 %%% Local Variables:
 %%% mode: latex
