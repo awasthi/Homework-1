@@ -46,7 +46,26 @@ Recall that the diameter of a set $E$ is the value
 \sup\left\{\,\|\bfx-\bfy\|:\bfx,\bfy\in E\,\right\}.
 \]
 A set function $F(E)$ is called \emph{continuous} if $F(E)$ tends to zero
-as the diameter of $E$ tends to zero; i.e., $F(E)$ is continuous if, given $\varepsilon>0$
+as the diameter of $E$ tends to zero; i.e., $F(E)$ is continuous if, given
+$\varepsilon>0$, there exists a $\delta>0$ such that $|F(E)|<\varepsilon$
+whenever the diameter of $E$ is less than $\delta$. An example of a
+function that is \emph{not} continuous can be obtained by setting $F(E)=1$
+for any measurable set that contains the origin, and $F(E)=0$
+otherwise.\footnote{Why is this function not continuous. Consider the
+  following argument: Let $\varepsilon=1/2$ and let $B_k\coloneqq
+  B(\mathbf{0},1/k)$. Then as the diameter of $B_k$ goes to zero,
+  $F(B_k)=1$ for all $k$ so $F(B_k)\to 1>1/2$.}
+
+A set function $F$ is called \emph{absolutely continuous with respect to
+  the Lebesgue measure}, or simply \emph{absolutely continuous} if $F(E)$
+tends to zero as the measure of $E$ tends to zero. Thus, $F$ is absolutely
+continuous if given a $\varepsilon>0$ there exists $\delta>0$ such that
+$|F(E)|<\varepsilon$ whenever the measure of $E$ is less than $\delta$.
+
+A set function that is absolutely continuous is clearly
+continuous\footnote{Suppose $F$ is absolutely continuous. Then, given
+  $\varepsilon>0$ there exists $\delta>0$ such that $|F(E)|<\varepsilon$
+  whenever $|E|<\delta$.}
 
 %%% Local Variables:
 %%% mode: latex
