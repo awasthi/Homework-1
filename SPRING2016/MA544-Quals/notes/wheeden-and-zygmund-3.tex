@@ -1,0 +1,54 @@
+\section{Final Exam Review}
+Material covered since exam 2.
+
+\bigskip
+
+If $f$ is a Riemann integrable function on an interval $[a,b]$ in $\bfR$,
+then the familiar definition of its indefinite integral is
+\[
+F(x)\coloneqq\int_a^x f(y)dy,\qquad a\leq x\leq b.
+\]
+The fundamental theorem of calculus asserts that $F'=f$ if $f$ is
+continuous. We will study an analogue of this result for Lebesgue
+integrable $f$ and higher dimensions.
+
+We must first find an appropriate definition of the indefinite integral. In
+two dimensions, for example, we might choose
+\[
+F(x_1,x_2)\coloneqq\int_{a_1}^{x_1}\int_{a_2}^{x_2}f(y_1,y_2)dy_1dy_2.
+\]
+It turns out, however, to be better to abandon the notion that the
+indefinite integral be a function of point and adopt the idea that it be a
+function of set. Thus, given $f\in L^1(A)$, where $A$ is a measurable
+subset of $\bfR^n$, we define the \emph{indefinite integral of $f$} to be
+the function
+\[
+F(E)\coloneqq\int_E f,
+\]
+where $E$ is any measurable subset of $A$.
+
+$F$ is an example of a \emph{set function}, by which we mean any
+real-valued function $F$ defined on a $\sigma$-algebra $\Sigma$ of
+measurable sets such that
+\begin{enumerate}[label=(\roman*)]
+\item $F(E)$ is finite for every $E\in\Sigma$.
+\item $F$ is \emph{countably additive}; that is, if $E=\bigcup_k E_k$ is a
+  union of disjoint $E_k\in\Sigma$, then
+\[
+F(E)=\sum_k F(E_k).
+\]
+\end{enumerate}
+By Theorem 5.5 and 5.24, the indefinite integral of $f\in L^1(A)$ satisfies
+(i) and (ii) for the $\sigma$-algebra of measurable subsets of $A$.
+
+Recall that the diameter of a set $E$ is the value
+\[
+\sup\left\{\,\|\bfx-\bfy\|:\bfx,\bfy\in E\,\right\}.
+\]
+A set function $F(E)$ is called \emph{continuous} if $F(E)$ tends to zero
+as the diameter of $E$ tends to zero; i.e., $F(E)$ is continuous if, given $\varepsilon>0$
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA544-Quals"
+%%% End:
