@@ -17,13 +17,13 @@ and that there exists a constant $C>0$ such that
 \begin{proof}
 Recall that a real-valued function $f\colon\bfR^n\to\bfR$ is (Lebesgue)
 integrable over a subset $E$ of $\bfR^n$ (or, alternatively, $f$ belongs to
-$L^1(E)$) if
+$L(E)$) if
 \[
 \int_E f(\bfx) d \bfx<\infty.
 \]
 
 Put $E\coloneqq\bfR^n\smallsetminus B_\varepsilon(\mathbf{0})$. Then, to show that
-$f$ belongs to $L^1(E)$ it suffices to prove the inequality
+$f$ belongs to $L(E)$ it suffices to prove the inequality
 \begin{equation}
 \label{eq:eq:inequality-1}
 \int_E f(\bfx) d \bfx<\frac{C}{\varepsilon}
@@ -105,7 +105,7 @@ for a.e.\@ $\bfx\in\bfR^n$ we have the following estimate
 |f(\bfx)-f_k(\bfx)|<\varepsilon
 \end{equation}
 for sufficiently large $k$; say $k$ greater than or equal to some index
-$N\in\bfN$. Moreover, we are given convergence in $L^1(\bfR^n)$ of $f_k$ to
+$N\in\bfN$. Moreover, we are given convergence in $L(\bfR^n)$ of $f_k$ to
 $f$
 \begin{equation}
 \label{eq:integral-estimate-1}
@@ -132,7 +132,7 @@ so, by the bounded convergence theorem, we have the desired convergence
 \int_E f_k\to\int_E f<\infty.
 \end{equation}
 
-However, if $f$ does not belong to $L^1(\bfR^n)$, i.e., its integral over
+However, if $f$ does not belong to $L(\bfR^n)$, i.e., its integral over
 $\bfR^n$ is infinity, there is no guarantee that $f$ will be finite a.e.\@
 in $\bfR^n$. This means that the bounded convergence theorem will fail to
 ensure convergence in integral for any measurable subset $E$ of
@@ -371,7 +371,7 @@ e
 \end{proof}
 
 \begin{problem}
-Let $f\in L^1(\bfR^n)$ and for $\mathbf{h}\in\bfR^n$ define
+Let $f\in L(\bfR^n)$ and for $\mathbf{h}\in\bfR^n$ define
 $f_{\mathbf{h}}\colon\bfR^n\to\bfR$ be $f_{\mathbf{h}}(\bfx)\coloneqq
 f(\bfx-\mathbf{h})$. Prove that
 \[
@@ -390,7 +390,7 @@ integral
 
 \begin{problem}
 \begin{enumerate}[label=(\alph*)]
-\item If $f_k,g_k,f,g\in L^1(\bfR^n)$, $f_k\to f$ and $g_k\to g$ a.e.\@ in
+\item If $f_k,g_k,f,g\in L(\bfR^n)$, $f_k\to f$ and $g_k\to g$ a.e.\@ in
   $\bfR^n$, $|f_k|\leq g_k$ and
 \[
 \int_{\bfR^n}g_k\to\int_{\bfR^n}g,
@@ -399,7 +399,7 @@ prove that
 \[
 \int_{\bfR^n} f_k\to\int_{\bfR^n}f.
 \]
-\item Using part (a) show that if $f_k,f\in L^1(\bfR^n)$ and $f_k\to f$
+\item Using part (a) show that if $f_k,f\in L(\bfR^n)$ and $f_k\to f$
   a.e.\@ in $\bfR^n$, then
 \[
 \int_{\bfR^n}|f_k-f|\to 0\qquad\text{as}\qquad k\to\infty
@@ -419,7 +419,7 @@ Fatou's theorem,
 \leq\liminf_{k\to\infty}\int_{\bfR^n}g_k-f_k,\\
 \int_{\bfR^n}g+f&\int_{\bfR^n}\liminf_{k\to\infty}g_k+f_k\leq\liminf_{k\to\infty}\int_{\bfR^n}g_k+f_k.
 \end{align*}
-Since $f_k,g_k,f,g\in L^1(\bfR^n)$ and $\int_{\bfR^n}g_k\to\int_{\bfR^n}g$,
+Since $f_k,g_k,f,g\in L(\bfR^n)$ and $\int_{\bfR^n}g_k\to\int_{\bfR^n}g$,
 then using the similar argument as problem 2, we have
 \[
   \begin{aligned}
@@ -435,7 +435,7 @@ Therefore, $\int_{\bfR^n}f_k\to\int_{\bfR^n} f$.
 \]
 
 $\impliedby$: Let $g_k\coloneqq |f_k|+|f|$ and $g\coloneqq 2|f|$. Since
-$f_k,f\in L^1(\bfR^n)$ and $f_k\to f$ a.e., then $g_k,g\in L^1(\bfR^n)$ and
+$f_k,f\in L(\bfR^n)$ and $f_k\to f$ a.e., then $g_k,g\in L(\bfR^n)$ and
 $g_k\to g$ a.e.\@ in $\bfR^n$. By the assumption, $\int_{\bfR^n}
 g_k\to\int_{\bfR^n}g$.
 

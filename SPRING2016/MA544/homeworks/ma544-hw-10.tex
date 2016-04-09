@@ -6,7 +6,15 @@ positive measure. Show that there is a positive constant $c$ such that
 $f^*(\bfx)\geq c\|\bfx\|^{-n}$ for $\|\bfx\|\geq 1$.
 \end{problem}
 \begin{proof}
-
+Let $E$ be a measurable subset of $\bfR^n$ with positive measure such that
+$f(\bfx)\neq 0$ for all $\bfx\in E$. Moreover, for now, assume that
+$|E|<\infty$. By Vitali's lemma, for ${\{Q_k\}}_{k=1}^N$ a finite cover of
+$E$ by cubes, there exists a real number $\beta>0$ such that
+\begin{equation}
+\label{eq:hw-10-vitalis-bound}
+|E|<\frac{1}{\beta}\sum_{k=1}^N|Q_k|.
+\end{equation}
+Let $\chi_k$ be the characteristic function of $Q_k$, then, by Lebesgue's
 \end{proof}
 \newpage
 

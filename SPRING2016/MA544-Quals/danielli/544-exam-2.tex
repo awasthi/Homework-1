@@ -1,17 +1,17 @@
 \section{MA 544 - Midterm 2}
 \begin{problem}
-Assume that $f\in L^1(\bfR^n)$. Show that for every $\varepsilon>0$ there
+Assume that $f\in L(\bfR^n)$. Show that for every $\varepsilon>0$ there
 exists a ball $B$, centered at the origin, such that
 \[
 \int_{\bfR^n\smallsetminus B}|f|<\varepsilon.
 \]
 \end{problem}
 \begin{proof}
-Recall that $f\in L^1(\bfR^n)$ if and only if $|f|\in
-L^1(\bfR^n)$. Let $B_k\coloneqq B(\mathbf{0},k)$ for $k\in\bfN$ and
+Recall that $f\in L(\bfR^n)$ if and only if $|f|\in
+L(\bfR^n)$. Let $B_k\coloneqq B(\mathbf{0},k)$ for $k\in\bfN$ and
 $\chi_{B_k}$ be the indicator function associated with $B_k$. Then, the
 sequence of maps $\left\{|f_k|\right\}$ defined $f_k\coloneqq f\chi_{B_k}$
-converge pointwise to $|f_k|$. Since $|f|\in L^1(\bfR^n)$, by the monotone
+converge pointwise to $|f_k|$. Since $|f|\in L(\bfR^n)$, by the monotone
 convergence theorem, we have
 \begin{equation}
 \label{eq:monotonicity-2-1}
@@ -33,7 +33,7 @@ as desired.
 \end{proof}
 
 \begin{problem}
-Let $f\in L^1(E)$, and let $\{E_j\}$ be a countable collection of pairwise
+Let $f\in L(E)$, and let $\{E_j\}$ be a countable collection of pairwise
 disjoint measurable subsets of $E$, such that $E=\bigcup_{j=1}^\infty
 E_j$. Prove that
 \[
@@ -67,7 +67,7 @@ as desired.
 \end{proof}
 
 \begin{problem}
-Let $\{f_k\}$ be a family in $L^1(E)$ satisfying the following property:
+Let $\{f_k\}$ be a family in $L(E)$ satisfying the following property:
 For any $\varepsilon>0$ there exits $\delta>0$ such that $|A|<\delta$
 implies
 \[
@@ -105,8 +105,8 @@ Letting $\varepsilon\to 0$, we achieved the desired convergence.
 \end{proof}
 
 \begin{problem}
-Let $I\coloneqq[0,1]$, $f\in L^1(I)$, and define $g(x)\coloneqq\int_x^1
-t^{-1}f(t) d  t$ for $x\in I$. Prove that $g\in L^1(I)$ and
+Let $I\coloneqq[0,1]$, $f\in L(I)$, and define $g(x)\coloneqq\int_x^1
+t^{-1}f(t) d  t$ for $x\in I$. Prove that $g\in L(I)$ and
 \[
 \int_I g=\int_I f.
 \]
@@ -133,7 +133,7 @@ so
 <{}&\infty
 \end{aligned}
 \end{equation}
-for all $k$ and converges uniformly to $g$ so $g\in L^1(I)$. I don't know
+for all $k$ and converges uniformly to $g$ so $g\in L(I)$. I don't know
 how to show that in fact $\int_I g=\int_I f$. Perhaps you show that the
 places where they differ is a set of measure zero.
 \end{proof}

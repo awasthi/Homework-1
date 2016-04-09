@@ -19,7 +19,7 @@ F(x_1,x_2)\coloneqq\int_{a_1}^{x_1}\int_{a_2}^{x_2}f(y_1,y_2)dy_1dy_2.
 \]
 It turns out, however, to be better to abandon the notion that the
 indefinite integral be a function of point and adopt the idea that it be a
-function of set. Thus, given $f\in L^1(A)$, where $A$ is a measurable
+function of set. Thus, given $f\in L(A)$, where $A$ is a measurable
 subset of $\bfR^n$, we define the \emph{indefinite integral of $f$} to be
 the function
 \[
@@ -38,7 +38,7 @@ measurable sets such that
 F(E)=\sum_k F(E_k).
 \]
 \end{enumerate}
-By Theorem 5.5 and 5.24, the indefinite integral of $f\in L^1(A)$ satisfies
+By Theorem 5.5 and 5.24, the indefinite integral of $f\in L(A)$ satisfies
 (i) and (ii) for the $\sigma$-algebra of measurable subsets of $A$.
 
 Recall that the diameter of a set $E$ is the value
@@ -81,8 +81,47 @@ If $f\in L(A)$, its definite integral is absolutely continuous.
 We may assume that $f\geq 0$ by considering $f^+$ and $f^-$. Fix $k$ and
 write $f=g+h$, where $g=f$ whenever $f\leq k$ and $g=k$ otherwise. Given
 $\varepsilon>0$, we may choose $k$ so large that $0\leq\int_A
-h<\varepsilon/2$ and, \emph{a fortiori}, $0\leq\int_E f<\varepsilon/2$
+h<\varepsilon/2$ and, \emph{a fortiori}, $0\leq\int_E f<\varepsilon/2$.
+Since
+\[
+\int|f-C|\leq\int|f-f_{k_0}|+\int|f_{k_0}-C|<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon.
+\]
+we see that $f$ has property $\calA$.
+
+To prove the lemma, let $f\in L(\bfR)$. Writing $f=f^+-f^-$, we may assume
+that $f\geq 0$. Then
+\[
+\int|\chi_G-\chi_E|=|G\smallsetminus E|<\varepsilon.
+\]
+so we may assume that $f=\chi_G$ for open set $G$ of finite measure. Using
+Theorem 1.11, write $G$ as the union of (partly open) disjoint intervals
+$G=\bigcup I_k$. If we let $f_N$ be the characteristic function of
+$\bigcup_{k=1}^N I_k$, we obtain
+\[
+\int|f-f_N|=\sum_{k=N+1}^\infty|I_k|\to 0
+\]
+since $\sum_k|I_k|=|G|<\infty$, i.e., the series converges. By (2), it is
+enough to show that each $f_N$ has property $\calA$. But $f_N$ is the sum
+$\chi_{I_k}$, $k=1,\dotsc,N$, so it suffices by (1) to show that the
+characteristic function of any partly open interval $I$ has property
+$\calA$. This is practically self-evident: if $I^*$ denotes an interval
+that contains the closure of $I$ in its interior and that satisfies
+$|I^*\smallsetminus I|<\varepsilon$, then for any continuous $C$, $0\leq
+C\leq 1$, which is $1$ in $I$ and $0$ outside $I^*$, we have
+\[
+\int|chi_I-C|\leq|I^*-I|<\varepsilon.
+\]
 \end{proof}
+
+\begin{theorem}[Simple Vitali lemma]
+Let $E$ be a subset of $\bfR^n$ with $|E|_e<\infty$, and let $K$ be a
+collection of cubes $Q$ covering $E$, then there exists a positive constant
+$\beta$, depending only on $n$, and a finite number of disjoint cubes,
+$Q_1,\dotsc,Q_N$ in $K$ such that
+\[
+\sum_{j=1}^N|Q_j|\geq\beta|E|_e
+\]
+\end{theorem}
 
 %%% Local Variables:
 %%% mode: latex
