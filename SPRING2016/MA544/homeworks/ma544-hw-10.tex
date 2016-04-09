@@ -6,15 +6,16 @@ positive measure. Show that there is a positive constant $c$ such that
 $f^*(\bfx)\geq c\|\bfx\|^{-n}$ for $\|\bfx\|\geq 1$.
 \end{problem}
 \begin{proof}
-Let $E$ be a measurable subset of $\bfR^n$ with positive measure such that
-$f(\bfx)\neq 0$ for all $\bfx\in E$. Moreover, for now, assume that
-$|E|<\infty$. By Vitali's lemma, for ${\{Q_k\}}_{k=1}^N$ a finite cover of
-$E$ by cubes, there exists a real number $\beta>0$ such that
+Let $E$ be a measurable subset of $\bfR^n$ such that $f\neq 0$ on $E$. For
+now, let us assume that the measure of $E$ is finite and that $E$ contains
+a point $\bfx$ of magnitude $\|\bfx\|\geq 1$. By Vitali's lemma, given a
+finite collection of cubes ${\{Q_j\}}_{j=1}^N$ covering our set $E$, there
+exists a real number $\beta>0$ such that the following inequality is
+observed
 \begin{equation}
-\label{eq:hw-10-vitalis-bound}
-|E|<\frac{1}{\beta}\sum_{k=1}^N|Q_k|.
+\label{eq:10:vitalis-covering-lemma}
+|E|<\frac{1}{\beta}\sum_{j=1}^N|Q_j|.
 \end{equation}
-Let $\chi_k$ be the characteristic function of $Q_k$, then, by Lebesgue's
 \end{proof}
 \newpage
 
@@ -71,20 +72,43 @@ Exercise 8).
 \end{proof}
 \newpage
 
-\begin{problem}[Wheeden \& Zygmund {\S}7, Ex.\@ 11]
-Prove the following result concerning changes of variable. Let $g(t)$ be
-monotone increasing and absolutely continuous on $[\alpha,\beta]$ and let $f$
-be integrable on $[a,b]$, $a\coloneqq g(\alpha)$, $b\coloneqq
-g(\beta)$. Then $f(g(t))g'(t)$ is measurable and integrable on
-$[\alpha,\beta]$, and
+\begin{problem}[Wheeden \& Zygmund {\S}7, Ex.\@ 12]
+Use Jensen's inequality to prove that if $a,b\geq 0$, $p,q>1$,
+$(1/p)+(1/q)=1$, then
 \[
-\int_a^b f(x)d x=\int_\alpha^\beta f(g(t))g'(t)d t.
+ab\leq\frac{a^p}{p}+\frac{b^p}{q}.
 \]
-(Consider the case when $f$ is the characteristic function of an interval,
-an open set, etc.)
+More generally, show that
+\[
+a_1\dotsm a_N=\sum_{j=1}^N\frac{{a_j}^{p_j}}{p_j},
+\]
+where $a_j\geq 0$, $p_j>1$, $\sum_{j=1}^N(1/p_j)=1$. (Write
+$a_j=e^{x_j/p_j}$ and use the convexity of $e^x$).
 \end{problem}
 \begin{proof}
 \end{proof}
+\newpage
+
+\begin{problem}[Wheeden \& Zygmund {\S}7, Ex.\@ 13]
+Prove Theorem 7.36.
+\end{problem}
+\begin{proof}
+\end{proof}
+
+% \begin{problem}[Wheeden \& Zygmund {\S}7, Ex.\@ 11]
+% Prove the following result concerning changes of variable. Let $g(t)$ be
+% monotone increasing and absolutely continuous on $[\alpha,\beta]$ and let $f$
+% be integrable on $[a,b]$, $a\coloneqq g(\alpha)$, $b\coloneqq
+% g(\beta)$. Then $f(g(t))g'(t)$ is measurable and integrable on
+% $[\alpha,\beta]$, and
+% \[
+% \int_a^b f(x)d x=\int_\alpha^\beta f(g(t))g'(t)d t.
+% \]
+% (Consider the case when $f$ is the characteristic function of an interval,
+% an open set, etc.)
+% \end{problem}
+% \begin{proof}
+% \end{proof}
 
 %%% Local Variables:
 %%% mode: latex
