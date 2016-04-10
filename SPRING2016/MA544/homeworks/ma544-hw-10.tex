@@ -23,8 +23,8 @@ observed
 Let $\varphi(\bfx),\bfx\in\bfR^n$, be a bounded measurable function such
 that $\varphi(\bfx)=0$ for $\|\bfx\|\geq 1$ and $\int\varphi=1$. For
 $\varepsilon>0$, let
-$\varphi_\varepsilon(\bfx)\coloneqq\varepsilon^{-n}\varphi(\bfx/\varepsilon)$. ($\varphi_\varepsilon$
-is called an \emph{approximation to the identity}.) If $f\in L^1(\bfR^n)$,
+$\varphi_\varepsilon(\bfx)=\varepsilon^{-n}\varphi(\bfx/\varepsilon)$. ($\varphi_\varepsilon$
+is called an \emph{approximation to the identity}.) If $f\in L(\bfR^n)$,
 show that
 \[
 \lim_{\varepsilon\to 0}(f*\varphi_\varepsilon)(x)=f(\bfx)
@@ -93,12 +93,23 @@ $a_j=e^{x_j/p_j}$ and use the convexity of $e^x$).
 Prove Theorem 7.36.
 \end{problem}
 \begin{proof}
+Recall the statement of Theorem 7.36
+\begin{theorem*}
+\begin{enumerate}[label=\textnormal{(\roman*)}]
+\item If $\varphi_1$ and $\varphi_2$ are convex in $(a,b)$, then
+  $\varphi_1+\varphi_2$ is convex in $(a,b)$.
+\item If $\varphi$ is convex in $(a,b)$ and $c$ is a positive constant,
+  then $c\varphi$ is convex in $(a,b)$.
+\item If $\varphi_k$, $k=1,2,\dotsc$, are convex in $(a,b)$ and
+  $\varphi_k\to\varphi$ in $(a,b)$, then $\varphi$ is convex in $(a,b)$.
+\end{enumerate}
+\end{theorem*}
 \end{proof}
 
 % \begin{problem}[Wheeden \& Zygmund {\S}7, Ex.\@ 11]
 % Prove the following result concerning changes of variable. Let $g(t)$ be
 % monotone increasing and absolutely continuous on $[\alpha,\beta]$ and let $f$
-% be integrable on $[a,b]$, $a\coloneqq g(\alpha)$, $b\coloneqq
+% be integrable on $[a,b]$, $a= g(\alpha)$, $b=
 % g(\beta)$. Then $f(g(t))g'(t)$ is measurable and integrable on
 % $[\alpha,\beta]$, and
 % \[

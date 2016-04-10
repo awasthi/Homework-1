@@ -2,7 +2,7 @@
 \begin{problem}
 Define for $\bfx\in\bfR^n$,
 \[
-f(\bfx)\coloneqq
+f(\bfx)=
 \begin{cases}
 \left|\bfx\right|^{-(n+1)}&\text{if $\bfx\neq \mathbf{0}$,}\\
 0&\text{if $\bfx=\mathbf{0}$.}
@@ -22,7 +22,7 @@ $L(E)$) if
 \int_E f(\bfx) d \bfx<\infty.
 \]
 
-Put $E\coloneqq\bfR^n\smallsetminus B_\varepsilon(\mathbf{0})$. Then, to show that
+Put $E=\bfR^n\smallsetminus B_\varepsilon(\mathbf{0})$. Then, to show that
 $f$ belongs to $L(E)$ it suffices to prove the inequality
 \begin{equation}
 \label{eq:eq:inequality-1}
@@ -155,8 +155,8 @@ If $f$ is integrable over a measurable subset $E$ of $\bfR^n$, then
 \label{eq:integrability-3}
 \int_E f(\bfx) d \bfx<\infty.
 \end{equation}
-Set $E_k\coloneqq\left\{\,\bfx\in E:k+1>f(\bfx)\geq k\,\right\}$ and
-$F_k\coloneqq\left\{\,\bfx\in E:f(\bfx)\geq k\,\right\}$. Note the
+Set $E_k=\left\{\,\bfx\in E:k+1>f(\bfx)\geq k\,\right\}$ and
+$F_k=\left\{\,\bfx\in E:f(\bfx)\geq k\,\right\}$. Note the
 following properties about the sets we have just defined: first, the
 $E_k$'s are pairwise disjoint and the $F_k$'s are nested in the following
 way $F_{k+1}\subset F_k$; second, $E=\bigcup_{k=1}^\infty E_k$ and
@@ -225,7 +225,7 @@ Suppose that $E$ is a measurable subset of $\bfR^n$, with
 $|E|<\infty$. If $f$ and $g$ are measurable functions on
 $E$, define
 \[
-\rho(f,g)\coloneqq\int_E\frac{|f-g|}{1+|f-g|}.
+\rho(f,g)=\int_E\frac{|f-g|}{1+|f-g|}.
 \]
 Prove that $\rho(f_k,f)\to 0$ as $k\to\infty$ if and only if $f_k$
 converges to $f$ as $k\to\infty$.
@@ -258,7 +258,7 @@ $\implies$: Given $\varepsilon>0$, $\rho(f_k,f)\to 0$ implies that
 x\longrightarrow 0.
 \]
 Observe that the function $\Phi\colon\bfR^+\to\bfR$ given by
-$\Phi(x)\coloneqq x/(1+x)$ is increasing on $\bfR^+$ and $0<\Psi(x)<1$,
+$\Phi(x)= x/(1+x)$ is increasing on $\bfR^+$ and $0<\Psi(x)<1$,
 hence
 \[
 \begin{aligned}
@@ -309,12 +309,12 @@ Therefore, $f_k\to f$ in measure implies $\rho(f_k,f)\to 0$ as $k\to\infty$.
 \begin{problem}
 Define the \emph{gamma function} $\Gamma\colon\bfR^+\to\bfR$ by
 \[
-\Gamma(y)\coloneqq\int_0^\infty e^{-u}u^{y-1} d  u,
+\Gamma(y)=\int_0^\infty e^{-u}u^{y-1} d  u,
 \]
 and the \emph{beta function} $\beta\colon\bfR^+\times\bfR^+\to\bfR$
 by
 \[
-\beta(x,y)\coloneqq\int_0^1 t^{x-1}(1-t)^{y-1} d  t.
+\beta(x,y)=\int_0^1 t^{x-1}(1-t)^{y-1} d  t.
 \]
 \begin{enumerate}[label=(\alph*)]
 \item Prove that the definition of the gamma function is well-posed, i.e.,
@@ -372,7 +372,7 @@ e
 
 \begin{problem}
 Let $f\in L(\bfR^n)$ and for $\mathbf{h}\in\bfR^n$ define
-$f_{\mathbf{h}}\colon\bfR^n\to\bfR$ be $f_{\mathbf{h}}(\bfx)\coloneqq
+$f_{\mathbf{h}}\colon\bfR^n\to\bfR$ be $f_{\mathbf{h}}(\bfx)=
 f(\bfx-\mathbf{h})$. Prove that
 \[
 \lim_{\mathbf{h}\to\mathbf{0}}\int_{\bfR^n}\left|f_{\mathbf{h}}-f\right|=0.
@@ -434,12 +434,12 @@ Therefore, $\int_{\bfR^n}f_k\to\int_{\bfR^n} f$.
 \left|\int_{\bfR^n}|f_k|-|f|\right|\leq\int_{\bfR^n}\left||f_k|-|f|\right|\leq\int_{\bfR^n}|f_k-f|.
 \]
 
-$\impliedby$: Let $g_k\coloneqq |f_k|+|f|$ and $g\coloneqq 2|f|$. Since
+$\impliedby$: Let $g_k= |f_k|+|f|$ and $g= 2|f|$. Since
 $f_k,f\in L(\bfR^n)$ and $f_k\to f$ a.e., then $g_k,g\in L(\bfR^n)$ and
 $g_k\to g$ a.e.\@ in $\bfR^n$. By the assumption, $\int_{\bfR^n}
 g_k\to\int_{\bfR^n}g$.
 
-Let $\tilde f_k\coloneqq|f_k-f|$. Then $\tilde f_k\to 0$ a.e.\@ in $\bfR^n$
+Let $\tilde f_k=|f_k-f|$. Then $\tilde f_k\to 0$ a.e.\@ in $\bfR^n$
 and $\tilde f_k\leq g_k$. Applying part (a) to $\tilde f_k$ we have
 \[
 \lim_{k\to\infty}\int_{\bfR^n}\tilde f_k=\lim_{k\to\infty}\int_{\bfR^n}|f_k-f|=0.

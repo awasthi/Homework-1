@@ -43,8 +43,8 @@ measurable and we have
 \left|\liminf_{k\to\infty} E_k\right|
 =\left|\bigcup_{k=1}^\infty F_k\right|,
 \end{equation}
-where $F_k\coloneqq\bigcap_{n=k}^\infty E_n$. Now, note that the collection
-of sets $F_k'\coloneqq\bigcup_{\ell=1}^k F_\ell$ forms an increasing
+where $F_k=\bigcap_{n=k}^\infty E_n$. Now, note that the collection
+of sets $F_k'=\bigcup_{\ell=1}^k F_\ell$ forms an increasing
 sequence of measurable sets $F_k'\nearrow F'$, where
 $F'=\bigcup_{k=1}^\infty F_k=\liminf E_k$. Then, by 3.26 (i), we have
 \begin{equation}
@@ -66,14 +66,14 @@ $F_k'\subset E_k$. Thus, we have the desired inequality
 \begin{problem}
 Consider the function
 \[
-F(x)\coloneqq
+F(x)=
 \begin{cases}
 |B(\mathbf{0},x)|&x>0\\
 0&x=0
 \end{cases}.
 \]
 Here
-$B(\mathbf{0},r)\coloneqq\left\{\,\bfy\in\bfR^n:|\bfy|<r\,\right\}$. Prove
+$B(\mathbf{0},r)=\left\{\,\bfy\in\bfR^n:|\bfy|<r\,\right\}$. Prove
 that $F$ is monotonic increasing and continuous.
 \end{problem}
 \begin{proof}
@@ -141,7 +141,7 @@ Let $x'',x'\in B(x,\delta)$. Then, by the triangle inequality, we have
 In view of these estimates, define the set
 \begin{equation}
 \label{eq:a-n}
-A_n\coloneqq
+A_n=
 \left\{\,
 x\in\bfR :\text{there exists $\delta>0$ such that $x',x''\in B(x,\delta)$ implies $\left|f(x')-f(x'')\right|<\frac{1}{n}$ }
 \,\right\}.
@@ -185,7 +185,7 @@ is measurable.
 The idea here should be to rewrite
 \begin{equation}
   \label{eq:measurable-lim-set}
-E\coloneqq\left\{\,x:\text{$\lim_{k\to\infty} f_k(x)$ exists}\,\right\}
+E=\left\{\,x:\text{$\lim_{k\to\infty} f_k(x)$ exists}\,\right\}
 \end{equation}
 as a countable union/intersection of measurable sets. Let $x\in E$. By the
 Cauchy criterion, for every $N>0$ there exists a positive integer
@@ -193,7 +193,7 @@ $M$ such that $m,n\geq M$ implies
 $\left|f_n(x)-f_m(x)\right|<1/N$. With this in mind, define
 \begin{equation}
   \label{eq:countable-lim-set}
-E_N\coloneqq
+E_N=
 \left\{\,
 x:\text{there exists $M$ such that $m,n\geq M$ implies $\left|f_n(x)-f_m(x)\right|<\frac{1}{N}$}
 \,\right\}.
@@ -219,7 +219,7 @@ $\varepsilon=1$, there exists a $\delta>0$ such that for every finite
 disjoint collection $\left\{ (a_kb_k) \right\}_{k=1}^N$ of open intervals
 in $(a,b)$ satisfying $\sum_{k=1}^Nb_k-a_k<\delta$, we have
 $\sum_{k=1}^N\left|f(b_k)-f(a_k)\right|<\varepsilon$. Let
-$\Gamma\coloneqq\left\{x_k\right\}_{k=1}^N$ be a partition of $[a,b]$ into closed
+$\Gamma=\left\{x_k\right\}_{k=1}^N$ be a partition of $[a,b]$ into closed
 intervals such that $x_{k+1}-x_k<\delta$, then by absolute continuity we have
 \begin{equation}
 \label{eq:absolute-continuity-variation}

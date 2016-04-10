@@ -9,7 +9,7 @@ Introductory material I should have known from 504.
 
 If $\calF$ is a countable (i.e., finite or countably infinite), it will be
 called a \emph{sequence of sets} and denoted
-$\calF\coloneqq\left\{\,E_k:k=1,2,...\,\right\}$. The corresponding union
+$\calF=\left\{\,E_k:k=1,2,...\,\right\}$. The corresponding union
 and intersection will be written $\bigcup_k E_k$ and $\bigcap_k E_k$. A
 sequence $\{E_k\}$ of sets is said to \emph{increase} to $\bigcup_k E_k$ if
 $E_k\subset E_{k+1}$ for all $k$ and to \emph{decrease} to $\bigcap_k E_k$
@@ -22,15 +22,15 @@ sets, we define
 \limsup E_k=\bigcap_{j=1}^\infty\bigcup_{k=j}^\infty E_k,\qquad
 \liminf E_k=\bigcup_{j=1}^\infty\bigcap_{k=j}^\infty E_k,
 \end{equation}
-noting that the sets $U_j\coloneqq\bigcup_{k=j}^\infty E_k$ and
-$V_j\coloneqq\bigcap_{k=j}^\infty E_k$ satisfy $U_j\searrow\limsup E_k$ and
+noting that the sets $U_j=\bigcup_{k=j}^\infty E_k$ and
+$V_j=\bigcap_{k=j}^\infty E_k$ satisfy $U_j\searrow\limsup E_k$ and
 $V_j\nearrow\liminf E_k$. Then $\limsup E_k$ consists of those points of
 $\bfR^n$ that belong to infinitely many $E_k$ and $\liminf E_k$ to those
 that belong to all $E_k$ for $k\geq k_0$ (where $k_0$ may vary from point
 to point). Thus $\liminf E_k\subset\limsup E_k$.
 
 If $E_1$ and $E_2$ are two sets, we define $E_1\setminus E_2$ by
-$E_1\setminus E_2\coloneqq E_1\cap\complement E_2$ and call it the
+$E_1\setminus E_2= E_1\cap\complement E_2$ and call it the
 \emph{difference} of $E_1$ and $E_2$ or the \emph{relative complement} of
 $E_2$ in $E_1$. We will often have occasion to use \emph{de Morgan laws},
 which govern relations between complements, unions, and intersections;
@@ -103,10 +103,10 @@ by
 \end{equation}
 \begin{theorem}[1.4]
 \begin{enumerate}[label=\textnormal{(\alph*)}]
-\item $L\coloneqq\limsup_{k\to\infty} a_k$ if and only if (i) there is a
+\item $L=\limsup_{k\to\infty} a_k$ if and only if (i) there is a
   subsequence $\{a_{k_j}\}$ of $\{a_k\}$ that   converges to $L$ and (ii)
   if $L'>L$, there is an integer $N$ such that $a_k<L'$ for $k\geq N$.
-\item $\ell\coloneqq\liminf_{k\to\infty} a_k$ if and only if (i) there is a
+\item $\ell=\liminf_{k\to\infty} a_k$ if and only if (i) there is a
   subsequence $\{a_{k_j}\}$ of $\{a_k\}$ that converges to $\ell$ and (ii)
   if $\ell'<\ell$, there is an integer $N$ such that $a_k>\ell'$ for $k\geq
   N$.
@@ -120,7 +120,7 @@ We can also use the metric on $\bfR$ to define the \emph{diameter of a set
   $E$} by letting
 \begin{equation}
   \label{eq:diameter-of-set}
-\diam E\coloneqq\left\{\,\|\bfx-\bfy\|:\bfx,\bfy\in E\,\right\}.
+\diam E=\left\{\,\|\bfx-\bfy\|:\bfx,\bfy\in E\,\right\}.
 \end{equation}
 If the diameter of $E$ is finite, $E$ is said to be
 \emph{bounded}. Equivalently, $E$ is bounded if there is a finite constant
@@ -128,13 +128,13 @@ $M$ such  that $\|\bfx\|\leq M$ for all $\bfx\in E$. If $E_1$ and $E_2$ are
 two sets, the \emph{distance between $E_1$ and $E_2$} is defined by
 \begin{equation}
   \label{eq:distance-e-1-e-2}
-d(E_1,E_2)\coloneqq\inf\left\{\,\|\bfx-\bfy\|:\bfx\in E_1,\bfy\in E_2\,\right\}.
+d(E_1,E_2)=\inf\left\{\,\|\bfx-\bfy\|:\bfx\in E_1,\bfy\in E_2\,\right\}.
 \end{equation}
 
 For $\bfx\in\bfR^n$ and $\delta>0$, the set
 \begin{equation}
 \label{eq:open-ball-r-n}
-B(\bfx,\delta)\coloneqq\left\{\,\bfy:\|bfx-\bfy\|<\delta\,\right\}
+B(\bfx,\delta)=\left\{\,\bfy:\|bfx-\bfy\|<\delta\,\right\}
 \end{equation}
 is called the \emph{open ball with center $\bfx$ and radius $\delta$}. A
 point $\bfx$ of a set $E$ is called an \emph{interior point} of $E$ if
@@ -150,7 +150,7 @@ A set $E$ is called \emph{closed} if $\complement E$ is open. Note that
 $\emptyset$ and $\bfR^n$ are closed. Closed sets will generally be denoted
 by the letter $F$. The union of a set $E$ and all its limit points is
 called the \emph{closure} of $E$ and written $\bar E$. By the
-\emph{boundary} of $E$, we mean $\partial E\coloneqq \bar E\smallsetminus
+\emph{boundary} of $E$, we mean $\partial E= \bar E\smallsetminus
 E^\circ$.
 \begin{theorem}[1.5]
 \begin{enumerate}[label=\textnormal{(\roman*)}]
@@ -194,11 +194,11 @@ A perfect set is uncountable.
 
 Other special sets that will be important are $n$-dimensional
 intervals. When $n=1$ and $a<b$, we will use the usual notations
-$[a,b]\coloneqq\left\{\,x:a\leq x\leq b\,\right\}$,
-$(a,b)\coloneqq\left\{\,x:a<x<b\,\right\}$, etc. Whenever we use just the
+$[a,b]=\left\{\,x:a\leq x\leq b\,\right\}$,
+$(a,b)=\left\{\,x:a<x<b\,\right\}$, etc. Whenever we use just the
 word interval, we generally mean closed interval. An \emph{$n$-dimensional
   interval $I$} is a subset of $\bfR^n$ of the form
-$I\coloneqq\left\{\,\bfx=(x_1,\dotsc,x_n):\text{$a_k\leq x_k\leq b_k$,
+$I=\left\{\,\bfx=(x_1,\dotsc,x_n):\text{$a_k\leq x_k\leq b_k$,
     $k=1,\dotsc,n$}\,\right\}$, where $a_k<b_k$, $k=1,\dotsc,n$. An
 interval is thus closed, and we say it has edges parallel to the coordinate
 axes. If the edge lengths $b_k-a_k$ are all equal, $I$ will be called an
@@ -208,11 +208,11 @@ said to be \emph{nonoverlapping} if their interiors are disjoint, that is,
 if the most they have in common is some part of their boundaries. A set
 equal to an interval minus will be called a \emph{partly-open interval}. By
 definition, the \emph{volume $\vol(I)$} of the interval
-$I\coloneqq\left\{\,(x_1,\dotsc,x_n):\text{$a_k\leq x_k\leq b_k$,
+$I=\left\{\,(x_1,\dotsc,x_n):\text{$a_k\leq x_k\leq b_k$,
     $k=1,\dotsc,n$}\,\right\}$ is
 \begin{equation}
   \label{eq:volume-i}
-\vol(I)\coloneqq\prod_{k=1}^n(b_k-a_k).
+\vol(I)=\prod_{k=1}^n(b_k-a_k).
 \end{equation}
 
 More generally, if ${\{\bfe_k\}}_{k=1}^n$ is any given set of $n$ vectors
@@ -220,7 +220,7 @@ emanating from a point in $\bfR^n$, we will consider the closed
 \emph{parallelepiped}
 \begin{equation}
   \label{eq:parallelepiped}
-P\coloneqq\left\{\,\bfx:\text{$\bfx=\sum_{k=1}^n t_k\bfe_k$, $0\leq t_k\leq
+P=\left\{\,\bfx:\text{$\bfx=\sum_{k=1}^n t_k\bfe_k$, $0\leq t_k\leq
     1$}\,\right\}.
 \end{equation}
 Note that the edges of $P$ are parallel translates of $\bfe_k$. Thus, $P$
@@ -322,13 +322,13 @@ $x<y$ and $x,y\in I$. By \emph{strictly} monotone increasing (decreasing),
 we mean that $f(x)<f(y)$ [$f(x)>f(y)$] if $x<y$ and $x,y\in I$.
 
 Let $f$ be defined on $E\subset\bfR^n$ and let $\bfx_0$ be a limit point of
-$E$. Let $B'(\bfx_0,\delta)\coloneqq B(\bfx_0,\delta)\smallsetminus\{\bfx_0\}$
+$E$. Let $B'(\bfx_0,\delta)= B(\bfx_0,\delta)\smallsetminus\{\bfx_0\}$
 denote the punctured ball with center $\bfx_0$ and radius $\delta$, and let
 \begin{equation}
 \label{eq:sup-inf-ball}
-M(\bfx_0,\delta)\coloneqq\sup_{\bfx\in B'(\bfx_0,\delta)\cap E}
+M(\bfx_0,\delta)=\sup_{\bfx\in B'(\bfx_0,\delta)\cap E}
 f(\bfx),\qquad
-m(\bfx_0,\delta)\coloneqq\inf_{\bfx\in B'(\bfx_0,\delta)\cap E}
+m(\bfx_0,\delta)=\inf_{\bfx\in B'(\bfx_0,\delta)\cap E}
 f(\bfx).
 \end{equation}
 As $\delta\searrow 0$, $M(\bfx_0,\delta)$ decreases and $m(\bfx_0,\delta)$
@@ -367,8 +367,8 @@ $f(\bfx_0)$.
 For functions on $\bfR$, we will use the notation
 \begin{equation}
   \label{eq:continuous-function}
-f(x_0+)\coloneqq\lim_{\substack{x\to x_0\\x>x_0}}f(x)\qquad
-f(x_0-)\coloneqq\lim_{\substack{x\to x_0\\x<x_0}}f(x).
+f(x_0+)=\lim_{\substack{x\to x_0\\x>x_0}}f(x)\qquad
+f(x_0-)=\lim_{\substack{x\to x_0\\x<x_0}}f(x).
 \end{equation}
 for the \emph{right-} and \emph{left-hand limits} of $f$ at $x_0$, when
 they exist. If $f(x_0+)$, $f(x_0-)$, and $f(x_0)$ exist and are finite, but
@@ -424,7 +424,7 @@ relative to $E$. If $E$ is compact, then so is the image $TE$.
 \end{theorem}
 
 If $f$ is defined and bounded on an interval
-$I\coloneqq\left\{\,\bfx:\text{$\bfx=(x_1,\dotsc,x_n)$, $a_k\leq x_k\leq
+$I=\left\{\,\bfx:\text{$\bfx=(x_1,\dotsc,x_n)$, $a_k\leq x_k\leq
     b_k$, $k=1,\dotsc,n$}\,\right\}$ in $\bfR^n$, its Riemann integral will
 be denoted
 \begin{equation}
@@ -436,19 +436,19 @@ x_1\dotsm d  x_n
 \end{equation}
 and is defined as follows. Partition $I$ into a finite collection $\Gamma$
 of nonoverlapping intervals, $\Gamma={\{I_k\}}_{k=1}^N$, and define the
-\emph{norm} $\|\Gamma\|$ of $\Gamma$ to by $\|\Gamma\|\coloneqq\max_k \diam
+\emph{norm} $\|\Gamma\|$ of $\Gamma$ to by $\|\Gamma\|=\max_k \diam
 I_k$. Select a point $\vec\xi_k$ in $I_k$ for $k\geq 1$, and let
 \begin{equation}
 \label{eq:riemannian-integral-partitions}
 \begin{aligned}
-R_\Gamma(\vec\xi_1,\dotsc,\vec\xi_n)&\coloneqq\sum_{k=1}^N f(\vec\xi_k)\vol(I_k)\\
-U_\Gamma(\vec\xi_1,\dotsc,\vec\xi_n)&\coloneqq\sum_{k=1}^N\left[\sup_{\bfx\in I}
+R_\Gamma(\vec\xi_1,\dotsc,\vec\xi_n)&=\sum_{k=1}^N f(\vec\xi_k)\vol(I_k)\\
+U_\Gamma(\vec\xi_1,\dotsc,\vec\xi_n)&=\sum_{k=1}^N\left[\sup_{\bfx\in I}
   f(\bfx)\right]\vol(I_k)\\
-L_\Gamma(\vec\xi_1,\dotsc,\vec\xi_n)&\coloneqq\sum_{k=1}^N\left[\inf_{\bfx\in
+L_\Gamma(\vec\xi_1,\dotsc,\vec\xi_n)&=\sum_{k=1}^N\left[\inf_{\bfx\in
     I_k}f(\bfx)\right]\vol(I_k).
 \end{aligned}
 \end{equation}
-We define the Riemann integral by saying that $A\coloneqq (R)\int_I
+We define the Riemann integral by saying that $A= (R)\int_I
 f(\bfx)d\bfx$ if $\lim_{\|\Gamma\|\to 0}R_\Gamma$ exists and equals
 $A$; that is, if given $\varepsilon>0$, there exists $\varepsilon>0$ such
 that $|A-R_\Gamma|<\varepsilon$ for any $\Gamma$ and any chosen
@@ -469,7 +469,7 @@ $x_0=a$, $x_m=b$, and $x_{i-1}<x_i$ for $i=1,\dotsc,m$. With each partition
 $\Gamma$ we associate the sum
 \begin{equation}
 \label{eq:variation-sums}
-S_\Gamma=S_\Gamma[f;a,b]\coloneqq\sum_{i=1}^m|f(x_i)-f(x_{i-1})|.
+S_\Gamma=S_\Gamma[f;a,b]=\sum_{i=1}^m|f(x_i)-f(x_{i-1})|.
 \end{equation}
 The \emph{variation of $f$ over $[a,b]$} is defined as
 \begin{equation}
@@ -496,7 +496,7 @@ previous example and the fact, to be proved, in Theorem 2.2, that
 $V=\sum_{i=1}^kV[a_i,a_{i+1}]$.
 \end{example}
 \begin{example}
-Let $f$ be defined by $f(x)\coloneqq 0$ when $x\neq 0$ and $f(0)\coloneqq
+Let $f$ be defined by $f(x)= 0$ when $x\neq 0$ and $f(0)=
 1$, and let $[a,b]$ be any interval containing $0$ in its interior. Then
 $S_\Gamma$ is either $2$ or $0$ depending on whether $x=0$ is a partition
 point or not. Thus, $V[a,b]=2$.
@@ -507,7 +507,7 @@ $\|\Gamma\|$, called the \emph{norm of $\Gamma$}, be defined as the longest
 subinterval of $\Gamma$:
 \begin{equation}
 \label{eq:eq:partition-norm}
-\|\Gamma\|\coloneqq\max_{i=1,\dotsc,m} x_i-x_{i-1}.
+\|\Gamma\|=\max_{i=1,\dotsc,m} x_i-x_{i-1}.
 \end{equation}
 If $f$ is continuous on $[a,b]$ and $\{\Gamma_j\}$ is a sequence of
 partitions $[a,b]$ with $\|\Gamma_j\|\to 0$, we shall see in Theorem 2.9
@@ -518,8 +518,8 @@ that $x=0$ is never a partition in the point, then $\lim S_{\Gamma_j}=0$,
 while if we choose the $\Gamma_j$ such that $x=0$ alternatively is and is
 not a point, then $\lim S_{\Gamma_j}$ does not exist.
 \begin{example}
-Let $f$ be the \emph{Dirichlet function}, defined by $f(x)\coloneqq 1$ for
-$x$ rational and $f(x)\coloneqq 0$ for $x$ irrational. Then, clearly,
+Let $f$ be the \emph{Dirichlet function}, defined by $f(x)= 1$ for
+$x$ rational and $f(x)= 0$ for $x$ irrational. Then, clearly,
 $V[a,b]=\infty$ for any interval $[a,b]$.
 \end{example}
 \begin{example}
@@ -660,8 +660,8 @@ $V[f;a,b]<\infty$. Let $c$ be a point in $[a,b]$ not equal to either
 endpoint $a$ or $b$.
 \end{proof}
 \begin{proof}[Proof of (ii)]
-Let $I\coloneqq [a,b]$, $I_I\coloneqq [a,c]$, $I_2\coloneqq [c,b]$,
-$V\coloneqq V[a,b]$, $V_1\coloneqq V[a,c]$, and $V_2\coloneqq V[c,b]$. If
+Let $I= [a,b]$, $I_I= [a,c]$, $I_2= [c,b]$,
+$V= V[a,b]$, $V_1= V[a,c]$, and $V_2= V[c,b]$. If
 $\Gamma_1$ and $\Gamma_2$ are any partitions of $I_1$ and $I_2$,
 respectively, then $\Gamma=\Gamma_1\cup\Gamma_2$ is one of $I$, and
 $S_\Gamma[I]=S_{\Gamma_1}[I_1]+S_{\Gamma_2}[I_2]$. Thus,
@@ -681,13 +681,13 @@ Therefore, $V\leq V_1+V_2$, which completes the proof of (ii).
 
 For any real number $x$, define
 \[
-x^+\coloneqq
+x^+=
 \begin{cases}
 x&\text{if $x>0$}\\
 0&\text{if $x\leq 0$}
 \end{cases},
 \qquad
-x^-\coloneqq
+x^-=
 \begin{cases}
 0&\text{if $x>0$}\\
 -x&\text{if $x\leq 0$}

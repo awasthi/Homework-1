@@ -6,7 +6,7 @@ Material covered since exam 2.
 If $f$ is a Riemann integrable function on an interval $[a,b]$ in $\bfR$,
 then the familiar definition of its indefinite integral is
 \[
-F(x)\coloneqq\int_a^x f(y)dy,\qquad a\leq x\leq b.
+F(x)=\int_a^x f(y)dy,\qquad a\leq x\leq b.
 \]
 The fundamental theorem of calculus asserts that $F'=f$ if $f$ is
 continuous. We will study an analogue of this result for Lebesgue
@@ -15,7 +15,7 @@ integrable $f$ and higher dimensions.
 We must first find an appropriate definition of the indefinite integral. In
 two dimensions, for example, we might choose
 \[
-F(x_1,x_2)\coloneqq\int_{a_1}^{x_1}\int_{a_2}^{x_2}f(y_1,y_2)dy_1dy_2.
+F(x_1,x_2)=\int_{a_1}^{x_1}\int_{a_2}^{x_2}f(y_1,y_2)dy_1dy_2.
 \]
 It turns out, however, to be better to abandon the notion that the
 indefinite integral be a function of point and adopt the idea that it be a
@@ -23,7 +23,7 @@ function of set. Thus, given $f\in L(A)$, where $A$ is a measurable
 subset of $\bfR^n$, we define the \emph{indefinite integral of $f$} to be
 the function
 \[
-F(E)\coloneqq\int_E f,
+F(E)=\int_E f,
 \]
 where $E$ is any measurable subset of $A$.
 
@@ -52,7 +52,7 @@ whenever the diameter of $E$ is less than $\delta$. An example of a
 function that is \emph{not} continuous can be obtained by setting $F(E)=1$
 for any measurable set that contains the origin, and $F(E)=0$
 otherwise.\footnote{Why is this function not continuous. Consider the
-  following argument: Let $\varepsilon=1/2$ and let $B_k\coloneqq
+  following argument: Let $\varepsilon=1/2$ and let $B_k=
   B(\mathbf{0},1/k)$. Then as the diameter of $B_k$ goes to zero,
   $F(B_k)=1$ for all $k$ so $F(B_k)\to 1>1/2$.}
 

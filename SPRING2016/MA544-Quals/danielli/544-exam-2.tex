@@ -8,9 +8,9 @@ exists a ball $B$, centered at the origin, such that
 \end{problem}
 \begin{proof}
 Recall that $f\in L(\bfR^n)$ if and only if $|f|\in
-L(\bfR^n)$. Let $B_k\coloneqq B(\mathbf{0},k)$ for $k\in\bfN$ and
+L(\bfR^n)$. Let $B_k= B(\mathbf{0},k)$ for $k\in\bfN$ and
 $\chi_{B_k}$ be the indicator function associated with $B_k$. Then, the
-sequence of maps $\left\{|f_k|\right\}$ defined $f_k\coloneqq f\chi_{B_k}$
+sequence of maps $\left\{|f_k|\right\}$ defined $f_k= f\chi_{B_k}$
 converge pointwise to $|f_k|$. Since $|f|\in L(\bfR^n)$, by the monotone
 convergence theorem, we have
 \begin{equation}
@@ -47,7 +47,7 @@ First, since the $E_j$'s are pairwise disjoint, by Theorem 3.23, we have
 |E|=\sum_{j=1}^\infty|E_j|.
 \end{equation}
 Let $\chi_{E_j}$ be the characteristic function of the subset $E_j$ of
-$E$ and define $f_j\coloneqq f\chi_{E_j}$ for $j\in\bfN$. Note that, since
+$E$ and define $f_j= f\chi_{E_j}$ for $j\in\bfN$. Note that, since
 both $f$ and $\chi_{E_j}$ are measurable on $E$, $f_j$ is
 measurable on $E$ and $\sum_{j=1}^\infty f_j=f$. Moreover, since
 $E_j\subset E$, by monotonicity of the integral we have
@@ -105,7 +105,7 @@ Letting $\varepsilon\to 0$, we achieved the desired convergence.
 \end{proof}
 
 \begin{problem}
-Let $I\coloneqq[0,1]$, $f\in L(I)$, and define $g(x)\coloneqq\int_x^1
+Let $I=[0,1]$, $f\in L(I)$, and define $g(x)=\int_x^1
 t^{-1}f(t) d  t$ for $x\in I$. Prove that $g\in L(I)$ and
 \[
 \int_I g=\int_I f.
@@ -113,7 +113,7 @@ t^{-1}f(t) d  t$ for $x\in I$. Prove that $g\in L(I)$ and
 \end{problem}
 \begin{proof}
 By Lusin's theorem, there exists a closed subset $F$ of $I$ with $|I\smallsetminus
-F|<\varepsilon$ such that the restriction of $f$ to $F\coloneqq I\smallsetminus E$
+F|<\varepsilon$ such that the restriction of $f$ to $F= I\smallsetminus E$
 is continuous. Now, since $F$ is closed in $I$ and $I$ is compact, it
 follows that $I$ is compact. Hence, by the Stone--Weierstraß approximation
 theorem, there exist a sequence of polynomials $\left\{ p_k \right\}$ such
