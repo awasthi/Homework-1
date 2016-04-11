@@ -19,8 +19,8 @@ we have $\overline{U\cap V}=X$ as desired.
 
 \begin{problem}
 Let $X$ be a set with two elements $\{a,b\}$. Give $X$ the
-\emph{indiscrete} topology. Give $X\times\bfR$ the product topology. Let
-$A\subset X\times\bfR$ be $(\{a\}\times[0,1])\cup(\{b\}\times(0,1))$. Prove
+\emph{indiscrete} topology. Give $X\times\bbR$ the product topology. Let
+$A\subset X\times\bbR$ be $(\{a\}\times[0,1])\cup(\{b\}\times(0,1))$. Prove
 that $A$ is compact.
 
 You may use the fact that a set is compact if every covering by
@@ -29,8 +29,8 @@ You may use the fact that a set is compact if every covering by
 \begin{proof}
 Let $\calU$ be an open cover of $A$ by basic open sets. Then each
 $U\in\calU$ is of the form $\{a,b\}\times V$ where $V$ is an open subset of
-$\bfR$. Then, the $V$'s, i.e., $\pi_2(U)$ where $\pi_2\colon
-X\times\bfR\to\bfR$ is an open map by previous work, form open cover of
+$\bbR$. Then, the $V$'s, i.e., $\pi_2(U)$ where $\pi_2\colon
+X\times\bbR\to\bbR$ is an open map by previous work, form open cover of
 $[0,1]$ (since $\bigcup_{U\in\calU} U\supset A$, we must have
 $\bigcup_{U\in\calU}\pi_2(U)\supset[0,1]$). Now, since $[0,1]$ is compact
 in $X$ there is a finite collection of the $V$'s, say
@@ -42,11 +42,11 @@ of $A$. Thus, $A$ is compact.
 \begin{problem}
 Let $B^2$ be the disk
 \[
-\left\{\,(x,y)\in\bfR^2:x^2+y^2\leq 1\,\right\}.
+\left\{\,(x,y)\in\bbR^2:x^2+y^2\leq 1\,\right\}.
 \]
 Let $S^1$ be the circle
 \[
-\left\{\,(x,y)\in\bfR^2:x^2+y^2=1\,\right\}.
+\left\{\,(x,y)\in\bbR^2:x^2+y^2=1\,\right\}.
 \]
 Prove that there is an equivalence relation $\sim$ such that $B^2$ is
 homeomorphic to $(S^1\times[0,1])/{\sim}$. As port of your proof explain
@@ -63,7 +63,7 @@ By the UMP of the quotient space, we need to find a continuous surjection
 $f\colon S^1\times[0,1]\to B^2$ that preserves the equivalence relation
 $\sim$. So consider the map $f(x,y,z)\coloneqq(zx,zy)$. This map is
 continuous by Theorem 18.4 since $\pi_1\circ f(x,y,z)=zx$ is multiplication
-on $\bfR$ and similarly for $\pi_2\circ f(x,y,z)$. Moreover, this map
+on $\bbR$ and similarly for $\pi_2\circ f(x,y,z)$. Moreover, this map
 preserves the equivalence relation: let $(x,y,z)\sim(x',y',z')$ then
 $(x,y,z)=(x',y',z')$ in which case
 \[
@@ -78,8 +78,8 @@ quotient space, the induced map $f'\colon (S^1\times[0,1])/{\sim}\to B^2$
 is continuous.
 
 Now, since $S^1\times[0,1]$ is closed and bounded, by Heine--Borel,
-$S^1\times[0,1]$ is a compact subset of $\bfR^3$. Therefore,
-$(S^1\times[0,1])/{\sim}$ is compact. Since $B^2\subset\bfR^2$ is
+$S^1\times[0,1]$ is a compact subset of $\bbR^3$. Therefore,
+$(S^1\times[0,1])/{\sim}$ is compact. Since $B^2\subset\bbR^2$ is
 Hausdorff, it suffices to show, by Theorem 26.6, that $f$ is bijective.
 
 It is eassy to see that $f$ is surjective since for any point
@@ -159,7 +159,7 @@ A\to E$ have a property that $\alpha(a)=\beta(a)$ and
 $p\circ\alpha=p\circ\beta$ then $\alpha=\beta$.
 
 For partial credit, you may assume that $p$ is the standard covering map
-from $\bfR$ to $S^1$.
+from $\bbR$ to $S^1$.
 \end{problem}
 \begin{proof}
 \end{proof}

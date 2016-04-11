@@ -58,13 +58,13 @@ measurable if and only if it has property $\calC$ on $E$.
 \end{theorem*}
 
 We start with a nonnegative function $f$ defined on a measurable subset $E$
-of $\bfR^n$. Let's
+of $\bbR^n$. Let's
 \begin{equation}
 \label{eq:graph-and-region}
 \begin{aligned}
-\Gamma(f,E)&=\left\{\,(\bfx,f(\bfx))\in\bfR^{n+1}:\text{$\bfx\in
+\Gamma(f,E)&=\left\{\,(\bfx,f(\bfx))\in\bbR^{n+1}:\text{$\bfx\in
     E$, $f(\bfx)<\infty$}\,\right\},\\
-R(f,E)&=\left\{\,(\bfx,y)\in\bfR^{n+1}:\text{$\bfx\in E$, $0\leq
+R(f,E)&=\left\{\,(\bfx,y)\in\bbR^{n+1}:\text{$\bfx\in E$, $0\leq
     y\leq f(\bfx)$ if $f(\bfx)<\infty$ and $0\leq y<\infty$ if
     $f(\bfx)=\infty$}\,\right\}.
 \end{aligned}
@@ -72,12 +72,12 @@ R(f,E)&=\left\{\,(\bfx,y)\in\bfR^{n+1}:\text{$\bfx\in E$, $0\leq
 $\Gamma(f,E)$ is called the \emph{graph of $f$ over $E$} and $R(f,E)$ the
 \emph{region under $f$ over $E$}.
 
-If $R(f,E)$ is measurable (as a subset of $\bfR^{n+1}$), its measure
-$|R(f,E)|_{\bfR^{n+1}}$ is called the \emph{Lebesgue integral over $E$},
+If $R(f,E)$ is measurable (as a subset of $\bbR^{n+1}$), its measure
+$|R(f,E)|_{\bbR^{n+1}}$ is called the \emph{Lebesgue integral over $E$},
 and we write
 \begin{equation}
 \label{eq:lebesgue-integral}
-\int_E f(\bfx) d \bfx=|R(f,E)|_{\bfR^{n+1}}.
+\int_E f(\bfx) d \bfx=|R(f,E)|_{\bbR^{n+1}}.
 \end{equation}
 This is sometimes written as
 \[
@@ -190,10 +190,10 @@ if $|f|$ is.
 If $f\in L(E)$, then $f$ is finite a.e.\@ in $E$.
 \end{theorem*}
 \begin{theorem*}[5.24]
-If $\int_E f$ exists and $E=\bigcup_{k\in\bfN} E_k$ is the countable union
+If $\int_E f$ exists and $E=\bigcup_{k\in\bbN} E_k$ is the countable union
 of disjoint measurable sets $E_k$, then
 \[
-\int_E f=\sum_{k\in\bfN}\int_{E_k}f.
+\int_E f=\sum_{k\in\bbN}\int_{E_k}f.
 \]
 \end{theorem*}
 \begin{theorem*}[5.25]
@@ -211,7 +211,7 @@ Let $\{f_k\}$ be a sequence of measurable functions on $E$:
 \end{enumerate}
 \end{theorem*}
 \begin{theorem*}[5.33, uniform convergence theorem]
-Let $f_k\in L(E)$ for $k\in\bfN$ and let $\{f_k\}$ converge uniformly to
+Let $f_k\in L(E)$ for $k\in\bbN$ and let $\{f_k\}$ converge uniformly to
 $f$ on $E$, $|E|<\infty$. Then $f\in L(E)$ and $\int_E f_k\to\int_E f$.
 \end{theorem*}
 \begin{theorem*}[5.34, Fatou's lemma]
@@ -234,7 +234,7 @@ then
 Let $\{f_k\}$ be a sequence of measurable functions on $E$ such that
 $f_k\to f$ a.e.\@ in $E$. If there exists $\varphi\in L(E)$ such that
 $|f_k|\leq\varphi$  such that $|f_k|\leq\varphi$ a.e.\@ in $E$ for all
-$k\in\bfN$, then $\int_E f_k\to\int_E f$.
+$k\in\bbN$, then $\int_E f_k\to\int_E f$.
 \end{theorem*}
 \begin{corollary*}[5.37, bounded convergence theeorem]
 Let $\{f_k\}$ be a sequence of measurable functions on $E$ such  that
@@ -256,23 +256,23 @@ Let $f(\bfx,\bfy)\in L(I)$, $I= I_1\times I_2$. Then
 \end{theorem*}
 \begin{theorem*}[6.8]
 Let $f(\bfx,\bfy)$ be a measurable function defined on a measurable subset
-$E$ of $\bfR^{n+m}$, and let $E_\bfx=\left\{ \,\bfy:(\bfx,\bfy)\in
+$E$ of $\bbR^{n+m}$, and let $E_\bfx=\left\{ \,\bfy:(\bfx,\bfy)\in
   E \,\right\}$.
 \begin{enumerate}[label=\textnormal{(\roman*)}]
-\item For almost every $\bfx\in \bfR^n$, $f(\bfx,\bfy)$ is a measurable
+\item For almost every $\bfx\in \bbR^n$, $f(\bfx,\bfy)$ is a measurable
   function of $\bfy$ on $E_\bfx$.
-\item If $f(\bfx,\bfy)\in L(E)$, then for almost every $\bfx\in\bfR^n$,
+\item If $f(\bfx,\bfy)\in L(E)$, then for almost every $\bfx\in\bbR^n$,
   $f(\bfx,\bfy)$ is an integrable on $E_\bfx$ with respect to $\bfy$;
   moreover $\int_{E_\bfx}f(\bfx,\bfy) d \bfy$ is an integrable function
   of $\bfx$ and
 \[
-\iint_E f(\bfx,\bfy) d \bfx d \bfy=\int_{\bfR^n}\left[\int_{E_\bfx}f(\bfx,\bfy) d \bfy\right]\! d \bfx.
+\iint_E f(\bfx,\bfy) d \bfx d \bfy=\int_{\bbR^n}\left[\int_{E_\bfx}f(\bfx,\bfy) d \bfy\right]\! d \bfx.
 \]
 \end{enumerate}
 \end{theorem*}
 \begin{theorem*}[6.10, Tonelli's theorem]
 Let $f(\bfx,\bfy)$ be nonnegative and measurable on an interval
-$I=I_1\times I_2$ of $\bfR^{n+m}$. Then, for almost every $\bfx\in I_1$,
+$I=I_1\times I_2$ of $\bbR^{n+m}$. Then, for almost every $\bfx\in I_1$,
 $f(\bfx,\bfy)$ is a measurable function of $\bfy$ on $I_2$. Moreover, as a
 function of $\bfx$, $\int_{I_2}f(\bfx,\bfy) d  \bfy$ is measurable on
 $I_1$, and
@@ -280,32 +280,32 @@ $I_1$, and
 \iint_I f(\bfx,\bfy) d \bfx d \bfy=\int_{I_1}\left[\int_{I_2}f(\bfx,\bfy) d \bfy\right]\! d \bfx
 \]
 \end{theorem*}
-If $f$ and $g$ are measurable in $\bfR^n$, their \emph{convolution
+If $f$ and $g$ are measurable in $\bbR^n$, their \emph{convolution
   $(f*g)(\bfx)$} is defined by
 \[
-(f*g)(\bfx)=\int_{\bfR^n}f(\bfx-\bfy)g(\bfy) d \bfy,
+(f*g)(\bfx)=\int_{\bbR^n}f(\bfx-\bfy)g(\bfy) d \bfy,
 \]
 provided the integral exists.
 \begin{theorem*}[6.14]
-If $f\in L(\bfR^n)$ and $g\in L(\bfR^n)$, then $(f*g)(\bfx)$ exists for
-almost every $\bfx\in\bfR^n$ and is measurable. Moreover, $f*\in
-L(\bfR^n)$ and
+If $f\in L(\bbR^n)$ and $g\in L(\bbR^n)$, then $(f*g)(\bfx)$ exists for
+almost every $\bfx\in\bbR^n$ and is measurable. Moreover, $f*\in
+L(\bbR^n)$ and
 \[
 \begin{aligned}
-\int_{\bfR^n}|f*g| d \bfx
-\leq{}&\left(\int_{\bfR^n}|f| d \bfx\right)\left(\int_{\bfR^n}|g| d \bfx\right)\\
-\int_{\bfR^n}(f*g)(\bfx) d \bfx
-={}&\left(\int_{\bfR^n}f d \bfx\right)\left(\int_{\bfR^n}g d \bfx\right).
+\int_{\bbR^n}|f*g| d \bfx
+\leq{}&\left(\int_{\bbR^n}|f| d \bfx\right)\left(\int_{\bbR^n}|g| d \bfx\right)\\
+\int_{\bbR^n}(f*g)(\bfx) d \bfx
+={}&\left(\int_{\bbR^n}f d \bfx\right)\left(\int_{\bbR^n}g d \bfx\right).
 \end{aligned}
 \]
 \end{theorem*}
 \begin{corollary*}[6.16]
-If $f$ and $g$ are nonnegative and measurable on $\bfR^n$, then $f*g$ is
-measurable on $\bfR^n$ and
+If $f$ and $g$ are nonnegative and measurable on $\bbR^n$, then $f*g$ is
+measurable on $\bbR^n$ and
 \[
-\int_{\bfR^n}(f*g) d \bfx=
-\left(\int_{\bfR^n} f d \bfx\right)
-\left(\int_{\bfR^n}g d \bfx\right).
+\int_{\bbR^n}(f*g) d \bfx=
+\left(\int_{\bbR^n} f d \bfx\right)
+\left(\int_{\bbR^n}g d \bfx\right).
 \]
 \end{corollary*}
 \begin{theorem*}[6.17, Marcinkiewicz]

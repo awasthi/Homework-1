@@ -1,32 +1,32 @@
 \section{MA 544 - Midterm 2}
 \begin{problem}
-Assume that $f\in L(\bfR^n)$. Show that for every $\varepsilon>0$ there
+Assume that $f\in L(\bbR^n)$. Show that for every $\varepsilon>0$ there
 exists a ball $B$, centered at the origin, such that
 \[
-\int_{\bfR^n\smallsetminus B}|f|<\varepsilon.
+\int_{\bbR^n\smallsetminus B}|f|<\varepsilon.
 \]
 \end{problem}
 \begin{proof}
-Recall that $f\in L(\bfR^n)$ if and only if $|f|\in
-L(\bfR^n)$. Let $B_k= B(\mathbf{0},k)$ for $k\in\bfN$ and
+Recall that $f\in L(\bbR^n)$ if and only if $|f|\in
+L(\bbR^n)$. Let $B_k= B(\mathbf{0},k)$ for $k\in\bbN$ and
 $\chi_{B_k}$ be the indicator function associated with $B_k$. Then, the
 sequence of maps $\left\{|f_k|\right\}$ defined $f_k= f\chi_{B_k}$
-converge pointwise to $|f_k|$. Since $|f|\in L(\bfR^n)$, by the monotone
+converge pointwise to $|f_k|$. Since $|f|\in L(\bbR^n)$, by the monotone
 convergence theorem, we have
 \begin{equation}
 \label{eq:monotonicity-2-1}
-\int_{\bfR^n} |f_k|=\int_{B_k}|f|\longrightarrow\int_{\bfR^n}|f|.
+\int_{\bbR^n} |f_k|=\int_{B_k}|f|\longrightarrow\int_{\bbR^n}|f|.
 \end{equation}
 But this means, exactly, that for every $\varepsilon>0$ there exists
-sufficiently large $N\in\bfN$ such that
+sufficiently large $N\in\bbN$ such that
 \begin{equation}
 \label{eq:desired-inequality-2-1}
 \begin{aligned}
-\varepsilon&>\left|\int_{\bfR^n}|f_k|-\int_{\bfR^n}|f|\right|\\
-={}&-\int_{\bfR^n}|f_k|+\int_{\bfR^n}|f|\\
-={}&-\int_{\bfR^n}|f|+\int_{\bfR^n}|f|\\
-={}&-\int_{B_k}|f|+\int_{\bfR^n}|f|\\
-={}&\int_{\bfR^n\smallsetminus B_k}|f|
+\varepsilon&>\left|\int_{\bbR^n}|f_k|-\int_{\bbR^n}|f|\right|\\
+={}&-\int_{\bbR^n}|f_k|+\int_{\bbR^n}|f|\\
+={}&-\int_{\bbR^n}|f|+\int_{\bbR^n}|f|\\
+={}&-\int_{B_k}|f|+\int_{\bbR^n}|f|\\
+={}&\int_{\bbR^n\smallsetminus B_k}|f|
 \end{aligned}
 \end{equation}
 as desired.
@@ -47,7 +47,7 @@ First, since the $E_j$'s are pairwise disjoint, by Theorem 3.23, we have
 |E|=\sum_{j=1}^\infty|E_j|.
 \end{equation}
 Let $\chi_{E_j}$ be the characteristic function of the subset $E_j$ of
-$E$ and define $f_j= f\chi_{E_j}$ for $j\in\bfN$. Note that, since
+$E$ and define $f_j= f\chi_{E_j}$ for $j\in\bbN$. Note that, since
 both $f$ and $\chi_{E_j}$ are measurable on $E$, $f_j$ is
 measurable on $E$ and $\sum_{j=1}^\infty f_j=f$. Moreover, since
 $E_j\subset E$, by monotonicity of the integral we have
@@ -73,7 +73,7 @@ implies
 \[
 \int_A |f_k|<\varepsilon
 \]
-for all $k\in\bfN$. Assume $|E|<\infty$, and $f_k(x)\to f(x)$ as
+for all $k\in\bbN$. Assume $|E|<\infty$, and $f_k(x)\to f(x)$ as
 $k\to\infty$ for a.e.\@ $x\in E$. Show that
 \[
 \lim_{k\to\infty}\int_E f_k=\int_E f.
@@ -89,7 +89,7 @@ implies
   \label{eq:hypothesis-2-3}
 \int_A |f_k|<\varepsilon
 \end{equation}
-for all $k\in\bfN$. By Egorov's theorem, there exists a closed subset $F$
+for all $k\in\bbN$. By Egorov's theorem, there exists a closed subset $F$
 of $E$ such that $|E\smallsetminus F|<\delta$ and $f_k\to f$ uniformly on
 $F$. Then, by the uniform convergence theorem,
 \begin{equation}
