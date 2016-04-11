@@ -101,7 +101,7 @@ $C$. Making a change of variables $\bfv=\bfx-\bfy$ gives us
 \begin{equation}
 \label{eq:10:change-of-var}
 |(f*\varphi_\varepsilon)(\bfx)-f(\bfx)|
-&\leq C\frac{M}{|Q_\varepsilon|}\int_{Q_\varepsilon+bfx}|f(\bfv)-f(\bfx)|d\bfvx,
+\leq C\frac{M}{|Q_\varepsilon|}\int_{Q_\varepsilon+bfx}|f(\bfv)-f(\bfx)|d\bfv,
 \end{equation}
 which goes to $0$ an $\varepsilon\to 0$ by Theorem 7.16 since $\bfx$ is a
 point in the Lebesgue set of $f$.
@@ -113,9 +113,25 @@ Show that if $\alpha>0$, then $x^\alpha$ is absolutely continuous on every
 bounded subinterval of $[0,\infty)$.
 \end{problem}
 \begin{proof}
+Recall that a function $f\colon[a,b]\to\bfR$ is absolutely continuous on
+$[a,b]$ if given $\varepsilon>0$, there exists $\delta>0$ such that for any
+collection $\{{[a_j,b_j]}\}$ of nonoverlapping subintervals of $[a,b]$,
+$\sum|b_i-a_i|<\delta$ implies $\sum|f(b_i)-f(a_i)|<\varepsilon$.
+
+Now, by Theorem 7.29 on the bounded interval $[a,b]\subset[0,\infty)$ we
+may write $F(x)=x^\alpha$ as the integral
+\begin{equation}
+\label{eq:10:int-rep}
+F(x)=\alpha\int_a^xx^{\alpha-1}+c
+\end{equation}
+for some finite constant $c$. Since constants and indefinite integrals are
+absolutely continuous, $F$ is absolutely continuous if we can show
+$x^{\alpha-1}$ is integrable on $[a,b]$. This is true unless $a=0$ and
+$\alpha<1$. If $a\neq 0$ and $\alpha\geq 1$, $x^{\alpha-1}$ is Riemann
+integrable and positive, so it is Lebesgue integrable and its Riemann
+integral equals its Lebesgue integral.
 \end{proof}
 \newpage
-
 
 \begin{problem}[Wheeden \& Zygmund {\S}7, Ex.\@ 8]
 Prove the following converse of Theorem 7.31: If $f$ is of bounded
@@ -123,6 +139,7 @@ variation on $[a,b]$, and if the function $V(x)=V[a,x]$ is absolutely
 continuous on $[a,b]$, then $f$ is absolutely continuous on $[a,b]$.
 \end{problem}
 \begin{proof}
+
 \end{proof}
 \newpage
 
@@ -137,6 +154,8 @@ to show that $V(x)$ is absolutely continuous and then use the result of
 Exercise 8).
 \end{problem}
 \begin{proof}
+(Sorry, I skipped this and the last one since I was at a conference and its
+easier to show things about concavity...)
 \end{proof}
 \newpage
 
@@ -144,7 +163,7 @@ Exercise 8).
 Use Jensen's inequality to prove that if $a,b\geq 0$, $p,q>1$,
 $(1/p)+(1/q)=1$, then
 \[
-ab\leq\frac{a^p}{p}+\frac{b^p}{q}.
+ab\leq\frac{a^p}{p}+\frac{b^q}{q}.
 \]
 More generally, show that
 \[
@@ -154,6 +173,29 @@ where $a_j\geq 0$, $p_j>1$, $\sum_{j=1}^N(1/p_j)=1$. (Write
 $a_j=e^{x_j/p_j}$ and use the convexity of $e^x$).
 \end{problem}
 \begin{proof}
+Suppose that $a$, $b$, $p$ and $q$ satisfy the conditions given in the
+statement of the problem. The claim is true if $a=0$ and $b=0$, so assume
+$a,b>0$. Set $t\coloneqq 1/p$ and $(1-t)=1/q$. Then, since the logarithm
+$\ln$ is strictly concave, we have
+\begin{equation}
+\label{eq:10:log-convex}
+\begin{aligned}
+\ln(ta^p+(1-t)b^q)
+&\geq t\ln(a^p)+(1-t)\ln(b^q)\\
+&=\ln(a)+\ln(b)\\
+&=\ln(ab).
+\end{aligned}
+\end{equation}
+Lastly, exponentiating the left and right inequalities in
+\eqref{eq:10:log-convex}, we have
+\begin{equation}
+\label{eq:10:exp-ineq}
+\begin{aligned}
+ab&\leq ta^p+(1-t)b^q\\
+&=\frac{a^p}{p}+\frac{b^q}{q}
+\end{aligned}
+\end{equation}
+as desired. The generalization follows from Jensen's inequality.
 \end{proof}
 \newpage
 
@@ -172,22 +214,53 @@ Recall the statement of Theorem 7.36
   $\varphi_k\to\varphi$ in $(a,b)$, then $\varphi$ is convex in $(a,b)$.
 \end{enumerate}
 \end{theorem*}
-\end{proof}
 
-% \begin{problem}[Wheeden \& Zygmund {\S}7, Ex.\@ 11]
-% Prove the following result concerning changes of variable. Let $g(t)$ be
-% monotone increasing and absolutely continuous on $[\alpha,\beta]$ and let $f$
-% be integrable on $[a,b]$, $a= g(\alpha)$, $b=
-% g(\beta)$. Then $f(g(t))g'(t)$ is measurable and integrable on
-% $[\alpha,\beta]$, and
-% \[
-% \int_a^b f(x)d x=\int_\alpha^\beta f(g(t))g'(t)d t.
-% \]
-% (Consider the case when $f$ is the characteristic function of an interval,
-% an open set, etc.)
-% \end{problem}
-% \begin{proof}
-% \end{proof
+\bigskip
+
+(i) Let $x,y\in(a,b)$ and $\varphi_1$ and $\varphi_2$ be convex. Then
+for every $t\in[0,1]$, we have
+\begin{equation}
+\label{eq:10:sum-convex}
+\begin{aligned}
+\varphi_1(tx+(1-t)y)+\varphi_2(tx+(1-t)y)
+&\leq t\varphi_1(x)+(1-t)\varphi_1(y)+t\varphi_2(x)+(1-t)\varphi_2(y)\\
+&=t(\varphi_1(x)+\varphi_2(x))+(1-t)(\varphi_1(y)+\varphi_2(y)).
+\end{aligned}
+\end{equation}
+Hence, $\varphi_1+\varphi_2$ is convex.
+\\\\
+(ii) Let $c>0$. Then for all $t\in[0,1]$, we have
+\begin{equation}
+\label{eq:10:const-mult-conv}
+\begin{aligned}
+c\varphi(tx+(1-t)y)
+&\leq ct\varphi(x)+c(1-t)\varphi(y)\\
+&=c(t\varphi(x)+(1-t)\varphi(y))
+\end{aligned}
+\end{equation}
+So $c\varphi$ is convex.
+\\\\
+(iii) For $t\in[0,1]$ and all $k\geq 1$, we have
+\begin{equation}
+\label{eq:10:seq-conv}
+\begin{aligned}
+\varphi_k(tx+(1-t)y)
+&\leq t\varphi_k(x)+(1-t)\varphi_k(y).
+\end{aligned}
+\end{equation}
+Letting $k\to\infty$, since $\varphi_k\to\varphi$ pointwise on $(a,b)$, we
+have
+\begin{equation}
+\label{eq:10:conv-convergence}
+\begin{aligned}
+\varphi(tx+(1-t)y)
+&=\lim_{k\to\infty} \varphi_k(tx+(1-t)y)\\
+&\leq\lim_{k\to\infty}\left[{t\varphi_k(x)+(1-t)\varphi_k(y)}\right]\\
+&=t\varphi(x)+(1-t)\varphi(y).
+\end{aligned}
+\end{equation}
+Hence $\varphi$ is convex on $(a,b)$.
+\end{proof}
 
 %%% Local Variables:
 %%% mode: latex
