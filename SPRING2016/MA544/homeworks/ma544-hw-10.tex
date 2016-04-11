@@ -6,8 +6,35 @@ positive measure. Show that there is a positive constant $c$ such that
 $f^*(\bfx)\geq c\|\bfx\|^{-n}$ for $\|\bfx\|\geq 1$.
 \end{problem}
 \begin{proof}
-Suppose $f$ is a measurable real-valued function, i.e., for every finite
-$a\in\bfR$, $\left\{\,f>a\,\right\}$.
+Suppose that $f$ is measurable and nonzero on a subset $E$ of $\bfR^n$ with
+positive measure. Assume $E$ is bounded. Since $f$ is measurable $|f|$ is
+measurable so the set $E_a\coloneqq \left\{\,\bfx\in
+  E:|f|(\bfx)>a\,\right\}$, for $a$ finite, is a measurable bounded subset
+of $\bfR^n$. Let $\chi_a$ denote the characteristic function of
+$E_a$. Then, by Chebyshev's inequality, we have
+\begin{equation}
+\label{eq:10:bound-by-chebyshev}
+\begin{aligned}
+{\chi_a}^*(\bfx)
+&=\sup_Q\frac{1}{|Q|}\int_Q|\chi_a(\bfy)|d\bfy\\
+&\leq\sup_Q\frac{1}{|Q|}\left[\frac{1}{a}\int_Q|f(\bfy)|d\bfy\right]\\
+&=\frac{1}{a}f^*(\bfx).
+\end{aligned}
+\end{equation}
+By the commentary on p.\@ 138, there exists constants $c_1$ and $c_2$ such
+that
+\begin{equation}
+\label{eq:10:bound-by-characteristic}
+c_1\frac{|E_a|}{\|\bfx\|^n}\leq{\chi_a}^*(\bfx)\leq c_2\frac{|E_a|}{\|\bfx\|^n}
+\end{equation}
+for all large $\|\bfx\|$. Putting \eqref{eq:10:bound-by-chebyshev} and
+\eqref{eq:10:bound-by-characteristic} together, we obtain
+\begin{equation}
+  \label{eq:lower-bound-maximal-fun}
+ac_1\frac{|E_a|}{\|\bfx\|^n}\leq f^*(\bfx).
+\end{equation}
+Setting $c\coloneqq ac_1|E|$, we have the desired lower bound
+$c\|\bfx\|^{-n}\leq f^*(\bfx)$ (assuming $\|\bfx\|$ is large).
 \end{proof}
 \newpage
 
@@ -19,7 +46,7 @@ $\varphi_\varepsilon(\bfx)=\varepsilon^{-n}\varphi(\bfx/\varepsilon)$. ($\varphi
 is called an \emph{approximation to the identity}.) If $f\in L(\bfR^n)$,
 show that
 \[
-\lim_{\varepsilon\to 0}(f*\varphi_\varepsilon)(x)=f(\bfx)
+\lim_{\varepsilon\to 0}(f*\varphi_\varepsilon)(\bfx)=f(\bfx)
 \]
 in the Lebesgue set of $f$. (Note that $\int\varphi_\varepsilon=1$,
 $\varepsilon>0$, so that
@@ -29,6 +56,55 @@ $\varepsilon>0$, so that
 Use Theorem 7.16.)
 \end{problem}
 \begin{proof}
+First note that, making the change of variables $\bfu=\bfx/\varepsilon$
+(with Jacobian $\Jac(\bfx,\bfu)=\varepsilon^n$), we
+have
+\begin{equation}
+\label{eq:10:change-of-vars}
+\begin{aligned}
+\int\varphi_\varepsilon(\bfx)d\bfx
+&=\int\varepsilon^{-n}\varphi(\bfx/\varepsilon)d\bfx\\
+&=\int_{B(\mathbf{0},\varepsilon)}\varepsilon^{-n}\varphi(\bfx/\varepsilon)d\bfx\\
+&=\int_{B(\mathbf{0},1)}\varphi(\bfu)d\bfu\\
+&=\int\varphi(\bfx)d\bfu\\
+&=1.
+\end{aligned}
+\end{equation}
+Hence, by the hint and the definition of the convolution, we have
+\begin{equation}
+\label{eq:10:convolution-hint}
+\begin{aligned}
+\left|(f*\varphi_\varepsilon)(\bfx)-f(\bfx)\right|
+&=\left|\int[f(\bfx-\bfy)-f(\bfx)]\varphi_\varepsilon(\bfx)d\bfx\right|\\
+&=\left|\int_{B(\mathbf{0},\varepsilon)}[f(\bfx-\bfy)-f(\bfx)]\varphi_\varepsilon(\bfx)d\bfx\right|\\
+&\leq\int_{B(\mathbf{0},\varepsilon)}\left|{[f(\bfx-\bfy)-f(\bfx)]\varphi_\varepsilon(\bfx)}\right|d\bfx.
+\end{aligned}
+\end{equation}
+Now, since $\varphi$ is bounded, say by $M$, we have
+\begin{align}
+\label{eq:10:bound-estimates}
+\varphi_\varepsilon(\bfy)=\varepsilon^{-n}\varphi(\bfx/\varepsilon)\leq M.
+\end{align}
+Then, we have an estimate on \eqref{eq:10:convolution-hint}
+\begin{equation}
+\label{eq:10:better-estimate}
+\begin{aligned}
+\int_{B(\mathbf{0},\varepsilon)}\left|{[f(\bfx-\bfy)-f(\bfx)]\varphi_\varepsilon(\bfx)}\right|d\bfx
+&\leq\frac{M}{\varepsilon^n}\int_{B\mathbf{0},\varepsilon}\left|f(\bfx-\bfy)-f(\bfx)\right|\\
+&\leq\frac{M}{\varepsilon^n}\int_{B(\mathbf{0},\varepsilon)}\left|f(\bfx-\bfy)-f(\bfx)\right|.
+\end{aligned}
+\end{equation}
+Now, let $Q_\varepsilon$ be the larges cube centered at $\bfx$ contained in
+$B(\mathbf{0},\bfx)$. Then, as we have previously shown, the volume of
+$Q_\varepsilon$ is $C\varepsilon^n$ for some positive real number
+$C$. Making a change of variables $\bfv=\bfx-\bfy$ gives us
+\begin{equation}
+\label{eq:10:change-of-var}
+|(f*\varphi_\varepsilon)(\bfx)-f(\bfx)|
+&\leq C\frac{M}{|Q_\varepsilon|}\int_{Q_\varepsilon+bfx}|f(\bfv)-f(\bfx)|d\bfvx,
+\end{equation}
+which goes to $0$ an $\varepsilon\to 0$ by Theorem 7.16 since $\bfx$ is a
+point in the Lebesgue set of $f$.
 \end{proof}
 \newpage
 
@@ -111,7 +187,7 @@ Recall the statement of Theorem 7.36
 % an open set, etc.)
 % \end{problem}
 % \begin{proof}
-% \end{proof}
+% \end{proof
 
 %%% Local Variables:
 %%% mode: latex
