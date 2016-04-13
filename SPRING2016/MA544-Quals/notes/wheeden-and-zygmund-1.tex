@@ -19,8 +19,8 @@ two possibilities. If $\left\{E_k\right\}_{k=1}^\infty$ is a sequence of
 sets, we define
 \begin{equation}
 \label{eq:limsup-liminf-sets}
-\limsup E_k=\bigcap_{j=1}^\infty\bigcup_{k=j}^\infty E_k,\qquad
-\liminf E_k=\bigcup_{j=1}^\infty\bigcap_{k=j}^\infty E_k,
+\limsup E_k\coloneqq\bigcap_{j=1}^\infty\bigcup_{k=j}^\infty E_k,\qquad
+\liminf E_k\coloneqq\bigcup_{j=1}^\infty\bigcap_{k=j}^\infty E_k,
 \end{equation}
 noting that the sets $U_j=\bigcup_{k=j}^\infty E_k$ and
 $V_j=\bigcap_{k=j}^\infty E_k$ satisfy $U_j\searrow\limsup E_k$ and
@@ -120,7 +120,7 @@ We can also use the metric on $\bbR$ to define the \emph{diameter of a set
   $E$} by letting
 \begin{equation}
   \label{eq:diameter-of-set}
-\diam E=\left\{\,\|\bfx-\bfy\|:\bfx,\bfy\in E\,\right\}.
+\diam E\coloneqq\left\{\,\|\bfx-\bfy\|:\bfx,\bfy\in E\,\right\}.
 \end{equation}
 If the diameter of $E$ is finite, $E$ is said to be
 \emph{bounded}. Equivalently, $E$ is bounded if there is a finite constant
@@ -128,13 +128,13 @@ $M$ such  that $\|\bfx\|\leq M$ for all $\bfx\in E$. If $E_1$ and $E_2$ are
 two sets, the \emph{distance between $E_1$ and $E_2$} is defined by
 \begin{equation}
   \label{eq:distance-e-1-e-2}
-d(E_1,E_2)=\inf\left\{\,\|\bfx-\bfy\|:\bfx\in E_1,\bfy\in E_2\,\right\}.
+d(E_1,E_2)\coloneqq\inf\left\{\,\|\bfx-\bfy\|:\bfx\in E_1,\bfy\in E_2\,\right\}.
 \end{equation}
 
 For $\bfx\in\bbR^n$ and $\delta>0$, the set
 \begin{equation}
 \label{eq:open-ball-r-n}
-B(\bfx,\delta)=\left\{\,\bfy:\|bfx-\bfy\|<\delta\,\right\}
+B(\bfx,\delta)\coloneqq\left\{\,\bfy:\|bfx-\bfy\|<\delta\,\right\}
 \end{equation}
 is called the \emph{open ball with center $\bfx$ and radius $\delta$}. A
 point $\bfx$ of a set $E$ is called an \emph{interior point} of $E$ if
@@ -150,7 +150,7 @@ A set $E$ is called \emph{closed} if $\complement E$ is open. Note that
 $\emptyset$ and $\bbR^n$ are closed. Closed sets will generally be denoted
 by the letter $F$. The union of a set $E$ and all its limit points is
 called the \emph{closure} of $E$ and written $\bar E$. By the
-\emph{boundary} of $E$, we mean $\partial E= \bar E\smallsetminus
+\emph{boundary} of $E$, we mean $\partial E\coloneqq\bar E\setminus
 E^\circ$.
 \begin{theorem}[1.5]
 \begin{enumerate}[label=\textnormal{(\roman*)}]
@@ -212,7 +212,7 @@ $I=\left\{\,(x_1,\dotsc,x_n):\text{$a_k\leq x_k\leq b_k$,
     $k=1,\dotsc,n$}\,\right\}$ is
 \begin{equation}
   \label{eq:volume-i}
-\vol(I)=\prod_{k=1}^n(b_k-a_k).
+\Vol(I)\coloneqq\prod_{k=1}^n(b_k-a_k).
 \end{equation}
 
 More generally, if ${\{\bfe_k\}}_{k=1}^n$ is any given set of $n$ vectors
@@ -220,16 +220,16 @@ emanating from a point in $\bbR^n$, we will consider the closed
 \emph{parallelepiped}
 \begin{equation}
   \label{eq:parallelepiped}
-P=\left\{\,\bfx:\text{$\bfx=\sum_{k=1}^n t_k\bfe_k$, $0\leq t_k\leq
+P\coloneqq\left\{\,\bfx:\text{$\bfx=\sum_{k=1}^n t_k\bfe_k$, $0\leq t_k\leq
     1$}\,\right\}.
 \end{equation}
 Note that the edges of $P$ are parallel translates of $\bfe_k$. Thus, $P$
 is an interval if the $\bfe_k$ are parallel to the coordinate axes. The
-\emph{volume $\vol P$} of $P$ is \emph{by definition} the absolute value of
+\emph{volume $\Vol P$} of $P$ is \emph{by definition} the absolute value of
 the $n\times n$ determinant having $\bfe_1,\dotsc,\bfe_n$ as rows. In case
 $P$ is an interval, this definition agrees with the one given earlier. A
 linear transformation $T$ of $\bbR^n$ transforms a parallelapiped $P$ into
-a parallelapiped $P'$ with volume $\vol P'=|\det T|\vol P$. In particular,
+a parallelapiped $P'$ with volume $\Vol P'=|\det T|\Vol P$. In particular,
 rotation of the axes in $\bbR^n$ does not change the volume of a
 parallelapiped.
 
@@ -322,13 +322,13 @@ $x<y$ and $x,y\in I$. By \emph{strictly} monotone increasing (decreasing),
 we mean that $f(x)<f(y)$ [$f(x)>f(y)$] if $x<y$ and $x,y\in I$.
 
 Let $f$ be defined on $E\subset\bbR^n$ and let $\bfx_0$ be a limit point of
-$E$. Let $B'(\bfx_0,\delta)= B(\bfx_0,\delta)\smallsetminus\{\bfx_0\}$
+$E$. Let $B'(\bfx_0,\delta)= B(\bfx_0,\delta)\setminus\{\bfx_0\}$
 denote the punctured ball with center $\bfx_0$ and radius $\delta$, and let
 \begin{equation}
 \label{eq:sup-inf-ball}
-M(\bfx_0,\delta)=\sup_{\bfx\in B'(\bfx_0,\delta)\cap E}
+M(\bfx_0,\delta)\coloneqq\sup_{\bfx\in B'(\bfx_0,\delta)\cap E}
 f(\bfx),\qquad
-m(\bfx_0,\delta)=\inf_{\bfx\in B'(\bfx_0,\delta)\cap E}
+m(\bfx_0,\delta)\coloneqq\inf_{\bfx\in B'(\bfx_0,\delta)\cap E}
 f(\bfx).
 \end{equation}
 As $\delta\searrow 0$, $M(\bfx_0,\delta)$ decreases and $m(\bfx_0,\delta)$
@@ -345,12 +345,12 @@ increases, and we define
 \begin{theorem}[1.14]
 \begin{enumerate}[label=\textnormal{(\alph*)}]
 \item $M=\limsup_{\bfx\to\bfx_0;\bfx\in E} f(\bfx)$ if and only if
-  \textnormal{(i)} there exist ${\bfx_k}$ in $E\smallsetminus\{\bfx_0\}$ such that
+  \textnormal{(i)} there exist ${\bfx_k}$ in $E\setminus\{\bfx_0\}$ such that
   $\bfx_k\to\bfx_0$ and $f(\bfx_k)\to M$ and \textnormal{(ii)} if $M'>M$,
   there exists $\delta>0$ such that $f(\bfx)<M'$ for $\bfx\in
   B'(\bfx_0,\delta)\cap E$.
 \item $m=\liminf_{\bfx\to\bfx_0;\bfx\in E} f(\bfx)$ if and only if
-  \textnormal{(i)} there exist ${\bfx_k}$ in $E\smallsetminus\{\bfx_0\}$ such that
+  \textnormal{(i)} there exist ${\bfx_k}$ in $E\setminus\{\bfx_0\}$ such that
   $\bfx_k\to\bfx_0$ and $f(\bfx_k)\to m$ and \textnormal{(ii)} if $m'<m$,
   there exists $\delta>0$ such that $f(\bfx)>m'$ for $\bfx\in
   B'(\bfx_0,\delta)\cap E$.
@@ -367,8 +367,8 @@ $f(\bfx_0)$.
 For functions on $\bbR$, we will use the notation
 \begin{equation}
   \label{eq:continuous-function}
-f(x_0+)=\lim_{\substack{x\to x_0\\x>x_0}}f(x)\qquad
-f(x_0-)=\lim_{\substack{x\to x_0\\x<x_0}}f(x).
+f(x_0+)\coloneqq\lim_{\substack{x\to x_0\\x>x_0}}f(x)\qquad
+f(x_0-)\coloneqq\lim_{\substack{x\to x_0\\x<x_0}}f(x).
 \end{equation}
 for the \emph{right-} and \emph{left-hand limits} of $f$ at $x_0$, when
 they exist. If $f(x_0+)$, $f(x_0-)$, and $f(x_0)$ exist and are finite, but
@@ -441,10 +441,10 @@ I_k$. Select a point $\vec\xi_k$ in $I_k$ for $k\geq 1$, and let
 \begin{equation}
 \label{eq:riemannian-integral-partitions}
 \begin{aligned}
-R_\Gamma(\vec\xi_1,\dotsc,\vec\xi_n)&=\sum_{k=1}^N f(\vec\xi_k)\vol(I_k)\\
-U_\Gamma(\vec\xi_1,\dotsc,\vec\xi_n)&=\sum_{k=1}^N\left[\sup_{\bfx\in I}
+R_\Gamma(\vec\xi_1,\dotsc,\vec\xi_n)&\coloneqq\sum_{k=1}^N f(\vec\xi_k)\vol(I_k)\\
+U_\Gamma(\vec\xi_1,\dotsc,\vec\xi_n)&\coloneqq\sum_{k=1}^N\left[\sup_{\bfx\in I}
   f(\bfx)\right]\vol(I_k)\\
-L_\Gamma(\vec\xi_1,\dotsc,\vec\xi_n)&=\sum_{k=1}^N\left[\inf_{\bfx\in
+L_\Gamma(\vec\xi_1,\dotsc,\vec\xi_n)&\coloneqq\sum_{k=1}^N\left[\inf_{\bfx\in
     I_k}f(\bfx)\right]\vol(I_k).
 \end{aligned}
 \end{equation}
@@ -704,8 +704,8 @@ Given a finite function $f$ on $[a,b]$ and a partition
 $\Gamma={\{x_i\}}_{i=0}^\infty$ of $[a,b]$, define
 \[
 \begin{aligned}
-P_\Gamma&=P_\Gamma[f;a,b]=\sum_{i=1}^m{[f(x_i)-f(x_{i-1})]}^+\\
-N_\Gamma&=N_\Gamma[f;a,b]=\sum_{i=1}^m{[f(x_i)-f(x_{i-1})]}^-
+P_\Gamma&=P_\Gamma[f;a,b]\coloneqq\sum_{i=1}^m{[f(x_i)-f(x_{i-1})]}^+\\
+N_\Gamma&=N_\Gamma[f;a,b]\coloneqq\sum_{i=1}^m{[f(x_i)-f(x_{i-1})]}^-
 \end{aligned}
 \]
 Thus, $P_\Gamma$ is the sum of the positive terms of $S_\Gamma$, and

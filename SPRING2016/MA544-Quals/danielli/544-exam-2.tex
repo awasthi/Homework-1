@@ -3,7 +3,7 @@
 Assume that $f\in L(\bbR^n)$. Show that for every $\varepsilon>0$ there
 exists a ball $B$, centered at the origin, such that
 \[
-\int_{\bbR^n\smallsetminus B}|f|<\varepsilon.
+\int_{\bbR^n\setminus B}|f|<\varepsilon.
 \]
 \end{problem}
 \begin{proof}
@@ -26,7 +26,7 @@ sufficiently large $N\in\bbN$ such that
 ={}&-\int_{\bbR^n}|f_k|+\int_{\bbR^n}|f|\\
 ={}&-\int_{\bbR^n}|f|+\int_{\bbR^n}|f|\\
 ={}&-\int_{B_k}|f|+\int_{\bbR^n}|f|\\
-={}&\int_{\bbR^n\smallsetminus B_k}|f|
+={}&\int_{\bbR^n\setminus B_k}|f|
 \end{aligned}
 \end{equation}
 as desired.
@@ -54,11 +54,11 @@ $E_j\subset E$, by monotonicity of the integral we have
 \begin{equation}
 \label{eq:monotonicity-2-2}
 \int_{E} f=
-\int_{E_j} f+\int_{E\smallsetminus E_j}f=
-\int_E f_j+\int_{E\smallsetminus E_j}f.
+\int_{E_j} f+\int_{E\setminus E_j}f=
+\int_E f_j+\int_{E\setminus E_j}f.
 \end{equation}
-Hence, because the $E_j$'s are disjoint $(E\smallsetminus E_k)\smallsetminus
-E_\ell=(E\smallsetminus E_\ell)\smallsetminus E_k$ so
+Hence, because the $E_j$'s are disjoint $(E\setminus E_k)\setminus
+E_\ell=(E\setminus E_\ell)\setminus E_k$ so
 \begin{equation}
 \label{eq:desired-sum-2}
 \int_E f=\sum_{j=1}^\infty\int_E f_j=\sum_{j=1}^\infty\int_{E_j}f
@@ -90,7 +90,7 @@ implies
 \int_A |f_k|<\varepsilon
 \end{equation}
 for all $k\in\bbN$. By Egorov's theorem, there exists a closed subset $F$
-of $E$ such that $|E\smallsetminus F|<\delta$ and $f_k\to f$ uniformly on
+of $E$ such that $|E\setminus F|<\delta$ and $f_k\to f$ uniformly on
 $F$. Then, by the uniform convergence theorem,
 \begin{equation}
 \label{eq:uniform-convergence-2-3}
@@ -99,7 +99,7 @@ $F$. Then, by the uniform convergence theorem,
 as $k\to\infty$. But by hypothesis, we have
 \begin{equation}
 \label{eq:need-to-show-2-}
-\int_{E\smallsetminus F} |f_k|<\varepsilon.
+\int_{E\setminus F} |f_k|<\varepsilon.
 \end{equation}
 Letting $\varepsilon\to 0$, we achieved the desired convergence.
 \end{proof}
@@ -112,8 +112,8 @@ t^{-1}f(t) d  t$ for $x\in I$. Prove that $g\in L(I)$ and
 \]
 \end{problem}
 \begin{proof}
-By Lusin's theorem, there exists a closed subset $F$ of $I$ with $|I\smallsetminus
-F|<\varepsilon$ such that the restriction of $f$ to $F= I\smallsetminus E$
+By Lusin's theorem, there exists a closed subset $F$ of $I$ with $|I\setminus
+F|<\varepsilon$ such that the restriction of $f$ to $F= I\setminus E$
 is continuous. Now, since $F$ is closed in $I$ and $I$ is compact, it
 follows that $I$ is compact. Hence, by the Stone--Weierstraß approximation
 theorem, there exist a sequence of polynomials $\left\{ p_k \right\}$ such

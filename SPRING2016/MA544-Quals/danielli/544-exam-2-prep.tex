@@ -11,7 +11,7 @@ f(\bfx)=
 Prove that $f$ is integrable outside any ball $B_\varepsilon(\mathbf{0})$,
 and that there exists a constant $C>0$ such that
 \[
-\int_{\bbR^n\smallsetminus B_\varepsilon(\mathbf{0})}f(\bfx) d \bfx\leq\frac{C}{\varepsilon}.
+\int_{\bbR^n\setminus B_\varepsilon(\mathbf{0})}f(\bfx) d \bfx\leq\frac{C}{\varepsilon}.
 \]
 \end{problem}
 \begin{proof}
@@ -22,7 +22,7 @@ $L(E)$) if
 \int_E f(\bfx) d \bfx<\infty.
 \]
 
-Put $E=\bbR^n\smallsetminus B_\varepsilon(\mathbf{0})$. Then, to show that
+Put $E=\bbR^n\setminus B_\varepsilon(\mathbf{0})$. Then, to show that
 $f$ belongs to $L(E)$ it suffices to prove the inequality
 \begin{equation}
 \label{eq:eq:inequality-1}
@@ -160,7 +160,7 @@ $F_k=\left\{\,\bfx\in E:f(\bfx)\geq k\,\right\}$. Note the
 following properties about the sets we have just defined: first, the
 $E_k$'s are pairwise disjoint and the $F_k$'s are nested in the following
 way $F_{k+1}\subset F_k$; second, $E=\bigcup_{k=1}^\infty E_k$ and
-$E_k=F_k\smallsetminus F_{k+1}$. By Theorem 3.23, since the $E_k$'s are disjoint,
+$E_k=F_k\setminus F_{k+1}$. By Theorem 3.23, since the $E_k$'s are disjoint,
 we have
 \begin{equation}
   \label{eq:disjoint-measurable-sets-3}
@@ -178,7 +178,7 @@ over $E$
 \label{eq:upper-lower-estimates-3}
 \sum_{k=0}^\infty k|E_k|\leq\int_E f(\bfx) d \bfx\leq\sum_{k=0}^\infty(k+1)|E_k|.
 \end{equation}
-But note that $|E_k|=|F_k\smallsetminus F_{k+1}|=|F_k|-|F_{k+1}|$ by Corollary 3.25
+But note that $|E_k|=|F_k\setminus F_{k+1}|=|F_k|-|F_{k+1}|$ by Corollary 3.25
 since the measures of $E_k$, $F_k$, and $F_{k+1}$ are all finite. Hence,
 \eqref{eq:upper-lower-estimates-3} becomes
 \begin{equation}
