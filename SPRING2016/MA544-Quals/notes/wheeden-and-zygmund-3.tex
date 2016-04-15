@@ -148,41 +148,110 @@ derivative $f'$ a.e.\@ in $(a,b)$. Moreover,
 0\leq\int_a^b f'\leq f(b-)-f(a+).
 \]
 \end{theorem}
+% \begin{proof}
+% We may assume that $(a,b)$ is finite; the general case follows from this by
+% passage to the limit: We will show that the set
+% $\left\{\,x\in(a,b):D_1f(x)>D_4f(x)\,\right\}$ has measure zero. A similar
+% argument will apply to any two Dini numbers of $f$. It is enough to show
+% that each set
+% \[
+% A_{r,s}\coloneqq\left\{\,x\in(a,b):D_1f(x)>r>s>D_4f(x)\,\right\}
+% \]
+% has measure zero since the original set is the union of these over rational
+% $r$ and $s$.
+
+% Fix $r$ and $s$ with $r>s>0$, write $A\coloneqq A_{r,s}$ and suppose that
+% $|A|_e>0$. If $x\in A$, the fact that $D_4f(x)<s$ implies the existence of
+% an arbitrarily small $h>0$\footnote{How can we see this? Well recall from
+%   the definition of the $4$-th Dini number that $D_4f(x)=\limsup_{h\to
+%     0-}[f(x+h)-f(x)]/h$. So really we have that
+% \[
+% \limsup_{h\to 0-}\frac{f(x+h)-f(x)}{h}<s
+% \]
+% so certainly for $\frac{f(x+h)-f(x)}{h}$ sufficiently close to zero the
+% following statement holds. However, why can the quotient get arbitrarily
+% small? Actually, it is because $f$ is monotone increasing.} such that
+% \[
+% \frac{f(x-h)-f(x)}{-h}<s.
+% \]
+% By Corollary 7.18 and 7.19, given $\varepsilon>0$, there exists disjoint
+% intervals $[x_j-h_j,x_j]$, $j=1,\dotsc,N$, such that
+% \begin{enumerate}[label=(\roman*)]
+% \item $f(x_j)-f(x_j-h_j)<sh_j$, $j=1,\dotsc,N$,
+% \item $\left|A\cap\bigcup_{j=1}^N[x_j-h_j,x_j]\right|>|A|_e-\varepsilon$,
+% \item $\sum_{j=1}^N h_j<(1+\varepsilon)|A|_e$.
+% \end{enumerate}
+% Combining (i) and (ii), we have
+% \[
+% \sum_{j=1}^N\left[f(x_j)-f(x_j-h_j)\right]<s(1+\varepsilon)|A|_e.
+% \]
+% Let $B\coloneqq A\cap\bigcup_{j=1}^N[x_j-h_j,x_j]$. By (ii),
+% $|B|_e>|A|_e-\varepsilon$. For every $y\in B$ that is not an endpoint of
+% some $[x_j-h_j,x_j]$, the fact that $D_1f(y)>r$ implies that there exists
+% arbitrarily small $k>0$ such that $[y,y+k]$ lies in some $[x_j-h_j,x_j]$
+% and
+% \[
+% \frac{f(y+k)-f(y)}{k}>r.
+% \]
+% Hence, by Corollary 7.18 and 7.20, there exists disjoint $[y_i,y_i+k_i]$,
+% $i=1,\dotsc,M$, such that
+% \end{proof}
+
+\begin{corollary}[7.23]
+If $f$ is of bounded variation on $[a,b]$, then $f'$ exists a.e.\@ in
+$[a,b]$, and $f'\in L[a,b]$.
+\end{corollary}
+
+\begin{theorem}[7.24]
+If $f$ is of bounded variation on $[a,b]$ and $V(x)$ is the variation of
+$f$ on $[a,b]$, $a\leq x\leq b$, then
+\[
+V'(x)=|f'(x)|
+\]
+for a.e.\@ $x\in[a,b]$.
+\end{theorem}
+\begin{lemma}[7.25, Fubini]
+Let $\{f_k\}$ be a sequence of monotone increasing functions on $[a,b]$. If
+the series $s(x)=\sum f_k(x)$ converges on $[a,b]$, (equivalently, if
+$s(a)$ and $s(b)$ are finite), then
+\[
+s'(x)=\sum f_k'(x)
+\]
+a.e.\@ in $[a,b]$. In particular, $f_k'\to 0$ a.e.\@ in $[a,b]$.
+\end{lemma}
+
+
+The Cantor--Lebesgue function is an example of an increasing function $f$
+whose derivative is integrable on $[0,1]$, but for which $\int_0^1 f'\neq
+f(1)-f(0)$.
+
+A function on a finite interval $[a,b]$ is said to be \emph{absolutely
+  continuous} on $[a,b]$ if given $\varepsilon>0$, there exists $\delta>0$
+such that for any collection $\left\{{[a_i,b_i]}\right\}$ (finite or not)
+of nonoverlapping subintervals of $[a,b]$,
+\[
+\sum\left|f(b_i)-f(a_i)\right|<\varepsilon
+\]
+if $\sum(b_i-a_i)<\delta$.
+
+E.g., if $f$ is integrable on $[a,b]$ and $f(x)=\int_a^x g(x)$ and $a\leq
+x\leq b$, then
+\[
+\sum\left|f(b_i)-f(a_i)\right|\leq\int\limits_{\bigcup[a_i,b_i]}|g|
+\]
+for any overlapping $[a_i,b_i]$. By Theorem 7.1, $\int_E |g|$ is an
+absolutely continuous \emph{set function} let
+
+\begin{theorem}[7.27]
+If $f$ is absolutely continuous on $[a,b]$, then it is of bounded variation
+on $[a,b]$.
+\end{theorem}
 \begin{proof}
-We may assume that $(a,b)$ is finite; the general case follows from this by
-passage to the limit: We will show that the set
-$\left\{\,x\in(a,b):D_1f(x)>D_4f(x)\,\right\}$ has measure zero. A similar
-argument will apply to any two Dini numbers of $f$. It is enough to show
-that each set
-\[
-A_{r,s}\coloneqq\left\{\,x\in(a,b):D_1f(x)>r>s>D_4f(x)\,\right\}
-\]
-has measure zero since the original set is the union of these over rational
-$r$ and $s$.
-
-Fix $r$ and $s$ with $r>s>0$, write $A\coloneqq A_{r,s}$ and suppose that
-$|A|_e>0$. If $x\in A$, the fact that $D_4f(x)<s$ implies the existence of
-an arbitrarily small $h>0$\footnote{How can we see this? Well recall from
-  the definition of the $4$-th Dini number that $D_4f(x)=\limsup_{h\to
-    0-}[f(x+h)-f(x)]/h$. So really we have that
-\[
-\limsup_{h\to 0-}\frac{f(x+h)-f(x)}{h}<s
-\]
-so certainly for $\frac{f(x+h)-f(x)}{h}$ sufficiently close to zero the
-following statement holds. However, why can the quotient get arbitrarily
-small? Actually, it is because $f$ is monotone increasing.} such that
-\[
-\frac{f(x-h)-f(x)}{-h}<s.
-\]
-By Corollary 7.18 and 7.19, given $\varepsilon>0$, there exists disjoint
-intervals $[x_j-h_j,x_j]$, $j=1,\dotsc,N$, such that
-\begin{enumerate}[label=(\roman*)]
-\item $f(x_j)-f(x_j-h_j)<sh_j$, $j=1,\dotsc,N$,
-\item $\left|A\cap\bigcup_{j=1}^N[x_j-h_j,x_j]\right|>|A|_e-\varepsilon$,
-\item $\sum_{j=1}^N h_j<(1+\varepsilon)|A|_e$.
-\end{enumerate}
+Choose $\delta$ so that $\sum |f(b_i)-f(a_i)|\leq 1$ for any collection of
+nonoverlapping intervals with $\sum(b_i-a_i)\leq\delta$. Then the variation
+of $f$ over any subinterval of $[a,b]$ with length less than $\delta$ is at
+most $1$.
 \end{proof}
-
 
 %%% Local Variables:
 %%% mode: latex
