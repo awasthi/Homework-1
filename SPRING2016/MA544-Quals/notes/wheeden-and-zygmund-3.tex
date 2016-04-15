@@ -3,7 +3,7 @@ Material covered since exam 2.
 
 \bigskip
 
-If $f$ is a Riemann integrable function on an interval $[a,b]$ in $\bfR$,
+If $f$ is a Riemann integrable function on an interval $[a,b]$ in $\bbR$,
 then the familiar definition of its indefinite integral is
 \[
 F(x)=\int_a^x f(y)dy,\qquad a\leq x\leq b.
@@ -20,7 +20,7 @@ F(x_1,x_2)=\int_{a_1}^{x_1}\int_{a_2}^{x_2}f(y_1,y_2)dy_1dy_2.
 It turns out, however, to be better to abandon the notion that the
 indefinite integral be a function of point and adopt the idea that it be a
 function of set. Thus, given $f\in L(A)$, where $A$ is a measurable
-subset of $\bfR^n$, we define the \emph{indefinite integral of $f$} to be
+subset of $\bbR^n$, we define the \emph{indefinite integral of $f$} to be
 the function
 \[
 F(E)=\int_E f,
@@ -66,12 +66,12 @@ A set function that is absolutely continuous is clearly
 continuous\footnote{Suppose $F$ is absolutely continuous. Then, given
   $\varepsilon>0$ there exists $\delta>0$ such that $|F(E)|<\varepsilon$
   whenever $|E|<\delta$.}, however, the converse is false, as shown in the
-following example. Let $A$ be the unit square in $\bfR^2$, let $D$ be the
+following example. Let $A$ be the unit square in $\bbR^2$, let $D$ be the
 diagonal of $A$, and consider the $\sigma$-algebra of measurable subsets
 $E$ of $A$ for which $E\cap D$ is linearly measurable. For such $E$, let
 $F(E)$ be the linear measure of $E\cap D$. Then $F$ is a continuous set
 function. However, it is not absolutely continuous since the sets $E$
-containing a fixed segment of $D$ whose $\bfR^2$-measures are arbitrarily
+containing a fixed segment of $D$ whose $\bbR^2$-measures are arbitrarily
 small.
 
 \begin{theorem}[7.1]
@@ -88,7 +88,7 @@ Since
 \]
 we see that $f$ has property $\calA$.
 
-To prove the lemma, let $f\in L(\bfR)$. Writing $f=f^+-f^-$, we may assume
+To prove the lemma, let $f\in L(\bbR)$. Writing $f=f^+-f^-$, we may assume
 that $f\geq 0$. Then
 \[
 \int|\chi_G-\chi_E|=|G\setminus E|<\varepsilon.
@@ -114,7 +114,7 @@ C\leq 1$, which is $1$ in $I$ and $0$ outside $I^*$, we have
 \end{proof}
 
 \begin{theorem}[Simple Vitali lemma]
-Let $E$ be a subset of $\bfR^n$ with $|E|_e<\infty$, and let $K$ be a
+Let $E$ be a subset of $\bbR^n$ with $|E|_e<\infty$, and let $K$ be a
 collection of cubes $Q$ covering $E$, then there exists a positive constant
 $\beta$, depending only on $n$, and a finite number of disjoint cubes,
 $Q_1,\dotsc,Q_N$ in $K$ such that
@@ -124,7 +124,7 @@ $Q_1,\dotsc,Q_N$ in $K$ such that
 \end{theorem}
 
 As an application of Vitali's covering lemma, we will prove some basic
-result concerning the differentiability of monotone functions on $\bfR$. If
+result concerning the differentiability of monotone functions on $\bbR$. If
 $f(x)$ is a real-valued function defined and finite in a neighborhood of
 $x_0$, consider the four \emph{Dini numbers} (or \emph{derivatives}),
 \[
@@ -142,7 +142,7 @@ value the \emph{derivative $f'(x_0)$} at $x_0$. Thus, $-\infty\leq
 f'(x_0)\leq\infty$ if $f'(x_0)$ exists.
 \begin{theorem}[7.21]
 Let $f$ be monotone increasing function and finite on an open interval
-$(a,b)\subset\bfR$. Then $f$ has a measurable, nonnegative, finite
+$(a,b)\subset\bbR$. Then $f$ has a measurable, nonnegative, finite
 derivative $f'$ a.e.\@ in $(a,b)$. Moreover,
 \[
 0\leq\int_a^b f'\leq f(b-)-f(a+).

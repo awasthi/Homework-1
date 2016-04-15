@@ -32,7 +32,7 @@ and is denoted by $\deg f$. Here are some basic properties of the degree
   generator to its negative.
 \item The antipodal map $a\colon S^n\to S^n$, $x\mapsto -x$, has degree
   $(-1)^{n+1}$ since it is the composition of $n+1$ reflections, each
-  changing the sign of one coordinate in $\bfR^{n+1}$.
+  changing the sign of one coordinate in $\bbR^{n+1}$.
 \item If $f\colon S^n\to S^n$ has no fixed points then $\deg
   f=(-1)^{n+1}$. For if $f(x)\neq x$ for any $x\in S^n$, then the line
   segment from $f(x)$ to $-x$, defined by $t\mapsto(1-t)f(x)-tx$ for $0\leq
@@ -47,7 +47,7 @@ $S^n$ has a continuous field of nonzero tangent vectors if and only if $n$
 is odd.
 \end{theorem}
 \begin{proposition*}[2.29]
-$\bfZ/2\bfZ$ is the only nontrivial group that can act freely on $S^n$ if
+$\bbZ/2\bbZ$ is the only nontrivial group that can act freely on $S^n$ if
 $n$ is even.
 \end{proposition*}
 
@@ -55,7 +55,7 @@ Recall that the action of a group $G$ on a space $X$ is a homomorphism from
 $G$ to the group $\Homeo(X)$ of homeomorphisms $X\to X$, and the action is
 free if the homeomorphism corresponding to each nontrivial element of $G$
 has no fixed points. In the case of $S^n$, the antipodal map $x\mapsto -x$
-generates a free action of $\bfZ/2\bfZ$.
+generates a free action of $\bbZ/2\bbZ$.
 
 Next we describe a technique for computing degrees which can be applied to
 most maps that arise in practice. Suppose $f\colon S^n\to S^n$, $n>0$, has
@@ -72,7 +72,7 @@ are induced by inclusions, so the triangles and squares commute. The two
 isomorphisms in the upper half of the diagram come from excision, while the
 lower two isomorphisms come from exact sequences of pairs. Via these four
 isomorphisms, the top two groups in the diagram can be identified with
-$H_n(S^n)\cong\bfZ$, and the top homomorphism $f_*$ becomes multiplication
+$H_n(S^n)\cong\bbZ$, and the top homomorphism $f_*$ becomes multiplication
 by an integer called the \emph{local degree} of $f$ at $x_i$, written $\deg
 f|_{x_i}$.
 
@@ -90,9 +90,9 @@ $\deg f=\sum_i\deg f|_{x_i}$.
 \begin{proof}
 By excision the central term $H_n(S^n,S^n\setminus\{f^{-1}(y)\})$ in the
 preceding lemma is the direct sum of the groups
-$H_n(U_i,U_i\setminus\{x_i\})\cong\bfZ$, with $k_i$ the inclusion of the
+$H_n(U_i,U_i\setminus\{x_i\})\cong\bbZ$, with $k_i$ the inclusion of the
 $i$-th  summand and $p_i$ the projection onto the $i$th
-summand. Identifying the outer groups in the diagram with $\bfZ$ as before,
+summand. Identifying the outer groups in the diagram with $\bbZ$ as before,
 commutativity of the lower triangle says that that $p_i\circ j(1)=1$, hence
 $j(1)=(1,\dotsc,1)=\sum_ik_i(1)$. Commutativity of the upper square says
 that the middle $f_*$ takes $k_i(1)$ to $\deg f|_{x_i}$, hence the sum

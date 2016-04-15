@@ -1,13 +1,13 @@
 \chapter{MA 544 Spring 2016}
 \section{Exam 1 Prep}
 \begin{problem}
-Let $E\subset\bfR^n$ be a measurable set, $r\in\bfR$ and define the set
+Let $E\subset\bbR^n$ be a measurable set, $r\in\bbR$ and define the set
 $rE=\left\{\,r\bfx:\bfx\in E\,\right\}$. Prove that $rE$ is
 measurable, and that $|rE|=|r|^n|E|$.
 \end{problem}
 \begin{proof}
-Define a linear map $T\colon\bfR^n\to\bfR^n$ by $\bfx\mapsto r\bfx$. Using
-the standard basis for $\bfR^n$, this map has the matrix presentation
+Define a linear map $T\colon\bbR^n\to\bbR^n$ by $\bfx\mapsto r\bfx$. Using
+the standard basis for $\bbR^n$, this map has the matrix presentation
 \begin{equation}
 \label{eq:matrix-presentation}
 T\bfx=
@@ -73,7 +73,7 @@ F(x)=
 \end{cases}.
 \]
 Here
-$B(\mathbf{0},r)=\left\{\,\bfy\in\bfR^n:|\bfy|<r\,\right\}$. Prove
+$B(\mathbf{0},r)=\left\{\,\bfy\in\bbR^n:|\bfy|<r\,\right\}$. Prove
 that $F$ is monotonic increasing and continuous.
 \end{problem}
 \begin{proof}
@@ -114,7 +114,7 @@ is a polynomial in $x$.
 \end{proof}
 
 \begin{problem}
-Let $f\colon\bfR\to\bfR$ be a function. Let $C$ be the set of all points
+Let $f\colon\bbR\to\bbR$ be a function. Let $C$ be the set of all points
 at which $f$ is continuous. Show that $C$ is a set of type $G_\delta$.
 \end{problem}
 \begin{proof}
@@ -143,7 +143,7 @@ In view of these estimates, define the set
 \label{eq:a-n}
 A_n=
 \left\{\,
-x\in\bfR :\text{there exists $\delta>0$ such that $x',x''\in B(x,\delta)$ implies $\left|f(x')-f(x'')\right|<\frac{1}{n}$ }
+x\in\bbR :\text{there exists $\delta>0$ such that $x',x''\in B(x,\delta)$ implies $\left|f(x')-f(x'')\right|<\frac{1}{n}$ }
 \,\right\}.
 \end{equation}
 Good Lord, that was a long definition! We claim that
@@ -166,18 +166,18 @@ particular, this means that $B(x,\delta)\subset A_n$ for any $x'\in
 B(x,\delta)$ satisfies $|f(x)-f(x')|<1/n$. Thus, $A_n$ is open and we
 conclude that $C=\bigcap_{n=1}^\infty A_n$ is a $G_\delta$ set.
 \begin{problem}
-Let $f\colon\bfR\to\bfR$ be a function. Is it true that if the sets
-$\left\{\,f=r\,\right\}$ are measurable for all $r\in\bfR$, then $f$ is
+Let $f\colon\bbR\to\bbR$ be a function. Is it true that if the sets
+$\left\{\,f=r\,\right\}$ are measurable for all $r\in\bbR$, then $f$ is
 measurable?
 \end{problem}
 \begin{proof}
 No. Recall that, by definition, or 4.1, $f$ is measurable if and only if
-$\left\{\,f>a\,\right\}$ for all $a\in\bfR$.
+$\left\{\,f>a\,\right\}$ for all $a\in\bbR$.
 \end{proof}
 
 \begin{problem}
 Let $\left\{f_k\right\}_{k=1}^\infty$ be a sequence of measurable functions
-on $\bfR$. Prove that the set
+on $\bbR$. Prove that the set
 $\left\{\,x:\text{$\lim_{k\to\infty} f_k(x)$ exists}\,\right\}$
 is measurable.
 \end{problem}
@@ -214,7 +214,7 @@ absolutely continuous function on $[a,b]$ is of bounded variation on
 $[a,b]$.
 \end{problem}
 \begin{proof}
-Suppose $f\colon[a,b]\to\bfR$ is absolutely continuous. Then for fixed
+Suppose $f\colon[a,b]\to\bbR$ is absolutely continuous. Then for fixed
 $\varepsilon=1$, there exists a $\delta>0$ such that for every finite
 disjoint collection $\left\{ (a_kb_k) \right\}_{k=1}^N$ of open intervals
 in $(a,b)$ satisfying $\sum_{k=1}^Nb_k-a_k<\delta$, we have
@@ -233,7 +233,7 @@ Thus, $f$ is b.v.\@ on $[a,b]$.
 \end{proof}
 
 \begin{problem}
-Let $f$ be a continuous function from $[a,b]$ into $\bfR$. Let
+Let $f$ be a continuous function from $[a,b]$ into $\bbR$. Let
 $\chi_{\{c\}}$ be the characteristic function of a singleton
 $\left\{c\right\}$, i.e., $\chi_{\{c\}}(x)=0$ if $x\neq c$ and
 $\chi_{\{c\}}(c)=1$. Show that

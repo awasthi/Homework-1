@@ -1,32 +1,32 @@
 \section{MA 544 - Midterm 2}
 \begin{problem}
-Assume that $f\in L(\bfR^n)$. Show that for every $\varepsilon>0$ there
+Assume that $f\in L(\bbR^n)$. Show that for every $\varepsilon>0$ there
 exists a ball $B$, centered at the origin, such that
 \[
-\int_{\bfR^n\setminus B}|f|<\varepsilon.
+\int_{\bbR^n\setminus B}|f|<\varepsilon.
 \]
 \end{problem}
 \begin{proof}
-Recall that $f\in L(\bfR^n)$ if and only if $|f|\in
-L(\bfR^n)$. Let $B_k= B(\mathbf{0},k)$ for $k\in\bbN$ and
+Recall that $f\in L(\bbR^n)$ if and only if $|f|\in
+L(\bbR^n)$. Let $B_k= B(\mathbf{0},k)$ for $k\in\bbN$ and
 $\chi_{B_k}$ be the indicator function associated with $B_k$. Then, the
 sequence of maps $\left\{|f_k|\right\}$ defined $f_k= f\chi_{B_k}$
-converge pointwise to $|f_k|$. Since $|f|\in L(\bfR^n)$, by the monotone
+converge pointwise to $|f_k|$. Since $|f|\in L(\bbR^n)$, by the monotone
 convergence theorem, we have
 \begin{equation}
 \label{eq:monotonicity-2-1}
-\int_{\bfR^n} |f_k|=\int_{B_k}|f|\longrightarrow\int_{\bfR^n}|f|.
+\int_{\bbR^n} |f_k|=\int_{B_k}|f|\longrightarrow\int_{\bbR^n}|f|.
 \end{equation}
 But this means, exactly, that for every $\varepsilon>0$ there exists
 sufficiently large $N\in\bbN$ such that
 \begin{equation}
 \label{eq:desired-inequality-2-1}
 \begin{aligned}
-\varepsilon&>\left|\int_{\bfR^n}|f_k|-\int_{\bfR^n}|f|\right|\\
-={}&-\int_{\bfR^n}|f_k|+\int_{\bfR^n}|f|\\
-={}&-\int_{\bfR^n}|f|+\int_{\bfR^n}|f|\\
-={}&-\int_{B_k}|f|+\int_{\bfR^n}|f|\\
-={}&\int_{\bfR^n\setminus B_k}|f|
+\varepsilon&>\left|\int_{\bbR^n}|f_k|-\int_{\bbR^n}|f|\right|\\
+={}&-\int_{\bbR^n}|f_k|+\int_{\bbR^n}|f|\\
+={}&-\int_{\bbR^n}|f|+\int_{\bbR^n}|f|\\
+={}&-\int_{B_k}|f|+\int_{\bbR^n}|f|\\
+={}&\int_{\bbR^n\setminus B_k}|f|
 \end{aligned}
 \end{equation}
 as desired.
