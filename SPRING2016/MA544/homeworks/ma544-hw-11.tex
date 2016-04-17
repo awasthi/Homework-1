@@ -14,11 +14,64 @@ $[\alpha,\beta]$, and
 an open set, etc.)
 \end{problem}
 \begin{proof}
-We split the proof of the result into the following claims and proceed then
-use them to prove the more general result.
+Recall that, by Theorem 5.21, $f$ is integrable (or in $L^1$) on
+$[\alpha,\beta]$ if and only if $|f|$ is integrable on
+$[\alpha,\beta]$. Therefore, it suffices to prove the result for the case
+$f\geq 0$. We split the proof of the result into a series of claims and
+then proceed to show the more general result.
 \begin{claim}
-
+Let $g$ be as above and $G$ be an open subset of $[\alpha,\beta]$. Then
+\[
+|g(G)|=\int_G g'(t)dt.
+\]
 \end{claim}
+\begin{proof}[Proof of claim 1]
+\renewcommand\qedsymbol{$\clubsuit$}
+Let $G$ be an open subset of $(a,b)$ then, by Theorem 1.10, $G$ can be
+written as the countable union of disjoint open intervals $\{I_k\}$. By
+Theorem 5.7, since $g'$ is nonnegative and measurable and
+$\int_Gg'$ is finite (in particular, it is bounded above by $\int_a^bg'$),
+we have
+\begin{equation}
+\label{eq:11:additive-measure}
+\int_Gg'(t)dt=\sum_k\int_{I_k}g'(t)dt.
+\end{equation}
+But by Theorem 7.27, since $g$ is absolutely continuous on
+$[\alpha,\beta]$, $g$ is b.v.\@ on $[\alpha,\beta]$ so by Theorem 7.30
+\[
+|g(I_k)|
+=g(\beta_k)-g(\alpha_k)
+=V[g;\alpha_k,\beta_k]
+=\int_{\alpha_k}^{\beta_k}g'(t)dt
+\]
+where $\alpha_k$ is the left-most endpoint of $I_k$ and $\beta_k$ the
+right-most. By Equation \eqref{eq:11:additive-measure}, on the right-hand
+side, we have
+\[
+\int_{I_k}g'(t)dt=|g(I_k)|
+\]
+so, by Theorem 3.23, we have
+\begin{equation}
+\label{eq:11:measure-sum-integral-dev}
+\int_G g'(t)dt
+=\sum_k|g(I_k)|
+=\left|g\left({\textstyle\bigcup_k I_k}\right)\right|
+=|g(G)|
+\end{equation}
+as desired.
+\end{proof}
+\begin{claim}
+Let $g$ be as above and $E$ be a $G_\delta$-subset of
+$[\alpha,\beta]$. Then
+\[
+|g(E)|=\int_E g'(t)dt.
+\]
+\end{claim}
+\begin{proof}[Proof of claim 2]
+\renewcommand\qedsymbol{$\clubsuit$}
+Suppose $E$ is a $G_\delta$-set then, $E$ is the countable intersection of
+open subsets $G_k$ of $[\alpha,\beta]$.
+\end{proof}
 \end{proof}
 \newpage
 
