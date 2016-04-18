@@ -1,43 +1,96 @@
 %% #12 – Due Apr. 25 Chapter 8: # 2, 3, 4, 5, 6, 9, 11.
 
 \begin{problem}[Wheeden \& Zygmund {\S}8, Ex.\@ 2]
-
+Prove the converse of Hölder's inequality for $p=1$ and $\infty$. Show Show
+also that for $1\leq p\leq\infty$, a real-valued measurable $f$ belongs to
+$L^p(E)$ if $fg\in L^1(E)$ for every $g\in L^{p'}(E)$, $1/p+1/p'=1$. The
+negation is also of interest: if $f\in L^p(E)$ then there exists $g\in
+L^{p'}(E)$ such that $fg\notin L^1(E)$. (To verify the negation, construct
+$g$ of the form $\sum a_kg_k$ satisfying $\int_E fg_k\to\infty$.)
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
 
 \begin{problem}[Wheeden \& Zygmund {\S}8, Ex.\@ 3]
+Prove Theorems 8.12 and 8.13. Show that Minkowski’s inequality for series
+fails when $p<1$.
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
 
 \begin{problem}[Wheeden \& Zygmund {\S}8, Ex.\@ 4]
+Let $f$ and $g$ be real-valued and not identically $0$ (i.e., neither
+function equals $0$ a.e.), and let $1<p<\infty$. Prove that equality holds
+in the inequality $\left|int fg\right|\leq\|f\|_p\|g\|_{p'}$ if and only if
+$fg$ has constant sign a.e.\@ and $|f|^p$ is a multiple of $|g|^{p'}$ a.e.
+
+If $\|f+g\|_p=\|f\|_p+\|g\|_{p}$ and $g\neq 0$ in Minkowski's inequality,
+show that $f$ is a multiple of $g$.
+
+Find analogues of these results for the spaces $\ell^p$.
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
 
 \begin{problem}[Wheeden \& Zygmund {\S}8, Ex.\@ 5]
+For $0<p\leq\infty$ and $0<|E|<\infty$, define
+\[
+N_p[f]\coloneqq\left(\frac{1}{E}\int_E|f|^p\right)^{1/p},
+\]
+where $N_\infty[f]$ means $\|f\|_\infty$. Prove that if $p_1<p_2$, then
+$N_{p_1}[f]\leq N_{p_2}[f]$. Prove also that if $1\leq p\leq \infty$, then
+$N_p[f+g]\leq N_p[f]+N_p[g]$, $(1/|E|)\int_E|fg|\leq N_p[f]N_{p'}[g]$,
+$1/p+1/p'=1$, and $\lim_{p\to\infty} N_p[f]=\|f\|_\infty$. Thus, $N_p$
+behaves like $\|\blank\|_p$ but has the advantage of being monotone in
+$p$. Recall Exercise 28 of Chapter 5.
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
 
 \begin{problem}[Wheeden \& Zygmund {\S}8, Ex.\@ 6]
+\begin{enumerate}[label=(\alph*)]
+\item Let $1\leq p_i$, $r\leq\infty$ and $\sum_{i=1}^k1/p_i=1/r$. Prove the
+  following generalization of Hölder's inequality:
+\[
+\|f_1\dotsm f_k\|_r\leq\|f_1\|_{p_1}\dotsm\|f_k\|_{p_k}.
+\]
+\item Let $1\leq p<r<q\leq\infty$ and define $\theta\in(0,1)$ by
+  $1/r=\theta/p+(1-\theta)/q$. Prove the interpolation estimate
+\[
+\|f\|_r\leq{\|f\|_p}^\theta{\|f\|_q}^{1-\theta}.
+\]
+In particular, if $A\coloneqq\max\left\{\|f\|_p,\|f\|_q\right\}$, then
+$\|f\|_r\leq A$.
+\end{enumerate}
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
 
 \begin{problem}[Wheeden \& Zygmund {\S}8, Ex.\@ 9]
+  % 9. If f is real-valued and measurable on E, |E| > 0, define its essential
+  % infimum on E by ess inf f = sup{α : |{x ∈ E : f (x) < α}| = 0}. E If f ≥
+  % 0, show that essE inf f = (essE sup 1/f )−1 .
+
+If $f$ is real-valued and measurable on $E$, $|E|>0$, define its essential
+infimum on $E$ by
+\[
+\essinf f\coloneqq\sup\left\{\,\alpha:\left|\{\,x\in
+    E:f(x)<\alpha\,\}\right|=0\,\right\}.
+\]
+If $f\geq 0$, show that $\essinf_E f=(\esssup 1/f)^{-1}$.
 \end{problem}
 \begin{proof}
 \end{proof}
 \newpage
 
 \begin{problem}[Wheeden \& Zygmund {\S}8, Ex.\@ 11]
+If $f_k\to f$ in $L^p$, $1\leq p<\infty$, $g_k\to g$ pointwise, and
+$\|g_k\|_\infty<M$ for all $k$, prove that $f_kg_k\to fg$ in $L^p$.
 \end{problem}
 \begin{proof}
 \end{proof}
