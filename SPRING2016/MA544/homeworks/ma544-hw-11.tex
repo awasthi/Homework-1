@@ -140,8 +140,7 @@ Recall the content of equation 5.49: For $f$ measurable, we have
   \label{eq:11:chebyshevs-inequality}
 \omega(\alpha)\leq\frac{1}{\alpha^p}\int\limits_{\{\,f>\alpha\,\}}f^p,\quad\alpha>0.
 \end{equation}
-Since $f=f^++f^-$, it suffices to prove the result for $f\geq 0$. Consider
-the $L^p$-norm of $f$ raised to the $p$-th power
+Consider the $L^p$-norm of $f$ raised to the $p$-th power
 \begin{align*}
 {\|f\|_p}^p&=\int|f(x)|^pdx
 \intertext{since $f$ is measurable, $f$ is measurable so $\left\{\,f>\alpha\,\right\}$ is
@@ -149,7 +148,7 @@ the $L^p$-norm of $f$ raised to the $p$-th power
              integral, we have}
   &\geq\int_{\left\{\,f>\alpha\,\right\}}f^pdx\\
            &\geq\int_{\left\{\,f>\alpha\,\right\}}\alpha^pdx\\
-           &=\alpha^p\left|\left\{\,f>\alpha\,\right\}\right|
+           &=\alpha^p\left|\left\{\,f>\alpha\,\right\}\right|\\
            &=\alpha^p\omega(\alpha).
 \end{align*}
 Thus, we have
@@ -186,13 +185,13 @@ An example, given in class, is the following: Set
 f(x)\coloneqq
 \begin{cases}
 1&x\leq e\\
-\frac{1}{\ln x}&x\geq e.
+1/\ln x&x\geq e.
 \end{cases}
 \end{equation}
-This function clearly satisfies the conditions of boundedness, continuity,
-and decay to $0$ as $x\to\infty$. Now, observe that, for every $p>0$, we
-have $\ln(x)\leq x^{1/p}$ for $x$ larger than some number $K$ depending on
-$p$. Thus,
+This function is bounded (above by $1$), continuous ($\lim_{x+\to
+  e}f(x)=1=\lim_{x-\to e}f(x)$) and $\lim_{x\to\infty}f(x)=0$ Now, observe
+that, for every $p>0$, we have $\ln(x)\leq x^{1/p}$ for $x$ larger than
+some number $K$ depending on $p$. Thus,
 \[
 \int_K^\infty\frac{dx}{\ln x}\geq\int_K^\infty\frac{dx}{x}=\infty.
 \]
@@ -205,7 +204,7 @@ If $f\geq 0$ and $\omega(\alpha)\leq c(1+\alpha)^p$ for all $\alpha>0$,
 show that $f\in L^r$, $0<r<p$.
 \end{problem}
 \begin{proof}
-Assuming Exercise 16, it suffices to show that
+Assuming the results of Exercise 16, it suffices to show that
 \begin{equation}
 \label{eq:11:need-to-show}
 \int_0^\infty\alpha^{r-1}\omega(\alpha)d\alpha\leq c\int_0^\infty\frac{\alpha^{r-1}}{(1+\alpha)^p}d\alpha<\infty
@@ -214,12 +213,30 @@ for all $r\in(0,p)$. The integral is improper only near $\infty$, and
 convergence there follows from the fact that
 \[
 \frac{\alpha^{r-1}}{(1+\alpha)^p}<\frac{\alpha^{r-1}}{\alpha^p}=\frac{1}{\alpha^{p-(r-1)}}
-\]
+\]L
 for sufficiently large $\alpha$. Since $r<p$, we have $p-(r-1)>1$, hence
 \[
 \int_{K_p}^\infty\frac{d\alpha}{\alpha^{p-(r-1)}}
 \]
 converges.
+\end{proof}
+\newpage
+\begin{problem}[Wheeden \& Zygmund {\S}8, Thm.\@ 8.3]
+ If $f,g\in L^p(E)$, $p>0$, then $f+g\in L^p(E)$ and $cf\in L^p(E)$ for any constant $c$.
+\end{problem}
+\begin{proof}
+Suppose $f,gi\in L^p(E)$ and $c$ is any constant, then, by Minkowski's
+inequality
+\[
+\|f+g\|_p\leq\|f\|_p+\|g\|_p<\infty
+\]
+and
+\[
+\|cf\|_p=\left(\int_E|cf|^p\right)^{1/p}=
+\left(\int_E|c|^p|f|^p\right)^{1/p}=
+|c|\left(\int_E|c|^p|f|^p\right)^{1/p}<\infty.
+\]
+Thus, $f+g,cf\in L^p(E)$
 \end{proof}
 
 %%% Local Variables:
