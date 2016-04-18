@@ -69,9 +69,29 @@ $[\alpha,\beta]$. Then
 \end{claim}
 \begin{proof}[Proof of claim 2]
 \renewcommand\qedsymbol{$\clubsuit$}
-Suppose $E$ is a $G_\delta$-set then, $E$ is the countable intersection of
-open subsets $G_k$ of $[\alpha,\beta]$.
+Suppose $E$ is a $G_\delta$-set, then $E$ is the countable intersection of
+open subsets $\{G_k\}$ of $[\alpha,\beta]$. We may choose $G_k$'s such that
+$G_k\searrow E$ (for example, taking our original collection of open
+subsets $\{G_k\}$ and taking the finite intersection $\bigcap_{j=1}^k
+G_j$). Hence, we have $\chi_{G_k}\searrow\chi_E$ and consequently
+$\chi_{G_k}g'\searrow\chi_Eg'$. Thus, we have
+\begin{equation}
+\label{eq:11:g-delta-case}
+\lim_{k\to\infty}\int_E\chi_{G_k}g'(t)dt
+=\lim_{k\to\infty}|g(G_k)|
+=|g(E)|
+\end{equation}
+by Claim 1 and Theorem 3.10. Thus, by the monotone convergence theorem
+together with Equation \eqref{eq:11:g-delta-case}, we have
+\begin{equation}
+\label{eq:11:apply-mct}
+|g(E)|=\lim_{k\to\infty}\int_E\chi_{G_k}g'(t)dt=\int_E\chi_{G_k}g'(t)dt
+\end{equation}
+as desired.
 \end{proof}
+\begin{claim}
+
+\end{claim}
 \end{proof}
 \newpage
 
@@ -82,6 +102,9 @@ $\varphi(x)=\int_a^xf(t)dt+\varphi(a)$ in $(a,b)$ and $f$ is monotone
 increasing, then $\varphi$ is convex in $(a,b)$. (Use Exercise 14.)
 \end{problem}
 \begin{proof}
+We will assume the result in Exercise 14. By Exercise 14, since $f$ is
+monotone increasing, $f$ is b.v.\@ on $[a,b]$ so $f$ is bounded a.e.\@ on
+$(a,b)$ by a previous exercise. Thus, $f\in L(a,b)$ so
 \end{proof}
 \newpage
 
