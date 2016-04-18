@@ -140,6 +140,23 @@ Recall the content of equation 5.49: For $f$ measurable, we have
   \label{eq:11:chebyshevs-inequality}
 \omega(\alpha)\leq\frac{1}{\alpha^p}\int\limits_{\{\,f>\alpha\,\}}f^p,\quad\alpha>0.
 \end{equation}
+Since $f=f^++f^-$, it suffices to prove the result for $f\geq 0$. Consider
+the $L^p$-norm of $f$ raised to the $p$-th power
+\begin{align*}
+{\|f\|_p}^p&=\int|f(x)|^pdx
+\intertext{since $f$ is measurable, $f$ is measurable so $\left\{\,f>\alpha\,\right\}$ is
+             measurable hence, by the monotonicity of the Lebesgue
+             integral, we have}
+  &\geq\int_{\left\{\,f>\alpha\,\right\}}f^pdx\\
+           &\geq\int_{\left\{\,f>\alpha\,\right\}}\alpha^pdx\\
+           &=\alpha^p\left|\left\{\,f>\alpha\,\right\}\right|
+           &=\alpha^p\omega(\alpha).
+\end{align*}
+Thus, we have
+\[
+\omega(\alpha)\leq\frac{1}{\alpha^p}\int_{\left\{\,f>\alpha\,\right\}}f^p
+\]
+as desired.
 \end{proof}
 \newpage
 
