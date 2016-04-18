@@ -90,8 +90,41 @@ together with Equation \eqref{eq:11:g-delta-case}, we have
 as desired.
 \end{proof}
 \begin{claim}
-
+Let $g$ be as above and $E$ be a $G_\delta$-subset of
+$[\alpha,\beta]$. Then
+\[
+|g(E)|=\int_E g'(t)dt.
+\]
 \end{claim}
+\begin{claim}
+Let $g$ be as above and $E$ be a $G_\delta$-subset of
+$[\alpha,\beta]$ and $f$ be a simple function. Then
+\[
+\int_Ef(x)dx=\int_E f(g(t))g'(t)dt.
+\]
+\end{claim}
+
+The general idea is like this, you prove a sequence of less general claims
+and make a limiting argument on simple functions. For now, assume Claim
+4. Suppose $f\geq 0$ is bounded and measurable. Then, by Theorem 4.12, we
+may take a sequence $\{f_k\}$ of bounded and measurable simple functions
+such that $f_k\nearrow f$ a.e.\@ on $[a,b]$. Then, the $f_k\circ g$'s are
+measurable and $f_k\circ g\nearrow f\circ g$. Thus, $(f_k\circ g)g'$ is
+measurable so by the monotone convergence theorem
+\[
+\int_\alpha^\beta f_k(g(t))g'(t)dt\longrightarrow\int_\alpha^\beta f(g(t))g'(t)dt
+\]
+as $k\to\infty$. But, assuming the result holds for simple functions, we
+have
+\[
+\int_\alpha^\beta f_k(g(t))g'(t)dt=\int_a^bf_k(x)dx
+\]
+so taking the limit as $k\to\infty$, by the monotone convergence theorem,
+we have
+\[
+\int_\alpha^\beta f(g(t))g'(t)dt=\int_a^b f(x)dx
+\]
+as desired.
 \end{proof}
 \newpage
 
@@ -163,14 +196,27 @@ as desired.
 For which $p$ does $1/x\in L^p(0,1)$? $L^p(1,\infty)$? $L^p(0,\infty)$?
 \end{problem}
 \begin{proof}
-For the case $1/x\in L^p(0,1)$, this happens if and only if $\int_0^1
-x^{-p}dx<\infty$ if and only if $p<1$.
+For the first case, we know that $1/x\in L^p(0,1)$ if and only if
+\begin{equation}
+\label{eq:11:first}
+\int_0^1\frac{dx}{x^p}<\infty.
+\end{equation}
+This happens if and only if $p<1$.
 
-In the second case $1/x\in L^p(1,\infty)$ if and only if $p>1$.
+In the second, case $1/x\in L^p(1,\infty)$ if and only if
+\begin{equation}
+\label{eq:11:second}
+\int_1^\infty\frac{dx}{x^p}<\infty
+\end{equation}
+if and only if $p>1$
 
-Lastly, we have $1/x\in L^p(0,\infty)$ if and only if $1/x\in L^p(0,1)$ and
-$1/x\in L^p(1,\infty)$. By our previous arguments, this is
-impossible. Thus, $1/x\notin L^p(0,\infty)$.
+Lastly, $1/x\in L^p(0,\infty)$ if and only if
+\[
+\int_0^\infty\frac{dx}{x^p}=\int_0^1\frac{dx}{x^p}+\int_1^\infty\frac{dx}{x^p}<\infty
+\]
+if and only if $1/x$ satisfies both \eqref{eq:11:first} and
+\eqref{eq:11:first}. This is impossible. Thus, $1/x\notin L^p(0,\infty)$
+for any $p\geq 0$
 \end{proof}
 \newpage
 
@@ -189,11 +235,14 @@ f(x)\coloneqq
 \end{cases}
 \end{equation}
 This function is bounded (above by $1$), continuous ($\lim_{x+\to
-  e}f(x)=1=\lim_{x-\to e}f(x)$) and $\lim_{x\to\infty}f(x)=0$ Now, observe
-that, for every $p>0$, we have $\ln(x)\leq x^{1/p}$ for $x$ larger than
-some number $K$ depending on $p$. Thus,
+  e}f(x)=1=\lim_{x-\to e}f(x)$) and $\lim_{x\to\infty}f(x)=0$ Now, because
+$\ln(x)\prec x^{1/p}$ (i.e., $\ln$ grows slower than any monomial $x^k$),
+for sufficiently large values of $x$, say $x\geq K$, depending on $p$, we
+have
 \[
-\int_K^\infty\frac{dx}{\ln x}\geq\int_K^\infty\frac{dx}{x}=\infty.
+\int_K^\infty\frac{dx}{(\ln x)^p}\geq
+\int_K^\infty\frac{dx}{{(x^{1/p})}^p}
+\int_K^\infty\frac{dx}{x}=\infty.
 \]
 so $f$ cannot be in $L^p(0,\infty)$ for any $p>0$.
 \end{proof}
@@ -204,25 +253,27 @@ If $f\geq 0$ and $\omega(\alpha)\leq c(1+\alpha)^p$ for all $\alpha>0$,
 show that $f\in L^r$, $0<r<p$.
 \end{problem}
 \begin{proof}
-Assuming the results of Exercise 16, it suffices to show that
+If we assume the results of Exercise 16, it suffices to show that
 \begin{equation}
 \label{eq:11:need-to-show}
-\int_0^\infty\alpha^{r-1}\omega(\alpha)d\alpha\leq c\int_0^\infty\frac{\alpha^{r-1}}{(1+\alpha)^p}d\alpha<\infty
+\frac{1}{r}\int f^r=\int_0^\infty\alpha^{r-1}\omega(\alpha)d\alpha\leq
+c\int_0^\infty\frac{\alpha^{r-1}}{(1+\alpha)^p}d\alpha<\infty
 \end{equation}
-for all $r\in(0,p)$. The integral is improper only near $\infty$, and
-convergence there follows from the fact that
+for all $0<r<p$. Make a change of variables $\beta\coloneqq\alpha+1$,
+$d\beta=d\alpha$ and (on the right-hand side of \eqref{eq:11:need-to-show})
+and consider the improper integral
 \[
-\frac{\alpha^{r-1}}{(1+\alpha)^p}<\frac{\alpha^{r-1}}{\alpha^p}=\frac{1}{\alpha^{p-(r-1)}}
-\]L
-for sufficiently large $\alpha$. Since $r<p$, we have $p-(r-1)>1$, hence
-\[
-\int_{K_p}^\infty\frac{d\alpha}{\alpha^{p-(r-1)}}
+c\int_1^x\left[\sum_{k=0}^r
+  a_k\beta^{k}\right]=c\sum_{k=0}^r\left[\frac{a_k}{k+1}\beta^{k+1}\right]_0^x
 \]
-converges.
+By Problem 11.4, we know that the sum on the left converges as
+$x\to\infty$ since, we have $k\geq p-(r-1)>1$. Hence,
+\eqref{eq:11:need-to-show} holds and we have $f\in L^r$.
 \end{proof}
 \newpage
 \begin{problem}[Wheeden \& Zygmund {\S}8, Thm.\@ 8.3]
- If $f,g\in L^p(E)$, $p>0$, then $f+g\in L^p(E)$ and $cf\in L^p(E)$ for any constant $c$.
+ If $f,g\in L^p(E)$, $p>0$, then $f+g\in L^p(E)$ and $cf\in L^p(E)$ for any
+ constant $c$.
 \end{problem}
 \begin{proof}
 Suppose $f,gi\in L^p(E)$ and $c$ is any constant, then, by Minkowski's
