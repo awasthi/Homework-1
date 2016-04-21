@@ -1,11 +1,52 @@
 \chapter{Course Notes}
 These notes roughly correspond to chapters 2 through 8 of Wheeden and
-Zygmund's \emph{Measure and Integration} \cite{wheeden-zygmund}.
+Zygmund's \emph{Measure and Integration}
+\cite{wheeden-zygmund:measure-and-integral}.
 
 \section{Functions of bounded variation and the Riemann--Stieltjes
   integral}
 In this section, we introduce functions of bounded variation as well as the
 definition of the Riemann integral. We conclude with a proof that the
+
+\subsection{Functions of bounded variation}
+Let $f\colon[a,b]\to\bbR$ be a real-valued function defined for all $a\leq
+x\leq b$ and finite; let $\Gamma=\left\{x_0,\dotsc,x_m\right\}$ be a
+\href{https://en.wikipedia.org/wiki/Partition_of_an_interval}{\emph{partition}}
+of $[a,b]$, i.e., a collection of points $x_i$, $i=0,\dotsc,m$, satisfying
+$x_0=a$ and $x_m=b$, and $x_{i-1}<x_i$ for $i=1,\dotsc,m$. To each
+partition $\Gamma$, we associated a sum
+\begin{equation}
+\label{eq:bv:sum}
+S_\Gamma\coloneqq S_\Gamma[f;a,b]\coloneqq\sum_{i=1}^m\left|f(x_i)-f(x_{i-1})\right|.
+\end{equation}
+The
+\href{https://en.wikipedia.org/wiki/Bounded_variation#Formal_definition}{\emph{variation}}
+(or \emph{total variation}) \emph{of $f$ over $[a,b]$} is defined as
+\begin{equation}
+  \label{eq:bv:variation}
+V\coloneqq V[f;a,b]\coloneqq\sup_\Gamma S_\Gamma,
+\end{equation}
+where the supremum is taken over all partitions $\Gamma$ of $[a,b]$. If
+$V<\infty$, $f$ is said to be of
+\href{https://en.wikipedia.org/wiki/Bounded_variation}{\emph{bounded
+    variation}} \emph{on $[a,b]$}; if $V=\infty$, $f$ is of \emph{unbounded
+variation on $[a,b]$}.
+
+Before going on to prove important properties about
+\eqref{eq:bv:variation}, let us look at some common examples (and
+nonexamples) of functions $f$ of bounded variation.
+
+\begin{example}
+Suppose $f$ is
+\href{https://en.wikipedia.org/wiki/Monotonic_function}{\emph{monotone}} in
+$[a,b]$. Then, for an arbitrary partition, $\Gamma=\{x_0,\dotsc,x_m\}$ of
+$[a,b]$ we have
+\begin{align*}
+S_\Gamma&=\sum_{i=1}^m|f(x_{i-1})-f(x_i)|\\
+        &=|f(a)-f(x_1)|+|f(x_2)-f(x_1)|+\dotsb+|f(x_{m-1})-f(x_{m-2})|+|f(x_m)-f(x_{m-1})|\\
+        &=
+\end{align*}
+\end{example}
 
 %%% Local Variables:
 %%% mode: latex
