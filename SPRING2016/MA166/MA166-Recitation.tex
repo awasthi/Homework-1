@@ -1,5 +1,5 @@
 \def\documentauthor{Carlos Salinas}
-\def\hwnum{12}
+\def\hwnum{13}
 \def\documenttitle{MA166: Recitation {\hwnum}}
 \def\shorttitle{MA166-Recitation-{\hwnum}}
 \def\coursename{MA166}
@@ -50,29 +50,29 @@
 \usepackage{mathtools}
 % \usepackage[mathcal]{euscript}
 % \usepackage{mathrsfs}
-% \usepackage[nointegrals]{wasysym}
+\usepackage[nointegrals]{wasysym}
 
-% \usepackage{cmap}
-% \usepackage[LAE,LFE,T2A,T1]{fontenc}
-% \usepackage[utf8]{inputenc}
-% \usepackage[farsi,french,german,spanish,russian,english]{babel}
-% \babeltags{fr=french,
-%            de=german,
-%            en=english,
-%            es=spanish,
-%            pa=farsi,
-%            ru=russian
-%            }
-% \def\spanishoptions{mexico}
+\usepackage{cmap}
+\usepackage[LAE,LFE,T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[farsi,french,german,spanish,russian,english]{babel}
+\babeltags{fr=french,
+           de=german,
+           en=english,
+           es=spanish,
+           pa=farsi,
+           ru=russian
+           }
+\def\spanishoptions{mexico}
 
-% \selectlanguage{english}
+\selectlanguage{english}
 
-% \newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
+\newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
 
-% \usepackage{CJKutf8}
-% \newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
-% \newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
-% \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
+\usepackage{CJKutf8}
+\newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
+\newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
+\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
 %% Misc
 \usepackage{graphicx}
@@ -86,18 +86,18 @@
 \usepackage{mleftright}
 \mleftright
 
-%% Unicode math and Polyglossia
-\usepackage{unicode-math}
-\usepackage{unicode-minionmath}
+% %% Unicode math and Polyglossia
+% \usepackage{unicode-math}
+% \usepackage{unicode-minionmath}
 
-\setmainfont[Ligatures=TeX]{Libertinus Serif}
-\setsansfont{Libertinus Sans}
-\setmonofont{Libertinus Mono}
-\setmathfont{Minion Math}
-\setmathfont[range={\mathfrak}]{XITS Math}
-\setmathfont[range={\mathcal},StylisticSet=1]{XITS Math}
-\setmathfont[range={\mathscr}]{XITS Math}
-\setmathfont[range={}]{Minion Math}
+% \setmainfont[Ligatures=TeX]{Libertinus Serif}
+% \setsansfont{Libertinus Sans}
+% \setmonofont{Libertinus Mono}
+% \setmathfont{Minion Math}
+% \setmathfont[range={\mathfrak}]{XITS Math}
+% \setmathfont[range={\mathcal},StylisticSet=1]{XITS Math}
+% \setmathfont[range={\mathscr}]{XITS Math}
+% \setmathfont[range={}]{Minion Math}
 
 % \usepackage{polyglossia}
 
@@ -163,39 +163,6 @@
 %% Commands and operators
 \DeclareMathOperator{\comp}{comp}
 \DeclareMathOperator{\proj}{proj}
-
-\newcommand\diff{\mathop{}\!\mathrm{d}}
-\newcommand\Diff[1]{\mathop{}\!\mathrm{d^#1}}
-
-\newcommand{\bbN}{\mathbb{N}}
-\newcommand{\bbQ}{\mathbb{Q}}
-\newcommand{\bbR}{\mathbb{R}}
-\newcommand{\bbZ}{\mathbb{Z}}
-
-\newcommand{\bfN}{\mathbf{N}}
-\newcommand{\bfQ}{\mathbf{Q}}
-\newcommand{\bfR}{\mathbf{R}}
-\newcommand{\bfZ}{\mathbf{Z}}
-
-\newcommand{\bfu}{\mathbf{u}}
-\newcommand{\bfv}{\mathbf{v}}
-\newcommand{\bfw}{\mathbf{w}}
-\newcommand{\bfx}{\mathbf{x}}
-\newcommand{\bfy}{\mathbf{y}}
-\newcommand{\bfz}{\mathbf{z}}
-
-\newenvironment{apmatrix}[1]{%
-  \left(\begin{array}{@{}*{#1}{c}|c@{}}
-}{%
-  \end{array}\right)
-}
-
-\newenvironment{abmatrix}[1]{%
-  \left[\begin{array}{@{}*{#1}{c}|c@{}}
-}{%
-  \end{array}\right]
-}
-
 \begin{document}
 \author{\href{mailto:\authoremail}{\documentauthor}}
 \title{\documenttitle}
