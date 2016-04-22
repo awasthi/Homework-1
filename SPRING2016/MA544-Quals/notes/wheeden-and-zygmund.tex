@@ -39,14 +39,55 @@ nonexamples) of functions $f$ of bounded variation.
 \begin{example}
 Suppose $f$ is
 \href{https://en.wikipedia.org/wiki/Monotonic_function}{\emph{monotone}} in
-$[a,b]$. Then, for an arbitrary partition, $\Gamma=\{x_0,\dotsc,x_m\}$ of
-$[a,b]$ we have
-\begin{align*}
-S_\Gamma&=\sum_{i=1}^m|f(x_{i-1})-f(x_i)|\\
-        &=|f(a)-f(x_1)|+|f(x_2)-f(x_1)|+\dotsb\\
-        &\phantom{{}={}}+|f(x_{m-1})-f(x_{m-2})|+|f(x_m)-f(x_{m-1})|\\
-        &=
-\end{align*}
+$[a,b]$. Then, clearly, each $S_\Gamma$ is equal to $|f(a)-f(b)|$ for every
+partition $\Gamma$\footnote{Carlos: This may not be clear at
+  a first glance, but, upon closer inspection, this is true by
+  monotoncity. If $a<x<b$, we have
+  $|f(b)-f(a)|=|f(b)-f(x)|+|f(x)-f(a)|$. This holds for an arbitrary
+  partitions $\Gamma$.}, and therefore $V=|f(b)-f(a)|$.
+\end{example}
+\begin{example}
+Suppose the graph of $f$ can be split into a finite number of monotone
+arcs, i.e., suppose $[a,b]=\bigcup_{i=1}^k [a_{i-1},a_i]$ and $f$ is
+monotone in each $[a_{i-1},a_i]$. Then
+$V=\sum_{i-1}^k|f(a_i)-f(a_{i-1})|$. To see this, we use the result of
+Example 1 above and the fact, yet to be proven, than $V=V[a,b]=\sum_{i=1}^k
+V[a_i,a_{i-1}]$.
+\end{example}
+
+If $\Gamma=\{x_0,\dotsc,x_m\}$ is a partition of $[a,b]$, let $|\Gamma|$,
+called the
+\href{https://en.wikipedia.org/wiki/Partition_of_an_interval#Norm_of_a_partition}{\emph{norm}}
+\emph{of $\Gamma$}, be defined as the length of the longest subinterval of
+$\Gamma$
+\begin{equation}
+\label{eq:bv:partition-norm}
+|\Gamma|\coloneqq\max_{i}(x_i-x_{i-1}).
+\end{equation}
+If $f$ is continuous on $[a,b]$ and $\{\Gamma_j\}$ is a sequence of
+partitions of $[a,b]$ with $|\Gamma_j|\to 0$, we shall see that
+$V=\lim_{j\to\infty} S_{\Gamma_j}$.
+
+\begin{example}
+Let $f$ be the
+\href{https://en.wikipedia.org/wiki/Dirichlet_function}{\emph{Dirichlet
+    function}}, defined by $f(x)=1$ for $x$ rational and $f(x)=0$ for $x$
+irrational. Then, clearly, $V[a,b]=\infty$ for any interval of
+$[a,b]$.\footnote{Carlos: By the density of $\bbQ$ in $\bbR$ (and by
+  restriction, $[a,b]$, since $[a,b]$ is path-connected), for any
+  positive integer $N$, we may choose a partition $\Gamma$ of $[a,b]$
+  containing $N+1$ rational numbers so $S_\Gamma=N+1>N$.}
+\end{example}
+
+\begin{example}
+A function that is continuous on an interval, however, need not be of
+bounded variation on that interval. Take for example the following
+construction: let $\{a_j\}$ and $\{d_j\}$, $j=1,2,\dotsc$, be monotone
+decreasing sequences in $(0,1]$ with $a_1=\lim_{j\to\infty}
+a_j=\lim_{j\to\infty}d_j=0$ and $\sum d_j=\infty$. Construct a continuous
+function $f$ as follows. On each subinterval $[a_{j+1},a_j]$, the graph of
+$f$ consists of the sides of the isosceles triangle with base
+$[a_{j+1},a_j]$ and height $d_j$.
 \end{example}
 
 %%% Local Variables:
