@@ -3,7 +3,7 @@
 Suppose $f\in L^1(\bbR)$ and that $x$ is a point in the Lebesgue set of
 $f$. For $r>0$, let
 \[
-A(r)\coloneqq\frac{1}{r}\int_{B(0,r)}|f(x-y)-f(x)|dy.
+A(r)\coloneqq\frac{1}{r}\int_{B(0,r)}|f(x-y)-f(x)|\diff y.
 \]
 Show that:
 \begin{enumerate}[label=(\alph*),noitemsep]
@@ -59,7 +59,7 @@ Let $f\in L(\bbR)$, and let $F(t)\coloneqq\int_{\bbR}f(x)\cos(tx)dx$.
 Let $f$ be of bounded variation on $[a,b]$, $-\infty<a<b<\infty$. If
 $f=g+h$, with $g$ absolutely continuous and $h$ singular. Show that
 \[
-\int_a^b\varphi df=\int_a^b\varphi f'dx+\int_a^b\varphi dh
+\int_a^b\varphi \diff f=\int_a^b\varphi f'dx+\int_a^b\varphi \diff h
 \]
 for all functions $\varphi$ continuous on $[a,b]$.
 \end{problem}

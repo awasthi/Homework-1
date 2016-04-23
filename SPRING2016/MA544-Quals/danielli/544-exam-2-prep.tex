@@ -11,7 +11,7 @@ f(\bfx)=
 Prove that $f$ is integrable outside any ball $B_\varepsilon(\mathbf{0})$,
 and that there exists a constant $C>0$ such that
 \[
-\int_{\bbR^n\setminus B_\varepsilon(\mathbf{0})}f(\bfx) d \bfx\leq\frac{C}{\varepsilon}.
+\int_{\bbR^n\setminus B_\varepsilon(\mathbf{0})}f(\bfx) \diff \bfx\leq\frac{C}{\varepsilon}.
 \]
 \end{problem}
 \begin{proof}
@@ -19,23 +19,23 @@ Recall that a real-valued function $f\colon\bbR^n\to\bbR$ is (Lebesgue)
 integrable over a subset $E$ of $\bbR^n$ (or, alternatively, $f$ belongs to
 $L(E)$) if
 \[
-\int_E f(\bfx) d \bfx<\infty.
+\int_E f(\bfx) \diff \bfx<\infty.
 \]
 
 Put $E=\bbR^n\setminus B_\varepsilon(\mathbf{0})$. Then, to show that
 $f$ belongs to $L(E)$ it suffices to prove the inequality
 \begin{equation}
 \label{eq:eq:inequality-1}
-\int_E f(\bfx) d \bfx<\frac{C}{\varepsilon}
+\int_E f(\bfx) \diff \bfx<\frac{C}{\varepsilon}
 \end{equation}
 for some appropriate constant $C$. We proceed by directly computing the
 Lebesgue integral of $f$ and employing Tonelli's theorem:
 \begingroup
 \allowdisplaybreaks
 \begin{align*}
-\int_Ef(\bfx) d \bfx
-={}&\int_E\frac{ d \bfx}{|\bfx|^{n+1}}\\
-={}&\idotsint_E\frac{ d  x_1\cdots d
+\int_Ef(\bfx) \diff \bfx
+={}&\int_E\frac{ \diff \bfx}{|\bfx|^{n+1}}\\
+={}&\idotsint_E\frac{\diff x_1\cdots \diff
   x_n}{\left({x_1}^2+\cdots+{x_n}^2\right)^{(n+1)/2}}
 \intertext{let $E_i$ denote the projection of $E$ onto its $i$-th
   coordinate and make the trigonometric substitution
@@ -44,10 +44,10 @@ Lebesgue integral of $f$ and employing Tonelli's theorem:
   $\theta\in(-\pi/2,-\tan^{-1}(\varepsilon))\cup(\tan^{-1}(\varepsilon),\pi/2)$
   giving us the integral}
 ={}&\int_{E_n}\cdots\int_{E_2}\left[\frac{\cos^{n-1}\theta}{\left({x_2}^2+\cdots+{x_n}^2\right)^{n/2}} d \theta\right] d
-  x_2\cdots d  x_n
+  x_2\cdots\diff x_n
 \intertext{which, by Tonelli's theorem, is}
 ={}&\int_{E_n}\cdots\int_{E_2}
-\frac{ d  x_2\cdots d  x_n}{\left({x_2}^2+\cdots+{x_n}^2\right)^{n/2}}
+\frac{\diff x_2\cdots\diff x_n}{\left({x_2}^2+\cdots+{x_n}^2\right)^{n/2}}
 \left[\int_{E_\theta}\cos^{n-1}\theta d \theta\right]
 \end{align*}
 \endgroup
@@ -61,8 +61,8 @@ Proceeding in this manner, we eventually achieve the inequality
 \label{eq:desired-inequality-1}
 \begin{aligned}
 \idotsint_Ef(\bfx) d \bfx
-<{}&C'\int_{E_n}\frac{ d  x_n}{{x_n}^2}\\
-={}&2C'\int_\varepsilon^\infty\frac{ d  x_n}{{x_n}^2}\\
+<{}&C'\int_{E_n}\frac{\diff x_n}{{x_n}^2}\\
+={}&2C'\int_\varepsilon^\infty\frac{\diff x_n}{{x_n}^2}\\
 ={}&\frac{C}{\varepsilon}
 \end{aligned}
 \end{equation}
@@ -277,7 +277,7 @@ Therefore,
 \left|\left\{\,x\in E:|f_k(x)-f(x)|>\varepsilon\,\right\}\right|
 \leq\frac{1+\varepsilon}{\varepsilon}
 \int_{\left\{\,x\in
-    E:|f_k(x)-f(x)|>\varepsilon\,\right\}}\frac{|f_k-f|}{1+|f_k-f|} d  x
+    E:|f_k(x)-f(x)|>\varepsilon\,\right\}}\frac{|f_k-f|}{1+|f_k-f|}\diff x
 \longrightarrow 0
 \]
 as $k\to\infty$.
@@ -286,9 +286,9 @@ $\impliedby$: Conversely, given $\delta>0$, we have
 \[
 \begin{aligned}
 \rho(f_k,f)
-={}&\int_{\left\{\,x\in E:|f_k(x)-f(x)|>\delta\,\right\}}\frac{|f_k-f|}{1+|f_k-f|} d  x\\
+={}&\int_{\left\{\,x\in E:|f_k(x)-f(x)|>\delta\,\right\}}\frac{|f_k-f|}{1+|f_k-f|}\diff x\\
 &\phantom{{}={}}+\int_{\left\{\,x\in
-    E:|f_k(x)-f(x)|\leq\delta\,\right\}}\frac{|f_k-f|}{1+|f_k-f|} d  x\\
+    E:|f_k(x)-f(x)|\leq\delta\,\right\}}\frac{|f_k-f|}{1+|f_k-f|}\diff x\\
 \leq{}&\left|\left\{\,x\in
     E:|f_k(x)-f(x)|>\delta\,\right\}\right|+\frac{\delta}{1+\delta}|E|.
 \end{aligned}
@@ -309,12 +309,12 @@ Therefore, $f_k\to f$ in measure implies $\rho(f_k,f)\to 0$ as $k\to\infty$.
 \begin{problem}
 Define the \emph{gamma function} $\Gamma\colon\bbR^+\to\bbR$ by
 \[
-\Gamma(y)=\int_0^\infty e^{-u}u^{y-1} d  u,
+\Gamma(y)=\int_0^\infty e^{-u}u^{y-1}\diff u,
 \]
 and the \emph{beta function} $\beta\colon\bbR^+\times\bbR^+\to\bbR$
 by
 \[
-\beta(x,y)=\int_0^1 t^{x-1}(1-t)^{y-1} d  t.
+\beta(x,y)=\int_0^1 t^{x-1}(1-t)^{y-1}\diff t.
 \]
 \begin{enumerate}[label=(\alph*)]
 \item Prove that the definition of the gamma function is well-posed, i.e.,
@@ -332,8 +332,8 @@ since $(0,1)$ and $[1,\infty)$ are disjoint measurable subsets of $\bbR$,
 by Theorem 5.7 we can split the integral $\Gamma(y)$ into
 \begin{equation}
 \label{eq:split-integral-5}
-\Gamma(y)=\underbrace{\int_0^1 e^{-u}u^{y-1} d  u}_{I_1}
-+\underbrace{\int_1^\infty e^{-u}u^{y-1} d  u}_{I_2}.
+\Gamma(y)=\underbrace{\int_0^1 e^{-u}u^{y-1}\diff u}_{I_1}
++\underbrace{\int_1^\infty e^{-u}u^{y-1}\diff u}_{I_2}.
 \end{equation}
 We will show, separately, that $I_1$ and $I_2$ are finite.
 
@@ -351,8 +351,8 @@ since $0<u<1$
 \begin{equation}
 \label{eq:estimate-i-1-5}
 \begin{aligned}
-I_1={}&\int_0^1 e^{-u}u^{y-1} d  u\\
-\leq{}&\int_0^1 u^{y-1} d  u\\
+I_1={}&\int_0^1 e^{-u}u^{y-1}\diff u\\
+\leq{}&\int_0^1 u^{y-1}\diff u\\
 ={}&\left[\frac{u^y}{y}\right]_0^1\\
 ={}&\frac{1}{y}\\
 <{}&\infty.
