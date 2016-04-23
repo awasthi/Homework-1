@@ -29,7 +29,8 @@ dimensions we might, for instance, define the indefinite integral $F$ of
 $f$ to be
 \begin{equation}
 \label{eq:3:2-dim-indefinite-integral}
-F(x_1,x_2)\coloneqq \int_{a_1}^{x_1}\int_{a_2}^{x_2}f(y_1,y_2)dy_2dy_1.
+F(x_1,x_2)\coloneqq \int_{a_1}^{x_1}\int_{a_2}^{x_2}f(y_1,y_2)\diff
+y_2\diff y_1.
 \end{equation}
 
 As it turns out, it is better to abandon the notion that the indefinite
@@ -42,6 +43,22 @@ be the function
 F(E)\coloneqq \int_E f,
 \end{equation}
 where $E$ is a measurable subset of $A$.
+
+The function $F$ is an example of a
+\href{https://en.wikipedia.org/wiki/Set_function}{\emph{set function}}, by
+which we mean any real-valued function $F$ defined on a $\sigma$-algebra
+$\Sigma$ of measurable sets such that
+\begin{enumerate}[label=(\roman*),noitemsep]
+\item $F(E)$ is finite for every $E\in\Sigma$.
+\item F is
+  \href{https://en.wikipedia.org/wiki/Measure_(mathematics)#Properties}{\emph{countably
+      additive}}; i.e., if $E$ is the union of disjoint sets
+  $E_k\in\Sigma$, $k=1,2,\dotsc$, then
+  \begin{equation}
+    \label{eq:3:countably-additive-set-function}
+    F(E)\sum_{k\in\bbN} F(E_k).
+  \end{equation}
+\end{enumerate}
 
 %%% Local Variables:
 %%% mode: latex
