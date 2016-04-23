@@ -35,8 +35,8 @@
 \usepackage{amssymb}
 \usepackage{mathtools}
 % \usepackage{eucal}
-\usepackage{mathrsfs}
-\usepackage[nointegrals]{wasysym}
+% \usepackage{mathrsfs}
+% \usepackage[nointegrals]{wasysym}
 
 %% Language
 \usepackage{cmap}
@@ -152,6 +152,11 @@
 \newtheorem*{problem*}{Problem}
 
 \begin{document}
+%% Footnotes
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+\chapterstyle{veelo}
+\pagestyle{ruled}
 \author{\href{mailto:\authoremail}{\documentauthor}}
 \title{\documenttitle}
 \date{\today}

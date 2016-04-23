@@ -157,10 +157,17 @@
 \newtheorem*{problem*}{Problem}
 
 \begin{document}
+\chapterstyle{veelo}
+\pagestyle{ruled}
 \author{\href{mailto:\authoremail}{\documentauthor}}
 \title{\documenttitle}
 \date{\today}
 \maketitle
+\tableofcontents
+
+%% Footnotes
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
 % \include{notes/wheeden-and-zygmund-1}
 % \include{notes/wheeden-and-zygmund-2}
 % \include{notes/wheeden-and-zygmund-3}
