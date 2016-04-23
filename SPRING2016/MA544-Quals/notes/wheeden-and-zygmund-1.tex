@@ -1,723 +1,100 @@
-\chapter{Notes}
-Notes based off of Wheeden and Zygmund's \emph{Measure and Integral} book.
-\section{Exam 1 Review}
-This is all of the material we covered before exam 1.
+\chapter{Course Notes}
+\thispagestyle{empty}
+These notes roughly correspond to chapters 2 through 8 of Wheeden and
+Zygmund's \emph{Measure and Integration}
+\cite{wheeden-zygmund:measure-and-integral}.
 
-\bigskip
+This first portion corresponds to material covered before Exam 1.
+\section{Functions of bounded variation and the Riemann--Stieltjes
+  integral}
+In this section, we introduce functions of bounded variation as well as the
+definition of the Riemann integral. We conclude with a proof that the
 
-Introductory material I should have known from 504.
-
-If $\calF$ is a countable (i.e., finite or countably infinite), it will be
-called a \emph{sequence of sets} and denoted
-$\calF=\left\{\,E_k:k=1,2,...\,\right\}$. The corresponding union
-and intersection will be written $\bigcup_k E_k$ and $\bigcap_k E_k$. A
-sequence $\{E_k\}$ of sets is said to \emph{increase} to $\bigcup_k E_k$ if
-$E_k\subset E_{k+1}$ for all $k$ and to \emph{decrease} to $\bigcap_k E_k$
-if $E_k\supset E_{k+1}$ for all $k$; we use the notation
-$E_k\nearrow\bigcap_k E_k$ and $E_k\searrow\bigcap_k E_k$ to denote these
-two possibilities. If $\left\{E_k\right\}_{k=1}^\infty$ is a sequence of
-sets, we define
+\subsection{Functions of bounded variation}
+Let $f\colon[a,b]\to\bbR$ be a real-valued function defined for all $a\leq
+x\leq b$ and finite; let $\Gamma=\left\{x_0,\dotsc,x_m\right\}$ be a
+\href{https://en.wikipedia.org/wiki/Partition_of_an_interval}{\emph{partition}}
+of $[a,b]$, i.e., a collection of points $x_i$, $i=0,\dotsc,m$, satisfying
+$x_0=a$ and $x_m=b$, and $x_{i-1}<x_i$ for $i=1,\dotsc,m$. To each
+partition $\Gamma$, we associated a sum
 \begin{equation}
-\label{eq:limsup-liminf-sets}
-\limsup E_k\coloneqq\bigcap_{j=1}^\infty\bigcup_{k=j}^\infty E_k,\qquad
-\liminf E_k\coloneqq\bigcup_{j=1}^\infty\bigcap_{k=j}^\infty E_k,
+\label{eq:bv:sum}
+S_\Gamma\coloneqq S_\Gamma[f;a,b]\coloneqq\sum_{i=1}^m\left|f(x_i)-f(x_{i-1})\right|.
 \end{equation}
-noting that the sets $U_j=\bigcup_{k=j}^\infty E_k$ and
-$V_j=\bigcap_{k=j}^\infty E_k$ satisfy $U_j\searrow\limsup E_k$ and
-$V_j\nearrow\liminf E_k$. Then $\limsup E_k$ consists of those points of
-$\bbR^n$ that belong to infinitely many $E_k$ and $\liminf E_k$ to those
-that belong to all $E_k$ for $k\geq k_0$ (where $k_0$ may vary from point
-to point). Thus $\liminf E_k\subset\limsup E_k$.
-
-If $E_1$ and $E_2$ are two sets, we define $E_1\setminus E_2$ by
-$E_1\setminus E_2= E_1\cap\complement E_2$ and call it the
-\emph{difference} of $E_1$ and $E_2$ or the \emph{relative complement} of
-$E_2$ in $E_1$. We will often have occasion to use \emph{de Morgan laws},
-which govern relations between complements, unions, and intersections;
-these state that
+The
+\href{https://en.wikipedia.org/wiki/Bounded_variation#Formal_definition}{\emph{variation}}
+(or \emph{total variation}) \emph{of $f$ over $[a,b]$} is defined as
 \begin{equation}
-\label{eq:de-morgan-laws}
-\complement
-\left(\bigcup_{E\in\calF}E\right)=
-\bigcap_{E\in\calF}\complement E,\qquad
-\complement
-\left(\bigcap_{E\in\calF}E\right)=
-\bigcup_{E\in\calF}\complement E,
+  \label{eq:bv:variation}
+V\coloneqq V[f;a,b]\coloneqq\sup_\Gamma S_\Gamma,
 \end{equation}
-and are easily verified.
+where the supremum is taken over all partitions $\Gamma$ of $[a,b]$. If
+$V<\infty$, $f$ is said to be of
+\href{https://en.wikipedia.org/wiki/Bounded_variation}{\emph{bounded
+    variation}} \emph{on $[a,b]$}; if $V=\infty$, $f$ is of \emph{unbounded
+variation on $[a,b]$}.
 
-If $\bfx\in\bbR^n$, we say that a sequence $\{\bfx_k\}$ \emph{converges} to
-$\bfx$, or that $\bfx$ is the \emph{limit point} of $\{\bfx_k\}$, if
-$\|\bfx-\bfx_k\|\to 0$ as $k\to\infty$. We denote this by writing either
-$\bfx=\lim_{k\to\infty}\bfx_k$ or $\bfx_k\to\bfx$ as $k\to\infty$. A point
-$\bfx\in\bbR^n$ is called a \emph{limit point of a set $E$} if it is the
-limit point of a sequence of distinct points of $E$. A point $\bfx\in E$ is
-called a \emph{isolated point} of $E$ if it is not the limit point of any
-sequence in $E$ (excluding the trivial sequence $\left\{\bfx_k\right\}$
-where $\bfx_k=\bfx$ for all $k\in\bbN$). It follows that $\bfx$ is isolated
-if and only if there is a $\delta>0$ such that $\|\bfx-\bfy\|>\delta$ for
-every $\bfy\in E$, $\bfy\neq\bfx$.
+Before going on to prove important properties about
+\eqref{eq:bv:variation}, let us look at some common examples (and
+nonexamples) of functions $f$ of bounded variation.
 
-For sequences $\left\{x_k\right\}$ in $\bbR$, we will write
-$\lim_{k\to\infty} x_K=\infty$, or $x_k\to\infty$ as $k\to\infty$, if given
-$M>0$ there is an integer $N$ such that $x_k\geq M$ whenever $k\geq M$.
-
-A sequence $\left\{ \bfx_k \right\}$ in $\bbR^n$ is called a \emph{Cauchy
-  sequence} if given $\varepsilon>0$ there exists an integer $N$ such that
-$\|\bfx_k-\bfx_\ell\|<\varepsilon$ for all $k,\ell\geq N$. $\bbR^n$ is a
-complete metric space, i.e., every Cauchy sequence in $\bbR^n$ converges to
-a point of $\bbR^n$.
-
-A set $E\subset E_1$ is said to be \emph{dense} in $E_1$ if for every
-$\bfx_1\in E_1$ and $\varepsilon>0$ there is a point $\bfx\in E$ such that
-$0<\|\bfx-\bfx_1\|<\varepsilon$. Thus, $E$ is dense in $E_1$ if every point
-of $E_1$ is a limit point of $E$. If $E=E_1$, we say $E$ is \emph{dense in
-  itself}. As an example, the set of limit points of $\bbR^n$ each of whose
-coordinates is a rational number is dense in $\bbR^n$. Since this set is
-also countable, it follows that $\bbR^n$ is \emph{separable}, by which we
-mean that $\bbR^n$ has a countable dense subset.
-
-For nonempty subsets $E$ of $\bbR$, we use the standard notation $\sup E$
-and $\inf E$ for the \emph{supremum} (\emph{least upper bound}) and
-\emph{infimum} (\emph{greatest lower bound}) of $E$. In case $\sup E$
-belong to $E$, it will be called $\max E$; similarly, $\inf E$ will be
-called $\min E$ if it belongs to $E$.
-
-If $\left\{ a_k \right\}_{k=1}^\infty$ is a sequence of points in $\bbR$,
-let $b_j=\sup_{k\geq j} a_k$ and $c_j=\inf_{k\geq j} a_k$,
-$j=1,2,\dotsc$. Then $-\infty\leq c_j\leq b_j\leq\infty$ and $\left\{ b_j
-\right\}$ and $\left\{ c_j \right\}$ are monotone decreasing and
-increasing, respectively; that is, $b_j\geq b_{j+1}$ and $c_j\leq
-c_{j+1}$. Define $\limsup_{k\to\infty} a_k$ and $\liminf_{k\to\infty} a_k$
-by
-\begin{equation}
-\label{eq:limsup-liminf-e-k}
-\begin{aligned}
-\limsup_{k\to\infty} a_j=
-\lim_{j\to\infty}b_j=
-\lim_{j\to\infty}\left\{\lim_{k\geq j} a_k\right\},\\
-\liminf_{k\to\infty} a_k=
-\lim_{j\to\infty} C_j=
-\lim_{j\to\infty}\left\{\lim_{k\geq j} a_k\right\}.
-\end{aligned}
-\end{equation}
-\begin{theorem}[1.4]
-\begin{enumerate}[label=\textnormal{(\alph*)}]
-\item $L=\limsup_{k\to\infty} a_k$ if and only if (i) there is a
-  subsequence $\{a_{k_j}\}$ of $\{a_k\}$ that   converges to $L$ and (ii)
-  if $L'>L$, there is an integer $N$ such that $a_k<L'$ for $k\geq N$.
-\item $\ell=\liminf_{k\to\infty} a_k$ if and only if (i) there is a
-  subsequence $\{a_{k_j}\}$ of $\{a_k\}$ that converges to $\ell$ and (ii)
-  if $\ell'<\ell$, there is an integer $N$ such that $a_k>\ell'$ for $k\geq
-  N$.
-\end{enumerate}
-\end{theorem}
-
-Thus, when they are finite, $\limsup a_k$ and $\liminf a_k$ are the
-largest and smallest limit points of $\{a_k\}$, respectively.
-
-We can also use the metric on $\bbR$ to define the \emph{diameter of a set
-  $E$} by letting
-\begin{equation}
-  \label{eq:diameter-of-set}
-\diam E\coloneqq\left\{\,\|\bfx-\bfy\|:\bfx,\bfy\in E\,\right\}.
-\end{equation}
-If the diameter of $E$ is finite, $E$ is said to be
-\emph{bounded}. Equivalently, $E$ is bounded if there is a finite constant
-$M$ such  that $\|\bfx\|\leq M$ for all $\bfx\in E$. If $E_1$ and $E_2$ are
-two sets, the \emph{distance between $E_1$ and $E_2$} is defined by
-\begin{equation}
-  \label{eq:distance-e-1-e-2}
-d(E_1,E_2)\coloneqq\inf\left\{\,\|\bfx-\bfy\|:\bfx\in E_1,\bfy\in E_2\,\right\}.
-\end{equation}
-
-For $\bfx\in\bbR^n$ and $\delta>0$, the set
-\begin{equation}
-\label{eq:open-ball-r-n}
-B(\bfx,\delta)\coloneqq\left\{\,\bfy:\|bfx-\bfy\|<\delta\,\right\}
-\end{equation}
-is called the \emph{open ball with center $\bfx$ and radius $\delta$}. A
-point $\bfx$ of a set $E$ is called an \emph{interior point} of $E$ if
-there exists $\delta>0$ such that $B(\bfx,\delta)\subset E$. The collection
-of all interior points of $E$ is called the \emph{interior} of $E$ and
-denoted $E^\circ$. A set $E$ is said to be \emph{open} if $E^\circ=E$; that
-is, $E$ is open if for each $\bfx\in E$ there exists $\delta>0$ such that
-$B(\bfx,\delta)\subset E$. The empty set $\emptyset$ is open by
-convention. The whole space $\bbR^n$ is clearly open and $B(\bfx,\delta)$
-is evidently open. We will generally denote open sets by the letter $G$.
-
-A set $E$ is called \emph{closed} if $\complement E$ is open. Note that
-$\emptyset$ and $\bbR^n$ are closed. Closed sets will generally be denoted
-by the letter $F$. The union of a set $E$ and all its limit points is
-called the \emph{closure} of $E$ and written $\bar E$. By the
-\emph{boundary} of $E$, we mean $\partial E\coloneqq\bar E\setminus
-E^\circ$.
-\begin{theorem}[1.5]
-\begin{enumerate}[label=\textnormal{(\roman*)}]
-\item $\bar{B(\bfx,\delta)}=\left\{\,\bfy:\|\bfx-\bfy\|\leq\delta\, \right\}$
-\item $E$ is closed if and only if $E=\bar E$; that is, $E$ is closed if
-  and only if it contains all of its limit points.
-\item $\bar E$ is closed, and $\bar E$ is the smallest closed set
-  containing $E$; that is, $F$ is closed and $E\subset F$, then $\bar
-  E\subset F$.
-\end{enumerate}
-\end{theorem}
-
-(The rest of this is a bunch of theorems that can be expressed in more
-generality from a more topological perspective. At any rate, they are very
-basic.)
-
-Consider a collection $\{A\}$ of sets $A$. A set is said to be of \emph{type
-$A_\delta$} if it can be written as a countable intersection of sets $A$
-and of \emph{type $A_\sigma$} if it can be written as a countable union of
-sets $A$. The most common uses of this notation are $G_\delta$ and
-$F_\sigma$, where $\{G\}$ denotes open sets in $\bbR^n$ and $\{F\}$ closed
-sets. Hence, $H$ is of \emph{type $G_\delta$} if
-\begin{equation}
-  \label{eq:G-delta}
-H=\bigcap_k G_k,\qquad \text{$G_k$ open,}
-\end{equation}
-and is of \emph{type $F_\sigma$} if
-\begin{equation}
-  \label{eq:F-sigma}
-H=\bigcap_k F_k,\qquad\text{$F_k$ closed.}
-\end{equation}
-The complement of a $G_\delta$ set is an $F_\sigma$ and vice-a-versa.
-
-Another type of set that we have the occasion to use is the \emph{perfect
-  set}, by which we mean a closed set $C$ each of whose points is a limit
-point of $C$. Thus, a perfect set is a closed set that is dense in itself.
-
-\begin{theorem}[1.9]
-A perfect set is uncountable.
-\end{theorem}
-
-Other special sets that will be important are $n$-dimensional
-intervals. When $n=1$ and $a<b$, we will use the usual notations
-$[a,b]=\left\{\,x:a\leq x\leq b\,\right\}$,
-$(a,b)=\left\{\,x:a<x<b\,\right\}$, etc. Whenever we use just the
-word interval, we generally mean closed interval. An \emph{$n$-dimensional
-  interval $I$} is a subset of $\bbR^n$ of the form
-$I=\left\{\,\bfx=(x_1,\dotsc,x_n):\text{$a_k\leq x_k\leq b_k$,
-    $k=1,\dotsc,n$}\,\right\}$, where $a_k<b_k$, $k=1,\dotsc,n$. An
-interval is thus closed, and we say it has edges parallel to the coordinate
-axes. If the edge lengths $b_k-a_k$ are all equal, $I$ will be called an
-\emph{$n$-dimensional cube} with edges parallel to the coordinate
-axes. Cubes will usually be denoted by the letter $Q$. Two intervals are
-said to be \emph{nonoverlapping} if their interiors are disjoint, that is,
-if the most they have in common is some part of their boundaries. A set
-equal to an interval minus will be called a \emph{partly-open interval}. By
-definition, the \emph{volume $\vol(I)$} of the interval
-$I=\left\{\,(x_1,\dotsc,x_n):\text{$a_k\leq x_k\leq b_k$,
-    $k=1,\dotsc,n$}\,\right\}$ is
-\begin{equation}
-  \label{eq:volume-i}
-\Vol(I)\coloneqq\prod_{k=1}^n(b_k-a_k).
-\end{equation}
-
-More generally, if ${\{\bfe_k\}}_{k=1}^n$ is any given set of $n$ vectors
-emanating from a point in $\bbR^n$, we will consider the closed
-\emph{parallelepiped}
-\begin{equation}
-  \label{eq:parallelepiped}
-P\coloneqq\left\{\,\bfx:\text{$\bfx=\sum_{k=1}^n t_k\bfe_k$, $0\leq t_k\leq
-    1$}\,\right\}.
-\end{equation}
-Note that the edges of $P$ are parallel translates of $\bfe_k$. Thus, $P$
-is an interval if the $\bfe_k$ are parallel to the coordinate axes. The
-\emph{volume $\Vol P$} of $P$ is \emph{by definition} the absolute value of
-the $n\times n$ determinant having $\bfe_1,\dotsc,\bfe_n$ as rows. In case
-$P$ is an interval, this definition agrees with the one given earlier. A
-linear transformation $T$ of $\bbR^n$ transforms a parallelapiped $P$ into
-a parallelapiped $P'$ with volume $\Vol P'=|\det T|\Vol P$. In particular,
-rotation of the axes in $\bbR^n$ does not change the volume of a
-parallelapiped.
-
-\begin{theorem}[1.10]
-Every open set in $\bbR$ can be written as a countable union of disjoint
-open intervals.
-\end{theorem}
-\begin{proof}
-Let $G$ be an open subset of $\bbR$. For each $x$ in $G$, by Zorn's lemma,
-we may choose a maximal interval $I_x\subset G$. Now, if $x,x'\in G$ are
-distinct points, then, by maximality, either $I_{x}=I_{x'}$ or $I_{x}\cap
-I_{x'}=\emptyset$. Clearly, $G=\bigcup_{x\in G} I_x$. Since each $I_x$
-contains a rational number, the number of distinct $I_x$ must be countable,
-and the theorem follows.
-\end{proof}
-\begin{theorem}[1.11]
-Every open set in $\bbR^n$, $n\geq 1$, can be written as a countable union
-of nonoverlapping (closed) cubes. It can also be written as a countable
-union of disjoint partly open cubes.
-\end{theorem}
-\begin{proof}
-The proof is analogous to that of Theorem 1.10, but more general. Consider
-a lattice of points of $\bbR^n$ with integral coordinates and the
-corresponding net $K_0$ of cubes with edge length $1$ and
-vertices. Bisecting each edge of a cube in $K_0$, we obtain from it $2^n$
-subcubes of edge length $1/2$. The total collection of these subcubes for
-every cube in $K_0$ forms a net $K_1$ of cubes. If we continue bisecting,
-we obtain finer and finer nets $K_j$ of cubes such that each cube in $K_j$
-has edge length $2^{-j}$ and is the union of $2^n$ nonoverlapping cubes in
-$K_{j+1}$.
-
-Now let $G$ be any open set in $\bbR^n$. Let $S_0$ be the collection of all
-cubes $K_0$ that lie entirely in $G$. Let $S_1$ be those cubes in $K_1$
-that lie in $G$ but are not subcubes of any cube in $S_0$. More generally,
-for $j\geq 1$, let $S_j$ be the cubes in $K_j$ that lie in $G$ but that are
-not subcubes of any cube in $S_0,\dotsc,S_{j-1}$. If $S$ denotes the total
-collection of cubes from all the $S_j$, then $S$ is countable since each
-$K_j$ is countable, and the cubes in $S$ are nonoverlapping by
-construction. Hence, $G=\bigcup_{Q\in S}Q$, which proves the first
-statement.
-
-The second part of the statement is left as an exercise to me, but I'm not
-interested in solving it; there is nothing to be gained from attempting a
-solution to it.
-\end{proof}
-
-The collection $\left\{\,Q:\text{$Q\in K_j$, $j=1,2,\dotsc$}\,\right\}$
-constructed above is called a family of dyadic cubes. In general, by
-\emph{dyadic cubes}, we mean the family of cubes obtained from repeated
-bisection of any initial net of cubes in $\bbR^n$.
-
-It follows from Theorem 1.10 that any closed set in $\bbR$ can be
-constructed by deleting a countable number of open disjoint intervals from
-$\bbR$.
-
-By cover of a set $E$, we mean a family $\calF$ of sets $A$ such that
-$E\subset\bigcup_{A\in\calF} A$. A \emph{subcover $\calF'$} of a cover
-$\calF$ is a cover with the property that $A'\in\calF$ whenever
-$A'\in\calF'$. A cover $\calF$ is called an \emph{open cover} if each set
-in $\calF$ is open.
-\begin{theorem}[1.12]
-\begin{enumerate}[label=\textnormal{(\alph*)}]
-\item (The Heine--Borel theorem) A set $E\subset\bbR^n$ is compact if and
-  only if it is closed and bounded.
-\item A set $E\subset\bbR^n$ is compact if and only if every sequence of
-  points in $E$ has a subsequence that converges to a point of $E$.
-\end{enumerate}
-\end{theorem}
-
-By a function $f$ defined for $\bfx$ in a set $E\subset\bbR^n$, we will
-always mean a \emph{real-valued} function, unless explicitly stated
-otherwise. By \emph{real-valued}, we generally mean \emph{extended
-  real-valued}, i.e., $f$ may take the values $\pm\infty$; if
-$|f(\bfx)|<\infty$ for all $\bfx\in E$, we say $f$ is \emph{finite} (or
-\emph{finite-valued}) on $E$. A finite function $f$ is said to be
-\emph{bounded} on $E$ if there is a finite number $M$ such that
-$|f(\bfx)|\leq M$ for $\bfx\in E$; that is, $f$ is bounded on $E$ if $\sup
-|f(\bfx)|$, where $\bfx\in E$, is finite. A sequence ${\{f_k\}}$ of
-functions is said to be \emph{uniformly bounded} on $E$ if there is a
-finite $M$ such that $|f_k(\bfx)|\leq M$ for $\bfx\in E$ and all $k$.
-
-By the \emph{support} of $f$, we mean the closure of the set where $f$ is
-not zero. Thus, the support of a function is always closed. It follows that
-a function defined in $\bbR^n$ has \emph{compact support} if and only if it
-vanishes outside some bounded set.
-
-A function $f$ defined onan interval $I$ in $\bbR$ is called \emph{monotone
-increasing (decreasing)} if $f(x)\leq f(y)$ [$f(x)\geq f(y)$] whenever
-$x<y$ and $x,y\in I$. By \emph{strictly} monotone increasing (decreasing),
-we mean that $f(x)<f(y)$ [$f(x)>f(y)$] if $x<y$ and $x,y\in I$.
-
-Let $f$ be defined on $E\subset\bbR^n$ and let $\bfx_0$ be a limit point of
-$E$. Let $B'(\bfx_0,\delta)= B(\bfx_0,\delta)\setminus\{\bfx_0\}$
-denote the punctured ball with center $\bfx_0$ and radius $\delta$, and let
-\begin{equation}
-\label{eq:sup-inf-ball}
-M(\bfx_0,\delta)\coloneqq\sup_{\bfx\in B'(\bfx_0,\delta)\cap E}
-f(\bfx),\qquad
-m(\bfx_0,\delta)\coloneqq\inf_{\bfx\in B'(\bfx_0,\delta)\cap E}
-f(\bfx).
-\end{equation}
-As $\delta\searrow 0$, $M(\bfx_0,\delta)$ decreases and $m(\bfx_0,\delta)$
-increases, and we define
-\begin{equation}
-  \label{eq:ball-limsup-liminf}
-\begin{aligned}
-\limsup_{\substack{\bfx\to\bfx_0\\\bfx\in E}} f(\bfx)
-={}&\lim_{\delta\to 0}M(\bfx_0,\delta)\\
-\liminf_{\substack{\bfx\to\bfx_0\\\bfx\in E}} f(\bfx)
-={}&\lim_{\delta\to 0}m(\bfx_0,\delta).
-\end{aligned}
-\end{equation}
-\begin{theorem}[1.14]
-\begin{enumerate}[label=\textnormal{(\alph*)}]
-\item $M=\limsup_{\bfx\to\bfx_0;\bfx\in E} f(\bfx)$ if and only if
-  \textnormal{(i)} there exist ${\bfx_k}$ in $E\setminus\{\bfx_0\}$ such that
-  $\bfx_k\to\bfx_0$ and $f(\bfx_k)\to M$ and \textnormal{(ii)} if $M'>M$,
-  there exists $\delta>0$ such that $f(\bfx)<M'$ for $\bfx\in
-  B'(\bfx_0,\delta)\cap E$.
-\item $m=\liminf_{\bfx\to\bfx_0;\bfx\in E} f(\bfx)$ if and only if
-  \textnormal{(i)} there exist ${\bfx_k}$ in $E\setminus\{\bfx_0\}$ such that
-  $\bfx_k\to\bfx_0$ and $f(\bfx_k)\to m$ and \textnormal{(ii)} if $m'<m$,
-  there exists $\delta>0$ such that $f(\bfx)>m'$ for $\bfx\in
-  B'(\bfx_0,\delta)\cap E$.
-\end{enumerate}
-\end{theorem}
-
-A function $f$ defined on a neighborhood of $\bfx_0$ is said to be
-\emph{continuous} at $\bfx_0$ if $f(\bfx_0)$ is finite and
-$\lim_{\bfx\to\bfx_0}f(\bfx)=f(\bfx_0)$. If $f$ is not continuous at
-$\bfx_0$, it follows that unless $f(\bfx_0)$ is infinite, either
-$\lim_{\bfx\to\bfx_0} f(\bfx)$ does not exist or is different from
-$f(\bfx_0)$.
-
-For functions on $\bbR$, we will use the notation
-\begin{equation}
-  \label{eq:continuous-function}
-f(x_0+)\coloneqq\lim_{\substack{x\to x_0\\x>x_0}}f(x)\qquad
-f(x_0-)\coloneqq\lim_{\substack{x\to x_0\\x<x_0}}f(x).
-\end{equation}
-for the \emph{right-} and \emph{left-hand limits} of $f$ at $x_0$, when
-they exist. If $f(x_0+)$, $f(x_0-)$, and $f(x_0)$ exist and are finite, but
-$f$ is not continuous at $x_0$, then either $f(x_0+)\neq f(x_0-)$ or
-$f(x_0+)=f(x_0-)\neq f(x_0)$. In the first case, $x_0$ is called a
-\emph{jump discontinuity} of $f$ and in the second, a \emph{removable
-  discontinuity} of $f$ (since by changing the value of $f$ at $x_0$, we
-can make it continuous there). Such discontinuities are said to be of the
-\emph{first kind}, as distinguished from those of the \emph{second kind},
-for which either $f(x_0+)$ or $f(x_0-)$ does not exist or for which
-$f(x_0+)$, $f(x_0-)$ or $f(x_0)$ are infinite.
-
-If $f$ is defined only in a set $E$ containing $\bfx_0$, $E\subset\bbR^n$,
-then $f$ is said to be \emph{continuous at $\bfx_0$ relative to  to $E$} if
-$f(\bfx_0)$ is finite and either $\bfx_0$ is an isolated point of $E$ or
-$\bfx_0$ is a limit point of $E$ and $\lim_{\bfx\to\bfx_0;\bfx\in
-  E}f(\bfx)=f(\bfx_0)$. If $E'\subset E$, a function is said to be
-\emph{continuous in $E'$ relative to $E$} if it is continuous relative to
-$E$ at every point of $E'$.
-
-\begin{theorem}[1.15]
-Let $E$ be a compact set in $\bbR^n$ and $f$ be continuous in $E$ relative
-to $E$. Then the following are true:
-\begin{enumerate}[label=\textnormal{(\roman*)}]
-\item $f$ is bounded on $E$, $\sup_{\bfx\in E}|f(\bfx)|<\infty$.
-\item $f$ attains its supremum and infimum on $E$; i.e., there exists
-  $\bfx_1,\bfx_2\in E$ such that $f(\bfx_1)=\sup_{\bfx\in E}f(\bfx)$,
-  $f(\bfx_2)=\inf_{\bfx\in E}f(\bfx)$.
-\item $f$ is uniformly continuous on $E$ relative to $E$; i.e., given
-  $\varepsilon>0$, there exists $\delta>0$ such that
-  $|f(\bfx)-f(\bfy)|<\varepsilon$ if $\|\bfx-\bfy\|<\delta$ and
-  $\bfx,\bfy\in E$.
-\end{enumerate}
-\end{theorem}
-
-\begin{theorem}[1.16]
-Let $\{f_k\}$ be a sequence of functions defined on $E$ that are continuous
-in $E$ relative to $E$ and that converge uniformly on $E$ to a finite
-$f$. Then $f$ is continuous in $E$ relative to $E$.
-\end{theorem}
-
-A \emph{transformation $T$ of a set $E\subset\bbR^n$ into $\bbR^n$} is a
-mapping $\bfy=T\bfx$ that carries points $\bfx\in E$ into points
-$\bfy\in\bbR^n$. If $\bfy=(y_1,\dotsc,y_n)$, then $T$ can be identified
-with the collection of coordinate functions $y_k=f_k(\bfx)$,
-$k=1,\dotsc,n$, which are induced by $T$. The \emph{image} of $E$ under $T$
-is the set $\left\{\,\bfy:\text{$\bfy=T\bfx$ for some $\bfx\in
-    E$},\right\}$. $T$ is continuous at $\bfx_0\in E$ relative to $E$.
-
-\begin{theorem}[1.17]
-Let $\bfy=T\bfx$ be a transformation of $\bbR^n$ that is continuous in $E$
-relative to $E$. If $E$ is compact, then so is the image $TE$.
-\end{theorem}
-
-If $f$ is defined and bounded on an interval
-$I=\left\{\,\bfx:\text{$\bfx=(x_1,\dotsc,x_n)$, $a_k\leq x_k\leq
-    b_k$, $k=1,\dotsc,n$}\,\right\}$ in $\bbR^n$, its Riemann integral will
-be denoted
-\begin{equation}
-  \label{eq:riemann-integral}
-(R)\int_{a_1}^{b_1}\dotsi\int_{a_n}^{b_n}f(x_1,\dotsc,x_n) d
-x_1\dotsm d  x_n
-\qquad\text{or}\qquad
-(R)\int_I f(\bfx) d \bfx
-\end{equation}
-and is defined as follows. Partition $I$ into a finite collection $\Gamma$
-of nonoverlapping intervals, $\Gamma={\{I_k\}}_{k=1}^N$, and define the
-\emph{norm} $\|\Gamma\|$ of $\Gamma$ to by $\|\Gamma\|=\max_k \diam
-I_k$. Select a point $\vec\xi_k$ in $I_k$ for $k\geq 1$, and let
-\begin{equation}
-\label{eq:riemannian-integral-partitions}
-\begin{aligned}
-R_\Gamma(\vec\xi_1,\dotsc,\vec\xi_n)&\coloneqq\sum_{k=1}^N f(\vec\xi_k)\vol(I_k)\\
-U_\Gamma(\vec\xi_1,\dotsc,\vec\xi_n)&\coloneqq\sum_{k=1}^N\left[\sup_{\bfx\in I}
-  f(\bfx)\right]\vol(I_k)\\
-L_\Gamma(\vec\xi_1,\dotsc,\vec\xi_n)&\coloneqq\sum_{k=1}^N\left[\inf_{\bfx\in
-    I_k}f(\bfx)\right]\vol(I_k).
-\end{aligned}
-\end{equation}
-We define the Riemann integral by saying that $A= (R)\int_I
-f(\bfx)d\bfx$ if $\lim_{\|\Gamma\|\to 0}R_\Gamma$ exists and equals
-$A$; that is, if given $\varepsilon>0$, there exists $\varepsilon>0$ such
-that $|A-R_\Gamma|<\varepsilon$ for any $\Gamma$ and any chosen
-$\{\vec\xi_k\}$, provided only that $\|\Gamma\|<\delta$. This definition is
-actually equivalent to the statement that
-\begin{equation}
-  \label{eq:upper-lower-rieemann-sums}
-\inf_\Gamma U_\Gamma=\sup_\Gamma L_\Gamma=A.
-\end{equation}
-The integral of course exists if $f$ is continuous on $I$.
-
-
-Let $f$ be a a real-valued function that is defined and finite for all $x$
-in a closed bounded interval $a\leq x\leq b$. Let
-$\Gamma=\{x_0,\dotsc,x_m\}$ be a \emph{partition} of $[a,b]$; that is,
-$\Gamma$ is a collection of points $x_i$, $i=0,1,\dots m$, satisfying
-$x_0=a$, $x_m=b$, and $x_{i-1}<x_i$ for $i=1,\dotsc,m$. With each partition
-$\Gamma$ we associate the sum
-\begin{equation}
-\label{eq:variation-sums}
-S_\Gamma=S_\Gamma[f;a,b]=\sum_{i=1}^m|f(x_i)-f(x_{i-1})|.
-\end{equation}
-The \emph{variation of $f$ over $[a,b]$} is defined as
-\begin{equation}
-\label{eq:variation}
-V=V[f;a,b]=\sup_\Gamma S_\Gamma,
-\end{equation}
-where the supremum is taken over all partitions $\Gamma$ of $[a,b]$. The
-variation of $V[f;a,b]$ will sometimes also be denoted by $V[a,b]$ or
-$V(f)$. Since $0\leq S_\Gamma<\infty$, we have $0\leq V\leq\infty$. If
-$V<\infty$, $f$ is said to be of \emph{bounded variation on $[a,b]$}; if
-$V=\infty$, $f$ is of \emph{unbounded variation on $[a,b]$}.
-
-Here are several examples
 \begin{example}
-Suppose $f$ is monotone in $[a,b]$. Then, clearly, each $S_\Gamma$ equals
-$|f(b)-f(a)|$, and therefore $V=|f(b)-f(a)|$.
+Suppose $f$ is
+\href{https://en.wikipedia.org/wiki/Monotonic_function}{\emph{monotone}} in
+$[a,b]$. Then, clearly, each $S_\Gamma$ is equal to $|f(a)-f(b)|$ for every
+partition $\Gamma$\footnote{Carlos: This may not be clear at
+  a first glance, but, upon closer inspection, this is true by
+  monotoncity. If $a<x<b$, we have
+  $|f(b)-f(a)|=|f(b)-f(x)|+|f(x)-f(a)|$. This holds for an arbitrary
+  partitions $\Gamma$.}, and therefore $V=|f(b)-f(a)|$.
 \end{example}
 \begin{example}
 Suppose the graph of $f$ can be split into a finite number of monotone
-arcs; that is, suppose $[a,b]=\bigcup_{i=1}^k[a_i,a_{i+1}]$ and $f$
-monotone in each $[a_i,a_{i+1}]$. Then
-$V=\sum_{i=1}^k|f(a_{i+1})-f(a_i)|$. To see this, we use the result of the
-previous example and the fact, to be proved, in Theorem 2.2, that
-$V=\sum_{i=1}^kV[a_i,a_{i+1}]$.
-\end{example}
-\begin{example}
-Let $f$ be defined by $f(x)= 0$ when $x\neq 0$ and $f(0)=
-1$, and let $[a,b]$ be any interval containing $0$ in its interior. Then
-$S_\Gamma$ is either $2$ or $0$ depending on whether $x=0$ is a partition
-point or not. Thus, $V[a,b]=2$.
+arcs, i.e., suppose $[a,b]=\bigcup_{i=1}^k [a_{i-1},a_i]$ and $f$ is
+monotone in each $[a_{i-1},a_i]$. Then
+$V=\sum_{i-1}^k|f(a_i)-f(a_{i-1})|$. To see this, we use the result of
+Example 1 above and the fact, yet to be proven, than $V=V[a,b]=\sum_{i=1}^k
+V[a_i,a_{i-1}]$.
 \end{example}
 
-If $\Gamma=\{x_0,x_1,\dotsc,x_m\}$ is a partition of $[a,b]$, let
-$\|\Gamma\|$, called the \emph{norm of $\Gamma$}, be defined as the longest
-subinterval of $\Gamma$:
+If $\Gamma=\{x_0,\dotsc,x_m\}$ is a partition of $[a,b]$, let $|\Gamma|$,
+called the
+\href{https://en.wikipedia.org/wiki/Partition_of_an_interval#Norm_of_a_partition}{\emph{norm}}
+\emph{of $\Gamma$}, be defined as the length of the longest subinterval of
+$\Gamma$
 \begin{equation}
-\label{eq:eq:partition-norm}
-\|\Gamma\|=\max_{i=1,\dotsc,m} x_i-x_{i-1}.
+\label{eq:bv:partition-norm}
+|\Gamma|\coloneqq\max_{i}(x_i-x_{i-1}).
 \end{equation}
 If $f$ is continuous on $[a,b]$ and $\{\Gamma_j\}$ is a sequence of
-partitions $[a,b]$ with $\|\Gamma_j\|\to 0$, we shall see in Theorem 2.9
-that $V=\lim_{j\to\infty} S_{\Gamma_j}$. The example above shows that this
-may fail for functions that are discontinuous even at a single point: if we
-take $f$ and $[a,b]$ is in the example above and choose $\Gamma_j$ such
-that $x=0$ is never a partition in the point, then $\lim S_{\Gamma_j}=0$,
-while if we choose the $\Gamma_j$ such that $x=0$ alternatively is and is
-not a point, then $\lim S_{\Gamma_j}$ does not exist.
+partitions of $[a,b]$ with $|\Gamma_j|\to 0$, we shall see that
+$V=\lim_{j\to\infty} S_{\Gamma_j}$.
+
 \begin{example}
-Let $f$ be the \emph{Dirichlet function}, defined by $f(x)= 1$ for
-$x$ rational and $f(x)= 0$ for $x$ irrational. Then, clearly,
-$V[a,b]=\infty$ for any interval $[a,b]$.
+Let $f$ be the
+\href{https://en.wikipedia.org/wiki/Dirichlet_function}{\emph{Dirichlet
+    function}}, defined by $f(x)=1$ for $x$ rational and $f(x)=0$ for $x$
+irrational. Then, clearly, $V[a,b]=\infty$ for any interval of
+$[a,b]$.\footnote{Carlos: By the density of $\bbQ$ in $\bbR$ (and by
+  restriction, $[a,b]$, since $[a,b]$ is path-connected), for any
+  positive integer $N$, we may choose a partition $\Gamma$ of $[a,b]$
+  containing $N+1$ rational numbers so $S_\Gamma=N+1>N$.}
 \end{example}
+
 \begin{example}
-A function that is continuous on an interval is not necessarily of bounded
-variation on the interval. To see this, let $\{a_j\}$ and $\{d_j\}$,
-$j=1,2,\dotsc$, be two monotone decreasing sequences in $(0,1]$ with
-$a_1=1$, $\lim_{j\to\infty} a_j=\lim_{j\to\infty} d_j=0$ and $\sum
-d_j=\infty$. Construct a continuous function $f$ as follows. On each
-subinterval $[a_{j+1},a_j]$, the graph of $f$ consists of sides of the
-isosceles with base $[a_{j+1},a_j]$ and height $d_j$. Thus, $f(a_j)=0$, and
-if $m_j$ denotes the midpoint of $[a_{j+1},a_j]$, then $f(m_j)=d_j$. If we
-further define $f(0)=0$, then $f$ is continuous on $[0,1]$. Taking
-$\Gamma_k$ to the be the partition defined by the points $0$,
-${\{a_j\}}_{j=1}^{k+1}$, and ${\{m_j\}}_{j=1}^k$, we see that
-$S_\Gamma=2\sum_{j=1}^k d_j$. Hence, $V[f;0,1]=\infty$.
+A function that is continuous on an interval, however, need not be of
+bounded variation on that interval. Take for example the following
+construction: let $\{a_j\}$ and $\{d_j\}$, $j=1,2,\dotsc$, be monotone
+decreasing sequences in $(0,1]$ with $a_1=\lim_{j\to\infty}
+a_j=\lim_{j\to\infty}d_j=0$ and $\sum d_j=\infty$. Construct a continuous
+function $f$ as follows. On each subinterval $[a_{j+1},a_j]$, the graph of
+$f$ consists of the sides of the isosceles triangle with base
+$[a_{j+1},a_j]$ and height $d_j$. Thus, $f(a_j)=0$, and if $m_j$ denotes
+the midpoint of $[a_{j+1},a_j]$, then $f(m_j)=d_j$. If we define $f(0)=0$,
+then $f$ is continuous on $[0,1]$. Taking $\Gamma_k$ to be the partition
+defined by the points $0$, ${\{a_j\}}_{j=1}^{k+1}$ and ${\{m_j\}}_{j=1}^k$,
+we see that $S_\Gamma=2\sum_{j=1}^k d_j$. Hence, $V[f;0,1]=\infty$.
 \end{example}
-\begin{example}
-A function $f$ defined on $[a,b]$ is said to satisfy the \emph{Lipschitz
-  condition} on $[a,b]$, or be a \emph{Lipschitz function} on $[a,b]$, if
-there is a constant $C$ such that
-\[
-|f(x)-f(y)|\leq C|x-y|
-\]
-for all $x,y\in[a,b]$. Such a function is clearly of bounded variation,
-with $V[f;a,b]\leq C(b-a)$. For example, if $f$ has a continuous derivative
-on $[a,b]$, or even just a bounded derivative, then (by the mean-value
-theorem) $f$ satisfies the Lipschitz condition on $[a,b]$.
-\end{example}
-\begin{theorem}[2.1]
-\begin{enumerate}[label=\textnormal{(\roman*)}]
-\item If $f$ is of bounded variation on $[a,b]$, then $f$ is bounded on
-  $[a,b]$.
-\item Let $f$ and $g$ be of bounded variation on $[a,b]$. Then $cf$ (for
-  any real constant $c$), $f+g$, and $fg$ are of bounded variation on
-  $[a,b]$. Moreover, $f/g$ is of bounded variation if there exist some
-  $\varepsilon>0$ such that $|g(x)|\geq\varepsilon$ for $x\in[a,b]$.
-\end{enumerate}
-\end{theorem}
-\begin{proof}[Proof by Carlos]
-And the proof of these two is rather clear.
-
-For (i), we proceed by contradiction. Suppose that $f$ is of bounded
-variation on the interval $[a,b]$. Then the variation $V$ of $f$ over
-$[a,b]$ is finite. However, if $f$ is unbounded on $[a,b]$, for every
-positive real number $M$, there exists some $x\in[a,b]$ such that
-$|f(x)|>M$. In particular, for any $x'\in [a,b]$ we have
-\[
-|f(x)-f(x')|>M.
-\]
-In turn, this tells us that $V>|f(x)-f(x')|>M$ for any partition $\Gamma$
-containing $x$, so $V=\infty$. This yields a contradiction.
-
-For (ii), the proofs are simple. Suppose $f$ is of bounded variation on
-$[a,b]$ with variation $V_f$. Let $c$ be a real constant, then
-\begin{align*}
-V[cf;a,b]
-={}&\sup_\Gamma\sum_{i=1}^n|cf(x_i)-f(x_{i-1})|\\
-={}&|c|\sup_\Gamma\sum_{i=1}^n|f(x_i)-f(x_{i-1})|\\
-={}&|c|V_f\\
-<{}&\infty.
-\end{align*}
-Hence, $cf$ is of bounded variation on $[a,b]$. Suppose $f$ and $g$ are of
-bounded variation on $[a,b]$ with variation $V_f$ and $V_g$,
-respectively. Then
-\begin{align*}
-V[f+g;a,b]
-={}&\sup_\Gamma\sum_{i=1}^n|(f+g)(x_i)-(f+g)(x_{i-1})|\\
-={}&\sup_\Gamma\sum_{i=1}^n\left|{(f(x_i)-f(x_{i-1}))}+{(g(x_i)-g(x_{i-1}))}\right|\\
-\leq{}&\sup_\Gamma\sum_{i=1}^n\bigl[|f(x_i)-f(x_{i-1})|+|g(x_i)-g(x_{i-1})|\bigr]\\
-={}&\sup_\Gamma\sum_{i=1}^n|f(x_i)-f(x_{i-1})|
-+\sup_\Gamma\sum_{i=1}^n|g(x_i)-g(x_{i-1})|\\
-={}&V_f+V_g\\
-<{}&\infty.
-\end{align*}
-Hence, $f+g$ is of bounded variation. Suppose $f$ and $g$ are of bounded
-variation on $[a,b]$ with variation $V_f$ and $V_g$, respectively. Then
-\begin{align*}
-V[fg;a,b]
-={}&\sup_\Gamma\sum_{i=1}^n|(fg)(x_i)-(fg)(x_{i-1})|\\
-={}&\sup_\Gamma\sum_{i=1}^n|f(x_i)g(x_i)-f(x_{i-1})g(x_{i-1})|\\
-={}&\sup_\Gamma\sum_{i=1}^n|f(x_i)g(x_i)-f(x_{i-1})g(x_i)+f(x_{i-1})g(x_i)-f(x_{i-1})g(x_{i-1})|\\
-={}&\sup_\Gamma\sum_{i=1}^n|(f(x_i)g(x_i)-f(x_{i-1})g(x_i))
--(f(x_{i-1})g(x_{i-1})-f(x_{i-1})g(x_i))|\\
-={}&\sup_\Gamma\sum_{i=1}^n|g(x_i)||f(x_i)-f(x_{i-1})|
-+\sup_\Gamma\sum_{i=1}^n|f(x_{i-1})||g(x_i)-g(x_{i-1})|
-\intertext{by part (i), since $f$ and $g$ are b.v.\@ on $[a,b]$, they are
-  bounded so there exists $M$ and $N$ such that $|f(x)|<M$, $|g(x)|<M$ for
-  all $x\in[a,b]$}
-={}&M V_f+N V_g\\
-<{}&\infty.
-\end{align*}
-Hence, $fg$ is of bounded variation on $[a,b]$. Suppose that $f$ and $g$
-are of bounded variation on $[a,b]$ with variation $V_f$ and $V_g$,
-respectively. Suppose, additionally that there exists $\varepsilon>0$ such
-that $|g(x)|\geq\varepsilon$ for all $x\in[a,b]$. Then, we have
-\begin{align*}
-V[f/g;a,b]
-={}&\sup_\Gamma\sum_{i=1}^n|(f/g)(x_i)-(f/g)(x_{i-1})|\\
-={}&\sup_\Gamma\sum_{i=1}^n
-\left|\frac{f(x_i)}{g(x_i)}-\frac{f(x_{i-1})}{g(x_{i-1})}\right|\\
-={}&\sup_\Gamma\sum_{i=1}^n
-\left|\frac{g(x_{i-1})f(x_i)-g(x_i)f(x_{i-1})}{g(x_i)g(x_{i-1})}\right|
-\intertext{and since we have $g(x)>\varepsilon$ for any $x\in[a,b]$,
-  $1/g(x)<1/\varepsilon$ for any $x\in[a,b]$, so }
-\leq{}&\sup_\Gamma\left[\frac{1}{\varepsilon^2}
-\sum_{i=1}^n|g(x_{i-1})f(x_i)-g(x_i)f(x_{i-1})|\right]\\
-\leq{}&\sup_\Gamma\biggl[\frac{1}{\varepsilon^2}
-\sum_{i=1}^n|g(x_{i-1})f(x_i)-g(x_{i-1})f(x_{i-1})\\
-&\phantom{\sup_\Gamma\biggl[\frac{1}{\varepsilon^2}\sum_{i=1}^n|}-(g(x_i)f(x_{i-1})-g(x_{i-1})f(x_{i-1}))|\biggr]\\
-={}&
-\end{align*}
-etc.\@ etc.\@ etc.
-\end{proof}
-
-\begin{theorem}[2.2]
-\begin{enumerate}[label=\textnormal{(\roman*)}]
-\item If $[a',b']$ is a subinterval of $[a,b]$, then
-  $V[a',b']\leq V[a,b]$; that is, variation increases with interval.
-\item If $a<c<b$, then $V[a,b]=V[a,c]+V[c,b]$; that is, variation
-  is additive on adjacent intervals.
-\end{enumerate}
-\end{theorem}
-\begin{proof}[Carlos's proof]
-(i) follows from (ii). By recursively applying part (ii), we have
-\[
-V[a,b]=V[a,a']+V[a',b']+V[b',b].
-\]
-Hence,
-\begin{align*}
-V[a',b']&=V[a,b]-V[a,a']-V[b',b]\\
-           &\leq V[a,b]
-\end{align*}
-as desired.
-
-To see part (ii) let $f$ be a real-valued function defined on $[a,b]$. If
-$V[f;a,b]=\infty$, there is nothing to show so suppose
-$V[f;a,b]<\infty$. Let $c$ be a point in $[a,b]$ not equal to either
-endpoint $a$ or $b$.
-\end{proof}
-\begin{proof}[Proof of (ii)]
-Let $I= [a,b]$, $I_I= [a,c]$, $I_2= [c,b]$,
-$V= V[a,b]$, $V_1= V[a,c]$, and $V_2= V[c,b]$. If
-$\Gamma_1$ and $\Gamma_2$ are any partitions of $I_1$ and $I_2$,
-respectively, then $\Gamma=\Gamma_1\cup\Gamma_2$ is one of $I$, and
-$S_\Gamma[I]=S_{\Gamma_1}[I_1]+S_{\Gamma_2}[I_2]$. Thus,
-$S_{\Gamma_1}[I_1]+S_{\Gamma_2}[I_2]\leq V$. Therefore, taking the supremum
-over $\Gamma_1$ and $\Gamma_2$ separately, we obtain $V_1+V_2\leq V$.
-
-To show the opposite inequality, let $\Gamma$ be any partition $I$, and let
-$\bar\Gamma$ be $\Gamma$ with $c$ adjoined. Then $S_\Gamma[I]\leq
-S_{\bar\Gamma}[I]$, and $\bar\Gamma$ splits into partitions
-$\Gamma_1$ of $I_1$ and $\Gamma_2$ of $I_2$. Thus, we have
-\[
-S_\Gamma[I]\leq
-S_{\bar\Gamma}[I]=S_{\Gamma_1}[I_1]+S_{\Gamma_2}[I_2]\leq V_1+V_2.
-\]
-Therefore, $V\leq V_1+V_2$, which completes the proof of (ii).
-\end{proof}
-
-For any real number $x$, define
-\[
-x^+=
-\begin{cases}
-x&\text{if $x>0$}\\
-0&\text{if $x\leq 0$}
-\end{cases},
-\qquad
-x^-=
-\begin{cases}
-0&\text{if $x>0$}\\
--x&\text{if $x\leq 0$}
-\end{cases}.
-\]
-These are called the \emph{positive} and \emph{negative parts of $x$},
-respectively, and satisfy the relations
-\[
-\begin{aligned}
-x^+,x^-\geq{}&;&|x|={}&x^++x^-;&x&=x^+-x^-.
-\end{aligned}
-\]
-Given a finite function $f$ on $[a,b]$ and a partition
-$\Gamma={\{x_i\}}_{i=0}^\infty$ of $[a,b]$, define
-\[
-\begin{aligned}
-P_\Gamma&=P_\Gamma[f;a,b]\coloneqq\sum_{i=1}^m{[f(x_i)-f(x_{i-1})]}^+\\
-N_\Gamma&=N_\Gamma[f;a,b]\coloneqq\sum_{i=1}^m{[f(x_i)-f(x_{i-1})]}^-
-\end{aligned}
-\]
-Thus, $P_\Gamma$ is the sum of the positive terms of $S_\Gamma$, and
-$-N_\Gamma$ is the sum of the negative terms of $S_\Gamma$. In particular,
-we have $P_\Gamma\geq 0$, $N_\Gamma\geq 0$,
-\begin{equation}
-\label{eq:p-gamma-n-gamma-sums}
-\begin{aligned}
-P_\Gamma+N_\Gamma&=S_\Gamma,\\
-P_\Gamma-N_\Gamma&=f(b)-f(a).
-\end{aligned}
-\end{equation}
 
 %%% Local Variables:
 %%% mode: latex

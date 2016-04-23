@@ -1,279 +1,47 @@
-\section{Final Exam Review}
-Material covered since exam 2.
+\section{Differentiation}
+This portion of the notes corresponds to material covered before the final.
 
-\bigskip
+This section deals with questions of differentiability and culminates with
+a couple of results tying together the Lebesgue integral with the
+derivative à la the familiar fundamental theorem of calculus for Riemann
+integrals.
 
-If $f$ is a Riemann integrable function on an interval $[a,b]$ in $\bbR$,
-then the familiar definition of its indefinite integral is
-\[
-F(x)=\int_a^x f(y)dy,\qquad a\leq x\leq b.
-\]
-The fundamental theorem of calculus asserts that $F'=f$ if $f$ is
-continuous. We will study an analogue of this result for Lebesgue
-integrable $f$ and higher dimensions.
-
-We must first find an appropriate definition of the indefinite integral. In
-two dimensions, for example, we might choose
-\[
-F(x_1,x_2)=\int_{a_1}^{x_1}\int_{a_2}^{x_2}f(y_1,y_2)dy_1dy_2.
-\]
-It turns out, however, to be better to abandon the notion that the
-indefinite integral be a function of point and adopt the idea that it be a
-function of set. Thus, given $f\in L(A)$, where $A$ is a measurable
-subset of $\bbR^n$, we define the \emph{indefinite integral of $f$} to be
-the function
-\[
-F(E)=\int_E f,
-\]
-where $E$ is any measurable subset of $A$.
-
-$F$ is an example of a \emph{set function}, by which we mean any
-real-valued function $F$ defined on a $\sigma$-algebra $\Sigma$ of
-measurable sets such that
-\begin{enumerate}[label=(\roman*)]
-\item $F(E)$ is finite for every $E\in\Sigma$.
-\item $F$ is \emph{countably additive}; that is, if $E=\bigcup_k E_k$ is a
-  union of disjoint $E_k\in\Sigma$, then
-\[
-F(E)=\sum_k F(E_k).
-\]
-\end{enumerate}
-By Theorem 5.5 and 5.24, the indefinite integral of $f\in L(A)$ satisfies
-(i) and (ii) for the $\sigma$-algebra of measurable subsets of $A$.
-
-Recall that the diameter of a set $E$ is the value
-\[
-\sup\left\{\,\|\bfx-\bfy\|:\bfx,\bfy\in E\,\right\}.
-\]
-A set function $F(E)$ is called \emph{continuous} if $F(E)$ tends to zero
-as the diameter of $E$ tends to zero; i.e., $F(E)$ is continuous if, given
-$\varepsilon>0$, there exists a $\delta>0$ such that $|F(E)|<\varepsilon$
-whenever the diameter of $E$ is less than $\delta$. An example of a
-function that is \emph{not} continuous can be obtained by setting $F(E)=1$
-for any measurable set that contains the origin, and $F(E)=0$
-otherwise.\footnote{Why is this function not continuous. Consider the
-  following argument: Let $\varepsilon=1/2$ and let $B_k=
-  B(\mathbf{0},1/k)$. Then as the diameter of $B_k$ goes to zero,
-  $F(B_k)=1$ for all $k$ so $F(B_k)\to 1>1/2$.}
-
-A set function $F$ is called \emph{absolutely continuous with respect to
-  the Lebesgue measure}, or simply \emph{absolutely continuous} if $F(E)$
-tends to zero as the measure of $E$ tends to zero. Thus, $F$ is absolutely
-continuous if given a $\varepsilon>0$ there exists $\delta>0$ such that
-$|F(E)|<\varepsilon$ whenever the measure of $E$ is less than $\delta$.
-
-A set function that is absolutely continuous is clearly
-continuous\footnote{Suppose $F$ is absolutely continuous. Then, given
-  $\varepsilon>0$ there exists $\delta>0$ such that $|F(E)|<\varepsilon$
-  whenever $|E|<\delta$.}, however, the converse is false, as shown in the
-following example. Let $A$ be the unit square in $\bbR^2$, let $D$ be the
-diagonal of $A$, and consider the $\sigma$-algebra of measurable subsets
-$E$ of $A$ for which $E\cap D$ is linearly measurable. For such $E$, let
-$F(E)$ be the linear measure of $E\cap D$. Then $F$ is a continuous set
-function. However, it is not absolutely continuous since the sets $E$
-containing a fixed segment of $D$ whose $\bbR^2$-measures are arbitrarily
-small.
-
-\begin{theorem}[7.1]
-If $f\in L(A)$, its definite integral is absolutely continuous.
-\end{theorem}
-\begin{proof}
-We may assume that $f\geq 0$ by considering $f^+$ and $f^-$. Fix $k$ and
-write $f=g+h$, where $g=f$ whenever $f\leq k$ and $g=k$ otherwise. Given
-$\varepsilon>0$, we may choose $k$ so large that $0\leq\int_A
-h<\varepsilon/2$ and, \emph{a fortiori}, $0\leq\int_E f<\varepsilon/2$.
-Since
-\[
-\int|f-C|\leq\int|f-f_{k_0}|+\int|f_{k_0}-C|<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon.
-\]
-we see that $f$ has property $\calA$.
-
-To prove the lemma, let $f\in L(\bbR)$. Writing $f=f^+-f^-$, we may assume
-that $f\geq 0$. Then
-\[
-\int|\chi_G-\chi_E|=|G\setminus E|<\varepsilon.
-\]
-so we may assume that $f=\chi_G$ for open set $G$ of finite measure. Using
-Theorem 1.11, write $G$ as the union of (partly open) disjoint intervals
-$G=\bigcup I_k$. If we let $f_N$ be the characteristic function of
-$\bigcup_{k=1}^N I_k$, we obtain
-\[
-\int|f-f_N|=\sum_{k=N+1}^\infty|I_k|\to 0
-\]
-since $\sum_k|I_k|=|G|<\infty$, i.e., the series converges. By (2), it is
-enough to show that each $f_N$ has property $\calA$. But $f_N$ is the sum
-$\chi_{I_k}$, $k=1,\dotsc,N$, so it suffices by (1) to show that the
-characteristic function of any partly open interval $I$ has property
-$\calA$. This is practically self-evident: if $I^*$ denotes an interval
-that contains the closure of $I$ in its interior and that satisfies
-$|I^*\setminus I|<\varepsilon$, then for any continuous $C$, $0\leq
-C\leq 1$, which is $1$ in $I$ and $0$ outside $I^*$, we have
-\[
-\int|\chi_I-C|\leq|I^*-I|<\varepsilon.
-\]
-\end{proof}
-
-\begin{theorem}[Simple Vitali lemma]
-Let $E$ be a subset of $\bbR^n$ with $|E|_e<\infty$, and let $K$ be a
-collection of cubes $Q$ covering $E$, then there exists a positive constant
-$\beta$, depending only on $n$, and a finite number of disjoint cubes,
-$Q_1,\dotsc,Q_N$ in $K$ such that
-\[
-\sum_{j=1}^N|Q_j|\geq\beta|E|_e
-\]
-\end{theorem}
-
-As an application of Vitali's covering lemma, we will prove some basic
-result concerning the differentiability of monotone functions on $\bbR$. If
-$f(x)$ is a real-valued function defined and finite in a neighborhood of
-$x_0$, consider the four \emph{Dini numbers} (or \emph{derivatives}),
-\[
+\subsection{The indefinite integral}
+If $f$ is a Riemann integrable function on an interval $[a,b]$ of $\bbR$,
+then the familiar definition for its
+\href{https://en.wikipedia.org/wiki/Antiderivative}{\emph{indefinite
+    integral}} is
+\begin{equation}
+\label{eq:3:indefinite-integral}
 \begin{aligned}
-D_1f(x_0)&\coloneqq\limsup_{h\to 0+}\frac{f(x_0+h)-f(x_0)}{h},\\
-D_2f(x_0)&\coloneqq\liminf_{h\to 0+}\frac{f(x_0+h)-f(x_0)}{h},\\
-D_3f(x_0)&\coloneqq\limsup_{h\to 0-}\frac{f(x_0+h)-f(x_0)}{h},\\
-D_4f(x_0)&\coloneqq\liminf_{h\to 0-}\frac{f(x_0+h)-f(x_0)}{h}.
+F(x)&=\int_a^xf(y)dy,&a\leq x\leq b.
 \end{aligned}
-\]
-Clearly, $D_2f\leq D_1f$ and $D_4f\leq D_3f$. If all four Dini numbers are
-equal, that is, if $\lim_{h\to 0}[f(x_0+h)-f(x_0)]/h$ exist, finite or
-infinite, we say that $f$ has a \emph{derivative at $x_0$} and call the
-value the \emph{derivative $f'(x_0)$} at $x_0$. Thus, $-\infty\leq
-f'(x_0)\leq\infty$ if $f'(x_0)$ exists.
-\begin{theorem}[7.21]
-Let $f$ be monotone increasing function and finite on an open interval
-$(a,b)\subset\bbR$. Then $f$ has a measurable, nonnegative, finite
-derivative $f'$ a.e.\@ in $(a,b)$. Moreover,
-\[
-0\leq\int_a^b f'\leq f(b-)-f(a+).
-\]
-\end{theorem}
-% \begin{proof}
-% We may assume that $(a,b)$ is finite; the general case follows from this by
-% passage to the limit: We will show that the set
-% $\left\{\,x\in(a,b):D_1f(x)>D_4f(x)\,\right\}$ has measure zero. A similar
-% argument will apply to any two Dini numbers of $f$. It is enough to show
-% that each set
-% \[
-% A_{r,s}\coloneqq\left\{\,x\in(a,b):D_1f(x)>r>s>D_4f(x)\,\right\}
-% \]
-% has measure zero since the original set is the union of these over rational
-% $r$ and $s$.
+\end{equation}
+The
+\href{https://en.wikipedia.org/wiki/Fundamental_theorem_of_calculus}{\emph{fundamental
+    theorem of calculus}} then asserts that $F'=f$ if $f$ is continuous. In
+this section, we study the analogue of this result for Lebesgue integrable
+functions.
 
-% Fix $r$ and $s$ with $r>s>0$, write $A\coloneqq A_{r,s}$ and suppose that
-% $|A|_e>0$. If $x\in A$, the fact that $D_4f(x)<s$ implies the existence of
-% an arbitrarily small $h>0$\footnote{How can we see this? Well recall from
-%   the definition of the $4$-th Dini number that $D_4f(x)=\limsup_{h\to
-%     0-}[f(x+h)-f(x)]/h$. So really we have that
-% \[
-% \limsup_{h\to 0-}\frac{f(x+h)-f(x)}{h}<s
-% \]
-% so certainly for $\frac{f(x+h)-f(x)}{h}$ sufficiently close to zero the
-% following statement holds. However, why can the quotient get arbitrarily
-% small? Actually, it is because $f$ is monotone increasing.} such that
-% \[
-% \frac{f(x-h)-f(x)}{-h}<s.
-% \]
-% By Corollary 7.18 and 7.19, given $\varepsilon>0$, there exists disjoint
-% intervals $[x_j-h_j,x_j]$, $j=1,\dotsc,N$, such that
-% \begin{enumerate}[label=(\roman*)]
-% \item $f(x_j)-f(x_j-h_j)<sh_j$, $j=1,\dotsc,N$,
-% \item $\left|A\cap\bigcup_{j=1}^N[x_j-h_j,x_j]\right|>|A|_e-\varepsilon$,
-% \item $\sum_{j=1}^N h_j<(1+\varepsilon)|A|_e$.
-% \end{enumerate}
-% Combining (i) and (ii), we have
-% \[
-% \sum_{j=1}^N\left[f(x_j)-f(x_j-h_j)\right]<s(1+\varepsilon)|A|_e.
-% \]
-% Let $B\coloneqq A\cap\bigcup_{j=1}^N[x_j-h_j,x_j]$. By (ii),
-% $|B|_e>|A|_e-\varepsilon$. For every $y\in B$ that is not an endpoint of
-% some $[x_j-h_j,x_j]$, the fact that $D_1f(y)>r$ implies that there exists
-% arbitrarily small $k>0$ such that $[y,y+k]$ lies in some $[x_j-h_j,x_j]$
-% and
-% \[
-% \frac{f(y+k)-f(y)}{k}>r.
-% \]
-% Hence, by Corollary 7.18 and 7.20, there exists disjoint $[y_i,y_i+k_i]$,
-% $i=1,\dotsc,M$, such that
-% \end{proof}
+Since we want to generalize our results to $\bbR^n$, first we must find a
+suitable notion of indefinite integral for multivariable functions. In two
+dimensions we might, for instance, define the indefinite integral $F$ of
+$f$ to be
+\begin{equation}
+\label{eq:3:2-dim-indefinite-integral}
+F(x_1,x_2)\coloneqq \int_{a_1}^{x_1}\int_{a_2}^{x_2}f(y_1,y_2)dy_2dy_1.
+\end{equation}
 
-\begin{corollary}[7.23]
-If $f$ is of bounded variation on $[a,b]$, then $f'$ exists a.e.\@ in
-$[a,b]$, and $f'\in L[a,b]$.
-\end{corollary}
-
-\begin{theorem}[7.24]
-If $f$ is of bounded variation on $[a,b]$ and $V(x)$ is the variation of
-$f$ on $[a,b]$, $a\leq x\leq b$, then
-\[
-V'(x)=|f'(x)|
-\]
-for a.e.\@ $x\in[a,b]$.
-\end{theorem}
-\begin{lemma}[7.25, Fubini]
-Let $\{f_k\}$ be a sequence of monotone increasing functions on $[a,b]$. If
-the series $s(x)=\sum f_k(x)$ converges on $[a,b]$, (equivalently, if
-$s(a)$ and $s(b)$ are finite), then
-\[
-s'(x)=\sum f_k'(x)
-\]
-a.e.\@ in $[a,b]$. In particular, $f_k'\to 0$ a.e.\@ in $[a,b]$.
-\end{lemma}
-
-
-The Cantor--Lebesgue function is an example of an increasing function $f$
-whose derivative is integrable on $[0,1]$, but for which $\int_0^1 f'\neq
-f(1)-f(0)$.
-
-A function on a finite interval $[a,b]$ is said to be \emph{absolutely
-  continuous} on $[a,b]$ if given $\varepsilon>0$, there exists $\delta>0$
-such that for any collection $\left\{{[a_i,b_i]}\right\}$ (finite or not)
-of nonoverlapping subintervals of $[a,b]$,
-\[
-\sum\left|f(b_i)-f(a_i)\right|<\varepsilon
-\]
-if $\sum(b_i-a_i)<\delta$.
-
-E.g., if $f$ is integrable on $[a,b]$ and $f(x)=\int_a^x g(x)$ and $a\leq
-x\leq b$, then
-\[
-\sum\left|f(b_i)-f(a_i)\right|\leq\int\limits_{\bigcup[a_i,b_i]}|g|
-\]
-for any overlapping $[a_i,b_i]$. By Theorem 7.1, $\int_E |g|$ is an
-absolutely continuous \emph{set function} let
-
-\begin{theorem}[7.27]
-If $f$ is absolutely continuous on $[a,b]$, then it is of bounded variation
-on $[a,b]$.
-\end{theorem}
-\begin{proof}
-Choose $\delta$ so that $\sum |f(b_i)-f(a_i)|\leq 1$ for any collection of
-nonoverlapping intervals with $\sum(b_i-a_i)\leq\delta$. Then the variation
-of $f$ over any subinterval of $[a,b]$ with length less than $\delta$ is at
-most $1$.
-\end{proof}
-
-\bigskip
-
-Skip to chapter 8, what we're doing right now.
-
-If $E$ is a measurable subset of $\bbR^n$ and $p$ satisfies $0<p<\infty$,
-then $L^p(E)$ denotes the collection of measurable $f$ for which
-$\int_E|f|^p$ is finite, that is,
-\[
-\begin{aligned}
-L^p(E)&\coloneqq\left\{\,f:\int_E|f|^p<\infty\, \right\},&0<p<\infty.
-\end{aligned}
-\]
-Here, $f$ is may be complex-valued. In this case, if $f=f_1+if_2$ for
-measurable real-valued $f_1$ and $f_2$, we have $|f|^2=|f_1|^2+|f_2|^2$
-
-We shall write
-\[
-\begin{aligned}
-\|f\|_{p,E}&\coloneqq\left(\int_E|f|^p\right)^{1/p},&0<p<\infty;
-\end{aligned}
-\]
+As it turns out, it is better to abandon the notion that the indefinite
+integral be a function of a point an instead let it be a function of
+a set. Therefore, given a function $f$, integrable on some measurable
+subset $A$ of $\bbR^n$, we define the \emph{indefinite integral of $f$} to
+be the function
+\begin{equation}
+  \label{eq:3:lebesgue-indefinite-integral}
+F(E)\coloneqq \int_E f,
+\end{equation}
+where $E$ is a measurable subset of $A$.
 
 %%% Local Variables:
 %%% mode: latex
