@@ -9,30 +9,32 @@ L^{p'}(E)$ such that $fg\notin L^1(E)$. (To verify the negation, construct
 $g$ of the form $\sum a_kg_k$ satisfying $\int_E fg_k\to\infty$.)
 \end{problem}
 \begin{proof}
-By the commentary at the end of the proof of Theorem 8.8 (and this
-\texttt{StackExchange} post
-\url{http://math.stackexchange.com/questions/37832/on-the-hölder-inequality})
-we must prove the following:
+This result is a completion of Theorem 8.8. We must show that:
 \begin{quote}
-If $1\leq p\leq\infty$, then $f\in L^p(E)$ if $fg\in L(E)$ for every $g\in
-L^{p'}(E)$, with $1/p+1/p'=1$.
+For $f$ a measurable real-valued function on $E$ and $p=1,\infty$. Then
+\[
+\|f\|_p=\sup\int_E fg,
+\]
+where the supremum is taken over every real-valued $g$ such that
+$\|g\|_{p'}\leq 1$ and $\int_E fg$ exists.
 \end{quote}
 
-We prove this for $p=1$ first. Recall that by convention, if $p=1$ its
+Let us prove this for $p=1$. Recall that by convention, if $p=1$ its
 conjugate exponent, $p'$, is $\infty$ and vice versa. Therefore, suppose
 \begin{equation}
   \label{eq:1:hypothesis}
-\|fg\|_1\leq\|f\|_1\cdot\|g\|_{\infty}
+\|fg\|_1\leq\|f\|_1\|g\|_{\infty}
 \end{equation}
-for every $g\in L^\infty(M)$. By the definition of the essential supremum,
-$|g|$ is bounded almost everywhere in $E$ by $\|g\|_\infty$. Then, the
-result follows by Theorem 8.8 since
+for every $g\in L^\infty(E)$. We may, without loss of generality, assume
+that $0<\|g\|_\infty\leq 1$, for otherwise, we need only manipulate
+Equation \eqref{eq:1:hypothesis} to get the inequality to this case, e.g.,
+by dividing both sides of the inequality by $\|g\|_\infty$.
+
+ By the definition of the essential supremum,
+$|g|$ is bounded almost everywhere in $E$ by $\|g\|_\infty$. Then, by
+Theorem 8.8 and Equation \eqref{eq:1:hypothesis}, we have
 \[
-\|f\|_1=\sup_E fg
-\]
-which, by Equation \eqref{eq:1:hypothesis}, gives us
-\[
-\sup \int_E fg\leq \sup \left(\|f\|_1\cdot\|g\|_\infty\right)
+\|fg\|_1\leq \|f\|_1\|g\|_\infty\leq \|f\|_1=\sup_{\|g\|_\infty\leq 1}\int_Efg
 \]
 \end{proof}
 \newpage
