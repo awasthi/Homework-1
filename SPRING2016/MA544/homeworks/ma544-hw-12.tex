@@ -9,14 +9,31 @@ L^{p'}(E)$ such that $fg\notin L^1(E)$. (To verify the negation, construct
 $g$ of the form $\sum a_kg_k$ satisfying $\int_E fg_k\to\infty$.)
 \end{problem}
 \begin{proof}
-By the commentary at the end of the proof of Theorem 8.8, it appears that
-we must prove the following: if $1\leq p\leq\infty$, then a measurable
-function $f$ belongs to $L^p(E)$ if $fg\in L^1(E)$ for every $g\in
-L^{p'}(E)$, $1/p+1/p'=1$.
+By the commentary at the end of the proof of Theorem 8.8 (and this
+\texttt{StackExchange} post
+\url{http://math.stackexchange.com/questions/37832/on-the-hölder-inequality})
+we must prove the following:
+\begin{quote}
+If $1\leq p\leq\infty$, then $f\in L^p(E)$ if $fg\in L(E)$ for every $g\in
+L^{p'}(E)$, with $1/p+1/p'=1$.
+\end{quote}
 
-Recall that by convention, if $p=1$ its conjugate exponent, $p'$, is
-$\infty$ and vice versa.
-
+We prove this for $p=1$ first. Recall that by convention, if $p=1$ its
+conjugate exponent, $p'$, is $\infty$ and vice versa. Therefore, suppose
+\begin{equation}
+  \label{eq:1:hypothesis}
+\|fg\|_1\leq\|f\|_1\cdot\|g\|_{\infty}
+\end{equation}
+for every $g\in L^\infty(M)$. By the definition of the essential supremum,
+$|g|$ is bounded almost everywhere in $E$ by $\|g\|_\infty$. Then, the
+result follows by Theorem 8.8 since
+\[
+\|f\|_1=\sup_E fg
+\]
+which, by Equation \eqref{eq:1:hypothesis}, gives us
+\[
+\sup \int_E fg\leq \sup \left(\|f\|_1\cdot\|g\|_\infty\right)
+\]
 \end{proof}
 \newpage
 
@@ -52,7 +69,7 @@ where $N_\infty[f]$ means $\|f\|_\infty$. Prove that if $p_1<p_2$, then
 $N_{p_1}[f]\leq N_{p_2}[f]$. Prove also that if $1\leq p\leq \infty$, then
 $N_p[f+g]\leq N_p[f]+N_p[g]$, $(1/|E|)\int_E|fg|\leq N_p[f]N_{p'}[g]$,
 $1/p+1/p'=1$, and $\lim_{p\to\infty} N_p[f]=\|f\|_\infty$. Thus, $N_p$
-behaves like $\|\blank\|_p$ but has the advantage of being monotone in
+behaves like $\|\cdot\|_p$ but has the advantage of being monotone in
 $p$. Recall Exercise 28 of Chapter 5.
 \end{problem}
 \begin{proof}

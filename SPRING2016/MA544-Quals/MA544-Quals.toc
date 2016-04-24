@@ -10,12 +10,14 @@
 \contentsline {subsection}{The indefinite integral}{\if@rlmain \I {5}\else \textLR {5}\fi }{section*.3}
 \contentsline {section}{\numberline {\if@rl \I {4.1}\else \textLR {1.4}\fi }$L^p$ Classes}{\if@rlmain \I {5}\else \textLR {5}\fi }{section.1.4}
 \contentsline {subsection}{The relation between the Riemann--Stieltjes integral and the Lebesgue integral, and the $L^p$ spaces, $0<p<\infty $}{\if@rlmain \I {5}\else \textLR {5}\fi }{section*.4}
+\contentsline {section}{\numberline {\if@rl \I {5.1}\else \textLR {1.5}\fi }$L^p$ Classes}{\if@rlmain \I {8}\else \textLR {8}\fi }{section.1.5}
+\contentsline {subsection}{Definition of $L^p$}{\if@rlmain \I {8}\else \textLR {8}\fi }{section*.5}
 \select@language {english}
-\contentsline {chapter}{\chapternumberline {2}\bgroup \beginL \latintext MA 544 (Spring 2016)\endL \egroup }{\if@rlmain \I {9}\else \textLR {9}\fi }{chapter.2}
-\contentsline {section}{\numberline {\if@rl \I {1.2}\else \textLR {2.1}\fi }Exam 1 Prep}{\if@rlmain \I {9}\else \textLR {9}\fi }{section.2.1}
-\contentsline {section}{\numberline {\if@rl \I {2.2}\else \textLR {2.2}\fi }Exam 1}{\if@rlmain \I {13}\else \textLR {13}\fi }{section.2.2}
-\contentsline {section}{\numberline {\if@rl \I {3.2}\else \textLR {2.3}\fi }Exam 2 Prep}{\if@rlmain \I {14}\else \textLR {14}\fi }{section.2.3}
-\contentsline {section}{\numberline {\if@rl \I {4.2}\else \textLR {2.4}\fi }Midterm 2}{\if@rlmain \I {22}\else \textLR {22}\fi }{section.2.4}
-\contentsline {section}{\numberline {\if@rl \I {5.2}\else \textLR {2.5}\fi }Final Practice}{\if@rlmain \I {25}\else \textLR {25}\fi }{section.2.5}
+\contentsline {chapter}{\chapternumberline {2}\bgroup \beginL \latintext MA 544 (Spring 2016)\endL \egroup }{\if@rlmain \I {10}\else \textLR {10}\fi }{chapter.2}
+\contentsline {section}{\numberline {\if@rl \I {1.2}\else \textLR {2.1}\fi }Exam 1 Prep}{\if@rlmain \I {10}\else \textLR {10}\fi }{section.2.1}
+\contentsline {section}{\numberline {\if@rl \I {2.2}\else \textLR {2.2}\fi }Exam 1}{\if@rlmain \I {14}\else \textLR {14}\fi }{section.2.2}
+\contentsline {section}{\numberline {\if@rl \I {3.2}\else \textLR {2.3}\fi }Exam 2 Prep}{\if@rlmain \I {15}\else \textLR {15}\fi }{section.2.3}
+\contentsline {section}{\numberline {\if@rl \I {4.2}\else \textLR {2.4}\fi }Midterm 2}{\if@rlmain \I {23}\else \textLR {23}\fi }{section.2.4}
+\contentsline {section}{\numberline {\if@rl \I {5.2}\else \textLR {2.5}\fi }Final Practice}{\if@rlmain \I {26}\else \textLR {26}\fi }{section.2.5}
 \select@language {english}
-\contentsline {chapter}{Bibliography}{\if@rlmain \I {26}\else \textLR {26}\fi }{section*.6}
+\contentsline {chapter}{Bibliography}{\if@rlmain \I {27}\else \textLR {27}\fi }{section*.7}

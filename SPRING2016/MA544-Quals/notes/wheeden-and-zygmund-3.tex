@@ -254,6 +254,73 @@ $|E|=\sum_k|E_k|$. Let
   \end{aligned}
 \]
 
+\section{$L^p$ Classes}
+Let's talk about $L^p$ classes now and some important results about
+$L^p$ spaces.
+\subsection{Definition of $L^p$}
+If $E$ is a measurable subset of $\bbR^n$ and satisfies $0<p<\infty$, then
+\href{https://en.wikipedia.org/wiki/Lp_space}{$L^p(E)$} denotes the
+collection of measurable $f$ for which $\int_E|f|^p$ is finite, i.e.,
+\begin{equation}
+  \label{eq:3:lp-space}
+L^p(E)\coloneqq\left\{\,f:\int_E |f|^p<\infty\,\right\}
+\end{equation}
+for $0<p<\infty$. Here, $f$ may be complex-valued, in which case, if
+$f=f_1+if_2$ for measurable real-valued $f_1$ and $f_2$, we have
+$|f|^2={f_1}^2+{f_2}^2$, so that
+\[
+|f_1|,|f_2|\leq|f|\leq |f_1|+|f_2|.
+\]
+It follows that $f\in L^p(E)$ if and only if both $f_1,f_2\in L^p(E)$.
+
+We shall write
+\[
+\|f\|_{p,E}\coloneqq\left(\int_E|f|^p\right)^{1/p},
+\]
+for $0<p<\infty$. Thus, $L^p(E)$ is the set of measurable $f$ for which
+$\|f\|_{p,E}$ is finite. Whenever it is clear from context, we will omit
+$E$ in $L^p(E)$ and $\|f\|_{p,E}$, and instead write $L^p$ and
+$\|f\|_p$. Also note that $L=L^1$.
+
+In order to define $L^\infty(E)$, let $f$ be real-valued and measurable on
+a set $E$ of positive measure. Define the
+\href{https://en.wikipedia.org/wiki/Essential_supremum_and_essential_infimum}{\emph{essential
+  supremum}} of $f$ on $E$ to be
+\begin{equation}
+  \label{eq:3:essential-supremum}
+\esssup_E f\coloneqq\inf\left\{\,\alpha:\left|\left\{\,\bfx\in
+      E:f(\bfx)>\alpha\,\right\}\right|=0\,\right\}.
+\end{equation}
+In words, this the essential supremum of $f$ is the least upper bound of
+$f$ outside of a set of measure zero. It can be restated as such: $\esssup
+f$ is the smallest number $M$, $-\infty\leq M\leq\infty$, such that
+$f(\bfx)\leq M$ almost everywhere in $E$.
+
+In the definition of $\esssup f$, we have made the explicit assumption that
+the measure of $E$ is nonzero. Otherwise, $\esssup f=-\infty$ which can
+result in awkward or incorrect statements of results involving $L^p$
+spaces. Therefore, we shall adopt the convention that $\esssup f=0$ if
+$|E|=0$.
+
+A real or complex-valued measurable $f$ is said to be \emph{essentially
+  bounded}, or simply \emph{bounded} almost everywhere on $E$ if $\esssup
+|f|$ is finite. The class of all functions that are essentially bounded on
+$E$ is denoted by $L^\infty(E)$. Clearly, $f\in L^\infty(E)$ if and only if
+its real and imaginary parts belong to $L^\infty(E)$. We shall use the
+notation $\|f\|_\infty$ synonymously with $\esssup f$.
+
+The following theorem gives some good motivation for the use the notation
+$\|f\|_\infty$, at least in the case $|E|<\infty$.
+\begin{theorem}[8.1]
+If $|E|<\infty$, then $\|f\|_\infty=\lim_{p\to\infty}\|f\|_p$.
+\end{theorem}
+\begin{proof}[Sketch of proof]
+We may assume that $|E|>0$, for otherwise we have a trivial statement,
+i.e., $\|f\|_p=0$ for all $p$ and by convention $\|f\|_\infty=0$ so clearly
+$\|f\|_p\to\|f\|_\infty$ as $p\to\infty$. Set $M\coloneqq\|f\|_\infty$. If $M'<M$,
+\end{proof}
+
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../MA544-Quals"
