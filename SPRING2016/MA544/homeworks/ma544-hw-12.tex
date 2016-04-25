@@ -19,17 +19,73 @@ For $f$ a measurable real-valued function on $E$ and $p=1,\infty$. Then
 where the supremum is taken over every real-valued $g$ such that
 $\|g\|_{p'}\leq 1$ and $\int_E fg$ exists.
 \end{quote}
+In both cases, $p=1$ and $p=\infty$, we may, without loss of generality,
+assume $\|f\|_p\neq 0$; otherwise, by Hölder's inequality, $\|fg\|_1\leq
+\|f\|_p\|g\|_{p'}=0$ implies $\|fg\|_1=0$ so, by Theorem 5.11, $fg=0$
+almost everywhere on $E$ and therefore, $f=0$ almost everywhere on $E$.
 
-Let us prove this for $p=1$. Recall that by convention, if $p=1$ its
+Let us prove this for $p=1$. Recall that, by convention, if $p=1$ its
 conjugate exponent, $p'$, is $\infty$ and vice versa. Suppose
-$\|g\|_\infty\leq 1$ and the integral $\int_E fg$ exists. By Hölder's
-inequality, we have
+$\|g\|_\infty\leq 1$ and the integral $\int_E fg$ exists. One direction is
+trivial, namely, by Hölder's inequality
+\begin{equation}
+\label{eq:1:holders-application}
+\int_E fg\leq \int_E |fg|\leq\|f\|_1\|g\|_1\leq \|f\|_1,
+\end{equation}
+for all $g$ with $\|g\|_\infty\leq 1$. Hence,
 \[
-\int_E |fg|\leq \|f\|_1\|g\|_\infty;
+\sup\int_E fg\leq\|f\|_1.
 \]
-note that we may choose $g$ such that $fg\geq 0$ for all $\bfx\in E$ by,
-for instance, setting $\tilde g\coloneqq (\sgn f)g$ as in the proof of
-Theorem 8.8.
+To get the reverse inequality, consider $g\coloneqq\sgn f$. The function
+$g$ is measurable since $g=f/|f|$ for all $f(\bfx)\neq 0$ and $g=0$
+otherwise. Moreover, $g$ is in $L^\infty(E)$ since $\|g\|_\infty\leq 1$,
+that is, $|g|\leq 1$ almost everywhere on $E$. Therefore
+\begin{equation}
+  \label{eq:1:reverse-ineq}
+\|f\|_1=\int_E |f|=\int_E fg\leq\sup_{\|g'\|_\infty\leq 1}\int_E fg'.
+\end{equation}
+Thus, $\|f\|_1=\sup\int fg$ where the supremum is taken over all $g\in
+L^\infty(E)$ with $\|g\|\leq 1$.
+
+Now, consider the case where $p=\infty$. By Hölder's inequality, it is
+clear that
+\begin{equation}
+\label{eq:1:holders-app-2}
+\sup \int_E fg\leq \|f\|_\infty
+\end{equation}
+since $\int_E fg\leq \|f\|_\infty\|g\|_1$ for all $g\in L(E)$. To prove the
+reverse inequality, we consider the cases $\|f\|_\infty<\infty$ and
+$\|f\|_\infty=\infty$ separately.
+
+Suppose $0<\|f\|_\infty<\infty$; we may, without loss of generality, assume
+$\|f\|_\infty=1$ by normalizing $f$ by its essential supremum. Now, by
+definition
+\begin{equation}
+\label{eq:1:essential-supremum-definition-result}
+\|f\|_\infty=\inf\left\{\,\alpha:\left|\left\{\,\bfx\in
+      E:f(\bfx)>\alpha\,\right\}\right|=0\,\right\}=1.
+\end{equation}
+Set $E_k\coloneqq\left\{\,\bfx\in
+  E:\text{$f(\bfx)>1-1/k$}\,\right\}\cap B(\mathbf{0},k)$. Then
+$E_k\nearrow\bigcup E_k$ and $\left|E\setminus\bigcup E_k\right|=0$ by
+Equation \eqref{eq:1:essential-supremum-definition-result} and the
+definition of the essential supremum. Therefore, $\int_E fg=\int_{\bigcup
+  E_k}fg$. Moreover, $|E_k|<|B(\mathbf{0},k)|<\infty$ so we can define the
+sequence of functions
+\begin{equation}
+  \label{eq:1:special-g}
+g_k(\bfx)\coloneqq
+\begin{cases}
+{\displaystyle\frac{1}{|E_k|}}&\text{if $x\in E_k$}\\
+0&\text{otherwise}
+\end{cases}.
+\end{equation}
+Note that $\|g_k\|_1=1$ and
+\[
+\int_E
+fg_k=\int_{E_k}fg_k\geq\int_{E_k}\left(1-\frac{1}{k}\right)g_k
+=\left(1-\frac{1}{k}\right)\int_E g_k=1-\frac{1}{k}
+\]
 \end{proof}
 
 % Therefore, suppose
@@ -106,6 +162,31 @@ $\|f\|_r\leq A$.
 \end{enumerate}
 \end{problem}
 \begin{proof}
+(a) We will proceed by induction on $k$ the number of measurable $f_k$
+whose $p_k$-norm is finite. When $k=2$, by applying Hölder's inequality on
+$|fg|^r$ with $1/(p/r)+1/(p'/r)=1$ we have
+\begin{align*}
+{\|fg\|_r}^r
+&=\left(\int_E|fg|^r\right)\\
+&\leq\left(\int_E|f|^{r(p/r)}\right)^{r/p}\left(\int_E|g|^{r(p'/r)}\right)^{r/p'}\\
+&={\|f\|_p}^r{\|g\|_{p'}}^r.
+\end{align*}
+Therefore,
+\begin{equation}
+  \label{eq:5:general-holder-2}
+{\|fg\|_r}\leq\|f\|_p\|g\|_{p'}.
+\end{equation}
+
+Now, suppose Equation \eqref{eq:5:general-holder-2} holds for $j\leq k-1$
+functions measurable functions $f_j\in L^{p_j}(E)$ where
+$\sum_j1/p_j=r$. Suppose $\sum_{j=1}^k1/p_j=1/r$ with $f_j\in L^{p_j}(E)$
+and consider
+\[
+{\|f_1\cdots f_{k-1}f_k\|_r}^r=\int_E|f_1\cdots
+f_{k-1}f_k|^r=\int_E|f_1|^r\cdots|f_{k-1}|^r|f_k|^r.
+\]
+\\\\
+(b)
 \end{proof}
 \newpage
 
