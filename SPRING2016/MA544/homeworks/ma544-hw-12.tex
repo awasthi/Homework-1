@@ -111,6 +111,29 @@ Prove Theorems 8.12 and 8.13. Show that Minkowski’s inequality for series
 fails when $p<1$.
 \end{problem}
 \begin{proof}
+Recall the statement of Theorem 8.12
+\begin{quote}
+Suppose that $1\leq p\leq\infty$, $1/p+1/p'=1$, $a=\{a_k\}$, $b=\{b_k\}$,
+and $ab=\{a_kb_k\}$. Then $\|ab\|_1\leq\|a\|_p\|b\|_{p'}$.
+\end{quote}
+\\\\
+Recall the statement of Theorem 8.13
+\begin{quote}
+Suppose that $1\leq p\leq\infty$, $1/p+1/p'=1$, $a=\{a_k\}$, $b=\{b_k\}$,
+and $ab=\{a_kb_k\}$. Then $\|a+b\|_p\leq\|a\|_p+\|b\|_p$.
+\end{quote}
+\\\\
+To see that Minkowski's inequality fails for $p<1$, consider the sequences
+$a=(0,1,0,\dotsc)$ and $b=(1,0,\dotsc)$. Then
+\[
+\begin{aligned}
+\|a_k+b_k\|_p&=2^{1/p},\quad&\|a_k\|_p&=1,\quad&\|b_k\|_p&=1.
+\end{aligned}
+\]
+Since $2^{1/p}>2$ for $p<1$, we have
+\[
+\|a_k+b_k\|_P\geq\|a_k\|_p+\|b_k\|_p.
+\]
 \end{proof}
 \newpage
 
@@ -119,13 +142,19 @@ Let $f$ and $g$ be real-valued and not identically $0$ (i.e., neither
 function equals $0$ a.e.), and let $1<p<\infty$. Prove that equality holds
 in the inequality $\left|\int fg\right|\leq\|f\|_p\|g\|_{p'}$ if and only if
 $fg$ has constant sign a.e.\@ and $|f|^p$ is a multiple of $|g|^{p'}$ a.e.
-
+\\\\
 If $\|f+g\|_p=\|f\|_p+\|g\|_{p}$ and $g\neq 0$ in Minkowski's inequality,
 show that $f$ is a multiple of $g$.
-
+\\\\
 Find analogues of these results for the spaces $\ell^p$.
 \end{problem}
 \begin{proof}
+
+  % Take the f and g given in the theorem to be step functions defined in the
+  % following way: ( a k x ∈ (k − 1, k] for k ∈ N f (x) = 0 otherwise ( b k x
+  % ∈ (k − 1, k] for k ∈ N g(x) = .  0 otherwise Then it is clear that Z |f
+  % g| = E ∞ X |a k b k |, k=1 kf k L p = ka k k ` p and kgk L p = kb k k ` p
+  % .  Thus the theorem is proven by substitution into Theorem 8.6.
 \end{proof}
 \newpage
 
@@ -177,14 +206,24 @@ Therefore,
 {\|fg\|_r}\leq\|f\|_p\|g\|_{p'}.
 \end{equation}
 
-Now, suppose Equation \eqref{eq:5:general-holder-2} holds for $j\leq k-1$
+Now, suppose Equation \eqref{eq:5:general-holder-2} holds for $j\leq n-1$
 functions measurable functions $f_j\in L^{p_j}(E)$ where
-$\sum_j1/p_j=r$. Suppose $\sum_{j=1}^k1/p_j=1/r$ with $f_j\in L^{p_j}(E)$
+$\sum_j1/p_j=r$. Suppose $\sum_{j=1}^n1/p_j=1/r$ with $f_j\in L^{p_j}(E)$
 and consider
 \[
-{\|f_1\cdots f_{k-1}f_k\|_r}^r=\int_E|f_1\cdots
-f_{k-1}f_k|^r=\int_E|f_1|^r\cdots|f_{k-1}|^r|f_k|^r.
+{\|f_1f_2\dotsm f_n\|_r}^r=\int_E|f_1f_2\dotsm
+f_n|^r.
 \]
+Set $g\coloneqq\prod_{j=1}^n f_j$ and
+$p'\coloneqq\left(\sum_{j=2}^n1/p_j\right)^{-1}$, then, by
+\eqref{eq:5:general-holder-2}, we have
+\begin{align*}
+\|f_1f_2\dotsm f_n\|_r
+&=\|f_1g\|_r\\
+&\leq\|f_1\|_{p_1}\|g\|_{p'}\\
+&\leq\|f_1\|_{p_1}\|f_2\|_{p_2}\dotsm\|f_n\|_{p_n}
+\end{align*}
+as desired.
 \\\\
 (b)
 \end{proof}
