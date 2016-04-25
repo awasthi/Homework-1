@@ -113,15 +113,70 @@ fails when $p<1$.
 \begin{proof}
 Recall the statement of Theorem 8.12
 \begin{quote}
-Suppose that $1\leq p\leq\infty$, $1/p+1/p'=1$, $a=\{a_k\}$, $b=\{b_k\}$,
-and $ab=\{a_kb_k\}$. Then $\|ab\|_1\leq\|a\|_p\|b\|_{p'}$.
+\emph{Suppose that $1\leq p\leq\infty$, $1/p+1/p'=1$, $a=\{a_k\}$, $b=\{b_k\}$,
+and $ab=\{a_kb_k\}$. Then $\|ab\|_1\leq\|a\|_p\|b\|_{p'}$.}
 \end{quote}
+The second inequality in the full statement of the theorem is straight
+forward since
+\[
+\sum_k|a_kb_k|\leq\sum\left|(\sup_k|a_k|)|b_k|\right|=\sup_k|a_k|\cdot \sum_k|b_k|.
+\]
+This proves the statement for $p=1,\infty$.
+
+As in the proof of Hölder's inequality, we may, without loss of generality,
+assume $\|a\|_p=\|b\|_{p'}=1$ (the other cases being trivial, i.e.,
+$\|a\|_p=0$ or $\|b\|_{p'}=0$, or reducible to this one by, for instance,
+taking $a_k'$ to be $a_k/\|a\|_p$ and $b_k'$ to be $b_k/\|b\|_{p'}$). Now,
+suppose $1<p<\infty$. By Young's inequality, we have
+\begin{align*}
+\sum_k|a_kb_k|
+&\leq\sum_k\left(\frac{{|a_k|}^p}{p}+\frac{{|b_k|}^{p'}}{p'}\right)\\
+&=\frac{1}{p}\sum_k|a_k|^p+\frac{1}{p'}\sum_k|b_k|^{p'}\\
+&=\frac{1}{p}{\|a\|_p}^p+\frac{1}{p'}{\|b\|_{p'}}^{p'}\\
+&=\frac{1}{p}+\frac{1}{p'}\\
+&=1\\
+&=\|a\|_p\|b\|_{p'},
+\end{align*}
+as was to be shown.
 \\\\
 Recall the statement of Theorem 8.13
 \begin{quote}
-Suppose that $1\leq p\leq\infty$, $1/p+1/p'=1$, $a=\{a_k\}$, $b=\{b_k\}$,
-and $ab=\{a_kb_k\}$. Then $\|a+b\|_p\leq\|a\|_p+\|b\|_p$.
+\emph{Suppose that $1\leq p\leq\infty$, $1/p+1/p'=1$, $a=\{a_k\}$, $b=\{b_k\}$,
+and $ab=\{a_kb_k\}$. Then $\|a+b\|_p\leq\|a\|_p+\|b\|_p$.}
 \end{quote}
+
+For $p=1$, Minkowski's inequality is nothing more than the triangle
+inequality so we are finished.
+
+For $p=\infty$, by the triangle inequality, we have
+\[
+|a_k+b_k|\leq |a_k|+|b_k|\leq\sup_k|a_k|+\sup_k|b_k|.
+\]
+By the definition of the supremum, since the right hand side of the
+inequality above holds for all $k$, the right-hand side is an upper bound
+for $|a_k+b_k|$, so
+\[
+\sup_k|a_k+b_k|\leq\sup_k|a_k|+\sup_k|b_k|.
+\]
+holds.
+
+Now, suppose $1<p<\infty$. Then, we have
+\begin{align*}
+{\|a+b\|_p}^p
+&=\sum_k|a_k+b_k|^p\\
+&=\sum_k|a_k+b_k|^{p-1}|a_k+b_k|\\
+&\leq\sum_k|a_k+b_k|^{p-1}|a_k|+\sum_k|a_k+b_k|^{p-1}|b_k|\\
+&=\sum_k\left(|a_k+b_k|^{p(p-1)}\right)^{1/p}{(|a_k|^p)}^{1/p}
++\sum_k\left(|a_k+b_k|^{p(p-1)}\right)^{1/p}{(|b_k|^{p})}^{1/p}\\
+&\leq\left[\sum_k\left(|a_k+b_k|^p\right)^{(p-1)/p}\right]
+\left[\sum_k{(|a_k|^p)}^{1/p}\right]
++\left[\sum_k\left(|a_k+b_k|^{p}\right)^{(p-1)/p}\right]
+\left[\sum_k{(|b_k|^{p})}^{1/p}\right]\\
+&={\|a+b\|_p}^{p-1}\|a\|_p+{\|a+b\|_p}^{p-1}\|b\|_p\\
+&={\|a+b\|_p}^{p-1}\left(\|a\|_p+\|b\|_p\right).
+\end{align*}
+Now, dived both sides of the inequality above by ${\|a+b\|_p}^{p-1}$ and we
+achieve Minkowski's inequality for $\ell^p$.
 \\\\
 To see that Minkowski's inequality fails for $p<1$, consider the sequences
 $a=(0,1,0,\dotsc)$ and $b=(1,0,\dotsc)$. Then
@@ -149,12 +204,32 @@ show that $f$ is a multiple of $g$.
 Find analogues of these results for the spaces $\ell^p$.
 \end{problem}
 \begin{proof}
+$\impliedby$ Suppose $fg$ has constant sign and $|f|^p=M|g|^{p'}$. Then, by
+Hölder's inequality, we have
+\[
+\begin{aligned}
+\left|\int fg\right|
+&=\int |fg|\\
+&\leq\left[\int |f|^p\right]^{1/p}
+\left[\int|g|^{p'}\right]^{1/p'}\\
+&=\left[\int M|g|^p'\right]^{1/p}
+\left[\int|g|^{p'}\right]^{1/p'}\\
+&=M^{1/p}
+% &=\int |f||g|\\
+% &=\int M^{1/p}|g|^{p'/p}|g|\\
+% &=M^{1/p}\int |g|^{1+p'/p}\\
+% &=M^{1/p}\int |g|^{(p+p')/p}\\
+\end{aligned}
+\]
 
-  % Take the f and g given in the theorem to be step functions defined in the
-  % following way: ( a k x ∈ (k − 1, k] for k ∈ N f (x) = 0 otherwise ( b k x
-  % ∈ (k − 1, k] for k ∈ N g(x) = .  0 otherwise Then it is clear that Z |f
-  % g| = E ∞ X |a k b k |, k=1 kf k L p = ka k k ` p and kgk L p = kb k k ` p
-  % .  Thus the theorem is proven by substitution into Theorem 8.6.
+$\implies$
+\\\\
+Assuming we proved the result above, recall from Minkowski's inequality
+that
+\[
+{\|f+g\|_p}^p\leq\int|f+g|^{p-1}|f|+\int|f+g|^{p-1}|g|.
+\]
+Therefore, if equality holds
 \end{proof}
 \newpage
 
@@ -214,7 +289,7 @@ and consider
 {\|f_1f_2\dotsm f_n\|_r}^r=\int_E|f_1f_2\dotsm
 f_n|^r.
 \]
-Set $g\coloneqq\prod_{j=1}^n f_j$ and
+Set $g\coloneqq f_2\dotsm f_k$ and
 $p'\coloneqq\left(\sum_{j=2}^n1/p_j\right)^{-1}$, then, by
 \eqref{eq:5:general-holder-2}, we have
 \begin{align*}
@@ -225,7 +300,19 @@ $p'\coloneqq\left(\sum_{j=2}^n1/p_j\right)^{-1}$, then, by
 \end{align*}
 as desired.
 \\\\
-(b)
+(b) Without loss of generality, assume $\|f\|_p=\|f\|_q=1$. By what we have
+just shown, with $1/r=1/(p/\theta)+1/(p/(1-\theta))$ and Jensen's
+inequality, we have
+\[
+\begin{aligned}
+\|f\|_r&=\left\||f|^\theta |f|^{1-\theta}\right\|\\
+&\leq\left\||f|^\theta\right\|_p\left\||f|^{1-\theta}\right\|_q\\
+&=\left[\int |f|^{\theta
+    p}\right]^{1/p}\left[\int\f|f|^{(1-\theta)q}\right]^{1/q}\\
+&\leq\left[\int |f|^{p}\right]^{\theta/p}\left[\int\f|f|^q\right]^{(1-\theta)/q}\\
+&=|f\|_r\leq{\|f\|_p}^\theta{\|f\|_q}^{1-\theta}.
+\end{aligned}
+\]
 \end{proof}
 \newpage
 
@@ -239,6 +326,29 @@ infimum on $E$ by
 If $f\geq 0$, show that $\essinf_E f=(\esssup 1/f)^{-1}$.
 \end{problem}
 \begin{proof}
+First, let us deal with the edge case. Suppose the essential infimum of $f$
+is zero. Then, for every $\alpha>0$, we have $\left|\left\{\,\bfx\in
+  E:f(\bfx)>\alpha\,\right\}\right|>0$. Thus, for every $0<\beta<\infty$,
+$\left|\left\{\,\bfx\in E:1/f(\bfx)>\beta\,\right\}\right|>0$ so the
+essential supremum of $f$ is $\infty$.
+
+If $\essinf f=\infty$, and we interpret $1/\infty$ to mean $0$, equality holds.
+
+Now, suppose $0<\essinf f<\infty$. Then, there exists $\alpha>0$ such that
+$\left|\left\{\,\bfx\in E:f(\bfx)<\alpha\,\right\}\right|>0$. Thus, we have
+\begin{align*}
+\essinf f
+&=\sup\left\{\,\alpha:\left|\{\,x\in
+    E:f(x)<\alpha\,\}\right|=0\,\right\}\\
+&=\sup\left\{\,\frac{1}{\beta}:\left|\left\{\,\bfx\in
+  E:f(\bfx)<1/\beta\,\right\}\right|\,\right\}\\
+&=\sup\left\{\,\frac{1}{\beta}:\left|\left\{\,\bfx\in
+  E:1/f(\bfx)>\beta\,\right\}\right|\,\right\}\\
+&=\left( \inf \left\{\,\beta:\left|\left\{\,\bfx\in
+  E:1/f(\bfx)>\beta\,\right\}\right|\,\right\}\right)^{-1}\\
+&=(\esssup 1/f)^{-1}
+\end{align*}
+as desired.
 \end{proof}
 \newpage
 
@@ -247,6 +357,35 @@ If $f_k\to f$ in $L^p$, $1\leq p<\infty$, $g_k\to g$ pointwise, and
 $\|g_k\|_\infty<M$ for all $k$, prove that $f_kg_k\to fg$ in $L^p$.
 \end{problem}
 \begin{proof}
+First, note that, by Minkowski's inequality, we have
+\[
+\begin{aligned}
+\|fg-f_kg_k\|_p
+&=\|(fg-fg_k)-(fg_k-f_kg-k)\|_p\\
+&\leq\|fg-fg_k\|_p+\|fg_k-f_kg_k\|_p\\
+&\leq\|fg-fg_k\|_p+M\|f-f_k\|_p.
+\end{aligned}
+\]
+Since we have complete control over the $M\|f-f_k\|_p$ term, i.e.,
+$M\|f-f_k\|_p\to 0$ as $k\to\infty$, we need only show that
+$\|fg_k-f_kg_k\|_p\to 0$ as $k\to\infty$. First, note that since $g_k\to g$
+pointwise and the $g_k$ are bounded above by $M$ a.e., then $|g|\leq M$ so
+by the triangle inequality, $|g-g_k|\leq |g|+|g_k\leq 2M$. Thus, we have
+\[
+{\|fg-fg_k\|_p}^p\leq 2M{\|f\|_p}^p=2M\int|f|^p.
+\]
+Thus, $|fg-fg_k|^p\in L$ so by the Lebesgue dominated convergence theorem,
+we have
+\[
+\begin{aligned}
+\lim_{k\to\infty}\int|fg-fg_k|^p
+&=\int\lim_{k\to\infty}|fg-fg_k|^p\\
+&=\int\lim_{k\to\infty}|f|^p|g-g_k|^p\\
+&=0.
+\end{aligned}
+\]
+Thus, $\|fg-fg_k\|_p\to 0$ as $k\to\infty$ so $\|fg-f_kg_k\|_p\to 0$ as
+$k\to\infty$, as desired.
 \end{proof}
 
 %%% Local Variables:
