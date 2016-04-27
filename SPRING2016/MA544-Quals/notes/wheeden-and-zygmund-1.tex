@@ -226,12 +226,25 @@ $I=\left\{\,(x_1,\dotsc,x_n)\,\right\}$ is
 \end{equation}
 Somewhat more generally, if ${\{\bfe_k\}}_{k=1}^n$ is any given set of $n$
 vectors emanating from a point in $\bbR^n$, we will consider the closed
-\href{}{\emph{parallelepiped}}
+\href{https://en.wikipedia.org/wiki/Parallelepiped}{\emph{parallelepiped}}
 \begin{equation}
   \label{eq:1:parallelepiped}
 P\coloneqq\left\{\,\bfx:\text{$\sideset{}{_{k=1}^n}\sum t_k\bfe_k$, $0\leq
     t_k\leq 1$}\,\right\}
 \end{equation}
+Note that the edges of $P$ are parallel translates of the $\bfe_k$. Thus,
+$P$ is an interval if the $\bfe_k$ are parallel to the coordinate axes. The
+\emph{volume $\Vol P$} of $P$ is by definition the absolute value of the
+$n\times n$ determinant having $\bfe_1,\dotsc,\bfe_n$ as rows. A linear
+transformation $T$ of $\bbR^n$ transforms a parallelepiped $P$ into a
+parallelepiped $P'$ with volume $\Vol P'=|\det T|\Vol P$. In particular, a
+rotation of axes in $\bbR^n$ (which is an orthogonal linear transformation)
+does not change the volume of the parallelepiped. We will assume basic
+facts about the volume: for example, if $N$ is finite and $P$ is
+parallelepiped with $P\subset\bigcup_{k=1}^N I_k$ then $\Vol
+P\leq\sum_{k=1}^N\Vol(I_k)$, and if ${\{I_k\}}_{k=1}^N$ are nonoverlapping
+intervals contained in a parallelepiped $P$, then $\sum_{k=1}^N\Vol
+I_k\leq\Vol P$.
 
 \section{Functions of bounded variation and the Riemann--Stieltjes
   integral}
