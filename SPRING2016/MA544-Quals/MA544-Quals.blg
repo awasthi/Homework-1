@@ -11,10 +11,9 @@ A level-1 auxiliary file: danielli/544-exam-2.aux
 A level-1 auxiliary file: danielli/544-final.aux
 The style file: plainnat.bst
 Database file #1: anal-bib.bib
-Warning--I didn't find a database entry for "wheeden-zygmund:measure-and-integration"
 You've used 1 entry,
             2773 wiz_defined-function locations,
-            609 strings with 5362 characters,
+            608 strings with 5323 characters,
 and the built_in function-call counts, 479 in all, are:
 = -- 40
 > -- 30
@@ -53,4 +52,3 @@ warning$ -- 0
 while$ -- 3
 width$ -- 0
 write$ -- 24
-(There was 1 warning)
