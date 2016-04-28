@@ -41,28 +41,28 @@
 \numberwithin{equation}{subsection}
 \renewcommand\theequation{\hwnum.\arabic{equation}}
 
-% %% Language
-% \usepackage{cmap}
-% \usepackage[LAE,LFE,T2A,T1]{fontenc}
-% \usepackage[utf8]{inputenc}
-% \usepackage[farsi,french,german,spanish,russian,english]{babel}
-% \babeltags{fr=french,
-%            de=german,
-%            en=english,
-%            es=spanish,
-%            pa=farsi,
-%            ru=russian
-%            }
-% \def\spanishoptions{mexico}
+%% Language
+\usepackage{cmap}
+\usepackage[LAE,LFE,T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[farsi,french,german,spanish,russian,english]{babel}
+\babeltags{fr=french,
+           de=german,
+           en=english,
+           es=spanish,
+           pa=farsi,
+           ru=russian
+           }
+\def\spanishoptions{mexico}
 
-% \selectlanguage{english}
+\selectlanguage{english}
 
-% \newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
+\newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
 
-% \usepackage{CJKutf8}
-% \newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
-% \newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
-% \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
+\usepackage{CJKutf8}
+\newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
+\newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
+\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
 %% Misc
 \usepackage{graphicx}
@@ -77,48 +77,48 @@
 \mleftright
 \usepackage{carlos-variables}
 
-%% Unicode math and Polyglossia
-\usepackage{unicode-math}
-\usepackage{unicode-minionmath}
+% %% Unicode math and Polyglossia
+% \usepackage{unicode-math}
+% \usepackage{unicode-minionmath}
 
-\setmainfont[Ligatures=TeX]{Libertinus Serif}
-\setsansfont{Libertinus Sans}
-\setmonofont{Libertinus Mono}
-\setmathfont{Minion Math}
-\setmathfont[range={\mathfrak}]{XITS Math}
-\setmathfont[range={\mathcal},StylisticSet=1]{XITS Math}
-\setmathfont[range={\mathscr}]{XITS Math}
-% \setmathfont[range={}]{Minion Math}
+% \setmainfont[Ligatures=TeX]{Libertinus Serif}
+% \setsansfont{Libertinus Sans}
+% \setmonofont{Libertinus Mono}
+% \setmathfont{Minion Math}
+% \setmathfont[range={\mathfrak}]{XITS Math}
+% \setmathfont[range={\mathcal},StylisticSet=1]{XITS Math}
+% \setmathfont[range={\mathscr}]{XITS Math}
+% % \setmathfont[range={}]{Minion Math}
 
-\usepackage{polyglossia}
+% \usepackage{polyglossia}
 
-\newfontfamily\cyrillicfont[Script=Cyrillic]{Libertinus Serif}
-\newfontfamily\cyrillicfontsf[Script=Cyrillic]{Libertinus Sans}
+% \newfontfamily\cyrillicfont[Script=Cyrillic]{Libertinus Serif}
+% \newfontfamily\cyrillicfontsf[Script=Cyrillic]{Libertinus Sans}
 
-\newfontfamily\farsifont[Script=Arabic,
-                         Scale=MatchUppercase]{Amiri}
+% \newfontfamily\farsifont[Script=Arabic,
+%                          Scale=MatchUppercase]{Amiri}
 
-\setmainlanguage[variant=american]{english}
-\setotherlanguage{farsi}
-\setotherlanguage{french}
-\setotherlanguage[spelling=new,latesthyphen,babelshorthands]{german}
-\setotherlanguage{spanish}
-\setotherlanguage[spelling=modern,babelshorthands]{russian}
+% \setmainlanguage[variant=american]{english}
+% \setotherlanguage{farsi}
+% \setotherlanguage{french}
+% \setotherlanguage[spelling=new,latesthyphen,babelshorthands]{german}
+% \setotherlanguage{spanish}
+% \setotherlanguage[spelling=modern,babelshorthands]{russian}
 
-\makeatletter
-\@Latintrue
-\makeatother
+% \makeatletter
+% \@Latintrue
+% \makeatother
 
-\usepackage{xeCJK}
-\usepackage[overlap]{ruby}
-\renewcommand\rubysep{-0.2ex}
-\xeCJKDeclareSubCJKBlock{Kana}{"3040 -> "309F, "30A0 -> "30FF, "31F0 -> "31FF, "1B000 -> "1B0FF}
-\xeCJKDeclareSubCJKBlock{Hangul}{"1100 -> "11FF, "3130 -> "318F, "A960 -> "A97F, "AC00 -> "D7AF, "D7B0 -> "D7FF}
+% \usepackage{xeCJK}
+% \usepackage[overlap]{ruby}
+% \renewcommand\rubysep{-0.2ex}
+% \xeCJKDeclareSubCJKBlock{Kana}{"3040 -> "309F, "30A0 -> "30FF, "31F0 -> "31FF, "1B000 -> "1B0FF}
+% \xeCJKDeclareSubCJKBlock{Hangul}{"1100 -> "11FF, "3130 -> "318F, "A960 -> "A97F, "AC00 -> "D7AF, "D7B0 -> "D7FF}
 
-\setCJKmainfont{HanaMinA}
-\setCJKmainfont[Kana]{HanaMinA}
-\setCJKmainfont[Hangul]{NanumMyeongjo}
-\setCJKsansfont[Hangul]{NanumGothic}
+% \setCJKmainfont{HanaMinA}
+% \setCJKmainfont[Kana]{HanaMinA}
+% \setCJKmainfont[Hangul]{NanumMyeongjo}
+% \setCJKsansfont[Hangul]{NanumGothic}
 
 %% Theorems and definitions
 \theoremstyle{plain}
@@ -193,7 +193,7 @@
 \begin{document}
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 %% Redefine the QED symbol
-\renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
+% \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
 
 \frontmatter
 \aliaspagestyle{title}{empty}
