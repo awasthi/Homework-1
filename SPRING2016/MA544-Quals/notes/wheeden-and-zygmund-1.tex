@@ -106,9 +106,9 @@ $\liminf_{k\to\infty}a_k$ by
 \label{eq:limsup-liminf-definition}
 \begin{aligned}
 \limsup_{k\to\infty}a_k&\coloneqq\lim_{j\to\infty} b_j
-=\lim_{j\to\infty}\left\{\sideset{}{_{k\geq j}}\sup a_k  \right\},\\
+=\lim_{j\to\infty}\{\sideset{}{_{k\geq j}}\sup a_k\},\\
 \liminf_{k\to\infty}a_k&\coloneqq\lim_{j\to\infty} c_j
-=\lim_{j\to\infty}\left\{\sideset{}{_{k\geq j}}\inf a_k\right\}.
+=\lim_{j\to\infty}\{\sideset{}{_{k\geq j}}\inf a_k\}.
 \end{aligned}
 \end{equation}
 
@@ -237,11 +237,11 @@ $P$ is an interval if the $\bfe_k$ are parallel to the coordinate axes. The
 \emph{volume $\Vol P$} of $P$ is by definition the absolute value of the
 $n\times n$ determinant having $\bfe_1,\dotsc,\bfe_n$ as rows. A linear
 transformation $T$ of $\bbR^n$ transforms a parallelepiped $P$ into a
-parallelepiped $P'$ with volume $\Vol P'=|\det T|\Vol P$. In particular, a
-rotation of axes in $\bbR^n$ (which is an orthogonal linear transformation)
-does not change the volume of the parallelepiped. We will assume basic
-facts about the volume: for example, if $N$ is finite and $P$ is
-parallelepiped with $P\subset\bigcup_{k=1}^N I_k$ then $\Vol
+parallelepiped $P'$ with volume $\Vol P'=|{\det T}|\Vol P$. In particular,
+a rotation of axes in $\bbR^n$ (which is an orthogonal linear
+transformation) does not change the volume of the parallelepiped. We will
+assume basic facts about the volume: for example, if $N$ is finite and $P$
+is parallelepiped with $P\subset\bigcup_{k=1}^N I_k$ then $\Vol
 P\leq\sum_{k=1}^N\Vol(I_k)$, and if ${\{I_k\}}_{k=1}^N$ are nonoverlapping
 intervals contained in a parallelepiped $P$, then $\sum_{k=1}^N\Vol
 I_k\leq\Vol P$.
