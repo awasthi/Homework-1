@@ -191,8 +191,9 @@
 \newtheorem*{observations*}{**Observations**}
 
 \begin{document}
-%% Footnotes
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+%% Redefine the QED symbol
+\renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
 
 \frontmatter
 \aliaspagestyle{title}{empty}

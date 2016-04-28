@@ -152,17 +152,27 @@
 \newtheorem*{problem*}{Problem}
 
 \begin{document}
+%% Footnotes
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+%% Redefine the QED symbol
+\renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
+
 \author{\href{mailto:\authoremail}{\documentauthor}}
 \title{\documenttitle}
 \date{\today}
 \maketitle
-% \include{kaufmann/MA571-Mid-JAN15}
-% \include{kaufmann/MA571-Final-JAN15}
+%% Munkres notes
+
+%% McClure Quals
 % \include{mcclure/MA571-JAN16}
 \include{mcclure/MA571-AUG14}
 \include{mcclure/MA571-JAN14}
 \include{mcclure/MA571-JAN12}
 \include{mcclure/MA571-JAN11}
+
+%% Kaufmann quals
+% \include{kaufmann/MA571-Mid-JAN15}
+% \include{kaufmann/MA571-Final-JAN15}
 
 \bibliographystyle{plainnat}
 \bibliography{top-bib}

@@ -157,6 +157,11 @@
 \newtheorem*{problem*}{Problem}
 
 \begin{document}
+%% Footnote style
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+%% Redefine the QED symbol
+\renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
+
 \chapterstyle{veelo}
 \pagestyle{ruled}
 \author{\href{mailto:\authoremail}{\documentauthor}}
@@ -164,9 +169,6 @@
 \date{\today}
 \maketitle
 \tableofcontents
-
-%% Footnotes
-\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
 \include{notes/wheeden-and-zygmund-1}
 \include{notes/wheeden-and-zygmund-2}
