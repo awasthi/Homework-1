@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Arch Linux)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: MA553-HW-Current.aux
+A level-1 auxiliary file: notes/groups.aux
+A level-1 auxiliary file: notes/rings.aux
+A level-1 auxiliary file: notes/fields.aux
+A level-1 auxiliary file: ulrich/ma553-hw-1.aux
+A level-1 auxiliary file: ulrich/ma553-hw-2.aux
+A level-1 auxiliary file: ulrich/ma553-hw-3.aux
+A level-1 auxiliary file: ulrich/ma553-hw-4.aux
+A level-1 auxiliary file: ulrich/ma553-hw-5.aux
+A level-1 auxiliary file: ulrich/ma553-hw-6.aux
+A level-1 auxiliary file: ulrich/ma553-hw-7.aux
+A level-1 auxiliary file: ulrich/ma553-hw-8.aux
+A level-1 auxiliary file: ulrich/ma553-hw-9.aux
+The style file: plainnat.bst
+Database file #1: alg-bib.bib
+You've used 2 entries,
+            2773 wiz_defined-function locations,
+            617 strings with 5353 characters,
+and the built_in function-call counts, 723 in all, are:
+= -- 59
+> -- 31
+< -- 2
++ -- 11
+- -- 9
+* -- 45
+:= -- 124
+add.period$ -- 9
+call.type$ -- 2
+change.case$ -- 7
+chr.to.int$ -- 2
+cite$ -- 4
+duplicate$ -- 40
+empty$ -- 65
+format.name$ -- 13
+if$ -- 146
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 4
+newline$ -- 21
+num.names$ -- 8
+pop$ -- 22
+preamble$ -- 1
+purify$ -- 7
+quote$ -- 0
+skip$ -- 28
+stack$ -- 0
+substring$ -- 4
+swap$ -- 2
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 12
+warning$ -- 0
+while$ -- 6
+width$ -- 0
+write$ -- 37
