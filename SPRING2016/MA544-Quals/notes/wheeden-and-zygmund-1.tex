@@ -289,12 +289,79 @@ has a finite subcover.
 
 \begin{theorem}[1.12]
 \hfill
-\begin{enumerate}[label=(\alph*),noitemsep]
+\begin{enumerate}[label=\textnormal{(\alph*)},noitemsep]
 \item The Heine--Borel theorem: A set $E\subset\bbR^n$ is compact if and
   only if it is closed and bounded.
 \item A set $E\subset\bbR^n$ is compact if and only if every sequence of
   points of $E$ has a subsequence that converges to a point of $E$.
 \end{enumerate}
+\end{theorem}
+
+\subsection{Functions}
+By a function $f=f(\bfx)$ defined for $\bfx$ in a subset $E$ of $\bbR^n$,
+we will always mean a \emph{real-valued} function, unless otherwise
+specified. By \emph{real-valued}, we generally mean \emph{extended
+  real-valued}, i.e., $f$ may take the values $\pm\infty$. If
+$|f(\bfx)|<\infty$ for all $\bfx\in E$, $f$ is \emph{finite} on $E$. A
+finite function $f$ is said to be
+\href{https://en.wikipedia.org/wiki/Bounded_function}{\emph{bounded}} if
+there is a finite number $M$ such that $|f(\bfx)|\leq M$ for all $\bfx\in
+E$; i.e., $f$ is bounded on $E$ if $\sup_{\bfx\in E}|f(\bfx)|$ is finite. A
+sequence $\{f_k\}$ of functions is said to be
+\href{https://en.wikipedia.org/wiki/Uniform_boundedness}{\emph{uniformly
+    bounded}} on $E$ if there is a finite $M$ such that $|f_k(\bfx)|\leq M$
+for all $\bfx\in E$ and all $k$.
+
+By the
+\href{https://en.wikipedia.org/wiki/Support_(mathematics)}{\emph{support}}
+of $f$, we mean the closure of the set where $f$ is not zero. Thus, the
+support of a function is always closed. It follows that a function defined
+in $\bbR^n$ has \emph{compact support} if and only if it vanishes outside
+some bounded set.
+
+A function $f$ defined on an interval $I$ in $\bbR$ is called
+\href{https://en.wikipedia.org/wiki/Monotonic_function}{\emph{monotone
+    increasing (decreasing)}} if $f(x)\leq f(y)$ (or $f(x)\geq f(y)$)
+whenever $x<y$, $x,y\in I$. By \emph{strictly increasing (decreasing)} if
+$f(x)<f(y)$ (or $f(x)>f(y)$) whenever $x<y$, $x,y\in I$.
+
+Let $f$ be defined on $E\subset\bbR^n$ and let $\bfx_0$ be a limit point of
+$E$. Let $B_\delta'(\bfx_0)=B_\delta(\bfx_0)\minus\{\bfx_0\}$ denote the
+puncture ball with center $\bfx_0$ and radius $\delta$, and let
+\begin{equation}
+  \label{eq:1:big-m-lil-m}
+  \begin{aligned}
+    M_\delta(\bfx)&=\sup_{\bfx\in B_\delta'(\bfx_0)\cap E}f(\bfx),&
+    m_\delta(\bfx)&=\inf_{\bfx\in B_\delta'(\bfx_0)\cap E}f(\bfx).
+  \end{aligned}
+\end{equation}
+As $\delta\searrow 0$, $M_\delta(\bfx_0)$ decreases and $m_\delta(\bfx_0)$
+increases, and we define
+\begin{equation}
+  \label{eq:1:mdeltas-limsup-liminf}
+  \begin{aligned}
+    \limsup_{\substack{\bfx\to\bfx_0\\\bfx\in E}}f(\bfx)
+    &=\limsup_{\delta\to 0} M_\delta(\bfx_0)\\
+    \liminf_{\substack{\bfx\to\bfx_0\\\bfx\in E}}f(\bfx)
+    &=\lim_{\delta\to 0} m_\delta(\bfx_0).
+  \end{aligned}
+\end{equation}
+
+The following charaterizations about Equations \eqref{eq:1:big-m-lil-m} and
+\eqref{eq:1:mdeltas-limsup-liminf} are valid.
+\begin{theorem}[1.14]
+\hfill
+\begin{enumerate}[label=\textnormal{(\alph*)},noitemsep]
+\item $M=\limsup_{\bfx\to\bfx_0,\,\bfx\in E}f(\bfx)$ if and only if
+  \textnormal{(i)} there exists $\{\bfx_k\}$ in $E\minus\{\bfx_0\}$ such
+  that $\bfx_k\to\bfx_0$ and $f(\bfx_K)\to M$ and \textnormal{(ii)} $M'>M$,
+  there exist $\delta>0$ such that $f(\bfx)<M'$ for $\bfx\in
+  B'_\delta(\bfx_0)$ for $\bfx\in B_\delta'(\bfx_0)\cap E$.
+\item $m=\liminf_{\bfx\to\bfx_0,\,\bfx\in E}f(\bfx)$ if and only if
+  \textnormal{(i)} there exists $\{\bfx_k\}$ in $E\minus\{\bfx_0\}$ such
+  that $\bfx_k\to\bfx_0$ and $f(\bfx_K)\to m$ and \textnormal{(ii)} $m'<m$,
+  there exist $\delta>0$ such that $f(\bfx)>m'$ for $\bfx\in
+  B'_\delta(\bfx_0)$ for $\bfx\in B_\delta'(\bfx_0)\cap E$.\end{enumerate}
 \end{theorem}
 
 \section{Functions of bounded variation and the Riemann--Stieltjes

@@ -6,7 +6,7 @@
 \def\documentsubject{measure theory}
 \def\authoremail{salinac@purdue.edu}
 
-\documentclass[article,oneside,10pt]{memoir}
+\documentclass[article,leqno,oneside,10pt]{memoir}
 \usepackage{geometry}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[
@@ -160,6 +160,7 @@
 \begin{document}
 %% Footnote style
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+\numberwithin{equation}{chapter}
 %% Redefine the QED symbol
 % \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
 
