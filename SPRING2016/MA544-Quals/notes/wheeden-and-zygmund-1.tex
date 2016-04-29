@@ -2,7 +2,7 @@
 \thispagestyle{empty}
 These notes roughly correspond to chapters 2 through 8 of Wheeden and
 Zygmund's \emph{Measure and Integration}
-\cite{wheeden-zygmund:measure-and-integral}.
+\cite{book:wheeden-zygmund}.
 
 This first portion corresponds to material covered before Exam 1.
 \section{Preliminaries}
@@ -245,6 +245,57 @@ is parallelepiped with $P\subset\bigcup_{k=1}^N I_k$ then $\Vol
 P\leq\sum_{k=1}^N\Vol(I_k)$, and if ${\{I_k\}}_{k=1}^N$ are nonoverlapping
 intervals contained in a parallelepiped $P$, then $\sum_{k=1}^N\Vol
 I_k\leq\Vol P$.
+
+Now we shall use the notion of interval to obtain a very useful
+decomposition of open sets in $\bbR^n$. This will be the foundation of many
+of our results later on.
+
+\begin{theorem}[1.10.]
+Every open set in $\bbR$ can be written as a countable union of disjoint
+open intervals.
+\end{theorem}
+% \begin{proof}
+% Let $G\subset\bbR$ be open. For $x\in G$, let $I_x$ denote the maximal
+% openet containing $x$ which is in $G$; i.e., $I_x$ is the union of all open
+% intervals that contain $x$ and that lie in $G$. If $x,x'\in G$ and $x\neq
+% x'$, then $I_x$ and $I_{x'}$ must either be disjoint or identical, since
+% they intersect, their union is an open interval containing $x$ and
+% $x'$. Clearly $G=\bigcup_{x\in G}I_x$. Since each $I_x$ contains a rational
+% number, the number of distinct $I_x$ must be countable, and the theorem
+% follows.
+% \end{proof}
+
+This construction, however, fails in $\bbR^n$ for $n>1$ since the union of
+(overlapping) intervals is not generally an interval. However, the
+following weaker, but sufficient, theorem does hold.
+\begin{theorem}
+Every open set in $\bbR^n$, $n\geq 1$, can be written as a countable union
+of nonoverlapping (closed) cubes. It can also be written as a countable
+union of disjoint partly open subsets.
+\end{theorem}
+You can find a proof of the preceding theorems in \cite{book:wheeden-zygmund}
+
+The collection $\left\{\,Q:\text{$Q\in K_j$, $j=1,2,\dotsc$}\,\right\}$
+which is constructed in the proof of the previous theorem is called a
+family of \emph{dyadic cubes}.
+
+\subsection{Compact Sets and the Heine--Borel Theorem}
+By an \emph{cover} of a set $E$, we mean a family $\calF$ of sets $A$ such
+that $E\subset\bigcap_{A\in\calF} A$. A \emph{subcover} $\calF_0$ of a
+cover $\calF$ is a cover with the property that $A_0\in\calF$ whenever
+$A_0\in\calF_0$. A cover $\calF$ is called an \emph{open cover} if each set
+in $\calF$ is open. We say $E$ is \emph{compact} if every open cover of $E$
+has a finite subcover.
+
+\begin{theorem}[1.12]
+\hfill
+\begin{enumerate}[label=(\alph*),noitemsep]
+\item The Heine--Borel theorem: A set $E\subset\bbR^n$ is compact if and
+  only if it is closed and bounded.
+\item A set $E\subset\bbR^n$ is compact if and only if every sequence of
+  points of $E$ has a subsequence that converges to a point of $E$.
+\end{enumerate}
+\end{theorem}
 
 \section{Functions of bounded variation and the Riemann--Stieltjes
   integral}

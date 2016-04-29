@@ -11,9 +11,15 @@ A level-1 auxiliary file: danielli/544-exam-2.aux
 A level-1 auxiliary file: danielli/544-final.aux
 The style file: plainnat.bst
 Database file #1: anal-bib.bib
+I was expecting a `,' or a `}'---line 13 of file anal-bib.bib
+ :   
+ :   title={Real Analysis},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "wheeden-zygmund:measure-and-integral"
 You've used 1 entry,
             2773 wiz_defined-function locations,
-            608 strings with 5323 characters,
+            609 strings with 5343 characters,
 and the built_in function-call counts, 479 in all, are:
 = -- 40
 > -- 30
@@ -52,3 +58,4 @@ warning$ -- 0
 while$ -- 3
 width$ -- 0
 write$ -- 24
+(There was 1 error message)

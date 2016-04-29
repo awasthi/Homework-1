@@ -6,7 +6,7 @@
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
 \bibitem[Wheeden et~al.(1977)Wheeden, Wheeden, and
-  Zygmund]{wheeden-zygmund:measure-and-integral}
+  Zygmund]{book:wheeden-zygmund}
 R.~Wheeden, R.L. Wheeden, and A.~Zygmund.
 \newblock \emph{Measure and Integral: An Introduction to Real Analysis}.
 \newblock Chapman \& Hall/CRC Pure and Applied Mathematics. Taylor \& Francis,
