@@ -75,7 +75,7 @@ error less than $1/15$
 Compute the first few terms of the series
 \[
 \sum_{n=1}^\infty\frac{(-1)^n}{n^2}\approx
--1+\frac{1}{4}-\frac{1}{9}+\frac{1}{16}-\cdots.
+\underbrace{-1+\frac{1}{4}-\frac{1}{9}}_{\text{terms $>1/15$}}+\frac{1}{16}-\cdots.
 \]
 Since the term following $-1/9$ is less that $1/15$, we only need $3$, by
 the alternating series estimation theorem, we only need $3$ terms.
@@ -100,18 +100,26 @@ Test the following series for convergence:
 \end{aligned}\]
 which goes to $0$ as $n\to\infty$. Thus, the series in (I) converges.
 \\\\
-(II) By the ratio test, we have
+(II) By the integral test, we have
 \begin{align*}
-\left(\frac{n+1}{2(n+1)+4}\right)
-\left(\frac{2n+4}{n}\right)
-&=\frac{(n+1)(2n+4)}{(2n+6)n}\\
-&=\frac{2n^2+6n+4}{2n^2+6n}
+\sum_{n=1}^\infty\frac{n}{(2n+4)}
+&\sim\int_1^\infty\frac{x}{2x+4}\diff x\\
+\intertext{maket he substitution $u=2x+4$, $du=2dx$}
+&=\frac{1}{2}\int_6^\infty\frac{(u-4)/2}{u}\diff u\\
+&=\frac{1}{4}\int_6^\infty\frac{u-4}{u}\diff u\\
+&=\frac{1}{4}\int_6^\infty1-\frac{4}{u}\diff u\\
+&=\int_6^\infty \frac{1}{4}-\int_6^\infty\frac{du}{u}\\
+&=\infty.
 \end{align*}
-which, by l'Hôpital's
+Therefore, the sum in (II) does not converge.
 \\\\
-(III)
+(III) Apply the alternating test. Note that $a_{n+1}<a_n$, but
+\[
+\lim_{n\to\infty}\frac{n}{2n+4}=\lim_{x\to\infty}\frac{x}{2x+4}=\lim_{x\to\infty}\frac{1}{2}=\frac{1}{2}\neq 0.
+\]
+Hence, the series does not converge.
 \\\\
-Answer: {\color{Green}}, {\color{Red}}
+Answer: {\color{Green} A}, {\color{Red} D}.
 \end{proof}
 
 \begin{problem}[{\color{Green} \# 5}, {\color{Red} \# 3}]
@@ -119,7 +127,40 @@ What is the interval of convergence of the series $\sum_{n=1}^\infty
 n(x-1)^n/(n^2+1)$?
 \end{problem}
 \begin{proof}[Solution]
-Answer: {\color{Green}}, {\color{Red}}
+Either the ratio test or the root test are good methods to apply here. We
+will use the ratio test. By the ratio test, we have
+\begin{align*}
+\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|
+&=\lim_{n\to\infty}\left|\left[\frac{(n+1)(x-1)^{n+1}}{((n+1)^2+1)}\right]
+\left[\frac{(n^2+1)}{n(x-1)^n}\right]\right|\\
+&=\lim_{n\to\infty}\frac{(n+1)(n^2+1)|x-1|}{n(n^2+2n+2)}\\
+&=\lim_{n\to\infty}\left[\frac{(n+1)(n^2+1)}{n(n^2+2n+2)}\right]|x-1|
+\intertext{for those of you who have a good understanding of asymptotics
+  (which terms grow largest), it is easy to see that the limit of that
+  nasty expression in $n$ will be $1$ (since the highest term in the
+  numerator is $n^3$ and the highest term in the denominator is $n^3$)  be
+  $|x-1|$, otherwise, we observe that $n^2+2n+2>n^2$ so}
+&\leq\lim_{n\to\infty}\left[\frac{(n+1)(n^2+1)}{n\cdot n^2}\right]|x-1|\\
+&=\lim_{n\to\infty}\left[\frac{n^3+n^2+n+1}{n^3}\right]|x-1|\\
+&=\left[\lim_{n\to\infty}\frac{n^3}{n^3}
++\lim_{n\to\infty}\frac{n^2}{n^3}
++\lim_{n\to\infty}\frac{n}{n^3}
++\lim_{n\to\infty}\frac{1}{n^3}\right]|x-1|\\
+&=|x-1|.
+\end{align*}
+We then want to bound this limit by $1$, so $|x-1|<1$. This gives us an
+interval $(0,2)$ and we must check the end points for convergence. Now,
+note that for $x=0$ the series converges by the AST. For $x=2$, by the
+comparison test, since $n^2+1<2n^2$, we have
+\[
+\sum_{n=1}^\infty\frac{n}{n^2+1}>
+\sum_{n=1}^\infty\frac{n}{2n^2}=
+\frac{1}{2}\sum_{n=1}^\infty\frac{n}{n^2}=
+\frac{1}{2}\sum_{n=1}^\infty\frac{1}{n}=\infty.
+\]
+Thus, the interval of convergence is $[0,1)$.
+\\\\
+Answer: {\color{Green} E}, {\color{Red} C}.
 \end{proof}
 
 \begin{problem}[{\color{Green} \# 6}, {\color{Red} \# 7}]
@@ -131,7 +172,25 @@ conditionally convergent, or divergent:
 \end{enumerate}
 \end{problem}
 \begin{proof}[Solution]
-Answer: {\color{Green}}, {\color{Red}}
+(I) Since $|\cos(n)|\leq 1$, by the comparison test, we have
+\[
+\sum_{n=1}^\infty\left|\frac{\cos(n)}{n^2+1}\right|
+\leq\sum_{n=1}^\infty\frac{1}{n^2+1}\leq\sum_{n=1}^\infty\frac{1}{n^2}<\infty.
+\]
+Thus, the series is absolutely convergent and hence, conditionally
+convergent. Remember, if a series is absolutely convergent it is also
+convergent in the traditional sense.
+\\\\
+(II) By the alternating series test, this series is convergent since
+$1/2(n+1)<1/2n$ and $\lim_{n\to\infty} 1/2n=0$. However,
+\[
+\sum_{n=1}^\infty\left|\frac{(-1)^n}{2n}\right|
+=\sum_{n=1}^\infty\frac{1}{2n}=\frac{1}{2}\sum_{n=1}^\infty\frac{1}{n}=\infty.
+\]
+Hence, the series is not absolutely convergent, so it is conditionally
+convergent.
+\\\\
+Answer: {\color{Green}C}, {\color{Red}B}.
 \end{proof}
 
 \begin{problem}[{\color{Green} \# 7}, {\color{Red} \# 9}]
@@ -145,14 +204,58 @@ Determine which of the following statements are true and which are false.
 \end{enumerate}
 \end{problem}
 \begin{proof}[Solution]
-Answer: {\color{Green}}, {\color{Red}}
+(I) This is false. Applying the ratio test, we have
+\begin{align*}
+\frac{a_{n+1}}{a_n}
+&=\frac{n^2+1}{(n+1)^2+1}\\
+&=\frac{n^2+1}{n^2+2n+2}
+\intertext{applying l'Hôpital's rule twice, we get}
+&=\lim_{x\to\infty}1\\
+&=1,
+\end{align*}
+which is inconclusive.
+\\\\
+(II) By the limit comparison test, we have
+\[
+\lim_{n\to\infty}\frac{n^2}{n^2+1}=1<\infty
+\]
+so, since $\sum_{n=1}^\infty 1/n^2$ converges, so must
+$\sum_{n=1}^\infty1/(n^2+1)$.
+\\\\
+(III) This is true. Since $n^2+1>n^2$, it follows that $1/(n^2+1)<1/n^2$ so
+by the comparison test
+\[
+\sum_{n=1}^\infty\frac{1}{n^2+1}<\sum_{n=1}^\infty\frac{1}{n^2}
+\]
+which we know converges since it is a $p$-series with $p>1$.
+\\\\
+Answer: {\color{Green}C}, {\color{Red}D}
 \end{proof}
 
 \begin{problem}[{\color{Green} \# 8}, {\color{Red} \# 10}]
 The series $\sum_{n=1}^\infty(-1)^nnx^n$ converges for $|x|<1$ to ?
 \end{problem}
 \begin{proof}[Solution]
-Answer: {\color{Green}}, {\color{Red}}
+Recall that
+\[
+\frac{1}{1-x}=\sum_{n=0}^\infty x^n.
+\]
+so
+\[
+\frac{1}{1+x}=\frac{1}{1-(-x)}=\sum_{n=0}^\infty (-1)^nx^n.
+\]
+The key here is recognize that the sum above looks like the derivative of
+something. Namely,
+\begin{align*}
+\sum_{n=1}^\infty(-1)^nnx^n
+&=x\sum_{n=1}^\infty(-1)^nnx^{n-1}\\
+&=x\frac{d}{dx}\left[\sum_{n=1}^\infty(-1)^nx^n\right]\\
+&=x\frac{d}{dx}\left[\frac{1}{1+x}\right]\\
+&=x\left(\frac{-1}{(1+x)^2}\right)\\
+&=-\frac{x}{(1+x)^2}.
+\end{align*}
+\\\\
+Answer: {\color{Green}D}, {\color{Red}A}.
 \end{proof}
 
 \begin{problem}[{\color{Green} \# 9}, {\color{Red} \# 12}]
@@ -160,7 +263,22 @@ Let $\sin x=\sum_{n=0}^\infty a_n\left(x-\pi/6\right)^n$ be the Taylor
 series for $\sin x$ at $a=\pi/6$. Then $a_2=$ ?
 \end{problem}
 \begin{proof}[Solution]
-Answer: {\color{Green}}, {\color{Red}}
+Remember that to find the Taylor series expansion of a function $f$ about
+$x$, we use the following formula
+\[
+T(f)\coloneqq\sum_{n=0}^\infty\frac{f^{(n)}(a)}{n!}(x-a)^n
+\]
+where $f^{(n)}(a)$ is the $n$-th derivative of $f$ evaluated at $a$. Now,
+if we put this formula in the form that the statement is asking, we see
+that the coefficient $a_n$ has to be equal to the coefficient
+$f^{(n)}(a)/n!$. Thus, we need to compute the $2$-nd derivative of $f$ at
+$\pi/6$ and divide it by $2!$ to find $a_2$.
+\[
+a_2=\frac{-\sin(\pi/6)}{2!}=\frac{-1/2}{2}=-\frac{1}{4}
+\]
+since the second derivative of $\sin x$ is $-\sin x$.
+\\\\
+Answer: {\color{Green}B}, {\color{Red}E}.
 \end{proof}
 
 \begin{problem}[{\color{Green} \# 10}, {\color{Red} \# 5}]
@@ -169,7 +287,24 @@ $\int x\cos(x^3)\diff x$? You may assume $\cos(x)=\sum_{n=0}^\infty(-1)^n
 x^{2n}/(2n!)$.
 \end{problem}
 \begin{proof}[Solution]
-Answer: {\color{Green}}, {\color{Red}}
+All we need to do is replace $\cos$ by its power series represetation in
+the integral and expand the first few terms of the power series
+representation for the integral until we get to the term containing
+$x^8$. Thus, we have
+\begin{align*}
+\int x\cos(x^3)\diff x
+&=\int x\sum_{n=0}^\infty(-1)^n\frac{(x^3)^{2n}}{(2n)!}\\
+&=\int x\sum_{n=0}^\infty(-1)^n\frac{x^{6n}}{(2n)!}\\
+&=\int\sum_{n=0}^\infty(-1)^n\frac{x^{6n+1}}{(2n)!}\\
+&=\sum_{n=0}^\infty\int(-1)^n\frac{x^{6n+1}}{(2n)!}\\
+&=\sum_{n=0}^\infty(-1)^n\frac{x^{6n+2}}{(2n)!(6n+2)}.
+\end{align*}
+Thus, the term containing $x^8$, has coefficient
+\[
+a_1=\frac{(-1)^1}{2!\cdot(6\cdot 1+2)}=\frac{-1}{2\cdot 8}=-\frac{1}{16}.
+\]
+\\\\
+Answer: {\color{Green}A}, {\color{Red}E}.
 \end{proof}
 
 \begin{problem}[{\color{Green} \# 11}, {\color{Red} \# 8}]
@@ -177,7 +312,14 @@ A particle moves along  the curve $x=\tan t$, $y=\sec t$, $0\leq t\leq
 \pi/4$. The trajectory of the particle is a segment of
 \end{problem}
 \begin{proof}[Solution]
-Answer: {\color{Green}}, {\color{Red}}
+This is easily seen to be a hyperbola by the $\tan$ identity
+\begin{align*}
+1&=\tan^2t-\sec^2t\\
+ &=x^2-y^2
+\end{align*}
+which is the equation for a hyperbola.
+\\\\
+Answer: {\color{Green}D}, {\color{Red}C}.
 \end{proof}
 
 \begin{problem}[{\color{Green} \# 12}, {\color{Red} \# 2}]
@@ -185,7 +327,29 @@ The length of the curve $x=\cos\theta+\theta\sin\theta$,
 $y=\sin\theta-\theta\cos\theta$, $0\leq\theta\leq\pi$, is
 \end{problem}
 \begin{proof}[Solution]
-Answer: {\color{Green}}, {\color{Red}}
+Recall that the length of a parametric curve $(x(\theta),y(\theta))$ from
+time $\alpha\leq\theta\leq\beta$ is given by
+\[
+\ell\coloneqq\int_\alpha^\beta\sqrt{\left(\frac{dx(\theta)}{d\theta}\right)^2+
+\left(\frac{dy(\theta)}{d\theta}\right)^2}.
+\]
+First, we find the derivatives of $x$ and $y$ with respect to
+$\theta$. They are
+\begin{align*}
+\frac{dx}{d\theta}
+&=-\sin\theta+\theta\cos\theta+\sin\theta&
+\frac{dy}{d\theta}
+&=\cos\theta+\theta\sin\theta-\cos\theta\\
+&=\theta\cos\theta&&=\theta\sin\theta.
+\end{align*}
+Hence, the length is given by
+\[
+\int_0^\pi\sqrt{(\theta\cos\theta)^2+(\theta\sin\theta)^2}\diff\theta=
+\int_0^\pi\sqrt{\theta^2(\cos^2\theta+\sin^2\theta)}\diff\theta=
+\int_0^\pi\theta\diff\theta=\left[\frac{\theta^2}{2}\right]_0^\pi=\frac{\pi^2}{2}.
+\]
+\\\\
+Answer: {\color{Green}C}, {\color{Red}E}.
 \end{proof}
 
 %%% Local Variables:

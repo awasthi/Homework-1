@@ -6,7 +6,7 @@
 \def\documentsubject{measure theory}
 \def\authoremail{salinac@purdue.edu}
 
-\documentclass[article,leqno,oneside,10pt]{memoir}
+\documentclass[article,oneside,10pt]{memoir}
 \usepackage{geometry}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[
@@ -83,6 +83,7 @@
 % \usepackage{unicode-math}
 % \usepackage{unicode-minionmath}
 
+% % \setmainfont[Ligatures=TeX]{Minion Pro}
 % \setmainfont[Ligatures=TeX]{Libertinus Serif}
 % \setsansfont{Libertinus Sans}
 % \setmonofont{Libertinus Mono}
@@ -100,6 +101,11 @@
 
 % \newfontfamily\farsifont[Script=Arabic,
 %                          Scale=MatchUppercase]{Amiri}
+
+% % \newfontfamily\farsifont[Script=Arabic,
+% %                          Scale=MatchUppercase]{Adobe Arabic}
+% % \newfontfamily\farsifontsf[Script=Arabic,
+% %                          Scale=MatchUppercase]{Myriad Arabic}
 
 % \setmainlanguage[variant=american]{english}
 % \setotherlanguage{farsi}
@@ -123,14 +129,20 @@
 % \setCJKmainfont[Hangul]{NanumMyeongjo}
 % \setCJKsansfont[Hangul]{NanumGothic}
 
+% % \setCJKmainfont{Adobe Ming Std}
+% % \setCJKmainfont{Adobe Ming Std}
+% % \setCJKmainfont[Kana]{Kozuka Mincho Pr6N}
+% % \setCJKmainfont[Hangul]{Adobe Myungjo Std}
+% % \setCJKsansfont[Hangul]{Adobe Gothic Std}
+
 %% Theorems and definitions
 %% remove parentheses
-% \makeatletter
-% \def\thmhead@plain#1#2#3{%
-%   \thmname{#1}\thmnumber{\@ifnotempty{#1}{ }\@upn{#2}}%
-%   \thmnote{ {\the\thm@notefont#3}}}
-% \let\thmhead\thmhead@plain
-% \makeatother
+\makeatletter
+\def\thmhead@plain#1#2#3{%
+  \thmname{#1}\thmnumber{\@ifnotempty{#1}{ }\@upn{#2}}%
+  \thmnote{ {\the\thm@notefont#3}}}
+\let\thmhead\thmhead@plain
+\makeatother
 
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
