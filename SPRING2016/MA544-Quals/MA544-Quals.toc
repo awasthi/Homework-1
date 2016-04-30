@@ -25,5 +25,7 @@
 \contentsline {section}{\numberline {\if@rl \I {3.2}\else \textLR {2.3}\fi }Exam 2 Prep}{\if@rlmain \I {19}\else \textLR {19}\fi }{section.2.3}
 \contentsline {section}{\numberline {\if@rl \I {4.2}\else \textLR {2.4}\fi }Midterm 2}{\if@rlmain \I {27}\else \textLR {27}\fi }{section.2.4}
 \contentsline {section}{\numberline {\if@rl \I {5.2}\else \textLR {2.5}\fi }Final Practice}{\if@rlmain \I {30}\else \textLR {30}\fi }{section.2.5}
+\contentsline {section}{\numberline {\if@rl \I {6.2}\else \textLR {2.6}\fi }Ba\IeC {\~n}uelos Quals}{\if@rlmain \I {31}\else \textLR {31}\fi }{section.2.6}
+\contentsline {subsection}{August 2000}{\if@rlmain \I {31}\else \textLR {31}\fi }{section*.11}
 \select@language {english}
-\contentsline {chapter}{Bibliography}{\if@rlmain \I {31}\else \textLR {31}\fi }{section*.12}
+\contentsline {chapter}{Bibliography}{\if@rlmain \I {32}\else \textLR {32}\fi }{section*.13}

@@ -326,7 +326,7 @@ whenever $x<y$, $x,y\in I$. By \emph{strictly increasing (decreasing)} if
 $f(x)<f(y)$ (or $f(x)>f(y)$) whenever $x<y$, $x,y\in I$.
 
 Let $f$ be defined on $E\subset\bbR^n$ and let $\bfx_0$ be a limit point of
-$E$. Let $B_\delta'(\bfx_0)=B_\delta(\bfx_0)\minus\{\bfx_0\}$ denote the
+$E$. Let $B_\delta'(\bfx_0)=B_\delta(\bfx_0)\setminus\{\bfx_0\}$ denote the
 puncture ball with center $\bfx_0$ and radius $\delta$, and let
 \begin{equation}
   \label{eq:1:big-m-lil-m}
@@ -353,12 +353,12 @@ The following charaterizations about Equations \eqref{eq:1:big-m-lil-m} and
 \hfill
 \begin{enumerate}[label=\textnormal{(\alph*)},noitemsep]
 \item $M=\limsup_{\bfx\to\bfx_0,\,\bfx\in E}f(\bfx)$ if and only if
-  \textnormal{(i)} there exists $\{\bfx_k\}$ in $E\minus\{\bfx_0\}$ such
+  \textnormal{(i)} there exists $\{\bfx_k\}$ in $E\setminus\{\bfx_0\}$ such
   that $\bfx_k\to\bfx_0$ and $f(\bfx_K)\to M$ and \textnormal{(ii)} $M'>M$,
   there exist $\delta>0$ such that $f(\bfx)<M'$ for $\bfx\in
   B'_\delta(\bfx_0)$ for $\bfx\in B_\delta'(\bfx_0)\cap E$.
 \item $m=\liminf_{\bfx\to\bfx_0,\,\bfx\in E}f(\bfx)$ if and only if
-  \textnormal{(i)} there exists $\{\bfx_k\}$ in $E\minus\{\bfx_0\}$ such
+  \textnormal{(i)} there exists $\{\bfx_k\}$ in $E\setminus\{\bfx_0\}$ such
   that $\bfx_k\to\bfx_0$ and $f(\bfx_K)\to m$ and \textnormal{(ii)} $m'<m$,
   there exist $\delta>0$ such that $f(\bfx)>m'$ for $\bfx\in
   B'_\delta(\bfx_0)$ for $\bfx\in B_\delta'(\bfx_0)\cap E$.\end{enumerate}
