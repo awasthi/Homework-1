@@ -1,72 +1,192 @@
 \chapter{Exam III (Spring 2016)}
 Here are the solutions to Exam III.
+\begin{quote}
+{\color{Green} Version 01}: CCEA ECCD BADC
 
-\begin{problem}[{\color{Green} \# 1}, {\color{Red} \# }]
+{\color{Red} Version  02}: DECA ECBC DABE
+\end{quote}
+
+\begin{problem}[{\color{Green} \# 1}, {\color{Red} \# 11}]
 Test the following series for convergence:
 \begin{enumerate}[label=(\MakeUppercase{\roman*})]
-\item $\displaystyle\sum_{n=1}^\infty e^{-n}$;
-\item $\displaystyle\sum_{n=1}^\infty\frac{2^n}{n}$;
-\item $\displaystyle\sum_{n=1}^\infty\frac{3}{n^2}$.
+\item $\sum_{n=1}^\infty e^{-n}$;
+\item $\sum_{n=1}^\infty2^n/n$;
+\item $\sum_{n=1}^\infty3/n^2$.
 \end{enumerate}
 \end{problem}
 \begin{proof}[Solution]
+(I) By the integral test, we have
+\begin{align*}
+\sum_{n=1}^\infty e^{-n}
+&\sim\int_1^\infty e^{-x}\\
+&=\left[-e^{-x}\right]_1^\infty\\
+&=-0-(-e^{-1})\\
+&=e^{-1}\\
+&<\infty.
+\end{align*}
+Hence, $\sum_{n=1}^\infty e^{-n}$ converges.
+\\\\
+(II) This series does not converge by the test for divergence since the
+limit of $2^n/n$ as $n\to\infty$ is no $0$. In particular, you can use
+l'Hôpital's rule to get $\lim_{x\to\infty}2^x/x=\lim_{x\to\infty}2^x\ln
+2/1=\infty\neq 0$.
+\\\\
+(III) Write $\sum_{n=1}^\infty 3/n^2$ as the product $3\sum_{n=1}^\infty
+n^2$. Then, since $\sum_{n=1}^\infty 1/n^2$ is a $p$-series with $p=2>1$,
+it converges. Hence $3\sum_{n=1}^\infty 1/n^2=\sum_{n=1}^\infty 3/n^2$
+converges.
+\\\\
+Answer: {\color{Green} C}, {\color{Red} B}.
 \end{proof}
 
-\begin{problem}[{\color{Green} \# 2}, {\color{Red} \# }]
+\begin{problem}[{\color{Green} \# 2}, {\color{Red} \# 4}]
+Determine which of the following statements are true and which are false.
+\begin{enumerate}[label=(\MakeUppercase{\roman*})]
+\item If $\sum_{n=1}^\infty a_n$ is convergent, then
+  $\sum_{n=1}^\infty|a_n|$ is convergent.
+\item If $a_n>0$, $b_n>0$, $\sum_{n=1}^\infty b_n$ is convergent, and
+  $b_n\leq a_n$, then $\sum_{n=1}^\infty a_n$ is convergent.
+\item If $a_n>0$, $b_n>0$, $\sum_{n=1}^\infty b_n$ is convergent, and
+  $\lim_{n\to\infty} a_n/b_n=5$, then $\sum_{n=1}^\infty a_n$ is convergent.
+\end{enumerate}
 \end{problem}
 \begin{proof}[Solution]
+(I) This is false. Consider the series $\sum_{n=1}^\infty(-1)^n/n$. This
+series is convergent by the alternating series test, but $\sum_{n=1}^\infty
+1/n$ is divergent since it is the harmonic series.
+\\\\
+(II) This is false. Consider the series $\sum_{n=1}^\infty1/n^2$ and
+$\sum_{n=1}^\infty n$; $1/n^2<n$, but $\sum_{n=1}^\infty n$ diverges,
+whereas $\sum_{n=1}^\infty 1/n^2$ converges since it is a $p$-series with
+$p=2>1$.
+\\\\
+(III) This is true by the limit comparison test.
+\\\\
+Answer: {\color{Green} C}, {\color{Red} A}.
 \end{proof}
 
-\begin{problem}[{\color{Green} \# 3}, {\color{Red} \# }]
+\begin{problem}[{\color{Green} \# 3}, {\color{Red} \# 6}]
+The series $\sum_{n=1}^\infty (-1)^n/n^2$ is convergent by the alternating
+series test. According to the alternating series estimation theorem, what
+is the smallest number of terms needed to find he sum of the series with
+error less than $1/15$
 \end{problem}
 \begin{proof}[Solution]
+Compute the first few terms of the series
+\[
+\sum_{n=1}^\infty\frac{(-1)^n}{n^2}\approx
+-1+\frac{1}{4}-\frac{1}{9}+\frac{1}{16}-\cdots.
+\]
+Since the term following $-1/9$ is less that $1/15$, we only need $3$, by
+the alternating series estimation theorem, we only need $3$ terms.
+\\\\
+Answer: {\color{Green} E}, {\color{Red} C}
 \end{proof}
 
-\begin{problem}[{\color{Green} \# 4}, {\color{Red} \# }]
+\begin{problem}[{\color{Green} \# 4}, {\color{Red} \# 1}]
+Test the following series for convergence:
+\begin{enumerate}[label=(\MakeUppercase{\roman*})]
+\item $\sum_{n=1}^\infty e^{2n}/n!$;
+\item $\sum_{n=1}^\infty n/(2n+4)$;
+\item $\sum_{n=1}^\infty (-1)^nn/(2n+4)$.
+\end{enumerate}
 \end{problem}
 \begin{proof}[Solution]
+(I) By the ratio test, we have
+\[\begin{aligned}
+\left(\frac{e^{2(n+1)}}{(n+1)!}\right)\left(\frac{n!}{e^{(2n+1)}}\right)&=
+\frac{e^{2n+2}n!}{(n+1)n!e^{2n}}\\
+&=\frac{e^2}{n+1}
+\end{aligned}\]
+which goes to $0$ as $n\to\infty$. Thus, the series in (I) converges.
+\\\\
+(II) By the ratio test, we have
+\begin{align*}
+\left(\frac{n+1}{2(n+1)+4}\right)
+\left(\frac{2n+4}{n}\right)
+&=\frac{(n+1)(2n+4)}{(2n+6)n}\\
+&=\frac{2n^2+6n+4}{2n^2+6n}
+\end{align*}
+which, by l'Hôpital's
+\\\\
+(III)
+\\\\
+Answer: {\color{Green}}, {\color{Red}}
 \end{proof}
 
-\begin{problem}[{\color{Green} \# 5}, {\color{Red} \# }]
+\begin{problem}[{\color{Green} \# 5}, {\color{Red} \# 3}]
+What is the interval of convergence of the series $\sum_{n=1}^\infty
+n(x-1)^n/(n^2+1)$?
 \end{problem}
 \begin{proof}[Solution]
+Answer: {\color{Green}}, {\color{Red}}
 \end{proof}
 
-\begin{problem}[{\color{Green} \# 6}, {\color{Red} \# }]
+\begin{problem}[{\color{Green} \# 6}, {\color{Red} \# 7}]
+Determine whether the following series are absolutely convergent,
+conditionally convergent, or divergent:
+\begin{enumerate}[label=(\MakeUppercase{\roman*})]
+\item $\sum_{n=1}^\infty\cos(n)/(n^2+1)$;
+\item $\sum_{n=1}^\infty(-1)^n/(2n)$.
+\end{enumerate}
 \end{problem}
 \begin{proof}[Solution]
+Answer: {\color{Green}}, {\color{Red}}
 \end{proof}
 
-\begin{problem}[{\color{Green} \# 7}, {\color{Red} \# }]
+\begin{problem}[{\color{Green} \# 7}, {\color{Red} \# 9}]
+Determine which of the following statements are true and which are false.
+\begin{enumerate}[label=(\MakeUppercase{\roman*})]
+\item $\sum_{n=1}^\infty 1/(n^2+1)$ is convergent by the ratio test.
+\item $\sum_{n=1}^\infty 1/(n^2+1)$ is convergent by the limit comparison
+  test with $\sum_{n=1}^\infty 1/n^2$.
+\item $\sum_{n=1}^\infty 1/(n^2+1)$ is convergent by the direct comparison
+  test with $\sum_{n=1}^\infty 1/n^2$.
+\end{enumerate}
 \end{problem}
 \begin{proof}[Solution]
+Answer: {\color{Green}}, {\color{Red}}
 \end{proof}
 
-\begin{problem}[{\color{Green} \# 8}, {\color{Red} \# }]
+\begin{problem}[{\color{Green} \# 8}, {\color{Red} \# 10}]
+The series $\sum_{n=1}^\infty(-1)^nnx^n$ converges for $|x|<1$ to ?
 \end{problem}
 \begin{proof}[Solution]
+Answer: {\color{Green}}, {\color{Red}}
 \end{proof}
 
-\begin{problem}[{\color{Green} \# 9}, {\color{Red} \# }]
+\begin{problem}[{\color{Green} \# 9}, {\color{Red} \# 12}]
+Let $\sin x=\sum_{n=0}^\infty a_n\left(x-\pi/6\right)^n$ be the Taylor
+series for $\sin x$ at $a=\pi/6$. Then $a_2=$ ?
 \end{problem}
 \begin{proof}[Solution]
+Answer: {\color{Green}}, {\color{Red}}
 \end{proof}
 
-\begin{problem}[{\color{Green} \# 10}, {\color{Red} \# }]
+\begin{problem}[{\color{Green} \# 10}, {\color{Red} \# 5}]
+What is the coefficient of  $x^8$ in the power series representation for
+$\int x\cos(x^3)\diff x$? You may assume $\cos(x)=\sum_{n=0}^\infty(-1)^n
+x^{2n}/(2n!)$.
 \end{problem}
 \begin{proof}[Solution]
+Answer: {\color{Green}}, {\color{Red}}
 \end{proof}
 
-\begin{problem}[{\color{Green} \# 11}, {\color{Red} \# }]
+\begin{problem}[{\color{Green} \# 11}, {\color{Red} \# 8}]
+A particle moves along  the curve $x=\tan t$, $y=\sec t$, $0\leq t\leq
+\pi/4$. The trajectory of the particle is a segment of
 \end{problem}
 \begin{proof}[Solution]
+Answer: {\color{Green}}, {\color{Red}}
 \end{proof}
 
-\begin{problem}[{\color{Green} \# 12}, {\color{Red} \# }]
+\begin{problem}[{\color{Green} \# 12}, {\color{Red} \# 2}]
+The length of the curve $x=\cos\theta+\theta\sin\theta$,
+$y=\sin\theta-\theta\cos\theta$, $0\leq\theta\leq\pi$, is
 \end{problem}
 \begin{proof}[Solution]
+Answer: {\color{Green}}, {\color{Red}}
 \end{proof}
-
 
 %%% Local Variables:
 %%% mode: latex
