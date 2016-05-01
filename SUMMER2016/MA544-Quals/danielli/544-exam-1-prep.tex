@@ -185,12 +185,13 @@ $f\colon\bbR\to\bbR$ by
 f(x)\coloneqq
 \begin{cases}
 x&\text{if $x\in\bbR\setminus((0,1)\setminus E)$},\\
-x+10&\text{if $x\in (0,1)\setminus E$.}
+x+1&\text{if $x\in (0,1)\setminus E$.}
 \end{cases}
 \end{equation}
 By the definition, it is clear that $\left\{\,f=r\,\right\}$ is measurable
-and $\left|\left\{\,f=r\,\right\}\right|=0$. However, $f$ is not measurable
-since $\left\{\,0<f<1\,\right\}=E$ is not measurable.
+and $\left|\left\{\,f=r\,\right\}\right|=0$ since $\{\,f=r\,\}$ contains at
+most two elements. However, the set $\left\{\,0<f<1\,\right\}=E$ is not
+measurable. Thus, $f$ is not measurable.
 \end{proof}
 
 \begin{problem}
@@ -219,6 +220,7 @@ is measurable.
 % Then, like for Problem 1.4, it is not too hard to see that the $E_n$'s are
 % open and that $E=\bigcap_{n=1}^\infty E_n$. Thus, $E$ is a $G_\delta$ set
 % and therefore measurable.
+
 \end{proof}
 
 \begin{problem}
