@@ -1,5 +1,7 @@
 \chapter{MA 544 (Spring 2016)}
 \thispagestyle{empty}
+\setcounter{exercise}{0}
+\setcounter{equation}{0}
 \section{Exam 1 Prep}
 \begin{problem}
 Let $E\subset\bbR^n$ be a measurable set, $r\in\bbR$ and define the set
@@ -7,19 +9,21 @@ $rE=\left\{\,r\bfx:\bfx\in E\,\right\}$. Prove that $rE$ is
 measurable, and that $|rE|=|r|^n|E|$.
 \end{problem}
 \begin{proof}
-Define a linear map $T\colon\bbR^n\to\bbR^n$ by $\bfx\mapsto r\bfx$. Using
-the standard basis for $\bbR^n$, this map has the matrix presentation
+Define a map $T\colon\bbR^n\to\bbR^n$ by $T\bfx\coloneqq r\bfx$. Note
+that $T$ is
+\href{https://en.wikipedia.org/wiki/Lipschitz_continuity}{\emph{Lipschitz
+    continuous}} since for any $\bfx,\bfy\in\bbR^n$, the equality
 \begin{equation}
-\label{eq:matrix-presentation}
-T\bfx=
-\begin{bmatrix}
-r&\\
-&\ddots\\
-&&r
-\end{bmatrix}\bfx
+\label{eq:sp16:1:1}
+|T\bfx-T\bfy|=|r\bfx-r\bfy|=|r||\bfx-\bfy|
 \end{equation}
-which has determinant $\det T=r^n$. By 3.35, we have
-$|E|=|T(E)|=r^n|E|=|rE|$.
+is satisfied. By Theorem 3.33 from \cite[\S 3.3,
+p.\@55]{book:wheeden-zygmund}, the image of $E$ under $T$ is
+measurable. Moreover, by Theorem 3.35 \cite[\S 3.3, p.\@
+56]{book:wheeden-zygmund}, since $T$ is linear, it follows that
+$|T(E)|=|{\det T}||E|$ where $\det T=|r|^n$. Lastly, we note that the image
+of $E$ under $T$ is precisely the set $rE$ so that $|T(E)|=|rE|=|r|^n|E|$,
+as was to be shown.
 \end{proof}
 
 \begin{problem}
@@ -35,33 +39,48 @@ Show that
 \]
 \end{problem}
 \begin{proof}
-If the $\liminf\left|E_k\right|=\infty$ the inequality holds
-trivially. Hence, we may, without loss of generality, assume that
-$\liminf\left|E_k\right|<\infty$. By 3.20, the set $\liminf E_k$ is
-measurable and we have
+Following the style of \cite[\S 1.1, p.\@ 2]{book:wheeden-zygmund},
+particularly, the sets defined after the introduction of equation (1.1),
+set
 \begin{equation}
-  \label{eq:limsup-rewrite}
-\left|\liminf_{k\to\infty} E_k\right|
-=\left|\bigcup_{k=1}^\infty F_k\right|,
+\label{eq:sp16:1:2}
+V_k\coloneqq\bigcap_{\ell=k}^\infty E_\ell.
 \end{equation}
-where $F_k=\bigcap_{n=k}^\infty E_n$. Now, note that the collection
-of sets $F_k'=\bigcup_{\ell=1}^k F_\ell$ forms an increasing
-sequence of measurable sets $F_k'\nearrow F'$, where
-$F'=\bigcup_{k=1}^\infty F_k=\liminf E_k$. Then, by 3.26 (i), we have
+Note that the collection of sets $\{V_k\}$ forms an increasing
+sequence, that is, if $\bfx\in V_k$ then, by \eqref{eq:sp16:1:2}, $\bfx$ is
+in the intersection $E_k\cap\bigl(\bigcap_{\ell=k+1}E_\ell\bigr)$, but, by
+\eqref{eq:sp16:1:2}, $\bigcap_{\ell=k+1}E_\ell=V_{k+1}$ thus, $\bfx$
+is in $V_{k+1}$ so $V_{k+1}\supset V_k$. Hence, we have $V_k\nearrow\liminf
+E_k$.
+
+Now, consider the sequence $\{|V_k|\}$ formed by the Lebesgue measure of
+the $V_k$. By Theorem 3.26 from \cite[\S 3.3, p.\@
+51]{book:wheeden-zygmund}, since $V_k\nearrow\liminf E_k$,
 \begin{equation}
-  \label{eq:monotone-increasing-limit}
-\lim_{k\to\infty}\left|F_k'\right|
-=\left|F'\right|
-=\left|\liminf_{k\to\infty} E_k\right|.
+  \label{eq:sp16:1:3}
+\lim_{k\to\infty}|V_k|=
+\lim_{k\to\infty}\left|\bigcap_{\ell=k}^\infty E_\ell\right|=
+\left|\liminf_{k\to\infty} E_k\right|.
 \end{equation}
-Hence, it suffices to show that $\left|F_k'\right|\leq\left|E_k\right|$ for
-all $k$, but this follows by monotonicity of the outer measure, 3.3, since
-$F_k'\subset E_k$. Thus, we have the desired inequality
+But note that, by the monotonicity of the Lebesgue measure, we have
 \begin{equation}
-  \label{eq:meas-liminf-liminf-meas}
-\left|\liminf_{k\to\infty} E_k\right|
-\leq\liminf_{k\to\infty}\left|E_k\right|.
+  \label{eq:sp16:1:4}
+\left|\bigcap_{\ell=k}^\infty E_\ell\right|\leq |E_k|,
 \end{equation}
+so, by properties of the $\liminf$, in particular, by Theorem 19(v) from
+\cite[\S 1.5, p.\@ 23]{book:royden}, we have
+\begin{equation}
+\label{eq:sp16:1:5}
+\limsup_{k\to\infty}|V_k|\leq\liminf_{k\to\infty}|E_k|.
+\end{equation}
+Hence, by \eqref{eq:sp16:1:3} and Proposition 19 (iv), since the sequence
+$\{|V_k|\}$ converges and is equal to the measure of $\liminf E_k$, by
+\eqref{eq:sp16:1:5}, we have
+\begin{equation}
+\label{eq:sp16:1:6}
+\left|\liminf_{k\to\infty} E_k\right|\leq\liminf_{k\to\infty}|E_k|
+\end{equation}
+as was to be shown.
 \end{proof}
 
 \begin{problem}
@@ -78,40 +97,68 @@ $B(\mathbf{0},r)=\left\{\,\bfy\in\bbR^n:|\bfy|<r\,\right\}$. Prove
 that $F$ is monotonic increasing and continuous.
 \end{problem}
 \begin{proof}
-That $F$ is increasing is immediate from the monotonicity of the outer
-measure since for $x<x'$ we have $B(\mathbf{0},x)\subset B(\mathbf{0},x')$
-so, by 3.2, we have
-\[
-F(x)\left|B(\mathbf{0},x)\right|\leq\left|B(\mathbf{0},x')\right|=F(x')
-\]
-as desired.
+% That $F$ is increasing is immediate from the monotonicity of the outer
+% measure since for $x<x'$ we have $B(\mathbf{0},x)\subset B(\mathbf{0},x')$
+% so, by 3.2, we have
+% \[
+% F(x)\left|B(\mathbf{0},x)\right|\leq\left|B(\mathbf{0},x')\right|=F(x')
+% \]
+% as desired.
 
-To see that $F$ is continuous, we will prove the following lemma
-\begin{lemma}
-\label{lem:one}
-For any $x>0$, $xB(\mathbf{0},1)=B(\mathbf{0},x)$.
-\end{lemma}
-\begin{proof}[Proof of lemma]
-\renewcommand\qedsymbol{$\clubsuit$}
-If $\bfy\in xB(\mathbf{0},1)$ then $\bfy=x\bfy'$ for $\bfy'\in
-B(\mathbf{0},1)$. Thus, $|\bfy'|=|\bfy|/x<1$ so $|\bfy|<x$ implies that
-$\bfy\in B(\mathbf{0},x)$. Hence, we have the containment
-$xB(\mathbf{0},1)\subset B(\mathbf{0},x)$.
+% To see that $F$ is continuous, we will prove the following lemma
+% \begin{lemma}
+% \label{lem:one}
+% For any $x>0$, $xB(\mathbf{0},1)=B(\mathbf{0},x)$.
+% \end{lemma}
+% \begin{proof}[Proof of lemma]
+% \renewcommand\qedsymbol{$\clubsuit$}
+% If $\bfy\in xB(\mathbf{0},1)$ then $\bfy=x\bfy'$ for $\bfy'\in
+% B(\mathbf{0},1)$. Thus, $|\bfy'|=|\bfy|/x<1$ so $|\bfy|<x$ implies that
+% $\bfy\in B(\mathbf{0},x)$. Hence, we have the containment
+% $xB(\mathbf{0},1)\subset B(\mathbf{0},x)$.
 
-On the other hand, if $\bfy\in B(\mathbf{0},x)$ then $|\bfy|<x$ so
-$\left|\bfy/x\right|<1$. Hence, $\bfy/x\in B(\mathbf{0},1)$ so
-$x(\bfy/x)=\bfy\in B(\mathbf{0},x)$. Thus, $B(\mathbf{0},x)\subset
-xB(\mathbf{0},)$ and equality holds.
+% On the other hand, if $\bfy\in B(\mathbf{0},x)$ then $|\bfy|<x$ so
+% $\left|\bfy/x\right|<1$. Hence, $\bfy/x\in B(\mathbf{0},1)$ so
+% $x(\bfy/x)=\bfy\in B(\mathbf{0},x)$. Thus, $B(\mathbf{0},x)\subset
+% xB(\mathbf{0},)$ and equality holds.
+% \end{proof}
+% In light of Lemma \ref{lem:one} and 3.35, for $x>0$, we have
+% \begin{equation}
+% \label{eq:scale-map}
+% F(x)=\left|B(\mathbf{0},x)\right|
+% =\left|xB(\mathbf{0},1)\right|
+% =x^n\left|B(\mathbf{0},1)\right|.
+% \end{equation}
+% It is clear that $F$ is continuous on the interval $[0,\infty)$ since $F$
+% is a polynomial in $x$.
+Define the linear map $T\colon[0,\infty)\times\bbR^n\to\bbR^n$ by
+$T(r)\bfx\coloneqq r\bfx$. We claim that
+$B(\mathbf{0},r)=T(r,B(\mathbf{0},1))$. To reduce notation, set
+$B_1\coloneqq B(\mathbf{0},1)$ and $B_r\coloneqq B(\mathbf{0},r)$.
+\begin{proof}[Proof of claim]
+\renewcommand{\qedsymbol}{$\clubsuit$}
+$\subset$: Let $\bfx\in B_r$. Then $|\bfx|<r$ so $|\bfx|/r<1$. Thus,
+$|\bfx|/r\in B_1$ so it is in the image of $B_1$ under the map
+$T(r,\blank)$.
+
+$\supset$: On the other hand, suppose $\bfx\in T(r,B_1)$. Then
+$\bfx=r\bfy$ for some $\bfy\in B_1$. Then, since $|\bfy|<1$,
+$|\bfx|=r|\bfy|<r$ so $\bfx\in B_r$.
 \end{proof}
-In light of Lemma \ref{lem:one} and 3.35, for $x>0$, we have
+
+From the claim, we see that $F(x)=|T(x,B(\mathbf{0},1))|$ which, by Problem
+1, is nothing more that the polynomial $|B_1|x^n$. It is clear,
+from this equivalence, that $F$ is monotonically increasing: Take
+$x,y\in[0,\infty)$ such that $x<y$, then $x^n<y^n$ so
 \begin{equation}
-\label{eq:scale-map}
-F(x)=\left|B(\mathbf{0},x)\right|
-=\left|xB(\mathbf{0},1)\right|
-=x^n\left|B(\mathbf{0},1)\right|.
+\label{eq:sp16:1:7}
+F(x)=|B_1|x^n<|B_1|y^n=F(y).
 \end{equation}
-It is clear that $F$ is continuous on the interval $[0,\infty)$ since $F$
-is a polynomial in $x$.
+Thus, $F$ is monotonically increasing.
+
+In the argument above, since $F(x)=|B_1|x^n$ is a polynomial in
+$[0,\infty)$ (and polynomials are continuous on $\bbR$) $F$ is continuous
+on $[0,\infty)$.
 \end{proof}
 
 \begin{problem}
@@ -236,7 +283,7 @@ Thus, $f$ is b.v.\@ on $[a,b]$.
 \begin{problem}
 Let $f$ be a continuous function from $[a,b]$ into $\bbR$. Let
 $\chi_{\{c\}}$ be the characteristic function of a singleton
-$\left\{c\right\}$, i.e., $\chi_{\{c\}}(x)=0$ if $x\neq c$ and
+$\left\{c\right\}$, that is, $\chi_{\{c\}}(x)=0$ if $x\neq c$ and
 $\chi_{\{c\}}(c)=1$. Show that
 \[
 \int_a^b f d \chi_{\{c\}}=
