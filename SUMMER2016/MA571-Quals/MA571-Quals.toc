@@ -1,0 +1,15 @@
+\select@language {english}
+\select@language {english}
+\contentsline {chapter}{Contents}{\if@rlmain \I {1}\else \textLR {1}\fi }{section*.1}
+\select@language {english}
+\contentsline {chapter}{\chapternumberline {1}\bgroup \beginL \latintext MA 571 Fall 2015\endL \egroup }{\if@rlmain \I {2}\else \textLR {2}\fi }{chapter.1}
+\contentsline {section}{\numberline {\if@rl \I {1.1}\else \textLR {1.1}\fi }Homework}{\if@rlmain \I {2}\else \textLR {2}\fi }{section.1.1}
+\contentsline {subsection}{Homework 1}{\if@rlmain \I {2}\else \textLR {2}\fi }{section*.2}
+\select@language {english}
+\contentsline {chapter}{\chapternumberline {2}\bgroup \beginL \latintext Past Qualifying Examinations\endL \egroup }{\if@rlmain \I {3}\else \textLR {3}\fi }{chapter.2}
+\contentsline {section}{\numberline {\if@rl \I {1.2}\else \textLR {2.1}\fi }MA 571: Qualifying Exam, August 2014}{\if@rlmain \I {3}\else \textLR {3}\fi }{section.2.1}
+\contentsline {section}{\numberline {\if@rl \I {2.2}\else \textLR {2.2}\fi }MA 571: Qualifying Exam, January 2014}{\if@rlmain \I {7}\else \textLR {7}\fi }{section.2.2}
+\contentsline {section}{\numberline {\if@rl \I {3.2}\else \textLR {2.3}\fi }MA571: Qualifying Exam, January 2012}{\if@rlmain \I {9}\else \textLR {9}\fi }{section.2.3}
+\contentsline {section}{\numberline {\if@rl \I {4.2}\else \textLR {2.4}\fi }MA 571: Qualifying Exam, January 2011}{\if@rlmain \I {12}\else \textLR {12}\fi }{section.2.4}
+\select@language {english}
+\contentsline {chapter}{Bibliography}{\if@rlmain \I {13}\else \textLR {13}\fi }{section*.4}

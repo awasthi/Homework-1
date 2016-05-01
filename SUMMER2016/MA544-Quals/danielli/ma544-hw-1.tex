@@ -1,0 +1,83 @@
+\chapter{MA 544 Spring 2016}
+\thispagestyle{empty}
+This is material from the course MA 544 as taught in the spring of 2016.
+\bigskip
+\section{Homework}
+These exercises were assigned from Wheeden and Zygmund's \emph{Measure and
+  Integral}. Therefore, most of the theorems I reference will be from
+\cite{wheeden-zygmund}. Other resources include \cite{folland} and
+\cite{royden}. For more elementary results, I cite \cite{rudin-1}.
+\subsection{Homework 1}
+\begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 1]
+Let $f(x)=x\sin(1/x)$ for $0<x\leq 1$ and $f(0)=0$. Show that $f$ is
+bounded and continuous on $[0,1]$, but that $V[f;0,1]=+\infty$.
+\end{problem}
+\begin{proof}
+It is clear that the function $f(x)=x\sin(1/x)$ is bounded on $[0,1]$ since
+$|{\sin(1/x)}|\leq 1$ and $|x|\leq 1$ on $[0,1]$. Moreover, by properties
+of continuous functions on $\bbR$, $x\sin(1/x)$ is continuous on
+$(0,1)$.\footnote{You can, for example, check Ch.\@ }
+\end{proof}
+
+\begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 2]
+Prove theorem (2.1).
+\end{problem}
+\begin{proof}
+Recall the statement of theorem (2.1):
+\begin{theorem*}[Wheeden \& Zygmund, 2.1]
+\begin{enumerate}[label=(\alph*)]
+\item If $f$ is of bounded variation on $[a,b]$, then $f$ is bounded on
+  $[a,b]$.
+\item Let $f$ and $g$ be of bounded variation on $[a,b]$. Then $cf$ (for
+  any real constant $c$), $f+g$, and $fg$ are of bounded variation on
+  $[a,b]$. Moreover, $f/g$ is of bounded variation on $[a,b]$ if there
+  exists an $\varepsilon>0$ such that $|g(x)|\geq\varepsilon$ for
+  $x\in[a,b]$.
+\end{enumerate}
+\end{theorem*}
+\end{proof}
+
+\begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 3]
+If $[a',b']$ is a subinterval of $[a,b]$ show that $P[a',b']\leq P[a,b]$
+and $N[a',b']\leq N[a,b]$.
+\end{problem}
+\begin{proof}
+\end{proof}
+\begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 11]
+Show that $\int_a^bf\diff\phi$ exists if and only if given $\varepsilon>0$
+there exists $\delta>0$ such that
+$\left|R_\Gamma-R_{\Gamma'}\right|<\varepsilon$ if
+$|\Gamma|,|\Gamma'|<\delta$.
+\end{problem}
+\begin{proof}
+\end{proof}
+
+\begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 13]
+Prove theorem (2.16).
+\end{problem}
+\begin{proof}
+\begin{theorem*}[Wheeden \& Zygmund, 2.16]
+\begin{enumerate}[label=(\roman*)]
+\item If $\int_a^b f\diff\phi$ exists, then so do $\int_a^bcf\diff\phi$ and
+  $\int_a^b f\diff(c\phi)$ for any constant $c$, and
+\[
+\int_a^bcf\diff\phi=\int_a^bf\diff(c\phi)=c\int_a^bf\diff\phi.
+\]
+\item If $\int_a^b f_1\diff\phi$ and $\int_a^bf_2\diff\phi$ both exist, so
+  does $\int_a^b\left(f_1+f_2\right)\diff\phi$, and
+\[
+\int_a^b\left(f_1+f_2\right)\diff\phi=\int_a^bf_1\diff\phi+\int_a^bf_2\diff\phi.
+\]
+\item If $\int_a^bf\diff\phi_1$ and $\int_a^bf\diff\phi_2$ both exist, so
+  does $\int_a^bf\diff\left(\phi_1+\phi_2\right)$, and
+\[
+\int_a^bf\diff\left(\phi_1+\phi_2\right)=\int_a^bf\diff\phi_1+\int_a^bf\diff\phi_2.
+\]
+\end{enumerate}
+\end{theorem*}
+\end{proof}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA544-Quals"
+%%% End:
