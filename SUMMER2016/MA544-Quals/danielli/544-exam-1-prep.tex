@@ -173,9 +173,24 @@ $\left\{\,f=r\,\right\}$ are measurable for all $r\in\bbR$, then $f$ is
 measurable?
 \end{problem}
 \begin{proof}
-No, but I don't care enough to come up with a explicit counterexample. The
-counterexample should go as follows: Construct a nonmeasurable set $E$ on
-$\bbR$ and define $f\coloneqq\chi_E$
+If $\left\{\,f=r\,\right\}$ are measurable for all $r\in\bbR$, it is not
+necessarily the case that $f$ is measurable. Consider the following
+construction: Let $E\subset(0,1)$ be an unmeasurable set.\footnote{It's
+  construction does not concern us. The interested reader such direct their
+  refer to Theorem 3.38 from \cite[Ch.\@ 3, p.\@ 57-58]{wheeden-zygmund} or
+  Theorem 17 from \cite[Ch.\@ 2\S 7, p.\@ 48]{royden}.} Define a map
+$f\colon\bbR\to\bbR$ by
+\begin{equation}
+\label{eq:sp16:1:11}
+f(x)\coloneqq
+\begin{cases}
+x&\text{if $x\in\bbR\setminus((0,1)\setminus E)$},\\
+x+10&\text{if $x\in (0,1)\setminus E$.}
+\end{cases}
+\end{equation}
+By the definition, it is clear that $\left\{\,f=r\,\right\}$ is measurable
+and $\left|\left\{\,f=r\,\right\}\right|=0$. However, $f$ is not measurable
+since $\left\{\,0<f<1\,\right\}=E$ is not measurable.
 \end{proof}
 
 \begin{problem}
@@ -185,25 +200,25 @@ $\left\{\,x:\text{$\lim_{k\to\infty} f_k(x)$ exists}\,\right\}$
 is measurable.
 \end{problem}
 \begin{proof}
-The idea here should be to rewrite
-\begin{equation}
-  \label{eq:measurable-lim-set}
-E=\left\{\,x:\text{$\lim_{k\to\infty} f_k(x)$ exists}\,\right\}
-\end{equation}
-as a countable union/intersection of measurable sets. Let $x\in E$. By the
-Cauchy criterion, for every $N>0$ there exists a positive integer
-$M$ such that $m,n\geq M$ implies
-$\left|f_n(x)-f_m(x)\right|<1/N$. With this in mind, define
-\begin{equation}
-  \label{eq:countable-lim-set}
-E_N=
-\left\{\,
-x:\text{there exists $M$ such that $m,n\geq M$ implies $\left|f_n(x)-f_m(x)\right|<\frac{1}{N}$}
-\,\right\}.
-\end{equation}
-Then, like for Problem 1.4, it is not too hard to see that the $E_n$'s are
-open and that $E=\bigcap_{n=1}^\infty E_n$. Thus, $E$ is a $G_\delta$ set
-and therefore measurable.
+% The idea here should be to rewrite
+% \begin{equation}
+%   \label{eq:measurable-lim-set}
+% E=\left\{\,x:\text{$\lim_{k\to\infty} f_k(x)$ exists}\,\right\}
+% \end{equation}
+% as a countable union/intersection of measurable sets. Let $x\in E$. By the
+% Cauchy criterion, for every $N>0$ there exists a positive integer
+% $M$ such that $m,n\geq M$ implies
+% $\left|f_n(x)-f_m(x)\right|<1/N$. With this in mind, define
+% \begin{equation}
+%   \label{eq:countable-lim-set}
+% E_N=
+% \left\{\,
+% x:\text{there exists $M$ such that $m,n\geq M$ implies $\left|f_n(x)-f_m(x)\right|<\frac{1}{N}$}
+% \,\right\}.
+% \end{equation}
+% Then, like for Problem 1.4, it is not too hard to see that the $E_n$'s are
+% open and that $E=\bigcap_{n=1}^\infty E_n$. Thus, $E$ is a $G_\delta$ set
+% and therefore measurable.
 \end{proof}
 
 \begin{problem}
@@ -217,22 +232,22 @@ absolutely continuous function on $[a,b]$ is of bounded variation on
 $[a,b]$.
 \end{problem}
 \begin{proof}
-Suppose $f\colon[a,b]\to\bbR$ is absolutely continuous. Then for fixed
-$\varepsilon=1$, there exists a $\delta>0$ such that for every finite
-disjoint collection $\left\{ (a_kb_k) \right\}_{k=1}^N$ of open intervals
-in $(a,b)$ satisfying $\sum_{k=1}^Nb_k-a_k<\delta$, we have
-$\sum_{k=1}^N\left|f(b_k)-f(a_k)\right|<\varepsilon$. Let
-$\Gamma=\left\{x_k\right\}_{k=1}^N$ be a partition of $[a,b]$ into closed
-intervals such that $x_{k+1}-x_k<\delta$, then by absolute continuity we have
-\begin{equation}
-\label{eq:absolute-continuity-variation}
-\begin{aligned}
-V[f;\Gamma]
-={}&\sum_{k=1}^N\left|f(x_{k+1})-f(x_k)\right|\\
-<{}&1.
-\end{aligned}
-\end{equation}
-Thus, $f$ is b.v.\@ on $[a,b]$.
+% Suppose $f\colon[a,b]\to\bbR$ is absolutely continuous. Then for fixed
+% $\varepsilon=1$, there exists a $\delta>0$ such that for every finite
+% disjoint collection $\left\{ (a_kb_k) \right\}_{k=1}^N$ of open intervals
+% in $(a,b)$ satisfying $\sum_{k=1}^Nb_k-a_k<\delta$, we have
+% $\sum_{k=1}^N\left|f(b_k)-f(a_k)\right|<\varepsilon$. Let
+% $\Gamma=\left\{x_k\right\}_{k=1}^N$ be a partition of $[a,b]$ into closed
+% intervals such that $x_{k+1}-x_k<\delta$, then by absolute continuity we have
+% \begin{equation}
+% \label{eq:absolute-continuity-variation}
+% \begin{aligned}
+% V[f;\Gamma]
+% ={}&\sum_{k=1}^N\left|f(x_{k+1})-f(x_k)\right|\\
+% <{}&1.
+% \end{aligned}
+% \end{equation}
+% Thus, $f$ is b.v.\@ on $[a,b]$.
 \end{proof}
 
 \begin{problem}
