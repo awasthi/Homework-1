@@ -13,10 +13,46 @@ Let $f(x)=x\sin(1/x)$ for $0<x\leq 1$ and $f(0)=0$. Show that $f$ is
 bounded and continuous on $[0,1]$, but that $V[f;0,1]=+\infty$.
 \end{problem}
 \begin{proof}
-It is clear that the function $f(x)=x\sin(1/x)$ is bounded on $[0,1]$ since
-$|{\sin(1/x)}|\leq 1$ and $|x|\leq 1$ on $[0,1]$. Moreover, by properties
-of continuous functions on $\bbR$, $x\sin(1/x)$ is continuous on
-$(0,1)$.\footnote{You can, for example, check Ch.\@ }
+  It is clear that the function $f(x)=x\sin(1/x)$ is
+  \href{https://en.wikipedia.org/wiki/Bounded_function}{\emph{bounded}} on
+  $[0,1]$ since $|{\sin(1/x)}|\leq 1$ and $|x|\leq 1$ on $[0,1]$. Moreover,
+  by properties of
+  \href{https://en.wikipedia.org/wiki/Continuous_function#Weierstrass_definition_.28epsilon.E2.80.93delta.29_of_continuous_functions}{\emph{continuous
+      functions}} on $\bbR$, it is obvious that $f$ is continuous on
+  $(0,1)$.\footnote{You can, for example, take a look at Theorem 4.9 from
+    \cite[Ch.\@ 4, p.\@ 87]{rudin-1}.} What is not obvious is continuity at
+  $0$. To show that $f$ is continuous at $0$, by Theorem 4.6 from
+  \cite[Ch.\@ 4, p.\@ 86]{rudin-1}, it suffices to show that
+  $\lim_{x\to 0}f(x)=0$. Consider the sequence $\{1/k\}$. This sequence
+  converges to $0$. Moreover, given $\varepsilon>0$, by the Archimedean
+  principle, for sufficiently large $K$, the inequality $1/K<\varepsilon$
+  holds so for every $k\geq K$ we have
+\begin{equation}
+\label{eq:1:1}
+\left|(1/k)\sin(k)-0\right|\leq
+\left|1/k\right|<\varepsilon.
+\end{equation}
+Thus, $\lim_{k\to\infty}f(1/k)=0$. Thus, $f$ is continuous on all of
+$[0,1]$.
+
+Nevertheless, $f$ is not of
+\href{https://en.wikipedia.org/wiki/Bounded_variation}{\emph{bounded
+    variation}} on $[0,1]$. By Corollary 2.10 from \cite[Ch.\@ 2, p.\@
+23]{wheeden-zygmund}, the
+\href{https://en.wikipedia.org/wiki/Total_variation}{\emph{total
+    variation}} $V$ of $f$ on $[0,1]$ is given by
+\begin{equation}
+\label{eq:sp16:1:2}
+\begin{aligned}
+V&=\int_0^1|f'|\diff x\\
+&=\int_0^1|\sin(1/x)-(1/x)\cos(1/x)|\diff x\\
+&=\int_1^\infty\frac{1}{u^2}|\sin u-u\cos u|\diff x\\
+&\geq\int_M^\infty \frac{1}{2u}\diff u\\
+&=\infty,
+\end{aligned}
+\end{equation}
+where, for sufficiently large $M$, for $u\geq M$ we have $|{\sin u- u\cos
+  u}|>u/2$. Thus, $f$ is not of bounded variation.
 \end{proof}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 2]
@@ -24,7 +60,7 @@ Prove theorem (2.1).
 \end{problem}
 \begin{proof}
 Recall the statement of theorem (2.1):
-\begin{theorem*}[Wheeden \& Zygmund, 2.1]
+\begin{quote}
 \begin{enumerate}[label=(\alph*)]
 \item If $f$ is of bounded variation on $[a,b]$, then $f$ is bounded on
   $[a,b]$.
@@ -34,7 +70,15 @@ Recall the statement of theorem (2.1):
   exists an $\varepsilon>0$ such that $|g(x)|\geq\varepsilon$ for
   $x\in[a,b]$.
 \end{enumerate}
-\end{theorem*}
+\end{quote}
+\noindent
+(a) Recall that $f$ is of b.v.\@ on $[a,b]$ if the
+total variation $V$ of $f$ on $[a,b]$ is finite, where $V$ is defined to be
+the supremum of the sum $\sum_{i=1}^m|f(x_i)-f(x_{i-1})|$ over all
+\href{https://en.wikipedia.org/wiki/Partition_of_an_interval}{\emph{partitions}}
+$\Gamma=\{x_0,\dotsc,x_m\}$ of $[a,b]$ of the sum.
+\\\\
+(b)
 \end{proof}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 3]
@@ -44,7 +88,7 @@ and $N[a',b']\leq N[a,b]$.
 \begin{proof}
 \end{proof}
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 11]
-Show that $\int_a^bf\diff\phi$ exists if and only if given $\varepsilon>0$
+Show that $\int_a^bf\diff\varphi$ exists if and only if given $\varepsilon>0$
 there exists $\delta>0$ such that
 $\left|R_\Gamma-R_{\Gamma'}\right|<\varepsilon$ if
 $|\Gamma|,|\Gamma'|<\delta$.
@@ -56,25 +100,26 @@ $|\Gamma|,|\Gamma'|<\delta$.
 Prove theorem (2.16).
 \end{problem}
 \begin{proof}
-\begin{theorem*}[Wheeden \& Zygmund, 2.16]
+Recall the statement of Theorem 2.16:
+\begin{quote}
 \begin{enumerate}[label=(\roman*)]
-\item If $\int_a^b f\diff\phi$ exists, then so do $\int_a^bcf\diff\phi$ and
-  $\int_a^b f\diff(c\phi)$ for any constant $c$, and
+\item If $\int_a^b f\diff\varphi$ exists, then so do $\int_a^bcf\diff\varphi$ and
+  $\int_a^b f\diff(c\varphi)$ for any constant $c$, and
 \[
-\int_a^bcf\diff\phi=\int_a^bf\diff(c\phi)=c\int_a^bf\diff\phi.
+\int_a^bcf\diff\varphi=\int_a^bf\diff(c\varphi)=c\int_a^bf\diff\varphi.
 \]
-\item If $\int_a^b f_1\diff\phi$ and $\int_a^bf_2\diff\phi$ both exist, so
-  does $\int_a^b\left(f_1+f_2\right)\diff\phi$, and
+\item If $\int_a^b f_1\diff\varphi$ and $\int_a^bf_2\diff\varphi$ both exist, so
+  does $\int_a^b\left(f_1+f_2\right)\diff\varphi$, and
 \[
-\int_a^b\left(f_1+f_2\right)\diff\phi=\int_a^bf_1\diff\phi+\int_a^bf_2\diff\phi.
+\int_a^b\left(f_1+f_2\right)\diff\varphi=\int_a^bf_1\diff\varphi+\int_a^bf_2\diff\varphi.
 \]
-\item If $\int_a^bf\diff\phi_1$ and $\int_a^bf\diff\phi_2$ both exist, so
-  does $\int_a^bf\diff\left(\phi_1+\phi_2\right)$, and
+\item If $\int_a^bf\diff\varphi_1$ and $\int_a^bf\diff\varphi_2$ both exist, so
+  does $\int_a^bf\diff\left(\varphi_1+\varphi_2\right)$, and
 \[
-\int_a^bf\diff\left(\phi_1+\phi_2\right)=\int_a^bf\diff\phi_1+\int_a^bf\diff\phi_2.
+\int_a^bf\diff\left(\varphi_1+\varphi_2\right)=\int_a^bf\diff\varphi_1+\int_a^bf\diff\varphi_2.
 \]
 \end{enumerate}
-\end{theorem*}
+\end{quote}
 \end{proof}
 
 %%% Local Variables:

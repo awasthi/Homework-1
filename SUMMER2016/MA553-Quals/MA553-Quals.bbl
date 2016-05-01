@@ -6,20 +6,20 @@
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
 \bibitem[Dummit and Foote(2004)]{dummit-foote}
-D.S. Dummit and R.M. Foote.
+D.S.\@ Dummit and R.M.\@ Foote.
 \newblock \emph{Abstract Algebra}.
 \newblock Wiley, 2004.
 \newblock ISBN 9780471433347.
 \newblock URL \url{https://books.google.com/books?id=KIGbCgAAQBAJ}.
 
 \bibitem[Herstein(1975)]{herstein}
-I.N. Herstein.
+I.N.\@ Herstein.
 \newblock \emph{Topics in algebra}.
 \newblock Xerox College Pub., 1975.
 \newblock URL \url{https://books.google.com/books?id=lgfvAAAAMAAJ}.
 
 \bibitem[Hungerford(2003)]{hungerford}
-T.W. Hungerford.
+T.W.\@ Hungerford.
 \newblock \emph{Algebra}.
 \newblock Graduate Texts in Mathematics. Springer New York, 2003.
 \newblock ISBN 9780387905181.

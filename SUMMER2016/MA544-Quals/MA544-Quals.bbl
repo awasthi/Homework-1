@@ -6,14 +6,14 @@
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
 \bibitem[Folland(1984)]{folland}
-G.B. Folland.
+G.~Folland.
 \newblock \emph{Real analysis: modern techniques and their applications}.
 \newblock Pure and applied mathematics. Wiley, 1984.
 \newblock ISBN 9780471809586.
 \newblock URL \url{https://books.google.com/books?id=AnIPAQAAMAAJ}.
 
 \bibitem[Royden and Fitzpatrick(2010)]{royden}
-H.L. Royden and P.~Fitzpatrick.
+H.~Royden and P.~Fitzpatrick.
 \newblock \emph{Real Analysis}.
 \newblock Featured Titles for Real Analysis Series. Prentice Hall, 2010.
 \newblock ISBN 9780131437470.
@@ -27,8 +27,8 @@ W.~Rudin.
 \newblock ISBN 9780070856134.
 \newblock URL \url{https://books.google.com/books?id=kwqzPAAACAAJ}.
 
-\bibitem[Wheeden et~al.(1977)Wheeden, Wheeden, and Zygmund]{wheeden-zygmund}
-R.~Wheeden, R.L. Wheeden, and A.~Zygmund.
+\bibitem[Wheeden and Zygmund(1977)]{wheeden-zygmund}
+R.~Wheeden and A.~Zygmund.
 \newblock \emph{Measure and Integral: An Introduction to Real Analysis}.
 \newblock Chapman \& Hall/CRC Pure and Applied Mathematics. Taylor \& Francis,
   1977.

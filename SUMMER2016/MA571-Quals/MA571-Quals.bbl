@@ -6,7 +6,7 @@
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
 \bibitem[Munkres(2000)]{munkres}
-J.R. Munkres.
+J.R.\@ Munkres.
 \newblock \emph{Topology}.
 \newblock Featured Titles for Topology Series. Prentice Hall, Incorporated,
   2000.
