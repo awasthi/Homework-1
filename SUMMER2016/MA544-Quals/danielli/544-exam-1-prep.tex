@@ -201,25 +201,6 @@ $\left\{\,x:\text{$\lim_{k\to\infty} f_k(x)$ exists}\,\right\}$
 is measurable.
 \end{problem}
 \begin{proof}
-% The idea here should be to rewrite
-% \begin{equation}
-%   \label{eq:measurable-lim-set}
-% E=\left\{\,x:\text{$\lim_{k\to\infty} f_k(x)$ exists}\,\right\}
-% \end{equation}
-% as a countable union/intersection of measurable sets. Let $x\in E$. By the
-% Cauchy criterion, for every $N>0$ there exists a positive integer
-% $M$ such that $m,n\geq M$ implies
-% $\left|f_n(x)-f_m(x)\right|<1/N$. With this in mind, define
-% \begin{equation}
-%   \label{eq:countable-lim-set}
-% E_N=
-% \left\{\,
-% x:\text{there exists $M$ such that $m,n\geq M$ implies $\left|f_n(x)-f_m(x)\right|<\frac{1}{N}$}
-% \,\right\}.
-% \end{equation}
-% Then, like for Problem 1.4, it is not too hard to see that the $E_n$'s are
-% open and that $E=\bigcap_{n=1}^\infty E_n$. Thus, $E$ is a $G_\delta$ set
-% and therefore measurable.
 In a fashion similar to that of Problem 4, consider the set collection of
 sets $\{E_k\}$ given by
 \begin{equation}
@@ -239,7 +220,23 @@ is measurable.
 
 There is a slicker proof. By Theorem 4.12 from \cite[Ch.\@ 4, p.\@
 67]{wheeden-zygmund}, $\liminf_{k\to\infty}f_k$ and
-$\limsup_{k\to\infty}f_k$ are measurable.
+$\limsup_{k\to\infty}f_k$ are measurable. By Theorem 4.7 from \cite[Ch.\@ 4,
+p.\@ 66]{wheeden-zygmund}
+\begin{equation}
+\label{eq:sp16:1:12}
+\left\{\,\liminf_{k\to\infty} f_k<\limsup_{k\to\infty} f_k\,\right\}
+\end{equation}
+is measurable. Since
+\begin{equation}
+  \label{eq:sp16:1:13}
+\left\{\,\text{$\lim_{k\to\infty}f_k$ exists}\,\right\}=
+\left\{\,{\limsup_{k\to\infty}f_k=\liminf_{k\to\infty}f_k}\,\right\}=
+\bbR\setminus
+\left\{\,{\liminf_{k\to\infty} f_k<\limsup_{k\to\infty} f_k}\,\right\},
+\end{equation}
+by Theorem 3.17 from \cite[Ch.\@ 3, p.\@ 48]{wheeden-zygmund},
+the set $\left\{\,\text{$\lim_{k\to\infty}f_k$ exists}\,\right\}$ is
+measurable.
 \end{proof}
 
 \begin{problem}
@@ -269,6 +266,7 @@ $[a,b]$.
 % \end{aligned}
 % \end{equation}
 % Thus, $f$ is b.v.\@ on $[a,b]$.
+
 \end{proof}
 
 \begin{problem}
