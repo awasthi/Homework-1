@@ -15,7 +15,6 @@
     colorlinks=true,
     pageanchor=false,
     linkcolor=black,
-    anchorcolor=black,
     citecolor=black,
     filecolor=black,
     menucolor=black,
@@ -154,7 +153,12 @@
 \begin{document}
 %% Footnotes
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
-\numberwithin{equation}{chapter}
+
+%% Counters
+\counterwithout{exercise}{chapter}
+\numberwithin{equation}{subsection}
+\counterwithout{equation}{chapter}
+
 %% Redefine the QED symbol
 % \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
 

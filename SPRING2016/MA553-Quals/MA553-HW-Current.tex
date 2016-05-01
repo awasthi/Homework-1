@@ -155,6 +155,12 @@
 \begin{document}
 %% Footnotes
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+%% Counters
+\counterwithout{exercise}{chapter}
+\numberwithin{equation}{subsection}
+\counterwithout{equation}{chapter}
+
 % \numberwithin{equation}{chapter}
 %% Redefine the QED symbol
 % \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}

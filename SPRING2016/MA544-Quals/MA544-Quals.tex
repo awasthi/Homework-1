@@ -15,7 +15,6 @@
     colorlinks=true,
     pageanchor=false,
     linkcolor=black,
-    anchorcolor=black,
     citecolor=black,
     filecolor=black,
     menucolor=black,
@@ -162,7 +161,7 @@
 \newtheorem{definition}{Definition}
 \newtheorem{example}{Examples}
 \newtheorem{examples}[example]{Example}
-\newtheorem{exercise}{Exercise}% [chapter]
+\newtheorem{exercise}{Exercise}[section]
 \newtheorem{problem}[exercise]{Problem}
 
 \newtheorem*{example*}{Example}
@@ -172,7 +171,12 @@
 \begin{document}
 %% Footnote style
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
-% \numberwithin{equation}{chapter}
+
+%% Counters
+\counterwithout{exercise}{chapter}
+\numberwithin{equation}{subsection}
+\counterwithout{equation}{chapter}
+
 %% Redefine the QED symbol
 % \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
 
