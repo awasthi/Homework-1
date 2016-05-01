@@ -10,6 +10,7 @@
 \contentsline {section}{\numberline {\if@rl \I {5.1}\else \textLR {1.5}\fi }Final Practice}{\if@rlmain \I {18}\else \textLR {18}\fi }{section.1.5}
 \select@language {english}
 \contentsline {chapter}{\chapternumberline {2}\bgroup \beginL \latintext MA 544 Past Quals\endL \egroup }{\if@rlmain \I {19}\else \textLR {19}\fi }{chapter.2}
-\contentsline {section}{\numberline {\if@rl \I {1.2}\else \textLR {2.1}\fi }Danielli}{\if@rlmain \I {19}\else \textLR {19}\fi }{section.2.1}
-\contentsline {subsection}{Winter 2012}{\if@rlmain \I {19}\else \textLR {19}\fi }{section*.2}
-\contentsline {subsection}{Summer 2011}{\if@rlmain \I {21}\else \textLR {21}\fi }{section*.3}
+\contentsline {section}{\numberline {\if@rl \I {1.2}\else \textLR {2.1}\fi }Danielli: Winter 2012}{\if@rlmain \I {19}\else \textLR {19}\fi }{section.2.1}
+\contentsline {section}{\numberline {\if@rl \I {2.2}\else \textLR {2.2}\fi }Danielli: Summer 2011}{\if@rlmain \I {21}\else \textLR {21}\fi }{section.2.2}
+\select@language {english}
+\contentsline {chapter}{Bibliography}{\if@rlmain \I {23}\else \textLR {23}\fi }{section*.3}
