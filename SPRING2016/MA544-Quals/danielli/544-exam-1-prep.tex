@@ -95,40 +95,6 @@ $B(\mathbf{0},r)=\left\{\,\bfy\in\bbR^n:|\bfy|<r\,\right\}$. Prove
 that $F$ is monotonic increasing and continuous.
 \end{problem}
 \begin{proof}
-% That $F$ is increasing is immediate from the monotonicity of the outer
-% measure since for $x<x'$ we have $B(\mathbf{0},x)\subset B(\mathbf{0},x')$
-% so, by 3.2, we have
-% \[
-% F(x)\left|B(\mathbf{0},x)\right|\leq\left|B(\mathbf{0},x')\right|=F(x')
-% \]
-% as desired.
-
-% To see that $F$ is continuous, we will prove the following lemma
-% \begin{lemma}
-% \label{lem:one}
-% For any $x>0$, $xB(\mathbf{0},1)=B(\mathbf{0},x)$.
-% \end{lemma}
-% \begin{proof}[Proof of lemma]
-% \renewcommand\qedsymbol{$\clubsuit$}
-% If $\bfy\in xB(\mathbf{0},1)$ then $\bfy=x\bfy'$ for $\bfy'\in
-% B(\mathbf{0},1)$. Thus, $|\bfy'|=|\bfy|/x<1$ so $|\bfy|<x$ implies that
-% $\bfy\in B(\mathbf{0},x)$. Hence, we have the containment
-% $xB(\mathbf{0},1)\subset B(\mathbf{0},x)$.
-
-% On the other hand, if $\bfy\in B(\mathbf{0},x)$ then $|\bfy|<x$ so
-% $\left|\bfy/x\right|<1$. Hence, $\bfy/x\in B(\mathbf{0},1)$ so
-% $x(\bfy/x)=\bfy\in B(\mathbf{0},x)$. Thus, $B(\mathbf{0},x)\subset
-% xB(\mathbf{0},)$ and equality holds.
-% \end{proof}
-% In light of Lemma \ref{lem:one} and 3.35, for $x>0$, we have
-% \begin{equation}
-% \label{eq:scale-map}
-% F(x)=\left|B(\mathbf{0},x)\right|
-% =\left|xB(\mathbf{0},1)\right|
-% =x^n\left|B(\mathbf{0},1)\right|.
-% \end{equation}
-% It is clear that $F$ is continuous on the interval $[0,\infty)$ since $F$
-% is a polynomial in $x$.
 Define the linear map $T\colon[0,\infty)\times\bbR^n\to\bbR^n$ by
 $T(r)\bfx\coloneqq r\bfx$. We claim that
 $B(\mathbf{0},r)=T(r,B(\mathbf{0},1))$. To reduce notation, set
@@ -164,53 +130,81 @@ Let $f\colon\bbR\to\bbR$ be a function. Let $C$ be the set of all points
 at which $f$ is continuous. Show that $C$ is a set of type $G_\delta$.
 \end{problem}
 \begin{proof}
-From the topological definition of continuity, $f$ is continuous at $x\in
-C$ if and only if for every neighborhood $U$ of $f(x)$, the preimage
-$f^{-1}(U)$ is a neighborhood of $x$. Now,
+% Let $x\in C$. Then, by the definition of continuity, for every natural
+% number $n>0$ there exists $\delta>0$ such that $|x-x'|<\delta$ implies
+% \begin{equation}
+% \label{eq:continuity-2n}
+% \left|f(x)-f(x')\right|<\frac{1}{2n}.
+% \end{equation}
+% Let $x'',x'\in B(x,\delta)$. Then, by the triangle inequality, we have
+% \begin{equation}
+% \label{eq:n-estimates}
+% \begin{aligned}
+% |f(x')-f(x)''|={}&\left|f(x')-f(x)-(f(x'')-f(x))\right|\\
+%               \leq{}&\left|f(x')-f(x)\right|+\left|f(x'')-f(x)\right|\\
+%               <{}&\frac{1}{2n}+\frac{1}{2n}\\
+%               ={}&\frac{1}{n}.
+% \end{aligned}
+% \end{equation}
+% In view of these estimates, define the set
+% \begin{equation}
+% \label{eq:a-n}
+% A_n=
+% \left\{\,
+% x\in\bbR :\text{there exists $\delta>0$ such that $x',x''\in B(x,\delta)$ implies $\left|f(x')-f(x'')\right|<\frac{1}{n}$ }
+% \,\right\}.
+% \end{equation}
+% Good Lord, that was a long definition! We claim that
+% $C=\bigcap_{n=1}^\infty A_n$ and that $A_n$ is open for all $n$.
+
+% First, let us show that $C=\bigcap_{n=1}^\infty A_n$. Let $x\in C$. Then for
+% every $n>0$, there exists $\delta>0$ such that $|x-x'|<\delta$ implies
+% $|f(x)-f(x')|<1/n$. Thus, $x\in A_n$ for all $n$ so $x\in\bigcap A_n$. On
+% the other hand, if $x\in\bigcap A_n$ for every $n>0$, there exists
+% $\delta>0$ such that $|x-x'|<\delta$ implies $|f(x)-f(x')|<1/n$. Fix
+% $\varepsilon>0$. By the Archimedean principle, there exists $N>0$ such that
+% $\varepsilon>1/N$. Then, since $x\in A_N$ it follows that for some
+% $\delta'>0$, $|x-x'|<\delta'$ implies
+% $\left|f(x)-f(x')\right|<1/N<\varepsilon$. Thus, $x\in C$ and we conclude
+% that $C=\bigcap_{n=1}^\infty A_n$.
+
+% Lastly, we show that $A_n$ is open. Let $x\in A_n$. Then there exists
+% $\delta>0$ such that $|x-x'|<\delta$ implies $|f(x)-f(x')|<1/n$. In
+% particular, this means that $B(x,\delta)\subset A_n$ for any $x'\in
+% B(x,\delta)$ satisfies $|f(x)-f(x')|<1/n$. Thus, $A_n$ is open and we
+% conclude that $C=\bigcap_{n=1}^\infty A_n$ is a $G_\delta$ set.
+(Without much motivation) let us consider the collection of sets $\{E_k\}$
+defined by
+\begin{equation}
+\label{eq:sp16:1:8}
+E_k\coloneqq\left\{\,x\in\bbR:
+\text{there exists $\delta>0$ such that $y\in B(x,\delta)$ implies $\left|f(x)-f(y)\right|<\frac{1}{n}$}\,\right\}.
+\end{equation}
+We claim that $C=\bigcap_{k=1}^\infty E_k$ and that each $E_k$ is open.
+\begin{proof}[Proof of claim]
+\renewcommand{\qedsymbol}{$\clubsuit$}
+First, we demonstrate equality. $\subset$: Suppose $x\in C$. Then, by the
+definition of continuity, for every $\varepsilon>0$, there exists a
+$\delta>0$ such that $y\in B(x,\delta)$ implies $|f(x)-f(y)|<\delta$. In
+particular, for every $k$, there exists $\delta>0$ such that for $y\in
+B(x,\delta)$ the inequality $|f(x)-f(y)|<1/k$ holds. Thus, $x$ is in
+$\bigcap_{k=1}^\infty E_k$.
+
+$\supset$: On the other hand, suppose that $x\in\bigcap_{k=1}^\infty
+E_k$. Then, given $\varepsilon>0$, by the Archimedean property, there
+exists a positive integer $N$ such that $1/N<\varepsilon$. Then, since
+$x\in\bigcap_{k=1}^\infty E_k$, $x\in E_N$ so
+\begin{equation}
+  \label{eq:sp16:1:9}
+|f(x)-f(y)|<\frac{1}{N}<\varepsilon.
+\end{equation}
+Thus, $x$ is in $C$ and $C=\bigcap_{k=1}^\infty E_k$.
+
+All that remains to be shown is that the $E_k$ are open. Let $x\in E_k$. We
+must show that for $\varepsilon>0$ small enough, $B(x,\varepsilon)\subset
+E_k$.
 \end{proof}
-Let $x\in C$. Then, by the definition of continuity, for every natural
-number $n>0$ there exists $\delta>0$ such that $|x-x'|<\delta$ implies
-\begin{equation}
-\label{eq:continuity-2n}
-\left|f(x)-f(x')\right|<\frac{1}{2n}.
-\end{equation}
-Let $x'',x'\in B(x,\delta)$. Then, by the triangle inequality, we have
-\begin{equation}
-\label{eq:n-estimates}
-\begin{aligned}
-|f(x')-f(x)''|={}&\left|f(x')-f(x)-(f(x'')-f(x))\right|\\
-              \leq{}&\left|f(x')-f(x)\right|+\left|f(x'')-f(x)\right|\\
-              <{}&\frac{1}{2n}+\frac{1}{2n}\\
-              ={}&\frac{1}{n}.
-\end{aligned}
-\end{equation}
-In view of these estimates, define the set
-\begin{equation}
-\label{eq:a-n}
-A_n=
-\left\{\,
-x\in\bbR :\text{there exists $\delta>0$ such that $x',x''\in B(x,\delta)$ implies $\left|f(x')-f(x'')\right|<\frac{1}{n}$ }
-\,\right\}.
-\end{equation}
-Good Lord, that was a long definition! We claim that
-$C=\bigcap_{n=1}^\infty A_n$ and that $A_n$ is open for all $n$.
-
-First, let us show that $C=\bigcap_{n=1}^\infty A_n$. Let $x\in C$. Then for
-every $n>0$, there exists $\delta>0$ such that $|x-x'|<\delta$ implies
-$|f(x)-f(x')|<1/n$. Thus, $x\in A_n$ for all $n$ so $x\in\bigcap A_n$. On
-the other hand, if $x\in\bigcap A_n$ for every $n>0$, there exists
-$\delta>0$ such that $|x-x'|<\delta$ implies $|f(x)-f(x')|<1/n$. Fix
-$\varepsilon>0$. By the Archimedean principle, there exists $N>0$ such that
-$\varepsilon>1/N$. Then, since $x\in A_N$ it follows that for some
-$\delta'>0$, $|x-x'|<\delta'$ implies
-$\left|f(x)-f(x')\right|<1/N<\varepsilon$. Thus, $x\in C$ and we conclude
-that $C=\bigcap_{n=1}^\infty A_n$.
-
-Lastly, we show that $A_n$ is open. Let $x\in A_n$. Then there exists
-$\delta>0$ such that $|x-x'|<\delta$ implies $|f(x)-f(x')|<1/n$. In
-particular, this means that $B(x,\delta)\subset A_n$ for any $x'\in
-B(x,\delta)$ satisfies $|f(x)-f(x')|<1/n$. Thus, $A_n$ is open and we
-conclude that $C=\bigcap_{n=1}^\infty A_n$ is a $G_\delta$ set.
+\end{proof}
 \begin{problem}
 Let $f\colon\bbR\to\bbR$ be a function. Is it true that if the sets
 $\left\{\,f=r\,\right\}$ are measurable for all $r\in\bbR$, then $f$ is
