@@ -1,38 +1,25 @@
-\begin{thebibliography}{4}
-\providecommand{\natexlab}[1]{#1}
-\providecommand{\url}[1]{\texttt{#1}}
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi: #1}\else
-  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+\begin{thebibliography}{1}
 
-\bibitem[Folland(1984)]{folland}
-G.~Folland.
-\newblock \emph{Real analysis: modern techniques and their applications}.
+\bibitem{folland}
+G.B.\@ Folland.
+\newblock {\em Real analysis: modern techniques and their applications}.
 \newblock Pure and applied mathematics. Wiley, 1984.
-\newblock ISBN 9780471809586.
-\newblock URL \url{https://books.google.com/books?id=AnIPAQAAMAAJ}.
 
-\bibitem[Royden and Fitzpatrick(2010)]{royden}
-H.~Royden and P.~Fitzpatrick.
-\newblock \emph{Real Analysis}.
+\bibitem{royden}
+H.L.\@ Royden and P.\@ Fitzpatrick.
+\newblock {\em Real Analysis}.
 \newblock Featured Titles for Real Analysis Series. Prentice Hall, 2010.
-\newblock ISBN 9780131437470.
-\newblock URL \url{https://books.google.com/books?id=0Y5fAAAACAAJ}.
 
-\bibitem[Rudin(1976)]{rudin-1}
+\bibitem{rudin-1}
 W.~Rudin.
-\newblock \emph{Principles of Mathematical Analysis}.
+\newblock {\em Principles of Mathematical Analysis}.
 \newblock International series in pure and applied mathematics. McGraw-Hill,
   1976.
-\newblock ISBN 9780070856134.
-\newblock URL \url{https://books.google.com/books?id=kwqzPAAACAAJ}.
 
-\bibitem[Wheeden and Zygmund(1977)]{wheeden-zygmund}
-R.~Wheeden and A.~Zygmund.
-\newblock \emph{Measure and Integral: An Introduction to Real Analysis}.
+\bibitem{wheeden-zygmund}
+R.\@ Wheeden and A.\@ Zygmund.
+\newblock {\em Measure and Integral: An Introduction to Real Analysis}.
 \newblock Chapman \& Hall/CRC Pure and Applied Mathematics. Taylor \& Francis,
   1977.
-\newblock ISBN 9780824764999.
-\newblock URL \url{https://books.google.com/books?id=YDkDmQ\_hdmcC}.
 
 \end{thebibliography}

@@ -9,46 +9,46 @@ A level-1 auxiliary file: danielli/544-exam-2.aux
 A level-1 auxiliary file: danielli/544-final.aux
 A level-1 auxiliary file: danielli/544-jan-12.aux
 A level-1 auxiliary file: danielli/544-aug-11.aux
-The style file: abbrvnat.bst
+The style file: plain.bst
 Database file #1: anal-bib.bib
 You've used 4 entries,
-            2773 wiz_defined-function locations,
-            632 strings with 5501 characters,
-and the built_in function-call counts, 1487 in all, are:
-= -- 140
-> -- 62
-< -- 4
-+ -- 22
-- -- 18
-* -- 94
-:= -- 256
-add.period$ -- 24
+            2118 wiz_defined-function locations,
+            529 strings with 4709 characters,
+and the built_in function-call counts, 1000 in all, are:
+= -- 98
+> -- 40
+< -- 0
++ -- 16
+- -- 12
+* -- 46
+:= -- 185
+add.period$ -- 16
 call.type$ -- 4
 change.case$ -- 14
-chr.to.int$ -- 4
-cite$ -- 8
-duplicate$ -- 80
-empty$ -- 129
-format.name$ -- 26
-if$ -- 313
-int.to.chr$ -- 1
-int.to.str$ -- 1
+chr.to.int$ -- 0
+cite$ -- 4
+duplicate$ -- 48
+empty$ -- 89
+format.name$ -- 12
+if$ -- 215
+int.to.chr$ -- 0
+int.to.str$ -- 4
 missing$ -- 8
-newline$ -- 36
-num.names$ -- 16
-pop$ -- 34
+newline$ -- 23
+num.names$ -- 8
+pop$ -- 26
 preamble$ -- 1
 purify$ -- 14
 quote$ -- 0
-skip$ -- 55
+skip$ -- 26
 stack$ -- 0
-substring$ -- 8
+substring$ -- 20
 swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
+type$ -- 8
 warning$ -- 0
-while$ -- 12
-width$ -- 0
-write$ -- 75
+while$ -- 8
+width$ -- 5
+write$ -- 46

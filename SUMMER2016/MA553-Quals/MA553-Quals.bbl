@@ -1,28 +1,18 @@
-\begin{thebibliography}{3}
-\providecommand{\natexlab}[1]{#1}
-\providecommand{\url}[1]{\texttt{#1}}
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi: #1}\else
-  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+\begin{thebibliography}{1}
 
-\bibitem[Dummit and Foote(2004)]{dummit-foote}
+\bibitem{dummit-foote}
 D.S.\@ Dummit and R.M.\@ Foote.
-\newblock \emph{Abstract Algebra}.
+\newblock {\em Abstract Algebra}.
 \newblock Wiley, 2004.
-\newblock ISBN 9780471433347.
-\newblock URL \url{https://books.google.com/books?id=KIGbCgAAQBAJ}.
 
-\bibitem[Herstein(1975)]{herstein}
+\bibitem{herstein}
 I.N.\@ Herstein.
-\newblock \emph{Topics in algebra}.
+\newblock {\em Topics in algebra}.
 \newblock Xerox College Pub., 1975.
-\newblock URL \url{https://books.google.com/books?id=lgfvAAAAMAAJ}.
 
-\bibitem[Hungerford(2003)]{hungerford}
+\bibitem{hungerford}
 T.W.\@ Hungerford.
-\newblock \emph{Algebra}.
+\newblock {\em Algebra}.
 \newblock Graduate Texts in Mathematics. Springer New York, 2003.
-\newblock ISBN 9780387905181.
-\newblock URL \url{https://books.google.com/books?id=t6N\_tOQhafoC}.
 
 \end{thebibliography}

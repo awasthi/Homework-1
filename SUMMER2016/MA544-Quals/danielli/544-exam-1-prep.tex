@@ -133,7 +133,7 @@ defined by
 \begin{equation}
 \label{eq:sp16:1:8}
 E_k\coloneqq\left\{\,x\in\bbR:
-\text{there exists $\delta>0$ such that $y,z\in B(x,\delta)$ implies $\left|f(y)-f(z)\right|<\frac{1}{2^k}$}\,\right\}.
+\text{there exists $\delta>0$ such that $y,z\in B(x,\delta)$ implies $\left|f(y)-f(z)\right|<\frac{1}{k}$}\,\right\}.
 \end{equation}
 We claim that $C=\bigcap_{k=1}^\infty E_k$ and that each $E_k$ is open.
 \begin{proof}[Proof of claim]
@@ -142,26 +142,26 @@ First, we demonstrate equality. $\subset$: Suppose $x\in C$. Then, by the
 definition of continuity, for every $\varepsilon>0$, there exists a
 $\delta>0$ such that $y\in B(x,\delta)$ implies $|f(x)-f(y)|<\delta$. In
 particular, for every $k$, there exists $\delta>0$ such that for $y\in
-B(x,\delta)$ the inequality $|f(x)-f(y)|<1/2^k$ holds. Thus, $x$ is in
+B(x,\delta)$ the inequality $|f(x)-f(y)|<1/k$ holds. Thus, $x$ is in
 $\bigcap_{k=1}^\infty E_k$.
 
 $\supset$: On the other hand, suppose that $x\in\bigcap_{k=1}^\infty
 E_k$. Then, given $\varepsilon>0$, by the Archimedean property, there
-exists a positive integer $N$ such that $1/2^N<\varepsilon$. Then, since
+exists a positive integer $N$ such that $1/N<\varepsilon$. Then, since
 $x\in\bigcap_{k=1}^\infty E_k$, $x\in E_N$ so
 \begin{equation}
   \label{eq:sp16:1:9}
-|f(x)-f(y)|<\frac{1}{2^N}<\varepsilon.
+|f(x)-f(y)|<\frac{1}{N}<\varepsilon.
 \end{equation}
 Thus, $x$ is in $C$ and $C=\bigcap_{k=1}^\infty E_k$.
 
 All that remains to be shown is that the $E_k$ are open. But this is clear
 by the way we defined $E_k$ in \eqref{eq:sp16:1:8}: Let $x\in E_k$, then
 there exists $\delta>0$ such that for any $y,z\in B(x,\delta)$,
-$|f(y)-f(z)|<1/2^k$; Let $x'\in B(x,\delta)$ and set
+$|f(y)-f(z)|<1/k$; Let $x'\in B(x,\delta)$ and set
 $\delta'\coloneqq\min\{|(x+\delta)-x'|,|(x-\delta)-x|\}$. Then, since
 $B(x',\delta')\subset B(x,\delta)$, for every $y,z\in B(x',\delta')$, we
-have $|f(y)-f(z)|<1/2^{-k}$. Hence, $x'\in E_k$ for any $x'\in B(x,\delta)$
+have $|f(y)-f(z)|<1/k$. Hence, $x'\in E_k$ for any $x'\in B(x,\delta)$
 so $B(x,\delta)\subset E_k$.
 \end{proof}
 Since $C$ can be expressed as the countable intersection of open sets
@@ -220,7 +220,26 @@ is measurable.
 % Then, like for Problem 1.4, it is not too hard to see that the $E_n$'s are
 % open and that $E=\bigcap_{n=1}^\infty E_n$. Thus, $E$ is a $G_\delta$ set
 % and therefore measurable.
+In a fashion similar to that of Problem 4, consider the set collection of
+sets $\{E_k\}$ given by
+\begin{equation}
+\label{eq:sp16:1:11}
+E_k=
+\left\{\,
+x\in\bbR:\text{there exists $N$ such that $m,n\geq N$ implies $\left|f_n(x)-f_m(x)\right|<\frac{1}{k}$}
+\,\right\}.
+\end{equation}
+You can show that the $E_k$ are open and that
+$\left\{\,x:\text{$\lim_{x\to\infty}f_k(x)$
+    exists}\,\right\}=\bigcap_{k=1}^\infty E_k$. Then, since open sets are
+measurable and, by Theorem 3.18 from \cite[Ch.\@ 3, p.\@
+48]{wheeden-zygmund}, the countable intersection of measurable sets is
+measurable, $\left\{\,x:\text{$\lim_{x\to\infty}f_k(x)$ exists}\,\right\}$
+is measurable.
 
+There is a slicker proof. By Theorem 4.12 from \cite[Ch.\@ 4, p.\@
+67]{wheeden-zygmund}, $\liminf_{k\to\infty}f_k$ and
+$\limsup_{k\to\infty}f_k$ are measurable.
 \end{proof}
 
 \begin{problem}
