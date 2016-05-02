@@ -7,29 +7,6 @@ exists a ball $B$, centered at the origin, such that
 \]
 \end{problem}
 \begin{proof}
-Recall that $f\in L(\bbR^n)$ if and only if $|f|\in
-L(\bbR^n)$. Let $B_k= B(\mathbf{0},k)$ for $k\in\bbN$ and
-$\chi_{B_k}$ be the indicator function associated with $B_k$. Then, the
-sequence of maps $\left\{|f_k|\right\}$ defined $f_k= f\chi_{B_k}$
-converge pointwise to $|f_k|$. Since $|f|\in L(\bbR^n)$, by the monotone
-convergence theorem, we have
-\begin{equation}
-\label{eq:monotonicity-2-1}
-\int_{\bbR^n} |f_k|=\int_{B_k}|f|\longrightarrow\int_{\bbR^n}|f|.
-\end{equation}
-But this means, exactly, that for every $\varepsilon>0$ there exists
-sufficiently large $N\in\bbN$ such that
-\begin{equation}
-\label{eq:desired-inequality-2-1}
-\begin{aligned}
-\varepsilon&>\left|\int_{\bbR^n}|f_k|-\int_{\bbR^n}|f|\right|\\
-={}&-\int_{\bbR^n}|f_k|+\int_{\bbR^n}|f|\\
-={}&-\int_{\bbR^n}|f|+\int_{\bbR^n}|f|\\
-={}&-\int_{B_k}|f|+\int_{\bbR^n}|f|\\
-={}&\int_{\bbR^n\setminus B_k}|f|
-\end{aligned}
-\end{equation}
-as desired.
 \end{proof}
 
 \begin{problem}
@@ -41,29 +18,6 @@ E_j$. Prove that
 \]
 \end{problem}
 \begin{proof}
-First, since the $E_j$'s are pairwise disjoint, by Theorem 3.23, we have
-\begin{equation}
-\label{eq:disjoint-measure-2-2}
-|E|=\sum_{j=1}^\infty|E_j|.
-\end{equation}
-Let $\chi_{E_j}$ be the characteristic function of the subset $E_j$ of
-$E$ and define $f_j= f\chi_{E_j}$ for $j\in\bbN$. Note that, since
-both $f$ and $\chi_{E_j}$ are measurable on $E$, $f_j$ is
-measurable on $E$ and $\sum_{j=1}^\infty f_j=f$. Moreover, since
-$E_j\subset E$, by monotonicity of the integral we have
-\begin{equation}
-\label{eq:monotonicity-2-2}
-\int_{E} f=
-\int_{E_j} f+\int_{E\setminus E_j}f=
-\int_E f_j+\int_{E\setminus E_j}f.
-\end{equation}
-Hence, because the $E_j$'s are disjoint $(E\setminus E_k)\setminus
-E_\ell=(E\setminus E_\ell)\setminus E_k$ so
-\begin{equation}
-\label{eq:desired-sum-2}
-\int_E f=\sum_{j=1}^\infty\int_E f_j=\sum_{j=1}^\infty\int_{E_j}f
-\end{equation}
-as desired.
 \end{proof}
 
 \begin{problem}
@@ -81,27 +35,6 @@ $k\to\infty$ for a.e.\@ $x\in E$. Show that
 (\emph{Hint:} Use Egorov's theorem.)
 \end{problem}
 \begin{proof}
-Let $\varepsilon>0$ be given. Then, by the hypothesis, there exists
-$\delta>0$ such that
-such that $|A|<\delta$
-implies
-\begin{equation}
-  \label{eq:hypothesis-2-3}
-\int_A |f_k|<\varepsilon
-\end{equation}
-for all $k\in\bbN$. By Egorov's theorem, there exists a closed subset $F$
-of $E$ such that $|E\setminus F|<\delta$ and $f_k\to f$ uniformly on
-$F$. Then, by the uniform convergence theorem,
-\begin{equation}
-\label{eq:uniform-convergence-2-3}
-\int_F f_k\longrightarrow \int_F f
-\end{equation}
-as $k\to\infty$. But by hypothesis, we have
-\begin{equation}
-\label{eq:need-to-show-2-}
-\int_{E\setminus F} |f_k|<\varepsilon.
-\end{equation}
-Letting $\varepsilon\to 0$, we achieved the desired convergence.
 \end{proof}
 
 \begin{problem}
@@ -112,30 +45,6 @@ t^{-1}f(t) \diff t$ for $x\in I$. Prove that $g\in L(I)$ and
 \]
 \end{problem}
 \begin{proof}
-By Lusin's theorem, there exists a closed subset $F$ of $I$ with $|I\setminus
-F|<\varepsilon$ such that the restriction of $f$ to $F= I\setminus E$
-is continuous. Now, since $F$ is closed in $I$ and $I$ is compact, it
-follows that $I$ is compact. Hence, by the Stone--Weierstraß approximation
-theorem, there exist a sequence of polynomials $\left\{ p_k \right\}$ such
-that $p_k\to f$ uniformly on $F$. Then, by the uniform convergence theorem,
-we have
-\begin{equation}
-  \label{eq:uniform-convergence-2-4}
-\int_F p_k\longrightarrow \int_F f
-\end{equation}
-so
-\begin{equation}
-  \label{eq:uniform-convergence-2-2-4}
-\begin{aligned}
-\int_F\left[\int_x^1t^{-1}p_k(t) d  t\right]\diff x
-={}&\int_F\left[\int_x^1 at^{-1}+q_k(t) d  t\right]\diff x\\
-={}&\int_F q_k'(x)-a\log(x)\diff x\\
-<{}&\infty
-\end{aligned}
-\end{equation}
-for all $k$ and converges uniformly to $g$ so $g\in L(I)$. I don't know
-how to show that in fact $\int_I g=\int_I f$. Perhaps you show that the
-places where they differ is a set of measure zero.
 \end{proof}
 
 %%% Local Variables:
