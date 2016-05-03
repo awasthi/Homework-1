@@ -45,14 +45,14 @@ Nevertheless, $f$ is not of
 \label{eq:1:2}
 \begin{aligned}
 V&=\int_0^1|f'|\diff x\\
-&=\int_0^1|\sin(1/x)-(1/x)\cos(1/x)|\diff x\\
-&=\int_1^\infty\frac{1}{u^2}|\sin u-u\cos u|\diff x\\
+&=\int_0^1|{\sin(1/x)-(1/x)\cos(1/x)}|\diff x\\
+&=\int_1^\infty\frac{1}{u^2}|{\sin u-u\cos u}|\diff x\\
 &\geq\int_M^\infty \frac{1}{2u}\diff u\\
 &=\infty,
 \end{aligned}
 \end{equation}
 where, for sufficiently large $M$, for $u\geq M$ we have $|{\sin u- u\cos
-  u}|>u/2$. Thus, $f$ is not of bounded variation.
+  u}|>u/2$. Thus, $f$ is not b.v.\@ on $[0,1]$.
 \end{proof}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 2]
@@ -72,11 +72,9 @@ Recall the statement of theorem (2.1):
 \end{enumerate}
 \end{quote}
 \noindent
-(a) Recall that $f$ is of b.v.\@ on $[a,b]$ if the
-total variation $V$ of $f$ on $[a,b]$ is finite, where $V$ is defined to be
-the supremum of the sum $\sum_{i=1}^m|f(x_i)-f(x_{i-1})|$ over all
-\href{https://en.wikipedia.org/wiki/Partition_of_an_interval}{\emph{partitions}}
-$\Gamma=\{x_0,\dotsc,x_m\}$ of $[a,b]$ of the sum.
+(a) We shall proceed by contradiction. Suppose that $f$ is not bounded on
+$[a,b]$. Then, for any positive integer $M$, $f(x)>M$ for some
+$x\in[a,b]$. In particular, given
 \\\\
 (b)
 \end{proof}
