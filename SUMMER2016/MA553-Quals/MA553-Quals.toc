@@ -9,9 +9,15 @@
 \contentsline {subsection}{Homework 3}{\if@rlmain \I {5}\else \textLR {5}\fi }{section*.4}
 \contentsline {subsection}{Homework 4}{\if@rlmain \I {6}\else \textLR {6}\fi }{section*.5}
 \contentsline {subsection}{Homework 5}{\if@rlmain \I {7}\else \textLR {7}\fi }{section*.6}
-\contentsline {subsection}{Homework 6}{\if@rlmain \I {8}\else \textLR {8}\fi }{section*.7}
-\contentsline {subsection}{Homework 7}{\if@rlmain \I {9}\else \textLR {9}\fi }{section*.8}
-\contentsline {subsection}{Homework 8}{\if@rlmain \I {10}\else \textLR {10}\fi }{section*.9}
-\contentsline {subsection}{Homework 9}{\if@rlmain \I {11}\else \textLR {11}\fi }{section*.10}
+\contentsline {subsection}{Homework 7}{\if@rlmain \I {8}\else \textLR {8}\fi }{section*.7}
+\contentsline {subsection}{Homework 9}{\if@rlmain \I {9}\else \textLR {9}\fi }{section*.8}
 \select@language {english}
-\contentsline {chapter}{Bibliography}{\if@rlmain \I {12}\else \textLR {12}\fi }{section*.12}
+\contentsline {chapter}{\chapternumberline {2}\bgroup \beginL \latintext Homework 10\endL \egroup }{\if@rlmain \I {10}\else \textLR {10}\fi }{chapter.2}
+\select@language {english}
+\contentsline {chapter}{\chapternumberline {3}\bgroup \beginL \latintext Homework 11\endL \egroup }{\if@rlmain \I {11}\else \textLR {11}\fi }{chapter.3}
+\select@language {english}
+\contentsline {chapter}{\chapternumberline {4}\bgroup \beginL \latintext Homework 12\endL \egroup }{\if@rlmain \I {12}\else \textLR {12}\fi }{chapter.4}
+\select@language {english}
+\contentsline {chapter}{\chapternumberline {5}\bgroup \beginL \latintext Homework 13\endL \egroup }{\if@rlmain \I {13}\else \textLR {13}\fi }{chapter.5}
+\select@language {english}
+\contentsline {chapter}{Bibliography}{\if@rlmain \I {14}\else \textLR {14}\fi }{section*.10}
