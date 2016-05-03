@@ -11,44 +11,44 @@ A level-1 auxiliary file: danielli/544-jan-12.aux
 A level-1 auxiliary file: danielli/544-aug-11.aux
 The style file: plain.bst
 Database file #1: anal-bib.bib
-You've used 4 entries,
+You've used 5 entries,
             2118 wiz_defined-function locations,
-            529 strings with 4709 characters,
-and the built_in function-call counts, 1000 in all, are:
-= -- 98
-> -- 40
+            534 strings with 4774 characters,
+and the built_in function-call counts, 1227 in all, are:
+= -- 121
+> -- 47
 < -- 0
-+ -- 16
-- -- 12
-* -- 46
-:= -- 185
-add.period$ -- 16
-call.type$ -- 4
-change.case$ -- 14
++ -- 19
+- -- 14
+* -- 55
+:= -- 226
+add.period$ -- 20
+call.type$ -- 5
+change.case$ -- 17
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 48
-empty$ -- 89
-format.name$ -- 12
-if$ -- 215
+cite$ -- 5
+duplicate$ -- 60
+empty$ -- 111
+format.name$ -- 14
+if$ -- 265
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 8
-newline$ -- 23
-num.names$ -- 8
-pop$ -- 26
+int.to.str$ -- 5
+missing$ -- 10
+newline$ -- 28
+num.names$ -- 10
+pop$ -- 32
 preamble$ -- 1
-purify$ -- 14
+purify$ -- 17
 quote$ -- 0
-skip$ -- 26
+skip$ -- 32
 stack$ -- 0
-substring$ -- 20
-swap$ -- 4
+substring$ -- 25
+swap$ -- 5
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 8
+type$ -- 10
 warning$ -- 0
-while$ -- 8
-width$ -- 5
-write$ -- 46
+while$ -- 10
+width$ -- 6
+write$ -- 57
