@@ -1,9 +1,11 @@
 \def\documentauthor{Carlos Salinas}
-\def\documenttitle{MA571: Qual Problems}
+\def\documenttitle{Basic Mathematics}
 % \def\hwnum{1}
-\def\shorttitle{MA571 Quals}
+\def\shorttitle{Basics}
 \def\coursename{MA571}
-\def\documentsubject{point-set topology}
+\def\documentsubject{abstract algebra, algebraic geometry, algebraic
+  topology, commutative algebra, differential geometry, lie groups,
+  functional analysis, real analysis}
 \def\authoremail{salinac@purdue.edu}
 
 \documentclass[article,10pt]{memoir}
@@ -170,25 +172,18 @@
 \date{\today}
 \maketitle
 \tableofcontents
-
-%% Munkres notes
-
-%% McClure Homework
-\include{mcclure/ma571-hw-1}
-
-%% McClure Quals
-% \include{mcclure/MA571-JAN16}
-\include{mcclure/MA571-AUG14}
-\include{mcclure/MA571-JAN14}
-\include{mcclure/MA571-JAN12}
-\include{mcclure/MA571-JAN11}
-
-%% Kaufmann quals
-% \include{kaufmann/MA571-Mid-JAN15}
-% \include{kaufmann/MA571-Final-JAN15}
-
+\include{topics/abstract-algebra}
+\include{topics/real-analysis}
+% \include{topics/complex-analysis}
+\include{topics/topology}
+\include{topics/measure-theory}
+% \include{topics/functional-analysis}
+\include{topics/commutative-algebra}
+\include{topics/algebraic-topology}
+\include{topics/differential-geometry}
+\include{topics/algebraic-geometry}
 \bibliographystyle{plain}
-\bibliography{top-bib}
+\bibliography{basics}
 \end{document}
 
 %%% Local Variables:
