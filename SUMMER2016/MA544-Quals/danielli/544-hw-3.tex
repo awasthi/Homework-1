@@ -1,4 +1,182 @@
 \subsection{Homework 3}
+\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\,5]
+Construct a subset of $[0,1]$ in the same manner as the Cantor set, except
+that at the $k$th stage each interval removed has length $\delta 3^{-k}$,
+$0<\delta<1$. Show that the resulting set is perfect, has measure
+$1-\delta$, and contains no interval.
+\end{problem}
+\begin{proof}
+Put $C_0\coloneqq[0,1]$. We begin constructing our desired set by
+removing the open set $\left(\frac{\delta}{3},1-\frac{\delta}{3}\right)$
+from the closed interval $[0,1]$. This separates $[0,1]$ into the union of
+two disjoint closed (and bounded therefore, compact) intervals
+$\left[0,\tfrac{\delta}{3}\right]$ and $\left[1-\tfrac{\delta}{3},1\right]$
+which we shall call $C_1$. Next, we remove the open
+interval $\left(\tfrac{\delta}{9},\frac{\delta}{3}-\frac{\delta}{9}\right)$
+from $\left[0,\tfrac{\delta}{3}\right]$ and the open interval
+$\left(1-\tfrac{\delta}{3}+\tfrac{\delta}{9},1-\tfrac{\delta}{9}\right)$
+and end up with the union $C_2$ of four disjoint closed intervals. Continue
+in this fashion ad infinitum. Note that each $C_{k+1}\subset C_k$ and each
+$C_k$ is a finite union of closed subsets thus, by theorem 1.7 and the
+Cantor's intersection theorem, the set
+$C_\delta\coloneqq\bigcap_{i=1}^\infty C_i$ is closed, compact, and nonempty.
+
+Now we show that the set we have constructed, $C_\delta$, is perfect. Since
+$C_\delta$ is closed, it remains to show that $C_\delta$ contains no
+isolated points. Note that, in the construction of $C_\delta$, we never
+removed the endpoints the intervals which union to $C_k$. Thus, the
+endpoints of the intervals which union to $C_k$ are in $C_\delta$. Before
+continuing, we need to figure out what the length of each interval at the
+$k$th stage in the construction is and in the process, we shall prove that
+$\left|C_\delta\right|=1-\delta$.
+
+At each stage in the construction (except for $k=0$) we removed $2^{k-1}$
+open intervals of length $\delta 3^{-k}$. Thus, at the $k$th stage of the
+construction, the measure of $C_k$ will be
+\[
+\left|C_k\right|
+=1-\sum_{i=1}^k\frac{2^{i-1}\delta}{3^i}=
+1-\frac{\delta}{3}\sum_{i=1}^k\left(\frac{2}{3}\right)^{i-1}.
+\]
+We immediately recognize the right-hand side as a geometric sum so letting
+$k\to\infty$, by theorem 3.26(ii), we have
+\[
+\left|C_\delta\right|
+=\lim_{k\to\infty}1-\frac{\delta}{3}\sum_{i=1}^k\left(\frac{2}{3}\right)^{i-1}
+=1-\lim_{k\to\infty}\frac{\delta}{3}\sum_{i=1}^k\left(\frac{2}{3}\right)^{i-1}
+=1-\frac{\delta}{3}\left(\frac{1}{1-\frac{2}{3}}\right)=1-\delta.
+\]
+
+Now, let $\varepsilon>0$ be given. By the Archimedean
+principle, we may choose a sufficiently large natural number $N$ so that
+$\left|C_N\right|2^{-N}<2^{-N}<\varepsilon$. Let $x$ be a point in
+$C_\delta$, then $x\in C_N$ since $x\in C_k$ for all $k$. In particular,
+$x$ is in one of he $2^N$ disjoint closed intervals that union to $C_k$,
+call it $I$. Let $x'$ be the closest endpoint of $I$ to $x$ (if $x$ is
+itself an endpoint, choose $x'$ to be the opposite endpoint). Then, by the
+triangle inequality, we have $\left|x-x'\right|\leq
+\left|C_N\right|2^{-N}<\varepsilon$. Hence, the open neighborhood
+$B(x,\varepsilon)\minus\{x\}\neq\emptyset$ for any $\varepsilon$. Thus,
+$C_\delta$ is perfect.
+
+Last but not least, we show that $C_\delta$ contains no interval. Suppose
+that $(a,b)$ is an interval contained in $C_\delta$. Hence, $(a,b)\subset
+C_k$ for all $k$. (I don't know how to finish the proof without using a
+fact about connected $1$-manifolds). Then, since $(a,b)$ is connected, it
+must be contained in an connected component $C$ of $C_\delta$. However, the
+connected components of $C_k$, i.e., the closed intervals, have measure
+less than $2^{-k}$ so $b-a\leq 2^{-k}$. Letting $k\to\infty$, we have
+$b-a\leq 0$ which leads to a contradiction since the measure of an interval
+is strictly greater than $0$.
+\end{proof}
+\newpage
+
+\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\,7]
+Prove (3.15).
+\end{problem}
+\begin{proof}
+Recall the statement of 3.15:
+\begin{lemma*}[Wheeden \& Zygmund (3.15)]
+If $\left\{I_k\right\}_k^N$ is a finite collection of nonoverlapping
+intervals, then $\bigcup I_k$ is measurable and $\left|\bigcup
+  I_k\right|=\sum\left|I_k\right|$.
+\end{lemma*}
+Note that the proof follows exactly as corollary 3.24. By theorem 3.14,
+since $\bigcup I_k$ is a finite union of closed sets, $\bigcup I_k$ is
+measurable. To see that $\left|\bigcup I_k\right|=\sum\left|I_k\right|$. By
+subadditivity, we have
+\[
+\left|\bigcup I_k\right|\leq\sum\left|I_k\right|.
+\]
+On the other hand, since
+$\left|{I_k}^\circ\right|=\left|{I_k}^\circ\right|+\left|\partial
+  I_k\right|=\left|{I_k}^\circ\cup\partial I\right|=\left|I_k\right|$, we
+have
+\[
+\sum\left|I_k\right|=
+\sum\left|{I_k}^\circ\right|\leq
+\left|\bigcup I_k\right|.
+\]
+Hence, $\left|\bigcup I_k\right|=\sum\left|I_k\right|$.
+\end{proof}
+\newpage
+
+\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\,8]
+Show that the Borel algebra $\calB$ in $\bfR^n$ is the smallest
+$\sigma$-algebra containing the closed sets in $\bfR^n$.
+\end{problem}
+\begin{proof}
+  We defined the Borel algebra $\calB$ in $\bfR^n$ to be the smallest
+  $\sigma$-algebra containing the open sets in $\bfR^n$. Since $\calB$
+  contains all the closed subsets of $\bfR^n$, theorem 3.17, it suffices to
+  show that $\calB$ is the smallest such $\sigma$-algebra. Suppose $\calB'$
+  is another $\sigma$-algebra containing all of the closed sets in
+  $\bfR^n$. Then, by theorem 3.17, $\calB'$ contains all of the open sets
+  of $\bfR^n$ and, since $\calB$ is the smallest $\sigma$-algebra
+  containing the open subsets of $\bfR^n$, we have $\calB\subset\calB'$, as
+  desired.
+\end{proof}
+\newpage
+
+\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\,9]
+  If $\left\{E_k\right\}_{k=1}^\infty$ is a sequence of sets with
+  $\sum\left|E_k\right|_e<+\infty$, show that $\limsup E_k$ (and also
+  $\liminf E_k$) has measure zero.
+\end{problem}
+\begin{proof}
+  Define $E\coloneqq\limsup E_k$ and
+  $E'_\ell\coloneqq\bigcup_{k=\ell}^\infty E_k$. Then $E'_\ell$ is a
+  decreasing (with respect to inclusion) sequence of sets with
+  $\lim_\ell E_\ell'=E$. Then $E$ is contained in the intersection
+  $\bigcap_{\ell=n}^\infty E_\ell'$ for all $n$, so by the monotonicity of
+  the outer measure we have
+  \[
+  \left|E\right|_e\leq\left|E_\ell'\right|_e.
+\]
+On the other hand, we also have
+\[
+  \left|E_n'\right|_e\leq\sum_{k=n}^\infty\left|E_k\right|_e
+\]
+for all $n$. Since, by assumption, the sum $\sum\left|E_k\right|_e$
+converges, we have, for every $\varepsilon>0$, there exists $N$
+sufficiently large such that the sum
+$\sum_{k=n}^\infty\left|E_k\right|_e<\varepsilon$ for every $n\geq
+N$. Thus, $\left|E\right|_e\leq\varepsilon$ for every $\varepsilon>0$. Let
+$\varepsilon\to 0$ and we have $\left|E\right|_e=0$ as desired. Lastly, we
+note that for any sequence $\left\{a_k\right\}\subset\bfR$ we have
+$\liminf a_n\leq\limsup a_n$ so, naturally, $\liminf E_k=0$.
+\end{proof}
+\newpage
+
+\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\,10]
+If $E_1$ and $E_2$ are measurable, show that
+$\left|E_1\cup E_2\right|+\left|E_1\cap
+  E_2\right|=\left|E_1\right|+\left|E_2\right|$.
+\end{problem}
+\begin{proof}
+Without loss of generality, we may assume that
+$\left|E_1\right|,\left|E_2\right|<\infty$, for otherwise the result holds
+trivially.
+
+By Carathéodory, we have that
+
+\begin{equation}
+\label{eq:1}
+\left|E_1\right|=\left|E_1\cap
+  E_2\right|+\left|E_1\minus E_2\right|
+\quad\text{and}\quad
+\left|E_2\right|=\left|E_1\cap
+  E_2\right|+\left|E_2\minus E_1\right|.
+\end{equation}
+Moreover, by elementary set theory, we have $\left(E_1\cup E_2\right)\minus
+E_2=E_1\minus\left(E_1\cap E_2\right)$ and $E_1\subset E_1\cup E_2$, and
+$E_1\cap E_2\subset E_1$ so by rearranging (\ref{eq:1}) we have
+\[
+\left|E_1\cup E_2\right|+\left|E_1\cap
+  E_2\right|=\left|E_1\right|+\left|E_2\right|,
+\]
+as desired.
+\end{proof}
 
 %%% Local Variables:
 %%% mode: latex
