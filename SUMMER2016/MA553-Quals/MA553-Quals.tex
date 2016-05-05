@@ -35,9 +35,9 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{mathtools}
-\usepackage{eucal}
-\usepackage{mathrsfs}
-\usepackage[nointegrals]{wasysym}
+% \usepackage{eucal}
+% \usepackage{mathrsfs}
+% \usepackage[nointegrals]{wasysym}
 
 %% Language
 \usepackage{cmap}
@@ -145,7 +145,7 @@
 \newtheorem{definition}{Definition}
 \newtheorem{example}{Examples}
 \newtheorem{examples}[example]{Example}
-\newtheorem{exercise}{Exercise}[chapter]
+\newtheorem{exercise}{Exercise}[subsection]
 \newtheorem{problem}[exercise]{Problem}
 
 \newtheorem*{example*}{Example}
@@ -157,8 +157,9 @@
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
 %% Counters
+\setsecnumdepth{subsection}
 \counterwithout{exercise}{chapter}
-\numberwithin{equation}{section}
+\numberwithin{equation}{subsection}
 \counterwithout{equation}{chapter}
 
 % \numberwithin{equation}{chapter}

@@ -1,7 +1,7 @@
 \subsection{Homework 7}
 % #7 - Due Feb. 29 Read Sections 5.1-2. Chapter 4: #9, 11, 15, 18 (ignore
 % the second part concerning convergence in measure);
-\begin{problem}[Wheeden \& Zygmund {\S}4, Ex.\@ 9]
+\begin{problem}[Wheeden \& Zygmund Ch.\@ 4, Ex.\@ 9]
 \begin{enumerate}[label=(\alph*)]
 \item Show that the limit of a decreasing (increasing) sequence of
   functions usc (lsc) at $\bfx_0$ is usc (lsc) at $\bfx_0$. In particular,
@@ -12,220 +12,59 @@
 \end{enumerate}
 \end{problem}
 \begin{proof}
-(a) Suppose $\left\{f_k\colon E\to\bfR\right\}_{k=1}^\infty$ is a sequence
-of decreasing functions which are usc at $\bfx_0\in E$ and put $f\coloneqq\lim
-f_k$. Then, since the $f_k$'s are decreasing, we have
-\begin{equation}
-  \label{eq:decreasing-estimate-on-f}
-f(\bfx)\leq f_k(\bfx)\qquad\text{for all $\bfx\in E$.}
-\end{equation}
-Moreover, $f_k$ being usc at $\bfx_0$ means that for any sequence
-$\bfx_k\to\bfx_0$, $\varlimsup_{\bfx\to\bfx_0} f_k(\bfx)\leq
-f_k(\bfx_0)$. Thus, by \eqref{eq:decreasing-estimate-on-f} we have
-\begin{equation}
-  \label{eq:limit-estimate-on-f}
-\varlimsup_{\bfx\to\bfx_0}f(\bfx)\leq\varlimsup_{\bfx\to\bfx_0}
-f_k(\bfx)\leq f_k(\bfx_0).
-\end{equation}
-Now, let $k\to\infty$ and we have $\varlimsup_{\bfx\to\bfx_0} f(\bfx)\leq
-f(\bfx_0)$. Thus, $f$ is usc at $\bfx_0$.
-\\\\
-(b) Mimicking the construction of the Cantor--Lebesgue function, divide the
-interval into $2n$ closed intervals
-$I_1\coloneqq[y_0,y_1],...,I_{2n}\coloneqq[y_{2n-1},y_{2n}]$ where $y_0=a$,
-$y_{2n}=b$. Define
-\begin{equation}
-  \label{eq:define-fn}
-f_n(y_k)\coloneqq\max_{I_{k}\cup I_{k+1}} f(x)
-\end{equation}
-and $f_n(x)$ is linear on $I_n$, i.e., is a line connecting $f(y_{n-1})$ to
-$f(y_n)$. Then the function $f_n$ is clearly continuous on $[a,b]$ since it
-is piece-wise linear and it is decreasing since $f$ is usc (on smaller
-intervals, the jumps are smaller). We claim that $f_n\to f$.  Fix
-$x\in[a,b]$. Given $\varepsilon>0$, for sufficiently large index $N\in\bfN$
-for every $n\geq N$ we have
-\begin{align*}
-|f(x)-f_n(x)|&<\left|f(x)-f_n(y_{k-1})\right|\\
-\shortintertext{for $x\in I_{k-1}\cup I_k$}
-             &=\bigl|f(x)-{\textstyle\max_{y\in I_{k-1}\cup I_{k}}}f(y)\bigr|\\
-             &<\varepsilon
-\end{align*}
-for sufficiently small $I_k$'s (I'm sure).
 \end{proof}
-\newpage
 
-\begin{problem}[Wheeden \& Zygmund {\S}4, Ex.\@ 11]
-Let $f$ be defined on $\bfR^n$ and let $B(\bfx)$ denote the open ball
-$\left\{\,\bfy\;\middle|\;\left|\bfx-\bfy\right|<r\,\right\}$ with center
+\begin{problem}[Wheeden \& Zygmund Ch.\@ 4, Ex.\@ 11]
+Let $f$ be defined on $\bbR^n$ and let $B(\bfx)$ denote the open ball
+$\left\{\,\bfy:|\bfx-\bfy|<r\,\right\}$ with center
 $\bfx$ and fixed radius $r$. Show that the function
-$g(\bfx)=\sup\left\{\,f(\bfy)\;\middle|\;\bfy\in B(\bfx)\,\right\}$ is lsc
-and the function $h(\bfx)=\inf\left\{\,f(\bfy)\;\middle|\;\bfy\in
-B(\bfx)\,\right\}$ is usc on $\bfR^n$. Is the same true for the closed ball
-$\left\{\,\bfy\;\middle|\;\left|\bfx-\bfy\right|\leq r\,\right\}$?
+$g(\bfx)=\sup\left\{\,f(\bfy):\bfy\in B(\bfx)\,\right\}$ is lsc
+and the function $h(\bfx)=\inf\left\{\,f(\bfy):\bfy\in
+B(\bfx)\,\right\}$ is usc on $\bbR^n$. Is the same true for the closed ball
+$\left\{\,\bfy:|\bfx-\bfy|\leq r\,\right\}$?
 \end{problem}
 \begin{proof}
-% Fix $\bfx_0\in\bfR^n$ and let $\left\{\bfx_k\right\}$ be any sequence
-% converging to $\bfx_0$. Then since $g(\bfx_0)$ is the supremum of $f(\bfx)$
-% for all $\bfx\in B(\bfx_0)$, given $\varepsilon>0$ there exists $\bfy\in
-% B(\bfx_0)$ such that $f(\bfy)>g(\bfx_0)-\varepsilon$. Let
-% $\delta\coloneqq\frac{1}{2}(r-|\bfy-\bfx_0|)$ ($\delta$ is positive since
-% $\bfy\in B(\bfx_0)$ hence $|\bfy-\bfx_0|<r$). Then $\bfx_k\to\bfx_0$ means
-% that for our chosen $\delta$ there exists an index $N\in\bfN$ such that
-% $\bfx_n\in B_\delta(\bfx_0)$ for every $n\geq N$. Now, note that for
-% $\bfx_n\in B_\delta(\bfx_0)$ we have
-% \begin{equation}
-% \label{eq:ball-estimates-x-y}
-% \begin{aligned}
-% |\bfx_n-\bfy|&=|\bfx_n-\bfx_0-(\bfy-\bfx_0)|\\
-%            &\leq|\bfx_n-\bfx_0|+|\bfy-\bfx_0|\\
-%            &=\tfrac{1}{2}(r-|\bfy-\bfx_0|)+|\bfy-\bfx_0|\\
-%            &=\tfrac{1}{2}r+\tfrac{1}{2}|\bfy-\bfx_0|\\
-%            &<r
-% \end{aligned}
-% \end{equation}
-% so $\bfy\in B(\bfx_n)$ hence, $g(\bfx_n)\geq f(\bfy)>g(\bfx_0)-\varepsilon$
-% so $\varliminf_{\bfx_k\to\bfx_0} g(\bfx_n)>g(\bfx_0)-\varepsilon$ since
-% $\varliminf g(\bfx_0)=\lim_{j\to\infty}\left\{\,\inf_{k\geq
-%     j}g(\bfx_0)\,\right\}$ by definition. Now let $\varepsilon\to 0$.
-Fix $\bfx_0\in\bfR^n$. By 4.14(ii), given a real number $m$ such that
-$f(\bfx_0)>m$, it suffices to show that there exists $\delta>0$ such that
-for every $\bfx\in B_\delta(\bfx_0)$ we have $g(\bfx)>m$. Since $g(\bfx_0)$
-is the supremum of $f(\bfx)$ for all $\bfx\in B(\bfx_0)$, given
-$\varepsilon>0$ such that $g(\bfx_0)-\varepsilon>m$ there exists $\bfy\in
-B(\bfx_0)$ such that $f(\bfy)>g(\bfx_0)-\varepsilon$. Let
-$\delta\coloneqq\frac{1}{2}(r-|\bfy-\bfx_0|)$ ($\delta$ is positive since
-$\bfy\in B(\bfx_0)$ hence $|\bfy-\bfx_0|<r$). Then for any $\bfx\in
-B_\delta(\bfx_0)$ we have
-\begin{equation}
-\label{eq:ball-estimates-x-y}
-\begin{aligned}
-|\bfx-\bfy|&=|\bfx-\bfx_0-(\bfy-\bfx_0)|\\
-           &\leq|\bfx-\bfx_0|+|\bfy-\bfx_0|\\
-           &=\tfrac{1}{2}(r-|\bfy-\bfx_0|)+|\bfy-\bfx_0|\\
-           &=\tfrac{1}{2}r+\tfrac{1}{2}|\bfy-\bfx_0|\\
-           &<r
-\end{aligned}
-\end{equation}
-so $\bfy\in B(\bfx)$. Hence, $g(\bfx)\geq f(\bfy)>g(\bfx_0)-\varepsilon>m$,
-i.e.,
-$B_\delta(\bfx_0)\subset\left\{\,\bfx\;\middle|\;f(\bfx)>m\,\right\}$. Thus,
-$g$ is lsc on $\bfR^n$.
-
-The proof for $h$ is similar to $g$. In fact, note that for any set
-$E\subset\bfR$ we have $\inf E=-\sup(-E)$ so that if we set $f'\coloneqq
--f$ and define $g'(\bfx)\coloneqq\sup\left\{\,f'(\bfy)\;\middle|\;\bfy\in
-  B(\bfx)\,\right\}$. By the above, $g'$ is lsc in $\bfR^n$ so $h=-g'$ is
-usc in $\bfR^n$.
-
-For the last part consider the map
-\begin{equation}
-  \label{eq:non-usc-map}
-f(x)\coloneqq
-\begin{cases}
-1&\text{if $x<x_0$}\\
-0&\text{if $x\geq x_0$}
-\end{cases}
-\end{equation}
-defined earlier in the section. Let
-$h(x)\coloneqq\inf\bigl\{\,f(y)\bigm|y\in\overline{B(x)}\,\bigr\}$. Let
-$x$ be a distance of $r$ to the right of $x_0$. Then $1/2>h(x)=0$. However,
-for any $\delta>0$, $y\in B_\delta(x)$ we have $x'\in\overline{B(y)}$ such
-that $x'<x_0$. Hence, $h(y)=1>1/2$ so $h$ is not usc.
 \end{proof}
-\newpage
 
-\begin{problem}[Wheeden \& Zygmund {\S}4, Ex.\@ 15]
+\begin{problem}[Wheeden \& Zygmund Ch.\@ 4, Ex.\@ 15]
 Let $\left\{f_k\right\}$ be a sequence of measurable functions defined on a
 measurable set $E$ with $|E|<\infty$. If $|f_k(M)|\leq M<\infty$ for all
 $k$ for each $\bfx\in E$, show that given $\varepsilon>0$, there is closed
-$F\subset E$ and finite $M$ such that $|E\minus F|<\varepsilon$ and
+$F\subset E$ and finite $M$ such that $|E\smallsetminus F|<\varepsilon$ and
 $|f_k(\bfx)|\leq M$ for all $\bfx\in F$.
 \end{problem}
 \begin{proof}
-Define $f\coloneqq\sup|f_k|$. Note that, since $|f_k|=f^++f^-$ and $f^+$
-and $f^-$ are measurable, $|f_k|$ is measurable hence, by 4.11, $f$ is
-measurable. Now, given $\varepsilon>0$ by Lusin's theorem $f$ has the
-$\calC$-property on $E$, i.e., there exists a closed subset $F$ of $E$ such
-that $|E\minus F|<\varepsilon/2$ and $f$ is continuous when restricted to
-$F$. Take the $\delta>0$ such that
-$\bigl|E\minus\overline{B_\delta(\mathbf{0})}\bigr|<\varepsilon/2$. Then
-$F\cap\overline{B_\delta(\mathbf{0})}$ is closed and compact and we have
-\begin{align*}
-\left|E\minus(F\cap\overline{B_\delta(\mathbf{0})})\right|
-&=\left|E\minus F\cup
-  \bigl(E\minus\overline{B_\delta(\mathbf{0})}\bigr)\right|\\
-&\leq|E\minus F|+\bigl|E\minus\overline{B_\delta(\mathbf{0})}\bigr|\\
-&<\varepsilon.
-\end{align*}
-By Problem 6.2 (W\&Z, 4.7) $f$ achieves its maximum $M$ on
-$F\cap\overline{B_\delta(\mathbf{0})}$. Thus, $|f_k|\leq M$ for all
-$\bfx\in F\cap\overline{B_\delta(\mathbf{0})}$.
 \end{proof}
-\newpage
 
-\begin{problem}[Wheeden \& Zygmund {\S}4, Ex.\@ 18]
+\begin{problem}[Wheeden \& Zygmund Ch.\@ 4, Ex.\@ 18]
 If $f$ is measurable on $E$, define
-$\omega_f(a)=\left|\left\{\,f>a\,\right\}\right|$ for
+$\omega_f(a)=|\{\,f>a\,\}|$ for
 $-\infty<a<\infty$. If $f_k\nearrow f$, show that
 $\omega_{f_k}\nearrow\omega_f$. If $f_k\to f$, show that
 $\omega_{f_k}\to\omega_f$ at each point of continuity of $\omega_f$. [For
 the second part, show that if $f_k\to f$, then
-$\varlimsup_{k\to\infty}\omega_{f_k}(a)\leq\omega_f(a-\varepsilon)$ and
-$\varliminf_{k\to\infty}\omega_{f_k}(a)\geq\omega_f(a+\varepsilon)$ for every
+$\limsup_{k\to\infty}\omega_{f_k}(a)\leq\omega_f(a-\varepsilon)$ and
+$\liminf_{k\to\infty}\omega_{f_k}(a)\geq\omega_f(a+\varepsilon)$ for every
 $\varepsilon>0$.]
 \end{problem}
 \begin{proof}
-For fixed $a$ define $E_k\coloneqq\left\{\,f_k>a\,\right\}$. Then we have
-$E_1\subset E_2\subset\cdots$ so $E_k\nearrow\bigcup E_k$. Now, it is clear
-that $\left\{\,f>a\,\right\}\supset\bigcup E_k$ since $\bfx\in\bigcup E_k$
-implies that $\bfx\in E_k$ for some $k$ so $f_k(\bfx)>a$ for all $K\geq
-k$. In particular, $f(\bfx)>a$. Thus, $\bfx\in\left\{\,f>a\,\right\}$. On the
-other hand, if $\bfx\in\left\{\,f>a\,\right\}$ then $f(\bfx)>a$ so
-$f_k\nearrow f$ implies that for sufficiently large $N$ we have
-$f_N(\bfx)>a$. Thus, $\bfx\in E_N$ so $\bfx\in\bigcup E_k$ and we have
-\begin{equation}
-\label{eq:equality-of-f-a}
-\left\{\,f>a\,\right\}=\bigcup E_k.
-\end{equation}
-It follows by 3.26(i) that $\omega_{f_k}\nearrow\omega_f$ point-wise.
 \end{proof}
-\newpage
 
 % (Chapter 5: # 1, 2, 3, 4).
-\begin{problem}[Wheeden \& Zygmund {\S}5, Ex.\@ 1]
+\begin{problem}[Wheeden \& Zygmund Ch.\@ 5, Ex.\@ 1]
 If $f$ is a simple measurable function (not necessarily positive) taking
 values $a_j$ on $E_j$, $j=1,...,N$, show that $\int_E f=\sum_{j=1}^N
-a_j\left|E_j\right|$. [Use (5.24)].
+a_j|E_j|$. [Use (5.24)].
 \end{problem}
 \begin{proof}
-Since $f$ is a simple measurable function $E_k\cap E_\ell=\emptyset$ for
-$k\neq\ell$. Since $E\coloneqq\bigcup_{j=1}^N E_j$ is countable, by 5.24 we
-have
-\[
-\int_E f=\sum_{j=1}^N\int_{E_j} f=\sum_{j=1}^N\int a_j\chi_{E_j}=\sum_{j=1}^N a_j|E_j|.
-\]
 \end{proof}
-\newpage
 
-\begin{problem}[Wheeden \& Zygmund {\S}5, Ex.\@ 3]
+\begin{problem}[Wheeden \& Zygmund Ch.\@ 5, Ex.\@ 3]
 Let $\left\{f_k\right\}$ be a sequence of nonnegative measurable functions
 defined on $E$. If $f_k\to f$ and $f_k\leq f$ a.e.\@ on $E$, show that
 $\int_E f_k\to\int_E f$.
 \end{problem}
 \begin{proof}
-By Fatou's lemma we have
-\begin{equation}
-  \label{eq:fatou-lower-bound}
-\int_E f=\int_E\varliminf_{k\to\infty} f_k\leq\varliminf_{k\to\infty}\int_E f_k.
-\end{equation}
-Now, by 5.10 since $f_k\leq f$ a.e.\@ on $E$ we have $\int_E
-f_k\leq\int_E f$ so
-\begin{equation}
-  \label{eq:upper-bound}
-\varlimsup_{k\to\infty}\int f_k\leq\int_E f.
-\end{equation}
-But $\varliminf\int_E f_k\leq\varlimsup\int_E f_k$ so we must have
-$\lim\int_E f_k\to\int_E f$ as $k\to\infty$.
 \end{proof}
 
 %%% Local Variables:

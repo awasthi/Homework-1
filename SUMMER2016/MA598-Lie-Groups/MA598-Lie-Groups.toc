@@ -1,0 +1,8 @@
+\select@language {english}
+\select@language {english}
+\contentsline {chapter}{Contents}{\if@rlmain \I {1}\else \textLR {1}\fi }{section*.1}
+\select@language {english}
+\contentsline {chapter}{\chapternumberline {1}\bgroup \beginL \latintext Prologue\endL \egroup }{\if@rlmain \I {2}\else \textLR {2}\fi }{chapter.1}
+\contentsline {section}{\numberline {\if@rl \I {1.1}\else \textLR {1.1}\fi }Introduction}{\if@rlmain \I {2}\else \textLR {2}\fi }{section.1.1}
+\select@language {english}
+\contentsline {chapter}{Bibliography}{\if@rlmain \I {3}\else \textLR {3}\fi }{section*.3}

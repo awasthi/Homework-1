@@ -1,9 +1,9 @@
 \def\documentauthor{Carlos Salinas}
-\def\documenttitle{MA571: Qual Problems}
+\def\documenttitle{Exercises in Basic Mathematics}
 % \def\hwnum{1}
-\def\shorttitle{MA571 Quals}
-\def\coursename{MA571}
-\def\documentsubject{point-set topology}
+\def\shorttitle{Basic Mathematics}
+\def\coursename{MA544}
+\def\documentsubject{algebra, linear algebra, differential geometry, lie groups}
 \def\authoremail{salinac@purdue.edu}
 
 \documentclass[article,10pt]{memoir}
@@ -20,6 +20,9 @@
     menucolor=black,
     runcolor=black,
     urlcolor=black,
+    % linkcolor=violet!85!black,
+    % citecolor=YellowOrange!85!black,
+    % urlcolor=Aquamarine!85!black,
     hyperindex=false,
     hyperfootnotes=true,
     pdftitle={\shorttitle},
@@ -31,8 +34,9 @@
 
 %% Math
 \usepackage{amsmath}
-\usepackage{amsthm}
+\usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{mathtools}
 % \usepackage{eucal}
 % \usepackage{mathrsfs}
@@ -78,9 +82,11 @@
 % \usepackage{unicode-math}
 % \usepackage{unicode-minionmath}
 
+% % \setmainfont[Ligatures=TeX]{Minion Pro}
 % \setmainfont[Ligatures=TeX]{Libertinus Serif}
 % \setsansfont{Libertinus Sans}
 % \setmonofont{Libertinus Mono}
+
 % \setmathfont{MinionMath-Regular.otf}
 % \setmathfont[range={\mathfrak}]{latinmodern-math.otf}
 % \setmathfont[range={\mathcal}]{latinmodern-math.otf}
@@ -94,6 +100,11 @@
 
 % \newfontfamily\farsifont[Script=Arabic,
 %                          Scale=MatchUppercase]{Amiri}
+
+% % \newfontfamily\farsifont[Script=Arabic,
+% %                          Scale=MatchUppercase]{Adobe Arabic}
+% % \newfontfamily\farsifontsf[Script=Arabic,
+% %                          Scale=MatchUppercase]{Myriad Arabic}
 
 % \setmainlanguage[variant=american]{english}
 % \setotherlanguage{farsi}
@@ -117,7 +128,13 @@
 % \setCJKmainfont[Hangul]{NanumMyeongjo}
 % \setCJKsansfont[Hangul]{NanumGothic}
 
-% %% Theorems and definitions
+% % \setCJKmainfont{Adobe Ming Std}
+% % \setCJKmainfont{Adobe Ming Std}
+% % \setCJKmainfont[Kana]{Kozuka Mincho Pr6N}
+% % \setCJKmainfont[Hangul]{Adobe Myungjo Std}
+% % \setCJKsansfont[Hangul]{Adobe Gothic Std}
+
+%% Theorems and definitions
 %% remove parentheses
 % \makeatletter
 % \def\thmhead@plain#1#2#3{%
@@ -144,7 +161,7 @@
 \newtheorem{definition}{Definition}
 \newtheorem{example}{Examples}
 \newtheorem{examples}[example]{Example}
-\newtheorem{exercise}{Exercise}[subsection]
+\newtheorem{exercise}{Exercise}[section]
 \newtheorem{problem}[exercise]{Problem}
 
 \newtheorem*{example*}{Example}
@@ -152,13 +169,12 @@
 \newtheorem*{problem*}{Problem}
 
 \begin{document}
-%% Footnotes
+%% Footnote style
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
 %% Counters
-\setsecnumdepth{subsection}
 \counterwithout{exercise}{chapter}
-\numberwithin{equation}{subsection}
+\numberwithin{equation}{section}
 \counterwithout{equation}{chapter}
 
 %% Redefine the QED symbol
@@ -172,35 +188,12 @@
 \maketitle
 \tableofcontents
 
-%% Munkres notes
+%% Notes
+\include{problems/}
 
-%% McClure Homework
-\include{mcclure/571-hw-1}
-\include{mcclure/571-hw-2}
-\include{mcclure/571-hw-3}
-\include{mcclure/571-hw-4}
-\include{mcclure/571-hw-5}
-\include{mcclure/571-hw-6}
-\include{mcclure/571-hw-7}
-\include{mcclure/571-hw-8}
-\include{mcclure/571-hw-9}
-\include{mcclure/571-hw-10}
-\include{mcclure/571-hw-11}
-\include{mcclure/571-hw-12}
-% \include{mcclure/571-hw-13}
-
-%% McClure Quals
-\include{mcclure/571-aug-14}
-\include{mcclure/571-jan-14}
-\include{mcclure/571-jan-12}
-\include{mcclure/571-jan-11}
-
-%% Kaufmann quals
-% \include{kaufmann/MA571-Mid-JAN15}
-% \include{kaufmann/MA571-Final-JAN15}
-
-\bibliographystyle{plain}
-\bibliography{top-bib}
+%% Bibliography
+% \bibliographystyle{plain}
+% \bibliography{lie-bib}
 \end{document}
 
 %%% Local Variables:

@@ -2,6 +2,17 @@ This is BibTeX, Version 0.99d (TeX Live 2015/Arch Linux)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: MA571-Quals.aux
 A level-1 auxiliary file: mcclure/571-hw-1.aux
+A level-1 auxiliary file: mcclure/571-hw-2.aux
+A level-1 auxiliary file: mcclure/571-hw-3.aux
+A level-1 auxiliary file: mcclure/571-hw-4.aux
+A level-1 auxiliary file: mcclure/571-hw-5.aux
+A level-1 auxiliary file: mcclure/571-hw-6.aux
+A level-1 auxiliary file: mcclure/571-hw-7.aux
+A level-1 auxiliary file: mcclure/571-hw-8.aux
+A level-1 auxiliary file: mcclure/571-hw-9.aux
+A level-1 auxiliary file: mcclure/571-hw-10.aux
+A level-1 auxiliary file: mcclure/571-hw-11.aux
+A level-1 auxiliary file: mcclure/571-hw-12.aux
 A level-1 auxiliary file: mcclure/571-aug-14.aux
 A level-1 auxiliary file: mcclure/571-jan-14.aux
 A level-1 auxiliary file: mcclure/571-jan-12.aux
@@ -10,7 +21,7 @@ The style file: plain.bst
 Database file #1: top-bib.bib
 You've used 1 entry,
             2118 wiz_defined-function locations,
-            508 strings with 4206 characters,
+            519 strings with 4429 characters,
 and the built_in function-call counts, 247 in all, are:
 = -- 23
 > -- 7

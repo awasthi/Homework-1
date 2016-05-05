@@ -1,0 +1,98 @@
+\chapter{Gaussian Geometry}
+To begin, we will review some Gaussian geometry.
+
+Let the $n$-dimensional real vector space $\bbR^n$ be equipped with its
+standard Euclidean scalar product
+$\langle\cdot,\cdot\rangle\colon\bbR^n\times\bbR^n\to\bbR$. This is
+given by
+\[
+\langle \bfx,\bfy \rangle\coloneqq x_1y_1+\dotsb+x_ny_n
+\]
+and induces the norm $|\cdot|\colon\bbR^n\to\bbR_0^+$ on $\bbR^n$ is given
+by
+\[
+|\bfx|=\sqrt{{x_1}^2+\dotsb+{x_n}^2}.
+\]
+
+\begin{definition}
+A map $\Phi\colon\bbR^n\to\bbR^n$ is said to be a Euclidean motion of
+$\bbR^n$ if it is given by $\Phi(\bfx)\coloneqq A\bfx+\bfb$ where
+$\bfb\in\bbR^n$ and $A\in\Orth(n)$ where
+\[
+\Orth(n)\coloneqq\left\{\,X\in\bbR^{n\times n}:X^\rmT X=I\,\right\}.
+\]
+A Euclidean motion $\Phi$ is said to be rigid or orientation preserving if
+$A\in\SO(n)$ where
+\[
+\SO(n)\coloneqq\left\{\,X\in\Orth(n):{\det X=1}\,\right\}.
+\]
+\end{definition}
+
+\begin{definition}
+A parametericzed curve in $\bbR^n$ is a $C^1$-map $\gamma\colon I\to\bbR^n$
+from an open interval $I$ on the real line $\bbR$. The image $\gamma(I)$ in
+$\bbR^n$ is the corresponding geometric curve. We say that the map
+$\gamma\colon I\to\bbR^n$ parametrizes $\gamma(I)$. The derivative
+$\dot\gamma(t)$ is called the tangent of $\gamma$ at the point $\gamma(t)$ and
+\[
+L(\gamma)\coloneqq\int_I|\dot\gamma(t)|\diff t\leq\infty
+\]
+is the arclength of $\gamma$. The curve $\gamma$ is said to be regular if
+$\gamma'(t)\neq 0$ for all $t\in I$.
+\end{definition}
+
+\begin{example}
+For example, if $\bfp$ and $\bfq$ are two distinct points in $\bbR^n$, then
+$\gamma\colon\bbR\to\bbR^n$ with
+\[
+\gamma(t)\coloneqq (1-t)\bfp+t\bfq
+\]
+parametrizes the straight line through $\bfp=\gamma(0)$ and
+$\bfq=\gamma(1)$.
+\end{example}
+
+\begin{example}
+If $r\in\bbR^+$ and $\bfp\in\bbR^n$ then $\gamma\colon\bbR\to\bbR^2$ with
+\[
+\gamma(t)\coloneqq\bfp+r(\cos t,\sin t)
+\]
+parametrizes a circle with center $\bfp$ and radius $r$. The arclength of
+the curve $\gamma|_{(0,2\pi)}$ is
+\[
+L(\gamma;0,2\pi)=\int_0^{2\pi}|\dot\gamma(t)|\diff t=2\pi r.
+\]
+\end{example}
+
+\begin{definition}
+A regular curve $\gamma\colon(a,b)\to\bbR^n$ is said to parametrize
+$\gamma(a,b)$ by arclength if $\dot\gamma(s)=1$ for all $s\in(a,b)$, i.e.,
+the tangent $\dot\gamma(s)$ are elements of the unit sphere $S^{n-1}$ in
+$\bbR^n$.
+\end{definition}
+
+\begin{theorem}
+Let $\gamma\colon I\to\bbR^n$ be a regular curve in $\bbR^n$. Then the
+image $\gamma(I)$ of $\gamma$ can be parametrized by arclength.
+\end{theorem}
+
+\begin{proof}
+Define the arclength function $\sigma\colon (a,b)\to\bbR^+$ by
+\[
+\sigma(t)\coloneqq\int_a^t|\dot\gamma(u)|\diff u
+\]
+Then $\dot\sigma(t)=|\dot\gamma(t)|>0$ so $\sigma$ is strictly increasing
+and
+\[
+\sigma(a,b)=(0,L(\gamma)).
+\]
+Let $\tau\colon(0,L(\gamma))\to(a,b)$ be the inverse of $\sigma$ such that
+$\sigma(\tau(s))=s$ for all $s\in(0,L(\gamma))$. By differentiating we get
+\[
+\frac{d}{ds}(\sigma(\tau(s)))=\dot\sigma(\tau(s))\dot\tau(s)=1.
+\]
+\end{proof}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA598-Lie-Groups"
+%%% End:

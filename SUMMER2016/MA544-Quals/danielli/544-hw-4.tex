@@ -2,327 +2,35 @@
 % #4 - Due Feb. 8 Read Sections 3.5, 4.1. Chapter 3: # 12, 13, 14, 15 (16,
 % 18), (Chapter 4: # 1, 2
 
-\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\@ 12]
-If $E_1$ and $E_2$ are measurable sets in $\bfR^1$, show $E_1\times E_2$ is
-a measurable subset of $\bfR^2$ and $\left|E_1\times
-  E_2\right|=\left|E_1\right|\left|E_2\right|$. (Interpret $0\cdot\infty$
-as $0$.) [\textsc{Hint:} Use a characterization of measurability.]
+\begin{problem}[Wheeden \& Zygmund Ch.\@ 3, Ex.\@ 12]
+If $E_1$ and $E_2$ are measurable sets in $\bbR^1$, show $E_1\times E_2$ is
+a measurable subset of $\bbR^2$ and $|E_1\times E_2|=|E_1||E_2$. (Interpret
+$0\cdot\infty$ as $0$.) [\emph{Hint:} Use a characterization of
+measurability.]
 \end{problem}
 \begin{proof}
-By (3.28) (i) we may write $E_1$ and $E_2$ as the set difference $H_1\minus
-Z_1$ and $H_2\minus Z_2$, respectively, where $H_1$ and $H_2$ are $G_\delta$
-and $Z_1$ and $Z_2$ are measure zero. Now, by elementary set theory, the
-Cartesian product $E_1\times E_2$ can then be written as
-\begin{equation}
-\label{eq:1}
-E_1\times E_2
-=\left(H_1\minus Z_1\right)\times\left(H_2\minus Z_2\right)
-=\underbrace{\left(H_1\times H_2\right)}_H\minus
-\underbrace{\left(Z_1\times H_2\minus H_1\times Z_2\minus Z_1\times Z_2\right)}_Z
-\end{equation}
-Hence, we win by (3.28) (i) if we can show that the Cartesian product of two
-$G_\delta$ sets is an $G_\delta$ set and if the Cartesian product of a
-measurable set with a set of measure zero is measure zero.
-
-First, we prove the former, since the argument to be made is little more
-than elementary set theory.
-\begin{lemma}
-\label{lem:product-of-g-delta}
-The Cartesian product of $G_\delta$ sets is again $G_\delta$.
-\end{lemma}
-\begin{proof}[Proof of lemma \ref{lem:product-of-g-delta}]
-\renewcommand\qedsymbol{$\clubsuit$}
-Let $G_1$ and $G_2$ be $G_\delta$. Write
-$G_1=\bigcap G_k'$ and $G_2=\bigcap G_k''$ where the $G_k'$'s and the
-$G_k''$'s are open subsets of $\bfR$. Then, $G_k'\times G_\ell''$ are
-open subsets of $\bfR^2$ by the definition of the product
-topology. Moreover, $G_k'\times G_\ell''\subset G_1\times G_2$ hence,
-$\bigcap_{k,\ell} G_k'\times G_\ell''\subset G_1\times G_2$. Thus, it
-suffices to show that
-$\bigcap_{k,\ell} G_k'\times G_\ell''\supset G_1\times G_2$. Let
-$(x,y)\in G_1\times G_2$. Then $x\in G_1$ and $y\in G_2$. But since
-$G_1=\bigcap G_k'$ and $G_2=\bigcap G_k''$ then $x\in G_k'$ and
-$x\in G_\ell''$ for some $k$, $\ell$. In other words,
-$(x,y)\in G_k'\times G_\ell''$ so $(x,y)$ is in the intersection
-$\bigcap_{k,\ell}G_k'\times G_\ell''$. Hence, we have
-$G_1\times G_2=\bigcap_{k,\ell} G_k'\times G_\ell''$. We conclude that if
-$G_1$ and $G_2$ are $G_\delta$, then so is their Cartesian product
-$G_1\times G_2$.
 \end{proof}
 
-\begin{lemma}
-\label{lem:measure-of-product-of-measure-zero}
-Let $E$ be measurable and $Z$ be measure zero. Then $E\times Z$ is measure
-zero.
-\end{lemma}
-\begin{proof}[Proof of lemma \ref{lem:measure-of-product-of-measure-zero}]
-\renewcommand\qedsymbol{$\clubsuit$}
-Let $E$ be a measurable set with $\left|E\right|<\infty$ and $Z$ a set of
-measure zero. Then, for every $\varepsilon>0$ there exists a countable
-collection of intervals $\left\{I_k\right\}$ containing $Z$ such that
-$\sum\Vol\left(I_k\right)<\varepsilon$. Similarly, we can find a collection
-$\left\{I_k'\right\}$ of intervals containing $E$ such that
-$\sum\Vol\left(I_k'\right)<\left|E\right|+\varepsilon$. Then,
-$\left\{I_k'\times I_\ell\right\}$ is a countable collection of
-$2$-intervals containing $E\times Z$ with
-\begin{align*}
-\sum_{k,\ell}\Vol\left(I_k'\times I_\ell\right)
-&=\sum_{k,\ell}\Vol\left(I_k'\right)\Vol\left(I_\ell\right)\\
-&=\sum_k\sum_\ell\Vol\left(I_k'\right)\Vol\left(I_\ell\right)\\
-&=\left(\sum_k\Vol\left(I_k'\right)\right)
-\left(\sum_\ell\Vol\left(I_\ell\right)\right)\\
-&=\left(\left|E\right|+\varepsilon\right)\varepsilon
-\end{align*}
-Letting $\varepsilon\to 0$, we have $E\times Z$ is measure zero. If
-$\left|E\right|=\infty$, partition $E$ into disjoint finite measure subsets
-of $\bfR$ by taking the following intersection
-\[
-E_k=E\cap\left(B(0,k)\setminus B(0,k-1)\right)
-\]
-for $k\in\bfN$.\footnote{In fact, it might be quicker from now on to quote
-  the fact that $\bfR^n$ is $\sigma$-finite.} By our previous argument,
-$E_k\times Z$ is measure zero so $\left\{E_k\times Z\right\}$ is a cover of
-$E\times Z$ hence, by (3.24), we have
-\begin{align*}
-\left|E\times Z\right|
-&=\left|\left(\bigcup_k E_k\right)\times Z\right|\\
-&=\left|\bigcup_k E_k\times Z\right|\\
-&=\sum_k \left|E_k\times Z\right|\\
-&=0.
-\end{align*}
-Thus, $E\times Z$ is measure zero.
-\end{proof}
-
-By lemma \ref{lem:product-of-g-delta} and
-\ref{lem:measure-of-product-of-measure-zero}, $E_1\times E_2$ is measurable
-with $\left|E_1\times E_2\right|=\left|H_1\times H_2\right|$. It's left to
-show is that $\left|H_1\times H_2\right|=\left|H_1\right|\left|H_2\right|$.
-
-\begin{lemma}
-\label{lem:measure-of-product-of-g-delta}
-If $G_1$ and $G_2$ are $G_\delta$ then $\left|G_1\times
-  G_2\right|=\left|G_1\right|\left|G_2\right|$.
-\end{lemma}
-But before that, we need to prove the above for the case where $G_1$ and
-$G_2$ are open sets.
-
-\begin{lemma}
-\label{lem:measure-of-product-of-open}
-If $G_1$ and $G_2$ are open then $\left|G_1\times
-  G_2\right|=\left|G_1\right|\left|G_2\right|$.
-\end{lemma}
-\begin{proof}[Proof of lemma \ref{lem:measure-of-product-of-open}]
-\renewcommand\qedsymbol{$\clubsuit$}
-Let $G_1$ and $G_2$ be open with
-$\left|G_1\right|,\left|G_2\right|<\infty$. By (1.11), we may write $G_1$
-and $G_2$ as the countable intersection of a collection of nonoverlapping
-closed intervals $\left\{I_k\right\}$ and $\left\{I_k'\right\}$,
-respectively. Therefore, we have
-\[
-\left|G_1\right|=\sum_k\Vol\left(I_k\right)\quad\text{and}\quad
-\left|G_2\right|=\sum_k\Vol\left(I_k'\right).
-\]
-Moreover the collection $\left\{I_k\times I_\ell'\right\}$ is a cover of
-$G_1\times G_2$ of nonoverlapping closed $2$-intervals,\footnote{They are closed
-  because of elementary topology: the Cartesian product of two closed sets
-  is again closed in the product topology; and they are nonoverlapping
-  because if $(x,y)\in I_k\times I_\ell'\cap I_{k'}\times
-  I_{\ell'}\neq\emptyset$ then $x\in I_k\cap I_{k'}$ and $y\in I_\ell\cap
-  I_{\ell'}$ a contradiction.} so by (3.2) we have
-\begin{align*}
-\left|G_1\times G_2\right|
-&=\sum_{k,\ell}\Vol\left(I_k\times I_\ell'\right)\\
-&=\sum_{k,\ell}\Vol\left(I_k\right)\Vol\left(I_\ell'\right)\\
-&=\left(\sum_k\Vol(I_k)\right)\left(\Vol(I_\ell')\right)\\
-&=\left|G_1\right|\left|G_2\right|
-\end{align*}
-\end{proof}
-\begin{proof}[Proof of lemma \ref{lem:measure-of-product-of-g-delta}]
-\renewcommand\qedsymbol{$\clubsuit$}
-Now that we have the result of lemma \ref{lem:measure-of-product-of-open}
-we may easily proceed to the countable case. Let $G_1$ and $G_2$ be
-$G_\delta$. Then by lemma \ref{lem:product-of-g-delta} $G_1\times G_2$ is
-$G_\delta$ and we may write $G_1\times G_2$ as the intersection of a
-countable collection of open sets $\left\{G_k'\right\}$. In particular, if
-$\left\{G_k'\right\}$ is a collection of open sets covering $G_1\times G_2$
-that intersects to $G_1\times G_2$ then the collection
-$\left\{G_k''\right\}$, where $G_k''\coloneqq\bigcap_{\ell=1}^k G_\ell'$,
-also intersects to $G_1$ and has the property that $G_{k+1}''\subset
-G_k''$. Thus, we may as well assume that $\left\{H_k\right\}$ is decreasing
-so, by (3.26), we have
-\begin{align*}
-\left|G_1\times G_2\right|
-&=\lim_{k\to\infty}\left|H_k\right|,\\
-\intertext{but $H_k$ is open in the product topology so $H_k=H_k'\times
-  H_k''$ for open subsets $H_k',H_k''\subset\bfR$, giving us}
-&=\lim_{k\to\infty}\left|H_k\times H_k''\right|,\\
-\intertext{which, by lemma \ref{lem:measure-of-product-of-open}, is just}
-&=\lim_{k\to\infty}\left|H_k'\right|\left|H_k''\right|\\
-&=\left|E_1\right|\left|E_2\right|,
-\end{align*}
-since $H_k'\supset E_1$ and $H_k''\supset E_2$ are open so $\bigcap
-H_k'\supset E_1$ and $\bigcap H_k''\supset E_2$ and their outer measure
-approach the outer measure of $E_1$ and $E_2$ as $k\to\infty$.
-\end{proof}
-Putting together our results, by equation \ref{eq:1},
-lemma \ref{lem:measure-of-product-of-measure-zero}, and
-lemma \ref{lem:measure-of-product-of-g-delta}, we can express
-$E_1\times E_2$ as a $G_\delta$ set $H$ minus a set of measure zero $Z$
-and its measure is
-\[
- \left|E_1\times E_2\right|=
-\left|H_1\right|\left|H_2\right|=
-\left|E_1\right|\left|E_2\right|,
-\]
-as desired.
-\end{proof}
-\newpage
-
-\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\@ 13]
+\begin{problem}[Wheeden \& Zygmund Ch.\@ 3, Ex.\@ 13]
 Motivated by (3.7), define the \emph{inner measure} of $E$ by
-$\left|E\right|_i=\sup\left|F\right|$, where the supremum is taken over all
-closed subsets $F$ of $E$. Show that
+$|E|_i=\sup|F|$, where the supremum is taken over all closed subsets $F$ of
+$E$. Show that
 \begin{enumerate}[label=(\roman*)]
-\item $\left|E\right|_i\leq\left|E\right|_e$, and
-\item if $\left|E\right|_e<+\infty$, then $E$ is measurable if and only if
-  $\left|E\right|_i=\left|E\right|_e$.
+\item $|E|_i\leq|E|_e$, and
+\item if $|E|_e<+\infty$, then $E$ is measurable if and only if
+  $|E|_i=|E|_e$.
 \end{enumerate}
 [Use (3.22).]
 \end{problem}
 \begin{proof}
-(i) If the outer measure of $E$ is infinite, the inequality holds
-trivially. Suppose $|E|_e<\infty$. Since closed sets are measurable and
-their outer measure is equal to their Lebesgue measure, then we may replace
-$\left|F\right|$ by $\left|F\right|_e$ to mirror the definition of the
-outer-measure and, by the monotonicity of the outer measure, we have
-\begin{equation}
-\label{eq:monotonicity-outer-measure}
-\left|F\right|=\left|F\right|_e\leq\left|E\right|_e.
-\end{equation}
-Taking the supremum on both sides of (\ref{eq:monotonicity-outer-measure}),
-we obtain the desired inequality
-\begin{equation}
-\label{eq:inner-outer-measure}
-\left|E\right|_i\leq\left|E\right|_e.
-\end{equation}
-\\\\
-(ii) $\implies$ Suppose $E$ is measurable with
-$\left|E\right|<\infty$. By (3.22), given $\varepsilon>0$, there exists a
-closed set $F\subset E$ such that $\left|E\minus
-  F\right|_e<\varepsilon$. Since $F$ is measurable, by (3.31), we have
-\begin{equation}
-\label{eq:applied-caratheodory}
-\left|E\minus F\right|_e=\left|E\right|_e-\left|F\right|.
-\end{equation}
-But $E$ is also measurable, so equation (\ref{eq:applied-caratheodory})
-becomes
-\begin{equation}
-  \label{eq:becomes-this}
-\left|E\minus F\right|_e+\left|F\right|=\left|E\right|<\varepsilon+\left|F\right|.
-\end{equation}
-Taking the supremum of (\ref{eq:becomes-this}) over all $F$, we gave
-\[
-\left|E\right|_e=\left|E\right|\leq \left|F\right|+\varepsilon=\left|E\right|_i+\varepsilon
-\]
-for all $\varepsilon>0$. By equation (\ref{eq:inner-outer-measure}), we
-achieve equality of the inner and outer measure, i.e.,
-$\left|E\right|_i=\left|E\right|_e$.
-
-$\impliedby$ Conversely, suppose that
-$\left|E\right|_i=\left|E\right|_e$. Then, given $\varepsilon>0$, by the
-definition of outer measure, there exists an open set $G\supset E$ and, by
-the definition of inner measure, closed set $F\subset E$ such that
-\begin{equation}
-  \label{eq:inner-outer-approximation}
-\left|G\right|-\left|E\right|_e<\frac{\varepsilon}{2}\qquad\text{and}\qquad
-\left|E\right|_i-\left|F\right|=
-\left|E\right|_e-\left|F\right|<\frac{\varepsilon}{2}.
-\end{equation}
-Then
-\[
-\left|E\minus F\right|_e
-<\left|G\minus F\right|_e
-=\left|G\right|_e-\left|G\cap F\right|_e
-=\left|G\right|_e-\left|F\right|_e
-<2\left(\frac{\varepsilon}{2}\right)=\varepsilon.
-\]
-So by (3.22) $E$ is measurable.
 \end{proof}
-\newpage
 
-% \begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\@ 14]
-%   Show that the conclusion of part (ii) of Exercise 13 is false if
-%   $\left|E\right|_e=+\infty$.
-% \end{problem}
-% \begin{proof}
-% \end{proof}
-% \newpage
-
-\begin{problem}[Wheeden \& Zygmund {\S}3, Ex.\@ 15]
+\begin{problem}[Wheeden \& Zygmund Ch.\@ 3, Ex.\@ 15]
 If $E$ is measurable and $A$ is any subset of $E$, show that
-$\left|E\right|=\left|A\right|_i+\left|E\minus A\right|_e$. (See Exercise 13 for
-the definition of $\left|A\right|_i$.)
+$|E|=|A|_i+|E\smallsetminus A|_e$. (See Exercise 13 for
+the definition of $|A|_i$.)
 \end{problem}
 \begin{proof}
-If $A$ is measurable, by our previous problem,
-$\left|A\right|_e=\left|A\right|=\left|A\right|_i$ so by (3.31), we have
-\[
-|E\minus A|_e=|E|_e-|A|=|E|-|A|_i,
-\]
-so $\left|E\right|=\left|A\right|_i+\left|E\minus A\right|_e$.
-
-If $A$ is not measurable and $\left|E\right|<\infty$ then $|A|_e$ and
-$\left|E\minus A\right|_e<\infty$ since $E\minus A\subset E$. Hence, we can
-subtract the quantity $\left|E\minus A\right|_e$ from
-$\left|E\right|_e=\left|E\right|$ and we get
-\begin{align*}
-\left|E\right|-\left|E\minus A\right|_e
-&=\left|E\right|-\inf\left\{\,\left|G\right|:\text{$G\supset E\minus A$ is open}\,\right\}\\
-&=\left|E\right|-\inf\left\{\,\left|G\right|:\text{$G\supset E\minus A$ is open}\,\right\}\\
-&=\left|E\right|-\inf\left\{\,\left|G\right|:\text{$E\supset G\supset E\minus
-  A$ is open}\,\right\}\\
-&=\left|E\right|-\inf\left\{\,\left|E\right|-\left|F\right|:\text{$E\minus
-  G\subset A$, $G\supset E\minus A$ is open}\,\right\}\\
-\intertext{pulling the $|E|$ inside of the infimum we get}
-&=-\inf\left\{\,-\left|F\right|:\text{$F\subset A$, where $F\coloneqq
-  E\minus G$ and $G\supset A$ is open}\,\right\}\\
-&=\sup\left\{\,\left|F\right|:\text{$F\subset A$, where $F\coloneqq
-  E\minus G$ and $G\supset A$ is open}\,\right\}\\
-&=\left|A\right|_i,
-\end{align*}
-so $\left|E\right|=\left|A\right|_i+\left|E\minus A\right|_e$ as desired.
-
-More generally, if $E$ is measurable we can establish the following lower
-bound on $|E|$: By definition of the inner measure, for every $F\subset A$
-closed we have
-\begin{equation}
-\label{eq:inner-measure-lower-bound}
-|E|=|F|+|E\minus F|\geq |F|+\left|E\minus A\right|_e,
-\end{equation}
-which follows from (3.31), since $F\subset A\subset E$ is measurable,
-$E\minus A\subset E\minus F$, and the monotonicity of outer measure. Taking
-the supremum on both sides of equation (\ref{eq:inner-measure-lower-bound})
-over all closed $F\subset A$ we achieve the desired lower bound
-\begin{equation}
-  \label{eq:lower-bound}
-|E|\geq |A|_i+|E\minus A|_e.
-\end{equation}
-
-Now, let $E$ be measurable. Then, we have
-\begin{align}
-\label{eq:upper-bound}
-|A|_i+|E\minus A|_e
-&\geq\sup\left\{\,|F\cap A|_i+|F\minus A|_e:\text{$F\subset E$ is closed, $|F|<\infty$}\,\right\}\nonumber\\
-&=\sup\left\{\,|F|:\text{$F\subset E$ closed, $|F|<\infty$}\,\right\}\nonumber\\
-&=|E|_i\nonumber\\
-\intertext{which by our last problem is just}
-&=|E|,
-\end{align}
-since $E$ is measurable. Having bounded $|E|$ by equations
-(\ref{eq:lower-bound}) and (\ref{eq:upper-bound}) we achieve the equality
-\[
-|E|=|A|_i+|E\minus A|_e.\qedhere
-\]
 \end{proof}
 
 %%% Local Variables:

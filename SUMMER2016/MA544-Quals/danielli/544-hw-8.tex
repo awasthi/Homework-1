@@ -1,65 +1,66 @@
 \subsection{Homework 8}
-\begin{problem}[Wheeden \& Zygmund {\S}5, Ex.\@ 2]
+\begin{problem}[Wheeden \& Zygmund Ch.\@ 5, Ex.\@ 2]
 Show that the conclusion of (5.32) are not true without the assumption that
 $\varphi\in L(E)$. [In part (ii), for example, take $f_k=\chi_{(k,\infty)}$.]
 \end{problem}
 \begin{proof}
 \end{proof}
 
-\begin{problem}[Wheeden \& Zygmund {\S}5, Ex.\@ 4]
+\begin{problem}[Wheeden \& Zygmund Ch.\@ 5, Ex.\@ 4]
 If $f\in L(0,1)$, show that $x^kf(x)\in L(0,1)$ for $k=1,2,...$, and
-$\int_0^1 x^kf(x)\,dx\to 0$.
+$\int_0^1 x^kf(x)\diff x\to 0$.
 \end{problem}
 \begin{proof}
 \end{proof}
 
-\begin{problem}[Wheeden \& Zygmund {\S}5, Ex.\@ 6]
+\begin{problem}[Wheeden \& Zygmund Ch.\@ 5, Ex.\@ 6]
 Let $f(x,y)$, $0\leq x,y\leq 1$, satisfy the following conditions: for each
 $x$, $f(x,y)$ is an integrable function of $y$, and
 $\partial f(x,y)/\partial x$ is a bounded function of $(x,y)$. Show that
 $\partial f(x,y)/\partial x$ is a measurable function of $y$ for each $x$
 and
 \[
-\frac{d}{dx}\int_0^1f(x,y)\;dy=\int_0^1\frac{\partial}{\partial x}f(x,y)\;dy.
+\frac{d}{dx}\int_0^1f(x,y)\diff y=\int_0^1\frac{\partial}{\partial x}f(x,y)\diff y.
 \]
 \end{problem}
 \begin{proof}
 \end{proof}
 
-\begin{problem}[Wheeden \& Zygmund {\S}5, Ex.\@ 7]
+\begin{problem}[Wheeden \& Zygmund Ch.\@ 5, Ex.\@ 7]
 Give an example of an $f$ that is not integrable, but whose improper
 Riemann integral exists and is finite.
 \end{problem}
 \begin{proof}
 \end{proof}
 
-\begin{problem}[Wheeden \& Zygmund {\S}5, Ex.\@ 21]
+\begin{problem}[Wheeden \& Zygmund Ch.\@ 5, Ex.\@ 21]
 If $\int_A f=0$ for every measurable subset A of a measurable set $E$, show
 that $f=0$ a.e.\@ in $E$.
 \end{problem}
 \begin{proof}
 \end{proof}
 
-\begin{problem}[Wheeden \& Zygmund {\S}6, Ex.\@ 10]
- Let $V_n$ be the volume of the unit ball in $\bfR^n$. Show by using
+\begin{problem}[Wheeden \& Zygmund Ch.\@ 6, Ex.\@ 10]
+ Let $V_n$ be the volume of the unit ball in $\bbR^n$. Show by using
  Fubini's theorem that
 \[
-V_n=2V_{n-1}\int_0^1\left(1-t^2\right)^{(n-1)/2}\;dt.
+V_n=2V_{n-1}\int_0^1\left(1-t^2\right)^{(n-1)/2}\diff t.
 \]
 (We also observe that by setting $w=t^2$, the integral is a multiple of a
 classical $\beta$-function and so can be expressed in terms of the
-$\Gamma$-function: $\Gamma(s)=\int_0^\infty e^{-t}t^{s-1}\;dt$, $s>0$.)
+$\Gamma$-function: $\Gamma(s)=\int_0^\infty e^{-t}t^{s-1}\diff t$, $s>0$.)
 \end{problem}
 \begin{proof}
 \end{proof}
 
-\begin{problem}[Wheeden \& Zygmund {\S}6, Ex.\@ 11]
+\begin{problem}[Wheeden \& Zygmund Ch.\@ 6, Ex.\@ 11]
 Use Fubini's theorem to prove that
 \[
-\int_{\bfR^n}e^{-|\bfx|^2}\;d\bfx=\pi^{n/2}.
+\int_{\bbR^n}e^{-|\bfx|^2}\diff\bfx=\pi^{n/2}.
 \]
 (For $n=1$, write $\left(\int_{-\infty}^\infty
-e^{-x^2}\;dx\right)^2=\int_{-\infty}^\infty\int_{-\infty}^\infty e^{-x^2-y^2}\;dxdy$
+e^{-x^2}\diff x\right)^2=\int_{-\infty}^\infty\int_{-\infty}^\infty
+e^{-x^2-y^2}\diff xdy$
 and use polar. For $n>1$, use the formula $e^{-|\bfx|^2}=e^{-{x_1}^2}\cdots
 e^{-{x_n}^2}$ and Fubini's theorem to reduce the case $n=1$.)
 \end{problem}

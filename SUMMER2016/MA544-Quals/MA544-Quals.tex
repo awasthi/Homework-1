@@ -38,9 +38,9 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{mathtools}
-\usepackage{eucal}
-\usepackage{mathrsfs}
-\usepackage[nointegrals]{wasysym}
+% \usepackage{eucal}
+% \usepackage{mathrsfs}
+% \usepackage[nointegrals]{wasysym}
 
 %% Language
 \usepackage{cmap}
@@ -161,7 +161,7 @@
 \newtheorem{definition}{Definition}
 \newtheorem{example}{Examples}
 \newtheorem{examples}[example]{Example}
-\newtheorem{exercise}{Exercise}[section]
+\newtheorem{exercise}{Exercise}[subsection]
 \newtheorem{problem}[exercise]{Problem}
 
 \newtheorem*{example*}{Example}
@@ -173,8 +173,9 @@
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
 %% Counters
+\setsecnumdepth{subsection}
 \counterwithout{exercise}{chapter}
-\numberwithin{equation}{section}
+\numberwithin{equation}{subsection}
 \counterwithout{equation}{chapter}
 
 %% Redefine the QED symbol
@@ -192,7 +193,6 @@
 % \include{notes/wheeden-and-zygmund-1}
 % \include{notes/wheeden-and-zygmund-2}
 % \include{notes/wheeden-and-zygmund-3}
-
 
 %% Danielli homework
 \include{danielli/544-hw-1}
