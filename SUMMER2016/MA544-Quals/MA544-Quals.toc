@@ -10,7 +10,9 @@
 \contentsline {subsection}{\numberline {1.1.6}Homework 6}{9}{subsection.1.1.6}
 \contentsline {subsection}{\numberline {1.1.7}Homework 7}{10}{subsection.1.1.7}
 \contentsline {subsection}{\numberline {1.1.8}Homework 8}{11}{subsection.1.1.8}
-\contentsline {subsection}{\numberline {1.1.9}Homework 2}{12}{subsection.1.1.9}
+\contentsline {subsection}{\numberline {1.1.9}Homework 9}{12}{subsection.1.1.9}
+\select@language {russian}
+\select@language {english}
 \contentsline {subsection}{\numberline {1.1.10}Homework 10}{14}{subsection.1.1.10}
 \contentsline {subsection}{\numberline {1.1.11}Homework 11}{16}{subsection.1.1.11}
 \contentsline {subsection}{\numberline {1.1.12}Homework 12}{17}{subsection.1.1.12}
@@ -26,4 +28,3 @@
 \contentsline {chapter}{\chapternumberline {2}MA 544 Past Quals}{38}{chapter.2}
 \contentsline {section}{\numberline {2.1}Danielli: Winter 2012}{38}{section.2.1}
 \contentsline {section}{\numberline {2.2}Danielli: Summer 2011}{40}{section.2.2}
-\contentsline {chapter}{Bibliography}{42}{section*.3}
