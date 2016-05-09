@@ -112,28 +112,28 @@
 % \end{example}
 \section{Affine Geometry (first level of abstraction), Zariski Topology}
 \begin{definition}
-Given any ideal $\fraka\subset k[X_1,\dotsc,X_q]$, define $V_k(\fraka)$
+Given any ideal $\fraka\subset k[X_1,\dotsc,X_q]$, define $\calV_k(\fraka)$
 by
 \[
-V_k(\fraka)\coloneqq\left\{\,\bfx\in\bfA^q:\text{for every
+\calV_k(\fraka)\coloneqq\left\{\,\bfx\in\bfA^q:\text{for every
 $f\in\fraka$, $f(\bfx)=0$}\,\right\}.
 \]
-We call $V_k(\fraka)$ the \emph{set of $\Omega$-points of the affine
+We call $\calV_k(\fraka)$ the \emph{set of $\Omega$-points of the affine
   $k$-variety determined by $\fraka$.} With a slight abuse of language, we
-call $V_k(\fraka)$ the \emph{affine $k$-variety determined by $\fraka$.}
+call $\calV_k(\fraka)$ the \emph{affine $k$-variety determined by $\fraka$.}
 Similarly, given by any ideal $\fraka\subset\bar k[X_1,\dotsc,X_q]$,
-defined by $V_{\bar k}(\fraka)$ by
+defined by $\calV_{\bar k}(\fraka)$ by
 \[
-V_{\bar k}(\fraka)\coloneqq\left\{\,\bfx\in \bfA^q:
+\calV_{\bar k}(\fraka)\coloneqq\left\{\,\bfx\in \bfA^q:
 \text{for every $f\in\fraka$, $f(\bfx)=0$}\,\right\}.
 \]
-We call $V_{\bar k}(\fraka)$ the \emph{set of $\Omega$-points of the
+We call $\calV_{\bar k}(\fraka)$ the \emph{set of $\Omega$-points of the
   (geometric) affine $\bar k$-variety determined by $\fraka$,} or for
 short, the \emph{(geometric) affine variety determined by $\fraka$.}
 \end{definition}
 
 To ease the notation, we usually drop the subscript $k$ or $\bar k$ and
-simply write $V$.
+simply write $\calV$.
 
 If $A$ is a (commutative) ring (with unit $1$), recall that the
 \emph{radical}, $\sqrt{\frakb}$, of an ideal, $\fraka\subset A$, is defined
@@ -145,17 +145,64 @@ by
 A \emph{radical ideal} is an ideal, $\fraka$, such that
 $\fraka=\sqrt{\fraka}$.
 
-The following properties are easily verified. We state them for $V_k$, but
-they also hold for $V_{\bar k}$:
+The following properties are easily verified. We state them for $\calV_k$, but
+they also hold for $\calV_{\bar k}$:
 \begin{align*}
-&V(0)=\text{$\bfA^n$, $V(A)=\emptyset$}\\
-&V(\fraka\cap\frakb)=V(\fraka\frakb)=V(\fraka)\cup V(\frakb)\\
-&\fraka\subset\text{$\frakb$ implies that $V(\frakb)\subset V(\frakb)$}\\
-&V\left({\textstyle\sum_\alpha\fraka_\alpha}\right)
-={\textstyle \bigcap_\alpha V(\fraka_\alpha)}\\
-&V(\sqrt{\fraka})=V(\fraka)
+&\text{$\calV(0)=\bfA^n$, $\calV(A)=\emptyset$}\\
+&\calV(\fraka\cap\frakb)=\calV(\fraka\frakb)=\calV(\fraka)\cup\calV(\frakb)\\
+&\text{$\fraka\subset\frakb$ implies that $\calV(\frakb)\subset\calV(\frakb)$}\\
+&\calV\left({\textstyle\sum_\alpha\fraka_\alpha}\right)
+={\textstyle \bigcap_\alpha\calV(\fraka_\alpha)}\\
+&\calV(\sqrt{\fraka})=\calV(\fraka)
 \end{align*}
+From the relations above, it follows that the sets $\calV(\fraka)$ can be taken
+as closed subsets of $\bfA^q$, and we obtain a topology on $\bfA^q$. This
+is the \emph{$k$-topology on $\bfA^q$.} If we consider ideals in $\bar
+k[X_1,\dotsc,X_q]$ (i.e., sets of the form $\calV_{\bar k}(\fraka)$), we obtain
+the \emph{Zariski topology on $\bfA^q$.}
 
+The Zariski topology is not necessarily Hausdorff (except when $\calV(\fraka)$
+consits of a finite set of points.)
+
+Let us see that $\bfA^q$ is not Hausdorff in the Zariski topology. Let
+$P,Q\in\bfA^q$, with $P\neq Q$. The line $\overleftrightarrow{PQ}$ is
+isomorphic to $\bfA^1$. Thus, it is enough to show that $\bfA^1$ is not
+Hausdorff. Consider any ideal $\fraka\subset\bar k[X]$. Then, $\fraka$ is a
+principal ideal, and thus
+\[
+\fraka=(f)
+\]
+for some polynomial $f$, which shows that $\calV(\fraka)=\calV(f)$ is a finite
+set. As a consequence, the closed sets of $\bfA^1$ (other than $\bfA^1$)
+are finite. Then, the union of two closed sets (distinct from $\bfA^1$) is
+also finite, and thus distinct from $\bfA^1$.
+
+The topology on $\bfA^q$ is not the product topology on
+$\prod_{i=1}^q\bfA^1$.
+
+For example, when $n=2$, the closed set in $\bfA^1\times\bfA^1$ are those
+sets consisting of finitely many horizontal and vertical lines, and
+intersections of such sets. However
+\[
+X^2+Y^2-1=0
+\]
+defines a closed set in $\bfA^2$ not of the previous form.
+
+To go backwards from subsets of $\bfA^q$ to ideals, we make the following
+definition.
+\begin{definition}
+ Given any subset $S\subset\bfA^q$, define $\calI_k(S)$ and $\calI_{\bar
+   k}(S)$ by
+\[
+\calI_k(S)\coloneqq\left\{\,f\in k[X_1,\dotsc,X_q]:
+\text{for every $s\in S$, $f(s)=0$}\,\right\}
+\]
+and
+\[
+\calI_{\bar k}(S)\coloneqq\left\{\,f\in\bar k[X_1,\dotsc,X_q]:
+\text{for every $s\in S$, $f(s)=0$}\,\right\}
+\]
+\end{definition}
 
 %%% Local Variables:
 %%% mode: latex
