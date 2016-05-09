@@ -28,3 +28,4 @@
 \contentsline {chapter}{\chapternumberline {2}MA 544 Past Quals}{38}{chapter.2}
 \contentsline {section}{\numberline {2.1}Danielli: Winter 2012}{38}{section.2.1}
 \contentsline {section}{\numberline {2.2}Danielli: Summer 2011}{40}{section.2.2}
+\contentsline {chapter}{Bibliography}{42}{section*.3}
