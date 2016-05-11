@@ -40,46 +40,50 @@ Let $f(x)=x\sin(1/x)$ for $0<x\leq 1$ and $f(0)=0$. Show that $f$ is
 bounded and continuous on $[0,1]$, but that $V[f;0,1]=+\infty$.
 \end{problem}
 \begin{proof}
-  It is clear that the function $f(x)=x\sin(1/x)$ is
-  \href{https://en.wikipedia.org/wiki/Bounded_function}{\emph{bounded}} on
-  $[0,1]$ since $|{\sin(1/x)}|\leq 1$ and $|x|\leq 1$ on $[0,1]$. Moreover,
-  by properties of
-  \href{https://en.wikipedia.org/wiki/Continuous_function#Weierstrass_definition_.28epsilon.E2.80.93delta.29_of_continuous_functions}{\emph{continuous
-      functions}} on $\bfR$, it is obvious that $f$ is continuous on
-  $(0,1)$ (this comes as a simple application of \cite[Ch.\@ 4, p.\@
-  87]{rudin-1}). What is not obvious is continuity at $0$. To show that $f$
-  is continuous at $0$, by Theorem 4.6 from \cite[Ch.\@ 4, p.\@
-  86]{rudin-1}, it suffices to show that $\lim_{x\to 0}f(x)=0$. Consider
-  the sequence $\{1/k\}$. This sequence converges to $0$. Moreover, given
-  $\varepsilon>0$, by the Archimedean principle, for sufficiently large
-  $K$, the inequality $1/K<\varepsilon$ holds so for every $k\geq K$ we
-  have
-\begin{equation}
-\label{eq:1:1}
-|{(1/k)\sin(k)-0}|\leq
-|1/k|<\varepsilon.
-\end{equation}
-Thus, $\lim_{k\to\infty}f(1/k)=0$. Thus, $f$ is continuous on all of
+Set $f\coloneqq x\sin(1/x)$. We will show that $f$ is bounded an continuous
+on $[0,1]$, but that, nevertheless, it $f$ is not of bounded variation on
 $[0,1]$.
 
-Nevertheless, $f$ is not of
-\href{https://en.wikipedia.org/wiki/Bounded_variation}{\emph{bounded
-    variation}} on $[0,1]$. By Corollary 2.10 from \cite[Ch.\@ 2, p.\@
-23]{wheeden-zygmund}, the
-\href{https://en.wikipedia.org/wiki/Total_variation}{\emph{total
-    variation}} $V$ of $f$ on $[0,1]$ is given by
-\begin{equation}
-\label{eq:1:2}
-\begin{aligned}
-V&=\int_0^1|f'|\diff x\\
-&=\int_0^1|{\sin(1/x)-(1/x)\cos(1/x)}|\diff x\\
-&=\int_1^\infty\frac{1}{u^2}|{\sin u-u\cos u}|\diff x\\
-&\geq\int_M^\infty \frac{1}{2u}\diff u\\
-&=\infty,
-\end{aligned}
-\end{equation}
-where, for sufficiently large $M$, for $u\geq M$ we have $|{\sin u- u\cos
-  u}|>u/2$. Thus, $f$ is not b.v.\@ on $[0,1]$.
+  % It is clear that the function $f(x)=x\sin(1/x)$ is
+%   \href{https://en.wikipedia.org/wiki/Bounded_function}{\emph{bounded}} on
+%   $[0,1]$ since $|{\sin(1/x)}|\leq 1$ and $|x|\leq 1$ on $[0,1]$, that is,
+%   $|x\sin(1/x)|\leq 1$. Moreover, by properties of
+%   \href{https://en.wikipedia.org/wiki/Continuous_function#Weierstrass_definition_.28epsilon.E2.80.93delta.29_of_continuous_functions}{\emph{continuous
+%       functions}} on $\bfR$, it is easy to see that $f$ is continuous on
+%   $(0,1)$ (this comes as a simple application of \cite[Ch.\@ 4, p.\@
+%   87]{rudin-1}). What is not obvious is continuity at $0$. To show that $f$
+%   is continuous at $0$, by Theorem 4.6 from \cite[Ch.\@ 4, p.\@
+%   86]{rudin-1}, it suffices to show that $\lim_{x\to 0}f(x)=0$. Consider
+%   the sequence $\{1/k\}$. This sequence converges to $0$. Moreover, given
+%   $\varepsilon>0$, by the Archimedean principle, for sufficiently large
+%   $K$, the inequality $1/K<\varepsilon$ holds so for every $k\geq K$ we
+%   have
+% \begin{equation}
+% \label{eq:1:1}
+% |{(1/k)\sin(k)-0}|\leq
+% |1/k|<\varepsilon.
+% \end{equation}
+% Thus, $\lim_{k\to\infty}f(1/k)=0$. Thus, $f$ is continuous on all of
+% $[0,1]$.
+
+% Nevertheless, $f$ is not of
+% \href{https://en.wikipedia.org/wiki/Bounded_variation}{\emph{bounded
+%     variation}} on $[0,1]$. By Corollary 2.10 from \cite[Ch.\@ 2, p.\@
+% 23]{wheeden-zygmund}, the
+% \href{https://en.wikipedia.org/wiki/Total_variation}{\emph{total
+%     variation}} $V$ of $f$ on $[0,1]$ is given by
+% \begin{equation}
+% \label{eq:1:2}
+% \begin{aligned}
+% V&=\int_0^1|f'|\diff x\\
+% &=\int_0^1|{\sin(1/x)-(1/x)\cos(1/x)}|\diff x\\
+% &=\int_1^\infty\frac{1}{u^2}|{\sin u-u\cos u}|\diff x\\
+% &\geq\int_M^\infty \frac{1}{2u}\diff u\\
+% &=\infty,
+% \end{aligned}
+% \end{equation}
+% where, for sufficiently large $M$, for $u\geq M$ we have $|{\sin u- u\cos
+%   u}|>u/2$. Thus, $f$ is not b.v.\@ on $[0,1]$.
 \end{proof}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 2]
@@ -99,9 +103,7 @@ Recall the statement of theorem (2.1):
 \end{enumerate}
 \end{quote}
 \noindent
-(a) We shall proceed by contradiction. Suppose that $f$ is not bounded on
-$[a,b]$. Then, for any positive integer $M$, $f(x)>M$ for some
-$x\in[a,b]$. In particular, given
+(a)
 \\\\
 (b)
 \end{proof}
