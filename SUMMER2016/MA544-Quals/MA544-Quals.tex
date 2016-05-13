@@ -80,9 +80,9 @@
 
 %% Unicode math and Polyglossia
 \usepackage{unicode-math}
-% \usepackage{unicode-minionmath}
+\usepackage{unicode-minionmath}
 
-% \setmainfont{CMU Serif}
+% \setmainfont[Ligatures=TeX]{CMU Serif}
 % \setsansfont{CMU Sans Serif}
 % \setmonofont{CMU Typewriter Text}
 \setmainfont[Ligatures=TeX]{Latin Modern Roman}
@@ -97,15 +97,13 @@
 % \setmathfont[range={\mathfrak}]{XITS Math}
 % \setmathfont[range={\mathcal,\mathbfcal},StylisticSet=1]{XITS Math}
 % \setmathfont[range=\mathscr]{XITS Math}
-% % \setmathfont[range={\mathfrak}]{latinmodern-math.otf}
-% % \setmathfont[range={\mathcal}]{latinmodern-math.otf}
-% % \setmathfont[range={\mathscr}]{latinmodern-math.otf}
+% \setmathfont[range={\period,\comma}]{Libertinus Math}
 % \setmathfont[range={}]{Minion Math}
 
 \usepackage{polyglossia}
 \usepackage[english]{selnolig}
 
-\newfontfamily\cyrillicfont[Script=Cyrillic]{CMU Serif}
+\newfontfamily\cyrillicfont[Ligatures=TeX,Script=Cyrillic]{CMU Serif}
 \newfontfamily\cyrillicfontsf[Script=Cyrillic]{CMU Sans Serif}
 \newfontfamily\cyrillicfonttt[Script=Cyrillic]{CMU Typewriter Text}
 
@@ -144,6 +142,10 @@
 % % \setCJKmainfont[Kana]{Kozuka Mincho Pr6N}
 % % \setCJKmainfont[Hangul]{Adobe Myungjo Std}
 % % \setCJKsansfont[Hangul]{Adobe Gothic Std}
+
+% \usepackage{luatexja-fontspec}
+% \setmainjfont{IPAMincho}
+% \setsansjfont{IPAGothic}
 
 %% Theorems and definitions
 %% remove parentheses

@@ -1,15 +1,15 @@
 \section{Exam Preparation}
 \subsection{Exam 1 Practice}
 \begin{problem}
-Let $E\subset\bfR^n$ be a measurable set, $r\in\bfR$ and define the set
+Let $E\subset\bbR^n$ be a measurable set, $r\in\bbR$ and define the set
 $rE=\left\{\,r\bfx:\bfx\in E\,\right\}$. Prove that $rE$ is
 measurable, and that $|rE|=|r|^n|E|$.
 \end{problem}
 \begin{proof}
-Define a map $T\colon\bfR^n\to\bfR^n$ by $T\bfx\coloneqq r\bfx$. Note
+Define a map $T\colon\bbR^n\to\bbR^n$ by $T\bfx\coloneqq r\bfx$. Note
 that $T$ is
 \href{https://en.wikipedia.org/wiki/Lipschitz_continuity}{\emph{Lipschitz
-    continuous}} since for any $\bfx,\bfy\in\bfR^n$, the equality
+    continuous}} since for any $\bfx,\bfy\in\bbR^n$, the equality
 \begin{equation}
 \label{eq:prep:1:1}
 |T\bfx-T\bfy|=|r\bfx-r\bfy|=|r||\bfx-\bfy|
@@ -89,11 +89,11 @@ F(x)=
 \end{cases}.
 \]
 Here
-$B(\mathbf{0},r)=\left\{\,\bfy\in\bfR^n:|\bfy|<r\,\right\}$. Prove
+$B(\mathbf{0},r)=\left\{\,\bfy\in\bbR^n:|\bfy|<r\,\right\}$. Prove
 that $F$ is monotonic increasing and continuous.
 \end{problem}
 \begin{proof}
-Define the linear map $T\colon[0,\infty)\times\bfR^n\to\bfR^n$ by
+Define the linear map $T\colon[0,\infty)\times\bbR^n\to\bbR^n$ by
 $T(r)\bfx\coloneqq r\bfx$. We claim that
 $B(\mathbf{0},r)=T(r,B(\mathbf{0},1))$. To reduce notation, set
 $B_1\coloneqq B(\mathbf{0},1)$ and $B_r\coloneqq B(\mathbf{0},r)$.
@@ -119,12 +119,12 @@ F(x)=|B_1|x^n<|B_1|y^n=F(y).
 Thus, $F$ is monotonically increasing.
 
 In the argument above, since $F(x)=|B_1|x^n$ is a polynomial in
-$[0,\infty)$ (and polynomials are continuous on $\bfR$) $F$ is continuous
+$[0,\infty)$ (and polynomials are continuous on $\bbR$) $F$ is continuous
 on $[0,\infty)$.
 \end{proof}
 
 \begin{problem}
-Let $f\colon\bfR\to\bfR$ be a function. Let $C$ be the set of all points
+Let $f\colon\bbR\to\bbR$ be a function. Let $C$ be the set of all points
 at which $f$ is continuous. Show that $C$ is a set of type $G_\delta$.
 \end{problem}
 \begin{proof}
@@ -132,7 +132,7 @@ at which $f$ is continuous. Show that $C$ is a set of type $G_\delta$.
 defined by
 \begin{equation}
 \label{eq:prep:1:8}
-E_k\coloneqq\left\{\,x\in\bfR:
+E_k\coloneqq\left\{\,x\in\bbR:
 \text{there exists $\delta>0$ such that $y,z\in B(x,\delta)$ implies $\left|f(y)-f(z)\right|<\frac{1}{k}$}\,\right\}.
 \end{equation}
 We claim that $C=\bigcap_{k=1}^\infty E_k$ and that each $E_k$ is open.
@@ -168,23 +168,23 @@ Since $C$ can be expressed as the countable intersection of open sets
 $E_k$, it follows that $C$ is a $G_\delta$ set.
 \end{proof}
 \begin{problem}
-Let $f\colon\bfR\to\bfR$ be a function. Is it true that if the sets
-$\left\{\,f=r\,\right\}$ are measurable for all $r\in\bfR$, then $f$ is
+Let $f\colon\bbR\to\bbR$ be a function. Is it true that if the sets
+$\left\{\,f=r\,\right\}$ are measurable for all $r\in\bbR$, then $f$ is
 measurable?
 \end{problem}
 \begin{proof}
-If $\left\{\,f=r\,\right\}$ are measurable for all $r\in\bfR$, it is not
+If $\left\{\,f=r\,\right\}$ are measurable for all $r\in\bbR$, it is not
 necessarily the case that $f$ is measurable. Consider the following
 construction: Let $E\subset(0,1)$ be an unmeasurable set.\footnote{It's
   construction does not concern us. The interested reader such direct their
   refer to Theorem 3.38 from \cite[Ch.\@ 3, p.\@ 57-58]{wheeden-zygmund} or
   Theorem 17 from \cite[Ch.\@ 2\S 7, p.\@ 48]{royden}.} Define a map
-$f\colon\bfR\to\bfR$ by
+$f\colon\bbR\to\bbR$ by
 \begin{equation}
 \label{eq:prep:1:11}
 f(x)\coloneqq
 \begin{cases}
-x&\text{if $x\in\bfR\smallsetminus((0,1)\smallsetminus E)$},\\
+x&\text{if $x\in\bbR\smallsetminus((0,1)\smallsetminus E)$},\\
 x+1&\text{if $x\in (0,1)\smallsetminus E$.}
 \end{cases}
 \end{equation}
@@ -196,7 +196,7 @@ measurable. Thus, $f$ is not measurable.
 
 \begin{problem}
 Let $\left\{f_k\right\}_{k=1}^\infty$ be a sequence of measurable functions
-on $\bfR$. Prove that the set
+on $\bbR$. Prove that the set
 $\left\{\,x:\text{$\lim_{k\to\infty} f_k(x)$ exists}\,\right\}$
 is measurable.
 \end{problem}
@@ -214,7 +214,7 @@ is measurable. Since
   \label{eq:prep:1:13}
 \left\{\,\text{$\lim_{k\to\infty}f_k$ exists}\,\right\}=
 \left\{\,{\limsup_{k\to\infty}f_k=\liminf_{k\to\infty}f_k}\,\right\}=
-\bfR\smallsetminus
+\bbR\smallsetminus
 \left\{\,{\liminf_{k\to\infty} f_k<\limsup_{k\to\infty} f_k}\,\right\},
 \end{equation}
 by Theorem 3.17 from \cite[Ch.\@ 3, p.\@ 48]{wheeden-zygmund},
@@ -226,7 +226,7 @@ measurable.
 % \label{eq:prep:1:11}
 % E_k=
 % \left\{\,
-% x\in\bfR:\text{there exists $N$ such that $m,n\geq N$ implies $\left|f_n(x)-f_m(x)\right|<\frac{1}{k}$}
+% x\in\bbR:\text{there exists $N$ such that $m,n\geq N$ implies $\left|f_n(x)-f_m(x)\right|<\frac{1}{k}$}
 % \,\right\}.
 % \end{equation}
 % You can show that the $E_k$ are open and that
@@ -267,7 +267,7 @@ Thus, $f$ is b.v.\@ on $[a,b]$.
 \end{proof}
 
 \begin{problem}
-Let $f$ be a continuous function from $[a,b]$ into $\bfR$. Let
+Let $f$ be a continuous function from $[a,b]$ into $\bbR$. Let
 $\chi_{\{c\}}$ be the characteristic function of a singleton
 $\left\{c\right\}$, that is, $\chi_{\{c\}}(x)=0$ if $x\neq c$ and
 $\chi_{\{c\}}(c)=1$. Show that
