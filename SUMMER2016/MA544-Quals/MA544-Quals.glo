@@ -1,4 +1,6 @@
 \glossaryentry{continuous?\glossentry{cont}|setentrycounter[]{page}\glsnumberformat}{2}
-\glossaryentry{bounded variation?\glossentry{BV}|setentrycounter[]{page}\glsnumberformat}{2}
+\glossaryentry{bounded variation?\glossentry{bv}|setentrycounter[]{page}\glsnumberformat}{2}
 \glossaryentry{Archimedean property?\glossentry{ArchProp}|setentrycounter[]{page}\glsnumberformat}{2}
-\glossaryentry{total variation?\glossentry{TotVar}|setentrycounter[]{page}\glsnumberformat}{41}
+\glossaryentry{bounded variation?\glossentry{bv}|setentrycounter[]{page}\glsnumberformat}{2}
+\glossaryentry{bounded?\glossentry{bdd}|setentrycounter[]{page}\glsnumberformat}{2}
+\glossaryentry{total variation?\glossentry{TotVar}|setentrycounter[]{page}\glsnumberformat}{43}

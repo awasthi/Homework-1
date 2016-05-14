@@ -1,6 +1,6 @@
 %% Glossaries
 
-\newglossaryentry{BV}%
+\newglossaryentry{bv}%
 {%
   name={bounded variation},%
   description={%
@@ -10,8 +10,6 @@
     finite%
   }%
 }%
-
-\newacronym{bv}{b.v.}{\gls{BV}}
 
 \newglossaryentry{TotVar}%
 {%
@@ -53,6 +51,17 @@
     Paraphrased from \cite[Ch.\@ 1, p.\@ 9]{rudin-1} Theorem 1.20(a): If
     $x,y\in\bbR$ and $x>0$, then there exist a positive integer $N$ such
     that $Nx>y$%
+  }%
+}
+
+\newglossaryentry{bdd}%
+{%
+  name={bounded},%
+  description={%
+    A function $f\colon E\to\bbR^n$ is said to be \emph{bounded on $E$} if
+    there exists a finite number $M\in\bbR^+$ such that $\|f(x)\|<M$ for
+    every $x\in E$. Equivalently, $f$ is bounded if $\sup_{x\in
+      E}\|f(x)\|<\infty$%
   }%
 }
 
