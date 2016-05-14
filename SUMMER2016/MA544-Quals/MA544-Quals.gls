@@ -1,9 +1,15 @@
 \glossarysection[\glossarytoctitle]{\glossarytitle}\glossarypreamble
 \begin{theglossary}\glossaryheader
+\glsgroupheading{A}\relax \glsresetentrylist %
+\glossentry{ArchProp}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{2}}}\glsgroupskip
 \glsgroupheading{B}\relax \glsresetentrylist %
-\glossentry{bv}{\glossaryentrynumbers{\relax 
+\glossentry{BV}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{2}}}\glsgroupskip
+\glsgroupheading{C}\relax \glsresetentrylist %
+\glossentry{cont}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{2}}}\glsgroupskip
 \glsgroupheading{T}\relax \glsresetentrylist %
-\glossentry{totvar}{\glossaryentrynumbers{\relax 
+\glossentry{TotVar}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{41}}}%
 \end{theglossary}\glossarypostamble

@@ -44,8 +44,13 @@ Throughout these notes
 
 \begin{tabular}{cl}
   $\bbR$ & is the set of real numbers\\
+  $\bbR^+$ & is the set of positive real numbers, that is, $x\in\bbR$ with
+             $x\geq 0$\\
   $\bbC$ & is the set of complex numbers\\
   $\bbQ$ & is the set of rational numbers\\
+  $\bbZ$ & is the set of the integers\\
+  $\bbZ^+$ & is the set of positive integers, that is, $x\in\bbZ$ with
+             $x\geq 0$\\
   $\bbN$ & is the set of the natural numbers $1,2,\dotsc$\\
   $A\smallsetminus B$ & is the set difference of $A$ and $B$, that is, the
                         complement of $A\cap B$ in $A$\\
@@ -64,7 +69,7 @@ bounded and continuous on $[0,1]$, but that $V[f;0,1]=+\infty$.
 \end{problem}
 \begin{proof}
  Set $f\coloneqq x\sin (1/x)$. We will show that $f$ is bounded and
- continuous on $[0,1]$ but that, nevertheless, $f$ is not of \gls{bv} on
+ \gls{cont} on $[0,1]$ but that, nevertheless, $f$ is not of \gls{bv} on
  $[0,1]$.
 
  To see that $f$ is bounded, we note that both $x$ and $\sin(1/x)$ are
@@ -76,36 +81,33 @@ bounded and continuous on $[0,1]$, but that $V[f;0,1]=+\infty$.
  refer to \cite[Ch.\@ 4, p.\@ 87]{rudin-1}), $f$ is continuous on $(0,1]$.
  What is not obvious is continuity at $0$. To show that $f$ is continuous
  at $0$, by Theorem 4.6 from \cite[Ch.\@ 4, p.\@ 86]{rudin-1}, it suffices
- to show that $\lim_{x\to 0}f(x)=0$. Consider the sequence $\{1/k\}$. This
- sequence converges to $0$. Moreover, given $\varepsilon>0$, by the
- Archimedean principle, for sufficiently large $K$, the inequality
- $1/K<\varepsilon$ holds so for every $k\geq K$ we have
-% \begin{equation}
-% \label{eq:1:1}
-% |{(1/k)\sin(k)-0}|\leq
-% |1/k|<\varepsilon.
-% \end{equation}
-% Thus, $\lim_{k\to\infty}f(1/k)=0$. Thus, $f$ is continuous on all of
-% $[0,1]$.
+ to show that $\lim_{x\to 0}f(x)=0$. Consider the sequence $\{a_n\}$ where
+ $a_n\coloneqq 1/n$. The sequence $a_n\to 0$ as $n\to\infty$. Now, given
+ $\varepsilon>0$, by the \gls{ArchProp}, for sufficiently  large
+ $N\in\bbZ^+$, $1/N<\varepsilon$ holds so for every $n\geq N$. Thus, we have
+ \begin{equation}
+   \label{eq:1:1}
+   |{(1/k)\sin(k)-0}|\leq
+   |1/k|<\varepsilon.
+ \end{equation}
+ Thus, $\lim_{k\to\infty}f(1/k)=0$. Thus, $f$ is continuous on all of
+ $[0,1]$.
 
-% Nevertheless, $f$ is not of
-% \href{https://en.wikipedia.org/wiki/Bounded_variation}{\emph{bounded
-%     variation}} on $[0,1]$. By Corollary 2.10 from \cite[Ch.\@ 2, p.\@
-% 23]{wheeden-zygmund}, the
-% \href{https://en.wikipedia.org/wiki/Total_variation}{\emph{total
-%     variation}} $V$ of $f$ on $[0,1]$ is given by
-% \begin{equation}
-% \label{eq:1:2}
-% \begin{aligned}
-% V&=\int_0^1|f'|\diff x\\
-% &=\int_0^1|{\sin(1/x)-(1/x)\cos(1/x)}|\diff x\\
-% &=\int_1^\infty\frac{1}{u^2}|{\sin u-u\cos u}|\diff x\\
-% &\geq\int_M^\infty \frac{1}{2u}\diff u\\
-% &=\infty,
-% \end{aligned}
-% \end{equation}
-% where, for sufficiently large $M$, for $u\geq M$ we have $|{\sin u- u\cos
-%   u}|>u/2$. Thus, $f$ is not b.v.\@ on $[0,1]$.
+ Nevertheless, $f$ is not b.v.\@ on $[0,1]$. To see this, note that since
+ $f$ is differentiable on $[0,1]$, by Corollary 2.10 from \cite[Ch.\@ 2,
+ p.\@ 23]{wheeden-zygmund}, we have
+ \begin{equation}
+   \label{eq:1:2}
+   \begin{aligned}
+     V&=\int_0^1|f'|\diff x\\
+     &=\int_0^1|{\sin(1/x)-(1/x)\cos(1/x)}|\diff x\\
+     &=\int_1^\infty\frac{1}{u^2}|{\sin u-u\cos u}|\diff x\\
+     &\geq\int_M^\infty \frac{1}{2u}\diff u\\
+     &=\infty,
+   \end{aligned}
+ \end{equation}
+ where, for sufficiently large $M\in\bbZ^+$, for $u\geq M$ we have
+ $|{\sin u- u\cos u}|>u/2$. Thus, $f$ is not b.v.\@ on $[0,1]$.
 \end{proof}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 2]

@@ -1,17 +1,19 @@
 %% Glossaries
 
-\newglossaryentry{bv}%
+\newglossaryentry{BV}%
 {%
   name={bounded variation},%
   description={%
     Paraphrased from \cite[Ch.\@ 2\S1, p.\@ 17]{wheeden-zygmund}: A
     real-valued function $f\colon[a,b]\to\bbR$ is said to be \emph{of
-      bounded variation on $[a,b]$} if the \gls{totvar} of $f$ is
+      bounded variation on $[a,b]$} if the \gls{TotVar} of $f$ is
     finite%
   }%
 }%
 
-\newglossaryentry{totvar}%
+\newacronym{bv}{b.v.}{\gls{BV}}
+
+\newglossaryentry{TotVar}%
 {%
   name={total variation},%
   description={%
@@ -29,6 +31,30 @@
     where the supremum is taken over every partition $\Gamma$ of $[a,b]$%
   }%
 }%
+
+\newglossaryentry{cont}%
+{%
+  name={continuous},%
+  description={%
+    Paraphrased from \cite[Ch.\@ P\S6, p.\@ 14]{folland}: If $X$ and $Y$
+    are metric spaces with metrics $d_X$ and $d_Y$, a map $f\colon X\to Y$
+    is called \emph{continuous} at $x\in X$ if for every $\varepsilon>0$
+    there exists a $\delta>0$ such that $d_Y(f(x),f(y))<\varepsilon$
+    whenever $d_X(x,y)<\delta$. Moreover, $f$ is said to be continuous if
+    it is continuous at each $x\in X$. Also see 1.2(c) from \cite[Ch.\@ 1,
+    p.\@ 8]{rudin-2}%
+  }%
+}
+
+\newglossaryentry{ArchProp}%
+{%
+  name={Archimedean property},%
+  description={%
+    Paraphrased from \cite[Ch.\@ 1, p.\@ 9]{rudin-1} Theorem 1.20(a): If
+    $x,y\in\bbR$ and $x>0$, then there exist a positive integer $N$ such
+    that $Nx>y$%
+  }%
+}
 
 %%% Local Variables:
 %%% mode: latex
