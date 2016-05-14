@@ -4,15 +4,31 @@
 {%
   name={bounded variation},%
   description={%
-    Paraphrased from \cite{wheeden-zygmund}: A real-valued function
-    $f\colon[a,b]\to\bbR$ is said to be \emph{of bounded variation on
-      $[a,b]$} if the \emph{total variation} of $f$
-    \[
-      V=\sup_{\Gamma}\sum |f(x_i)-f(x_{i-1})|<\infty,
-    \]
-    where the supremum is taken over every partition $\Gamma$ of $[a,b]$.%
+    Paraphrased from \cite[Ch.\@ 2\S1, p.\@ 17]{wheeden-zygmund}: A
+    real-valued function $f\colon[a,b]\to\bbR$ is said to be \emph{of
+      bounded variation on $[a,b]$} if the \gls{totvar} of $f$ is
+    finite%
   }%
-}
+}%
+
+\newglossaryentry{totvar}%
+{%
+  name={total variation},%
+  description={%
+    From \cite[Ch.\@ 2\S1, p.\@ 17]{wheeden-zygmund}: Let $f$ be a
+    real-valued function defined on the closed interval $[a,b]$. Let
+    $\Gamma$ be a partition of $[a,b]$. With each partition
+    $\Gamma=\{x_0,\dotsc,x_n\}$, we associate the sum
+    \[
+      S_\Gamma\coloneqq\sum_{i=1}^n|f(x_i)-f(x_{i-1})|.
+    \]
+    The \emph{total variation of $f$ over $[a,b]$} is defined as
+    \[
+      V[f;a,b]\coloneqq\sup_{\Gamma}S_\Gamma,
+    \]
+    where the supremum is taken over every partition $\Gamma$ of $[a,b]$%
+  }%
+}%
 
 %%% Local Variables:
 %%% mode: latex
