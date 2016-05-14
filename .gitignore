@@ -11,4 +11,11 @@
 *.aux
 *.log
 *.out
+*.toc
+*.gls
+*.ist
+*.idx
+*.glg
+*.acn
+*.ilg
 _region_*
