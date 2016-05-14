@@ -6,7 +6,7 @@
 \def\documentsubject{lie groups}
 \def\authoremail{salinac@purdue.edu}
 
-\documentclass[article,10pt]{memoir}
+\documentclass[10pt,showtrims,twoside]{memoir}
 \usepackage{geometry}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[
@@ -31,6 +31,7 @@
     pdfsubject={\coursename}
     ]{hyperref}
 \usepackage{natbib}
+\usepackage[toc,acronym,section=section]{glossaries}
 
 %% Math
 \usepackage{amsmath}
@@ -183,6 +184,8 @@
 \newtheorem*{exercise*}{Exercise}
 \newtheorem*{problem*}{Problem}
 
+\makeindex
+
 \begin{document}
 %% Footnote style
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
@@ -192,23 +195,30 @@
 \numberwithin{equation}{section}
 \counterwithout{equation}{chapter}
 
+%% Header-footer
+\chapterstyle{veelo}
+\pagestyle{Ruled}
+
 %% Redefine the QED symbol
 % \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
 
-\chapterstyle{veelo}
-\pagestyle{ruled}
+\thispagestyle{empty}
 \author{\href{mailto:\authoremail}{\documentauthor}}
 \title{\documenttitle}
 \date{\today}
+
+\frontmatter
 \maketitle
 \tableofcontents
 
 %% Notes
+\mainmatter
 \include{section/598-week-1}
 
 %% Bibliography
 \bibliographystyle{plain}
 \bibliography{lie-bib}
+\printindex
 \end{document}
 
 %%% Local Variables:

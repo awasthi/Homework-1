@@ -6,7 +6,7 @@
 \def\documentsubject{point-set topology}
 \def\authoremail{salinac@purdue.edu}
 
-\documentclass[article,10pt]{memoir}
+\documentclass[10pt,showtrims,twoside]{memoir}
 \usepackage{geometry}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[
@@ -20,6 +20,9 @@
     menucolor=black,
     runcolor=black,
     urlcolor=black,
+    % linkcolor=violet!85!black,
+    % citecolor=YellowOrange!85!black,
+    % urlcolor=Aquamarine!85!black,
     hyperindex=false,
     hyperfootnotes=true,
     pdftitle={\shorttitle},
@@ -28,6 +31,7 @@
     pdfsubject={\coursename}
     ]{hyperref}
 \usepackage{natbib}
+\usepackage[toc,acronym,section=section]{glossaries}
 
 %% Math
 \usepackage{amsmath}
@@ -173,6 +177,8 @@
 \newtheorem*{exercise*}{Exercise}
 \newtheorem*{problem*}{Problem}
 
+\makeindex
+
 \begin{document}
 %% Footnotes
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
@@ -183,20 +189,26 @@
 \numberwithin{equation}{subsection}
 \counterwithout{equation}{chapter}
 
+%% Header-footer
+\chapterstyle{veelo}
+\pagestyle{Ruled}
+
 %% Redefine the QED symbol
 % \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
 
-\chapterstyle{veelo}
-\pagestyle{ruled}
+\thispagestyle{empty}
 \author{\href{mailto:\authoremail}{\documentauthor}}
 \title{\documenttitle}
 \date{\today}
+
+\frontmatter
 \maketitle
 \tableofcontents
 
 %% Munkres notes
 
 %% McClure Homework
+\mainmatter
 \include{mcclure/571-hw-1}
 \include{mcclure/571-hw-2}
 \include{mcclure/571-hw-3}
@@ -220,9 +232,10 @@
 %% Kaufmann quals
 % \include{kaufmann/MA571-Mid-JAN15}
 % \include{kaufmann/MA571-Final-JAN15}
-
+\backmatter
 \bibliographystyle{plain}
 \bibliography{top-bib}
+\printindex
 \end{document}
 
 %%% Local Variables:
