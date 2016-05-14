@@ -31,7 +31,8 @@
     pdfsubject={\coursename}
     ]{hyperref}
 \usepackage{natbib}
-\usepackage[toc,acronym,section=section]{glossaries}
+\usepackage[toc]{glossaries}
+\glsdisablehyper
 
 %% Math
 \usepackage{amsmath}
@@ -186,7 +187,11 @@
 
 \makeindex
 
+\loadglsentries{anal-glossary.tex}
+\makeglossaries
+
 \begin{document}
+
 %% Footnote style
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
@@ -198,7 +203,6 @@
 
 %% Header-footer
 \chapterstyle{veelo}
-\pagestyle{Ruled}
 
 %% Redefine the QED symbol
 % \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
@@ -254,6 +258,7 @@
 
 %% Glossaries
 \backmatter
+\printglossary
 
 %% References
 \bibliographystyle{plain}
