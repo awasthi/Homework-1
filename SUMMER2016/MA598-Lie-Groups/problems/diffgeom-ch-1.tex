@@ -45,7 +45,55 @@ of Lie groups. For example, it is clear that the map
 \exp\colon\glalg(n,\bbR)\longrightarrow\GL(n,\bbR)
 \]
 is well-defined, but since $\det(e^A)=e^{\tr A}$, every matrix of the form
-$e^A$ has a positive determinant and $\exp$ is not surjective.
+$e^A$ has a positive determinant and $\exp$ is not surjective. However,
+this map is not surjective. However, as we will see very soon, the map
+\[
+\exp\colon\soalg(n)\longrightarrow\SO(n)
+\]
+is well-defined and surjective. The map
+\[
+\exp\colon\oalg(n)\longrightarrow\Orth(n)
+\]
+is well-defined, but it is not surjective, since there are matrices in
+$\Orth(n)$ with the determinant $-1$.
+
+The situation for matrices over the field of complex numbers $\bbC$ is
+quite different.
+
+We now show the fundamental relationship between $\SO(n)$ and $\soalg(n)$
+\begin{theorem}
+The exponential map
+\[
+  \exp\colon\soalg(n)\longrightarrow\SO(n)
+\]
+is well-defined and surjective.
+\end{theorem}
+\begin{proof}
+First, we show that if $A$ is a skew-symmetric matrix then $e^A$ is a
+rotation matrix. For this, we quickly check that
+\[
+{(e^A)}^\hermitmatrix=e^{A^\hermitmatrix}
+\]
+This is a consequence of the definition $e^A=\sum_{p\geq 0}A^p/(p!)$ as an
+absolutely convergent series, the observation that
+${(A^p)}^\hermitmatrix={(A^\hermitmatrix)}^p$, and the linear of the
+transpose map, i.e.,
+$(A+B)^\hermitmatrix=A^\hermitmatrix+B^\hermitmatrix$. Then, since
+$A^\hermitmatrix=-A$, we get
+\[
+{(e^A)}^\hermitmatrix e^A=e^{-A}e^A=e^{-A+A}=e^0=I,
+\]
+and similarly,
+\[
+e^A{(e^A)}^\hermitmatrix=I
+\]
+showing that $e^A$ is orthogonal. Also,
+\[
+\det e^A=e^{\tr A}
+\]
+and since $A$ is real skew-symmetric, its diagonal entries are $0$, i.e.,
+$\tr A=0$, and so $\det e^A=+1$.
+\end{proof}
 
 %%% Local Variables:
 %%% mode: latex
