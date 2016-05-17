@@ -8,3 +8,4 @@
 \contentsline {chapter}{\chapternumberline {4}Differential Geometry Exercises}{6}{chapter.4}
 \contentsline {section}{\numberline {4.1}The Matrix Exponential; Some Matrix Lie Groups}{6}{section.4.1}
 \contentsline {subsection}{The Exponential Map}{6}{section*.2}
+\contentsline {subsection}{The Lie Groups $\mathrm {GL}(n,\symbb {R})$, $\mathrm {SL}(n,\symbb {R})$, $\symfrak {o}(n)$, $\mathrm {SO}(n)$, the Lie Algebras $\symfrak {gl}(n,\symbb {R})$, $\symfrak {sl}(n,\symbb {R})$, $\symfrak {o}(n)$, $\symfrak {so}(n)$, and the Exponential Map}{6}{section*.3}
