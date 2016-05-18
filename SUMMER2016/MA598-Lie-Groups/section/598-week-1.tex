@@ -3,49 +3,30 @@ This summer, we will be making our way through Knapp's \emph{Lie Groups
   Beyond an Introduction} \cite{knapp} although, I (the writer of these
 notes) will occasionally refer to \cite{hall} for examples.
 
+\section{Representation of Finite Groups}
+\subsection{Definitions}
+A \emph{representation} of a finite group $G$ on a finite-dimensional
+complex vector space $V$ is a homomorphism $\rho\colon G\to\GL(V)$; we say
+that such a map $\rho$ \emph{gives $V$ the structure of a $G$-module.} When
+there is little ambiguity about the map $\rho$ we will call $V$ itself as a
+representation of $G$; in this vein, we supress the symbol $\rho$ and write
+$gv$ for $\rho(g)(v)$. The dimension of $V$ is sometimes called the
+\emph{degree} of $\rho$.
 
-\section{Lie Algebras and Lie Groups}
-\subsection{Definitions and Examples}
-Let $\bbk$ be a field. An \emph{algebra $\frakg$} (not necessarily
-associative) is a vector space over $\bbk$ with product $[X,Y]$ that is
-linear in each variable. The algebra is a \emph{Lie algebra} if the product
-satisfies also
-\begin{enumerate}[label=(\alph*),noitemsep]
-\item $[X,X]=0$ for all $X\in\frakg$ (and hence, $[X,Y]=-[Y,X]$) and
-\item the \emph{Jacobi identity}
-\[
-[[X,Y],Z]+[[Y,Z],X]+[[Z,X],Y]=0.
-\]
-\end{enumerate}
+A map $\varphi$ between two representations $V$ and $W$ of $G$ is a vector
+space map $\varphi\colon V\to W$ such that
+\begin{center}
+\includegraphics{figures/week-1-diag-1}
+\end{center}
+commutes for every $g\in G$. (We will call this a \emph{$G$-linear map}
+when we want to distinguish it from an arbitrary linear map between the
+vector spaces $V$ and $W$). We can then define $\Ker\varphi$,
+$\Img\varphi$, and $\Coker\varphi$, which are also $G$-modules.
 
-For any algebra $\frakg$ we get a linear map
-$\ad\colon\frakg\to\End_\bbk\frakg$ given by
-\[
-(\ad X)(Y)\coloneqq[X,Y].
-\]
-The fact that the image is in $\End_\bbk\frakg$ follows from the linearity
-of the bracket in the second variable and the fact that $\ad$ is linear
-follows from the linearity of bracket in the first variable. Whenever there
-is possible ambiguity in what the underlying vector space is, we write
-$\ad_\frakg X$ in place of $\ad X$.
-
-Suppose that (a) holds in the definition of Lie algebra. Then (b) holds if
-and only if
-\[
-[Z,[X,Y]]=[X,[Z,Y]]+[[Z,X],Y]
-\]
-which holds if and only if
-\begin{equation}
-  \label{eq:1:1}
-(\ad Z)[X,Y]=[X,(\ad Z)Y]+[(\ad Z)X,Y].
-\end{equation}
-
-Any $D$ in $\End_\bbk\frakg$ for which
-\begin{equation}
-  \label{eq:1:2}
-  D[X,Y]=[X,DY]+[DX,Y]
-\end{equation}
-is called a \emph{derivation}.
+A \emph{subrepresentation} of a representation $V$ is a vector subspace $W$
+of $V$ which is invariant under $G$. A representation $V$ is called
+\emph{irreducible} if there is no proper nonzero invariant subspace $W$ of
+$V$.
 
 %%% Local Variables:
 %%% mode: latex
