@@ -68,6 +68,11 @@
 \setotherlanguage{spanish}
 \setotherlanguage[spelling=modern,babelshorthands]{russian}
 
+\usepackage{xeCJK}
+\usepackage[overlap]{ruby}
+\renewcommand\rubysep{-0.2ex}
+\setCJKmainfont[BoldFont=IPAGothic]{IPAMincho}
+
 %% Theorems and definitions
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
@@ -87,7 +92,7 @@
 \newtheorem{definition}{Definition}
 \newtheorem{example}{Examples}
 \newtheorem{examples}[example]{Example}
-\newtheorem{exercise}{Exercise}[subsection]
+\newtheorem{exercise}{Exercise}
 \newtheorem{problem}[exercise]{Problem}
 
 \newtheorem*{example*}{Example}
@@ -105,11 +110,6 @@
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
 %% Counters
-\setsecnumdepth{subsection}
-\counterwithout{exercise}{chapter}
-\numberwithin{equation}{subsection}
-\counterwithout{equation}{chapter}
-
 %% Header-footer
 \chapterstyle{veelo}
 

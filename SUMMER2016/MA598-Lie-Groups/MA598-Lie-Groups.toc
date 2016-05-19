@@ -3,4 +3,5 @@
 \contentsline {chapter}{\chapternumberline {1}Prologue}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Representation of Finite Groups}{1}{section.1.1}
 \contentsline {subsection}{Definitions}{1}{section*.2}
-\contentsline {chapter}{Bibliography}{5}{section*.4}
+\contentsline {subsection}{Complete Reducibility; Schur's Lemma}{3}{section*.3}
+\contentsline {chapter}{Bibliography}{5}{section*.5}
