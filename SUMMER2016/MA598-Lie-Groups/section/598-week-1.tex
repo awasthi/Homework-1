@@ -218,6 +218,68 @@ V_i$; when applied to the identity map of $V$ to $V$, the stated uniqueness
 follows.
 \end{proof}
 
+
+Occasionally, the decomposition is written
+\[
+V=a_1V_1\oplus\dotsb\oplus a_kV_k=a_1V_1+\dotsb+a_kV_k,
+\]
+especially when one is encountered only about the isomorphism classes and
+multiplicities of the $V_i$.
+
+One more fact that will be established in the following lecture is that a
+finite group $G$ admits only finitely many irreducible representations
+$V_i$ up to isomorphism (in fact, we can say how many).
+
+Our first goal, in analyzing the representations of any group, will
+therefore be:
+\begin{enumerate}[label=(\alph*)]
+\item Described all the irreducible representations of $G$.
+
+  Once we have done this, there remains the problem of carrying out in
+  practice the description of a given representation in these terms. Thus,
+  our second goal will be:
+\item Find techniques for giving the direct sum decomposition, and in
+  particular determining the multiplicities $a_i$ of an arbitrary
+  representation $V$.
+
+  Finally, it is the case that the representations we will most often be
+  concerned with are those arising from simpler ones by the sort of linear-
+  or miltilinear-algebraic operations described above. We would like,
+  therefore, to be able to describe, in the terms above, the representation
+  we get when we perform these operations on a know representation. This is
+  known generally as
+\item Plethysm: Describe the decompositions, with multiplicities, of
+  representations derived from a given representation $V$, such as
+  $V\otimes V$, $V^*$, $\bigwedge^k V$, $\Sym^k V$ and
+  $\bigwedge^k(\bigwedge^\ell V)$. Note that if $V$ decomposes into a sum
+  of two representations, these representatinos decompose accordingly;
+  e.g., if $V=U\oplus W$, then
+  \[
+    \bigwedge^k V=\bigoplus_{i+j=k}\bigwedge^i U\otimes\bigwedge^j W,
+  \]
+  so it is enough to work out this plethysm for irreducible
+  representations. Similarly, if $V$ and $W$ are two irreducible
+  representations, we want to decompose $V\otimes W$; this is usually known
+  as the Clebsch--Gordan problem.
+\end{enumerate}
+\subsection{Examples: Abelian Groups; $S_3$}
+One obvious place to look for examples is with Abelian groups. It does not
+take long, however, to deal with this case. Basically, we may obverve in
+general that if $V$ is a representation of the finite group $G$, abelian or
+not, each $g\in G$ gives a map $\rho(g)\colon V\to V$; but this map is not
+generally a $G$-module homomorphism: For general $h\in G$, we will have
+\[
+g(h(\bfv))\neq h(g(\bfv)).
+\]
+Indeed, $\rho(g)\colon V\to V$ will be $G$-linear for every $\rho$ if and
+only if $g$ is in the center $Z(G)$ of $G$. In particular, if $G$ is
+Abelian, and $V$ is an irreducible representation, then by Schur's lemma
+every element $g\in G$ acts on $V$ by a scalar multiple of the
+identity. Every subspace of $V$ is thus invariant; so that $V$ must be one
+dimensional. The irreducible representations of an Abelian group $G$ are
+thus simply elements of the dual group, i.e., homomorphism $\rho\colon
+G\to\bbC^*$.
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../MA598-Lie-Groups"
