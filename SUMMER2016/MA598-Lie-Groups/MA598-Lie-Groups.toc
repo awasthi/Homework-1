@@ -5,4 +5,6 @@
 \contentsline {subsection}{Definitions}{1}{section*.2}
 \contentsline {subsection}{Complete Reducibility; Schur's Lemma}{3}{section*.3}
 \contentsline {subsection}{Examples: Abelian Groups; $S_3$}{5}{section*.4}
-\contentsline {chapter}{Bibliography}{7}{section*.6}
+\contentsline {section}{\numberline {1.2}Characters}{6}{section.1.2}
+\contentsline {subsection}{Characters}{6}{section*.5}
+\contentsline {chapter}{Bibliography}{9}{section*.7}

@@ -3,63 +3,78 @@ This summer, we will be making our way through Knapp's \emph{Lie Groups
   Beyond an Introduction} \cite{knapp} although, I (the writer of these
 notes) will occasionally refer to \cite{hall} for examples.
 
+Throughout these notes
+
+\begin{tabular}{cl}
+  $C_n$ &the cyclic group of order $n$\\
+  $S_n$&the symmetric group on $n$ letters\\
+  $A_n$&the alternating group on $n$ letters
+\end{tabular}
+
 \section{Representation of Finite Groups}
+This section of the notes is mainly paraphrased from Fulton and Harris's
+book \emph{Representation Theory}. We will quickly talk about the
+representation theory of finite groups and move on to the representation
+theory of Lie groups, covering perhaps the first 5 chapters of the latter
+book.
+
 \subsection{Definitions}
-A \emph{representation} of a finite group $G$ on a finite-dimensional
-complex vector space $V$ is a homomorphism $\rho\colon G\to\GL(V)$; we say
-that such a map $\rho$ \emph{gives $V$ the structure of a $G$-module.} When
-there is little ambiguity about the map $\rho$ we will call $V$ itself as a
-representation of $G$; in this vein, we supress the symbol $\rho$ and write
-$gv$ for $\rho(g)(v)$. The dimension of $V$ is sometimes called the
-\emph{degree} of $\rho$.
+Throughout this section, by a \emph{representation} of a finite group $G$
+we mean a homomorphism $\rho\colon G\to\GL(V)$, where $V$ is a
+finite-dimensional complex vector space. A \emph{representation} of a
+finite group $G$ on a finite-dimension; we say that such a map $\rho$
+\emph{gives $V$ a $G$-module structure.} When there is little ambiguity
+about the map $\rho$, we will call $V$ itself a representation of $G$; we
+also suppress the symbol $\rho$ and write $g\bfv$ for $\rho(g)(\bfv)$
+whenever context allows us. The dimension of $V$ is called the \emph{degree} of
+$\rho$.
 
 A map $\varphi$ between two representations $V$ and $W$ of $G$ is a vector
 space map $\varphi\colon V\to W$ such that
 \[
 \includegraphics{figures/week-1-diag-1}
 \]
-commutes for every $g\in G$. (We will call this a \emph{$G$-linear map}
-when we want to distinguish it from an arbitrary linear map between the
-vector spaces $V$ and $W$). We can then define $\Ker\varphi$,
-$\Img\varphi$, and $\Coker\varphi$, which are also $G$-modules.
+commutes for every $g\in G$. We will call such a map a \emph{$G$-linear
+  map} when we want to distinguish it from an arbitrary linear map between
+the vector spaces $V$ and $W$. We can thus, then define $\Ker\varphi$,
+$\Img\varphi$, and $\Coker\varphi$, which naturally inherit a $G$-module
+structure from $V$.
 
-A \emph{subrepresentation} of a representation $V$ is a vector subspace $W$
-of $V$ which is invariant under $G$. A representation $V$ is called
+A \emph{subrperesentation} of a representation $V$ is a vector subspace $W$
+of $V$ which is invariant under the action by $G$, that is,
+$g\bfw=\bfw$ for all $\bfw\in W$. A representation $V$ is called
 \emph{irreducible} if there is no proper nonzero invariant subspace $W$ of
 $V$.
 
-If $V$ and $W$ are representations, so are $V\oplus W$ and $V\otimes W$
-with $g(v\otimes w)\coloneqq gv\otimes gw$. Moreover, the $n$th tensor
-power $\bigotimes^nV$, the exterior power $\bigwedge^n V$ and symmetric
-powers $\Sym^n V$ are subrepresentations of it. The dual $V^*=\Hom(V,\bbC)$
-of $V$ is also a representation, though not in the most obvious way: We
-want the two representations of $G$ with respect to the natural pairing
-between $V$ and $V^*$, so that if $\rho\colon G\to\GL(V)$ is a
-representation and $\rho^*\colon G\to\GL(V)$ is its dual, then we have
-\begin{equation}
-  \label{eq:1:relation-1}
-  \langle \rho^*(g)(v^*),\rho(g)(v) \rangle=\langle v^*,v \rangle
-\end{equation}
-for all $g\in G$, $v\in V$, and $v^*\in V^*$. This in turn forces us to
-define the dual representation by
-\[
-  \rho^*(g)\coloneqq\prescript{\rmt}{}{\rho}(g^{-1})\colon V^*\longrightarrow V^*
-\]
-for all $g\in G$.
 
-\begin{exercise}
-Let us verify that \eqref{eq:1:relation-1} is satisfied by the definition
-of $\rho^*$.
-\end{exercise}
-\begin{proof}
-With $\rho^*$ as defined above, choose $g\in G$, $v\in V$ and $v^*\in
-V$. Then, we have
+As it turns out, some of if $V$ and $W$ are representations, so are
+$V\oplus W$ and $V\otimes W$ with $g(v\otimes w)\coloneqq gv\otimes gw$,
+and so are the $n$th tensor power $\bigotimes^nV$, the exterior power
+$\bigwedge^n V$ and the symmetric powers $\Sym^n V$. The dual
+$V^*=\Hom(V,\bbC)$ of $V$ is also a representation, though not in the most
+obvious way: We want the two representations of $G$ with respect to the
+natural pairing between $V$ and $V^*$, that is,
+$\langle\bfv^*,\bfv\rangle\coloneqq\bfv^*(\bfv)$, so that if
+$\rho\colon G\to\GL(V)$ is a representation and $\rho^*\colon G\to\GL(V)$
+is its dual, then we have
+\[
+  \langle \rho^*(g)(\bfv^*),\rho(g)(\bfv) \rangle=\langle \bfv^*,\bfv \rangle
+\]
+for all $g\in G$, $\bfv\in V$, and $\bfv^*\in V^*$. This in turn forces us
+to define the dual representation $\rho^*\colon V^*\to V^*$ by
+\[
+  \rho^*(g)\coloneqq\prescript{\rmt}{}{\rho}(g^{-1})
+\]
+for all $g\in G$. Let us verify that $\rho^*$ in fact satisfies $\langle
+\rho^*(g)(\bfv^*),\rho(g)(\bfv) \rangle=\langle\bfv^*,\bfv \rangle$: Let
+$\bfv^*\in V^*$ and $\bfv\in V$,
+then
 \begin{align*}
-  \langle \rho^*(g)(v^*),\rho(g)(v) \rangle=\langle v^*,v \rangle
-  &=\langle  \rangle\\
-  &=
+  \langle\rho^*(g)(\bfv^*),\rho(g)(\bfv)\rangle
+  &=\langle\prescript{t}{}\rho(g^{-1})(\bfv^*),\rho(g)(\bfv)\rangle\\
+  &=\langle \bfv^*,\rho(g^{-1})\circ\rho(g)(\bfv)\rangle\\
+  &=\langle \bfv^*,\bfv\rangle.
 \end{align*}
-\end{proof}
 
 Having defined the dual representation of the tensor product of two
 representations, it is likewise the case that if $V$ and $W$ are
@@ -279,6 +294,125 @@ identity. Every subspace of $V$ is thus invariant; so that $V$ must be one
 dimensional. The irreducible representations of an Abelian group $G$ are
 thus simply elements of the dual group, i.e., homomorphism $\rho\colon
 G\to\bbC^*$.
+
+We begin with the next simplest nonAbelian group, $G\coloneqq S_3$. To
+begin with, we have two one-dimensional representations: We have the
+trivial representation, which we shall denote $U$, and the alternating
+representation $U'$, defined by setting
+\[
+gv=\sgn(g)v
+\]
+for $g\in G$, $v\in\bbC$. Next, since $G$ comes to us as a permutation
+group, we have a natural permutation representation, in which $G$ acts on
+$\bbC^3$ by permuting the coordinates. Explicitly, if
+$\{\bfe_1,\bfe_2,\bfe_3\}$ is the standard basis, then
+$g\cdot\bfe_i=\bfe_{g(i)}$, or equivalently,
+\[
+g\cdot (z_1,z_2,z_3)=\left(z_{g^{-1}(1)},z_{g^{-1}(2)},z_{g^{-1}(3)}\right).
+\]
+This representation, like any permutation representation, is not
+irreducible: The line spanned by the sum $(1,1,1)$ of the basis vectors is
+invariant, with complementary subspace
+\[
+V\coloneqq\left\{\,(z_1,z_2,z_3)\in\bbC^3:z_1+z_2+z_3=0\,\right\}.
+\]
+This two-dimensional representation of $V$ is easily seen to be
+irreducible; we call it the standard representation of $S_3$.
+
+Let us now turn to the problem of describing an arbitrary representation of
+$S_3$. We will see in the next lecture that a wonderful tool for doing this
+is called \emph{character theory}; but, as inefficient as this may be, we
+would like here to adapt the more ad hoc approach.
+
+We have just seen that the representation theory of a finite Abelian group
+is virtually trivial, we will start our analysis of an arbirtary
+representation $W$ of $S_3$ by looking just at the action of the Abelian
+subgroup $A_3=C_3\subset S_3$. This yields a very simple decomposition: If
+we take $\tau$ to be any generator of $A_3$ (that is, any $3$-cycle), the
+space $W$ is spanned by eigenvectors $\bfv_i$ for the action $\tau$, whose
+eigenvalues are of course all powers of the cube root of unity
+$\omega\coloneqq e^{2\pi i/3}$. Thus,
+\[
+W=\bigoplus V_i,
+\]
+where
+\[
+V_i\coloneqq\bbC\bfv_i
+\]
+and
+\[
+\tau\bfv_i=\omega^{\alpha_i}\bfv_i.
+\]
+
+Next, we ask how the remaining elements of $S_3$ act on $W$ in terms of
+this decomposition. TO see how it goes, let $\sigma$ be any transposition,
+so that $\tau$ and $\sigma$, together generate $S_3$, with the relation
+$\sigma\tau\sigma=\tau^2$. We want to know where $\sigma$ sends an
+eigenvector $\bfv$ for the action of $\tau$, say with eigenvalue
+$\omega^i$; to answer this, we look at how $\tau$ acts on
+$\sigma(\bfv)$. We use the basic relation above to write
+\[
+  \begin{aligned}
+    \tau(\sigma(\bfv))
+    &=\sigma(\tau^2(\bfv))\\
+    &=\sigma(\omega^{2i}\bfv)\\
+    &=\sigma^{2i}\sigma(bfv).
+  \end{aligned}
+\]
+The conclusion, then, is that if $\bfv$ is an eigenvector for $\tau$ with
+eigenvalue $\omega^i$, then $\sigma(\bfv)$ is again an eigenvector for
+$\tau$, with eigenvalue $\omega^{2i}$.
+
+
+\section{Characters}
+\subsection{Characters}
+As it turns out, there is a remarkably effective tool for understanding the
+representations of a finite group $G$, called \emph{character theory}. This
+is in some ways motivated by the example worked out in the last section
+where we saw that a representation of $S_3$ was determined by knowing the
+eigenvalues of the action of the elements $\tau$ and $\sigma\in S_3$. For a
+general group $G$, it is not clear what subgroups and or elements should
+play the role of $A_3$, $\tau$, and $\sigma$; but the example certainly
+suggests that knowing all the eigenvalues of each element of $G$ should
+suffice to describe the representation.
+
+Of course, specifying all the eigenvalues of the action of each element of
+$G$ is somewhat unwieldy; but fortunately, it is redundant as well. For
+example, if we know that the eigenvalues $\{\lambda_i\}$ of an element
+$g\in G$, then of course we know the eigenvalues $\{\lambda_i^k\}$ of $g^k$
+for each $k$ as well. We can thus use this redundancy to simplify the data
+we have to specify.
+
+\begin{definition}
+If $V$ is a representation of $G$, its \emph{character $\chi_V$} is the
+complex-valued function on the group defined by
+\[
+\chi_V\coloneqq\tr\bigr(g|_V\bigl).
+\]
+the trace of $g$ on $V$.
+\end{definition}
+
+In particular, we have
+\[
+\chi_V(hgh^{-1})=\chi_V(g)
+\]
+so that $\chi_V$ is constant on the conjugacy classes of $G$; such a
+function is called a \emph{class function}. Note that $\chi_V(1)=\dim V$.
+
+\begin{proposition}
+Let $V$ and $W$ be representations of $G$. Then
+\[
+  \begin{aligned}
+    \chi_{V\oplus W}&=\chi_V+\chi_W,&\chi_{V\otimes W}&=\chi_V\chi_W\\
+    \chi_{V^*}&=\bar\chi_V&\chi_{\wedge^2
+      V}(g)&=\tfrac{1}{2}\left[\chi_V(g)^2-\chi_V(g^2)\right].
+  \end{aligned}
+\]
+\end{proposition}
+\begin{proof}
+\end{proof}
+
+
 
 %%% Local Variables:
 %%% mode: latex
