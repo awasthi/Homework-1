@@ -7,4 +7,5 @@
 \contentsline {subsection}{Examples: Abelian Groups; $S_3$}{5}{section*.4}
 \contentsline {section}{\numberline {1.2}Characters}{6}{section.1.2}
 \contentsline {subsection}{Characters}{6}{section*.5}
-\contentsline {chapter}{Bibliography}{9}{section*.7}
+\contentsline {subsection}{The First Projection Formula and its Consequences}{8}{section*.6}
+\contentsline {chapter}{Bibliography}{9}{section*.8}
