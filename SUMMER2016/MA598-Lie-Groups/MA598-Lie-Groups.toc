@@ -1,11 +1,12 @@
 \select@language {english}
 \contentsline {chapter}{Contents}{i}{section*.1}
 \contentsline {chapter}{\chapternumberline {1}Prologue}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Representation of Finite Groups}{1}{section.1.1}
-\contentsline {subsection}{Definitions}{1}{section*.2}
-\contentsline {subsection}{Complete Reducibility; Schur's Lemma}{3}{section*.3}
-\contentsline {subsection}{Examples: Abelian Groups; $S_3$}{5}{section*.4}
-\contentsline {section}{\numberline {1.2}Characters}{6}{section.1.2}
-\contentsline {subsection}{Characters}{6}{section*.5}
-\contentsline {subsection}{The First Projection Formula and its Consequences}{8}{section*.6}
-\contentsline {chapter}{Bibliography}{9}{section*.8}
+\contentsline {chapter}{\chapternumberline {2}Representation Theory}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Representation of Finite Groups}{3}{section.2.1}
+\contentsline {subsection}{Definitions}{3}{section*.2}
+\contentsline {subsection}{Complete Reducibility; Schur's Lemma}{5}{section*.3}
+\contentsline {subsection}{Examples: Abelian Groups; $S_3$}{7}{section*.4}
+\contentsline {section}{\numberline {2.2}Characters}{8}{section.2.2}
+\contentsline {subsection}{Characters}{8}{section*.5}
+\contentsline {subsection}{The First Projection Formula and its Consequences}{9}{section*.6}
+\contentsline {chapter}{Bibliography}{11}{section*.8}

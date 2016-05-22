@@ -4,44 +4,44 @@ The top-level auxiliary file: MA598-Lie-Groups.aux
 A level-1 auxiliary file: section/598-week-1.aux
 The style file: plain.bst
 Database file #1: lie-bib.bib
-You've used 2 entries,
+You've used 1 entry,
             2118 wiz_defined-function locations,
-            510 strings with 4257 characters,
-and the built_in function-call counts, 474 in all, are:
-= -- 46
-> -- 14
+            504 strings with 4131 characters,
+and the built_in function-call counts, 247 in all, are:
+= -- 23
+> -- 7
 < -- 0
-+ -- 6
-- -- 4
-* -- 20
-:= -- 91
-add.period$ -- 8
-call.type$ -- 2
-change.case$ -- 6
++ -- 3
+- -- 2
+* -- 11
+:= -- 50
+add.period$ -- 4
+call.type$ -- 1
+change.case$ -- 3
 chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 24
-empty$ -- 45
-format.name$ -- 4
-if$ -- 101
+cite$ -- 1
+duplicate$ -- 12
+empty$ -- 23
+format.name$ -- 2
+if$ -- 51
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 4
-newline$ -- 13
-num.names$ -- 4
-pop$ -- 12
+int.to.str$ -- 1
+missing$ -- 2
+newline$ -- 8
+num.names$ -- 2
+pop$ -- 6
 preamble$ -- 1
-purify$ -- 6
+purify$ -- 3
 quote$ -- 0
-skip$ -- 12
+skip$ -- 6
 stack$ -- 0
-substring$ -- 10
-swap$ -- 2
+substring$ -- 5
+swap$ -- 1
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 4
+type$ -- 2
 warning$ -- 0
-while$ -- 4
-width$ -- 3
-write$ -- 24
+while$ -- 2
+width$ -- 2
+write$ -- 13

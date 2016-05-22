@@ -2,7 +2,7 @@
 \contentsline {chapter}{Contents}{i}{section*.1}
 \contentsline {chapter}{\chapternumberline {1}MA 553 Spring 2016}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Homework}{1}{section.1.1}
-\contentsline {subsection}{Homework 1}{1}{section*.2}
+\contentsline {subsection}{Homework 1}{2}{section*.2}
 \contentsline {subsection}{Homework 2}{3}{section*.3}
 \contentsline {subsection}{Homework 3}{4}{section*.4}
 \contentsline {subsection}{Homework 4}{5}{section*.5}

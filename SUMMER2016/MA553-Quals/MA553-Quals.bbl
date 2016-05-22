@@ -15,4 +15,14 @@ T.W.\@ Hungerford.
 \newblock {\em Algebra}.
 \newblock Graduate Texts in Mathematics. Springer New York, 2003.
 
+\bibitem{milneGT}
+James~S. Milne.
+\newblock Group theory (v3.13), 2013.
+\newblock Available at www.jmilne.org/math/.
+
+\bibitem{milneFT}
+James~S. Milne.
+\newblock Fields and galois theory (v4.50), 2014.
+\newblock Available at www.jmilne.org/math/.
+
 \end{thebibliography}
