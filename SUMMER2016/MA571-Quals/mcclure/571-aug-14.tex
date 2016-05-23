@@ -31,7 +31,7 @@ quotinet map. Then, for $(x,y)\in X$, we define the map
 We shall proceed by the hint. Let $q\colon X\to X/{\sim}$ denote the
 quotient map. Then, for $x\in X$, we define the map
 \[
-h(s,t)\coloneqq
+h(s,t)\coloneq
 \begin{cases}
 (s,t)&\text{if $(s,t)\in(0,1]\times[0,1]$}\\
 (s-1,t)&\text{if $(s,t)\in(2,3]\times[0,1])$}
@@ -62,7 +62,7 @@ and $(s',t')=(2,t)$. Then $h(s,t)=(1,t)=(2-1,t)=h(s',t')$. Thus, by Theorem
 Q.3, the induced map $h'\colon X/{\sim}\to(0,2)\times[0,1]$ is
 continuous. Moreover, the map is bijective with inverse
 \[
-(h')^{-1}\coloneqq
+(h')^{-1}\coloneq
 \begin{cases}
 [s,t]&\text{if $x\in (0,1]$}\\
 [s+1,t]&\text{if $x\in [1,2)$}
@@ -164,7 +164,7 @@ path-connected. Thus, it suffices to show that for every point $y\in Y$
 there exists a path $p\colon [0,1]\to Y$ from $y$ to some point $y'\in
 f(X)$. Now, since $f\circ g\simeq\id_Y$, there exists a homotopy, say
 $H\colon Y\times[0,1]\to Y$ such that $H(s,0)=f\circ g(s)$ and
-$H(s,1)=s$. Consider the evaluation $H_y\coloneqq H(y,t)\circ H(y,t)$ where
+$H(s,1)=s$. Consider the evaluation $H_y\coloneq H(y,t)\circ H(y,t)$ where
 the map $(y,t)\colon [0,1]\to Y\times[0,1]$ is the imbedding of $[0,1]$ at
 $y$ (which is continuous by Theorem 18.4) thus, $H_y$ is
 continuous. Moreover, $H_y(0)=f\circ g(y)\in f(Y)$ and
@@ -181,9 +181,9 @@ method.
 \begin{proof}
 We'll use Theorem 70.2's version of the Seifert--van Kampen theorem. Define
 \[
-U\coloneqq\left(-\infty,\tfrac{1}{2}\right)\times\bbR
+U\coloneq\left(-\infty,\tfrac{1}{2}\right)\times\bbR
 \quad\text{and}\quad
-V\coloneqq\left(-\tfrac{1}{2},\infty\right)\times\bbR.
+V\coloneq\left(-\tfrac{1}{2},\infty\right)\times\bbR.
 \]
 Then $U\cap V=(-1/2,1/2)\times\bbR$ is clearly path-connected since it is a
 convex set. Moreover, note that $U\simeq\bbR^2\smallsetminus\{x_0\}$ and
@@ -242,7 +242,7 @@ C$. Thus, since $h$ is a set-bijection, $D\subset h(C)$.
 \end{proof}
 so by Theorem 25.3, $p(C)$ is open in $B$ since $B$ is locally
 connected. Thus, the restriction $\left.p\right|_{C}$ is a homeomorphism
-onto its image $W\coloneqq p(C)$, by Lemma A, which is a neighborhood of $x$.
+onto its image $W\coloneq p(C)$, by Lemma A, which is a neighborhood of $x$.
 \end{proof}
 
 %%% Local Variables:

@@ -49,13 +49,13 @@ $V$.
 
 
 As it turns out, some of if $V$ and $W$ are representations, so are
-$V\oplus W$ and $V\otimes W$ with $g(v\otimes w)\coloneqq gv\otimes gw$,
+$V\oplus W$ and $V\otimes W$ with $g(v\otimes w)\coloneq gv\otimes gw$,
 and so are the $n$th tensor power $\bigotimes^nV$, the exterior power
 $\bigwedge^n V$ and the symmetric powers $\Sym^n V$. The dual
 $V^*=\Hom(V,\bbC)$ of $V$ is also a representation, though not in the most
 obvious way: We want the two representations of $G$ with respect to the
 natural pairing between $V$ and $V^*$, that is,
-$\langlev^*,v\rangle\coloneqqv^*(v)$, so that if
+$\langle v^*,v\rangle\coloneq v^*(v)$, so that if
 $\rho\colon G\to\GL(V)$ is a representation and $\rho^*\colon G\to\GL(V)$
 is its dual, then we have
 \[
@@ -64,15 +64,15 @@ is its dual, then we have
 for all $g\in G$, $v\in V$, and $v^*\in V^*$. This in turn forces us
 to define the dual representation $\rho^*\colon V^*\to V^*$ by
 \[
-  \rho^*(g)\coloneqq\prescript{\rmt}{}{\rho}(g^{-1})
+  \rho^*(g)\coloneq{}^{\rmt}{\rho}(g^{-1})
 \]
 for all $g\in G$. Let us verify that $\rho^*$ in fact satisfies $\langle
-\rho^*(g)(v^*),\rho(g)(v) \rangle=\langlev^*,v \rangle$: Let
+\rho^*(g)(v^*),\rho(g)(v) \rangle=\langle v^*,v \rangle$: Let
 $v^*\in V^*$ and $v\in V$,
 then
 \begin{align*}
   \langle\rho^*(g)(v^*),\rho(g)(v)\rangle
-  &=\langle\prescript{t}{}\rho(g^{-1})(v^*),\rho(g)(v)\rangle\\
+  &=\langle{}^\rmt\rho(g^{-1})(v^*),\rho(g)(v)\rangle\\
   &=\langle v^*,\rho(g^{-1})\circ\rho(g)(v)\rangle\\
   &=\langle v^*,v\rangle.
 \end{align*}
@@ -93,7 +93,7 @@ commutes. Note that the dual representation is, in turn, a special case of
 this: When $W=\bbC$ is the trivial representation, i.e., $gw=w$ for all
 $w\in\bbC$, this makes $V^*$ into a $G$-module, with
 $g\varphi(v)=\varphi(g^{-1}v)$, i.e.,
-$g\varphi=\prescript{\rmt}{}{(g^{-1})}$.
+$g\varphi={}^\rmt(g^{-1})$.
 
 \begin{exercise}
 We verify that in general the vector space of $G$-linear maps between two
@@ -119,7 +119,7 @@ $G\to\Aut(X)$ is a homomorphism to the premutation group of $X$, there is
 an associated permutation representation: Let $V$ be the vector space with
 basis $\{e_x:x\in X\}$, and let $G$ act on $V$ by
 \[
-  g\cdot\sum a_xe_x\coloneqq\sum a_xe_{gx}.
+  g\cdot\sum a_xe_x\coloneq\sum a_xe_{gx}.
 \]
 The regular representation, denoted $R_G$ or simply $R$, corresponds to the
 left action of $G$ on itself. Alternatively, $R$ is the space of
@@ -152,7 +152,7 @@ $V=W\oplus W'$.
   such an $H$ by averaging over $G$:
   \begin{equation}
     \label{eq:1:hermitian-inn-prod}
-    H(v,w)\coloneqq\sum_{g\in G}H_0(gv,gw).
+    H(v,w)\coloneq\sum_{g\in G}H_0(gv,gw).
   \end{equation}
   Then the perpendicular subspace $W^\perp$ is complementary to $W$ in
   $V$. Alternatively, we can simply choose an arbitrary subspace $U$
@@ -161,7 +161,7 @@ $V=W\oplus W'$.
   over $G$: i.e., take
   \begin{equation}
     \label{eq:1:averaging-map}
-    \pi(v)\coloneqq\sum_{g\in G}g(\pi_0(g^{-1}v)).
+    \pi(v)\coloneq\sum_{g\in G}g(\pi_0(g^{-1}v)).
   \end{equation}
   this will then be a $G$-linear map from $V$ onto $W$, which is
   multiplication by $|G|$ on $W$; its kernel will, therefore, be a subspace
@@ -296,7 +296,7 @@ dimensional. The irreducible representations of an Abelian group $G$ are
 thus simply elements of the dual group, i.e., homomorphism $\rho\colon
 G\to\bbC^*$.
 
-We begin with the next simplest nonAbelian group, $G\coloneqq S_3$. To
+We begin with the next simplest nonAbelian group, $G\coloneq S_3$. To
 begin with, we have two one-dimensional representations: We have the
 trivial representation, which we shall denote $U$, and the alternating
 representation $U'$, defined by setting
@@ -307,7 +307,7 @@ for $g\in G$, $v\in\bbC$. Next, since $G$ comes to us as a permutation
 group, we have a natural permutation representation, in which $G$ acts on
 $\bbC^3$ by permuting the coordinates. Explicitly, if
 $\{e_1,e_2,e_3\}$ is the standard basis, then
-$g\cdote_i=e_{g(i)}$, or equivalently,
+$g\cdot e_i=e_{g(i)}$, or equivalently,
 \[
 g\cdot (z_1,z_2,z_3)=\left(z_{g^{-1}(1)},z_{g^{-1}(2)},z_{g^{-1}(3)}\right).
 \]
@@ -315,7 +315,7 @@ This representation, like any permutation representation, is not
 irreducible: The line spanned by the sum $(1,1,1)$ of the basis vectors is
 invariant, with complementary subspace
 \[
-V\coloneqq\left\{\,(z_1,z_2,z_3)\in\bbC^3:z_1+z_2+z_3=0\,\right\}.
+V\coloneq\left\{\,(z_1,z_2,z_3)\in\bbC^3:z_1+z_2+z_3=0\,\right\}.
 \]
 This two-dimensional representation of $V$ is easily seen to be
 irreducible; we call it the standard representation of $S_3$.
@@ -332,17 +332,17 @@ subgroup $A_3=C_3\subset S_3$. This yields a very simple decomposition: If
 we take $\tau$ to be any generator of $A_3$ (that is, any $3$-cycle), the
 space $W$ is spanned by eigenvectors $v_i$ for the action $\tau$, whose
 eigenvalues are of course all powers of the cube root of unity
-$\omega\coloneqq e^{2\pi i/3}$. Thus,
+$\omega\coloneq e^{2\pi i/3}$. Thus,
 \[
 W=\bigoplus V_i,
 \]
 where
 \[
-V_i\coloneqq\bbCv_i
+V_i\coloneq\bbC v_i
 \]
 and
 \[
-\tauv_i=\omega^{\alpha_i}v_i.
+\tau v_i=\omega^{\alpha_i}v_i.
 \]
 
 Next, we ask how the remaining elements of $S_3$ act on $W$ in terms of
@@ -388,7 +388,7 @@ we have to specify.
 If $V$ is a representation of $G$, its \emph{character $\chi_V$} is the
 complex-valued function on the group defined by
 \[
-\chi_V\coloneqq\tr\bigr(g|_V\bigl).
+\chi_V\coloneq\tr\bigr(g|_V\bigl).
 \]
 the trace of $g$ on $V$.
 \end{definition}
@@ -455,7 +455,7 @@ consequences.
 
 To start, for any representation $V$ of a group $G$, we set
 \[
-V^G\coloneqq\left\{\,v\in V:gv=v\,\right\}
+V^G\coloneq\left\{\,v\in V:gv=v\,\right\}
 \;\text{for all $g\in G$.}
 \]
 We ask for a way finding $V^G$ explicitly. The idea behind our solution to
@@ -464,7 +464,7 @@ representation $V$ of $G$ and any $g\in G$, the endomorphism $g\colon V\to
 V$ is general, not a $G$-module. On the other hand, if we take the average
 of all these endomorphisms, that is, we set
 \[
-\varphi\coloneqq\frac{1}{|G|}\sum_{g\in G}g
+\varphi\coloneq\frac{1}{|G|}\sum_{g\in G}g
 \]
 is in $\End V$, then the endomorphism $\varphi$ will be $G$-linear since
 $\sum g=\sum hgh^{-1}$. In fact, we have
@@ -479,6 +479,15 @@ G$
 hv=\frac{1}{|G|}\sum hgw=\frac{1}{|G|}\sum gw
 \]
 \end{proof}
+
+\subsection{More Projection Formulas; More Consequences}
+In this section, we complete the analysis of the characters of the
+irreducible representations of a general finite group begun in \S2.2 and
+give a more general formula for the projection of the general
+representation $V$ onto a direct sum of the factors in $V$ isomorphic to a
+given irreducible representation $W$. The main idea for both is a
+generalization of the averaging of the endomorphisms $g\colon V\to V$ for
+both the point
 
 
 %%% Local Variables:

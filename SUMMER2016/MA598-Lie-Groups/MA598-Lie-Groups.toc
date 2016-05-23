@@ -9,4 +9,5 @@
 \contentsline {section}{\numberline {2.2}Characters}{8}{section.2.2}
 \contentsline {subsection}{Characters}{8}{section*.5}
 \contentsline {subsection}{The First Projection Formula and its Consequences}{9}{section*.6}
-\contentsline {chapter}{Bibliography}{11}{section*.8}
+\contentsline {subsection}{More Projection Formulas; More Consequences}{10}{section*.7}
+\contentsline {chapter}{Bibliography}{11}{section*.9}
