@@ -3,30 +3,29 @@
 \contentsline {chapter}{\chapternumberline {1}MA 544 Spring 2016}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Homework}{1}{section.1.1}
 \contentsline {subsection}{Homework 1}{2}{section*.2}
-\contentsline {subsection}{Homework 2}{5}{section*.3}
-\contentsline {subsection}{Homework 3}{6}{section*.4}
-\contentsline {subsection}{Homework 4}{7}{section*.5}
-\contentsline {subsection}{Homework 5}{8}{section*.6}
-\contentsline {subsection}{Homework 6}{9}{section*.7}
-\contentsline {subsection}{Homework 7}{10}{section*.8}
-\contentsline {subsection}{Homework 8}{11}{section*.9}
-\contentsline {subsection}{Homework 9}{12}{section*.10}
+\contentsline {subsection}{Homework 2}{4}{section*.3}
+\contentsline {subsection}{Homework 3}{5}{section*.4}
+\contentsline {subsection}{Homework 4}{6}{section*.5}
+\contentsline {subsection}{Homework 5}{7}{section*.6}
+\contentsline {subsection}{Homework 6}{8}{section*.7}
+\contentsline {subsection}{Homework 7}{9}{section*.8}
+\contentsline {subsection}{Homework 8}{10}{section*.9}
+\contentsline {subsection}{Homework 9}{11}{section*.10}
 \select@language {russian}
 \select@language {english}
-\contentsline {subsection}{Homework 10}{14}{section*.11}
-\contentsline {subsection}{Homework 11}{16}{section*.12}
-\contentsline {subsection}{Homework 12}{17}{section*.13}
-\contentsline {section}{\numberline {1.2}Exam Preparation}{19}{section.1.2}
-\contentsline {subsection}{Exam 1 Practice}{19}{section*.14}
-\contentsline {subsection}{Exam 1}{24}{section*.15}
-\contentsline {subsection}{Exam 2 Practice Problems}{26}{section*.16}
-\contentsline {subsection}{Exam 2 (2010)}{32}{section*.17}
-\contentsline {subsection}{Exam 2}{33}{section*.18}
-\contentsline {subsection}{Final Exam Practice Problems}{34}{section*.19}
-\contentsline {subsection}{Final Exam 2010}{36}{section*.20}
-\contentsline {subsection}{Final Exam}{37}{section*.21}
-\contentsline {chapter}{\chapternumberline {2}MA 544 Past Quals}{39}{chapter.2}
-\contentsline {section}{\numberline {2.1}Danielli: Winter 2012}{39}{section.2.1}
-\contentsline {section}{\numberline {2.2}Danielli: Summer 2011}{41}{section.2.2}
-\contentsline {chapter}{Glossary}{43}{section*.22}
-\contentsline {chapter}{Bibliography}{45}{section*.25}
+\contentsline {subsection}{Homework 10}{13}{section*.11}
+\contentsline {subsection}{Homework 11}{15}{section*.12}
+\contentsline {subsection}{Homework 12}{16}{section*.13}
+\contentsline {section}{\numberline {1.2}Exam Preparation}{18}{section.1.2}
+\contentsline {subsection}{Exam 1 Practice}{18}{section*.14}
+\contentsline {subsection}{Exam 1}{23}{section*.15}
+\contentsline {subsection}{Exam 2 Practice Problems}{24}{section*.16}
+\contentsline {subsection}{Exam 2 (2010)}{28}{section*.17}
+\contentsline {subsection}{Exam 2}{29}{section*.18}
+\contentsline {subsection}{Final Exam Practice Problems}{30}{section*.19}
+\contentsline {subsection}{Final Exam 2010}{32}{section*.20}
+\contentsline {subsection}{Final Exam}{33}{section*.21}
+\contentsline {chapter}{\chapternumberline {2}MA 544 Past Quals}{35}{chapter.2}
+\contentsline {section}{\numberline {2.1}Danielli: Winter 2012}{35}{section.2.1}
+\contentsline {section}{\numberline {2.2}Danielli: Summer 2011}{37}{section.2.2}
+\contentsline {chapter}{Bibliography}{39}{section*.23}

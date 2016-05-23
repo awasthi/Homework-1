@@ -488,17 +488,28 @@ representation $V$ onto a direct sum of the factors in $V$ isomorphic to a
 given irreducible representation $W$. The main idea for both is a
 generalization of the averaging of the endomorphisms $g\colon V\to V$ for
 both the point being that instead of simply averaging all of the $g$ we can
-ask the question: What linear combinations of the endomorphisms $g\colon
-V\to V$ are $G$-linear endomorphisms? The answer is given by
+ask the question: What linear combinations of the endomorphisms
+$g\colon V\to V$ are $G$-linear endomorphisms? The answer is given by
 \begin{proposition}
-Let $\alpha\colon G\to\bbC$ be any function on the group $G$, and for any
-representation $V$ of $G$ set $\varphi_{\alpha,V}\colon V\to V$ to be
-\[
-\varphi_{\alpha,V}\coloneq\sum \alpha(g)\cdot g.
-\]
-Then $\varphi_{\alpha,V}$ is a homomorphism of $G$-modules for all $V$ if
-and only if $\alpha$ is a class function.
+  Let $\alpha\colon G\to\bbC$ be any function on the group $G$, and for any
+  representation $V$ of $G$ set $\varphi_{\alpha,V}\colon V\to V$ to be
+  \[
+    \varphi_{\alpha,V}\coloneq\sum \alpha(g)\cdot g.
+  \]
+  Then $\varphi_{\alpha,V}$ is a homomorphism of $G$-modules for all $V$ if
+  and only if $\alpha$ is a class function.
 \end{proposition}
+\begin{proof}
+  We simply write out the condition that $\varphi_{\alpha,V}$ be
+  $G$-linear, and the result falls out: We have
+  \begin{align*}
+    \varphi_{\alpha,V}(hv)
+    &=\sum\alpha(g)\cdot g(hv)\\
+    &=\sum \alpha(hgh^{-1})\cdot hgh^{-1}(hv)
+      \intertext{substituting $hgh^{-1}$ for $g$}
+    &=h\left(  \right)
+  \end{align*}
+\end{proof}
 
 %%% Local Variables:
 %%% mode: latex

@@ -2,21 +2,21 @@
 \contentsline {chapter}{Contents}{i}{section*.1}
 \contentsline {chapter}{\chapternumberline {1}MA 571 Fall 2015}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Homework}{1}{section.1.1}
-\contentsline {subsection}{Homework 1}{1}{section*.2}
-\contentsline {subsection}{Homework 2}{2}{section*.3}
-\contentsline {subsection}{Homework 3}{3}{section*.4}
-\contentsline {subsection}{Homework 4}{4}{section*.5}
-\contentsline {subsection}{Homework 5}{5}{section*.6}
-\contentsline {subsection}{Homework 6}{6}{section*.7}
-\contentsline {subsection}{Homework 7}{7}{section*.8}
-\contentsline {subsection}{Homework 8}{8}{section*.9}
-\contentsline {subsection}{Homework 9}{9}{section*.10}
-\contentsline {subsection}{Homework 10}{10}{section*.11}
-\contentsline {subsection}{Homework 11}{11}{section*.12}
-\contentsline {subsection}{Homework 12}{12}{section*.13}
-\contentsline {chapter}{\chapternumberline {2}Past Qualifying Examinations}{13}{chapter.2}
-\contentsline {section}{\numberline {2.1}MA 571: Qualifying Exam, August 2014}{13}{section.2.1}
-\contentsline {section}{\numberline {2.2}MA 571: Qualifying Exam, January 2014}{17}{section.2.2}
-\contentsline {section}{\numberline {2.3}MA571: Qualifying Exam, January 2012}{19}{section.2.3}
-\contentsline {section}{\numberline {2.4}MA 571: Qualifying Exam, January 2011}{22}{section.2.4}
-\contentsline {chapter}{Bibliography}{23}{section*.15}
+\contentsline {subsection}{Homework 1}{2}{section*.2}
+\contentsline {subsection}{Homework 2}{3}{section*.3}
+\contentsline {subsection}{Homework 3}{4}{section*.4}
+\contentsline {subsection}{Homework 4}{5}{section*.5}
+\contentsline {subsection}{Homework 5}{6}{section*.6}
+\contentsline {subsection}{Homework 6}{7}{section*.7}
+\contentsline {subsection}{Homework 7}{8}{section*.8}
+\contentsline {subsection}{Homework 8}{9}{section*.9}
+\contentsline {subsection}{Homework 9}{10}{section*.10}
+\contentsline {subsection}{Homework 10}{11}{section*.11}
+\contentsline {subsection}{Homework 11}{12}{section*.12}
+\contentsline {subsection}{Homework 12}{13}{section*.13}
+\contentsline {chapter}{\chapternumberline {2}Past Qualifying Examinations}{15}{chapter.2}
+\contentsline {section}{\numberline {2.1}MA 571: Qualifying Exam, August 2014}{15}{section.2.1}
+\contentsline {section}{\numberline {2.2}MA 571: Qualifying Exam, January 2014}{19}{section.2.2}
+\contentsline {section}{\numberline {2.3}MA571: Qualifying Exam, January 2012}{21}{section.2.3}
+\contentsline {section}{\numberline {2.4}MA 571: Qualifying Exam, January 2011}{24}{section.2.4}
+\contentsline {chapter}{Bibliography}{25}{section*.15}
