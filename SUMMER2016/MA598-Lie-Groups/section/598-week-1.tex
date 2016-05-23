@@ -487,8 +487,18 @@ give a more general formula for the projection of the general
 representation $V$ onto a direct sum of the factors in $V$ isomorphic to a
 given irreducible representation $W$. The main idea for both is a
 generalization of the averaging of the endomorphisms $g\colon V\to V$ for
-both the point
-
+both the point being that instead of simply averaging all of the $g$ we can
+ask the question: What linear combinations of the endomorphisms $g\colon
+V\to V$ are $G$-linear endomorphisms? The answer is given by
+\begin{proposition}
+Let $\alpha\colon G\to\bbC$ be any function on the group $G$, and for any
+representation $V$ of $G$ set $\varphi_{\alpha,V}\colon V\to V$ to be
+\[
+\varphi_{\alpha,V}\coloneq\sum \alpha(g)\cdot g.
+\]
+Then $\varphi_{\alpha,V}$ is a homomorphism of $G$-modules for all $V$ if
+and only if $\alpha$ is a class function.
+\end{proposition}
 
 %%% Local Variables:
 %%% mode: latex
