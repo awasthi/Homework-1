@@ -10,4 +10,5 @@
 \contentsline {subsection}{Characters}{8}{section*.5}
 \contentsline {subsection}{The First Projection Formula and its Consequences}{9}{section*.6}
 \contentsline {subsection}{More Projection Formulas; More Consequences}{10}{section*.7}
-\contentsline {chapter}{Bibliography}{13}{section*.9}
+\contentsline {subsection}{Induced Representations}{12}{section*.8}
+\contentsline {chapter}{Bibliography}{13}{section*.10}

@@ -590,10 +590,23 @@ representation, then for any representation $V$, look at the weighted sum
 in $\End V$. By Proposition 2.28, $\psi$ is a $G$-module
 homomorphism. Hence, if $V$ is irreducible, we have $\psi=\lambda\cdot\Id$,
 and
-% \begin{align*}
-%   \lambda&=\frac{1}{\dim V}\tr\psi\\
-%          % &=\frac{1}{\dim V}\frac{1}{|G|}\sum\overline{\chi_W(g)}\cdot\chi_V(g)
-% \end{align*}
+\begin{align*}
+  \lambda&=\frac{1}{\dim V}\tr\psi\\
+         &=\frac{1}{\dim V}\frac{1}{|G|}\sum\overline{\chi_W(g)}\cdot\chi_V(g)
+\end{align*}
+
+\subsection{Induced Representations}
+If $H\subset G$ is a subgroup, any representation $V$ of $G$ restricts to a
+representation of $H$, denoted $\Res_H^G V$ or simply $\Res V$. In this
+section, we describe an important construction which produces
+representations of $G$ from representations of $H$. Suppose $V$ is a
+representation of $G$, and $W\subset V$ is a subspace which is
+$H$-invariant. For any $g$ in $G$, the subspace
+$g\cdot W=\left\{\,g\cdot w:w\in W\,\right\}$ depends only on the left
+coset $gH$ of $g$ modulo $H$, since $gh\cdot W=g\cdot(g\cdot W)=g\cdot W$;
+for a coset $\sigma$ in $G/H$, we write $\sigma\cdot W$. We say that $V$ is
+\emph{induced} by $W$ if every element in $V$ can be written uniquely as a
+sum of elements in such translates of $W$, i.e.,
 
 %%% Local Variables:
 %%% mode: latex
