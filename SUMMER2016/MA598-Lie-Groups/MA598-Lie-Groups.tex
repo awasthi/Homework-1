@@ -1,6 +1,5 @@
 \def\documentauthor{Carlos Salinas}
 \def\documenttitle{MA598: Lie Groups}
-% \def\hwnum{1}
 \def\shorttitle{MA544 Lie Groups}
 \def\coursename{MA544}
 \def\documentsubject{lie groups}
@@ -26,13 +25,15 @@
 \usepackage{natbib}
 % \usepackage[acronym,shortcuts,toc]{glossaries}
 
+% TOC depth
+\setsecnumdepth{subsection}
+
 %% Math
 \usepackage{amsmath}
-% \usepackage{amsfonts}
-% \usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amssymb}
 \usepackage{amsthm}
 % \usepackage{mathtools}
-% \usepackage{lmodern}
 
 %% Misc
 \usepackage{graphicx}
@@ -47,13 +48,17 @@
 \mleftright
 \usepackage{carlos-variables}
 
-% Unicode math and Polyglossia
+%% Unicode math and Polyglossia
 \usepackage{unicode-math}
+% \usepackage{unicode-minionmath}
 
 % \setmainfont[Ligatures=TeX]{Latin Modern Roman}
 % \setsansfont{Latin Modern Sans}
 % \setsansfont{Latin Modern Mono}
 % \setmathfont{Latin Modern Math}
+
+% \setmainfont[Ligatures=TeX]{XITS}
+% \setmathfont{XITS Math}
 
 \usepackage{polyglossia}
 % \usepackage[english]{selnolig}
@@ -92,16 +97,16 @@
 \newtheorem{definition}{Definition}
 \newtheorem{example}{Examples}
 \newtheorem{examples}[example]{Example}
-\newtheorem{exercise}{Exercise}
+\newtheorem{exercise}{Exercise}[subsection]
 \newtheorem{problem}[exercise]{Problem}
 
 \newtheorem*{example*}{Example}
 \newtheorem*{exercise*}{Exercise}
 \newtheorem*{problem*}{Problem}
 
-\makeindex
+% \makeindex
 
-% \loadglsentries{lie-glossary.tex}
+% \loadglsentries{anal-glossary.tex}
 % \makeglossaries
 
 \begin{document}
@@ -109,12 +114,16 @@
 %% Footnote style
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
-%% Counters
 %% Header-footer
-\chapterstyle{veelo}
+% \chapterstyle{veelo}
 
 %% Redefine the QED symbol
-% \renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
+% \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
+
+%% Counters
+\counterwithout{exercise}{chapter}
+\numberwithin{equation}{subsection}
+\counterwithout{equation}{chapter}
 
 \thispagestyle{empty}
 \author{\href{mailto:\authoremail}{\documentauthor}}
@@ -132,7 +141,7 @@
 %% Bibliography
 \bibliographystyle{plain}
 \bibliography{lie-bib}
-\printindex
+% \printindex
 \end{document}
 
 %%% Local Variables:

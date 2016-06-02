@@ -1,6 +1,5 @@
 \def\documentauthor{Carlos Salinas}
 \def\documenttitle{MA553: Qual Preparation}
-% \def\hwnum{1}
 \def\shorttitle{MA553 Qual Prep}
 \def\coursename{MA553}
 \def\documentsubject{abstract algebra}
@@ -26,10 +25,13 @@
 \usepackage{natbib}
 % \usepackage[acronym,shortcuts,toc]{glossaries}
 
+% TOC depth
+\setsecnumdepth{subsection}
+
 %% Math
 \usepackage{amsmath}
-% \usepackage{amsfonts}
-% \usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amssymb}
 \usepackage{amsthm}
 % \usepackage{mathtools}
 
@@ -54,6 +56,9 @@
 % \setsansfont{Latin Modern Sans}
 % \setsansfont{Latin Modern Mono}
 % \setmathfont{Latin Modern Math}
+
+% \setmainfont[Ligatures=TeX]{XITS}
+% \setmathfont{XITS Math}
 
 \usepackage{polyglossia}
 % \usepackage[english]{selnolig}
@@ -99,9 +104,9 @@
 \newtheorem*{exercise*}{Exercise}
 \newtheorem*{problem*}{Problem}
 
-\makeindex
+% \makeindex
 
-% \loadglsentries{alg-glossary.tex}
+% \loadglsentries{anal-glossary.tex}
 % \makeglossaries
 
 \begin{document}
@@ -109,17 +114,16 @@
 %% Footnote style
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
-%% Counters
-\setsecnumdepth{subsection}
-\counterwithout{exercise}{chapter}
-\numberwithin{equation}{subsection}
-\counterwithout{equation}{chapter}
-
 %% Header-footer
-\chapterstyle{veelo}
+% \chapterstyle{veelo}
 
 %% Redefine the QED symbol
 % \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
+
+%% Counters
+\counterwithout{exercise}{chapter}
+\numberwithin{equation}{subsection}
+\counterwithout{equation}{chapter}
 
 \thispagestyle{empty}
 \author{\href{mailto:\authoremail}{\documentauthor}}
@@ -161,7 +165,7 @@
 \backmatter
 \bibliographystyle{plain}
 \bibliography{alg-bib}
-\printindex
+% \printindex
 \end{document}
 
 %%% Local Variables:

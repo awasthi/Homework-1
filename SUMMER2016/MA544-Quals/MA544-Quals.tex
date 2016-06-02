@@ -1,6 +1,5 @@
 \def\documentauthor{Carlos Salinas}
 \def\documenttitle{MA544: Qual Preparation}
-% \def\hwnum{1}
 \def\shorttitle{MA544 Quals Prep}
 \def\coursename{MA544}
 \def\documentsubject{measure theory}
@@ -26,10 +25,13 @@
 \usepackage{natbib}
 % \usepackage[acronym,shortcuts,toc]{glossaries}
 
+% TOC depth
+\setsecnumdepth{subsection}
+
 %% Math
 \usepackage{amsmath}
-% \usepackage{amsfonts}
-% \usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amssymb}
 \usepackage{amsthm}
 % \usepackage{mathtools}
 
@@ -54,6 +56,9 @@
 % \setsansfont{Latin Modern Sans}
 % \setsansfont{Latin Modern Mono}
 % \setmathfont{Latin Modern Math}
+
+% \setmainfont[Ligatures=TeX]{XITS}
+% \setmathfont{XITS Math}
 
 \usepackage{polyglossia}
 % \usepackage[english]{selnolig}
@@ -99,7 +104,7 @@
 \newtheorem*{exercise*}{Exercise}
 \newtheorem*{problem*}{Problem}
 
-\makeindex
+% \makeindex
 
 % \loadglsentries{anal-glossary.tex}
 % \makeglossaries
@@ -109,17 +114,16 @@
 %% Footnote style
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
-%% Counters
-\setsecnumdepth{subsection}
-\counterwithout{exercise}{chapter}
-\numberwithin{equation}{subsection}
-\counterwithout{equation}{chapter}
-
 %% Header-footer
-\chapterstyle{veelo}
+% \chapterstyle{veelo}
 
 %% Redefine the QED symbol
 % \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
+
+%% Counters
+\counterwithout{exercise}{chapter}
+\numberwithin{equation}{subsection}
+\counterwithout{equation}{chapter}
 
 \thispagestyle{empty}
 \author{\href{mailto:\authoremail}{\documentauthor}}
@@ -177,7 +181,7 @@
 %% References
 \bibliographystyle{plain}
 \bibliography{anal-bib}
-\printindex
+% \printindex
 \end{document}
 
 %%% Local Variables:
