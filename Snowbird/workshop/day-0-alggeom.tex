@@ -1,0 +1,69 @@
+\section{Algebraic Geometry}
+Generally speaking, in order to do geometry we need
+\begin{enumerate}[label=(\arabic*)]
+\item A topological space.
+\item A notion of locally standard objects. (For example, in the case of
+  real manifolds, a ball in $\bbR^n$. In the case of complex manifolds, a
+  ball in $\bbC^n$. In the case of algebraic varieties, a system of
+  polynomials that are locally $0$.)
+\item Some set of functions on the space (perhaps locally defined). For
+  example, in the real case, $C^k$-functions, or smooth functions, or
+  analytic functions In the complex case, holomorphic functions, or
+  analytic functions. In the complex case, holomorphic functions.
+\item Maps between the objects given by (1), (2), (3).
+\end{enumerate}
+
+Another theme in algebraic geometry is that of classifying a space (or
+moduli space). Assume that we have some geometric algebraic object $X$.This
+object $X$ is at least a topological space.
+
+\begin{question}
+  Given $X$, with some topological structure, classify all algebraic
+  structures it carries, compatible with the underlying topological
+  structure.
+\end{question}
+
+\begin{example}
+  Consider the elliptic curve of equation
+  \[
+    y^2=ax^3+bx+c,\qquad(a,b,c\in\bbC),
+  \]
+  where the right hand side has distinct roots. Geometrically, this is a
+  genus $1$ complex surface with one point missing. If we compactify, we
+  obtain the usual torus.
+\end{example}
+
+Here are two things that we can ask ourveles.
+
+What are the algebraic structures carried by the torus?
+
+Given $X$ an algebraic variety, classify all subobjects of $X$.
+
+This problem can only be handled if we fix some discrete invariants. Then
+it might be possible to classify the subobjects, and the classifying space
+might also be an algebraic variety.
+
+Consider the special case where $\bbk=\bbC$ and $X=\bbA^n$. We would like
+to classify all the subvarieties of $\bbA^n$ traced by polynomials
+$\bff_1,\dotsc,\bff_m\in\bbC[X_1,\dotsc,X_n]$. Let us consider the easier
+problem which is to classify the linear subvarieties of $\bbA^n$. Using
+translation, we may assume without loss of generality that they pass
+through the origin. The invariant is the dimension $d$, where $0\leq d\leq
+n$. The cases $d=0$, $n$ are trivial. Let $G(n,d)$ denote the space of all
+linear transformations of dimension $d$ in $\bbA^n$ through $\mathbf{0}$.
+
+Observe that there is an isomorphism
+\[
+G(n,d)\simeq G(n,n-d)
+\]
+given by duality. We will treat the case $d=1$, since it is simpler. We
+need to classify all lines through the origin $\mathbf{0}$ in $\bbA^n$. Let
+$\Sigma$ be the unit sphere in $\bbA^n$, that is, the set
+\[
+  \Sigma\coloneq\left\{\,\bfz:\sum|z_i|^2=1,\bfz=(z_1,\dotsc,z_n)\,\right\}
+\]
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Snowbird-Notes"
+%%% End:

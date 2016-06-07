@@ -157,21 +157,86 @@ Prove theorem (2.1).
   $[a,b]$. %
   \\\\
   (b) Suppose $f$ and $g$ are b.v.\@ on $[a,b]$ with variation $V_f$ and
-  $V_g$, respectively.
-
-  Let $c$ be a real number. Given a partition $\Gamma=\{x_0,\dotsc,x_n\}$
-  of $[a,b]$, we have
+  $V_g$, respectively.  We will show that $cf$, $f+g$, and $fg$ are b.v.\@
+  on $[a,b]$. Moreover, we show $f/g$ is b.v.\@ on $[a,b]$ if there exists
+  $\varepsilon>0$ such that $|g(x)|\geq\varepsilon$ for all $x\in[a,b]$.
+  \\\\
+  \underline{($cf$ is b.v.\@ on $[a,b]$)}: Let $c$ be a real number. Given
+  a partition $\Gamma=\{x_0,\dotsc,x_n\}$ of $[a,b]$, we have
   \begin{equation}
-    \label{eq:eq:1:4}
+    \label{eq:1:4}
     \begin{aligned}
       S_\Gamma&=\sum_{i=0}^n|cf(x_i)-cf(x_{i-1})|\\
-      &=\sum_{i=0}^n|c||f(x_i)-f(x_{i-1})|\\
-      &=|c|\underbrace{\left(\sum_{i=0}^n|f(x_i)-f(x_{i-1})|\right)}_{S_{\Gamma,f}}.
+      &=\sum_{i=1}^n|c||f(x_i)-f(x_{i-1})|\\
+      &=|c|\underbrace{\left(\sum_{i=1}^n|f(x_i)-f(x_{i-1})|\right)}_{S_{\Gamma,f}}.
     \end{aligned}
   \end{equation}
   But since $f$ is b.v.\@ on $[a,b]$, $S_{\Gamma,f}\leq V_F$ so
   $S_\Gamma\leq cV_f$. Since $\Gamma$ was chosen arbitrarily, it follows
-  that $cf$ is b.v.\@ on $[a,b]$.
+  that $cf$ is b.v.\@ on $[a,b]$.  $x\in[a,b]$.
+  \\\\
+  \underline{($f+g$ is b.v.\@ on $[a,b]$)}: Given a partition
+  $\Gamma=\left\{ x_0,\dotsc,x_n \right\}$ of the interval $[a,b]$, we have
+  the sums associated to $f+g$
+  \begin{equation}
+    \label{eq:1:5}
+    \begin{aligned}
+      S_{\Gamma,f+g}
+      &=\sum_{i=1}^n\left|(f(x_i)+g(x_i))-(f(x_{i-1})+g(x_{i-1}))\right|\\
+      &=\sum_{i=1}^n\left|(f(x_i)-f(x_{i-1}))+(g(x_i)-g(x_{i-1}))\right|\\
+      &\leq\sum_{i=1}^n|f(x_i)-f(x_{i-1})|+\sum_{i=1}^n|g(x_i)-g(x_{i-1})|\\
+      &\leq V_f+V_g.
+    \end{aligned}
+  \end{equation}
+  Thus, $f+g$ is b.v.\@ on $[a,b]$.
+  \\\\
+  \underline{($fg$ is b.v.\@ on $[a,b]$)}: First, recall that, since $f$
+  and $g$ are b.v.\@ on $[a,b]$, $f$ and $g$ are bounded on $[a,b]$ by,
+  say, $M_f>0$ and $M_g>0$, respectively. Now, given a partition
+  $\Gamma=\{x_0,\dotsc,x_n\}$ of $[a,b]$ consider the sums associated to
+  the product $fg$
+  \begin{equation}
+    \label{eq:1:6}
+    \begin{aligned}
+      S_{\Gamma,fg}
+      &=\sum_{i=1}^n\left|f(x_i)g(x_i)-f(x_{i-1})g(x_{i-1})\right|\\
+      &\begin{aligned}
+        =\sum_{i=1}^n
+        &\left|f(x_i)g(x_i)-f(x_{i-1})g(x_{i-1})\right.\\
+        &\left.+f(x_i)g(x_{i-1})-f(x_i)g(x_{i-1})\right|
+      \end{aligned}\\
+      &\begin{aligned}
+        =\sum_{i=1}^n
+        &\left|(f(x_i)g(x_i)-f(x_i)g(x_{i-1}))\right.\\
+        &\left.-(f(x_{i-1})g(x_{i-1})-f(x_i)g(x_{i-1}))\right|
+      \end{aligned}\\
+      &\begin{aligned}
+        \leq&\sum_{i=1}^n|f(x_i)g(x_i)-f(x_i)g(x_{i-1})|\\
+        &+\sum_{i=1}^n|f(x_{i-1})g(x_{i-1})-f(x_i)g(x_{i-1})|
+      \end{aligned}\\
+      &=\sum_{i=1}^n|f(x_i)||g(x_i)-g(x_{i-1})|+\sum_{i=1}^n|g(x_{i-1})||f(x_i)-f(x_{i-1})|\\
+      &=\sum_{i=1}^n
+      M_f|g(x_i)-g(x_{i-1})|+\sum_{i=1}^nM_g|f(x_i)-f(x_{i-1})|\\
+      &\leq M_fV_g+M_gV_f.
+      \end{aligned}
+    \end{equation}
+    Thus, $fg$ is b.v.\@ on $[a,b]$.
+    \\\\
+    \underline{($f/g$ is b.v.\@ on $[a,b]$ if there exists $\varepsilon>0$
+      such that $|g(x)|\geq\varepsilon$ for all $x\in[a,b]$.)}: Suppose
+    there exists $\varepsilon>0$ such that $|g(x)|\geq\varepsilon$ for all
+    $x\in[a,b]$. Suppose $\Gamma=\{x_0,\dotsc,x_n\}$ is a partition of
+    $[a,b]$ and consider the sum associated to the quotient $f/g$
+    \begin{equation}
+      \label{eq:1:7}
+      \begin{aligned}
+        V_{\Gamma,f/g}
+        &=\sum_{i=1}^n |f(x_i)/g(x_i)-f(x_{i-1})/g(x_{i-1})|\\
+        &=\sum_{i=1}^n\left|\frac{f(x_i)g(x_{i-1})-
+            f(x_{i-1})g(x_i)}{g(x_i)g(x_{i-1})}\right|\\
+        &=
+      \end{aligned}
+    \end{equation}
 \end{proof}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 3]
