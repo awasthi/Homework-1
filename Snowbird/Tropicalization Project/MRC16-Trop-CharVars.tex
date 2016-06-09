@@ -10,10 +10,10 @@
     menucolor=black,
     runcolor=black,
     urlcolor=black,
-    pdftitle={\shorttitle},
-    pdfauthor={\documentauthor},
-    pdfkeywords={\documentsubject},
-    pdfsubject={\coursename}
+    pdftitle={TropGroup},
+    pdfauthor={CS},
+    pdfkeywords={tropical geometry, character varieties, character
+      varieties of knots}
     ]{hyperref}
 \usepackage{natbib}
 % \usepackage[acronym,shortcuts,toc]{glossaries}
@@ -24,6 +24,7 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 % \usepackage{mathtools}
+\usepackage{lmodern}
 
 %% Misc
 \usepackage{graphicx}
@@ -73,16 +74,25 @@
 \newtheorem*{problem*}{Problem}
 
 \begin{document}
-\author{\href{mailto:\authoremail}{\documentauthor}}
-\title{\documenttitle}
+\author{Carlos Salinas}
+\title{MRC 16: Character Varieties -- Tropical Geometry Group}
 \date{\today}
 
 \maketitle
+\begin{abstract}
+\input{notes/abstract}
+\end{abstract}
 \tableofcontents
 
+%% Content
+\input{notes/tropicalization}
+\input{notes/knot-varieties}
+\input{notes/code}
+\input{notes/results}
+
 %% Bibliography
-\bibliographystyle{plain}
-\bibliography{mrc-16-bib}
+% \bibliographystyle{plain}
+% \bibliography{mrc-16-bib}
 % \printindex
 \end{document}
 
