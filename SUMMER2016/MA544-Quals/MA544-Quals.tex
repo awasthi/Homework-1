@@ -48,34 +48,13 @@
 % \mleftright
 \usepackage{carlos-variables}
 
-%% Unicode math and Polyglossia
-\usepackage{unicode-math}
+%% Unicode math
+% \usepackage{unicode-math}
 
 % \setmainfont[Ligatures=TeX]{Latin Modern Roman}
 % \setsansfont{Latin Modern Sans}
 % \setsansfont{Latin Modern Mono}
 % \setmathfont{Latin Modern Math}
-
-% \setmainfont[Ligatures=TeX]{XITS}
-% \setmathfont{XITS Math}
-
-\usepackage{polyglossia}
-% \usepackage[english]{selnolig}
-
-\newfontfamily\cyrillicfont[Ligatures=TeX,Script=Cyrillic]{CMU Serif}
-\newfontfamily\cyrillicfontsf[Script=Cyrillic]{CMU Sans Serif}
-\newfontfamily\cyrillicfonttt[Script=Cyrillic]{CMU Typewriter Text}
-
-\setmainlanguage[variant=american]{english}
-\setotherlanguage{french}
-\setotherlanguage[spelling=new,latesthyphen,babelshorthands]{german}
-\setotherlanguage{spanish}
-\setotherlanguage[spelling=modern,babelshorthands]{russian}
-
-\usepackage{xeCJK}
-\usepackage[overlap]{ruby}
-\renewcommand\rubysep{-0.2ex}
-\setCJKmainfont[BoldFont=IPAGothic]{IPAMincho}
 
 %% Theorems and definitions
 \theoremstyle{plain}
@@ -117,7 +96,8 @@
 % \chapterstyle{veelo}
 
 %% Redefine the QED symbol
-% \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
+\renewcommand\qedsymbol{\ensuremath{\null\hfill\blacksquare}}
+
 
 %% Counters
 \counterwithout{exercise}{chapter}
