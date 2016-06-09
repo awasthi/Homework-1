@@ -1,11 +1,4 @@
-\def\documentauthor{Carlos Salinas}
-\def\documenttitle{MA544: Qual Preparation}
-\def\shorttitle{MA544 Quals Prep}
-\def\coursename{MA544}
-\def\documentsubject{measure theory}
-\def\authoremail{salinac@purdue.edu}
-
-\documentclass[10pt,showtrims,twoside]{memoir}
+\documentclass{amsart}
 \usepackage{geometry}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[
@@ -24,9 +17,6 @@
     ]{hyperref}
 \usepackage{natbib}
 % \usepackage[acronym,shortcuts,toc]{glossaries}
-
-% TOC depth
-\setsecnumdepth{subsection}
 
 %% Math
 \usepackage{amsmath}
@@ -48,7 +38,7 @@
 % \mleftright
 \usepackage{carlos-variables}
 
-%% Unicode math
+%% Unicode math and Polyglossia
 % \usepackage{unicode-math}
 
 % \setmainfont[Ligatures=TeX]{Latin Modern Roman}
@@ -82,79 +72,17 @@
 \newtheorem*{exercise*}{Exercise}
 \newtheorem*{problem*}{Problem}
 
-% \makeindex
-
-% \loadglsentries{anal-glossary.tex}
-% \makeglossaries
-
 \begin{document}
-
-%% Footnote style
-\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
-
-%% Header-footer
-% \chapterstyle{veelo}
-
-%% Redefine the QED symbol
-% \renewcommand\qedsymbol{\ensuremath{\null\hfill\QED}}
-
-
-%% Counters
-\counterwithout{exercise}{chapter}
-\numberwithin{equation}{subsection}
-\counterwithout{equation}{chapter}
-
-\thispagestyle{empty}
 \author{\href{mailto:\authoremail}{\documentauthor}}
 \title{\documenttitle}
 \date{\today}
 
-\frontmatter
 \maketitle
 \tableofcontents
 
-%% Danielli homework
-\mainmatter
-\include{danielli/544-hw-1}
-\include{danielli/544-hw-2}
-\include{danielli/544-hw-3}
-\include{danielli/544-hw-4}
-\include{danielli/544-hw-5}
-\include{danielli/544-hw-6}
-\include{danielli/544-hw-7}
-\include{danielli/544-hw-8}
-\include{danielli/544-hw-9}
-\include{danielli/544-hw-10}
-\include{danielli/544-hw-11}
-\include{danielli/544-hw-12}
-
-\include{danielli/544-exam-1-prep}
-\include{danielli/544-exam-1}
-\include{danielli/544-exam-2-prep}
-\include{danielli/544-exam-2-2010}
-\include{danielli/544-exam-2}
-\include{danielli/544-final-prep}
-\include{danielli/544-final-2010}
-\include{danielli/544-final}
-
-%%% Quals
-%% Danielli
-\include{danielli/544-jan-12}
-\include{danielli/544-aug-11}
-%% Bañuelos
-% \include{banuelos/544-aug-13}
-% \include{banuelos/544-jan-13}
-% \include{banuelos/544-aug-00}
-%% Lempert
-% \include{lempert}
-
-%% Glossaries
-\backmatter
-% \printglossary
-
-%% References
+%% Bibliography
 \bibliographystyle{plain}
-\bibliography{anal-bib}
+\bibliography{mrc-16-bib}
 % \printindex
 \end{document}
 
