@@ -1,0 +1,2 @@
+Q[y,z,w]
+{w-y^2w-zw+y^2zw-z^2w}
