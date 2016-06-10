@@ -5,11 +5,11 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsthm}
-\usepackage{lmodern}
+% \usepackage{lmodern}
 \usepackage{eucal}
 \usepackage{carlos-variables}
 
-%% Misc
+%% Mis
 \usepackage{graphicx}
 \graphicspath{{figures/}}
 
@@ -17,33 +17,33 @@
 \usepackage[inline]{enumitem}
 
 %% Beamer options
-\usetheme{Madrid}
-\usecolortheme{seagull}
-\useoutertheme{smoothbars}
-\useinnertheme{rounded}
+\usetheme{Boadilla}
+\usecolortheme{default}
 
 \begin{document}
 %% Title
-\title[Crisis] % (optional, only for long titles)
+\title[Tropicalization of Character Varieties]
 {MRC 2016: Character Varieties}
-\subtitle{Tropical Geometry Group}
-\author[]{}
-\institute[]
-{
-  \inst{1}%
-  \and
-  \inst{2}%
-}
-\date[MRC 2016] % (optional)
-{Character Varieties, 2016}
-\subject{Character varieties}
+\subtitle{Tropicalization of Character Varieties}
+\author[TGG]{Tropical Geometry Group}
+\date[Snowbird 2016] % (optional)
+{Snowbird, 2016}
+\subject{character varieties, tropical geometry}
 \frame{\titlepage}
 
-\begin{frame}
-  \frametitle{Hello}
-  \[
-    \oint\sum_{i=1}^m\frac{\varphi(z)}{(z-z_i)^{n_i}}
-  \]
+%% Frames
+\input{slides/intro}
+\input{slides/sgilles}
+% \input{slides/}
+% \input{slides/visualization}
+% \input{slides/ckaterba}
+
+%% Bibliography
+\begin{frame}[allowframebreaks]
+  \frametitle{References}
+  \cite{*}%
+  \bibliographystyle{plain}%
+  \bibliography{trop-charvar}%
 \end{frame}
 \end{document}
 
