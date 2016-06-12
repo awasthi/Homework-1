@@ -50,7 +50,31 @@ Throughout these notes
 \begin{proof}
   Without loss of generality, we may assume $n<m$; otherwise, by the
   fundamental theorem of arithmetic, there exist $q$ and $r$ with $r<m$
-  such that $n=qm+r$ so $a^n=a^{qm+r}=a^{qm}a^r=a^r$.
+  such that $n=qm+r$ so $a^n=a^{qm+r}=a^{qm}a^r=a^r$. Now, observe that
+  since $\gcd(m,n)\mid m,n$ we have
+  \begin{equation}
+    \label{eq:1:1}
+    \begin{aligned}
+      {(a^n)}^{m/\gcd(m,n)}
+      &=a^{nm/\gcd(m,n)}\\
+      &=({a^m})^{n/\gcd(m,n)}\\
+      &=1^{n/\gcd(m,n)}\\
+      &=1.
+    \end{aligned}
+  \end{equation}
+  Thus, $|a^n|\leq m/\gcd(m,n)$ so we must show that $({a^n})^p$ for any
+  $p<\gcd(m,n)$ is not $1$. Seeking a contradiction, suppose that
+  $|a^n|=p<m/\gcd(m,n)$. Then we have
+  \begin{equation}
+    \label{eq:1:2}
+    \begin{aligned}
+      1
+      &={(a^n)}^p\\
+      &=a^{np}\\
+      &={(a^p)}^n\\
+      &=
+    \end{aligned}
+  \end{equation}
 \end{proof}
 
 \begin{problem}
