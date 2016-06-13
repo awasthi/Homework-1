@@ -44,7 +44,7 @@ Throughout these notes
   Let $G$ be a group, $a\in G$ an element of finite order $m$, and $n$ a
   positive integer. Prove that
   \[
-    |a^n|=\frac{m}{\gcd(m,n)}.
+    |a^n|=\frac{m}{(m,n)}.
   \]
 \end{problem}
 \begin{proof}
@@ -53,25 +53,62 @@ Throughout these notes
   \begin{equation}
     \label{eq:1:1}
     \begin{aligned}
-      {(a^n)}^{m/\gcd(m,n)}
-      &=a^{nm/\gcd(m,n)}\\
-      &=a^{mn/\gcd(m,n)}\\
-      &={(a^m)}^{n/\gcd(m,n)}\\
-      &=e^{n/\gcd(m,n)}\\
+      {(a^n)}^{m/(m,n)}
+      &=a^{nm/(m,n)}\\
+      &=a^{mn/(m,n)}\\
+      &={(a^m)}^{n/(m,n)}\\
+      &=e^{n/(m,n)}\\
       &=e.
     \end{aligned}
   \end{equation}
-  Thus $\ell\leq m$.
+  Thus $\ell\leq m/(m,n)$.
 
-  By Theorem 3.4(iv) from \cite[Ch.\@ 3, p.\@ 35]{hungerford}, $g^$
+  On the other hand, by Theorem 3.4 (iv) from \cite[Ch.\@ I \S 3.3, p.\@
+  35]{hungerford} since ${(a^n)}^\ell=a^{n\ell}=e$ and the order of $a$ is
+  $m$, $m\mid n\ell$ or, equivalently, $mk=n\ell$ for some
+  $k\in\bbZ^+$. Now, since $(m,n)\mid m$ and $(m,n)\mid n$, we can
+  represent $m$ and $n$ as the products $(m,n)m'$ and $(m,n)n'$,
+  respectively. Now, note that $m'=m/(n,m)$ so we must show that
+  $m'\leq\ell$. Putting all of this together, we have $mk$
+  \begin{equation}
+    \label{eq:1:2}
+    mk=(m,n)m'k=(m,n)n'\ell=n\ell
+  \end{equation}
+  so
+  \begin{equation}
+    \label{eq:1:3}
+    m'k=n'\ell.
+  \end{equation}
+  Thus $m'\mid n'\ell$ so either $m'\mid n'$ or $m'\mid\ell$. But since we
+  factored the $(m,n)$ from $m$ and $n$, it follows that $(m',n')=1$ so
+  $m'\mid \ell$. Therefore $m'\leq\ell$ and equality holds, that is,
+  $\ell=m/(m,n)$.
 \end{proof}
 
 \begin{problem}
   Let $G$ be a group, and let $a$, $b$ be elements of finite order $m$, $n$
   respectively. Show that if $ba=ab$ and
-  $\langle a\rangle\cap\langle b\rangle=\{e\}$, then $|ab|=\lcm(m,n)$.
+  $\langle a\rangle\cap\langle b\rangle=\{e\}$, then $|ab|=mn/(m,n)$.
 \end{problem}
 \begin{proof}
+  Let $\ell$ denote the order of $ab$. If we play around with the powers of
+  $ab$ we have
+  \begin{equation}
+    \label{eq:1:4}
+    \begin{aligned}
+      {(ab)}^{mn/(m,n)}
+      &={((ab)^m)}^{n/(m,n)}\\
+      &={(a^mb^m)^{n/(m,n)}}\\
+      &={(b^m)^{n/(m,n)}}\\
+      &=b^{mn/(m,n)}\\
+      &=b^{nm/(m,n)}\\
+      &={(b^n)}^{m/(m,n)}\\
+      &=e^{m/(m,n)}\\
+      &=e
+    \end{aligned}
+  \end{equation}
+  so by Theorem 3.4 (iv) from \cite[Ch.\@ I \S 3.3, p.\@ 35]{hungerford},
+  $\ell\mid mn/(m,n)$.
 \end{proof}
 
 \begin{problem}

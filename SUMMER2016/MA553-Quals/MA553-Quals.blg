@@ -14,46 +14,46 @@ A level-1 auxiliary file: ulrich/553-hw-10.aux
 A level-1 auxiliary file: ulrich/553-hw-11.aux
 A level-1 auxiliary file: ulrich/553-hw-12.aux
 A level-1 auxiliary file: ulrich/553-hw-13.aux
-The style file: plain.bst
+The style file: alpha.bst
 Database file #1: alg-bib.bib
 You've used 5 entries,
-            2118 wiz_defined-function locations,
-            538 strings with 4612 characters,
-and the built_in function-call counts, 1125 in all, are:
-= -- 102
-> -- 41
-< -- 0
-+ -- 17
-- -- 12
-* -- 43
-:= -- 200
+            2543 wiz_defined-function locations,
+            599 strings with 5058 characters,
+and the built_in function-call counts, 1432 in all, are:
+= -- 129
+> -- 51
+< -- 4
++ -- 14
+- -- 14
+* -- 70
+:= -- 246
 add.period$ -- 16
 call.type$ -- 5
-change.case$ -- 18
-chr.to.int$ -- 0
+change.case$ -- 23
+chr.to.int$ -- 5
 cite$ -- 5
-duplicate$ -- 50
-empty$ -- 111
-format.name$ -- 12
-if$ -- 240
-int.to.chr$ -- 0
-int.to.str$ -- 5
+duplicate$ -- 69
+empty$ -- 126
+format.name$ -- 23
+if$ -- 294
+int.to.chr$ -- 1
+int.to.str$ -- 0
 missing$ -- 6
 newline$ -- 28
-num.names$ -- 10
-pop$ -- 41
+num.names$ -- 15
+pop$ -- 45
 preamble$ -- 1
-purify$ -- 16
+purify$ -- 31
 quote$ -- 0
-skip$ -- 33
+skip$ -- 54
 stack$ -- 0
-substring$ -- 25
+substring$ -- 35
 swap$ -- 5
-text.length$ -- 0
-text.prefix$ -- 0
+text.length$ -- 4
+text.prefix$ -- 4
 top$ -- 0
-type$ -- 14
+type$ -- 28
 warning$ -- 0
-while$ -- 10
-width$ -- 6
-write$ -- 53
+while$ -- 11
+width$ -- 7
+write$ -- 63
