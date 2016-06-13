@@ -48,33 +48,22 @@ Throughout these notes
   \]
 \end{problem}
 \begin{proof}
-  Without loss of generality, we may assume $n<m$; otherwise, by the
-  fundamental theorem of arithmetic, there exist $q$ and $r$ with $r<m$
-  such that $n=qm+r$ so $a^n=a^{qm+r}=a^{qm}a^r=a^r$. Now, observe that
-  since $\gcd(m,n)\mid m,n$ we have
+  Let $\ell$ denote the order of $a^n$. Then $\ell$ is the minimal power of
+  $a^n$ such that ${(a^n)}^\ell=e$. Now, observe that
   \begin{equation}
     \label{eq:1:1}
     \begin{aligned}
       {(a^n)}^{m/\gcd(m,n)}
       &=a^{nm/\gcd(m,n)}\\
-      &=({a^m})^{n/\gcd(m,n)}\\
-      &=1^{n/\gcd(m,n)}\\
-      &=1.
+      &=a^{mn/\gcd(m,n)}\\
+      &={(a^m)}^{n/\gcd(m,n)}\\
+      &=e^{n/\gcd(m,n)}\\
+      &=e.
     \end{aligned}
   \end{equation}
-  Thus, $|a^n|\leq m/\gcd(m,n)$ so we must show that $({a^n})^p$ for any
-  $p<\gcd(m,n)$ is not $1$. Seeking a contradiction, suppose that
-  $|a^n|=p<m/\gcd(m,n)$. Then we have
-  \begin{equation}
-    \label{eq:1:2}
-    \begin{aligned}
-      1
-      &={(a^n)}^p\\
-      &=a^{np}\\
-      &={(a^p)}^n\\
-      &=
-    \end{aligned}
-  \end{equation}
+  Thus $\ell\leq m$.
+
+  By Theorem 3.4(iv) from \cite[Ch.\@ 3, p.\@ 35]{hungerford}, $g^$
 \end{proof}
 
 \begin{problem}
