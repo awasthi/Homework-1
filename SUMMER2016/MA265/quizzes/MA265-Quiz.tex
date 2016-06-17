@@ -1,4 +1,4 @@
-\def\quiznum{1}
+\def\quiznum{2}
 
 \def\documentauthor{Carlos Salinas}
 \def\documenttitle{MA 265: Quiz {\quiznum}}
@@ -7,8 +7,8 @@
 \def\documentsubject{linear algebra}
 \def\authoremail{salinac@purdue.edu}
 
-\documentclass[10pt,twoside]{memoir}
-\usepackage{geometry}
+\documentclass[12pt,twoside]{memoir}
+\usepackage[top=1in, bottom=1.5in, left=1in, right=1in]{geometry}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[
     breaklinks,
@@ -76,10 +76,10 @@
 %% Unicode math
 \usepackage{unicode-math}
 
-\setmainfont[Ligatures=TeX]{Latin Modern Roman}
-\setsansfont{Latin Modern Sans}
-\setsansfont{Latin Modern Mono}
-\setmathfont[BoldFont={latinmodern-math.otf}]{latinmodern-math.otf}
+% \setmainfont[Ligatures=TeX]{Latin Modern Roman}
+% \setsansfont{Latin Modern Sans}
+% \setsansfont{Latin Modern Mono}
+% \setmathfont[BoldFont={latinmodern-math.otf}]{latinmodern-math.otf}
 
 %% Theorems and definitions
 \theoremstyle{plain}
@@ -111,12 +111,19 @@
 
 %% Footnote style
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
-\author{TA: \href{mailto:\authoremail}{\documentauthor}}
-\title{\documenttitle}
-\date{\today}
-\maketitle
 \thispagestyle{empty}
 \setcounter{chapter}{\quiznum}
+Instructor: Tatsunari Watanabe
+\hfill \textbf{Name: \underline{\phantom{I have a really long name}}}
+
+TA: Carlos Salinas
+\begin{center}
+  {\Large\textbf{MA 265 \quad Quiz \quiznum}}
+
+  \bigskip
+
+  \today
+\end{center}
 
 \input{ma265-quiz-\quiznum}
 \end{document}
