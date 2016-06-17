@@ -1,0 +1,105 @@
+\chapter{Introduction}
+In any algebra textbook, the study of group theory is usually concerned
+about the theory of finite (or at least finitely generated)
+groups. However, most groups which appear as groups of symmetries of
+various geometric objects are not finite: for example, the group
+$\SO_3\bbR$ of all rotations of three-dimensional space is not finite and
+is not even finitely generated. Thus, much of the material learned in a
+basic algebra course does not apply here; for exampel, it is not clear,
+whether, say, the set of all morphisms between such groups can be
+explicitly described.
+
+The theory of Lie groups answers these questions by replacing the notion of
+a finitely generated group by that of a Lie group --- a group which at the
+same time is a finite dimensional manifold. It turns out that in many ways
+such groups can be described and studied as easily as finitely generated
+groups --- or even easier. The key role is played by the notion of a Lie
+algebra, the tangent space to $G$ at the identity. It turns out that the
+group operation on $G$ defines a certain skew-symmetric bilinear form on
+$\frakg\coloneq T_1G$; axiomatizing the properties of this operation gives
+a definition of the Lie algebra.
+
+The fundamental result of the theory of Lie groups is that many properties
+of Lie groups are completely determined by the properties of corresponding
+Lie algebras. For example, the set of morphisms between two (connected and
+simply connected) Lie groups is the same as the set of morphisms between
+the corresponding Lie algebras; thus, describing them is essentially
+reduced to a linear algebra problem.
+
+Similarly, Lie algebras also provide a key to the study of the structure of
+Lie groups and their representations. In particular, this allows one to get
+a complete classification of Lie groups (semisimple and more generally,
+reductive Lie groups; this includes all compact Lie groups and all
+classical Lie groups such as $\SO_n\bbR$) in terms of relatively simple
+geometric objects so-called root systems. This result is considered by many
+mathematicians to be one of the most beautiful achievements in all
+mathematics.
+
+To conclude this introduction, we will give  a simple example which shows
+that Lie groups naturally appear as groups of symmetries of various
+objects --- and how one can use the theory of Lie grousp and Lie algebras
+to make use of these symmetries.
+
+Let $S^2\subset\bbR^3$ be the unit sphere. Define the Laplace operator
+$\Delta\colon C^\infty(S^2)\to C^\infty(S^2)$ by
+$\Delta_{\text{sph}}\,f\coloneq\left.\Delta(\tilde f)\right|_{S^2}$, where
+$\tilde f$ is the result of extending $f$ to $\bbR^3\setminus\{(0,0,0)\}$
+(constant along each ray), and $\Delta$ is the usual Laplace operator in
+$\bbR^3$. It is easy to see that $\Delta_{\text{sph}}$ is a second order
+differential operator on the sphere; one can write explicit formulas for it
+in the spherical coordinates, but they are not particularly nice.
+
+For many applications, it is important to know that the eigenvalues and
+eigenfunctions of $\Delta_{\text{sph}}$. In particular, this problem arises
+in quantum mechanics: the eigenvalues are related to to the energy levels
+of a hydrogen atom in quantum mechanical description. Unfortunately, trying
+to find the eigenfunctions by brute force gives a second-order differential
+equation which is very difficult to solve.
+
+However, it is easy to notice that this problem has some symmetry ---
+namely, the group $\SO_3\bbR$ acting on the sphere by rotations. How can
+one us this symmetry?
+
+If we had just one symmetry, given by some rotation $R\colon S^2\to S^2$,
+we could consider its action on the space of complex-valued functions
+$C^\infty(S^2,\bbC)$. If we could diagonalize this operator, this would
+help us study $\Delta_{\text{sph}}$: it is a general result of linear
+algebra that if $A$ and $B$ are two linear operators, and $A$ is
+diagonalizable, then $B$ must preserve eigenspaces for $A$. Applying this
+to the pair $R$, $\Delta_{text{sph}}$, we get that $\Delta_{\text{sph}}$
+preserves eigenspaces for $R$, so we can diagonalize $\Delta_{\text{sph}}$
+independently in each of the eigenspaces.
+
+HOwever, this will not solve the problem: for each individual rotation $R$,
+the eigenspace will still be too large (in fact, infinite-dimensional), so
+diagonalizing $\Delta_{\text{sph}}$ in each of them is not very easy
+either. This is not surprising: after all, we only used one of many
+symmetries. Can we use all of the rotations in $\SO_3\bbR$ simultaneously?
+
+This however presents two problems
+\begin{itemize}
+\item $\SO_3\bbR$ is not a finitely generated group, so apparently we will
+  need to use infinitely (in fact, uncountably) many different symmetries
+  and diagonalize each of them.
+\item $\SO_3\bbR$ is not commutative, so different operators from
+  $\SO_3\bbR$ cannot be diagonalized simultaneously.
+\end{itemize}
+
+The goal of the theory of Lie groups is to give tools to deal with these
+(and similar) problems. IN short, the answer to the first problem is that
+$\SO_3\bbR$ is in a certain sense finitely generated --- namely, it is
+generated by three generators, infinitesimal rotations around the $x$-,
+$y$-, $z$-axes.
+
+The answer to the second problem is that instead of decomposing the
+$C^\infty(S^2,\bbC)$ into adirect sum of common eigenspaces for operators
+$R\in\SO_3\bbR$, we need to decompose it into irreducible representations
+of $\SO_3\bbR$. In order to do this, we need to develop the theory of
+representations of $\SO_3\bbR$. WE will do this an complete the analysis of
+this example in a couple of sections.
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA598-Lie-Groups"
+%%% End:

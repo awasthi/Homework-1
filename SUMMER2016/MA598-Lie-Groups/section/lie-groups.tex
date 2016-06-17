@@ -1,0 +1,280 @@
+\chapter{Lie Groups: Basic Definitions}
+\section{Differential geometry review}
+This book assumes that the reader is familiar with basic notions of
+differential geometry. For the reader's convenience, in this section, we
+briefly remind you of some of the definitions and fix notation for further
+use.
+
+Unless otherwise specified, all manifolds considered will be real smooth
+manifolds. All manifolds we will consider will have at most countably many
+connected components.
+
+For a manifold $M$ and a point $p\in M$, we denote by $T_pM$ the tangent
+space to $M$ at point $p$, and by $TM$ the tangent bundle to $M$. The space
+of vector fields on $M$ (i.e, global sections of $TM$) is denoted by
+$\Vect M$. For a mrphism $f\colon M\to N$ and a point $p\in M$,
+$q\coloneq f(p)$, $df\colon T_pM\to T_qN$ is the corresponding map of map
+of tangent spaces.
+
+Recall that a morphism $f\colon M\to N$ is called an \emph{immersion} if
+$\rk df=\dim M$ for every point $p\in M$; in this case, one can choose
+local coordinates in a neighborhood of $p$ and in a neighborhood of $q$
+such that $f$ is given by $f(x_1,\dotsc,x_n)=(x_1,\dotsc,x_n,0,\dotsc,0)$.
+
+An \emph{immersed submanifold} in a manifold $M$ is a subset $N\subset M$
+with a structure of a manifold (not necessarily the one inherited from $M$)
+such that the inclusion map $\iota\colon N\hookrightarrow M$ is an
+immersion. Note that the manifold structure on $N$ is part of the data: in
+general it is not unique. However, it is usually suppressed in the
+notation. Note also that for any point $p\in N$, the tangent space to $N$
+is naturally a subspace of the tangent space to $M$ at $p$, i.e.,
+$T_pN\subset T_pM$.
+
+An \emph{embedded submanifold $N\subset M$} is an immersed submanifold such
+that the inclusion map $\iota\colon N\hookrightarrow M$ is a
+homeomorphism. In this case the smooth structure on $N$ is uniquely
+determined by the smooth structure on $M$.
+
+Following Spivak, we will use the word submanifold for \emph{embedded
+  submanifolds}.
+
+All of the notions above have complex analogs, in which manifolds are
+replaced by complex analytic manifolds and smooth maps by holomorphic maps.
+
+\section{Lie groups, subgroups and cosets}
+\begin{definition}
+  A Lie group is a set $G$ with two structures: $G$ is a group and $G$ is a
+  manifold. These structures agree in the following sense: the
+  multiplication map $G\times G\to G$ and the inversion map $G\to G$ are
+  smooth maps.
+\end{definition}
+
+A morphism of Lie groups is a smooth map which also preserves the group
+operation: $f(gh)=f(g)f(h)$, $f(1)=1$. We will use the standard notation
+$\Img f$ and $\Ker f$ for the image and the kernel of the morphism.
+
+The word real is used to distinguish these Lie groups from complex Lie
+groups. However, it is frequently omitted.
+
+One can also consider other classes of manifolds: $C^1$, $C^2$, analytic
+(denoted $C^\omega$). It turns out that all of them are equivalent: every
+$C^0$ Lie group has a unique analytic structure. This is a higly
+non-trivial result (it was one of Hilber's 20 problems), and we are not
+going to prove it. Proof of a weaker result, that $C^2$ implies
+analyticity, is much easier.
+
+In a similar way, one defines complex Lie groups.
+
+\begin{definition}
+  A complex Lie group is a set $G$ with two structures: $G$ is a group and
+  $G$ is an analytic manifold. These structures agree in the following
+  sense: multiplication map $G\times G\to G$ and inversion map $G\to G$ are
+  analytic maps.
+\end{definition}
+
+A moprhism of complex Lie groups is an analytic map which also preserves
+the group operation, $f(gh)=f(g)f(h)$, $f(1)=1$.
+
+Through out this book, we try to treat both real and complex cases
+simultaneously. Thus, most theorems in this book apply both to real and
+complex Lie groups.
+
+When talking about complex Lie groups, submanifolds will mean complex
+analytic submanifold, tangent spaces will be considered as complex vector
+spaces, all morphisms between manifolds will be assumed holomorphic, etc.
+
+\begin{example}
+  The following are examples of Lie groups
+  \begin{enumerate}[label=(\arabic*)]
+  \item $\bbR^n$, with the group operation given by addition
+  \item $\bbR^\times\coloneq(\bbR\smallsetminus\{0\},\cdot)$
+
+    $\bbR^+\coloneq(\left\{\,x\in\bbR:x>0\,\right\},+)$
+  \item $S^1\coloneq(\left\{\,z\in\bbC:|z|=1\,\right\},\cdot)$
+  \item $\GL_n\bbR\subset\bbR^{n^2}$. Many of the groups we will consider
+    are subgroups of $\GL_n\bbR$ or $\GL_n\bbC$.
+  \item $\SU_2\coloneq\left\{\,A\in\GL_2\bbC:AA^\hermitmatrix=I,\det
+      A=1\,\right\}$. Indeed, one can easily see that
+    \[
+      \SU_2=\left\{
+        \begin{pmatrix}
+          a&b\\
+          -\bar b&\bar a
+        \end{pmatrix}:
+        a,b\in\bbC,\,|a|^2+|b|^2=1\,
+      \right\}.
+    \]
+    Writing $a=x_1+\rmi x_2$, $b=x_3+\rmi x_4$, $x_i\in\bbR$, we see that
+    $\SU_2$ is diffeomorphic to
+    $S^3=\left\{\,(x_1,x_2,x_3,x_4)\in\bbR^4:{x_1}^2+{x_2}^2+{x_3}^2+{x_4}^2=1\,\right\}$.
+  \item In fact, all usual groups of linear algebra, such as $\GL_n\bbR$,
+    $\SL_n\bbR$, $\Orth_n$, $\Unit_n$, $SO_n$, $\SU_n$, $\Sp_{2n}$ are all
+    Lie groups.
+  \end{enumerate}
+\end{example}
+
+Note that this definition of a Lie group does not require $G$ to be
+connected. Thus, any finite group is a $0$-dimensional Lie group. Since the
+theory of finite groups is complicated enough, it makes sense to separate
+the finite part. It can be done as follows.
+
+\begin{theorem}
+  Let $G$ be a real or complex Lie group. Denote by $G^0$ the connected
+  component of the identity. Then $G^0$ is a normal subgroup of $G$ and is
+  a Lie group itself (real or complex, respectively). The quotient group
+  $G/G^0$ is discrete.
+\end{theorem}
+\begin{proof}
+We need to show that $G^0$ is closed under the operations of multiplication
+and inversion. Since the image of a connected topological space under a
+continuous map is connected, the inversion map $i$ must take $G^0$ to one
+component of $G$, that which contains $i(1)=1$, namely $G^0$. In a similar
+way one shows that $G^0$ is closed under multiplication.
+
+To check that this is a normal subgroup, we must show that if $g\in G$ and
+$h\in G^0$, then $ghg^{-1}\in G^0$. Conjugation by $g$ is continuous and
+thus will take $G^0$ to some connected component of $G$; since it fixes
+$1$, this component is $G^0$.
+
+The fact that the quotient is discrete is obvious.
+\end{proof}
+
+This theorem mostly reduces the study of arbitrary Lie groups to the study
+of finite groups and connected Lie groups. In fact, one can go further and
+reduce the study of connected Lie groups to the study of connected
+simply-connected Lie groups.
+
+\begin{theorem}
+If $G$ is a connected Lie group, then its universal cover $\tilde G$ has a
+canonical structure of a Lie group such that the covering map
+$p\colon\tilde G\to G$ is a marphism of a Lie groups whose kernel is
+isomorphic to the fundamental group of $G$; $\Ker p=\pi_1(G)$ as a
+group. Moreover, in this case $\Ker p$ is a discrete central subgroup in
+$\tilde G$.
+\end{theorem}
+\begin{proof}
+The proof follows from the following general result of topology: if $M$,
+$N$ are manifolds (or, more generally, nice enough topological spaces),
+then any continuous mapping $f\colon M\to N$ can be lifted to a map of
+universal covers $\tilde f\colon \tilde M\to\tilde N$. Moreover, if we
+choose $m\in M$, $n\in N$ such that $f(m)=n$ and choose liftings $\tilde
+m\in M$, $\tilde n\in\tilde N$ such that $p(\tilde m)=m$, $p(\tilde n)=n$,
+there is a unique lifting $\tilde f$ of $f$ such that $\tilde f(\tilde
+m)=\tilde n$.
+
+Now let us choose some element $\tilde 1\in\tilde G$ such that $p(\tilde
+1)=1$ in $G$. Then, by the above theorem, there is a unique map
+$\tilde\imath\colon\tilde G\to\tilde G$ which lifts the inversion map
+$i\colon G\to G$ and satisfies $\tilde\imath(\tilde 1)=\tilde 1$. In a
+similar way, one constructs the multiplication map $\tilde G\times\tilde
+G\to\tilde G$.
+
+Finally, the fact that $\Ker p$ is central follows from the results of
+Exercise 2.2. (Whatever that exercise may be.)
+\end{proof}
+
+\begin{definition}
+A closed Lie subgroup $H$ of a Lie group $G$ is a subgroup which is also a
+submanifold.
+\end{definition}
+
+\begin{theorem}
+  \begin{enumerate}[label=\textnormal{(\arabic*)}]
+  \item Any closed LIe subgroup is closed in $G$.
+  \item Any closed subgroup of a Lie goup is a closed real Lie subgroup.
+  \end{enumerate}
+\end{theorem}
+\begin{proof}
+The proof o fthe first part is given in Exercise 2.1. The second part is
+much harder and will not be proved here. Thep roof uses the technique of
+Lie algebras and can be found, for example, in 10, Corollary 1.10.7.
+\end{proof}
+
+\begin{corollary}
+  \hfill
+  \begin{enumerate}[label=\textnormal{(\arabic*)}]
+  \item If $G$ is a connected LIe group and $U$ is a neighborhood of $1$,
+    then $U$ generates $G$.
+  \item Let $f\colon G_1\to G_2$ be a morphism of Lie groups, with $G_2$
+    connected, such that $df\colon T_1G_1\to T_2G_2$ is surjective. Then
+    $f$ is surjective.
+  \end{enumerate}
+\end{corollary}
+\begin{proof}
+(1) Let $H$ be the subgroup generated by $U$. Then $H$ is open in $G$: for
+any element $h\in H$, the set $h\cdot U$ is a neighborhoof of $h$ in
+$G$. Since it is an open subset of a manifold, it is a submanifold, so $H$
+is a closed Lie subgroup. Therefore, by Theorem 2.9 it is closed and is
+nonempty, so $H=G$.
+\\\\
+(2) Given the assumptions, the inverse function theorem says that $f$ is
+surjective onto some neighborhood $U$ of $1\in G_2$. Since an image of
+a group morphism is a subgroup, and $U$ generates $G_2$, $f$ is
+surjective.
+\end{proof}
+
+As in the theory of discrete groups, given a closed Lie subgroup $H<G$, we
+can define the notion of cosets and define the coset space $G/H$ as the set
+of equivalence classes. The following theorem shows that the coset space is
+actually a manifold.
+\begin{theorem}
+  \hfill
+  \begin{enumerate}[label=\textnormal{(\arabic*)}]
+  \item Let $G$ be a Lie group of dimension $n$ and $H<G$ a closed Lie
+    subgroup of dimension $k$. Then the coset space $G/H$ has a natural
+    structure of a manifold of dimension $n-k$ such that the canonical map
+    $p\colon G\to G/H$ is a fiber bundle, with fiber diffeomorphic to
+    $H$. The tangent space at $\tilde 1=p(1)$ is given by $T_{\tilde
+      1}G/H=T_1G/T_1H$.
+  \item If $H$ is a normal closed Lie subgroup then $G/H$ has a canonical
+    structure of a Lie group.
+  \end{enumerate}
+\end{theorem}
+\begin{proof}
+  Denote by $p\colon G\to G/H$ the canonical map. Let $g\in G$ and
+  $\bar g=p(g)\in G/H$. Then the set $g\cdot H$ is a submanifold in $G$ as
+  it is an image of $H$ under diffeomorphism $x\mapsto gx$. Choose a
+  submanifold $M\subset G$ such that $g\in M$ and $M$ is transversal to the
+  manifold $gH$, i.e., $T_gG=T_ggH\oplus T_gM$. Let $U\subset M$ be a
+  sufficiently small neighborhood of $g$ in $M$. Then the set
+  $UH\coloneq\left\{\,uh:u\in U,h\in H\,\right\}$ is open in $G$ (which
+  easily follows from the inverse function theorem applied to the map
+  $U\times H\to G$). Consider $\bar U=p(U)$; since $p^{-1}(\bar U)=UH$ is
+  open, $\bar U$ is an open neighborhood of $\bar g$ in $G/H$ and the map
+  $U\to \bar U$ is a homeomorphism. This gives a local chart for $G/H$ and
+  at the same time shows that $G\to G/H$ is a fiber bundle with fiber
+  $H$. Now we just need to show that the transition functions between such
+  charts are smooth and that the smooth structure does not depend on the
+  choice of $g$, $M$.
+
+  This argument also shows that the kernel of the projection $\pi\colon
+  T_gG\to T_{\bar g}G/H$ is equal to $T_ggH$. In particular, for $g=1$ this
+  gives us an isomorphism $T_{\bar 1}G/H\simeq T_1G/T_1H$.
+\end{proof}
+
+\begin{corollary}
+  Let $H$ be a closed Lie subgroup of a Lie group $G$.
+  \begin{enumerate}[label=\textnormal{(\arabic*)}]
+  \item If $H$ is connected, then the set of connected components
+    $\pi_0G=\pi_0G/H$ . In particular, if $H$, $G/H$ are connected, then so
+    is $G$.
+  \item If $G$, $H$ are connected, then there is an exact sequence of
+    fundamental groups
+    \[
+      \pi_2G/H\longrightarrow
+      \pi_1H\longrightarrow
+      \pi_1G/H\longrightarrow
+      1.
+    \]
+  \end{enumerate}
+\end{corollary}
+This corollary follows from more general long exact sequence of homotopy
+groups associated with any fiber bundle.
+
+\section{Analytic subgroups and the homomorphism theorem}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA598-Lie-Groups"
+%%% End:
