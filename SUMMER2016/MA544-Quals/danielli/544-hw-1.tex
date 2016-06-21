@@ -70,54 +70,54 @@ Let $f(x)=x\sin(1/x)$ for $0<x\leq 1$ and $f(0)=0$. Show that $f$ is
 bounded and continuous on $[0,1]$, but that $V[f;0,1]=+\infty$.
 \end{problem}
 \begin{proof}
-  Set $f\coloneq x\sin (1/x)$. We will show that $f$ is bounded and
-  continuous on $[0,1]$ but that, nevertheless, $f$ is not of bounded
-  variation on $[0,1]$.
+  % Set $f\coloneq x\sin (1/x)$. We will show that $f$ is bounded and
+  % continuous on $[0,1]$ but that, nevertheless, $f$ is not of bounded
+  % variation on $[0,1]$.
 
-  To see that $f$ is bounded, we note that both $x$ and $\sin(1/x)$ are
-  bounded by $1$ on $[0,1]$. Thus, the absolute value of the product
-  $|{x\sin(1/x)}|$ is bounded by $1$ so $f$, since it is defined to be the
-  product $x\sin x$, is bounded on $[0,1]$.
+  % To see that $f$ is bounded, we note that both $x$ and $\sin(1/x)$ are
+  % bounded by $1$ on $[0,1]$. Thus, the absolute value of the product
+  % $|{x\sin(1/x)}|$ is bounded by $1$ so $f$, since it is defined to be the
+  % product $x\sin x$, is bounded on $[0,1]$.
 
-  To see that $f$ is continuous, we use note that, since $\sin(1/x)$ and
-  $x$ are continuous on $(0,1]$ by properties of continuous functions (you
-  may refer to \cite[Ch.\@ 4, p.\@ 87]{rudin-1}) $f$ is continuous on
-  $(0,1]$. At a first glance, however, is not obvious that $f$ is
-  continuous at $0$ since $\sin(1/x)$ is not continuous at
-  $0$.\footnote{Take for example, the sequence of real numbers $\{a_n\}$
-    and $\{b_n\}$, where we set $a_n\coloneq (2\pi)^{-1}$ and
-    $b_n\coloneq (2\pi n+\pi/2)^{-1}$. These sequences approach $0$ as
-    $n\to\infty$. However, the sequence $\{\sin(1/a_n)\}$ and
-    $\{\sin(1/b_n)\}$ approach $0$ and $1$, respectively.} To show that $f$
-  is continuous at $0$ by Theorem 4.6 from \cite[Ch.\@ 4, p.\@
-  86]{rudin-1} it suffices to show that $\lim_{x\to 0}f(x)=0$. Let
-  $\{a_n\}$ be a sequence whose limit is $0$. Now, given $\varepsilon>0$,
-  for sufficiently large $N\in\bbZ^+$, the distance
-  $|a_n-0|=a_n<\varepsilon$. Thus, for every $n\geq N$ we have
-  \begin{equation}
-    \label{eq:1:1}
-    |{a_n\sin(1/a_n)-0}|\leq
-    a_n<\varepsilon.
-  \end{equation}
-  Thus, $\lim_{a_n\to 0}f(a_n)=0$. Since $a_n$ was chosen arbitrarily, it
-  follows that $f$ is continuous at $0$ and, consequently, on
-  $[0,1]$.
+  % To see that $f$ is continuous, we use note that, since $\sin(1/x)$ and
+  % $x$ are continuous on $(0,1]$ by properties of continuous functions (you
+  % may refer to \cite[Ch.\@ 4, p.\@ 87]{rudin-1}) $f$ is continuous on
+  % $(0,1]$. At a first glance, however, is not obvious that $f$ is
+  % continuous at $0$ since $\sin(1/x)$ is not continuous at
+  % $0$.\footnote{Take for example, the sequence of real numbers $\{a_n\}$
+  %   and $\{b_n\}$, where we set $a_n\coloneq (2\pi)^{-1}$ and
+  %   $b_n\coloneq (2\pi n+\pi/2)^{-1}$. These sequences approach $0$ as
+  %   $n\to\infty$. However, the sequence $\{\sin(1/a_n)\}$ and
+  %   $\{\sin(1/b_n)\}$ approach $0$ and $1$, respectively.} To show that $f$
+  % is continuous at $0$ by Theorem 4.6 from \cite[Ch.\@ 4, p.\@
+  % 86]{rudin-1} it suffices to show that $\lim_{x\to 0}f(x)=0$. Let
+  % $\{a_n\}$ be a sequence whose limit is $0$. Now, given $\varepsilon>0$,
+  % for sufficiently large $N\in\bbZ^+$, the distance
+  % $|a_n-0|=a_n<\varepsilon$. Thus, for every $n\geq N$ we have
+  % \begin{equation}
+  %   \label{eq:1:1}
+  %   |{a_n\sin(1/a_n)-0}|\leq
+  %   a_n<\varepsilon.
+  % \end{equation}
+  % Thus, $\lim_{a_n\to 0}f(a_n)=0$. Since $a_n$ was chosen arbitrarily, it
+  % follows that $f$ is continuous at $0$ and, consequently, on
+  % $[0,1]$.
 
-  In spite of these nice properties that $f$ possesses $f$ is not b.v.\@ on
-  $[0,1]$. To see this, we note that $f$ is differentiable on $[0,1]$ so by
-  Corollary 2.10 from \cite[Ch.\@ 2, p.\@ 23]{wheeden-zygmund} we have
-  \begin{equation}
-    \label{eq:1:2}
-    \begin{aligned}
-      V&=\int_0^1|f'|\diff x\\
-      &=\int_0^1|{\sin(1/x)-(1/x)\cos(1/x)}|\diff x\\
-      &=\int_1^\infty\frac{1}{u^2}|{\sin u-u\cos u}|\diff x\\
-      &\geq\int_M^\infty \frac{1}{2u}\diff u\\
-      &=\infty,
-    \end{aligned}
-  \end{equation}
-  where, for sufficiently large $M\in\bbZ^+$, for $u\geq M$, we have
-  $|{\sin u- u\cos u}|>u/2$. Thus, $f$ is not b.v.\@ on $[0,1]$.
+  % In spite of these nice properties that $f$ possesses $f$ is not b.v.\@ on
+  % $[0,1]$. To see this, we note that $f$ is differentiable on $[0,1]$ so by
+  % Corollary 2.10 from \cite[Ch.\@ 2, p.\@ 23]{wheeden-zygmund} we have
+  % \begin{equation}
+  %   \label{eq:1:2}
+  %   \begin{aligned}
+  %     V&=\int_0^1|f'|\diff x\\
+  %     &=\int_0^1|{\sin(1/x)-(1/x)\cos(1/x)}|\diff x\\
+  %     &=\int_1^\infty\frac{1}{u^2}|{\sin u-u\cos u}|\diff x\\
+  %     &\geq\int_M^\infty \frac{1}{2u}\diff u\\
+  %     &=\infty,
+  %   \end{aligned}
+  % \end{equation}
+  % where, for sufficiently large $M\in\bbZ^+$, for $u\geq M$, we have
+  % $|{\sin u- u\cos u}|>u/2$. Thus, $f$ is not b.v.\@ on $[0,1]$.
 \end{proof}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 2]
@@ -246,7 +246,6 @@ Prove theorem (2.1).
         &=
       \end{aligned}
     \end{equation}
-
 \end{proof}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 3]

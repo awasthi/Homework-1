@@ -272,7 +272,229 @@ This corollary follows from more general long exact sequence of homotopy
 groups associated with any fiber bundle.
 
 \section{Analytic subgroups and the homomorphism theorem}
+For many purposes, the notion of a closed Lie subgroup introduced above is
+too restrictive. For example
+\begin{example}
+Let $G_1\coloneq\bbR$, $G_2\coloneq T^2=\bbR^2/\bbZ^2$. Define the map
+$f\colon G_1\to G_2$ by $f(t)\coloneq(t\mod\bbZ,\alpha t\mod\bbZ)$, where
+$\alpha$ is some fixed irrational number. Then it is well-known that the
+image of this map is everywhere dense in $T^2$ (it is sometimes called the
+\emph{irrational winding} on the torus)..
+\end{example}
 
+It is therefore useful to introduce a more general notion of a
+subgroup. Recall the definition of immersed submanifold.
+
+\begin{definition}
+  A \emph{Lie subgroup} in a Lie  group $H<G$ is an immersed submanifold
+  which is also a subgroup.
+\end{definition}
+
+It is easy to see that in such a situation $H$ is itself a Lie group and
+the inclusion map $\iota\colon H\hookrightarrow G$ is a morphism of Lie
+groups.
+
+Clearly, every closed Lie subgroup is a Lie subgroup, but the converse is
+not true as the example above demonstrated.
+
+With this new notion of a subgroup we can formulate an analog of the
+standard homomorphism theorems.
+
+\begin{theorem}
+Let $f\colon G_1\to G_2$ be a morphism of Lie groups. Then $H\coloneq\Ker
+f$ is a normal closed Lie subgroup in $G_1$, and $f$ gives rise to an
+injective morphism $G_1/H\to G_2$, which is an immersion; thus, $\Img f$ is
+a Lie subgroup in $G_2$. If $\Img f$ is a submanifold, then it is a closed
+lie subgroup in $G_2$ and $f$ gives an isomorphism of Lie gruops
+$G_1/H\simeq\Img f$.
+\end{theorem}
+
+With this new notation of of a subgroup we can formulate an analog of the
+standard hobmomorphism theorems.
+\begin{theorem}
+  Let $f\colon G_1\to G_2$ be a morphism of Lie groups. Then
+  $H\coloneq\Ker f$ is a normal closed Lie subgroup in $G_1$, and $f$ gives
+  rise to an injective morphism $G_1/H\to G_2$, which is an immersion;
+  thus, $\Img f$ is a Lie subgroup of $G_2$. If $\Img f$ is a submanifold
+  then it is a closed Lie subgroup in $G_2$ and $f$ gives an isomorphism of
+  Lie groups $G_1/H\simeq\Img f$.
+\end{theorem}
+
+The easiest way to prove this theorem is by using the theory of Lie
+algebras which we develeop in the next chapter.
+
+\section{Action of Lie groups on manifolds and representations}
+The primary reason why Lie groups are so frequently used is that they
+usually appear as symmetry groups of various geometric objects. In this
+section, we will show several examples.
+
+\begin{definition}
+  An action of a real Lie group $G$ on a manifold $M$ is an assignment to
+  each $g\in G$ of a diffeomorphism $\rho(g)\in\Diff M$ such that
+  $\rho(1)=\id$, $\rho(gh)=\rho(g)\rho(h)$ and such that the map
+  \[
+    \begin{aligned}
+      G\times M&\longrightarrow M\\
+      (g,m)&\longmapsto \rho(g)m
+    \end{aligned}
+  \]
+  is a smooth map.
+\end{definition}
+
+A holomorphic action of a complex Lie group $G$ on a complex manifold $M$
+is an assignment to each $g\in G$ an invertible holomorphic map
+$\rho(g)\in\Diff M$ such that $\rho(1)=\id$, $\rho(gh)=\rho(g)\rho(h)$ and
+such that the map
+\[
+  \begin{aligned}
+    G\times M&\longrightarrow M\\
+    (g,m)&\longmapsto \rho(g)m
+  \end{aligned}
+\]
+is holomorphic.
+
+\begin{example}
+  \hfill
+  \begin{enumerate}[label=(\arabic*)]
+  \item The group $\GL_n\bbR$ acts on $\bbR^n$.
+  \item The group $\Orth_n$ acts on the sphere $S^{n-1}\subset\bbR^n$. The
+    group $\Unit_n$ acts on the sphere $S^{2n-1}\subset\bbC^n$.
+  \end{enumerate}
+\end{example}
+Closely related with the notion of a group action on a manifold is the
+notion of a representation.
+
+\begin{definition}
+A representation of a Lie group $G$ is a vector space $V$ together with a
+group morphism $\rho\colon G\to\End V$. If $V$ is finite-dimensional, we
+require that $\rho$ be smooth (respectively, analytic), so it is a morphism
+of Lie groups. A morphism between two representations $V$, $W$ of the same
+group $G$ is a linear map $f\colon V\to W$ which commutes with the group
+action: $f\circ\rho_v(g)=\rho_w(g)\circ f$.
+\end{definition}
+
+In other words, we assigne to every $g\in G$ a linear map $\rho(g)\colon
+V\to V$ so that $\rho(g)\rho(h)=\rho(gh)$.
+
+We will frequently use the shorter notation $g\cdot m$, $g\cdot v$ instead
+of $\rho(g)(m)$ in the cases where there is no ambiguity about the
+representation being used.
+
+Any action of the group $G$ on a manifold $M$ gives rise to several
+representations of $G$ on various vector spaces associated with $M$:
+\begin{enumerate}[label=(\arabic*)]
+\item Representation of $G$ on the infinite-dimensional space of functions
+  $C^\infty(M)$ or the space of holomorphic functions $C^\omega(M)$ defined
+  by
+  \[
+    (\rho(g)\circ f)(m)\coloneq f(g^{-1}\cdot m).
+  \]
+  (note that we need $g^{-1}$ rather than $g$ to satisfy
+  $\rho(g)\rho(h)=\rho(gh)$).
+\item Representation of $G$ on the infinite-dimensional space of vector
+  fields $\Vec M$ defined by
+  \[
+    (\rho(g)(\bfv))(m)\coloneq dg(\bfv(g^{-1}\cdot m)).
+  \]
+  In a similar way, we defined the action of $G$ on the spaces of
+  differential forms and other types of tensor fields on $M$.
+\item Assume that $m\in M$ is a fixed-point: $g\cdot m=m$ for all $g\in
+  G$. Then we have an action of $G$ on the tangent space $T_mM$ given by
+  $\rho(g)=dg\colon T_mM\to T_mM$, and similarly for the spaces $T_m^*M$,
+  $\bigwedge^k T_m^*M$.
+\end{enumerate}
+
+\section{Orbits and homogeneous spaces}
+Let $G$ be a Lie group acting on a manifold $M$. Then for every point
+$m\in M$ we defined its \emph{orbit} by
+$\calO_m\coloneq Gm\coloneq\left\{\,g\cdot m:g\in G\,\right\}$ and
+stabilizer
+\[
+G_m\coloneq\left\{\,g\in G:g\cdot m=m\,\right\}.
+\]
+
+\begin{theorem}
+  Let $M$ be a manifold with an action of a Lie group $G$. Then for any
+  $m\in M$ the stabilizer $G_m$ is closed is a closed Lie subgroup in $G$,
+  and $g\mapsto g\cdot m$ is an injective immersion $G/G_m\hookrightarrow
+  M$ whose image coincides with the orbit $\calO_m$.
+\end{theorem}
+
+\begin{proof}
+  The fact that the orbit is in bijection with $G/G_m$ is obvious. For the
+  proof of the fact that $G_m$ is a closed Lie subgroup, we could just
+  refer to Theorem 2.9. However, this would not help proving that
+  $G/G_m\to M$ is an immersion. Both of these statements are esiest proved
+  using the technique of Lie algebras.
+\end{proof}
+
+\begin{corollary}
+  The orbit $\calO_m$ is an immersed submanifold in $M$, with tangeth space
+  $T_m\calO_m\simeq T_1G/T_1G_m$. If $\calO_m$ is a submanifold, then
+  $g\mapsto g\cdot m$ is a diffeomorphism $G/G_m\rightleftarrows\calO_m$.
+\end{corollary}
+
+An important special case is when the action of $G$ is transitive, i.e.,
+when there is only one orbit.
+
+\begin{definition}
+  A $G$-homogeneous space is a manifold with a transitive action of $G$.
+\end{definition}
+
+As an immediate corollary of Corollary 2.21, we see that each homogeneous
+space is diffeomorphic to a coset space $G/H$. Combining Theorem 2.11, we
+get the following result.
+
+\begin{corollary}
+  Let $M$ be a $G$-homogeneous space and choose $m\in M$. Then the map
+  $G\to M$ given by $g\mapsto g\cdot m$ is a fiber bundle over $M$ with
+  fiber $G_m$.
+\end{corollary}
+
+\begin{enumerate}[label=(\arabic*)]
+\item Consider the action of $\SO_n\bbR$ on the sphere
+  $S^{n-1}\subset\bbR^n$. It is transitive then $S^{n-1}$ is a homogeneous
+  space, so we have the fiber bundle
+  \[
+    \includegraphics{fiber-bundle-so}
+  \]
+\item Consider the action of $\SU_n$ on the sphere
+  $S^{2n-1}\subset\bbC^n$. Then it is a homogeneous space, so we have a
+  fiber bundle
+  \[
+    \includegraphics{fiber-bundle-su}
+  \]
+\end{enumerate}
+
+In fact, action of $G$ can be used to define smooth structure on a
+set. Indeed, if $M$ is a set (with no predetermined smooth structure) with
+a transitive action of a Lie group $G$, then $M$ is in bijection with
+$G/H$, $H\coloneq\Stab_G m$ and thus, by Theorem 2.11 $M$ has a canonical
+structure of a manifold of dimension $\dim G-\dim H$.
+
+\begin{example}
+  Define a \emph{flag} in $\bbR^n$ to be a sequence of subspaces
+  \[
+    \{0\}\subset V_1\subset V_2\subset\dotsb\subset V_n=\bbR^n,\qquad \dim
+    V_i=i.
+  \]
+  Let $\calF_n(\bbR)$ be the set of all flags in $\bbR^n$. It turns out
+  that $\calF_n(\bbR)$ has a canonical structure of a smooth manifold which
+  is called the \emph{flag manifold}. The easiest way to define it is to
+  note that we have an obvious action of the group $\GL_n\bbR$ on
+  $\calF_n(\bbR)$. This action is transitive: by a change of basis, any flag
+  can be identified with the standard flag
+  \[
+    V^{\text{std}}\coloneq\left( \{0\}\subset\Span(\bfe_1
+      )\subset\Span(\bfe_1,\bfe_2
+      )\subset\cdots\subset\Span(\bfe_1,\dotsc,\bfe_n )=\bbR\right)
+  \]
+  where $\langle \bfe_1,\dots,\bfe_n \rangle$ is the standard basis for
+  $\bbR^n$. Thus, $\calF_n(\bbR)$ can be identified with the coset space
+  $\GL_n\bbR/B_n\bbR$ where $B_n\bbR\coloneq\Stab V^{\text{std}}$ is the
+  group of all invertible upper-triangular matrices. Therefore, $\calF_n$
+  is a manifold of  dimension $n^2-n(n+1)/2=n(n-1)/2$.
+\end{example}
 
 %%% Local Variables:
 %%% mode: latex
