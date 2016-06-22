@@ -1,0 +1,134 @@
+\newcommand{\tf}[1][{}]{%
+\fillin[#1][0.25in]%
+}
+
+\begin{questions}
+  \question The following are \textbf{T}rue/\textbf{F}alse
+  questions. You do not have to justify your answers. The symbols $A$, $B$
+  and $C$ represent $m\times n$ matrices and $\bfx=(x_1,\dotsc,x_n)$ and
+  $\bfb=(b_1,\dotsc,b_m)$ be $1\times n$ and $1\times m$ vectors,
+  respectively.
+  \\
+  \begin{parts}
+    \part[5] \tf[T] If $A$ and $B$ are invertible $n\times n$ matrices
+    then $AB$ is invertible.
+    \part[5] \tf[T] Suppose $A$ and $B$ are $n\times n$ matrices such that
+    $AB=I$ then $BA=I$.
+    \part[5] \tf[F] Suppose $AB=BA$ then $B$ must equal $A^{-1}$.
+    \part[5] \tf[T] Suppose $AB=AC$ then $B$ must equal $C$.
+    \part[5] \tf[T] Suppose $AA^\rmT=I$ then $\det(A)=\pm 1$.
+  \end{parts}
+  \newpage
+  \question[10] Suppose $A$ is a skew-symmetric matrix $3\times 3$ matrix ,
+  i.e., $A^\rmT=-A$. Which of the following is \textbf{not} true:
+  \\
+  \begin{choices}
+    \choice $
+    \left[
+      \begin{smallmatrix}
+        0&2&-1\\
+        -2&0&-4\\
+        1&4&0
+      \end{smallmatrix}
+    \right]$ is skew-symmetric%
+    \choice $\det(A^\rmT)=\pm 1$%
+    \choice $\det(A)=0$%
+    \choice All of the above are true
+  \end{choices}
+  \newpage
+  \question[10] Suppose $A$ is an idempotent matrix, i.e., $A^2=A$. Which
+  of the following is true:
+  \\
+  \begin{choices}
+    \choice $A$ must be the identity matrix $I$
+    \choice ${(A^\rmT)}^2=A$
+    \choice $\det(A)=0$
+    \choice All of the above are true
+    \choice None of the above are true
+  \end{choices}
+  \newpage
+  \question[10] Consider the matrix
+  \[
+    A\coloneq
+    \begin{bmatrix}
+      0&0&2&0\\
+      2&-1&0&0\\
+      1&-1&0&0\\
+      -1&1&0&1
+    \end{bmatrix}.
+  \]
+  Which of the following statements is true:
+  \\
+  \begin{choices}
+    \choice The columns are linearly independent
+    \choice The matrix is not invertible
+    \choice The matrix has determinant $-2$
+    \choice None of the above
+  \end{choices}
+  \newpage
+  \question[10] Consider the following system of equations
+  \begin{align*}
+    x_1+x_3&=5\\
+    x_1-x_2-x_3&=6\\
+    x_2+x_3&=7.
+  \end{align*}
+  The above system of linear equations is:
+  \\
+  \begin{choices}
+    \choice Inconsistent
+    \choice Consistent with a unique solution
+    \choice Consistent with infinitely many solutions
+    \choice None of the above
+  \end{choices}
+  \newpage
+  \question Set
+  \[
+    A\coloneq
+    \begin{bmatrix}
+      1&2\\1&1
+    \end{bmatrix}
+    \quad\text{and}\quad
+    B\coloneq
+    \begin{bmatrix}
+      3&5\\
+      -1&2
+    \end{bmatrix}.
+  \]
+  \\
+  \begin{parts}
+    \part[5] Compute $A^{-1}$.
+    \part[5] Compute $ABA^{-1}$.
+    \part[5] Compute $\det (ABA^{-1})$.
+    \part[10] What is the relationship between $\det(B)$ and
+    $\det(ABA^{-1})$ and why?
+  \end{parts}
+  % \newpage
+  % \question[15] Recall that an $m\times n$ matrix $B$ is equivalent to an
+  % $m\times n$ matrix $A$ if there exist nonsingular matrices $P$ and $Q$
+  % such that
+  % \[
+  %   B=PAQ.
+  % \]
+  % Show that
+  % \\
+  % \begin{parts}
+  %   \part[5] Every matrix $A$ is equivalent to itself.
+  %   \part[5] If $B$ is equivalent to $A$, then $A$ is equivalent to $B$.
+  %   \part[5] If $C$ is equivalent to $B$ and $B$ is equivanent to $A$, then
+  %   $C$ is equivalent to $A$.
+  % \end{parts}
+\end{questions}
+
+% \question[10] For which rational numbers $\lambda$ does the homogeneous
+% system
+% \begin{align*}
+%   x+(\lambda-3)y&=0\\
+%   (\lambda-3)x+y&=0
+% \end{align*}
+% have a nontrivial solution?
+% \newpage
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "MA265-Quiz"
+%%% End:
