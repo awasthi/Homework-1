@@ -118,6 +118,47 @@ bounded and continuous on $[0,1]$, but that $V[f;0,1]=+\infty$.
   % \end{equation}
   % where, for sufficiently large $M\in\bbZ^+$, for $u\geq M$, we have
   % $|{\sin u- u\cos u}|>u/2$. Thus, $f$ is not b.v.\@ on $[0,1]$.
+
+  Set $f\coloneq x\sin (1/x)$. We will show that $f$ is bounded and
+  continuous on $[0,1]$, but that it is not of bounded variation on
+  $[0,1]$.
+
+  First we show that $f$ is bounded. To see this, note that both $|x|$ and
+  $|\sin (1/x)|$ are bounded by $1$ on $[0,1]$ so that their product
+  $|f|=|x||\sin (1/x)|\leq 1$. Thus, $f$ is bounded on $[0,1]$.
+
+  Next we show that $f$ is continuous. Note that since $x$ is continuous
+  on $(0,1]$ and $\sin(1/x)$ is continuous on $(0,1]$ since it is the
+  composition $1/x\colon (0,1]\to (1,\infty)$, $\sin\colon(1,\infty)\to
+  [0,1]$ both of which are continuous functions. All that is left to show
+  is that $f$ is continuous at $0$. To that end, it suffices to show that
+  for any sequence of point ${\{x_n\}}\subset[0,1]$ converging to $0$, the
+  sequence ${\{f(x_n)\}}$ converges to $f(0)=0$. But, given
+  $\varepsilon>0$, for sufficiently large $N$, we can bound the distance
+  $|x_n-0|<\varepsilon$ so that for any $n\geq N$, we have
+  \begin{equation}
+    \label{eq:1:1}
+    |x_n\sin(1/x_n)-0|\leq |x_n|<\varepsilon.
+  \end{equation}
+  Letting $\varepsilon\to 0$, we have $\lim_{x_n\to 0}f(x_n)=0=f(0)$. Thus,
+  $f$ is continuous at $0$ and consequently on all of $[0,1]$.
+
+  Last but not least, we show that $f$ is not of bounded variation on
+  $[0,1]$. Note that $f$ is differentiable on $[0,1]$ with derivative
+  $f'(x)=\sin(1/x)-(1/x)\cos(1/x)$ so by Corollary 2.10 we have
+  \begin{equation}
+    \label{eq:1:2}
+    \begin{aligned}
+      V[f;0,1]
+      &=\int_0^1|f'|\diff x\\
+      &=\int_0^1|\sin(1/x)-(1/x)\cos(1/x)|\diff x\\
+      &=\int_1^\infty\frac{1}{u^2}|\sin u-u\cos u|\diff u\\
+      &\geq\int_M^\infty\frac{1}{2u}\diff u\\
+      &=\infty,
+    \end{aligned}
+  \end{equation}
+  where, for sufficiently large $M$, for $u\geq M$, we have $|\sin u-u\cos
+  u|>u/2$. Thus, $f$ is not b.v.\@ on $[0,1]$.
 \end{proof}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 2]
