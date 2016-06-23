@@ -218,8 +218,9 @@ Throughout these notes
       +\frac{1}{\varepsilon^2}\sum_{i=1}^nM_f|g(x_i)-g(x_i)|\\
     &=\frac{1}{\varepsilon^2}M_g\sum_{i=1}^n|f(x_i)-f(x_{i})|
       +\frac{1}{\varepsilon^2}M_f\sum_{i=1}^n|g(x_i)-g(x_i)|\\
-    &=
+    &=\frac{1}{\varepsilon^2}(M_gV_f+M_fV_g).
   \end{align*}
+  Thus, $f/g$ is b.v.\@ on $[a,b]$.
 \end{proof}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 3]
@@ -227,7 +228,27 @@ Throughout these notes
   and $N[a',b']\leq N[a,b]$.
 \end{problem}
 \begin{proof}
+  Recall that, given a partition $\Gamma$ of the interval$[a,b]$,
+  $P_\Gamma$ and $N_\Gamma$ are defined to be the sum of the positive and,
+  respectively, the negative terms of $S_\Gamma$ and that the positive
+  variation $P$ and negative variation $N$ are
+  \[
+    P\coloneq\sup_\Gamma P_\Gamma \qquad N\coloneq\sup_\Gamma N_\Gamma.
+  \]
+
+  Now, we aim to show that if $[a',b']\subset[a,b]$, then $P[a',b']\leq
+  P[a,b]$ and $N[a',b']\leq N[a,b]$. We can do this in two ways.
+
+  First, by Theorem 2.6 we have
+  \[
+    P=\tfrac{1}{2}(V+f(b)-f(a))\quad\text{and}\quad N=\tfrac{1}{2}(V-f(b)+f(a)).
+  \]
+  Moreover, Theorem 2.2 (i) tells us that $V[a',b']\leq V[a,b]$ so
+  \[
+    P[a',b']=\tfrac{1}{2}(V[a',b']+f(b')-f(a'))
+  \]
 \end{proof}
+
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 11]
   Show that $\int_a^bf\diff\varphi$ exists if and only if given
   $\varepsilon>0$ there exists $\delta>0$ such that
