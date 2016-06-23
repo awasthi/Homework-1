@@ -230,10 +230,17 @@ Throughout these notes
   and $N[a',b']\leq N[a,b]$.
 \end{problem}
 \begin{proof}
-  Recall that, given a partition $\Gamma$ of the interval$[a,b]$,
-  $P_\Gamma$ and $N_\Gamma$ are defined to be the sum of the positive and,
-  respectively, the negative terms of $S_\Gamma$ and that the positive
-  variation $P$ and negative variation $N$ are
+  Recall that, given a partition $\Gamma=\{x_0,x_1,\dotsc,x_n\}$ of the
+  interval$[a,b]$, $P_\Gamma$ and $N_\Gamma$ are defined to be the sum of
+  the positive and, respectively, the negative terms of $S_\Gamma$, that
+  is, the sums
+  \[
+    P_\Gamma\coloneq\sum_{i=1}^n\left[f(x_i)-f(x_{i-1})\right]^+
+    \qquad
+    N_\Gamma\coloneq\sum_{i=1}^n\left[f(x_i)-f(x_{i-1})\right]^-,
+  \]
+  so that the positive variation $P$ and negative variation $N$ are defined
+  to be
   \[
     P\coloneq\sup_\Gamma P_\Gamma \qquad N\coloneq\sup_\Gamma N_\Gamma.
   \]
@@ -244,11 +251,11 @@ Throughout these notes
 
   First, by Theorem 2.6 we have
   \[
-    P=\tfrac{1}{2}(V+f(b)-f(a))\quad\text{and}\quad N=\tfrac{1}{2}(V-f(b)+f(a)).
+    P=\frac{1}{2}(V+f(b)-f(a))\quad\text{and}\quad N=\frac{1}{2}(V-f(b)+f(a)).
   \]
   Moreover, Theorem 2.2 (i) tells us that $V[a',b']\leq V[a,b]$ so
   \[
-    P[a',b']=\tfrac{1}{2}(V[a',b']+f(b')-f(a'))
+    P[a',b']=\frac{1}{2}(V[a',b']+f(b')-f(a'))<\frac{1}{2}(V[a,b]+f(b')-f(a'))
   \]
 \end{proof}
 
