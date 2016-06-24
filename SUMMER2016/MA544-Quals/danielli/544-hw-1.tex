@@ -356,7 +356,52 @@ Throughout these notes
   to the argument we have made yields the same conclusion for
   $\int_a^b f\diff(c\varphi)$.
   \\\\
-  (ii)
+  (ii) Leaving the notation as in (i), let $R_{\Gamma_1}^1$ and
+  $R_{\Gamma_2}^1$ be the Riemann--Stieltjes sums of $f_1$ with respect to
+  $\Gamma_1$ and $\Gamma_2$ and $R_{\Gamma_1}^2$ and $R_{\Gamma_2}^2$ be
+  the Riemann--Stieltjes sums of $f_2$ with respect to $\Gamma_1$ and
+  $\Gamma_2$. By assumption, we can make the sums
+  \[
+    |R_{\Gamma_1}^1-R_{\Gamma_2}^1|<\frac{\varepsilon}{2}
+    \qquad\text{and}\qquad
+    |R_{\Gamma_1}^2-R_{\Gamma_2}^2|<\frac{\varepsilon}{2}.
+  \]
+  Then we have
+  \begin{align*}
+    |R_{\Gamma_1}-R_{\Gamma_2}|
+    &=\left|
+      \sum_{i=1}^{n_1}(f_1(\xi_i^1)+f_2(\xi_i^1))
+      \left[\varphi(x_i^1)-\varphi(x_{i-1}^1)\right]
+      -\sum_{i=1}^{n_1}(f_1(\xi_i^2)+f_2(\xi_i^2))
+      \left[\varphi(x_i^2)-\varphi(x_{i-1}^2)\right]
+      \right|\\
+    &\begin{aligned}
+      &=\left|\sum_{i=1}^{n_1}f_1(\xi_i^1)
+        \left[\varphi(x_i^1)-\varphi(x_{i-1}^1)\right]
+        -\sum_{i=1}^{n_1}f_1(\xi_i^2)
+        \left[\varphi(x_i^2)-\varphi(x_{i-1}^2)
+        \right]\right.\\
+      &\phantom{{}={}}+\left. \sum_{i=1}^{n_1}f_2(\xi_i^1)
+        \left[\varphi(x_i^1)-\varphi(x_{i-1}^1)\right]
+        -\sum_{i=1}^{n_1}f_2(\xi_i^2)
+        \left[\varphi(x_i^2)-\varphi(x_{i-1}^2) \right] \right|
+    \end{aligned}\\
+    &\begin{aligned}
+      &\leq\left|\sum_{i=1}^{n_1}f_1(\xi_i^1)
+        \left[\varphi(x_i^1)-\varphi(x_{i-1}^1)\right]
+        -\sum_{i=1}^{n_1}f_1(\xi_i^2)
+        \left[\varphi(x_i^2)-\varphi(x_{i-1}^2)
+        \right]\right|\\
+      &+\left|\sum_{i=1}^{n_1}f_2(\xi_i^1)
+        \left[\varphi(x_i^1)-\varphi(x_{i-1}^1)\right]
+        -\sum_{i=1}^{n_1}f_2(\xi_i^2)
+        \left[\varphi(x_i^2)-\varphi(x_{i-1}^2) \right] \right|
+    \end{aligned}\\
+    &=|R_{\Gamma_1}^1-R_{\Gamma_2}^1|+|R_{\Gamma_1}^2-R_{\Gamma_2}^2|\\
+    &<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}.
+  \end{align*}
+  Thus, $\int_a^b (f_1+f_2)\diff\varphi$ exists and it is equal to
+  $I_1+I_2$.
   \\\\
   (iii)
 \end{proof}
