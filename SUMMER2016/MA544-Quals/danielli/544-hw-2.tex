@@ -5,9 +5,10 @@
 \begin{proof}
   Let $I\coloneq\prod_{i=1}^n I_i$ be a closed interval in $\bbR^n$ and let
   $J$ be the boundary of $I$. We must show that given $\varepsilon>0$ there
-  exists a collection of intervals $\{I_n\}$ covering $J$ such that
+  exists a countable collection of intervals $\{I_n\}_{n\in J}$ covering
+  $J$ such that
   \[
-    \sum_{i=1}^n\vol(I_i)<\varepsilon.
+    \sum_{n\in J}\vol(I_n)<\varepsilon.
   \]
   First, note that we can write $J$ as the union $\bigcup_{i=1}^n J_i$
   where
@@ -52,7 +53,25 @@
   Show that a set consisting of a single point has outer measure zero.
 \end{problem}
 \begin{proof}
-  Suppose
+  Let $\{a\}$ be the set consisting of a single point $a\in\bbR$. Then we
+  must show that given $\varepsilon>0$ there exists a countable collection
+  of intervals $\{I_n\}$ such that
+  \[
+    \sum_{n\in J} m(I_n)<\varepsilon.
+  \]
+  Consider the collection $\{I_\varepsilon\}$ consisting of the single
+  interval
+  \[
+    I_\varepsilon\coloneq
+    \left[a-\frac{\varepsilon}{2},a+\frac{\varepsilon}{2}\right].
+  \]
+  It is clear that $\{a\}\subset I_\varepsilon$. Moreover,
+  \begin{align*}
+    \vol(I_\varepsilon)
+    &=a+\frac{\varepsilon}{2}-\left(a-\frac{1}{\varepsilon}\right)\\
+    &=\varepsilon.
+  \end{align*}
+  Thus, $\{a\}$ has measure zero.
 \end{proof}
 
 %%% Local Variables:
