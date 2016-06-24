@@ -51,7 +51,7 @@ Throughout these notes
   $\bbZ$ & is the set of the integers\\
   $\bbZ^+$ & is the set of positive integers, that is, $x\in\bbZ$ with
              $x\geq 0$\\
-  $\bbN$ & is the set of the natural numbers $1,2,\dotsc$\\
+  $\bbN$ & is the set of the natural numbers $1,2,\ldots$\\
   $A\smallsetminus B$ & is the set difference of $A$ and $B$, that is, the
                         complement of $A\cap B$ in $A$\\
   $m^*(E)$ & the outer measure of $E$\\
@@ -148,7 +148,7 @@ Throughout these notes
   $\varepsilon>0$ such that $|g(x)|\geq\varepsilon$ for all $x\in[a,b]$.
   \\\\
   \underline{($cf$ is b.v.\@ on $[a,b]$)}: Let $c$ be a real number. Given
-  a partition $\Gamma=\{x_0,\dotsc,x_n\}$ of $[a,b]$, we have
+  a partition $\Gamma=\{x_0,\ldots,x_n\}$ of $[a,b]$, we have
   \begin{align*}
     S_\Gamma&=\sum_{i=0}^n|cf(x_i)-cf(x_{i-1})|\\
             &=\sum_{i=1}^n|c||f(x_i)-f(x_{i-1})|\\
@@ -159,7 +159,7 @@ Throughout these notes
   that $cf$ is b.v.\@ on $[a,b]$.  $x\in[a,b]$.
   \\\\
   \underline{($f+g$ is b.v.\@ on $[a,b]$)}: Given a partition
-  $\Gamma=\left\{ x_0,\dotsc,x_n \right\}$ of the interval $[a,b]$, we have
+  $\Gamma=\left\{ x_0,\ldots,x_n \right\}$ of the interval $[a,b]$, we have
   the sums associated to $f+g$
   \begin{align*}
     S_{\Gamma,f+g}
@@ -173,7 +173,7 @@ Throughout these notes
   \underline{($fg$ is b.v.\@ on $[a,b]$)}: First, recall that, since $f$
   and $g$ are b.v.\@ on $[a,b]$, $f$ and $g$ are bounded on $[a,b]$ by,
   say, $M_f>0$ and $M_g>0$, respectively. Now, given a partition
-  $\Gamma=\{x_0,\dotsc,x_n\}$ of $[a,b]$ consider the sums associated to
+  $\Gamma=\{x_0,\ldots,x_n\}$ of $[a,b]$ consider the sums associated to
   the product $fg$
   \begin{align*}
     S_{\Gamma,fg}
@@ -200,7 +200,7 @@ Throughout these notes
   \underline{($f/g$ is b.v.\@ on $[a,b]$ if there exists $\varepsilon>0$
     such that $|g(x)|\geq\varepsilon$ for all $x\in[a,b]$.)}: Suppose there
   exists $\varepsilon>0$ such that $|g(x)|\geq\varepsilon$ for all
-  $x\in[a,b]$. Suppose $\Gamma=\{x_0,\dotsc,x_n\}$ is a partition of
+  $x\in[a,b]$. Suppose $\Gamma=\{x_0,\ldots,x_n\}$ is a partition of
   $[a,b]$ and consider the sum associated to the quotient $f/g$
   \begin{align*}
     V_{\Gamma,f/g}
@@ -230,15 +230,16 @@ Throughout these notes
   and $N[a',b']\leq N[a,b]$.
 \end{problem}
 \begin{proof}
-  Recall that, given a partition $\Gamma=\{x_0,x_1,\dotsc,x_n\}$ of the
-  interval$[a,b]$, $P_\Gamma$ and $N_\Gamma$ are defined to be the sum of
+  Recall that, given a partition $\Gamma=\{x_0,x_1,\ldots,x_n\}$ of the
+  interval $[a,b]$, $P_\Gamma$ and $N_\Gamma$ are defined to be the sum of
   the positive and, respectively, the negative terms of $S_\Gamma$, that
   is, the sums
-  \[
+  \begin{equation}
+    \label{eq:1.1}
     P_\Gamma\coloneq\sum_{i=1}^n\left[f(x_i)-f(x_{i-1})\right]^+
     \quad\text{and}\quad
     N_\Gamma\coloneq\sum_{i=1}^n\left[f(x_i)-f(x_{i-1})\right]^-,
-  \]
+  \end{equation}
   so that the positive variation $P$ and negative variation $N$ are defined
   to be
   \[
@@ -247,17 +248,28 @@ Throughout these notes
   \]
 
   Now, we aim to show that if $[a',b']\subset[a,b]$ then
-  $P[a',b']\leq P[a,b]$ and $N[a',b']\leq N[a,b]$. We can do this in two
-  ways.
-
-  First, by Theorem 2.6 we have
-  \[
-    P+N=V\quad\text{and}\quad P-N=f(b)-f(a).
-  \]
-  Moreover, Theorem 2.2 (i) tells us that $V[a',b']\leq V[a,b]$ so
-  \[
-    P[a',b']=\frac{1}{2}(V[a',b']+f(b')-f(a'))<\frac{1}{2}(V[a,b]+f(b')-f(a'))
-  \]
+  $P[a',b']\leq P[a,b]$ and $N[a',b']\leq N[a,b]$.  We shall proceed as
+  follows: given a partition $\Gamma'=\{x_0',\ldots,x_n'\}$ of $[a,b]$,
+  extend $\Gamma'=\{x_0,\ldots,x_m\}$ where $x_i'=x_k$ for some
+  $0\leq k\leq m-n$ for $0\leq i\leq n$ (clearly $n\leq m$ for this to make
+  sense) to a partition $\Gamma$ of $[a,b]$ --- by which we mean $\Gamma$
+  is a partition of $[a,b]$ with $\Gamma'\subset\Gamma$. Then by the
+  definition in \eqref{eq:1.1} we have
+  \begin{align*}
+    P_\Gamma
+    &=\sum_{i=1}^m\left[f(x_i)-f(x_{i-1})\right]^+\\
+    &=\sum_{i=1}^k\left[f(x_i)-f(x_{i-1})\right]^+
+      +\sum_{i=k}^n\left[f(x_i)-f(x_{i-1})\right]
+      +\sum_{i=n}^m\left[f(x_i)-f(x_{i-1})\right]\\
+    &=\sum_{i=1}^k\left[f(x_i)-f(x_{i-1})\right]^+
+      +\sum_{i=n}^m\left[f(x_i)-f(x_{i-1})\right]
+      +P_{\Gamma'}\\
+    &\geq P_{\Gamma'}
+  \end{align*}
+  so that, taking the supremum on both sides, we have
+  $P[a,b]\geq P[a',b']$. The same argument can be used to show that
+  $N[a,b]\geq N[a',b']$ by replacing $N$ by $P$ in the statements we made
+  above.
 \end{proof}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 11]
@@ -267,6 +279,33 @@ Throughout these notes
   $|\Gamma|,|\Gamma'|<\delta$.
 \end{problem}
 \begin{proof}
+  One direction is straightforward $\impliedby$: suppose that given
+  $\varepsilon>0$ there exists $\delta>0$ such that
+  $|R_\Gamma-R_{\Gamma'}|<\varepsilon$ whenever
+  $|\Gamma|,|\Gamma'|<\delta$. Let $\{\Gamma_n\}$ be a sequence of nested
+  partitions --- that is, $\Gamma_i\subset\Gamma_{i+1}$ --- of $[a,b]$ with
+  $\lim_{n\to\infty}|\Gamma_n|=0$. Then there exists an index $N$ such that
+  $m,n\geq N$ implies $|\Gamma_m|,|\Gamma_n|<\delta$. Then by the
+  hypothesis we have
+  \[
+    \left|R_{\Gamma_n}-R_{\Gamma_m}\right|<\varepsilon.
+  \]
+  By Cauchy's criterion for convergence this implies that the
+  Riemann--Stieltjes integral $\int_a^b f\diff\varphi$ exists.
+
+  $\implies$: On the other hand, suppose that
+  $I\coloneq\int_a^b f\diff\varphi$ exists. Then given $\varepsilon>0$
+  there exists $\delta>0$ such that $|I-R_\Gamma|<\varepsilon/2$ whenever
+  $|\Gamma|<\delta$. Take any two partitions $\Gamma_1$ and $\Gamma_2$ with
+  $|\Gamma_1|,|\Gamma_2|<\delta$. Then
+  \begin{align*}
+    |R_{\Gamma_1}-R_{\Gamma_2}|
+    &=\left|R_{\Gamma_1}-I-(R_{\Gamma_2}-I)\right|\\
+    &\leq|R_{\Gamma_1}-I|+|R_{\Gamma_2}-I|\\
+    &<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}\\
+    &=\varepsilon
+  \end{align*}
+  as desired.
 \end{proof}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 13]
@@ -294,6 +333,32 @@ Throughout these notes
       \]
     \end{enumerate}
   \end{quote}
+  \noindent%
+  (i) Suppose that $I\coloneq\int_a^bf\diff\varphi$ exists. By Problem 4 we
+  know that $I$ exists if and only if given $\varepsilon>0$ there exists
+  $\delta>0$ such that whenever
+  $\Gamma_1=\{x_1^1,\ldots,x_{n_1}^1\},\Gamma_2=\{x_1^2,\ldots,x_{n_2}^2\}$
+  are partitions of $[a,b]$ with norm $|\Gamma_1|,|\Gamma_2|<\delta$ then
+  $|R_{\Gamma_1}-R_{\Gamma_2}|<\varepsilon/|c|$. Now, consider the
+  Riemann--Stieltjes sums of the pair $cf$, $\varphi$ with respect to
+  $\Gamma_1$ and $\Gamma_2$, call them $R_{\Gamma_1}'$ and $R_{\Gamma_2}'$
+  \begin{align*}
+    |R_{\Gamma_1}'-R_{\Gamma_2}'|
+    &=\left|\sum_{i=1}^{n_1}cf(\xi_i^1)\left[\varphi(x_i^1)-\varphi(x_{i-1}^1)\right]
+      -\sum_{i=1}^{n_2}cf(\xi_i^2)\left[\varphi(x_i^2)-\varphi(x_{i-1}^2)\right]\right|\\
+    &=|c|\left|\sum_{i=1}^{n_1}f(\xi_i^1)\left[\varphi(x_i^1)-\varphi(x_{i-1}^1)\right]
+      -\sum_{i=1}^{n_2}f(\xi_i^2)\left[\varphi(x_i^2)-\varphi(x_{i-1}^2)\right]\right|\\
+    &=|c||R_{\Gamma_1}-R_{\Gamma_2}|\\
+    &<\frac{|c|\varepsilon}{|c|}\\
+    &=\varepsilon.
+  \end{align*}
+  Thus, by Problem 4 $\int_a^b cf\diff\varphi$ exist. A slight modification
+  to the argument we have made yields the same conclusion for
+  $\int_a^b f\diff(c\varphi)$.
+  \\\\
+  (ii)
+  \\\\
+  (iii)
 \end{proof}
 
 %%% Local Variables:
