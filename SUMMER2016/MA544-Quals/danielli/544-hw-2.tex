@@ -1,14 +1,58 @@
 \subsection{Homework 2}
 \begin{problem}
-Show that the boundary of any interval has outer measure zero.
+  Show that the boundary of any interval has outer measure zero.
 \end{problem}
 \begin{proof}
+  Let $I\coloneq\prod_{i=1}^n I_i$ be a closed interval in $\bbR^n$ and let
+  $J$ be the boundary of $I$. We must show that given $\varepsilon>0$ there
+  exists a collection of intervals $\{I_n\}$ covering $J$ such that
+  \[
+    \sum_{i=1}^n\vol(I_i)<\varepsilon.
+  \]
+  First, note that we can write $J$ as the union $\bigcup_{i=1}^n J_i$
+  where
+  \[
+    J_i\coloneq%
+    % \underbrace{
+      [a_1,b_1]\times\cdots\times\{a_i\}\times\cdots\times[a_n,b_n]%
+    % }_{J_i^1}
+    \cup
+    [a_1,b_1]\times\cdots\times\{b_i\}\times\cdots\times[a_n,b_n].
+  \]
+  Since the countable union of null sets has measure zero, it suffices to
+  show that the set
+  \[
+    [a_1,b_1]\times\cdots\times[a_{n-1},b_{n-1}]\times\{a_n\}%
+  \]
+  has measure zero. Consider the collection $\{I_\varepsilon\}$ consisting
+  of the single interval
+  \[
+    I_\varepsilon\coloneq [a_1,b_1]\times\cdots\times[a_{n-1},b_{n-1}]
+    \times\left[a_n-\frac{\varepsilon}{2\prod_{i=1}^{n-1}(b_i-a_i)},
+      a_n+\frac{\varepsilon}{2\prod_{i=1}^{n-1}(b_i-a_i)}\right].
+  \]
+  It is clear that $I_\varepsilon\supset J$. Now, computing the volume of
+  this interval, we have
+  \begin{align*}
+    \vol(I_\varepsilon)%
+    &=\prod_{i=1}^{n-1}(b_i-a_i)%
+    \left[%
+    a_n+\frac{\varepsilon}{2\prod_{i=1}^{n-1}(b_i-a_i)}%
+    -\left(%
+    a_n -\frac{\varepsilon}{2\prod_{i=1}^{n-1}(b_i-a_i)} \right)
+    \right]\\
+    &=\left[\prod_{i=1}^{n-1}(b_i-a_i)\right]%
+      \frac{\varepsilon}{\prod_{i=1}^{n-1}(b_i-a_i)}\\
+    &=\varepsilon.
+  \end{align*}
+  Thus, $J$ has measure zero.
 \end{proof}
 
 \begin{problem}
-Show that a set consisting of a single point has outer measure zero.
+  Show that a set consisting of a single point has outer measure zero.
 \end{problem}
 \begin{proof}
+  Suppose
 \end{proof}
 
 %%% Local Variables:

@@ -369,13 +369,13 @@ Throughout these notes
   Then we have
   \begin{align*}
     |R_{\Gamma_1}-R_{\Gamma_2}|
-    &=\left|
+    &{}={}\left|
       \sum_{i=1}^{n_1}(f_1(\xi_i^1)+f_2(\xi_i^1))
       \left[\varphi(x_i^1)-\varphi(x_{i-1}^1)\right]
       -\sum_{i=1}^{n_1}(f_1(\xi_i^2)+f_2(\xi_i^2))
       \left[\varphi(x_i^2)-\varphi(x_{i-1}^2)\right]
       \right|\\
-    &\begin{aligned}
+    {}&{}\begin{aligned}
       &=\left|\sum_{i=1}^{n_1}f_1(\xi_i^1)
         \left[\varphi(x_i^1)-\varphi(x_{i-1}^1)\right]
         -\sum_{i=1}^{n_1}f_1(\xi_i^2)
@@ -392,18 +392,60 @@ Throughout these notes
         -\sum_{i=1}^{n_1}f_1(\xi_i^2)
         \left[\varphi(x_i^2)-\varphi(x_{i-1}^2)
         \right]\right|\\
-      &+\left|\sum_{i=1}^{n_1}f_2(\xi_i^1)
+      &\phantom{{}={}}+\left|\sum_{i=1}^{n_1}f_2(\xi_i^1)
         \left[\varphi(x_i^1)-\varphi(x_{i-1}^1)\right]
         -\sum_{i=1}^{n_1}f_2(\xi_i^2)
         \left[\varphi(x_i^2)-\varphi(x_{i-1}^2) \right] \right|
     \end{aligned}\\
-    &=|R_{\Gamma_1}^1-R_{\Gamma_2}^1|+|R_{\Gamma_1}^2-R_{\Gamma_2}^2|\\
-    &<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}.
+    &{}={}|R_{\Gamma_1}^1-R_{\Gamma_2}^1|+|R_{\Gamma_1}^2-R_{\Gamma_2}^2|\\
+    &{}<{}\frac{\varepsilon}{2}+\frac{\varepsilon}{2}.
   \end{align*}
   Thus, $\int_a^b (f_1+f_2)\diff\varphi$ exists and it is equal to
   $I_1+I_2$.
   \\\\
-  (iii)
+  (iii) Suppose that $J_1\coloneq\int_a^bf\diff\varphi_1$ and
+  $J_2\coloneq\int_a^bf\diff\varphi_2$ exist. By Problem 4, given
+  $\varepsilon>0$ there exists $\delta>0$ such that for any pair $\Gamma_1$,
+  $\Gamma_2$ of partitions of $[a,b]$ with $|\Gamma_1|,|\Gamma_2|<\delta$
+  we have
+  \[
+    |R_{\Gamma_1}^1-R_{\Gamma_2}^1|<\frac{\varepsilon}{2}\quad\text{and}\quad
+    |R_{\Gamma_1}^2-R_{\Gamma_2}^2|<\frac{\varepsilon}{2},
+  \]
+  where $R_{\Gamma_1}^1$ and $R_{\Gamma_2}^1$ is the Riemann--Stieltjes sum
+  of $(f,\varphi_1)$ with respect to $\Gamma_1$ and $\Gamma_2$ and
+  $R_{\Gamma_1}^2$ and $R_{\Gamma_2}^2$ is the Riemann--Stieltjes sum of
+  $(f,\varphi_2)$ with respect to $\Gamma_1$ and $\Gamma_2$. Then for the
+  pair $(f,\varphi_1+\varphi_2)$ we have
+  \begin{align*}
+    |R_{\Gamma_1}-R_{\Gamma_2}|
+    &=%
+      \left|%
+      \sum_{i=1}^{n_1}f(\xi_i^1)\left[\varphi_1(x_i^1)+\varphi_2(x_i^1)
+      -(\varphi_1(x_i^1)+\varphi_2(x_i^1))\right]\right.\\
+    &\phantom{{}={}}%
+      \left.%
+      -\sum_{i=1}^{n_2}f(\xi_i^2)\left[\varphi_1(x_i^2)+\varphi_2(x_i^2)
+      -(\varphi_1(x_i^2)+\varphi_2(x_i^2))\right]
+      \right|\\
+    &=\left|%
+      R_{\Gamma_1}^1-R_{\Gamma_2}^1+(R_{\Gamma_1}^2-R_{\Gamma_2}^2)
+      \right|\\
+    &\leq|%
+      R_{\Gamma_1}^1-R_{\Gamma_2}^1
+      |+
+      |%
+      (R_{\Gamma_1}^2-R_{\Gamma_2}^2)
+      |\\
+    &<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}\\
+    &=\varepsilon.
+  \end{align*}
+  Thus, $\int_a^bf\diff(\varphi_1+\varphi_2)$ exists and we can easily see
+  that it is equal to the sum
+  \[
+    \int_a^bf\diff\varphi_1
+    +\int_a^bf\diff\varphi_2.
+  \]
 \end{proof}
 
 %%% Local Variables:
