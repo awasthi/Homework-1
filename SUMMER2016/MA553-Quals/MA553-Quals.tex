@@ -1,9 +1,9 @@
-\def\documentauthor{Carlos Salinas}
-\def\documenttitle{MA553: Qual Preparation}
-\def\shorttitle{MA553 Qual Prep}
-\def\coursename{MA553}
-\def\documentsubject{abstract algebra}
-\def\authoremail{salinac@purdue.edu}
+\def\auth{Carlos Salinas}
+\def\tight{MA553: Qual Preparation}
+\def\short{MA553 Qual Prep}
+\def\class{MA553}
+\def\subject{abstract algebra}
+\def\email{salinac@purdue.edu}
 
 \documentclass[10pt,showtrims,twoside]{memoir}
 \usepackage{geometry}
@@ -17,10 +17,11 @@
     menucolor=black,
     runcolor=black,
     urlcolor=black,
-    pdftitle={\shorttitle},
-    pdfauthor={\documentauthor},
-    pdfkeywords={\documentsubject},
-    pdfsubject={\coursename}
+    pdftitle={\short},
+    pdfauthor={\auth},
+    pdfkeywords={\subject},
+    pdfsubject={\class},
+    pageanchor={false}
     ]{hyperref}
 % \usepackage{natbib}
 
@@ -116,8 +117,8 @@
 \counterwithout{equation}{chapter}
 
 \thispagestyle{empty}
-\author{\href{mailto:\authoremail}{\documentauthor}}
-\title{\documenttitle}
+\author{\href{mailto:\email}{\auth}}
+\title{\tight}
 \date{\today}
 
 \frontmatter
