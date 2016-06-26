@@ -6,18 +6,98 @@
   has measure $1-\delta$, and contains no interval.
 \end{problem}
 \begin{proof}
-\underline{The construction}: pick a $\delta\in(0,1)$ and subdivide the
-interval $[0,1]$ into
-\[
-  C_{1,1}\coloneq\left[1,\frac{\delta}{3}\right]\quad\text{and}\quad
-  C_{1,2}\coloneq\left[1-\frac{\delta}{3},1\right].
-\]
+  \underline{The construction}: pick a $\delta\in(0,1)$ and remove the
+  open interval $(\delta/3,1-\delta/3)$ from $[0,1]$ which, in the first
+  step of the construction, will yield the sets
+  \[
+    C_{1,1}\coloneq\left[0,\frac{\delta}{3}\right]\quad\text{and}\quad
+    C_{1,2}\coloneq\left[1-\frac{\delta}{3},1\right].
+  \]
+  In the next step of the construction, we will be removing the interval
+  $(\delta/9,\delta/3-\delta/9)\cup(1-\delta/3+\delta/9,1-\delta/9)$ from
+  the union $C_1\coloneq C_{1,1}\cup C_{1,2}$ and so on. We can state this
+  more cleanly: at the $n$th stage in the construction of our set
+  \[
+    C_n\coloneq%
+    C_{n-1}\setminus\bigcup_{i=1}^{n-1}%
+    \left(\frac{i\delta}{3^n},\frac{(i+1)\delta}{3^n}\right)\cup%
+    \left(\frac{3^n-(i+1)\delta}{3^n},\frac{3^n-i\delta}{3^n}\right).
+  \]
+  (Probably; I'll check it later after I have some more time.)  Thus, at
+  the $n$th stage in the construction $C_n$ is the union of $2^n$ disjoint
+  intervals of length $\delta 3^{-n}$. Taking the intersection of these
+  sets
+  \[
+    C\coloneq\bigcap_{i\in\bbN} C_i
+  \]
+  we claim that the set $C$ is perfect, has measure $\delta-1$ and contains
+  no intervals. \textcolor{Red}{**Forget this. For some reason, I have
+    forgotten the construction, so what I made was a Cantor set with
+    measure zero, not what was asked for. We'll proceed as if we
+    constructed what was asked of us.**}
+  \\\\
+  \underline{$C$ is perfect}: To prove that $C$ is perfect we must show
+  that $C$ is closed and dense in itself. $C$ is closed because it is it he
+  (arbitrary) intersection of closed intervals. To see that $C$ is dense in
+  itself we must show that given any $\varepsilon>0$ for any $x\in C$, the
+  open ball $B(x,\varepsilon)$ contains another point, call it $y$, in
+  $C$. But first, we prove the following claim: At the end of each stage
+  $C_n$ in the construction of $C$, \textcolor{Red}{the set of all
+    endpoints of intervals in $C_n$ is a subset of $C$}. (We will not prove
+  this here as it is tedious and I have already proved this before; and
+  after all these notes are mostly for myself.) Now, since $x\in C$,
+  $x\in C_n$ for every $n\in\bbN$. In particular, for sufficiently large
+  $N$, $\delta 3^{-N}<\varepsilon$ and $x$ is in one of the closed interval
+  that makes up $C_N$. Pick an endpoint $y\neq x$ in that interval. Then
+  $y\in C$ and $y\in B(x,\varepsilon)$. Thus, $C$ is dense in itself.
+  \\\\
+  \underline{$C$ has measure $1-\delta$}: For this we simply compute the
+  length of $C$ by evaluating the limit of sequence of lengths, which is
+  justified by Theorem 3.26 since $C_{n+1}\subset C_n$ and $C_n$ is
+  measurable for all $n\in\bbN$, hence
+  \begin{align*}
+    \lim_{n\to\infty}m^*(C_n)
+    &=\lim_{n\to\infty} 1-\sum_{i=1}^n\delta\left[\frac{2^i}{3^{i+1}}\right]\\
+    &=\lim_{n\to\infty}1-\sum_{i=1}^n\frac{\delta}{3}\left[\frac{2}{3}\right]^i\\
+    &=1-\frac{\delta}{3}3\\
+    &=1-\delta
+  \end{align*}
+  as desired.
+  \\\\
+  \underline{$C$ contains no intervals}: Seeking a contradiction, we will
+  assume that $I$ is an interval of positive measure contained in
+  $C$. Since $I\coloneq[a,b]$ is a connected subset of $\bbR$ and
+  $I\subset C$, then $I$ must be contained in some interval $I_n$ in the
+  $n$th step of the construction of $C$ for every $n\in\bbN$. However, for
+  sufficiently large $N$, $m(I_N)<m(I)=b-a$. Thus, $C$ contains no
+  intervals.
 \end{proof}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 3, Ex.\@ 7]
   Prove (3.15).
 \end{problem}
 \begin{proof}
+  Here is the statement of the lemma:
+  \begin{quote}
+    \emph{If ${\{I_k\}}_{k=1}^{N}$ is a finite collection of nonoverlapping
+      intervals, then $\bigcup_{k=1}^NI_k$ is measurable and
+      $m\left(\bigcup_{k=1}^NI_k\right)=\sum_{k=1}^Nm(I_k)$.}
+  \end{quote}
+  By Theorem 3.12, the union $\bigcup_{n=1}^N I_n$ is measurable. Now we
+  show that $m\left(\bigcup_{n=1}^NI_n\right)=\sum_{n=1}^Nm(I_n)$. At least
+  one inequality is straightforward by Theorem 3.12
+  \[
+    m\left(\bigcup_{k=1}^N I_k\right)\leq\sum_{n=1}^Nm(I_n).
+  \]
+  To see the reverse inequality, given $\varepsilon>0$, take open sets
+  $G_n$ for $1\leq n\leq N$ such that
+  $m^*(G_n\smallsetminus I_n)<\min\left(\{\,d(I_k,I_\ell):k\leq\ell,1\leq
+    k\leq\ell\,\}\cup\{\,\varepsilon/N\,\}\right)$. Then the union
+  $\bigcup_{n=1}^N G_n$ contains $\bigcup_{n=1}^N I_n$ and
+  \begin{align*}
+    m\left(\bigcup_{n=1}^N G_n\setminus\bigcup_{n=1}^N I_n\right)
+    &<
+  \end{align*}
 \end{proof}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 3, Ex.\@ 8]
