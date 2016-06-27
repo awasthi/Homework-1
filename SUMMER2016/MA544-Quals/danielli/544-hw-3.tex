@@ -57,8 +57,10 @@
   measurable for all $n\in\bbN$, hence
   \begin{align*}
     \lim_{n\to\infty}m^*(C_n)
-    &=\lim_{n\to\infty} 1-\sum_{i=1}^n\delta\left[\frac{2^i}{3^{i+1}}\right]\\
-    &=\lim_{n\to\infty}1-\sum_{i=1}^n\frac{\delta}{3}\left[\frac{2}{3}\right]^i\\
+    &=\lim_{n\to\infty}
+      \left[1-\sum_{i=1}^n\delta\left(\frac{2^i}{3^{i+1}}\right)\right]\\
+    &=\lim_{n\to\infty}
+      \left[1-\sum_{i=1}^n\frac{\delta}{3}\left(\frac{2}{3}\right)^i\right]\\
     &=1-\frac{\delta}{3}3\\
     &=1-\delta
   \end{align*}
@@ -85,19 +87,20 @@
   \end{quote}
   By Theorem 3.12, the union $\bigcup_{n=1}^N I_n$ is measurable. Now we
   show that $m\left(\bigcup_{n=1}^NI_n\right)=\sum_{n=1}^Nm(I_n)$. At least
-  one inequality is straightforward by Theorem 3.12
+  one inequality is straightforward, by Theorem 3.12 we have
   \[
     m\left(\bigcup_{k=1}^N I_k\right)\leq\sum_{n=1}^Nm(I_n).
   \]
-  To see the reverse inequality, given $\varepsilon>0$, take open sets
-  $G_n$ for $1\leq n\leq N$ such that
-  $m^*(G_n\smallsetminus I_n)<\min\left(\{\,d(I_k,I_\ell):k\leq\ell,1\leq
-    k\leq\ell\,\}\cup\{\,\varepsilon/N\,\}\right)$. Then the union
-  $\bigcup_{n=1}^N G_n$ contains $\bigcup_{n=1}^N I_n$ and
+  To see the reverse note that $m(I_n^\circ)=m(I_n)$ and
+  $I_n^\circ\subset I_n$ so by Theorem 3.3
   \begin{align*}
-    m\left(\bigcup_{n=1}^N G_n\setminus\bigcup_{n=1}^N I_n\right)
-    &<
+    m\left(\bigcup_{n=1}^NI_n\right)
+    &\geq m\left(\bigcup_{n=1}^NI_n^\circ\right)\\
+    &=\sum_{n=1}^Nm(I_n^\circ)\\
+    &=\sum_{n=1}^Nm(I_n).
   \end{align*}
+  Thus, $\bigcup_{n=1}^N I_n$ is measurable and
+  $m\left(\bigcup_{n=1}^NI_n\right)=\sum_{n=1}^Nm(I_n)$.
 \end{proof}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 3, Ex.\@ 8]
@@ -105,6 +108,14 @@
   $\sigma$-algebra containing the closed sets in $\bbR^n$.
 \end{problem}
 \begin{proof}
+  Since $\calB$ is the smallest $\sigma$-algebra containing all of the open
+  sets of $\bbR^n$, it contains all of the closed sets of $\bbR^n$. Now,
+  suppose that $\calB'$ is another $\sigma$-algebra containing the closed
+  sets in $\bbR^n$. Then, $\calB'\subset\calB$ since $\calB$ contains all
+  of the closed sets in $\bbR^n$. However, since $\calB'$ is a
+  $\sigma$-algebra, it contains all of the open sets in $\bbR^n$, so
+  $\calB'\subset\calB$ since $\calB$ is the smallest $\sigma$-algebra
+  containing the open sets in $\bbR^n$. Thus, $\calB'=\calB$.
 \end{proof}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 3, Ex.\@ 9]
@@ -113,6 +124,12 @@
   has measure zero.
 \end{problem}
 \begin{proof}
+  Suppose ${\{E_n\}}_{n=1}^\infty$ is a sequence of sets with
+  $\sum_{n=1}^\infty m^*(E_n)<\infty$. Then, since the sum
+  $\sum_{n=1}^\infty m^*(E_n)$ converges, given $\varepsilon>0$ there
+  exist $N\in\bbN$ such that $n\geq N$ implies
+  $\sum_{j=n}^\infty m^*(E_j)<\varepsilon$. But what does this say about
+  the $\varlimsup_{n\to\infty} E_n$?
 \end{proof}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 3, Ex.\@ 10]
