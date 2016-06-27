@@ -57,7 +57,7 @@ Throughout these notes
   $m^*(E)$ & the outer measure of $E$\\
   $m_*(E)$ & the inner measure of $E$\\
   $m(E)$ & the Lebesgue measure of $E$\\
-  $\|\cdot\|$ & the standard Euclidean norm on $\bbR^n$\\
+  $\|\blank\|$ & the standard Euclidean norm on $\bbR^n$\\
   $f\asymp g$ & means $f$ is asymptotically equivalent to $g$, that is,
                 $\lim_{x\to\infty} g(x)/f(x)=1$\\
 \end{tabular}
@@ -70,43 +70,57 @@ Throughout these notes
   bounded and continuous on $[0,1]$, but that $V[f;0,1]=+\infty$.
 \end{problem}
 \begin{proof}
-  Set $f\coloneq x\sin (1/x)$. We will show that $f$ is bounded and
+  Let $f$ equal $x\sin(1/x)$. We will show that $f$ is bounded and
   continuous on $[0,1]$, but that it is not of bounded variation on
   $[0,1]$.
 
-  First we show that $f$ is bounded. To see this, note that both $|x|$ and
-  $|\sin (1/x)|$ are bounded by $1$ on $[0,1]$ so that their product
-  $|f|=|x||\sin (1/x)|\leq 1$. Thus, $f$ is bounded on $[0,1]$.
+  First we will show that $f$ is bounded. Note that both $|x|$ and
+  $|\sin(1/x)|$ are bounded by $1$ on the interval $[0,1]$. Since
+  $|f|=|x||\sin(1/x)|$, it follows that $|f|\leq 1$ on $[0,1]$. Thus, $f$
+  is bounded on $[0,1]$.
 
-  Next we show that $f$ is continuous. Note that since $x$ is continuous on
-  $(0,1]$ and $\sin(1/x)$ is continuous on $(0,1]$ since it is the
-  composition $1/x\colon (0,1]\to (1,\infty)$,
-  $\sin\colon(1,\infty)\to [0,1]$ both of which are continuous
-  functions. All that is left to show is that $f$ is continuous at $0$. To
-  that end, it suffices to show that for any sequence of point
-  ${\{x_n\}}\subset[0,1]$ converging to $0$, the sequence ${\{f(x_n)\}}$
-  converges to $f(0)=0$. But, given $\varepsilon>0$, for sufficiently large
-  $N$, we can bound the distance $|x_n-0|<\varepsilon$ so that for any
-  $n\geq N$, we have
-  \begin{equation*}
-    |x_n\sin(1/x_n)-0|\leq |x_n|<\varepsilon.
-  \end{equation*}
-  Letting $\varepsilon\to 0$, we have $\lim_{x_n\to 0}f(x_n)=0=f(0)$. Thus,
-  $f$ is continuous at $0$ and consequently on all of $[0,1]$.
-
-  Last but not least, we show that $f$ is not of bounded variation on
-  $[0,1]$. Note that $f$ is differentiable on $[0,1]$ with derivative
-  $f'(x)=\sin(1/x)-(1/x)\cos(1/x)$ so by Corollary 2.10 we have
+  Next we show that $f$ is continuous. It is easy to show that $f$ is
+  continuous on the subinterval $(0,1]$ since both $|x|$ and $\sin(1/x)$
+  are continuous on that interval and we know that the product of
+  continuous functions is continuous. To see that $f$ is continuous at $0$
+  we must show that $f(x^+)=f(0)$, that is, the limit of $f$ as $x$
+  approaches $0$ from the right is $f(0)$ which by definition is $0$. To
+  this end, it suffices to take a (monotonically decreasing) sequence
+  $x_n\searrow 0$ and show that the limit of the sequence
+  ${\{f(x_n)\}}_{n=1}^\infty$ is $0$. Let $\varepsilon>0$ be given then,
+  since $x_n$ converges to $0$ there exists an index $N$ such that
+  $|0-x_n|<\varepsilon$ whenever $n\geq N$. Since $|f(x_n)|\leq |x_n|$ on
+  $[0,1]$, the following inequality holds
   \begin{align*}
-    V[f;0,1]
-    &=\int_0^1|f'|\diff x\\
-    &=\int_0^1|\sin(1/x)-(1/x)\cos(1/x)|\diff x\\
-    &=\int_1^\infty\frac{1}{u^2}|\sin u-u\cos u|\diff u\\
-    &\geq\int_M^\infty\frac{1}{2u}\diff u\\
-    &=\infty,
+    |0-f(x_n)|
+    &=\left|0-x_n\sin(1/x_n)\right|\\
+    &\leq |x_n|\\
+    &<\varepsilon.
   \end{align*}
-  where, for sufficiently large $M$, for $u\geq M$, we have
-  $|\sin u-u\cos u|>u/2$. Thus, $f$ is not b.v.\@ on $[0,1]$.
+  Thus, $f$ is continuous at $0$ and it converges to $0$.
+
+  Despite the nice properties that $f$ seemingly possesses, $f$ is not
+  b.v.\@ on $[0,1]$. To show that $f$ is not b.v.\@ on $[0,1]$ we must show
+  that for any positive real number $M$ there exists some partition
+  $\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}$ of $[0,1]$ such that the variational
+  sum associated to $\Gamma$
+  \[
+    \sum_{i=1}^n|f(x_i)-f(x_{i-1})|>M.
+  \]
+  Let $N$ be the smallest integer greater than $M$ and let $n$ be the
+  smallest integer greater than or equal to $N/2$. Then the partition
+  $\Gamma=\{\,x_0=1<x_1<\cdots<x_{n+1}=1\,\}$ where
+  $x_i=2/((3+(n-i))\pi)$\footnote{I took care to choose $x_i$ such that
+    $x_{i}<x_{i+1}$ in the partition.} for $1\leq i\leq N$. Then we have
+  the inequality
+  \begin{align*}
+    \sum_{i=1}^{n+1}|f(x_i)-f(x_{i-1})|
+    &=\sum_{i=2}^n
+      |f(x_i)-f(x_{i-1})|+|f(x_{n+1})-f(x_n)|+|f(x_0)-f(x_1)|\\
+    &=N+|f(x_{n+1})-f(x_n)|+|f(x_0)-f(x_1)|\\
+    &>M.
+  \end{align*}
+  Thus, $f$ is not b.v.\@ on $[0,1]$.
 \end{proof}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 2]
