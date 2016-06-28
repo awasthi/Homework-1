@@ -52,7 +52,7 @@ Throughout these notes
   $\bbZ^+$ & is the set of positive integers, that is, $x\in\bbZ$ with
              $x\geq 0$\\
   $\bbN$ & is the set of the natural numbers $1,2,\ldots$\\
-  $A\setminus B$ & is the set difference of $A$ and $B$, that is, the
+  $A\smallsetminus B$ & is the set difference of $A$ and $B$, that is, the
                         complement of $A\cap B$ in $A$\\
   $m^*(E)$ & the outer measure of $E$\\
   $m_*(E)$ & the inner measure of $E$\\
@@ -110,9 +110,9 @@ Throughout these notes
   Let $N$ be the smallest integer greater than $M$ and let $n$ be the
   smallest integer greater than or equal to $N/2$. Then the partition
   $\Gamma=\{\,x_0=1<x_1<\cdots<x_{n+1}=1\,\}$ where
-  $x_i=2/((3+(n-i))\pi)$\marginpar{\textcolor{Red}{I took care to choose
-      $x_i$ such that $x_{i}<x_{i+1}$ in the partition.}} for
-  $1\leq i\leq N$. Then we have the inequality
+  $x_i=2/((3+(n-i))\pi)$\marginremark{I took care to choose $x_i$ such that
+    $x_{i}<x_{i+1}$ in the partition.} for $1\leq i\leq N$. Then we have
+  the inequality
   \begin{align*}
     S_\Gamma
     &=\sum_{i=1}^{n+1}|f(x_i)-f(x_{i-1})|\\
@@ -270,15 +270,15 @@ Throughout these notes
   $P[a',b']\leq P[a,b]$ and $N[a',b']\leq N[a,b]$. Since the argument for
   $N$ is similar to that of $P$, we will omit it here for the sake of
   brevity. Now, consider the closure of the complement of $[a',b']$ in
-  $[a,b]$, $\overline{[a,b]\setminus [a',b']}=[a,a']\cup[b',b]$. Since
+  $[a,b]$, $\overline{[a,b]\smallsetminus [a',b']}=[a,a']\cup[b',b]$. Since
   $[a,a']$, $[a',b']$ and $[b',b]$ are close intervals we may take
-  partitions \marginpar{\textcolor{Red}{On second thought, this is not the
-      correct way to go, but the argument is almost correct. You need to
-      start with a partition $\Gamma$ of $[a,b]$ and refined it so that
-      some subset $\Gamma'$ of $\Gamma$ is a partition of $[a',b']$ and
-      argue that because $P[a,b]$ is a supremum and for any partition
-      $\Gamma$, $P_{\Gamma'}$ is in the sum $P_\Gamma$, it follows that
-      $P[a',b']\leq P[a,b]$.}}
+  partitions\marginremark{On second thought, this is not the correct way to
+    go, but the argument is almost correct. You need to start with a
+    partition $\Gamma$ of $[a,b]$ and refined it so that some subset
+    $\Gamma'$ of $\Gamma$ is a partition of $[a',b']$ and argue that
+    because $P[a,b]$ is a supremum and for any partition $\Gamma$,
+    $P_{\Gamma'}$ is in the sum $P_\Gamma$, it follows that
+    $P[a',b']\leq P[a,b]$.}
   \begin{align*}
     \Gamma_a&=\{\,x_0<x_1\cdots<x_\ell\,\},\\
     \Gamma_{ab}&=\{\,x_\ell<x_{\ell+1}<\cdots<x_m\,\}
@@ -318,14 +318,11 @@ Throughout these notes
   $|\Gamma|,|\Gamma'|<\delta$.
 \end{problem}
 \begin{solution}
-  One direction is fairly straight forward. Namely, suppose that given
-  $\varepsilon>0$ there exists $\delta>0$ such that
-  $|R_\Gamma-R_{\Gamma'}|<\varepsilon$ whenever the norms of $\Gamma$ and
-  $\Gamma'$ are less that $\delta$. Let ${\{\Gamma_n\}}_{n=1}^\infty$ be a
-  sequence of monotonically increasing partitions of $[a,b]$ such that
-  $\lim_{n\to\infty}|\Gamma_n|=0$. Since the sequence of partition norms
-  ${\{|\Gamma_n|\}}_{n=1}^\infty$ converges to $0$, there exist $N\in\bbN$
-  such that $n\geq N$ implies $|\Gamma_n|<\delta$.
+  One direction is straightforward. Namely $\impliedby$: suppose that
+  given $\varepsilon>0$ there exists $\delta>0$ such that
+  $|R_\Gamma-R_{\Gamma'}|<\varepsilon$ whenever $|\Gamma|$ and $|\Gamma'|$
+  are less than $\delta$. Let ${\{\Gamma_n\}}_{n=1}^\infty$ be a decreasing
+  sequence of partitions of $[a,b]$ such that $|\Gamma_n|\to 0$.
 
   % One direction is straightforward $\impliedby$: suppose that given
   % $\varepsilon>0$ there exists $\delta>0$ such that
