@@ -242,6 +242,8 @@ Throughout these notes
   \end{align*}
   where, as above, $f$ is bounded by $M$ and $g$ is bounded by $N$. Thus,
   $f/g$ is b.v.\@ on $[a,b]$.
+  \\\\
+  This concludes the proof of Theorem 2.1.
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 3]
@@ -249,46 +251,48 @@ Throughout these notes
   and $N[a',b']\leq N[a,b]$.
 \end{problem}
 \begin{solution}
-  Recall that, given a partition $\Gamma=\{x_0,x_1,\ldots,x_n\}$ of the
-  interval $[a,b]$, $P_\Gamma$ and $N_\Gamma$ are defined to be the sum of
-  the positive and, respectively, the negative terms of $S_\Gamma$, that
-  is, the sums
-  \begin{equation}
-    \label{eq:1.1}
-    P_\Gamma\coloneq\sum_{i=1}^n\left[f(x_i)-f(x_{i-1})\right]^+
-    \quad\text{and}\quad
-    N_\Gamma\coloneq\sum_{i=1}^n\left[f(x_i)-f(x_{i-1})\right]^-,
-  \end{equation}
-  so that the positive variation $P$ and negative variation $N$ are defined
-  to be
+  We will prove this by digging in to the definition of $N$ and $P$.
+  Recall that given a partition $\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}$ of the
+  interval $[a,b]$, $P$ and $N$ are defined to be the supremum over the sum
+  of the positive and, respectively, the sum negative terms of $S_\Gamma$;
+  that is, $P$ and $N$ are the supremum over every partition $\Gamma$ of
+  $[a,b]$ of
   \[
-    P\coloneq\sup_\Gamma P_\Gamma \quad\text{and}\quad N\coloneq\sup_\Gamma
-    N_\Gamma.
+    P_\Gamma=\sum_{i=1}^n\left[f(x_i)-f(x_{i-1})\right]^+
+    \quad\text{and}\quad
+    N_\Gamma=\sum_{i=1}^n\left[f(x_i)-f(x_{i-1})\right]^-.
   \]
 
-  Now, we aim to show that if $[a',b']\subset[a,b]$ then
-  $P[a',b']\leq P[a,b]$ and $N[a',b']\leq N[a,b]$.  We shall proceed as
-  follows: given a partition $\Gamma'=\{x_0',\ldots,x_n'\}$ of $[a,b]$,
-  extend $\Gamma'=\{x_0,\ldots,x_m\}$ where $x_i'=x_k$ for some
-  $0\leq k\leq m-n$ for $0\leq i\leq n$ (clearly $n\leq m$ for this to make
-  sense) to a partition $\Gamma$ of $[a,b]$; by which we mean $\Gamma$ is a
-  partition of $[a,b]$ with $\Gamma'\subset\Gamma$. Then by the definition
-  in \eqref{eq:1.1} we have
+  Let $[a',b']$ be a subinterval of $[a,b]$. Without loss of generality, we
+  may assume that $[a',b']$ is strictly contained in $[a,b]$; that is,
+  $a'\neq a$ and $b'\neq b$. We aim to show that $P[a',b']\leq P[a,b]$ and
+  $N[a',b']\leq N[a,b]$. Since the argument for $N$ is similar to that of
+  $P$, we will omit it here for the sake of brevity. Now, consider the
+  closure of the complement of $[a',b']$ in $[a,b]$,
+  $\overline{[a,b]\setminus [a',b']}=[a,a']\cup[b',b]$. Since $[a,a']$,
+  $[a',b']$ and $[b',b]$ are close intervals we may take partitions
   \begin{align*}
-    P_\Gamma
-    &=\sum_{i=1}^m\left[f(x_i)-f(x_{i-1})\right]^+\\
-    &=\sum_{i=1}^k\left[f(x_i)-f(x_{i-1})\right]^+
-      +\sum_{i=k}^n\left[f(x_i)-f(x_{i-1})\right]
-      +\sum_{i=n}^m\left[f(x_i)-f(x_{i-1})\right]\\
-    &=\sum_{i=1}^k\left[f(x_i)-f(x_{i-1})\right]^+
-      +\sum_{i=n}^m\left[f(x_i)-f(x_{i-1})\right]
-      +P_{\Gamma'}\\
-    &\geq P_{\Gamma'}
+    \Gamma_a&=\{\,x_0<x_1\cdots<x_\ell\,\},\\
+    \Gamma_{ab}&=\{\,x_\ell<x_{\ell+1}<\cdots<x_m\,\}
+    \shortintertext{and}
+    \Gamma_b&=\{\,x_m<x_{m+1}<\cdots<x_n\,\}
   \end{align*}
-  so that, taking the supremum on both sides, we have
-  $P[a,b]\geq P[a',b']$. The same argument can be used to show that
-  $N[a,b]\geq N[a',b']$ by replacing $N$ by $P$ in the statements we made
-  above.
+  of $[a,a']$, $[a',b']$ and $[b',b]$, respectively and extend this to a
+  partition
+  \[
+    \Gamma=\{\,x_0<x_1<\cdots<x_\ell<x_{\ell+1}\cdots<x_m<x_{m+1}\cdots<x_n\,\}
+  \]
+  of $[a,b]$. Then, by the definition of $N$ we have the string of
+  inequalities
+  \begin{align*}
+    N_\Gamma&=\sum_{i=1}^n[f(x_i)-f(x_{i-1})]^+\\
+            &\begin{aligned}
+              ={}&\sum_{i=1}^\ell[f(x_i)-f(x_{i-1})]^+\\
+              &+\sum_{i=\ell+1}^m[f(x_i)-f(x_{i-1})]^+\\
+              &+\sum_{i=m+1}^n[f(x_i)-f(x_{i-1})]^+
+            \end{aligned}\\
+            &
+  \end{align*}
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 11]
