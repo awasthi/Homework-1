@@ -374,118 +374,29 @@ Throughout these notes
     \end{enumerate}
   \end{quote}
   \noindent%
-  (i) Suppose that $I\coloneq\int_a^bf\diff\varphi$ exists. By Problem 4 we
-  know that $I$ exists if and only if given $\varepsilon>0$ there exists
-  $\delta>0$ such that whenever
-  $\Gamma_1=\{x_1^1,\ldots,x_{n_1}^1\},\Gamma_2=\{x_1^2,\ldots,x_{n_2}^2\}$
-  are partitions of $[a,b]$ with norm $|\Gamma_1|,|\Gamma_2|<\delta$ then
-  $|R_{\Gamma_1}-R_{\Gamma_2}|<\varepsilon/|c|$. Now, consider the
-  Riemann--Stieltjes sums of the pair $cf$, $\varphi$ with respect to
-  $\Gamma_1$ and $\Gamma_2$, call them $R_{\Gamma_1}'$ and $R_{\Gamma_2}'$
+  We prove this in (Roman) numerical order.
+
+
+  For (i) suppose that $I=\int_a^bf\diff\varphi$ exists. Then, given
+  $\varepsilon>0$, there exists $\delta>0$ such that
+  $|I-R_\Gamma|<\varepsilon/|c|$ whenever $\Gamma$ is a partition of
+  $[a,b]$ with $|\Gamma|<\delta$. We claim that
+  $\int_a^b cf\diff\varphi=|c|I$. Let $\Gamma=\{,x_0<x_1<\cdots<x_n\,\}$ be
+  a partition $[a,b]$ with $|\Gamma|<\delta$. Then the Riemann sums
+  $\R_\Gamma'$ of the pair $(cf,\varphi)$ associated to the partition
+  $\Gamma$ give us the chain of inequalities
   \begin{align*}
-    |R_{\Gamma_1}'-R_{\Gamma_2}'|
-    &=\left|\sum_{i=1}^{n_1}cf(\xi_i^1)\left[\varphi(x_i^1)-\varphi(x_{i-1}^1)\right]
-      -\sum_{i=1}^{n_2}cf(\xi_i^2)\left[\varphi(x_i^2)-\varphi(x_{i-1}^2)\right]\right|\\
-    &=|c|\left|\sum_{i=1}^{n_1}f(\xi_i^1)\left[\varphi(x_i^1)-\varphi(x_{i-1}^1)\right]
-      -\sum_{i=1}^{n_2}f(\xi_i^2)\left[\varphi(x_i^2)-\varphi(x_{i-1}^2)\right]\right|\\
-    &=|c||R_{\Gamma_1}-R_{\Gamma_2}|\\
-    &<\frac{|c|\varepsilon}{|c|}\\
+    ||c|I-R_\Gamma'|
+    &=\left| |c|I-
+      \sum_{i=1}^n cf(\xi_i)[\varphi(x_i)-\varphi(x_{i-1})]
+      \right|\\
+    &=|c|\left|
+      \sum_{i=1}^n cf(\xi_i)[\varphi(x_i)-\varphi(x_{i-1})]
+      \right|\\
+    &=|c||I-R_\Gamma'|\\
+    &<|c|\left[\frac{\varepsilon}{|c|}\right]\\
     &=\varepsilon.
   \end{align*}
-  Thus, by Problem 4 $\int_a^b cf\diff\varphi$ exist. A slight modification
-  to the argument we have made yields the same conclusion for
-  $\int_a^b f\diff(c\varphi)$.
-  \\\\
-  (ii) Leaving the notation as in (i), let $R_{\Gamma_1}^1$ and
-  $R_{\Gamma_2}^1$ be the Riemann--Stieltjes sums of $f_1$ with respect to
-  $\Gamma_1$ and $\Gamma_2$ and $R_{\Gamma_1}^2$ and $R_{\Gamma_2}^2$ be
-  the Riemann--Stieltjes sums of $f_2$ with respect to $\Gamma_1$ and
-  $\Gamma_2$. By assumption, we can make the sums
-  \[
-    |R_{\Gamma_1}^1-R_{\Gamma_2}^1|<\frac{\varepsilon}{2}
-    \qquad\text{and}\qquad
-    |R_{\Gamma_1}^2-R_{\Gamma_2}^2|<\frac{\varepsilon}{2}.
-  \]
-  Then we have
-  \begin{align*}
-    |R_{\Gamma_1}-R_{\Gamma_2}|
-    &{}={}\left|
-      \sum_{i=1}^{n_1}(f_1(\xi_i^1)+f_2(\xi_i^1))
-      \left[\varphi(x_i^1)-\varphi(x_{i-1}^1)\right]
-      -\sum_{i=1}^{n_1}(f_1(\xi_i^2)+f_2(\xi_i^2))
-      \left[\varphi(x_i^2)-\varphi(x_{i-1}^2)\right]
-      \right|\\
-    {}&{}\begin{aligned}
-      &=\left|\sum_{i=1}^{n_1}f_1(\xi_i^1)
-        \left[\varphi(x_i^1)-\varphi(x_{i-1}^1)\right]
-        -\sum_{i=1}^{n_1}f_1(\xi_i^2)
-        \left[\varphi(x_i^2)-\varphi(x_{i-1}^2)
-        \right]\right.\\
-      &\phantom{{}={}}+\left. \sum_{i=1}^{n_1}f_2(\xi_i^1)
-        \left[\varphi(x_i^1)-\varphi(x_{i-1}^1)\right]
-        -\sum_{i=1}^{n_1}f_2(\xi_i^2)
-        \left[\varphi(x_i^2)-\varphi(x_{i-1}^2) \right] \right|
-    \end{aligned}\\
-    &\begin{aligned}
-      &\leq\left|\sum_{i=1}^{n_1}f_1(\xi_i^1)
-        \left[\varphi(x_i^1)-\varphi(x_{i-1}^1)\right]
-        -\sum_{i=1}^{n_1}f_1(\xi_i^2)
-        \left[\varphi(x_i^2)-\varphi(x_{i-1}^2)
-        \right]\right|\\
-      &\phantom{{}={}}+\left|\sum_{i=1}^{n_1}f_2(\xi_i^1)
-        \left[\varphi(x_i^1)-\varphi(x_{i-1}^1)\right]
-        -\sum_{i=1}^{n_1}f_2(\xi_i^2)
-        \left[\varphi(x_i^2)-\varphi(x_{i-1}^2) \right] \right|
-    \end{aligned}\\
-    &{}={}|R_{\Gamma_1}^1-R_{\Gamma_2}^1|+|R_{\Gamma_1}^2-R_{\Gamma_2}^2|\\
-    &{}<{}\frac{\varepsilon}{2}+\frac{\varepsilon}{2}.
-  \end{align*}
-  Thus, $\int_a^b (f_1+f_2)\diff\varphi$ exists and it is equal to
-  $I_1+I_2$.
-  \\\\
-  (iii) Suppose that $J_1\coloneq\int_a^bf\diff\varphi_1$ and
-  $J_2\coloneq\int_a^bf\diff\varphi_2$ exist. By Problem 4, given
-  $\varepsilon>0$ there exists $\delta>0$ such that for any pair $\Gamma_1$,
-  $\Gamma_2$ of partitions of $[a,b]$ with $|\Gamma_1|,|\Gamma_2|<\delta$
-  we have
-  \[
-    |R_{\Gamma_1}^1-R_{\Gamma_2}^1|<\frac{\varepsilon}{2}\quad\text{and}\quad
-    |R_{\Gamma_1}^2-R_{\Gamma_2}^2|<\frac{\varepsilon}{2},
-  \]
-  where $R_{\Gamma_1}^1$ and $R_{\Gamma_2}^1$ is the Riemann--Stieltjes sum
-  of $(f,\varphi_1)$ with respect to $\Gamma_1$ and $\Gamma_2$ and
-  $R_{\Gamma_1}^2$ and $R_{\Gamma_2}^2$ is the Riemann--Stieltjes sum of
-  $(f,\varphi_2)$ with respect to $\Gamma_1$ and $\Gamma_2$. Then for the
-  pair $(f,\varphi_1+\varphi_2)$ we have
-  \begin{align*}
-    |R_{\Gamma_1}-R_{\Gamma_2}|
-    &=%
-      \left|%
-      \sum_{i=1}^{n_1}f(\xi_i^1)\left[\varphi_1(x_i^1)+\varphi_2(x_i^1)
-      -(\varphi_1(x_i^1)+\varphi_2(x_i^1))\right]\right.\\
-    &\phantom{{}={}}%
-      \left.%
-      -\sum_{i=1}^{n_2}f(\xi_i^2)\left[\varphi_1(x_i^2)+\varphi_2(x_i^2)
-      -(\varphi_1(x_i^2)+\varphi_2(x_i^2))\right]
-      \right|\\
-    &=\left|%
-      R_{\Gamma_1}^1-R_{\Gamma_2}^1+(R_{\Gamma_1}^2-R_{\Gamma_2}^2)
-      \right|\\
-    &\leq|%
-      R_{\Gamma_1}^1-R_{\Gamma_2}^1
-      |+
-      |%
-      (R_{\Gamma_1}^2-R_{\Gamma_2}^2)
-      |\\
-    &<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}\\
-    &=\varepsilon.
-  \end{align*}
-  Thus, $\int_a^bf\diff(\varphi_1+\varphi_2)$ exists and we can easily see
-  that it is equal to the sum
-  \[
-    \int_a^bf\diff\varphi_1
-    +\int_a^bf\diff\varphi_2.
-  \]
 \end{solution}
 
 %%% Local Variables:
