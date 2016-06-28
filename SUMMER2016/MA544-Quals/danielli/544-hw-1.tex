@@ -318,39 +318,34 @@ Throughout these notes
   $|\Gamma|,|\Gamma'|<\delta$.
 \end{problem}
 \begin{solution}
-  One direction is straightforward. Namely $\impliedby$: suppose that
-  given $\varepsilon>0$ there exists $\delta>0$ such that
+  One direction is straightforward. Namely $\impliedby$: suppose that given
+  $\varepsilon>0$ there exists $\delta>0$ such that
   $|R_\Gamma-R_{\Gamma'}|<\varepsilon$ whenever $|\Gamma|$ and $|\Gamma'|$
   are less than $\delta$. Let ${\{\Gamma_n\}}_{n=1}^\infty$ be a decreasing
-  sequence of partitions of $[a,b]$ such that $|\Gamma_n|\to 0$.
+  sequence of partitions (by which we mean $\Gamma_n\subset\Gamma_{n+1}$)
+  of $[a,b]$ such that $|\Gamma_n|\to 0$. Then, by convergence, there
+  exists $N\in\bbN$ such that $n\geq N$ implies $|\Gamma_n|<\delta$. Then,
+  for $n,m\geq N$, we have
+  \begin{align*}
+    |R_{\Gamma_n}-R_{\Gamma_m}|<\varepsilon.
+  \end{align*}
+  Thus, by the Cauchy criterion for convergence, the sequence
+  ${\{R_{\Gamma_n}\}}_{n=0}^\infty$ converges and its limit is by
+  definition the Riemann--Stieltjes integral $\int_a^b f\diff\varphi$.
 
-  % One direction is straightforward $\impliedby$: suppose that given
-  % $\varepsilon>0$ there exists $\delta>0$ such that
-  % $|R_\Gamma-R_{\Gamma'}|<\varepsilon$ whenever
-  % $|\Gamma|,|\Gamma'|<\delta$. Let $\{\Gamma_n\}$ be a sequence of nested
-  % partitions --- that is, $\Gamma_i\subset\Gamma_{i+1}$ --- of $[a,b]$ with
-  % $\lim_{n\to\infty}|\Gamma_n|=0$. Then there exists an index $N$ such that
-  % $m,n\geq N$ implies $|\Gamma_m|,|\Gamma_n|<\delta$. Then by the
-  % hypothesis we have
-  % \[
-  %   \left|R_{\Gamma_n}-R_{\Gamma_m}\right|<\varepsilon.
-  % \]
-  % By Cauchy's criterion for convergence this implies that the
-  % Riemann--Stieltjes integral $\int_a^b f\diff\varphi$ exists.
-
-  % $\implies$: On the other hand, suppose that
-  % $I\coloneq\int_a^b f\diff\varphi$ exists. Then given $\varepsilon>0$
-  % there exists $\delta>0$ such that $|I-R_\Gamma|<\varepsilon/2$ whenever
-  % $|\Gamma|<\delta$. Take any two partitions $\Gamma_1$ and $\Gamma_2$ with
-  % $|\Gamma_1|,|\Gamma_2|<\delta$. Then
-  % \begin{align*}
-  %   |R_{\Gamma_1}-R_{\Gamma_2}|
-  %   &=\left|R_{\Gamma_1}-I-(R_{\Gamma_2}-I)\right|\\
-  %   &\leq|R_{\Gamma_1}-I|+|R_{\Gamma_2}-I|\\
-  %   &<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}\\
-  %   &=\varepsilon
-  % \end{align*}
-  % as desired.
+  On the other hand $\implies$: suppose that $I=\int_a^b f\diff\varphi$
+  exists. Then given $\varepsilon>0$ there exists $\delta>0$ such that
+  $|I-R_\Gamma|<\varepsilon/2$ whenever $|\Gamma|<\delta$. Let $\Gamma$ and
+  $\Gamma'$ be two partitions of $[a,b]$ with norm
+  $|\Gamma|,|\Gamma'|<\delta$. Then we have
+  \begin{align*}
+    |R_\Gamma-R_{\Gamma'}|
+    &=|R_\Gamma-I-(R_{\Gamma'}-I)|\\
+    &\leq |R_\Gamma-I|+|R_{\Gamma'}-I|\\
+    &<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}\\
+    &=\varepsilon.
+  \end{align*}
+  Thus, $I$ satisfies the Cauchy condition.
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 13]
