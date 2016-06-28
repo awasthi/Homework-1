@@ -381,10 +381,10 @@ Throughout these notes
   $\varepsilon>0$, there exists $\delta>0$ such that
   $|I-R_\Gamma|<\varepsilon/|c|$ whenever $\Gamma$ is a partition of
   $[a,b]$ with $|\Gamma|<\delta$. We claim that
-  $\int_a^b cf\diff\varphi=|c|I$. Let $\Gamma=\{,x_0<x_1<\cdots<x_n\,\}$ be
-  a partition $[a,b]$ with $|\Gamma|<\delta$. Then the Riemann sums
-  $\R_\Gamma'$ of the pair $(cf,\varphi)$ associated to the partition
-  $\Gamma$ give us the chain of inequalities
+  $\int_a^b cf\diff\varphi=|c|I$. Let $\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}$
+  be a partition $[a,b]$ with $|\Gamma|<\delta$. Then the
+  Riemann--Stieltjes sums $R_\Gamma'$ of the pair $(cf,\varphi)$ associated
+  to the partition $\Gamma$ give us the chain of inequalities
   \begin{align*}
     ||c|I-R_\Gamma'|
     &=\left| |c|I-
@@ -393,10 +393,16 @@ Throughout these notes
     &=|c|\left|
       \sum_{i=1}^n cf(\xi_i)[\varphi(x_i)-\varphi(x_{i-1})]
       \right|\\
-    &=|c||I-R_\Gamma'|\\
-    &<|c|\left[\frac{\varepsilon}{|c|}\right]\\
+    &=|c||I-R_\Gamma|\\
+    &<|c|\frac{\varepsilon}{|c|}\\
     &=\varepsilon.
   \end{align*}
+  Thus, $\int_a^b cf\diff\varphi$ is Riemann--Stieltjes integrable and its
+  integral is equal to $|c|I$. A similar argument shows that
+  $\int_a^b f\diff(c\varphi)$ is Riemann--Stieltjes integrable with
+  integral $|c|I$.
+
+  For (ii)
 \end{solution}
 
 %%% Local Variables:
