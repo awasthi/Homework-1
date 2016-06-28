@@ -263,20 +263,29 @@ Throughout these notes
     N_\Gamma=\sum_{i=1}^n\left[f(x_i)-f(x_{i-1})\right]^-.
   \]
 
-  Let $[a',b']$ be a subinterval of $[a,b]$. Without loss of generality, we
-  may assume that $[a',b']$ is strictly contained in $[a,b]$; that is,
-  $a'\neq a$ and $b'\neq b$. We aim to show that $P[a',b']\leq P[a,b]$ and
-  $N[a',b']\leq N[a,b]$. Since the argument for $N$ is similar to that of
-  $P$, we will omit it here for the sake of brevity. Now, consider the
-  closure of the complement of $[a',b']$ in $[a,b]$,
-  $\overline{[a,b]\setminus [a',b']}=[a,a']\cup[b',b]$. Since $[a,a']$,
-  $[a',b']$ and $[b',b]$ are close intervals we may take partitions
+  Let $f\colon[a,b]\to\bbR$ be a function of bounded variation on $[a,b]$
+  and let $[a',b']$ be a subinterval of $[a,b]$. Without loss of
+  generality, we may assume that $[a',b']$ is strictly contained in
+  $[a,b]$; that is, $a'\neq a$ and $b'\neq b$. We aim to show that
+  $P[a',b']\leq P[a,b]$ and $N[a',b']\leq N[a,b]$. Since the argument for
+  $N$ is similar to that of $P$, we will omit it here for the sake of
+  brevity. Now, consider the closure of the complement of $[a',b']$ in
+  $[a,b]$, $\overline{[a,b]\setminus [a',b']}=[a,a']\cup[b',b]$. Since
+  $[a,a']$, $[a',b']$ and $[b',b]$ are close intervals we may take
+  partitions \marginpar{\textcolor{Red}{On second thought, this is not the
+      correct way to go, but the argument is almost correct. You need to
+      start with a partition $\Gamma$ of $[a,b]$ and refined it so that
+      some subset $\Gamma'$ of $\Gamma$ is a partition of $[a',b']$ and
+      argue that because $P[a,b]$ is a supremum and for any partition
+      $\Gamma$, $P_{\Gamma'}$ is in the sum $P_\Gamma$, it follows that
+      $P[a',b']\leq P[a,b]$.}}
   \begin{align*}
     \Gamma_a&=\{\,x_0<x_1\cdots<x_\ell\,\},\\
     \Gamma_{ab}&=\{\,x_\ell<x_{\ell+1}<\cdots<x_m\,\}
     \shortintertext{and}
     \Gamma_b&=\{\,x_m<x_{m+1}<\cdots<x_n\,\}
   \end{align*}
+
   of $[a,a']$, $[a',b']$ and $[b',b]$, respectively and extend this to a
   partition
   \[
@@ -285,14 +294,21 @@ Throughout these notes
   of $[a,b]$. Then, by the definition of $N$ we have the string of
   inequalities
   \begin{align*}
-    N_\Gamma&=\sum_{i=1}^n[f(x_i)-f(x_{i-1})]^+\\
+    P_\Gamma&=\sum_{i=1}^n[f(x_i)-f(x_{i-1})]^+\\
             &\begin{aligned}
-              ={}&\sum_{i=1}^\ell[f(x_i)-f(x_{i-1})]^+\\
+              =\sum_{i=1}^\ell&[f(x_i)-f(x_{i-1})]^+\\
               &+\sum_{i=\ell+1}^m[f(x_i)-f(x_{i-1})]^+\\
               &+\sum_{i=m+1}^n[f(x_i)-f(x_{i-1})]^+
             \end{aligned}\\
-            &
+            &=P_{\Gamma_{ab}}+P_{\Gamma_a}+P_{\Gamma_b}\\
+            &\leq P[a,b].
   \end{align*}
+  Taking the supremum on the left, we have
+  \[
+    P[a,a']+P[a',b']+P[b',a']\leq P[a,b].
+  \]
+  Since $P$ is strictly positive, it must be the case that
+  $P[a',b']\leq P[a,b]$.
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 11]
