@@ -52,7 +52,7 @@ Throughout these notes
   $\bbZ^+$ & is the set of positive integers, that is, $x\in\bbZ$ with
              $x\geq 0$\\
   $\bbN$ & is the set of the natural numbers $1,2,\ldots$\\
-  $A\smallsetminus B$ & is the set difference of $A$ and $B$, that is, the
+  $A\setminus B$ & is the set difference of $A$ and $B$, that is, the
                         complement of $A\cap B$ in $A$\\
   $m^*(E)$ & the outer measure of $E$\\
   $m_*(E)$ & the inner measure of $E$\\
@@ -69,7 +69,7 @@ Throughout these notes
   Let $f(x)=x\sin(1/x)$ for $0<x\leq 1$ and $f(0)=0$. Show that $f$ is
   bounded and continuous on $[0,1]$, but that $V[f;0,1]=+\infty$.
 \end{problem}
-\begin{proof}
+\begin{solution}
   Let $f$ equal $x\sin(1/x)$. We will show that $f$ is bounded and
   continuous on $[0,1]$, but that it is not of bounded variation on
   $[0,1]$.
@@ -83,7 +83,7 @@ Throughout these notes
   continuous on the subinterval $(0,1]$ since both $|x|$ and $\sin(1/x)$
   are continuous on that interval and we know that the product of
   continuous functions is continuous. To see that $f$ is continuous at $0$
-  we must show that $f(x^+)=f(0)$, that is, the limit of $f$ as $x$
+  we must show that $f(x^+)=f(0)$; that is, the limit of $f$ as $x$
   approaches $0$ from the right is $f(0)$ which by definition is $0$. To
   this end, it suffices to take a (monotonically decreasing) sequence
   $x_n\searrow 0$ and show that the limit of the sequence
@@ -102,8 +102,8 @@ Throughout these notes
   Despite the nice properties that $f$ seemingly possesses, $f$ is not
   b.v.\@ on $[0,1]$. To show that $f$ is not b.v.\@ on $[0,1]$ we must show
   that for any positive real number $M$ there exists some partition
-  $\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}$ of $[0,1]$ such that the variational
-  sum associated to $\Gamma$
+  $\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}$ of $[0,1]$ such that the sum
+  associated to $\Gamma$
   \[
     \sum_{i=1}^n|f(x_i)-f(x_{i-1})|>M.
   \]
@@ -114,20 +114,21 @@ Throughout these notes
       $x_i$ such that $x_{i}<x_{i+1}$ in the partition.}} for
   $1\leq i\leq N$. Then we have the inequality
   \begin{align*}
-    \sum_{i=1}^{n+1}|f(x_i)-f(x_{i-1})|
+    S_\Gamma
+    &=\sum_{i=1}^{n+1}|f(x_i)-f(x_{i-1})|\\
     &=\sum_{i=2}^n
       |f(x_i)-f(x_{i-1})|+|f(x_{n+1})-f(x_n)|+|f(x_0)-f(x_1)|\\
     &=N+|f(x_{n+1})-f(x_n)|+|f(x_0)-f(x_1)|\\
     &>M.
   \end{align*}
   Thus, $f$ is not b.v.\@ on $[0,1]$.
-\end{proof}
+\end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 2]
   Prove theorem (2.1).
 \end{problem}
-\begin{proof}
-  Recall the statement of theorem (2.1):
+\begin{solution}
+  Recall the statement of Theorem 2.1:
   \begin{quote}
     \begin{enumerate}[label=(\alph*),noitemsep]
     \item If $f$ is of bounded variation on $[a,b]$, then $f$ is bounded on
@@ -140,91 +141,94 @@ Throughout these notes
     \end{enumerate}
   \end{quote}
   \noindent%
-  (a) We shall proceed by contradiction. Suppose $f$ is of b.v.\@ on
-  $[a,b]$ with total variation $V$, but that $f$ is not bounded on
-  $[a,b]$. Then, for every $M\in\bbR^+$, there exist $x\in[a,b]$ such that
-  $|f(x)|>M$. Hence, there exist $x^*\in[a,b]$ such that
-  $|f(x^*)|>V+|f(a)|$ so by the reverse triangle inequality we have
+  We shall prove these in alphabetical order:
+
+  For part (a) we shall proceed by contradiction. First, without loss of
+  generality, we may assume that $f(a)=0$ since the function the variation
+  of $g(x)=f(x)-f(a)$ is equal to the variation of $f$ and $g(a)=0$.
+  Suppose that $f$ is b.v.\@ on $[a,b]$ with variation $V=V[f;a,b]$, but
+  that $f$ is unbounded on $[a,b]$; that is, given a positive real number
+  $M$ there exists a point $x$ in $[a,b]$ such that $|f(x)|>M$. In
+  particular, there exists $x\in[a,b]$ such that $|f(x)|>V$. Hence, for any
+  $x\in[a,b]$ by the triangle inequality we have
   \begin{align*}
-    |f(a)-f(x^*)|+|f(x^*)-f(b)| &\geq
-                                  |(V-|f(a)|)-|f(a)||+|V+(|f(a)|-|f(b)|)|\\
-                                &=V+|V+(|f(a)|-|f(b)|)|\\
-                                &>V.
+    V&<|f(x)|\\
+     &=|f(x)-f(a)+f(a)|\\
+     &\leq|f(x)-f(a)|+|f(a)|\\
+     &\leq V.
   \end{align*}
-  Since $\Gamma^*\coloneq\{a,x^*,b\}$ is a partition of $[a,b]$ and $f$ is
-  b.v.\@ on $[a,b]$, we must have $S_{\Gamma^*}\leq V$. This is a
-  contradiction. Thus, it must be the case that $f$ is bounded on
-  $[a,b]$. %
-  \\\\
-  (b) Suppose $f$ and $g$ are b.v.\@ on $[a,b]$ with variation $V_f$ and
-  $V_g$, respectively.  We will show that $cf$, $f+g$, and $fg$ are b.v.\@
-  on $[a,b]$. Moreover, we show $f/g$ is b.v.\@ on $[a,b]$ if there exists
-  $\varepsilon>0$ such that $|g(x)|\geq\varepsilon$ for all $x\in[a,b]$.
-  \\\\
-  \underline{($cf$ is b.v.\@ on $[a,b]$)}: Let $c$ be a real number. Given
-  a partition $\Gamma=\{x_0,\ldots,x_n\}$ of $[a,b]$, we have
+  This is a contradiction. Therefore, it must be the case that if $f$ is
+  b.v.\@ on $[a,b]$ then $f$ is bounded on $[a,b]$.
+
+  We break part (b) into three sections. Suppose $f$ and $g$ are b.v.\@ on
+  $[a,b]$ with variation $V$ and $V'$, respectively.  We will show that (i)
+  $cf$; (ii) $f+g$; and (iii) $fg$ are b.v.\@ on $[a,b]$. Moreover, we show
+  that (iv) $f/g$ is b.v.\@ on $[a,b]$ if there exists $\varepsilon>0$ such
+  that $|g(x)|\geq\varepsilon$ for all $x\in[a,b]$.
+
+  For part (i) above let $c$ be a real number. Given a partition
+  $\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}$ of $[a,b]$, we have
   \begin{align*}
-    S_\Gamma&=\sum_{i=0}^n|cf(x_i)-cf(x_{i-1})|\\
-            &=\sum_{i=1}^n|c||f(x_i)-f(x_{i-1})|\\
-            &=|c|\underbrace{\left(\sum_{i=1}^n|f(x_i)-f(x_{i-1})|\right)}_{S_{\Gamma,f}}.
+    S_\Gamma
+    &=\sum_{i=1}^n |cf(x_i)-cf(x_{i-1})|\\
+    &=\sum_{i=1}^n |c||f(x_i)-cf(x_{i-1})|\\
+    &=|c|\sum_{i=1}^n|f(x_i)-f(x_{i-1})|\\
+    &\leq |c| V
   \end{align*}
-  But since $f$ is b.v.\@ on $[a,b]$, $S_{\Gamma,f}\leq V_F$ so
-  $S_\Gamma\leq cV_f$. Since $\Gamma$ was chosen arbitrarily, it follows
-  that $cf$ is b.v.\@ on $[a,b]$.  $x\in[a,b]$.
-  \\\\
-  \underline{($f+g$ is b.v.\@ on $[a,b]$)}: Given a partition
-  $\Gamma=\left\{ x_0,\ldots,x_n \right\}$ of the interval $[a,b]$, we have
-  the sums associated to $f+g$
+  since $V$ is the supremum of the sums of the form
+  $\sum_{i=1}^m|f(x_i)-f(x_{i-1})|$ over all partitions of $[a,b]$. Thus,
+  $V[cf;a,b]\leq |c|V$ so $cf$ is b.v.\@ on $[a,b]$.
+
+  For part (ii) given a partition $\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}$ of
+  the interval $[a,b]$, by the triangle inequality we have
   \begin{align*}
-    S_{\Gamma,f+g}
+    S_\Gamma
     &=\sum_{i=1}^n\left|(f(x_i)+g(x_i))-(f(x_{i-1})+g(x_{i-1}))\right|\\
     &=\sum_{i=1}^n\left|(f(x_i)-f(x_{i-1}))+(g(x_i)-g(x_{i-1}))\right|\\
     &\leq\sum_{i=1}^n|f(x_i)-f(x_{i-1})|+\sum_{i=1}^n|g(x_i)-g(x_{i-1})|\\
-    &\leq V_f+V_g.
+    &\leq V+V'.
   \end{align*}
-  Thus, $f+g$ is b.v.\@ on $[a,b]$.
-  \\\\
-  \underline{($fg$ is b.v.\@ on $[a,b]$)}: First, recall that, since $f$
-  and $g$ are b.v.\@ on $[a,b]$, $f$ and $g$ are bounded on $[a,b]$ by,
-  say, $M_f>0$ and $M_g>0$, respectively. Now, given a partition
-  $\Gamma=\{x_0,\ldots,x_n\}$ of $[a,b]$ consider the sums associated to
-  the product $fg$
+  Thus, $f+g$ is b.v.\@ on $[a,b]$
+
+  For part (iii) since $f$ and $g$ are b.v.\@ on $[a,b]$ by part (a) $f$
+  and $g$ are bounded on $[a,b]$ by, say, $M$ and $N$, respectively. Now,
+  given a partition $\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}$ of $[a,b]$, by the
+  triangle inequality we have
   \begin{align*}
-    S_{\Gamma,fg}
+    S_{\Gamma}
     &=\sum_{i=1}^n\left|f(x_i)g(x_i)-f(x_{i-1})g(x_{i-1})\right|\\
     &\begin{aligned} =\sum_{i=1}^n
-      &\left|f(x_i)g(x_i)-f(x_{i-1})g(x_{i-1})\right.\\
+      \left|f(x_i)g(x_i)\right.{}&{}\left.-f(x_{i-1})g(x_{i-1})\right.\\
       &\left.+f(x_i)g(x_{i-1})-f(x_i)g(x_{i-1})\right|
     \end{aligned}\\
     &\begin{aligned} =\sum_{i=1}^n
-      &\left|(f(x_i)g(x_i)-f(x_i)g(x_{i-1}))\right.\\
+      \left|(f(x_i)g(x_i)\right.{}&{}\left.-f(x_i)g(x_{i-1}))\right.\\
       &\left.-(f(x_{i-1})g(x_{i-1})-f(x_i)g(x_{i-1}))\right|
     \end{aligned}\\
     &\begin{aligned}
-      \leq&\sum_{i=1}^n|f(x_i)g(x_i)-f(x_i)g(x_{i-1})|\\
+      \leq\sum_{i=1}^n|f(x_i)g(x_i){}&{}-f(x_i)g(x_{i-1})|\\
       &+\sum_{i=1}^n|f(x_{i-1})g(x_{i-1})-f(x_i)g(x_{i-1})|
     \end{aligned}\\
     &=\sum_{i=1}^n|f(x_i)||g(x_i)-g(x_{i-1})|+\sum_{i=1}^n|g(x_{i-1})||f(x_i)-f(x_{i-1})|\\
     &=\sum_{i=1}^n
-      M_f|g(x_i)-g(x_{i-1})|+\sum_{i=1}^nM_g|f(x_i)-f(x_{i-1})|\\
-    &\leq M_fV_g+M_gV_f.
+      M|g(x_i)-g(x_{i-1})|+\sum_{i=1}^n N|f(x_i)-f(x_{i-1})|\\
+    &\leq MV'+NV.
   \end{align*}
   Thus, $fg$ is b.v.\@ on $[a,b]$.
-  \\\\
-  \underline{($f/g$ is b.v.\@ on $[a,b]$ if there exists $\varepsilon>0$
-    such that $|g(x)|\geq\varepsilon$ for all $x\in[a,b]$.)}: Suppose there
-  exists $\varepsilon>0$ such that $|g(x)|\geq\varepsilon$ for all
-  $x\in[a,b]$. Suppose $\Gamma=\{x_0,\ldots,x_n\}$ is a partition of
-  $[a,b]$ and consider the sum associated to the quotient $f/g$
+
+  Finally, for part (iv) suppose there exists $\varepsilon>0$ such that
+  $|g(x)|\geq\varepsilon$ for all $x\in[a,b]$. Then, given a partition
+  $\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}$ of $[a,b]$, largely by the triangle
+  inequality, we have
   \begin{align*}
-    V_{\Gamma,f/g}
+    S_\Gamma
     &=\sum_{i=1}^n |f(x_i)/g(x_i)-f(x_{i-1})/g(x_{i-1})|\\
     &=\sum_{i=1}^n\left|\frac{f(x_i)g(x_{i-1})-
       f(x_{i-1})g(x_i)}{g(x_i)g(x_{i-1})}\right|\\
     &\leq\frac{1}{\varepsilon^2}\sum_{i=1}^n|f(x_i)g(x_{i-1})-f(x_{i-1})g(x_i)|\\
     &
       \begin{aligned}
-        =\frac{1}{\varepsilon^2}\sum_{i=1}^n |&f(x_i)g(x_{i-1})-f(x_{i-1})g(x_{i-1})\\
+        =\frac{1}{\varepsilon^2}\sum_{i=1}^n |f(x_i)g(x_{i-1}){}&{}-f(x_{i-1})g(x_{i-1})\\
         &-(f(x_{i-1})g(x_i)-f(x_{i-1})g(x_{i-1}))|
       \end{aligned}\\
     &\leq
@@ -234,16 +238,17 @@ Throughout these notes
       +\frac{1}{\varepsilon^2}\sum_{i=1}^nM_f|g(x_i)-g(x_i)|\\
     &=\frac{1}{\varepsilon^2}M_g\sum_{i=1}^n|f(x_i)-f(x_{i})|
       +\frac{1}{\varepsilon^2}M_f\sum_{i=1}^n|g(x_i)-g(x_i)|\\
-    &=\frac{1}{\varepsilon^2}(M_gV_f+M_fV_g).
+    &=\frac{1}{\varepsilon^2}(NV+MV')
   \end{align*}
-  Thus, $f/g$ is b.v.\@ on $[a,b]$.
-\end{proof}
+  where, as above, $f$ is bounded by $M$ and $g$ is bounded by $N$. Thus,
+  $f/g$ is b.v.\@ on $[a,b]$.
+\end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 3]
   If $[a',b']$ is a subinterval of $[a,b]$ show that $P[a',b']\leq P[a,b]$
   and $N[a',b']\leq N[a,b]$.
 \end{problem}
-\begin{proof}
+\begin{solution}
   Recall that, given a partition $\Gamma=\{x_0,x_1,\ldots,x_n\}$ of the
   interval $[a,b]$, $P_\Gamma$ and $N_\Gamma$ are defined to be the sum of
   the positive and, respectively, the negative terms of $S_\Gamma$, that
@@ -266,9 +271,9 @@ Throughout these notes
   follows: given a partition $\Gamma'=\{x_0',\ldots,x_n'\}$ of $[a,b]$,
   extend $\Gamma'=\{x_0,\ldots,x_m\}$ where $x_i'=x_k$ for some
   $0\leq k\leq m-n$ for $0\leq i\leq n$ (clearly $n\leq m$ for this to make
-  sense) to a partition $\Gamma$ of $[a,b]$ --- by which we mean $\Gamma$
-  is a partition of $[a,b]$ with $\Gamma'\subset\Gamma$. Then by the
-  definition in \eqref{eq:1.1} we have
+  sense) to a partition $\Gamma$ of $[a,b]$; by which we mean $\Gamma$ is a
+  partition of $[a,b]$ with $\Gamma'\subset\Gamma$. Then by the definition
+  in \eqref{eq:1.1} we have
   \begin{align*}
     P_\Gamma
     &=\sum_{i=1}^m\left[f(x_i)-f(x_{i-1})\right]^+\\
@@ -284,7 +289,7 @@ Throughout these notes
   $P[a,b]\geq P[a',b']$. The same argument can be used to show that
   $N[a,b]\geq N[a',b']$ by replacing $N$ by $P$ in the statements we made
   above.
-\end{proof}
+\end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 11]
   Show that $\int_a^bf\diff\varphi$ exists if and only if given
@@ -292,7 +297,7 @@ Throughout these notes
   $\left|R_\Gamma-R_{\Gamma'}\right|<\varepsilon$ if
   $|\Gamma|,|\Gamma'|<\delta$.
 \end{problem}
-\begin{proof}
+\begin{solution}
   One direction is straightforward $\impliedby$: suppose that given
   $\varepsilon>0$ there exists $\delta>0$ such that
   $|R_\Gamma-R_{\Gamma'}|<\varepsilon$ whenever
@@ -320,12 +325,12 @@ Throughout these notes
     &=\varepsilon
   \end{align*}
   as desired.
-\end{proof}
+\end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 13]
   Prove theorem (2.16).
 \end{problem}
-\begin{proof}
+\begin{solution}
   Recall the statement of Theorem 2.16:
   \begin{quote}
     \begin{enumerate}[label=(\roman*),noitemsep]
@@ -460,7 +465,7 @@ Throughout these notes
     \int_a^bf\diff\varphi_1
     +\int_a^bf\diff\varphi_2.
   \]
-\end{proof}
+\end{solution}
 
 %%% Local Variables:
 %%% mode: latex
