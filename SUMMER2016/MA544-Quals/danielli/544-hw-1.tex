@@ -376,7 +376,6 @@ Throughout these notes
   \noindent%
   We prove this in (Roman) numerical order.
 
-
   For (i) suppose that $I=\int_a^bf\diff\varphi$ exists. Then, given
   $\varepsilon>0$, there exists $\delta>0$ such that
   $|I-R_\Gamma|<\varepsilon/|c|$ whenever $\Gamma$ is a partition of
@@ -384,7 +383,7 @@ Throughout these notes
   $\int_a^b cf\diff\varphi=|c|I$. Let $\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}$
   be a partition $[a,b]$ with $|\Gamma|<\delta$. Then the
   Riemann--Stieltjes sums $R_\Gamma'$ of the pair $(cf,\varphi)$ associated
-  to the partition $\Gamma$ give us the chain of inequalities
+  to $\Gamma$ give us the chain of inequalities
   \begin{align*}
     ||c|I-R_\Gamma'|
     &=\left| |c|I-
@@ -402,7 +401,48 @@ Throughout these notes
   $\int_a^b f\diff(c\varphi)$ is Riemann--Stieltjes integrable with
   integral $|c|I$.
 
-  For (ii)
+  For (ii) let $I_1=\int_a^b f_1\diff\varphi$ and $I_2=\int_a^b
+  f_2\diff\varphi$. Then, we claim that $I=\int_a^b (f_1+f_2)\diff\varphi$
+  exists and that $I=I_1+I_2$. Since both $I_1$ and $I_2$ exist, given
+  $\varepsilon>0$ there exists $\delta>0$ such that
+  \[
+    |I_1-R_\Gamma^1|<\frac{\varepsilon}{2}\qquad\text{and}\qquad
+    |I_2-R_\Gamma^2|<\frac{\varepsilon}{2}
+  \]
+  whenever $|\Gamma|<\delta$. Let $\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}$ be a
+  partition of $[a,b]$ with $|\Gamma|<\delta$. Then the Riemann--Stieltjes
+  sums $R_\Gamma$ of the pair $(f_1+f_2,\varphi)$ associated to $\Gamma$
+  give is the following chain of inequalities
+  \begin{align*}
+    |(I_1+I_2)-R_{\Gamma}|
+    &=\left|(I_1+I_2)
+      -\sum_{i=1}^n (f_1(\xi_i)+f_2(\xi_i))[\varphi(x_i)-\varphi(x_{i-1})]
+      \right|\\
+    &=\left|
+      I_1
+      -\sum_{i=1}^n
+      f_1(\xi_i)[\varphi(x_i)-\varphi(x_{i-1})\right.\\
+    &\qquad
+      \left.+I_2
+      -\sum_{i=1}^n f_2(\xi_i)[\varphi(x_i)-\varphi(x_{i-1})]\right|\\
+    &\leq
+      \left|
+      I_1
+      -\sum_{i=1}^n
+      f_1(\xi_i)[\varphi(x_i)-\varphi(x_{i-1})
+      \right|\\
+    &\qquad
+      +\left|
+      I_2-\sum_{i=1}^n f_2(\xi_i)[\varphi(x_i)-\varphi(x_{i-1})]\right|\\
+    &=|I_1-R_\Gamma^1|+|I_2-R_\Gamma^2|\\
+    &<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}\\
+    &=\varepsilon.
+  \end{align*}
+  Thus, $I$ exists and it is equal to the sum $I_1+I_2$.
+
+  Part (iii) is similar to part (ii) in the above equation except that
+  instead of splitting the sum at $f_1+f_2$ part, we split it at
+  $\varphi_1+\varphi_2$ part.
 \end{solution}
 
 %%% Local Variables:
