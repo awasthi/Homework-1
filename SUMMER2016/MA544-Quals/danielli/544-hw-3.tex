@@ -96,22 +96,50 @@
       intervals, then $\bigcup_{k=1}^NI_k$ is measurable and
       $m\left(\bigcup_{k=1}^NI_k\right)=\sum_{k=1}^Nm(I_k)$.}
   \end{quote}
-  By Theorem 3.12, the union $\bigcup_{n=1}^N I_n$ is measurable. Now we
-  show that $m\left(\bigcup_{n=1}^NI_n\right)=\sum_{n=1}^Nm(I_n)$. At least
-  one inequality is straightforward, by Theorem 3.12 we have
-  \[
-    m\left(\bigcup_{k=1}^N I_k\right)\leq\sum_{n=1}^Nm(I_n).
-  \]
-  To see the reverse note that $m(I_n^\circ)=m(I_n)$ and
-  $I_n^\circ\subset I_n$ so by Theorem 3.3
-  \begin{align*}
-    m\left(\bigcup_{n=1}^NI_n\right)
-    &\geq m\left(\bigcup_{n=1}^NI_n^\circ\right)\\
-    &=\sum_{n=1}^Nm(I_n^\circ)\\
-    &=\sum_{n=1}^Nm(I_n).
-  \end{align*}
-  Thus, $\bigcup_{n=1}^N I_n$ is measurable and
+  By Theorem 3.12, the union $\bigcup_{n=1}^N I_n$ is measurable. Hence, it
+  remains to show that
   $m\left(\bigcup_{n=1}^NI_n\right)=\sum_{n=1}^Nm(I_n)$.
+
+  We take the approach of extending the argument provided in Theorem
+  3.2. As in Theorem 3.2, we note that, since ${\{I_n\}}_{n=1}^N$ covers
+  the union $\bigcup_{n=1}^N I_n$, then
+  \[
+    m\left(\bigcup_{n=1}^N I_n\right)\leq \sigma%
+    \left(\bigcup_{n=1}^N I_n\right)=\sum_{n=1}^N m(I_n).
+  \]
+
+  On the other hand, note that $I_n$ is the union
+  $I_n^\circ\cup\partial I_n$ of its interior and its boundary. In the
+  previous homework, we showed that the boundary of an interval has measure
+  zero. Hence, we have
+  \[
+    m(I_n^\circ)\leq m(I_n)\leq m(I_n^\circ)+m(\partial I_n)=m(I_n^\circ)
+  \]
+  so $m(I_n)=m(I_n^\circ)$. Now, note that\marginremark{Let us substantiate
+    this claim. Suppose ${\{I_n'\}}_{n=1}^M$ a collection of intervals
+    which covers $\bigcup_{n=1}^N I_n$ with
+    $\sigma\left({\{I_n'\}}_{n=1}^M\right)<\sum_{n=1}^M
+    m(I_n)<\sum_{n=1}^Nm(I_n)$. Then, the collection of intervals
+    ${\{I_n\cap I_m'\}}^{1\leq n\leq N}_{1\leq m\leq M}$ covers
+    $\bigcup_{n=1}^N I_n$ and has measure
+    $\sigma(\{I_n\cap I_m'\})<\sum_{n=1}^M m(I_n)<\sum_{n=1}^Nm(I_n)$. This
+    implies that one of the intervals, say, $I_k$ is not completely covered
+    by intervals of the form $I_k\cap I_\ell'$, $1\leq \ell\leq M$. This is
+    a contradiction.}
+  \[
+    m\left(\bigcup_{n=1}^N I_n^\circ\right)=%
+    \sum_{n=1}^N m(I_n^\circ)=%
+    \sum_{n=1}^N m(I_n).
+  \]
+  Hence, we have
+  \begin{align*}
+    \sum_{n=1}^N m(I_n)
+    &=m\left(\bigcup_{n=1}^N I_n^\circ\right)\\
+    &\leq m\left(\bigcup_{n=1}^N I_n\right)\\
+    &\leq \sum_{n=1}^N m(I_n).
+  \end{align*}
+  Thus, equality $m\left(\bigcup_{n=1}^NI_n\right)=\sum_{n=1}^Nm(I_n)$
+  holds.
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 3, Ex.\@ 8]
@@ -135,24 +163,7 @@
   has measure zero.
 \end{problem}
 \begin{solution}
-  Suppose ${\{E_n\}}_{n=1}^\infty$ is a sequence of sets with
-  $\sum_{n=1}^\infty m^*(E_n)<\infty$. Then, since the sum
-  $\sum_{n=1}^\infty m^*(E_n)$ converges, given $\varepsilon>0$ there
-  exist $N\in\bbN$ such that $n\geq N$ implies
-  $\sum_{j=n}^\infty m^*(E_j)<\varepsilon$. But what does this say about
-  the $\varlimsup_{n\to\infty} E_n$? Well, recall that
-  \[
-    \varlimsup_{n\to\infty}
-    E_n\coloneq\bigcap_{j=1}^\infty\bigcup_{k=j}^\infty E_k.
-  \]
-  Define $F_n\coloneq\bigcup_{j=n}^\infty E_j$. Then $F_n\supset F_{n+1}$
-  and $F_n\searrow\varlimsup_{n\to\infty} E_n$. Moreover, by Theorem 3.12
-  $m^*(F_1)\leq\sum_{n=1}^\infty m^*(E_n)<\infty$ so by Theorem 3.26,
-  $m(\varlimsup_{n\to\infty} E_n)=\lim_{n\to\infty}m(F_n)=0$ since the sum
-  $\sum_{n=1}^\infty m(E_n)$ converges.
 
-  Setting $F_n\coloneq\bigcap_{j=n}^\infty E_j$ yields the same for
-  $\varliminf_{n\to\infty} E_n$.
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 3, Ex.\@ 10]
