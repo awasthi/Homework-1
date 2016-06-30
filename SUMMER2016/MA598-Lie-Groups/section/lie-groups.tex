@@ -588,18 +588,18 @@ subgroups of the general linear group which are frequently used in linear
 algebra. Traditionally, the name ``classical groups'' is applied t othe
 following groups
 \begin{itemize}
-\item $\GL(n,\bbF)$
-\item $\SL(n,\bbF)$
-\item $\O(n,\bbF)$
-\item $\SO(n,\bbF)$ and more the general groups $\SO(p,q,\bbF)$
+\item $\GL(n,\bbK)$
+\item $\SL(n,\bbK)$
+\item $\O(n,\bbK)$
+\item $\SO(n,\bbK)$ and more the general groups $\SO(p,q,\bbK)$
 \item
-  $\Sp(2n,\bbF)=\{\,A\colon\bbF^{2n}\to\bbF^{2n}:\omega(Ax,Ay)=\omega(x,y)\,\}$. Here
+  $\Sp(2n,\bbK)=\{\,A\colon\bbK^{2n}\to\bbK^{2n}:\omega(Ax,Ay)=\omega(x,y)\,\}$. Here
   $\omega(x,y)$ is a skew-symmetric bilinear form
   $\sum_{i=1}^n x_iy_{i+n}-y_ix_{i+n}$ which, up to a change of basis, is
   the unique non-degenerate skew-symmetric bilinear form on
-  $\bbF^{2n}$. Equivalently, one can write $\omega(x,y)=(Jx,y)$
+  $\bbK^{2n}$. Equivalently, one can write $\omega(x,y)=(Jx,y)$
   where $\langle \blank,\blank \rangle$ is the standard symmetric bilinear
-  form on $\bbF^{2n}$ and
+  form on $\bbK^{2n}$ and
   \[
     J=
     \begin{bmatrix}
@@ -620,7 +620,7 @@ little section, we will show that each of the classical groups listed above
 are in fact Lie groups and we will find their dimensions.
 
 A straightforward approach, based on implicit function theorem is hard: for
-example, $\SO(n,\bbF)$ is defined by $n^2$ equations in $\bbF^{n^2}$, and
+example, $\SO(n,\bbK)$ is defined by $n^2$ equations in $\bbK^{n^2}$, and
 finding the rank of this system is not an easy task. We could just refer to
 the theorem about closed subgroups; this would prove that each of them is a
 Lie group, but wuold give us no other information --- not even the
@@ -633,13 +633,13 @@ matrices the exponential map is defined by
 \]
 
 It is well-known that this power series converges and defines an analytic
-map $\frakgl(n,\bbF)$ is the set of all $n\times n$ matrices. In a similar
+map $\frakgl(n,\bbK)$ is the set of all $n\times n$ matrices. In a similar
 way, we define the logarithmic map by
 \[
   \log(1+x)=\sum_{n=1}^\infty\frac{(-1)^{n+1}x^n}{n}.
 \]
 So defined $\log$ is an analytic map defined in a neighborhood of
-$1\in\frakgl(n,\bbF)$.
+$1\in\frakgl(n,\bbK)$.
 
 The following theorem summarizes properties of the exponential and
 logarithmic maps. Most of the properties are the same as for numbers;
@@ -654,10 +654,10 @@ theorem apply equally in real and complex cases.
   \item $\exp(x)=1+x+\cdots$. This means $\exp(0)=1$ and $\exp(0)=I$.
   \item If $xy=yx$ then $\exp(x+y)=\exp(x)\exp(y)$. If $XY=YX$ then
     $\log(XY)=\log(X)+\log(Y)$ in some neighborhood of the identity. In
-    particular, for any $x\in\frakgl(n,\bbF)$, $\exp(x)\exp(-x)=1$, so
-    $\exp x\in\GL(n,\bbF)$.
-  \item For fixed $x\in\frakgl(n,\bbF)$, consider the map
-    $\bbF\to\GL(n,\bbF)$ given by $t\mapsto\exp(tx)$. Then
+    particular, for any $x\in\frakgl(n,\bbK)$, $\exp(x)\exp(-x)=1$, so
+    $\exp x\in\GL(n,\bbK)$.
+  \item For fixed $x\in\frakgl(n,\bbK)$, consider the map
+    $\bbK\to\GL(n,\bbK)$ given by $t\mapsto\exp(tx)$. Then
     $\exp((t+s)x)=\exp(tx)\exp(sx)$. In other words, this map is a morphism
     of Lie groups.
   \item The exponential map agrees with change of basis and transposition:
@@ -667,6 +667,26 @@ theorem apply equally in real and complex cases.
   \end{enumerate}
 \end{theorem}
 
+Note that group morphisms $\bfF\to G$ are frequently called
+\emph{one-parameter subgroups} in $G$. Thus, we cane reformulate part (4)
+of the theorem saying that $\exp(tx)$ is a one-parameter subgroup in
+$\GL(n,\bbK)$.
+
+But how does this help us to study various matrix groups? The key idea is
+that the logarithmic map identifies some neighborhood of the identity in
+$\GL(n,\bbK)$ with some neighborhood of $0$ in the vector space
+$\frakgl(n,\bbK)$. It turns out that it also does the same for all the
+classical groups.
+
+\begin{theorem}
+  For each classical group $G\subset\GL(n,\bbK)$ there exists a vector
+  space $\frakg\subset\frakgl(n,\bbK)$ such that for some neighborhood $U$
+  of $1$ in $\GL(n,\bbK)$ and some neighborhood $V$ of $0$ in
+  $\frakgl(n,\bbK)$ the following maps are mutually inverse
+  \[
+    \includegraphics{U-V-exp-log}
+  \]
+\end{theorem}
 
 %%% Local Variables:
 %%% mode: latex
