@@ -159,11 +159,15 @@
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 3, Ex.\@ 9]
   If ${\{E_k\}}_{k=1}^\infty$ is a sequence of sets with
-  $\sum m^*(E_k)<+\infty$, show that $\limsup E_k$ (and also $\liminf E_k$)
+  $\sum m^*(E_k)<\infty$, show that $\limsup E_k$ (and also $\liminf E_k$)
   has measure zero.
 \end{problem}
 \begin{solution}
-
+  First, recall that the limit supremum of a collection of sets is defined
+  as
+  \[
+    \limsup E_k\triangleeq \bigcap_{i=1}^\infty\bigcup_{j=i}^\infty E_j.
+  \]
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 3, Ex.\@ 10]
