@@ -521,11 +521,13 @@ methods go beyond the scope of this book.
 \subsection{Left, right, and adjoint actions}
 Important examples of group actions are the following actions of a group
 $G$ on itself:
+\begin{quote}
 \begin{itemize}
 \item[Left action:] $L_g\colon G\to G$ defined by $L_g(h)=gh$;
 \item[Right action:] $R_g\colon G\to G$ defined by $R_g(h)=hg^{-1}$;
 \item[Adjoint action:] $\Ad(g)\colon G\to G$ defined by $A_g(h)=ghg^{-1}$.
 \end{itemize}
+\end{quote}
 
 One easily sees that he left and right actions are transitive; in fact,
 each of them is simply transitive. It is also easy to see that the left and
@@ -533,12 +535,12 @@ right actions commute and that $\Ad(g)=L_gR_g$.
 
 Each of these actions also defines the action of $G$ on the spaces of
 functions, vector fields, forms, etc.\@ on $G$. For simplicity, for a
-tangent vector $v\in T_mG$, we will frequently write just $g\cdot v\in
-T_{gm}G$ instead of the technically more accurate but cumbersome notation
-$(L_g)_{*}(v)$. Similarly, we will write $v\cdot g$ for
-$(R_{g^{-1}})_*(v)$. This is justified by Exercise 2.6, where it is
-shown that for matrix groups this notation agrees with usual multiplication
-of matrices.
+tangent vector $v\in T_mG$, we will frequently write just
+$g\cdot v\in T_{gm}G$ instead of the technically more accurate but
+cumbersome notation $d(L_g)(v)$. Similarly, we will write $v\cdot g$ for
+$d(R_{g^{-1}})(v)$. This is justified by Exercise 2.6, where it is shown
+that for matrix groups this notation agrees with usual multiplication of
+matrices.
 
 Since the adjoint action preserves the identity element $1\in G$,  it also
 defines an action of $G$ on the (finite-dimensional) space $T_1G$. Slightly
@@ -688,7 +690,28 @@ classical groups.
   \]
 \end{theorem}
 
-Before provi
+Before proving this theorem, note that it immediately implies the following
+important corollary.
+
+\begin{corollary}
+  Each classical group is a Lie group with tangent space at the identity
+  $T_1G=\frakg$ and $\dim G=\dim\frakg$. The groups $\Unit(n)$, $\SU(n)$,
+  $\Sp(2n)$ are real Lie groups; the groups $\GL(n,\bbK)$, $\SL(n,\bbK)$,
+  $\SO(n,\bbK)$, $\Orth(n,\bbK)$, $\Sp(2n,\bbK)$ are real Lie groups for
+  $\bbK=\bbR$ and complex for $\bbK=\bbC$.
+\end{corollary}
+
+Let us prove this corollary first because it is very easy. Indeed, theorem
+2.30 shows that near $1$, $G$ is identified with an open set in a vector
+space. So it is immediate that near $1$, $G$ is locally a submanifold in
+$\GL(n,\bbK)$. If $g\in G$ then $g\cdot U$ is a neighborhood of $g$ in
+$\GL(n,\bbK)$ and $(g\cdot U)\cap G=g\cdot(U\cap G)$ is a neighborhood of
+$g$ in $G$; thus, $G$ is a submanifold in a neighborhood of $g$.
+
+For the second part, consider the differential of the exponential map
+$d\exp\colon T_0\frakg\to T_1G$. Since $\frakg$ is a vector space,
+$T_0\frakg=\frakg$, and since $\exp(x)=1+x+\cdots$, the derivative is the
+identity; thus $T_0\frakg=\frakg=T_1G$.
 
 %%% Local Variables:
 %%% mode: latex

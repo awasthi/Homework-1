@@ -5,7 +5,7 @@
 \def\subject{measure theory}
 \def\email{salinac@purdue.edu}
 
-\documentclass[10pt,showtrims,twoside]{memoir}
+\documentclass[10pt,showtrims,twoside]{article}
 % \usepackage{geometry}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[
@@ -26,89 +26,19 @@
 % \usepackage{natbib}
 
 % TOC depth
-\setsecnumdepth{subsection}
+% \setsecnumdepth{subsection}
 
-%% Math
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{mathtools}
-% \usepackage{lmodern}
-\usepackage{eucal}
-
-%% Language
-\usepackage[LAE,LFE,T2A,T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[farsi,french,german,spanish,russian,english]{babel}
-\babeltags{fr=french,
-           de=german,
-           en=english,
-           es=spanish,
-           pa=farsi,
-           ru=russian
-           }
-\def\spanishoptions{mexico}
-
-\selectlanguage{english}
-
-\newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
-
-\usepackage{CJKutf8}
-\newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
-\newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
-\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
+%% Math and variables all bundled up
+\usepackage{carlos-variables}
 
 %% Misc
 \usepackage{graphicx}
 \graphicspath{{figures/}}
-
-\usepackage[babel=true]{microtype}
+\usepackage{microtype}
 \usepackage{lineno}
 \usepackage{multicol}
 \usepackage[inline]{enumitem}
 \usepackage{listings}
-\usepackage{mleftright}
-\mleftright
-\usepackage{carlos-variables}
-
-%% Unicode math
-% \usepackage{unicode-math}
-
-% \setmainfont[Ligatures=TeX]{Latin Modern Roman}
-% \setsansfont{Latin Modern Sans}
-% \setsansfont{Latin Modern Mono}
-% \setmathfont{Latin Modern Math}
-% \setmathfont[BoldFont={latinmodern-math.otf}]{latinmodern-math.otf}
-
-% \setmainfont[Ligatures=TeX]{Minion Pro}
-% \setmathfont{Minion Math}
-
-%% Theorems and definitions
-\theoremstyle{plain}
-\newtheorem{theorem}{Theorem}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{claim}[theorem]{Claim}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{axiom}[theorem]{Axiom}
-
-\newtheorem*{corollary*}{Corollary}
-\newtheorem*{claim*}{Claim}
-\newtheorem*{lemma*}{Lemma}
-\newtheorem*{proposition*}{Proposition}
-\newtheorem*{theorem*}{Theorem}
-
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}
-\newtheorem{example}{Examples}
-\newtheorem{examples}[example]{Example}
-\newtheorem{exercise}{Exercise}[subsection]
-\newtheorem{problem}[exercise]{Problem}
-
-\newtheorem*{example*}{Example}
-\newtheorem*{exercise*}{Exercise}
-\newtheorem*{problem*}{Problem}
 
 \begin{document}
 
@@ -116,21 +46,21 @@
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
 %% Counters
-\counterwithout{exercise}{chapter}
-\numberwithin{equation}{subsection}
-\counterwithout{equation}{chapter}
+% \counterwithout{exercise}{subsection}
+% \numberwithin{equation}{subsection}
+% \counterwithout{equation}{chapter}
 
 \thispagestyle{empty}
 \author{\href{mailto:\email}{\auth}}
 \title{\tight}
 \date{\today}
 
-\frontmatter
+% \frontmatter
 \maketitle
 \tableofcontents
 
 %% Danielli homework
-\mainmatter
+% \mainmatter
 \include{danielli/544-hw-1}
 \include{danielli/544-hw-2}
 \include{danielli/544-hw-3}
@@ -165,7 +95,7 @@
 % \include{lempert}
 
 %% Glossaries
-\backmatter
+% \backmatter
 % \printglossary
 
 %% References
