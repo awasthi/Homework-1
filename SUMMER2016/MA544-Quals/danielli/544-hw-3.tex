@@ -163,16 +163,20 @@
   has measure zero.
 \end{problem}
 \begin{solution}
-  First, recall that the limit supremum of a collection of sets is defined
-  as
+  First, since
+  ${\{E_n\}}_{n=1}^\infty$ is a sequence of sets with
   \[
-    \limsup_{n\to\infty} E_n=\bigcap_{i=1}^\infty\bigcup_{j=i}^\infty E_j.
+    \sum_{i=1}^\infty m^*(E_i)<\infty,
   \]
-  Then, since
+  for every $\varepsilon>0$ there exists $N\in\bbN$ such that $n\geq N$
+  implies
   \[
-    \liminf_{n\to\infty} E_n=\bigcup_{i=1}^\infty\bigcap_{j=i}^\infty E_j
+    \sum_{i=n}^\infty m^*(E_i)<\varepsilon.
   \]
-  we have
+  Let $E=\limsup_{n\to\infty} E_n$ and consider the sequence of sets
+  ${\{E_n'\}}_{n=1}^\infty$ defined by $E_n'=\bigcup_{i=n}^\infty
+  E_i$. This sequence is decreasing (since $E_n'=E_n\cup E_{n+1}'$) and it
+  is easy to check that $E=\bigcap_{n=1}^\infty E_n'$.
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 3, Ex.\@ 10]
