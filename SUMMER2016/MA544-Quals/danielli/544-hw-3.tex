@@ -1,4 +1,5 @@
 \subsubsection{Homework 3}
+\setcounter{exercise}{0}
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 3, Ex.\@ 5]
   Construct a subset of $[0,1]$ in the same manner as the Cantor set,
   except that at the $k$th stage each interval removed has length
@@ -163,20 +164,34 @@
   has measure zero.
 \end{problem}
 \begin{solution}
-  First, since
-  ${\{E_n\}}_{n=1}^\infty$ is a sequence of sets with
+  First, since ${\{E_n\}}_{n=1}^\infty$ is a sequence of sets with
   \[
-    \sum_{i=1}^\infty m^*(E_i)<\infty,
+    \sum_{i=1}^\infty m^*(E_i)<\infty
   \]
   for every $\varepsilon>0$ there exists $N\in\bbN$ such that $n\geq N$
   implies
   \[
     \sum_{i=n}^\infty m^*(E_i)<\varepsilon.
   \]
-  Let $E=\limsup_{n\to\infty} E_n$ and consider the sequence of sets
-  ${\{E_n'\}}_{n=1}^\infty$ defined by $E_n'=\bigcup_{i=n}^\infty
-  E_i$. This sequence is decreasing (since $E_n'=E_n\cup E_{n+1}'$) and it
-  is easy to check that $E=\bigcap_{n=1}^\infty E_n'$.
+  Let's put this aside for now.
+
+  Define $E=\limsup_{n\to\infty} E_n$ and $E_n'=\bigcup_{i=n}^\infty
+  E_n$. It is easy to see that ${\{E_n'\}}_{n=1}^\infty$ is a decreasing
+  sequence of sets whose intersection $\bigcap_{n=1}^\infty E_n$ is the
+  limit supremum $E$. \marginremark{This is because $E_{n+1}'$ is the union
+    $E_{n+1}\cup E_n'$.} By the monotonicity of the outer measure, we have
+  \[
+    m^*(E)\leq m^*(E_n')
+  \]
+  for all $n\in\bbN$. On the other hand,
+  \[
+    m^*(E_n')\leq \sum_{i=n}^\infty m^*(E_i)<\varepsilon
+  \]
+  for every $\varepsilon$. Letting $\varepsilon$ go to $0$ we have
+  $m^*(E)=0$.
+
+  Lastly, we note that $E'=\liminf_{n\to\infty} E_n$ is a subset of
+  $\limsup_{n\to\infty} E_n$, so that $m^*(E')=0$.
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 3, Ex.\@ 10]
@@ -184,6 +199,33 @@
   $m(E_1\cup E_2)+m(E_1\cap E_2)=m(E_1)+m(E_2)$.
 \end{problem}
 \begin{solution}
+  We may, without loss of generality, assume that $m(E_1),m(E_2)<\infty$
+  for otherwise there is nothing to show as equality holds trivially.
+
+  Now, by Carathéodory's theorem we have the following characterization of
+  measurability: a set $E$ is measurable if and only if for every set $A$
+  we have
+  \[
+    m^*(A)=m^*(A\cap E)+m^*(A\smallsetminus E).
+  \]
+  Therefore, the following equalities hold \marginremark{Note that we
+    remove the $*$ from $m$ since for measurable sets the outer measure and
+    measure agree.}
+  \begin{align*}
+    m(E_1)&=m(E_1\cap E_2)+m(E_1\smallsetminus E_2)\\
+    m(E_2)&=m(E_1\cap E_2)+m(E_2\smallsetminus E_1).
+  \end{align*}
+  Moreover, from elementary set theory we have
+  \[
+    (E_1\cup E_2)\smallsetminus E_2=E_1\smallsetminus (E_1\cap E_2),
+  \]
+  $E_1\subset E_1\cup E_2$ and $E_1\cap E_2\subset E_1$ so\marginremark{The
+    corollary to Carathéodory's theorem would have been enough to get this
+    result; that is, Corollary 3.31.}
+  \[
+    m(E_1\cup E_2)+m(E_1\cap E_2)=m(E_1)+m(E_2)
+  \]
+  as desired.
 \end{solution}
 
 %%% Local Variables:
