@@ -87,6 +87,30 @@
   of $m_*(A)$.)
 \end{problem}
 \begin{solution}
+  Suppose $A\subset E$. If $A$ is measurable, by Problem 2, the outer and
+  inner measure of $A$ agree; symbolically, we have
+  $m(A)=m^*(A)=m_*(A)$. Thus, we have
+  \[
+    m^*(E\smallsetminus A)=m^*(E)-m^*(A)=m^*(E)-m_*(A).
+  \]
+
+  If $A$ is not measurable\marginremark{Even though $A$ is not measurable,
+    we can still find its inner and outer measure.} and $m(E)<\infty$, then
+  we must have $m^*(A),m^*(E\smallsetminus A)<\infty$ by the monotonicity
+  of the outer measure; since both $A$ an $E\smallsetminus A$ are subsets
+  of $E$. Hence, we may, without any ambiguity, subtract the quantity
+  $m^*(E\smallsetminus A)$ from $m(E)$ and we have
+  \begin{align*}
+    m(E)-m^*(E\smallsetminus A)
+    &=m(E)
+      -\inf\left\{\,m(G):\text{$E\smallsetminus A\subset G$ and $G$ is
+      open}\,\right\}\\
+    &=m(E)
+      -\inf\left\{\,m(G):\text{$E\smallsetminus A\subset G\subset E$ and $G$ is
+      open}\,\right\}\\
+    &=
+  \end{align*}
+  Etcetera. The rest of this is uninteresting.
 \end{solution}
 
 %%% Local Variables:
