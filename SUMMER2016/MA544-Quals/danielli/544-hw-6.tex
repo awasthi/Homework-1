@@ -100,12 +100,38 @@
   Thus, $f+g$ is u.s.c.
 
   For that second little part of (a), the one that asks ``Is $f-g$ u.s.c.\@
-  at $x_0$?'' we provide a counter example.\marginrremark{In fact, we could
+  at $x_0$?'' we provide a counter example.\marginremark{In fact, we could
     have predicted this, since if $g$ is u.s.c.\@ at $x_0$, $-g$ is
     l.s.c.\@ at $x_0$}. In fact, the following is enough of a
   counterexample: Take $f=0$ (which is continuous everywhere) and $g$ any
   function that is u.s.c.\@, but not continuous, at $x_0$ then $f-g=-g$ is
-  l.s.c.\@ at $x_0$.
+  l.s.c.\@ at $x_0$. Another counterexample is provided by the equations
+  $u_1$ and $u_2$ from Ch.\@ 4 of Wheeden and Zygmund: Fix an $x_0\in\bbR$
+  and define
+  \begin{align*}
+    u_1(x)&=\begin{cases}
+      0&\text{if $x<x_0$,}\\
+      1&\text{if $x\geq x_0$,}
+    \end{cases}
+    &
+    u_2(x)&=\begin{cases}
+      0&\text{if $x\leq x_0$,}\\
+      1&\text{if $x>x_0$.}
+    \end{cases}
+  \end{align*}
+  Then
+  \[
+    u_1(x)-u_2(x)=
+    \begin{cases}
+      0&\text{if $x\leq x_0$,}\\
+      1&\text{if $x>x_0$.}
+    \end{cases}
+  \]
+  is not u.s.c.\@ at $x_0$ since being u.s.c.\@ at $x_0$ implies that for
+  $1/2>f(x_0)=0$ there exists $\delta>0$ such that $f(x)<1/2$ for all
+  $x\in (x_0-\delta,x_0+\delta)$. But for any $x'>x_0$ in
+  $(x_0-\delta,x+\delta)$, $u(x')=1>1/2$ which contradicts the assumption
+  that $u$ is u.s.c.\@ at $x_0$.
 
   For (b), suppose $\{f_n\}$ is a sequence of functions that are u.s.c.\@
   at $x_0$.

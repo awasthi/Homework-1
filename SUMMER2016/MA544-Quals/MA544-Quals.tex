@@ -33,14 +33,11 @@ pageanchor={false}%
 \usepackage{carlos-variables}
 
 %% Misc
+\usepackage{microtype}
+\usepackage[inline]{enumitem}
+\usepackage{cleveref}
 \usepackage{graphicx}
 \graphicspath{{figures/}}
-\usepackage{microtype}
-\usepackage{lineno}
-\usepackage{multicol}
-\usepackage[inline]{enumitem}
-\usepackage{listings}
-% \usepackage{lmodern}
 
 \begin{document}
 
@@ -50,7 +47,7 @@ pageanchor={false}%
 %% Counters
 % \counterwithout{exercise}{subsection}
 % \numberwithin{equation}{subsection}
-% \counterwithout{equation}{chapter}
+% \counterwithout{equation}{subsection}
 
 \thispagestyle{empty}
 \author{\href{mailto:\email}{\auth}}
@@ -70,7 +67,6 @@ pageanchor={false}%
 \include{danielli/544-hw-4}
 \include{danielli/544-hw-5}
 \include{danielli/544-hw-6}
-\setcounter{exercise}{0}
 \include{danielli/544-hw-7}
 \setcounter{exercise}{0}
 \include{danielli/544-hw-8}
