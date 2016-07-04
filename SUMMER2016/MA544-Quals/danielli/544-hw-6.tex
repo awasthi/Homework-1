@@ -1,37 +1,114 @@
 \subsubsection{Homework 6}
+\setcounter{exercise}{0}
 % #6 - Due Feb. 22 Read Sections 4.2-3. Chapter 4: # 4, 7, 8.
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 4, Ex.\@ 4]
   Let $f$ be defined and measurable in $\bbR^n$. If $T$ is a nonsingular
-  linear transformation of $\bbR^n$, show that $f(T\bfx)$ is
-  measurable. [If $E_1=\left\{\,\bfx: f(\bfx)>a\,\right\}$ and
-  $E_2=\left\{\,\bfx:f(T\bfx)>a\,\right\}$, show $E_2=T^{-1}E_1$.]
+  linear transformation of $\bbR^n$, show that $f(T(x))$ is measurable. [If
+  $E_1=\left\{\,x: f(x)>a\,\right\}$ and
+  $E_2=\left\{\,x:f(T(x))>a\,\right\}$, show $E_2=T^{-1}(E_1)$.]
 \end{problem}
 \begin{solution}
+  % Let $f$ be a measurable function and $T$ a nonsingular linear
+  % transformation. Then we show that for any finite $\alpha\in\bbR$, for
+  % $E_1=\left\{\,x:f(x)>\alpha\,\right\}$ and
+  % $E_2=\left\{\,x:f(T(x))>\alpha\,\right\}$, we have $E_2=T^{-1}(E_1)$
+  % which, by Theorem 3.35, shows that $E_2$ is measurable and hence, the
+  % composition $f\circ T$ is measurable.
+  Let $f\colon\bbR^n\to\bbR$ be a measurable function and
+  $T\colon\bbR^n\to\bbR^n$ be a linear transformation. Then, we show that
+  the composition $f\circ T$ is measurable. Fix a finite $\alpha\in\bbR$
+  and let
+  \begin{align*}
+    E_1&=\left\{\,x:f(x)>\alpha\,\right\}\\
+    E_2&=\left\{\,x:f(T(x))>\alpha\,\right\}.
+  \end{align*}
+  Then, by Theorem 3.35, it suffices to show that $E_2=T^{-1}(E_1)$ since
+  $T^{-1}$ is a nonsingular linear transformation so it sends measurable
+  sets to measurable sets. But this equality is obvious: Suppose
+  $x\in E_2$; then $f(T(x))>\alpha$ so, because $T$ is nonsingular and
+  therefore bijective, clearly $x\in T^{-1}(E_1)$ so $E_2\subset
+  T^{-1}(E_1)$. One the other hand, if $x\in T^{-1}(E_1)$ then $x$ is a
+  point in $E$ such that $f(T(x))>\alpha$ so $x\in E_2$. Thus,
+  $E_2=T^{-1}(E_1)$ and consequently, $f\circ T$ is a measurable function.
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 4, Ex.\@ 7]
   Let $f$ be usc and less that $\infty$ on a compact set $E$. Show that $f$
   is bounded above on $E$. Show also that $f$ assumes its maximum on $E$,
-  i.e., that there exists $\bfx_0\in E$ such that $f(\bfx_0)\geq f(\bfx)$
-  for all $\bfx\in E$.
+  i.e., that there exists $x_0\in E$ such that $f(x_0)\geq f(x)$ for all
+  $x\in E$.
 \end{problem}
 \begin{solution}
+  First we show that $f$ is bounded. Suppose that $f$ is u.s.c.\@ on
+  $E$. Then, by Theorem 4.14 (i), sets of the form
+  $\left\{\,x\in E:f(x)<\alpha\,\right\}$ are relatively open. Let
+  $\calG={\{G_\alpha\}}_{\alpha\in\bbZ}$ where
+  $G_a=\left\{\,x\in E:f(x)<\alpha\,\right\}$. Then $\calG$ forms an open
+  cover of $E$ and since $E$ is compact there exists a finite subset
+  ${\{G_{\alpha_n}\}}_{n=1}^N$ for some finite subset
+  $\{\,\alpha_1,\ldots,\alpha_N\,\}$ of $\bbZ$. Let
+  $\alpha=\max\left\{\,\alpha_1,\ldots,\alpha_N\,\right\}$. Then,
+  $f(x)<\alpha$ for all $x\in E$ so $f$ is bounded above by $\alpha$.
+
+  Next, we show that $f$ in fact assumes its maximum (locally) on $E$ by
+  using only topological properties of $f$. Since sets of the form
+  $\left\{\,x\in E:f(x)\geq\alpha\,\right\}$ are relatively closed, by
+  Theorem 4.14 (i), for fixed $x\in E$ the sets
+  $F_x=\left\{\,y\in E:f(y)\geq f(x)\,\right\}$ are relatively
+  closed. Consider the collection ${\{F_x\}}_{x\in E}$ of closed subsets of
+  $E$. First, note that each of these sets is nonempty since
+  $f(x)\geq f(x)$ so $x\in F_x$ for every $x\in E$. Now, let
+  ${\{x_n\}}_{n=1}^N\subset E$ and consider the collection
+  ${\{F_{x_n}\}}_{n=1}^N$. Then $\bigcap_{n=1}^N F_{x_n}\neq\emptyset$
+  since for $x$ the point in $\{\,x_1,\ldots,x_N\,\}$ such that
+  $f(x)=\min\left\{\,f(x_1),\ldots,f(x_N)\,\right\}$, $x\in F_{x_n}$ for
+  all $1\leq n\leq N$. Thus, by the finite intersection property, the
+  intersection $F=\bigcap_{x\in E}F_x$ is nonempty. Let
+  $y\in\bigcap_{x\in E} F_x$, then $f(y)\geq f(x)$ for all $x\in E$ so $f$
+  achieves its maximum (locally) on $E$.
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 4, Ex.\@ 8]
   \hfill
   \begin{enumerate}[label=(\alph*),noitemsep]
-  \item Let $f$ and $g$ be two functions which are usc at $\bfx_0$. Show
-    that $f+g$ is usc at $\bfx_0$. Is $f-g$ usc at $\bfx_0$? When is $fg$
-    usc at $\bfx_0$?
-  \item If $\left\{f_k\right\}$ is a sequence of functions are usc at
-    $\bfx_0$, show that $\inf f_k(\bfx)$ is usc at $\bfx_0$.
-  \item If $\left\{f_k\right\}$ is a sequence of functions which are usc at
-    $\bfx_0$ and which converge uniformly near $\bfx_0$, show that
-    $\lim f_k$ is usc at $\bfx_0$.
+  \item Let $f$ and $g$ be two functions which are u.s.c.\@ at $x_0$. Show
+    that $f+g$ is u.s.c.\@ at $x_0$. Is $f-g$ u.s.c.\@ at $x_0$? When is
+    $fg$ u.s.c.\@ at $x_0$?
+  \item If $\left\{f_k\right\}$ is a sequence of functions are u.s.c.\@ at
+    $x_0$, show that $\inf f_k(x)$ is u.s.c.\@ at $x_0$.
+  \item If $\left\{f_k\right\}$ is a sequence of functions which are
+    u.s.c.\@ at $x_0$ and which converge uniformly near $x_0$, show that
+    $\lim f_k$ is u.s.c.\@ at $x_0$.
   \end{enumerate}
 \end{problem}
 \begin{solution}
+  We prove these in alphabetical order (a) $\to$ (b) $\to$ (c).
+
+  For (a), suppose that $f$ and $g$ are u.s.c.\@ at $x_0$. Then given
+  $M>f(x_0),g(x_0)$ there exists $\delta_1,\delta_2>0$ such that
+  $f(x),g(x)<M/2$ for all $|x_1-x_0|<\delta_1,|x_2-x_0|<\delta_2$,
+  respectively. Let $\delta$ be the minimum of
+  $\{\,\delta_1,\delta_2\,\}$. Then for any $x$ such that $|x-x_0|<\delta$,
+  we have
+  \begin{align*}
+    |f(x)+g(x)-(f(x_0)+g(x_0))|
+    &=|(f(x)-f(x_0))+(g(x)-g(x_0))|\\
+    &\leq |(f(x)-f(x_0))|+|(g(x)-g(x_0))|\\
+    &<\frac{M}{2}+\frac{M}{2}\\
+    &=M.
+  \end{align*}
+  Thus, $f+g$ is u.s.c.
+
+  For that second little part of (a), the one that asks ``Is $f-g$ u.s.c.\@
+  at $x_0$?'' we provide a counter example.\marginrremark{In fact, we could
+    have predicted this, since if $g$ is u.s.c.\@ at $x_0$, $-g$ is
+    l.s.c.\@ at $x_0$}. In fact, the following is enough of a
+  counterexample: Take $f=0$ (which is continuous everywhere) and $g$ any
+  function that is u.s.c.\@, but not continuous, at $x_0$ then $f-g=-g$ is
+  l.s.c.\@ at $x_0$.
+
+  For (b), suppose $\{f_n\}$ is a sequence of functions that are u.s.c.\@
+  at $x_0$.
 \end{solution}
 
 %%% Local Variables:
