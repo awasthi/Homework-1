@@ -102,7 +102,7 @@
   For that second little part of (a), the one that asks ``Is $f-g$ u.s.c.\@
   at $x_0$?'' we provide a counter example.\marginremark{In fact, we could
     have predicted this, since if $g$ is u.s.c.\@ at $x_0$, $-g$ is
-    l.s.c.\@ at $x_0$}. In fact, the following is enough of a
+    l.s.c.\@ at $x_0$.} In fact, the following is enough of a
   counterexample: Take $f=0$ (which is continuous everywhere) and $g$ any
   function that is u.s.c.\@, but not continuous, at $x_0$ then $f-g=-g$ is
   l.s.c.\@ at $x_0$. Another counterexample is provided by the equations
@@ -133,8 +133,15 @@
   $(x_0-\delta,x+\delta)$, $u(x')=1>1/2$ which contradicts the assumption
   that $u$ is u.s.c.\@ at $x_0$.
 
-  For (b), suppose $\{f_n\}$ is a sequence of functions that are u.s.c.\@
-  at $x_0$.
+  For (b), suppose $\{f_n\}_{n=1}^\infty$ is a sequence of functions that are u.s.c.\@
+  at $x_0$. Then
+  \[
+    \limsup_{\substack{x\to x_0\\ x\in E}}f_n(x)\leq f_n(x_0)
+  \]
+  for all $n\in\bbN$. We must show that
+  \[
+    \limsup_{\substack{x\to x_0}\\ x\in E}\left[\inf f_n(x)\right]\leq \inf f_n(x_0).
+  \]
 \end{solution}
 
 %%% Local Variables:
