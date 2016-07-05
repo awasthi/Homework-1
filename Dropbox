@@ -41,7 +41,7 @@
     {12pt plus 4pt minus 4pt}  % Space below
     {}          % Body font
     {}          % Indent amount
-    {$\blacktriangleright$~\scshape}  % Theorem head font
+    {\bfseries\scshape}  % Theorem head font
     {.}         % Punctuation after theorem head
     {.5em}      % Space after theorem head
     {}          % Theorem head spec (can be left empty, meaning ‘normal’)
@@ -61,7 +61,7 @@
 \makeatletter
 \@ifundefined{solution}{%
 \newenvironment{solution}[1][\proofname]{%
-  \proof[\ensuremath{\blacktriangleright}~\textnormal{{\textsc{#1}}}]%
+  \proof[\ensuremath{\blacktriangleright}~\textnormal{\bfseries{\textsc{#1}}}]%
 }{\endproof}
 }{}
 \makeatother
@@ -648,7 +648,7 @@
 
 \ifpdf
 %% Math packages
-\usepackage{lmodern}
+%\usepackage{lmodern}
 %\usepackage{cfr-lm}
 \usepackage[bbgreekl]{mathbbol}
 \usepackage{eucal}
