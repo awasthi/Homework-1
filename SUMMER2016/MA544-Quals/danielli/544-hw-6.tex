@@ -133,15 +133,21 @@
   $(x_0-\delta,x+\delta)$, $u(x')=1>1/2$ which contradicts the assumption
   that $u$ is u.s.c.\@ at $x_0$.
 
-  For (b), suppose $\{f_n\}_{n=1}^\infty$ is a sequence of functions that are u.s.c.\@
-  at $x_0$. Then
+  For that last bit of part (a), we claim that a sufficient condition for
+  the product of two u.s.c.\@ maps $fg$ to be u.s.c.\@ is that
+  $(fg)(x)\geq 0$ for all $x\in E$. If this condition is satisfied, then
+  for any $x\to x_0$, $x\in E$, we have
   \[
-    \limsup_{\substack{x\to x_0\\ x\in E}}f_n(x)\leq f_n(x_0)
+    \limsup_{x\to x_0} (fg)(x)\leq%
+    \Bigl(\limsup_{x\to x_0}f(x)\Bigr)%
+    \Bigl(\limsup_{x\to x_0}g(x)\Bigr)%
+    \leq (fg)(x_0).
   \]
-  for all $n\in\bbN$. We must show that
-  \[
-    \limsup_{\substack{x\to x_0}\\ x\in E}\left[\inf f_n(x)\right]\leq \inf f_n(x_0).
-  \]
+  Hence, the product $fg$ is u.s.c.\@ at $x_0$.
+
+  For (b), suppose $\{f_n\}_{n=1}^\infty$ is a sequence of functions that
+  are u.s.c.\@ at $x_0$. Let $f=\inf f_n$. Then for every $\varepsilon>0$,
+  there $f_n(x_0)\leq f(x_0)+\varepsilon$
 \end{solution}
 
 %%% Local Variables:
