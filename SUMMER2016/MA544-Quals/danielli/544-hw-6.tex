@@ -147,8 +147,36 @@
 
   For (b), suppose $\{f_n\}_{n=1}^\infty$ is a sequence of functions that
   are u.s.c.\@ at $x_0$. Let $f=\inf f_n$. Then for every $\varepsilon>0$,
-  by the definition of the infimum, $f(x_0)+\varepsilon>f_n(x_0)$ for some
-  $n\in\bbN$.
+  by the definition of the infimum, $f(x_0)+\varepsilon>f_n(x_0)$ for at
+  least one $n\in\bbN$. Since $f_n$ is u.s.c.\@ at for every sequence $x\to
+  x_0$ with $x\in E$, we have
+  \[
+    \limsup_{x\to x_0}f_n(x_0)\leq
+  \]
+
+  For (c) suppose $f_n\to f$ uniformly \emph{close} to $x_0$; that is, in
+  some appropriately small neighborhood $B(x_0,\delta)$ for
+  $\delta>0$. Then for every $\varepsilon>0$ there exists $N\in\bbN$ such
+  that $n\geq N$ implies $|f_n(x)-f(x)|<\varepsilon/2$. Untangling this
+  inequality, we have
+  \[
+    f_n(x)-\frac{\varepsilon}{2}<f(x)<f_n(x)+\frac{\varepsilon}{2}.
+  \]
+  Since the $f_n$ are u.s.c. at $x_0$, there exists $\delta_n$ such that
+  $f_n(x)<f_n(x)+\varepsilon/2$ whenever $x\in B(x_0,\delta_n)$. Thus, we
+  have
+  \[
+    f(x)<f_n(x)+\frac{\varepsilon}{2}<%
+    \left(f_n(x_0)+\frac{\varepsilon}{2}\right)+\frac{\varepsilon}{2}=%
+    f_n(x_0)+\varepsilon
+  \]
+  whenever $x\in B(x_0,\delta')$ where
+  $\delta'=\min\{\,\delta,\delta_n\,\}$. Taking the limit supremum on both
+  sides of the inequalities above, we have
+  \[
+    \limsup f(x)\leq f(x_0)+\varepsilon.
+  \]
+  Letting $\varepsilon\to 0$, we see that $f$ is u.s.c.\@ at $x_0$.
 \end{solution}
 
 %%% Local Variables:
