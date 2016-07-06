@@ -142,7 +142,22 @@ Throughout these notes
   Show that $A_4$ has no subgroup of order $6$ (although $6\mid 12=|A_4|$).
 \end{problem}
 \begin{solution}
-  We proceed by contradiction.
+  We proceed by contradiction. Suppose that $A_4$ has a subgroup of order
+  $6$, call it $H$. Then, we claim that $H$ must contain all elements
+  $\sigma^2$ where $\sigma\in A$.
+  \begin{proof}[Proof of claim]
+    \renewcommand\qedsymbol{$\clubsuit$}%
+    Since $|H|=6$, $[A_4:H]=2$ which implies that $H$ is must be a normal
+    subgroup of $A_4$. Now, consider the quotient group $G/H$. By
+    Langrange's theorem, $|G/H|=2$ so either $\bar\sigma=\bar e$ or
+    ${\bar\sigma}^2=\bar e$. Thus, $\sigma^2\in H$.
+  \end{proof}
+  Thus, $H$ must contain all of the squares in $A_4$. However, counting all
+  of the elements in $A_4$, we see that there are a total of $9$ squares
+  \[
+  \]
+  which exceeds the order of $H$. This is a contradiction therefore, $G$
+  has no subgroup of order $6$.
 \end{solution}
 
 %%% Local Variables:
