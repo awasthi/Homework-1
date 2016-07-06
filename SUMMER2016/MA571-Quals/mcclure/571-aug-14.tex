@@ -1,17 +1,18 @@
 \section{Past Qualifying Examinations}
 \subsection{MA 571: Qualifying Exam, August 2014}
+\setcounter{exercise}{0}
 \begin{problem}
 Let $X$ be a topological space, let $A$ be a subset of $X$, and let $U$ be
 an open subset of $X$. Prove that $U\cap \bar A\subset\overline{U\cap A}$.
 \end{problem}
-\begin{proof}
+\begin{solution}
 Let $x\in U\cap\bar A$. Then $x\in U$ and $x\in\bar A$. This means that,
 since $U$ is open, by Lemma C there exist an open neighborhood $V$ of $x$
 such that $V\subset U$. Moreover, since $x\in\bar A$, $V'\cap
 A\neq\emptyset$ for every open neighborhood $V'$ of $x$. In particular,
 $V\cap A\neq\emptyset$. Thus, we have $V\cap U\neq\emptyset$ and $V\cap
 A\neq\emptyset$ so $V\cap(U\cap A)\neq\emptyset$.
-\end{proof}
+\end{solution}
 
 \begin{problem}
 Let $X$ be the following subspace of $\bbR^2$:
@@ -24,7 +25,7 @@ you do \emph{not} have to prove that this is an equivalence
 relation). Prove that $X/{\sim}$ is homeomorphic to
 $(0,2)\times[0,1]$. (\emph{Hint}: construct maps in both directions).
 \end{problem}
-\begin{proof}
+\begin{solution}
 We shall proceed by the hint. Let $q\colon X\to X/{\sim}$ denote the
 quotinet map. Then, for $(x,y)\in X$, we define the map
 
@@ -77,15 +78,15 @@ and
 (h')^{-1}\circ h'=\id_{(0,2)\times[0,1]}.
 \]
 Thus, by Theorem 26.6, $h'$ is a homeomorphism.
-\end{proof}
+\end{solution}
 
 \begin{problem}
 Prove that there is an equivalence relation $\sim$ on the interval $[0,1]$
 such that $[0,1]/{\sim}$ is homeomorphic to $[0,1]\times[0,1]$. As part of
-your proof \emph{explain} how you are using one or more properties of the
+your solution \emph{explain} how you are using one or more properties of the
 quotient topology.
 \end{problem}
-\begin{proof}
+\begin{solution}
 First, it suffices to find a continuous surjective map $f\colon[0,1]\to
 [0,1]\times[0,1]$ and quotient out by the preimage of every point
 $x\in[0,1]\times[0,1]$. These maps are hard to describe in general, but
@@ -96,7 +97,7 @@ $f(C)\subset[0,1]\times[0,1]$ will be closed. It follows by that $f$ will
 be a Munkres quotient map, so by Theorem Q.4, $f'\colon
 [0,1]/{\sim}\to[0,1]\times[0,1]$ is a homeomorphism for some equivalence
 relation $\sim$ on $[0,1]$.
-\end{proof}
+\end{solution}
 
 \begin{problem}
 Let $D$ be the closed unit disk in $\bbR^2$, that is, the set
@@ -118,7 +119,7 @@ f(x,y)=
 \]
 Prove that $f$ is continuous.
 \end{problem}
-\begin{proof}
+\begin{solution}
 By the section on the one-point-compactification, it suffices to check two
 cases of open sets (1) all sets $U$ open in $E$, and (2) all sets of the
 form $U=X\smallsetminus C$ containing the point at infinity, $\infty$, where $C$ is
@@ -128,13 +129,13 @@ case, suppose that $U$ is a neighborhood of $\infty$. Then $Y-U$ is a
 compact subset of $E$, hence closed since $X$ is a compact Hausdorff
 space. But since $f$ is bijective, continuous on $E$, then $f^{-1}(X-U)$ is
 a closed subset of $E$. Thus, by theorem 18.2, $f$ is continuous.
-\end{proof}
+\end{solution}
 
 \begin{problem}
 Let $X$ and $Y$ be homotopy-equivalent topological spaces. Suppose that $X$
 is path-connected. Prove that $Y$ is path-connected.
 \end{problem}
-\begin{proof}
+\begin{solution}
 % Suppose that $X$ is homotopy-equivalent to $Y$. Then there exists a
 % continuous maps $f\colon X\to Y$ and $g\colon Y\to X$ such that $g\circ
 % f\simeq\id_X$ and $g\circ f\simeq\id_Y$. Now, since $X$ is path-connected,
@@ -148,14 +149,14 @@ Path-connectedness is a topological property, i.e., if $X$ is
 path-connected and $f\colon X\to Y$ is a continuous map then, $f(X)$ is
 path connected.
 \end{lemma}
-\begin{proof}
+\begin{solution}
 \renewcommand\qedsymbol{$\clubsuit$}
 Since $X$ is path-connected, for any pair of points $x,x'\in X$ there
 exists a continuous map $p\colon [0,1]\to X$ such that $p(0)=x$ and
 $p(1)=x'$. Since composition of continuous maps is continuous, $f\circ
 p\colon[0,1]\to Y$ is a path from $f(x)$ to $f(x')$. Since this property
 holds for any $y\in f(X)$, it follows that $f(X)$ is path-connected.
-\end{proof}
+\end{solution}
 Now, suppose that $X$ is homotopy-equivalent to $Y$. Then there exists
 continuous maps $f\colon X\to Y$ and $g\colon Y\to X$ such that $g\circ
 f\simeq\id_X$ and $f\circ g\simeq\id_Y$. Now, since $X$ is path-connected,
@@ -171,14 +172,14 @@ continuous. Moreover, $H_y(0)=f\circ g(y)\in f(Y)$ and
 $H_y(1)=\id_Y(y)=y$ so $H_y$ is a path from $y$ to a point $f\circ g(y)$ in
 $f(X)$. Since we can do this for any point $y\in Y$, it follows, since
 path-connectedness is an equivalence relation, that $Y$ is path-connected.
-\end{proof}
+\end{solution}
 \begin{problem}
 Let $a$ and $b$ denote the points $(-1,0)$ and $(1,0)$ in $\bbR^2$. Let
 $x_0$ denote the origin $(0,0)$. Use the Seifert--van Kampen theorem to
 calculate $\pi_1\left(\bbR^2\smallsetminus\{a,b\},x_0\right)$. You may not use any other
 method.
 \end{problem}
-\begin{proof}
+\begin{solution}
 We'll use Theorem 70.2's version of the Seifert--van Kampen theorem. Define
 \[
 U\coloneq\left(-\infty,\tfrac{1}{2}\right)\times\bbR
@@ -201,7 +202,7 @@ classical version of the Seifert--van Kampen theorem
 \frac{\bbZ*\bbZ}{N}
 \]
 where $N$ is the least normal subgroup
-\end{proof}
+\end{solution}
 
 \begin{problem}
 Let $p\colon E\to B$ be a covering map with $B$ locally connected, and let
@@ -209,7 +210,7 @@ $x\in B$. Prove that $x$ has a neighborhood $W$ with the following
 property: for every connected component $C$ of $p^{-1}(W)$, the map
 $p\colon C\to W$ is a homeomorphism.
 \end{problem}
-\begin{proof}
+\begin{solution}
 Let $U$ be an evenly covered neighborhood of $x$. Then
 $p^{-1}(U)=\bigcup_\alpha V_\alpha$ where the $V_\alpha$ are open in $E$
 and  $V_\alpha\cap V_\beta=\emptyset$ whenever $\alpha\neq\beta$. For any
@@ -230,7 +231,7 @@ following lemma shows
 Suppose $C$ is a connected component of $X$ and $h\colon X\to Y$ is a
 homeomorphism. Then $h(C)$ is a connected component of $Y$.
 \end{lemma}
-\begin{proof}[Proof of lemma]
+\begin{solution}[Solution of lemma]
 \renewcommand\qedsymbol{$\clubsuit$}
 Let $C$ be a connected component of $X$. By theorem 23.5, $h(C)$ is a
 connected subset of $Y$, moreover, is open. By Theorem 25.1, $h(C)$ is
@@ -239,11 +240,11 @@ that $D\subset h(C)$. Now, since $h$ is a homeomorphism, $h^{-1}(D)$ is a
 connected subset of $X$, by Theorem 23.5, so is contained in only one
 component of $X$. But $h^{-1}(D)\cap C\neq\emptyset$ so $h^{-1}(D)\subset
 C$. Thus, since $h$ is a set-bijection, $D\subset h(C)$.
-\end{proof}
+\end{solution}
 so by Theorem 25.3, $p(C)$ is open in $B$ since $B$ is locally
 connected. Thus, the restriction $\left.p\right|_{C}$ is a homeomorphism
 onto its image $W\coloneq p(C)$, by Lemma A, which is a neighborhood of $x$.
-\end{proof}
+\end{solution}
 
 %%% Local Variables:
 %%% mode: latex

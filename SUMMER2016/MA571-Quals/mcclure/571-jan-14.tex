@@ -1,24 +1,25 @@
 \subsection{MA 571: Qualifying Exam, January 2014}
+\setcounter{exercise}{0}
 \begin{problem}
 Let $X$ be a topological space, let $A$ be a subset of $X$, and let $U$ be
 an open subset of $X$. Prove that $U\cap\bar A\subset\overline{U\cap A}$.
 \end{problem}
-\begin{proof}
-The proof is simple and we have shown this before in the August 2014
+\begin{solution}
+The solution is simple and we have shown this before in the August 2014
 quals, it goes as follows: If $U\cap\bar A=\emptyset$, there is nothing to
 show. Let $x\in U\cap\bar A$. Then $x\in U$ and $x\in\bar A$. Since $x\in
 U$ and $U$ is open, by Lemma C, there exists a neighborhood $V$ of $x$ such
 that $V\subset U$; in particular, note that $V\cap U\neq\emptyset$. But
 $x\in\bar A$ so $V\cap A\neq\emptyset$. Thus, $V\cap(U\cap
 A)\neq\emptyset$. Thus, $x\in\overline{U\cap A}$.
-\end{proof}
+\end{solution}
 \begin{problem}
 Let $\sim$ be an equivalence relation on $\bbR^2$ defined by
 $(x,y)\sim(x',y')$ if and only if there is a nonzero $t$ with
 $(x,y)=(tx',ty')$. Prove that the quotient space $\bbR^2/{\sim}$ is compact
 but not Hausdorff.
 \end{problem}
-\begin{proof}
+\begin{solution}
 To show that $\bbR^2/{\sim}$ is compact, we need to show that for every
 open covering $\calA$ of $\bbR^2/{\sim}$, there is a finite subcover
 $\calA'\subset\calA$. Let $q\colon\bbR^2\to\bbR^2/{\sim}$ denote the
@@ -49,7 +50,7 @@ for sufficiently small values of $t>0$, $(tx,ty)\in
 B((0,0),\varepsilon)\subset q^{-1}(U)$. Thus, $[x,y]\in U$. In particular,
 for any open neighborhood $V$ of $[x,y]$, $V\cap U\neq\emptyset$. Thus,
 $\bbR^2/{\sim}$ is not Hausdorff.
-\end{proof}
+\end{solution}
 \begin{problem}
 Let $X$ and $Y$ be topological spaces. Let $x_0\in X$ and let $C$ be a
 compact subset of $Y$. Let $N$ be an open set in $X\times Y$ containing
@@ -57,10 +58,10 @@ $\left\{x_0\right\}\times C$. Prove that there is an open set $U$
 containing $x_0$ and an open set $V$ containing $C$ such that $U\times
 V\subset N$.
 \end{problem}
-\begin{proof}
+\begin{solution}
 This is a classical theorem called the tube lemma. We shall prove first in
 the style of Munkres and second in the style of McClure (if I can find the
-proof or somehow reconstruct it).
+solution or somehow reconstruct it).
 
 Let $X$, $Y$, $x_0$, $N$, and $C$ be as above. Note that since $C$ is
 compact and the injection $\iota_{x_0}\colon X\hookrightarrow X\times Y$
@@ -86,13 +87,13 @@ W\subset U_{x_i}$ for all $i$ which in turn is a subset of $\pi_1(N)$ and
 $y\in W'=\pi_2(N)$). Lastly, $W\times W'\supset \{x_0\}\times C$ since
 $x_0\in W$ and $W'=\pi_1(N)\supset C$. Thus, $W\times W'\subset N$
 containing $\left\{x_0\right\}\times C$ as desired.
-\end{proof}
+\end{solution}
 \begin{problem}
 Let $X$ be a locally compact Hausdorff space and let $A$ be a subset with
 the property that $A\cap K$ is closed for every compact $K$. Prove that $A$
 is closed.
 \end{problem}
-\begin{proof}
+\begin{solution}
 Here's what I have so far:
 
 We will try to show that $\bar A\subset A$. Let $x\in\bar A$. Then, for
@@ -100,14 +101,14 @@ every neighborhood $U$ of $x$, $U\cap A\neq\emptyset$. Now, since $X$ is
 locally compact, there exists a neighborhood $V$ of $x$ such that $\bar V$
 is compact and is a subset of $U$. Since $X$ is Hausdorff, $\bar V$ is
 compact so $\bar V\cap A$ is closed.
-\end{proof}
+\end{solution}
 \begin{problem}
 Let $X$ and $Y$ be path-connected and let $h\colon X\to Y$ be a continuous
 function which induces the trivial homomorphism of fundamental groups. Let
 $x_0,x_1\in X$ and let $f$ and $g$ be paths from $x_0$ to $x_1$. Prove that
 $h\circ f$ and $h\circ g$ are homotopic.
 \end{problem}
-\begin{proof}
+\begin{solution}
 Consider the path-product $\gamma\coloneq f*\bar g$. $\gamma$ is a loop
 based at $x_0$ since $\gamma(0)=f(0)=x_0$ and $\gamma(1)=\bar g(2-1)=\bar
 g(1)=x_0$. Thus, $[\gamma]\in\pi_1(X,x_0)$. Now, since
@@ -116,7 +117,7 @@ i.e., $h(\gamma)\simeq_p e_{x_0}$, there exists a homotopy $H\colon
 [0,1]\times[0,1]\to Y$ such that $H(s,0)=h\circ\gamma(s)$ and
 $H(s,1)=e_{x_0}(s)$. Now, since $Y$ is path-connected, there exists a path
 $\delta\colon[0,1]\to Y$ from $h(x_0)$ to $h(x_1)$.
-\end{proof}
+\end{solution}
 \begin{problem}
 Let $X$ be the quotient space obtained from an $8$-sided polygonal region
 $P$ by pasting its edges together according to the labelling scheme
@@ -127,16 +128,16 @@ $aabbcdc^{-1}d^{-1}$.
   classification theorem, which surface is it?
 \end{enumerate}
 \end{problem}
-\begin{proof}
-\end{proof}
+\begin{solution}
+\end{solution}
 \begin{problem}
 Let $p\colon E\to B$ be a covering map with $B$ locally connected, and let
 $x\in B$. Prove that $x$ has a neighborhood $W$ with the following
 property: for every connected component $C$ of $p^{-1}(W)$, the map
 $p\colon C\to W$ is a homeomorphism.
 \end{problem}
-\begin{proof}
-\end{proof}
+\begin{solution}
+\end{solution}
 
 %%% Local Variables:
 %%% mode: latex

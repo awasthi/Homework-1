@@ -1,10 +1,12 @@
 \subsection{MA571: Qualifying Exam, January 2012}
+\setcounter{exercise}{0}
+
 \begin{problem}
 Let $X$ be a topological space. Recall that a subset of $X$ is \emph{dense}
 if its closure is $X$. Prove that the intersection of two dense open sets is
 dense.
 \end{problem}
-\begin{proof}
+\begin{solution}
 Suppose $U$ and $V$ are open dense subsets of $X$. We will show that $U\cap
 V$ is dense in $X$, i.e., $\overline{U\cap V}=X$. To that end, we will show
 that for any point $x\in X$, for any neighborhood $W$ of $x$, $W\cap(U\cap
@@ -15,7 +17,7 @@ is a neighborhood of $y$. Moreover, since $V$ is dense in $X$, $(W\cap
 U)\cap V\neq\emptyset$. Now, since intersection is associative, $(W\cap
 U)\cap V=W\cap(U\cap V)\neq\emptyset$. Thus, $x\in\overline{U\cap V}$ and
 we have $\overline{U\cap V}=X$ as desired.
-\end{proof}
+\end{solution}
 
 \begin{problem}
 Let $X$ be a set with two elements $\{a,b\}$. Give $X$ the
@@ -26,7 +28,7 @@ that $A$ is compact.
 You may use the fact that a set is compact if every covering by
 \emph{basic} open sets has a finite subcovering.
 \end{problem}
-\begin{proof}
+\begin{solution}
 Let $\calU$ be an open cover of $A$ by basic open sets. Then each
 $U\in\calU$ is of the form $\{a,b\}\times V$ where $V$ is an open subset of
 $\bbR$. Then, the $V$'s, i.e., $\pi_2(U)$ where $\pi_2\colon
@@ -37,7 +39,7 @@ in $X$ there is a finite collection of the $V$'s, say
 $\left\{V_1,\dotsc,V_n\right\}$, that cover $[0,1]$. Call $U_i$ the element of
 $\calU$ such that $\pi_2(U_i)=V_i$. Then the $U_i$'s form a finite subcover
 of $A$. Thus, $A$ is compact.
-\end{proof}
+\end{solution}
 
 \begin{problem}
 Let $B^2$ be the disk
@@ -49,10 +51,10 @@ Let $S^1$ be the circle
 \left\{\,(x,y)\in\bbR^2:x^2+y^2=1\,\right\}.
 \]
 Prove that there is an equivalence relation $\sim$ such that $B^2$ is
-homeomorphic to $(S^1\times[0,1])/{\sim}$. As port of your proof explain
+homeomorphic to $(S^1\times[0,1])/{\sim}$. As port of your solution explain
 how you are using one or more properties of the quotient topology.
 \end{problem}
-\begin{proof}
+\begin{solution}
 Such an equivalence relation is called the cone of $S^1$. We define it as
 follows, let $(x,y,z),(x',y',z')\in S^1\times[0,1]$ then we say
 $(x,y,z)\sim(x',y',z')$ if and only if $(x,y)=(x',y')$ or $z=z'=0$. We
@@ -100,7 +102,7 @@ which precisely means that $(x,y,z)\sim(x',y',z')$. Thus, $f$ is
 injective.
 
 It follows that $(S^1\times[0,1])/{\sim}\approx B^2$.
-\end{proof}
+\end{solution}
 
 \begin{problem}
 Let $X$ be a set with $2$ elements $\{a,b\}$. Give $X$ the \emph{discrete}
@@ -109,7 +111,7 @@ denotes the set of continuous functions from $X$ to $Y$, with the
 compact-open topology. Prove that $\calC(X,Y)$ is homeomorphic to $Y\times
 Y$ (with the product topology).
 \end{problem}
-\begin{proof}
+\begin{solution}
 Consider the map $F\colon\calC(X,Y)\to Y\times Y$ given by
 $F(f)\coloneq(f(a),f(b))$. This map is continuous by Theorem 18.4, since
 $\pi_1(F)$ and $\pi_2(F)$ are, respectively, the evaluation of $f$ at $a$
@@ -131,14 +133,14 @@ b&\text{if $y=y_2$}.
 \end{cases}
 \]
 
-\end{proof}
+\end{solution}
 
 \begin{problem}
 Let $X$ and $Y$ be homotopy-equivalent topological spaces. Suppose that $X$
 is path-connected. Prove that $Y$ is path-connected.
 \end{problem}
-\begin{proof}
-\end{proof}
+\begin{solution}
+\end{solution}
 
 \begin{problem}
 Suppose that $X$ is a wedge of two circles: that is, $X$ is a Hausdorff
@@ -149,8 +151,8 @@ Use the Seifert--van Kampen theorem to calculate $\pi_1(X,p)$. You should
 state what deformation retractions you are using, but you do not have to
 give formulas for them.
 \end{problem}
-\begin{proof}
-\end{proof}
+\begin{solution}
+\end{solution}
 
 \begin{problem}
 Let $p\colon E\to B$ be a covering map. Let $A$ be a connected space and
@@ -161,8 +163,8 @@ $p\circ\alpha=p\circ\beta$ then $\alpha=\beta$.
 For partial credit, you may assume that $p$ is the standard covering map
 from $\bbR$ to $S^1$.
 \end{problem}
-\begin{proof}
-\end{proof}
+\begin{solution}
+\end{solution}
 
 Here's an extra problem I felt like doing since I thought it might be on
 the exam:
@@ -173,7 +175,7 @@ $f(a)\coloneq(f_1(a),f_2(a))$. Then $f$ is continuous if and only if
 $f_1\colon A\to X$ and $f_2\colon A\to Y$ are continuous.
 \end{theorem*}
 \end{problem*}
-\begin{proof}
+\begin{solution}
 Let $\pi_1\colon X\times Y\to X$ and $\pi_2\colon X\times Y\to Y$ be
 projections onto the 1st and 2nd factors, respectively. These maps are
 continuous and open by previous work. Now, for every $a\in A$ we have
@@ -191,7 +193,7 @@ and only if $f(a)\in U\times V$, if and only if $f_1(a)\in U$ and
 $f_2(a)\in V$. Thus, $f^{-1}(U\times V)=f^{-1}(U)\cap f^{-1}(V)$ which is
 open in $A$ since $U$ is open in $X$ and $V$ is open in $Y$ and $f_1,f_2$
 are continuous.
-\end{proof}
+\end{solution}
 
 %%% Local Variables:
 %%% mode: latex
