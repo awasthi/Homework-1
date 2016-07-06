@@ -1,6 +1,8 @@
 \subsection{Danielli: Summer 2011}
+\setcounter{exercise}{0}
+
 \begin{problem}
-Let $f\in L^1(\bbR)$, and let $F(t)\coloneq\int_\bbR f(x)\cos(tx)\diff x$.
+Let $f\in L^1(\bbR)$, and let $F(t)=\int_\bbR f(x)\cos(tx)\diff x$.
 \begin{enumerate}[label=(\alph*),noitemsep]
 \item Prove that $F(t)$ is continuous for $t\in\bbR$.
 \item Prove the following \emph{Riemman--Lebesgue lemma}:
@@ -37,7 +39,7 @@ as $k\to\infty$.
 \begin{problem}
 A bounded function $f$ is said to be of bounded variation on $\bbR$ if it
 is of bounded variation on any finite subinterval $[a,b]$, and moreover
-$A\coloneq\sup_{a,b}V[a,b;f]<\infty$. Here, $V[a,b;f]$ denotes the total
+$A=\sup_{a,b}V[a,b;f]<\infty$. Here, $V[a,b;f]$ denotes the total
 variation of $f$ over the interval $[a,b]$. Show that:
 \begin{enumerate}[label=(\alph*),noitemsep]
 \item $\displaystyle\int_\bbR|f(x+h)-f(x)|\diff x\leq A|h|$ for all
@@ -72,7 +74,7 @@ variation of $f$ over the interval $[a,b]$. Show that:
 |(f*g)(x)|\leq{\|f\|_p}^{r-p}{\|g\|_q}^{r-q}\int|f(y)|^p|g(x-y)|^q\diff y.
 \]
 \\\\
-(Recall that $(f*g)(x)\coloneq\int f(y)g(x-y)\diff y$.)
+(Recall that $(f*g)(x)=\int f(y)g(x-y)\diff y$.)
 \item Prove \emph{Young's convolution theorem}: Assume that $p$, $q$, $r$,
   $f$, and $g$ are as in part (b). Then $f*g\in L^r(\bbR)$ and
   \[

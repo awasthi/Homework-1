@@ -1,4 +1,6 @@
 \subsubsection{Exam 1}
+\setcounter{exercise}{0}
+
 
 \begin{problem}
 \end{problem}
@@ -13,22 +15,22 @@
 \begin{problem}
 \hfill
 \begin{enumerate}[label=(\roman*),noitemsep]
-\item Show that if $B_r\coloneq\left\{\,\bfx\in\bbR^n:|\bfx|<r\,\right\}$,
+\item Show that if $B_r=\left\{\,\bfx\in\bbR^n:|\bfx|<r\,\right\}$,
   then there exists a constant $C$ such that $|B_r|=Cr^n$.
 \\\\
 (\emph{Hint}: Think of $B_r$ as $\left\{\,r\bfx:\bfx\in B_1\,\right\}$.)
 \item Let $E\subset\bbR^n$ be a measurable set and let
   $\varphi_E\colon\bbR^n\to\bbR$ be defined
-  $\varphi_E(\bfx)\coloneq\left|E\cap B_{|\bfx|}\right|$. Use part (i) to prove
+  $\varphi_E(\bfx)=\left|E\cap B_{|\bfx|}\right|$. Use part (i) to prove
     that $\varphi_E$ is continuous.
 \end{enumerate}
 \end{problem}
 \begin{proof}
 (i) To prove this result, we use the map constructed in Problem 1 of the
 review sheet for Exam 1, the map $T\colon\bbR\times\bbR^n\to\bbR^n$. Set
-$T_r\colon\bbR^n\to\bbR^n$ to be $T_r\coloneq T(r)$. Then, we claim
+$T_r\colon\bbR^n\to\bbR^n$ to be $T_r= T(r)$. Then, we claim
 $B_r=T_r(B_1)$ and $|B_r|=|T_r(B_1)|$, which, as we saw in Problem 1 of the
-review sheet, has measure $|B_1||r|^n$. Setting $C\coloneq |B_1|$, we have
+review sheet, has measure $|B_1||r|^n$. Setting $C= |B_1|$, we have
 $|B_r|=C|r|^n$ as desired.
 \\\\
 (ii) To prove that $\varphi_E$ is continuous, we provide an
@@ -47,7 +49,7 @@ such that $\bfy\in B(\bfx,\delta)$ implies
 \label{eq:ex:1:2}
 \left||\bfx|^n-|\bfy|^n\right|<\frac{\varepsilon}{C},
 \end{equation}
-where $C\coloneq |B_1|$.
+where $C= |B_1|$.
 
 Now, let $x\in\bbR^n$ and $\bfy\in B(\bfx,\delta)$ as above. Then, by
 \eqref{eq:ex:1:2} we have

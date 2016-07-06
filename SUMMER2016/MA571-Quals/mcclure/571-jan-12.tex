@@ -63,7 +63,7 @@ may return to this if time permits).
 
 By the UMP of the quotient space, we need to find a continuous surjection
 $f\colon S^1\times[0,1]\to B^2$ that preserves the equivalence relation
-$\sim$. So consider the map $f(x,y,z)\coloneq(zx,zy)$. This map is
+$\sim$. So consider the map $f(x,y,z)=(zx,zy)$. This map is
 continuous by Theorem 18.4 since $\pi_1\circ f(x,y,z)=zx$ is multiplication
 on $\bbR$ and similarly for $\pi_2\circ f(x,y,z)$. Moreover, this map
 preserves the equivalence relation: let $(x,y,z)\sim(x',y',z')$ then
@@ -113,12 +113,12 @@ Y$ (with the product topology).
 \end{problem}
 \begin{solution}
 Consider the map $F\colon\calC(X,Y)\to Y\times Y$ given by
-$F(f)\coloneq(f(a),f(b))$. This map is continuous by Theorem 18.4, since
+$F(f)=(f(a),f(b))$. This map is continuous by Theorem 18.4, since
 $\pi_1(F)$ and $\pi_2(F)$ are, respectively, the evaluation of $f$ at $a$
 and the evaluation of $f$ and $b$, both of which are continuous because
 under the compact-open topology. This map is clearly surjective since for
-any $(y_1,y_2)\in Y\times Y$ we may define the function $f(a)\coloneq y_1$
-and $f(b)\coloneq y_2$ which is continuous sinced $X$ has the discrete
+any $(y_1,y_2)\in Y\times Y$ we may define the function $f(a)= y_1$
+and $f(b)= y_2$ which is continuous sinced $X$ has the discrete
 topology. Moreover, $F$ is injective since if $(f(a),f(b))=(g(a),g(b))$
 then $f(x)=g(x)$ for all $x\in X$ hence, $f=g$. Therefore, to show that $F$
 is a homeomorphism, it suffices to show that $F$ is an open map.
@@ -126,7 +126,7 @@ is a homeomorphism, it suffices to show that $F$ is an open map.
 Now it suffices to find a continuous inverse. For any $(y_1,y_2)\in Y\times
 Y$, define the map $g\colon Y\times Y\to\calC(X,Y)$.
 \[
-g(y_1,y_2)\coloneq f
+g(y_1,y_2)= f
 (y)=\begin{cases}
 a&\text{if $y=y_1$}\\
 b&\text{if $y=y_2$}.
@@ -171,7 +171,7 @@ the exam:
 \begin{problem*}
 \begin{theorem*}[Munkres, Theorem 18.4]
 Let $f\colon A\to X\times Y$ be given by the equation
-$f(a)\coloneq(f_1(a),f_2(a))$. Then $f$ is continuous if and only if
+$f(a)=(f_1(a),f_2(a))$. Then $f$ is continuous if and only if
 $f_1\colon A\to X$ and $f_2\colon A\to Y$ are continuous.
 \end{theorem*}
 \end{problem*}

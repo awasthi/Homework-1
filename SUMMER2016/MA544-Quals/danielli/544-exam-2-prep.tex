@@ -1,4 +1,6 @@
 \subsubsection{Exam 2 Practice Problems}
+\setcounter{exercise}{0}
+
 \begin{problem}
 Define for $\bfx\in\bbR^n$,
 \[
@@ -23,7 +25,7 @@ on a subset $E$ of $\bbR^n$ if
 \int_E f(\bfx)\diff\bfx<\infty.
 \end{equation}
 Let $f$ be as given in the statement of the problem and set
-$B_\varepsilon\coloneq B(\mathbf{0},\varepsilon)$. Consider
+$B_\varepsilon= B(\mathbf{0},\varepsilon)$. Consider
 the change of variables to
 \href{https://en.wikipedia.org/wiki/N-sphere#Spherical_coordinates}{\emph{hyperspherical
     coordinates}} $(x_1,\dotsc,x_n)\mapsto(r,\Theta)$ where
@@ -61,7 +63,7 @@ Now, note that from Problem 1 of the review sheet for Exam 1, we have
   \label{eq:prep:2:4}
 \int_{S_r^{n-1}}1\diff V=|S_r^{n-1}|_{\bbR^{n-1}}=|S^{n-1}|_{\bbR^{n-1}}|r|^{n-1}.
 \end{equation}
-Set $C\coloneq|S^{n-1}|_{\bbR^{n-1}}$. Putting equations
+Set $C=|S^{n-1}|_{\bbR^{n-1}}$. Putting equations
 \eqref{eq:prep:2:2}, \eqref{eq:prep:2:3}, and \eqref{eq:prep:2:4} together,
 we have
 \begin{equation}
@@ -139,7 +141,7 @@ To see that the result need not be true if $\int_Ef=\infty$, consider the
 following example: Let $f_k\colon\bbR\to\bbR$ be given by
 \begin{equation}
 \label{eq:prep:2:11}
-f_k(x)\coloneq
+f_k(x)=
 \begin{cases}
 k^2/2&\text{if $x\in(-1/k,1/k)$},\\
 1&\text{otherwise}
@@ -148,7 +150,7 @@ k^2/2&\text{if $x\in(-1/k,1/k)$},\\
 and $f=1$.
 
 It is easy to see that $f_k\to f$ a.e.\@ in $\bbR$ and that both $\int_\bbR
-f=\infty$ and $\lim_{k\to\infty}f_k=\infty$. However, if $E\coloneq(-1,1)$
+f=\infty$ and $\lim_{k\to\infty}f_k=\infty$. However, if $E=(-1,1)$
 then $\int_E f=1$, but $\lim_{k\to\infty}\int_Ef=\infty$.
 \end{proof}
 

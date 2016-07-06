@@ -1,4 +1,6 @@
 \subsection{Exam Preparation}
+\setcounter{exercise}{0}
+
 \subsubsection{Exam 1 Practice}
 \begin{problem}
 Let $E\subset\bbR^n$ be a measurable set, $r\in\bbR$ and define the set
@@ -6,7 +8,7 @@ $rE=\left\{\,r\bfx:\bfx\in E\,\right\}$. Prove that $rE$ is
 measurable, and that $|rE|=|r|^n|E|$.
 \end{problem}
 \begin{proof}
-Define a map $T\colon\bbR^n\to\bbR^n$ by $T\bfx\coloneq r\bfx$. Note
+Define a map $T\colon\bbR^n\to\bbR^n$ by $T\bfx= r\bfx$. Note
 that $T$ is
 \href{https://en.wikipedia.org/wiki/Lipschitz_continuity}{\emph{Lipschitz
     continuous}} since for any $\bfx,\bfy\in\bbR^n$, the equality
@@ -40,7 +42,7 @@ particularly, the sets defined after the introduction of equation (1.1),
 set
 \begin{equation}
 \label{eq:prep:1:2}
-V_k\coloneq\bigcap_{\ell=k}^\infty E_\ell.
+V_k=\bigcap_{\ell=k}^\infty E_\ell.
 \end{equation}
 Note that the collection of sets $\{V_k\}$ forms an increasing
 sequence, that is, if $\bfx\in V_k$ then, by \eqref{eq:prep:1:2}, $\bfx$ is
@@ -94,9 +96,9 @@ that $F$ is monotonic increasing and continuous.
 \end{problem}
 \begin{proof}
 Define the linear map $T\colon[0,\infty)\times\bbR^n\to\bbR^n$ by
-$T(r)\bfx\coloneq r\bfx$. We claim that
+$T(r)\bfx= r\bfx$. We claim that
 $B(\mathbf{0},r)=T(r,B(\mathbf{0},1))$. To reduce notation, set
-$B_1\coloneq B(\mathbf{0},1)$ and $B_r\coloneq B(\mathbf{0},r)$.
+$B_1= B(\mathbf{0},1)$ and $B_r= B(\mathbf{0},r)$.
 \begin{proof}[Proof of claim]
 \renewcommand{\qedsymbol}{$\clubsuit$}
 $\subset$: Let $\bfx\in B_r$. Then $|\bfx|<r$ so $|\bfx|/r<1$. Thus,
@@ -132,7 +134,7 @@ at which $f$ is continuous. Show that $C$ is a set of type $G_\delta$.
 defined by
 \begin{equation}
 \label{eq:prep:1:8}
-E_k\coloneq\left\{\,x\in\bbR:
+E_k=\left\{\,x\in\bbR:
 \text{there exists $\delta>0$ such that $y,z\in B(x,\delta)$ implies $\left|f(y)-f(z)\right|<\frac{1}{k}$}\,\right\}.
 \end{equation}
 We claim that $C=\bigcap_{k=1}^\infty E_k$ and that each $E_k$ is open.
@@ -159,7 +161,7 @@ All that remains to be shown is that the $E_k$ are open. But this is clear
 by the way we defined $E_k$ in \eqref{eq:prep:1:8}: Let $x\in E_k$, then
 there exists $\delta>0$ such that for any $y,z\in B(x,\delta)$,
 $|f(y)-f(z)|<1/k$; Let $x'\in B(x,\delta)$ and set
-$\delta'\coloneq\min\{|(x+\delta)-x'|,|(x-\delta)-x|\}$. Then, since
+$\delta'=\min\{|(x+\delta)-x'|,|(x-\delta)-x|\}$. Then, since
 $B(x',\delta')\subset B(x,\delta)$, for every $y,z\in B(x',\delta')$, we
 have $|f(y)-f(z)|<1/k$. Hence, $x'\in E_k$ for any $x'\in B(x,\delta)$
 so $B(x,\delta)\subset E_k$.
@@ -182,7 +184,7 @@ construction: Let $E\subset(0,1)$ be an unmeasurable set.\footnote{It's
 $f\colon\bbR\to\bbR$ by
 \begin{equation}
 \label{eq:prep:1:11}
-f(x)\coloneq
+f(x)=
 \begin{cases}
 x&\text{if $x\in\bbR\smallsetminus((0,1)\smallsetminus E)$},\\
 x+1&\text{if $x\in (0,1)\smallsetminus E$.}
@@ -248,14 +250,14 @@ absolutely continuous function on $[a,b]$ is of bounded variation on
 $[a,b]$.
 \end{problem}
 \begin{proof}
-Suppose $f$ is absolutely continuous on $[a,b]$. Let $\varepsilon\coloneq
+Suppose $f$ is absolutely continuous on $[a,b]$. Let $\varepsilon=
 1$. Then, there exists $\delta>0$ such that for every finite disjoint
 collection $\left\{(a_k,b_k)\right\}_{k=1}^N$ of open intervals in $(a,b)$
 satisfying $\sum_{k=1}^Nb_k-a_k<\delta$, one has
 $\sum_{k=1}^N\left|f(b_k)-f(a_k)\right|<1$. Let
-$N\coloneq\lceil(b-a)/\delta\rceil$, that is, $N$ is the smallest integer
+$N=\lceil(b-a)/\delta\rceil$, that is, $N$ is the smallest integer
 greater than $(b-a)/\delta$, and consider the partition $\Gamma=\{x_k\}$
-where $x_k\coloneq a+k(b-a)/N$, for $k=0,\dotsc,N$. Then
+where $x_k= a+k(b-a)/N$, for $k=0,\dotsc,N$. Then
 $x_k-x_{k-1}<(b-a)/N<\delta$ so, by Theorem 2.2(i) from \cite[Ch.\@ 2, p.\@
 19]{wheeden-zygmund}, we have $V[f;x_{k-1},x_k]<1$ for $k=0,\dotsc,N$. In
 follows by Theorem 2.2(ii) that
@@ -292,12 +294,12 @@ Recall that the given a partition $\Gamma=\{x_0,\dotsc,x_m\}$ of $[a,b]$,
 the Riemann--Stieltjes sum of $f$ with respect to $\varphi$ is
 \begin{equation}
   \label{eq:prep:1:15}
-R_\Gamma\coloneq\sum_{k=1}^mf(\xi_k)[\varphi(x_k)-\varphi(x_{k-1})].
+R_\Gamma=\sum_{k=1}^mf(\xi_k)[\varphi(x_k)-\varphi(x_{k-1})].
 \end{equation}
 The Riemann--Stieltjes integral is defined as the limit
 \begin{equation}
 \label{eq:prep:1:16}
-\int_a^b f\diff\varphi\coloneq\lim_{|\Gamma|\to 0} R_\Gamma
+\int_a^b f\diff\varphi=\lim_{|\Gamma|\to 0} R_\Gamma
 \end{equation}
 if it exists.
 
