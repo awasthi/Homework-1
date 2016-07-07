@@ -53,16 +53,24 @@
     |f_{2^{k_n}}(x)|>\sqrt{2^{k_n}\log(\log(2^{k_n}))}
   \]
   for all $n\geq N$. But by Equation \eqref{ban:aug00-1} we have
-  \begin{align*}
-    \mu\left(\left\{\,%
-    x\in X:\frac{|f_{2^{k_n}}(x)|}{\sqrt{2^{k_n}\log(\log(2^{k_n}))}}\geq 1
-    \,\right\}\right)
-    &\leq%
+  \begin{equation}
+    \label{eq:ban00-2}
+    \begin{aligned}
+      \mu\left(\left\{\,%
+          x\in
+          X:\frac{|f_{2^{k_n}}(x)|}{\sqrt{2^{k_n}\log(\log(2^{k_n}))}}\geq
+          1 \,\right\}\right) &\leq%
       C\exp\left(-\left.
-      \left(\sqrt{2^{k_m}\log(\log(2^{k_m}))}\right)^2\right/2^{k_m}%
+          \left(\sqrt{2^{k_n}\log(\log(2^{k_n}))}\right)^2\right/2^{k_n}%
       \right)\\
-    &=C\exp
-  \end{align*}
+      &=C\exp\left(-\left.2^{k_n}\log(\log(2^{k_n}))\right/2^{k_n} \right)\\
+      &=C\exp\left(-\log(\log(2^{k_n}))\right)\\
+      &=C\exp\left(\log(1/\log(2^{k_n}))\right)\\
+      &=\frac{C}{\log(2^{k_n})}.
+    \end{aligned}
+  \end{equation}
+  Letting $n\to\infty$, we see that the measure of the set on the left-hand
+  side of Equation \eqref{eq:ban00-2} must go to $0$ so $\mu(E)=0$.
 \end{solution}
 
 \begin{problem}
@@ -81,6 +89,7 @@ for all $n$ and all $\lambda>0$. Prove that
 $\|f\|_1=\int_0^\infty\left\{\,|f(x)|>\lambda\,\right\}\diff\lambda$.)
 \end{problem}
 \begin{solution}
+  We may, without loss of generality, assume that $\mu(X)=1$.
 \end{solution}
 
 \begin{problem}
