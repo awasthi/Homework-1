@@ -1,20 +1,69 @@
-\section{Bañuelos Quals}
-\subsection{August 2000}
+\section{Bañuelos: Summer 2000}
+\setcounter{exercise}{0}
+\setcounter{equation}{0}
 \begin{problem}
-Let $(X,\calF,\mu)$ be a measure space and suppose $\{f_n\}$ is a sequence
-of measurable functions with the property that for all $n\geq 1$,
-\[
-\mu\left(\left\{\,x\in X:|f_n(x)|\geq\lambda\,\right\}\right)\leq C e^{-\lambda^2/n}
-\]
-for all $\lambda>0$. (Here $C$ is a constant independent of $n$.) Let
-$n_k=2^k$. Prove that
-\[
-\limsup_{k\to\infty}\frac{|f_{n_k}}{\sqrt{n_k\ln(ln(n_k))}}\leq 1
-\]
-a.e.
+  Let $(X,\calF,\mu)$ be a measure space and suppose $\{f_n\}$ is a
+  sequence of measurable functions with the property that for all
+  $n\geq 1$
+  \[
+    \mu\left(\left\{\,x\in X:|f_n(x)|\geq\lambda\,\right\}\right)\leq C
+    \exp(-\lambda^2/n)
+  \]
+  for all $\lambda>0$. (Here $C$ is a constant independent of $n$.) Let
+  $n_k=2^k$. Prove that
+  \[
+    \limsup_{k\to\infty}\frac{|f_{n_k}|}{\sqrt{n_k\log(\log(n_k))}}\leq
+    1\quad\text{a.e.}
+  \]
 \end{problem}
-\begin{proof}
-\end{proof}
+\begin{solution}
+  Suppose ${\{f_n\}}_{n=1}^\infty$ is a sequence of measurable functions
+  such that
+  \begin{equation}
+    \label{ban:aug00-1}%
+    \mu\left(\left\{\,x\in X:|f_n(x)|\geq\lambda\,\right\}\right)\leq C
+    \exp(-\lambda^2/n)
+  \end{equation}
+    for all $\lambda$. Now, consider the subsequence
+  ${\{f_{2^k}\}}_{k=1}^\infty$ of ${\{f_n\}}_{n=1}^\infty$. We aim to show
+  that
+  \[
+    \limsup_{k\to\infty}\frac{|f_{2^k}|}{\sqrt{2^k\log(\log(2^k))}}\leq 1
+  \]
+  almost everywhere. To that end, it suffices to show that the set
+  \[
+    E=%
+    \left\{\,%
+      x\in
+      X:\limsup_{k\to\infty}\frac{|f_{2^k}|}{\sqrt{2^k\log(\log(2^k))}}>1%
+      \,%
+    \right\}
+  \]
+  has measure zero. Let $x\in E$ then
+  \[
+    \limsup_{k\to\infty} \frac{|f_{2^k}(x)|}{\sqrt{2^k\log(\log(2^k))}}>1.
+  \]
+  This means that there exists some subsequence
+  $\{k_m\}_{m=1}^\infty\subset\{k\}_{n=1}^\infty$ such that
+  \[
+    \lim_{m\to\infty}\frac{|f_{2^{k_m}}(x)|}{\sqrt{2^{k_m}\log(\log(2^{k_m}))}}>1.
+  \]
+  This means that, for sufficiently large $N$
+  \[
+    |f_{2^{k_n}}(x)|>\sqrt{2^{k_n}\log(\log(2^{k_n}))}
+  \]
+  for all $n\geq N$. But by Equation \eqref{ban:aug00-1} we have
+  \begin{align*}
+    \mu\left(\left\{\,%
+    x\in X:\frac{|f_{2^{k_n}}(x)|}{\sqrt{2^{k_n}\log(\log(2^{k_n}))}}\geq 1
+    \,\right\}\right)
+    &\leq%
+      C\exp\left(-\left.
+      \left(\sqrt{2^{k_m}\log(\log(2^{k_m}))}\right)^2\right/2^{k_m}%
+      \right)\\
+    &=C\exp
+  \end{align*}
+\end{solution}
 
 \begin{problem}
 let $(X,\calF,\mu)$ be a finite measure space. Let $f_n$ be a sequence of
@@ -31,8 +80,8 @@ for all $n$ and all $\lambda>0$. Prove that
 (\emph{Hint}: You may use the fact that
 $\|f\|_1=\int_0^\infty\left\{\,|f(x)|>\lambda\,\right\}\diff\lambda$.)
 \end{problem}
-\begin{proof}
-\end{proof}
+\begin{solution}
+\end{solution}
 
 \begin{problem}
 \begin{enumerate}[label=(\roman*)]
@@ -46,8 +95,8 @@ $F(f_n)\to F(f)$ in measure. (You may assume, of course, that $f_n$, $F$,
 $F(f_n)$, and $F(f)$ are all measurable.)
 \end{enumerate}
 \end{problem}
-\begin{proof}
-\end{proof}
+\begin{solution}
+\end{solution}
 
 \begin{problem}
 Let $(X,\calF,\mu)$ be a finite measure space and suppose $f\in L^1(\mu)$
@@ -61,8 +110,8 @@ r<p$.
 
 (\emph{Hint}: Consider)
 \end{problem}
-\begin{proof}
-\end{proof}
+\begin{solution}
+\end{solution}
 
 %%% Local Variables:
 %%% mode: latex
