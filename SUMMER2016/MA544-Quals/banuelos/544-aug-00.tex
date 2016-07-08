@@ -74,53 +74,73 @@
 \end{solution}
 
 \begin{problem}
-let $(X,\calF,\mu)$ be a finite measure space. Let $f_n$ be a sequence of
-measurable functions with $f_1\in L^1(\mu)$ and with the property that
-\[
-\mu\left(\left\{\,x\in X:|f_n(x)|>\lambda\,\right\}\right)
-\leq
-\mu\left(\left\{\,x\in X:|f_1(x)|>\lambda\,\right\}\right)
-\]
-for all $n$ and all $\lambda>0$. Prove that
-\[
-\lim_{n\to\infty}\frac{1}{n}\int_X\left[\max_{1\leq j\leq n}|f_j|\right]\diff\mu=0.
-\]
-(\emph{Hint}: You may use the fact that
-$\|f\|_1=\int_0^\infty\left\{\,|f(x)|>\lambda\,\right\}\diff\lambda$.)
+  Let $(X,\calF,\mu)$ be a finite measure space. Let $f_n$ be a sequence of
+  measurable functions with $f_1\in L^1(\mu)$ and with the property that
+  \[
+    \mu\left(\left\{\,x\in X:|f_n(x)|>\lambda\,\right\}\right) \leq
+    \mu\left(\left\{\,x\in X:|f_1(x)|>\lambda\,\right\}\right)
+  \]
+  for all $n$ and all $\lambda>0$. Prove that
+  \[
+    \lim_{n\to\infty}\frac{1}{n}\int_X\left[\max_{1\leq j\leq
+        n}|f_j|\right]\diff\mu=0.
+  \]
+  [\emph{Hint}: You may use the fact that
+  $\|f\|_1=\int_0^\infty\mu\left(\left\{\,|f(x)|>\lambda\,\right\}\right)\diff\lambda$.]
 \end{problem}
 \begin{solution}
-  We may, without loss of generality, assume that $\mu(X)=1$.
+  Without loss of generality we may assume that $\mu(X)=1$. Define
+  $g,g_n\colon\calF\to[0,\infty]$ for $n\in\bbN$ by
+  \begin{align*}
+    g(\lambda)&=%
+    \mu\left(\left\{\,x\in X:\max_{1\leq i\leq n}|f_i(x)|>\lambda\,\right\}\right),%
+    &g_n(\lambda)%
+    &=\mu\left(\left\{\,x\in X:|f_n(x)|>\lambda\,\right\}\right).
+  \end{align*}
 \end{solution}
 
 \begin{problem}
-\begin{enumerate}[label=(\roman*)]
-\item Let $(X,\calF,\mu)$ be a finite measure space. Let $\{f_n\}$ be a sequence
-of measurable functions. Prove that $f_n\to f$ is measurable if and only if
-every subsequence $\{f_{n_k}\}$ contains a further subsequence
-$\{f_{n_{k_j}}\}$ that converges a.e.\@ to $f$.
-\item Let $(X,\calF,\mu)$ be a finite measure space. Let
-$F\colon\bbR\to\bbR$ be continuous and $f_n\to f$ in measure. Prove that
-$F(f_n)\to F(f)$ in measure. (You may assume, of course, that $f_n$, $F$,
-$F(f_n)$, and $F(f)$ are all measurable.)
-\end{enumerate}
+  \hfill
+  \begin{enumerate}[label=(\roman*)]
+  \item Let $(X,\calF,\mu)$ be a finite measure space. Let $\{f_n\}$ be a
+    sequence of measurable functions. Prove that $f_n\to f$ is measurable
+    if and only if every subsequence $\{f_{n_k}\}$ contains a further
+    subsequence $\{f_{n_{k_j}}\}$ that converges a.e.\@ to $f$.
+  \item Let $(X,\calF,\mu)$ be a finite measure space. Let
+    $F\colon\bbR\to\bbR$ be continuous and $f_n\to f$ in measure. Prove
+    that $F(f_n)\to F(f)$ in measure. (You may assume, of course, that
+    $f_n$, $F$, $F(f_n)$, and $F(f)$ are all measurable.)
+  \end{enumerate}
 \end{problem}
 \begin{solution}
 \end{solution}
 
 \begin{problem}
-Let $(X,\calF,\mu)$ be a finite measure space and suppose $f\in L^1(\mu)$
-is nonnegative. Suppose $1<q<\infty$ and let $1\leq \leq\infty$ be its
-conjugate exponent, i.e., $1/p+1/q=1$. Suppose $f$ has the property that
-\[
-\int_Ef\diff\mu\leq \mu(E)^{1/q}
-\]
-for all measurable sets $E$. Prove that $f\in L^r(\mu)$ for any $1\leq
-r<p$.
-
-(\emph{Hint}: Consider)
+  Let $(X,\calF,\mu)$ be a finite measure space and suppose $f\in L^1(\mu)$
+  is nonnegative. Suppose $1<q<\infty$ and let $1\leq \leq\infty$ be its
+  conjugate exponent, i.e., $1/p+1/q=1$. Suppose $f$ has the property that
+  \[
+    \int_Ef\diff\mu\leq \mu(E)^{1/q}
+  \]
+  for all measurable sets $E$. Prove that $f\in L^r(\mu)$ for any
+  $1\leq r<p$. [\emph{Hint}: Consider
+  $\left\{\,x\in X:2^n\leq f(x)<2^{n+1}\,\right\}$.]
 \end{problem}
 \begin{solution}
 \end{solution}
+
+\begin{problem}
+  Let $f$ be a continuous function on $[-1,1]$. Find
+  \[
+    \lim_{n\to\infty}\int_{-1/n}^{1/n} f(x)(1-n|x|)\diff x.
+  \]
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}
+
+\end{problem}
 
 %%% Local Variables:
 %%% mode: latex
