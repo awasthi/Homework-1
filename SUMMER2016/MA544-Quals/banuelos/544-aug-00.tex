@@ -85,18 +85,37 @@
     \lim_{n\to\infty}\frac{1}{n}\int_X\left[\max_{1\leq j\leq
         n}|f_j|\right]\diff\mu=0.
   \]
+
   [\emph{Hint}: You may use the fact that
   $\|f\|_1=\int_0^\infty\mu\left(\left\{\,|f(x)|>\lambda\,\right\}\right)\diff\lambda$.]
 \end{problem}
 \begin{solution}
-  Without loss of generality we may assume that $\mu(X)=1$. Define
-  $g,g_n\colon\calF\to[0,\infty]$ for $n\in\bbN$ by
+  Define $g_n,h_n\colon\calF\to[0,\infty]$ for $n\in\bbN$ by
   \begin{align*}
-    g(\lambda)&=%
-    \mu\left(\left\{\,x\in X:\max_{1\leq i\leq n}|f_i(x)|>\lambda\,\right\}\right),%
-    &g_n(\lambda)%
-    &=\mu\left(\left\{\,x\in X:|f_n(x)|>\lambda\,\right\}\right).
+    g_n(\lambda)%
+    &=\mu\left(\left\{\,x\in X:|f_n(x)|>\lambda\,\right\}\right),%
+    &h_n(\lambda)%
+    &=\mu\left(\left\{\,x\in X:\max_{1\leq i\leq n}|f_i(x)|>\lambda\,\right\}\right).%
   \end{align*}
+  Now, note that, by the monotonicity of $\mu$, we have
+  \[
+    h_n(\lambda)\leq \sum_{i=1}^n g_n(\lambda)\leq ng_1(\lambda).
+  \]
+  Thus,
+  \[
+    \frac{h_n(\lambda)}{n}\leq g_1(\lambda).
+  \]
+  Since $\|f_1\|_1=\int_0^\infty g_1(\lambda)\diff\lambda$, by Lebesgue's
+  dominated convergence theorem, we have
+  \begin{align*}
+    \lim_{n\to\infty}\frac{1}{n}%
+    \int_X\left[\max_{1\leq j\leq n}|f_j|\right]\diff\mu
+    &=\lim_{n\to\infty}\int_X\frac{h_n(x)}{n}\diff\mu\\
+    &=\int_X\lim_{n\to\infty}\frac{h_n(x)}{n}\diff\mu\\
+    &\leq\int_X\lim_{n\to\infty}\frac{\mu(X)}{n}\\
+    &=0
+  \end{align*}
+  as we wanted to show.
 \end{solution}
 
 \begin{problem}
@@ -113,18 +132,29 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
+  Recall that a sequence of measurable functions $\{f_n\}$ converge in
+  measure to a limit $f$ if for every $\varepsilon>0$ the limit
+  \[
+    \lim_{n\to\infty}
+    \mu\left(\left\{\,x\in X:|f(x)-f_n(x)|\geq\varepsilon\,\right\}\right)=0.
+  \]
+
+  For part (i) $\impliedby$ suppose that every subsequence $\{f_{n_k}\}$
+  contains a subsequence $\{f_{n_{k_\ell}}\}$ that converges almost
+  everywhere to $f$.
 \end{solution}
 
 \begin{problem}
   Let $(X,\calF,\mu)$ be a finite measure space and suppose $f\in L^1(\mu)$
-  is nonnegative. Suppose $1<q<\infty$ and let $1\leq \leq\infty$ be its
+  is nonnegative. Suppose $1<p<\infty$ and let $1<q<\infty$ be its
   conjugate exponent, i.e., $1/p+1/q=1$. Suppose $f$ has the property that
   \[
     \int_Ef\diff\mu\leq \mu(E)^{1/q}
   \]
   for all measurable sets $E$. Prove that $f\in L^r(\mu)$ for any
-  $1\leq r<p$. [\emph{Hint}: Consider
-  $\left\{\,x\in X:2^n\leq f(x)<2^{n+1}\,\right\}$.]
+  $1\leq r<p$.
+
+  [\emph{Hint}: Consider $\left\{\,x\in X:2^n\leq f(x)<2^{n+1}\,\right\}$.]
 \end{problem}
 \begin{solution}
 \end{solution}
@@ -139,7 +169,12 @@
 \end{solution}
 
 \begin{problem}
-
+  Let $(X,\calF,\mu)$ be a measure space and suppose $f\in L^p(\mu)$,
+  $1\leq p<\infty$. Suppose $E_n$ is a sequence of measurable sets
+  satisfying $\mu(E_n)=1/n$ for all $n$. Prove that
+  \[
+    \lim_{n\to\infty}\left[n^{p-1}{p}\int_{E_n}|f|\diff\mu\right]=0.
+  \]
 \end{problem}
 
 %%% Local Variables:
