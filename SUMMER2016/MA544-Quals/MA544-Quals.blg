@@ -23,11 +23,12 @@ A level-1 auxiliary file: danielli/544-final-2010.aux
 A level-1 auxiliary file: danielli/544-final.aux
 A level-1 auxiliary file: danielli/544-jan-12.aux
 A level-1 auxiliary file: danielli/544-aug-11.aux
+A level-1 auxiliary file: banuelos/544-aug-00.aux
 The style file: plain.bst
 Database file #1: anal-bib.bib
 You've used 5 entries,
             2118 wiz_defined-function locations,
-            548 strings with 5088 characters,
+            549 strings with 5111 characters,
 and the built_in function-call counts, 1227 in all, are:
 = -- 121
 > -- 47
