@@ -1,0 +1,82 @@
+\def\auth{Carlos Salinas}
+\def\tight{MRC 2016 Report: Tropicalization of Character Varieties}
+\def\short{Trop-Summ}
+\def\class{tropicalization}
+\def\subject{character varieties, tropical geometry, tropicalization}
+\def\email{salinac@purdue.edu}
+
+\documentclass[10pt]{article}
+
+\usepackage[dvipsnames]{xcolor}%
+\usepackage[%
+breaklinks,%
+colorlinks=true,%
+linkcolor=black,%
+citecolor=black,%
+filecolor=black,%
+menucolor=black,%
+runcolor=black,%
+urlcolor=black,%
+pdftitle={\short},%
+pdfauthor={\auth},%
+pdfkeywords={\subject},%
+pdfsubject={\class},%
+pageanchor={false}%
+]{hyperref}
+\usepackage{cleveref}
+
+% TOC depth
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+%% Math and variables all bundled up
+\usepackage{carlos-variables}
+
+%% Misc
+\usepackage{microtype}
+\usepackage[inline]{enumitem}
+\usepackage{cleveref}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{authblk}
+
+\begin{document}
+
+%% Footnote style
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+%% Title
+\thispagestyle{empty}%
+
+\author[1]{Shams Alyusof}
+\author[4]{Corry Bedwell}
+\author[2]{Ellie Dannenberg}
+\author[5]{Dmitry Gekhtman}
+\author[1]{Charlie Katerba}
+\author[1]{Jack Love}
+\author[1]{Chris Manon}
+\author[3]{Giuseppe Martone}
+\author[6]{\href{mailto:\email}{\auth}}%
+\affil[1]{George Mason}
+\affil[2]{University of Chicago}
+\affil[3]{University of South California}
+\affil[4]{University of Maryland--College Park}
+\affil[5]{California Institute of Technology}
+\affil[6]{Purdue University}
+
+\renewcommand\Authands{ and }
+\title{\tight}%
+\date{\today}%
+
+\maketitle
+\tableofcontents
+
+\section{The Conjecture}
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

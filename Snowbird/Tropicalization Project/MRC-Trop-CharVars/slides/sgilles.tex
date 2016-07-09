@@ -1,0 +1,68 @@
+\begin{frame}{$S_{2,g}$ - a recursive approach}
+
+  \begin{definition}
+    $S_{2,g}$ is the number of words over an alphabet of size $g$ such
+    that no letter appears (considering absolute multiplicities) more
+    than twice.
+  \end{definition}
+
+  \pause
+
+  \begin{definition}
+    $S_{2,g}^{d,\ell,u}$ is the number of words counted by $S_{2,g}$ which
+    have exactly $d$ exponents of $\pm 2$, have \emph{reduced} length
+    $\ell$ (exponents are ignored), and use exactly $u$ distinct letters.
+  \end{definition}
+
+  \pause
+
+  \[S_{2,g} = \sum_{d=0}^{g} \sum_{\ell=0}^{2g} \sum_{u=0}^{g}
+    S_{2,g}^{d,\ell,u}, \]
+  and
+  \[ S_{2,0}^{0,0,0} = 1. \]
+
+
+\end{frame}
+
+\begin{frame}{The recursion}
+
+{\tiny
+\[
+\begin{aligned}
+  S_{2,g}^{d,\ell,u}
+  &= S_{2,g-1}^{d,\ell,u} \\
+  &+\sum_{j=0}^{u-1} {g-1 \choose j}  j!  2^j  (\ell - 2j)  \left( S_{2,g-1-j}^{d, \ell-1-2j, u-j-1} + S_{2,g-1-j}^{d-1,\ell-1-2j,u-j-1} \right)  2 \\
+  &+  \sum_{j=0}^{u-1} \sum_{k=0}^{u-1-j} { g-1 \choose j + k}  (j + k)!  2^{j + k}  \left(\frac{(\ell - 2(j + k) - 1)  (\ell - 2 (j + k) - 2)}{2}\right)  S_{2,g-1-j-k}^{d,\ell-2(j+k) - 2,u-1-j-k}  4 \\
+  &+ \sum_{j=0}^{0} \sum_{k=1}^{u-1-j} { g-1 \choose j + k} (j + k)!  2^{j
+    + k} \left(\frac{(\ell - 2(j + k) - 1) 2}{2}\right)
+  S_{2,g-1-j-k}^{d,\ell-2(j+k) - 2,u-1-j-k}  4 \\
+  &+ \sum_{j=1}^{u-1} \sum_{k=0}^{0} { g-1 \choose j + k}  (j + k)!  2^{j + k} \left(\frac{(\ell - 2(j + k) - 1)  2}{2}\right)  S_{2,g-1-j-k}^{d,\ell-2(j+k) - 2,u-1-j-k}  4 \\
+  &- \sum_{j=1}^{u-1} \sum_{k=1}^{u-1-j} { g-1 \choose j + k}  (j + k)!  2^{j + k}  \left(\frac{(\ell - 2(j + k) - 1)  2}{2}\right)  S_{2,g-1-j-k}^{d,\ell-2(j+k) - 2,u-1-j-k}  4 \\
+  &+ \sum_{j=1}^{u-1} \sum_{k=0}^{u-1-j} { g-1 \choose j + k}  (j + k)!  2^{j + k}  \left(\frac{(\ell - 2(j + k) - 1)  2(j-1)}{2}\right)  S_{2,g-1-j-k}^{d,\ell-2(j+k) - 2,u-1-j-k}  4\\
+  &+ \sum_{j=1}^{u-1} \sum_{k=1}^{u-1-j} { g-1 \choose j + k} (j + k)!
+  2^{j + k} \left(\frac{(\ell - 2(j + k) - 1) 2)}{2}\right)
+  S_{2,g-1-j-k}^{d,-2(j+k) - 2,u-1-j-k} 4
+\end{aligned}
+\]
+}
+\end{frame}
+
+\begin{frame}{Some calculations}
+  This has been implemented, with the following results
+  \begin{align*}
+    S_{2,0} &= 1 \\
+    S_{2,1} &= 5 \\
+    S_{2,2} &= 105 \\
+    S_{2,3} &= 6061 \\
+    S_{2,4} &= 668753 \\
+    &\vdots
+  \end{align*}
+
+  Conclusion: it is impractical to consider naïve generators when examining
+  representations $F_n$ to $\SL_2\bbC$.
+\end{frame}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MRC16-Trop-CharVars-Slides"
+%%% End:

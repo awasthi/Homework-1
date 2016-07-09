@@ -1,0 +1,56 @@
+\documentclass{beamer}
+
+%% Math
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+% \usepackage{lmodern}
+\usepackage{eucal}
+\usepackage{carlos-variables}
+\usepackage{mleftright}
+\mleftright
+
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+
+%% Mis
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+
+\usepackage{microtype}
+\usepackage[inline]{enumitem}
+
+%% Beamer options
+\usetheme{Boadilla}
+\usecolortheme{default}
+\usefonttheme{professionalfonts}
+
+\begin{document}
+%% Title
+\title{Tropicalization of Character Varieties}%
+\author[TGG]{Tropical Geometry Group}%
+\subject{character varieties, tropical geometry}%
+
+\frame{\titlepage}%
+
+%% Frames
+\input{slides/visualization}%
+\input{slides/sgilles}%
+\input{slides/newton_polytopes}%
+\input{slides/martone}%
+
+%% Bibliography
+% \begin{frame}[allowframebreaks]
+%   \frametitle{References}
+%   \cite{*}%
+%   \bibliographystyle{plain}%
+%   \bibliography{trop-charvar}%
+% \end{frame}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
