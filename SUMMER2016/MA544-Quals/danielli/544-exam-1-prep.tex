@@ -3,7 +3,7 @@
 
 \subsubsection{Exam 1 Practice}
 \begin{problem}
-Let $E\subset\bbR^n$ be a measurable set, $r\in\bbR$ and define the set
+Let $E\subseteq\bbR^n$ be a measurable set, $r\in\bbR$ and define the set
 $rE=\left\{\,r\bfx:\bfx\in E\,\right\}$. Prove that $rE$ is
 measurable, and that $|rE|=|r|^n|E|$.
 \end{problem}
@@ -48,7 +48,7 @@ Note that the collection of sets $\{V_k\}$ forms an increasing
 sequence, that is, if $\bfx\in V_k$ then, by \eqref{eq:prep:1:2}, $\bfx$ is
 in the intersection $E_k\cap\bigl(\bigcap_{\ell=k+1}E_\ell\bigr)$, but, by
 \eqref{eq:prep:1:2}, $\bigcap_{\ell=k+1}E_\ell=V_{k+1}$ thus, $\bfx$
-is in $V_{k+1}$ so $V_{k+1}\supset V_k$. Hence, we have $V_k\nearrow\liminf
+is in $V_{k+1}$ so $V_{k+1}\supseteq V_k$. Hence, we have $V_k\nearrow\liminf
 E_k$.
 
 Now, consider the sequence $\{|V_k|\}$ formed by the Lebesgue measure of
@@ -101,11 +101,11 @@ $B(\mathbf{0},r)=T(r,B(\mathbf{0},1))$. To reduce notation, set
 $B_1= B(\mathbf{0},1)$ and $B_r= B(\mathbf{0},r)$.
 \begin{proof}[Proof of claim]
 \renewcommand{\qedsymbol}{$\clubsuit$}
-$\subset$: Let $\bfx\in B_r$. Then $|\bfx|<r$ so $|\bfx|/r<1$. Thus,
+$\subseteq$: Let $\bfx\in B_r$. Then $|\bfx|<r$ so $|\bfx|/r<1$. Thus,
 $|\bfx|/r\in B_1$ so it is in the image of $B_1$ under the map
 $T(r,\cdot)$.
 
-$\supset$: On the other hand, suppose $\bfx\in T(r,B_1)$. Then
+$\supseteq$: On the other hand, suppose $\bfx\in T(r,B_1)$. Then
 $\bfx=r\bfy$ for some $\bfy\in B_1$. Then, since $|\bfy|<1$,
 $|\bfx|=r|\bfy|<r$ so $\bfx\in B_r$.
 \end{proof}
@@ -140,14 +140,14 @@ E_k=\left\{\,x\in\bbR:
 We claim that $C=\bigcap_{k=1}^\infty E_k$ and that each $E_k$ is open.
 \begin{proof}[Proof of claim]
 \renewcommand{\qedsymbol}{$\clubsuit$}
-First, we demonstrate equality. $\subset$: Suppose $x\in C$. Then, by the
+First, we demonstrate equality. $\subseteq$: Suppose $x\in C$. Then, by the
 definition of continuity, for every $\varepsilon>0$, there exists a
 $\delta>0$ such that $y\in B(x,\delta)$ implies $|f(x)-f(y)|<\delta$. In
 particular, for every $k$, there exists $\delta>0$ such that for $y\in
 B(x,\delta)$ the inequality $|f(x)-f(y)|<1/k$ holds. Thus, $x$ is in
 $\bigcap_{k=1}^\infty E_k$.
 
-$\supset$: On the other hand, suppose that $x\in\bigcap_{k=1}^\infty
+$\supseteq$: On the other hand, suppose that $x\in\bigcap_{k=1}^\infty
 E_k$. Then, given $\varepsilon>0$, by the Archimedean property, there
 exists a positive integer $N$ such that $1/N<\varepsilon$. Then, since
 $x\in\bigcap_{k=1}^\infty E_k$, $x\in E_N$ so
@@ -162,9 +162,9 @@ by the way we defined $E_k$ in \eqref{eq:prep:1:8}: Let $x\in E_k$, then
 there exists $\delta>0$ such that for any $y,z\in B(x,\delta)$,
 $|f(y)-f(z)|<1/k$; Let $x'\in B(x,\delta)$ and set
 $\delta'=\min\{|(x+\delta)-x'|,|(x-\delta)-x|\}$. Then, since
-$B(x',\delta')\subset B(x,\delta)$, for every $y,z\in B(x',\delta')$, we
+$B(x',\delta')\subseteq B(x,\delta)$, for every $y,z\in B(x',\delta')$, we
 have $|f(y)-f(z)|<1/k$. Hence, $x'\in E_k$ for any $x'\in B(x,\delta)$
-so $B(x,\delta)\subset E_k$.
+so $B(x,\delta)\subseteq E_k$.
 \end{proof}
 Since $C$ can be expressed as the countable intersection of open sets
 $E_k$, it follows that $C$ is a $G_\delta$ set.
@@ -177,7 +177,7 @@ measurable?
 \begin{proof}
 If $\left\{\,f=r\,\right\}$ are measurable for all $r\in\bbR$, it is not
 necessarily the case that $f$ is measurable. Consider the following
-construction: Let $E\subset(0,1)$ be an unmeasurable set.\footnote{It's
+construction: Let $E\subseteq(0,1)$ be an unmeasurable set.\footnote{It's
   construction does not concern us. The interested reader such direct their
   refer to Theorem 3.38 from \cite[Ch.\@ 3, p.\@ 57-58]{wheeden-zygmund} or
   Theorem 17 from \cite[Ch.\@ 2\S 7, p.\@ 48]{royden}.} Define a map

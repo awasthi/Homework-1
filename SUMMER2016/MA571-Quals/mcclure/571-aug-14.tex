@@ -3,12 +3,12 @@
 \setcounter{exercise}{0}
 \begin{problem}
 Let $X$ be a topological space, let $A$ be a subset of $X$, and let $U$ be
-an open subset of $X$. Prove that $U\cap \bar A\subset\overline{U\cap A}$.
+an open subset of $X$. Prove that $U\cap \bar A\subseteq\overline{U\cap A}$.
 \end{problem}
 \begin{solution}
 Let $x\in U\cap\bar A$. Then $x\in U$ and $x\in\bar A$. This means that,
 since $U$ is open, by Lemma C there exist an open neighborhood $V$ of $x$
-such that $V\subset U$. Moreover, since $x\in\bar A$, $V'\cap
+such that $V\subseteq U$. Moreover, since $x\in\bar A$, $V'\cap
 A\neq\emptyset$ for every open neighborhood $V'$ of $x$. In particular,
 $V\cap A\neq\emptyset$. Thus, we have $V\cap U\neq\emptyset$ and $V\cap
 A\neq\emptyset$ so $V\cap(U\cap A)\neq\emptyset$.
@@ -93,7 +93,7 @@ $x\in[0,1]\times[0,1]$. These maps are hard to describe in general, but
 they exists (take for example a space-filling curve). Next, note that if
 $C$ is a closed subset of $[0,1]$ then it is compact so $f(C)$ is
 compact. But since $[0,1]\times[0,1]$ is compact Hausdorff, then
-$f(C)\subset[0,1]\times[0,1]$ will be closed. It follows by that $f$ will
+$f(C)\subseteq[0,1]\times[0,1]$ will be closed. It follows by that $f$ will
 be a Munkres quotient map, so by Theorem Q.4, $f'\colon
 [0,1]/{\sim}\to[0,1]\times[0,1]$ is a homeomorphism for some equivalence
 relation $\sim$ on $[0,1]$.
@@ -216,15 +216,15 @@ $p^{-1}(U)=\bigcup_\alpha V_\alpha$ where the $V_\alpha$ are open in $E$
 and  $V_\alpha\cap V_\beta=\emptyset$ whenever $\alpha\neq\beta$. For any
 $\alpha$, let $C$ be a connected component of $p^{-1}(U)$ containing
 $p^{-1}(x)\cap V_\alpha$ (the latter is a one point set since
-$\left.p\right|_{V_\alpha}$ is a bijection). Then $C\subset V_\alpha$ for
+$\left.p\right|_{V_\alpha}$ is a bijection). Then $C\subseteq V_\alpha$ for
 at most one such $\alpha$ for otherwise $C\cap V_\beta\neq\emptyset$ for
 some $\beta\neq\alpha$, so $C\cap V_\beta$ and $C\cap V_\alpha$ form a
 separation of (note that $C\smallsetminus(C\cap V_\beta)=C\cap V_\alpha$ and
 vice-versa thus, $C\cap V_\beta$ and $C\cap V_\alpha$ are open and closed
 in the subspace topology on $C$, conversely) by Lemma 23.1.
 
-Thus, $p(C)\subset U$ is connected by Theorem 23.5. Moreover, since
-$V_\alpha\supset C$ is homeomorphic to $U$ by the restriction
+Thus, $p(C)\subseteq U$ is connected by Theorem 23.5. Moreover, since
+$V_\alpha\supseteq C$ is homeomorphic to $U$ by the restriction
 $\left.p\right|_{V_\alpha}$, $p(C)$ is a connected component of $U$ as the
 following lemma shows
 \begin{lemma}
@@ -236,10 +236,10 @@ homeomorphism. Then $h(C)$ is a connected component of $Y$.
 Let $C$ be a connected component of $X$. By theorem 23.5, $h(C)$ is a
 connected subset of $Y$, moreover, is open. By Theorem 25.1, $h(C)$ is
 contained in a connected component of $Y$, say $D$. Hence, we must show
-that $D\subset h(C)$. Now, since $h$ is a homeomorphism, $h^{-1}(D)$ is a
+that $D\subseteq h(C)$. Now, since $h$ is a homeomorphism, $h^{-1}(D)$ is a
 connected subset of $X$, by Theorem 23.5, so is contained in only one
-component of $X$. But $h^{-1}(D)\cap C\neq\emptyset$ so $h^{-1}(D)\subset
-C$. Thus, since $h$ is a set-bijection, $D\subset h(C)$.
+component of $X$. But $h^{-1}(D)\cap C\neq\emptyset$ so $h^{-1}(D)\subseteq
+C$. Thus, since $h$ is a set-bijection, $D\subseteq h(C)$.
 \end{solution}
 so by Theorem 25.3, $p(C)$ is open in $B$ since $B$ is locally
 connected. Thus, the restriction $\left.p\right|_{C}$ is a homeomorphism
