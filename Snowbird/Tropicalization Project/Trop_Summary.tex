@@ -8,6 +8,7 @@
 \documentclass[11pt]{article}
 
 \usepackage[dvipsnames]{xcolor}%
+\usepackage{geometry}
 \usepackage[%
 breaklinks,%
 colorlinks=true,%
@@ -49,12 +50,12 @@ pageanchor={false}%
 \author[5]{Dmitry Gekhtman}
 \author[1]{Charlie Katerba}
 \author[1]{Jack Love}
-\author[1]{Chris Manon}
+\author[1]{Christopher Manon}
 \author[3]{Giuseppe Martone}
 \author[6]{\href{mailto:\eemail}{\auth}}%
-\affil[1]{George Mason}
-\affil[2]{University of Chicago}
-\affil[3]{University of South California}
+\affil[1]{George Mason University}
+\affil[2]{University of Illinois at Chicago}
+\affil[3]{University of Southern California}
 \affil[4]{University of Maryland--College Park}
 \affil[5]{California Institute of Technology}
 \affil[6]{Purdue University}
@@ -67,18 +68,19 @@ pageanchor={false}%
 \maketitle
 % \tableofcontents
 \section{Overview}
-Tropical geometry is a new and exciting area of mathematics that is best
-described as piece-wise linear algebraic geometry. In tropical geometetry
-the sum of two real numbers $x\oplus y$ is their maximum and the product
-$x\odot y$ their sum. This, together with a minimum element $-\infty$,
-gives us the tropical semiring $(\bbR\cup\{-\infty\},\oplus,\odot)$. In the
-tropical setting, polynomials become pice-wise linear functions and
-algebraic varieties give way to tropical varieties--- which are in some
-sense ``skeletons'' of the original variety.
+Tropical geometry is a new an exciting area of mathematics that is best
+described as a piecewise-linear version of algebraic geometry. In tropical
+geometry the sum of two real numbers $x\oplus y$ is their maximum and the
+product $x\odot y$ their sum. This, together with a minimum element
+$-\infty$, gives us the tropical semiring
+$(\bbR\cup\{-\infty\},\oplus,\odot)$. In the tropical setting, polynomials
+become pice-wise linear functions and algebraic varieties give way to
+tropical varieties--- which are in some sense ``skeletons'' of the original
+variety.
 
 During the introductory talks by Manon, we decided to try our hand at
-``tropicalizing'' some of the $\SL(2,\bbC)$-character varieties that were
-presented Lawton's talk and, further, tropicalize $\PSL(2,\bbC)$-,
+\emph{tropicalizing} some of the $\SL(2,\bbC)$-character varieties that
+were presented Lawton's talk and, further, tropicalize $\PSL(2,\bbC)$-,
 $\SL(3,\bbC)$-, an $\Sp(4)$-character varieties. We broke
 out---loosely---into two groups: one concerned with the tropicalization of
 $\PSL(2,\bbC)$-character varieties and the other with visualization of the
@@ -87,11 +89,10 @@ Newton polytopes that came about from tropicalization.
 Here is a summary of the observations made by the group.
 
 \section{Tropicalization of $\frakX(F_3,\SL(2,\bbC))$}
-% The team made up of Giuseppe Maratone Corry Bedwell, Ellie Dannenberg,
-% Dmitry Gekhtman
-
-From Lawton \cite{}, we deduced that the character variety
-$\frakX(F_3,\SL(2,\bbC))$ is cut out by the polynomial in $7$ variables
+From Lawton \cite{0601132} Corollary 4 and Lemma 5, and some
+\texttt{Mathematica} Gröbner basis magic, we deduced that the coordinate
+ring of the character variety $\frakX(F_3,\SL(2,\bbC))$ is cut out by the
+polynomial in $7$ indeterminates
 \begin{equation}
   \label{eq:f3-sl2c}
   \begin{aligned}
@@ -109,19 +110,25 @@ the codimension $1$-cones of the dual fan to the Newton polytope
 $\Newt(f)$. Figure \ref{fig:f3-sl2c} is a picture made we made using the
 Ti\textit{k}Z graphics language to draw the edge graph of $\Newt(f)$
 
-\begin{figure}[h]
+\begin{figure}[htpb]
   \centering
   \includegraphics[scale=.25]{smallgraph}
   \caption{Edge graph of the Newton polytope of $\frakX(F_3,\SL(2,\bbC))$.}
 \label{fig:f3-sl2c}
 \end{figure}
 
+More information about its tropicalization was extracted using
+\texttt{gfan}. The relevant file is on the MRC website under the
+\texttt{Tropical Group Files/F\_3->SL\_2} folder with the tile
+\texttt{hypersurface\_F3->SL(2,C)\_groebnerfan.txt}.
+
 \section{Tropicalization of  $\frakX(F_2, \SL_3\bbC))$}
-The character variety $\frakX(F_2, \SL_3\bbC))$ is cut out by the huge
-polynomial in $9$ variables
-\[
+The coordinate ring of the character variety $\frakX(F_2, \SL_3\bbC))$ is
+cut out by the huge polynomial in $9$ indeterminates
+\begin{equation}
+  \label{eq:f2-sl3c}
   \begin{aligned}
-    f=9+3X_9 - 6X_1X_2
+    f=9&+3X_9 - 6X_1X_2\\
     &-6X_3X_4-6X_5X_6-6X_7X_8 + {X_9}^2- X_1X_2X_9\\
     & - X_3X_4X_9 - X_5X_6X_9\ - X_7X_8X_9+{X_1}^3\\
     &+ {X_3}^3 + {X_5}^3 + {X_7}^3 + {X_2}^3 \\
@@ -147,11 +154,10 @@ polynomial in $9$ variables
     & - X_1X_2X_3X_5X_8- X_1X_2X_4X_6X_7 + {X_1}^2{X_2}^2X_3X_4 +
     X_1X_2{X_3}^2{X_4}^2
   \end{aligned}
-\]
-It's the edge graph of its Newton polytope is shown in Figure
-\ref{fig:f3-sl3c}.
+\end{equation}
+The edge graph of its Newton polytope is shown in Figure \ref{fig:f3-sl3c}.
 
-\begin{figure}[h]
+\begin{figure}[htpb]
   \centering
   \includegraphics[scale=.55]{biggraph}
   \caption{Edge graph of the Newton polytope of
@@ -159,13 +165,25 @@ It's the edge graph of its Newton polytope is shown in Figure
 \label{fig:f3-sl3c}
 \end{figure}
 
+More information about the tropicalization of was extracted using
+\texttt{gfan}. The file containing this information (is huge) can be found
+on the MRC website under the \texttt{Tropical Group Files/F\_2->SL\_3}
+folder with title \texttt{F\_2SL\_3TropicalVariety}. \textbf{Warning} the
+file is huge.
+
 \section{Tropicalization of $\PSL(2,\bbC)$-character varieties}
-Let $F_3=\langle A,B,C\rangle$; that is, the free group on $3$ letters. We
-claim that
-$\bbC[\frakX(F_3,\PSL_2\bbC)]=\bbC[\frakX(F_3,\SL(2,\bbC))]
-^{\bbZ/2\bbZ\times\bbZ/2\bbZ\times\bbZ/2\bbZ}$ is generated the following
-family of trace polynomials
-\begin{itemize}[label=$\star$]
+In addition to tropicalizing plain $\SL(2,\bbC)$- and
+$\SL(3,\bbC)$-character varieties, we decided to look at $\PSL(2,\bbC)$-
+and $\Sp(4)$-character varieties.
+
+Let $F_3$ be the free group on $3$ generators $A,B,C$. Then, we claim that
+the coordinate ring of $\frakX(F_3,\PSL(2,\bbC))$
+\[
+  \bbC[\frakX(F_3,\PSL(2,\bbC)]=\bbC[\frakX(F_3,\SL(2,\bbC))]^{\bbZ/2\bbZ\times\bbZ/2\bbZ\times\bbZ/2\bbZ}
+\]
+is cut out the following family of trace-polynomials---which we shall group
+according to similarity:
+\begin{itemize}
 \item Type $\chi$:
   \begin{align*}
     \chi_A&=(\tr A)^2&\chi_B&=(\tr B)^2&\chi_C&=(\tr C)^2\\
@@ -196,13 +214,13 @@ family of trace polynomials
     \Theta_C&=\tr C\tr AB\tr ABC
   \end{align*}
 \end{itemize}
-\subsection{Relations}
-Explicit example:
-\[
-\Sigma ^2=(\tr AB\tr AC\tr BC)^2=\chi_{AB}\chi_{AC}\chi_{BC}
-\]
 
-\subsection{(Binomial) Relations}
+With some further algebraic manipulations, we observe the following
+relations among the generators
+\[
+  \Sigma ^2=(\tr AB\tr AC\tr BC)^2=\chi_{AB}\chi_{AC}\chi_{BC}
+\]
+and some binomial relations
 \begin{align*}
   \tau_{AB}^2&=\chi_A\chi_B\chi_{AB} &\tau_{AC}^2&=\chi_A\chi_C\chi_{AC}\\
   \tau_{BC}^2&=\chi_B\chi_C\chi_{BC}\\\\
@@ -213,8 +231,7 @@ Explicit example:
   \Theta_C^2&=\chi_C\chi_{AB}\chi_{ABC}\\\\
   \Sigma ^2&=\chi_{AB}\chi_{AC}\chi_{BC}&\Delta^2&=\chi_A\chi_B\chi_C\chi_{ABC}.
 \end{align*}
-and finally the relation coming from $\frakX(F_3,\SL(2,\bbC))$ can be written
-as
+and finally the relation coming from $\frakX(F_3,\SL(2,\bbC))$
 \begin{align*}
   \chi_A+\chi_B+\chi_C+\chi_{AB}+\chi_{AC}
   &=\tau_{AB}+\tau_{AC}+\tau_{BC}\\
@@ -222,6 +239,66 @@ as
   &\phantom{{}={}}+\Theta_A+\Theta_B+\Theta_C+4.
 \end{align*}
 
+On the last day of the MRC we further managed to tropicalize
+$\frakX(F_2,\Sp(4))$. The Gröbner basis and other tropicalization
+information we obtained from \texttt{gfan} can be found on the MRC website
+under the \texttt{Tropical Group Files/F\_2->SP\_4}.
+
+\section{Visualization of character varieties of knot complements}
+Although \texttt{gfan} can make excellent polyhedral representation of the
+Gröbner fans we obtained from the tropicalization of our character
+varieties, the documentation is very sparse and so we tried our hand at
+making these polyhedral representations from scratch using
+\texttt{Mathematica} which, surprisingly enough, does not yet have great
+support for tropical geometry.
+
+We attempted to create the Newton polytopes of several knot groups whose
+$A$-polynomials we obtained from a paper by Eric Chesebro \emph{Formulas
+  for Character Varieties of $2$-Bridge Knots} which can be found on the
+University of Montana's Department of Mathematical Sciences, Technical
+reports page under the Research tab. Here is a link to the document in
+question
+\url{http://hs.umt.edu/math/research/technical-reports/documents/2012/KnotFormulas.pdf}.
+
+With the help of \texttt{Mathematica}, we made the following subdivision of
+the Newton polytopes of these character varieties.
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[scale=0.5]{newtonsub_apoly_fig8}
+  \caption{Subdivided Newton polytope for the $A$-polynomial of the
+    figure-$8$ knot.}
+  \end{figure}
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[scale=0.45]{newtonsub_apoly_twist4}
+  \caption{Subdivided Newton polytope for the $A$-polynomial the
+    $4$-twisted knot.}
+\end{figure}
+
+Some more pictures for Newton polytopes of two $2$-bridge knots
+corresponding to $\varphi(1)$ and $\varphi(2)$ of Chesebro's equation are
+shown in Figures \ref{fig:phi1} and \ref{fig:phi2}.
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[scale=0.5]{newtonsub_phi1}
+  \caption{Subdivided Newton polytope for the $A$-polynomial of the
+    $\varphi(1)$ $2$-bridge knot.}
+  \label{fig:phi1}
+\end{figure}
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[scale=0.5]{newtonsub_phi2}
+  \caption{Subdivided Newton polytope for the $A$-polynomial of the
+    $\varphi(1)$ $2$-bridge knot.}
+  \label{fig:phi2}
+\end{figure}
+
+The dual of these images is really what we are after and, although we may
+be on hiatus for the moment, we plan to finish writing the code that does
+this.
+
+\newpage
 \bibliographystyle{acm}
 \bibliography{trop-charvar}
 \end{document}

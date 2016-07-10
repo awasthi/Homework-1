@@ -1,5 +1,48 @@
-[1] Config.pm:327> INFO - This is Biber 2.2
-[2] Config.pm:330> INFO - Logfile is 'Trop_Summary.blg'
-[66] biber:286> INFO - === dom jul 10, 2016, 13:11:09
-[136] Utils.pm:163> ERROR - Cannot find control file 'Trop_Summary.bcf'! - did you pass the "backend=biber" option to BibLaTeX?
-[136] Biber.pm:111> INFO - ERRORS: 1
+This is BibTeX, Version 0.99d (TeX Live 2015/Arch Linux)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Trop_Summary.aux
+The style file: acm.bst
+Database file #1: trop-charvar.bib
+Warning--empty journal in 0601132
+You've used 2 entries,
+            2253 wiz_defined-function locations,
+            536 strings with 4195 characters,
+and the built_in function-call counts, 408 in all, are:
+= -- 36
+> -- 14
+< -- 0
++ -- 6
+- -- 4
+* -- 17
+:= -- 77
+add.period$ -- 5
+call.type$ -- 2
+change.case$ -- 8
+chr.to.int$ -- 0
+cite$ -- 3
+duplicate$ -- 16
+empty$ -- 37
+format.name$ -- 4
+if$ -- 81
+int.to.chr$ -- 0
+int.to.str$ -- 2
+missing$ -- 1
+newline$ -- 12
+num.names$ -- 4
+pop$ -- 12
+preamble$ -- 1
+purify$ -- 6
+quote$ -- 0
+skip$ -- 13
+stack$ -- 0
+substring$ -- 10
+swap$ -- 3
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 8
+warning$ -- 1
+while$ -- 4
+width$ -- 3
+write$ -- 18
+(There was 1 warning)
