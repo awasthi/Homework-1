@@ -1,5 +1,97 @@
 \subsection{Bañuelos: Winter 2013}
 \setcounter{exercise}{0}
+\begin{problem}
+  \hfill
+  \begin{enumerate}[label=(\alph*)]
+  \item \hfill
+    \begin{enumerate}[label=(\roman*),noitemsep]
+    \item Define almost uniform convergence on the measure space
+      $(X,\calF,\mu)$.
+    \item Let $f_n$ be a sequence of nonnegative measurable functions
+      converging almost uniformly to the nonnegative function $f$. Prove
+      that $\sqrt{f_n}$ converges almost uniformly to $\sqrt{f}$.
+    \end{enumerate}
+  \item \hfill
+    \begin{enumerate}[label=(\roman*),noitemsep]
+    \item Suppose $f_n$ has the property that $\int_X |f_n|\diff\mu\to 0$.
+    \item Does it follow that $f_n\to 0$ almost everywhere? Justify your
+      answer.
+    \item Does it follow that $f_n\to 0$ almost uniformly? Justify your
+      answer.
+    \end{enumerate}
+  \end{enumerate}
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}
+  Let $(X,\calF,\mu)$ be a measure space and let $1\leq p\leq\infty$ and
+  $q$ be its conjugate exponent. Suppose $f_n\to f$ in $L^p$ and $g_n\to g$
+  in $L^q$. Prove that $f_ng_n\to fg$ in $L^1$.
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}
+  Let $\{a_k\}$ be a sequence of positive numbers converging to
+  infinity. Prove that the following limit exists
+  \[
+    \lim_{k\to\infty}\int_0^\infty\frac{\exp(-x)\cos
+      x}{a_kx^2+(1/a_k)}\diff x
+  \]
+  and find it. Make sure to justify all steps.
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}
+  Let $(X,\calF,\mu)$ be $\sigma$-finite and $f$ be measurable such that
+  for all $\lambda>0$
+  \[
+    \mu\left( \left\{ \,x\in X:|f(x)|>\lambda\, \right\} \right)\leq%
+    \frac{20}{\lambda^p}
+  \]
+  where $1<p<\infty$. Let $q$ be the conjugate exponent of $p$. Prove that
+  there is a constant $C$ depending only on $p$ such that
+  \[
+    \int_E |f(x)|\diff\mu\leq Cm(E)^{1/q},
+  \]
+  for all measurable sets $E$ with $0<\mu(E)<\infty$. (The inequality holds
+  trivially when $\mu(E)=0$ or $\mu(E)=\infty$.)
+
+  [\emph{Hint}: Recall $\int_E |f(x)|\diff\mu=\int_0^\infty?\diff\lambda$
+  and ``break it'' at the right place!]
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}
+  Suppose $f\colon[0,1]\to\bbR$ is of bounded variation with
+  $V(f;0,1)=\alpha$. For any $\beta>\alpha$, set
+  \[
+    A=\left\{\,x\in(0,1):\limsup_{h\to 0}\frac{|f(x+h)-f(x)|}{|h|}>\beta\,\right\}.
+  \]
+  Prove that for any $0<p<1$,  $m(A)\leq (\alpha/\beta)^p$, where $m$
+  denotes the Lebesgue measure.
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}
+  Let $f\in L^1(0,1)$ and for $x\in(0,1)$, define
+  \[
+    h(x)=\int_x^1\frac{f(t)}{t}\diff t.
+  \]
+  \begin{enumerate}[label=(\roman*),noitemsep]
+  \item Prove that $h$ is continuous on $(0,1)$.
+  \item Show that
+    \[
+      \int_0^1 h(t)\diff t=\int_0^1 f(t)\diff t.
+    \]
+  \end{enumerate}
+\end{problem}
+\begin{solution}
+\end{solution}
 
 %%% Local Variables:
 %%% mode: latex
