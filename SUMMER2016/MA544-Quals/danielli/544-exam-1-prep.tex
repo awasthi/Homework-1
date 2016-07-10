@@ -3,346 +3,343 @@
 
 \subsubsection{Exam 1 Practice}
 \begin{problem}
-Let $E\subseteq\bbR^n$ be a measurable set, $r\in\bbR$ and define the set
-$rE=\left\{\,r\bfx:\bfx\in E\,\right\}$. Prove that $rE$ is
-measurable, and that $|rE|=|r|^n|E|$.
+  Let $E\subset\bbR^n$ be a measurable set, $r\in\bbR$ and define the set
+  $rE=\left\{\,r\bfx:\bfx\in E\,\right\}$. Prove that $rE$ is measurable,
+  and that $|rE|=|r|^n|E|$.
 \end{problem}
-\begin{proof}
-Define a map $T\colon\bbR^n\to\bbR^n$ by $T\bfx= r\bfx$. Note
-that $T$ is
-\href{https://en.wikipedia.org/wiki/Lipschitz_continuity}{\emph{Lipschitz
-    continuous}} since for any $\bfx,\bfy\in\bbR^n$, the equality
-\begin{equation}
-\label{eq:prep:1:1}
-|T\bfx-T\bfy|=|r\bfx-r\bfy|=|r||\bfx-\bfy|
-\end{equation}
-is satisfied. By Theorem 3.33 from \cite[Ch.\@ 3, p.\@55]{wheeden-zygmund},
-the image of $E$ under $T$ is measurable. Moreover, by Theorem 3.35
-\cite[Ch.\@ 3, p.\@ 56]{wheeden-zygmund}, since $T$ is linear, it follows
-that $|T(E)|=|{\det T}||E|$ where $\det T=|r|^n$. Lastly, we note that the
-image of $E$ under $T$ is precisely the set $rE$ so that
-$|T(E)|=|rE|=|r|^n|E|$, as was to be shown.
-\end{proof}
+\begin{solution}
+  Define a map $T\colon\bbR^n\to\bbR^n$ by $T\bfx= r\bfx$. Note that $T$ is
+  \href{https://en.wikipedia.org/wiki/Lipschitz_continuity}{\emph{Lipschitz
+      continuous}} since for any $\bfx,\bfy\in\bbR^n$, the equality
+  \begin{equation}
+    \label{eq:prep:1:1}
+    |T\bfx-T\bfy|=|r\bfx-r\bfy|=|r||\bfx-\bfy|
+  \end{equation}
+  is satisfied. By Theorem 3.33 from \cite[Ch.\@ 3,
+  p.\@55]{wheeden-zygmund}, the image of $E$ under $T$ is
+  measurable. Moreover, by Theorem 3.35 \cite[Ch.\@ 3, p.\@
+  56]{wheeden-zygmund}, since $T$ is linear, it follows that
+  $|T(E)|=|{\det T}||E|$ where $\det T=|r|^n$. Lastly, we note that the
+  image of $E$ under $T$ is precisely the set $rE$ so that
+  $|T(E)|=|rE|=|r|^n|E|$, as was to be shown.
+\end{solution}
 
 \begin{problem}
-Let $\left\{ E_k \right\}$, $k\in\bfN$ be a collection of measurable
-sets. Define the set
-\[
-\liminf_{k\to\infty} E_k
-=\bigcup_{k=1}^\infty\left(\bigcap_{n=k}^\infty E_n\right).
-\]
-Show that
-\[
-\left|\liminf_{k\to\infty} E_k\right|\leq\liminf_{k\to\infty}\left|E_k\right|.
-\]
+  Let $\left\{ E_k \right\}$, $k\in\bfN$ be a collection of measurable
+  sets. Define the set
+  \[
+    \liminf_{k\to\infty} E_k
+    =\bigcup_{k=1}^\infty\left(\bigcap_{n=k}^\infty E_n\right).
+  \]
+  Show that
+  \[
+    \left|\liminf_{k\to\infty}
+      E_k\right|\leq\liminf_{k\to\infty}\left|E_k\right|.
+  \]
 \end{problem}
-\begin{proof}
-Following the style of \cite[Ch.\@ 1, p.\@ 2]{wheeden-zygmund},
-particularly, the sets defined after the introduction of equation (1.1),
-set
-\begin{equation}
-\label{eq:prep:1:2}
-V_k=\bigcap_{\ell=k}^\infty E_\ell.
-\end{equation}
-Note that the collection of sets $\{V_k\}$ forms an increasing
-sequence, that is, if $\bfx\in V_k$ then, by \eqref{eq:prep:1:2}, $\bfx$ is
-in the intersection $E_k\cap\bigl(\bigcap_{\ell=k+1}E_\ell\bigr)$, but, by
-\eqref{eq:prep:1:2}, $\bigcap_{\ell=k+1}E_\ell=V_{k+1}$ thus, $\bfx$
-is in $V_{k+1}$ so $V_{k+1}\supseteq V_k$. Hence, we have $V_k\nearrow\liminf
-E_k$.
+\begin{solution}
+  Following the style of \cite[Ch.\@ 1, p.\@ 2]{wheeden-zygmund},
+  particularly, the sets defined after the introduction of equation (1.1),
+  set
+  \begin{equation}
+    \label{eq:prep:1:2}
+    V_k=\bigcap_{\ell=k}^\infty E_\ell.
+  \end{equation}
+  Note that the collection of sets $\{V_k\}$ forms an increasing sequence,
+  that is, if $\bfx\in V_k$ then, by \eqref{eq:prep:1:2}, $\bfx$ is in the
+  intersection $E_k\cap\bigl(\bigcap_{\ell=k+1}E_\ell\bigr)$, but, by
+  \eqref{eq:prep:1:2}, $\bigcap_{\ell=k+1}E_\ell=V_{k+1}$ thus, $\bfx$ is
+  in $V_{k+1}$ so $V_{k+1}\supset V_k$. Hence, we have
+  $V_k\nearrow\liminf E_k$.
 
-Now, consider the sequence $\{|V_k|\}$ formed by the Lebesgue measure of
-the $V_k$. By Theorem 3.26 from \cite[Ch.\@ 3, p.\@
-51]{wheeden-zygmund}, since $V_k\nearrow\liminf E_k$,
-\begin{equation}
-  \label{eq:prep:1:3}
-\lim_{k\to\infty}|V_k|=
-\lim_{k\to\infty}\left|\bigcap_{\ell=k}^\infty E_\ell\right|=
-\left|\liminf_{k\to\infty} E_k\right|.
-\end{equation}
-But note that, by the monotonicity of the Lebesgue measure, we have
-\begin{equation}
-  \label{eq:prep:1:4}
-\left|\bigcap_{\ell=k}^\infty E_\ell\right|\leq |E_k|,
-\end{equation}
-so, by properties of the $\liminf$, in particular, by Theorem 19(v) from
-\cite[Ch.\@ 1, p.\@ 23]{royden}, we have
-\begin{equation}
-\label{eq:prep:1:5}
-\limsup_{k\to\infty}|V_k|\leq\liminf_{k\to\infty}|E_k|.
-\end{equation}
-Hence, by \eqref{eq:prep:1:3} and Proposition 19 (iv), since the sequence
-$\{|V_k|\}$ converges and is equal to the measure of $\liminf E_k$, by
-\eqref{eq:prep:1:5}, we have
-\begin{equation}
-\label{eq:prep:1:6}
-\left|\liminf_{k\to\infty} E_k\right|\leq\liminf_{k\to\infty}|E_k|
-\end{equation}
-as was to be shown.
-\end{proof}
+  Now, consider the sequence $\{|V_k|\}$ formed by the Lebesgue measure of
+  the $V_k$. By Theorem 3.26 from \cite[Ch.\@ 3, p.\@ 51]{wheeden-zygmund},
+  since $V_k\nearrow\liminf E_k$,
+  \begin{equation}
+    \label{eq:prep:1:3}
+    \lim_{k\to\infty}|V_k|=
+    \lim_{k\to\infty}\left|\bigcap_{\ell=k}^\infty E_\ell\right|=
+    \left|\liminf_{k\to\infty} E_k\right|.
+  \end{equation}
+  But note that, by the monotonicity of the Lebesgue measure, we have
+  \begin{equation}
+    \label{eq:prep:1:4}
+    \left|\bigcap_{\ell=k}^\infty E_\ell\right|\leq |E_k|,
+  \end{equation}
+  so, by properties of the $\liminf$, in particular, by Theorem 19(v) from
+  \cite[Ch.\@ 1, p.\@ 23]{royden}, we have
+  \begin{equation}
+    \label{eq:prep:1:5}
+    \limsup_{k\to\infty}|V_k|\leq\liminf_{k\to\infty}|E_k|.
+  \end{equation}
+  Hence, by \eqref{eq:prep:1:3} and Proposition 19 (iv), since the sequence
+  $\{|V_k|\}$ converges and is equal to the measure of $\liminf E_k$, by
+  \eqref{eq:prep:1:5}, we have
+  \begin{equation}
+    \label{eq:prep:1:6}
+    \left|\liminf_{k\to\infty} E_k\right|\leq\liminf_{k\to\infty}|E_k|
+  \end{equation}
+  as was to be shown.
+\end{solution}
 
 \begin{problem}
-Consider the function
-\[
-F(x)=
-\begin{cases}
-|B(\mathbf{0},x)|&x>0\\
-0&x=0
-\end{cases}.
-\]
-Here
-$B(\mathbf{0},r)=\left\{\,\bfy\in\bbR^n:|\bfy|<r\,\right\}$. Prove
-that $F$ is monotonic increasing and continuous.
+  Consider the function
+  \[
+    F(x)=
+    \begin{cases}
+      |B(\mathbf{0},x)|&x>0\\
+      0&x=0
+    \end{cases}.
+  \]
+  Here $B(\mathbf{0},r)=\left\{\,\bfy\in\bbR^n:|\bfy|<r\,\right\}$. Prove
+  that $F$ is monotonic increasing and continuous.
 \end{problem}
-\begin{proof}
-Define the linear map $T\colon[0,\infty)\times\bbR^n\to\bbR^n$ by
-$T(r)\bfx= r\bfx$. We claim that
-$B(\mathbf{0},r)=T(r,B(\mathbf{0},1))$. To reduce notation, set
-$B_1= B(\mathbf{0},1)$ and $B_r= B(\mathbf{0},r)$.
-\begin{proof}[Proof of claim]
-\renewcommand{\qedsymbol}{$\clubsuit$}
-$\subseteq$: Let $\bfx\in B_r$. Then $|\bfx|<r$ so $|\bfx|/r<1$. Thus,
-$|\bfx|/r\in B_1$ so it is in the image of $B_1$ under the map
-$T(r,\cdot)$.
+\begin{solution}
+  Define the linear map $T\colon[0,\infty)\times\bbR^n\to\bbR^n$ by
+  $T(r)\bfx= r\bfx$. We claim that
+  $B(\mathbf{0},r)=T(r,B(\mathbf{0},1))$. To reduce notation, set
+  $B_1= B(\mathbf{0},1)$ and $B_r= B(\mathbf{0},r)$.
+  \begin{solution}[Proof of claim]
+    \renewcommand{\qedsymbol}{$\clubsuit$} $\subset$: Let $\bfx\in
+    B_r$. Then $|\bfx|<r$ so $|\bfx|/r<1$. Thus, $|\bfx|/r\in B_1$ so it is
+    in the image of $B_1$ under the map $T(r,\cdot)$.
 
-$\supseteq$: On the other hand, suppose $\bfx\in T(r,B_1)$. Then
-$\bfx=r\bfy$ for some $\bfy\in B_1$. Then, since $|\bfy|<1$,
-$|\bfx|=r|\bfy|<r$ so $\bfx\in B_r$.
-\end{proof}
+    $\supset$: On the other hand, suppose $\bfx\in T(r,B_1)$. Then
+    $\bfx=r\bfy$ for some $\bfy\in B_1$. Then, since $|\bfy|<1$,
+    $|\bfx|=r|\bfy|<r$ so $\bfx\in B_r$.
+  \end{solution}
 
-From the claim, we see that $F(x)=|T(x,B(\mathbf{0},1))|$ which, by Problem
-1, is nothing more that the polynomial $|B_1|x^n$. It is clear,
-from this equivalence, that $F$ is monotonically increasing: Take
-$x,y\in[0,\infty)$ such that $x<y$, then $x^n<y^n$ so
-\begin{equation}
-\label{eq:prep:1:7}
-F(x)=|B_1|x^n<|B_1|y^n=F(y).
-\end{equation}
-Thus, $F$ is monotonically increasing.
+  From the claim, we see that $F(x)=|T(x,B(\mathbf{0},1))|$ which, by
+  Problem 1, is nothing more that the polynomial $|B_1|x^n$. It is clear,
+  from this equivalence, that $F$ is monotonically increasing: Take
+  $x,y\in[0,\infty)$ such that $x<y$, then $x^n<y^n$ so
+  \begin{equation}
+    \label{eq:prep:1:7}
+    F(x)=|B_1|x^n<|B_1|y^n=F(y).
+  \end{equation}
+  Thus, $F$ is monotonically increasing.
 
-In the argument above, since $F(x)=|B_1|x^n$ is a polynomial in
-$[0,\infty)$ (and polynomials are continuous on $\bbR$) $F$ is continuous
-on $[0,\infty)$.
-\end{proof}
+  In the argument above, since $F(x)=|B_1|x^n$ is a polynomial in
+  $[0,\infty)$ (and polynomials are continuous on $\bbR$) $F$ is continuous
+  on $[0,\infty)$.
+\end{solution}
 
 \begin{problem}
-Let $f\colon\bbR\to\bbR$ be a function. Let $C$ be the set of all points
-at which $f$ is continuous. Show that $C$ is a set of type $G_\delta$.
+  Let $f\colon\bbR\to\bbR$ be a function. Let $C$ be the set of all points
+  at which $f$ is continuous. Show that $C$ is a set of type $G_\delta$.
 \end{problem}
-\begin{proof}
-(Without much motivation) let us consider the collection of sets $\{E_k\}$
-defined by
-\begin{equation}
-\label{eq:prep:1:8}
-E_k=\left\{\,x\in\bbR:
-\text{there exists $\delta>0$ such that $y,z\in B(x,\delta)$ implies $\left|f(y)-f(z)\right|<\frac{1}{k}$}\,\right\}.
-\end{equation}
-We claim that $C=\bigcap_{k=1}^\infty E_k$ and that each $E_k$ is open.
-\begin{proof}[Proof of claim]
-\renewcommand{\qedsymbol}{$\clubsuit$}
-First, we demonstrate equality. $\subseteq$: Suppose $x\in C$. Then, by the
-definition of continuity, for every $\varepsilon>0$, there exists a
-$\delta>0$ such that $y\in B(x,\delta)$ implies $|f(x)-f(y)|<\delta$. In
-particular, for every $k$, there exists $\delta>0$ such that for $y\in
-B(x,\delta)$ the inequality $|f(x)-f(y)|<1/k$ holds. Thus, $x$ is in
-$\bigcap_{k=1}^\infty E_k$.
+\begin{solution}
+  (Without much motivation) let us consider the collection of sets
+  $\{E_k\}$ defined by
+  \begin{equation}
+    \label{eq:prep:1:8}
+    E_k=\left\{\,x\in\bbR:
+      \text{there exists $\delta>0$ such that $y,z\in B(x,\delta)$ implies $\left|f(y)-f(z)\right|<\frac{1}{k}$}\,\right\}.
+  \end{equation}
+  We claim that $C=\bigcap_{k=1}^\infty E_k$ and that each $E_k$ is open.
+  \begin{solution}[Proof of claim]
+    \renewcommand{\qedsymbol}{$\clubsuit$} First, we demonstrate
+    equality. $\subset$: Suppose $x\in C$. Then, by the definition of
+    continuity, for every $\varepsilon>0$, there exists a $\delta>0$ such
+    that $y\in B(x,\delta)$ implies $|f(x)-f(y)|<\delta$. In particular,
+    for every $k$, there exists $\delta>0$ such that for $y\in B(x,\delta)$
+    the inequality $|f(x)-f(y)|<1/k$ holds. Thus, $x$ is in
+    $\bigcap_{k=1}^\infty E_k$.
 
-$\supseteq$: On the other hand, suppose that $x\in\bigcap_{k=1}^\infty
-E_k$. Then, given $\varepsilon>0$, by the Archimedean property, there
-exists a positive integer $N$ such that $1/N<\varepsilon$. Then, since
-$x\in\bigcap_{k=1}^\infty E_k$, $x\in E_N$ so
-\begin{equation}
-  \label{eq:prep:1:9}
-|f(x)-f(y)|<\frac{1}{N}<\varepsilon.
-\end{equation}
-Thus, $x$ is in $C$ and $C=\bigcap_{k=1}^\infty E_k$.
+    $\supset$: On the other hand, suppose that
+    $x\in\bigcap_{k=1}^\infty E_k$. Then, given $\varepsilon>0$, by the
+    Archimedean property, there exists a positive integer $N$ such that
+    $1/N<\varepsilon$. Then, since $x\in\bigcap_{k=1}^\infty E_k$,
+    $x\in E_N$ so
+    \begin{equation}
+      \label{eq:prep:1:9}
+      |f(x)-f(y)|<\frac{1}{N}<\varepsilon.
+    \end{equation}
+    Thus, $x$ is in $C$ and $C=\bigcap_{k=1}^\infty E_k$.
 
-All that remains to be shown is that the $E_k$ are open. But this is clear
-by the way we defined $E_k$ in \eqref{eq:prep:1:8}: Let $x\in E_k$, then
-there exists $\delta>0$ such that for any $y,z\in B(x,\delta)$,
-$|f(y)-f(z)|<1/k$; Let $x'\in B(x,\delta)$ and set
-$\delta'=\min\{|(x+\delta)-x'|,|(x-\delta)-x|\}$. Then, since
-$B(x',\delta')\subseteq B(x,\delta)$, for every $y,z\in B(x',\delta')$, we
-have $|f(y)-f(z)|<1/k$. Hence, $x'\in E_k$ for any $x'\in B(x,\delta)$
-so $B(x,\delta)\subseteq E_k$.
-\end{proof}
-Since $C$ can be expressed as the countable intersection of open sets
-$E_k$, it follows that $C$ is a $G_\delta$ set.
-\end{proof}
+    All that remains to be shown is that the $E_k$ are open. But this is
+    clear by the way we defined $E_k$ in \eqref{eq:prep:1:8}: Let
+    $x\in E_k$, then there exists $\delta>0$ such that for any
+    $y,z\in B(x,\delta)$, $|f(y)-f(z)|<1/k$; Let $x'\in B(x,\delta)$ and
+    set $\delta'=\min\{|(x+\delta)-x'|,|(x-\delta)-x|\}$. Then, since
+    $B(x',\delta')\subset B(x,\delta)$, for every $y,z\in B(x',\delta')$,
+    we have $|f(y)-f(z)|<1/k$. Hence, $x'\in E_k$ for any
+    $x'\in B(x,\delta)$ so $B(x,\delta)\subset E_k$.
+  \end{solution}
+  Since $C$ can be expressed as the countable intersection of open sets
+  $E_k$, it follows that $C$ is a $G_\delta$ set.
+\end{solution}
 \begin{problem}
-Let $f\colon\bbR\to\bbR$ be a function. Is it true that if the sets
-$\left\{\,f=r\,\right\}$ are measurable for all $r\in\bbR$, then $f$ is
-measurable?
+  Let $f\colon\bbR\to\bbR$ be a function. Is it true that if the sets
+  $\left\{\,f=r\,\right\}$ are measurable for all $r\in\bbR$, then $f$ is
+  measurable?
 \end{problem}
-\begin{proof}
-If $\left\{\,f=r\,\right\}$ are measurable for all $r\in\bbR$, it is not
-necessarily the case that $f$ is measurable. Consider the following
-construction: Let $E\subseteq(0,1)$ be an unmeasurable set.\footnote{It's
-  construction does not concern us. The interested reader such direct their
-  refer to Theorem 3.38 from \cite[Ch.\@ 3, p.\@ 57-58]{wheeden-zygmund} or
-  Theorem 17 from \cite[Ch.\@ 2\S 7, p.\@ 48]{royden}.} Define a map
-$f\colon\bbR\to\bbR$ by
-\begin{equation}
-\label{eq:prep:1:11}
-f(x)=
-\begin{cases}
-x&\text{if $x\in\bbR\smallsetminus((0,1)\smallsetminus E)$},\\
-x+1&\text{if $x\in (0,1)\smallsetminus E$.}
-\end{cases}
-\end{equation}
-By the definition, it is clear that $\left\{\,f=r\,\right\}$ is measurable
-and $\left|\left\{\,f=r\,\right\}\right|=0$ since $\{\,f=r\,\}$ contains at
-most two elements. However, the set $\left\{\,0<f<1\,\right\}=E$ is not
-measurable. Thus, $f$ is not measurable.
-\end{proof}
-
-\begin{problem}
-Let $\left\{f_k\right\}_{k=1}^\infty$ be a sequence of measurable functions
-on $\bbR$. Prove that the set
-$\left\{\,x:\text{$\lim_{k\to\infty} f_k(x)$ exists}\,\right\}$
-is measurable.
-\end{problem}
-\begin{proof}
-By Theorem 4.12 from \cite[Ch.\@ 4, p.\@
-67]{wheeden-zygmund}, $\liminf_{k\to\infty}f_k$ and
-$\limsup_{k\to\infty}f_k$ are measurable. By Theorem 4.7 from \cite[Ch.\@ 4,
-p.\@ 66]{wheeden-zygmund}
-\begin{equation}
-\label{eq:prep:1:12}
-\left\{\,\liminf_{k\to\infty} f_k<\limsup_{k\to\infty} f_k\,\right\}
-\end{equation}
-is measurable. Since
-\begin{equation}
-  \label{eq:prep:1:13}
-\left\{\,\text{$\lim_{k\to\infty}f_k$ exists}\,\right\}=
-\left\{\,{\limsup_{k\to\infty}f_k=\liminf_{k\to\infty}f_k}\,\right\}=
-\bbR\smallsetminus
-\left\{\,{\liminf_{k\to\infty} f_k<\limsup_{k\to\infty} f_k}\,\right\},
-\end{equation}
-by Theorem 3.17 from \cite[Ch.\@ 3, p.\@ 48]{wheeden-zygmund},
-the set $\left\{\,\text{$\lim_{k\to\infty}f_k$ exists}\,\right\}$ is
-measurable.
-% In a fashion similar to that of Problem 4, consider the set collection of
-% sets $\{E_k\}$ given by
-% \begin{equation}
-% \label{eq:prep:1:11}
-% E_k=
-% \left\{\,
-% x\in\bbR:\text{there exists $N$ such that $m,n\geq N$ implies $\left|f_n(x)-f_m(x)\right|<\frac{1}{k}$}
-% \,\right\}.
-% \end{equation}
-% You can show that the $E_k$ are open and that
-% $\left\{\,x:\text{$\lim_{x\to\infty}f_k(x)$
-%     exists}\,\right\}=\bigcap_{k=1}^\infty E_k$. Then, since open sets are
-% measurable and, by Theorem 3.18 from \cite[Ch.\@ 3, p.\@
-% 48]{wheeden-zygmund}, the countable intersection of measurable sets is
-% measurable, $\left\{\,x:\text{$\lim_{x\to\infty}f_k(x)$ exists}\,\right\}$
-% is measuable.
-\end{proof}
-\begin{problem}
-A real valued function $f$ on an interval $[a,b]$ is said to be
-\emph{absolutely continuous} if for every $\varepsilon>0$, there exists a
-$\delta>0$ such that for every finite disjoint collection
-$\left\{(a_k,b_k)\right\}_{k=1}^N$ of open intervals in $(a,b)$ satisfying
-$\sum_{k=1}^Nb_k-a_k<\delta$, one has
-$\sum_{k=1}^N\left|f(b_k)-f(a_k)\right|<\varepsilon$. Show that an
-absolutely continuous function on $[a,b]$ is of bounded variation on
-$[a,b]$.
-\end{problem}
-\begin{proof}
-Suppose $f$ is absolutely continuous on $[a,b]$. Let $\varepsilon=
-1$. Then, there exists $\delta>0$ such that for every finite disjoint
-collection $\left\{(a_k,b_k)\right\}_{k=1}^N$ of open intervals in $(a,b)$
-satisfying $\sum_{k=1}^Nb_k-a_k<\delta$, one has
-$\sum_{k=1}^N\left|f(b_k)-f(a_k)\right|<1$. Let
-$N=\lceil(b-a)/\delta\rceil$, that is, $N$ is the smallest integer
-greater than $(b-a)/\delta$, and consider the partition $\Gamma=\{x_k\}$
-where $x_k= a+k(b-a)/N$, for $k=0,\dotsc,N$. Then
-$x_k-x_{k-1}<(b-a)/N<\delta$ so, by Theorem 2.2(i) from \cite[Ch.\@ 2, p.\@
-19]{wheeden-zygmund}, we have $V[f;x_{k-1},x_k]<1$ for $k=0,\dotsc,N$. In
-follows by Theorem 2.2(ii) that
-\begin{equation}
-\label{eq:prep:1:14}
-V[f;a,b]=\sum_{k=1}^N V[f;x_{k-1},x_k]<N.
-\end{equation}
-Thus, $f$ is b.v.\@ on $[a,b]$.
-\end{proof}
+\begin{solution}
+  If $\left\{\,f=r\,\right\}$ are measurable for all $r\in\bbR$, it is not
+  necessarily the case that $f$ is measurable. Consider the following
+  construction: Let $E\subset(0,1)$ be an unmeasurable set.\footnote{It's
+    construction does not concern us. The interested reader such direct
+    their refer to Theorem 3.38 from \cite[Ch.\@ 3, p.\@
+    57-58]{wheeden-zygmund} or Theorem 17 from \cite[Ch.\@ 2\S 7, p.\@
+    48]{royden}.} Define a map $f\colon\bbR\to\bbR$ by
+  \begin{equation}
+    \label{eq:prep:1:11}
+    f(x)=
+    \begin{cases}
+      x&\text{if $x\in\bbR\smallsetminus((0,1)\smallsetminus E)$},\\
+      x+1&\text{if $x\in (0,1)\smallsetminus E$.}
+    \end{cases}
+  \end{equation}
+  By the definition, it is clear that $\left\{\,f=r\,\right\}$ is
+  measurable and $\left|\left\{\,f=r\,\right\}\right|=0$ since
+  $\{\,f=r\,\}$ contains at most two elements. However, the set
+  $\left\{\,0<f<1\,\right\}=E$ is not measurable. Thus, $f$ is not
+  measurable.
+\end{solution}
 
 \begin{problem}
-Let $f$ be a continuous function from $[a,b]$ into $\bbR$. Let
-$\chi_{\{c\}}$ be the characteristic function of a singleton
-$\left\{c\right\}$, that is, $\chi_{\{c\}}(x)=0$ if $x\neq c$ and
-$\chi_{\{c\}}(c)=1$. Show that
-\[
-\int_a^b f d \chi_{\{c\}}=
-\begin{cases}
-0&\text{if $c\in(a,b)$,}\\
--f(a)&\text{if $c=a$,}\\
-f(b)&\text{if $c=b$.}
-\end{cases}
-\]
+  Let $\left\{f_k\right\}_{k=1}^\infty$ be a sequence of measurable
+  functions on $\bbR$. Prove that the set
+  $\left\{\,x:\text{$\lim_{k\to\infty} f_k(x)$ exists}\,\right\}$ is
+  measurable.
 \end{problem}
-\begin{proof}
-The result follows quite easily from more sophisticated measure theoretic
-arguments. At this point, however, such language has not been discussed so
-we shall prove this using nothing but the definition of the
-Riemann--Stieltjes integral and properties thereof.
+\begin{solution}
+  By Theorem 4.12 from \cite[Ch.\@ 4, p.\@ 67]{wheeden-zygmund},
+  $\liminf_{k\to\infty}f_k$ and $\limsup_{k\to\infty}f_k$ are
+  measurable. By Theorem 4.7 from \cite[Ch.\@ 4, p.\@ 66]{wheeden-zygmund}
+  \begin{equation}
+    \label{eq:prep:1:12}
+    \left\{\,\liminf_{k\to\infty} f_k<\limsup_{k\to\infty} f_k\,\right\}
+  \end{equation}
+  is measurable. Since
+  \begin{equation}
+    \label{eq:prep:1:13}
+    \left\{\,\text{$\lim_{k\to\infty}f_k$ exists}\,\right\}=
+    \left\{\,{\limsup_{k\to\infty}f_k=\liminf_{k\to\infty}f_k}\,\right\}=
+    \bbR\smallsetminus
+    \left\{\,{\liminf_{k\to\infty} f_k<\limsup_{k\to\infty} f_k}\,\right\},
+  \end{equation}
+  by Theorem 3.17 from \cite[Ch.\@ 3, p.\@ 48]{wheeden-zygmund}, the set
+  $\left\{\,\text{$\lim_{k\to\infty}f_k$ exists}\,\right\}$ is measurable.
+  % In a fashion similar to that of Problem 4, consider the set collection
+  % of sets $\{E_k\}$ given by
+  % \begin{equation}
+  %   \label{eq:prep:1:11}
+  %       %   E_k= \left\{\, x\in\bbR:\text{there exists $N$ such that $m,n\geq N$
+  %     implies $\left|f_n(x)-f_m(x)\right|<\frac{1}{k}$} \,\right\}.
+  % \end{equation}
+  % You can show that the $E_k$ are open and that
+  % $\left\{\,x:\text{$\lim_{x\to\infty}f_k(x)$
+  %   exists}\,\right\}=\bigcap_{k=1}^\infty E_k$. Then, since open sets
+  % are measurable and, by Theorem 3.18 from \cite[Ch.\@ 3, p.\@
+  % 48]{wheeden-zygmund}, the countable intersection of measurable sets is
+  % measurable, $\left\{\,x:\text{$\lim_{x\to\infty}f_k(x)$
+  %   exists}\,\right\}$ is measuable.
+\end{solution}
+\begin{problem}
+  A real valued function $f$ on an interval $[a,b]$ is said to be
+  \emph{absolutely continuous} if for every $\varepsilon>0$, there exists a
+  $\delta>0$ such that for every finite disjoint collection
+  $\left\{(a_k,b_k)\right\}_{k=1}^N$ of open intervals in $(a,b)$
+  satisfying $\sum_{k=1}^Nb_k-a_k<\delta$, one has
+  $\sum_{k=1}^N\left|f(b_k)-f(a_k)\right|<\varepsilon$. Show that an
+  absolutely continuous function on $[a,b]$ is of bounded variation on
+  $[a,b]$.
+\end{problem}
+\begin{solution}
+  Suppose $f$ is absolutely continuous on $[a,b]$. Let $\varepsilon=
+  1$. Then, there exists $\delta>0$ such that for every finite disjoint
+  collection $\left\{(a_k,b_k)\right\}_{k=1}^N$ of open intervals in
+  $(a,b)$ satisfying $\sum_{k=1}^Nb_k-a_k<\delta$, one has
+  $\sum_{k=1}^N\left|f(b_k)-f(a_k)\right|<1$. Let
+  $N=\lceil(b-a)/\delta\rceil$, that is, $N$ is the smallest integer
+  greater than $(b-a)/\delta$, and consider the partition $\Gamma=\{x_k\}$
+  where $x_k= a+k(b-a)/N$, for $k=0,\dotsc,N$. Then
+  $x_k-x_{k-1}<(b-a)/N<\delta$ so, by Theorem 2.2(i) from \cite[Ch.\@ 2,
+  p.\@ 19]{wheeden-zygmund}, we have $V[f;x_{k-1},x_k]<1$ for
+  $k=0,\dotsc,N$. In follows by Theorem 2.2(ii) that
+  \begin{equation}
+    \label{eq:prep:1:14}
+    V[f;a,b]=\sum_{k=1}^N V[f;x_{k-1},x_k]<N.
+  \end{equation}
+  Thus, $f$ is b.v.\@ on $[a,b]$.
+\end{solution}
 
-Let us consider each case $c\in(a,b)$, $c=a$, and $c=b$ separately.
+\begin{problem}
+  Let $f$ be a continuous function from $[a,b]$ into $\bbR$. Let
+  $\chi_{\{c\}}$ be the characteristic function of a singleton
+  $\left\{c\right\}$, that is, $\chi_{\{c\}}(x)=0$ if $x\neq c$ and
+  $\chi_{\{c\}}(c)=1$. Show that
+  \[
+    \int_a^b f d \chi_{\{c\}}=
+    \begin{cases}
+      0&\text{if $c\in(a,b)$,}\\
+      -f(a)&\text{if $c=a$,}\\
+      f(b)&\text{if $c=b$.}
+    \end{cases}
+  \]
+\end{problem}
+\begin{solution}
+  The result follows quite easily from more sophisticated measure theoretic
+  arguments. At this point, however, such language has not been discussed
+  so we shall prove this using nothing but the definition of the
+  Riemann--Stieltjes integral and properties thereof.
 
-Recall that the given a partition $\Gamma=\{x_0,\dotsc,x_m\}$ of $[a,b]$,
-the Riemann--Stieltjes sum of $f$ with respect to $\varphi$ is
-\begin{equation}
-  \label{eq:prep:1:15}
-R_\Gamma=\sum_{k=1}^mf(\xi_k)[\varphi(x_k)-\varphi(x_{k-1})].
-\end{equation}
-The Riemann--Stieltjes integral is defined as the limit
-\begin{equation}
-\label{eq:prep:1:16}
-\int_a^b f\diff\varphi=\lim_{|\Gamma|\to 0} R_\Gamma
-\end{equation}
-if it exists.
+  Let us consider each case $c\in(a,b)$, $c=a$, and $c=b$ separately.
 
-Suppose $c\in(a,b)$. Then, for any partition $\Gamma$ of $[a,b]$, either
-$c\in\Gamma$ or $c\notin\Gamma$. In the latter case, $R_\Gamma=0$. In the
-former case $c$ is one of the $x_k$, say $c=x_\ell$ for $0<\ell<m$. Then
-\begin{equation}
-\label{eq:prep:1:17}
-\begin{aligned}
-R_\Gamma&=\sum_{k=1}^mf(\xi_k)[\chi_{\{c\}}(x_k)-\chi_{\{c\}}(x_{k-1})]\\
-&=0+\dotsb+0+f(\xi_{\ell-1})-f(\xi_\ell)+0+\dotsb+0\\
-&=f(\xi_{\ell-1})-f(\xi_\ell).
-\end{aligned}
-\end{equation}
-Since $f$ is continuous, given $\varepsilon>0$ there exists $\delta>0$ such
-that $|\xi_\ell-\xi_{\ell-1}|<\delta$ implies
-$|f(\xi_{\ell})-f(\xi_{\ell-1})|<\varepsilon$. It follows that the quantity
-in \eqref{eq:prep:1:17} approaches $0$ as $|\Gamma|$ approaches
-$0$. Therefore, $\int_a^b f\diff\chi_{\{c\}}=0$.
+  Recall that the given a partition $\Gamma=\{x_0,\dotsc,x_m\}$ of $[a,b]$,
+  the Riemann--Stieltjes sum of $f$ with respect to $\varphi$ is
+  \begin{equation}
+    \label{eq:prep:1:15}
+    R_\Gamma=\sum_{k=1}^mf(\xi_k)[\varphi(x_k)-\varphi(x_{k-1})].
+  \end{equation}
+  The Riemann--Stieltjes integral is defined as the limit
+  \begin{equation}
+    \label{eq:prep:1:16}
+    \int_a^b f\diff\varphi=\lim_{|\Gamma|\to 0} R_\Gamma
+  \end{equation}
+  if it exists.
 
-Suppose $c=a$. Then, since any partition $\Gamma$ of $[a,b]$ must contain
-the point $a$, we have
-\begin{equation}
-\label{eq:prep:1:18}
-\begin{aligned}
-R_\Gamma
-&=\sum_{k=1}^mf(\chi_k)[\chi_{\{c\}}(x_k)-\chi_{\{c\}}(x_{k-1})]\\
-&
-\begin{aligned}
-=f(\xi_1)[\chi_{\{c\}}(x_1)-\chi_{\{c\}}(x_0)]&
-+f(\xi_2)[\chi_{\{c\}}(x_2)-\chi_{\{c\}}(x_1)]\\
-&+\dotsb+f(\xi_m)[\chi_{\{c\}}(x_m)-\chi_{\{c\}}(x_{m-1})]
-\end{aligned}\\
-&=-f(\xi_1)+0+\dotsb+0\\
-&=-f(\xi_1)
-\end{aligned}
-\end{equation}
-Taking the limit as $|\Gamma|\to 0$, $\xi_1\to a$ so, by continuity of $f$,
-$f(\xi_1)\to f(a)$. Thus, $\int_a^b f\diff\chi_{\{c\}}=-f(a)$.
+  Suppose $c\in(a,b)$. Then, for any partition $\Gamma$ of $[a,b]$, either
+  $c\in\Gamma$ or $c\notin\Gamma$. In the latter case, $R_\Gamma=0$. In the
+  former case $c$ is one of the $x_k$, say $c=x_\ell$ for $0<\ell<m$. Then
+  \begin{equation}
+    \label{eq:prep:1:17}
+    \begin{aligned}
+      R_\Gamma&=\sum_{k=1}^mf(\xi_k)[\chi_{\{c\}}(x_k)-\chi_{\{c\}}(x_{k-1})]\\
+      &=0+\dotsb+0+f(\xi_{\ell-1})-f(\xi_\ell)+0+\dotsb+0\\
+      &=f(\xi_{\ell-1})-f(\xi_\ell).
+    \end{aligned}
+  \end{equation}
+  Since $f$ is continuous, given $\varepsilon>0$ there exists $\delta>0$
+  such that $|\xi_\ell-\xi_{\ell-1}|<\delta$ implies
+  $|f(\xi_{\ell})-f(\xi_{\ell-1})|<\varepsilon$. It follows that the
+  quantity in \eqref{eq:prep:1:17} approaches $0$ as $|\Gamma|$ approaches
+  $0$. Therefore, $\int_a^b f\diff\chi_{\{c\}}=0$.
 
-A similar argument to the one above shows that, if $c=b$, the
-Riemann--Stieltjes integral $\int_a^bf\diff\chi_{\{c\}}=f(b)$.
-\end{proof}
+  Suppose $c=a$. Then, since any partition $\Gamma$ of $[a,b]$ must contain
+  the point $a$, we have
+  \begin{equation}
+    \label{eq:prep:1:18}
+    \begin{aligned}
+      R_\Gamma
+      &=\sum_{k=1}^mf(\chi_k)[\chi_{\{c\}}(x_k)-\chi_{\{c\}}(x_{k-1})]\\
+      &
+      \begin{aligned}
+        =f(\xi_1)[\chi_{\{c\}}(x_1)-\chi_{\{c\}}(x_0)]&
+        +f(\xi_2)[\chi_{\{c\}}(x_2)-\chi_{\{c\}}(x_1)]\\
+        &+\dotsb+f(\xi_m)[\chi_{\{c\}}(x_m)-\chi_{\{c\}}(x_{m-1})]
+      \end{aligned}\\
+      &=-f(\xi_1)+0+\dotsb+0\\
+      &=-f(\xi_1)
+    \end{aligned}
+  \end{equation}
+  Taking the limit as $|\Gamma|\to 0$, $\xi_1\to a$ so, by continuity of
+  $f$, $f(\xi_1)\to f(a)$. Thus, $\int_a^b f\diff\chi_{\{c\}}=-f(a)$.
+
+  A similar argument to the one above shows that, if $c=b$, the
+  Riemann--Stieltjes integral $\int_a^bf\diff\chi_{\{c\}}=f(b)$.
+\end{solution}
 
 %%% Local Variables:
 %%% mode: latex
