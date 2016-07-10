@@ -1,27 +1,27 @@
-\begin{thebibliography}{Hun03}
+\begin{thebibliography}{1}
 
-\bibitem[DF04]{dummit-foote}
-D.S.\@ Dummit and R.M.\@ Foote.
+\bibitem{dummit-foote}
+{\sc Dummit, D., and Foote, R.}
 \newblock {\em Abstract Algebra}.
 \newblock Wiley, 2004.
 
-\bibitem[Her75]{herstein}
-I.N.\@ Herstein.
+\bibitem{herstein}
+{\sc Herstein, I.}
 \newblock {\em Topics in algebra}.
 \newblock Xerox College Pub., 1975.
 
-\bibitem[Hun03]{hungerford}
-T.W.\@ Hungerford.
+\bibitem{hungerford}
+{\sc Hungerford, T.}
 \newblock {\em Algebra}.
 \newblock Graduate Texts in Mathematics. Springer New York, 2003.
 
-\bibitem[Mil13]{milneGT}
-James~S. Milne.
+\bibitem{milneGT}
+{\sc Milne, J.~S.}
 \newblock Group theory (v3.13), 2013.
 \newblock Available at www.jmilne.org/math/.
 
-\bibitem[Mil14]{milneFT}
-James~S. Milne.
+\bibitem{milneFT}
+{\sc Milne, J.~S.}
 \newblock Fields and galois theory (v4.50), 2014.
 \newblock Available at www.jmilne.org/math/.
 
