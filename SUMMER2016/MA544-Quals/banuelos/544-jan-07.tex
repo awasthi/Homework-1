@@ -1,4 +1,5 @@
 \subsection{Bañuelos: Winter 2007}
+\setcounter{exercise}{0}
 \begin{problem}
   Let $f\colon[0,1]\to\bbR$.
   \begin{enumerate}[label=(\roman*),noitemsep]
@@ -30,11 +31,30 @@
 \end{solution}
 
 \begin{problem}
+  Let ${\{E_j\}}_{j=1}^\infty$ be Lebesgue measurable sets in $[0,1]$ and
+  let $E=\bigcup_{j=1}^\infty E_j$ and suppose there is an $\varepsilon>0$
+  such that $\sum_{j=1}^\infty m(E_j)\leq m(E)+\varepsilon$.
+  \begin{enumerate}[label=(\roman*),noitemsep]
+  \item Show that for all measurable sets $A\subset[0,1]$
+    \[
+      \sum_{j=1}^\infty m(A\cap E_j)\leq m(A\cap E)+\varepsilon.
+    \]
+  \item Let $A$ be the set of all $x\in[0,1]$ which are in at least two of
+    $E_j'$. Prove that $m(A)\leq\varepsilon$.
+  \end{enumerate}
 \end{problem}
 \begin{solution}
 \end{solution}
 
 \begin{problem}
+  Let $(X,\calF,\mu)$ be a finite measure space. Let
+  $f_n\colon X\to[0,\infty)$ be a sequence measurable functions and suppose
+  that $\|f_n\|_p\leq 1$, $1<p<\infty$, and that $f_n\to f$ almost
+  everywhere. Prove
+  \begin{enumerate}[label=(\roman*),noitemsep]
+  \item $f\in L^p(\mu)$.
+  \item $\|f_n-f\|_1\to 0$ as $n\to\infty$.
+  \end{enumerate}
 \end{problem}
 \begin{solution}
 \end{solution}
