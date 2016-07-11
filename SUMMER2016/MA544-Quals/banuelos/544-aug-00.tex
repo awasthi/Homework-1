@@ -180,6 +180,53 @@
     \lim_{n\to\infty}\left[n^{p-1}{p}\int_{E_n}|f|\diff\mu\right]=0.
   \]
 \end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}
+  Let $(X,\calM,\mu)$ be a measure space and let $\{g_n\}$ be a sequence of
+  nonnegative measurable functions with the property that $g_n\in L^1(\mu)$
+  for every $n$ and $g_n\to g$ in $L^1(\mu)$. Let $\{f_n\}$ be another
+  sequence of nonnegative measurable functions on $(X,\calF,\mu)$.
+  \begin{enumerate}[label=(\roman*),noitemsep]
+  \item If $f_n\leq g_n$ almost everywhere for every $n$, prove that
+    \[
+      \limsup_{n\to\infty}\int_X f_n\diff\mu\leq\int_X\limsup_{n\to\infty}f_n\diff\mu.
+    \]
+
+    [\emph{Hint}: Start by considering a subsequence $\{f_{n_k}\}$ such
+    that
+    \[
+      \lim_{n_k\to\infty}\int_X
+      f_{n_k}\diff\mu=\limsup_{n\to\infty}\int_X f_n\diff\mu
+    \]
+    and let $\{g_{n_{k_\ell}}\}$ be a subsequence of $\{g_{n_k}\}$ such
+    that $g_{n_{k_\ell}}\to g$ almost everywhere.]
+  \item If $f_n\to f$ almost everywhere and if $f_n\leq g_n$ almost
+    everywhere for all $n$, then $\|f_n-f\|_1\to 0$ as $n\to\infty$.
+  \end{enumerate}
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}
+  Let $f\in L^1(\bbR)$. Consider the function
+  \[
+    F(x)=\int_\bbR \exp(\rmi xt) f(t)\diff t.
+  \]
+  \begin{enumerate}[label=(\roman*),noitemsep]
+  \item Show that $F\in L^\infty(\bbR)$ and that $F$ is continuous at every
+    $x\in\bbR$. Moreover, if $|t|^kf(t)\in L^\infty(\bbR)$ for all $k\geq
+    1$, show that $F$ is infinitely differentiable, i.e., $F\in
+    C^\infty(\bbR)$.
+  \item Suppose $f$ is continuous as well as in $L^1(\bbR)$. Show that
+    $\lim_{|x|to\infty} F(x)=0$.
+  \end{enumerate}
+  [\emph{Hint}: Using $\exp(-\rmi\pi)=-1$, write
+  $F(x)=\left.\left(\int_\bbR(\exp(\rmi xt)-\exp(\rmi xt-\rmi\pi))\right)\right/2$.]
+\end{problem}
+\begin{solution}
+\end{solution}
 
 %%% Local Variables:
 %%% mode: latex
