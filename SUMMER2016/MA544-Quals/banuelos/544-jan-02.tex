@@ -1,0 +1,95 @@
+\subsection{Bañuelos: Summer 2000}
+\setcounter{exercise}{0}
+\setcounter{equation}{0}
+
+\begin{problem}
+  For any two subsets $A$ and $B$ of $\bbR$ define $A+B=\left\{\,a+b:a\in
+    A,b\in B\,\right\}$.
+  \begin{enumerate}[label=(\roman*),noitemsep]
+  \item Suppose $A$ is closed and $B$ is compact. Prove that $A+B$ is
+    closed.
+  \item Give an example that shows that (i) may be false if we only assume
+    that $A$ and $B$ are closed.
+  \end{enumerate}
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}
+  Suppose $f\colon[0,1]\to\bbR$ is differentiable at every $x\in[0,1]$
+  where by differentiability at $0$ and $1$ we mean right and left
+  differentiability, respectively. Prove that $f'$ is continuous if and
+  only if $f$ is uniformly differentiable. That is, if and only if for all
+  $\varepsilon>0$ there is an $h_0>0$ such that
+  \[
+    \left|\frac{f(x+h)-f(x)}{h}-f'(x)\right|<\varepsilon
+  \]
+  whenever $0\leq x$, $x+h\leq 1$, $0<|h|<h_0$.
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}
+  Let $(X,\calF,\mu)$ be a measure space with $\mu(X)=1$ and let
+  $F_1,\ldots,F_{17}$ be seventeen measurable subsets of $X$ with
+  $\mu(F_j)=1/4$ for every $j$.
+  \begin{enumerate}[label=(\roman*),noitemsep]
+  \item Prove that five of these subsets must have an intersection of
+    positive measure. That is, if $E_1,\ldots,E_k$ denotes the collection
+    of all nonempty intersections of the $F_j$ taken five at a time ($k\leq
+    6188$), show that at least one of these sets must have positive
+    measure.
+  \item Is the conclusion in (i) true if we take sixteen sets instead of
+    seventeen?
+  \end{enumerate}
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}
+  Let $f_n\colon X\to[0,\infty)$ be a sequence of measurable functions on
+  the measure space $(X,\calF,\mu)$. Suppose there is a positive constant
+  $M$ such that the functions $g_n(x)=f(x)\chi_{\left\{\,f_n\leq
+      M\,\right\}}(x)$ satisfy $\|g_n\|_1\leq A/n^{4/3}$ and for which
+  $\mu\left(\left\{\,x\in X:f_n(x)>M\,\right\}\right)\leq B/n^{5/4}$, where
+  $A$ and $B$ are positive constants independent of $n$. Prove that
+  \[
+    \sum_{n=1}^\infty f_n<\infty
+  \]
+  almost everywhere.
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}
+  Let $\{g_n\}$ be a bounded sequence of functions on $[0,1]$ which is
+  uniformly Lipschitz. That isthere is a constant $M$ (independent of $n$)
+  such that for all $n$, $|g_n(x)-g_n(y)|\leq M|x-y|$ for all $x,y\in
+  [0,1]$ and $|g_n(x)|\leq M$ for all $x\in[0,1]$.
+  \begin{enumerate}[label=(\roman*),noitemsep]
+  \item Prove that for any $0\leq a\leq b\leq 1$,
+    \[
+      \lim_{n\to\infty}\int_a^b g_n(x)\sin(2n\pi x)\diff x=0.
+    \]
+  \item Prove that for any $f\in L^1[0,1]$,
+    \[
+      \lim_{n\to\infty}\int_0^1 f(x)g_n(x)\sin(2n\pi x)\diff x=0.
+    \]
+  \end{enumerate}
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}
+  Let $\{f_n\}$ be a sequence of nonnegative functions in $L^1[0,1]$ with
+  the property that $\int_0^1 f_n(t)\diff t=1$ and $\int_{1/n}^1
+  f_n(t)\diff t\leq 1/n$ for all $n$. Define $h(x)=\sup_n f_n(x)$. Prove
+  that $h\notin L^1[0,1]$.
+\end{problem}
+\begin{solution}
+\end{solution}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA544-Quals"
+%%% End:
