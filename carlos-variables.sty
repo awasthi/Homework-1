@@ -24,42 +24,33 @@
 \ifpdf
 %% Math packages
 \RequirePackage{amssymb}
-%\RequirePackage{lmodern}
+% \RequirePackage{lmodern}
 % \RequirePackage{cfr-lm}
 \RequirePackage[bbgreekl]{mathbbol}
 \RequirePackage{eucal}
-\RequirePackage{mathrsfs}
-\RequirePackage[nointegrals]{wasysym}
-\RequirePackage{stmaryrd}
+% \RequirePackage{mathrsfs}
+% \RequirePackage[nointegrals]{wasysym}
+% \RequirePackage{stmaryrd}
 
 %% Language
-\usepackage[LAE,LFE,LGR,T2A,T1]{fontenc}
+\usepackage[T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[
-arabic,
-farsi,
 french,
 german,
-greek,
 spanish,
 russian,
 english]{babel}
 
-\babeltags{ara=arabic,
-           fr=french,
+\babeltags{fr=french,
            de=german,
            en=english,
            es=spanish,
-           he=greek,
-           pa=farsi,
            ru=russian,
            }
 \def\spanishoptions{mexico}
 
 \selectlanguage{english}
-
-\newcommand{\textfa}[1]{\beginR\textpa{#1}\endR}
-\newcommand{\textar}[1]{\beginR\textara{#1}\endR}
 
 \usepackage{CJKutf8}
 \newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
