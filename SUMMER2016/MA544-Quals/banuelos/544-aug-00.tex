@@ -140,17 +140,20 @@
     \mu\left(\left\{\,x\in X:|f(x)-f_n(x)|\geq\varepsilon\,\right\}\right)=0.
   \]
 
-  For part (i) $\impliedby$ seeking a contradiction suppose that every
-  subsequence $\{f_{n_k}\}$ contains a subsequence $\{f_{n_{k_\ell}}\}$
-  that converges almost everywhere to $f$ but that for some
-  $\varepsilon>0$,
+  For part (i) $\implies$ suppose that $f_n\to f$ in measure. Then given
+  $\varepsilon>0$ we have
   \[
-    \lim_{n\to\infty}\mu%
-    \left(%
-      \left\{\,x\in X:|f(x)-f_n(x)|\geq\varepsilon\,\right\}%
-    \right)=c>0.
+    \lim_{n\to\infty}%
+    \mu\left(\left\{\,%
+        x\in X:|f(x)-f_n(x)|\geq\varepsilon%
+        \,\right\}\right)%
+    =0.
   \]
-  Then there exists a subsequence
+  In particular, for $k=1,2,\ldots$, we may choose $\varepsilon$ to be
+  $2^{-k}$ giving us the sequence of sets
+  \[
+    E_k=\left\{\,x\in X:|f_n(x)-f(x)|\geq\frac{1}{2^k}\,\right\}.
+  \]
 \end{solution}
 
 \begin{problem}
@@ -205,8 +208,8 @@
       \lim_{n_k\to\infty}\int_X
       f_{n_k}\diff\mu=\limsup_{n\to\infty}\int_X f_n\diff\mu
     \]
-    and let $\{g_{n_{k_\ell}}\}$ be a subsequence of $\{g_{n_k}\}$ such
-    that $g_{n_{k_\ell}}\to g$ almost everywhere.]
+    and let $\{g_{n_{k_j}}\}$ be a subsequence of $\{g_{n_k}\}$ such
+    that $g_{n_{k_j}}\to g$ almost everywhere.]
   \item If $f_n\to f$ almost everywhere and if $f_n\leq g_n$ almost
     everywhere for all $n$, then $\|f_n-f\|_1\to 0$ as $n\to\infty$.
   \end{enumerate}
