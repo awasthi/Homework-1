@@ -1,5 +1,7 @@
 \subsubsection{Homework 4}
 \setcounter{exercise}{0}
+\setcounter{equation}{0}
+
 % #4 - Due Feb. 8 Read Sections 3.5, 4.1. Chapter 3: # 12, 13, 14, 15 (16,
 % 18), (Chapter 4: # 1, 2
 
@@ -41,10 +43,10 @@
   Next we show part (ii). Let $E\subset\bbR^n$ with
   $m^*(E)<\infty$. $\implies$ Suppose that $E$ is measurable. Then, by
   Lemma 3.22, there exists a closed set $F\subset E$ such that
-  $m^*(E\smallsetminus F)<\varepsilon$. Since closed sets are measurable,
+  $m^*(E\setminus F)<\varepsilon$. Since closed sets are measurable,
   by Corollary 3.31, we have
   \[
-    m^*(E\smallsetminus F)=m(E)-m(F)<\varepsilon
+    m^*(E\setminus F)=m(E)-m(F)<\varepsilon
   \]
   so
   \[
@@ -71,8 +73,8 @@
   \end{align*}
   Then
   \begin{align*}
-    m^*(E\smallsetminus F)
-    &<m^*(G\smallsetminus F)\\
+    m^*(E\setminus F)
+    &<m^*(G\setminus F)\\
     &=m^*(G)-m^*(G\cap F)\\
     &=m^*(G)-m^*(F)\\
     &<\frac{\varepsilon}{2}+m^*(E)-\left(m^*(E)-\frac{\varepsilon}{2}\right)\\
@@ -83,7 +85,7 @@
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 3, Ex.\@ 15]
   If $E$ is measurable and $A$ is any subset of $E$, show that
-  $m(E)=m_*(A)+m^*(E\smallsetminus A)$. (See Exercise 13 for the definition
+  $m(E)=m_*(A)+m^*(E\setminus A)$. (See Exercise 13 for the definition
   of $m_*(A)$.)
 \end{problem}
 \begin{solution}
@@ -91,22 +93,22 @@
   inner measure of $A$ agree; symbolically, we have
   $m(A)=m^*(A)=m_*(A)$. Thus, we have
   \[
-    m^*(E\smallsetminus A)=m^*(E)-m^*(A)=m^*(E)-m_*(A).
+    m^*(E\setminus A)=m^*(E)-m^*(A)=m^*(E)-m_*(A).
   \]
 
   If $A$ is not measurable\marginremark{Even though $A$ is not measurable,
     we can still find its inner and outer measure.} and $m(E)<\infty$, then
-  we must have $m^*(A),m^*(E\smallsetminus A)<\infty$ by the monotonicity
-  of the outer measure; since both $A$ an $E\smallsetminus A$ are subsets
+  we must have $m^*(A),m^*(E\setminus A)<\infty$ by the monotonicity
+  of the outer measure; since both $A$ an $E\setminus A$ are subsets
   of $E$. Hence, we may, without any ambiguity, subtract the quantity
-  $m^*(E\smallsetminus A)$ from $m(E)$ and we have
+  $m^*(E\setminus A)$ from $m(E)$ and we have
   \begin{align*}
-    m(E)-m^*(E\smallsetminus A)
+    m(E)-m^*(E\setminus A)
     &=m(E)
-      -\inf\left\{\,m(G):\text{$E\smallsetminus A\subset G$ and $G$ is
+      -\inf\left\{\,m(G):\text{$E\setminus A\subset G$ and $G$ is
       open}\,\right\}\\
     &=m(E)
-      -\inf\left\{\,m(G):\text{$E\smallsetminus A\subset G\subset E$ and $G$ is
+      -\inf\left\{\,m(G):\text{$E\setminus A\subset G\subset E$ and $G$ is
       open}\,\right\}\\
     &=
   \end{align*}

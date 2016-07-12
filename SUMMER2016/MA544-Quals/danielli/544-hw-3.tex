@@ -1,5 +1,7 @@
 \subsubsection{Homework 3}
 \setcounter{exercise}{0}
+\setcounter{equation}{0}
+
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 3, Ex.\@ 5]
   Construct a subset of $[0,1]$ in the same manner as the Cantor set,
   except that at the $k$th stage each interval removed has length
@@ -48,13 +50,13 @@
   and dense in itself. The set $E$ is closed because it is the (arbitrary)
   intersection of closed intervals. To see that $E$ is dense in itself, we
   must show that for every $\varepsilon>0$, for every $x\in E$, the
-  intersection $(B(x,\varepsilon)\cap E)\smallsetminus\{x\}$ is
+  intersection $(B(x,\varepsilon)\cap E)\setminus\{x\}$ is
   nonempty. Let $\varepsilon>0$ and $x\in E$ be given. Then, since
   $x\in E$, $x\in E_n$ for every $n$. Thus, $x$ is in some closed interval
   $E_{n,i}\subset E_n$. Let $N$ be the smallest integer such that the
   length of $E_{N,i}=[a,b]$ is less that $\varepsilon$. Then, $a,b\in E$
   and $a,b\in B(x,\varepsilon)$ and $x$ is cannot be equal to both $a$ and
-  $b$. Thus, $(E\cap B(x,\varepsilon))\smallsetminus\{x\}\neq\emptyset$. It
+  $b$. Thus, $(E\cap B(x,\varepsilon))\setminus\{x\}\neq\emptyset$. It
   follows that $E$ is a perfect set.
 
   To see that the measure of $E$ is $1-\delta$ by Theorem 3.26 (ii) since
@@ -206,18 +208,18 @@
   measurability: a set $E$ is measurable if and only if for every set $A$
   we have
   \[
-    m^*(A)=m^*(A\cap E)+m^*(A\smallsetminus E).
+    m^*(A)=m^*(A\cap E)+m^*(A\setminus E).
   \]
   Therefore, the following equalities hold \marginremark{Note that we
     remove the $*$ from $m$ since for measurable sets the outer measure and
     measure agree.}
   \begin{align*}
-    m(E_1)&=m(E_1\cap E_2)+m(E_1\smallsetminus E_2)\\
-    m(E_2)&=m(E_1\cap E_2)+m(E_2\smallsetminus E_1).
+    m(E_1)&=m(E_1\cap E_2)+m(E_1\setminus E_2)\\
+    m(E_2)&=m(E_1\cap E_2)+m(E_2\setminus E_1).
   \end{align*}
   Moreover, from elementary set theory we have
   \[
-    (E_1\cup E_2)\smallsetminus E_2=E_1\smallsetminus (E_1\cap E_2),
+    (E_1\cup E_2)\setminus E_2=E_1\setminus (E_1\cap E_2),
   \]
   $E_1\subset E_1\cup E_2$ and $E_1\cap E_2\subset E_1$ so\marginremark{The
     corollary to Carathéodory's theorem would have been enough to get this
