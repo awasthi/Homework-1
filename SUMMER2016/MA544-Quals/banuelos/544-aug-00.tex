@@ -186,15 +186,17 @@
   But by assumption there exists a subsequence $\{f_{n_{k_j}}\}$ of
   $\{f_{n_k}\}$ that converges almost everywhere to $f$. We claim that this
   implies that $f_{n_{k_j}}\to f$ in measure.
+  \begin{quote}
   \begin{proof}[Proof of claim]
-    \renewcommand{\qedsymbol}{$\heartsuit$}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
     This is adapted from a proof in Royden, Proposition 3, Ch.\@ 5.
 
     First note that $f$ is measurable since it is the pointwise limit
     almost everywhere of a sequence of measurable functions. Let
-    $\varepsilon,\delta>0$ be given. By Egorov's theorem, there is a measurable
-    subset $E\subset X$ with $\mu(X\setminus E)<\delta$ such that
-    $f_n\to f$ uniformly on $E$. Thus, there is an index $N$ such that
+    $\varepsilon,\delta>0$ be given. \hilight{Here is where the assumption
+      that $\mu(X)<\infty$ is essential!} By Egorov's theorem, there is a
+    measurable subset $E\subset X$ with $\mu(X\setminus E)<\delta$ such
+    that $f_n\to f$ uniformly on $E$. Thus, there is an index $N$ such that
     $n\geq N$ implies
     \[
       |f_n(x)-f(x)|<\varepsilon
@@ -202,10 +204,39 @@
     for all $x\in E$. Thus, for $n\geq N$,
     \[
       \left\{\,x\in X:|f(x)-f_n(x)|\geq\varepsilon\,\right\}\subset
-      X\setminus E.
+      X\setminus E
     \]
-    Thus,
+    so
+    \[
+      \mu\left(%
+        \left\{\,x\in X:|f(x)-f_n(x)|\geq\varepsilon\,\right\}%
+      \right)%
+      <\varepsilon.
+    \]
+    Thus, we have
+    \[
+      \lim_{n\to\infty}\mu\left(%
+        \left\{\,x\in X:|f(x)-f_n(x)|\geq\varepsilon\,\right\}%
+      \right)%
+      =0,
+    \]
+    i.e., $f_n\to f$ in measure.
   \end{proof}
+  \end{quote}
+  Hence, since $f_{n_{k_j}}\to f$ in measure, but $M>0$ we have a
+  contradiction.
+
+  For (ii) since $F$ is continuous and the $f_n,f$ are measurable,
+  $F(f_n),F(f)$ are measurable. Suppose that $f_n\to f$ in measure. Then
+  given $\varepsilon,\delta>0$, there exists an index $N$ such that $n\geq
+  N$ implies
+  \[
+    \mu\left(%
+      \left\{\,x\in X:|f(x)-f_n(x)|\geq\varepsilon\,\right\}%
+    \right)%
+    <\delta.
+  \]
+  Thus,
 \end{solution}
 
 \begin{problem}
