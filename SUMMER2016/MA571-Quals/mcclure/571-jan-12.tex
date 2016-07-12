@@ -2,166 +2,168 @@
 \setcounter{exercise}{0}
 
 \begin{problem}
-Let $X$ be a topological space. Recall that a subset of $X$ is \emph{dense}
-if its closure is $X$. Prove that the intersection of two dense open sets is
-dense.
+  Let $X$ be a topological space. Recall that a subset of $X$ is
+  \emph{dense} if its closure is $X$. Prove that the intersection of two
+  dense open sets is dense.
 \end{problem}
 \begin{solution}
-Suppose $U$ and $V$ are open dense subsets of $X$. We will show that $U\cap
-V$ is dense in $X$, i.e., $\overline{U\cap V}=X$. To that end, we will show
-that for any point $x\in X$, for any neighborhood $W$ of $x$, $W\cap(U\cap
-V)\neq\emptyset$. Therefore, let $x\in X$. Let $W$ be a neighborhood of
-$x$. Then, since $U$ is dense in $X$, $W\cap U\neq\emptyset$. Let $y\in
-W\cap U$. Then, since $U$ and $V$ are open, $U\cap V$ is open so $U\cap V$
-is a neighborhood of $y$. Moreover, since $V$ is dense in $X$, $(W\cap
-U)\cap V\neq\emptyset$. Now, since intersection is associative, $(W\cap
-U)\cap V=W\cap(U\cap V)\neq\emptyset$. Thus, $x\in\overline{U\cap V}$ and
-we have $\overline{U\cap V}=X$ as desired.
+  Suppose $U$ and $V$ are open dense subsets of $X$. We will show that
+  $U\cap V$ is dense in $X$, i.e., $\overline{U\cap V}=X$. To that end, we
+  will show that for any point $x\in X$, for any neighborhood $W$ of $x$,
+  $W\cap(U\cap V)\neq\emptyset$. Therefore, let $x\in X$. Let $W$ be a
+  neighborhood of $x$. Then, since $U$ is dense in $X$,
+  $W\cap U\neq\emptyset$. Let $y\in W\cap U$. Then, since $U$ and $V$ are
+  open, $U\cap V$ is open so $U\cap V$ is a neighborhood of $y$. Moreover,
+  since $V$ is dense in $X$, $(W\cap U)\cap V\neq\emptyset$. Now, since
+  intersection is associative,
+  $(W\cap U)\cap V=W\cap(U\cap V)\neq\emptyset$. Thus,
+  $x\in\overline{U\cap V}$ and we have $\overline{U\cap V}=X$ as desired.
 \end{solution}
 
 \begin{problem}
-Let $X$ be a set with two elements $\{a,b\}$. Give $X$ the
-\emph{indiscrete} topology. Give $X\times\bbR$ the product topology. Let
-$A\subset X\times\bbR$ be $(\{a\}\times[0,1])\cup(\{b\}\times(0,1))$. Prove
-that $A$ is compact.
+  Let $X$ be a set with two elements $\{a,b\}$. Give $X$ the
+  \emph{indiscrete} topology. Give $X\times\bbR$ the product topology. Let
+  $A\subset X\times\bbR$ be
+  $(\{a\}\times[0,1])\cup(\{b\}\times(0,1))$. Prove that $A$ is compact.
 
-You may use the fact that a set is compact if every covering by
-\emph{basic} open sets has a finite subcovering.
+  You may use the fact that a set is compact if every covering by
+  \emph{basic} open sets has a finite subcovering.
 \end{problem}
 \begin{solution}
-Let $\calU$ be an open cover of $A$ by basic open sets. Then each
-$U\in\calU$ is of the form $\{a,b\}\times V$ where $V$ is an open subset of
-$\bbR$. Then, the $V$'s, i.e., $\pi_2(U)$ where $\pi_2\colon
-X\times\bbR\to\bbR$ is an open map by previous work, form open cover of
-$[0,1]$ (since $\bigcup_{U\in\calU} U\supset A$, we must have
-$\bigcup_{U\in\calU}\pi_2(U)\supset[0,1]$). Now, since $[0,1]$ is compact
-in $X$ there is a finite collection of the $V$'s, say
-$\left\{V_1,\dotsc,V_n\right\}$, that cover $[0,1]$. Call $U_i$ the element of
-$\calU$ such that $\pi_2(U_i)=V_i$. Then the $U_i$'s form a finite subcover
-of $A$. Thus, $A$ is compact.
+  Let $\calU$ be an open cover of $A$ by basic open sets. Then each
+  $U\in\calU$ is of the form $\{a,b\}\times V$ where $V$ is an open subset
+  of $\bbR$. Then, the $V$'s, i.e., $\pi_2(U)$ where
+  $\pi_2\colon X\times\bbR\to\bbR$ is an open map by previous work, form
+  open cover of $[0,1]$ (since $\bigcup_{U\in\calU} U\supset A$, we must
+  have $\bigcup_{U\in\calU}\pi_2(U)\supset[0,1]$). Now, since $[0,1]$ is
+  compact in $X$ there is a finite collection of the $V$'s, say
+  $\left\{V_1,\dotsc,V_n\right\}$, that cover $[0,1]$. Call $U_i$ the
+  element of $\calU$ such that $\pi_2(U_i)=V_i$. Then the $U_i$'s form a
+  finite subcover of $A$. Thus, $A$ is compact.
 \end{solution}
 
 \begin{problem}
-Let $B^2$ be the disk
-\[
-\left\{\,(x,y)\in\bbR^2:x^2+y^2\leq 1\,\right\}.
-\]
-Let $S^1$ be the circle
-\[
-\left\{\,(x,y)\in\bbR^2:x^2+y^2=1\,\right\}.
-\]
-Prove that there is an equivalence relation $\sim$ such that $B^2$ is
-homeomorphic to $(S^1\times[0,1])/{\sim}$. As port of your solution explain
-how you are using one or more properties of the quotient topology.
+  Let $B^2$ be the disk
+  \[
+    \left\{\,(x,y)\in\bbR^2:x^2+y^2\leq 1\,\right\}.
+  \]
+  Let $S^1$ be the circle
+  \[
+    \left\{\,(x,y)\in\bbR^2:x^2+y^2=1\,\right\}.
+  \]
+  Prove that there is an equivalence relation $\sim$ such that $B^2$ is
+  homeomorphic to $(S^1\times[0,1])/{\sim}$. As port of your solution
+  explain how you are using one or more properties of the quotient
+  topology.
 \end{problem}
 \begin{solution}
-Such an equivalence relation is called the cone of $S^1$. We define it as
-follows, let $(x,y,z),(x',y',z')\in S^1\times[0,1]$ then we say
-$(x,y,z)\sim(x',y',z')$ if and only if $(x,y)=(x',y')$ or $z=z'=0$. We
-shall take it on faith that $\sim$ is in fact an equivalence relation (we
-may return to this if time permits).
+  Such an equivalence relation is called the cone of $S^1$. We define it as
+  follows, let $(x,y,z),(x',y',z')\in S^1\times[0,1]$ then we say
+  $(x,y,z)\sim(x',y',z')$ if and only if $(x,y)=(x',y')$ or $z=z'=0$. We
+  shall take it on faith that $\sim$ is in fact an equivalence relation (we
+  may return to this if time permits).
 
-By the UMP of the quotient space, we need to find a continuous surjection
-$f\colon S^1\times[0,1]\to B^2$ that preserves the equivalence relation
-$\sim$. So consider the map $f(x,y,z)=(zx,zy)$. This map is
-continuous by Theorem 18.4 since $\pi_1\circ f(x,y,z)=zx$ is multiplication
-on $\bbR$ and similarly for $\pi_2\circ f(x,y,z)$. Moreover, this map
-preserves the equivalence relation: let $(x,y,z)\sim(x',y',z')$ then
-$(x,y,z)=(x',y',z')$ in which case
-\[
-f(x,y,z)=(zx,zy)=(z'x',z'y')=f(x',y',z')
-\]
-or $z=z'=0$ so
-\[
-f(x,y,0)=(0\cdot x,0\cdot y)=(0,0)=(0\cdot x',0\cdot y')=f(x',y',0).
-\]
-In either case, we have $f(x,y,z)=f(x',y',z')$. Thus, by the UMP of the
-quotient space, the induced map $f'\colon (S^1\times[0,1])/{\sim}\to B^2$
-is continuous.
+  By the UMP of the quotient space, we need to find a continuous surjection
+  $f\colon S^1\times[0,1]\to B^2$ that preserves the equivalence relation
+  $\sim$. So consider the map $f(x,y,z)=(zx,zy)$. This map is continuous by
+  Theorem 18.4 since $\pi_1\circ f(x,y,z)=zx$ is multiplication on $\bbR$
+  and similarly for $\pi_2\circ f(x,y,z)$. Moreover, this map preserves the
+  equivalence relation: let $(x,y,z)\sim(x',y',z')$ then
+  $(x,y,z)=(x',y',z')$ in which case
+  \[
+    f(x,y,z)=(zx,zy)=(z'x',z'y')=f(x',y',z')
+  \]
+  or $z=z'=0$ so
+  \[
+    f(x,y,0)=(0\cdot x,0\cdot y)=(0,0)=(0\cdot x',0\cdot y')=f(x',y',0).
+  \]
+  In either case, we have $f(x,y,z)=f(x',y',z')$. Thus, by the UMP of the
+  quotient space, the induced map $f'\colon (S^1\times[0,1])/{\sim}\to B^2$
+  is continuous.
 
-Now, since $S^1\times[0,1]$ is closed and bounded, by Heine--Borel,
-$S^1\times[0,1]$ is a compact subset of $\bbR^3$. Therefore,
-$(S^1\times[0,1])/{\sim}$ is compact. Since $B^2\subset\bbR^2$ is
-Hausdorff, it suffices to show, by Theorem 26.6, that $f$ is bijective.
+  Now, since $S^1\times[0,1]$ is closed and bounded, by Heine--Borel,
+  $S^1\times[0,1]$ is a compact subset of $\bbR^3$. Therefore,
+  $(S^1\times[0,1])/{\sim}$ is compact. Since $B^2\subset\bbR^2$ is
+  Hausdorff, it suffices to show, by Theorem 26.6, that $f$ is bijective.
 
-It is eassy to see that $f$ is surjective since for any point
-$(x,y)\neq(0,0)$ in $B^2$, $\sqrt{x^2+y^2}\leq 1$ so letting
-$z=\sqrt{x^2+y^2}$, $x'=x/\sqrt{x^2+y^2}$, and $y'=y/\sqrt{x^2+y^2}$ we
-have
-\[
-f(x',y',z)=\sqrt{x^2+y^2}
-\left(\frac{x}{\sqrt{x^2+y^2}},
-\frac{y}{\sqrt{x^2+y^2}}\right)=(x,y).
-\]
-And, trivially, if $(x,y)=0$, we have $\varphi(x,y,0)=0$ for any $(x,y)\in
-S^1$.
+  It is eassy to see that $f$ is surjective since for any point
+  $(x,y)\neq(0,0)$ in $B^2$, $\sqrt{x^2+y^2}\leq 1$ so letting
+  $z=\sqrt{x^2+y^2}$, $x'=x/\sqrt{x^2+y^2}$, and $y'=y/\sqrt{x^2+y^2}$ we
+  have
+  \[
+    f(x',y',z)=\sqrt{x^2+y^2} \left(\frac{x}{\sqrt{x^2+y^2}},
+      \frac{y}{\sqrt{x^2+y^2}}\right)=(x,y).
+  \]
+  And, trivially, if $(x,y)=0$, we have $\varphi(x,y,0)=0$ for any
+  $(x,y)\in S^1$.
 
-To see that it is injective, merely note that, by the definition of $f$,
-$f(x,y,z)=f(x',y',z')$ if and only if $(x,y,z)=(x',y',z')$ or $z=z'=0$
-which precisely means that $(x,y,z)\sim(x',y',z')$. Thus, $f$ is
-injective.
+  To see that it is injective, merely note that, by the definition of $f$,
+  $f(x,y,z)=f(x',y',z')$ if and only if $(x,y,z)=(x',y',z')$ or $z=z'=0$
+  which precisely means that $(x,y,z)\sim(x',y',z')$. Thus, $f$ is
+  injective.
 
-It follows that $(S^1\times[0,1])/{\sim}\approx B^2$.
+  It follows that $(S^1\times[0,1])/{\sim}\approx B^2$.
 \end{solution}
 
 \begin{problem}
-Let $X$ be a set with $2$ elements $\{a,b\}$. Give $X$ the \emph{discrete}
-topology. Let $Y$ be any topological space. Recall that $\calC(X,Y)$
-denotes the set of continuous functions from $X$ to $Y$, with the
-compact-open topology. Prove that $\calC(X,Y)$ is homeomorphic to $Y\times
-Y$ (with the product topology).
+  Let $X$ be a set with $2$ elements $\{a,b\}$. Give $X$ the
+  \emph{discrete} topology. Let $Y$ be any topological space. Recall that
+  $\calC(X,Y)$ denotes the set of continuous functions from $X$ to $Y$,
+  with the compact-open topology. Prove that $\calC(X,Y)$ is homeomorphic
+  to $Y\times Y$ (with the product topology).
 \end{problem}
 \begin{solution}
-Consider the map $F\colon\calC(X,Y)\to Y\times Y$ given by
-$F(f)=(f(a),f(b))$. This map is continuous by Theorem 18.4, since
-$\pi_1(F)$ and $\pi_2(F)$ are, respectively, the evaluation of $f$ at $a$
-and the evaluation of $f$ and $b$, both of which are continuous because
-under the compact-open topology. This map is clearly surjective since for
-any $(y_1,y_2)\in Y\times Y$ we may define the function $f(a)= y_1$
-and $f(b)= y_2$ which is continuous sinced $X$ has the discrete
-topology. Moreover, $F$ is injective since if $(f(a),f(b))=(g(a),g(b))$
-then $f(x)=g(x)$ for all $x\in X$ hence, $f=g$. Therefore, to show that $F$
-is a homeomorphism, it suffices to show that $F$ is an open map.
+  Consider the map $F\colon\calC(X,Y)\to Y\times Y$ given by
+  $F(f)=(f(a),f(b))$. This map is continuous by Theorem 18.4, since
+  $\pi_1(F)$ and $\pi_2(F)$ are, respectively, the evaluation of $f$ at $a$
+  and the evaluation of $f$ and $b$, both of which are continuous because
+  under the compact-open topology. This map is clearly surjective since for
+  any $(y_1,y_2)\in Y\times Y$ we may define the function $f(a)= y_1$ and
+  $f(b)= y_2$ which is continuous sinced $X$ has the discrete
+  topology. Moreover, $F$ is injective since if $(f(a),f(b))=(g(a),g(b))$
+  then $f(x)=g(x)$ for all $x\in X$ hence, $f=g$. Therefore, to show that
+  $F$ is a homeomorphism, it suffices to show that $F$ is an open map.
 
-Now it suffices to find a continuous inverse. For any $(y_1,y_2)\in Y\times
-Y$, define the map $g\colon Y\times Y\to\calC(X,Y)$.
-\[
-g(y_1,y_2)= f
-(y)=\begin{cases}
-a&\text{if $y=y_1$}\\
-b&\text{if $y=y_2$}.
-\end{cases}
-\]
+  Now it suffices to find a continuous inverse. For any
+  $(y_1,y_2)\in Y\times Y$, define the map
+  $g\colon Y\times Y\to\calC(X,Y)$.
+  \[
+    g(y_1,y_2)= f (y)=\begin{cases}
+      a&\text{if $y=y_1$}\\
+      b&\text{if $y=y_2$}.
+    \end{cases}
+  \]
 
 \end{solution}
 
 \begin{problem}
-Let $X$ and $Y$ be homotopy-equivalent topological spaces. Suppose that $X$
-is path-connected. Prove that $Y$ is path-connected.
-\end{problem}
-\begin{solution}
-\end{solution}
-
-\begin{problem}
-Suppose that $X$ is a wedge of two circles: that is, $X$ is a Hausdorff
-space which is a union of two subspaces $A_1$ and $A_2$ such that $A_1$ and
-$A_2$ are each homeomorphic to $S^1$ and $A_1\cap A_2$ is a single point $p$.
-
-Use the Seifert--van Kampen theorem to calculate $\pi_1(X,p)$. You should
-state what deformation retractions you are using, but you do not have to
-give formulas for them.
+  Let $X$ and $Y$ be homotopy-equivalent topological spaces. Suppose that
+  $X$ is path-connected. Prove that $Y$ is path-connected.
 \end{problem}
 \begin{solution}
 \end{solution}
 
 \begin{problem}
-Let $p\colon E\to B$ be a covering map. Let $A$ be a connected space and
-let $a\in A$. Prove that if two continuous functions $\alpha,\beta\colon
-A\to E$ have a property that $\alpha(a)=\beta(a)$ and
-$p\circ\alpha=p\circ\beta$ then $\alpha=\beta$.
+  Suppose that $X$ is a wedge of two circles: that is, $X$ is a Hausdorff
+  space which is a union of two subspaces $A_1$ and $A_2$ such that $A_1$
+  and $A_2$ are each homeomorphic to $S^1$ and $A_1\cap A_2$ is a single
+  point $p$.
 
-For partial credit, you may assume that $p$ is the standard covering map
-from $\bbR$ to $S^1$.
+  Use the Seifert--van Kampen theorem to calculate $\pi_1(X,p)$. You should
+  state what deformation retractions you are using, but you do not have to
+  give formulas for them.
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}
+  Let $p\colon E\to B$ be a covering map. Let $A$ be a connected space and
+  let $a\in A$. Prove that if two continuous functions
+  $\alpha,\beta\colon A\to E$ have a property that $\alpha(a)=\beta(a)$ and
+  $p\circ\alpha=p\circ\beta$ then $\alpha=\beta$.
+
+  For partial credit, you may assume that $p$ is the standard covering map
+  from $\bbR$ to $S^1$.
 \end{problem}
 \begin{solution}
 \end{solution}
@@ -169,30 +171,29 @@ from $\bbR$ to $S^1$.
 Here's an extra problem I felt like doing since I thought it might be on
 the exam:
 \begin{problem*}
-\begin{theorem*}[Munkres, Theorem 18.4]
-Let $f\colon A\to X\times Y$ be given by the equation
-$f(a)=(f_1(a),f_2(a))$. Then $f$ is continuous if and only if
-$f_1\colon A\to X$ and $f_2\colon A\to Y$ are continuous.
-\end{theorem*}
+  \begin{theorem*}[Munkres, Theorem 18.4]
+    Let $f\colon A\to X\times Y$ be given by the equation
+    $f(a)=(f_1(a),f_2(a))$. Then $f$ is continuous if and only if
+    $f_1\colon A\to X$ and $f_2\colon A\to Y$ are continuous.
+  \end{theorem*}
 \end{problem*}
 \begin{solution}
-Let $\pi_1\colon X\times Y\to X$ and $\pi_2\colon X\times Y\to Y$ be
-projections onto the 1st and 2nd factors, respectively. These maps are
-continuous and open by previous work. Now, for every $a\in A$ we have
-\[
-\pi_1(f(a))=f_1(a)\qquad\text{and}\qquad
-\pi_2(f(a))=f_2(a).
-\]
-Therefore, if $f$ is continuous, then $f_1$ and $f_2$ are the composites of
-the continuous functions above therefore, are continuous.
+  Let $\pi_1\colon X\times Y\to X$ and $\pi_2\colon X\times Y\to Y$ be
+  projections onto the 1st and 2nd factors, respectively. These maps are
+  continuous and open by previous work. Now, for every $a\in A$ we have
+  \[
+    \pi_1(f(a))=f_1(a)\qquad\text{and}\qquad \pi_2(f(a))=f_2(a).
+  \]
+  Therefore, if $f$ is continuous, then $f_1$ and $f_2$ are the composites
+  of the continuous functions above therefore, are continuous.
 
-Conversely, suppose that $f_1$ and $f_2$ are continuous. By Lemma C, it
-suffices to show that for each basic open set $U\times V\subset X\times Y$,
-the preimage $f^{-1}(U\times V)$ is open. But $a\in f^{-1}(U\times V)$ if
-and only if $f(a)\in U\times V$, if and only if $f_1(a)\in U$ and
-$f_2(a)\in V$. Thus, $f^{-1}(U\times V)=f^{-1}(U)\cap f^{-1}(V)$ which is
-open in $A$ since $U$ is open in $X$ and $V$ is open in $Y$ and $f_1,f_2$
-are continuous.
+  Conversely, suppose that $f_1$ and $f_2$ are continuous. By Lemma C, it
+  suffices to show that for each basic open set
+  $U\times V\subset X\times Y$, the preimage $f^{-1}(U\times V)$ is
+  open. But $a\in f^{-1}(U\times V)$ if and only if $f(a)\in U\times V$, if
+  and only if $f_1(a)\in U$ and $f_2(a)\in V$. Thus,
+  $f^{-1}(U\times V)=f^{-1}(U)\cap f^{-1}(V)$ which is open in $A$ since
+  $U$ is open in $X$ and $V$ is open in $Y$ and $f_1,f_2$ are continuous.
 \end{solution}
 
 %%% Local Variables:

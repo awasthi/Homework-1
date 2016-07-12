@@ -13,7 +13,7 @@ f(\bfx)=
 Prove that $f$ is integrable outside any ball $B(\mathbf{0},\varepsilon)$,
 and that there exists a constant $C>0$ such that
 \[
-\int_{\bbR^n\smallsetminus B(\mathbf{0},\varepsilon)}f(\bfx) \diff \bfx\leq\frac{C}{\varepsilon}.
+\int_{\bbR^n\setminus B(\mathbf{0},\varepsilon)}f(\bfx) \diff \bfx\leq\frac{C}{\varepsilon}.
 \]
 \end{problem}
 \begin{solution}
@@ -36,9 +36,9 @@ $\Theta=(\theta_1,\dotsc,\theta_{n-1})$.\footnote{The explicit construction
 \begin{equation}
 \label{eq:prep:2:2}
 \begin{aligned}
-\int_{\bbR^n\smallsetminus B_\varepsilon}f(\bfx)\diff\bfx
-&=\int_{\bbR^n\smallsetminus B_\varepsilon} f(\bfx)\diff\bfx\\
-&=\int_{\bbR^n\smallsetminus
+\int_{\bbR^n\setminus B_\varepsilon}f(\bfx)\diff\bfx
+&=\int_{\bbR^n\setminus B_\varepsilon} f(\bfx)\diff\bfx\\
+&=\int_{\bbR^n\setminus
   B_\varepsilon}\frac{1}{|\bfx|^{n+1}}\diff\bfx.\\
 &=\int_{S^{n-1}_r}\int_\varepsilon^\infty\frac{1}{|r|^{n+1}} \diff r dV,
 \end{aligned}
@@ -69,7 +69,7 @@ we have
 \begin{equation}
 \label{eq:prep:2:5}
 \begin{aligned}
-\int_{\bbR^n\smallsetminus B_\varepsilon}f(\bfx)\diff\bfx
+\int_{\bbR^n\setminus B_\varepsilon}f(\bfx)\diff\bfx
 &=\int_\varepsilon^\infty C|r|^{n-1}\frac{1}{|r|^{n+1}}\diff r\\
 &=\int_\varepsilon^\infty\frac{C}{|r|^2}\diff r\\
 &=\lim_{x\to\infty}\left[-\frac{C}{x}-\left(-\frac{C}{\varepsilon}\right)\right]\\
@@ -96,7 +96,7 @@ necessarily true if $\int_{\bbR^n} f=\lim_{k\to\infty} f_k=\infty$.
 \begin{solution}
 Let $E\subset\bbR^n$ be a measurable subset of $\bbR^n$. Then, since
 $f_k\to f$ pointwise a.e.\@ on $\bbR^n$, then $f_k\to f$ pointwise a.e.\@ on
-$E$ and $\bbR^n\smallsetminus E$. To prove that the limit of the sequence
+$E$ and $\bbR^n\setminus E$. To prove that the limit of the sequence
 of integrals $\left\{\int_Ef_k\right\}$ exist and is equal to $\int_E f$,
 it suffices to prove that
 \begin{equation}
@@ -114,8 +114,8 @@ Fatou's lemma:
 Also by Fatou's lemma, we have
 \begin{equation}
   \label{eq:prep:2:8}
-\int_{\bbR^n\smallsetminus E}f=\int_{\bbR^n\smallsetminus
-  E}\liminf_{k\to\infty}f\leq\liminf_{k\to\infty}\int_{\bbR^n\smallsetminus E}f_k.
+\int_{\bbR^n\setminus E}f=\int_{\bbR^n\setminus
+  E}\liminf_{k\to\infty}f\leq\liminf_{k\to\infty}\int_{\bbR^n\setminus E}f_k.
 \end{equation}
 Now, since $f\in L^1(\bbR^n)$, by equation \eqref{eq:prep:2:8} and
 properties of the $\liminf$ and $\limsup$\footnote{Namely, for any sequence
@@ -124,12 +124,12 @@ properties of the $\liminf$ and $\limsup$\footnote{Namely, for any sequence
 \begin{equation}
 \label{eq:prep:2:9}
 \begin{aligned}
-\int_Ef=\int_{\bbR^n}f-\int_{\bbR^n\smallsetminus E}f
-&\geq\limsup_{k\to\infty}\int_{\bbR^n}f-\liminf_{k\to\infty}\int_{\bbR^n\smallsetminus
+\int_Ef=\int_{\bbR^n}f-\int_{\bbR^n\setminus E}f
+&\geq\limsup_{k\to\infty}\int_{\bbR^n}f-\liminf_{k\to\infty}\int_{\bbR^n\setminus
 E}f_k\\
-&\geq\limsup_{k\to\infty}\int_{\bbR^n}f_k-\limsup_{k\to\infty}\int_{\bbR^n\smallsetminus
+&\geq\limsup_{k\to\infty}\int_{\bbR^n}f_k-\limsup_{k\to\infty}\int_{\bbR^n\setminus
   E}f_k\\
-&=\limsup_{k\to\infty}\left[\int_{\bbR^n}f_k-\int_{\bbR^n\smallsetminus
+&=\limsup_{k\to\infty}\left[\int_{\bbR^n}f_k-\int_{\bbR^n\setminus
     E}f_k\right]\\
 &=\limsup_{k\to\infty}\int_Ef_k.
 \end{aligned}
@@ -174,7 +174,7 @@ $F_k=\left\{\,\bfx\in E:f(\bfx)\geq k\,\right\}$. Note the
 following properties about the sets we have just defined: first, the
 $E_k$'s are pairwise disjoint and the $F_k$'s are nested in the following
 way $F_{k+1}\subset F_k$; second, $E=\bigcup_{k=1}^\infty E_k$ and
-$E_k=F_k\smallsetminus F_{k+1}$. By Theorem 3.23, since the $E_k$'s are disjoint,
+$E_k=F_k\setminus F_{k+1}$. By Theorem 3.23, since the $E_k$'s are disjoint,
 we have
 \begin{equation}
   \label{eq:disjoint-measurable-sets-3}
@@ -192,7 +192,7 @@ over $E$
 \label{eq:upper-lower-estimates-3}
 \sum_{k=0}^\infty k|E_k|\leq\int_E f(\bfx) d \bfx\leq\sum_{k=0}^\infty(k+1)|E_k|.
 \end{equation}
-But note that $|E_k|=|F_k\smallsetminus F_{k+1}|=|F_k|-|F_{k+1}|$ by Corollary 3.25
+But note that $|E_k|=|F_k\setminus F_{k+1}|=|F_k|-|F_{k+1}|$ by Corollary 3.25
 since the measures of $E_k$, $F_k$, and $F_{k+1}$ are all finite. Hence,
 \eqref{eq:upper-lower-estimates-3} becomes
 \begin{equation}

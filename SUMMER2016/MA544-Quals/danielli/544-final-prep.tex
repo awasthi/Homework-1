@@ -28,16 +28,16 @@ Set $F(\bfy)= |f(\bfx-\bfy)-f(\bfx)|$ and consider said quantity
 \frac{1}{|r|^n}\int_{B_r}F(\bfy)\diff\bfy
 \right|\\
 &=\left|
-\frac{1}{|s|^n}\int_{B_s\smallsetminus B_r}F(\bfy)\diff\bfy+
+\frac{1}{|s|^n}\int_{B_s\setminus B_r}F(\bfy)\diff\bfy+
 \frac{1}{|s|^n}\int_{B_r}F(\bfy)\diff\bfy-
 \frac{1}{|r|^n}\int_{B_r}F(\bfy)\diff\bfy
 \right|\\
 &=\left|
-\frac{1}{|s|^n}\int_{B_s\smallsetminus B_r}F(\bfy)\diff\bfy
+\frac{1}{|s|^n}\int_{B_s\setminus B_r}F(\bfy)\diff\bfy
 +\left(\frac{1}{|s|^n}-\frac{1}{|r|^n}\right)\int_{B_r}F(\bfy)\diff\bfy
 \right|\\
 &\leq
-\underbrace{\frac{1}{|s|^n}\int_{B_s\smallsetminus B_r}F(\bfy)\diff\bfy}_{I_1}
+\underbrace{\frac{1}{|s|^n}\int_{B_s\setminus B_r}F(\bfy)\diff\bfy}_{I_1}
 +\underbrace{\left(\frac{1}{|s|^n}-\frac{1}{|r|^n}\right)\int_{B_r}F(\bfy)\diff\bfy}_{I_2}.
 \end{align*}
 Hence, we must show that the quantities $I_1,I_2\to 0$ as $r\to s$.

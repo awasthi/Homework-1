@@ -15,235 +15,242 @@
 \end{solution}
 
 \begin{problem}
-Let $X$ be the following subspace of $\bbR^2$:
-\[
-((0,1]\times[0,1])\cup([2,3)\times[0,1]).
-\]
-Let $\sim$ be the equivalence relation on $X$ with $(1,t)\sim(2,t)$ (that
-is $(s,t)\sim(s',t')\iff(s,t)=(s',t')$ or $t=t'$ and $\{s,s'\}=\{1,2\}$;
-you do \emph{not} have to prove that this is an equivalence
-relation). Prove that $X/{\sim}$ is homeomorphic to
-$(0,2)\times[0,1]$. (\emph{Hint}: construct maps in both directions).
+  Let $X$ be the following subspace of $\bbR^2$:
+  \[
+    ((0,1]\times[0,1])\cup([2,3)\times[0,1]).
+  \]
+  Let $\sim$ be the equivalence relation on $X$ with $(1,t)\sim(2,t)$ (that
+  is $(s,t)\sim(s',t')\iff(s,t)=(s',t')$ or $t=t'$ and $\{s,s'\}=\{1,2\}$;
+  you do \emph{not} have to prove that this is an equivalence
+  relation). Prove that $X/{\sim}$ is homeomorphic to
+  $(0,2)\times[0,1]$. (\emph{Hint}: construct maps in both directions).
 \end{problem}
 \begin{solution}
-We shall proceed by the hint. Let $q\colon X\to X/{\sim}$ denote the
-quotinet map. Then, for $(x,y)\in X$, we define the map
+  We shall proceed by the hint. Let $q\colon X\to X/{\sim}$ denote the
+  quotinet map. Then, for $(x,y)\in X$, we define the map
 
-We shall proceed by the hint. Let $q\colon X\to X/{\sim}$ denote the
-quotient map. Then, for $x\in X$, we define the map
-\[
-h(s,t)=
-\begin{cases}
-(s,t)&\text{if $(s,t)\in(0,1]\times[0,1]$}\\
-(s-1,t)&\text{if $(s,t)\in(2,3]\times[0,1])$}
-\end{cases}
-\]
-from $X\to(0,2)\times[0,1]$.
+  We shall proceed by the hint. Let $q\colon X\to X/{\sim}$ denote the
+  quotient map. Then, for $x\in X$, we define the map
+  \[
+    h(s,t)=
+    \begin{cases}
+      (s,t)&\text{if $(s,t)\in(0,1]\times[0,1]$}\\
+      (s-1,t)&\text{if $(s,t)\in(2,3]\times[0,1])$}
+    \end{cases}
+  \]
+  from $X\to(0,2)\times[0,1]$.
 
-By the UMP of the quotient space (Theorem Q.3), if we can show that $h$ is
-continuous and preserves the equivalence relation, the induced map on the
-quotient space, $h'\colon X/{\sim}\to (0,2)\times[0,1]$ will be
-continuous. To that end, we will use the pasting lemma. First, note that
-$(0,1]\times[0,1]$ and $[2,3)\times[0,1]$ are closed subsets of $X$ since
-$(0,1]\times[0,1]$ is the complement of $((1,\infty)\times (-2,2))\cap X$
-which is open in $X$ (since $X$ inherits its topology from $\bbR^2$),
-similarly, $[2,3)\times[0,1]$ is closed in $X$ since it is the complement
-of $((-\infty,2)\times(-2,2))\cap X$ which is open in $X$ for the same
-reasons. It is clear that the maps $x\mapsto x$ and $x\mapsto x-1$ are
-continuous onto their image, since the latter is nothing more than the
-inclusion map and the former is nothing more than subtraction, which is
-continuous by Theorem 21.5. Thus, by the pasting lemma, $h$ is continuous.
+  By the UMP of the quotient space (Theorem Q.3), if we can show that $h$
+  is continuous and preserves the equivalence relation, the induced map on
+  the quotient space, $h'\colon X/{\sim}\to (0,2)\times[0,1]$ will be
+  continuous. To that end, we will use the pasting lemma. First, note that
+  $(0,1]\times[0,1]$ and $[2,3)\times[0,1]$ are closed subsets of $X$ since
+  $(0,1]\times[0,1]$ is the complement of $((1,\infty)\times (-2,2))\cap X$
+  which is open in $X$ (since $X$ inherits its topology from $\bbR^2$),
+  similarly, $[2,3)\times[0,1]$ is closed in $X$ since it is the complement
+  of $((-\infty,2)\times(-2,2))\cap X$ which is open in $X$ for the same
+  reasons. It is clear that the maps $x\mapsto x$ and $x\mapsto x-1$ are
+  continuous onto their image, since the latter is nothing more than the
+  inclusion map and the former is nothing more than subtraction, which is
+  continuous by Theorem 21.5. Thus, by the pasting lemma, $h$ is
+  continuous.
 
-Now we show that $h$ does in fact preserve the equivalence
-relation. Suppose $(s,t)\sim(s',t')$. Then either $(s,t)=(s',t')$ or $t=t'$
-and $s,s'\in\{1,2\}$. In the former case, we have $h(s,t)=h(s',t')$
-(whether $(s,t),(s',t')\in(0,1]\times[0,1]$ or its complement). In the
-latter case, we may, without loss of generality, assume that $(s,t)=(1,t)$
-and $(s',t')=(2,t)$. Then $h(s,t)=(1,t)=(2-1,t)=h(s',t')$. Thus, by Theorem
-Q.3, the induced map $h'\colon X/{\sim}\to(0,2)\times[0,1]$ is
-continuous. Moreover, the map is bijective with inverse
-\[
-(h')^{-1}=
-\begin{cases}
-[s,t]&\text{if $x\in (0,1]$}\\
-[s+1,t]&\text{if $x\in [1,2)$}
-\end{cases}.
-\]
-This is clearly an inverse as
-\[
-h'\circ (h')^{-1}=\id_{X/{\sim}}
-\]
-and
-\[
-(h')^{-1}\circ h'=\id_{(0,2)\times[0,1]}.
-\]
-Thus, by Theorem 26.6, $h'$ is a homeomorphism.
+  Now we show that $h$ does in fact preserve the equivalence
+  relation. Suppose $(s,t)\sim(s',t')$. Then either $(s,t)=(s',t')$ or
+  $t=t'$ and $s,s'\in\{1,2\}$. In the former case, we have
+  $h(s,t)=h(s',t')$ (whether $(s,t),(s',t')\in(0,1]\times[0,1]$ or its
+  complement). In the latter case, we may, without loss of generality,
+  assume that $(s,t)=(1,t)$ and $(s',t')=(2,t)$. Then
+  $h(s,t)=(1,t)=(2-1,t)=h(s',t')$. Thus, by Theorem Q.3, the induced map
+  $h'\colon X/{\sim}\to(0,2)\times[0,1]$ is continuous. Moreover, the map
+  is bijective with inverse
+  \[
+    (h')^{-1}=
+    \begin{cases}
+      [s,t]&\text{if $x\in (0,1]$}\\
+      [s+1,t]&\text{if $x\in [1,2)$}
+    \end{cases}.
+  \]
+  This is clearly an inverse as
+  \[
+    h'\circ (h')^{-1}=\id_{X/{\sim}}
+  \]
+  and
+  \[
+    (h')^{-1}\circ h'=\id_{(0,2)\times[0,1]}.
+  \]
+  Thus, by Theorem 26.6, $h'$ is a homeomorphism.
 \end{solution}
 
 \begin{problem}
-Prove that there is an equivalence relation $\sim$ on the interval $[0,1]$
-such that $[0,1]/{\sim}$ is homeomorphic to $[0,1]\times[0,1]$. As part of
-your solution \emph{explain} how you are using one or more properties of the
-quotient topology.
+  Prove that there is an equivalence relation $\sim$ on the interval
+  $[0,1]$ such that $[0,1]/{\sim}$ is homeomorphic to
+  $[0,1]\times[0,1]$. As part of your solution \emph{explain} how you are
+  using one or more properties of the quotient topology.
 \end{problem}
 \begin{solution}
-First, it suffices to find a continuous surjective map $f\colon[0,1]\to
-[0,1]\times[0,1]$ and quotient out by the preimage of every point
-$x\in[0,1]\times[0,1]$. These maps are hard to describe in general, but
-they exists (take for example a space-filling curve). Next, note that if
-$C$ is a closed subset of $[0,1]$ then it is compact so $f(C)$ is
-compact. But since $[0,1]\times[0,1]$ is compact Hausdorff, then
-$f(C)\subset[0,1]\times[0,1]$ will be closed. It follows by that $f$ will
-be a Munkres quotient map, so by Theorem Q.4, $f'\colon
-[0,1]/{\sim}\to[0,1]\times[0,1]$ is a homeomorphism for some equivalence
-relation $\sim$ on $[0,1]$.
+  First, it suffices to find a continuous surjective map
+  $f\colon[0,1]\to [0,1]\times[0,1]$ and quotient out by the preimage of
+  every point $x\in[0,1]\times[0,1]$. These maps are hard to describe in
+  general, but they exists (take for example a space-filling curve). Next,
+  note that if $C$ is a closed subset of $[0,1]$ then it is compact so
+  $f(C)$ is compact. But since $[0,1]\times[0,1]$ is compact Hausdorff,
+  then $f(C)\subset[0,1]\times[0,1]$ will be closed. It follows by that $f$
+  will be a Munkres quotient map, so by Theorem Q.4,
+  $f'\colon [0,1]/{\sim}\to[0,1]\times[0,1]$ is a homeomorphism for some
+  equivalence relation $\sim$ on $[0,1]$.
 \end{solution}
 
 \begin{problem}
-Let $D$ be the closed unit disk in $\bbR^2$, that is, the set
-\[
-\left\{\,(x,y):x^2+y^2\leq 1\,\right\}.
-\]
-Let $E$ be the open unit disk
-\[
-\left\{\,(x,y):x^2+y^2<1\,\right\}.
-\]
-Let $X$ be the one-point compactification of $E$, and let $f\colon D\to X$
-be the map defined by
-\[
-f(x,y)=
-\begin{cases}
-(x,y)&\text{if $x^2+y^2<1$}\\
-\infty&\text{if $x^2+y^2=1$.}
-\end{cases}
-\]
-Prove that $f$ is continuous.
+  Let $D$ be the closed unit disk in $\bbR^2$, that is, the set
+  \[
+    \left\{\,(x,y):x^2+y^2\leq 1\,\right\}.
+  \]
+  Let $E$ be the open unit disk
+  \[
+    \left\{\,(x,y):x^2+y^2<1\,\right\}.
+  \]
+  Let $X$ be the one-point compactification of $E$, and let
+  $f\colon D\to X$ be the map defined by
+  \[
+    f(x,y)=
+    \begin{cases}
+      (x,y)&\text{if $x^2+y^2<1$}\\
+      \infty&\text{if $x^2+y^2=1$.}
+    \end{cases}
+  \]
+  Prove that $f$ is continuous.
 \end{problem}
 \begin{solution}
-By the section on the one-point-compactification, it suffices to check two
-cases of open sets (1) all sets $U$ open in $E$, and (2) all sets of the
-form $U=X\smallsetminus C$ containing the point at infinity, $\infty$, where $C$ is
-compact. In the first case, it is clear that $f$ is continuous since it is
-just the inclusion map and is in fact bijective on $E$. For the second
-case, suppose that $U$ is a neighborhood of $\infty$. Then $Y-U$ is a
-compact subset of $E$, hence closed since $X$ is a compact Hausdorff
-space. But since $f$ is bijective, continuous on $E$, then $f^{-1}(X-U)$ is
-a closed subset of $E$. Thus, by theorem 18.2, $f$ is continuous.
+  By the section on the one-point-compactification, it suffices to check
+  two cases of open sets (1) all sets $U$ open in $E$, and (2) all sets of
+  the form $U=X\setminus C$ containing the point at infinity,
+  $\infty$, where $C$ is compact. In the first case, it is clear that $f$
+  is continuous since it is just the inclusion map and is in fact bijective
+  on $E$. For the second case, suppose that $U$ is a neighborhood of
+  $\infty$. Then $Y-U$ is a compact subset of $E$, hence closed since $X$
+  is a compact Hausdorff space. But since $f$ is bijective, continuous on
+  $E$, then $f^{-1}(X-U)$ is a closed subset of $E$. Thus, by theorem 18.2,
+  $f$ is continuous.
 \end{solution}
 
 \begin{problem}
-Let $X$ and $Y$ be homotopy-equivalent topological spaces. Suppose that $X$
-is path-connected. Prove that $Y$ is path-connected.
+  Let $X$ and $Y$ be homotopy-equivalent topological spaces. Suppose that
+  $X$ is path-connected. Prove that $Y$ is path-connected.
 \end{problem}
 \begin{solution}
-% Suppose that $X$ is homotopy-equivalent to $Y$. Then there exists a
-% continuous maps $f\colon X\to Y$ and $g\colon Y\to X$ such that $g\circ
-% f\simeq\id_X$ and $g\circ f\simeq\id_Y$. Now, since $X$ is path-connected,
-% its image is path-connected (as we will show shortly) thus, it suffices to
-% show that for any point $y\in Y$, there exists a path $p\colon I\to Y$ from
-% $p(0)=y$ to $p(1)\in f(X)$. Let $y\in Y\smallsetminus f(X)$.
-First we prove the following important result:
-\begin{lemma}
-\label{lem:path-connected-image}
-Path-connectedness is a topological property, i.e., if $X$ is
-path-connected and $f\colon X\to Y$ is a continuous map then, $f(X)$ is
-path connected.
-\end{lemma}
-\begin{solution}
-\renewcommand\qedsymbol{$\clubsuit$}
-Since $X$ is path-connected, for any pair of points $x,x'\in X$ there
-exists a continuous map $p\colon [0,1]\to X$ such that $p(0)=x$ and
-$p(1)=x'$. Since composition of continuous maps is continuous, $f\circ
-p\colon[0,1]\to Y$ is a path from $f(x)$ to $f(x')$. Since this property
-holds for any $y\in f(X)$, it follows that $f(X)$ is path-connected.
-\end{solution}
-Now, suppose that $X$ is homotopy-equivalent to $Y$. Then there exists
-continuous maps $f\colon X\to Y$ and $g\colon Y\to X$ such that $g\circ
-f\simeq\id_X$ and $f\circ g\simeq\id_Y$. Now, since $X$ is path-connected,
-by Lemma (\ref{lem:path-connected-image}) we have $f(X)$ is
-path-connected. Thus, it suffices to show that for every point $y\in Y$
-there exists a path $p\colon [0,1]\to Y$ from $y$ to some point $y'\in
-f(X)$. Now, since $f\circ g\simeq\id_Y$, there exists a homotopy, say
-$H\colon Y\times[0,1]\to Y$ such that $H(s,0)=f\circ g(s)$ and
-$H(s,1)=s$. Consider the evaluation $H_y= H(y,t)\circ H(y,t)$ where
-the map $(y,t)\colon [0,1]\to Y\times[0,1]$ is the imbedding of $[0,1]$ at
-$y$ (which is continuous by Theorem 18.4) thus, $H_y$ is
-continuous. Moreover, $H_y(0)=f\circ g(y)\in f(Y)$ and
-$H_y(1)=\id_Y(y)=y$ so $H_y$ is a path from $y$ to a point $f\circ g(y)$ in
-$f(X)$. Since we can do this for any point $y\in Y$, it follows, since
-path-connectedness is an equivalence relation, that $Y$ is path-connected.
+  % Suppose that $X$ is homotopy-equivalent to $Y$. Then there exists a
+  % continuous maps $f\colon X\to Y$ and $g\colon Y\to X$ such that
+  % $g\circ f\simeq\id_X$ and $g\circ f\simeq\id_Y$. Now, since $X$ is
+  % path-connected, its image is path-connected (as we will show shortly)
+  % thus, it suffices to show that for any point $y\in Y$, there exists a
+  % path $p\colon I\to Y$ from $p(0)=y$ to $p(1)\in f(X)$. Let
+  % $y\in Y\setminus f(X)$.
+  First we prove the following important result:
+  \begin{lemma}
+    \label{lem:path-connected-image}
+    Path-connectedness is a topological property, i.e., if $X$ is
+    path-connected and $f\colon X\to Y$ is a continuous map then, $f(X)$ is
+    path connected.
+  \end{lemma}
+  \begin{solution}
+    \renewcommand\qedsymbol{$\clubsuit$} Since $X$ is path-connected, for
+    any pair of points $x,x'\in X$ there exists a continuous map
+    $p\colon [0,1]\to X$ such that $p(0)=x$ and $p(1)=x'$. Since
+    composition of continuous maps is continuous,
+    $f\circ p\colon[0,1]\to Y$ is a path from $f(x)$ to $f(x')$. Since this
+    property holds for any $y\in f(X)$, it follows that $f(X)$ is
+    path-connected.
+  \end{solution}
+  Now, suppose that $X$ is homotopy-equivalent to $Y$. Then there exists
+  continuous maps $f\colon X\to Y$ and $g\colon Y\to X$ such that
+  $g\circ f\simeq\id_X$ and $f\circ g\simeq\id_Y$. Now, since $X$ is
+  path-connected, by Lemma (\ref{lem:path-connected-image}) we have $f(X)$
+  is path-connected. Thus, it suffices to show that for every point
+  $y\in Y$ there exists a path $p\colon [0,1]\to Y$ from $y$ to some point
+  $y'\in f(X)$. Now, since $f\circ g\simeq\id_Y$, there exists a homotopy,
+  say $H\colon Y\times[0,1]\to Y$ such that $H(s,0)=f\circ g(s)$ and
+  $H(s,1)=s$. Consider the evaluation $H_y= H(y,t)\circ H(y,t)$ where the
+  map $(y,t)\colon [0,1]\to Y\times[0,1]$ is the imbedding of $[0,1]$ at
+  $y$ (which is continuous by Theorem 18.4) thus, $H_y$ is
+  continuous. Moreover, $H_y(0)=f\circ g(y)\in f(Y)$ and
+  $H_y(1)=\id_Y(y)=y$ so $H_y$ is a path from $y$ to a point $f\circ g(y)$
+  in $f(X)$. Since we can do this for any point $y\in Y$, it follows, since
+  path-connectedness is an equivalence relation, that $Y$ is
+  path-connected.
 \end{solution}
 \begin{problem}
-Let $a$ and $b$ denote the points $(-1,0)$ and $(1,0)$ in $\bbR^2$. Let
-$x_0$ denote the origin $(0,0)$. Use the Seifert--van Kampen theorem to
-calculate $\pi_1\left(\bbR^2\smallsetminus\{a,b\},x_0\right)$. You may not use any other
-method.
+  Let $a$ and $b$ denote the points $(-1,0)$ and $(1,0)$ in $\bbR^2$. Let
+  $x_0$ denote the origin $(0,0)$. Use the Seifert--van Kampen theorem to
+  calculate $\pi_1\left(\bbR^2\setminus\{a,b\},x_0\right)$. You may
+  not use any other method.
 \end{problem}
 \begin{solution}
-We'll use Theorem 70.2's version of the Seifert--van Kampen theorem. Define
-\[
-U=\left(-\infty,\tfrac{1}{2}\right)\times\bbR
-\quad\text{and}\quad
-V=\left(-\tfrac{1}{2},\infty\right)\times\bbR.
-\]
-Then $U\cap V=(-1/2,1/2)\times\bbR$ is clearly path-connected since it is a
-convex set. Moreover, note that $U\simeq\bbR^2\smallsetminus\{x_0\}$ and
-$V\simeq\bbR^2\smallsetminus\{x_0\}$ (in the case of $U$, first consider the
-homeomorphism $(x,y)\mapsto(x+1,y)$ which sends $a$ to $(0,0)$ and then the
-homotopy $(x,y)\mapsto\tfrac{1}{t}(x,ys)$).
+  We'll use Theorem 70.2's version of the Seifert--van Kampen
+  theorem. Define
+  \[
+    U=\left(-\infty,\tfrac{1}{2}\right)\times\bbR \quad\text{and}\quad
+    V=\left(-\tfrac{1}{2},\infty\right)\times\bbR.
+  \]
+  Then $U\cap V=(-1/2,1/2)\times\bbR$ is clearly path-connected since it is
+  a convex set. Moreover, note that $U\simeq\bbR^2\setminus\{x_0\}$
+  and $V\simeq\bbR^2\setminus\{x_0\}$ (in the case of $U$, first
+  consider the homeomorphism $(x,y)\mapsto(x+1,y)$ which sends $a$ to
+  $(0,0)$ and then the homotopy $(x,y)\mapsto\tfrac{1}{t}(x,ys)$).
 
-Once we have established the above, since the fundamental group of a space
-is invariant under homotopy-equivalence,
-$\pi_1(U,x_0)\cong\pi_1\left(\bbR^2\smallsetminus\{x_0\},y_0\right)\cong\bbZ$ for some
-arbitrary $y_0\neq x_0$ and similarly $\pi_1(V,x_0)\cong\bbZ$. Thus, by the
-classical version of the Seifert--van Kampen theorem
-\[
-\pi_1\left(\bbR^2\smallsetminus\{a,b\},x_0\right)\cong
-\frac{\bbZ*\bbZ}{N}
-\]
-where $N$ is the least normal subgroup
+  Once we have established the above, since the fundamental group of a
+  space is invariant under homotopy-equivalence,
+  $\pi_1(U,x_0)\cong\pi_1\left(\bbR^2\setminus\{x_0\},y_0\right)\cong\bbZ$
+  for some arbitrary $y_0\neq x_0$ and similarly
+  $\pi_1(V,x_0)\cong\bbZ$. Thus, by the classical version of the
+  Seifert--van Kampen theorem
+  \[
+    \pi_1\left(\bbR^2\setminus\{a,b\},x_0\right)\cong
+    \frac{\bbZ*\bbZ}{N}
+  \]
+  where $N$ is the least normal subgroup
 \end{solution}
 
 \begin{problem}
-Let $p\colon E\to B$ be a covering map with $B$ locally connected, and let
-$x\in B$. Prove that $x$ has a neighborhood $W$ with the following
-property: for every connected component $C$ of $p^{-1}(W)$, the map
-$p\colon C\to W$ is a homeomorphism.
+  Let $p\colon E\to B$ be a covering map with $B$ locally connected, and
+  let $x\in B$. Prove that $x$ has a neighborhood $W$ with the following
+  property: for every connected component $C$ of $p^{-1}(W)$, the map
+  $p\colon C\to W$ is a homeomorphism.
 \end{problem}
 \begin{solution}
-Let $U$ be an evenly covered neighborhood of $x$. Then
-$p^{-1}(U)=\bigcup_\alpha V_\alpha$ where the $V_\alpha$ are open in $E$
-and  $V_\alpha\cap V_\beta=\emptyset$ whenever $\alpha\neq\beta$. For any
-$\alpha$, let $C$ be a connected component of $p^{-1}(U)$ containing
-$p^{-1}(x)\cap V_\alpha$ (the latter is a one point set since
-$\left.p\right|_{V_\alpha}$ is a bijection). Then $C\subset V_\alpha$ for
-at most one such $\alpha$ for otherwise $C\cap V_\beta\neq\emptyset$ for
-some $\beta\neq\alpha$, so $C\cap V_\beta$ and $C\cap V_\alpha$ form a
-separation of (note that $C\smallsetminus(C\cap V_\beta)=C\cap V_\alpha$ and
-vice-versa thus, $C\cap V_\beta$ and $C\cap V_\alpha$ are open and closed
-in the subspace topology on $C$, conversely) by Lemma 23.1.
+  Let $U$ be an evenly covered neighborhood of $x$. Then
+  $p^{-1}(U)=\bigcup_\alpha V_\alpha$ where the $V_\alpha$ are open in $E$
+  and $V_\alpha\cap V_\beta=\emptyset$ whenever $\alpha\neq\beta$. For any
+  $\alpha$, let $C$ be a connected component of $p^{-1}(U)$ containing
+  $p^{-1}(x)\cap V_\alpha$ (the latter is a one point set since
+  $\left.p\right|_{V_\alpha}$ is a bijection). Then $C\subset V_\alpha$ for
+  at most one such $\alpha$ for otherwise $C\cap V_\beta\neq\emptyset$ for
+  some $\beta\neq\alpha$, so $C\cap V_\beta$ and $C\cap V_\alpha$ form a
+  separation of (note that $C\setminus(C\cap V_\beta)=C\cap V_\alpha$
+  and vice-versa thus, $C\cap V_\beta$ and $C\cap V_\alpha$ are open and
+  closed in the subspace topology on $C$, conversely) by Lemma 23.1.
 
-Thus, $p(C)\subset U$ is connected by Theorem 23.5. Moreover, since
-$V_\alpha\supset C$ is homeomorphic to $U$ by the restriction
-$\left.p\right|_{V_\alpha}$, $p(C)$ is a connected component of $U$ as the
-following lemma shows
-\begin{lemma}
-Suppose $C$ is a connected component of $X$ and $h\colon X\to Y$ is a
-homeomorphism. Then $h(C)$ is a connected component of $Y$.
-\end{lemma}
-\begin{solution}[Solution of lemma]
-\renewcommand\qedsymbol{$\clubsuit$}
-Let $C$ be a connected component of $X$. By theorem 23.5, $h(C)$ is a
-connected subset of $Y$, moreover, is open. By Theorem 25.1, $h(C)$ is
-contained in a connected component of $Y$, say $D$. Hence, we must show
-that $D\subset h(C)$. Now, since $h$ is a homeomorphism, $h^{-1}(D)$ is a
-connected subset of $X$, by Theorem 23.5, so is contained in only one
-component of $X$. But $h^{-1}(D)\cap C\neq\emptyset$ so $h^{-1}(D)\subset
-C$. Thus, since $h$ is a set-bijection, $D\subset h(C)$.
-\end{solution}
-so by Theorem 25.3, $p(C)$ is open in $B$ since $B$ is locally
-connected. Thus, the restriction $\left.p\right|_{C}$ is a homeomorphism
-onto its image $W= p(C)$, by Lemma A, which is a neighborhood of $x$.
+  Thus, $p(C)\subset U$ is connected by Theorem 23.5. Moreover, since
+  $V_\alpha\supset C$ is homeomorphic to $U$ by the restriction
+  $\left.p\right|_{V_\alpha}$, $p(C)$ is a connected component of $U$ as
+  the following lemma shows
+  \begin{lemma}
+    Suppose $C$ is a connected component of $X$ and $h\colon X\to Y$ is a
+    homeomorphism. Then $h(C)$ is a connected component of $Y$.
+  \end{lemma}
+  \begin{solution}[Solution of lemma]
+    \renewcommand\qedsymbol{$\clubsuit$} Let $C$ be a connected component
+    of $X$. By theorem 23.5, $h(C)$ is a connected subset of $Y$, moreover,
+    is open. By Theorem 25.1, $h(C)$ is contained in a connected component
+    of $Y$, say $D$. Hence, we must show that $D\subset h(C)$. Now, since
+    $h$ is a homeomorphism, $h^{-1}(D)$ is a connected subset of $X$, by
+    Theorem 23.5, so is contained in only one component of $X$. But
+    $h^{-1}(D)\cap C\neq\emptyset$ so $h^{-1}(D)\subset C$. Thus, since $h$
+    is a set-bijection, $D\subset h(C)$.
+  \end{solution}
+  so by Theorem 25.3, $p(C)$ is open in $B$ since $B$ is locally
+  connected. Thus, the restriction $\left.p\right|_{C}$ is a homeomorphism
+  onto its image $W= p(C)$, by Lemma A, which is a neighborhood of $x$.
 \end{solution}
 
 %%% Local Variables:

@@ -176,11 +176,36 @@
 
   $\impliedby$ On the other hand, suppose that every subsequence
   $\{f_{n_k}\}$ of $\{f_n\}$ contains a subsequence $\{f_{n_{k_j}}\}$ that
-  converges to $f$. Then, writing the set
+  converges to $f$. Seeking a contradiction, suppose that given
+  $\varepsilon>0$ there exists a subsequence $\{f_{n_k}\}$ of $\{f_n\}$
+  such that
   \[
-    \left\{\,x\in X:|f_n(x)-f(x)|\geq\varepsilon\,\right\}
+    M=\mu\left(\left\{\,x\in
+        X:|f(x)-f_{n_k}(x)|\geq\varepsilon\,\right\}\right)>0.
   \]
-  as the union
+  But by assumption there exists a subsequence $\{f_{n_{k_j}}\}$ of
+  $\{f_{n_k}\}$ that converges almost everywhere to $f$. We claim that this
+  implies that $f_{n_{k_j}}\to f$ in measure.
+  \begin{proof}[Proof of claim]
+    \renewcommand{\qedsymbol}{$\heartsuit$}
+    This is adapted from a proof in Royden, Proposition 3, Ch.\@ 5.
+
+    First note that $f$ is measurable since it is the pointwise limit
+    almost everywhere of a sequence of measurable functions. Let
+    $\varepsilon,\delta>0$ be given. By Egorov's theorem, there is a measurable
+    subset $E\subset X$ with $\mu(X\setminus E)<\delta$ such that
+    $f_n\to f$ uniformly on $E$. Thus, there is an index $N$ such that
+    $n\geq N$ implies
+    \[
+      |f_n(x)-f(x)|<\varepsilon
+    \]
+    for all $x\in E$. Thus, for $n\geq N$,
+    \[
+      \left\{\,x\in X:|f(x)-f_n(x)|\geq\varepsilon\,\right\}\subset
+      X\setminus E.
+    \]
+    Thus,
+  \end{proof}
 \end{solution}
 
 \begin{problem}
@@ -196,6 +221,7 @@
   [\emph{Hint}: Consider $\left\{\,x\in X:2^n\leq f(x)<2^{n+1}\,\right\}$.]
 \end{problem}
 \begin{solution}
+
 \end{solution}
 
 \begin{problem}
