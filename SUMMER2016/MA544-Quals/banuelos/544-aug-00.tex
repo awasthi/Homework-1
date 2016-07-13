@@ -226,17 +226,22 @@
   Hence, since $f_{n_{k_j}}\to f$ in measure, but $M>0$ we have a
   contradiction.
 
-  For (ii) since $F$ is continuous and the $f_n,f$ are measurable,
-  $F(f_n),F(f)$ are measurable. Suppose that $f_n\to f$ in measure. Then
-  given $\varepsilon,\delta>0$, there exists an index $N$ such that $n\geq
-  N$ implies
+  For (ii) since $F$ is continuous given $\varepsilon>0$ there exist
+  $\delta>0$ such that $|x-x'|<\delta$ implies
+  $|F(x)-F(x')|<\varepsilon$. Then, since $f_n\to f$ in measure, there
+  exist an index there exists an index $N$ such that $n\geq N$ implies
   \[
     \mu\left(%
-      \left\{\,x\in X:|f(x)-f_n(x)|\geq\varepsilon\,\right\}%
+      \left\{\,x\in X:|f(x)-f_n(x)|\geq\delta\,\right\}%
     \right)%
-    <\delta.
+    <\varepsilon.
   \]
-  Thus,
+  We want to show that the above (or some variation thereof) implies that
+  the measure of the set
+  \[
+    \left\{\,x\in X:|F(f(x))-F(f_n(x))|\geq\delta\,\right\}%
+  \]
+  approaches $0$ as $n$ approaches $\infty$.
 \end{solution}
 
 \begin{problem}
