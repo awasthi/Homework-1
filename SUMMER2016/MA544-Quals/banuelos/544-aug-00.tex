@@ -258,8 +258,21 @@
   [\emph{Hint}: Consider $\left\{\,x\in X:2^n\leq f(x)<2^{n+1}\,\right\}$.]
 \end{problem}
 \begin{solution}
-  Since $f\geq 0$, we can take the $p$th root of $f$ and it makes sense to
-  and we have
+  Since $\mu(X)<\infty$ it suffices to consider all $x\in X$ such that
+  $f(x)>1$ for, by properties of the Lebesgue integral, we can split the
+  integral of $f$ over $X$ into
+  \[
+    \int_X f\diff x=\int_{X\setminus E} f\diff x+\int_{E} f\diff x
+    \leq\int_{X\setminus E} f\diff x+C
+  \]
+  for some constant $C$ and where
+  $E=\left\{\,x\in X:0\leq f(x)<1\,\right\}$. So the finiteness of
+  $\|f\|_1$ depends only on what happens in $X\setminus E$. Following the
+  hint, let us partition $X\setminus E$ into a disjoint countable
+  collection of measurable sets $\{E_n\}$ where
+  \[
+    E_n=\left\{\,x\in X:2^n\leq f(x)<2^{n+1}\,\right\}.
+  \]
 \end{solution}
 
 \begin{problem}
