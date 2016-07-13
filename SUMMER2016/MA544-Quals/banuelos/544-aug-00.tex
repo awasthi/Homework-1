@@ -228,20 +228,21 @@
 
   For (ii) since $F$ is continuous given $\varepsilon>0$ there exist
   $\delta>0$ such that $|x-x'|<\delta$ implies
-  $|F(x)-F(x')|<\varepsilon$. Then, since $f_n\to f$ in measure, there
-  exist an index there exists an index $N$ such that $n\geq N$ implies
+  $|F(x)-F(x')|<\varepsilon$. By part (i), $f_n\to f$ in measure if and
+  only if every subsequence $\{f_{n_k}\}$ of $\{f_n\}$ contains a
+  subsequence $\{f_{n_{k_j}}\}$ that converges to $f$ almost everywhere,
+  i.e., given $\delta>0$ there exists an index $N$ such that $n_{k_j}\geq
+  N$ implies
   \[
-    \mu\left(%
-      \left\{\,x\in X:|f(x)-f_n(x)|\geq\delta\,\right\}%
-    \right)%
-    <\varepsilon.
+    |f(x)-f_{n_{j_k}}(x)|<\delta
   \]
-  We want to show that the above (or some variation thereof) implies that
-  the measure of the set
+  for almost every $x\in X$. Thus,
   \[
-    \left\{\,x\in X:|F(f(x))-F(f_n(x))|\geq\delta\,\right\}%
+    \left|F(f(x))-F(f_{n_{j_k}}(x))\right|<\varepsilon
   \]
-  approaches $0$ as $n$ approaches $\infty$.
+  and we see that for every subsequence $\{F\circ f_{n_k}\}$ of $\{F\circ
+  f_n\}$ we can find a subsequence $\{F\circ f_{n_{j_k}}\}$ that converges
+  almost everywhere to $F\circ f$.
 \end{solution}
 
 \begin{problem}
