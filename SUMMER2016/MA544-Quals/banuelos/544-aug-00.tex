@@ -346,6 +346,16 @@
   \]
 \end{problem}
 \begin{solution}
+  Let $q$ be the conjugate exponent to $p$, i.e., $1/p+1/q=1$. Then, by
+  Hölder's inequality, we have
+  \[
+    \|f\|_1\leq\|f\|_p\mu(E_n)^{1/q}=\|f\|_pn^{-1/q}.
+  \]
+  Thus, we can bound the integral
+  \[
+    n^{p-1}p\int_{E_n}|f|\diff\mu%
+    \leq n^{p-1-1/q}p\|f\|_p= n^{(p-1)^2/p}p\|f\|_p.
+  \]
 \end{solution}
 
 \begin{problem}
