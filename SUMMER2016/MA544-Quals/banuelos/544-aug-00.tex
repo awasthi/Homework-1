@@ -316,6 +316,25 @@
     \int_{-1/n}^{1/n} f(x)(1-n|x|)\diff x%
     =\frac{1}{n}\int_{-1}^1 f(y/n)(1-|y|)\diff y.
   \]
+  By the extreme value theorem, since $f$ is continuous and $[-1,1]$ is
+  compact $f$ is bounded on $[-1,1]$ by, say $M$. Let $g(x)=M$. Then $g\in
+  L^1(X)$ since $\|g\|_1=2M$. Thus, by the Lebesgue dominated convergence
+  theorem, since
+  \[
+    \left|f(y/n)(1-|y|)\right|\leq M
+  \]
+  on $[-1,1]$ and $g\in L^1([-1,1])$ it follows that
+  \begin{align*}
+    \lim_{n\to\infty}\int_{-1/n}^{1/n} f(x)(1-n|x|)\diff x
+    &=\lim_{n\to\infty}\frac{1}{n}\int_{-1}^1 f(y/n)(1-|y|)\diff y\\
+    &=\int_{-1}^1\lim_{n\to\infty}\left[\frac{f(y/n)(1-|y|)}{n}\right]\rmd
+      y\\
+    &=\int_{-1}^1\lim_{n\to\infty}%
+      \left[%
+      \frac{f(y/n)}{n}-\frac{|y|}{n}
+      \right]\rmd y\\%
+    &=0.
+  \end{align*}
 \end{solution}
 
 \begin{problem}
