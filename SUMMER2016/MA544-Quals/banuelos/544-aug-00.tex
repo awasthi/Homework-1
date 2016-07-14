@@ -273,6 +273,14 @@
   \[
     E_n=\left\{\,x\in X:2^n\leq f(x)<2^{n+1}\,\right\}.
   \]
+
+  Okay, by Jensen's inequality, we have
+  \[
+    \left(\frac{\int_X f\diff x}{\mu(X)}\right)^r
+    \leq
+    \frac{\int_Xf^r\diff x}{\mu(X)}
+  \]
+  which gives us ... absolutely nothing.
 \end{solution}
 
 \begin{problem}
@@ -282,6 +290,12 @@
   \]
 \end{problem}
 \begin{solution}
+  First, let us make the following substitution $y=nx$, $\rmd y=n\diff x$
+  into the integral
+  \[
+    \int_{-1/n}^{1/n} f(x)(1-n|x|)\diff x
+    =\int_{-1}^1nf(y/n)(1-|y|)\diff y
+  \]
 \end{solution}
 
 \begin{problem}
