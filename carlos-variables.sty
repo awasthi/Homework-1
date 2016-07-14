@@ -39,6 +39,7 @@
 \RequirePackage[LGR,T2A,T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[
+% farsi,
 french,
 german,
 greek.plutoniko,
@@ -50,12 +51,15 @@ english]{babel}
            de=german,
            en=english,
            es=spanish,
+           he=greek,
+           % pa=farsi,
            ru=russian,
            }
 \def\spanishoptions{mexico}
 
 \selectlanguage{english}
 
+\AtBeginDvi{\input{zhwinfonts}}
 \RequirePackage{CJKutf8}
 \newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
 \newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
@@ -69,7 +73,6 @@ english]{babel}
 \useosf % use oldstyle figures except in math
 \substitutefont{LGR}{\rmdefault}{Tempora}
 \substitutefont{T2A}{\rmdefault}{Tempora}
-
 \fi
 
 %% Theorems and definitions
