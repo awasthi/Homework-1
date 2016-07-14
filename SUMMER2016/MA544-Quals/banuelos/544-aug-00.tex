@@ -258,19 +258,35 @@
   if you like.]
 \end{problem}
 \begin{solution}
-  We don't like it; nevertheless, we shall consider the set
+  % We don't like it; nevertheless, we shall consider the set
+  % \[
+  %   \left\{\,x\in X:2^n\leq f(x)<2^{n+1}\,\right\}.
+  % \]
+  % In fact, define the countable collection of measurable sets $\{E_n\}$,
+  % with $n\in\bbN$, to be
+  % \[
+  %   E_n=\left\{\,x\in X:2^n\leq f(x)<2^{n+1}\,\right\}.
+  % \]
+  % Note that the $E_n$ are pairwise disjoint and their union is the set $X$
+  % so $\sum_{n=1}^\infty\mu(E_n)=\mu(X)<\infty$. Thus, by the
+  % Borel--Cantelli lemma, every $x\in X$ belongs to at most a finite number
+  % of $E_n$. If we can show that $f\in L^p(X)$ we win as it is known that if
+  % $\mu(X)<\infty$ then $L^r(X)\subset L^p(X)$ for all $1\leq r<p$. Our goal
+  % is therefore to bound the integral
+  % \[
+  %   \int_X f^p\diff\mu.
+  % \]
+
+
+  Instead of following the hint, consider the set
   \[
-    \left\{\,x\in X:2^n\leq f(x)<2^{n+1}\,\right\}.
+    E_t=\left\{\,x\in X:f(x)\geq t\,\right\}
   \]
-  In fact, define the countable collection of measurable sets $\{E_n\}$,
-  with $n\in\bbN$, to be
+  and let
   \[
-    E_n=\left\{\,x\in X:2^n\leq f(x)<2^{n+1}\,\right\}.
+    \omega(t)=\mu\left(E_t\right),
   \]
-  Note that the $E_n$ are pairwise disjoint and their union is the set $X$
-  so $\sum_{n=1}^\infty\mu(E_n)=\mu(X)<\infty$. Thus, by the
-  Borel--Cantelli lemma, every $x\in X$ belongs to at most a finite number
-  of $E_n$.
+  i.e., the distribution function of $f$.
 \end{solution}
 
 \begin{problem}
@@ -280,11 +296,15 @@
   \]
 \end{problem}
 \begin{solution}
-  First, let us make the following substitution $y=nx$, $\rmd y=n\diff x$
-  into the integral
+  To find the limit of the integral
   \[
     \int_{-1/n}^{1/n} f(x)(1-n|x|)\diff x
-    =\int_{-1}^1nf(y/n)(1-|y|)\diff y
+  \]
+  we first make the following substitutions: Let $y=nx$, $\rmd y=n\diff
+  x$. Then
+  \[
+    \int_{-1/n}^{1/n} f(x)(1-n|x|)\diff x%
+    =\frac{1}{n}\int_{-1}^1 f(y/n)(1-|y|)\diff y.
   \]
 \end{solution}
 
