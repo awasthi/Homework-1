@@ -102,9 +102,9 @@
   $B(\mathbf{0},r)=T(r,B(\mathbf{0},1))$. To reduce notation, set
   $B_1= B(\mathbf{0},1)$ and $B_r= B(\mathbf{0},r)$.
   \begin{solution}[Proof of claim]
-    \renewcommand{\qedsymbol}{$\clubsuit$} $\subset$: Let $\bfx\in
-    B_r$. Then $|\bfx|<r$ so $|\bfx|/r<1$. Thus, $|\bfx|/r\in B_1$ so it is
-    in the image of $B_1$ under the map $T(r,\cdot)$.
+    $\subset$: Let $\bfx\in B_r$. Then $|\bfx|<r$ so $|\bfx|/r<1$. Thus,
+    $|\bfx|/r\in B_1$ so it is in the image of $B_1$ under the map
+    $T(r,\cdot)$.
 
     $\supset$: On the other hand, suppose $\bfx\in T(r,B_1)$. Then
     $\bfx=r\bfy$ for some $\bfy\in B_1$. Then, since $|\bfy|<1$,
@@ -140,13 +140,12 @@
   \end{equation}
   We claim that $C=\bigcap_{k=1}^\infty E_k$ and that each $E_k$ is open.
   \begin{solution}[Proof of claim]
-    \renewcommand{\qedsymbol}{$\clubsuit$} First, we demonstrate
-    equality. $\subset$: Suppose $x\in C$. Then, by the definition of
-    continuity, for every $\varepsilon>0$, there exists a $\delta>0$ such
-    that $y\in B(x,\delta)$ implies $|f(x)-f(y)|<\delta$. In particular,
-    for every $k$, there exists $\delta>0$ such that for $y\in B(x,\delta)$
-    the inequality $|f(x)-f(y)|<1/k$ holds. Thus, $x$ is in
-    $\bigcap_{k=1}^\infty E_k$.
+    First, we demonstrate equality. $\subset$: Suppose $x\in C$. Then, by
+    the definition of continuity, for every $\varepsilon>0$, there exists a
+    $\delta>0$ such that $y\in B(x,\delta)$ implies
+    $|f(x)-f(y)|<\delta$. In particular, for every $k$, there exists
+    $\delta>0$ such that for $y\in B(x,\delta)$ the inequality
+    $|f(x)-f(y)|<1/k$ holds. Thus, $x$ is in $\bigcap_{k=1}^\infty E_k$.
 
     $\supset$: On the other hand, suppose that
     $x\in\bigcap_{k=1}^\infty E_k$. Then, given $\varepsilon>0$, by the
