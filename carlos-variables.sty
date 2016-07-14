@@ -29,9 +29,9 @@
 \RequirePackage{amssymb}
 % \RequirePackage{lmodern}
 % \RequirePackage{cfr-lm}
-% \RequirePackage[bbgreekl]{mathbbol}
-% \RequirePackage{eucal}
-% \RequirePackage{mathrsfs}
+\RequirePackage[bbgreekl]{mathbbol}
+\RequirePackage{eucal}
+\RequirePackage{mathrsfs}
 \RequirePackage[nointegrals]{wasysym}
 \RequirePackage{stmaryrd}
 
@@ -108,9 +108,10 @@ english]{babel}
 \@ifundefined{solution}{%
 \newenvironment{solution}[1][Solution]{%
   \proof[\textnormal{\bfseries{#1}}]%
-  \renewcommand\qedsymbol{\ensuremath{\blacktriangleleft}}
   $\blacktriangleright$
-}{\endproof}
+}{
+\renewcommand\qedsymbol{\ensuremath{\blacktriangleleft}}
+\endproof}
 }{}
 \makeatother
 
