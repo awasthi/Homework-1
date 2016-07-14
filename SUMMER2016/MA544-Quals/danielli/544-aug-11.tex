@@ -3,7 +3,7 @@
 \setcounter{equation}{0}
 
 \begin{problem}
-Let $f\in L^1(\bbR)$, and let $F(t)=\int_\bbR f(x)\cos(tx)\diff x$.
+Let $f\in L^1(\bbR)$, and let $F(t)=\int_{\bbR} f(x)\cos(tx)\diff x$.
 \begin{enumerate}[label=(\alph*),noitemsep]
 \item Prove that $F(t)$ is continuous for $t\in\bbR$.
 \item Prove the following \emph{Riemman--Lebesgue lemma}:
@@ -44,15 +44,15 @@ is of bounded variation on any finite subinterval $[a,b]$, and moreover
 $A=\sup_{a,b}V[a,b;f]<\infty$. Here, $V[a,b;f]$ denotes the total
 variation of $f$ over the interval $[a,b]$. Show that:
 \begin{enumerate}[label=(\alph*),noitemsep]
-\item $\displaystyle\int_\bbR|f(x+h)-f(x)|\diff x\leq A|h|$ for all
+\item $\displaystyle\int_{\bbR}|f(x+h)-f(x)|\diff x\leq A|h|$ for all
   $h\in\bbR$.
 \\\\
 \emph{Hint}: For $h>0$, write
 \[
-\int_\bbR |f(x+h)-f(x)|\diff x=
+\int_{\bbR} |f(x+h)-f(x)|\diff x=
 \sum_{n=-\infty}^\infty\int_{nh}^{(n+1)h}|f(x+h)-f(x)|\diff x.
 \]
-\item $\displaystyle\left|\int_\bbR f(x)\varphi'(x)\diff x\right|\leq A$,
+\item $\displaystyle\left|\int_{\bbR} f(x)\varphi'(x)\diff x\right|\leq A$,
   where $\varphi$ is any function of class $C^1$, of bounded variation,
   compactly supported, with $\sup_{x\in\bbR}|\varphi(x)|\leq 1$.
 \end{enumerate}
