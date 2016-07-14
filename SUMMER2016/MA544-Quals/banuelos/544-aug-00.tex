@@ -254,32 +254,34 @@
   for all measurable sets $E$. Prove that $f\in L^r(\mu)$ for any
   $1\leq r<p$.
 
-  [\emph{Hint}: Consider $\left\{\,x\in X:2^n\leq f(x)<2^{n+1}\,\right\}$.]
+  [\emph{Hint}: Consider $\left\{\,x\in X:2^n\leq f(x)<2^{n+1}\,\right\}$,
+  if you like.]
 \end{problem}
 \begin{solution}
-  Since $\mu(X)<\infty$ it suffices to consider all $x\in X$ such that
-  $f(x)>1$ for, by properties of the Lebesgue integral, we can split the
-  integral of $f$ over $X$ into
+  We don't like it; nevertheless, we shall consider the set
   \[
-    \int_X f\diff x=\int_{X\setminus E} f\diff x+\int_{E} f\diff x
-    \leq\int_{X\setminus E} f\diff x+C
+    \left\{\,x\in X:2^n\leq f(x)<2^{n+1}\,\right\}.
   \]
-  for some constant $C$ and where
-  $E=\left\{\,x\in X:0\leq f(x)<1\,\right\}$. So the finiteness of
-  $\|f\|_1$ depends only on what happens in $X\setminus E$. Following the
-  hint, let us partition $X\setminus E$ into a disjoint countable
-  collection of measurable sets $\{E_n\}$ where
+  In fact, define the countable collection of measurable sets $\{E_n\}$,
+  with $n\in\bbN$, to be
   \[
     E_n=\left\{\,x\in X:2^n\leq f(x)<2^{n+1}\,\right\}.
   \]
+  Note that the $E_n$ are pairwise disjoint and their union is the set
+  $X$. Thus, the Borel--Cantelli M\textru{Мы русские}
 
-  Okay, by Jensen's inequality, we have
+  We aim to show that $f\in L^r(X)$ for $1\leq r<p$, i.e., that
   \[
-    \left(\frac{\int_X f\diff x}{\mu(X)}\right)^r
-    \leq
-    \frac{\int_Xf^r\diff x}{\mu(X)}
+    \int_X f^r\diff x<\infty.
   \]
-  which gives us ... absolutely nothing.
+
+  Now, since the measure of $X$ is finite and, by properties of the
+  Lebesgue integral, we may safely ignore the set $E\subset X$ where
+  $f(x)<1$ for every $x\in E$ since, by properties of the Lebesgue
+  integral,
+  \[
+    \int_X f^r\diff x=\int_X
+  \]
 \end{solution}
 
 \begin{problem}

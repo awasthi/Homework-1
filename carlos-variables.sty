@@ -26,21 +26,22 @@
 
 \ifpdf
 %% Math packages
-\RequirePackage{amssymb}
+% \RequirePackage{amssymb}
 % \RequirePackage{lmodern}
 % \RequirePackage{cfr-lm}
-\RequirePackage[bbgreekl]{mathbbol}
-\RequirePackage{eucal}
-\RequirePackage{mathrsfs}
-\RequirePackage[nointegrals]{wasysym}
-\RequirePackage{stmaryrd}
+% \RequirePackage[bbgreekl]{mathbbol}
+% \RequirePackage{eucal}
+% \RequirePackage{mathrsfs}
+% \RequirePackage[nointegrals]{wasysym}
+% \RequirePackage{stmaryrd}
 
 %% Language
-\RequirePackage[T2A,T1]{fontenc}
+\RequirePackage[LGR,T2A,T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[
 french,
 german,
+greek.plutoniko,
 spanish,
 russian,
 english]{babel}
@@ -59,6 +60,16 @@ english]{babel}
 \newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
 \newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
+
+\RequirePackage{substitutefont} % so we can use fonts other than those in babel
+\RequirePackage[largesc]{newtxtext} %
+\RequirePackage[varqu,varl]{zi4}% inconsolata
+\RequirePackage{cabin}% sans serif
+\RequirePackage[bigdelims,vvarbb]{newtxmath}
+\useosf % use oldstyle figures except in math
+\substitutefont{LGR}{\rmdefault}{Tempora}
+\substitutefont{T2A}{\rmdefault}{Tempora}
+
 \fi
 
 %% Theorems and definitions
@@ -128,9 +139,9 @@ english]{babel}
 
 %% Redefinitions & commands not available in pdfLaTeX
 \ifpdf
-\newcommand{\nsubset}{\ensuremath{\not\subset}}
-\newcommand{\nsupset}{\ensuremath{\not\supset}}
-\newcommand{\nsimeq}{\ensuremath{\not\simeq}}
+\providecommand{\nsubset}{\ensuremath{\not\subset}}
+\providecommand{\nsupset}{\ensuremath{\not\supset}}
+\providecommand{\nsimeq}{\ensuremath{\not\simeq}}
 \fi
 
 \newcommand{\blank}{{-}}
@@ -306,7 +317,7 @@ english]{babel}
 \newcommand{\Poset}{\catname{Poset}}
 \newcommand{\Ring}{\catname{Ring}}
 \newcommand{\Set}{\catname{Set}}
-\newcommand{\Top}{\catname{Top}}
+\newcommand{\Topo}{\catname{Top}}
 \newcommand{\ptTop}{\catname{Top}_\star}
 \newcommand{\Vects}{\catname{Vec}}
 \newcommand{\kVects}[1]{#1\textnormal{-}\catname{Vects}}
