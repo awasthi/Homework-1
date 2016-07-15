@@ -65,6 +65,8 @@ english]{babel}
 \newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
+\RequirePackage{fixltx2e} % LaTeX patches, \textsubscript
+
 %% Math packages
 % \RequirePackage{amssymb}
 % \RequirePackage[nointegrals]{wasysym}
@@ -76,17 +78,20 @@ english]{babel}
 \RequirePackage[varqu,varl,scaled=.97]{inconsolata}% inconsolata
 % \RequirePackage[zerostyle=c,scaled=.94]{newtxtt}
 
-\RequirePackage[scale=.95,type1]{cabin}% sans serif
+\RequirePackage[scale=.95]{cabin}% sans serif
 % \RequirePackage{FiraSans}% sans serif
 
 \RequirePackage[varg,bigdelims,cmintegrals,vvarbb]{newtxmath}
+\RequirePackage[cal=boondoxo]{mathalfa}
 
 \useosf % use oldstyle figures except in math
 
 % Font substitute
 \RequirePackage{substitutefont}
-\substitutefont{LGR}{\rmdefault}{Tempora-TLF}
+\substitutefont{LGR}{\rmdefault}{Tempora}
 \substitutefont{T2A}{\rmdefault}{Tempora}
+% \substitutefont{T1}{\sfdefault}{fca} %
+\substitutefont{T2A}{\sfdefault}{fca}
 
 \fi
 
