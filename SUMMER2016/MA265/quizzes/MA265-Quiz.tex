@@ -10,39 +10,36 @@
 
 \documentclass[12pt,letterpaper,addpoints]{exam}%
 % \usepackage[top=1in, bottom=1.5in, left=1in, right=1in]{geometry}%
-\usepackage[dvipsnames]{xcolor}%
-\usepackage[%
-breaklinks,%
-colorlinks=true,%
-linkcolor=black,%
-citecolor=black,%
-filecolor=black,%
-menucolor=black,%
-runcolor=black,%
-urlcolor=black,%
-% pdftitle={\shorttitle},
-pdfauthor={\auth},%
-pdfkeywords={\subject},%
-pdfsubject={\class}%
-pageanchor={false}%
-]{hyperref}%
 
-%% Math and variables all bundled up
+%% Base customization and variables
 \usepackage{carlos-variables}
 
-%% Misc
-\usepackage{graphicx}
+%% Formatting
+
+%% Footnote style
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+%% Hyperref setup
+\hypersetup{%
+  breaklinks,%
+  colorlinks=true,%
+  linkcolor=black,%
+  citecolor=black,%
+  filecolor=black,%
+  menucolor=black,%
+  runcolor=black,%
+  urlcolor=black,%
+  pdftitle={\short},%
+  pdfauthor={\auth},%
+  pdfkeywords={\subject},%
+  pdfsubject={\class},%
+  pageanchor={false}%
+}
+
+%% Graphics path as it says
 \graphicspath{{figures/}}
-\usepackage[final,babel]{microtype}
-\usepackage[inline]{enumitem}
-
-% \parindent 0ex
-
-\DeclareMathOperator\Rowspace{Rowspace}
-\DeclareMathOperator\Nullspace{Nullspace}
 
 \begin{document}
-
 % %% Footnote style
 % \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 

@@ -7,31 +7,32 @@
 
 \documentclass[11pt,twoside]{article}
 
-\usepackage[dvipsnames]{xcolor}%
-\usepackage[%
-breaklinks,%
-colorlinks=true,%
-linkcolor=black,%
-citecolor=black,%
-filecolor=black,%
-menucolor=black,%
-runcolor=black,%
-urlcolor=black,%
-pdftitle={\short},%
-pdfauthor={\auth},%
-pdfkeywords={\subject},%
-pdfsubject={\class},%
-pageanchor={false}%
-]{hyperref}
-\usepackage{cleveref}
-
-%% Math and variables all bundled up
+%% Base customization and variables
 \usepackage{carlos-variables}
 
-%% Misc
-\usepackage[final,babel]{microtype}
-\usepackage[inline]{enumitem}
-\usepackage{graphicx}
+%% Formatting
+
+%% Footnote style
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+%% Hyperref setup
+\hypersetup{%
+  breaklinks,%
+  colorlinks=true,%
+  linkcolor=black,%
+  citecolor=black,%
+  filecolor=black,%
+  menucolor=black,%
+  runcolor=black,%
+  urlcolor=black,%
+  pdftitle={\short},%
+  pdfauthor={\auth},%
+  pdfkeywords={\subject},%
+  pdfsubject={\class},%
+  pageanchor={false}%
+}
+
+%% Graphics path as it says
 \graphicspath{{figures/}}
 
 \begin{document}
