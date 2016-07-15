@@ -1,5 +1,5 @@
 \def\class{MA 265}
-\def\examnum{6}
+\def\examnum{5}
 \def\term{Summer 2016}
 \def\examdate{\today}
 \def\auth{Carlos Salinas}
@@ -8,7 +8,7 @@
 \def\tight{MA 265: Exam \examnum}
 % \def\timelimit{1:00 hr}
 
-\documentclass[12pt,letterpaper,addpoints]{exam}%
+\documentclass[10pt,letterpaper,addpoints]{exam}%
 % \usepackage[top=1in, bottom=1.5in, left=1in, right=1in]{geometry}%
 
 %% Base customization and variables
@@ -29,7 +29,7 @@
   menucolor=black,%
   runcolor=black,%
   urlcolor=black,%
-  pdftitle={\short},%
+  pdftitle={\tight},%
   pdfauthor={\auth},%
   pdfkeywords={\subject},%
   pdfsubject={\class},%
@@ -38,6 +38,10 @@
 
 %% Graphics path as it says
 \graphicspath{{figures/}}
+
+%% Commands
+\DeclareMathOperator{\Nullspace}{Nullspace}
+\DeclareMathOperator{\Rowspace}{Rowspace}
 
 \begin{document}
 % %% Footnote style
@@ -105,7 +109,7 @@
 % \newpage % End of cover page
 \noindent Instructor: Tatsunari Watanabe
 \hfill \textbf{Name:\underline{\phantom{My name way too long}}.}\\
-\noindent TA: Carlos Salinas
+\noindent TA: \href{mailto:\email}{\auth}
 \\\\
 \begin{center}
   {\Large \textbf{MA 26500-215 \quad Quiz \examnum}}
