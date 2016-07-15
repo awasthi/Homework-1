@@ -66,16 +66,12 @@ english]{babel}
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
 %% Math packages
-% \RequirePackage{lmodern}
+% \RequirePackage{amssymb}
 % \RequirePackage[nointegrals]{wasysym}
 % \RequirePackage{stmaryrd}
-% \RequirePackage[bbgreekl]{mathbbol}
-% \RequirePackage{eucal}
-% \RequirePackage{mathrsfs}
 
 %% Times clones
-\RequirePackage{substitutefont} % so we can use fonts other than those in babel
-\RequirePackage[largesc]{newtxtext} %
+\RequirePackage[largesc]{newtxtext}
 
 \RequirePackage[varqu,varl,scaled=.97]{inconsolata}% inconsolata
 % \RequirePackage[zerostyle=c,scaled=.94]{newtxtt}
@@ -86,7 +82,10 @@ english]{babel}
 \RequirePackage[varg,bigdelims,cmintegrals,vvarbb]{newtxmath}
 
 \useosf % use oldstyle figures except in math
-\substitutefont{LGR}{\rmdefault}{Tempora}
+
+% Font substitute
+\RequirePackage{substitutefont}
+\substitutefont{LGR}{\rmdefault}{Tempora-TLF}
 \substitutefont{T2A}{\rmdefault}{Tempora}
 
 \fi
