@@ -1,14 +1,40 @@
-\begin{questions}[10]
-  Using the method of elimination, determine if the following system of
-  equations has a solution, no solution or many solutions:
-  \begin{alignat*}{5}
-    x_1&+&2x_2&&-3x_3&=&-4\\
-    2x_1&+&x_2&&-3x_3&=&4.\nonumber
-  \end{alignat*}
-%
-  \bigskip\bigskip\bigskip\bigskip\bigskip\bigskip
-  \bigskip\bigskip\bigskip\bigskip\bigskip\bigskip
-%
+\begin{questions}
+  \question[10] Using the method of elimination, determine if the following
+  system of equations has a solution, no solution or many solutions:
+  \begin{align*}{5}
+    x_1+2x_2-3x_3&=-4\\
+    2x_1+x_2-3x_3&=4.
+  \end{align*}
+  \begin{solution}
+    By looking at the number of free variables vs.\@ equations, we can
+    already tell that the system will either have no solutions or many
+    solutions (such a system is said to be
+    \emph{\href{https://en.wikipedia.org/wiki/Underdetermined_system}{underdetermined}}).
+
+    Take the first equation and subtract it from the second equation to get
+    \begin{align*}
+      x_1+2x_2-3x_3&=-4\\
+      x_1-x_2&=8.
+    \end{align*}
+    Then $x_1=8+x_2$. Now, substitute this into the first equation
+    \[
+      (8+x_2)+2x_2-3x_3=-4
+    \]
+    so $3x_2=-4-8+3x_3$ or $x_2=-4+x_3$. Thus
+    \[
+      \label{eq:A}
+      \tag{$\star$}
+      \begin{aligned}
+        x_1&=8+x_2&
+        x_2&=-4+x_3.\\
+        &=8-4+x_3\\
+        &=4+x_3\\
+      \end{aligned}
+    \]
+    Therefore, the system has \textbf{many solutions}; you give me a value
+    of $x_3$ and, using the equations in \eqref{eq:A}, I can find values
+    for $x_1$ and $x_2$ that solve the system.
+  \end{solution}
   \question[5] Given the matrices
   \[
     A=
@@ -17,7 +43,7 @@
       -1&1
     \end{bmatrix}
     \qquad
-    B\coloneq
+    B=
     \begin{bmatrix}
       1&1\\
       0&1
@@ -25,8 +51,48 @@
   \]
   find
   \[
-    2A+3B^\rmT.
+    2A+3B^\intercal.
   \]
+  \begin{solution}
+    The calculation is straightforward
+    \begin{align*}
+      2A+3B^\intercal
+      &=
+        2\begin{bmatrix}
+          1&-1\\
+          -1&1
+        \end{bmatrix}
+       +3\begin{bmatrix}
+         1&1\\
+         0&1
+       \end{bmatrix}^\intercal\\%
+      &=
+        \begin{bmatrix}
+          2&-2\\
+          -2&2
+        \end{bmatrix}
+      +3\begin{bmatrix}
+        1&0\\
+        1&1
+      \end{bmatrix}\\
+      &=\begin{bmatrix}
+          2&-2\\
+          -2&2
+        \end{bmatrix}
+      +\begin{bmatrix}
+        3&0\\
+        3&3
+      \end{bmatrix}\\
+      &=\begin{bmatrix}
+        2+3&-2+0\\
+        -2+3&2+3
+      \end{bmatrix}\\
+      &=\begin{bmatrix}
+        5&-2\\
+        1&5
+      \end{bmatrix}.
+    \end{align*}
+  \end{solution}
 \end{questions}
 
 %%% Local Variables:
