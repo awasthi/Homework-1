@@ -86,7 +86,7 @@
   \question Which of the following are \emph{not} a basis for $\bbR^3$?
   Why?
   \begin{choices}
-    \choice
+    \CorrectChoice
     $\displaystyle\left\{\,
       \begin{bmatrix}1\\2\\3\end{bmatrix},
       \begin{bmatrix}3\\2\\1\end{bmatrix},
@@ -97,13 +97,57 @@
       \begin{bmatrix}1\\2\\3\end{bmatrix},
       \begin{bmatrix}3\\2\\1\end{bmatrix}
       \,\right\}$.
-    \choice
+    \CorrectChoice
     $\displaystyle\left\{\,
       \begin{bmatrix}0\\2\\-1\end{bmatrix},
       \begin{bmatrix}1\\1\\1\end{bmatrix},
       \begin{bmatrix}2\\5\\0\end{bmatrix}
       \,\right\}$.
   \end{choices}
+  \begin{solution}
+    Since $\dim\bbR^3=3$ we know that B can't possible be a basis for
+    $\bbR^3$ so we immediately disqualify it.
+
+    So that leaves A and B.
+
+    For A, let
+    \[
+      A=\begin{bmatrix}%
+        1&2&3\\
+        3&2&1\\
+        0&0&1
+    \end{bmatrix}
+    \]
+    and find $A_{\text{rref}}$ (which can be done very quickly). Then
+    \[
+      A_{\text{rref}}=%
+      \begin{bmatrix}%
+        1&0&0\\
+        0&1&0\\
+        0&0&1
+      \end{bmatrix}
+    \]
+    is full rank. Thus, the set in A is a basis for $\bbR^3$.
+
+    For B we follow the same procedure. Let
+    \[
+      A=\begin{bmatrix}%
+        0&2&-1\\
+        1&1&1\\
+        2&5&0
+    \end{bmatrix}.
+    \]
+    Then, doing some real quick row operations gets you to
+    \[
+      A_{\text{rref}}=%
+      \begin{bmatrix}%
+        1&0&0\\
+        0&1&0\\
+        0&0&1
+      \end{bmatrix}
+    \]
+    which is full rank. Thus, the set in B is also a basis for $\bbR^3$.
+  \end{solution}
 \end{questions}
 
 %%% Local Variables:
