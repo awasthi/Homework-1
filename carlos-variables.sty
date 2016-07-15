@@ -64,11 +64,18 @@ english]{babel}
 % \RequirePackage{eucal}
 % \RequirePackage{mathrsfs}
 
+%% Times clones
 \RequirePackage{substitutefont} % so we can use fonts other than those in babel
 \RequirePackage[largesc]{newtxtext} %
-\RequirePackage[varqu,varl]{zi4}% inconsolata
-\RequirePackage{cabin}% sans serif
-\RequirePackage[varg,bigdelims,vvarbb]{newtxmath}
+
+\RequirePackage[varqu,varl,scaled=.97]{inconsolata}% inconsolata
+% \RequirePackage[zerostyle=c,scaled=.94]{newtxtt}
+
+\RequirePackage[scale=.95,type1]{cabin}% sans serif
+% \RequirePackage{FiraSans}% sans serif
+
+\RequirePackage[varg,bigdelims,cmintegrals,vvarbb]{newtxmath}
+
 \useosf % use oldstyle figures except in math
 \substitutefont{LGR}{\rmdefault}{Tempora}
 \substitutefont{T2A}{\rmdefault}{Tempora}
