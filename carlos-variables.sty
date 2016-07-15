@@ -25,15 +25,6 @@
 \fi
 
 \ifpdf
-%% Math packages
-% \RequirePackage{amssymb}
-% \RequirePackage{lmodern}
-% \RequirePackage{cfr-lm}
-% \RequirePackage[bbgreekl]{mathbbol}
-% \RequirePackage{eucal}
-% \RequirePackage{mathrsfs}
-% \RequirePackage[nointegrals]{wasysym}
-% \RequirePackage{stmaryrd}
 
 %% Language
 \RequirePackage[LGR,T2A,T1]{fontenc}
@@ -65,14 +56,23 @@ english]{babel}
 \newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
+%% Math packages
+% \RequirePackage{lmodern}
+% \RequirePackage[nointegrals]{wasysym}
+% \RequirePackage{stmaryrd}
+% \RequirePackage[bbgreekl]{mathbbol}
+% \RequirePackage{eucal}
+% \RequirePackage{mathrsfs}
+
 \RequirePackage{substitutefont} % so we can use fonts other than those in babel
 \RequirePackage[largesc]{newtxtext} %
 \RequirePackage[varqu,varl]{zi4}% inconsolata
 \RequirePackage{cabin}% sans serif
-\RequirePackage[varg,bigdelims,cmintegrals,vvarbb]{newtxmath}
+\RequirePackage[varg,bigdelims,vvarbb]{newtxmath}
 \useosf % use oldstyle figures except in math
 \substitutefont{LGR}{\rmdefault}{Tempora}
 \substitutefont{T2A}{\rmdefault}{Tempora}
+
 \fi
 
 %% Theorems and definitions

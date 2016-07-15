@@ -346,16 +346,40 @@
   \]
 \end{problem}
 \begin{solution}
-  Let $q$ be the conjugate exponent to $p$, i.e., $1/p+1/q=1$. Then, by
-  Hölder's inequality, we have
+  Let $q$ be the conjugate exponent to $p$, i.e., $1/p+1/q=1$. Then,
+  letting $\omega$ be the distribution function of $f$, we have the
+  following equality
   \[
-    \|f\|_1\leq\|f\|_p\mu(E_n)^{1/q}=\|f\|_pn^{-1/q}.
+    \|f\|_p^p=%
+    % \left(
+    \int_{0}^\infty p\alpha^{p-1}\omega(\alpha)\diff\alpha%
+    % \right)^{1/p}
+    <%
+    \infty.
   \]
-  Thus, we can bound the integral
+  So if we can write the integral
   \[
-    n^{p-1}p\int_{E_n}|f|\diff\mu%
-    \leq n^{p-1-1/q}p\|f\|_p= n^{(p-1)^2/p}p\|f\|_p.
+    n^{p-1}p\int_{E_n} |f|\diff\mu
   \]
+  like the integral above, we may be able to something interesting.
+
+  Our previous approach will probably not work. Let us take a more direct
+  approach. By Hölder's inequality, we have
+  \begin{align*}
+    \|f\|_{L^1(E)}
+    &\leq \|f\|_{L^p(E)}\mu(E_n)^{1/q}\\%
+    &\leq \|f\|_{L^p(X)}n^{-1/q}\\
+    &\leq \|f\|_pn^{-1/q}.
+  \end{align*}
+  Thus, we have
+  \begin{align*}
+    n^{p-1}p\int_{E_n}|f|\diff\mu
+    &\leq n^{p-1-1/q}p\|f\|_p\\
+    &=n^{p-2+1-1/q}p\|f\|_p\\
+    &=n^{p-2+1/p}p\|f\|_p\\
+    &=n^{(p^2-2p+1)/p}\|f\|_p\\
+    &=n^{(p-1)^2/p}\|f\|_p
+  \end{align*}
 \end{solution}
 
 \begin{problem}
@@ -387,7 +411,7 @@
 \begin{problem}
   Let $f\in L^1(\bbR)$. Consider the function
   \[
-    F(x)=\int_{\bbR} \exp(\rmi xt) f(t)\diff t.
+    F(x)=\lowint_{\bbR} \exp(\rmi xt) f(t)\diff t.
   \]
   \begin{enumerate}[label=(\roman*),noitemsep]
   \item Show that $F\in L^\infty(\bbR)$ and that $F$ is continuous at every
@@ -398,7 +422,7 @@
     $\lim_{|x|\to\infty} F(x)=0$.
   \end{enumerate}
   [\emph{Hint}: Using $\exp(-\rmi\pi)=-1$, write
-  $F(x)=\left.\left(\int_{\bbR}(\exp(\rmi xt)-\exp(\rmi xt-\rmi\pi))\right)\right/2$.]
+  $F(x)=\left(\int_{\bbR}(\exp(\rmi xt)-\exp(\rmi xt-\rmi\pi))\right)/2$.]
 \end{problem}
 \begin{solution}
 \end{solution}
