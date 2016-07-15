@@ -141,8 +141,8 @@
   \]
 
   For part (i) $\implies$ suppose that $f_n\to f$ in measure. Then given
-  $\varepsilon>0$ and $\delta>0$ there exists $N\in\bbN$ such that $n\geq
-  N$ implies
+  $\varepsilon>0$ and $\delta>0$ there exists $N\in\bbN$ such that
+  $n\geq N$ implies
   \[
     \mu\left(\left\{\,%
         x\in X:|f(x)-f_n(x)|\geq\varepsilon%
@@ -390,7 +390,8 @@
   \begin{enumerate}[label=(\roman*),noitemsep]
   \item If $f_n\leq g_n$ almost everywhere for every $n$, prove that
     \[
-      \limsup_{n\to\infty}\int_X f_n\diff\mu\leq\int_X\limsup_{n\to\infty}f_n\diff\mu.
+      \limsup_{n\to\infty}\int_X
+      f_n\diff\mu\leq\int_X\limsup_{n\to\infty}f_n\diff\mu.
     \]
 
     [\emph{Hint}: Start by considering a subsequence $\{f_{n_k}\}$ such
@@ -407,9 +408,20 @@
 \end{problem}
 \begin{solution}
   Part (i) is a generalization of what is colloquially known as the reverse
-  Fatou's lemma. Since $g\to g_n$ in $L^1(X)$, $g\to g_n$ in measure so by
+  Fatou's lemma. Let $\left\{\int_X f_{n_k}\right\}$ be a subsequence of
+  $\left\{\int_X f_n\right\}$ that converges to
+  $\limsup_{n\to\infty}\int_X f_n$. Let $\{g_{n_k}\}$ be the subsequence of
+  $\{g_n\}$ corresponding to the subsequence $\{f_{n_k}\}$ of
+  $\{f_n\}$. Since $g\to g_n$ in $L^1(X)$, $g\to g_n$ in measure so by
   Problem 3 (i) given a subsequence $\{g_{n_k}\}$ there exists a
-  subsequence $\{g_{n_{k_j}}\}$ that converges to $g$ almost everywhere.
+  subsequence $\{g_{n_{k_j}}\}$ that converges to $g$ almost
+  everywhere. Then, we have
+  \begin{align*}
+    \limsup_{n\to\infty}\int_X f_n\diff\mu%
+    &=\lim_{n_{k_j}\to\infty}\int_X f_{n_{k_j}}\diff\mu\\
+    &\leq\lim_{n_{k_j}\to\infty}\int_X g_{n_{k_j}}\diff\mu\\
+    &=\int_X g\diff\mu
+  \end{align*}
 \end{solution}
 
 \begin{problem}
