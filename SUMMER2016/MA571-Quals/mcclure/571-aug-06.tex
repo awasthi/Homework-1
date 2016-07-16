@@ -9,7 +9,21 @@
   in Munkres---prove it from the definitions).
 \end{problem}
 \begin{solution}
-  The solution
+  We will show that the only separation of $Y$ is the trivial one.
+
+  Let $C,D$ be a separation of $Y$. Then, $C$ and $D$ are open and $Y=C\cup
+  D$. Since $f$ is continuous $f^{-1}(C)$ and $f^{-1}(D)$ are open in $X$
+  and
+  \[
+    X=f^{-1}(Y)=f^{-1}(C\cup D)=f^{-1}(C)\cup f^{-1}(D).
+  \]
+  Since $X$ is connected we have $f^{-1}(C)=\emptyset,f^{-1}(D)=X$ or
+  $f^{-1}(C)=X,f^{-1}(D)=\emptyset$; we may, without loss of generality,
+  assume that $f^{-1}(C)=\emptyset$ and $f^{-1}(D)=X$. But since $f$ is
+  onto, from elementary set theory, we have $f(f^{-1}(C))=C$ and
+  $f(f^{-1}(D))=D$. Thus, it must be the case that $C=\emptyset$ and
+  $D=Y$. It follows that the only separation of $Y$ is the trivial
+  separation and so $Y$ is connected.
 \end{solution}
 
 \begin{problem}
@@ -17,9 +31,32 @@
   \emph{box topology} (recall that a basis for this topology consists of
   all sets of the form $\prod_{i=1}^\infty U_i$, where $U_i$ is open in
   $\bbR$). Let $f\colon\bbR\to X$ be the function which takes $t$ to
-  $(t,t,\ldots)$. Prove that $f$ is continuous.
+  $(t,t,\ldots)$. Prove that $f$ is not continuous.
 \end{problem}
 \begin{solution}
+  We show that for some neighborhood $U$ of $\mathbf{0}$, $f^{-1}(U)$ is
+  not open in $\bbR$ with the standard topology. Consider the set
+  \[
+    U=\prod_{n=1}^\infty\left(-\frac{1}{n},\frac{1}{n}\right).
+  \]
+  Since each $U_n$ is open in $\bbR$, $U$ is open in the box
+  topology. Moreover, $\mathbf{0}\in U$ since $0\in U_n$ for all
+  $n\in\bbN$. Therefore, $U$ is a neighborhood of $\mathbf{0}$.
+
+  Now, consider the preimage of $U$ under $f$,
+  \[
+    f^{-1}(U)=\left\{\,x\in\bbR:\mathbf{x}\in U\,\right\}.
+  \]
+  We claim that $f^{-1}(U)=\{0\}$. It is evident, from its construction,
+  that $0$ is in $f^{-1}(U)$ since $\mathbf{0}$ is in $U_n$ for all
+  $n$. Now, let $x\in f^{-1}(U)$ and, without loss of generality, assume
+  $x>0$. Then $x\in U_n$ for all $n$. However, by the Archimedean property
+  of $\bbR$, there exist an appropriately large natural number $N$ such
+  that $1/N<x$ so $x\notin U_N$ for all $n\geq N$. This is a
+  contradiction. A similar argument shows that $x<0$. Thus, $x=0$.
+
+  We have thus, exhibited an open set whose preimage is not
+  open. Therefore, $f$ is not continuous.
 \end{solution}
 
 \begin{problem}
@@ -31,6 +68,13 @@
   $f(B)$.
 \end{problem}
 \begin{solution}
+  First, note that the map $f\colon X\to Y$ is continuous by definition
+  since the preimage under $f$ of every open set $V\subset Y$ is open in
+  $X$. Now, consider the closure $\overline f(B)$. Since $f$ is continuous,
+  preimage $f^{-1}(\overline{f(B)})$ is closed in $X$ and contains $B$. It
+  therefore suffices to show that $f^{-1}(\overline{f(B)})\subset B$.
+
+  Let $x\in B$.
 \end{solution}
 
 For the next two problems, let $P$ be the Cartesian product
