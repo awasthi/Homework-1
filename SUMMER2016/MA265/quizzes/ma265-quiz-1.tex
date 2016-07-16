@@ -1,10 +1,14 @@
 \begin{questions}
   \question[10] Using the method of elimination, determine if the following
   system of equations has a solution, no solution or many solutions:
-  \begin{align*}{5}
-    x_1+2x_2-3x_3&=-4\\
-    2x_1+x_2-3x_3&=4.
-  \end{align*}
+  \[
+    \label{eq:A}
+    \tag{$\star$}
+    \begin{aligned}
+      x_1+2x_2-3x_3&=-4\\
+      2x_1+x_2-3x_3&=4.
+    \end{aligned}
+  \]
   \begin{solution}
     By looking at the number of free variables vs.\@ equations, we can
     already tell that the system will either have no solutions or many
@@ -22,8 +26,8 @@
     \]
     so $3x_2=-4-8+3x_3$ or $x_2=-4+x_3$. Thus
     \[
-      \label{eq:A}
-      \tag{$\star$}
+      \label{eq:B}
+      \tag{$\vardiamondsuit$}
       \begin{aligned}
         x_1&=8+x_2&
         x_2&=-4+x_3.\\
@@ -32,8 +36,8 @@
       \end{aligned}
     \]
     Therefore, the system has \textbf{many solutions}; you give me a value
-    of $x_3$ and, using the equations in \eqref{eq:A}, I can find values
-    for $x_1$ and $x_2$ that solve the system.
+    of $x_3$ and, using the equations in \eqref{eq:B}, I can find values
+    for $x_1$ and $x_2$ that solve the system \eqref{eq:A}.
   \end{solution}
   \question[5] Given the matrices
   \[

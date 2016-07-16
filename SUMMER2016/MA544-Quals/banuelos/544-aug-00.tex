@@ -346,6 +346,22 @@
   \]
 \end{problem}
 \begin{solution}
+  The result follows immediately by Hölder's inequality. Since $f\in
+  L^p(X)$, then $f\in L^p(E_n)$ for all $n\in\bbN$. Thus, by Hölder's
+  inequality
+  \[
+    \begin{aligned}
+      \|f\|_1&\leq \|f\|_p\mu(E)^{1/q}\\
+      &=\|f\|_p\mu(E)^{p/(p-1)}\\
+      &=\|f\|_pn^{-p/(p-1)}\\
+      &=\|f\|_p n^{p/(1-p)}.
+    \end{aligned}
+  \]
+  Hence, the integral in question is bounded like so
+  \[
+    n^{(p-1)/p}\int_{E_n}|f|\diff\mu\leq
+    \|f\|_pn^{(p-1)/p+p/(1-p)}
+  \]
 \end{solution}
 
 \begin{problem}
