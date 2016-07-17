@@ -360,10 +360,20 @@
   \]
   Hence, the integral is bounded above by
   \begin{align*}
+    0\leq
     n^{(p-1)/p}\int_{E_n}|f|\diff\mu
     &\leq Cn^{(p-1)/p+p/(1-p)}\\
-    &=C
+    &=Cn^{(2p-1)/(p(1-p))}.
   \end{align*}
+  Since $p>1$, $1-p<0$ and $2p-1>0$ so the exponent
+  $(2p-1)/(p(1-p))<0$. Thus, as $n\to\infty$
+  \[
+    Cn^{(2p-1)/(p(1-p))}\longrightarrow 0.
+  \]
+  It follows that
+  \[
+    \lim_{n\to\infty}\left[n^{(p-1)/p}\int_{E_n}|f|\diff\mu\right]=0.
+  \]
 \end{solution}
 
 \begin{problem}
