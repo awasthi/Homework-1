@@ -137,9 +137,12 @@ interval.)
   use anything in Munkres's book.
 \end{problem}
 \begin{solution}
-  Suppose $f\colon X\to Y$ is a continuous one-to-one map such that
-  $f(x_0)=y_0$. We show that the induced mapping $f_*\colon
-  \pi_1(X,x_0)\to\pi_1(Y,y_0)$ is one-to-one.
+  We provide a counter example. Let $B^2$ be the open ball of radius $1$
+  cenntered at $(0,0)$, $S^1$ the circle of radius $1$ centered at $(0,0)$
+  and fix $x_0=(0,1)$ on $S^2$ Then, the canonical inclusion
+  $\iota\colon S^1\to B^2$ is injective. However, $\pi_1(S^1,x_0)\cong\bbZ$
+  whereas $\pi_1(B^2,x_0)\cong \{0\}$ and no map $f\colon\bbZ\to\{0\}$ is
+  injective.
 \end{solution}
 
 \begin{problem}
@@ -158,6 +161,22 @@ interval.)
 \end{problem}
 
 \begin{solution}
+  Let $N$ and $S$ denote the points $(0,0,1)$ and $(0,0,-1)$,
+  respectively. Then the sets
+  \[
+    U=S^2\setminus\{N\}\qquad\text{and}\qquad V=S^2\setminus\{S\}
+  \]
+  are open in $S^2$ and both contain the point $x_0$. Now since
+  $U,V\approx\bbR$ via the stereographic projections
+  $\pi_N\colon N\to\bbR^2$, $\pi_S\colon S\to\bbR^2$ we have
+  \[
+    \pi_1(U,x_0)\cong\pi_1(V,x_0)\cong\pi_1(\bbR^2,\pi_N(x_0))\cong 0.
+  \]
+  Thus, by the Seifert--van Kampen theorem,
+  \[
+    \pi_1(S^2,x_0)\cong\frac{\pi_1(U,x_0)*\pi_1(V,x_0)}{N'}\cong 0
+  \]
+  since $0*0\cong 0$ and any quotient of the trivial subgroup is trivial.
 \end{solution}
 
 %%% Local Variables:
