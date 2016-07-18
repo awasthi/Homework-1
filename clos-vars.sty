@@ -2,7 +2,7 @@
 %% My preference of symbols and variables
 %%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{carlos-variables}[2016/04/06 v0.1]
+\ProvidesPackage{clos-vars}[2016/06/17 v1.1]
 
 %% Necessary packages
 \RequirePackage{amsmath}
@@ -27,8 +27,9 @@
 \ifpdf
 
 %% Language
-\RequirePackage[LGR,T2A,T1]{fontenc}
+\RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
+\RequirePackage{substitutefont}
 \RequirePackage[
 % farsi,
 french,
@@ -61,24 +62,28 @@ english]{babel}
 % \RequirePackage{stmaryrd}
 
 %% Times clones
-\RequirePackage[largesc]{newtxtext}
+%\RequirePackage[largesc]{newtxtext}
 
-% \RequirePackage[scale=.95]{cabin}% sans serif
 \RequirePackage[scale=.9,defaultsans]{cantarell}% sans serif
-% \RequirePackage[scale=.85,sfdefault]{FiraSans}% sans serif
+% \RequirePackage[scale=.95]{cabin}
+% \RequirePackage[scale=.85,sfdefault]{FiraSans}
 
-\RequirePackage[varqu,varl,scaled=.97]{inconsolata}% inconsolata
-% \RequirePackage[zerostyle=c,scaled=.94]{newtxtt}
+%\RequirePackage[varqu,varl,scaled=.97]{inconsolata}% mono
 
-\RequirePackage[varg,bigdelims,cmintegrals,vvarbb]{newtxmath}
+\pdfmapfile{+libertinelgc.map}
+\RequirePackage[sb]{libertine}
+\RequirePackage{libertinextras}
+
+\@ifpackageloaded{libertine}
+     {\RequirePackage[libertine,varg,bigdelims,vvarbb]{newtxmath}} % math
+     {\RequirePackage[varg,bigdelims,vvarbb]{newtxmath}}
 \RequirePackage[cal=boondoxo]{mathalfa}
 
 \useosf % use oldstyle figures except in math
 
 % Font substitute
-\RequirePackage{substitutefont}
-\substitutefont{LGR}{\rmdefault}{Tempora}
-\substitutefont{T2A}{\rmdefault}{Tempora}
+\substitutefont{LGR}{\rmdefault}{LinuxLibertineT}
+\substitutefont{T2A}{\rmdefault}{LinuxLibertineT}
 
 \fi
 
@@ -92,6 +97,7 @@ english]{babel}
 \RequirePackage[final,babel]{microtype}
 \RequirePackage{enumitem}
 \RequirePackage{listings}
+\@ifpackageloaded{tikz}{\tikzcdset{arrow style=math font}}{}
 
 %% Theorems and definitions
 \theoremstyle{plain}
