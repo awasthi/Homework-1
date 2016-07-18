@@ -76,7 +76,7 @@ english]{babel}
      {\RequirePackage[libertine,varg]{newtxmath}} % math
      {\RequirePackage[varg,bigdelims]{newtxmath}}
 
-\RequirePackage{MnSymbol}
+%\RequirePackage{MnSymbol}
 \RequirePackage[bb=boondox,frak=euler,cal=dutchcal]{mathalfa}
 
 \useosf % use oldstyle figures except in math
@@ -175,7 +175,13 @@ english]{babel}
 \providecommand{\varg}{\ensuremath{g}}
 \fi
 
-\newcommand{\blank}{{-}}
+%% Augmented matrix
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
 
 %% Commands and operators
 \DeclareMathOperator{\Card}{Card}
@@ -337,6 +343,8 @@ english]{babel}
 
 %% Algebraic Topology
 %%% Categories
+\newcommand{\blank}{{-}} % useful for categories
+ 
 \newcommand{\catname}[1]{\mathbf{#1}}
 \newcommand{\AbGrp}{\catname{AbGrp}}
 \newcommand{\Grp}{\catname{Grp}}

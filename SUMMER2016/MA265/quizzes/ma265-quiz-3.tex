@@ -1,7 +1,7 @@
 \begin{questions}
   \question Let $A$ be the following matrix
   \[
-    A\coloneq
+    A=
     \begin{bmatrix}
       1&1&1\\
       1&2&t\\
@@ -12,27 +12,30 @@
     \part[8] Compute the determinant of $A$ using any method you like.
     \part[4] For what values of $t$ is $A$ nonsingular?
   \end{parts}
+  \begin{solution}
+    For part (a) the method of cofactors is fairly straightforward way to
+    find the determinant in this instance. So expand along the top row
+    \[
+      \label{eq:A}
+      \tag{$\star$}
+      \begin{aligned}
+        \det A
+        &=%
+        1\det\left(\begin{bmatrix}2&t\\4&t^2\end{bmatrix}\right)%
+        -1\det\left(\begin{bmatrix}1&t\\1&t^2\end{bmatrix}\right)%
+        1\det\left(\begin{bmatrix}1&2\\1&4\end{bmatrix}\right)\\%
+        &=(2t^2-4t)-(t^2-t)+(4-2)\\%
+        &=t^2-3t+2\\
+        &=(t-2)(t-1).
+      \end{aligned}
+    \]
 
-  \bigskip
-  \bigskip
-  \bigskip
-  \bigskip
-  \bigskip
-  \bigskip
-  \bigskip
-  \bigskip
-  \bigskip
-  \bigskip
-  \bigskip
-  \bigskip
-  \bigskip
-  \bigskip
-  \bigskip
-  \bigskip
-
+    For part (b), using the result of \eqref{eq:A}, we see that $t$ is
+    nonsingular if and only if $t\neq 1,2$.
+  \end{solution}
   \question Let $A$ be the following matrix
   \[
-    A\coloneq
+    A=
     \begin{bmatrix}
       3&-2&1\\
       5&6&2\\
@@ -40,9 +43,85 @@
     \end{bmatrix}.
   \]
   \begin{parts}
-    \part[5] Find the adjoint matrix of $A$, $\adj(A)$.
+    \part[5] Find the adjoint matrix of $A$, $\adj A$.
     \part[3] Find the determinant of $A$.
   \end{parts}
+  \begin{solution}
+    For part (a), remember that the adjoint of a matrix $\adj A$ is the
+    transpose of its cofactor matrix. So we need to find the entries of the
+    cofactor matrix
+    \begin{align*}
+      A_{11}&=
+      \begin{bmatrix}
+        6&2\\0&-3
+      \end{bmatrix}=-18,
+      &A_{12}&=
+      -\begin{bmatrix}
+        5&2\\
+        1&-3
+      \end{bmatrix}=17,
+      &A_{13}&=
+      \begin{bmatrix}
+        5&6\\
+        1&0
+      \end{bmatrix}=-6,\\
+      A_{21}&=
+      -\begin{bmatrix}
+        -2&1\\
+        0&-3
+      \end{bmatrix}=-6,
+      &A_{22}&=
+      \begin{bmatrix}
+        3&1\\
+        1&-3
+      \end{bmatrix}=-8,
+      &A_{23}&=
+      -\begin{bmatrix}
+        3&-2\\
+        1&0
+      \end{bmatrix},=2\\
+      A_{31}&=
+      \begin{bmatrix}
+        -2&1\\
+        6&2
+      \end{bmatrix}=-10,
+      &A_{32}&=
+      -\begin{bmatrix}
+        3&1\\
+        5&2
+      \end{bmatrix}=-1,
+      &A_{33}&=
+      \begin{bmatrix}
+        3&-2\\
+        5&6
+      \end{bmatrix}=28.
+    \end{align*}
+    So
+    \[
+      \adj A=
+      \begin{bmatrix}
+        -18&17&-6\\
+        -6&-8&2\\
+        -10&-1&28\\
+      \end{bmatrix}^\intercal
+      =
+      \begin{bmatrix}
+        -18&-6&-10\\
+        17&-8&-1\\
+        -6&2&28
+      \end{bmatrix}.
+    \]
+
+    For part (b), recall that $A\adj A=\det A I$. Since the identity matrix
+    $I$ only has $1$ across the diagonal, $\det A I$ has $\det A$ across
+    the diagonal. So all we need to do is multiply the first row of $A$
+    times the first column of $\adj A$ to find the determinant of $A$
+    \[
+      \det A=\begin{bmatrix}3&-2&1\end{bmatrix}
+      \begin{bmatrix}-18\\17\\-6\end{bmatrix}
+      =-3\cdot 18-2\cdot 17-6=-94.
+    \]
+  \end{solution}
 \end{questions}
 %%% Local Variables:
 %%% mode: latex
