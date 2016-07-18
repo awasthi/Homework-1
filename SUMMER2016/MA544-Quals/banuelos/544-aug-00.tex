@@ -455,29 +455,26 @@
   \[
     |F(x)|\leq\|f\|_1.
   \]
-  By Hölder's inequality, we have
+  Since $|\blank|\colon\bbC\to\bbR$ is convex, by Jensen's inequality, we
+  have
   \begin{align*}
     |F(x)|
     &=\left|\int_X\exp(\rmi xt)f(t)\diff t\right|\\
-    &\leq\int_X|{\exp(\rmi xt)f(t)\diff t}|\\
-    &\leq\esssup_{t\in\bbR}|{\exp(\rmi xt)}|\cdot\|f\|_1\\
-    &=\esssup_{t\in\bbR}\left(\sqrt{\cos^2(xt)+\sin^2(xt)}\right)\|f\|_1\\
+    &\leq\int_X|{\exp(\rmi xt)f(t)}|\diff t\\
+    &\leq\int_X|f(t)|\diff t\\
     &=\|f\|_1.
   \end{align*}
   Thus, $\esssup_{x\in\bbR}F\leq\|f_1\|$ so $F\in L^\infty(\bbR)$. To see
-  that $F$ is continuous, take let $\varepsilon>0$ be given. Then, we want
-  to show that for some $\delta>0$, $|x-y|<\delta$ implies
-  \begin{align*}
-    |F(x)-F(y)|&=%
-                 \left|\int_\bbR\exp(\rmi xt)f(t)\diff t
-                 -\int_\bbR\exp(\rmi yt)f(t)\diff t
-                 \right|\\
-               &=\left|\int_\bbR\exp(\rmi xt)f(t)
-                 (1-\exp(\rmi (y-x)t))\diff t
-                 \right|\\
-               &<%
-                 \varepsilon
-  \end{align*}
+  that $F$ is continuous, take let $\varepsilon>0$ be given. Consider the
+  sequence of functions $f_n=f\chi_{\left\{\,|t|\leq n\,\right\}}$. Then
+  $f_n\to f$ and, by Lebesgue's dominated convergence theorem, there exists
+  an index $N$ such that for every $n\geq N$ we have
+  \[
+    \int_\bbR |f|\diff t-\int_\bbR|f_n|\diff t=%
+    \int_{\left\{\,|t|>n\,\right\}}|f|\diff t<%
+    \frac{\varepsilon}{4}.
+  \]
+  Let $\delta<\varepsilon/$
 \end{solution}
 
 %%% Local Variables:
