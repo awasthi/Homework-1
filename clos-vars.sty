@@ -2,7 +2,7 @@
 %% My preference of symbols and variables
 %%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{clos-vars}[2016/06/17 v1.1]
+\ProvidesPackage{clos-vars}[2016/06/17 v1.4]
 
 %% Necessary packages
 \RequirePackage{amsmath}
@@ -62,19 +62,22 @@ english]{babel}
 % \RequirePackage{stmaryrd}
 
 %% Times clones
-\RequirePackage[largesc]{newtxtext}
-%\pdfmapfile{+libertinelgc.map}
-%\RequirePackage[sb]{libertine}
+%\RequirePackage[largesc]{newtxtext}
+\pdfmapfile{+libertinelgc.map}
+\RequirePackage[sb]{libertine}
+\RequirePackage{libertinextras}
 
 % \RequirePackage[scale=.9,defaultsans]{cantarell}% sans serif
 \RequirePackage[scale=.95,type1]{cabin}
 
-%\RequirePackage[varqu,varl]{zi4}% mono
+\RequirePackage[varqu,varl]{zi4}% mono
 
 \@ifpackageloaded{libertine}
-     {\RequirePackage[libertine,varg,bigdelims]{newtxmath}} % math
+     {\RequirePackage[libertine,varg]{newtxmath}} % math
      {\RequirePackage[varg,bigdelims]{newtxmath}}
-\RequirePackage[bb=boondox,frak=boondox,cal=boondoxo]{mathalfa}
+
+\RequirePackage{MnSymbol}
+\RequirePackage[bb=boondox,frak=euler,cal=dutchcal]{mathalfa}
 
 \useosf % use oldstyle figures except in math
 
@@ -280,13 +283,13 @@ english]{babel}
 \DeclareMathOperator{\var}{var}
 
 \ifpdf % This is unavailale in pdfLaTeX
-\def\upint{\mathchoice%
-    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+\providecommand\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-24mu}%
     {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
     {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
     {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
   \int}
-\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+\providecommand\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-12mu\int}
 \fi
 
 %% Probability

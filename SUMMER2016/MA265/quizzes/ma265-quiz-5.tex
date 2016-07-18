@@ -3,34 +3,32 @@
   space of all symmetric $2\times 2$ matrices? Why? [\textsc{Hint}: Recall
   that a symmetric matrix must satisfy $A=A^\intercal$.]
   \begin{choices}
-    \choice
-    $\displaystyle\left\{\,
-      \begin{bmatrix}1&0\\0&0\end{bmatrix},
+    \choice%
+    $\displaystyle\left\{\,%
+      \begin{bmatrix}1&0\\0&0\end{bmatrix},%
       \begin{bmatrix}0&0\\0&1\end{bmatrix},
-      \begin{bmatrix}1&0\\0&0\end{bmatrix}
-      \,\right\}$.
-    \CorrectChoice
-    $\displaystyle\left\{\,
+      \begin{bmatrix}1&0\\0&0\end{bmatrix}%
+      \,\right\}$.%
+    \CorrectChoice%
+    $\displaystyle\left\{\,%
       \begin{bmatrix}1&1\\1&0\end{bmatrix},
       \begin{bmatrix}1&2\\2&-3\end{bmatrix},
-      \begin{bmatrix}0&1\\1&1\end{bmatrix}
-      \,\right\}$.
-    \CorrectChoice
+      \begin{bmatrix}0&1\\1&1\end{bmatrix}%
+      \,\right\}$.%
+    \CorrectChoice%
     $\displaystyle\left\{\,
       \begin{bmatrix}1&0\\0&0\end{bmatrix},
-      \begin{bmatrix}-1&-1\\-1&-1\end{bmatrix},
-      \begin{bmatrix}1&0\\0&1\end{bmatrix}
-      \,\right\}$.
+      \begin{bmatrix}-1&-1\\-1&-1\end{bmatrix},%
+      \begin{bmatrix}1&0\\0&1\end{bmatrix}%
+      \,\right\}$.%
   \end{choices}
   \begin{solution}
-    The correct choices are marked in \textbf{bold}.
-
-    Here is the rationale that accompanies it. We know that a symmetric
-    matrix has the property that $A=A^\intercal$. That is, if
+    The correct choices are marked in \hilight{\textbf{red}}. Here is the
+    rationale that accompanies it. We know that a symmetric matrix has the
+    property that $A=A^\intercal$. That is, if
     \[
-      A=\begin{bmatrix}
-        a&b\\c&d
-        \end{bmatrix}
+      A=\begin{bmatrix} a&b\\c&d
+      \end{bmatrix}
     \]
     then
     \[
@@ -45,8 +43,7 @@
       =
       \begin{bmatrix}
         a&b\\c&d
-      \end{bmatrix}^{\intercal}
-      =A^{\intercal}.
+      \end{bmatrix}^{\intercal} =A^{\intercal}.
     \]
     This forces $b=c$. Then we can replace our original matrix $A$ by one
     that looks like
@@ -54,16 +51,13 @@
       A=\begin{bmatrix}
         a&b\\
         b&d
-      \end{bmatrix}=
-      a\begin{bmatrix}
+      \end{bmatrix}= a\begin{bmatrix}
         1&0\\
         0&0
-      \end{bmatrix}+
-      b\begin{bmatrix}
+      \end{bmatrix}+ b\begin{bmatrix}
         0&1\\
         1&0
-      \end{bmatrix}+
-      d\begin{bmatrix}
+      \end{bmatrix}+ d\begin{bmatrix}
         0&0\\
         0&1
       \end{bmatrix}
@@ -86,26 +80,26 @@
   \question Which of the following are \emph{not} a basis for $\bbR^3$?
   Why?
   \begin{choices}
-    \CorrectChoice
+    \CorrectChoice%
     $\displaystyle\left\{\,
       \begin{bmatrix}1\\2\\3\end{bmatrix},
       \begin{bmatrix}3\\2\\1\end{bmatrix},
-      \begin{bmatrix}0\\0\\1\end{bmatrix}
-      \,\right\}$.
-    \choice
+      \begin{bmatrix}0\\0\\1\end{bmatrix}%
+      \,\right\}$.%
+    \choice%
     $\displaystyle\left\{\,
       \begin{bmatrix}1\\2\\3\end{bmatrix},
-      \begin{bmatrix}3\\2\\1\end{bmatrix}
-      \,\right\}$.
-    \CorrectChoice
+      \begin{bmatrix}3\\2\\1\end{bmatrix}%
+      \,\right\}$.%
+    \CorrectChoice%
     $\displaystyle\left\{\,
       \begin{bmatrix}0\\2\\-1\end{bmatrix},
       \begin{bmatrix}1\\1\\1\end{bmatrix},
-      \begin{bmatrix}2\\5\\0\end{bmatrix}
-      \,\right\}$.
+      \begin{bmatrix}2\\5\\0\end{bmatrix}%
+      \,\right\}$.%
   \end{choices}
   \begin{solution}
-    The correct choices are marked in \textbf{bold}.
+    The correct choices are marked in \hilight{\textbf{red}}.
 
     Since $\dim\bbR^3=3$ we know that B can't possible be a basis for
     $\bbR^3$ so we immediately disqualify it.
@@ -118,7 +112,7 @@
         1&2&3\\
         3&2&1\\
         0&0&1
-    \end{bmatrix}
+      \end{bmatrix}
     \]
     and find $A_{\text{rref}}$ (which can be done very quickly). Then
     \[
@@ -137,7 +131,7 @@
         0&2&-1\\
         1&1&1\\
         2&5&0
-    \end{bmatrix}.
+      \end{bmatrix}.
     \]
     Then, doing some real quick row operations gets you to
     \[
