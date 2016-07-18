@@ -406,9 +406,21 @@
   where $h_n=g_n-f_n$. Note that $h_n\geq 0$ for all $x\in X$ since
   $g_n\geq f$ for all $x\in X$. Then
   \[
-    h_n\leq\sup_{1\leq k\leq n} h_k
+    h_n\leq\sup_{k\geq n} h_k
   \]
-  for all $x\in X$.
+  for all $x\in X$. Then
+  $\sup_{k\geq n}h_n\nearrow\limsup_{n\to\infty} h_n$ so by the monotone
+  convergence theorem
+  \begin{align*}
+    \lim_{n\to\infty}\int_X \sup_{k\geq n}h_n\diff \mu
+    &=\int_X\limsup_{n\to\infty} h_n\diff\mu\\
+    &=\int_X\limsup_{n\to\infty}(g_n-f_n)\diff\mu\\
+    &\leq\int\limsup_{n\to\infty}g_n\diff\mu
+      +\int_X\limsup_{n\to\infty}(-f)\diff\mu\\
+    &\leq\int_X g\diff\mu
+      -\int_X\liminf_{n\to\infty}f\diff\mu.
+  \end{align*}
+  Then, we have
 \end{solution}
 
 \begin{problem}
