@@ -4,8 +4,32 @@
   satisfy in order to be a vector space.
   \\\\
   (\emph{Hint:} there are eight of them.)
-  \vskip 7cm
-  \hrulefill
+  \begin{solution}
+    The axioms that a \emph{real} vector space (i.e., a vector space with
+    scalar in $\bbR$, because you can have \emph{complex} vector spaces
+    with scalars in the complex or \emph{imaginary} numbers $\bbC$) must
+    satisfy are
+    \begin{enumerate}
+    \item associativity of addition:
+      $\bfu+\bfv+\bfw=\bfu+(\bfv+\bfw)=(\bfu+\bfv)+\bfw$;
+    \item commutativity of addition: $\bfv+\bfw=\bfw+\bfu$;
+    \item additivie identity: there exists some element (called a
+      \emph{zero}) $\mathbf{0}\in V$ such that for any $\bfv\in V$,
+      $\bfv+\mathbf{0}=\mathbf{0}+\bfv=\bfv$.
+    \item additive inverse: for every $\bfv\in V$ there exist an inverse
+      element $\bfw\in V$ such that $\bfv+\bfw=\mathbf{0}$. \textbf{Note}
+      the vector $\bfw$ is not always $-\bfv$, it just so happens that in
+      the linear algebra we cover it will almost always be $-\bfv$;
+    \item compatibility of scalar multiplication: if $a,b\in\bbR$,
+      $a(b\bfv)=(ab)\bfv$ for all $\bfv\in V$;
+    \item multiplicative identity: there exist element $1\in\bbR$ such that
+      $1\bfv=\bfv$ for all $\bfv\in V$;
+    \item distributivity with respect to vector addition: if $a\in\bbR$,
+      $\bfv,\bfw\in V$ then $a(\bfv+\bfw)=a\bfv+a\bfw$;
+    \item distributivity with respect to scalar addition: if $a,b\in\bbR$,
+      $\bfv\in V$ then $(a+b)\bfv=a\bfv+a\bfw$.
+    \end{enumerate}
+  \end{solution}
   \question Which of the following subsets $W$ of $\bbR^3$ are subspaces?
   \begin{parts}
     \part[2]
@@ -26,6 +50,101 @@
   need to check all of the conditions; but for those that are not
   subspaces, give me a reason, e.g., the set is not closed under addition,
   multiplication by scalars, etc.)
+  \begin{solution}
+    The set in (a) is not subspace and this is easy to see because
+    $[-1,0,1]$ is in the set, but $-1[-1,0,1]=[1,0,-1]$ is not since
+    $1\nleq 0\nleq -1$.
+
+    The set in (b) is a vector space because, first, it is nonempty since
+    it contains $[0,0,0]$ and if $c\in\bbR$,
+    $[x_1,y_1,z_1],[x_2,y_2,z_2]\in W$ then
+    \begin{align*}
+      c\begin{bmatrix}
+        x_1\\
+        y_1\\
+        z_1
+      \end{bmatrix}
+      &=\begin{bmatrix}
+        cx_1\\
+        cy_1\\
+        cz_1
+      \end{bmatrix},&
+      \begin{bmatrix}
+        x_1\\
+        y_1\\
+        z_1
+      \end{bmatrix}+
+      \begin{bmatrix}
+        x_2\\
+        y_2\\
+        z_2
+      \end{bmatrix}
+     &=\begin{bmatrix}
+        x_1+x_2\\
+        y_1+y_2\\
+        z_1+z_2
+      \end{bmatrix}
+    \end{align*}
+    and both satisfy
+    \begin{align*}
+      cx_1+cy_1+cz_1
+      &=c(x_1+y_1+z_1)&
+      x_1+x_2+y_1+y_2+z_1+z_2
+      &=(x_1+y_1+z_1)+(x_2+y_2+z_2)\\
+      &=0&&=0.
+    \end{align*}
+
+    The set in (c) is the sphere. It is clearly not a subspace since
+    $[1,0,0],[0,1,0]\in W$, but $[1,0,0]+[0,1,0]=[1,1,0]$ has norm
+    $1^2+1^2+0^2=2\neq 0$ hence $[1,1,0]\notin W$.
+
+    Lastly, the set in (d) is a subspace because, first, it is nonempty
+    since $[0,0,0]\in W$ and if $c\in\bbR$, $[x_1+2y_1+3z_1,z_1,0],[x_2+2y_2+3z_2,z_2,0]\in
+    W$ then
+    \begin{align*}
+      c\begin{bmatrix}
+        x_1+2y_1+3z_1\\
+        z_1\\
+        0
+      \end{bmatrix}
+      &=\begin{bmatrix}
+        c(x_1+2y_1+3z_1)\\
+        cz_1\\
+        c\cdot 0
+      \end{bmatrix}\\
+      &=\begin{bmatrix}
+        cx_1+2cy_1+3cz_1\\
+        cz_1\\
+        0
+      \end{bmatrix}\label{eq:A}\tag{$\clubsuit$}\\
+            \begin{bmatrix}
+        x_1+2y_1+3z_1\\
+        z_1\\
+        0
+      \end{bmatrix}+
+      \begin{bmatrix}
+        x_2+2y_2+3z_2\\
+        z_2\\
+        0
+      \end{bmatrix}
+     &=\begin{bmatrix}
+       x_1+2y_1+3z_1+x_2+2y_2+3z_2\\
+       z_1+z_2\\
+       0
+     \end{bmatrix}\\
+      &=\begin{bmatrix}
+        (x_1+x_2)+2(y_1+y_2)+3(z_1+z_2)\\
+        (z_1+z_2)\\
+        0
+      \end{bmatrix}\label{eq:B}\tag{$\spadesuit$}
+    \end{align*}
+    Putting $x=cx_1,y=cy_1,z=cz_1$ for the entries in \eqref{eq:A}, we see
+    that the vector in \eqref{eq:A} indeed belongs to $W$ since it has the
+    shape $[x+2y+3z,z,0]$. Putting $x=x_1+x_2,y=y_1+y_2,z=z_1+z_2$ we see
+    that the vector in \eqref{eq:B} also belongs to $W$. Thus, $W$ is a
+    subspace.
+  \end{solution}
+
 \end{questions}
 
 %%% Local Variables:
