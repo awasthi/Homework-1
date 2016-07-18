@@ -403,24 +403,35 @@
 \begin{solution}
   Part (i) is a generalization of what is colloquially known as the reverse
   Fatou's lemma. Consider the sequence of measurable functions $\{h_n\}$
-  where $h_n=g_n-f_n$. Note that $h_n\geq 0$ for all $x\in X$ since
-  $g_n\geq f$ for all $x\in X$. Then
-  \[
-    h_n\leq\sup_{k\geq n} h_k
-  \]
-  for all $x\in X$. Then
-  $\sup_{k\geq n}h_n\nearrow\limsup_{n\to\infty} h_n$ so by the monotone
-  convergence theorem
+  where $g_n-f_n$. Note that $g_n-f_n\geq 0$ for all $x\in X$ since
+  $g_n\geq f$ for all $x\in X$. Thus, by Fatou's lemma, we have
   \begin{align*}
-    \lim_{n\to\infty}\int_X \sup_{k\geq n}h_n\diff \mu
-    &=\int_X\limsup_{n\to\infty} h_n\diff\mu\\
-    &=\int_X\limsup_{n\to\infty}(g_n-f_n)\diff\mu\\
-    &\leq\int\limsup_{n\to\infty}g_n\diff\mu
-      +\int_X\limsup_{n\to\infty}(-f)\diff\mu\\
-    &\leq\int_X g\diff\mu
-      -\int_X\liminf_{n\to\infty}f\diff\mu.
+    \liminf_{n\to\infty}\int_X g_n-f_n\diff\mu
+    &\leq\int_X\liminf_{n\to\infty}\int_X g_n-f_n\diff\mu\\
+    \liminf_{n\to\infty}\left[\int_X g_n\diff\mu-\int_X
+    f_n\diff\mu\right]
+    &\leq\int_X\left[\liminf_{n\to\infty}
+      g_n+\liminf_{n\to\infty}-f_n\right]\diff\mu\\
+    \liminf_{n\to\infty}\int_X g_n\diff\mu
+    +\liminf\left[-\int_X f_n\diff\mu \right]
+    &\leq\int_X\liminf_{n\to\infty} g_n+\int_X\liminf_{n\to\infty}
+      (-f_n)\diff\mu\\
+    \liminf_{n\to\infty}\int_X g_n\diff\mu
+    -\limsup\int_X f_n\diff\mu
+    &\leq\int_X\liminf_{n\to\infty} g_n
+      -\int_X\limsup_{n\to\infty}f_n\diff\mu\\
+    \int_X g\diff\mu-\limsup\int_X f_n\diff\mu
+    &\leq\int_X\liminf_{n\to\infty} g_n
+      -\int_X\limsup_{n\to\infty}f_n\diff\mu.
   \end{align*}
-  Then, we have
+  Now, let $\{f_{n_k}\}$ be a subsequence of $\{f_n\}$ such that
+  \[
+    \int_X f_{n_k}\diff\mu%
+    \longrightarrow%
+    \limsup_{n\to\infty}\int_Xf_n\diff\mu.
+  \]
+  Since $g_n\to g$ in $L^1(X)$, for every subsequence $\{g_{n_k}\}$
+  there exists a subsequence $\{g_{n_{k_j}}\}$ that converges to $g$.
 \end{solution}
 
 \begin{problem}
@@ -440,6 +451,33 @@
   $F(x)=\left(\int_{\bbR}(\exp(\rmi xt)-\exp(\rmi xt-\rmi\pi))\right)/2$.]
 \end{problem}
 \begin{solution}
+  For part (a), we claim that
+  \[
+    |F(x)|\leq\|f\|_1.
+  \]
+  By Hölder's inequality, we have
+  \begin{align*}
+    |F(x)|
+    &=\left|\int_X\exp(\rmi xt)f(t)\diff t\right|\\
+    &\leq\int_X|{\exp(\rmi xt)f(t)\diff t}|\\
+    &\leq\esssup_{t\in\bbR}|{\exp(\rmi xt)}|\cdot\|f\|_1\\
+    &=\esssup_{t\in\bbR}\left(\sqrt{\cos^2(xt)+\sin^2(xt)}\right)\|f\|_1\\
+    &=\|f\|_1.
+  \end{align*}
+  Thus, $\esssup_{x\in\bbR}F\leq\|f_1\|$ so $F\in L^\infty(\bbR)$. To see
+  that $F$ is continuous, take let $\varepsilon>0$ be given. Then, we want
+  to show that for some $\delta>0$, $|x-y|<\delta$ implies
+  \begin{align*}
+    |F(x)-F(y)|&=%
+                 \left|\int_\bbR\exp(\rmi xt)f(t)\diff t
+                 -\int_\bbR\exp(\rmi yt)f(t)\diff t
+                 \right|\\
+               &=\left|\int_\bbR\exp(\rmi xt)f(t)
+                 (1-\exp(\rmi (y-x)t))\diff t
+                 \right|\\
+               &<%
+                 \varepsilon
+  \end{align*}
 \end{solution}
 
 %%% Local Variables:
