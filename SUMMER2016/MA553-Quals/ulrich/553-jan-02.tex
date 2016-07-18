@@ -10,15 +10,24 @@
 \begin{solution}
   Let $n=[G:H]$ and $X=\left\{\,H,g_1H,\ldots,g_{n-1}H\,\right\}$ the set
   of left-cosets of $H$ in $G$ with representatives
-  $g_0=e,g_1,\ldots,g_{n-1}$. Let $G$ act on $X$ by left multiplication, i.e.,
-  $g\mapsto g g_iH$. This is indeed an action as $e(g_iH)=eg_iH=g_iH$ for
-  all $g_iH\in X$ and
+  $g_0=e,g_1,\ldots,g_{n-1}$. Let $G$ act on $X$ by left multiplication,
+  i.e., $g\mapsto g g_iH$; this is indeed an action since
+  $e(g_iH)=eg_iH=g_iH$ for all $g_iH\in X$ and for $k_1,k_2\in G$
+  $k_2(k_1g_iH)=k_2k_1g_iH=(k_2k_1)g_iH$. By Cayley's theorem, this induces
+  a homomorphism $\varphi\colon G\to S_n$. Note that the action is not
+  necessarily faithful. However, by the first isomorphism theorem, the
+  kernel of $\varphi$, $N=\Ker\varphi$, is a normal subgroup of $G$ with
+  index $[G:N]\leq |S_n|=n!$ and $N\subset H$ since $g\in N$ if and only if
+  $gg_iH=g_iH$ which, in particular, implies that $gH=H$. Thus, $N\subset
+  H$ and $[G:N]<\infty$.
 \end{solution}
 
 \begin{problem}
-  Show that every group of order $992$ ($=2^5\cdot 31$) is solvable.
+  Show that every group of order $992$ ($=32\cdot 31$) is solvable.
 \end{problem}
 \begin{solution}
+  Suppose $G$ is a group with order $|G|=992=2^5\cdot 3$. By Sylow's
+  theorem, there
 \end{solution}
 
 \begin{problem}
