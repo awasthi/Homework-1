@@ -1,15 +1,31 @@
 \begin{questions}
-  \question Let $\ell^2(\bbR)$ be the set of all sequences $\{a_n\}$ whose
-  sum of squares converges, i.e.,
-  \[
-    \sum_{n=1}^\infty {a_n}^2<\infty.
-  \]
-  Show that $\ell^2(\bbR)$ is a vector space.
-  \bigskip\bigskip\bigskip
-  \bigskip\bigskip\bigskip
-  \bigskip\bigskip\bigskip
-  \bigskip\bigskip\bigskip
-  \question
+  \question Let $\calP_2(\bbR)$ be the set of all polynomials of degree
+  less than or equal to $2$ with coefficients in $\bbR$, i.e., if
+  $p(t)=at^2+bt+c$ is a polynomial in $\calP_2(\bbR)$, then $a,b,c\in\bbR$.
+  \begin{parts}
+    \part[4] Show that the set $\calP_2(\bbR)$ is closed under addition and
+    multiplication by scalars. What is a \emph{zero} for this set?
+    \bigskip\bigskip\bigskip \bigskip\bigskip\bigskip
+    \part[4] The set $\calP_2(\bbR)$ is in fact a vector space. Find a
+    basis for $\calP_2(\bbR)$.%
+    \bigskip\bigskip\bigskip \bigskip\bigskip\bigskip
+    \part[12] Define an inner product $\langle \blank,\blank
+    \rangle\colon\calP_2(\bbR)\times\calP_2(\bbR)\to\bbR$ by
+    \[
+      \langle p(t),q(t) \rangle\longmapsto \int_0^1 p(t)q(t)\diff t.
+    \]
+    Find a polynomial $q\in\calP_2(\bbR)$ such that
+    $\langle p,q \rangle=p(1/2)$ for every $p\in\calP_2(\bbR)$.
+    [\textsc{Hint}: You should start by looking at the basis you found in
+    part (b). If you chose a nice basis $t^2$ should be in your basis. Now
+    for a general $q(t)=at^2+bt+c\in\calP_2(\bbR)$ we have
+    \[
+      \langle t^2,p(t) \rangle=\int_0^1t^2 q(t)\diff t
+      =\left(\frac{1}{2}\right)^2=\frac{1}{4}.
+    \]
+    Can you come up with enough equations to solve for the unknowns $a$,
+    $b$, $c$?]
+  \end{parts}
 \end{questions}
 
 %%% Local Variables:
