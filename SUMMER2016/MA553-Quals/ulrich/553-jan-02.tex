@@ -34,7 +34,7 @@
   solvable.
 
   Now, suppose the number of $2$-Sylow subgroups is $3$. Let
-  $\Syl_2(G)=\{\,P,P_1,P_2\,\}$. Then, by Sylow's theorem, the three
+  $\Syl_2(G)=\{P,P_1,P_2\}$. Then, by Sylow's theorem, the three
   $2$-Sylow subgroups are conjugate, i.e., there exists $g_1,g_2\in G$ such
   that $P_1=g_1P{g_1}^{-1}$ and $P_2=g_2P{g_2}^{-1}$. Thus, $G$ acts on the
   set $\Syl_2(P)$ by conjugation. This actions defines a (not necessarily
@@ -73,6 +73,19 @@
   that this action is either trivial or transitive.]
 \end{problem}
 \begin{solution}
+  First, note that, by the fundamental theorem of arithmetic, the order of
+  $G$ can be broken down into $56=2^3 \cdot 7$. Suppose $G$ has a normal
+  $2$-Sylow subgroup $Q$ and let $P\in\Syl_3(G)$. Then
+  $|\Syl_3(G)|=1,4$. If $|{\Syl_3(G)}|=1$, then $P$ is the unique $3$-Sylow
+  subgroup of $G$, hence it is normal. Thus, $|P||Q|=|G|$ and $PQ=G$ since,
+  if $g\in Q\cap G$, then $|g|=3$, but $2\mid |g|$ so $g=e$. Thus, $G\simeq
+  P\times Q$.
+
+  Now, suppose $|{\Syl_3(G)}|=4$. Then $G$ contains $4$ $3$-Sylow subgroups
+  which, by Sylow's theorem, are conjugate, i.e., there exists
+  $g_1,g_2,g_3\in G$ such that
+  $\Syl_p(G)=\left\{P,g_1P{g_1}^{-1},g_2P{g_2}^{-1},g_3P{g_3}^{-1}\right\}$. Let
+  $P$ act on $Q$ by conjugation. Then $$
 \end{solution}
 
 \begin{problem}
