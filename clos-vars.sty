@@ -30,6 +30,8 @@
 \RequirePackage[LAE,LFE,LGR,T2A,T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{substitutefont}
+
+\def\spanishoptions{mexico}
 \RequirePackage[
 % farsi,
 french,
@@ -47,7 +49,6 @@ english]{babel}
            % pa=farsi,
            ru=russian,
            }
-\def\spanishoptions{mexico}
 
 \selectlanguage{english}
 
@@ -57,36 +58,37 @@ english]{babel}
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
 %% Math packages
-% \RequirePackage{amssymb}
-% \RequirePackage[nointegrals]{wasysym}
-% \RequirePackage{stmaryrd}
+\RequirePackage{amssymb}
+\RequirePackage[nointegrals]{wasysym}
+\RequirePackage{stmaryrd}
+\RequirePackage{eucal}
 
 %% Times clones
 %\RequirePackage[largesc]{newtxtext}
-\pdfmapfile{+libertinelgc.map}
-\RequirePackage[sb]{libertine}
-\RequirePackage{libertinextras}
+%\pdfmapfile{+libertinelgc.map}
+%\RequirePackage[sb]{libertine}
+%\RequirePackage{libertinextras}
 
 % \RequirePackage[scale=.9,defaultsans]{cantarell}% sans serif
-\RequirePackage[scale=.95,type1]{cabin}
+%\RequirePackage[scale=.95,type1]{cabin}
 
-\RequirePackage[varqu,varl]{zi4}% mono
+%\RequirePackage[varqu,varl]{zi4}% mono
 
-\@ifpackageloaded{libertine}
-     {\RequirePackage[libertine,varg,bigdelims]{newtxmath}} % math
-     {\RequirePackage[varg,bigdelims]{newtxmath}}
+%\@ifpackageloaded{libertine}
+%     {\RequirePackage[libertine,varg,bigdelims]{newtxmath}} % math
+%     {\RequirePackage[varg,bigdelims]{newtxmath}}
 
 %\RequirePackage{MnSymbol}
-\RequirePackage[bb=boondox,frak=euler,cal=dutchcal]{mathalfa}
+%\RequirePackage[bb=boondox,frak=euler,cal=dutchcal]{mathalfa}
 
-\useosf % use oldstyle figures except in math
+%\useosf % use oldstyle figures except in math
 
 % Font substitute
-\@ifpackageloaded{libertine}{
-\substitutefont{LGR}{\rmdefault}{LinuxLibertineT}
-\substitutefont{T2A}{\rmdefault}{LinuxLibertineT}}
-{\substitutefont{LGR}{\rmdefault}{Tempora}
-\substitutefont{T2A}{\rmdefault}{Tempora}}
+%\@ifpackageloaded{libertine}{
+%\substitutefont{LGR}{\rmdefault}{LinuxLibertineT}
+%\substitutefont{T2A}{\rmdefault}{LinuxLibertineT}}
+%{\substitutefont{LGR}{\rmdefault}{Tempora}
+%\substitutefont{T2A}{\rmdefault}{Tempora}}
 
 \fi
 
@@ -172,7 +174,6 @@ english]{babel}
 \providecommand{\nsubset}{\ensuremath{\not\subset}}
 \providecommand{\nsupset}{\ensuremath{\not\supset}}
 \providecommand{\nsimeq}{\ensuremath{\not\simeq}}
-\providecommand{\varg}{\ensuremath{g}}
 \fi
 
 %% Augmented matrix
@@ -236,6 +237,7 @@ english]{babel}
 \DeclareMathOperator{\Spec}{Spec}
 \DeclareMathOperator{\SPAN}{Span}
 \DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\Syl}{Syl}
 \DeclareMathOperator{\Tor}{Tor}
 
 %% Groups

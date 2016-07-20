@@ -1,7 +1,7 @@
 \begin{questions}
   \question Which of the following are \emph{not} a basis for the vector
   space of all symmetric $2\times 2$ matrices? Why? [\textsc{Hint}: Recall
-  that a symmetric matrix must satisfy $A=A^\intercal$.]
+  that a symmetric matrix must satisfy $A=A^\sfT$.]
   \begin{choices}
     \choice%
     $\displaystyle\left\{\,%
@@ -25,7 +25,7 @@
   \begin{solution}
     The correct choices are marked in \hilight{\textbf{red}}. Here is the
     rationale that accompanies it. We know that a symmetric matrix has the
-    property that $A=A^\intercal$. That is, if
+    property that $A=A^\sfT$. That is, if
     \[
       A=\begin{bmatrix} a&b\\c&d
       \end{bmatrix}
@@ -43,7 +43,7 @@
       =
       \begin{bmatrix}
         a&b\\c&d
-      \end{bmatrix}^{\intercal} =A^{\intercal}.
+      \end{bmatrix}^{\sfT} =A^{\sfT}.
     \]
     This forces $b=c$. Then we can replace our original matrix $A$ by one
     that looks like
@@ -67,7 +67,7 @@
     the set
     \[
       \label{eq:A}
-      \tag{$\star$} \left\{
+      \tag{$\bigstar$} \left\{
         \begin{bmatrix}1&0\\0&0\end{bmatrix},
         \begin{bmatrix}0&1\\1&0\end{bmatrix},
         \begin{bmatrix}0&0\\0&1\end{bmatrix} \right\}.

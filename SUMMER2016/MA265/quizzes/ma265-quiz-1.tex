@@ -3,7 +3,7 @@
   system of equations has a solution, no solution or many solutions:
   \[
     \label{eq:A}
-    \tag{$\star$}
+    \tag{$\bigstar$}
     \begin{aligned}
       x_1+2x_2-3x_3&=-4\\
       2x_1+x_2-3x_3&=4.
@@ -27,7 +27,7 @@
     so $3x_2=-4-8+3x_3$ or $x_2=-4+x_3$. Thus
     \[
       \label{eq:B}
-      \tag{$\vardiamondsuit$}
+      \tag{$\spadesuit$}
       \begin{aligned}
         x_1&=8+x_2&
         x_2&=-4+x_3.\\
@@ -55,12 +55,12 @@
   \]
   find
   \[
-    2A+3B^\intercal.
+    2A+3B^\sfT.
   \]
   \begin{solution}
     The calculation is straightforward
     \begin{align*}
-      2A+3B^\intercal
+      2A+3B^\sfT
       &=
         2\begin{bmatrix}
           1&-1\\
@@ -69,7 +69,7 @@
        +3\begin{bmatrix}
          1&1\\
          0&1
-       \end{bmatrix}^\intercal\\%
+       \end{bmatrix}^\sfT\\%
       &=
         \begin{bmatrix}
           2&-2\\
