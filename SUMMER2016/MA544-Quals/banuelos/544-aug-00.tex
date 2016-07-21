@@ -91,7 +91,7 @@
   $\|f\|_1=\int_0^\infty\mu\left(\left\{\,|f(x)|>\lambda\,\right\}\right)\diff\lambda$.]
 \end{problem}
 \begin{solution}
-  Define $g_n,h_n\colon\calF\to[0,\infty]$ for $n\in\bbN$ by
+  Define $g_n,h_n\colon\calF\to[0,\infty]$ for $n\in\bfN$ by
   \begin{align*}
     g_n(\lambda)%
     &=\mu\left(\left\{\,x\in X:|f_n(x)|>\lambda\,\right\}\right),%
@@ -127,7 +127,7 @@
     if and only if every subsequence $\{f_{n_k}\}$ contains a further
     subsequence $\{f_{n_{k_j}}\}$ that converges a.e.\@ to $f$.
   \item Let $(X,\calF,\mu)$ be a finite measure space. Let
-    $F\colon\bbR\to\bbR$ be continuous and $f_n\to f$ in measure. Prove
+    $F\colon\bfR\to\bfR$ be continuous and $f_n\to f$ in measure. Prove
     that $F(f_n)\to F(f)$ in measure. (You may assume, of course, that
     $f_n$, $F$, $F(f_n)$, and $F(f)$ are all measurable.)
   \end{enumerate}
@@ -141,7 +141,7 @@
   \]
 
   For part (i) $\implies$ suppose that $f_n\to f$ in measure. Then given
-  $\varepsilon>0$ and $\delta>0$ there exists $N\in\bbN$ such that
+  $\varepsilon>0$ and $\delta>0$ there exists $N\in\bfN$ such that
   $n\geq N$ implies
   \[
     \mu\left(\left\{\,%
@@ -163,7 +163,7 @@
   \[
     \sum_{k=1}^\infty \mu(E_k)<\sum_{k=1}^\infty 2^{-k}=1<\infty,
   \]
-  for almost every $x\in X$, there exists $N_x\in\bbN$ such that $x\notin
+  for almost every $x\in X$, there exists $N_x\in\bfN$ such that $x\notin
   E_k$ for $k\geq N_x$. This means that for $k\geq N_x$, we have
   \[
     |f(x)-f_{n_k}(x)|<\frac{1}{k}.
@@ -348,7 +348,7 @@
 \begin{solution}
   The result follows immediately by Hölder's inequality. Let
   $C=\|f\|_p$. Since $f\in L^p(X)$, then $f\in L^p(E_n)$ for all
-  $n\in\bbN$. Thus, by Hölder's inequality
+  $n\in\bfN$. Thus, by Hölder's inequality
   \[
     \begin{aligned}
       \|f\|_{L^1(E_n)}&\leq \|f\|_{L^p(E_n)}\mu(E)^{1/q}\\
@@ -435,27 +435,27 @@
 \end{solution}
 
 \begin{problem}
-  Let $f\in L^1(\bbR)$. Consider the function
+  Let $f\in L^1(\bfR)$. Consider the function
   \[
-    F(x)=\int_{\bbR} \exp(\rmi xt) f(t)\diff t.
+    F(x)=\int_{\bfR} \exp(\rmi xt) f(t)\diff t.
   \]
   \begin{enumerate}[label=(\roman*),noitemsep]
-  \item Show that $F\in L^\infty(\bbR)$ and that $F$ is continuous at every
-    $x\in\bbR$. Moreover, if $|t|^kf(t)\in L^\infty(\bbR)$ for all $k\geq
+  \item Show that $F\in L^\infty(\bfR)$ and that $F$ is continuous at every
+    $x\in\bfR$. Moreover, if $|t|^kf(t)\in L^\infty(\bfR)$ for all $k\geq
     1$, show that $F$ is infinitely differentiable, i.e., $F\in
-    C^\infty(\bbR)$.
-  \item Suppose $f$ is continuous as well as in $L^1(\bbR)$. Show that
+    C^\infty(\bfR)$.
+  \item Suppose $f$ is continuous as well as in $L^1(\bfR)$. Show that
     $\lim_{|x|\to\infty} F(x)=0$.
   \end{enumerate}
   [\emph{Hint}: Using $\exp(-\rmi\pi)=-1$, write
-  $F(x)=\left(\int_{\bbR}(\exp(\rmi xt)-\exp(\rmi xt-\rmi\pi))\right)/2$.]
+  $F(x)=\left(\int_{\bfR}(\exp(\rmi xt)-\exp(\rmi xt-\rmi\pi))\right)/2$.]
 \end{problem}
 \begin{solution}
   For part (a), we claim that
   \[
     |F(x)|\leq\|f\|_1.
   \]
-  Since $|\blank|\colon\bbC\to\bbR$ is convex, by Jensen's inequality, we
+  Since $|\blank|\colon\bbC\to\bfR$ is convex, by Jensen's inequality, we
   have
   \begin{align*}
     |F(x)|
@@ -464,13 +464,13 @@
     &\leq\int_X|f(t)|\diff t\\
     &=\|f\|_1.
   \end{align*}
-  Thus, $\esssup_{x\in\bbR}F\leq\|f_1\|$ so $F\in L^\infty(\bbR)$. To see
+  Thus, $\esssup_{x\in\bfR}F\leq\|f_1\|$ so $F\in L^\infty(\bfR)$. To see
   that $F$ is continuous, take let $\varepsilon>0$ be given. Consider the
   sequence of functions $f_n=f\chi_{\left\{\,|t|\leq n\,\right\}}$. Then
   $f_n\to f$ and, by Lebesgue's dominated convergence theorem, there exists
   an index $N$ such that for every $n\geq N$ we have
   \[
-    \int_\bbR |f|\diff t-\int_\bbR|f_n|\diff t=%
+    \int_\bfR |f|\diff t-\int_\bfR|f_n|\diff t=%
     \int_{\left\{\,|t|>n\,\right\}}|f|\diff t<%
     \frac{\varepsilon}{4}.
   \]

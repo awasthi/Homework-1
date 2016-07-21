@@ -5,14 +5,14 @@
 
 \subsubsection{Exam 1 Practice}
 \begin{problem}
-  Let $E\subset\bbR^n$ be a measurable set, $r\in\bbR$ and define the set
+  Let $E\subset\bfR^n$ be a measurable set, $r\in\bfR$ and define the set
   $rE=\left\{\,r\bfx:\bfx\in E\,\right\}$. Prove that $rE$ is measurable,
   and that $|rE|=|r|^n|E|$.
 \end{problem}
 \begin{solution}
-  Define a map $T\colon\bbR^n\to\bbR^n$ by $T\bfx= r\bfx$. Note that $T$ is
+  Define a map $T\colon\bfR^n\to\bfR^n$ by $T\bfx= r\bfx$. Note that $T$ is
   \href{https://en.wikipedia.org/wiki/Lipschitz_continuity}{\emph{Lipschitz
-      continuous}} since for any $\bfx,\bfy\in\bbR^n$, the equality
+      continuous}} since for any $\bfx,\bfy\in\bfR^n$, the equality
   \begin{equation}
     \label{eq:prep:1:1}
     |T\bfx-T\bfy|=|r\bfx-r\bfy|=|r||\bfx-\bfy|
@@ -93,11 +93,11 @@
       0&x=0
     \end{cases}.
   \]
-  Here $B(\mathbf{0},r)=\left\{\,\bfy\in\bbR^n:|\bfy|<r\,\right\}$. Prove
+  Here $B(\mathbf{0},r)=\left\{\,\bfy\in\bfR^n:|\bfy|<r\,\right\}$. Prove
   that $F$ is monotonic increasing and continuous.
 \end{problem}
 \begin{solution}
-  Define the linear map $T\colon[0,\infty)\times\bbR^n\to\bbR^n$ by
+  Define the linear map $T\colon[0,\infty)\times\bfR^n\to\bfR^n$ by
   $T(r)\bfx= r\bfx$. We claim that
   $B(\mathbf{0},r)=T(r,B(\mathbf{0},1))$. To reduce notation, set
   $B_1= B(\mathbf{0},1)$ and $B_r= B(\mathbf{0},r)$.
@@ -122,12 +122,12 @@
   Thus, $F$ is monotonically increasing.
 
   In the argument above, since $F(x)=|B_1|x^n$ is a polynomial in
-  $[0,\infty)$ (and polynomials are continuous on $\bbR$) $F$ is continuous
+  $[0,\infty)$ (and polynomials are continuous on $\bfR$) $F$ is continuous
   on $[0,\infty)$.
 \end{solution}
 
 \begin{problem}
-  Let $f\colon\bbR\to\bbR$ be a function. Let $C$ be the set of all points
+  Let $f\colon\bfR\to\bfR$ be a function. Let $C$ be the set of all points
   at which $f$ is continuous. Show that $C$ is a set of type $G_\delta$.
 \end{problem}
 \begin{solution}
@@ -135,7 +135,7 @@
   $\{E_k\}$ defined by
   \begin{equation}
     \label{eq:prep:1:8}
-    E_k=\left\{\,x\in\bbR:
+    E_k=\left\{\,x\in\bfR:
       \text{there exists $\delta>0$ such that $y,z\in B(x,\delta)$ implies $\left|f(y)-f(z)\right|<\frac{1}{k}$}\,\right\}.
   \end{equation}
   We claim that $C=\bigcap_{k=1}^\infty E_k$ and that each $E_k$ is open.
@@ -171,23 +171,23 @@
   $E_k$, it follows that $C$ is a $G_\delta$ set.
 \end{solution}
 \begin{problem}
-  Let $f\colon\bbR\to\bbR$ be a function. Is it true that if the sets
-  $\left\{\,f=r\,\right\}$ are measurable for all $r\in\bbR$, then $f$ is
+  Let $f\colon\bfR\to\bfR$ be a function. Is it true that if the sets
+  $\left\{\,f=r\,\right\}$ are measurable for all $r\in\bfR$, then $f$ is
   measurable?
 \end{problem}
 \begin{solution}
-  If $\left\{\,f=r\,\right\}$ are measurable for all $r\in\bbR$, it is not
+  If $\left\{\,f=r\,\right\}$ are measurable for all $r\in\bfR$, it is not
   necessarily the case that $f$ is measurable. Consider the following
   construction: Let $E\subset(0,1)$ be an unmeasurable set.\footnote{It's
     construction does not concern us. The interested reader such direct
     their refer to Theorem 3.38 from \cite[Ch.\@ 3, p.\@
     57-58]{wheeden-zygmund} or Theorem 17 from \cite[Ch.\@ 2\S 7, p.\@
-    48]{royden}.} Define a map $f\colon\bbR\to\bbR$ by
+    48]{royden}.} Define a map $f\colon\bfR\to\bfR$ by
   \begin{equation}
     \label{eq:prep:1:11}
     f(x)=
     \begin{cases}
-      x&\text{if $x\in\bbR\setminus((0,1)\setminus E)$},\\
+      x&\text{if $x\in\bfR\setminus((0,1)\setminus E)$},\\
       x+1&\text{if $x\in (0,1)\setminus E$.}
     \end{cases}
   \end{equation}
@@ -200,7 +200,7 @@
 
 \begin{problem}
   Let $\left\{f_k\right\}_{k=1}^\infty$ be a sequence of measurable
-  functions on $\bbR$. Prove that the set
+  functions on $\bfR$. Prove that the set
   $\left\{\,x:\text{$\lim_{k\to\infty} f_k(x)$ exists}\,\right\}$ is
   measurable.
 \end{problem}
@@ -217,7 +217,7 @@
     \label{eq:prep:1:13}
     \left\{\,\text{$\lim_{k\to\infty}f_k$ exists}\,\right\}=
     \left\{\,{\limsup_{k\to\infty}f_k=\liminf_{k\to\infty}f_k}\,\right\}=
-    \bbR\setminus
+    \bfR\setminus
     \left\{\,{\liminf_{k\to\infty} f_k<\limsup_{k\to\infty} f_k}\,\right\},
   \end{equation}
   by Theorem 3.17 from \cite[Ch.\@ 3, p.\@ 48]{wheeden-zygmund}, the set
@@ -226,7 +226,7 @@
   % of sets $\{E_k\}$ given by
   % \begin{equation}
   %   \label{eq:prep:1:11}
-  %       %   E_k= \left\{\, x\in\bbR:\text{there exists $N$ such that $m,n\geq N$
+  %       %   E_k= \left\{\, x\in\bfR:\text{there exists $N$ such that $m,n\geq N$
   %     implies $\left|f_n(x)-f_m(x)\right|<\frac{1}{k}$} \,\right\}.
   % \end{equation}
   % You can show that the $E_k$ are open and that
@@ -267,7 +267,7 @@
 \end{solution}
 
 \begin{problem}
-  Let $f$ be a continuous function from $[a,b]$ into $\bbR$. Let
+  Let $f$ be a continuous function from $[a,b]$ into $\bfR$. Let
   $\chi_{\{c\}}$ be the characteristic function of a singleton
   $\left\{c\right\}$, that is, $\chi_{\{c\}}(x)=0$ if $x\neq c$ and
   $\chi_{\{c\}}(c)=1$. Show that

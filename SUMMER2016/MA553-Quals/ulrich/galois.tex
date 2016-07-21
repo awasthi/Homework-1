@@ -6,7 +6,7 @@ This handout discusses relationships between roots of irreducible
 polynomials and field extensions.
 \subsubsection{Roots in larger fields}
 For most fields $K$, there are polynomials in $K[X]$ without a root in
-$K$. Consider $X^2+1$ in $\bbR[X]$ or $X^3-2$ in $\bbF_7[X]$. If we are
+$K$. Consider $X^2+1$ in $\bfR[X]$ or $X^3-2$ in $\bfF_7[X]$. If we are
 willing to enlarge the field. The following is due to Kronecker.
 \begin{theorem}
   Let $K$ be a field and $f(X)$ be a nonconstant polynomial in
@@ -46,7 +46,6 @@ willing to enlarge the field. The following is due to Kronecker.
   factorization of $f(X)$ in $L[X]$.
 \end{proof}
 
-
 \begin{corollary}
   Let $f(X)$ and $g(X)$ be nonconstant in $K[X]$. They are relatively prime
   in $K[X]$ if and only if they do not have a common root in any extension
@@ -60,9 +59,151 @@ willing to enlarge the field. The following is due to Kronecker.
   \]
   for some $u(X)$ and $v(X)$ in $K[X]$. If there were an $\alpha$ in a
   field extension of $K$ which is a common root of $f(X)$ and $g(X)$, then
-  substituting $\alpha$ for $X$ in the above polynomial
+  substituting $\alpha$ for $X$ in the above polynomial identity makes the
+  left side $0$ while the right side is $1$. This is a contradiction, so
+  $f(X)$ and $g(X)$ have no common root in any field extension of $K$.
+
+  Now assume $f(X)$ and $g(X)$ are not relatively prime in $K[X]$. Say,
+  $h(X)\in K[X]$ is a (nonconstant) common factor. There is a field
+  extension of $K$ in which $h(X)$ has a root and this root will be a
+  common root of $f(X)$ and $g(X)$.
 \end{proof}
 
+\subsubsection[Divisibility and roots in KX]{Divisibility and roots in
+  $K[X]$}
+There is an important connection between roots of a polynomial and
+divisibility by \emph{linear} polynomials. For $f(X)\in K[X]$ and
+$\alpha\in K$, $f(\alpha)=0$ $\iff$ $(X-\alpha)\mid f(X)$. The next result
+is an analogue for divisibility by higher degree polynomials in $K[X]$,
+provided they are irreducible. (All linear polynomials are irreducible.)
+
+\begin{theorem}
+  Let $\pi(X)$ be an irreducible in $K[X]$ and let $\alpha$ be a root of
+  $\pi(X)$ in some larger field. For $h(X)$ in $K[X]$, $h(\alpha)=0$ $\iff$
+  $\pi(X)\mid h(X)$ in $K[X]$.
+\end{theorem}
+\begin{proof}
+  If $h(X)=\pi(X)g(X)$, then $h(\alpha)=\pi(\alpha)g(\alpha)=0$.
+
+  Now assume $h(\alpha)=0$. Then $h(X)$ and $\pi(X)$ have a common root, so
+  by Corollary 2.4 they have a common factor in $K[X]$. Since $\pi(X)$ is
+  irreducible, this means $\pi(X)\mid h(X)$ in $K[X]$. To see this argument
+  more directly, suppose $h(\alpha)=0$ and $\pi(X)$ does not divide
+  $h(X)$. Then (because $\pi$ is irreducible) the polynomials $\pi(X)$ and
+  $h(Xx)$ are relatively prime in $K[X]$ so we can write
+  \[
+    \pi(X)u(X)+h(X)v(X)=1
+  \]
+  for some $u(X),v(X)\in K[X]$. Substitute $\alpha$ for $X$ and the left
+  side vanishes. The right side is $1$ so we have a contradiction.
+\end{proof}
+
+\begin{theorem}
+  Let $K$ be a field and $L$ be a larger field. For $f(X)$ and $g(X)$in
+  $K[X]$, $f(X)\mid g(X)$ in $K[X]$ if and only if $f(X)\mid g(X)$ in
+  $L[X]$.
+\end{theorem}
+\begin{proof}
+  It is clear that divisibility inf $K[X]$ implies divisibility in larger
+  $L[X]$. Conversely suppose $f(X)\mid g(X)$ in $L[X]$. Then
+  \[
+    g(X)=f(X)h(X)
+  \]
+  for some $h(X)\in L[X]$. By the division algorithm in $K[X]$,
+  \[
+    g(X)=f(X)q(X)+r(X)
+  \]
+  where $q(X)$ and $r(X)$ are in $K[X]$ and $r(X)=0$ or $\deg r<\deg
+  f$. Comparing these two formulas for $g(X)$, the uniqueness of the
+  division algorithm in $L[X]$ implies $q(X)=h(X)$ and $r(X)=0$. Therefore
+  $g(X)=f(X)q(X)$, so $f(X)\mid g(X)$ in $L[X]$.
+\end{proof}
+
+\subsection[Raising to the pth power in characteristic p]{Raising to the $p$th power in characteristic $p$}
+\begin{lemma}
+  Let $A$ be a commutative ring with prime characteristic. Pick any $a$ and
+  $b$ in $A$.
+  \begin{enumerate}[label=\textnormal{(\alph*)}]
+  \item $(a+b)^p=a^p+b^p$.
+  \item When $A$ is a domain, $a^p=b^p$ $\implies$ $a=b$.
+  \end{enumerate}
+\end{lemma}
+\begin{proof}
+  (a) By the binomial theorem,
+  \[
+    (a+b)^p=a^p+\sum_{k=1}^{p-1}\binom{p}{k}a^{p-k}b^k+b^p.
+  \]
+  For $1\leq k\leq p-1$, the integer $\binom{p}{k}$ is a multiple of $p$,
+  so the intermediate terms are $0$ in $A$.
+
+  (b) Now assume $A$ is a domain and $a^p=b^p$. Then
+  $0=a^p-b^p=(a-b)^p$. (Note $(-1)^p=-1$ for $p\neq 2$, and also for $p=2$
+  since $2=0$ $\implies$ $-1=1$ in $A$.) Since $A$ is a domain, $a-b=0$ so
+  $a=b$.
+\end{proof}
+
+\begin{lemma}
+  Let $F$ be a field containing $\bfF_p$. For $c\in F$, $c\in\bfF_p$ $\iff$
+  $c^p=c$.
+\end{lemma}
+\begin{proof}
+  Every element $c$ of $\bfF_p$ satisfies the equation $c^p=c$. Conversely,
+  solutions to this equation are the roots of $X^p-X$, which has at most
+  $p$ roots. The elements of $\bfF_p$already fulfill this upper bound, so
+  there are no further roots in characteristic $p$.
+\end{proof}
+
+\begin{theorem}
+  For any $f(X)\in\bfF_p[X]$, $f(X)^p=f(X^{p^r})=f(X^{p^r})$ for $r\geq
+  0$. If $F$ is a field of characteristic $p$ other than $\bfF_p$, this is
+  not always true in $F[X]$.
+\end{theorem}
+\begin{proof}
+  Writing
+  \[
+    f(X)=c_mX^m+c_{m-1}X^{m-1}+\cdots+c_1X+c_0,
+  \]
+  Lemma 4.1a with $A=\bfF_p[X]$ gives
+  \begin{align*}
+    f(X)^p
+    &=\left( c_mX^m+c_{m-1}X^{m-1}+\cdots+c_1X+c_0 \right)^p\\
+    &={c_m}^pX^{mp}+{c_{m-1}}^pX^{p(m-1)}+\cdots+{c_1}^pX^p+c_0^p\\
+    &=c_m{(X^p)}^m+c_{m-1}{(X^p)}^{m-1}+\cdots+c_1X^p+c_0,
+  \end{align*}
+  since $c^p=c$ for any $c\in\bfF_p$. The last expression is
+  $f(X^p)$. Applying this result $r$ times, we find
+  $f(X)^{p^r}=f(X^{p^r})$.
+\end{proof}
+
+Let $f(X)\in\bfF_p[X]$ be nonconstant, with degree $m$. Let
+$L\supset\bfF_p$ be a field over which $f(X)$ decomposes into linear
+factors, i.e., (2.1) holds. It is possible to that some roots of $f(X)$ are
+multiple roots. As long as that does not happen, the following corollary
+says something about the $p$th powers of the roots.
+
+\begin{corollary}
+  When $f(X)\in\bfF_p[X]$ has distinct roots, raising all roots of $f(X)$
+  to the $p$th power permutes the roots
+  \[
+    \left\{{\alpha_1}^p,\ldots,{\alpha_m}^p\right\}=\left\{{\alpha_1},\ldots,{\alpha_m}\right\}.
+  \]
+\end{corollary}
+\begin{proof}
+  Let $S=\{\alpha_1,\ldots,\alpha_m\}$. Since $f(X)^p=f(X^p)$ by Theorem
+  4.3, the $p$th power of each root of $f(X)$ is again a root of
+  $f(X)$. Therefore raising to the $p$th power defines a function
+  $\varphi\colon S\to S$. By Lemma 4.1b, $\varphi$ takes different values
+  on different elements of $S$. Since $S$ is a finite set, $\varphi$ must
+  assume each element of $S$ as a value (in the language of set theory, a
+  one-to-one function from a finite set to itself is onto), so $\varphi$ is
+  a permutation of $S$.
+\end{proof}
+
+\subsection[Roots of irreducibles in FpX]{Roots of irreducibles in
+  $\bfF_p[X]$}
+\begin{lemma}
+  For $h(X)$ in $\bfF_p[X]$ with degree $m$,
+\end{lemma}
 
 %%% Local Variables:
 %%% mode: latex
