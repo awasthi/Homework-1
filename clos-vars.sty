@@ -2,7 +2,7 @@
 %% My preference of symbols and variables
 %%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{clos-vars}[2016/06/17 v1.4]
+\ProvidesPackage{clos-vars}[2016/06/20 v1.5]
 
 %% Necessary packages
 \RequirePackage{amsmath}
@@ -27,13 +27,12 @@
 \ifpdf
 
 %% Language
-\RequirePackage[LAE,LFE,LGR,T2A,T1]{fontenc}
+\RequirePackage[LGR,T2A,T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{substitutefont}
 
 \def\spanishoptions{mexico}
 \RequirePackage[
-% farsi,
 french,
 german,
 greek.plutoniko,
@@ -46,7 +45,6 @@ english]{babel}
            en=english,
            es=spanish,
            he=greek,
-           % pa=farsi,
            ru=russian,
            }
 
@@ -58,38 +56,65 @@ english]{babel}
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
 
 %% Math packages
+\newif\if@times\@timesfalse
+\DeclareOption{times}{
+  \@timestrue
+}
+
+\newif\if@libertine\@libertinefalse
+\DeclareOption{libertine}{
+  \@timestrue
+}
+
+\newif\if@eucal\@eucalfalse
+\DeclareOption{eucal}{
+  \@eucaltrue
+}
+
+\ProcessOptions\relax
+
+%% Times clones
+\if@times
+\RequirePackage[largesc]{newtxtext}% roman
+\RequirePackage[scale=.95,type1]{cabin}% sans
+\RequirePackage[varqu,varl]{zi4}% mono
+
+\RequirePackage[varg,bigdelims]{newtxmath}
+\RequirePackage[bb=boondox,frak=euler,cal=dutchcal]{mathalfa}
+
+\useosf % oldstyle figs
+
+% Font substitute
+\substitutefont{LGR}{\rmdefault}{Tempora}
+\substitutefont{T2A}{\rmdefault}{Tempora}
+
+\else
+
+\if@libertine
+\pdfmapfile{+libertinelgc.map}
+\RequirePackage[sb]{libertine} % roman
+\RequirePackage{libertinextras}
+\RequirePackage[scale=.95,type1]{cabin} % sans
+\RequirePackage[varqu,varl]{zi4} % mono
+
+\RequirePackage[libertine,varg,bigdelims]{newtxmath}
+\RequirePackage[bb=boondox,frak=euler,cal=dutchcal]{mathalfa}
+
+\useosf % oldstyle figs
+
+% Font substitute
+\substitutefont{LGR}{\rmdefault}{LinuxLibertineT}
+\substitutefont{T2A}{\rmdefault}{LinuxLibertineT}
+
+\else
+
 \RequirePackage{amssymb}
 \RequirePackage[nointegrals]{wasysym}
 \RequirePackage{stmaryrd}
-%\RequirePackage{eucal}
-
-%% Times clones
-%\RequirePackage[largesc]{newtxtext}
-%\pdfmapfile{+libertinelgc.map}
-%\RequirePackage[sb]{libertine}
-%\RequirePackage{libertinextras}
-
-% \RequirePackage[scale=.9,defaultsans]{cantarell}% sans serif
-%\RequirePackage[scale=.95,type1]{cabin}
-
-%\RequirePackage[varqu,varl]{zi4}% mono
-
-%\@ifpackageloaded{libertine}
-%     {\RequirePackage[libertine,varg,bigdelims]{newtxmath}} % math
-%     {\RequirePackage[varg,bigdelims]{newtxmath}}
-
-%\RequirePackage{MnSymbol}
-%\RequirePackage[bb=boondox,frak=euler,cal=dutchcal]{mathalfa}
-
-%\useosf % use oldstyle figures except in math
-
-% Font substitute
-%\@ifpackageloaded{libertine}{
-%\substitutefont{LGR}{\rmdefault}{LinuxLibertineT}
-%\substitutefont{T2A}{\rmdefault}{LinuxLibertineT}}
-%{\substitutefont{LGR}{\rmdefault}{Tempora}
-%\substitutefont{T2A}{\rmdefault}{Tempora}}
-
+\if@eucal
+\RequirePackage{eucal}
+\fi
+\fi
 \fi
 
 %% Misc
@@ -346,7 +371,7 @@ english]{babel}
 %% Algebraic Topology
 %%% Categories
 \newcommand{\blank}{{-}} % useful for categories
- 
+
 \newcommand{\catname}[1]{\mathbf{#1}}
 \newcommand{\AbGrp}{\catname{AbGrp}}
 \newcommand{\Grp}{\catname{Grp}}
@@ -790,3 +815,5 @@ english]{babel}
 \DeclareSIUnit[number-unit-product = {\thinspace}]{\pint}{pt}
 \DeclareSIUnit[number-unit-product = {\thinspace}]{\quart}{qt}
 \DeclareSIUnit[number-unit-product = {\thinspace}]{\gallon}{gal}
+
+\endinput
