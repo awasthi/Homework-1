@@ -1,0 +1,70 @@
+\section{Field Theory and Galois Theory}
+Notes taken from Keith Conrad's blurbs.
+
+\subsection{Roots and irreducibles}
+This handout discusses relationships between roots of irreducible
+polynomials and field extensions.
+\subsubsection{Roots in larger fields}
+For most fields $K$, there are polynomials in $K[X]$ without a root in
+$K$. Consider $X^2+1$ in $\bbR[X]$ or $X^3-2$ in $\bbF_7[X]$. If we are
+willing to enlarge the field. The following is due to Kronecker.
+\begin{theorem}
+  Let $K$ be a field and $f(X)$ be a nonconstant polynomial in
+  $K[X]$. There exists a field extension of $K$ containing a root of
+  $f(X)$.
+\end{theorem}
+\begin{proof}
+  It suffices to prove the theorem when $f(X)=\pi(X)$ is irreducible.
+
+  Set $F=K[t]/(\pi(t))$ where $t$ is an indeterminate. Since $\pi(t)$ is
+  irreducible in $K[t]$, $F$ is a field. Inside of $F$ we have $K$ as a
+  subfield: the congruence classes represented by constants. There is also
+  a root of $\pi(X)$ in $F$, namely the class of $t$. Indeed, writing $\bar
+  t$ for the congruence class of $t$ in $F$, the congruence $\pi(t)\equiv
+  0\mod \pi(t)$ becomes the equation $\pi(\bar t)=0$ in $F$.
+\end{proof}
+
+\begin{corollary}
+  Let $K$ be a field and $f(X)=c_mX^m+\cdots+c_0$ a polynomial in $K[X]$
+  with degree $m\geq 1$. There is a field $L\supset K$ such that in $L[X]$
+  \[
+    F(X)=c_m(X-\alpha_1)\cdots(X-\alpha_m).
+  \]
+\end{corollary}
+\begin{proof}
+  We induct on the degree $m$. The case $m=1$ is clear, using $L=K$. By
+  Theorem 2.1, there is a field $F\supset K$ such that that $f(X)$ has a
+  root in $F$, say $\alpha$. Then in $F[X]$,
+  \[
+    f(X)=(X-\alpha_1)g(X),
+  \]
+  where $\deg g(X)=m-1$. The leading coefficient of $g(X)$ is also $c_m$.
+
+  Since $g(X)$ has smaller degree than $f(X)$, by induction on the degree
+  there is a field $L\supset F$ (so $L\supset K$) such that $g(X)$
+  decomposes into linear factors in $L[X]$, so we get the desired
+  factorization of $f(X)$ in $L[X]$.
+\end{proof}
+
+
+\begin{corollary}
+  Let $f(X)$ and $g(X)$ be nonconstant in $K[X]$. They are relatively prime
+  in $K[X]$ if and only if they do not have a common root in any extension
+  field of $K$.
+\end{corollary}
+\begin{proof}
+  Assume $f(X)$ and $g(X)$ are relatively prime in $K[X]$. Then we can
+  write
+  \[
+    f(X)u(X)+g(X)v(X)=1
+  \]
+  for some $u(X)$ and $v(X)$ in $K[X]$. If there were an $\alpha$ in a
+  field extension of $K$ which is a common root of $f(X)$ and $g(X)$, then
+  substituting $\alpha$ for $X$ in the above polynomial
+\end{proof}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA553-Quals"
+%%% End:
