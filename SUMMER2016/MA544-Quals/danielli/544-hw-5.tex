@@ -40,23 +40,23 @@
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 3, Ex.\@ 18]
   Prove that outer measure is \emph{translation invariant}; that is, if
   $E_h=\left\{\,x+h:x\in E\,\right\}$\marginremark{To use \textbf{boldface}
-    or not to use \textbf{boldface} with points in $\bbR^n$, that is the
+    or not to use \textbf{boldface} with points in $\bfR^n$, that is the
     question. Whether 'tis nobler...
     \\
     For now, let us just use math italic for points in a set and boldface
     math for vectors. Yes, I like this convention.}  is the translate of
-  $E$ by $h$, $h\in\bbR^n$, show that $m^*(E_h)=m^*(E)$. If $E$ is
+  $E$ by $h$, $h\in\bfR^n$, show that $m^*(E_h)=m^*(E)$. If $E$ is
   measurable, show that $E_h$ is also measurable. [This fact was used in
   proving (3.37).]
 \end{problem}
 \begin{solution}
-  Let $E\subset\bbR^n$ and $h\in\bbR^n$ and define the set $E_h$ to be the
+  Let $E\subset\bfR^n$ and $h\in\bfR^n$ and define the set $E_h$ to be the
   set $E_h=\left\{\,x+h:x\in E\,\right\}$. We will show that the outer
   measure of $E$ is preserved under such translations. But first, let us
   point out that $E_h$ is nothing more than the image of $E$ under the
-  linear transformation $T\colon\bbR^n\to\bbR^n$ given by $x\mapsto
+  linear transformation $T\colon\bfR^n\to\bfR^n$ given by $x\mapsto
   x+h$. By Theorem 3.35, such a map preserves measurability of sets and for
-  any measurable set $E'\subset\bbR^n$, $m(T(E'))=(\det T)m(E')=m(E')$
+  any measurable set $E'\subset\bfR^n$, $m(T(E'))=(\det T)m(E')=m(E')$
   (since $\det T=1$). Now, by Theorem 3.6, for every $\varepsilon>0$, there
   exist an open set $G\supset E$ such that $m^*(G)\leq
   m^*(E)+\varepsilon$. Consider the image of $G$ under $T$, $T(G)$ is an
@@ -69,7 +69,7 @@
     m^*(E_h)\leq m^*(E).
   \]
 
-  To get the other inequality, take the map $T^{-1}\colon\bbR^n\to\bbR^n$
+  To get the other inequality, take the map $T^{-1}\colon\bfR^n\to\bfR^n$
   which takes $x\mapsto x-h$; this sends $E_h$ to $E$ and the same argument
   shows that
   \[
@@ -97,23 +97,23 @@
   \end{quote}
 
   Their proofs are quite simple. For the corollary: Suppose
-  $f\colon E\to\bbR$ is a measurable function. By Theorem 4.1, $f$ is
-  measurable if and only if for every finite $\alpha\in\bbR$, the sets
+  $f\colon E\to\bfR$ is a measurable function. By Theorem 4.1, $f$ is
+  measurable if and only if for every finite $\alpha\in\bfR$, the sets
   \begin{align*}
     &\left\{\,x\in E: f(x)\geq\alpha\,\right\}\\
     &\left\{\,x\in E:f(x)<\alpha\,\right\}\\
     &\left\{\,x\in E:f(x)\leq\alpha\,\right\}
   \end{align*}
   are measurable. Since measurable sets form a $\sigma$-algebra on
-  $\bbR^n$, we know that the countable union and intersection of measurable
+  $\bfR^n$, we know that the countable union and intersection of measurable
   sets is measurable. Thus,
   \begin{align*}
     \left\{\,x\in E:f(x)>-\infty\,\right\}
-    &=\bigcup_{\alpha\in\bbZ}\left\{\,x\in E:f(x)>\alpha\,\right\}\\
+    &=\bigcup_{\alpha\in\bfZ}\left\{\,x\in E:f(x)>\alpha\,\right\}\\
     \left\{\,x\in E:f(x)=\infty\,\right\}
     &=\bigcap_{n=1}^\infty\left\{\,x\in E:f(x)>n\,\right\}\\
     \left\{\,x\in E:f(x)<\infty\,\right\}
-    &=\bigcup_{\alpha\in\bbZ}\left\{\,x\in E:f(x)<\alpha\,\right\}
+    &=\bigcup_{\alpha\in\bfZ}\left\{\,x\in E:f(x)<\alpha\,\right\}
   \end{align*}
   are easily seen to be measurable.
 
@@ -122,12 +122,12 @@
   some clever (but not too clever) intersection/union of the sets we get
   from Theorem 4.1.
 
-  % Viewing $\lambda$ as the constant mapping $g\colon E\to \bbR$ where
+  % Viewing $\lambda$ as the constant mapping $g\colon E\to \bfR$ where
   % $x\mapsto\lambda$ we have that $\lambda$ is measurable since it is
   % continuous.
 
   For the theorem: Suppose $f$ is measurable and $\lambda$ is a
-  constant. By Theorem 4.1, for any finite $\alpha\in\bbR$ we have
+  constant. By Theorem 4.1, for any finite $\alpha\in\bfR$ we have
   \[
     \left\{\,x\in E:f(x)>\alpha-\lambda\,\right\}
   \]
