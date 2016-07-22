@@ -80,7 +80,7 @@ english]{babel}
 \RequirePackage[varqu,varl]{zi4}% mono
 
 \RequirePackage[varg,bigdelims]{newtxmath}
-\RequirePackage[bb=boondox,frak=euler,cal=dutchcal]{mathalfa}
+\RequirePackage[bb=boondox,frak=boondox,cal=boondoxo]{mathalfa}
 
 \useosf % oldstyle figs
 
@@ -107,12 +107,13 @@ english]{babel}
 \substitutefont{T2A}{\rmdefault}{LinuxLibertineT}
 
 \else
-
+%\usepackage[rm={lining,proportional},sf={lining,proportional},tt={lining,proportional,variable}]{cfr-lm}
 \RequirePackage{amssymb}
 \RequirePackage[nointegrals]{wasysym}
 \RequirePackage{stmaryrd}
 \if@eucal
 \RequirePackage{eucal}
+\RequirePackage{eufrak}
 \fi
 \fi
 \fi
@@ -227,7 +228,7 @@ english]{babel}
 \DeclareMathOperator{\Det}{Det}
 % \DeclareMathOperator{\dim}{dim}
 \DeclareMathOperator{\lcm}{lcm}
-\DeclareMathOperator{\NORM}{Norm}
+\DeclareMathOperator{\Norm}{norm}
 \DeclareMathOperator{\nullity}{nullity}
 \DeclareMathOperator{\rk}{rk}
 \DeclareMathOperator{\sgn}{sgn}
@@ -271,7 +272,7 @@ english]{babel}
 \DeclareMathOperator{\Alt}{Alt}
 \DeclareMathOperator{\Stab}{Stab}
 \DeclareMathOperator{\Orb}{Orb}
-\DeclareMathOperator{\Norm}{Norm}
+\DeclareMathOperator{\NORM}{Norm}
 \DeclareMathOperator{\Sym}{Sym}
 
 % Linear groups
