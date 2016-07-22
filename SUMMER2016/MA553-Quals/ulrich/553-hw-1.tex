@@ -17,24 +17,24 @@ understood to come from Hungerford's \emph{Algebra}.
 Throughout these notes
 
 \begin{tabular}{cl}
-  $\bfR$   & is the set of real numbers\\
-  $\bfC$   & is the set of complex numbers\\
-  $\bfQ$   & is the set of rational numbers\\
-  $\bfF_q$ & is the finite field of order $q=p^n$ for some prime $p$\\
-  $\bfZ$   & is the set of the integers\\
-  $\bfN$   & is the set of the natural numbers $1,2,\dotsc$\\
+  $\bbR$   & is the set of real numbers\\
+  $\bbC$   & is the set of complex numbers\\
+  $\bbQ$   & is the set of rational numbers\\
+  $\bbF_q$ & is the finite field of order $q=p^n$ for some prime $p$\\
+  $\bbZ$   & is the set of the integers\\
+  $\bbN$   & is the set of the natural numbers $1,2,\dotsc$\\
   $k$   & is used to denote the base field with
              characteristic $\Char k$\\
   $K,E,L$& is used to denote field extensions over the base field
                     $k$\\
   $Z_n$    & is the cyclic group of order $n$ not necessarily equal
-             (but isomorphic) to $\bfZ/p\bfZ$\\
+             (but isomorphic) to $\bbZ/p\bbZ$\\
   $S_n$    & is the symmetric group on $\{1,\dotsc,n\}$\\
   $A_n$    & is the alternating group on $\{1,\dotsc,n\}$\\
   $D_n$    & is the dihedral group of order $n$\\
   $A\setminus B$ & is the set difference of $A$ and $B$, that is, the
                         complement of $A\cap B$ in $A$\\
-  $X\simeq Y$ & means $X$ and $Y$ are isomorphic as groups, rings,
+  $X\cong Y$ & means $X$ and $Y$ are isomorphic as groups, rings,
                 $R$-modules, or fields
 \end{tabular}
 
@@ -66,7 +66,7 @@ Throughout these notes
 
   On the other hand, by Theorem 3.4 (iv) since ${(a^n)}^\ell=a^{n\ell}=e$
   and the order of $a$ is $m$, $m\mid n\ell$ or, equivalently, $mk=n\ell$
-  for some $k\in\bfZ^+$. Now, since $(m,n)\mid m$ and $(m,n)\mid n$, we can
+  for some $k\in\bbZ^+$. Now, since $(m,n)\mid m$ and $(m,n)\mid n$, we can
   represent $m$ and $n$ as the products $(m,n)m'$ and $(m,n)n'$,
   respectively. Now, note that $m'=m/(n,m)$ so we must show that
   $m'\leq\ell$. Putting all of this together, we have $mk$
@@ -106,7 +106,7 @@ Throughout these notes
   K=\{e\}$. Show that
   \begin{enumerate}[label=(\alph*),noitemsep]
   \item $hk=kh$ for every $h\in H$, $k\in K$.
-  \item $HK$ is a subgroup of $G$ with $HK\simeq H\times K$.
+  \item $HK$ is a subgroup of $G$ with $HK\cong H\times K$.
   \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -123,11 +123,11 @@ Throughout these notes
   $hkh^{-1}k^{-1}=(hkh^{-1})k^{-1}=kk^{-1}=e$ so $HK$ is closed under
   taking inverses. Thus, $HK$ is a subgroup of $G$.
 
-  To see that $HK\simeq H\times K$, consider the map
+  To see that $HK\cong H\times K$, consider the map
   $\varphi\colon HK\to (HK/K)\times(HK/H)$ given by
   $\varphi(hk)=(\pi_K(h),\pi_H(k))$ where $\pi_H\colon HK\to HK/H$
   and $\pi_K\colon HK\to HK/K$ are quotient maps. By the first (or second)
-  isomorphism theorem, $H\simeq HK/H$ and $K\simeq HK/H$ so $HK\simeq
+  isomorphism theorem, $H\cong HK/H$ and $K\cong HK/H$ so $HK\cong
   H\times K$.
 \end{solution}
 

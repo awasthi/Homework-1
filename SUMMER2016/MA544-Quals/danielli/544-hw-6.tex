@@ -4,21 +4,21 @@
 
 % #6 - Due Feb. 22 Read Sections 4.2-3. Chapter 4: # 4, 7, 8.
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 4, Ex.\@ 4]
-  Let $f$ be defined and measurable in $\bfR^n$. If $T$ is a nonsingular
-  linear transformation of $\bfR^n$, show that $f(T(x))$ is measurable. [If
+  Let $f$ be defined and measurable in $\bbR^n$. If $T$ is a nonsingular
+  linear transformation of $\bbR^n$, show that $f(T(x))$ is measurable. [If
   $E_1=\left\{\,x: f(x)>a\,\right\}$ and
   $E_2=\left\{\,x:f(T(x))>a\,\right\}$, show $E_2=T^{-1}(E_1)$.]
 \end{problem}
 \begin{solution}
   % Let $f$ be a measurable function and $T$ a nonsingular linear
-  % transformation. Then we show that for any finite $\alpha\in\bfR$, for
+  % transformation. Then we show that for any finite $\alpha\in\bbR$, for
   % $E_1=\left\{\,x:f(x)>\alpha\,\right\}$ and
   % $E_2=\left\{\,x:f(T(x))>\alpha\,\right\}$, we have $E_2=T^{-1}(E_1)$
   % which, by Theorem 3.35, shows that $E_2$ is measurable and hence, the
   % composition $f\circ T$ is measurable.
-  Let $f\colon\bfR^n\to\bfR$ be a measurable function and
-  $T\colon\bfR^n\to\bfR^n$ be a linear transformation. Then, we show that
-  the composition $f\circ T$ is measurable. Fix a finite $\alpha\in\bfR$
+  Let $f\colon\bbR^n\to\bbR$ be a measurable function and
+  $T\colon\bbR^n\to\bbR^n$ be a linear transformation. Then, we show that
+  the composition $f\circ T$ is measurable. Fix a finite $\alpha\in\bbR$
   and let
   \begin{align*}
     E_1&=\left\{\,x:f(x)>\alpha\,\right\}\\
@@ -44,11 +44,11 @@
   First we show that $f$ is bounded. Suppose that $f$ is u.s.c.\@ on
   $E$. Then, by Theorem 4.14 (i), sets of the form
   $\left\{\,x\in E:f(x)<\alpha\,\right\}$ are relatively open. Let
-  $\calG={\{G_\alpha\}}_{\alpha\in\bfZ}$ where
+  $\calG={\{G_\alpha\}}_{\alpha\in\bbZ}$ where
   $G_a=\left\{\,x\in E:f(x)<\alpha\,\right\}$. Then $\calG$ forms an open
   cover of $E$ and since $E$ is compact there exists a finite subset
   ${\{G_{\alpha_n}\}}_{n=1}^N$ for some finite subset
-  $\{\,\alpha_1,\ldots,\alpha_N\,\}$ of $\bfZ$. Let
+  $\{\,\alpha_1,\ldots,\alpha_N\,\}$ of $\bbZ$. Let
   $\alpha=\max\left\{\,\alpha_1,\ldots,\alpha_N\,\right\}$. Then,
   $f(x)<\alpha$ for all $x\in E$ so $f$ is bounded above by $\alpha$.
 
@@ -108,7 +108,7 @@
   counterexample: Take $f=0$ (which is continuous everywhere) and $g$ any
   function that is u.s.c.\@, but not continuous, at $x_0$ then $f-g=-g$ is
   l.s.c.\@ at $x_0$. Another counterexample is provided by the equations
-  $u_1$ and $u_2$ from Ch.\@ 4 of Wheeden and Zygmund: Fix an $x_0\in\bfR$
+  $u_1$ and $u_2$ from Ch.\@ 4 of Wheeden and Zygmund: Fix an $x_0\in\bbR$
   and define
   \begin{align*}
     u_1(x)&=\begin{cases}
@@ -140,7 +140,7 @@
   \[
     \limsup_{\substack{x\to x_0\\ x\in E}}f_n(x)\leq f_n(x_0)
   \]
-  for all $n\in\bfN$. We must show that
+  for all $n\in\bbN$. We must show that
   \[
     \limsup_{\substack{x\to x_0\\ x\in E}}\bigl[\inf f_n(x)\bigr]\leq \inf
     f_n(x_0).

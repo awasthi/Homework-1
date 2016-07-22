@@ -3,10 +3,10 @@
 \setcounter{equation}{0}
 
 \begin{problem}
-Suppose $f\in L^1(\bfR^n)$ and that $x$ is a point in the Lebesgue set of
+Suppose $f\in L^1(\bbR^n)$ and that $x$ is a point in the Lebesgue set of
 $f$. For $r>0$, let
 \[
-A(r)=\frac{1}{|r|^n}\int_{B(0,r)}|f(\bfx-\bfy)-f(\bfx)|\diff\bfy.
+A(r)=\frac{1}{|r|^n}\int_{B(0,r)}|f( x - y )-f( x )|\diff y .
 \]
 Show that:
 \begin{enumerate}[label=(\alph*),noitemsep]
@@ -20,42 +20,42 @@ that as $r\to s$, the quantity
 \[
 |A(s)-A(r)|\longrightarrow 0.
 \]
-Set $F(\bfy)= |f(\bfx-\bfy)-f(\bfx)|$ and consider said quantity
+Set $F( y )= |f( x - y )-f( x )|$ and consider said quantity
 \begin{align*}
 |A(s)-A(r)|
 &=\left|
-\frac{1}{|s|^n}\int_{B_s}F(\bfy)\diff\bfy
+\frac{1}{|s|^n}\int_{B_s}F( y )\diff y
 -
-\frac{1}{|r|^n}\int_{B_r}F(\bfy)\diff\bfy
+\frac{1}{|r|^n}\int_{B_r}F( y )\diff y
 \right|\\
 &=\left|
-\frac{1}{|s|^n}\int_{B_s\setminus B_r}F(\bfy)\diff\bfy+
-\frac{1}{|s|^n}\int_{B_r}F(\bfy)\diff\bfy-
-\frac{1}{|r|^n}\int_{B_r}F(\bfy)\diff\bfy
+\frac{1}{|s|^n}\int_{B_s\setminus B_r}F( y )\diff y +
+\frac{1}{|s|^n}\int_{B_r}F( y )\diff y -
+\frac{1}{|r|^n}\int_{B_r}F( y )\diff y
 \right|\\
 &=\left|
-\frac{1}{|s|^n}\int_{B_s\setminus B_r}F(\bfy)\diff\bfy
-+\left(\frac{1}{|s|^n}-\frac{1}{|r|^n}\right)\int_{B_r}F(\bfy)\diff\bfy
+\frac{1}{|s|^n}\int_{B_s\setminus B_r}F( y )\diff y
++\left(\frac{1}{|s|^n}-\frac{1}{|r|^n}\right)\int_{B_r}F( y )\diff y
 \right|\\
 &\leq
-\underbrace{\frac{1}{|s|^n}\int_{B_s\setminus B_r}F(\bfy)\diff\bfy}_{I_1}
-+\underbrace{\left(\frac{1}{|s|^n}-\frac{1}{|r|^n}\right)\int_{B_r}F(\bfy)\diff\bfy}_{I_2}.
+\underbrace{\frac{1}{|s|^n}\int_{B_s\setminus B_r}F( y )\diff y }_{I_1}
++\underbrace{\left(\frac{1}{|s|^n}-\frac{1}{|r|^n}\right)\int_{B_r}F( y )\diff y }_{I_2}.
 \end{align*}
 Hence, we must show that the quantities $I_1,I_2\to 0$ as $r\to s$.
 
 To see that $A(r)\to 0$ as $r\to 0$, note that $x$ is a point of the
 Lebesgue set of $f$ and that
 \[
-0=\lim_{B_r\searrow\bfx}\frac{1}{|B_1||r|^n}\int_{B_r}|f(\bfy)-f(\bfx)|\diff\bfy=\frac{1}{|B_1|}\lim_{B_r\searrow\bfx}\frac{1}{|r|^n}\int_{B_r}|f(\bft)-f(\bfx)|\diff\bft=\lim_{r\to
+0=\lim_{B_r\searrow x }\frac{1}{|B_1||r|^n}\int_{B_r}|f( y )-f( x )|\diff y =\frac{1}{|B_1|}\lim_{B_r\searrow x }\frac{1}{|r|^n}\int_{B_r}|f(\bbt)-f( x )|\diff\bbt=\lim_{r\to
 0}A(r).
 \]
-by making the change of variables $\bft=\bfx-\bfy$.
+by making the change of variables $\bbt= x - y $.
 \\\\
 (b)
 \end{solution}
 
 \begin{problem}
-Let $E\subset\bfR^n$ be a measurable set, $1\leq n<\infty$. Assume
+Let $E\subset\bbR^n$ be a measurable set, $1\leq n<\infty$. Assume
 $\{f_k\}$ is a sequence in $L^p(E)$ converging pointwise a.e.\@ on $E$ to a
 function $f\in L^p(E)$. Prove that
 \[
@@ -73,7 +73,7 @@ as $k\to\infty$.
 \begin{problem}
 Let $1<p<\infty$, $f\in L^p(E)$, $g\in L^{p'}(E)$.
 \begin{enumerate}[label=(\alph*),noitemsep]
-\item Prove that $f*g\in C(\bfR^n)$.
+\item Prove that $f*g\in C(\bbR^n)$.
 \item Does this conclusion continue to be valid when $p=1$ and $p=\infty$?
 \end{enumerate}
 \end{problem}
@@ -81,9 +81,9 @@ Let $1<p<\infty$, $f\in L^p(E)$, $g\in L^{p'}(E)$.
 \end{solution}
 
 \begin{problem}
-Let $f\in L(\bfR)$, and let $F(t)=\int_{\bfR}f(x)\cos(tx)dx$.
+Let $f\in L(\bbR)$, and let $F(t)=\int_{\bbR}f(x)\cos(tx)dx$.
 \begin{enumerate}[label=(\alph*),noitemsep]
-\item Prove that $F(t)$ is continuous for $t\in\bfR$.
+\item Prove that $F(t)$ is continuous for $t\in\bbR$.
 \item Prove the following
   \href{https://en.wikipedia.org/wiki/Riemann–Lebesgue_lemma}{\emph{Riemann--Lebesgue
       lemma}}:
