@@ -63,7 +63,7 @@ english]{babel}
 
 \newif\if@libertine\@libertinefalse
 \DeclareOption{libertine}{
-  \@timestrue
+  \@libertinetrue
 }
 
 \newif\if@eucal\@eucalfalse
@@ -200,6 +200,8 @@ english]{babel}
 \providecommand{\nsupset}{\ensuremath{\not\supset}}
 \providecommand{\nsimeq}{\ensuremath{\not\simeq}}
 \fi
+
+\renewcommand\setminus{\ensuremath{\smallsetminus}}
 
 %% Augmented matrix
 \makeatletter
