@@ -115,18 +115,17 @@
 \end{problem}
 \begin{solution}
   Define the linear map $T\colon[0,\infty)\times\bbR^n\to\bbR^n$ by
-  $T(r) x = rx $. We claim that
-  $B(\mathbf{0},r)=T(r,B(\mathbf{0},1))$. To reduce notation, set
-  $B_1= B(\mathbf{0},1)$ and $B_r= B(\mathbf{0},r)$.
-  \begin{solution}[Proof of claim]
-    $\subset$: Let $x\in B_r$. Then $|x |<r$ so $|x |/r<1$. Thus,
-    $|x |/r\in B_1$ so it is in the image of $B_1$ under the map
-    $T(r,\cdot)$.
+  $T(r) x = rx $. We claim that $B(\mathbf{0},r)=T(r,B(\mathbf{0},1))$. To
+  reduce notation, set $B_1= B(\mathbf{0},1)$ and $B_r= B(\mathbf{0},r)$.
+  \begin{quote}
+    \begin{proof}[Proof of claim]
+      Let $x\in B_r$. Then $|x |<r$ so $|x |/r<1$. Thus, $|x |/r\in B_1$ so
+      it is in the image of $B_1$ under the map $T(r,\cdot)$.
 
-    $\supset$: On the other hand, suppose $x\in T(r,B_1)$. Then
-    $x =r y $ for some $ y \in B_1$. Then, since $| y |<1$,
-    $|x |=r| y |<r$ so $x\in B_r$.
-  \end{solution}
+      On the other hand, suppose $x\in T(r,B_1)$. Then $x =r y $ for some
+      $ y \in B_1$. Then, since $| y |<1$, $|x |=r| y |<r$ so $x\in B_r$.
+    \end{proof}
+  \end{quote}
 
   From the claim, we see that $F(x)=|T(x,B(\mathbf{0},1))|$ which, by
   Problem 1, is nothing more that the polynomial $|B_1|x^n$. It is clear,
