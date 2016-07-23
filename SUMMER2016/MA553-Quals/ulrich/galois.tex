@@ -6,7 +6,7 @@ This handout discusses relationships between roots of irreducible
 polynomials and field extensions.
 \subsubsection{Roots in larger fields}
 For most fields $K$, there are polynomials in $K[X]$ without a root in
-$K$. Consider $X^2+1$ in $\bfR[X]$ or $X^3-2$ in $\bfF_7[X]$. If we are
+$K$. Consider $X^2+1$ in $\bbR[X]$ or $X^3-2$ in $\bbF_7[X]$. If we are
 willing to enlarge the field. The following is due to Kronecker.
 \begin{theorem}
   Let $K$ be a field and $f(X)$ be a nonconstant polynomial in
@@ -143,19 +143,19 @@ provided they are irreducible. (All linear polynomials are irreducible.)
 \end{proof}
 
 \begin{lemma}
-  Let $F$ be a field containing $\bfF_p$. For $c\in F$, $c\in\bfF_p$ $\iff$
+  Let $F$ be a field containing $\bbF_p$. For $c\in F$, $c\in\bbF_p$ $\iff$
   $c^p=c$.
 \end{lemma}
 \begin{proof}
-  Every element $c$ of $\bfF_p$ satisfies the equation $c^p=c$. Conversely,
+  Every element $c$ of $\bbF_p$ satisfies the equation $c^p=c$. Conversely,
   solutions to this equation are the roots of $X^p-X$, which has at most
-  $p$ roots. The elements of $\bfF_p$already fulfill this upper bound, so
+  $p$ roots. The elements of $\bbF_p$already fulfill this upper bound, so
   there are no further roots in characteristic $p$.
 \end{proof}
 
 \begin{theorem}
-  For any $f(X)\in\bfF_p[X]$, $f(X)^p=f(X^{p^r})=f(X^{p^r})$ for $r\geq
-  0$. If $F$ is a field of characteristic $p$ other than $\bfF_p$, this is
+  For any $f(X)\in\bbF_p[X]$, $f(X)^p=f(X^{p^r})=f(X^{p^r})$ for $r\geq
+  0$. If $F$ is a field of characteristic $p$ other than $\bbF_p$, this is
   not always true in $F[X]$.
 \end{theorem}
 \begin{proof}
@@ -163,26 +163,26 @@ provided they are irreducible. (All linear polynomials are irreducible.)
   \[
     f(X)=c_mX^m+c_{m-1}X^{m-1}+\cdots+c_1X+c_0,
   \]
-  Lemma 4.1a with $A=\bfF_p[X]$ gives
+  Lemma 4.1a with $A=\bbF_p[X]$ gives
   \begin{align*}
     f(X)^p
     &=\left( c_mX^m+c_{m-1}X^{m-1}+\cdots+c_1X+c_0 \right)^p\\
     &={c_m}^pX^{mp}+{c_{m-1}}^pX^{p(m-1)}+\cdots+{c_1}^pX^p+c_0^p\\
     &=c_m{(X^p)}^m+c_{m-1}{(X^p)}^{m-1}+\cdots+c_1X^p+c_0,
   \end{align*}
-  since $c^p=c$ for any $c\in\bfF_p$. The last expression is
+  since $c^p=c$ for any $c\in\bbF_p$. The last expression is
   $f(X^p)$. Applying this result $r$ times, we find
   $f(X)^{p^r}=f(X^{p^r})$.
 \end{proof}
 
-Let $f(X)\in\bfF_p[X]$ be nonconstant, with degree $m$. Let
-$L\supset\bfF_p$ be a field over which $f(X)$ decomposes into linear
+Let $f(X)\in\bbF_p[X]$ be nonconstant, with degree $m$. Let
+$L\supset\bbF_p$ be a field over which $f(X)$ decomposes into linear
 factors, i.e., (2.1) holds. It is possible to that some roots of $f(X)$ are
 multiple roots. As long as that does not happen, the following corollary
 says something about the $p$th powers of the roots.
 
 \begin{corollary}
-  When $f(X)\in\bfF_p[X]$ has distinct roots, raising all roots of $f(X)$
+  When $f(X)\in\bbF_p[X]$ has distinct roots, raising all roots of $f(X)$
   to the $p$th power permutes the roots
   \[
     \left\{{\alpha_1}^p,\ldots,{\alpha_m}^p\right\}=\left\{{\alpha_1},\ldots,{\alpha_m}\right\}.
@@ -200,13 +200,13 @@ says something about the $p$th powers of the roots.
 \end{proof}
 
 \subsection[Roots of irreducibles in FpX]{Roots of irreducibles in
-  $\bfF_p[X]$}
+  $\bbF_p[X]$}
 \begin{lemma}
-  For $h(X)$ in $\bfF_p[X]$ with degree $m$, $\bfF_p[X]/(h(X))$ has size
+  For $h(X)$ in $\bbF_p[X]$ with degree $m$, $\bbF_p[X]/(h(X))$ has size
   $p^m$.
 \end{lemma}
 \begin{proof}
-  By the division algorithm in $\bfF_p[X]$, every congruence class modulo
+  By the division algorithm in $\bbF_p[X]$, every congruence class modulo
 \end{proof}
 
 %%% Local Variables:
