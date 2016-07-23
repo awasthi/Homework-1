@@ -6,82 +6,99 @@
 \subsubsection{Exam 1 Practice}
 \begin{problem}
   Let $E\subset\bbR^n$ be a measurable set, $r\in\bbR$ and define the set
-  $rE=\left\{\,r x : x \in E\,\right\}$. Prove that $rE$ is measurable,
-  and that $|rE|=|r|^n|E|$.
+  $rE=\left\{\,rx : x\in E\,\right\}$. Prove that $rE$ is measurable, and
+  that $|rE|=|r|^n|E|$.
 \end{problem}
 \begin{solution}
-  Define a map $T\colon\bbR^n\to\bbR^n$ by $T x = r x $. Note that $T$ is
-  \href{https://en.wikipedia.org/wiki/Lipschitz_continuity}{\emph{Lipschitz
-      continuous}} since for any $ x , y \in\bbR^n$, the equality
-  \begin{equation}
-    \label{eq:prep:1:1}
-    |T x -T y |=|r x -r y |=|r|| x - y |
-  \end{equation}
-  is satisfied. By Theorem 3.33 from \cite[Ch.\@ 3,
-  p.\@55]{wheeden-zygmund}, the image of $E$ under $T$ is
-  measurable. Moreover, by Theorem 3.35 \cite[Ch.\@ 3, p.\@
-  56]{wheeden-zygmund}, since $T$ is linear, it follows that
-  $|T(E)|=|{\det T}||E|$ where $\det T=|r|^n$. Lastly, we note that the
-  image of $E$ under $T$ is precisely the set $rE$ so that
-  $|T(E)|=|rE|=|r|^n|E|$, as was to be shown.
+  Define a map a linear map $T\colon\bbR^n\to\bbR^n$ by $T(x)=rx$. Since a
+  the image of a measurable set $E$ under linear map is measurable and
+  $m(T(E))=|{\det T}|m(E)=|r|^nm(E)$, it suffices to show that $T(E)=rE$.
+
+  Let $y\in T(E)$ then $y=rx$ for some $x\in E$. Thus, $y\in rE$. Let $y\in
+  rE$. Then, $y=rx=T(x)$ for some $x\in E$. Thus, $y\in T(E)$. It follows
+  that $m(rE)=|r|^nm(E)$.
 \end{solution}
 
 \begin{problem}
-  Let $\left\{ E_k \right\}$, $k\in\bbN$ be a collection of measurable
-  sets. Define the set
+  Let $\{E_k\}$, $k\in\bbN$ be a collection of measurable sets. Define the
+  set
   \[
     \liminf_{k\to\infty} E_k
     =\bigcup_{k=1}^\infty\left(\bigcap_{n=k}^\infty E_n\right).
   \]
   Show that
   \[
-    \left|\liminf_{k\to\infty}
-      E_k\right|\leq\liminf_{k\to\infty}\left|E_k\right|.
+    m\left(\liminf_{k\to\infty}
+      E_k\right)\leq\liminf_{k\to\infty}m(E_k).
   \]
 \end{problem}
-\begin{solution}
-  Following the style of \cite[Ch.\@ 1, p.\@ 2]{wheeden-zygmund},
-  particularly, the sets defined after the introduction of equation (1.1),
-  set
-  \begin{equation}
-    \label{eq:prep:1:2}
-    V_k=\bigcap_{\ell=k}^\infty E_\ell.
-  \end{equation}
-  Note that the collection of sets $\{V_k\}$ forms an increasing sequence,
-  that is, if $ x \in V_k$ then, by \eqref{eq:prep:1:2}, $ x $ is in the
-  intersection $E_k\cap\bigl(\bigcap_{\ell=k+1}E_\ell\bigr)$, but, by
-  \eqref{eq:prep:1:2}, $\bigcap_{\ell=k+1}E_\ell=V_{k+1}$ thus, $ x $ is
-  in $V_{k+1}$ so $V_{k+1}\supset V_k$. Hence, we have
-  $V_k\nearrow\liminf E_k$.
+% Following the style of \cite[Ch.\@ 1, p.\@ 2]{wheeden-zygmund},
+  % particularly, the sets defined after the introduction of equation (1.1),
+  % set
+  % \begin{equation}
+  %   \label{eq:prep:1:2}
+  %   V_k=\bigcap_{\ell=k}^\infty E_\ell.
+  % \end{equation}
+  % Note that the collection of sets $\{V_k\}$ forms an increasing sequence,
+  % that is, if $x\in V_k$ then, by \eqref{eq:prep:1:2}, $x $ is in the
+  % intersection $E_k\cap\bigl(\bigcap_{\ell=k+1}E_\ell\bigr)$, but, by
+  % \eqref{eq:prep:1:2}, $\bigcap_{\ell=k+1}E_\ell=V_{k+1}$ thus, $x $ is
+  % in $V_{k+1}$ so $V_{k+1}\supset V_k$. Hence, we have
+  % $V_k\nearrow\liminf E_k$.
 
-  Now, consider the sequence $\{|V_k|\}$ formed by the Lebesgue measure of
-  the $V_k$. By Theorem 3.26 from \cite[Ch.\@ 3, p.\@ 51]{wheeden-zygmund},
-  since $V_k\nearrow\liminf E_k$,
+  % Now, consider the sequence $\{|V_k|\}$ formed by the Lebesgue measure of
+  % the $V_k$. By Theorem 3.26 from \cite[Ch.\@ 3, p.\@ 51]{wheeden-zygmund},
+  % since $V_k\nearrow\liminf E_k$,
+  % \begin{equation}
+  %   \label{eq:prep:1:3}
+  %   \lim_{k\to\infty}|V_k|=
+  %   \lim_{k\to\infty}\left|\bigcap_{\ell=k}^\infty E_\ell\right|=
+  %   \left|\liminf_{k\to\infty} E_k\right|.
+  % \end{equation}
+  % But note that, by the monotonicity of the Lebesgue measure, we have
+  % \begin{equation}
+  %   \label{eq:prep:1:4}
+  %   \left|\bigcap_{\ell=k}^\infty E_\ell\right|\leq |E_k|,
+  % \end{equation}
+  % so, by properties of the $\liminf$, in particular, by Theorem 19(v) from
+  % \cite[Ch.\@ 1, p.\@ 23]{royden}, we have
+  % \begin{equation}
+  %   \label{eq:prep:1:5}
+  %   \limsup_{k\to\infty}|V_k|\leq\liminf_{k\to\infty}|E_k|.
+  % \end{equation}
+  % Hence, by \eqref{eq:prep:1:3} and Proposition 19 (iv), since the sequence
+  % $\{|V_k|\}$ converges and is equal to the measure of $\liminf E_k$, by
+  % \eqref{eq:prep:1:5}, we have
+  % \begin{equation}
+  %   \label{eq:prep:1:6}
+  %   \left|\liminf_{k\to\infty} E_k\right|\leq\liminf_{k\to\infty}|E_k|
+  % \end{equation}
+  % as was to be shown.
+\begin{solution}
+  Here's a quick and dirty way of proving this: let $\chi_{E_n}$ be the
+  characteristic function of $E_n$. Then, by Fatou's lemma,
   \begin{equation}
-    \label{eq:prep:1:3}
-    \lim_{k\to\infty}|V_k|=
-    \lim_{k\to\infty}\left|\bigcap_{\ell=k}^\infty E_\ell\right|=
-    \left|\liminf_{k\to\infty} E_k\right|.
+    \label{eq:ex-1-prep:fatou}
+    \int\liminf_{n\to\infty}\chi_{E_n}(x)\diff x
+    \leq\liminf_{n\to\infty}\int\chi_{E_n}(x)\diff x.
   \end{equation}
-  But note that, by the monotonicity of the Lebesgue measure, we have
-  \begin{equation}
-    \label{eq:prep:1:4}
-    \left|\bigcap_{\ell=k}^\infty E_\ell\right|\leq |E_k|,
-  \end{equation}
-  so, by properties of the $\liminf$, in particular, by Theorem 19(v) from
-  \cite[Ch.\@ 1, p.\@ 23]{royden}, we have
-  \begin{equation}
-    \label{eq:prep:1:5}
-    \limsup_{k\to\infty}|V_k|\leq\liminf_{k\to\infty}|E_k|.
-  \end{equation}
-  Hence, by \eqref{eq:prep:1:3} and Proposition 19 (iv), since the sequence
-  $\{|V_k|\}$ converges and is equal to the measure of $\liminf E_k$, by
-  \eqref{eq:prep:1:5}, we have
-  \begin{equation}
-    \label{eq:prep:1:6}
-    \left|\liminf_{k\to\infty} E_k\right|\leq\liminf_{k\to\infty}|E_k|
-  \end{equation}
-  as was to be shown.
+  By definition of the characteristic function, it is easy to see that the
+  right hand-side of the Equation \eqref{eq:ex-1-prep:fatou} is
+  \[
+    \liminf_{k\to\infty}m(E_k).
+  \]
+  But what about the left-hand side of \eqref{eq:ex-1-prep:fatou}? It
+  suffices to show that
+  \[
+    \liminf_{n\to\infty}\chi_{E_n}=\chi_{E}
+  \]
+  where $E=\liminf_{n\to\infty} E_n$. Let $x\in E$. Then $x$ is in
+
+  Define
+  \[
+    V_n=\bigcap_{k=n}^\infty E_k.
+  \]
+  Note that ${\{V_n\}}_{n=1}^\infty$ forms an increasing sequence of
 \end{solution}
 
 \begin{problem}
@@ -98,17 +115,17 @@
 \end{problem}
 \begin{solution}
   Define the linear map $T\colon[0,\infty)\times\bbR^n\to\bbR^n$ by
-  $T(r) x = r x $. We claim that
+  $T(r) x = rx $. We claim that
   $B(\mathbf{0},r)=T(r,B(\mathbf{0},1))$. To reduce notation, set
   $B_1= B(\mathbf{0},1)$ and $B_r= B(\mathbf{0},r)$.
   \begin{solution}[Proof of claim]
-    $\subset$: Let $ x \in B_r$. Then $| x |<r$ so $| x |/r<1$. Thus,
-    $| x |/r\in B_1$ so it is in the image of $B_1$ under the map
+    $\subset$: Let $x\in B_r$. Then $|x |<r$ so $|x |/r<1$. Thus,
+    $|x |/r\in B_1$ so it is in the image of $B_1$ under the map
     $T(r,\cdot)$.
 
-    $\supset$: On the other hand, suppose $ x \in T(r,B_1)$. Then
-    $ x =r y $ for some $ y \in B_1$. Then, since $| y |<1$,
-    $| x |=r| y |<r$ so $ x \in B_r$.
+    $\supset$: On the other hand, suppose $x\in T(r,B_1)$. Then
+    $x =r y $ for some $ y \in B_1$. Then, since $| y |<1$,
+    $|x |=r| y |<r$ so $x\in B_r$.
   \end{solution}
 
   From the claim, we see that $F(x)=|T(x,B(\mathbf{0},1))|$ which, by
