@@ -118,17 +118,7 @@
   \[
     m(I_n^\circ)\leq m(I_n)\leq m(I_n^\circ)+m(\partial I_n)=m(I_n^\circ)
   \]
-  so $m(I_n)=m(I_n^\circ)$. Now, note that\marginremark{Let us substantiate
-    this claim. Suppose ${\{I_n'\}}_{n=1}^M$ a collection of intervals
-    which covers $\bigcup_{n=1}^N I_n$ with
-    $\sigma\left({\{I_n'\}}_{n=1}^M\right)<\sum_{n=1}^M
-    m(I_n)<\sum_{n=1}^Nm(I_n)$. Then, the collection of intervals
-    ${\{I_n\cap I_m'\}}^{1\leq n\leq N}_{1\leq m\leq M}$ covers
-    $\bigcup_{n=1}^N I_n$ and has measure
-    $\sigma(\{I_n\cap I_m'\})<\sum_{n=1}^M m(I_n)<\sum_{n=1}^Nm(I_n)$. This
-    implies that one of the intervals, say, $I_k$ is not completely covered
-    by intervals of the form $I_k\cap I_\ell'$, $1\leq \ell\leq M$. This is
-    a contradiction.}
+  so $m(I_n)=m(I_n^\circ)$. Now, note that
   \[
     m\left(\bigcup_{n=1}^N I_n^\circ\right)=%
     \sum_{n=1}^N m(I_n^\circ)=%
@@ -180,8 +170,7 @@
   Define $E=\limsup_{n\to\infty} E_n$ and $E_n'=\bigcup_{i=n}^\infty
   E_n$. It is easy to see that ${\{E_n'\}}_{n=1}^\infty$ is a decreasing
   sequence of sets whose intersection $\bigcap_{n=1}^\infty E_n$ is the
-  limit supremum $E$. \marginremark{This is because $E_{n+1}'$ is the union
-    $E_{n+1}\cup E_n'$.} By the monotonicity of the outer measure, we have
+  limit supremum $E$. By the monotonicity of the outer measure, we have
   \[
     m^*(E)\leq m^*(E_n')
   \]
@@ -210,9 +199,7 @@
   \[
     m^*(A)=m^*(A\cap E)+m^*(A\setminus E).
   \]
-  Therefore, the following equalities hold \marginremark{Note that we
-    remove the $*$ from $m$ since for measurable sets the outer measure and
-    measure agree.}
+  Therefore, the following equalities hold
   \begin{align*}
     m(E_1)&=m(E_1\cap E_2)+m(E_1\setminus E_2)\\
     m(E_2)&=m(E_1\cap E_2)+m(E_2\setminus E_1).
@@ -221,9 +208,7 @@
   \[
     (E_1\cup E_2)\setminus E_2=E_1\setminus (E_1\cap E_2),
   \]
-  $E_1\subset E_1\cup E_2$ and $E_1\cap E_2\subset E_1$ so\marginremark{The
-    corollary to Carathéodory's theorem would have been enough to get this
-    result; that is, Corollary 3.31.}
+  $E_1\subset E_1\cup E_2$ and $E_1\cap E_2\subset E_1$ so
   \[
     m(E_1\cup E_2)+m(E_1\cap E_2)=m(E_1)+m(E_2)
   \]
