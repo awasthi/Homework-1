@@ -87,12 +87,23 @@
   \[
     \liminf_{k\to\infty}m(E_k).
   \]
-  But what about the left-hand side of \eqref{eq:ex-1-prep:fatou}? It
-  suffices to show that
+  But what about the left-hand side of \eqref{eq:ex-1-prep:fatou}? We claim
+  that
   \[
     \liminf_{n\to\infty}\chi_{E_n}=\chi_{E}
   \]
-  where $E=\liminf_{n\to\infty} E_n$. Let $x\in E$. Then $x$ is in
+  where $E=\liminf_{n\to\infty} E_n$.
+  \begin{quote}
+    \begin{proof}[Proof of claim]
+      Let $x\in E$. We must show that
+      $\liminf_{n\to\infty}\chi_{E_n}(x)=1$. By definition
+      \[
+        \liminf_{n\to\infty}\chi_{E_n}=%
+        \lim_{n\to\infty}\left[\inf_{k\geq n}\chi_{E_k}\right].
+      \]
+      Now
+    \end{proof}
+  \end{quote}
 
   Define
   \[
