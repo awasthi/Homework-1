@@ -20,17 +20,18 @@
 \end{solution}
 
 \begin{problem}
-  Let $\{E_k\}$, $k\in\bbN$ be a collection of measurable sets. Define the
+  Let $\{E_n\}$, $n\in\bbN$ be a collection of measurable sets. Define the
   set
   \[
-    \liminf_{k\to\infty} E_k
-    =\bigcup_{k=1}^\infty\left(\bigcap_{n=k}^\infty E_n\right).
+    \liminf_{n\to\infty} E_n
+    =\bigcup_{n=1}^\infty\left(\bigcap_{k=n}^\infty E_k\right).
   \]
   Show that
   \[
-    m\left(\liminf_{k\to\infty}
-      E_k\right)\leq\liminf_{k\to\infty}m(E_k).
+    m\left(\liminf_{n\to\infty}
+      E_n\right)\leq\liminf_{n\to\infty}m(E_n).
   \]
+  \textfa{چیز که ما می‌خواهیم است که}
 \end{problem}
 % Following the style of \cite[Ch.\@ 1, p.\@ 2]{wheeden-zygmund},
   % particularly, the sets defined after the introduction of equation (1.1),

@@ -27,12 +27,13 @@
 \ifpdf
 
 %% Language
-\RequirePackage[LGR,T2A,T1]{fontenc}
+\RequirePackage[LAE,LFE,LGR,T2A,T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{substitutefont}
 
 \def\spanishoptions{mexico}
 \RequirePackage[
+farsi,
 french,
 german,
 greek.plutoniko,
@@ -45,10 +46,16 @@ english]{babel}
            en=english,
            es=spanish,
            he=greek,
+           pa=farsi,
            ru=russian,
            }
 
 \selectlanguage{english}
+
+% Persian settings
+\csname @Latintrue\endcsname
+\RequirePackage[free]{frfonts} 
+\newcommand{\textfa}[1]{{\beginR\textpa{#1}\endR}}
 
 \RequirePackage{CJKutf8}
 \newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
@@ -77,7 +84,7 @@ english]{babel}
 \if@times
 \RequirePackage[largesc]{newtxtext}% roman
 \RequirePackage[scale=.95,type1]{cabin}% sans
-\RequirePackage[varqu,varl]{zi4}% mono
+\RequirePackage[varqu,varl,scaled=.9]{zi4}% mono
 
 \RequirePackage[varg,bigdelims]{newtxmath}
 \RequirePackage[bb=boondox,frak=boondox,cal=boondoxo]{mathalfa}
@@ -88,7 +95,7 @@ english]{babel}
 \substitutefont{LGR}{\rmdefault}{Tempora}
 \substitutefont{T2A}{\rmdefault}{Tempora}
 \renewcommand\bigstar{\ensuremath{\star}}
-
+\mleftrightrestore
 \else
 
 \if@libertine
@@ -96,7 +103,7 @@ english]{babel}
 \RequirePackage[sb]{libertine} % roman
 \RequirePackage{libertinextras}
 \RequirePackage[scale=.95,type1]{cabin} % sans
-\RequirePackage[varqu,varl]{zi4} % mono
+\RequirePackage[varqu,varl,scaled=.9]{zi4} % mono
 
 \RequirePackage[libertine,bigdelims]{newtxmath}
 \RequirePackage[bb=boondox,frak=euler,cal=dutchcal]{mathalfa}
@@ -107,9 +114,9 @@ english]{babel}
 \substitutefont{LGR}{\rmdefault}{LinuxLibertineT}
 \substitutefont{T2A}{\rmdefault}{LinuxLibertineT}
 \renewcommand\bigstar{\ensuremath{\star}}
-\else
+\mleftrightrestore
 
-%\usepackage[rm={lining,proportional},sf={lining,proportional},tt={lining,proportional,variable}]{cfr-lm}
+\else
 \RequirePackage{amssymb}
 \RequirePackage[nointegrals]{wasysym}
 \RequirePackage{stmaryrd}
