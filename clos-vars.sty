@@ -182,6 +182,9 @@ english]{babel}
 \newtheorem{remark}{Remark}
 \newtheorem{remarks}[remark]{Remarks}
 
+\newtheorem*{remark*}{Remark}
+\newtheorem*{remarks*}{Remarks}
+
 \makeatletter
 \@ifundefined{solution}{%
 \newenvironment{solution}[1][Solution]{%
@@ -211,7 +214,10 @@ english]{babel}
 \providecommand{\nsimeq}{\ensuremath{\not\simeq}}
 \fi
 
+%% Renew some common commands to ones I personally prefer
 \renewcommand\setminus{\ensuremath{\smallsetminus}}
+\newcommand\coloneq{\ensuremath{\coloneqq}}
+\newcommand\eqcolon{\ensuremath{\eqqcolon}}
 
 %% Augmented matrix
 \makeatletter
