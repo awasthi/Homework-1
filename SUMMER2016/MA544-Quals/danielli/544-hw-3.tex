@@ -53,7 +53,7 @@
   intersection $(B(x,\varepsilon)\cap E)\setminus\{x\}$ is
   nonempty. Let $\varepsilon>0$ and $x\in E$ be given. Then, since
   $x\in E$, $x\in E_n$ for every $n$. Thus, $x$ is in some closed interval
-  $E_{n,i}\subset E_n$. Let $N$ be the smallest integer such that the
+  $E_{n,i}\subseteq E_n$. Let $N$ be the smallest integer such that the
   length of $E_{N,i}=[a,b]$ is less that $\varepsilon$. Then, $a,b\in E$
   and $a,b\in B(x,\varepsilon)$ and $x$ is cannot be equal to both $a$ and
   $b$. Thus, $(E\cap B(x,\varepsilon))\setminus\{x\}\neq\emptyset$. It
@@ -81,10 +81,10 @@
 
   Lastly, we must show that $E$ contains no interval. Seeking a
   contradiction, suppose that $E$ contains an interval $I=[a,b]$ of length
-  $b-a$. Then, since $I\subset E$, $I\subset E_n$ for all $n$ so, since $I$
+  $b-a$. Then, since $I\subseteq E$, $I\subseteq E_n$ for all $n$ so, since $I$
   is connected, it must be contained in one of the $E_{n,i}$ for all
   $n$. Let $N$ be the smallest integer such that $m(E_{N,i})<b-a$ and
-  $E_{N,i}=[c,d]$ contains $I$. Then, since $I\subset E_{N,i}$, both $a$
+  $E_{N,i}=[c,d]$ contains $I$. Then, since $I\subseteq E_{N,i}$, both $a$
   and $b$ are points in $I$, $|b-a|\leq |d-c|=m(E_{N,i})$. This is a
   contradiction. Thus, it must be the case that $E$ contains no interval.
 \end{solution}
@@ -143,10 +143,10 @@
   Since $\calB$ is the smallest $\sigma$-algebra containing all of the open
   sets of $\bbR^n$, it contains all of the closed sets of $\bbR^n$. Now,
   suppose that $\calB'$ is another $\sigma$-algebra containing the closed
-  sets in $\bbR^n$. Then, $\calB'\subset\calB$ since $\calB$ contains all
+  sets in $\bbR^n$. Then, $\calB'\subseteq\calB$ since $\calB$ contains all
   of the closed sets in $\bbR^n$. However, since $\calB'$ is a
   $\sigma$-algebra, it contains all of the open sets in $\bbR^n$, so
-  $\calB'\subset\calB$ since $\calB$ is the smallest $\sigma$-algebra
+  $\calB'\subseteq\calB$ since $\calB$ is the smallest $\sigma$-algebra
   containing the open sets in $\bbR^n$. Thus, $\calB'=\calB$.
 \end{solution}
 
@@ -208,7 +208,7 @@
   \[
     (E_1\cup E_2)\setminus E_2=E_1\setminus (E_1\cap E_2),
   \]
-  $E_1\subset E_1\cup E_2$ and $E_1\cap E_2\subset E_1$ so
+  $E_1\subseteq E_1\cup E_2$ and $E_1\cap E_2\subseteq E_1$ so
   \[
     m(E_1\cup E_2)+m(E_1\cap E_2)=m(E_1)+m(E_2)
   \]

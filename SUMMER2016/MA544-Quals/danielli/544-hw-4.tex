@@ -29,20 +29,20 @@
 \begin{solution}
   First we show part (i). If $m^*(E)=\infty$, the inequality holds
   trivially. Suppose that $m^*(E)<\infty$. Then, since $F$ is closed, it is
-  measurable and $m(F)=m^*(F)$. Moreover, $F\subset E$ so by the
+  measurable and $m(F)=m^*(F)$. Moreover, $F\subseteq E$ so by the
   monotonicity of the outer measure,
   \[
     m(F)=m^*(F)<m^*(E).
   \]
   Taking the supremum over all $F$ on the left, we have
   \[
-    m_*(E)=\sup_{F\subset E}m(F)<m^*(E)
+    m_*(E)=\sup_{F\subseteq E}m(F)<m^*(E)
   \]
   as we set out to show.
 
-  Next we show part (ii). Let $E\subset\bbR^n$ with
+  Next we show part (ii). Let $E\subseteq\bbR^n$ with
   $m^*(E)<\infty$. $\implies$ Suppose that $E$ is measurable. Then, by
-  Lemma 3.22, there exists a closed set $F\subset E$ such that
+  Lemma 3.22, there exists a closed set $F\subseteq E$ such that
   $m^*(E\setminus F)<\varepsilon$. Since closed sets are measurable,
   by Corollary 3.31, we have
   \[
@@ -88,7 +88,7 @@
   of $m_*(A)$.)
 \end{problem}
 \begin{solution}
-  Suppose $A\subset E$. If $A$ is measurable, by Problem 2, the outer and
+  Suppose $A\subseteq E$. If $A$ is measurable, by Problem 2, the outer and
   inner measure of $A$ agree; symbolically, we have
   $m(A)=m^*(A)=m_*(A)$. Thus, we have
   \[
@@ -103,10 +103,10 @@
   \begin{align*}
     m(E)-m^*(E\setminus A)
     &=m(E)
-      -\inf\left\{\,m(G):\text{$E\setminus A\subset G$ and $G$ is
+      -\inf\left\{\,m(G):\text{$E\setminus A\subseteq G$ and $G$ is
       open}\,\right\}\\
     &=m(E)
-      -\inf\left\{\,m(G):\text{$E\setminus A\subset G\subset E$ and $G$ is
+      -\inf\left\{\,m(G):\text{$E\setminus A\subseteq G\subseteq E$ and $G$ is
       open}\,\right\}\\
     &=
   \end{align*}

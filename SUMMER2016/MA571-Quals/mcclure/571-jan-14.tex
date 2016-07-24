@@ -3,14 +3,14 @@
 \begin{problem}
   Let $X$ be a topological space, let $A$ be a subset of $X$, and let $U$
   be an open subset of $X$. Prove that
-  $U\cap\bar A\subset\overline{U\cap A}$.
+  $U\cap\bar A\subseteq\overline{U\cap A}$.
 \end{problem}
 \begin{solution}
   The solution is simple and we have shown this before in the August 2014
   quals, it goes as follows: If $U\cap\bar A=\emptyset$, there is nothing
   to show. Let $x\in U\cap\bar A$. Then $x\in U$ and $x\in\bar A$. Since
   $x\in U$ and $U$ is open, by Lemma C, there exists a neighborhood $V$ of
-  $x$ such that $V\subset U$; in particular, note that
+  $x$ such that $V\subseteq U$; in particular, note that
   $V\cap U\neq\emptyset$. But $x\in\bar A$ so $V\cap A\neq\emptyset$. Thus,
   $V\cap(U\cap A)\neq\emptyset$. Thus, $x\in\overline{U\cap A}$.
 \end{solution}
@@ -23,13 +23,13 @@
 \begin{solution}
   To show that $\bbR^2/{\sim}$ is compact, we need to show that for every
   open covering $\calA$ of $\bbR^2/{\sim}$, there is a finite subcover
-  $\calA'\subset\calA$. Let $q\colon\bbR^2\to\bbR^2/{\sim}$ denote the
+  $\calA'\subseteq\calA$. Let $q\colon\bbR^2\to\bbR^2/{\sim}$ denote the
   quotient map. Then, since $q$ is continuous and onto $\bbR^2/{\sim}$, the
   set $\left\{q^{-1}(A_\alpha)\right\}_{A_\alpha\in\calA}$ is an open cover
   of $\bbR^2$. In particular, there exists at least one $A_\alpha$ such
   that $q^{-1}(A_\alpha)$ is a neighborhood of $(0,0)$. By Lemma C, there
   exists a basic open neighborhood, i.e., an open ball
-  $B((0,0),\varepsilon)\subset q^{-1}(A_\alpha)$ for $\varepsilon>0$. Now,
+  $B((0,0),\varepsilon)\subseteq q^{-1}(A_\alpha)$ for $\varepsilon>0$. Now,
   for any point $[(x,y)]\in\bbR^2$ pick a representative
   $(x,y)\in\bbR^2$. Then, by the Archimedean principle, there exists a
   positive real numbers $t',t''>0$ such that $t'x<\sqrt{\varepsilon}$ and
@@ -47,9 +47,9 @@
   $[x,y]\in\bbR^2/{\sim}$. Let $[x,y]\in\bbR^2/{\sim}$ and let $U$ be a
   neighborhood of $[0,0]$. Then $q^{-1}(U)$ is an open neighborhood of
   $(0,0)$, i.e., there exists an open ball
-  $B((0,0),\varepsilon)\subset q^{-1}(U)$. But as we have just shown, for
+  $B((0,0),\varepsilon)\subseteq q^{-1}(U)$. But as we have just shown, for
   sufficiently small values of $t>0$,
-  $(tx,ty)\in B((0,0),\varepsilon)\subset q^{-1}(U)$. Thus, $[x,y]\in
+  $(tx,ty)\in B((0,0),\varepsilon)\subseteq q^{-1}(U)$. Thus, $[x,y]\in
   U$. In particular, for any open neighborhood $V$ of $[x,y]$,
   $V\cap U\neq\emptyset$. Thus, $\bbR^2/{\sim}$ is not Hausdorff.
 \end{solution}
@@ -58,7 +58,7 @@
   compact subset of $Y$. Let $N$ be an open set in $X\times Y$ containing
   $\left\{x_0\right\}\times C$. Prove that there is an open set $U$
   containing $x_0$ and an open set $V$ containing $C$ such that
-  $U\times V\subset N$.
+  $U\times V\subseteq N$.
 \end{problem}
 \begin{solution}
   This is a classical theorem called the tube lemma. We shall prove first
@@ -84,11 +84,11 @@
   it is a finite intersection of open sets and contains $x_0$ since every
   $U_{x_i}\times V_{x_i}$ intersects $\left\{x_0\right\}\times Y$. Define
   $W'=\pi_2(N)\cap Y$. This set is open since it is a finite intersection
-  of open sets in $Y$. The $W\times W'\subset N$. This is clear since every
-  point $(x,y)\in W\times W'$ is in $N$ ($x\in W\subset U_{x_i}$ for all
+  of open sets in $Y$. The $W\times W'\subseteq N$. This is clear since every
+  point $(x,y)\in W\times W'$ is in $N$ ($x\in W\subseteq U_{x_i}$ for all
   $i$ which in turn is a subset of $\pi_1(N)$ and $y\in
   W'=\pi_2(N)$). Lastly, $W\times W'\supset \{x_0\}\times C$ since
-  $x_0\in W$ and $W'=\pi_1(N)\supset C$. Thus, $W\times W'\subset N$
+  $x_0\in W$ and $W'=\pi_1(N)\supset C$. Thus, $W\times W'\subseteq N$
   containing $\left\{x_0\right\}\times C$ as desired.
 \end{solution}
 \begin{problem}
@@ -99,7 +99,7 @@
 \begin{solution}
   Here's what I have so far:
 
-  We will try to show that $\bar A\subset A$. Let $x\in\bar A$. Then, for
+  We will try to show that $\bar A\subseteq A$. Let $x\in\bar A$. Then, for
   every neighborhood $U$ of $x$, $U\cap A\neq\emptyset$. Now, since $X$ is
   locally compact, there exists a neighborhood $V$ of $x$ such that
   $\bar V$ is compact and is a subset of $U$. Since $X$ is Hausdorff,

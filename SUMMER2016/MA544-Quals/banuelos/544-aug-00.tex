@@ -45,7 +45,7 @@
     \limsup_{k\to\infty} \frac{|f_{2^k}(x)|}{\sqrt{2^k\log(\log(2^k))}}>1.
   \]
   This means that there exists some subsequence
-  $\{k_m\}_{m=1}^\infty\subset\{k\}_{n=1}^\infty$ such that
+  $\{k_m\}_{m=1}^\infty\subseteq\{k\}_{n=1}^\infty$ such that
   \[
     \lim_{m\to\infty}\frac{|f_{2^{k_m}}(x)|}{\sqrt{2^{k_m}\log(\log(2^{k_m}))}}>1.
   \]
@@ -194,7 +194,7 @@
     almost everywhere of a sequence of measurable functions. Let
     $\varepsilon,\delta>0$ be given. \hilight{Here is where the assumption
       that $\mu(X)<\infty$ is essential!} By Egorov's theorem, there is a
-    measurable subset $E\subset X$ with $\mu(X\setminus E)<\delta$ such
+    measurable subset $E\subseteq X$ with $\mu(X\setminus E)<\delta$ such
     that $f_n\to f$ uniformly on $E$. Thus, there is an index $N$ such that
     $n\geq N$ implies
     \[
@@ -202,7 +202,7 @@
     \]
     for all $x\in E$. Thus, for $n\geq N$,
     \[
-      \left\{\,x\in X:|f(x)-f_n(x)|\geq\varepsilon\,\right\}\subset
+      \left\{\,x\in X:|f(x)-f_n(x)|\geq\varepsilon\,\right\}\subseteq
       X\setminus E
     \]
     so
