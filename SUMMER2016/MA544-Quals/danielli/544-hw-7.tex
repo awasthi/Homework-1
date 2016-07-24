@@ -8,22 +8,35 @@
   \hfill
   \begin{enumerate}[label=(\alph*),noitemsep]
   \item Show that the limit of a decreasing (increasing) sequence of
-    functions usc (lsc) at $x_0$ is usc (lsc) at $x_0$. In particular, the
-    limit of a decreasing (increasing) sequence of functions continuous at
-    $x_0$ is usc (lsc) at $x_0$.
-  \item Let $f$ be usc and less than $\infty$ on $[a,b]$. Show that there
+    functions u.s.c.\@ (l.s.c.) at $x_0$ is u.s.c.\@ (l.s.c.) at $x_0$. In
+    particular, the limit of a decreasing (increasing) sequence of
+    functions continuous at $x_0$ is u.s.c.\@ (l.s.c.) at $x_0$.
+  \item Let $f$ be u.s.c.\@ and less than $\infty$ on $[a,b]$. Show that there
     exists continuous $f_k$ on $[a,b]$ such that $f_k\searrow f$.
   \end{enumerate}
 \end{problem}
 \begin{solution}
+  For part (a) we may as well assume that $f\geq 0$ for all $x$. Let
+  $\{f_n\}$, $n\in\bbN$, be a sequence of decreasing functions with limit
+  $f$ which are u.s.c.\@ at $x_0$. Then, for every $n\in\bbN$, for every
+  sequence $x\to x_0$,
+  \[
+    \limsup_{x\to x_0}f_n(x)\leq f_n(x_0).
+  \]
+  Now, since the $f_n$ are decreasing and converge to $f$, for every
+  $\varepsilon>0$ there exists an index $N\in\bbN$ such that
+  \[
+    f_n(x_0)-f(x_0)<\varepsilon
+  \]
+  for all $n\geq N$. Then $f_n(x_0)<f(x_0)+\varepsilon$ for all $n\geq N$.
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 4, Ex.\@ 11]
   Let $f$ be defined on $\bbR^n$ and let $B(x)$ denote the open ball
   $\left\{\,y:|x-y|<r\,\right\}$ with center $x$ and fixed radius $r$. Show
-  that the function $g(x)=\sup\left\{\,f(y):y\in B(x)\,\right\}$ is lsc and
-  the function $h(x)=\inf\left\{\,f(y):y\in B(x)\,\right\}$ is usc on
-  $\bbR^n$. Is the same true for the closed ball
+  that the function $g(x)=\sup\left\{\,f(y):y\in B(x)\,\right\}$ is
+  l.s.c.\@ and the function $h(x)=\inf\left\{\,f(y):y\in B(x)\,\right\}$ is
+  u.s.c.\@ on $\bbR^n$. Is the same true for the closed ball
   $\left\{\,y:|x-y|\leq r\,\right\}$?
 \end{problem}
 \begin{solution}
