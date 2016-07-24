@@ -95,7 +95,7 @@
   where $E=\liminf_{n\to\infty} E_n$.
   \begin{quote}
     \begin{proof}[Proof of claim]
-      Let $x\in E$. We must show that
+      Suppose $x\in E$. We must show that
       $\liminf_{n\to\infty}\chi_{E_n}(x)=1$. By definition
       \[
         \liminf_{n\to\infty}\chi_{E_n}=%
@@ -107,14 +107,29 @@
         \inf_{k\geq n}\chi_{E_k}(x)=1
       \]
       so $\liminf_{n\to\infty}\chi_{E_n}(x)=1$.
+
+      On the other hand, if $x\notin E$ then $x\notin\bigcap_{k=n}^\infty
+      E_k$ for all $n\in\bbN$. Thus, for all $n\in\bbN$,
+      \[
+        \inf_{k\geq n}\chi_{E_k}(x)=0
+      \]
+      so $\liminf_{n\to\infty}\chi_{E_k}=0$.
     \end{proof}
   \end{quote}
+  Having established this equivalence, we have
+  \[
+    m\left(\liminf_{n\to\infty}E_n\right)=%
+    \int\liminf_{n\to\infty}\chi_{E_n}(x)\diff x\leq%
+    \liminf_{n\to\infty}\int\chi_{E_n}(x)\diff x=%
+    \liminf_{n\to\infty}m(E_n).
+  \]
 
-  Define
+  Using more elementary methods, define
   \[
     V_n=\bigcap_{k=n}^\infty E_k.
   \]
-  Note that ${\{V_n\}}_{n=1}^\infty$ forms an increasing sequence of
+  The sets $\{V_n\}$, $n\in\bbN$, are measurable since they are the
+  countable intersection of measurable subsets.
 \end{solution}
 
 \begin{problem}
