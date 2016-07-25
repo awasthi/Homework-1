@@ -73,7 +73,20 @@
   $\left\{\,y:|x-y|\leq r\,\right\}$?
 \end{problem}
 \begin{solution}
-  Note that by properties of the supremum/infimum of sets, there exists
+  Note that, by properties of the infimum/supremum for any set of real
+  numbers $S\subset\bbR$,
+  \[
+    \sup S=-\inf (-S)
+  \]
+  where $-S=\left\{\,-s:s\in S\,\right\}$. Therefore,
+  \begin{align*}
+    g(x)
+    &=-\inf\left\{\,-f(y):y\in B(x,r)\,\right\}\\
+    &=\sup\left\{\,f(y):y\in B(x,r)\, \right\}.
+  \end{align*}
+  Letting $f'=-f$, it suffices to show that $g'(x)=\inf\{\,f'(y):y\in
+  B(x,r)\,\}$ is u.s.c.\@ since for any u.s.c.\@ function $f$, $-f$ is
+  l.s.c.
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 4, Ex.\@ 15]
