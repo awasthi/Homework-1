@@ -2,7 +2,7 @@
 %% My preference of symbols and variables
 %%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{clos-vars}[2016/06/20 v1.5]
+\ProvidesPackage{clos-vars}[2016/06/24 v1.7 personal shortcuts]
 
 %% Necessary packages
 \RequirePackage{amsmath}
@@ -225,8 +225,8 @@ english]{babel}
 
 %% Renew some common commands to ones I personally prefer
 \renewcommand\setminus{\ensuremath{\smallsetminus}}
-\newcommand\coloneq{\ensuremath{\coloneqq}}
-\newcommand\eqcolon{\ensuremath{\eqqcolon}}
+\providecommand\coloneq{\ensuremath{\coloneqq}}
+\providecommand\eqcolon{\ensuremath{\eqqcolon}}
 \newcommand\trileq{\ensuremath{\trianglelefteq}}
 \newcommand\trireq{\ensuremath{\trianglerighteq}}
 
@@ -243,6 +243,7 @@ english]{babel}
 \DeclareMathOperator{\card}{card}
 \DeclareMathOperator{\Id}{Id}
 \DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\ord}{ord}
 
 %% Algebra
 %%% Operations
@@ -846,3 +847,4 @@ english]{babel}
 \DeclareSIUnit[number-unit-product = {\thinspace}]{\gallon}{gal}
 
 \endinput
+%% End of file `clos-vars.sty'
