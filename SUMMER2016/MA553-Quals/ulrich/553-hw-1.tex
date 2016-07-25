@@ -48,7 +48,7 @@ Throughout these notes
   Let $G$ be a group, $a\in G$ an element of finite order $m$, and $n$ a
   positive integer. Prove that
   \[
-    |a^n|=\frac{m}{(m,n)}.
+    \ord(a^n)=\frac{m}{(m,n)}.
   \]
 \end{problem}
 \begin{solution}
@@ -86,7 +86,7 @@ Throughout these notes
 \begin{problem}
   Let $G$ be a group, and let $a$, $b$ be elements of finite order $m$, $n$
   respectively. Show that if $ba=ab$ and
-  $\langle a\rangle\cap\langle b\rangle=\{e\}$, then $|ab|=mn/(m,n)$.
+  $\langle a\rangle\cap\langle b\rangle=\{e\}$, then $\ord(ab)=mn/(m,n)$.
 \end{problem}
 \begin{solution}
   Let $\ell$ denote the order of $ab$. Now, playing around with powers of
@@ -98,7 +98,7 @@ Throughout these notes
     &\neq e
   \end{align*}
   since the order of $a$ is $m$ and $n<m$. Thus, by Problem 1,
-  $|a^n|=m/(m,n)$ so $|ab|=mn/(m,n)$.
+  $\ord(a^n)=m/(m,n)$ so $\ord(ab)=mn/(m,n)$.
 \end{solution}
 
 \begin{problem}
@@ -132,18 +132,19 @@ Throughout these notes
 \end{solution}
 
 \begin{problem}
-  Show that $A_4$ has no subgroup of order $6$ (although $6\mid 12=|A_4|$).
+  Show that $A_4$ has no subgroup of order $6$ (although
+  $6\mid 12=\card A_4$).
 \end{problem}
 \begin{solution}
   We proceed by contradiction. Suppose that $A_4$ has a subgroup of order
   $6$, call it $H$. Then, we claim that $H$ must contain all elements
   $\sigma^2$ where $\sigma\in A$.
   \begin{proof}[Proof of claim]
-    Since $|H|=6$, $[A_4:H]=2$ which implies that $H$ is must be a normal
-    subgroup of $A_4$. Now, consider the collection of $G/H$ of
+    Since $\card H=6$, $[A_4:H]=2$ which implies that $H$ is must be a
+    normal subgroup of $A_4$. Now, consider the collection of $G/H$ of
     right-cosets of $H$ in $G$. By Theorem 5.4, $G/H$ is a group with order
-    $|G/H|=2$ so either $\bar\sigma=\bar e$ or ${\bar\sigma}^2=\bar
-    e$. Thus, $\sigma^2\in H$.
+    $\card(G/H)=2$ so either $\bar\sigma=\bar e$ or
+    ${\bar\sigma}^2=\bar e$. Thus, $\sigma^2\in H$.
   \end{proof}
   Thus, $H$ must contain all of the squares in $A_4$. However, counting all
   of the elements in $A_4$ and squaring them

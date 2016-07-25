@@ -49,7 +49,19 @@
     \limsup_{x\to x_0} f(x)\leq \lim_{n\to\infty}f_n(x_0)=f(x_0).
   \]
 
-  For part (b), we admit, we don't know how to do it.
+  For part (b), suppose $f\colon [a,b]\to\bbR$ is u.s.c.\@ on $[a,b]$ and
+  $f(x)<\infty$ on $[a,b]$. For fixed $x_0\in[a,b]$, for every sequence
+  $x\to x_0$ in $[a,b]$,
+  \[
+    \limsup_{x\to x_0} f(x)\leq f(x_0).
+  \]
+  Intuitively, an u.s.c.\@ function is one that is shaped like a stair
+  case; once the function begins increasing, it cannot decrease and it
+  cannot vary too much within a small neighborhood of any point. We can
+  therefore take a sequence of piecewise continuous functions that increase
+  linearly at these ``jumps'' and take the limit as the distance between
+  the left endpoint of the line segment gets closer and closer to the
+  point. Maybe this is all nonsense.
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 4, Ex.\@ 11]
@@ -61,7 +73,11 @@
   $\left\{\,y:|x-y|\leq r\,\right\}$?
 \end{problem}
 \begin{solution}
-  Consider the set
+  For a fixed point $x_0\in\bbR^n$, for any $m<g(x_0)$, it suffices to show
+  that there exists $\delta>0$ such that for every $x\in B(x_0,\delta)$,
+  $g(x)>m$. Since $g(x_0)$ is the supremum of $f(x)$ over all
+  $x\in B(x_0)$, given $\varepsilon>0$ such that $g(x_0)-\varepsilon>m$,
+  there exists $x_1\in B(x_0)$ such that $f(x_1)>g(x_0)-\varepsilon$
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 4, Ex.\@ 15]
@@ -76,8 +92,8 @@
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 4, Ex.\@ 18]
   If $f$ is measurable on $E$, define $\omega_f(a)=|\{\,f>a\,\}|$ for
-  $-\infty<a<\infty$. If $f_k\nearrow f$, show that
-  $\omega_{f_k}\nearrow\omega_f$. If $f_k\to f$, show that
+  $-\infty<a<\infty$. If $f_k\uparrow f$, show that
+  $\omega_{f_k}\uparrow\omega_f$. If $f_k\to f$, show that
   $\omega_{f_k}\to\omega_f$ at each point of continuity of $\omega_f$. [For
   the second part, show that if $f_k\to f$, then
   $\limsup_{k\to\infty}\omega_{f_k}(a)\leq\omega_f(a-\varepsilon)$ and
@@ -90,16 +106,16 @@
 % (Chapter 5: # 1, 2, 3, 4).
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 5, Ex.\@ 1]
   If $f$ is a simple measurable function (not necessarily positive) taking
-  values $a_j$ on $E_j$, $j=1,...,N$, show that
-  $\int_E f=\sum_{j=1}^N a_j|E_j|$. [Use (5.24)].
+  values $a_j$ on $E_j$, $j=1,\ldots,N$, show that
+  $\int_E f=\sum_{j=1}^N a_jm(E_j)$. [Use (5.24)].
 \end{problem}
 \begin{solution}
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 5, Ex.\@ 3]
-Let $\left\{f_k\right\}$ be a sequence of nonnegative measurable functions
-defined on $E$. If $f_k\to f$ and $f_k\leq f$ a.e.\@ on $E$, show that
-$\int_E f_k\to\int_E f$.
+  Let $\left\{f_k\right\}$ be a sequence of nonnegative measurable
+  functions defined on $E$. If $f_k\to f$ and $f_k\leq f$ a.e.\@ on $E$,
+  show that $\int_E f_k\to\int_E f$.
 \end{problem}
 \begin{solution}
 \end{solution}
