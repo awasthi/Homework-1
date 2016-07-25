@@ -73,11 +73,13 @@
   $\left\{\,y:|x-y|\leq r\,\right\}$?
 \end{problem}
 \begin{solution}
-  For a fixed point $x_0\in\bbR^n$, for any $m<g(x_0)$, it suffices to show
-  that there exists $\delta>0$ such that for every $x\in B(x_0,\delta)$,
-  $g(x)>m$. Since $g(x_0)$ is the supremum of $f(x)$ over all
-  $x\in B(x_0)$, given $\varepsilon>0$ such that $g(x_0)-\varepsilon>m$,
-  there exists $x_1\in B(x_0)$ such that $f(x_1)>g(x_0)-\varepsilon$
+  For a fixed $x_0\in\bbR^n$ we must show that for every sequence $x\to
+  x_0$, we have
+  \[
+    \liminf_{x\to x_0} g(x)\geq g(x_0).
+  \]
+  By the definition of the limit supremum, $\liminf_{x\to x_0} g(x)$ is the
+  limit over the set of infimums $\inf_{x\in\{x_n\},n\geq N} g(x)$
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 4, Ex.\@ 15]
