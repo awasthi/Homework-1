@@ -106,7 +106,7 @@ english]{babel}
 \RequirePackage[varqu,varl,scaled=.9]{zi4} % mono
 
 \RequirePackage[libertine,libaltvw,bigdelims]{newtxmath}
-\RequirePackage[bb=boondox,frak=euler,cal=boondoxo]{mathalfa}
+\RequirePackage[bb=boondox,frak=pxtx,cal=boondoxo]{mathalfa}
 
 %\useosf % oldstyle figs
 
@@ -121,7 +121,7 @@ english]{babel}
 \RequirePackage[nointegrals]{wasysym}
 \RequirePackage{stmaryrd}
 \if@eucal
-\RequirePackage[bb=ams,frak=euler,cal=euler]{mathalfa}
+\RequirePackage[bb=ams,frak=euler,cal=euler,scr=rsfso]{mathalfa}
 \fi
 \fi
 \fi
@@ -212,8 +212,7 @@ english]{babel}
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}}
 \fi
 
-\newcommand{\marginremark}[1]{\marginpar{{\footnotesize\textcolor{Red}{#1}}}}
-\newcommand{\hilight}[1]{{\textcolor{Red!85!black}{#1}}}
+\newcommand{\hilight}[2]{\colorbox{#1}{#2}}
 
 %% Redefinitions & commands not available in pdfLaTeX
 \ifpdf
@@ -228,6 +227,7 @@ english]{babel}
 \providecommand\eqcolon{\ensuremath{\eqqcolon}}
 \newcommand\trileq{\ensuremath{\trianglelefteq}}
 \newcommand\trireq{\ensuremath{\trianglerighteq}}
+\newcommand\restrict[1]{\raisebox{-.5ex}{\ensuremath|}_{#1}}
 
 %% Augmented matrix
 \makeatletter
@@ -236,6 +236,16 @@ english]{babel}
   \let\@ifnextchar\new@ifnextchar
   \array{#1}}
 \makeatother
+
+%% smallbmatrix
+\newenvironment{smallbmatrix}
+{
+\left[
+\begin{smallmatrix}
+}%
+{
+\end{smallmatrix}\right]
+}
 
 %% Commands and operators
 \DeclareMathOperator{\Card}{Card}
