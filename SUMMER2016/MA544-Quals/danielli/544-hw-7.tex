@@ -12,7 +12,7 @@
     particular, the limit of a decreasing (increasing) sequence of
     functions continuous at $x_0$ is u.s.c.\@ (l.s.c.) at $x_0$.
   \item Let $f$ be u.s.c.\@ and less than $\infty$ on $[a,b]$. Show that there
-    exists continuous $f_k$ on $[a,b]$ such that $f_k\searrow f$.
+    exists continuous $f_k$ on $[a,b]$ such that $f_k\downarrow f$.
   \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -23,8 +23,25 @@
   \[
     \limsup_{x\to x_0}f_n(x)\leq f_n(x_0).
   \]
-  Now, since the $f_n$ are decreasing and converge to $f$, for every
-  $\varepsilon>0$ there exists an index $N\in\bbN$ such that
+  Now, we claim that $f(x)\leq f_n(x)$ for every $x$ and every $n\in\bbN$.
+  {\begin{subproof}[Proof of claim]
+    Suppose $f(x)>f_{N_1}(x)$ for some $x$, $N_1\in\bbN$. Then there exists
+    a real number $\varepsilon>0$ such that $0<\varepsilon<|f(x)-f_n(x)|$ (we
+    may, for example, take $\varepsilon$ to be in $\bbQ$ which is dense in
+    $\bbR$). Then, since $f_n\downarrow f$, there exists an index
+    $N_1\in\bbN$ such that
+    \[
+      |f(x)-f_n(x)|<\varepsilon.
+    \]
+    However, since the sequence $f_n$ decreases to $f$, for
+    $n\geq\max\{N_1,N_2\}$, $f_n(x)\leq f_{N_1}(x)$ so
+    \[
+      |f(x)-f_n(x)|>|f(x)-f_{N_1}(x)|>\varepsilon.
+    \]
+    This is a contradiction.
+  \end{subproof}}\noindent Now, since the $f_n$ are decreasing and converge
+to $f$, for every $\varepsilon>0$ there exists an index $N\in\bbN$ such
+that
   \[
     f_n(x_0)-f(x_0)<\varepsilon
   \]

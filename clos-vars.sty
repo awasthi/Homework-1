@@ -196,6 +196,15 @@ english]{babel}
 }{}
 \makeatother
 
+\newenvironment{subproof}[1][Proof]{
+\begin{quote}
+\proof[\textnormal{\textit{#1}}]%
+}{
+\renewcommand\qedsymbol{\ensuremath{\square}}
+\endproof
+\end{quote}
+}
+
 \ifxetex
 \renewcommand\qedsymbol{\ensuremath{\QED}}
 \fi
@@ -218,6 +227,8 @@ english]{babel}
 \renewcommand\setminus{\ensuremath{\smallsetminus}}
 \newcommand\coloneq{\ensuremath{\coloneqq}}
 \newcommand\eqcolon{\ensuremath{\eqqcolon}}
+\newcommand\trileq{\ensuremath{\trianglelefteq}}
+\newcommand\trireq{\ensuremath{\trianglerighteq}}
 
 %% Augmented matrix
 \makeatletter
