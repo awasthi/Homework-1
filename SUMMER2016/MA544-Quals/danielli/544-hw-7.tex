@@ -56,6 +56,24 @@
   $\varepsilon=1/n$. Then, for each $x\in [a,b]$, there exists a
   neighborhood $B(x,\delta_x)$ such that $f(y)<f(x)+\varepsilon$ for
   $y\in B(x,\delta_x)$.
+
+  The following
+  \href{http://math.stackexchange.com/questions/462534/recognizing-uppersemicontinuous-function-as-a-pointwise-decreasing-limit}{post}
+  on the Mathematics StackExchange contains a solution to part (b) of this
+  problem.
+
+  First, we claim that $f(x)\neq\infty$ for any $x\in[a,b]$, it must be
+  bounded.
+  \begin{subproof}[Proof of claim]
+    By Theorem 4.14 (a), sets of the form $\{\,x\in[a,b]:f(x)<a\,\}$ is
+    relatively open for all finite $a$. Define
+    \[
+      E_n\coloneq\left\{\,x\in [a,b]:f(x)<n\,\right\}.
+    \]
+    Then, the collection $\calE\coloneq\{E_n\}$, $n\in\bbN$, is an open
+    cover of $[a,b]$. Since $[a,b]$ is compact, there exists a finite
+    subcover of $\calE$,
+  \end{subproof}
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 4, Ex.\@ 11]
@@ -116,6 +134,7 @@
   $m(E\setminus F)<\varepsilon$ and $|f_k(x)|\leq M$ for all $x\in F$.
 \end{problem}
 \begin{solution}
+  Suppose that $\{f_n\}$ is a function such that
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 4, Ex.\@ 18]

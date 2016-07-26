@@ -120,6 +120,16 @@ english]{babel}
 \RequirePackage{amssymb}
 \RequirePackage[nointegrals]{wasysym}
 \RequirePackage{stmaryrd}
+
+%% Upper and lower Riemann sums
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
 \if@eucal
 \RequirePackage[bb=ams,frak=euler,cal=euler,scr=rsfso]{mathalfa}
 \fi
@@ -353,16 +363,6 @@ english]{babel}
 \DeclareMathOperator{\vol}{vol}
 \DeclareMathOperator{\Vol}{Vol}
 \DeclareMathOperator{\var}{var}
-
-\ifpdf % This is unavailale in pdfLaTeX
-\providecommand\upint{\mathchoice%
-    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-24mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-  \int}
-\providecommand\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-12mu\int}
-\fi
 
 %% Probability
 \DeclareMathOperator{\corr}{corr}
