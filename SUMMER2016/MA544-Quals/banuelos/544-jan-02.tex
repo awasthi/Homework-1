@@ -13,7 +13,21 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  Suppose that there is a sequence
+  For part (a): Let $x\in\overline{A+B}$. Then there is a sequence
+  $\{a_n+b_n\}$ in $A+B$, with $a\in A$, $b_n\in B$, that converges to
+  $x$. Now, consider the sequences $\{a_n\}$, $\{b_n\}$ in $A$ and $B$,
+  respectively. Since $A$ is closed $a_n\to a$ for some $a\in A$. Moreover,
+  since $\bbR$ is a complete metric space and $B$ is compact, there is a
+  subsequence $\{b_{n_k}\}$ of $\{b_n\}$ that converges to a point $b$ in
+  $B$. Thus, taking the subsequence $\{a_{n_k}+b_{n_k}\}$ of $\{a_n+b_n\}$,
+  $a_{n_k}+b_{n_k}\to a+b$ which is in $A+B$. But $a_n+b_n\to x$ so every
+  subsequence of $\{a_n+b_n\}$ converges to $x$. By the uniqueness of the
+  limit, we must have $x=a+b$.
+
+  For part (b): Consider the subsets $A=\bbZ$ and $B=\sqrt{2}\bbZ$ of
+  $\bbR$. Both $A$ and $B$ are discrete subsets of $\bbR$, hence
+  closed. However, we claim that $A+B$ is dense in $\bbR$; in particular,
+  $\overline{A+B}\neq A+B$. Let $x\in\bbR$
 \end{solution}
 
 \begin{problem}
