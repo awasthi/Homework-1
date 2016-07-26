@@ -27,7 +27,13 @@
   For part (b): Consider the subsets $A=\bbZ$ and $B=\sqrt{2}\bbZ$ of
   $\bbR$. Both $A$ and $B$ are discrete subsets of $\bbR$, hence
   closed. However, we claim that $A+B$ is dense in $\bbR$; in particular,
-  $\overline{A+B}\neq A+B$. Let $x\in\bbR$
+  $\overline{A+B}\neq A+B$. Let $x\in\bbR$ then given $\varepsilon>0$, and
+  consider $x-m-\varepsilon<x-m+\varepsilon$ (where we can choose $m$ to
+  be, e.g., $m=\lfloor x \rfloor$). By the density of $\bbQ$ in $\bbR$,
+  there exists a rational number $a/b\in\bbQ$ such that
+  \[
+    \frac{x-m-\varepsilon}{\sqrt{2}b}<\frac{a}{b}<\frac{x-m+\varepsilon}{\sqrt{2}b}
+  \]
 \end{solution}
 
 \begin{problem}
@@ -42,6 +48,12 @@
   whenever $0\leq x$, $x+h\leq 1$, $0<|h|<h_0$.
 \end{problem}
 \begin{solution}
+  $\implies$ Suppose that $f'$ is continuous. Then, given $\varepsilon>0$,
+  there exists $\delta>0$ such that $|x-y|<\delta$ implies
+  \[
+    |f'(x)-f'(y)|<\varepsilon.
+  \]
+  Now,
 \end{solution}
 
 \begin{problem}
