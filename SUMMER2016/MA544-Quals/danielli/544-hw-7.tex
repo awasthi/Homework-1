@@ -68,12 +68,19 @@
     By Theorem 4.14 (a), sets of the form $\{\,x\in[a,b]:f(x)<a\,\}$ is
     relatively open for all finite $a$. Define
     \[
-      E_n\coloneq\left\{\,x\in [a,b]:f(x)<n\,\right\}.
+      E_n=\left\{\,x\in [a,b]:f(x)<n\,\right\}.
     \]
-    Then, the collection $\calE\coloneq\{E_n\}$, $n\in\bbN$, is an open
-    cover of $[a,b]$. Since $[a,b]$ is compact, there exists a finite
-    subcover of $\calE$,
-  \end{subproof}
+    Then, the collection $\calE=\{E_n\}$, $n\in\bbN$, is an open cover of
+    $[a,b]$. Since $[a,b]$ is compact, there exists a finite subcover
+    $\{E_{n_1},\ldots,E_{n_m}\}$ of $\calE$. Letting
+    $M=\max\{n_1,\ldots,n_m\}$, we have $f<M$ for all $x\in[a,b]$. Thus,
+    $f$ is bounded on $[a,b]$.
+  \end{subproof}\noindent
+  Now that we have established that $f$ is bounded on $[a,b]$ by, say, $M$
+  then $\sup_{x\in[a,b]} f\leq M$. Define
+  \[
+    f_n(x)=\sup_{x\in[a,b]}\bigl[f(y)-n|x-y|\bigr].
+  \]
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 4, Ex.\@ 11]
