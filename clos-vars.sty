@@ -336,10 +336,12 @@ english]{babel}
 \DeclareMathOperator{\Res}{Res}
 
 %% Analysis
+\DeclareMathOperator{\abs}{abs}
 \newcommand{\BV}{BV}
 \DeclareMathOperator{\Curl}{curl}
 \DeclareMathOperator{\diam}{diam}
 \DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\dist}{dist}
 \DeclareMathOperator{\Div}{div}
 \newcommand*\diff{\mathop{}\!\rmd}
 \newcommand*\Diff[1]{\mathop{}\!{\rmd^#1}}
@@ -355,6 +357,10 @@ english]{babel}
 \DeclareMathOperator{\vol}{vol}
 \DeclareMathOperator{\Vol}{Vol}
 \DeclareMathOperator{\var}{var}
+
+%% Complex analysis
+\renewcommand{\Re}{\operatorname{\frakR\frake}}
+\renewcommand{\Im}{\operatorname{\frakI\frakm}}
 
 \ifpdf % This is unavailale in pdfLaTeX
 \providecommand\upint{\mathchoice%
@@ -856,6 +862,11 @@ english]{babel}
 \DeclareSIUnit[number-unit-product = {\thinspace}]{\pint}{pt}
 \DeclareSIUnit[number-unit-product = {\thinspace}]{\quart}{qt}
 \DeclareSIUnit[number-unit-product = {\thinspace}]{\gallon}{gal}
+
+%% Numbers
+\sisetup{bracket-negative-numbers, open-bracket={
+    {}^-% your custom hack here
+}, close-bracket={}}
 
 \endinput
 %% End of file `clos-vars.sty'
