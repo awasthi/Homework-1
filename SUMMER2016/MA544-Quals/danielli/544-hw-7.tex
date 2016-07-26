@@ -79,12 +79,35 @@
   Now that we have established that $f$ is bounded on $[a,b]$ by, say, $M$
   then $\sup_{x\in[a,b]} f\leq M$. Define
   \[
-    f_n(x)=\sup_{x\in[a,b]}\bigl[f(y)-n|x-y|\bigr].
+    f_n(x)=\sup_{y\in[a,b]}\bigl[f(y)-n|x-y|\bigr].
   \]
   We claim that this family of functions $\{f_n\}$, $n\in\bbN$, is
   continuous and that $f_n\to f$. To see that $f$ is continuous, we observe
-  that this family of functions is in fact Lipschitz continuous. Moreover,
-  we have that
+  that this family of functions is in fact Lipschitz continuous
+  \begin{align*}
+    |f_n(x)-f_n(y)|
+    &=\left|\sup_{z\in[a,b]}\bigl[ f(z)-n|x-z|
+      \bigr]-\sup_{z\in[a,b]}\bigl[ f(z)-n|y-z| \bigr]\right|\\
+    &\leq\left|\sup_{z\in[a,b]}\bigl[ f(z)-n|x-z|-f(z)-n|y-z| \bigr]\right|\\
+    &=\left|\sup_{z\in[a,b]}\bigl[-n|x-z|-n|y-z|\bigr]\right|\\
+    &=\left|\sup_{z\in[a,b]}\bigl[-n|x-y+(y-z)|-n|y-z|\bigr]\right|\\
+    &\leq\left|\sup_{z\in[a,b]}\bigl[-n|x-y|-2n|y-z|\bigr]\right|\\
+    &=n|x-y|.
+  \end{align*}
+  Thus, $f_n$ is Lipschitz and in particular, it is continuous.
+
+  To see that $f_n\to f$ pointwise, let $\varepsilon>0$ be given then we
+  must show that there exists some index $N$ such that $n\geq N$ implies
+  \[
+    |f(x)-f_n(x)|<\varepsilon.
+  \]
+  Expanding the equation above, we see that
+  \[
+    |f(x)-f_n(x)|=
+    \left|
+      f(x)-\sup_{y\in[a,b]}\bigl[f(y)-n|x-y|\bigr].
+    \right|
+  \]
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 4, Ex.\@ 11]
