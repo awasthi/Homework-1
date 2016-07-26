@@ -54,8 +54,7 @@ english]{babel}
 
 % Persian settings
 \csname @Latintrue\endcsname
-\RequirePackage[free]{frfonts} 
-\newcommand{\textfa}[1]{{\beginR\textpa{#1}\endR}}
+\newcommand{\textfa}[1]{\textRL{\textpa{#1}}}
 
 \RequirePackage{CJKutf8}
 \newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
@@ -132,6 +131,8 @@ english]{babel}
 
 \if@eucal
 \RequirePackage[bb=ams,frak=euler,cal=euler,scr=rsfso]{mathalfa}
+\else
+\RequirePackage[bb=ams,frak=euler,cal=cm,scr=rsfso]{mathalfa}
 \fi
 \fi
 \fi
@@ -785,6 +786,7 @@ english]{babel}
 \newcommand{\scrY}{\mathscr{Y}}
 \newcommand{\scrZ}{\mathscr{Z}}
 
+\ifxetex
 %% Greek letters
 \newcommand{\bfalpha}{\mbfalpha}
 \newcommand{\bfbeta}{\mbfbeta}
@@ -835,6 +837,7 @@ english]{babel}
 \newcommand{\bfChi}{\mbfChi}
 \newcommand{\bfPsi}{\mbfPsi}
 \newcommand{\bfOmega}{\mbfOmega}
+\fi
 
 %% Units
 \usepackage{siunitx}
