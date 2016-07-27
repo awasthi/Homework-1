@@ -159,14 +159,23 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-
+  For part (i), recall that $\mu(F_i)=\int_X\chi_{F_i}\diff x$ and that
+  $\chi_{F_i\cap F_j}=\chi_{F_i}\chi_{F_j}$. Thus, we need only consider
+  characteristic functions for this problem. Seeking a contradiction,
+  suppose that $F_{i_1}\cap\cdots\cap F_{i_5}$ has measure zero for all
+  $\{i_1,\ldots,i_5\}\subseteq\{1,\ldots,17\}$. Then, for every
+  $\varepsilon>0$,
+  \[
+    \int_X\chi_{F_{i_1}}\ldots\chi_{F_{i_5}}\diff x<\varepsilon.
+  \]
 \end{solution}
 
 \begin{problem}
   Let $f_n\colon X\to[0,\infty)$ be a sequence of measurable functions on
   the measure space $(X,\calF,\mu)$. Suppose there is a positive constant
-  $M$ such that the functions $g_n(x)=f(x)\chi_{\left\{\,f_n\leq
-      M\,\right\}}(x)$ satisfy $\|g_n\|_1\leq A/n^{4/3}$ and for which
+  $M$ such that the functions
+  $g_n(x)=f(x)\chi_{\left\{\,f_n\leq M\,\right\}}(x)$ satisfy
+  ${\|g_n\|}_1\leq A/n^{4/3}$ and for which
   $\mu\left(\left\{\,x\in X:f_n(x)>M\,\right\}\right)\leq B/n^{5/4}$, where
   $A$ and $B$ are positive constants independent of $n$. Prove that
   \[
@@ -175,6 +184,9 @@
   almost everywhere.
 \end{problem}
 \begin{solution}
+  Seeking a contradiction, suppose that $E$ is a subset of $X$ with
+  $\mu(E)>0$ such that $\sum_{n=1}^\infty f_n(x)=\infty$ for every $x\in
+  E$.
 \end{solution}
 
 \begin{problem}
