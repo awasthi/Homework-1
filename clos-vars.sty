@@ -247,6 +247,7 @@ english]{babel}
 \providecommand{\nsupset}{\ensuremath{\not\supset}}
 \providecommand{\nsimeq}{\ensuremath{\not\simeq}}
 
+
 %% Augmented matrix
 \makeatletter
 \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
@@ -265,93 +266,158 @@ english]{babel}
 \end{smallmatrix}\right]
 }
 
-%% Commands and operators
+%%% Special sets and operators
+%%% General
+%% Set theory
 \DeclareMathOperator{\Card}{Card}
 \DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\ev}{ev}
+\DeclareMathOperator{\Ev}{Ev}
+\DeclareMathOperator{\eval}{eval}
+\DeclareMathOperator{\Eval}{Eval}
 \DeclareMathOperator{\Id}{Id}
 \DeclareMathOperator{\id}{id}
-\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Img}{Im}
 
-%% Algebra
-%%% Operations
+%% Number theory
+\DeclareMathOperator{\gcd}{gcd}
+\DeclareMathOperator{\lcm}{lcm}
+
+%%% Categories
+\newcommand{\blank}{{-}} % useful for categories
+\DeclareMathOperator{\Hom}{Hom}
+\newcommand{\catname}[1]{\mathbf{#1}}
+\newcommand{\AbGrp}{\catname{AbGrp}}
+\newcommand{\Grp}{\catname{Grp}}
+\newcommand{\Haus}{\catname{Haus}}
+\newcommand{\Man}{\catname{Man}}
+\newcommand{\Met}{\catname{Met}}
+\newcommand{\Mod}{\catname{Mod}}
+\newcommand{\kMod}[1]{#1\textnormal{-}\catname{Mod}}
+\newcommand{\Poset}{\catname{Poset}}
+\newcommand{\Ring}{\catname{Ring}}
+\newcommand{\Set}{\catname{Set}}
+\newcommand{\Topo}{\catname{Top}}
+\newcommand{\ptTop}{\catname{Top}_\star}
+\newcommand{\Vects}{\catname{Vec}}
+\newcommand{\kVects}[1]{#1\textnormal{-}\catname{Vects}}
+
+%%% Algebra
+%% Some special groups (mostly Lie groups)
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\Orth}{O}
+\DeclareMathOperator{\Unit}{U}
+\DeclareMathOperator{\Simp}{S}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\SU}{SU}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PSO}{PSO}
+\DeclareMathOperator{\PSU}{SU}
+
+%% Some special algebras and rings (mostly Lie groups)
+\DeclareMathOperator{\frakgl}{\mathfrak{gl}}
+\DeclareMathOperator{\frakorth}{\mathfrak{o}}
+\DeclareMathOperator{\frakuni}{\mathfrak{u}}
+\DeclareMathOperator{\frakso}{\mathfrak{so}}
+\DeclareMathOperator{\fracksl}{\mathfrak{sl}}
+
+%% Linear Algebra
 \DeclareMathOperator{\Ad}{Ad}
 \DeclareMathOperator{\ad}{ad}
 \DeclareMathOperator{\Adj}{Adj}
 \DeclareMathOperator{\adj}{adj}
-\DeclareMathOperator{\Char}{char}
-\DeclareMathOperator{\Det}{Det}
-% \DeclareMathOperator{\dim}{dim}
-\DeclareMathOperator{\lcm}{lcm}
-\DeclareMathOperator{\Norm}{norm}
-\DeclareMathOperator{\nullity}{nullity}
-\DeclareMathOperator{\rk}{rk}
-\DeclareMathOperator{\sgn}{sgn}
-\DeclareMathOperator{\sepdeg}{sep\,deg}
-\DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\Tr}{Tr}
-\DeclareMathOperator{\trdeg}{trans\,deg}
-
-\DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\Img}{Im}
 \DeclareMathOperator{\ann}{ann}
 \DeclareMathOperator{\Ann}{Ann}
-\DeclareMathOperator{\Aut}{Aut}
-\DeclareMathOperator{\Ass}{Ass}
 \DeclareMathOperator{\Coker}{Coker}
 \DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\Det}{Det}
 \DeclareMathOperator{\End}{End}
-\DeclareMathOperator{\Frac}{Frac}
-\DeclareMathOperator{\Gal}{Gal}
-\DeclareMathOperator{\Hom}{Hom}
-\DeclareMathOperator{\Inn}{Inn}
-\DeclareMathOperator{\Irr}{Irr}
-\DeclareMathOperator{\Jac}{Jac}
-\DeclareMathOperator{\Ker}{Ker}
-\DeclareMathOperator{\MSpec}{\frakm\textnormal{-}\Spec}
-\DeclareMathOperator{\nil}{nil}
-\DeclareMathOperator{\Nil}{Nil}
-\DeclareMathOperator{\Null}{Null}
-\DeclareMathOperator{\Out}{Out}
-\DeclareMathOperator{\Quot}{Quot}
-\DeclareMathOperator{\Rad}{Rad}
+\DeclareMathOperator{\Nullspace}{Nullspace}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\Norm}{norm}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Tr}{Tr}
 \DeclareMathOperator{\Range}{Range}
-\DeclareMathOperator{\rad}{rad}
-\DeclareMathOperator{\Spec}{Spec}
-\DeclareMathOperator{\SPAN}{Span}
+\DeclareMathOperator{\rk}{rk}
 \DeclareMathOperator{\Span}{span}
-\DeclareMathOperator{\Syl}{Syl}
-\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\SPAN}{Span}
 
-%% Groups
+%% Group theory
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Syl}{Syl}
+
+%% Group actions and representation theory
 \DeclareMathOperator{\Alt}{Alt}
-\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\Out}{Out}
 \DeclareMathOperator{\Orb}{Orb}
 \DeclareMathOperator{\NORM}{Norm}
+\DeclareMathOperator{\Stab}{Stab}
 \DeclareMathOperator{\Sym}{Sym}
-
-%% Linear groups
-\newcommand{\GL}{\mathrm{GL}}
-\newcommand{\Orth}{\mathrm{O}}
-\newcommand{\Unit}{\mathrm{U}}
-\newcommand{\Simp}{\mathrm{S}}
-\newcommand{\SL}{\mathrm{SL}}
-\newcommand{\SO}{\mathrm{SO}}
-\newcommand{\Sp}{\mathrm{Sp}}
-\newcommand{\SU}{\mathrm{SU}}
-\newcommand{\PGL}{\mathrm{PGL}}
-\newcommand{\PSL}{\mathrm{PSL}}
-\newcommand{\PSO}{\mathrm{PSO}}
-\newcommand{\PSU}{\mathrm{SU}}
-
-%% Lie groups
-\newcommand{\frakgl}{\mathfrak{gl}}
-\newcommand{\frakorth}{\mathfrak{o}}
-\newcommand{\frakuni}{\mathfrak{u}}
-\newcommand{\frakso}{\mathfrak{so}}
-\newcommand{\fracksl}{\mathfrak{sl}}
 \DeclareMathOperator{\Res}{Res}
 
-%% Analysis
+%% Ring theory and commutative algebra
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Bil}{Bil}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Irr}{Irr}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\nil}{nil}
+\DeclareMathOperator{\Nil}{Nil}
+\DeclareMathOperator{\MSpec}{\frakm\textnormal{-}\Spec}
+\DeclareMathOperator{\Quot}{Quot}
+\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\Rad}{Rad}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Tor}{Tor}
+
+%% Field theory and Galois theory
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\sepdeg}{sep\,deg}
+\DeclareMathOperator{\trdeg}{trans\,deg}
+\DeclareMathOperator{\Gal}{Gal}
+
+%%% Geometry and topology
+%% Topology
+\DeclareMathOperator{\Cls}{Cls}
+\DeclareMathOperator{\Int}{Int}
+
+%% Algebraic topology
+\DeclareMathOperator{\Homeo}{Homeo}
+\DeclareMathOperator{\MCG}{MCG}
+\DeclareMathOperator{\St}{St}
+\DeclareMathOperator{\Sdv}{Sdv}
+
+%% Differential geometry
+\DeclareMathOperator{\Diffeo}{Diffeo}
+\DeclareMathOperator{\ind}{ind}
+\DeclareMathOperator{\Isom}{Isom}
+\DeclareMathOperator{\Isom}{Isom}
+
+%% Topological spaces
+\newcommand{\bbCP}{\mathbb{CP}}
+\newcommand{\bbHP}{\mathbb{HP}}
+\newcommand{\bbRP}{\mathbb{RP}}
+\newcommand{\varbbCP}{\mathbb{C}\rmP}
+\newcommand{\varbbHP}{\mathbb{H}\rmP}
+\newcommand{\varbbRP}{\mathbb{R}\rmP}
+\newcommand{\bfCP}{\mathbf{CP}}
+\newcommand{\bfHP}{\mathbf{HP}}
+\newcommand{\bfRP}{\mathbf{RP}}
+\newcommand{\PSpace}{\mathrm{P}}
+\newcommand{\varbfCP}{\mathbf{C}\rmP}
+\newcommand{\varbfHP}{\mathbf{H}\rmP}
+\newcommand{\varbfRP}{\mathbf{R}\rmP}
+
+%%% Analysis
+%% Real analysis
 \newcommand{\BV}{BV}
 \DeclareMathOperator{\Curl}{curl}
 \DeclareMathOperator{\diam}{diam}
@@ -383,63 +449,7 @@ english]{babel}
 \DeclareMathOperator{\Pb}{Pb}
 \DeclareMathOperator{\Var}{Var}
 
-%% Topology
-%%% Operations
-\DeclareMathOperator{\ind}{ind}
-\DeclareMathOperator{\Int}{Int}
-\DeclareMathOperator{\Cls}{Cls}
-\newcommand{\CW}{\mathrm{CW}}
-\DeclareMathOperator{\Diffeo}{Diffeo}
-\DeclareMathOperator{\Sdv}{Sdv}
-\DeclareMathOperator{\St}{St}
-\DeclareMathOperator{\ev}{ev}
-\DeclareMathOperator{\Ev}{Ev}
-\DeclareMathOperator{\eval}{eval}
-\DeclareMathOperator{\Eval}{Eval}
-\DeclareMathOperator{\Homeo}{Homeo}
-\DeclareMathOperator{\Isom}{Isom}
-\DeclareMathOperator{\MCG}{MCG}
-
-%%% Spaces, labels, etc
-\newcommand{\bbCP}{\mathbb{CP}}
-\newcommand{\bbHP}{\mathbb{HP}}
-\newcommand{\bbRP}{\mathbb{RP}}
-\newcommand{\varbbCP}{\mathbb{C}\rmP}
-\newcommand{\varbbHP}{\mathbb{H}\rmP}
-\newcommand{\varbbRP}{\mathbb{R}\rmP}
-\newcommand{\bfCP}{\mathbf{CP}}
-\newcommand{\bfHP}{\mathbf{HP}}
-\newcommand{\bfRP}{\mathbf{RP}}
-\newcommand{\PSpace}{\mathrm{P}}
-\newcommand{\varbfCP}{\mathbf{C}\rmP}
-\newcommand{\varbfHP}{\mathbf{H}\rmP}
-\newcommand{\varbfRP}{\mathbf{R}\rmP}
-
-%% Algebraic Topology
-%%% Categories
-\newcommand{\blank}{{-}} % useful for categories
-
-\newcommand{\catname}[1]{\mathbf{#1}}
-\newcommand{\AbGrp}{\catname{AbGrp}}
-\newcommand{\Grp}{\catname{Grp}}
-\newcommand{\Haus}{\catname{Haus}}
-\newcommand{\Man}{\catname{Man}}
-\newcommand{\Met}{\catname{Met}}
-\newcommand{\Mod}{\catname{Mod}}
-\newcommand{\kMod}[1]{#1\textnormal{-}\catname{Mod}}
-\newcommand{\Poset}{\catname{Poset}}
-\newcommand{\Ring}{\catname{Ring}}
-\newcommand{\Set}{\catname{Set}}
-\newcommand{\Topo}{\catname{Top}}
-\newcommand{\ptTop}{\catname{Top}_\star}
-\newcommand{\Vects}{\catname{Vec}}
-\newcommand{\kVects}[1]{#1\textnormal{-}\catname{Vects}}
-
-%% Algebraic Geometry
-\DeclareMathOperator{\Pic}{Pic}
-
-%% Geometry
-\DeclareMathOperator{\Trop}{Trop}
+%% Functional Analysis
 
 %% Math letters
 \newcommand{\rma}{\mathrm{a}}
