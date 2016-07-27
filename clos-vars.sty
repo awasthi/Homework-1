@@ -130,7 +130,7 @@ english]{babel}
 %% Use Tempora for Greek and Russian
 \substitutefont{LGR}{\rmdefault}{Tempora}
 \substitutefont{T2A}{\rmdefault}{Tempora}
-\renewcommand\bigstar{\ensuremath{\star}}
+\renewcommand\bigstar{\star}
 \mleftrightrestore
 \else
 
@@ -152,7 +152,7 @@ english]{babel}
 %% Use Libertine for Greek and Russian (Libertine is magnificent font)
 \substitutefont{LGR}{\rmdefault}{LinuxLibertineT}
 \substitutefont{T2A}{\rmdefault}{LinuxLibertineT}
-\renewcommand\bigstar{\ensuremath{\star}}
+\renewcommand\bigstar{\star}
 \mleftrightrestore
 
 \else % Use the regular CM fonts
@@ -228,25 +228,23 @@ english]{babel}
 \begin{quote}
 \proof[\textnormal{\textit{#1}}]%
 }{
-\renewcommand\qedsymbol{\ensuremath{\square}}
 \endproof
 \end{quote}
 }
 
 %% Renew some common commands to ones I personally prefer
-\renewcommand\setminus{\ensuremath{\smallsetminus}}
+\renewcommand\setminus{\smallsetminus}
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}}
-\providecommand\coloneq{\ensuremath{\coloneqq}}
-\providecommand\eqcolon{\ensuremath{\eqqcolon}}
-\newcommand\trileq{\ensuremath{\trianglelefteq}}
-\newcommand\trireq{\ensuremath{\trianglerighteq}}
+\providecommand\coloneq{\coloneqq}
+\providecommand\eqcolon{\eqqcolon}
+\newcommand\trileq{\trianglelefteq}
+\newcommand\trireq{\trianglerighteq}
 \newcommand\restrict[1]{\raisebox{-.5ex}{\ensuremath|}_{#1}}
 
 %% Redefinitions & commands not available in the default CM
 \providecommand{\nsubset}{\ensuremath{\not\subset}}
 \providecommand{\nsupset}{\ensuremath{\not\supset}}
 \providecommand{\nsimeq}{\ensuremath{\not\simeq}}
-
 
 %% Augmented matrix
 \makeatletter
@@ -277,11 +275,10 @@ english]{babel}
 \DeclareMathOperator{\Eval}{Eval}
 \DeclareMathOperator{\Id}{Id}
 \DeclareMathOperator{\id}{id}
-\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\img}{im}
 \DeclareMathOperator{\Img}{Im}
 
 %% Number theory
-\DeclareMathOperator{\gcd}{gcd}
 \DeclareMathOperator{\lcm}{lcm}
 
 %%% Categories
@@ -293,8 +290,7 @@ english]{babel}
 \newcommand{\Haus}{\catname{Haus}}
 \newcommand{\Man}{\catname{Man}}
 \newcommand{\Met}{\catname{Met}}
-\newcommand{\Mod}{\catname{Mod}}
-\newcommand{\kMod}[1]{#1\textnormal{-}\catname{Mod}}
+\newcommand{\RMod}[1]{#1\textnormal{-}\catname{Mod}}
 \newcommand{\Poset}{\catname{Poset}}
 \newcommand{\Ring}{\catname{Ring}}
 \newcommand{\Set}{\catname{Set}}
@@ -305,25 +301,25 @@ english]{babel}
 
 %%% Algebra
 %% Some special groups (mostly Lie groups)
-\DeclareMathOperator{\GL}{GL}
-\DeclareMathOperator{\Orth}{O}
-\DeclareMathOperator{\Unit}{U}
-\DeclareMathOperator{\Simp}{S}
-\DeclareMathOperator{\SL}{SL}
-\DeclareMathOperator{\SO}{SO}
-\DeclareMathOperator{\Sp}{Sp}
-\DeclareMathOperator{\SU}{SU}
-\DeclareMathOperator{\PGL}{PGL}
-\DeclareMathOperator{\PSL}{PSL}
-\DeclareMathOperator{\PSO}{PSO}
-\DeclareMathOperator{\PSU}{SU}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\Orth}{\mathrm{O}}
+\newcommand{\Unit}{\mathrm{U}}
+\newcommand{\Simp}{\mathrm{S}}
+\newcommand{\SL}{\mathrm{SL}}
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\Sp}{\mathrm{Sp}}
+\newcommand{\SU}{\mathrm{SU}}
+\newcommand{\PGL}{\mathrm{PGL}}
+\newcommand{\PSL}{\mathrm{PSL}}
+\newcommand{\PSO}{\mathrm{PSO}}
+\newcommand{\PSU}{\mathrm{SU}}
 
 %% Some special algebras and rings (mostly Lie groups)
-\DeclareMathOperator{\frakgl}{\mathfrak{gl}}
-\DeclareMathOperator{\frakorth}{\mathfrak{o}}
-\DeclareMathOperator{\frakuni}{\mathfrak{u}}
-\DeclareMathOperator{\frakso}{\mathfrak{so}}
-\DeclareMathOperator{\fracksl}{\mathfrak{sl}}
+\newcommand{\frakgl}{\mathfrak{gl}}
+\newcommand{\frakorth}{\mathfrak{o}}
+\newcommand{\frakuni}{\mathfrak{u}}
+\newcommand{\frakso}{\mathfrak{so}}
+\newcommand{\fracksl}{\mathfrak{sl}}
 
 %% Linear Algebra
 \DeclareMathOperator{\Ad}{Ad}
@@ -343,6 +339,7 @@ english]{babel}
 \DeclareMathOperator{\Tr}{Tr}
 \DeclareMathOperator{\Range}{Range}
 \DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\Rowspace}{Rowspace}
 \DeclareMathOperator{\Span}{span}
 \DeclareMathOperator{\SPAN}{Span}
 
@@ -355,6 +352,7 @@ english]{babel}
 %% Group actions and representation theory
 \DeclareMathOperator{\Alt}{Alt}
 \DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Cen}{Cen}
 \DeclareMathOperator{\Inn}{Inn}
 \DeclareMathOperator{\Out}{Out}
 \DeclareMathOperator{\Orb}{Orb}
@@ -379,7 +377,7 @@ english]{babel}
 \DeclareMathOperator{\Tor}{Tor}
 
 %% Field theory and Galois theory
-\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\Char}{char}
 \DeclareMathOperator{\sepdeg}{sep\,deg}
 \DeclareMathOperator{\trdeg}{trans\,deg}
 \DeclareMathOperator{\Gal}{Gal}
@@ -391,15 +389,15 @@ english]{babel}
 
 %% Algebraic topology
 \DeclareMathOperator{\Homeo}{Homeo}
-\DeclareMathOperator{\MCG}{MCG}
+\DeclareMathOperator{\Mod}{Mod}
 \DeclareMathOperator{\St}{St}
 \DeclareMathOperator{\Sdv}{Sdv}
 
 %% Differential geometry
 \DeclareMathOperator{\Diffeo}{Diffeo}
 \DeclareMathOperator{\ind}{ind}
-\DeclareMathOperator{\Isom}{Isom}
-\DeclareMathOperator{\Isom}{Isom}
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Vect}{Vect}
 
 %% Topological spaces
 \newcommand{\bbCP}{\mathbb{CP}}
@@ -417,26 +415,38 @@ english]{babel}
 \newcommand{\varbfRP}{\mathbf{R}\rmP}
 
 %%% Analysis
-%% Real analysis
-\newcommand{\BV}{BV}
-\DeclareMathOperator{\Curl}{curl}
+%% Metric space
 \DeclareMathOperator{\diam}{diam}
 \DeclareMathOperator{\disc}{disc}
-\DeclareMathOperator{\Div}{div}
-\newcommand*\diff{\mathop{}\!\rmd}
-\newcommand*\Diff[1]{\mathop{}\!{\rmd^#1}}
-\DeclareMathOperator*{\esssup}{ess\,sup}
-\DeclareMathOperator*{\essinf}{ess\,inf}
-\DeclareMathOperator{\Grad}{grad}
-\DeclareMathOperator{\varGrad}{\nabla}
-\DeclareMathOperator{\Lip}{Lip}
-\DeclareMathOperator{\Lap}{\increment}
-\DeclareMathOperator{\Vect}{Vect}
+\DeclareMathOperator{\Isom}{Isom}
 \DeclareMathOperator{\supp}{supp}
 \DeclareMathOperator{\Supp}{Supp}
+
+%% Real analysis
+\DeclareMathOperator{\Lip}{Lip}
+\newcommand*\diff{\mathop{}\!\rmd}
+\newcommand*\Diff[1]{\mathop{}\!{\rmd^#1}}
+\DeclareMathOperator{\var}{var}
+
+%% Complex analysis
+\DeclareMathOperator\frakim{\mathfrak{im}}
+\DeclareMathOperator\frakIm{\mathfrak{Im}}
+\DeclareMathOperator\frakre{\mathfrak{re}}
+\DeclareMathOperator\frakRe{\mathfrak{Re}}
+\DeclareMathOperator\rmim{\mathop{im}}
+\DeclareMathOperator\rmIm{\mathop{Im}}
+\DeclareMathOperator\rmre{\mathop{re}}
+\DeclareMathOperator\rmRe{\mathop{Re}}
+
+%% Multivariable calculus
+\DeclareMathOperator{\Curl}{curl}
+\DeclareMathOperator{\Div}{div}
+\DeclareMathOperator{\Grad}{grad}
+\DeclareMathOperator{\Lap}{\increment}
+
+%% Measure theory
 \DeclareMathOperator{\vol}{vol}
 \DeclareMathOperator{\Vol}{Vol}
-\DeclareMathOperator{\var}{var}
 
 %% Probability
 \DeclareMathOperator{\corr}{corr}
@@ -450,8 +460,10 @@ english]{babel}
 \DeclareMathOperator{\Var}{Var}
 
 %% Functional Analysis
+\DeclareMathOperator*{\esssup}{ess\,sup}
+\DeclareMathOperator*{\essinf}{ess\,inf}
 
-%% Math letters
+%%% Math letters
 \newcommand{\rma}{\mathrm{a}}
 \newcommand{\rmb}{\mathrm{b}}
 \newcommand{\rmc}{\mathrm{c}}
