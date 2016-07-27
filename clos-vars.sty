@@ -4,65 +4,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{clos-vars}[2016/06/24 v1.7 personal shortcuts]
 
-%% Necessary packages
-\RequirePackage{amsmath}
-\RequirePackage{amsthm}
-\RequirePackage{mathtools}
-\RequirePackage{mleftright}
-\mleftright
-
-\RequirePackage{ifpdf}
-\RequirePackage{ifxetex}
-
-\ifxetex
-%% Unicode math
-\RequirePackage{unicode-math}
-
-% \setmainfont[Ligatures=TeX]{Latin Modern Roman}
-% \setsansfont{Latin Modern Sans}
-% \setsansfont{Latin Modern Mono}
-% \setmathfont[BoldFont={latinmodern-math.otf}]{latinmodern-math.otf}
-\fi
-
-\ifpdf
-
-%% Language
-\RequirePackage[LAE,LFE,LGR,T2A,T1]{fontenc}
-\RequirePackage[utf8]{inputenc}
-\RequirePackage{substitutefont}
-
-\def\spanishoptions{mexico}
-\RequirePackage[
-%farsi,
-french,
-german,
-greek.plutoniko,
-spanish,
-russian,
-english]{babel}
-
-\babeltags{fr=french,
-           de=german,
-           en=english,
-           es=spanish,
-           he=greek,
-           %pa=farsi,
-           ru=russian,
-           }
-
-\selectlanguage{english}
-
-% Persian settings
-%\csname @Latintrue\endcsname
-%\RequirePackage[free]{frfonts} 
-%\newcommand{\textfa}[1]{{\beginR\textpa{#1}\endR}}
-
-\RequirePackage{CJKutf8}
-\newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
-\newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
-\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
-
-%% Math packages
+%%% Options
 \newif\if@times\@timesfalse
 \DeclareOption{times}{
   \@timestrue
@@ -78,57 +20,26 @@ english]{babel}
   \@eucaltrue
 }
 
+\newif\if@farsi\@farsifalse
+\DeclareOption{farsi}{
+  \@farsitrue
+}
+
+\newif\if@CJK\@CJKfalse
+\DeclareOption{CJK}{
+  \@CJKistrue
+}
+
 \ProcessOptions\relax
 
-%% Times clones
-\if@times
-\RequirePackage[largesc]{newtxtext}% roman
-\RequirePackage[scale=.95,type1]{cabin}% sans
-\RequirePackage[varqu,varl,scaled=.9]{zi4}% mono
+%%% Required math packages
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+\RequirePackage{mathtools}
+\RequirePackage{mleftright}
+\mleftright
 
-\RequirePackage[varg,bigdelims]{newtxmath}
-\RequirePackage[bb=boondox,frak=boondox,cal=boondoxo]{mathalfa}
-
-\useosf % oldstyle figs
-
-% Font substitute
-\substitutefont{LGR}{\rmdefault}{Tempora}
-\substitutefont{T2A}{\rmdefault}{Tempora}
-\renewcommand\bigstar{\ensuremath{\star}}
-\mleftrightrestore
-\else
-
-\if@libertine
-\pdfmapfile{+libertinelgc.map}
-\RequirePackage[sb]{libertine} % roman
-\RequirePackage{libertinextras}
-\RequirePackage[scale=.95,type1]{cabin} % sans
-\RequirePackage[varqu,varl,scaled=.9]{zi4} % mono
-
-\RequirePackage[libertine,libaltvw,bigdelims]{newtxmath}
-\RequirePackage[bb=boondox,frak=pxtx,cal=boondoxo]{mathalfa}
-
-%\useosf % oldstyle figs
-
-% Font substitute
-\substitutefont{LGR}{\rmdefault}{LinuxLibertineT}
-\substitutefont{T2A}{\rmdefault}{LinuxLibertineT}
-\renewcommand\bigstar{\ensuremath{\star}}
-\mleftrightrestore
-
-\else
-\RequirePackage{amssymb}
-\RequirePackage[nointegrals]{wasysym}
-\RequirePackage{stmaryrd}
-\if@eucal
-\RequirePackage[bb=ams,frak=euler,cal=euler,scr=rsfso]{mathalfa}
-\else
-\RequirePackage[bb=ams,cal=cm,frak=euler,scr=rsfso]{mathalfa}
-\fi
-\fi
-\fi
-
-%% Misc
+%%% Othe useful packages
 \@ifpackageloaded{hyperref}{}{\RequirePackage{hyperref}}
 \RequirePackage{cleveref}
 \@ifpackageloaded{xcolor}
@@ -139,6 +50,122 @@ english]{babel}
 \RequirePackage{enumitem}
 \RequirePackage{listings}
 \@ifpackageloaded{tikz}{\tikzcdset{arrow style=math font}}{}
+
+%% Language settings
+\RequirePackage{substitutefont}
+
+\if@farsi
+\RequirePackage[LAE,LFE,LGR,T2A,T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{substitutefont}
+
+\def\spanishoptions{mexico}%
+\RequirePackage[%
+farsi,%
+french,%
+german,%
+greek.plutoniko,%
+spanish,%
+russian,%
+english]{babel}
+
+\babeltags{%
+  fr=french,%
+  de=german,%
+  en=english,%
+  es=spanish,%
+  he=greek,%
+  pa=farsi,%
+  ru=russian%
+}
+
+\newcommand{\textfr}[1]{\textRL{\textpa{#1}}}
+
+\else
+\RequirePackage[LGR,T2A,T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+
+\def\spanishoptions{mexico}%
+\RequirePackage[%
+french,%
+german,%
+greek.plutoniko,%
+spanish,%
+russian,%
+english]{babel}
+
+\babeltags{%
+  fr=french,%
+  de=german,%
+  en=english,%
+  es=spanish,%
+  he=greek,%
+  ru=russian%
+}
+
+\fi
+
+\selectlanguage{english}
+
+%%% East Asian languages
+\if@CJK
+\RequirePackage{CJKutf8}
+\newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
+\newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
+\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
+\fi
+
+%%% Math packages
+%% Times clones
+\if@times % TeX Gyre for text and mathematics
+\RequirePackage[largesc]{newtxtext}% roman
+\RequirePackage[scale=.95,type1]{cabin}% sans
+\RequirePackage[varqu,varl,scaled=.9]{zi4}% mono
+
+\RequirePackage[varg,bigdelims]{newtxmath}
+\RequirePackage[bb=boondox,frak=boondox,cal=boondoxo]{mathalfa}
+
+\useosf % oldstyle figs
+
+%% Use Tempora for Greek and Russian
+\substitutefont{LGR}{\rmdefault}{Tempora}
+\substitutefont{T2A}{\rmdefault}{Tempora}
+\renewcommand\bigstar{\ensuremath{\star}}
+\mleftrightrestore
+\else
+
+\if@libertine %% Use Libertine (a beautiful free font)
+\pdfmapfile{+libertinelgc.map}
+\RequirePackage[sb]{libertine} % roman
+\RequirePackage{libertinextras}
+\RequirePackage[scale=.95,type1]{cabin} % sans
+\RequirePackage[varqu,varl,scaled=.9]{zi4} % mono
+
+\RequirePackage[libertine,libaltvw,bigdelims]{newtxmath} % Shitty math to
+                                % accompany Libertine
+% \pdfmapfile{+libertinust1math.map}
+% \RequirePackage{libertinust1math}
+\RequirePackage[bb=boondox,frak=pxtx,cal=boondoxo]{mathalfa}
+
+\useosf % oldstyle figs
+
+%% Use Libertine for Greek and Russian (Libertine is magnificent font)
+\substitutefont{LGR}{\rmdefault}{LinuxLibertineT}
+\substitutefont{T2A}{\rmdefault}{LinuxLibertineT}
+\renewcommand\bigstar{\ensuremath{\star}}
+\mleftrightrestore
+
+\else % Use the regular CM fonts
+\RequirePackage{amssymb}
+\RequirePackage[nointegrals]{wasysym}
+\RequirePackage{stmaryrd}
+\if@eucal % Euler mathcal
+\RequirePackage[bb=ams,frak=euler,cal=euler,scr=rsfso]{mathalfa}
+\else % AMS mathcal
+\RequirePackage[bb=ams,cal=cm,frak=euler,scr=rsfso]{mathalfa}
+\fi
+\fi
+\fi
 
 %% Theorems and definitions
 \theoremstyle{plain}
@@ -206,30 +233,19 @@ english]{babel}
 \end{quote}
 }
 
-\ifxetex
-\renewcommand\qedsymbol{\ensuremath{\QED}}
-\fi
-
-\ifpdf
-\renewcommand\qedsymbol{\ensuremath{\blacksquare}}
-\fi
-
-\newcommand{\hilight}[2]{\colorbox{#1}{#2}}
-
-%% Redefinitions & commands not available in pdfLaTeX
-\ifpdf
-\providecommand{\nsubset}{\ensuremath{\not\subset}}
-\providecommand{\nsupset}{\ensuremath{\not\supset}}
-\providecommand{\nsimeq}{\ensuremath{\not\simeq}}
-\fi
-
 %% Renew some common commands to ones I personally prefer
 \renewcommand\setminus{\ensuremath{\smallsetminus}}
+\renewcommand\qedsymbol{\ensuremath{\blacksquare}}
 \providecommand\coloneq{\ensuremath{\coloneqq}}
 \providecommand\eqcolon{\ensuremath{\eqqcolon}}
 \newcommand\trileq{\ensuremath{\trianglelefteq}}
 \newcommand\trireq{\ensuremath{\trianglerighteq}}
 \newcommand\restrict[1]{\raisebox{-.5ex}{\ensuremath|}_{#1}}
+
+%% Redefinitions & commands not available in the default CM
+\providecommand{\nsubset}{\ensuremath{\not\subset}}
+\providecommand{\nsupset}{\ensuremath{\not\supset}}
+\providecommand{\nsimeq}{\ensuremath{\not\simeq}}
 
 %% Augmented matrix
 \makeatletter
@@ -313,7 +329,7 @@ english]{babel}
 \DeclareMathOperator{\NORM}{Norm}
 \DeclareMathOperator{\Sym}{Sym}
 
-% Linear groups
+%% Linear groups
 \newcommand{\GL}{\mathrm{GL}}
 \newcommand{\Orth}{\mathrm{O}}
 \newcommand{\Unit}{\mathrm{U}}
@@ -336,12 +352,10 @@ english]{babel}
 \DeclareMathOperator{\Res}{Res}
 
 %% Analysis
-\DeclareMathOperator{\abs}{abs}
 \newcommand{\BV}{BV}
 \DeclareMathOperator{\Curl}{curl}
 \DeclareMathOperator{\diam}{diam}
 \DeclareMathOperator{\disc}{disc}
-\DeclareMathOperator{\dist}{dist}
 \DeclareMathOperator{\Div}{div}
 \newcommand*\diff{\mathop{}\!\rmd}
 \newcommand*\Diff[1]{\mathop{}\!{\rmd^#1}}
@@ -357,20 +371,6 @@ english]{babel}
 \DeclareMathOperator{\vol}{vol}
 \DeclareMathOperator{\Vol}{Vol}
 \DeclareMathOperator{\var}{var}
-
-%% Complex analysis
-\renewcommand{\Re}{\operatorname{\frakR\frake}}
-\renewcommand{\Im}{\operatorname{\frakI\frakm}}
-
-\ifpdf % This is unavailale in pdfLaTeX
-\providecommand\upint{\mathchoice%
-    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-24mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-  \int}
-\providecommand\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-12mu\int}
-\fi
 
 %% Probability
 \DeclareMathOperator{\corr}{corr}
@@ -793,58 +793,7 @@ english]{babel}
 \newcommand{\scrY}{\mathscr{Y}}
 \newcommand{\scrZ}{\mathscr{Z}}
 
-%% Greek letters
-\newcommand{\bfalpha}{\mbfalpha}
-\newcommand{\bfbeta}{\mbfbeta}
-\newcommand{\bfgamma}{\mbfgamma}
-\newcommand{\bfdelta}{\mbfdelta}
-\newcommand{\bfepsilon}{\mbfepsilon}
-\newcommand{\bfzeta}{\mbfzeta}
-\newcommand{\bfeta}{\mbfeta}
-\newcommand{\bftheta}{\mbftheta}
-\newcommand{\bfiota}{\mbfiota}
-\newcommand{\bfkappa}{\mbfkappa}
-\newcommand{\bflambda}{\mbflambda}
-\newcommand{\bfmu}{\mbfmu}
-\newcommand{\bfnu}{\mbfnu}
-\newcommand{\bfxi}{\mbfxi}
-\newcommand{\bfomicron}{\mbfomicron}
-\newcommand{\bfpi}{\mbfpi}
-\newcommand{\bfrho}{\mbfrho}
-\newcommand{\bfsigma}{\mbfsigma}
-\newcommand{\bftau}{\mbftau}
-\newcommand{\bfupsilon}{\mbfupsilon}
-\newcommand{\bfphi}{\mbfphi}
-\newcommand{\bfchi}{\mbfchi}
-\newcommand{\bfpsi}{\mbfpsi}
-\newcommand{\bfomega}{\mbfomega}
-
-\newcommand{\bfAlpha}{\mbfAlpha}
-\newcommand{\bfBeta}{\mbfBeta}
-\newcommand{\bfGamma}{\mbfGamma}
-\newcommand{\bfDelta}{\mbfDelta}
-\newcommand{\bfEpsilon}{\mbfEpsilon}
-\newcommand{\bfZeta}{\mbfZeta}
-\newcommand{\bfEta}{\mbfEta}
-\newcommand{\bfTheta}{\mbfTheta}
-\newcommand{\bfIota}{\mbfIota}
-\newcommand{\bfKappa}{\mbfKappa}
-\newcommand{\bfLambda}{\mbfLambda}
-\newcommand{\bfMu}{\mbfMu}
-\newcommand{\bfNu}{\mbfNu}
-\newcommand{\bfXi}{\mbfXi}
-\newcommand{\bfOmicron}{\mbfOmicron}
-\newcommand{\bfPi}{\mbfPi}
-\newcommand{\bfRho}{\mbfRho}
-\newcommand{\bfSigma}{\mbfSigma}
-\newcommand{\bfTau}{\mbfTau}
-\newcommand{\bfUpsilon}{\mbfUpsilon}
-\newcommand{\bfPhi}{\mbfPhi}
-\newcommand{\bfChi}{\mbfChi}
-\newcommand{\bfPsi}{\mbfPsi}
-\newcommand{\bfOmega}{\mbfOmega}
-
-%% Units
+%%% Units
 \usepackage{siunitx}
 %% English units
 %% Distance
@@ -863,10 +812,6 @@ english]{babel}
 \DeclareSIUnit[number-unit-product = {\thinspace}]{\quart}{qt}
 \DeclareSIUnit[number-unit-product = {\thinspace}]{\gallon}{gal}
 
-%% Numbers
-\sisetup{bracket-negative-numbers, open-bracket={
-    {}^-% your custom hack here
-}, close-bracket={}}
-
 \endinput
+
 %% End of file `clos-vars.sty'
