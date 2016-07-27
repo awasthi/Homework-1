@@ -27,13 +27,14 @@
   For part (ii): Consider the subsets $A=\bbZ$ and $B=\sqrt{2}\bbZ$ of
   $\bbR$. Both $A$ and $B$ are discrete subsets of $\bbR$, hence
   closed. However, we claim that $A+B$ is dense in $\bbR$; in particular,
-  $\overline{A+B}\neq A+B$. Let $x\in\bbR$ then given $\varepsilon>0$, and
-  consider $x-m-\varepsilon<x-m+\varepsilon$ (where we can choose $m$ to
-  be, e.g., $m=\lfloor x \rfloor$). By the density of $\bbQ$ in $\bbR$,
-  there exists a rational number $a/b\in\bbQ$ such that
-  \[
-    \frac{x-m-\varepsilon}{\sqrt{2}b}<\frac{a}{b}<\frac{x-m+\varepsilon}{\sqrt{2}b}
-  \]
+  $\overline{A+B}\neq A+B$. To see this, choose a point $x\in\bbR$; we may
+  as well assume that $x\in[0,1]$ since $0\leq x-n<1$ where
+  $n=\lceil x \rceil$ if $x>0$ (or if $x<0$, let $n=\lfloor n\rfloor$),
+  i.e., the largest integer smaller than $x$. Thus, it suffices to show
+  that $0$ is a limit point of $A+B$.
+
+  Suppose there exists $\varepsilon>0$ such that
+  $(0,\varepsilon)\cap(A+B)=\emptyset$.
 \end{solution}
 
 \begin{problem}
@@ -48,6 +49,8 @@
   whenever $0\leq x$, $x+h\leq 1$, $0<|h|<h_0$.
 \end{problem}
 \begin{solution}
+  $\impliedby$ Suppose that $f$ is uniformly differentiable. Then, given
+
   $\implies$ Suppose that $f'$ is continuous. Then, given $\varepsilon>0$,
   there exists $\delta>0$ such that $|h|<\delta$ implies
   \[
