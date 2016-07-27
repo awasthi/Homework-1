@@ -15,7 +15,8 @@ A level-1 auxiliary file: mcclure/571-hw-11.aux
 A level-1 auxiliary file: mcclure/571-hw-12.aux
 A level-1 auxiliary file: mcclure/571-hw-13.aux
 A level-1 auxiliary file: mcclure/571-aug-06.aux
-A level-1 auxiliary file: mcclure/571-aug-07.aux
+A level-1 auxiliary file: mcclure/571-jan-08.aux
+A level-1 auxiliary file: mcclure/571-aug-08.aux
 A level-1 auxiliary file: mcclure/571-jan-11.aux
 A level-1 auxiliary file: mcclure/571-jan-12.aux
 A level-1 auxiliary file: mcclure/571-jan-14.aux
@@ -24,7 +25,7 @@ The style file: acm.bst
 Database file #1: top-bib.bib
 You've used 1 entry,
             2253 wiz_defined-function locations,
-            552 strings with 4380 characters,
+            553 strings with 4402 characters,
 and the built_in function-call counts, 253 in all, are:
 = -- 23
 > -- 7
