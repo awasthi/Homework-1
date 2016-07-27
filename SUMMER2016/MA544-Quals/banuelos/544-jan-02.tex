@@ -83,17 +83,65 @@
   whenever $0\leq x$, $x+h\leq 1$, $0<|h|<h_0$.
 \end{problem}
 \begin{solution}
-  $\impliedby$ Suppose that $f$ is uniformly differentiable. Then given
-  $\varepsilon>0$ there exists a $h_0>0$ such that $|h|<h_0$ implies
+  $\impliedby$ If $f$ is uniformly differentiable then given
+  $\varepsilon>0$, there exists $h_0$ such that $|x-y|<h_0$ implies
+  \begin{align*}
+    \left|
+    f'(x)-\frac{f(x)-f(y)}{x-y}
+    \right|
+    &<\frac{\varepsilon}{2}\\
+    \left|
+    f'(y)-\frac{f(y)-f(x)}{x-y}
+    \right|
+    &<\frac{\varepsilon}{2}.
+  \end{align*}
+  Then, for $|x-y|<h_0$, we have
+  \begin{align*}
+    |f'(x)-f'(y)|
+    &=
+      \left|
+      f'(x)-\frac{f(x)-f(y)}{x-y}-
+      \left(
+      f'(y)-
+      \frac{f(y)-f(x)}{x-y}
+      \right)
+      \right|\\
+    &\leq
+      \left|
+      f'(x)-\frac{f(x)-f(y)}{x-y}
+      \right|
+      +
+      \left|
+      f'(y)-
+      \frac{f(y)-f(x)}{x-y}
+      \right|\\
+    &<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}\\
+    &=\varepsilon.
+  \end{align*}
+  Thus, $f'$ is continuous on $[0,1]$.
+
+  $\implies$ Conversely, if $f'$ is continuous on $[0,1]$ then given
+  $\varepsilon>0$ there exists $\delta>0$ such that $|y-x|<\delta$ implies
   \[
-    \left|\frac{f(x+h)-f(x)}{h}-f'(x)\right|<\varepsilon
+    |f'(y)-f'(x)|<\varepsilon.
   \]
-  for any $x\in[0,1]$ such that $x+h\in[0,1]$. Fix $x\in[0,1]$ such that
-  $x+h\in[0,1]$. Then, we want to show that there exists $\delta>0$ such
-  that $y\in B(x,\delta)$ implies
+  Now, consider the estimate
   \[
-    \left|f'(x)-f'(y)\right|<\varepsilon.
+    0<\left|\frac{f(x+h)-f(x)}{h}-f'(x)\right|
   \]
+  for $|h|<\delta$. By the mean value theorem, there exists
+  $\xi\in(x-\delta,x+\delta)$ such that
+  \[
+    \frac{f(x+h)-f(x)}{h}=f'(\xi).
+  \]
+  Thus,
+  \begin{align*}
+    \left|\frac{f(x+h)-f(x)}{h}-f'(x)\right|
+    &=
+      \left|f'(\xi)-f'(x)\right|\\
+    &<\varepsilon
+  \end{align*}
+  since $|\xi-x|<\delta$. Thus, $f$ is uniformly differentiable.
 \end{solution}
 
 \begin{problem}
@@ -111,6 +159,7 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
+
 \end{solution}
 
 \begin{problem}
