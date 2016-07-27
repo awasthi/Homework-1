@@ -187,20 +187,27 @@
   Let $f_n\colon X\to[0,\infty)$ be a sequence of measurable functions on
   the measure space $(X,\calF,\mu)$. Suppose there is a positive constant
   $M$ such that the functions
-  $g_n(x)=f_n
-  (x)\chi_{\left\{\,f_n\leq M\,\right\}}(x)$ satisfy
+  $g_n(x)=f_n (x)\chi_{\left\{\,f_n\leq M\,\right\}}(x)$ satisfy
   ${\|g_n\|}_1\leq A/n^{4/3}$ and for which
-  $\mu\left(\left\{\,x\in X:f_n(x)>M\,\right\}\right)\leq B/n^{5/4}$, where
-  $A$ and $B$ are positive constants independent of $n$. Prove that
+  $\mu\left\{\,x\in X:f_n(x)>M\,\right\}\leq B/n^{5/4}$, where $A$ and $B$
+  are positive constants independent of $n$. Prove that
   \[
     \sum_{n=1}^\infty f_n<\infty
   \]
   almost everywhere.
 \end{problem}
 \begin{solution}
-  Let $E$ be the set of all $x\in X$ such that $\sum_{n=1}^\infty
-  f_n(x)=\infty$. We will show that for every $\varepsilon>0$,
-  $\mu(E)<\varepsilon$.
+  By \textru{Чебышёв}'s inequality
+  \[
+    \frac{1}{M}\int\limits_{\left\{\,f_n\geq M\,\right\}}
+    f_n(x)\diff x%
+    \geq
+    \mu\left\{\,x\in X:f_n(x)>M\,\right\}.
+  \]
+  But also, we know that
+  \[
+    \mu\left\{\,x\in X:f_n(x)>M\,\right\}
+  \]
 \end{solution}
 
 \begin{problem}
