@@ -35,7 +35,40 @@
 
   Suppose there exists $\varepsilon>0$ such that
   $(0,\varepsilon)\cap(A+B)=\emptyset$. Let
-  $\alpha=\inf (A+B)\cap(0,\infty)$.
+  $\alpha=\inf (A+B)\cap(0,\infty)$. We claim that $\alpha\in A+B$. Seeking
+  a contradiction, suppose that $\alpha\notin (A+B)\cap(0,\infty)$. Then
+  there exists elements $x,y\in (A+B)\cap(0,\infty)$ such that
+  \[
+    \alpha\leq x\leq y\leq\left(1+\frac{1}{4}\right)\alpha
+  \]
+  (by the infimum property). Then $x-y\in A+B$ (since $A+B$ is a ring),
+  such that
+  \[
+    0\leq x-y\leq\tfrac{1}{4}\alpha<\alpha.
+  \]
+  This contradicts that $\alpha$ is the infimum of $A+B$. Thus, $\alpha\in
+  A+B$.
+
+  Now, let $x\in (A+B)\cap(0,\infty)$ and let $n=\lfloor x/\alpha\rfloor$
+  be the largest integer smaller than $x/\alpha$. Then
+  \[
+    n\alpha\leq x<(n+1)\alpha
+  \]
+  so that $0\leq x-n\alpha<\alpha$. This tells us that
+  $x-n\alpha\in[0,\alpha)$, but since $\alpha$ is the infimum of
+  $(A+B)\cap(0,\infty)$, we must have $x-n\alpha=0$ so $x=n\alpha$. It
+  follows that every element in $A+B$ is a multiple of $\alpha$.
+
+  In particular, since $1,\sqrt{2}\in A+B$, there exists integers $n$ and
+  $m$ such that
+  \[
+    \sqrt{2}=\frac{\sqrt{2}}{1}=\frac{m\alpha}{n\alpha}.
+  \]
+  Since $\sqrt{2}$ is irrational, this is a contradiction. Thus, it must be
+  that $(0,\varepsilon)\cap (A+B)$ is nonempty for every $\varepsilon>0$
+  and it follows that we can reasonably approximate any $x\in[0,1]$ and by
+  extension, any $x\in\bbR$. Thus, $A+B$ is dense in $\bbR$ but it is not
+  $\bbR$.
 \end{solution}
 
 \begin{problem}
@@ -50,14 +83,18 @@
   whenever $0\leq x$, $x+h\leq 1$, $0<|h|<h_0$.
 \end{problem}
 \begin{solution}
-  $\impliedby$ Suppose that $f$ is uniformly differentiable. Then, given
-
-  $\implies$ Suppose that $f'$ is continuous. Then, given $\varepsilon>0$,
-  there exists $\delta>0$ such that $|h|<\delta$ implies
+  $\impliedby$ Suppose that $f$ is uniformly differentiable. Then given
+  $\varepsilon>0$ there exists a $h_0>0$ such that $|h|<h_0$ implies
   \[
-    |f'(x+h)-f'(x)|<\varepsilon.
+    \left|\frac{f(x+h)-f(x)}{h}-f'(x)\right|<\varepsilon
   \]
-  Now,
+  for any $x\in[0,1]$ such that $x+h\in[0,1]$. Fix $x\in[0,1]$ such that
+  $x+h\in[0,1]$. Then, we want to show that there exists $\delta>0$ such
+  that $y\in B(x,\delta)$ implies
+  \[
+    \left|f'(x)-f'(y)\right|<\varepsilon.
+  \]
+  Let $x\inx$
 \end{solution}
 
 \begin{problem}
