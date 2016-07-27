@@ -33,7 +33,7 @@
 
 \def\spanishoptions{mexico}
 \RequirePackage[
-farsi,
+%farsi,
 french,
 german,
 greek.plutoniko,
@@ -46,16 +46,16 @@ english]{babel}
            en=english,
            es=spanish,
            he=greek,
-           pa=farsi,
+           %pa=farsi,
            ru=russian,
            }
 
 \selectlanguage{english}
 
 % Persian settings
-\csname @Latintrue\endcsname
-\RequirePackage[free]{frfonts} 
-\newcommand{\textfa}[1]{{\beginR\textpa{#1}\endR}}
+%\csname @Latintrue\endcsname
+%\RequirePackage[free]{frfonts} 
+%\newcommand{\textfa}[1]{{\beginR\textpa{#1}\endR}}
 
 \RequirePackage{CJKutf8}
 \newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
