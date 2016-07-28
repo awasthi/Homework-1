@@ -188,15 +188,21 @@
   the measure space $(X,\calF,\mu)$. Suppose there is a positive constant
   $M$ such that the functions
   $g_n(x)=f_n (x)\chi_{\left\{\,f_n\leq M\,\right\}}(x)$ satisfy
-  ${\|g_n\|}_1\leq A/n^{4/3}$ and for which
-  $\mu\left\{\,x\in X:f_n(x)>M\,\right\}\leq B/n^{5/4}$, where $A$ and $B$
-  are positive constants independent of $n$. Prove that
+  ${\|g_n\|}_1\leq An^{-4/3}$ and for which
+  $\mu\left\{\,f_n(x)>M\,\right\}\leq Bn^{-5/4}$, where $A$ and $B$ are
+  positive constants independent of $n$. Prove that
   \[
     \sum_{n=1}^\infty f_n<\infty
   \]
   almost everywhere.
 \end{problem}
 \begin{solution}
+  Consider the sum
+  \[
+    \sum_{n\in\bbN}\biggl[\int\limits_{\left\{\,f_n\leq
+        M\,\right\}}f_n(x)\diff x\biggr]\leq\sum_{n\in\bbN}An^{-4/3}
+    =A\left(\frac{1}{1-n}\right)
+  \]
 \end{solution}
 
 \begin{problem}
