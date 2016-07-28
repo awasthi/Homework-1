@@ -187,7 +187,7 @@
   Let $f_n\colon X\to[0,\infty)$ be a sequence of measurable functions on
   the measure space $(X,\calF,\mu)$. Suppose there is a positive constant
   $M$ such that the functions
-  $g_n(x)=f_n (x)\chi_{\left\{\,f_n\leq M\,\right\}}(x)$ satisfy
+  $g_n(x)=f_n (x)\mathbf\chi_{\left\{\,f_n\leq M\,\right\}}(x)$ satisfy
   ${\|g_n\|}_1\leq An^{-4/3}$ and for which
   $\mu\left\{\,f_n(x)>M\,\right\}\leq Bn^{-5/4}$, where $A$ and $B$ are
   positive constants independent of $n$. Prove that
@@ -197,11 +197,38 @@
   almost everywhere.
 \end{problem}
 \begin{solution}
-  Consider the sum
+  It suffices to show that
   \[
-    \sum_{n\in\bbN}\biggl[\int\limits_{\left\{\,f_n\leq
-        M\,\right\}}f_n(x)\diff x\biggr]\leq\sum_{n\in\bbN}An^{-4/3}<\infty
+    \sum_{n\in\bbN}\int_Xf_n\diff x<\infty
   \]
+  for then we may interchange the order of the sum and the integral and by
+  Lebesgue's dominated convergence theorem
+  \[
+    \int_X\biggl[\sum_{n\in\bbN}f_n(x)\biggr]\rmd x =
+    \sum_{n\in\bbN}\biggl[\int_X f_n(x)\biggr]\rmd x
+  \]
+  and ${\left\|\sum_{n\in\bbN}f_n\right\|}_1<\infty$ implies that
+  $\sum_{n\in\bbN}f_n(x)<\infty$ almost everywhere.
+
+  First, since there exists an $M$ such that
+  \[
+    \int\limits_{\left\{\,f_n\leq M\,\right\}}f(x)\diff x\leq An^{-4/3}
+  \]
+  and
+  \[
+    \mu\left\{\,f_n(x)>M\,\right\}\leq Bn^{-5/4}.
+  \]
+  Hence, a good place to estimate the sum of integrals
+  $\sum_{n\in\bbN}\int_Xf_n\diff x<\infty$ is by splitting the integrals of
+  $f_n$ along this $M$, i.e., to do the following:
+  \begin{align*}
+    \int_X f_n\diff x&=
+    \int\limits_{\left\{\,f_n\leq M\,\right\}}f_n(x)\diff x
+    +\int\limits_{\left\{\,f_n>M\,\right\}}f_n(x)\diff x\\
+    &\leq An^{-4/3}
+      +\int\limits_{\left\{\,f_n>M\,\right\}}f_n(x)\diff x\\
+    &=
+  \end{align*}
 \end{solution}
 
 \begin{problem}
