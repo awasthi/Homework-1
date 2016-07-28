@@ -11,10 +11,49 @@
     \part[2] If $\lambda$ is an eigenvalue of $T$ with respect to $W$, is
     $\lambda$ an eigenvalue of $T$ with respect to $V$?
   \end{parts}
-  \question
   %
   \question[4] Suppose that $A$ and $B$ are conjugate matrices. Show that
   if $\lambda$ is an eigenvalue of $A$ then it is an eigenvalue of $B$.
+  %
+  \begin{solution}
+    Suppose that $\lambda$ is an eigenvalue of $A$ and that $A$ is
+    conjugate to $B$. Then, $\lambda$ is an eigenvalue of $A$ means that
+    there exists a vector (the associated eigenvector) $\bfx$ such that
+    $A\bfx=\lambda\bfx$; while $A$ is conjugate to $B$ means that there
+    exists an invertible matrix $P$ such that $A=PBP^{-1}$. Thus,
+    \[
+      PBP^{-1}\bfx=A\bfx=\lambda\bfx
+    \]
+    so
+    \begin{align*}
+      PBP^{-1}\bfx
+      &=\lambda\bfx\\
+      BP^{-1}\bfx&=P^{-1}\lambda\bfx\\
+      &=\lambda P^{-1}\bfx\\
+      \intertext{now let $\bfy=P^{-1}\bfx$ and we have}
+      B\bfy&=\lambda\bfy.
+    \end{align*}
+    So $\lambda$ is an eigenvalue of $B$ with associated eigenvector
+    $\bfy=P^{-1}\bfx$.
+  \end{solution}
+  \question[6] Suppose $V$ is a finite dimensional complex vector space
+  with an inner product $(\cdot,\cdot)\colon V\times V\to\bbC$. For an
+  orthogonal $2\times 2$ matrix $A$, show that
+  \[
+    (A\bfx,A\bfy)=(\bfx,\bfy)
+  \]
+  for any $\bfx,\bfy\in V$.
+  \begin{solution}
+    Since $A$ is an orthogonal matrix, we know that $A{\bar
+      A}^\rmT=I$. Now,
+    \begin{align*}
+      (A\bfx,A\bfy)
+      &=(\bfx,{\bar A}^\rmT A\bfy)\\
+      &=(\bfx,I\bfy)\\
+      &=(\bfx,\bfy)
+    \end{align*}
+    as desired.
+  \end{solution}
 \end{questions}
 %%% Local Variables:
 %%% mode: latex
