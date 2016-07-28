@@ -53,6 +53,7 @@
 
 %% Language settings
 \RequirePackage{substitutefont}
+\RequirePackage[full]{textcomp}
 
 \if@farsi
 \RequirePackage[LAE,LFE,LGR,T2A,T1]{fontenc}
@@ -122,7 +123,7 @@ english]{babel}
 \RequirePackage[scale=.95,type1]{cabin}% sans
 \RequirePackage[varqu,varl,scaled=.9]{zi4}% mono
 
-\RequirePackage[varg,bigdelims]{newtxmath}
+\RequirePackage[varg,bigdelims,cmintegrals]{newtxmath}
 \RequirePackage[bb=boondox,frak=boondox,cal=boondoxo]{mathalfa}
 
 %\useosf % oldstyle figs
@@ -141,10 +142,13 @@ english]{babel}
 \RequirePackage[scale=.95,type1]{cabin} % sans
 \RequirePackage[varqu,varl,scaled=.9]{zi4} % mono
 
-\RequirePackage[libertine,libaltvw,bigdelims]{newtxmath} % Shitty math fonts
+\RequirePackage[libertine,%
+                libaltvw,%
+                bigdelims,%
+                cmintegrals]{newtxmath} % Shitty math fonts
 \RequirePackage[bb=boondox,frak=pxtx,cal=boondoxo]{mathalfa}
 
-%\useosf % oldstyle figs
+\useosf % oldstyle figs
 
 %% Use Libertine for Greek and Russian (Libertine is magnificent font)
 \substitutefont{LGR}{\rmdefault}{LinuxLibertineT}
