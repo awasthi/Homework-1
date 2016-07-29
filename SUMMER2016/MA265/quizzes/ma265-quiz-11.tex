@@ -15,6 +15,64 @@
     \end{bmatrix}.
   \]
   %
+  \begin{solution}
+    First, compute all the necessary matrices and vectors
+    \begin{align*}
+      A^\rmT A
+      &=\begin{bmatrix}
+        0&1\\
+        0&0\\
+        -1&0
+      \end{bmatrix}^\rmT
+      \begin{bmatrix}
+        0&1\\
+        0&0\\
+        -1&0
+      \end{bmatrix}
+      \\
+      &=\begin{bmatrix}
+        0&0&-1\\
+        1&0&0
+      \end{bmatrix}
+      \begin{bmatrix}
+        0&1\\
+        0&0\\
+        -1&0
+      \end{bmatrix}
+      \\
+      &=\begin{bmatrix}
+        1&0\\
+        0&1
+      \end{bmatrix}\\
+      A^\rmT\bar\bfb
+      &=\begin{bmatrix}
+        1&1&0\\
+        0&0&-1
+        \end{bmatrix}
+       \begin{bmatrix}
+         2\\1\\3
+       \end{bmatrix}\\
+      &=\begin{bmatrix}
+        3\\-2
+        \end{bmatrix}.
+    \end{align*}
+    Then, to find $\bar\bfx$ we compute
+    \begin{align*}
+      \bar\bfx
+      &={(A^\rmT A)}^{-1}(A^\rmT\bar\bfb)\\
+      &=
+      \begin{bmatrix}
+        1&0\\
+        0&1\\
+      \end{bmatrix}^{-1}
+      \begin{bmatrix}
+        3\\-2
+      \end{bmatrix}\\
+      &=\begin{bmatrix}
+        3\\-2
+        \end{bmatrix}.
+    \end{align*}
+  \end{solution}
   \question[4] Suppose that $A$ and $B$ are conjugate matrices. Show that
   if $\lambda$ is an eigenvalue of $A$ then it is an eigenvalue of $B$.
   %
@@ -40,7 +98,25 @@
     $\bfy=P^{-1}\bfx$.
   \end{solution}
   \question[8] Suppose that $P$ is an idempotent matrix, i.e., $P^2=I$. Show
-  that the only possible eigenvalues for $P$ are $\lambda=0$ and $\lambda=1$.
+  that the only possible eigenvalues for $P$ are $\lambda=0$ and
+  $\lambda=1$.
+  \begin{solution}
+    Suppose that $P$ is an idempotent matrix and $\lambda$ is an eigenvalue
+    of $P$. Then $P\bfx=\lambda\bfx$ for some eigenvector $\bfx\neq
+    \mathbf{0}$. Now, since we have
+    \[
+      P^2\bfx=P\bfx
+    \]
+    then
+    \begin{align*}
+      P^2\bfx&=P(P\bfx)\\
+      P\bfx&=\lambda P\bfx\\
+      \lambda\bfx&=\lambda^2\bfx.
+    \end{align*}
+    Thus, $\lambda^2=\lambda$ so
+    $\lambda^2-\lambda=\lambda(\lambda-1)=0$. Thus, $\lambda=0$ or
+    $\lambda=1$.
+  \end{solution}
 \end{questions}
 %%% Local Variables:
 %%% mode: latex
