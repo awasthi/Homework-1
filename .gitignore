@@ -19,4 +19,6 @@
 *.acn
 *.ilg
 *.toc
+*.bbl
+*.bgl
 _region_*
