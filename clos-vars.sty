@@ -131,7 +131,6 @@ english]{babel}
 %% Use Tempora for Greek and Russian
 \substitutefont{LGR}{\rmdefault}{Tempora}
 \substitutefont{T2A}{\rmdefault}{Tempora}
-\renewcommand\bigstar{\star}
 \mleftrightrestore
 \else
 
@@ -154,7 +153,6 @@ english]{babel}
 %% Use Libertine for Greek and Russian (Libertine is magnificent font)
 \substitutefont{LGR}{\rmdefault}{LinuxLibertineT}
 \substitutefont{T2A}{\rmdefault}{LinuxLibertineT}
-\renewcommand\bigstar{\star}
 \mleftrightrestore
 
 \else % Use the regular CM fonts
@@ -230,12 +228,12 @@ english]{babel}
 \begin{quote}
 \proof[\textnormal{\textit{#1}}]%
 }{
+\renewcommand\qedsymbol{\ensuremath{\star}}
 \endproof
 \end{quote}
 }
 
 %% Renew some common commands to ones I personally prefer
-\renewcommand\setminus{\smallsetminus}
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}}
 \providecommand\coloneq{\coloneqq}
 \providecommand\eqcolon{\eqqcolon}
