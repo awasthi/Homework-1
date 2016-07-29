@@ -2,7 +2,7 @@
 %% My preference of symbols and variables
 %%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{clos-vars}[2016/07/27 v2.0 personal shortcuts]
+\ProvidesPackage{clos-vars}[2016/07/29 v2.1 personal shortcuts]
 
 %%% Options
 \newif\if@times\@timesfalse
@@ -298,8 +298,8 @@ english]{babel}
 \newcommand{\Set}{\catname{Set}}
 \newcommand{\Topo}{\catname{Top}}
 \newcommand{\ptTop}{\catname{Top}_\star}
-\newcommand{\Vects}{\catname{Vec}}
-\newcommand{\kVects}[1]{#1\textnormal{-}\catname{Vects}}
+\newcommand{\VEC}{\catname{Vec}}
+\newcommand{\kVec}[1]{#1\textnormal{-}\VEC}
 
 %%% Algebra
 %% Some special groups (mostly Lie groups)
@@ -354,11 +354,11 @@ english]{babel}
 %% Group actions and representation theory
 \DeclareMathOperator{\Alt}{Alt}
 \DeclareMathOperator{\Aut}{Aut}
-\DeclareMathOperator{\Cen}{Cen}
+\DeclareMathOperator{\Cent}{Cent}
+\DeclareMathOperator{\Fix}{Fix}
 \DeclareMathOperator{\Inn}{Inn}
 \DeclareMathOperator{\Out}{Out}
 \DeclareMathOperator{\Orb}{Orb}
-\DeclareMathOperator{\NORM}{Norm}
 \DeclareMathOperator{\Stab}{Stab}
 \DeclareMathOperator{\Sym}{Sym}
 \DeclareMathOperator{\Res}{Res}
@@ -371,7 +371,7 @@ english]{babel}
 \DeclareMathOperator{\Jac}{Jac}
 \DeclareMathOperator{\nil}{nil}
 \DeclareMathOperator{\Nil}{Nil}
-\DeclareMathOperator{\MSpec}{\frakm\textnormal{-}\Spec}
+\DeclareMathOperator{\Maxspec}{Maxspec}
 \DeclareMathOperator{\Quot}{Quot}
 \DeclareMathOperator{\rad}{rad}
 \DeclareMathOperator{\Rad}{Rad}
@@ -399,7 +399,7 @@ english]{babel}
 \DeclareMathOperator{\Diffeo}{Diffeo}
 \DeclareMathOperator{\ind}{ind}
 \DeclareMathOperator{\Tan}{Tan}
-\DeclareMathOperator{\Vect}{Vect}
+\DeclareMathOperator{\Vect}{Vec}
 
 %% Topological spaces
 \newcommand{\bbCP}{\mathbb{CP}}
@@ -431,20 +431,13 @@ english]{babel}
 \DeclareMathOperator{\var}{var}
 
 %% Complex analysis
-\DeclareMathOperator\frakim{\mathfrak{im}}
-\DeclareMathOperator\frakIm{\mathfrak{Im}}
-\DeclareMathOperator\frakre{\mathfrak{re}}
-\DeclareMathOperator\frakRe{\mathfrak{Re}}
-\DeclareMathOperator\rmim{\mathop{im}}
-\DeclareMathOperator\rmIm{\mathop{Im}}
-\DeclareMathOperator\rmre{\mathop{re}}
-\DeclareMathOperator\rmRe{\mathop{Re}}
+\DeclareMathOperator\re{re}
+\DeclareMathOperator\im{im}
 
 %% Multivariable calculus
 \DeclareMathOperator{\Curl}{curl}
 \DeclareMathOperator{\Div}{div}
 \DeclareMathOperator{\Grad}{grad}
-\DeclareMathOperator{\Lap}{\increment}
 
 %% Measure theory
 \DeclareMathOperator{\vol}{vol}
