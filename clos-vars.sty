@@ -155,7 +155,7 @@ english]{babel}
 
 \mleftrightrestore
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}} % Default is
-\renewcommand\varsetminus{\setminus} % too ugly
+\newcommand\bigsetminus{\setminus} % too ugly
 \renewcommand\setminus{\smallsetminus} % too ugly
 
 \else
@@ -181,7 +181,7 @@ english]{babel}
 
 \mleftrightrestore
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}} % Default is
-\renewcommand\varsetminus{\setminus} % too ugly
+\newcommand\bigsetminus{\setminus} % too ugly
 \renewcommand\setminus{\smallsetminus} % too ugly
 
 \else % Use the regular CM fonts
@@ -190,7 +190,7 @@ english]{babel}
 \RequirePackage{stmaryrd}
 
 \mleftrightrestore
-\renewcommand\varsetminus{\setminus} % too ugly
+\newcommand\bigsetminus{\setminus} % too ugly
 \renewcommand\setminus{\smallsetminus} % Default is too ugly
 \renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}} % Default is
                                 % too big
