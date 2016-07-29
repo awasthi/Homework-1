@@ -168,19 +168,20 @@
   $m(E\setminus F)<\varepsilon$ and $|f_k(x)|\leq M$ for all $x\in F$.
 \end{problem}
 \begin{solution}
-  Let $f=\sup_{n\in\bbN}f_n$. By Lusin's theorem, given $\varepsilon>0$
-  there exists a closed subset $F'$ of $E$ such that $m(E\setminus
-  F')<\varepsilon$ and $f$ is continuous on $F'$. Since $E$ is measurable,
-  it can be approximated from the inside by an open set $G$ such that
-  $m(G\setminus E)<\varepsilon$.
+  Let $f=\sup_{n\in\bbN}|f_n|$. Then $f$ is measurable since it is the
+  supremum of measurable functions $|f_n|$. By Lusin's theorem $f$ has the
+  $\calC$-property, i.e., given $\varepsilon>0$ there exists a closed
+  subset $F'$ of $E$ such that $m(E\setminus F')<\varepsilon$ and $f$ is
+  continuous on $F'$. Since $E$ is measurable, it can be approximated from
+  the inside by an open set $G$ such that $m(G\setminus E)<\varepsilon$.
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 4, Ex.\@ 18]
-  If $f$ is measurable on $E$, define $\omega_f(a)=|\{\,f>a\,\}|$ for
-  $-\infty<a<\infty$. If $f_k\uparrow f$, show that
-  $\omega_{f_k}\uparrow\omega_f$. If $f_k\to f$, show that
-  $\omega_{f_k}\to\omega_f$ at each point of continuity of $\omega_f$. [For
-  the second part, show that if $f_k\to f$, then
+  If $f$ is measurable on $E$, define
+  $\omega_f(a)=m\{\,f>a\,\}$ for $-\infty<a<\infty$. If
+  $f_k\uparrow f$, show that $\omega_{f_k}\uparrow\omega_f$. If $f_k\to f$,
+  show that $\omega_{f_k}\to\omega_f$ at each point of continuity of
+  $\omega_f$. [For the second part, show that if $f_k\to f$, then
   $\limsup_{k\to\infty}\omega_{f_k}(a)\leq\omega_f(a-\varepsilon)$ and
   $\liminf_{k\to\infty}\omega_{f_k}(a)\geq\omega_f(a+\varepsilon)$ for
   every $\varepsilon>0$.]
