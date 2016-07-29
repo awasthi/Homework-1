@@ -152,9 +152,13 @@ english]{babel}
 %% Use Tempora for Greek and Russian
 \substitutefont{LGR}{\rmdefault}{Tempora}
 \substitutefont{T2A}{\rmdefault}{Tempora}
-\mleftrightrestore
-\else
 
+\mleftrightrestore
+\renewcommand\qedsymbol{\ensuremath{\blacksquare}} % Default is
+\renewcommand\varsetminus{\setminus} % too ugly
+\renewcommand\setminus{\smallsetminus} % too ugly
+
+\else
 \if@libertine %% Use Libertine (a beautiful free font)
 \pdfmapfile{+libertinelgc.map}
 \RequirePackage[sb]{libertine} % roman
@@ -174,14 +178,19 @@ english]{babel}
 %% Use Libertine for Greek and Russian (Libertine is magnificent font)
 \substitutefont{LGR}{\rmdefault}{LinuxLibertineT}
 \substitutefont{T2A}{\rmdefault}{LinuxLibertineT}
+
 \mleftrightrestore
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}} % Default is
+\renewcommand\varsetminus{\setminus} % too ugly
 \renewcommand\setminus{\smallsetminus} % too ugly
 
 \else % Use the regular CM fonts
 \RequirePackage{amssymb}
 \RequirePackage[nointegrals]{wasysym}
 \RequirePackage{stmaryrd}
+
+\mleftrightrestore
+\renewcommand\varsetminus{\setminus} % too ugly
 \renewcommand\setminus{\smallsetminus} % Default is too ugly
 \renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}} % Default is
                                 % too big
