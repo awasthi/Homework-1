@@ -48,14 +48,15 @@
 \@ifpackageloaded{tikz}{\tikzcdset{arrow style=math font}}{}
 
 %% Language settings
-\RequirePackage{substitutefont}
-\RequirePackage[full]{textcomp}
-\RequirePackage{cmap}
+\RequirePackage{substitutefont}%
+\RequirePackage[full]{textcomp}%
+\RequirePackage{tipa}%
+\RequirePackage{cmap}%
 
-\if@ME
-\RequirePackage[LAE,LFE,LGR,T2A,T1]{fontenc}
-\RequirePackage[utf8]{inputenc}
-\RequirePackage{substitutefont}
+\if@ME%
+\RequirePackage[LAE,LFE,LGR,T2A,T1]{fontenc}%
+\RequirePackage[utf8]{inputenc}%
+\RequirePackage{substitutefont}%
 
 \def\spanishoptions{mexico}%
 \RequirePackage[%
@@ -79,20 +80,20 @@ english]{babel}
   ru=russian%
 }
 
-\renewcommand{\textara}[1]{\foreignlanguage{arabic}{\textRL{#1}}}
-\newcommand{\textfa}[1]{\foreignlanguage{farsi}{\textRL{#1}}}
-\newcommand{\textheb}[1]{\foreignlanguage{hebrew}{\textRL{#1}}}
+\renewcommand{\textara}[1]{\foreignlanguage{arabic}{\textRL{#1}}}%
+\newcommand{\textfa}[1]{\foreignlanguage{farsi}{\textRL{#1}}}%
+\newcommand{\textheb}[1]{\foreignlanguage{hebrew}{\textRL{#1}}}%
 
-\makeatletter
+\makeatletter%
 \pdfstringdefDisableCommands{%
-\let\beginL\@empty
-\let\endL\@empty
-}
-\makeatother
+  \let\beginL\@empty%
+  \let\endL\@empty
+}%
+\makeatother%
 
-\else
-\RequirePackage[LGR,T2A,T1]{fontenc}
-\RequirePackage[utf8]{inputenc}
+\else%
+\RequirePackage[LGR,T2A,T1]{fontenc}%
+\RequirePackage[utf8]{inputenc}%
 
 \def\spanishoptions{mexico}%
 \RequirePackage[%
@@ -114,28 +115,28 @@ english]{babel}
 
 \fi
 
-\renewcommand{\textfr}[1]{\foreignlanguage{french}{#1}}
-\renewcommand{\textde}[1]{\foreignlanguage{german}{#1}}
-\renewcommand{\textes}[1]{\foreignlanguage{spanish}{#1}}
-\renewcommand{\texten}[1]{\foreignlanguage{english}{#1}}
-\renewcommand{\texthe}[1]{\foreignlanguage{greek}{#1}}
-\renewcommand{\textru}[1]{\foreignlanguage{russian}{#1}}
+\renewcommand{\textfr}[1]{\foreignlanguage{french}{#1}}%
+\renewcommand{\textde}[1]{\foreignlanguage{german}{#1}}%
+\renewcommand{\textes}[1]{\foreignlanguage{spanish}{#1}}%
+\renewcommand{\texten}[1]{\foreignlanguage{english}{#1}}%
+\renewcommand{\texthe}[1]{\foreignlanguage{greek}{#1}}%
+\renewcommand{\textru}[1]{\foreignlanguage{russian}{#1}}%
 
-\selectlanguage{english}
+\selectlanguage{english}%
 
 %% Must be loaded after Babel
-\RequirePackage{cleveref}
-\RequirePackage[final,babel]{microtype}
-\RequirePackage{enumitem}
-\RequirePackage{listings}
+\RequirePackage{cleveref}%
+\RequirePackage[final,babel]{microtype}%
+\RequirePackage{enumitem}%
+\RequirePackage{listings}%
 
 %%% East Asian languages
-\if@CJK
-\RequirePackage{CJKutf8}
-\newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}
-\newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}
-\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}
-\fi
+\if@CJK%
+\RequirePackage{CJKutf8}%
+\newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}%
+\newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}%
+\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}%
+\fi%
 
 %%% Math packages
 %% Times clones
@@ -144,25 +145,25 @@ english]{babel}
 \RequirePackage[scale=.95,type1]{cabin}% sans
 \RequirePackage[varqu,varl,scaled=.9]{zi4}% mono
 
-\RequirePackage[varg,bigdelims,cmintegrals]{newtxmath}
-\RequirePackage[bb=boondox,frak=boondox,cal=boondoxo]{mathalfa}
+\RequirePackage[varg,bigdelims,cmintegrals]{newtxmath}%
+\RequirePackage[bb=boondox,frak=boondox,cal=boondoxo]{mathalfa}%
 
-%\useosf % oldstyle figs
+\useosf % oldstyle figs
 
 %% Use Tempora for Greek and Russian
-\substitutefont{LGR}{\rmdefault}{Tempora}
-\substitutefont{T2A}{\rmdefault}{Tempora}
+\substitutefont{LGR}{\rmdefault}{Tempora}%
+\substitutefont{T2A}{\rmdefault}{Tempora}%
 
-\mleftrightrestore
+\mleftrightrestore%
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}} % Default is
-\newcommand\bigsetminus{\setminus} % too ugly
-\renewcommand\setminus{\smallsetminus} % too ugly
+\newcommand\bigsetminus{\setminus}%
+\renewcommand\setminus{\smallsetminus}%
 
 \else
 \if@libertine %% Use Libertine (a beautiful free font)
-\pdfmapfile{+libertinelgc.map}
+\pdfmapfile{+libertinelgc.map}%
 \RequirePackage[sb]{libertine} % roman
-\RequirePackage{libertinextras}
+\RequirePackage{libertinextras}%
 \RequirePackage[scale=.95,type1]{cabin} % sans
 \RequirePackage[varqu,varl,scaled=.9]{zi4} % mono
 
@@ -176,31 +177,29 @@ english]{babel}
 \useosf % oldstyle figs
 
 %% Use Libertine for Greek and Russian (Libertine is magnificent font)
-\substitutefont{LGR}{\rmdefault}{LinuxLibertineT}
-\substitutefont{T2A}{\rmdefault}{LinuxLibertineT}
+\substitutefont{LGR}{\rmdefault}{LinuxLibertineT}%
+\substitutefont{T2A}{\rmdefault}{LinuxLibertineT}%
 
-\mleftrightrestore
+\mleftrightrestore%
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}} % Default is
 \newcommand\bigsetminus{\setminus} % too ugly
 \renewcommand\setminus{\smallsetminus} % too ugly
 
 \else % Use the regular CM fonts
-\RequirePackage{amssymb}
-\RequirePackage[nointegrals]{wasysym}
-\RequirePackage{stmaryrd}
+\RequirePackage{amssymb}%
+\RequirePackage[nointegrals]{wasysym}%
+\RequirePackage{stmaryrd}%
 
-\mleftrightrestore
+\mleftrightrestore%
 \newcommand\bigsetminus{\setminus} % too ugly
 \renewcommand\setminus{\smallsetminus} % Default is too ugly
 \renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}} % Default is
                                 % too big
 \if@eucal % Euler mathcal
-\RequirePackage[bb=ams,frak=euler,cal=euler,scr=rsfso]{mathalfa}
+\RequirePackage[bb=ams,frak=euler,cal=euler,scr=rsfso]{mathalfa}%
 \else % AMS mathcal
-\RequirePackage[bb=ams,cal=cm,frak=euler,scr=rsfso]{mathalfa}
-\fi
-\fi
-\fi
+\RequirePackage[bb=ams,cal=cm,frak=euler,scr=rsfso]{mathalfa}%
+\fi \fi \fi
 
 %% Theorems and definitions
 \theoremstyle{plain}
