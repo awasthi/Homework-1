@@ -154,12 +154,15 @@ english]{babel}
 \substitutefont{LGR}{\rmdefault}{LinuxLibertineT}
 \substitutefont{T2A}{\rmdefault}{LinuxLibertineT}
 \mleftrightrestore
+\renewcommand\qedsymbol{\ensuremath{\blacksquare}} % Default is
 
 \else % Use the regular CM fonts
 \RequirePackage{amssymb}
 \RequirePackage[nointegrals]{wasysym}
 \RequirePackage{stmaryrd}
-\renewcommand\setminus{\smallsetminus}
+\renewcommand\setminus{\smallsetminus} % Default is too ugly
+\renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}} % Default is
+                                % too big
 \if@eucal % Euler mathcal
 \RequirePackage[bb=ams,frak=euler,cal=euler,scr=rsfso]{mathalfa}
 \else % AMS mathcal
@@ -229,13 +232,12 @@ english]{babel}
 \begin{quote}
 \proof[\textnormal{\textit{#1}}]%
 }{
-\renewcommand\qedsymbol{\ensuremath{\star}}
+% \renewcommand\qedsymbol{\ensuremath{\star}}
 \endproof
 \end{quote}
 }
 
 %% Renew some common commands to ones I personally prefer
-\renewcommand\qedsymbol{\ensuremath{\blacksquare}}
 \providecommand\coloneq{\coloneqq}
 \providecommand\eqcolon{\eqqcolon}
 \newcommand\trileq{\trianglelefteq}
