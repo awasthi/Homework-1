@@ -20,9 +20,9 @@
   \@eucaltrue
 }
 
-\newif\if@farsi\@farsifalse
-\DeclareOption{farsi}{
-  \@farsitrue
+\newif\if@ME\@MEfalse
+\DeclareOption{ME}{
+  \@MEtrue
 }
 
 \newif\if@CJK\@CJKfalse
@@ -41,27 +41,25 @@
 
 %%% Othe useful packages
 \@ifpackageloaded{hyperref}{}{\RequirePackage{hyperref}}
-\RequirePackage{cleveref}
 \@ifpackageloaded{xcolor}
                  {\PassOptionsToPackage{dvipsnames}{xcolor}}
                  {\RequirePackage[dvipsnames]{xcolor}}
 \RequirePackage{graphicx}
-\RequirePackage[final,babel]{microtype}
-\RequirePackage{enumitem}
-\RequirePackage{listings}
 \@ifpackageloaded{tikz}{\tikzcdset{arrow style=math font}}{}
 
 %% Language settings
 \RequirePackage{substitutefont}
 \RequirePackage[full]{textcomp}
+\RequirePackage{cmap}
 
-\if@farsi
+\if@ME
 \RequirePackage[LAE,LFE,LGR,T2A,T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{substitutefont}
 
 \def\spanishoptions{mexico}%
 \RequirePackage[%
+arabic,%
 farsi,%
 french,%
 german,%
@@ -71,6 +69,7 @@ russian,%
 english]{babel}
 
 \babeltags{%
+  ara=arabic,%
   fr=french,%
   de=german,%
   en=english,%
@@ -80,7 +79,16 @@ english]{babel}
   ru=russian%
 }
 
-\newcommand{\textfa}[1]{\foreignlanguage{farsi}{#1}}
+\renewcommand{\textara}[1]{\foreignlanguage{arabic}{\textRL{#1}}}
+\newcommand{\textfa}[1]{\foreignlanguage{farsi}{\textRL{#1}}}
+\newcommand{\textheb}[1]{\foreignlanguage{hebrew}{\textRL{#1}}}
+
+\makeatletter
+\pdfstringdefDisableCommands{%
+\let\beginL\@empty
+\let\endL\@empty
+}
+\makeatother
 
 \else
 \RequirePackage[LGR,T2A,T1]{fontenc}
@@ -114,6 +122,12 @@ english]{babel}
 \renewcommand{\textru}[1]{\foreignlanguage{russian}{#1}}
 
 \selectlanguage{english}
+
+%% Must be loaded after Babel
+\RequirePackage{cleveref}
+\RequirePackage[final,babel]{microtype}
+\RequirePackage{enumitem}
+\RequirePackage{listings}
 
 %%% East Asian languages
 \if@CJK
