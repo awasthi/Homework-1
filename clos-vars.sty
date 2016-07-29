@@ -27,7 +27,7 @@
 
 \newif\if@CJK\@CJKfalse
 \DeclareOption{CJK}{
-  \@CJKistrue
+  \@CJKtrue
 }
 
 \ProcessOptions\relax
@@ -80,7 +80,7 @@ english]{babel}
   ru=russian%
 }
 
-\newcommand{\textfr}[1]{\textRL{\textpa{#1}}}
+\newcommand{\textfa}[1]{\foreignlanguage{farsi}{#1}}
 
 \else
 \RequirePackage[LGR,T2A,T1]{fontenc}
@@ -105,6 +105,13 @@ english]{babel}
 }
 
 \fi
+
+\renewcommand{\textfr}[1]{\foreignlanguage{french}{#1}}
+\renewcommand{\textde}[1]{\foreignlanguage{german}{#1}}
+\renewcommand{\textes}[1]{\foreignlanguage{spanish}{#1}}
+\renewcommand{\texten}[1]{\foreignlanguage{english}{#1}}
+\renewcommand{\texthe}[1]{\foreignlanguage{greek}{#1}}
+\renewcommand{\textru}[1]{\foreignlanguage{russian}{#1}}
 
 \selectlanguage{english}
 
