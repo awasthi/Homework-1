@@ -248,7 +248,16 @@
 \begin{solution}
   It is enough to consider simple positive measurable functions $f$ since
   we can split $f$ into the difference of two positive simple measurable
-  functions; namely, $f=f^+-f^-$.
+  functions, namely, $f=f^+-f^-$. Now, since $f$ is a simple function,
+  $f=\sum_{n=1}^Na_n\chi_{E_n}$ for measurable subsets $E_n\subseteq
+  E$. Now, by Theorem 5.24, we have
+  \begin{align*}
+    \int_E f\diff x
+    &=\int_E\biggl[ \sum_{n=1}^N a_n\chi_{E_n} \biggr]\rmd x\\
+    &=\sum_{n=1}^N \int_{E_n} a_n\diff x\\
+    &=\sum_{n=1}^N a_n m(E_n),
+  \end{align*}
+  as we set out to show.
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 5, Ex.\@ 3]
@@ -257,6 +266,18 @@
   show that $\int_E f_k\to\int_E f$.
 \end{problem}
 \begin{solution}
+  First, we shall prove the result for the case when $m(E)<\infty$. Suppose
+  that $\{f_n\}$, $n\in\bbN$, is a sequence of nonnegative measurable
+  functions whose pointwise limit a.e.\@ is $f$. Then, given
+  $\varepsilon>0$ the set
+  \[
+    E_0=\left\{\,x\in E:\lim_{n\to\infty}f_n(x)\neq f(x)\,\right\}
+  \]
+  has measure $m(E_0)<\varepsilon$. Setting $E'=E\setminus E_0$, by
+  properties of the Lebesgue integral,
+  \[
+    \int_E f_n\diff x=\int_{E_0} f_n\diff x+\int_{E'} f_n\diff x.
+  \]
 \end{solution}
 
 %%% Local Variables:
