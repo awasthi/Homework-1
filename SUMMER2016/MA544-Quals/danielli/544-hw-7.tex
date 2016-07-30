@@ -169,10 +169,26 @@
 \end{problem}
 \begin{solution}
   Set $f=\sup_{n\in\bbN} |f_n|$; then, $f$ is measurable since it is the
-  supremum of measurable functions $|f_n|$. By Lusin's theorem, there
-  exists a closed subset $F'$ of $E$ with $m(E\setminus F')<\varepsilon$
-  and a continuous function $g\colon E\to\bbR$ such that
-  $g\restrict{F'}=f\restrict{F'}$. Now, consider the set
+  supremum of measurable functions $|f_n|$. By Lusin's theorem $f$
+  satisfies the $\calC$-property, i.e., there exists a closed subset $F'$
+  of $E$ with $m(E\setminus F')<\varepsilon/2$ and a continuous function
+  $\bar f\colon E\to\bbR$ such that $f\restrict{F'}=\bar
+  f\restrict{F'}$. Now, let $B$ be the closed ball centered at $\mathbf{0}$
+  such that $|E\setminus B|<\varepsilon/2$ (remember, this is all taking
+  place in $\bbR^n$, so we can do this). Thus, $F'\cap B$ is compact since
+  it is a closed subset of $B$ the latter being a compact set. Let
+  $F=F'\cap B$ then,
+  \begin{align*}
+    |E\setminus F|
+    &=|E\setminus(F'\cap B)|\\
+    &=|(E\setminus F')\cup(E\setminus B)|\\
+    &\leq|E\setminus F'|+|E\setminus B|\\
+    &<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}\\
+    &=\varepsilon
+  \end{align*}
+  so $F$ has the desired measure. Lastly, by the mean value theorem, $f$
+  achieves its maximum, call it $M$, on $F$ since $F$ is compact. It
+  follows that $f_n\restrict{F}\leq M$ for all $n\in\bbN$.
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 4, Ex.\@ 18]
@@ -186,7 +202,28 @@
   every $\varepsilon>0$.]
 \end{problem}
 \begin{solution}
-
+  For the initial part of this problem, suppose that $\{f_n\}$, $n\in\bbN$,
+  is a sequence of measurable functions that increase to $f$ pointwise and
+  consider the sequence of distribution functions $\{\omega_{f_n}\}$,
+  $n\in\bbN$. We aim to show that
+  $\lim_{n\to\infty}\omega_{f_n}=\omega_f$; call the latter limit,
+  $\omega_f'$. First we will show that $\omega_f'$ exists.
+  \begin{subproof}[Proof of claim]
+    Since $f_n\uparrow f$, given $\varepsilon>0$ there exists an index $N$
+    such that $m,n\geq N$ implies
+    \[
+      |f_n(x)-f_m(x)|<\varepsilon
+    \]
+    for a fixed $x\in E$. Then, assuming $n>m$, we have
+    \begin{align*}
+      |\omega_{f_n}(x)-\omega_{f_m}(x)|
+      &=\left|
+        m\left\{\,f_n>x\,\right\}
+        -m\left\{\,f_m>x\,\right\}
+        \right|\\
+      &=
+    \end{align*}
+  \end{subproof}
 \end{solution}
 
 % (Chapter 5: # 1, 2, 3, 4).
