@@ -123,13 +123,11 @@
     \liminf_{n\to\infty}\int\chi_{E_n}(x)\diff x=%
     \liminf_{n\to\infty}m(E_n).
   \]
-
-  Using more elementary methods, define
-  \[
-    V_n=\bigcap_{k=n}^\infty E_k.
-  \]
-  The sets $\{V_n\}$, $n\in\bbN$, are measurable since they are the
-  countable intersection of measurable subsets.
+  % \begin{remarks*}
+  %   The problem can be solved using more elementary results, but the setup
+  %   is a bit longer and amounts to proving a special case of Fatou's lemma
+  %   for characteristic functions.
+  % \end{remarks*}
 \end{solution}
 
 \begin{problem}
@@ -137,40 +135,46 @@
   \[
     F(x)=
     \begin{cases}
-      |B(\mathbf{0},x)|&x>0\\
+      m(B(\mathbf{0},x))&x>0\\
       0&x=0
     \end{cases}.
   \]
   Here $B(\mathbf{0},r)=\left\{\, y \in\bbR^n:| y |<r\,\right\}$. Prove
   that $F$ is monotonic increasing and continuous.
 \end{problem}
+% Define the linear map $T\colon[0,\infty)\times\bbR^n\to\bbR^n$ by
+  % $T(r) x = rx $. We claim that $B(\mathbf{0},r)=T(r,B(\mathbf{0},1))$. To
+  % reduce notation, set $B_1= B(\mathbf{0},1)$ and $B_r= B(\mathbf{0},r)$.
+  % \begin{quote}
+  %   \begin{proof}[Proof of claim]
+  %     Let $x\in B_r$. Then $|x |<r$ so $|x |/r<1$. Thus, $|x |/r\in B_1$ so
+  %     it is in the image of $B_1$ under the map $T(r,\cdot)$.
+
+  %     On the other hand, suppose $x\in T(r,B_1)$. Then $x =r y $ for some
+  %     $ y \in B_1$. Then, since $| y |<1$, $|x |=r| y |<r$ so $x\in B_r$.
+  %   \end{proof}
+  % \end{quote}
+
+  % From the claim, we see that $F(x)=|T(x,B(\mathbf{0},1))|$ which, by
+  % Problem 1, is nothing more that the polynomial $|B_1|x^n$. It is clear,
+  % from this equivalence, that $F$ is monotonically increasing: Take
+  % $x,y\in[0,\infty)$ such that $x<y$, then $x^n<y^n$ so
+  % \begin{equation}
+  %   \label{eq:prep:1:7}
+  %   F(x)=|B_1|x^n<|B_1|y^n=F(y).
+  % \end{equation}
+  % Thus, $F$ is monotonically increasing.
+
+  % In the argument above, since $F(x)=|B_1|x^n$ is a polynomial in
+  % $[0,\infty)$ (and polynomials are continuous on $\bbR$) $F$ is continuous
+  % on $[0,\infty)$.
 \begin{solution}
-  Define the linear map $T\colon[0,\infty)\times\bbR^n\to\bbR^n$ by
-  $T(r) x = rx $. We claim that $B(\mathbf{0},r)=T(r,B(\mathbf{0},1))$. To
-  reduce notation, set $B_1= B(\mathbf{0},1)$ and $B_r= B(\mathbf{0},r)$.
-  \begin{quote}
-    \begin{proof}[Proof of claim]
-      Let $x\in B_r$. Then $|x |<r$ so $|x |/r<1$. Thus, $|x |/r\in B_1$ so
-      it is in the image of $B_1$ under the map $T(r,\cdot)$.
-
-      On the other hand, suppose $x\in T(r,B_1)$. Then $x =r y $ for some
-      $ y \in B_1$. Then, since $| y |<1$, $|x |=r| y |<r$ so $x\in B_r$.
-    \end{proof}
-  \end{quote}
-
-  From the claim, we see that $F(x)=|T(x,B(\mathbf{0},1))|$ which, by
-  Problem 1, is nothing more that the polynomial $|B_1|x^n$. It is clear,
-  from this equivalence, that $F$ is monotonically increasing: Take
-  $x,y\in[0,\infty)$ such that $x<y$, then $x^n<y^n$ so
-  \begin{equation}
-    \label{eq:prep:1:7}
-    F(x)=|B_1|x^n<|B_1|y^n=F(y).
-  \end{equation}
-  Thus, $F$ is monotonically increasing.
-
-  In the argument above, since $F(x)=|B_1|x^n$ is a polynomial in
-  $[0,\infty)$ (and polynomials are continuous on $\bbR$) $F$ is continuous
-  on $[0,\infty)$.
+  Let $T\colon\bbR^n\times[0,x)\to\bbR^n$ be the linear map given by
+  $T(x,r)=rx$. By Problem 1, we know that
+  $T(B(\mathbf{0},1),r)=B(\mathbf{0},r)$ and consequently,
+  $m(B(\mathbf{0},1))=|r|^nm(B(\mathbf{0},1))$. Interpreting
+  $B(\mathbf{0},0)=\emptyset$, we have
+  $F(x)=m\left(T(B(\mathbf{0},1),x)\right)$.
 \end{solution}
 
 \begin{problem}
