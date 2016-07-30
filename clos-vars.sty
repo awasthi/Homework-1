@@ -37,7 +37,6 @@
 \RequirePackage{amsthm}
 \RequirePackage{mathtools}
 \RequirePackage{mleftright}
-\mleftright
 
 %%% Othe useful packages
 \@ifpackageloaded{hyperref}{}{\RequirePackage{hyperref}}
@@ -154,7 +153,6 @@ english]{babel}
 \substitutefont{LGR}{\rmdefault}{Tempora}%
 \substitutefont{T2A}{\rmdefault}{Tempora}%
 
-\mleftrightrestore%
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}} % Default is
 \newcommand\bigsetminus{\setminus}%
 \renewcommand\setminus{\smallsetminus}%
@@ -180,7 +178,6 @@ english]{babel}
 \substitutefont{LGR}{\rmdefault}{LinuxLibertineT}%
 \substitutefont{T2A}{\rmdefault}{LinuxLibertineT}%
 
-\mleftrightrestore%
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}} % Default is
 \newcommand\bigsetminus{\setminus} % too ugly
 \renewcommand\setminus{\smallsetminus} % too ugly
@@ -190,7 +187,6 @@ english]{babel}
 \RequirePackage[nointegrals]{wasysym}%
 \RequirePackage{stmaryrd}%
 
-\mleftrightrestore%
 \newcommand\bigsetminus{\setminus} % too ugly
 \renewcommand\setminus{\smallsetminus} % Default is too ugly
 \renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}} % Default is big
@@ -258,9 +254,9 @@ english]{babel}
 \@ifundefined{solution}{%
 \newenvironment{solution}[1][Solution]{%
   \proof[\textnormal{\bfseries{#1}}]%
-  $\blacktriangleright$
+  \ensuremath{\scriptstyle\blacktriangleright}
 }{
-\renewcommand\qedsymbol{\ensuremath{\blacktriangleleft}}
+\renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacktriangleleft}}
 \endproof}
 }{}
 \makeatother

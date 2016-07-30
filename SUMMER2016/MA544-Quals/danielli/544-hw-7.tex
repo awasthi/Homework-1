@@ -202,28 +202,13 @@
   every $\varepsilon>0$.]
 \end{problem}
 \begin{solution}
-  For the initial part of this problem, suppose that $\{f_n\}$, $n\in\bbN$,
-  is a sequence of measurable functions that increase to $f$ pointwise and
-  consider the sequence of distribution functions $\{\omega_{f_n}\}$,
-  $n\in\bbN$. We aim to show that
-  $\lim_{n\to\infty}\omega_{f_n}=\omega_f$; call the latter limit,
-  $\omega_f'$. First we will show that $\omega_f'$ exists.
-  \begin{subproof}[Proof of claim]
-    Since $f_n\uparrow f$, given $\varepsilon>0$ there exists an index $N$
-    such that $m,n\geq N$ implies
-    \[
-      |f_n(x)-f_m(x)|<\varepsilon
-    \]
-    for a fixed $x\in E$. Then, assuming $n>m$, we have
-    \begin{align*}
-      |\omega_{f_n}(x)-\omega_{f_m}(x)|
-      &=\left|
-        m\left\{\,f_n>x\,\right\}
-        -m\left\{\,f_m>x\,\right\}
-        \right|\\
-      &=
-    \end{align*}
-  \end{subproof}
+  For the first part of this problem we will show that the sequence of
+  distribution functions $\{\omega_{f_n}\}$, $n\in\bbN$, is increasing and
+  that its limit is $\omega_f$. It is easy to verify that this sequence is
+  in fact increasing: if $x\in\left\{\,f_{n-1}\geq M\,\right\}$ then
+  $x\in\left\{\,f_n\geq M\,\right\}$ since $f_n\geq f_{n-1}$ for all $x\in
+  E$. Thus, $\omega_{f_n}\geq\omega_{f_{n-1}}$. Now we need to show that
+  the limit of this sequence
 \end{solution}
 
 % (Chapter 5: # 1, 2, 3, 4).
