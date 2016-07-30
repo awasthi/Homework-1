@@ -206,9 +206,37 @@
   distribution functions $\{\omega_{f_n}\}$, $n\in\bbN$, is increasing and
   that its limit is $\omega_f$. It is easy to verify that this sequence is
   in fact increasing: if $x\in\left\{\,f_{n-1}\geq M\,\right\}$ then
-  $x\in\left\{\,f_n\geq M\,\right\}$ since $f_n\geq f_{n-1}$ for all $x\in
-  E$. Thus, $\omega_{f_n}\geq\omega_{f_{n-1}}$. Now we need to show that
-  the limit of this sequence
+  $x\in\left\{\,f_n\geq M\,\right\}$ since $f_n\geq f_{n-1}$ for all
+  $x\in E$. Thus, $\omega_{f_n}\geq\omega_{f_{n-1}}$. Now we need to show
+  that the limit of this sequence is in fact $\omega_f$: fix an $x\in E$
+  and let $\varepsilon>0$ be given. Then there exists an index $N'$ such
+  that $n\geq N'$ implies $|f(x)-f_n(x)|<\varepsilon$. Now, we want to use
+  this $\varepsilon$ and index $N'$ (with some possible alterations), for
+  some fixed $M$, we want to show that the difference
+  \[
+    \left| \omega_f(M)-\omega_{f_n}(M) \right|<\varepsilon.
+  \]
+  First, by properties of the Lebesgue measure
+  \[
+    m\left\{\,f>M\,\right\}-m\left\{\,f_n>M\,\right\}\leq
+    m\left(\left\{\,f>M\,\right\}\setminus \left\{\,f_n>M\,\right\}\right).
+  \]
+  In turn, it is easy to see that the latter set is in fact
+  \begin{align*}
+    E_{M,n}
+    &=\left\{\,x\in E:\text{$f(x)>M$ and $f_n(x)\leq M$}\,\right\}\\
+    &=\left\{\,x\in E:\text{$f(x)>M$ and $f(x)-f_n(x)>0$}\,\right\}.
+  \end{align*}
+  Then, $E_{M,n}\subseteq\left\{\,x\in E:f(x)-f_n(x)>M\,\right\}=E_{0,n}$
+  and the the measure of the latter set converges to $0$ since $f_n\to f$
+  and this implies that $f_n$ converges to $f$ in measure (a weaker form of
+  pointwise convergence). Let $N''$ be the index such that $n\geq N'$
+  implies $m(E_{0,n})<\varepsilon$. Then for $n\geq N$ with
+  $N=\max\{N',N''\}$, the difference
+  \[
+    \left| \omega_f(M)-\omega_{f_n}(M) \right|<\varepsilon.
+  \]
+  Thus, we have shown that $\omega_{f_n}\uparrow\omega_f$.
 \end{solution}
 
 % (Chapter 5: # 1, 2, 3, 4).
@@ -218,6 +246,9 @@
   $\int_E f=\sum_{j=1}^N a_jm(E_j)$. [Use (5.24)].
 \end{problem}
 \begin{solution}
+  It is enough to consider simple positive measurable functions $f$ since
+  we can split $f$ into the difference of two positive simple measurable
+  functions; namely, $f=f^+-f^-$.
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 5, Ex.\@ 3]
