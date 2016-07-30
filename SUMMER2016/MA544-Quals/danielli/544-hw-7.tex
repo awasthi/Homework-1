@@ -267,7 +267,34 @@
 \end{problem}
 \begin{solution}
   The result follows from a simple application of Fatou's lemma. Consider
-  the sequence of integrals $\left\{\int_E f_n \right\}$, $n\in\bbN$.
+  the sequence of integrals $\left\{\int_E f_n \right\}$, $n\in\bbN$. By
+  Fatou's lemma
+  \begin{align*}
+    \int_E \liminf_{n\to\infty}f_n\diff x
+    &=\int_E f\diff x\\
+    &\leq\liminf_{n\to\infty}\int_E f_n\diff x.
+  \end{align*}
+  By Theorem 5.10, since $f_n\leq f$, we have
+  \[
+    \limsup_{n\to\infty}\int_E f_n\diff x\leq
+    \int_E f\diff x.
+  \]
+  Thus, we have
+  \[
+    \limsup_{n\to\infty}\int_E f_n\diff x\leq
+    \liminf_{n\to\infty}\int_E f_n\diff x,
+  \]
+  which implies that
+  \[
+    \limsup_{n\to\infty}\int_E f_n\diff
+    x=\liminf_{n\to\infty}\int_E f_n\diff x
+  \]
+  so
+  \[
+    \lim_{n\to\infty}\int_E f_n\diff x=
+    \int_Ef\diff x
+  \]
+  as we set out to show.
 \end{solution}
 
 %%% Local Variables:
