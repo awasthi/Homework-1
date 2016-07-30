@@ -266,18 +266,8 @@
   show that $\int_E f_k\to\int_E f$.
 \end{problem}
 \begin{solution}
-  First, we shall prove the result for the case when $m(E)<\infty$. Suppose
-  that $\{f_n\}$, $n\in\bbN$, is a sequence of nonnegative measurable
-  functions whose pointwise limit a.e.\@ is $f$. Then, given
-  $\varepsilon>0$ the set
-  \[
-    E_0=\left\{\,x\in E:\lim_{n\to\infty}f_n(x)\neq f(x)\,\right\}
-  \]
-  has measure $m(E_0)<\varepsilon$. Setting $E'=E\setminus E_0$, by
-  properties of the Lebesgue integral,
-  \[
-    \int_E f_n\diff x=\int_{E_0} f_n\diff x+\int_{E'} f_n\diff x.
-  \]
+  The result follows from a simple application of Fatou's lemma. Consider
+  the sequence of integrals $\left\{\int_E f_n \right\}$, $n\in\bbN$.
 \end{solution}
 
 %%% Local Variables:
