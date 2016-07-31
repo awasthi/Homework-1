@@ -173,13 +173,16 @@
 \begin{solution}
   The statement is false and, of course, the counterexample involves
   existence of nonmeasurable sets. Let \(V\subseteq[0,1]\) be a Vitali set
-  and define the function \(f\colon\bbR\to\bbR\) by the rule
+  and consider the function \(f\colon\bbR\to\bbR\) given by the rule
   \[
-    f(x)=\begin{cases}
-      {-1}&\text{if \(x\in V\),}\\
+    f(x)=
+    \begin{cases}
+      x&\text{if \(x\in V\),}\\
       1&\text{if \(x\in\bbR\setminus V\).}
     \end{cases}
   \]
+  Then, \(\left\{\,f=r\,\right\}\) is measurable for all \(r\in\bbR\) since
+  it either consists of a singleton set
 \end{solution}
 
 \begin{problem}
@@ -191,6 +194,12 @@
   is measurable.
 \end{problem}
 \begin{solution}
+  Express the set that is given to us as
+  \[
+    \left\{\,x:\text{\(\lim_{k\to\infty} f_k(x)\) exists}\,\right\}=%
+    \left\{\,x:\limsup_{n\to\infty}f_n(x)=\liminf_{n\to\infty}f_n(x)\,\right\}.
+  \]
+  Then this set is exactly the difference
 \end{solution}
 
 \begin{problem}
