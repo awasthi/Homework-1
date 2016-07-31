@@ -6,7 +6,28 @@
   open cover of \(X\) has a countable subcover.
 \end{problem}
 \begin{solution}
+  Suppose \(\calB\) is a countable basis for \(X\). Let
+  \(\{B_n:n\in\bbN\}\) be an enumeration of \(\calB\) and let
+  \(\calU=\{U_\alpha:\alpha\in A\}\) an open cover of \(X\). To every
+  \(B_n\) in \(\calB\) associate an element \(U_n\) such that
+  \(B_n\subseteq U_n\) if such an \(n\) exists; otherwise, associate to
+  \(B_n\) the empty set \(\emptyset\). We claim that the subcollection
+  \(\calU'=\{U_n:n\in\bbN\}\) is a countable subcover of \(\calU\).
 
+  The countability of \(\calU'\) follows from the countability of
+  \(\calB\). Let \(f\colon\calB\to\calU\) be the function which assigns
+  \(B_n\) to \(U_n\). Then, by definition, \(\calU'=f(\calB)\) and,
+  restricting the codomain of \(f\) to \(\calU'\), we have
+  \(f'\colon\calB\to\calU'\) is surjective. Since \(\calB\) is countable,
+  there exists a surjection \(g\colon\bbN\to\calB\). Then, the map
+  \(\hat f'\circ g\colon\bbN\to\calU'\) is surjective. It follows that
+  \(\calU'\) is at most countable.
+
+  It remains to show that \(\calU'\) cover \(X\). Suppose \(x\notin U_n\)
+  for some \(n\in\bbN\).
+
+  It follows that every cover \(\calU\) of \(X\) admits a finite subcover
+  \(\calU'\) of \(\calU\).
 \end{solution}
 
 \begin{problem}
