@@ -183,24 +183,33 @@
   \]
   Then, \(\left\{\,f=r\,\right\}\) is measurable for all \(r\in\bbR\) since
   the set either consists of a single point or is the empty set. However,
-  $\left\{\,f\geq 0\,\right\}=V$ is not measurable.
+  \(\left\{\,f\geq 0\,\right\}=V\) is not measurable.
 \end{solution}
 
 \begin{problem}
-  Let \(\left\{f_k\right\}_{k=1}^\infty\) be a sequence of measurable
-  functions on \(\bbR\). Prove that the set
+  Let \(\{f_k\}\) be a sequence of measurable functions on \(\bbR\). Prove
+  that the set
   \[
     \left\{\,x:\text{\(\lim_{k\to\infty} f_k(x)\) exists}\,\right\}
   \]
   is measurable.
 \end{problem}
 \begin{solution}
-  Express the set that is given to us as
+  Suppose \({\{f_n\}}\), \(n\in\bbN\), is a sequence of measurable
+  functions and let
   \[
-    \left\{\,x:\text{\(\lim_{k\to\infty} f_k(x)\) exists}\,\right\}=%
-    \left\{\,x:\limsup_{n\to\infty}f_n(x)=\liminf_{n\to\infty}f_n(x)\,\right\}.
+    E=\left\{\,x: \text{\(\lim_{n\to\infty} f_n(x)\) exists} \,\right\}.
   \]
-  Then this set is exactly the difference
+  Then, by general properties of the limit supremum and the limit infimum,
+  we know that \(\lim_{n\to\infty}f_n(x)\) exists if and only if
+  \[
+    \limsup_{n\to\infty}f_n(x)=\liminf_{n\to\infty}f_n(x).
+  \]
+  Both of these functions are measurable so the set
+  \[
+    E=\left\{\,x:\limsup_{n\to\infty}f_n(x)=\liminf_{n\to\infty}f_n(x)\,\right\}.
+  \]
+  is measurable.
 \end{solution}
 
 \begin{problem}
@@ -214,6 +223,43 @@
   \([a,b]\).
 \end{problem}
 \begin{solution}
+  % First, we show that if \(f\colon[a,b]\to\bbR\) is absolutely continuous
+  % on \([a,b]\), it is continuous on \([a,b]\). Let \(\varepsilon>0\) be
+  % given. Then, since \(f\) is absolutely continuous on \([a,b]\), there
+  % exists a \(\delta>0\) such that that for every finite disjoint collection
+  % of open intervals \(\{(a_n,b_n)\}\), \(1\leq n\leq N\), satisfying
+  % \(\sum_{n=1}^Nb_n-a_n<\delta\), we have
+  % \[
+  %   \sum_{n=1}^N\bigl|f(b_n)-f(a_n)\bigr|<\varepsilon.
+  % \]
+  % In particular, for any \(x\in[a,b]\), with \(|x-y|<\delta\),
+  % \(\{(x,y)\}\) (if \(|a-x|<\delta\) or if \(|b-x|<\delta\), consider
+  % instead \((y,x)\)) is a disjoint collection of open intervals with
+  % \(y-x<\delta\). Thus,
+  % \[
+  %   \bigl|f(x)-f(y)\bigr|<\varepsilon.
+  % \]
+  % Thus, \(f\) is continuous on \([a,b]\); the argument can be easily
+  % adapted to the case when \(x=a,b\).
+
+  % Since \(f\) is continuous, it suffices to show that
+  % \(\lim_{\Delta(\Gamma)\to 0} S_\Gamma<\infty\); where \(\Delta(\Gamma)\)
+  % denotes the partition size of \(\Gamma\), i.e., the
+  % \(\max\left\{\,x_i-x_{i-1}:1\leq i\leq\card \Gamma\,\right\}\).
+  Let \(\varepsilon=1\) then, since \(f\colon[a,b]\to\bbr\) is absolutely
+  continuous, there exists \(\delta>0\) such that
+  \(|f(x)-f(y)|<\varepsilon\) whenever \(y-x<\delta\) (assuming
+  \(x<y\)). Partition the closed interval \([a,b]\) into subintervals
+  \(\left\{[a_n,b_n]:1\leq n\leq N\right\}\) of length less than or equal
+  to \(\delta\). Then
+  \[
+    \var(f;[a_n,b_n])\leq 1.
+  \]
+  Thus,
+  \[
+    \var(f;[a,b])\leq N
+  \]
+  for every partition \(\Gamma\) of \([a,b]\).
 \end{solution}
 
 \begin{problem}
