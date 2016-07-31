@@ -128,14 +128,14 @@
         \(|f(x)-f(y)|<\frac{1}{n}\) whenever \(|x-y|<\delta_n\)}\,\right\}.
   \]
   We claim that (i) the \(G_n\) are open and (ii)
-  \(C=\bigcup_{n\in\bbN}G_n\).
+  \(C=\bigcap_{n\in\bbN}G_n\).
 
   The proof of (i) is easy: let \(x\in G_n\) then there exists
   \(\delta_n>0\) such that
   \[
     |f(x)-f(y)|<\frac{1}{n}.
   \]
-  Then $B(x,\delta_n)\subseteq G_n$ since \(x'\in B(x,\delta_n)\) implies
+  Then \(B(x,\delta_n)\subseteq G_n\) since \(x'\in B(x,\delta_n)\) implies
   that \(|x-x'|<\delta\) so
   \[
     |f(x)-f(x')|<\frac{1}{n}.
@@ -146,9 +146,14 @@
   \[
     |f(x)-f(y)|<\varepsilon
   \]
-  whenever \(|x-y|<\delta\). By the Archimedean property of \(\bbR\) there
-  exist a positive integer \(N\) such that \(1/N<\varepsilon\). Let $A=\Im
-  f$ be the real part
+  whenever \(|x-y|<\delta\). In particular, if \(\varepsilon=1/n\) then
+  there exists \(\delta_n\) such that \(|x-y|<\delta_n\) implies
+  \[
+    |f(x)-f(y)|<\frac{1}{n}
+  \]
+  for ever \(n\in\bbN\). Thus, \(x\in\bigcap_{n\in\bbN} G_n\). On the other
+  hand, if \(x\in\bigcap_{ni\in\bbN} G_n\), then \(x\in G_n\) for all
+  \(n\in\bbN\).
 \end{solution}
 
 \begin{problem}
