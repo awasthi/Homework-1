@@ -329,9 +329,11 @@ english]{babel}
 \newcommand{\blank}{{-}} % useful for categories
 \DeclareMathOperator{\Hom}{Hom}
 \renewcommand{\hom}{\mathop{hom}}
+\newcommand{\kAlg}[1]{#1\textnormal{-}\catname{Alg}}
 \newcommand{\catname}[1]{\mathbf{#1}}
 \newcommand{\AbGrp}{\catname{AbGrp}}
 \newcommand{\Grp}{\catname{Grp}}
+\newcommand{\LieAlg}{\catname{LieAlg}}
 \newcommand{\Haus}{\catname{Haus}}
 \newcommand{\Man}{\catname{Man}}
 \newcommand{\Met}{\catname{Met}}
@@ -340,9 +342,11 @@ english]{babel}
 \newcommand{\Ring}{\catname{Ring}}
 \newcommand{\Set}{\catname{Set}}
 \newcommand{\Topo}{\catname{Top}}
-\newcommand{\ptTop}{\catname{Top}_\star}
-\newcommand{\VEC}{\catname{Vec}}
-\newcommand{\kVec}[1]{#1\textnormal{-}\VEC}
+\newcommand{\starTop}{\catname{Top}_\star}
+\newcommand{\Vect}{\catname{Vect}}
+\newcommand{\kVect}[1]{#1\textnormal{-}\Vect}
+
+\newcommand{\opp}{\mathrm{opp}}
 
 %%% Algebra
 %% Some special groups (mostly Lie groups)
@@ -414,7 +418,7 @@ english]{babel}
 \DeclareMathOperator{\Jac}{Jac}
 \DeclareMathOperator{\nil}{nil}
 \DeclareMathOperator{\Nil}{Nil}
-\DeclareMathOperator{\Maxspec}{Maxspec}
+\DeclareMathOperator{\MaxSpec}{MaxSpec}
 \DeclareMathOperator{\Quot}{Quot}
 \DeclareMathOperator{\rad}{rad}
 \DeclareMathOperator{\Rad}{Rad}
@@ -442,7 +446,7 @@ english]{babel}
 \DeclareMathOperator{\Diffeo}{Diffeo}
 \DeclareMathOperator{\ind}{ind}
 \DeclareMathOperator{\Tan}{Tan}
-\DeclareMathOperator{\Vect}{Vec}
+\DeclareMathOperator{\Vec}{Vec}
 
 %% Topological spaces
 \newcommand{\bbCP}{\mathbb{CP}}
