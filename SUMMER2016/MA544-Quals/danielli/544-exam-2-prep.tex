@@ -7,7 +7,7 @@
   \[
     f(x)=
     \begin{cases}
-      \left| x \right|^{-(n+1)}&\text{if \(x\neq\mathbf{0}\),}\\
+      |x|^{-(n+1)}&\text{if \(x\neq\mathbf{0}\),}\\
       0&\text{if \(x=\mathbf{0}\).}
     \end{cases}
   \]
@@ -15,26 +15,28 @@
   \(B(\mathbf{0},\varepsilon)\), and that there exists a constant \(C>0\)
   such that
   \[
-    \int_{\bbR^n\setminus B(\mathbf{0},\varepsilon)}f( x ) \diff x
+    \int\limits_{\bbR^n\setminus B(\mathbf{0},\varepsilon)}f(x)\diff x
     \leq\frac{C}{\varepsilon}.
   \]
 \end{problem}
 \begin{solution}
+  Suppose that the following is true.
 \end{solution}
 
 \begin{problem}
   Let \(\left\{f_k\right\}\) be a sequence of nonnegative measurable
   functions on \(\bbR^n\), and assume that \(f_k\) converges pointwise
   almost everywhere to a function \(f\). If
-\[
-\int_{\bbR^n} f=\lim_{k\to\infty}\int_{\bbR^n} f_k<\infty,
-\]
-show that
-\[
-\int_E f=\lim_{k\to\infty}\int_E f_k
-\]
-for all measurable subsets \(E\) of \(\bbR^n\). Moreover, show that this is
-not necessarily true if \(\int_{\bbR^n} f=\lim_{k\to\infty} f_k=\infty\).
+  \[
+    \int_{\bbR^n} f=\lim_{k\to\infty}\int_{\bbR^n} f_k<\infty,
+  \]
+  show that
+  \[
+    \int_E f=\lim_{k\to\infty}\int_E f_k
+  \]
+  for all measurable subsets \(E\) of \(\bbR^n\). Moreover, show that this
+  is not necessarily true if
+  \(\int_{\bbR^n} f=\lim_{k\to\infty} f_k=\infty\).
 \end{problem}
 \begin{solution}
 \end{solution}
@@ -43,44 +45,45 @@ not necessarily true if \(\int_{\bbR^n} f=\lim_{k\to\infty} f_k=\infty\).
   Assume that \(E\) is a measurable set of \(\bbR^n\), with
   \(|E|<\infty\). Prove that a nonnegative function \(f\) defined on \(E\)
   is integrable if and only if
-\[
-\sum_{k=0}^\infty\left|\left\{\, x \in E:f( x )\geq
-    k\,\right\}\right|<\infty.
-\]
+  \[
+    \sum_{k=0}^\infty\left|\left\{\, x \in E:f( x )\geq
+        k\,\right\}\right|<\infty.
+  \]
 \end{problem}
 \begin{solution}
 \end{solution}
+
 \begin{problem}
   Suppose that \(E\) is a measurable subset of \(\bbR^n\), with
   \(|E|<\infty\). If \(f\) and \(g\) are measurable functions on \(E\),
   define
-\[
-\rho(f,g)=\int_E\frac{|f-g|}{1+|f-g|}.
-\]
-Prove that \(\rho(f_k,f)\to 0\) as \(k\to\infty\) if and only if \(f_k\)
-converges to \(f\) as \(k\to\infty\).
+  \[
+    \rho(f,g)=\int_E\frac{|f-g|}{1+|f-g|}.
+  \]
+  Prove that \(\rho(f_k,f)\to 0\) as \(k\to\infty\) if and only if \(f_k\)
+  converges to \(f\) as \(k\to\infty\).
 \end{problem}
 \begin{solution}
 \end{solution}
 
 \begin{problem}
   Define the \emph{gamma function} \(\Gamma\colon\bbR^+\to\bbR\) by
-\[
-\Gamma(y)=\int_0^\infty e^{-u}u^{y-1}\diff u,
-\]
-and the \emph{beta function} \(\beta\colon\bbR^+\times\bbR^+\to\bbR\) by
-\[
-\beta(x,y)=\int_0^1 t^{x-1}(1-t)^{y-1}\diff t.
-\]
-\begin{enumerate}[label=(\alph*),noitemsep]
-\item Prove that the definition of the gamma function is well-posed, i.e.,
-  the function \(u\mapsto e^{-u}u^{y-1}\) is in \(L(\bbR^+)\) for all
-  \(y\in\bbR^+\).
-\item Show that
-\[
-\beta(x,y)=\frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}.
-\]
-\end{enumerate}
+  \[
+    \Gamma(y)=\int_0^\infty e^{-u}u^{y-1}\diff u,
+  \]
+  and the \emph{beta function} \(\beta\colon\bbR^+\times\bbR^+\to\bbR\) by
+  \[
+    \beta(x,y)=\int_0^1 t^{x-1}(1-t)^{y-1}\diff t.
+  \]
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item Prove that the definition of the gamma function is well-posed,
+    i.e., the function \(u\mapsto e^{-u}u^{y-1}\) is in \(L(\bbR^+)\) for
+    all \(y\in\bbR^+\).
+  \item Show that
+    \[
+      \beta(x,y)=\frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}.
+    \]
+  \end{enumerate}
 \end{problem}
 \begin{solution}
 \end{solution}
@@ -89,9 +92,9 @@ and the \emph{beta function} \(\beta\colon\bbR^+\times\bbR^+\to\bbR\) by
   Let \(f\in L(\bbR^n)\) and for \(\mathbf{h}\in\bbR^n\) define
   \(f_{\mathbf{h}}\colon\bbR^n\to\bbR\) be
   \(f_{\mathbf{h}}( x )= f( x -\mathbf{h})\). Prove that
-\[
-\lim_{\mathbf{h}\to\mathbf{0}}\int_{\bbR^n}\left|f_{\mathbf{h}}-f\right|=0.
-\]
+  \[
+    \lim_{\mathbf{h}\to\mathbf{0}}\int_{\bbR^n}\left|f_{\mathbf{h}}-f\right|=0.
+  \]
 \end{problem}
 \begin{solution}
 \end{solution}
@@ -100,23 +103,24 @@ and the \emph{beta function} \(\beta\colon\bbR^+\times\bbR^+\to\bbR\) by
 \begin{enumerate}[label=(\alph*),noitemsep]
 \item If \(f_k,g_k,f,g\in L(\bbR^n)\), \(f_k\to f\) and \(g_k\to g\) a.e.\@
   in \(\bbR^n\), \(|f_k|\leq g_k\) and
-\[
-\int_{\bbR^n}g_k\longrightarrow\int_{\bbR^n}g,
-\]
-prove that
-\[
-\int_{\bbR^n} f_k\longrightarrow\int_{\bbR^n}f.
-\]
+  \[
+    \int_{\bbR^n}g_k\longrightarrow\int_{\bbR^n}g,
+  \]
+
+  prove that
+  \[
+    \int_{\bbR^n} f_k\longrightarrow\int_{\bbR^n}f.
+  \]
 \item Using part (a) show that if \(f_k,f\in L(\bbR^n)\) and \(f_k\to f\)
   a.e.\@ in \(\bbR^n\), then
-\[
-  \int_{\bbR^n}|f_k-f|\longrightarrow 0\qquad\text{as \(k\to\infty\)}
-\]
-if and only if
-\[
-  \int_{\bbR^n}|f_k|\longrightarrow\int_{\bbR^n}|f|\qquad\text{as
-    \(k\to\infty\)}.
-\]
+  \[
+    \int_{\bbR^n}|f_k-f|\longrightarrow 0\qquad\text{as \(k\to\infty\)}
+  \]
+  if and only if
+  \[
+    \int_{\bbR^n}|f_k|\longrightarrow\int_{\bbR^n}|f|\qquad\text{as
+      \(k\to\infty\)}.
+  \]
 \end{enumerate}
 \end{problem}
 \begin{solution}

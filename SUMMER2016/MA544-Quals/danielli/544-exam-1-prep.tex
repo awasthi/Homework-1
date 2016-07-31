@@ -223,30 +223,7 @@
   \([a,b]\).
 \end{problem}
 \begin{solution}
-  % First, we show that if \(f\colon[a,b]\to\bbR\) is absolutely continuous
-  % on \([a,b]\), it is continuous on \([a,b]\). Let \(\varepsilon>0\) be
-  % given. Then, since \(f\) is absolutely continuous on \([a,b]\), there
-  % exists a \(\delta>0\) such that that for every finite disjoint collection
-  % of open intervals \(\{(a_n,b_n)\}\), \(1\leq n\leq N\), satisfying
-  % \(\sum_{n=1}^Nb_n-a_n<\delta\), we have
-  % \[
-  %   \sum_{n=1}^N\bigl|f(b_n)-f(a_n)\bigr|<\varepsilon.
-  % \]
-  % In particular, for any \(x\in[a,b]\), with \(|x-y|<\delta\),
-  % \(\{(x,y)\}\) (if \(|a-x|<\delta\) or if \(|b-x|<\delta\), consider
-  % instead \((y,x)\)) is a disjoint collection of open intervals with
-  % \(y-x<\delta\). Thus,
-  % \[
-  %   \bigl|f(x)-f(y)\bigr|<\varepsilon.
-  % \]
-  % Thus, \(f\) is continuous on \([a,b]\); the argument can be easily
-  % adapted to the case when \(x=a,b\).
-
-  % Since \(f\) is continuous, it suffices to show that
-  % \(\lim_{\Delta(\Gamma)\to 0} S_\Gamma<\infty\); where \(\Delta(\Gamma)\)
-  % denotes the partition size of \(\Gamma\), i.e., the
-  % \(\max\left\{\,x_i-x_{i-1}:1\leq i\leq\card \Gamma\,\right\}\).
-  Let \(\varepsilon=1\) then, since \(f\colon[a,b]\to\bbr\) is absolutely
+  Let \(\varepsilon=1\) then, since \(f\colon[a,b]\to\bbR\) is absolutely
   continuous, there exists \(\delta>0\) such that
   \(|f(x)-f(y)|<\varepsilon\) whenever \(y-x<\delta\) (assuming
   \(x<y\)). Partition the closed interval \([a,b]\) into subintervals
@@ -277,6 +254,50 @@
   \]
 \end{problem}
 \begin{solution}
+  There are three cases to consider (1) \(c\in(a,b)\), (2) \(c=a\) and (3)
+  \(c=b\). Cases (2) and (3) can be handled easily: if \(c=a\) then the
+  Rieman--Stieltjes integral of \(f\) with respect to \(\chi_{\{c\}}\) is
+  the supremum over all sums
+  \[
+    \sum_{n=1}^N f(\xi_n)\bigl[ \chi_{\{c\}}(x_n)-\chi_{\{c\}}(x_{n-1})\bigr]
+  \]
+  where \(x_0=a\) and \(x_N=b\) for all partitions
+  \(\Gamma=\{x_0,\dotsc,x_N\}\) of \([a,b]\). Thus, the sum
+  \[
+    \sum_{n=1}^N
+    f(\xi_n)\bigl[\chi_{\{c\}}(x_n)-\chi_{\{c\}}(x_{n-1})\bigr]
+    =\begin{cases}
+      -f(\xi_0)&\text{if \(c=a\),}\\
+      f(\xi_N)&\text{if \(c=b\).}
+    \end{cases}
+  \]
+  Letting \(\Delta(\Gamma)\to 0\), \(\xi_0\to a\) and \(\xi_N\to b\) giving
+  us
+  \[
+    \int_a^b f d \chi_{\{c\}}=
+    \begin{cases}
+      -f(a)&\text{if \(c=a\),}\\
+      f(b)&\text{if \(c=b\).}
+    \end{cases}
+  \]
+
+  It remains to show that
+  \[
+    \int_a^b f\diff\chi_{\{c\}}=0
+  \]
+  if \(c\in(a,b)\). To that end, note that if \(\Gamma_c\) is a partition
+  containing the point \(c\), say, \(x_m=c\) for some \(1\leq m\leq N\),
+  the partial sums yield
+  \[
+    \sum_{n=1}^N
+    f(\xi_n)\bigl[\chi_{\{c\}}(x_n)-\chi_{\{c\}}(x_{n-1})\bigr]
+    =f(\xi_{m+1})-f(\xi_m).
+  \]
+  Letting \(\Delta(\Gamma_c)\to 0\), since \(f\) is continuous,
+  \(f(\xi_{m+1})\to f(\xi_m)\). Thus,
+  \[
+    \int_a^b f\diff\chi_{\{c\}}=0.
+  \]
 \end{solution}
 
 %%% Local Variables:
