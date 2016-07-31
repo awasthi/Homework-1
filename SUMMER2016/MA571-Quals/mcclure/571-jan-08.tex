@@ -20,11 +20,19 @@
   restricting the codomain of \(f\) to \(\calU'\), we have
   \(f'\colon\calB\to\calU'\) is surjective. Since \(\calB\) is countable,
   there exists a surjection \(g\colon\bbN\to\calB\). Then, the map
-  \(\hat f'\circ g\colon\bbN\to\calU'\) is surjective. It follows that
+  \(f'\circ g\colon\bbN\to\calU'\) is surjective. It follows that
   \(\calU'\) is at most countable.
 
-  It remains to show that \(\calU'\) cover \(X\). Suppose \(x\notin U_n\)
-  for some \(n\in\bbN\).
+  It remains to show that \(\calU'\) covers \(X\). Suppose \(x\notin U_n\)
+  for any \(n\in\bbN\). Then, since \(\calU\) is a cover of \(X\), there
+  exists an open set \(U_\alpha\in\calU\) such that \(x\in
+  U_\alpha\). Moreover, since \(\calB\) is a basis for \(X\), and
+  \(U_\alpha\) is open, there exists a basis element \(B_m\in\calB\)
+  containing \(x\) contained in \(U_\alpha\). It follows that there is some
+  nonempty open set \(U_m\) in the cover \(\calU\) containing \(B_m\) which
+  implies that \(f(B_m)\neq\emptyset\). This contradicts the assumption
+  that no \(x\notin U_n\) for any \(n\in\bbN\). Thus, \(\calU'\) covers
+  \(X\).
 
   It follows that every cover \(\calU\) of \(X\) admits a finite subcover
   \(\calU'\) of \(\calU\).
