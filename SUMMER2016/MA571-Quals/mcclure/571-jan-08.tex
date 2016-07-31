@@ -96,7 +96,25 @@
   \]
   are continuous; where \(\pi_1,\pi_2\colon Y\times Y\to Y\) are the
   standard projections \((y_1,y_2)\mapsto y_1\) and \((y_1,y_2)\mapsto
-  y_2\), respectively.
+  y_2\), respectively. We claim that
+  \[
+    \left\{\,x\in X:f(x)=g(x)\,\right\}=F^{-1}(\Delta).
+  \]
+
+  Let \(x\in\left\{\,x\in X:f(x)=g(x)\,\right\}\) then \(f(x)=g(x)\) so
+  \(F(x)\in\Delta\). Thus, \(x\in F^{-1}(\Delta)\). On the other hand, if
+  \(x\in F^{-1}(\Delta)\) then \(F(x)=(f(x),g(x))=(y,y)\) for some \(y\in
+  Y\). Thus, \(f(x)=g(x)\) so \(x\in\left\{\,x\in X:f(x)=g(x)\,\right\}\).
+
+  It follows that since
+  \[
+    \left\{\,x\in X:f(x)=g(x)\,\right\}=F^{-1}(\Delta),
+  \]
+  \(F\) is continuous and \(\Delta\) is closed in \(Y\times Y\), the set
+  \[
+    \left\{\,x\in X:f(x)=g(x)\,\right\}
+  \]
+  is closed in \(X\).
 \end{solution}
 
 \begin{problem}
@@ -107,10 +125,35 @@
   For each \(n\geq 1\), let \(y_n\in Y\) be the element
   \((1,\dotsc,1,0,\dotsc)\), with \(n\) \(1\)s at the beginning and all
   other entries \(0\). Let \(y\in Y\) be the element with all \(1\)s. Prove
-  that the set \(\{y_n\}_{n\in\bbN}\cup\{y\}\) is closed. Give a clear
+  that the set \({\{y_n\}}_{n\in\bbN}\cup\{y\}\) is closed. Give a clear
   explanation. Do not use a metric.
 \end{problem}
 \begin{solution}
+  Let \(A={\{y_n\}}_{n\in\bbN}\cup\{y\}\). Assuming \(Y\) is given the
+  discrete topology, we must show that for every \(x\in A\), for every
+  neighborhood \(U\) of \(x\), \(U\cap A\neq\emptyset\). By one of Prof.\@
+  McClure's lemmas, it suffices to show that this holds for basic open
+  sets.
+
+  We break the proof into two cases (1) \(x\neq y\) and (2) \(x=y\).
+
+  For (1), let \(U=\prod_{n\in\bbN} U_n\) be a basic neighborhood of
+  \(x\). Since \(x\neq y\), the first \(N\) entries of \(x\) consists of
+  all \(1\). Therefore, the first \(N\) \(U_n\) must contain \(\{1\}\) and
+  the last \(U_n\), \(n\geq N\), must contain \(\{0\}\). Since a \(U\) is a
+  basic open, \(U_n=X\) for infinitely many \(U_n\). Let $N'$ be the
+  smallest integer such that \(U_n=X\) for all \(n\geq N'\). Then \(U\)
+  contains the element \((1,\dotsc,1,0,\dotsc)\) with \(N'\) \(1\) at the
+  beginning. This is an element of \(A\). Thus, \(U\cap A\neq\emptyset\).
+
+  For (2), let \(U=\prod_{n\in\bbN} U_n\) be a basic open set containing
+  \(x=y\). Let \(N\) be the smallest integer such that \(U_n=X\) for all
+  \(n\geq N\). Then \(U\) contains the element \((1,\dotsc,1,0,\dotsc)\)
+  with \(N\) \(1\) in the beginning. This is an element of \(A\), thus
+  \(U\cap A\neq\emptyset\).
+
+  Since the latter arguments holds for any basic neighborhood \(U\) for any
+  \(x\in A\), it follows that \(A\) is closed.
 \end{solution}
 
 \begin{problem}
@@ -125,6 +168,30 @@
   is reachable from \(U\).
 \end{problem}
 \begin{solution}
+  Fix \(U\) in the cover \(\calU\). Seeking a contradiction, suppose \(U'\)
+  is not reachable from \(U\). Let
+  \begin{align*}
+    \calA&=\left\{\,V\in\calU:\text{\(V\) is reachable from
+           \(U\)}\,\right\}\\
+    \calB&=\left\{\,V\in\calU:\text{\(V\) is not reachable from
+    \(U\)}\,\right\}.
+  \end{align*}
+  Then, \(\calA\) is nonempty since it contains \(U\) and \(\calB\) is
+  nonempty since it contains \(U'\).
+
+  We claim that \(C=\bigcup_{V\in\calA}V\) and \(D=\bigcup_{V\in\calB}V\)
+  form a separation of \(X\). First, \(C\) and \(D\) are open since they
+  are the (arbitrary) union of open sets. Next, we must show that
+  \(C\cup D=X\). Let \(x\in X\). Then \(x\in V\) for some \(V\in\calU\)
+  since \(\calU\) covers \(X\). Thus, either \(V\) is reachable from \(U\)
+  or \(V\) is not reachable from \(U\). In the former case, \(x\in C\) and
+  in the latter case \(x\in D\). Thus, \(C\cup D\supseteq X\) and
+  \(C\cup D=X\); it is clear that both \(C,D\subseteq X\) so the union
+  \(C\cup D\subseteq X\).
+
+  Thus, \(C,D\) forms a separation of \(X\). This contradicts the
+  assumption that \(X\) is connected. Therefore, it must be the case that
+  every set \(V\) is reachable from \(U\) for any \(U\in\calU\).
 \end{solution}
 
 \begin{problem}
@@ -133,6 +200,7 @@
   \(b\in B\) the set \(A\cap p^{-1}\{b\}\) is finite.
 \end{problem}
 \begin{solution}
+  Let
 \end{solution}
 
 \begin{problem}
