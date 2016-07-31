@@ -46,6 +46,35 @@
   subspace of \(\bbR^n\).
 \end{problem}
 \begin{solution}
+  Consider the map \(f\colon X\to\bbR^n\) given by
+  \[
+    f(x)=\bigl(f_1(x),\dotsc,f_n(x)\bigr).
+  \]
+  By a theorem from Munkres regarding continuous bijective maps between
+  compact and Hausdorff spaces, it suffices to show that the restriction
+  \(f'\colon X\to f(X)\) of the codomain of \(f\) to its image \(f(X)\) is
+  a bijection.
+
+  First, from Munkres, we know that the restriction of the codomain of a
+  continuous function to a subspace is again continuous. Therefore,
+  \(f'\colon X\to f(X)\) is continuous.
+
+  Moreover, since \(\bbR^n\) is Hausdorff and \(f(X)\subseteq\bbR^n\) is a
+  subspace, \(f(X)\) is Hausdorff.
+
+  Lastly, we show that \(f'\colon X\to f(X)\) is bijective. It is clear
+  that \(f'\) is surjective since we have restricted the codomain of \(f\)
+  to its image. To see that \(f'\) is injective let \(x,y\in X\) and
+  suppose that \(f'(x)=f'(y)\). Then
+  \[
+    \bigl(f_1(x),\dotsc,f(x)\bigr)= \bigl(f_1(y),\dotsc,f(y)\bigr).
+  \]
+  This implies that \(x=y\) for otherwise, there is a \(x\neq y\) in \(X\)
+  such that \(f_i(x)=f_i(y)\) for all \(1\leq i\leq n\); which contradicts
+  our assumption.
+
+  It follows that \(f'\colon X\to f(X)\) is a continuous bijection from a
+  compact to a Hausdorff space and thus, is a homeomorphism.
 \end{solution}
 
 \begin{problem}
@@ -54,6 +83,20 @@
   set \(\left\{\,x\in X:f(x)=g(x)\,\right\}\) is closed.
 \end{problem}
 \begin{solution}
+  Recall that a topological space $Y$ is Hausdorff if and only if the
+  diagonal $\Delta=\left\{\,(y,y):y\in Y\,\right\}$ is closed in
+  $Y\times Y$ with the product topology. Define a map \(F\colon X\to
+  Y\times Y\) by
+  \[
+    F(x)=\bigl(f(x),g(x)\bigr).
+  \]
+  Then, by the u.m.p\@ of the product topology, \(F\) is continuous because
+  \[
+    (\pi_1\circ F)(x)=f(x),\quad(\pi_2\circ F)(x)=g(x)
+  \]
+  are continuous; where \(\pi_1,\pi_2\colon Y\times Y\to Y\) are the
+  standard projections \((y_1,y_2)\mapsto y_1\) and \((y_1,y_2)\mapsto
+  y_2\), respectively.
 \end{solution}
 
 \begin{problem}
