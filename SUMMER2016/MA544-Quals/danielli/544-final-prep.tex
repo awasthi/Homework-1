@@ -3,105 +3,111 @@
 \setcounter{equation}{0}
 
 \begin{problem}
-Suppose $f\in L^1(\bbR^n)$ and that $x$ is a point in the Lebesgue set of
-$f$. For $r>0$, let
-\[
-A(r)=\frac{1}{|r|^n}\int_{B(0,r)}|f( x - y )-f( x )|\diff y .
-\]
-Show that:
-\begin{enumerate}[label=(\alph*),noitemsep]
-\item $A(r)$ is a continuous function of $r$, and $A(r)\to 0$ as $r\to 0$;
-\item there exists a constant $M>0$ such that $A(r)\leq M$ for all $r>0$.
+  Suppose \(f\in L^1(\bbR^n)\) and that \(x\) is a point in the Lebesgue
+  set of \(f\). For \(r>0\), let
+  \[
+    A(r)=\frac{1}{|r|^n}\int_{B(0,r)}|f( x - y )-f( x )|\diff y .
+  \]
+  Show that:
+  \begin{enumerate}[label=(\alph*),noitemsep]
+    \hfill
+  \item \(A(r)\) is a continuous function of \(r\), and \(A(r)\to 0\) as
+    \(r\to 0\);
+  \item there exists a constant \(M>0\) such that \(A(r)\leq M\) for all
+    \(r>0\).
+  \end{enumerate}
+\end{problem}
+\begin{solution}
+  (a) Without loss of generality, we may assume \(r<s\). Then, we want to
+  show that as \(r\to s\), the quantity
+  \[
+    |A(s)-A(r)|\longrightarrow 0.
+  \]
+  Set \(F( y )= |f( x - y )-f( x )|\) and consider said quantity
+  \begin{align*}
+    |A(s)-A(r)|
+    &=\left|
+      \frac{1}{|s|^n}\int_{B_s}F( y )\diff y
+      -
+      \frac{1}{|r|^n}\int_{B_r}F( y )\diff y
+      \right|\\
+    &=\left|
+      \frac{1}{|s|^n}\int_{B_s\setminus B_r}F( y )\diff y +
+      \frac{1}{|s|^n}\int_{B_r}F( y )\diff y -
+      \frac{1}{|r|^n}\int_{B_r}F( y )\diff y
+      \right|\\
+    &=\left|
+      \frac{1}{|s|^n}\int_{B_s\setminus B_r}F( y )\diff y
+      +\left(\frac{1}{|s|^n}-\frac{1}{|r|^n}\right)\int_{B_r}F( y )\diff y
+      \right|\\
+    &\leq
+      \underbrace{\frac{1}{|s|^n}\int_{B_s\setminus B_r}F( y )\diff y }_{I_1}
+      +\underbrace{\left(\frac{1}{|s|^n}-\frac{1}{|r|^n}\right)\int_{B_r}F( y )\diff y }_{I_2}.
+  \end{align*}
+  Hence, we must show that the quantities \(I_1,I_2\to 0\) as \(r\to s\).
+
+  To see that \(A(r)\to 0\) as \(r\to 0\), note that \(x\) is a point of
+  the Lebesgue set of \(f\) and that
+  \[
+    0=\lim_{B_r\searrow x }\frac{1}{|B_1||r|^n}\int_{B_r}|f( y )-f( x
+    )|\diff y =\frac{1}{|B_1|}\lim_{B_r\searrow x
+    }\frac{1}{|r|^n}\int_{B_r}|f( t )-f( x )|\diff t =\lim_{r\to 0}A(r).
+  \]
+  by making the change of variables \(t=x-y\).
+  \\\\
+  (b)
+\end{solution}
+
+\begin{problem}
+  Let \(E\subseteq\bbR^n\) be a measurable set, \(1\leq n<\infty\). Assume
+  \(\{f_k\}\) is a sequence in \(L^p(E)\) converging pointwise a.e.\@ on
+  \(E\) to a function \(f\in L^p(E)\). Prove that
+  \[
+    \|{f_k-f}\|_p\longrightarrow 0
+  \]
+  if and only if
+  \[
+    \|{f_k}\|_p\longrightarrow\|f\|_p
+  \]
+  as \(k\to\infty\).
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}
+  Let \(1<p<\infty\), \(f\in L^p(E)\), \(g\in L^{p'}(E)\).
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item Prove that \(f*g\in C(\bbR^n)\).
+  \item Does this conclusion continue to be valid when \(p=1\) and
+    \(p=\infty\)?
+  \end{enumerate}
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}
+  Let \(f\in L(\bbR)\), and let \(F(t)=\int_{\bbR}f(x)\cos(tx)dx\).
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item Prove that \(F(t)\) is continuous for \(t\in\bbR\).
+  \item Prove the following
+    \href{https://en.wikipedia.org/wiki/Riemann–Lebesgue_lemma}{\emph{Riemann--Lebesgue
+        lemma}}:
+    \[
+      \lim_{t\to\infty}F(t)=0.
+    \]
 \end{enumerate}
 \end{problem}
 \begin{solution}
-(a) Without loss of generality, we may assume $r<s$. Then, we want to show
-that as $r\to s$, the quantity
-\[
-|A(s)-A(r)|\longrightarrow 0.
-\]
-Set $F( y )= |f( x - y )-f( x )|$ and consider said quantity
-\begin{align*}
-|A(s)-A(r)|
-&=\left|
-\frac{1}{|s|^n}\int_{B_s}F( y )\diff y
--
-\frac{1}{|r|^n}\int_{B_r}F( y )\diff y
-\right|\\
-&=\left|
-\frac{1}{|s|^n}\int_{B_s\setminus B_r}F( y )\diff y +
-\frac{1}{|s|^n}\int_{B_r}F( y )\diff y -
-\frac{1}{|r|^n}\int_{B_r}F( y )\diff y
-\right|\\
-&=\left|
-\frac{1}{|s|^n}\int_{B_s\setminus B_r}F( y )\diff y
-+\left(\frac{1}{|s|^n}-\frac{1}{|r|^n}\right)\int_{B_r}F( y )\diff y
-\right|\\
-&\leq
-\underbrace{\frac{1}{|s|^n}\int_{B_s\setminus B_r}F( y )\diff y }_{I_1}
-+\underbrace{\left(\frac{1}{|s|^n}-\frac{1}{|r|^n}\right)\int_{B_r}F( y )\diff y }_{I_2}.
-\end{align*}
-Hence, we must show that the quantities $I_1,I_2\to 0$ as $r\to s$.
-
-To see that $A(r)\to 0$ as $r\to 0$, note that $x$ is a point of the
-Lebesgue set of $f$ and that
-\[
-0=\lim_{B_r\searrow x }\frac{1}{|B_1||r|^n}\int_{B_r}|f( y )-f( x )|\diff y =\frac{1}{|B_1|}\lim_{B_r\searrow x }\frac{1}{|r|^n}\int_{B_r}|f( t )-f( x )|\diff t =\lim_{r\to
-0}A(r).
-\]
-by making the change of variables $t=x-y$.
-\\\\
-(b)
 \end{solution}
 
 \begin{problem}
-Let $E\subseteq\bbR^n$ be a measurable set, $1\leq n<\infty$. Assume
-$\{f_k\}$ is a sequence in $L^p(E)$ converging pointwise a.e.\@ on $E$ to a
-function $f\in L^p(E)$. Prove that
-\[
-\|{f_k-f}\|_p\longrightarrow 0
-\]
-if and only if
-\[
-\|{f_k}\|_p\longrightarrow\|f\|_p
-\]
-as $k\to\infty$.
-\end{problem}
-\begin{solution}
-\end{solution}
-
-\begin{problem}
-Let $1<p<\infty$, $f\in L^p(E)$, $g\in L^{p'}(E)$.
-\begin{enumerate}[label=(\alph*),noitemsep]
-\item Prove that $f*g\in C(\bbR^n)$.
-\item Does this conclusion continue to be valid when $p=1$ and $p=\infty$?
-\end{enumerate}
-\end{problem}
-\begin{solution}
-\end{solution}
-
-\begin{problem}
-Let $f\in L(\bbR)$, and let $F(t)=\int_{\bbR}f(x)\cos(tx)dx$.
-\begin{enumerate}[label=(\alph*),noitemsep]
-\item Prove that $F(t)$ is continuous for $t\in\bbR$.
-\item Prove the following
-  \href{https://en.wikipedia.org/wiki/Riemann–Lebesgue_lemma}{\emph{Riemann--Lebesgue
-      lemma}}:
-\[
-\lim_{t\to\infty}F(t)=0.
-\]
-\end{enumerate}
-\end{problem}
-\begin{solution}
-\end{solution}
-
-\begin{problem}
-Let $f$ be of bounded variation on $[a,b]$, $-\infty<a<b<\infty$. If
-$f=g+h$, with $g$ absolutely continuous and $h$ singular. Show that
-\[
-\int_a^b\varphi \diff f=\int_a^b\varphi f'dx+\int_a^b\varphi \diff h
-\]
-for all functions $\varphi$ continuous on $[a,b]$.
+  Let \(f\) be of bounded variation on \([a,b]\),
+  \(-\infty<a<b<\infty\). If \(f=g+h\), with \(g\) absolutely continuous
+  and \(h\) singular. Show that
+  \[
+    \int_a^b\varphi \diff f=\int_a^b\varphi f'dx+\int_a^b\varphi \diff h
+  \]
+  for all functions \(\varphi\) continuous on \([a,b]\).
 \end{problem}
 \begin{solution}
 \end{solution}

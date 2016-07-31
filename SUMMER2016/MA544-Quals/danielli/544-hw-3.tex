@@ -3,29 +3,29 @@
 \setcounter{equation}{0}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 3, Ex.\@ 5]
-  Construct a subset of $[0,1]$ in the same manner as the Cantor set,
-  except that at the $k$th stage each interval removed has length
-  $\delta 3^{-k}$, $0<\delta<1$. Show that the resulting set is perfect,
-  has measure $1-\delta$, and contains no interval.
+  Construct a subset of \([0,1]\) in the same manner as the Cantor set,
+  except that at the \(k\)th stage each interval removed has length
+  \(\delta 3^{-k}\), \(0<\delta<1\). Show that the resulting set is
+  perfect, has measure \(1-\delta\), and contains no interval.
 \end{problem}
 \begin{solution}
   We construct the prescribed subset as follows: take the open interval
-  $(1/2-\delta/6,1/2+\delta/6)$ and remove it from the closed interval
-  $[0,1]$ the result is a union of two disjoint closed intervals
+  \((1/2-\delta/6,1/2+\delta/6)\) and remove it from the closed interval
+  \([0,1]\) the result is a union of two disjoint closed intervals
   \[
     \begin{aligned}
     E_{1,1}&=\left[0,\frac{1}{2}-\frac{1}{6}\delta\right],&
     E_{1,2}&=\left[\frac{1}{2}+\frac{1}{6}\delta,1\right],
     \end{aligned}
   \]
-  whose union we call $E_1$; this marks the first step in the construction
-  of this Cantor-like set. Next, we remove the set
+  whose union we call \(E_1\); this marks the first step in the
+  construction of this Cantor-like set. Next, we remove the set
   \[
     \left(\frac{1}{4}-\frac{5}{36}\delta,\frac{1}{4}+\frac{1}{36}\delta\right)
     \cup
     \left(\frac{3}{4}+\frac{\delta}{36},\frac{3}{4}+\frac{5}{36}\delta\right)
   \]
-  from the set $E_1$ which yields $E_2$ the union of the four closed
+  from the set \(E_1\) which yields \(E_2\) the union of the four closed
   intervals
   \[
     \begin{aligned}
@@ -37,30 +37,32 @@
       E_{2,4}&=\left[\frac{3}{4}+\frac{5}{36}\delta,1\right].
     \end{aligned}
   \]
-  In the $n$th step of the construction, we remove an open interval of
-  length $3^{-n}\delta$ from the center of each interval $E_{n-1,i}$
-  yielding $E_n$ which is the union of $2^n$ intervals $E_{n,i}$ of length
-  $2^{-n}-\delta 2^{-n}\sum_{i=1}^n2^{i-1}3^{-i}$. Let $E$ be the intersection
-  $\bigcap_{i=1}^\infty E_i$. This concludes our construction.
+  In the \(n\)th step of the construction, we remove an open interval of
+  length \(3^{-n}\delta\) from the center of each interval \(E_{n-1,i}\)
+  yielding \(E_n\) which is the union of \(2^n\) intervals \(E_{n,i}\) of
+  length \(2^{-n}-\delta 2^{-n}\sum_{i=1}^n2^{i-1}3^{-i}\). Let \(E\) be
+  the intersection \(\bigcap_{i=1}^\infty E_i\). This concludes our
+  construction.
 
-  Next we show that $E$ is perfect, has measure $1-\delta$ and contains no
-  interval.
+  Next we show that \(E\) is perfect, has measure \(1-\delta\) and contains
+  no interval.
 
-  To see that $E$ is perfect, we must show that $E$ is closed and that
-  and dense in itself. The set $E$ is closed because it is the (arbitrary)
-  intersection of closed intervals. To see that $E$ is dense in itself, we
-  must show that for every $\varepsilon>0$, for every $x\in E$, the
-  intersection $(B(x,\varepsilon)\cap E)\setminus\{x\}$ is
-  nonempty. Let $\varepsilon>0$ and $x\in E$ be given. Then, since
-  $x\in E$, $x\in E_n$ for every $n$. Thus, $x$ is in some closed interval
-  $E_{n,i}\subseteq E_n$. Let $N$ be the smallest integer such that the
-  length of $E_{N,i}=[a,b]$ is less that $\varepsilon$. Then, $a,b\in E$
-  and $a,b\in B(x,\varepsilon)$ and $x$ is cannot be equal to both $a$ and
-  $b$. Thus, $(E\cap B(x,\varepsilon))\setminus\{x\}\neq\emptyset$. It
-  follows that $E$ is a perfect set.
+  To see that \(E\) is perfect, we must show that \(E\) is closed and that
+  and dense in itself. The set \(E\) is closed because it is the
+  (arbitrary) intersection of closed intervals. To see that \(E\) is dense
+  in itself, we must show that for every \(\varepsilon>0\), for every
+  \(x\in E\), the intersection \((B(x,\varepsilon)\cap E)\setminus\{x\}\)
+  is nonempty. Let \(\varepsilon>0\) and \(x\in E\) be given. Then, since
+  \(x\in E\), \(x\in E_n\) for every \(n\). Thus, \(x\) is in some closed
+  interval \(E_{n,i}\subseteq E_n\). Let \(N\) be the smallest integer such
+  that the length of \(E_{N,i}=[a,b]\) is less that \(\varepsilon\). Then,
+  \(a,b\in E\) and \(a,b\in B(x,\varepsilon)\) and \(x\) is cannot be equal
+  to both \(a\) and \(b\). Thus,
+  \((E\cap B(x,\varepsilon))\setminus\{x\}\neq\emptyset\). It follows that
+  \(E\) is a perfect set.
 
-  To see that the measure of $E$ is $1-\delta$ by Theorem 3.26 (ii) since
-  $m(E_1)=1-\delta/3<\infty$ and $E_n\searrow E$ we have
+  To see that the measure of \(E\) is \(1-\delta\) by Theorem 3.26 (ii)
+  since \(m(E_1)=1-\delta/3<\infty\) and \(E_n\searrow E\) we have
   \begin{align*}
     m(E)
     &=m\left(\bigcap_{i=1}^\infty E_i\right)\\
@@ -72,21 +74,22 @@
     &=\lim_{n\to\infty}\left[1-\delta\sum_{i=1}^n\frac{2^{i-1}}{3^i}\right]\\
     &=\lim_{n\to\infty}\left[1-\frac{\delta}{3}\sum_{i=1}^n
       \left(\frac{2}{3}\right)^{i-1}\right]
-    \shortintertext{letting $j=i-1$, we can rewrite the series above as the
+      \shortintertext{letting \(j=i-1\), we can rewrite the series above as the
       geometric series}
     &=1-\frac{\delta}{3}\lim_{n\to\infty}\sum_{j=0}^n\left(\frac{2}{3}\right)^j\\
     &=1-\delta,
   \end{align*}
   as desired.
 
-  Lastly, we must show that $E$ contains no interval. Seeking a
-  contradiction, suppose that $E$ contains an interval $I=[a,b]$ of length
-  $b-a$. Then, since $I\subseteq E$, $I\subseteq E_n$ for all $n$ so, since $I$
-  is connected, it must be contained in one of the $E_{n,i}$ for all
-  $n$. Let $N$ be the smallest integer such that $m(E_{N,i})<b-a$ and
-  $E_{N,i}=[c,d]$ contains $I$. Then, since $I\subseteq E_{N,i}$, both $a$
-  and $b$ are points in $I$, $|b-a|\leq |d-c|=m(E_{N,i})$. This is a
-  contradiction. Thus, it must be the case that $E$ contains no interval.
+  Lastly, we must show that \(E\) contains no interval. Seeking a
+  contradiction, suppose that \(E\) contains an interval \(I=[a,b]\) of
+  length \(b-a\). Then, since \(I\subseteq E\), \(I\subseteq E_n\) for all
+  \(n\) so, since \(I\) is connected, it must be contained in one of the
+  \(E_{n,i}\) for all \(n\). Let \(N\) be the smallest integer such that
+  \(m(E_{N,i})<b-a\) and \(E_{N,i}=[c,d]\) contains \(I\). Then, since
+  \(I\subseteq E_{N,i}\), both \(a\) and \(b\) are points in \(I\),
+  \(|b-a|\leq |d-c|=m(E_{N,i})\). This is a contradiction. Thus, it must be
+  the case that \(E\) contains no interval.
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 3, Ex.\@ 7]
@@ -95,30 +98,30 @@
 \begin{solution}
   Here is the statement of the lemma:
   \begin{quote}
-    \emph{If ${\{I_k\}}_{k=1}^{N}$ is a finite collection of nonoverlapping
-      intervals, then $\bigcup_{k=1}^NI_k$ is measurable and
-      $m\left(\bigcup_{k=1}^NI_k\right)=\sum_{k=1}^Nm(I_k)$.}
+    \emph{If \({\{I_k\}}_{k=1}^{N}\) is a finite collection of
+      nonoverlapping intervals, then \(\bigcup_{k=1}^NI_k\) is measurable
+      and \(m\left(\bigcup_{k=1}^NI_k\right)=\sum_{k=1}^Nm(I_k)\).}
   \end{quote}
-  By Theorem 3.12, the union $\bigcup_{n=1}^N I_n$ is measurable. Hence, it
-  remains to show that
-  $m\left(\bigcup_{n=1}^NI_n\right)=\sum_{n=1}^Nm(I_n)$.
+  By Theorem 3.12, the union \(\bigcup_{n=1}^N I_n\) is measurable. Hence,
+  it remains to show that
+  \(m\left(\bigcup_{n=1}^NI_n\right)=\sum_{n=1}^Nm(I_n)\).
 
   We take the approach of extending the argument provided in Theorem
-  3.2. As in Theorem 3.2, we note that, since ${\{I_n\}}_{n=1}^N$ covers
-  the union $\bigcup_{n=1}^N I_n$, then
+  3.2. As in Theorem 3.2, we note that, since \({\{I_n\}}_{n=1}^N\) covers
+  the union \(\bigcup_{n=1}^N I_n\), then
   \[
     m\left(\bigcup_{n=1}^N I_n\right)\leq \sigma%
     \left(\bigcup_{n=1}^N I_n\right)=\sum_{n=1}^N m(I_n).
   \]
 
-  On the other hand, note that $I_n$ is the union
-  $I_n^\circ\cup\partial I_n$ of its interior and its boundary. In the
+  On the other hand, note that \(I_n\) is the union
+  \(I_n^\circ\cup\partial I_n\) of its interior and its boundary. In the
   previous homework, we showed that the boundary of an interval has measure
   zero. Hence, we have
   \[
     m(I_n^\circ)\leq m(I_n)\leq m(I_n^\circ)+m(\partial I_n)=m(I_n^\circ)
   \]
-  so $m(I_n)=m(I_n^\circ)$. Now, note that
+  so \(m(I_n)=m(I_n^\circ)\). Now, note that
   \[
     m\left(\bigcup_{n=1}^N I_n^\circ\right)=%
     \sum_{n=1}^N m(I_n^\circ)=%
@@ -131,71 +134,73 @@
     &\leq m\left(\bigcup_{n=1}^N I_n\right)\\
     &\leq \sum_{n=1}^N m(I_n).
   \end{align*}
-  Thus, equality $m\left(\bigcup_{n=1}^NI_n\right)=\sum_{n=1}^Nm(I_n)$
+  Thus, equality \(m\left(\bigcup_{n=1}^NI_n\right)=\sum_{n=1}^Nm(I_n)\)
   holds.
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 3, Ex.\@ 8]
-  Show that the Borel algebra $\calB$ in $\bbR^n$ is the smallest
-  $\sigma$-algebra containing the closed sets in $\bbR^n$.
+  Show that the Borel algebra \(\calB\) in \(\bbR^n\) is the smallest
+  \(\sigma\)-algebra containing the closed sets in \(\bbR^n\).
 \end{problem}
 \begin{solution}
-  Since $\calB$ is the smallest $\sigma$-algebra containing all of the open
-  sets of $\bbR^n$, it contains all of the closed sets of $\bbR^n$. Now,
-  suppose that $\calB'$ is another $\sigma$-algebra containing the closed
-  sets in $\bbR^n$. Then, $\calB'\subseteq\calB$ since $\calB$ contains all
-  of the closed sets in $\bbR^n$. However, since $\calB'$ is a
-  $\sigma$-algebra, it contains all of the open sets in $\bbR^n$, so
-  $\calB'\subseteq\calB$ since $\calB$ is the smallest $\sigma$-algebra
-  containing the open sets in $\bbR^n$. Thus, $\calB'=\calB$.
+  Since \(\calB\) is the smallest \(\sigma\)-algebra containing all of the
+  open sets of \(\bbR^n\), it contains all of the closed sets of
+  \(\bbR^n\). Now, suppose that \(\calB'\) is another \(\sigma\)-algebra
+  containing the closed sets in \(\bbR^n\). Then, \(\calB'\subseteq\calB\)
+  since \(\calB\) contains all of the closed sets in \(\bbR^n\). However,
+  since \(\calB'\) is a \(\sigma\)-algebra, it contains all of the open
+  sets in \(\bbR^n\), so \(\calB'\subseteq\calB\) since \(\calB\) is the
+  smallest \(\sigma\)-algebra containing the open sets in \(\bbR^n\). Thus,
+  \(\calB'=\calB\).
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 3, Ex.\@ 9]
-  If ${\{E_k\}}_{k=1}^\infty$ is a sequence of sets with
-  $\sum m^*(E_k)<\infty$, show that $\limsup E_k$ (and also $\liminf E_k$)
-  has measure zero.
+  If \({\{E_k\}}_{k=1}^\infty\) is a sequence of sets with
+  \(\sum m^*(E_k)<\infty\), show that \(\limsup E_k\) (and also
+  \(\liminf E_k\) has measure zero.
 \end{problem}
 \begin{solution}
-  First, since ${\{E_n\}}_{n=1}^\infty$ is a sequence of sets with
+  First, since \({\{E_n\}}_{n=1}^\infty\) is a sequence of sets with
   \[
     \sum_{i=1}^\infty m^*(E_i)<\infty
   \]
-  for every $\varepsilon>0$ there exists $N\in\bbN$ such that $n\geq N$
-  implies
+  for every \(\varepsilon>0\) there exists \(N\in\bbN\) such that
+  \(n\geq N\) implies
   \[
     \sum_{i=n}^\infty m^*(E_i)<\varepsilon.
   \]
   Let's put this aside for now.
 
-  Define $E=\limsup_{n\to\infty} E_n$ and $E_n'=\bigcup_{i=n}^\infty
-  E_n$. It is easy to see that ${\{E_n'\}}_{n=1}^\infty$ is a decreasing
-  sequence of sets whose intersection $\bigcap_{n=1}^\infty E_n$ is the
-  limit supremum $E$. By the monotonicity of the outer measure, we have
+  Define \(E=\limsup_{n\to\infty} E_n\) and
+  \(E_n'=\bigcup_{i=n}^\infty E_n\). It is easy to see that
+  \({\{E_n'\}}_{n=1}^\infty\) is a decreasing sequence of sets whose
+  intersection \(\bigcap_{n=1}^\infty E_n\) is the limit supremum \(E\). By
+  the monotonicity of the outer measure, we have
   \[
     m^*(E)\leq m^*(E_n')
   \]
-  for all $n\in\bbN$. On the other hand,
+  for all \(n\in\bbN\). On the other hand,
   \[
     m^*(E_n')\leq \sum_{i=n}^\infty m^*(E_i)<\varepsilon
   \]
-  for every $\varepsilon$. Letting $\varepsilon$ go to $0$ we have
-  $m^*(E)=0$.
+  for every \(\varepsilon\). Letting \(\varepsilon\) go to \(0\) we have
+  \(m^*(E)=0\).
 
-  Lastly, we note that $E'=\liminf_{n\to\infty} E_n$ is a subset of
-  $\limsup_{n\to\infty} E_n$, so that $m^*(E')=0$.
+  Lastly, we note that \(E'=\liminf_{n\to\infty} E_n\) is a subset of
+  \(\limsup_{n\to\infty} E_n\), so that \(m^*(E')=0\).
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 3, Ex.\@ 10]
-  If $E_1$ and $E_2$ are measurable, show that
-  $m(E_1\cup E_2)+m(E_1\cap E_2)=m(E_1)+m(E_2)$.
+  If \(E_1\) and \(E_2\) are measurable, show that
+  \(m(E_1\cup E_2)+m(E_1\cap E_2)=m(E_1)+m(E_2)\).
 \end{problem}
 \begin{solution}
-  We may, without loss of generality, assume that $m(E_1),m(E_2)<\infty$
+  We may, without loss of generality, assume that \(m(E_1),m(E_2)<\infty\)
   for otherwise there is nothing to show as equality holds trivially.
 
   Now, by Carathéodory's theorem we have the following characterization of
-  measurability: a set $E$ is measurable if and only if for every set $A$
-  we have
+  measurability: a set \(E\) is measurable if and only if for every set
+  \(A\) we have
   \[
     m^*(A)=m^*(A\cap E)+m^*(A\setminus E).
   \]
@@ -208,7 +213,7 @@
   \[
     (E_1\cup E_2)\setminus E_2=E_1\setminus (E_1\cap E_2),
   \]
-  $E_1\subseteq E_1\cup E_2$ and $E_1\cap E_2\subseteq E_1$ so
+  \(E_1\subseteq E_1\cup E_2\) and \(E_1\cap E_2\subseteq E_1\) so
   \[
     m(E_1\cup E_2)+m(E_1\cap E_2)=m(E_1)+m(E_2)
   \]

@@ -3,87 +3,29 @@
 \setcounter{equation}{0}
 
 \begin{problem}
-Define for $ x \in\bbR^n$,
-\[
-f( x )=
-\begin{cases}
-\left| x \right|^{-(n+1)}&\text{if $ x \neq \mathbf{0}$,}\\
-0&\text{if $ x =\mathbf{0}$.}
-\end{cases}
-\]
-Prove that $f$ is integrable outside any ball $B(\mathbf{0},\varepsilon)$,
-and that there exists a constant $C>0$ such that
-\[
-\int_{\bbR^n\setminus B(\mathbf{0},\varepsilon)}f( x ) \diff  x \leq\frac{C}{\varepsilon}.
-\]
+  Define for \( x \in\bbR^n\),
+  \[
+    f(x)=
+    \begin{cases}
+      \left| x \right|^{-(n+1)}&\text{if \(x\neq\mathbf{0}\),}\\
+      0&\text{if \(x=\mathbf{0}\).}
+    \end{cases}
+  \]
+  Prove that \(f\) is integrable outside any ball
+  \(B(\mathbf{0},\varepsilon)\), and that there exists a constant \(C>0\)
+  such that
+  \[
+    \int_{\bbR^n\setminus B(\mathbf{0},\varepsilon)}f( x ) \diff x
+    \leq\frac{C}{\varepsilon}.
+  \]
 \end{problem}
 \begin{solution}
-Recall that a real-valued function $f\colon\bbR^n\to\bbR$ is
-\href{https://en.wikipedia.org/wiki/Fubini's_theorem#Tonelli.27s_theorem_for_non-negative_functions}{Lebesgueintegrable}
-on a subset $E$ of $\bbR^n$ if
-\begin{equation}
-\label{eq:prep:2:1}
-\int_E f( x )\diff x <\infty.
-\end{equation}
-Let $f$ be as given in the statement of the problem and set
-$B_\varepsilon= B(\mathbf{0},\varepsilon)$. Consider
-the change of variables to
-\href{https://en.wikipedia.org/wiki/N-sphere#Spherical_coordinates}{\emph{hyperspherical
-    coordinates}} $(x_1,\dotsc,x_n)\mapsto(r,\Theta)$ where
-$\Theta=(\theta_1,\dotsc,\theta_{n-1})$.\footnote{The explicit construction
-  of the map $(x_1,\dotsc,x_n)\mapsto(r,\Theta)$ is of no concern to us for
-  now. What is important is that it exists.} By Theorem 7.26(iii) from
-\cite[Ch.\@ 7, p.\@ 123]{rudin-2}, we have
-\begin{equation}
-\label{eq:prep:2:2}
-\begin{aligned}
-\int_{\bbR^n\setminus B_\varepsilon}f( x )\diff x
-&=\int_{\bbR^n\setminus B_\varepsilon} f( x )\diff x \\
-&=\int_{\bbR^n\setminus
-  B_\varepsilon}\frac{1}{| x |^{n+1}}\diff x .\\
-&=\int_{S^{n-1}_r}\int_\varepsilon^\infty\frac{1}{|r|^{n+1}} \diff r dV,
-\end{aligned}
-\end{equation}
-where $S_r^{n-1}$ is the $(n-1)$-sphere centered at $\mathbf{0}$ with
-radius $r$, that is, the subset $\left\{\, x \in\bbR^n:| x |=1\,\right\}$
-of $\bbR^n$ and $dV$ is the
-\href{https://en.wikipedia.org/wiki/Volume_element}{\emph{volume element}}
-of $S_r^{n-1}$. Since $1/|r|^{n+1}$ is nonnegative, by
-\href{https://en.wikipedia.org/wiki/Fubini's_theorem#Tonelli.27s_theorem}{Tonelli's
-  theorem} the the iterated integrals in \eqref{eq:prep:2:2} may be
-exchange, that is,
-\begin{equation}
-  \label{eq:prep:2:3}
-\int_{S^{n-1}_r}\int_\varepsilon^\infty\frac{1}{|r|^{n+1}} \diff r dV=
-\int_\varepsilon^\infty\left(\int_{S_r^{n-1}}1\diff
-  V\right)\frac{1}{|r|^{n+1}}\diff r.
-\end{equation}
-
-Now, note that from Problem 1 of the review sheet for Exam 1, we have
-\begin{equation}
-  \label{eq:prep:2:4}
-\int_{S_r^{n-1}}1\diff V=|S_r^{n-1}|_{\bbR^{n-1}}=|S^{n-1}|_{\bbR^{n-1}}|r|^{n-1}.
-\end{equation}
-Set $C=|S^{n-1}|_{\bbR^{n-1}}$. Putting equations
-\eqref{eq:prep:2:2}, \eqref{eq:prep:2:3}, and \eqref{eq:prep:2:4} together,
-we have
-\begin{equation}
-\label{eq:prep:2:5}
-\begin{aligned}
-\int_{\bbR^n\setminus B_\varepsilon}f( x )\diff x
-&=\int_\varepsilon^\infty C|r|^{n-1}\frac{1}{|r|^{n+1}}\diff r\\
-&=\int_\varepsilon^\infty\frac{C}{|r|^2}\diff r\\
-&=\lim_{x\to\infty}\left[-\frac{C}{x}-\left(-\frac{C}{\varepsilon}\right)\right]\\
-&=\frac{C}{\varepsilon},
-\end{aligned}
-\end{equation}
-as was to be shown.
 \end{solution}
 
 \begin{problem}
-Let $\left\{f_k\right\}$ be a sequence of nonnegative measurable functions
-on $\bbR^n$, and assume that $f_k$ converges pointwise almost everywhere to
-a function $f$. If
+  Let \(\left\{f_k\right\}\) be a sequence of nonnegative measurable
+  functions on \(\bbR^n\), and assume that \(f_k\) converges pointwise
+  almost everywhere to a function \(f\). If
 \[
 \int_{\bbR^n} f=\lim_{k\to\infty}\int_{\bbR^n} f_k<\infty,
 \]
@@ -91,177 +33,49 @@ show that
 \[
 \int_E f=\lim_{k\to\infty}\int_E f_k
 \]
-for all measurable subsets $E$ of $\bbR^n$. Moreover, show that this is not
-necessarily true if $\int_{\bbR^n} f=\lim_{k\to\infty} f_k=\infty$.
+for all measurable subsets \(E\) of \(\bbR^n\). Moreover, show that this is
+not necessarily true if \(\int_{\bbR^n} f=\lim_{k\to\infty} f_k=\infty\).
 \end{problem}
 \begin{solution}
-Let $E\subseteq\bbR^n$ be a measurable subset of $\bbR^n$. Then, since
-$f_k\to f$ pointwise a.e.\@ on $\bbR^n$, then $f_k\to f$ pointwise a.e.\@ on
-$E$ and $\bbR^n\setminus E$. To prove that the limit of the sequence
-of integrals $\left\{\int_Ef_k\right\}$ exist and is equal to $\int_E f$,
-it suffices to prove that
-\begin{equation}
-  \label{eq:prep:2:6}
-\int_E
-f\leq\liminf_{k\to\infty}\int_Ef_k\leq\limsup_{k\to\infty}\int_Ef_k\leq\int_E f.
-\end{equation}
-
-The lower bound in \eqref{eq:prep:2:6} follows from an application of
-Fatou's lemma:
-\begin{equation}
-  \label{eq:prep:2:7}
-\int_E f=\int_E\liminf_{k\to\infty} f\leq\liminf_{k\to\infty}\int_E f_k.
-\end{equation}
-Also by Fatou's lemma, we have
-\begin{equation}
-  \label{eq:prep:2:8}
-\int_{\bbR^n\setminus E}f=\int_{\bbR^n\setminus
-  E}\liminf_{k\to\infty}f\leq\liminf_{k\to\infty}\int_{\bbR^n\setminus E}f_k.
-\end{equation}
-Now, since $f\in L^1(\bbR^n)$, by equation \eqref{eq:prep:2:8} and
-properties of the $\liminf$ and $\limsup$\footnote{Namely, for any sequence
-  of positive real numbers $\{a_k\}$ the inequality $\liminf a_k\leq\limsup
-  a_k$ holds} we have
-\begin{equation}
-\label{eq:prep:2:9}
-\begin{aligned}
-\int_Ef=\int_{\bbR^n}f-\int_{\bbR^n\setminus E}f
-&\geq\limsup_{k\to\infty}\int_{\bbR^n}f-\liminf_{k\to\infty}\int_{\bbR^n\setminus
-E}f_k\\
-&\geq\limsup_{k\to\infty}\int_{\bbR^n}f_k-\limsup_{k\to\infty}\int_{\bbR^n\setminus
-  E}f_k\\
-&=\limsup_{k\to\infty}\left[\int_{\bbR^n}f_k-\int_{\bbR^n\setminus
-    E}f_k\right]\\
-&=\limsup_{k\to\infty}\int_Ef_k.
-\end{aligned}
-\end{equation}
-By equations \eqref{eq:prep:2:7} and \eqref{eq:prep:2:9} it follows
-that $\lim_{k\to\infty}\int_E f_k$ exists and is equal to $\int_E f$.
-\\\\
-To see that the result need not be true if $\int_Ef=\infty$, consider the
-following example: Let $f_k\colon\bbR\to\bbR$ be given by
-\begin{equation}
-\label{eq:prep:2:11}
-f_k(x)=
-\begin{cases}
-k^2/2&\text{if $x\in(-1/k,1/k)$},\\
-1&\text{otherwise}
-\end{cases}
-\end{equation}
-and $f=1$.
-
-It is easy to see that $f_k\to f$ a.e.\@ in $\bbR$ and that both $\int_{\bbR}
-f=\infty$ and $\lim_{k\to\infty}f_k=\infty$. However, if $E=(-1,1)$
-then $\int_E f=1$, but $\lim_{k\to\infty}\int_Ef=\infty$.
 \end{solution}
 
 \begin{problem}
-Assume that $E$ is a measurable set of $\bbR^n$, with
-$|E|<\infty$. Prove that a nonnegative function $f$ defined
-on $E$ is integrable if and only if
+  Assume that \(E\) is a measurable set of \(\bbR^n\), with
+  \(|E|<\infty\). Prove that a nonnegative function \(f\) defined on \(E\)
+  is integrable if and only if
 \[
 \sum_{k=0}^\infty\left|\left\{\, x \in E:f( x )\geq
     k\,\right\}\right|<\infty.
 \]
 \end{problem}
 \begin{solution}
-If $f$ is integrable over a measurable subset $E$ of $\bbR^n$, then
-\begin{equation}
-\label{eq:integrability-3}
-\int_E f( x ) d  x <\infty.
-\end{equation}
-Set $E_k=\left\{\, x \in E:k+1>f( x )\geq k\,\right\}$ and
-$F_k=\left\{\, x \in E:f( x )\geq k\,\right\}$. Note the
-following properties about the sets we have just defined: first, the
-$E_k$'s are pairwise disjoint and the $F_k$'s are nested in the following
-way $F_{k+1}\subseteq F_k$; second, $E=\bigcup_{k=1}^\infty E_k$ and
-$E_k=F_k\setminus F_{k+1}$. By Theorem 3.23, since the $E_k$'s are disjoint,
-we have
-\begin{equation}
-  \label{eq:disjoint-measurable-sets-3}
-|E|=\sum_{k=1}^\infty|E_k|<\infty.
-\end{equation}
-Now, since $k\chi_{E_k}( x )\leq f( x )\leq (k+1)\chi_{E_k}( x )$ on
-$E_k$, we have
-\begin{equation}
-\label{eq:estimates-E-k-3}
-k|E_k|\leq\int_{E_k}f( x ) d  x \leq (k+1)|E_k|.
-\end{equation}
-Then we have the following upper and lower estimates on the integral of $f$
-over $E$
-\begin{equation}
-\label{eq:upper-lower-estimates-3}
-\sum_{k=0}^\infty k|E_k|\leq\int_E f( x ) d  x \leq\sum_{k=0}^\infty(k+1)|E_k|.
-\end{equation}
-But note that $|E_k|=|F_k\setminus F_{k+1}|=|F_k|-|F_{k+1}|$ by Corollary 3.25
-since the measures of $E_k$, $F_k$, and $F_{k+1}$ are all finite. Hence,
-\eqref{eq:upper-lower-estimates-3} becomes
-\begin{equation}
-\label{eq:new-upper-lower-estimates-3}
-\sum_{k=0}^\infty k\left(|F_k|-|F_{k+1}|\right)\leq
-\int_E f( x ) d  x \leq
-\sum_{k=0}^\infty (k+1)\left(|F_k|-|F_{k+1}|\right).
-\end{equation}
-A little manipulation of the series in the leftmost estimate gives us
-\begin{equation}
-\label{eq:leftmost-estimate-3}
-\begin{aligned}
-\sum_{k=0}^\infty k\left(|F_k|-|F_{k+1}|\right)
-={}&\sum_{k=1}^\infty k|F_k|-\sum_{k=1}^\infty k|F_{k+1}|\\
-={}&|F_1|+\sum_{k=2}^\infty k|F_k|-\sum_{k=1}^\infty k|F_{k+1}|\\
-={}&|F_1|+\sum_{k=1}^\infty(k+1)|F_{k+1}|-\sum_{k=1}^\infty k|F_{k+1}\\
-={}&|F_1|+\sum_{k=1}^\infty |F_{k+1}|\\
-={}&\sum_{k=1}^\infty|F_{k+1}|
-\end{aligned}
-\end{equation}
-and
-\begin{equation}
-\label{eq:rightmost-estimate-3}
-\begin{aligned}
-\sum_{k=0}^\infty(k+1)\left(|F_k|-|F_{k+1}|\right)
-={}&\sum_{k=0}^\infty(k+1)|F_k|-\sum_{k=0}^\infty(k+1)|F_{k+1}|\\
-={}&|F_0|+\sum_{k=1}^\infty(k+1)|F_k|-\sum_{k=0}^\infty(k+1)|F_{k+1}|\\
-={}&|F_0|+\sum_{k=0}^\infty(k+2)|F_{k+1}|-\sum_{k=0}^\infty(k+1)|F_{k+1}|\\
-={}&|F_0|+\sum_{k=0}^\infty|F_{k+1}|\\
-={}&\sum_{k=0}^\infty|F_k|.
-\end{aligned}
-\end{equation}
-Thus, from \eqref{eq:leftmost-estimate-3} and
-\eqref{eq:rightmost-estimate-3}
-\begin{equation}
-\label{eq:final-upper-lower-estimates-3}
-\sum_{k=1}^\infty|F_k|\leq\int_E f( x ) d  x \leq\sum_{k=0}^\infty|F_k|
-\end{equation}
-so the integral $\int_E f$ converges if and only if the sum
-$\sum_{k=0}^\infty|F_k|$ converges.
 \end{solution}
 \begin{problem}
-Suppose that $E$ is a measurable subset of $\bbR^n$, with
-$|E|<\infty$. If $f$ and $g$ are measurable functions on
-$E$, define
+  Suppose that \(E\) is a measurable subset of \(\bbR^n\), with
+  \(|E|<\infty\). If \(f\) and \(g\) are measurable functions on \(E\),
+  define
 \[
 \rho(f,g)=\int_E\frac{|f-g|}{1+|f-g|}.
 \]
-Prove that $\rho(f_k,f)\to 0$ as $k\to\infty$ if and only if $f_k$
-converges to $f$ as $k\to\infty$.
+Prove that \(\rho(f_k,f)\to 0\) as \(k\to\infty\) if and only if \(f_k\)
+converges to \(f\) as \(k\to\infty\).
 \end{problem}
 \begin{solution}
 \end{solution}
 
 \begin{problem}
-Define the \emph{gamma function} $\Gamma\colon\bbR^+\to\bbR$ by
+  Define the \emph{gamma function} \(\Gamma\colon\bbR^+\to\bbR\) by
 \[
 \Gamma(y)=\int_0^\infty e^{-u}u^{y-1}\diff u,
 \]
-and the \emph{beta function} $\beta\colon\bbR^+\times\bbR^+\to\bbR$
-by
+and the \emph{beta function} \(\beta\colon\bbR^+\times\bbR^+\to\bbR\) by
 \[
 \beta(x,y)=\int_0^1 t^{x-1}(1-t)^{y-1}\diff t.
 \]
 \begin{enumerate}[label=(\alph*),noitemsep]
 \item Prove that the definition of the gamma function is well-posed, i.e.,
-the function $u\mapsto e^{-u}u^{y-1}$ is in $L(\bbR^+)$ for all
-$y\in\bbR^+$.
+  the function \(u\mapsto e^{-u}u^{y-1}\) is in \(L(\bbR^+)\) for all
+  \(y\in\bbR^+\).
 \item Show that
 \[
 \beta(x,y)=\frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}.
@@ -272,9 +86,9 @@ $y\in\bbR^+$.
 \end{solution}
 
 \begin{problem}
-Let $f\in L(\bbR^n)$ and for $\mathbf{h}\in\bbR^n$ define
-$f_{\mathbf{h}}\colon\bbR^n\to\bbR$ be $f_{\mathbf{h}}( x )=
-f( x -\mathbf{h})$. Prove that
+  Let \(f\in L(\bbR^n)\) and for \(\mathbf{h}\in\bbR^n\) define
+  \(f_{\mathbf{h}}\colon\bbR^n\to\bbR\) be
+  \(f_{\mathbf{h}}( x )= f( x -\mathbf{h})\). Prove that
 \[
 \lim_{\mathbf{h}\to\mathbf{0}}\int_{\bbR^n}\left|f_{\mathbf{h}}-f\right|=0.
 \]
@@ -284,8 +98,8 @@ f( x -\mathbf{h})$. Prove that
 
 \begin{problem}
 \begin{enumerate}[label=(\alph*),noitemsep]
-\item If $f_k,g_k,f,g\in L(\bbR^n)$, $f_k\to f$ and $g_k\to g$ a.e.\@ in
-  $\bbR^n$, $|f_k|\leq g_k$ and
+\item If \(f_k,g_k,f,g\in L(\bbR^n)\), \(f_k\to f\) and \(g_k\to g\) a.e.\@
+  in \(\bbR^n\), \(|f_k|\leq g_k\) and
 \[
 \int_{\bbR^n}g_k\longrightarrow\int_{\bbR^n}g,
 \]
@@ -293,26 +107,19 @@ prove that
 \[
 \int_{\bbR^n} f_k\longrightarrow\int_{\bbR^n}f.
 \]
-\item Using part (a) show that if $f_k,f\in L(\bbR^n)$ and $f_k\to f$
-  a.e.\@ in $\bbR^n$, then
+\item Using part (a) show that if \(f_k,f\in L(\bbR^n)\) and \(f_k\to f\)
+  a.e.\@ in \(\bbR^n\), then
 \[
-\int_{\bbR^n}|f_k-f|\longrightarrow 0\qquad\text{as $k\to\infty$}
+  \int_{\bbR^n}|f_k-f|\longrightarrow 0\qquad\text{as \(k\to\infty\)}
 \]
 if and only if
 \[
-\int_{\bbR^n}|f_k|\longrightarrow\int_{\bbR^n}|f|\qquad\text{as $k\to\infty$}.
+  \int_{\bbR^n}|f_k|\longrightarrow\int_{\bbR^n}|f|\qquad\text{as
+    \(k\to\infty\)}.
 \]
 \end{enumerate}
 \end{problem}
 \begin{solution}
-(a) $\implies$ (b): Assume part (a) then $\implies$ if
-\begin{equation}
-\label{eq:prep:2:12}
-\int_{\bbR^n}|f_k-f|\longrightarrow 0
-\end{equation}
-as $k\to\infty$, we have
-\\\\
-(b):
 \end{solution}
 
 %%% Local Variables:

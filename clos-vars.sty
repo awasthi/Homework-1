@@ -36,6 +36,7 @@
 \RequirePackage{amsmath}
 \RequirePackage{amsthm}
 \RequirePackage{mathtools}
+\mathtoolsset{mathic=true}
 \RequirePackage{mleftright}
 
 %%% Othe useful packages
@@ -161,10 +162,9 @@ english]{babel}
 \if@libertine %% Use Libertine (a beautiful free font)
 \pdfmapfile{+libertinelgc.map}%
 \RequirePackage[sb]{libertine} % roman
-\RequirePackage{libertinextras}%
+% \RequirePackage{libertinextras}%
 \RequirePackage[scale=.95,type1]{cabin} % sans
 \RequirePackage[varqu,varl,scaled=.94]{zi4} % mono
-
 \RequirePackage[libertine,%
                 libaltvw,%
                 bigdelims,%
@@ -178,6 +178,9 @@ english]{babel}
 \substitutefont{LGR}{\rmdefault}{LinuxLibertineT}%
 \substitutefont{T2A}{\rmdefault}{LinuxLibertineT}%
 
+%% Other Libertine specific math settings
+\newcommand\Bigstar{\bigstar} % too ugly
+\renewcommand\bigstar{\star} % too ugly
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}} % Default is
 \newcommand\bigsetminus{\setminus} % too ugly
 \renewcommand\setminus{\smallsetminus} % too ugly
@@ -195,12 +198,13 @@ english]{babel}
     {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
     {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
     {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-  \int}
-\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+  \int}%
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}%
 
 \newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
-                     \hbox{\scriptsize.}\hbox{\scriptsize.}}}%
-                     =}
+      \hbox{\scriptsize.}\hbox{\scriptsize.}}}%
+  =}%
+\mleftright%
 
 \if@eucal % Euler mathcal
 \RequirePackage[bb=ams,frak=euler,cal=euler,scr=rsfso]{mathalfa}%

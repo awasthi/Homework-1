@@ -5,50 +5,51 @@
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 6, Ex.\@ 1]
   \hfill
   \begin{enumerate}[label=(\alph*),noitemsep]
-  \item Let $E$ be a measurable subset of $\bbR^2$ such that for almost
-    every $x\in\bbR$, $\left\{\,y:(x,y)\in E\,\right\}$ has $\bbR$-measure
-    zero. Show that $E$ has measure zero and that for almost every
-    $y\in\bbR$, $\left\{\,x:(x,y)\in E\,\right\}$ has measure zero.
-  \item Let $f(x,y)$ be nonnegative and measurable in $\bbR^2$. Suppose
-    that for almost every $x\in\bbR$, $f(x,y)$ is finite for almost every
-    $y$. Show that for almost $y\in\bbR$, $f(x,y)$ is finite for almost
-    every $x$.
+  \item Let \(E\) be a measurable subset of \(\bbR^2\) such that for almost
+    every \(x\in\bbR\), \(\left\{\,y:(x,y)\in E\,\right\}\) has
+    \(\bbR\)-measure zero. Show that \(E\) has measure zero and that for
+    almost every \(y\in\bbR\), \(\left\{\,x:(x,y)\in E\,\right\}\) has
+    measure zero.
+  \item Let \(f(x,y)\) be nonnegative and measurable in \(\bbR^2\). Suppose
+    that for almost every \(x\in\bbR\), \(f(x,y)\) is finite for almost
+    every \(y\). Show that for almost \(y\in\bbR\), \(f(x,y)\) is finite
+    for almost every \(x\).
   \end{enumerate}
 \end{problem}
 \begin{solution}
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 6, Ex.\@ 3]
-  Let $f$ be measurable and finite a.e.\@ on $[0,1]$. If $f(x)-f(y)$ is
-  integrable over the square $0\leq x\leq 1$, $0\leq y\leq 1$, show that
-  $f\in L[0,1]$.
+  Let \(f\) be measurable and finite a.e.\@ on \([0,1]\). If \(f(x)-f(y)\)
+  is integrable over the square \(0\leq x\leq 1\), \(0\leq y\leq 1\), show
+  that \(f\in L[0,1]\).
 \end{problem}
 \begin{solution}
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 6, Ex.\@ 4]
-  Let $f$ be measurable and periodic with period $1$:
-  $f(t+1)=f(t)$. Suppose there is a finite $c$ such that
+  Let \(f\) be measurable and periodic with period \(1\):
+  \(f(t+1)=f(t)\). Suppose there is a finite \(c\) such that
   \[
     \int_0^1|f(a+t)-f(b+t)|\diff t\leq c
   \]
-  for all $a$ and $b$. Show that $f\in L[0,1]$. (Set $a=x$, $b=-x$,
-  integrate with respect to $x$, and make the change of variables
-  $\xi=x+t$, $\eta=-x+t$.)
+  for all \(a\) and \(b\). Show that \(f\in L[0,1]\). (Set \(a=x\),
+  \(b=-x\), integrate with respect to \(x\), and make the change of
+  variables \(\xi=x+t\), \(\eta=-x+t\).)
 \end{problem}
 \begin{solution}
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 6, Ex.\@ 6]
-  For $f\in L(\bbR)$, define the \emph{Fourier transform $\hat f$} of $f$
-  by
+  For \(f\in L(\bbR)\), define the \emph{Fourier transform \(\hat f\)} of
+  \(f\) by
   \[
     \hat f(x)=\frac{1}{2\pi}\int_{-\infty}^\infty f(t)e^{-ixt}\diff t
   \]
-  for $x\in\bbR$. (For complex-valued function $F=F_0+iF_1$ whose real and
-  imaginary parts $F_0$ and $F_1$ are integrable, we define
-  $\int F=\int F_0+i\int F_1$.) Show that if $f$ and $g$ belong to
-  $L(\bbR)$, then
+  for \(x\in\bbR\). (For complex-valued function \(F=F_0+iF_1\) whose real
+  and imaginary parts \(F_0\) and \(F_1\) are integrable, we define
+  \(\int F=\int F_0+i\int F_1\).) Show that if \(f\) and \(g\) belong to
+  \(L(\bbR)\), then
   \[
     \widehat{(f*g)}(x)=2\pi\hat f(x)\hat g(x).
   \]
@@ -57,15 +58,15 @@
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 6, Ex.\@ 7]
-  Let $F$ be a closed subset of $\bbR$ and let $\delta(x)=\delta(x,F)$ be
-  the corresponding distance function. If $\lambda>0$ and $f$ is
-  nonnegative and integrable over the complement of $F$, prove that the
-  function
+  Let \(F\) be a closed subset of \(\bbR\) and let
+  \(\delta(x)=\delta(x,F)\) be the corresponding distance function. If
+  \(\lambda>0\) and \(f\) is nonnegative and integrable over the complement
+  of \(F\), prove that the function
   \[
     \int_{\bbR}\frac{\delta^\lambda(y)f(y)}{|x-y|^{1+\lambda}}\diff t
   \]
-  is integrable over $F$ and so is finite a.e.\@ in $F$. (In case
-  $f=\chi_{(a,b)}$, this reduces to Theorem 6.17.)
+  is integrable over \(F\) and so is finite a.e.\@ in \(F\). (In case
+  \(f=\chi_{(a,b)}\), this reduces to Theorem 6.17.)
 \end{problem}
 \begin{solution}
 \end{solution}
@@ -73,12 +74,14 @@
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 6, Ex.\@ 9]
   \hfill
   \begin{enumerate}[label=(\alph*)]
-  \item Show that $M_\lambda(x;F)=+\infty$ if $x\notin F$, $\lambda>0$.
-  \item Let $F=[c,d]$ be a closed subinterval of a bounded open interval
-    $(a,b)\subseteq\bbR$, and let $M_\alpha$ be the corresponding
-    Marcinkiewicz integral, $\lambda>0$. Show that $M_\lambda$ is finite
-    for every $x\in(c,d)$ and that $M_\lambda(c)=M_\lambda(d)=\infty$. Show
-    also that $\int M_\lambda\leq\lambda^{-1}|G|$, where $G=(a,b)-[c,d]$.
+  \item Show that \(M_\lambda(x;F)=+\infty\) if \(x\notin F\),
+    \(\lambda>0\).
+  \item Let \(F=[c,d]\) be a closed subinterval of a bounded open interval
+    \((a,b)\subseteq\bbR\), and let \(M_\alpha\) be the corresponding
+    Marcinkiewicz integral, \(\lambda>0\). Show that \(M_\lambda\) is
+    finite for every \(x\in(c,d)\) and that
+    \(M_\lambda(c)=M_\lambda(d)=\infty\). Show also that
+    \(\int M_\lambda\leq\lambda^{-1}|G|\), where \(G=(a,b)-[c,d]\).
   \end{enumerate}
 \end{problem}
 \begin{solution}

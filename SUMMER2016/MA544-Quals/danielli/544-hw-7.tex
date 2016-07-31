@@ -8,82 +8,85 @@
   \hfill
   \begin{enumerate}[label=(\alph*),noitemsep]
   \item Show that the limit of a decreasing (increasing) sequence of
-    functions u.s.c.\@ (l.s.c.) at $x_0$ is u.s.c.\@ (l.s.c.) at $x_0$. In
-    particular, the limit of a decreasing (increasing) sequence of
-    functions continuous at $x_0$ is u.s.c.\@ (l.s.c.) at $x_0$.
-  \item Let $f$ be u.s.c.\@ and less than $\infty$ on $[a,b]$. Show that there
-    exists continuous $f_k$ on $[a,b]$ such that $f_k\downarrow f$.
+    functions u.s.c.\@ (l.s.c.) at \(x_0\) is u.s.c.\@ (l.s.c.) at
+    \(x_0\). In particular, the limit of a decreasing (increasing) sequence
+    of functions continuous at \(x_0\) is u.s.c.\@ (l.s.c.) at \(x_0\).
+  \item Let \(f\) be u.s.c.\@ and less than \(\infty\) on \([a,b]\). Show
+    that there exists continuous \(f_k\) on \([a,b]\) such that
+    \(f_k\downarrow f\).
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  For part (a) we may as well assume that $f\geq 0$ for all $x$. Let
-  $\{f_n\}$, $n\in\bbN$, be a sequence of decreasing functions with limit
-  $f$ which are u.s.c.\@ at $x_0$. Then, for every $n\in\bbN$, for every
-  sequence $x\to x_0$,
+  For part (a) we may as well assume that \(f\geq 0\) for all \(x\). Let
+  \(\{f_n\}\), \(n\in\bbN\), be a sequence of decreasing functions with
+  limit \(f\) which are u.s.c.\@ at \(x_0\). Then, for every \(n\in\bbN\),
+  for every sequence \(x\to x_0\),
   \[
     \limsup_{x\to x_0}f_n(x)\leq f_n(x_0).
   \]
-  Now, we claim that $f(x)\leq f_n(x)$ for every $x$ and every $n\in\bbN$.
+  Now, we claim that \(f(x)\leq f_n(x)\) for every \(x\) and every
+  \(n\in\bbN\).
   \begin{subproof}[Proof of claim]
-    Suppose $f(x)>f_{N_1}(x)$ for some $x$, $N_1\in\bbN$. Then there exists
-    a real number $\varepsilon>0$ such that $0<\varepsilon<|f(x)-f_n(x)|$
-    (we may, for example, take $\varepsilon$ to be in $\bbQ$ which is dense
-    in $\bbR$). Then, since $f_n\downarrow f$, there exists an index
-    $N_1\in\bbN$ such that
+    Suppose \(f(x)>f_{N_1}(x)\) for some \(x\), \(N_1\in\bbN\). Then there
+    exists a real number \(\varepsilon>0\) such that
+    \(0<\varepsilon<|f(x)-f_n(x)|\) (we may, for example, take
+    \(\varepsilon\) to be in \(\bbQ\) which is dense in \(\bbR\). Then,
+    since \(f_n\downarrow f\), there exists an index \(N_1\in\bbN\) such
+    that
     \[
       |f(x)-f_n(x)|<\varepsilon.
     \]
-    However, since the sequence $f_n$ decreases to $f$, for
-    $n\geq\max\{N_1,N_2\}$, $f_n(x)\leq f_{N_1}(x)$ so
+    However, since the sequence \(f_n\) decreases to \(f\), for
+    \(n\geq\max\{N_1,N_2\}\), \(f_n(x)\leq f_{N_1}(x)\) so
     \[
       |f(x)-f_n(x)|>|f(x)-f_{N_1}(x)|>\varepsilon.
     \]
     This is a contradiction.
   \end{subproof}
-  Having established this, for every sequence $x\to x_0$, we have
+  Having established this, for every sequence \(x\to x_0\), we have
   \[
     \limsup_{x\to x_0} f(x)\leq \limsup_{x\to x_0} f_n(x)\leq f_n(x_0).
   \]
-  Letting $n\to\infty$,
+  Letting \(n\to\infty\),
   \[
     \limsup_{x\to x_0} f(x)\leq \lim_{n\to\infty}f_n(x_0)=f(x_0).
   \]
 
-  For part (b) suppose $f\colon [a,b]\to\bbR$ is u.s.c.\@ on $[a,b]$ and
-  $f(x)<\infty$ for all $x\in [a,b]$. For a fixed $x\in[a,b]$, $f$ is
-  u.s.c.\@ at $x$ if for every $\varepsilon>0$, there exists a neighborhood
-  $B(x,\delta)$ such that $f(y)<f(x)+\varepsilon$. Now, let
-  $\varepsilon=1/n$. Then, for each $x\in [a,b]$, there exists a
-  neighborhood $B(x,\delta_x)$ such that $f(y)<f(x)+\varepsilon$ for
-  $y\in B(x,\delta_x)$.
+  For part (b) suppose \(f\colon [a,b]\to\bbR\) is u.s.c.\@ on \([a,b]\)
+  and \(f(x)<\infty\) for all \(x\in [a,b]\). For a fixed \(x\in[a,b]\),
+  \(f\) is u.s.c.\@ at \(x\) if for every \(\varepsilon>0\), there exists a
+  neighborhood \(B(x,\delta)\) such that \(f(y)<f(x)+\varepsilon\). Now,
+  let \(\varepsilon=1/n\). Then, for each \(x\in [a,b]\), there exists a
+  neighborhood \(B(x,\delta_x)\) such that \(f(y)<f(x)+\varepsilon\) for
+  \(y\in B(x,\delta_x)\).
 
   The following
   \href{http://math.stackexchange.com/questions/462534/recognizing-uppersemicontinuous-function-as-a-pointwise-decreasing-limit}{post}
   on the Mathematics \textsf{StackExchange} contains a solution to part (b)
   of this problem.
 
-  First, we claim that $f(x)\neq\infty$ for any $x\in[a,b]$, it must be
+  First, we claim that \(f(x)\neq\infty\) for any \(x\in[a,b]\), it must be
   bounded.
   \begin{subproof}[Proof of claim]
-    By Theorem 4.14 (a), sets of the form $\{\,x\in[a,b]:f(x)<a\,\}$ is
-    relatively open for all finite $a$. Define
+    By Theorem 4.14 (a), sets of the form \(\{\,x\in[a,b]:f(x)<a\,\}\) is
+    relatively open for all finite \(a\). Define
     \[
       E_n=\left\{\,x\in [a,b]:f(x)<n\,\right\}.
     \]
-    Then, the collection $\calE=\{E_n\}$, $n\in\bbN$, is an open cover of
-    $[a,b]$. Since $[a,b]$ is compact, there exists a finite subcover
-    $\{E_{n_1},\ldots,E_{n_m}\}$ of $\calE$. Letting
-    $M=\max\{n_1,\ldots,n_m\}$, we have $f<M$ for all $x\in[a,b]$. Thus,
-    $f$ is bounded on $[a,b]$.
+    Then, the collection \(\calE=\{E_n\}\), \(n\in\bbN\), is an open cover
+    of \([a,b]\). Since \([a,b]\) is compact, there exists a finite
+    subcover \(\{E_{n_1},\dotsc,E_{n_m}\}\) of \(\calE\). Letting
+    \(M=\max\{n_1,\dotsc,n_m\}\), we have \(f<M\) for all
+    \(x\in[a,b]\). Thus, \(f\) is bounded on \([a,b]\).
   \end{subproof}\noindent
-  Now that we have established that $f$ is bounded on $[a,b]$ by, say, $M$
-  then $\sup_{x\in[a,b]} f\leq M$. Define
+  Now that we have established that \(f\) is bounded on \([a,b]\) by, say,
+  \(M\) then \(\sup_{x\in[a,b]} f\leq M\). Define
   \[
     f_n(x)=\sup_{y\in[a,b]}\bigl[f(y)-n|x-y|\bigr].
   \]
-  We claim that this family of functions $\{f_n\}$, $n\in\bbN$, is
-  continuous and that $f_n\to f$. To see that $f$ is continuous, we observe
-  that this family of functions is in fact Lipschitz continuous
+  We claim that this family of functions \(\{f_n\}\), \(n\in\bbN\), is
+  continuous and that \(f_n\to f\). To see that \(f\) is continuous, we
+  observe that this family of functions is in fact Lipschitz continuous
   \begin{align*}
     |f_n(x)-f_n(y)|
     &=\left|\sup_{z\in[a,b]}\bigl[ f(z)-n|x-z|
@@ -94,10 +97,11 @@
     &\leq\left|\sup_{z\in[a,b]}\bigl[-n|x-y|-2n|y-z|\bigr]\right|\\
     &=n|x-y|.
   \end{align*}
-  Thus, $f_n$ is Lipschitz and in particular, it is continuous.
+  Thus, \(f_n\) is Lipschitz and in particular, it is continuous.
 
-  To see that $f_n\to f$ pointwise, let $\varepsilon>0$ be given then we
-  must show that there exists some index $N$ such that $n\geq N$ implies
+  To see that \(f_n\to f\) pointwise, let \(\varepsilon>0\) be given then
+  we must show that there exists some index \(N\) such that \(n\geq N\)
+  implies
   \[
     |f(x)-f_n(x)|<\varepsilon.
   \]
@@ -111,40 +115,43 @@
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 4, Ex.\@ 11]
-  Let $f$ be defined on $\bbR^n$ and let $B(x)$ denote the open ball
-  $\left\{\,y:|x-y|<r\,\right\}$ with center $x$ and fixed radius $r$. Show
-  that the function $g(x)=\sup\left\{\,f(y):y\in B(x)\,\right\}$ is
-  l.s.c.\@ and the function $h(x)=\inf\left\{\,f(y):y\in B(x)\,\right\}$ is
-  u.s.c.\@ on $\bbR^n$. Is the same true for the closed ball
-  $\left\{\,y:|x-y|\leq r\,\right\}$?
+  Let \(f\) be defined on \(\bbR^n\) and let \(B(x)\) denote the open ball
+  \(\left\{\,y:|x-y|<r\,\right\}\) with center \(x\) and fixed radius
+  \(r\). Show that the function
+  \(g(x)=\sup\left\{\,f(y):y\in B(x)\,\right\}\) is l.s.c.\@ and the
+  function \(h(x)=\inf\left\{\,f(y):y\in B(x)\,\right\}\) is u.s.c.\@ on
+  \(\bbR^n\). Is the same true for the closed ball
+  \(\left\{\,y:|x-y|\leq r\,\right\}\)?
 \end{problem}
 \begin{solution}
   Note that, by properties of the infimum/supremum for any set of real
-  numbers $S\subset\bbR$,
+  numbers \(S\subset\bbR\),
   \[
     \sup S=-\inf (-S)
   \]
-  where $-S=\left\{\,-s:s\in S\,\right\}$. Thus,
+  where \(-S=\left\{\,-s:s\in S\,\right\}\). Thus,
   \begin{align*}
     g(x)
     &=-\inf\left\{\,-f(y):y\in B(x,r)\,\right\}\\
     &=\sup\left\{\,f(y):y\in B(x,r)\, \right\}.
   \end{align*}
-  Letting $f'=-f$, it suffices to show that $g'(x)=\inf\{\,f'(y):y\in
-  B(x,r)\,\}$ is u.s.c.\@ since for any u.s.c.\@ function $f$, $-f$ is
-  l.s.c. Therefore, we show that $h$ is u.s.c.
+  Letting \(f'=-f\), it suffices to show that
+  \(g'(x)=\inf\{\,f'(y):y\in B(x,r)\,\}\) is u.s.c.\@ since for any
+  u.s.c.\@ function \(f\), \(-f\) is l.s.c. Therefore, we show that \(h\)
+  is u.s.c.
 
-  To see that $h$ is u.s.c., let $M>h(x_0)$. Then we must show that there
-  exists a neighborhood $B(x_0,\delta)$ such that $M>h(x)$ for every
-  $x\in B(x_0,\delta)$. Since $h(x_0)$ is the infimum of $f(x)$ over all
-  $x\in B(x_0,r)$, given $\varepsilon>0$ there exists $x\in B(x_0,r)$ such
-  that $f(x)<h(x_0)+\varepsilon<M$. Define $\delta=(r-|x-y|)/2$. Then we
-  claim that for any $x\in B(x_0,\delta)$,
+  To see that \(h\) is u.s.c., let \(M>h(x_0)\). Then we must show that
+  there exists a neighborhood \(B(x_0,\delta)\) such that \(M>h(x)\) for
+  every \(x\in B(x_0,\delta)\). Since \(h(x_0)\) is the infimum of \(f(x)\)
+  over all \(x\in B(x_0,r)\), given \(\varepsilon>0\) there exists
+  \(x\in B(x_0,r)\) such that \(f(x)<h(x_0)+\varepsilon<M\). Define
+  \(\delta=(r-|x-y|)/2\). Then we claim that for any
+  \(x\in B(x_0,\delta)\),
   \[
     g(x)<M.
   \]
   \begin{subproof}[Proof of claim]
-    Let $x\in B(x_0,\delta)$. Then $y\in B(x_0,\delta)$ since
+    Let \(x\in B(x_0,\delta)\). Then \(y\in B(x_0,\delta)\) since
     \begin{align*}
       |x-y|&=|x-x_0-(y-x_0)|\\
            &\leq |x-x_0|+|y-x_0|\\
@@ -157,27 +164,28 @@
       g(x)\leq f(y)<g(x_0)+\varepsilon<M.
     \]
   \end{subproof}
-  It follows that $g$ is u.s.c.
+  It follows that \(g\) is u.s.c.
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 4, Ex.\@ 15]
-  Let $\left\{f_k\right\}$ be a sequence of measurable functions defined on
-  a measurable set $E$ with $m(E)<\infty$. If $|f_k(x)|\leq M_x<\infty$ for
-  all $k$ for each $x\in E$, show that given $\varepsilon>0$, there is
-  closed $F\subseteq E$ and finite $M$ such that
-  $m(E\setminus F)<\varepsilon$ and $|f_k(x)|\leq M$ for all $x\in F$.
+  Let \(\left\{f_k\right\}\) be a sequence of measurable functions defined
+  on a measurable set \(E\) with \(m(E)<\infty\). If
+  \(|f_k(x)|\leq M_x<\infty\) for all \(k\) for each \(x\in E\), show that
+  given \(\varepsilon>0\), there is closed \(F\subseteq E\) and finite
+  \(M\) such that \(m(E\setminus F)<\varepsilon\) and \(|f_k(x)|\leq M\)
+  for all \(x\in F\).
 \end{problem}
 \begin{solution}
-  Set $f=\sup_{n\in\bbN} |f_n|$; then, $f$ is measurable since it is the
-  supremum of measurable functions $|f_n|$. By Lusin's theorem $f$
-  satisfies the $\calC$-property, i.e., there exists a closed subset $F'$
-  of $E$ with $m(E\setminus F')<\varepsilon/2$ and a continuous function
-  $\bar f\colon E\to\bbR$ such that $f\restrict{F'}=\bar
-  f\restrict{F'}$. Now, let $B$ be the closed ball centered at $\mathbf{0}$
-  such that $|E\setminus B|<\varepsilon/2$ (remember, this is all taking
-  place in $\bbR^n$, so we can do this). Thus, $F'\cap B$ is compact since
-  it is a closed subset of $B$ the latter being a compact set. Let
-  $F=F'\cap B$ then,
+  Set \(f=\sup_{n\in\bbN} |f_n|\); then, \(f\) is measurable since it is
+  the supremum of measurable functions \(|f_n|\). By Lusin's theorem \(f\)
+  satisfies the \(\calC\)-property, i.e., there exists a closed subset
+  \(F'\) of \(E\) with \(m(E\setminus F')<\varepsilon/2\) and a continuous
+  function \(\bar f\colon E\to\bbR\) such that
+  \(f\restrict{F'}=\bar f\restrict{F'}\). Now, let \(B\) be the closed ball
+  centered at \(\mathbf{0}\) such that \(|E\setminus B|<\varepsilon/2\)
+  (remember, this is all taking place in \(\bbR^n\), so we can do
+  this). Thus, \(F'\cap B\) is compact since it is a closed subset of \(B\)
+  the latter being a compact set. Let \(F=F'\cap B\) then,
   \begin{align*}
     |E\setminus F|
     &=|E\setminus(F'\cap B)|\\
@@ -186,33 +194,34 @@
     &<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}\\
     &=\varepsilon
   \end{align*}
-  so $F$ has the desired measure. Lastly, by the mean value theorem, $f$
-  achieves its maximum, call it $M$, on $F$ since $F$ is compact. It
-  follows that $f_n\restrict{F}\leq M$ for all $n\in\bbN$.
+  so \(F\) has the desired measure. Lastly, by the mean value theorem,
+  \(f\) achieves its maximum, call it \(M\), on \(F\) since \(F\) is
+  compact. It follows that \(f_n\restrict{F}\leq M\) for all \(n\in\bbN\).
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 4, Ex.\@ 18]
-  If $f$ is measurable on $E$, define
-  $\omega_f(a)=m\{\,f>a\,\}$ for $-\infty<a<\infty$. If
-  $f_k\uparrow f$, show that $\omega_{f_k}\uparrow\omega_f$. If $f_k\to f$,
-  show that $\omega_{f_k}\to\omega_f$ at each point of continuity of
-  $\omega_f$. [For the second part, show that if $f_k\to f$, then
-  $\limsup_{k\to\infty}\omega_{f_k}(a)\leq\omega_f(a-\varepsilon)$ and
-  $\liminf_{k\to\infty}\omega_{f_k}(a)\geq\omega_f(a+\varepsilon)$ for
-  every $\varepsilon>0$.]
+  If \(f\) is measurable on \(E\), define \(\omega_f(a)=m\{\,f>a\,\}\) for
+  \(-\infty<a<\infty\). If \(f_k\uparrow f\), show that
+  \(\omega_{f_k}\uparrow\omega_f\). If \(f_k\to f\), show that
+  \(\omega_{f_k}\to\omega_f\) at each point of continuity of
+  \(\omega_f\). [For the second part, show that if \(f_k\to f\), then
+  \(\limsup_{k\to\infty}\omega_{f_k}(a)\leq\omega_f(a-\varepsilon)\) and
+  \(\liminf_{k\to\infty}\omega_{f_k}(a)\geq\omega_f(a+\varepsilon)\) for
+  every \(\varepsilon>0\).]
 \end{problem}
 \begin{solution}
   For the first part of this problem we will show that the sequence of
-  distribution functions $\{\omega_{f_n}\}$, $n\in\bbN$, is increasing and
-  that its limit is $\omega_f$. It is easy to verify that this sequence is
-  in fact increasing: if $x\in\left\{\,f_{n-1}\geq M\,\right\}$ then
-  $x\in\left\{\,f_n\geq M\,\right\}$ since $f_n\geq f_{n-1}$ for all
-  $x\in E$. Thus, $\omega_{f_n}\geq\omega_{f_{n-1}}$. Now we need to show
-  that the limit of this sequence is in fact $\omega_f$: fix an $x\in E$
-  and let $\varepsilon>0$ be given. Then there exists an index $N'$ such
-  that $n\geq N'$ implies $|f(x)-f_n(x)|<\varepsilon$. Now, we want to use
-  this $\varepsilon$ and index $N'$ (with some possible alterations), for
-  some fixed $M$, we want to show that the difference
+  distribution functions \(\{\omega_{f_n}\}\), \(n\in\bbN\), is increasing
+  and that its limit is \(\omega_f\). It is easy to verify that this
+  sequence is in fact increasing: if
+  \(x\in\left\{\,f_{n-1}\geq M\,\right\}\) then
+  \(x\in\left\{\,f_n\geq M\,\right\}\) since \(f_n\geq f_{n-1}\) for all
+  \(x\in E\). Thus, \(\omega_{f_n}\geq\omega_{f_{n-1}}\). Now we need to
+  show that the limit of this sequence is in fact \(\omega_f\): fix an
+  \(x\in E\) and let \(\varepsilon>0\) be given. Then there exists an index
+  \(N'\) such that \(n\geq N'\) implies \(|f(x)-f_n(x)|<\varepsilon\). Now,
+  we want to use this \(\varepsilon\) and index \(N'\) (with some possible
+  alterations), for some fixed \(M\), we want to show that the difference
   \[
     \left| \omega_f(M)-\omega_{f_n}(M) \right|<\varepsilon.
   \]
@@ -224,33 +233,33 @@
   In turn, it is easy to see that the latter set is in fact
   \begin{align*}
     E_{M,n}
-    &=\left\{\,x\in E:\text{$f(x)>M$ and $f_n(x)\leq M$}\,\right\}\\
-    &=\left\{\,x\in E:\text{$f(x)>M$ and $f(x)-f_n(x)>0$}\,\right\}.
+    &=\left\{\,x\in E:\text{\(f(x)>M\) and \(f_n(x)\leq M\)}\,\right\}\\
+    &=\left\{\,x\in E:\text{\(f(x)>M\) and \(f(x)-f_n(x)>0\)}\,\right\}.
   \end{align*}
-  Then, $E_{M,n}\subseteq\left\{\,x\in E:f(x)-f_n(x)>M\,\right\}=E_{0,n}$
-  and the the measure of the latter set converges to $0$ since $f_n\to f$
-  and this implies that $f_n$ converges to $f$ in measure (a weaker form of
-  pointwise convergence). Let $N''$ be the index such that $n\geq N'$
-  implies $m(E_{0,n})<\varepsilon$. Then for $n\geq N$ with
-  $N=\max\{N',N''\}$, the difference
+  Then, \(E_{M,n}\subseteq\left\{\,x\in E:f(x)-f_n(x)>M\,\right\}=E_{0,n}\)
+  and the the measure of the latter set converges to \(0\) since
+  \(f_n\to f\) and this implies that \(f_n\) converges to \(f\) in measure
+  (a weaker form of pointwise convergence). Let \(N''\) be the index such
+  that \(n\geq N'\) implies \(m(E_{0,n})<\varepsilon\). Then for
+  \(n\geq N\) with \(N=\max\{N',N''\}\), the difference
   \[
     \left| \omega_f(M)-\omega_{f_n}(M) \right|<\varepsilon.
   \]
-  Thus, we have shown that $\omega_{f_n}\uparrow\omega_f$.
+  Thus, we have shown that \(\omega_{f_n}\uparrow\omega_f\).
 \end{solution}
 
 % (Chapter 5: # 1, 2, 3, 4).
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 5, Ex.\@ 1]
-  If $f$ is a simple measurable function (not necessarily positive) taking
-  values $a_j$ on $E_j$, $j=1,\ldots,N$, show that
-  $\int_E f=\sum_{j=1}^N a_jm(E_j)$. [Use (5.24)].
+  If \(f\) is a simple measurable function (not necessarily positive)
+  taking values \(a_j\) on \(E_j\), \(j=1,\dotsc,N\), show that
+  \(\int_E f=\sum_{j=1}^N a_jm(E_j)\). [Use (5.24)].
 \end{problem}
 \begin{solution}
-  It is enough to consider simple positive measurable functions $f$ since
-  we can split $f$ into the difference of two positive simple measurable
-  functions, namely, $f=f^+-f^-$. Now, since $f$ is a simple function,
-  $f=\sum_{n=1}^Na_n\chi_{E_n}$ for measurable subsets $E_n\subseteq
-  E$. Now, by Theorem 5.24, we have
+  It is enough to consider simple positive measurable functions \(f\) since
+  we can split \(f\) into the difference of two positive simple measurable
+  functions, namely, \(f=f^+-f^-\). Now, since \(f\) is a simple function,
+  \(f=\sum_{n=1}^Na_n\chi_{E_n}\) for measurable subsets
+  \(E_n\subseteq E\). Now, by Theorem 5.24, we have
   \begin{align*}
     \int_E f\diff x
     &=\int_E\biggl[ \sum_{n=1}^N a_n\chi_{E_n} \biggr]\rmd x\\
@@ -261,20 +270,20 @@
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 5, Ex.\@ 3]
-  Let $\left\{f_k\right\}$ be a sequence of nonnegative measurable
-  functions defined on $E$. If $f_k\to f$ and $f_k\leq f$ a.e.\@ on $E$,
-  show that $\int_E f_k\to\int_E f$.
+  Let \(\left\{f_k\right\}\) be a sequence of nonnegative measurable
+  functions defined on \(E\). If \(f_k\to f\) and \(f_k\leq f\) a.e.\@ on
+  \(E\), show that \(\int_E f_k\to\int_E f\).
 \end{problem}
 \begin{solution}
   The result follows from a simple application of Fatou's lemma. Consider
-  the sequence of integrals $\left\{\int_E f_n \right\}$, $n\in\bbN$. By
-  Fatou's lemma
+  the sequence of integrals \(\left\{\int_E f_n \right\}\),
+  \(n\in\bbN\). By Fatou's lemma
   \begin{align*}
     \int_E \liminf_{n\to\infty}f_n\diff x
     &=\int_E f\diff x\\
     &\leq\liminf_{n\to\infty}\int_E f_n\diff x.
   \end{align*}
-  By Theorem 5.10, since $f_n\leq f$, we have
+  By Theorem 5.10, since \(f_n\leq f\), we have
   \[
     \limsup_{n\to\infty}\int_E f_n\diff x\leq
     \int_E f\diff x.

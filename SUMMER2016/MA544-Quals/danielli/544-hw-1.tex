@@ -24,9 +24,7 @@
 % Final Exam on Tuesday, May 3, 8-10 am, UNIV 117
 % Practice Problems for the Final Exam - Solutions
 
-
 % Interesting symbols
-% $\mbfalpha,\mbfvartheta,\mbfvarphi,\mbfvarkappa,\mbfvarepsilon,\mbfvarpi$
 \section{MA 544 Spring 2016}
 % \thispagestyle{empty}
 This is material from the course MA 544 as it was taught in the spring of
@@ -45,23 +43,23 @@ understood to come from Wheeden and Zygmund's \emph{Measure and Integral}.
 Throughout these notes
 
 \begin{tabular}{cl}
-  $\bbR$ & is the set of real numbers\\
-  $\bbR^+$ & is the set of positive real numbers, that is, $x\in\bbR$ with
-             $x\geq 0$\\
-  $\bbC$ & is the set of complex numbers\\
-  $\bbQ$ & is the set of rational numbers\\
-  $\bbZ$ & is the set of the integers\\
-  $\bbZ^+$ & is the set of positive integers, that is, $x\in\bbZ$ with
-             $x\geq 0$\\
-  $\bbN$ & is the set of the natural numbers $1,2,\ldots$\\
-  $A\setminus B$ & is the set difference of $A$ and $B$, that is, the
-                        complement of $A\cap B$ in $A$\\
-  $m^*(E)$ & the outer measure of $E$\\
-  $m_*(E)$ & the inner measure of $E$\\
-  $m(E)$ & the Lebesgue measure of $E$\\
-  $\|\blank\|$ & the standard Euclidean norm on $\bbR^n$\\
-  $f\asymp g$ & means $f$ is asymptotically equivalent to $g$, that is,
-                $\lim_{x\to\infty} g(x)/f(x)=1$\\
+  \(\bbR\) & is the set of real numbers\\
+  \(\bbR^+\) & is the set of positive real numbers, that is, \(x\in\bbR\) with
+             \(x\geq 0\)\\
+  \(\bbC\) & is the set of complex numbers\\
+  \(\bbQ\) & is the set of rational numbers\\
+  \(\bbZ\) & is the set of the integers\\
+  \(\bbZ^+\) & is the set of positive integers, that is, \(x\in\bbZ\) with
+             \(x\geq 0\)\\
+  \(\bbN\) & is the set of the natural numbers \(1,2,\dotsc\)\\
+  \(A\setminus B\) & is the set difference of \(A\) and \(B\), that is, the
+                        complement of \(A\cap B\) in \(A\)\\
+  \(m^*(E)\) & the outer measure of \(E\)\\
+  \(m_*(E)\) & the inner measure of \(E\)\\
+  \(m(E)\) & the Lebesgue measure of \(E\)\\
+  \(\|\blank\|\) & the standard Euclidean norm on \(\bbR^n\)\\
+  \(f\asymp g\) & means \(f\) is asymptotically equivalent to \(g\), that is,
+                \(\lim_{x\to\infty} g(x)/f(x)=1\)\\
 \end{tabular}
 
 \newpage
@@ -71,51 +69,51 @@ Throughout these notes
 \setcounter{equation}{0}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 1]
-  Let $f(x)=x\sin(1/x)$ for $0<x\leq 1$ and $f(0)=0$. Show that $f$ is
-  bounded and continuous on $[0,1]$, but that $V[f;0,1]=\infty$.
+  Let \(f(x)=x\sin(1/x)\) for \(0<x\leq 1\) and \(f(0)=0\). Show that \(f\) is
+  bounded and continuous on \([0,1]\), but that \(V[f;0,1]=\infty\).
 \end{problem}
 \begin{solution}
-  Let $f$ equal $x\sin(1/x)$. We will show that $f$ is bounded and
-  continuous on $[0,1]$, but that it is not of bounded variation on
-  $[0,1]$.
+  Let \(f\) equal \(x\sin(1/x)\). We will show that \(f\) is bounded and
+  continuous on \([0,1]\), but that it is not of bounded variation on
+  \([0,1]\).
 
-  First we will show that $f$ is bounded. Note that both $|x|$ and
-  $|\sin(1/x)|$ are bounded by $1$ on the interval $[0,1]$. Since
-  $|f|=|x||\sin(1/x)|$, it follows that $|f|\leq 1$ on $[0,1]$. Thus, $f$
-  is bounded on $[0,1]$.
+  First we will show that \(f\) is bounded. Note that both \(|x|\) and
+  \(|\sin(1/x)|\) are bounded by \(1\) on the interval \([0,1]\). Since
+  \(|f|=|x||\sin(1/x)|\), it follows that \(|f|\leq 1\) on \([0,1]\). Thus, \(\)f
+  is bounded on \([0,1]\).
 
-  Next we show that $f$ is continuous. It is easy to show that $f$ is
-  continuous on the subinterval $(0,1]$ since both $|x|$ and $\sin(1/x)$
+  Next we show that \(f\) is continuous. It is easy to show that \(f\) is
+  continuous on the subinterval \((0,1]\) since both \(|x|\) and \(\sin(1/x\)
   are continuous on that interval and we know that the product of
-  continuous functions is continuous. To see that $f$ is continuous at $0$
-  we must show that $f(x^+)=f(0)$; that is, the limit of $f$ as $x$
-  approaches $0$ from the right is $f(0)$ which by definition is $0$. To
+  continuous functions is continuous. To see that \(f\) is continuous at \(\)0
+  we must show that \(f(x^+)=f(0)\); that is, the limit of \(f\) as \(\)x
+  approaches \(0\) from the right is \(f(0)\) which by definition is \(0\). To
   this end, it suffices to take a (monotonically decreasing) sequence
-  $x_n\searrow 0$ and show that the limit of the sequence
-  ${\{f(x_n)\}}_{n=1}^\infty$ is $0$. Let $\varepsilon>0$ be given then,
-  since $x_n$ converges to $0$ there exists an index $N$ such that
-  $|0-x_n|<\varepsilon$ whenever $n\geq N$. Since $|f(x_n)|\leq |x_n|$ on
-  $[0,1]$, the following inequality holds
+  \(x_n\downarrow 0\) and show that the limit of the sequence
+  \({\{f(x_n)\}}_{n=1}^\infty\) is \(0\). Let \(\varepsilon>0\) be given then,
+  since \(x_n\) converges to \(0\) there exists an index \(N\) such that
+  \(|0-x_n|<\varepsilon\) whenever \(n\geq N\). Since \(|f(x_n)|\leq |x_n|\) on
+  \([0,1]\), the following inequality holds
   \begin{align*}
     |0-f(x_n)|
     &=\left|0-x_n\sin(1/x_n)\right|\\
     &\leq |x_n|\\
     &<\varepsilon.
   \end{align*}
-  Thus, $f$ is continuous at $0$ and it converges to $0$.
+  Thus, \(f\) is continuous at \(0\) and it converges to \(0\).
 
-  Despite the nice properties that $f$ seemingly possesses, $f$ is not
-  b.v.\@ on $[0,1]$. To show that $f$ is not b.v.\@ on $[0,1]$ we must show
-  that for any positive real number $M$ there exists some partition
-  $\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}$ of $[0,1]$ such that the sum
-  associated to $\Gamma$
+  Despite the nice properties that \(f\) seemingly possesses, \(f\) is not
+  b.v.\@ on \([0,1]\). To show that \(f\) is not b.v.\@ on \([0,1]\) we
+  must show that for any positive real number \(M\) there exists some
+  partition \(\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}\) of \([0,1]\) such that
+  the sum associated to \(\Gamma\)
   \[
     \sum_{i=1}^n|f(x_i)-f(x_{i-1})|>M.
   \]
-  Let $N$ be the smallest integer greater than $M$ and let $n$ be the
-  smallest integer greater than or equal to $N/2$. Then the partition
-  $\Gamma=\{\,x_0=1<x_1<\cdots<x_{n+1}=1\,\}$ where $x_i=2/((3+(n-i))\pi)$
-  for $1\leq i\leq N$. Then we have the inequality
+  Let \(N\) be the smallest integer greater than \(M\) and let \(n\) be the
+  smallest integer greater than or equal to \(N/2\). Then the partition
+  \(\Gamma=\{\,x_0=1<x_1<\cdots<x_{n+1}=1\,\}\) where \(x_i=2/((3+(n-i))\pi\)
+  for \(1\leq i\leq N\). Then we have the inequality
   \begin{align*}
     S_\Gamma
     &=\sum_{i=1}^{n+1}|f(x_i)-f(x_{i-1})|\\
@@ -124,7 +122,7 @@ Throughout these notes
     &=N+|f(x_{n+1})-f(x_n)|+|f(x_0)-f(x_1)|\\
     &>M.
   \end{align*}
-  Thus, $f$ is not b.v.\@ on $[0,1]$.
+  Thus, \(f\) is not b.v.\@ on \([0,1]\).
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 2]
@@ -134,43 +132,45 @@ Throughout these notes
   Recall the statement of Theorem 2.1:
   \begin{quote}
     \begin{enumerate}[label=(\alph*),noitemsep]
-    \item If $f$ is of bounded variation on $[a,b]$, then $f$ is bounded on
-      $[a,b]$.
-    \item Let $f$ and $g$ be of bounded variation on $[a,b]$. Then $cf$
-      (for any real constant $c$), $f+g$, and $fg$ are of bounded variation
-      on $[a,b]$. Moreover, $f/g$ is of bounded variation on $[a,b]$ if
-      there exists an $\varepsilon>0$ such that $|g(x)|\geq\varepsilon$ for
-      $x\in[a,b]$.
+    \item If \(f\) is of bounded variation on \([a,b]\), then \(f\) is bounded on
+      \([a,b]\).
+    \item Let \(f\) and \(g\) be of bounded variation on \([a,b]\). Then
+      \(cf\) (for any real constant \(c\)), \(f+g\), and \(fg\) are of
+      bounded variation on \([a,b]\). Moreover, \(f/g\) is of bounded
+      variation on \([a,b]\) if there exists an \(\varepsilon>0\) such that
+      \(|g(x)|\geq\varepsilon\) for \(x\in[a,b]\).
     \end{enumerate}
   \end{quote}
   \noindent%
   We shall prove these in alphabetical order:
 
   For part (a) we shall proceed by contradiction. First, without loss of
-  generality, we may assume that $f(a)=0$ since the function the variation
-  of $g(x)=f(x)-f(a)$ is equal to the variation of $f$ and $g(a)=0$.
-  Suppose that $f$ is b.v.\@ on $[a,b]$ with variation $V=V[f;a,b]$, but
-  that $f$ is unbounded on $[a,b]$; that is, given a positive real number
-  $M$ there exists a point $x$ in $[a,b]$ such that $|f(x)|>M$. In
-  particular, there exists $x\in[a,b]$ such that $|f(x)|>V$. Hence, for any
-  $x\in[a,b]$ by the triangle inequality we have
+  generality, we may assume that \(f(a)=0\) since the function the
+  variation of \(g(x)=f(x)-f(a)\) is equal to the variation of \(f\) and
+  \(g(a)=0\).  Suppose that \(f\) is b.v.\@ on \([a,b]\) with variation
+  \(V=V[f;a,b]\), but that \(f\) is unbounded on \([a,b]\); that is, given
+  a positive real number \(M\) there exists a point \(x\) in \([a,b]\) such
+  that \(|f(x)|>M\). In particular, there exists \(x\in[a,b]\) such that
+  \(|f(x)|>V\). Hence, for any \(x\in[a,b]\) by the triangle inequality we
+  have
   \begin{align*}
     V&<|f(x)|\\
      &=|f(x)-f(a)+f(a)|\\
      &\leq|f(x)-f(a)|+|f(a)|\\
      &\leq V.
   \end{align*}
-  This is a contradiction. Therefore, it must be the case that if $f$ is
-  b.v.\@ on $[a,b]$ then $f$ is bounded on $[a,b]$.
+  This is a contradiction. Therefore, it must be the case that if \(f\) is
+  b.v.\@ on \([a,b]\) then \(f\) is bounded on \([a,b]\).
 
-  We break part (b) into three sections. Suppose $f$ and $g$ are b.v.\@ on
-  $[a,b]$ with variation $V$ and $V'$, respectively.  We will show that (i)
-  $cf$; (ii) $f+g$; and (iii) $fg$ are b.v.\@ on $[a,b]$. Moreover, we show
-  that (iv) $f/g$ is b.v.\@ on $[a,b]$ if there exists $\varepsilon>0$ such
-  that $|g(x)|\geq\varepsilon$ for all $x\in[a,b]$.
+  We break part (b) into three sections. Suppose \(f\) and \(g\) are b.v.\@
+  on \([a,b]\) with variation \(V\) and \(V'\), respectively.  We will show
+  that (i) \(cf\); (ii) \(f+g\); and (iii) \(fg\) are b.v.\@ on
+  \([a,b]\). Moreover, we show that (iv) \(f/g\) is b.v.\@ on \([a,b]\) if
+  there exists \(\varepsilon>0\) such that \(|g(x)|\geq\varepsilon\) for
+  all \(x\in[a,b]\).
 
-  For part (i) above let $c$ be a real number. Given a partition
-  $\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}$ of $[a,b]$, we have
+  For part (i) above let \(c\) be a real number. Given a partition
+  \(\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}\) of \([a,b]\), we have
   \begin{align*}
     S_\Gamma
     &=\sum_{i=1}^n |cf(x_i)-cf(x_{i-1})|\\
@@ -178,12 +178,12 @@ Throughout these notes
     &=|c|\sum_{i=1}^n|f(x_i)-f(x_{i-1})|\\
     &\leq |c| V
   \end{align*}
-  since $V$ is the supremum of the sums of the form
-  $\sum_{i=1}^m|f(x_i)-f(x_{i-1})|$ over all partitions of $[a,b]$. Thus,
-  $V[cf;a,b]\leq |c|V$ so $cf$ is b.v.\@ on $[a,b]$.
+  since \(V\) is the supremum of the sums of the form
+  \(\sum_{i=1}^m|f(x_i)-f(x_{i-1})|\) over all partitions of
+  \([a,b]\). Thus, \(V[cf;a,b]\leq |c|V\) so \(cf\) is b.v.\@ on \([a,b]\).
 
-  For part (ii) given a partition $\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}$ of
-  the interval $[a,b]$, by the triangle inequality we have
+  For part (ii) given a partition \(\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}\) of
+  the interval \([a,b]\), by the triangle inequality we have
   \begin{align*}
     S_\Gamma
     &=\sum_{i=1}^n\left|(f(x_i)+g(x_i))-(f(x_{i-1})+g(x_{i-1}))\right|\\
@@ -191,12 +191,13 @@ Throughout these notes
     &\leq\sum_{i=1}^n|f(x_i)-f(x_{i-1})|+\sum_{i=1}^n|g(x_i)-g(x_{i-1})|\\
     &\leq V+V'.
   \end{align*}
-  Thus, $f+g$ is b.v.\@ on $[a,b]$
+  Thus, \(f+g\) is b.v.\@ on \([a,b\)]
 
-  For part (iii) since $f$ and $g$ are b.v.\@ on $[a,b]$ by part (a) $f$
-  and $g$ are bounded on $[a,b]$ by, say, $M$ and $N$, respectively. Now,
-  given a partition $\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}$ of $[a,b]$, by the
-  triangle inequality we have
+  For part (iii) since \(f\) and \(g\) are b.v.\@ on \([a,b]\) by part (a)
+  \(f\) and \(g\) are bounded on \([a,b]\) by, say, \(M\) and \(N\),
+  respectively. Now, given a partition
+  \(\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}\) of \([a,b]\), by the triangle
+  inequality we have
   \begin{align*}
     S_{\Gamma}
     &=\sum_{i=1}^n\left|f(x_i)g(x_i)-f(x_{i-1})g(x_{i-1})\right|\\
@@ -217,12 +218,12 @@ Throughout these notes
       M|g(x_i)-g(x_{i-1})|+\sum_{i=1}^n N|f(x_i)-f(x_{i-1})|\\
     &\leq MV'+NV.
   \end{align*}
-  Thus, $fg$ is b.v.\@ on $[a,b]$.
+  Thus, \(fg\) is b.v.\@ on \([a,b]\).
 
-  Finally, for part (iv) suppose there exists $\varepsilon>0$ such that
-  $|g(x)|\geq\varepsilon$ for all $x\in[a,b]$. Then, given a partition
-  $\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}$ of $[a,b]$, largely by the triangle
-  inequality, we have
+  Finally, for part (iv) suppose there exists \(\varepsilon>0\) such that
+  \(|g(x)|\geq\varepsilon\) for all \(x\in[a,b]\). Then, given a partition
+  \(\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}\) of \([a,b]\), largely by the
+  triangle inequality, we have
   \begin{align*}
     S_\Gamma
     &=\sum_{i=1}^n |f(x_i)/g(x_i)-f(x_{i-1})/g(x_{i-1})|\\
@@ -243,38 +244,38 @@ Throughout these notes
       +\frac{1}{\varepsilon^2}M_f\sum_{i=1}^n|g(x_i)-g(x_i)|\\
     &\leq\frac{1}{\varepsilon^2}(NV+MV')
   \end{align*}
-  where, as above, $f$ is bounded by $M$ and $g$ is bounded by $N$. Thus,
-  $f/g$ is b.v.\@ on $[a,b]$.
+  where, as above, \(f\) is bounded by \(M\) and \(g\) is bounded by
+  \(N\). Thus, \(f/g\) is b.v.\@ on \([a,b]\).
   \\\\
   This concludes the proof of Theorem 2.1.
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 3]
-  If $[a',b']$ is a subinterval of $[a,b]$ show that $P[a',b']\leq P[a,b]$
-  and $N[a',b']\leq N[a,b]$.
+  If \([a',b']\) is a subinterval of \([a,b]\) show that
+  \(P[a',b']\leq P[a,b]\) and \(N[a',b']\leq N[a,b]\).
 \end{problem}
 \begin{solution}
-  We will prove this by digging in to the definition of $N$ and $P$.
-  Recall that given a partition $\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}$ of the
-  interval $[a,b]$, $P$ and $N$ are defined to be the supremum over the sum
-  of the positive and, respectively, the sum negative terms of $S_\Gamma$;
-  that is, $P$ and $N$ are the supremum over every partition $\Gamma$ of
-  $[a,b]$ of
+  We will prove this by digging in to the definition of \(N\) and \(P\).
+  Recall that given a partition \(\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}\) of
+  the interval \([a,b]\), \(P\) and \(N\) are defined to be the supremum
+  over the sum of the positive and, respectively, the sum negative terms of
+  \(S_\Gamma\); that is, \(P\) and \(N\) are the supremum over every
+  partition \(\Gamma\) of \([a,b]\) of
   \[
     P_\Gamma=\sum_{i=1}^n\left[f(x_i)-f(x_{i-1})\right]^+
     \quad\text{and}\quad
     N_\Gamma=\sum_{i=1}^n\left[f(x_i)-f(x_{i-1})\right]^-.
   \]
 
-  Let $f\colon[a,b]\to\bbR$ be a function of bounded variation on $[a,b]$
-  and let $[a',b']$ be a subinterval of $[a,b]$. Without loss of
-  generality, we may assume that $[a',b']$ is strictly contained in
-  $[a,b]$; that is, $a'\neq a$ and $b'\neq b$. We aim to show that
-  $P[a',b']\leq P[a,b]$ and $N[a',b']\leq N[a,b]$. Since the argument for
-  $N$ is similar to that of $P$, we will omit it here for the sake of
-  brevity. Now, consider the closure of the complement of $[a',b']$ in
-  $[a,b]$, $\overline{[a,b]\setminus [a',b']}=[a,a']\cup[b',b]$. Since
-  $[a,a']$, $[a',b']$ and $[b',b]$ are close intervals we may take
+  Let \(f\colon[a,b]\to\bbR\) be a function of bounded variation on
+  \([a,b]\) and let \([a',b']\) be a subinterval of \([a,b]\). Without loss
+  of generality, we may assume that \([a',b']\) is strictly contained in
+  \([a,b]\); that is, \(a'\neq a\) and \(b'\neq b\). We aim to show that
+  \(P[a',b']\leq P[a,b]\) and \(N[a',b']\leq N[a,b]\). Since the argument
+  for \(N\) is similar to that of \(P\), we will omit it here for the sake
+  of brevity. Now, consider the closure of the complement of \([a',b']\) in
+  \([a,b]\), \(\overline{[a,b]\setminus [a',b']}=[a,a']\cup[b',b]\). Since
+  \([a,a']\), \([a',b']\) and \([b',b]\) are close intervals we may take
   partitions
   \begin{align*}
     \Gamma_a&=\{\,x_0<x_1\cdots<x_\ell\,\},\\
@@ -282,12 +283,12 @@ Throughout these notes
                  \shortintertext{and}
                  \Gamma_b&=\{\,x_m<x_{m+1}<\cdots<x_n\,\}
   \end{align*}
-  of $[a,a']$, $[a',b']$ and $[b',b]$, respectively and extend this to a
-  partition
+  of \([a,a']\), \([a',b']\) and \([b',b]\), respectively and extend this
+  to a partition
   \[
     \Gamma=\{\,x_0<x_1<\cdots<x_\ell<x_{\ell+1}\cdots<x_m<x_{m+1}\cdots<x_n\,\}
   \]
-  of $[a,b]$. Then, by the definition of $N$ we have the string of
+  of \([a,b]\). Then, by the definition of \(N\) we have the string of
   inequalities
   \begin{align*}
     P_\Gamma&=\sum_{i=1}^n[f(x_i)-f(x_{i-1})]^+\\
@@ -303,37 +304,38 @@ Throughout these notes
   \[
     P[a,a']+P[a',b']+P[b',a']\leq P[a,b].
   \]
-  Since $P$ is strictly positive, it must be the case that
-  $P[a',b']\leq P[a,b]$.
+  Since \(P\) is strictly positive, it must be the case that
+  \(P[a',b']\leq P[a,b]\).
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 11]
-  Show that $\int_a^bf\diff\varphi$ exists if and only if given
-  $\varepsilon>0$ there exists $\delta>0$ such that
-  $\left|R_\Gamma-R_{\Gamma'}\right|<\varepsilon$ if
-  $|\Gamma|,|\Gamma'|<\delta$.
+  Show that \(\int_a^bf\diff\varphi\) exists if and only if given
+  \(\varepsilon>0\) there exists \(\delta>0\) such that
+  \(\left|R_\Gamma-R_{\Gamma'}\right|<\varepsilon\) if
+  \(|\Gamma|,|\Gamma'|<\delta\).
 \end{problem}
 \begin{solution}
-  One direction is straightforward. Namely $\impliedby$: suppose that given
-  $\varepsilon>0$ there exists $\delta>0$ such that
-  $|R_\Gamma-R_{\Gamma'}|<\varepsilon$ whenever $|\Gamma|$ and $|\Gamma'|$
-  are less than $\delta$. Let ${\{\Gamma_n\}}_{n=1}^\infty$ be a decreasing
-  sequence of partitions (by which we mean $\Gamma_n\subseteq\Gamma_{n+1}$)
-  of $[a,b]$ such that $|\Gamma_n|\to 0$. Then, by convergence, there
-  exists $N\in\bbN$ such that $n\geq N$ implies $|\Gamma_n|<\delta$. Then,
-  for $n,m\geq N$, we have
+  One direction is straightforward. Namely \(\impliedby\): suppose that
+  given \(\varepsilon>0\) there exists \(\delta>0\) such that
+  \(|R_\Gamma-R_{\Gamma'}|<\varepsilon\) whenever \(|\Gamma|\) and
+  \(|\Gamma'|\) are less than \(\delta\). Let
+  \({\{\Gamma_n\}}_{n=1}^\infty\) be a decreasing sequence of partitions
+  (by which we mean \(\Gamma_n\subseteq\Gamma_{n+1}\) of \([a,b]\) such
+  that \(|\Gamma_n|\to 0\). Then, by convergence, there exists \(N\in\bbN\)
+  such that \(n\geq N\) implies \(|\Gamma_n|<\delta\). Then, for
+  \(n,m\geq N\), we have
   \begin{align*}
     |R_{\Gamma_n}-R_{\Gamma_m}|<\varepsilon.
   \end{align*}
   Thus, by the Cauchy criterion for convergence, the sequence
-  ${\{R_{\Gamma_n}\}}_{n=0}^\infty$ converges and its limit is by
-  definition the Riemann--Stieltjes integral $\int_a^b f\diff\varphi$.
+  \({\{R_{\Gamma_n}\}}_{n=0}^\infty\) converges and its limit is by
+  definition the Riemann--Stieltjes integral \(\int_a^b f\diff\varphi\).
 
-  On the other hand $\implies$: suppose that $I=\int_a^b f\diff\varphi$
-  exists. Then given $\varepsilon>0$ there exists $\delta>0$ such that
-  $|I-R_\Gamma|<\varepsilon/2$ whenever $|\Gamma|<\delta$. Let $\Gamma$ and
-  $\Gamma'$ be two partitions of $[a,b]$ with norm
-  $|\Gamma|,|\Gamma'|<\delta$. Then we have
+  On the other hand \(\implies\): suppose that \(I=\int_a^b f\diff\varphi\)
+  exists. Then given \(\varepsilon>0\) there exists \(\delta>0\) such that
+  \(|I-R_\Gamma|<\varepsilon/2\) whenever \(|\Gamma|<\delta\). Let
+  \(\Gamma\) and \(\Gamma'\) be two partitions of \([a,b]\) with norm
+  \(|\Gamma|,|\Gamma'|<\delta\). Then we have
   \begin{align*}
     |R_\Gamma-R_{\Gamma'}|
     &=|R_\Gamma-I-(R_{\Gamma'}-I)|\\
@@ -341,7 +343,7 @@ Throughout these notes
     &<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}\\
     &=\varepsilon.
   \end{align*}
-  Thus, $I$ satisfies the Cauchy condition.
+  Thus, \(I\) satisfies the Cauchy condition.
 \end{solution}
 
 \begin{problem}[Wheeden \& Zygmund Ch.\@ 2, Ex.\@ 13]
@@ -351,19 +353,20 @@ Throughout these notes
   Recall the statement of Theorem 2.16:
   \begin{quote}
     \begin{enumerate}[label=(\roman*),noitemsep]
-    \item If $\int_a^b f\diff\varphi$ exists, then so do
-      $\int_a^bcf\diff\varphi$ and $\int_a^b f\diff(c\varphi)$ for any
-      constant $c$, and
+    \item If \(\int_a^b f\diff\varphi\) exists, then so do
+      \(\int_a^bcf\diff\varphi\) and \(\int_a^b f\diff(c\varphi)\) for any
+      constant \(c\), and
       \[
         \int_a^bcf\diff\varphi=\int_a^bf\diff(c\varphi)=c\int_a^bf\diff\varphi.
       \]
-    \item If $\int_a^b f_1\diff\varphi$ and $\int_a^bf_2\diff\varphi$ both
-      exist, so does $\int_a^b\left(f_1+f_2\right)\diff\varphi$, and
+    \item If \(\int_a^b f_1\diff\varphi\) and \(\int_a^bf_2\diff\varphi\)
+      both exist, so does \(\int_a^b\left(f_1+f_2\right)\diff\varphi\), and
       \[
         \int_a^b\left(f_1+f_2\right)\diff\varphi=\int_a^bf_1\diff\varphi+\int_a^bf_2\diff\varphi.
       \]
-    \item If $\int_a^bf\diff\varphi_1$ and $\int_a^bf\diff\varphi_2$ both
-      exist, so does $\int_a^bf\diff\left(\varphi_1+\varphi_2\right)$, and
+    \item If \(\int_a^bf\diff\varphi_1\) and \(\int_a^bf\diff\varphi_2\)
+      both exist, so does
+      \(\int_a^bf\diff\left(\varphi_1+\varphi_2\right)\), and
       \[
         \int_a^bf\diff\left(\varphi_1+\varphi_2\right)=\int_a^bf\diff\varphi_1+\int_a^bf\diff\varphi_2.
       \]
@@ -372,14 +375,15 @@ Throughout these notes
   \noindent%
   We prove this in (Roman) numerical order.
 
-  For (i) suppose that $I=\int_a^bf\diff\varphi$ exists. Then, given
-  $\varepsilon>0$, there exists $\delta>0$ such that
-  $|I-R_\Gamma|<\varepsilon/|c|$ whenever $\Gamma$ is a partition of
-  $[a,b]$ with $|\Gamma|<\delta$. We claim that
-  $\int_a^b cf\diff\varphi=|c|I$. Let $\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}$
-  be a partition $[a,b]$ with $|\Gamma|<\delta$. Then the
-  Riemann--Stieltjes sums $R_\Gamma'$ of the pair $(cf,\varphi)$ associated
-  to $\Gamma$ give us the chain of inequalities
+  For (i) suppose that \(I=\int_a^bf\diff\varphi\) exists. Then, given
+  \(\varepsilon>0\), there exists \(\delta>0\) such that
+  \(|I-R_\Gamma|<\varepsilon/|c|\) whenever \(\Gamma\) is a partition of
+  \([a,b]\) with \(|\Gamma|<\delta\). We claim that
+  \(\int_a^b cf\diff\varphi=|c|I\). Let
+  \(\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}\) be a partition \([a,b]\) with
+  \(|\Gamma|<\delta\). Then the Riemann--Stieltjes sums \(R_\Gamma'\) of
+  the pair \((cf,\varphi)\) associated to \(\Gamma\) give us the chain of
+  inequalities
   \begin{align*}
     ||c|I-R_\Gamma'|
     &=\left| |c|I-
@@ -392,23 +396,24 @@ Throughout these notes
     &<|c|\frac{\varepsilon}{|c|}\\
     &=\varepsilon.
   \end{align*}
-  Thus, $\int_a^b cf\diff\varphi$ is Riemann--Stieltjes integrable and its
-  integral is equal to $|c|I$. A similar argument shows that
-  $\int_a^b f\diff(c\varphi)$ is Riemann--Stieltjes integrable with
-  integral $|c|I$.
+  Thus, \(\int_a^b cf\diff\varphi\) is Riemann--Stieltjes integrable and
+  its integral is equal to \(|c|I\). A similar argument shows that
+  \(\int_a^b f\diff(c\varphi)\) is Riemann--Stieltjes integrable with
+  integral \(|c|I\).
 
-  For (ii) let $I_1=\int_a^b f_1\diff\varphi$ and $I_2=\int_a^b
-  f_2\diff\varphi$. Then, we claim that $I=\int_a^b (f_1+f_2)\diff\varphi$
-  exists and that $I=I_1+I_2$. Since both $I_1$ and $I_2$ exist, given
-  $\varepsilon>0$ there exists $\delta>0$ such that
+  For (ii) let \(I_1=\int_a^b f_1\diff\varphi\) and
+  \(I_2=\int_a^b f_2\diff\varphi\). Then, we claim that
+  \(I=\int_a^b (f_1+f_2)\diff\varphi\) exists and that \(I=I_1+I_2\). Since
+  both \(I_1\) and \(I_2\) exist, given \(\varepsilon>0\) there exists
+  \(\delta>0\) such that
   \[
     |I_1-R_\Gamma^1|<\frac{\varepsilon}{2}\qquad\text{and}\qquad
     |I_2-R_\Gamma^2|<\frac{\varepsilon}{2}
   \]
-  whenever $|\Gamma|<\delta$. Let $\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}$ be a
-  partition of $[a,b]$ with $|\Gamma|<\delta$. Then the Riemann--Stieltjes
-  sums $R_\Gamma$ of the pair $(f_1+f_2,\varphi)$ associated to $\Gamma$
-  give is the following chain of inequalities
+  whenever \(|\Gamma|<\delta\). Let \(\Gamma=\{\,x_0<x_1<\cdots<x_n\,\}\)
+  be a partition of \([a,b]\) with \(|\Gamma|<\delta\). Then the
+  Riemann--Stieltjes sums \(R_\Gamma\) of the pair \((f_1+f_2,\varphi)\)
+  associated to \(\Gamma\) give is the following chain of inequalities
   \begin{align*}
     |(I_1+I_2)-R_{\Gamma}|
     &=\left|(I_1+I_2)
@@ -434,11 +439,11 @@ Throughout these notes
     &<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}\\
     &=\varepsilon.
   \end{align*}
-  Thus, $I$ exists and it is equal to the sum $I_1+I_2$.
+  Thus, \(I\) exists and it is equal to the sum \(I_1+I_2\).
 
   Part (iii) is similar to part (ii) in the above equation except that
-  instead of splitting the sum at $f_1+f_2$ part, we split it at
-  $\varphi_1+\varphi_2$ part.
+  instead of splitting the sum at \(f_1+f_2\) part, we split it at
+  \(\varphi_1+\varphi_2\) part.
 \end{solution}
 
 %%% Local Variables:

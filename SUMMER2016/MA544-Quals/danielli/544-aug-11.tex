@@ -3,15 +3,15 @@
 \setcounter{equation}{0}
 
 \begin{problem}
-Let $f\in L^1(\bfR)$, and let $F(t)=\int_{\bfR} f(x)\cos(tx)\diff x$.
+  Let \(f\in L^1(\bfR)\), and let \(F(t)=\int_{\bfR} f(x)\cos(tx)\diff x\).
 \begin{enumerate}[label=(\alph*),noitemsep]
-\item Prove that $F(t)$ is continuous for $t\in\bfR$.
+\item Prove that \(F(t)\) is continuous for \(t\in\bfR\).
 \item Prove the following \emph{Riemman--Lebesgue lemma}:
 \[
 \lim_{t\to\infty}F(t)=0.
 \]
 \end{enumerate}
-\emph{Hint}: Start by proving the statement for $f=\chi_{[a,b]}$.
+\emph{Hint}: Start by proving the statement for \(f=\chi_{[a,b]}\).
 \end{problem}
 \begin{solution}
 
@@ -19,42 +19,45 @@ Let $f\in L^1(\bfR)$, and let $F(t)=\int_{\bfR} f(x)\cos(tx)\diff x$.
 
 \begin{problem}
 \begin{enumerate}[label=(\alph*),noitemsep]
-\item Suppose that $f_k,f\in L^2(E)$, with $E$ a measurable set, and that
+\item Suppose that \(f_k,f\in L^2(E)\), with \(E\) a measurable set, and
+  that
 \begin{equation}
 \label{eq:aug-11:1}
 \int_E f_kg\longrightarrow\int_E fg
 \end{equation}
-as $k\to\infty$ for all $g\in L^2(E)$. If, in addition,
-$\|f_k\|_2\to\|f\|_2$ show that $f_k$ converges to $f$ in $L^2$, i.e., that
+as \(k\to\infty\) for all \(g\in L^2(E)\). If, in addition,
+\(\|f_k\|_2\to\|f\|_2\) show that \(f_k\) converges to \(f\) in \(L^2\),
+i.e., that
 \[
 \int_E|f-f_k|^2\longrightarrow 0
 \]
-as $k\to\infty$.
-\item Provide an example of a sequence $f_k$ in $L^2$ and a function $f$ in
-  $L^2$ satisfying \eqref{eq:aug-11:1}, but such that $f_k$ does \emph{not}
-  converge to $f$ in $L^2$.
+as \(k\to\infty\).
+\item Provide an example of a sequence \(f_k\) in \(L^2\) and a function
+  \(f\) in \(L^2\) satisfying \eqref{eq:aug-11:1}, but such that \(f_k\)
+  does \emph{not} converge to \(f\) in \(L^2\).
 \end{enumerate}
 \end{problem}
 \begin{solution}
 \end{solution}
 
 \begin{problem}
-A bounded function $f$ is said to be of bounded variation on $\bfR$ if it
-is of bounded variation on any finite subinterval $[a,b]$, and moreover
-$A=\sup_{a,b}V[a,b;f]<\infty$. Here, $V[a,b;f]$ denotes the total
-variation of $f$ over the interval $[a,b]$. Show that:
+  A bounded function \(f\) is said to be of bounded variation on \(\bfR\)
+  if it is of bounded variation on any finite subinterval \([a,b]\), and
+  moreover \(A=\sup_{a,b}V[a,b;f]<\infty\). Here, \(V[a,b;f]\) denotes the
+  total variation of \(f\) over the interval \([a,b]\). Show that:
 \begin{enumerate}[label=(\alph*),noitemsep]
-\item $\displaystyle\int_{\bfR}|f(x+h)-f(x)|\diff x\leq A|h|$ for all
-  $h\in\bfR$.
-\\\\
-\emph{Hint}: For $h>0$, write
+\item \(\displaystyle\int_{\bfR}|f(x+h)-f(x)|\diff x\leq A|h|\) for all
+  \(h\in\bfR\).
+  \\\\
+  \emph{Hint}: For \(h>0\), write
 \[
 \int_{\bfR} |f(x+h)-f(x)|\diff x=
 \sum_{n=-\infty}^\infty\int_{nh}^{(n+1)h}|f(x+h)-f(x)|\diff x.
 \]
-\item $\displaystyle\left|\int_{\bfR} f(x)\varphi'(x)\diff x\right|\leq A$,
-  where $\varphi$ is any function of class $C^1$, of bounded variation,
-  compactly supported, with $\sup_{x\in\bfR}|\varphi(x)|\leq 1$.
+\item
+  \(\displaystyle\left|\int_{\bfR} f(x)\varphi'(x)\diff x\right|\leq A\),
+  where \(\varphi\) is any function of class \(C^1\), of bounded variation,
+  compactly supported, with \(\sup_{x\in\bfR}|\varphi(x)|\leq 1\).
 \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -63,22 +66,22 @@ variation of $f$ over the interval $[a,b]$. Show that:
 \begin{problem}
 \begin{enumerate}[label=(\alph*),noitemsep]
 \item Prove the \emph{generalized Hölder's inequality}: Assume
-  $1\leq p\leq\infty$, $j=1,\dotsc,n$, with
-  $\sum_{j=1}^\infty 1/p_j=1/r\leq 1$. If $E$ is a measurable set and
-  $f_j\in L^{p_j}(E)$ for $j=1,\dotsc,n$, then
-  $\prod_{j=1}^n f_j\in L^r(E)$ and
+  \(1\leq p\leq\infty\), \(j=1,\dotsc,n\), with
+  \(\sum_{j=1}^\infty 1/p_j=1/r\leq 1\). If \(E\) is a measurable set and
+  \(f_j\in L^{p_j}(E)\) for \(j=1,\dotsc,n\), then
+  \(\prod_{j=1}^n f_j\in L^r(E)\) and
     \[
       \|f_1\dotsm f_n\|_r\leq\|f_1\|_{p_1}\dotsm\|f_n\|_{p_n}.
     \]
-\item Use part (a) to show that that if $1\leq p,q,r\leq\infty$, with
-  $1/p+1/q=1/r+1$, $f\in L^p(\bfR)$, and $g\in L^p(\bfR)$, then
+  \item Use part (a) to show that that if \(1\leq p,q,r\leq\infty\), with
+    \(1/p+1/q=1/r+1\), \(f\in L^p(\bfR)\), and \(g\in L^p(\bfR)\), then
 \[
 |(f*g)(x)|\leq{\|f\|_p}^{r-p}{\|g\|_q}^{r-q}\int|f(y)|^p|g(x-y)|^q\diff y.
 \]
 \\\\
-(Recall that $(f*g)(x)=\int f(y)g(x-y)\diff y$.)
-\item Prove \emph{Young's convolution theorem}: Assume that $p$, $q$, $r$,
-  $f$, and $g$ are as in part (b). Then $f*g\in L^r(\bfR)$ and
+(Recall that \((f*g)(x)=\int f(y)g(x-y)\diff y\).)
+\item Prove \emph{Young's convolution theorem}: Assume that \(p\), \(q\),
+  \(r\), \(f\), and \(g\) are as in part (b). Then \(f*g\in L^r(\bfR)\) and
   \[
     \|f*g\|_r\leq\|f\|_p\|g\|_q.
   \]
