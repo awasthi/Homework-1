@@ -279,10 +279,10 @@ english]{babel}
 }
 
 %% Renew some common commands to ones I personally prefer
-\providecommand\coloneq{\coloneqq}
-\providecommand\eqcolon{\eqqcolon}
 \newcommand\trileq{\trianglelefteq}
 \newcommand\trireq{\trianglerighteq}
+\newcommand\ntrileq{\ntrianglelefteq}
+\newcommand\ntrireq{\ntrianglerighteq}
 \newcommand\restrict[1]{\raisebox{-.5ex}{\ensuremath|}_{#1}}
 
 %% Redefinitions & commands not available in the default CM
@@ -343,8 +343,8 @@ english]{babel}
 \newcommand{\Set}{\catname{Set}}
 \newcommand{\Topo}{\catname{Top}}
 \newcommand{\starTop}{\catname{Top}_\star}
-\newcommand{\Vect}{\catname{Vect}}
-\newcommand{\kVect}[1]{#1\textnormal{-}\Vect}
+\newcommand{\VECT}{\catname{Vect}}
+\newcommand{\kVect}[1]{#1\textnormal{-}\VECT}
 
 \newcommand{\opp}{\mathrm{opp}}
 
@@ -446,7 +446,7 @@ english]{babel}
 \DeclareMathOperator{\Diffeo}{Diffeo}
 \DeclareMathOperator{\ind}{ind}
 \DeclareMathOperator{\Tan}{Tan}
-\DeclareMathOperator{\Vec}{Vec}
+\DeclareMathOperator{\Vect}{Vect}
 
 %% Topological spaces
 \newcommand{\bbCP}{\mathbb{CP}}
