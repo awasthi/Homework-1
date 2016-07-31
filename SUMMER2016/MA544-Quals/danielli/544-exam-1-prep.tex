@@ -114,12 +114,43 @@
   \(G_\delta\).
 \end{problem}
 \begin{solution}
-  Let
+  Let \(C\) be the subset of \(\bbR\) where \(f\) is continuous, i.e., the
+  set
   \[
-    G=\left\{\,x\in E:\,\right\}
+    C=\left\{\,x\in\bbR:\text{given \(\varepsilon>0\) there exist
+        \(\delta>0\) such that \(|f(x)-f(y)|<\varepsilon\) whenever
+      \(|x-y|<\delta\)}\,\right\}.
   \]
-  \(Ax\) \(Ax\) and \(Mx\)
+  In light of the latter equality, for each \(n\in\bbN\) define the
+  following family of subsets of \(C\),
+  \[
+    G_n=\left\{\,x\in\bbR:\text{there exists \(\delta_n>0\) such that
+        \(|f(x)-f(y)|<\frac{1}{n}\) whenever \(|x-y|<\delta_n\)}\,\right\}.
+  \]
+  We claim that (i) the \(G_n\) are open and (ii)
+  \(C=\bigcup_{n\in\bbN}G_n\).
+
+  The proof of (i) is easy: let \(x\in G_n\) then there exists
+  \(\delta_n>0\) such that
+  \[
+    |f(x)-f(y)|<\frac{1}{n}.
+  \]
+  Then $B(x,\delta_n)\subseteq G_n$ since \(x'\in B(x,\delta_n)\) implies
+  that \(|x-x'|<\delta\) so
+  \[
+    |f(x)-f(x')|<\frac{1}{n}.
+  \]
+
+  The proof of (ii) is also straight forward: let \(x\in C\) then given
+  \(\varepsilon>0\) there exists \(\delta>0\) such that
+  \[
+    |f(x)-f(y)|<\varepsilon
+  \]
+  whenever \(|x-y|<\delta\). By the Archimedean property of \(\bbR\) there
+  exist a positive integer \(N\) such that
+  \(1/N<\varepsilon\).
 \end{solution}
+
 \begin{problem}
   Let \(f\colon\bbR\to\bbR\) be a function. Is it true that if the sets
   \(\left\{\,f=r\,\right\}\) are measurable for all \(r\in\bbR\), then
