@@ -192,7 +192,11 @@ english]{babel}
 
 \newcommand\bigsetminus{\setminus} % too ugly
 \renewcommand\setminus{\smallsetminus} % Default is too ugly
-\renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}} % Default is big
+\renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}} % Default is
+% big
+\newcommand\oldemptyset{\emptyset}%
+\renewcommand\emptyset{\varnothing}%
+
 \def\upint{\mathchoice%
     {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
     {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%

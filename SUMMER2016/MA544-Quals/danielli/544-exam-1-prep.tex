@@ -153,7 +153,16 @@
   \]
   for ever \(n\in\bbN\). Thus, \(x\in\bigcap_{n\in\bbN} G_n\). On the other
   hand, if \(x\in\bigcap_{ni\in\bbN} G_n\), then \(x\in G_n\) for all
-  \(n\in\bbN\).
+  \(n\in\bbN\). Thus, given \(\varepsilon>0\), by the Archimedean property
+  of the real numbers, there exists a positive integer \(N\) such that
+  \(1/N<\varepsilon\) and hence for \(\delta=\delta_N>0\) we have
+  \[
+    |f(x)-f(y)|<\frac{1}{N}
+  \]
+  whenever \(|x-y|<\delta_N\). Thus, \(x\in C\).
+
+  It follows that \(C=\bigcap_{n\in\bbN} G_n\) and hence is a \(G_\delta\)
+  set.
 \end{solution}
 
 \begin{problem}
@@ -162,6 +171,14 @@
   \(f\) is measurable?
 \end{problem}
 \begin{solution}
+  The statement is false and, of course, the counterexample involves
+  existence of nonmeasurable sets. Let \(V\subseteq[0,1]\) be a Vitali set
+  \[
+    f(x)=\begin{cases}
+      {-1}&\text{if \(x\in V\),}\\
+      1&\text{if \(x\in\bbR\setminus V\).}
+    \end{cases}
+  \]
 \end{solution}
 
 \begin{problem}
