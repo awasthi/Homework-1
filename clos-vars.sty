@@ -364,7 +364,7 @@ english]{babel}
 \newcommand{\frakorth}{\mathfrak{o}}
 \newcommand{\frakuni}{\mathfrak{u}}
 \newcommand{\frakso}{\mathfrak{so}}
-\newcommand{\fracksl}{\mathfrak{sl}}
+\newcommand{\fraksl}{\mathfrak{sl}}
 
 %% Linear Algebra
 \DeclareMathOperator{\Ad}{Ad}
@@ -475,7 +475,9 @@ english]{babel}
 
 %% Complex analysis
 \DeclareMathOperator\re{re}
-\DeclareMathOperator\im{im}
+\renewcommand\Im{\mathop{\mathfrak{Im}}}
+\DeclareMathOperator\re{re}
+\renewcommand\Re{\mathop{\mathfrak{Re}}}
 
 %% Multivariable calculus
 \DeclareMathOperator{\Curl}{curl}
