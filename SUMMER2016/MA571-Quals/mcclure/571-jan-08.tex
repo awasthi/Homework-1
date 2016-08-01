@@ -200,15 +200,24 @@
   \(b\in B\) the set \(A\cap p^{-1}\{b\}\) is finite.
 \end{problem}
 \begin{solution}
-  Fix a point \(b\in B\). Then the singelton set \(\{b\}\) is closed in
-  \(B\). Since \(p\colon E\to B\) is a covering map, it is
-  continuous. Thus, \(p^{-1}\{b\}\) is closed in \(E\). Let \(V\) be a
-  neighborhood of \(b\) such that \(p^{-1}(V)=\bigsqcup_{\alpha\in
-    A}U_\alpha\) and \(p\restrict{U_\alpha}\) is a homeomorphism from
-  \(U_\alpha\) to \(V\). Now, consider the intersection \(A\cap
-  p^{-1}\{b\}\). We claim that this set is closed and hence compact.
-
-  To see that \(A\cap p^{-1}\{b\}\) is closed note that \(\)
+  Fix a point \(b\in B\). Then the singleton set \(\{b\}\) is closed in
+  \(B\) and since \(p\colon E\to B\) is a covering map, it is continuous so
+  \(p^{-1}\{b\}\) is closed in \(A\). By some theorem from Munkres dealing
+  with the subspace topology, \(A\cap p^{-1}\{b\}\) is a closed subset of
+  \(A\) in the subspace topology. Thus, \(A\cap p^{-1}\{b\}\) is compact in
+  \(A\). Now, since \(p\) is a covering map, there exists an evenly covered
+  neighborhood \(V\) of \(b\), i.e., a neighborhood such that \(p^{-1}(V)\)
+  is the disjoint union of open sets \(\bigsqcup_{\alpha\in A} U_\alpha\)
+  such that the restriction \(p_\alpha=p\restrict{U_\alpha}\) yields a
+  homeomorphism \(U_\alpha\approx_{p_\alpha} V\). Since
+  \(p^{-1}\{b\}\subset p^{-1}(V)\), the \(\bigsqcup_5\alpha\in A\) form an
+  open cover of \(A\cap p^{-1}\{b\}\). Since \(A\cap p^{-1}\{b\}\) is
+  compact, only finitely many of the \(U_\alpha\), say
+  \(\{U_1,\dotsc,U_N\}\), cover \(A\cap p^{-1}\{b\}\). Thus,
+  \(A\cap p^{-1}\{b\}\subseteq\bigcup_{n=1}^N U_n\). Since each
+  \(U_n\approx V\), each \(U_n\cap p^{-1}\{b\}\) consists of a single
+  point. Thus, the number of points in \(A\cap p^{-1}\{b\}\) is less than
+  or equal to \(N\).
 \end{solution}
 
 \begin{problem}

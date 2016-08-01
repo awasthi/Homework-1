@@ -20,9 +20,9 @@
   \@eucaltrue
 }
 
-\newif\if@ME\@MEfalse
-\DeclareOption{ME}{
-  \@MEtrue
+\newif\if@arabi\@arabifalse
+\DeclareOption{arabi}{
+  \@arabitrue
 }
 
 \newif\if@CJK\@CJKfalse
@@ -53,8 +53,8 @@
 % \RequirePackage{tipa}%
 \RequirePackage{cmap}%
 
-\if@ME%
-\RequirePackage[LAE,LFE,LGR,T2A,T1]{fontenc}%
+\if@arabi%
+\RequirePackage[LHE,LAE,LFE,LGR,T2A,T1]{fontenc}%
 \RequirePackage[utf8]{inputenc}%
 \RequirePackage{substitutefont}%
 
@@ -67,7 +67,7 @@ german,%
 greek.plutoniko,%
 spanish,%
 russian,%
-english]{babel}
+main=english]{babel}
 
 \babeltags{%
   ara=arabic,%
@@ -79,17 +79,8 @@ english]{babel}
   pa=farsi,%
   ru=russian%
 }
-
-\renewcommand{\textara}[1]{\foreignlanguage{arabic}{\textRL{#1}}}%
-\newcommand{\textfa}[1]{\foreignlanguage{farsi}{\textRL{#1}}}%
-\newcommand{\textheb}[1]{\foreignlanguage{hebrew}{\textRL{#1}}}%
-
-\makeatletter%
-\pdfstringdefDisableCommands{%
-  \let\beginL\@empty%
-  \let\endL\@empty
-}%
-\makeatother%
+\newcommand{\textar}[1]{\textara{\textRL{#1}}}%
+\newcommand{\textfa}[1]{\textpa{\textRL{#1\endRL}}}%
 
 \else%
 \RequirePackage[LGR,T2A,T1]{fontenc}%
@@ -102,7 +93,7 @@ german,%
 greek.plutoniko,%
 spanish,%
 russian,%
-english]{babel}
+main=english]{babel}
 
 \babeltags{%
   fr=french,%
@@ -115,14 +106,23 @@ english]{babel}
 
 \fi
 
-\renewcommand{\textfr}[1]{\foreignlanguage{french}{#1}}%
-\renewcommand{\textde}[1]{\foreignlanguage{german}{#1}}%
-\renewcommand{\textes}[1]{\foreignlanguage{spanish}{#1}}%
-\renewcommand{\texten}[1]{\foreignlanguage{english}{#1}}%
-\renewcommand{\texthe}[1]{\foreignlanguage{greek}{#1}}%
-\renewcommand{\textru}[1]{\foreignlanguage{russian}{#1}}%
+% \renewcommand{\textfr}[1]{\foreignlanguage{french}{#1}}%
+% \renewcommand{\textde}[1]{\foreignlanguage{german}{#1}}%
+% \renewcommand{\textes}[1]{\foreignlanguage{spanish}{#1}}%
+% \renewcommand{\texten}[1]{\foreignlanguage{english}{#1}}%
+% \renewcommand{\texthe}[1]{\foreignlanguage{greek}{#1}}%
+% \renewcommand{\textru}[1]{\foreignlanguage{russian}{#1}}%
 
-\selectlanguage{english}%
+% \input cyracc.def
+% \font\tencyr=wncyr10
+% \font\tencyb=wncyb10
+% \font\tencyi=wncyi10
+% \font\twlcyr=wncyr10 at 10pt
+% \font\twlcyb=wncyb10 at 10pt
+% \font\twlcyi=wncyi10 at 10pt
+% \def\cyr{\twlcyr\cyracc}
+% \def\cyb{\twlcyb\cyracc}
+% \def\cyi{\twlcyi\cyracc}
 
 %% Must be loaded after Babel
 \RequirePackage{cleveref}%
@@ -190,6 +190,7 @@ english]{babel}
 \RequirePackage[nointegrals]{wasysym}%
 \RequirePackage{stmaryrd}%
 
+%% Russian substitute
 \newcommand\bigsetminus{\setminus} % too ugly
 \renewcommand\setminus{\smallsetminus} % Default is too ugly
 \renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}} % Default is
