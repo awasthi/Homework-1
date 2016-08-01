@@ -168,11 +168,17 @@ main=english]{babel}
 \substitutefont{T2A}{\rmdefault}{LinuxLibertineT}%
 
 %% Other Libertine specific math settings
-\newcommand\Bigstar{\bigstar} % too ugly
-\renewcommand\bigstar{\star} % too ugly
-\renewcommand\qedsymbol{\ensuremath{\blacksquare}} % Default is
+\let\oldbtright\blacktriangleright%
+\let\oldbtleft\blacktriangleleft%
 \newcommand\bigsetminus{\setminus} % too ugly
-\renewcommand\setminus{\smallsetminus} % too ugly
+\renewcommand\setminus{\smallsetminus} % Default is too ugly
+\renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}} % Default is
+\newcommand\Bigstar{\bigstar}
+\renewcommand\bigstar{\star}
+\newcommand\oldemptyset{\emptyset}%
+\renewcommand\emptyset{\varnothing}%
+\renewcommand\blacktriangleright{\ensuremath{\scriptstyle\oldbtright}}
+\renewcommand\blacktriangleleft{\ensuremath{\scriptstyle\oldbtleft}}
 
 \else % Use the regular CM fonts
 \RequirePackage{amssymb}%
