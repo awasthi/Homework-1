@@ -156,7 +156,7 @@ main=english]{babel}
 \RequirePackage[varqu,varl,scaled=.94]{zi4} % mono
 \RequirePackage[libertine,%
                 libaltvw,%
-                bigdelims,%
+                % bigdelims,%
                 % cmintegrals
                 ]{newtxmath} % Shitty math fonts
 \RequirePackage[bb=boondox,frak=pxtx,cal=boondoxo]{mathalfa}
@@ -170,9 +170,15 @@ main=english]{babel}
 %% Other Libertine specific math settings
 \newcommand\Bigstar{\bigstar} % too ugly
 \renewcommand\bigstar{\star} % too ugly
-\renewcommand\qedsymbol{\ensuremath{\blacksquare}} % Default is
+\let\oldbtright\blacktriangleright%
+\let\oldbtleft\blacktriangleleft%
+\renewcommand\blacktriangleright{\ensuremath{\scriptstyle\oldbtright}}
+\renewcommand\blacktriangleleft{\ensuremath{\scriptstyle\oldbtleft}}
 \newcommand\bigsetminus{\setminus} % too ugly
-\renewcommand\setminus{\smallsetminus} % too ugly
+\renewcommand\setminus{\smallsetminus} % Default is too ugly
+\renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}} % Default is
+\newcommand\oldemptyset{\emptyset}
+\renewcommand\emptyset{\varnothing}
 
 \else % Use the regular CM fonts
 \RequirePackage{amssymb}%
@@ -182,14 +188,13 @@ main=english]{babel}
 %% Math replace
 \let\oldbtright\blacktriangleright%
 \let\oldbtleft\blacktriangleleft%
+\renewcommand\blacktriangleright{\ensuremath{\scriptstyle\oldbtright}}
+\renewcommand\blacktriangleleft{\ensuremath{\scriptstyle\oldbtleft}}
 \newcommand\bigsetminus{\setminus} % too ugly
 \renewcommand\setminus{\smallsetminus} % Default is too ugly
 \renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}} % Default is
-\renewcommand\blacktriangleright{\ensuremath{\scriptstyle\oldbtright}}
-\renewcommand\blacktriangleleft{\ensuremath{\scriptstyle\oldbtleft}}
-% big
-\newcommand\oldemptyset{\emptyset}%
-\renewcommand\emptyset{\varnothing}%
+\newcommand\oldemptyset{\emptyset}
+\renewcommand\emptyset{\varnothing}
 
 \def\upint{\mathchoice%
     {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
