@@ -2,7 +2,7 @@
 %% My preference of symbols and variables
 %%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{clos-vars}[2016/07/31 v2.2 personal shortcuts]
+\ProvidesPackage{clos-vars}[2016/08/01 v2.3 personal shortcuts]
 
 %%% Options
 \newif\if@times\@timesfalse
@@ -287,7 +287,7 @@ main=english]{babel}
 \newcommand\trireq{\trianglerighteq}
 \newcommand\ntrileq{\ntrianglelefteq}
 \newcommand\ntrireq{\ntrianglerighteq}
-\newcommand\restrict[1]{\raisebox{-.5ex}{\ensuremath|}_{#1}}
+\newcommand\restrict[1]{\raisebox{-.5ex}{\ensuremath\restriction}_{#1}}
 
 %% Redefinitions & commands not available in the default CM
 \providecommand{\nequiv}{\ensuremath{\not\equiv}}
@@ -316,8 +316,12 @@ main=english]{babel}
 %%% Special sets and operators
 %%% General
 %% Set theory
-\DeclareMathOperator{\Card}{Card}
 \DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\Card}{Card}
+\DeclareMathOperator{\codom}{codom}
+\DeclareMathOperator{\Codom}{Codom}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\Dom}{Dom}
 \DeclareMathOperator{\img}{im}
 \DeclareMathOperator{\Img}{Im}
 
