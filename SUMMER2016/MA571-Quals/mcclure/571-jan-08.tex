@@ -227,13 +227,24 @@
   k\). Prove that \(h\) and \(k\) are the same function.
 \end{problem}
 \begin{solution}
+  % Since the image of a path-connected space under a continuous map is again
+  % path-connected and \(h(y_0)=k(y_0)\) then \(h(Y)\) and \(k(Y)\) must lie
+  % in the same path-connected component. Suppose that \(h\neq k\). Then for
+  % some \(y_1\in Y\), \(h(y_1)\neq k(y_1)\). Let \(f\colon I\to E\)
+  % be a path from \(h(y_1)\) to \(k(y_1)\). Then, \(p\circ f\colon I\to E\)
+  % is a path from \(p(h(y_1))\) to \(p(k(y_1))\). But
+  % \(p(h(y_1))=p(k(y_1))\).
   Since the image of a path-connected space under a continuous map is again
-  path-connected and \(h(y_0)=k(y_0)\) then \(h(Y)\) and \(k(Y)\) must lie
-  in the same path-connected component. Suppose that \(h\neq k\). Then for
-  some \(y_1\in Y\), \(h(y_1)\neq k(y_1)\). Let \(f\colon I\to E\)
-  be a path from \(h(y_1)\) to \(k(y_1)\). Then, \(p\circ f\colon I\to E\)
-  is a path from \(p(h(y_1))\) to \(p(k(y_1))\). But
-  \(p(h(y_1))=p(k(y_1))\).
+  path-connected and \(h(y_0)=k(y_0)\), \(h(Y)\) and \(k(Y)\) both lie in
+  the same path-connected component. Now, suppose that \(h\neq k\). Then
+  there exists \(y_1\in Y\) such that \(h(y_1)\neq k(y_1)\). Let
+  \(f_1,f_2\colon I\to E\) be a path from \(h(y_0)\) to \(h(y_1)\) and
+  \(k(y_0)\) to \(k(y_1)\), respectively. Then, since
+  \(p\circ h=p\circ k\), \(p\circ f_1\) and \(p\circ f_2\) are paths in
+  \(B\) that both at \(p(h(y_0))\) and end at \(p(h(y_1))\). By the
+  path-lifting property, \(p\circ f_1\) and \(p\circ f_2\) lift uniquely to
+  paths \(\tilde f_1\) and \(\tilde f_2\) in \(E\) with
+  \(\tilde f_1(1)=\tilde f_2(1)=h(y_0)\).
 \end{solution}
 
 %%% Local Variables:
