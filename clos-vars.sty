@@ -179,10 +179,14 @@ main=english]{babel}
 \RequirePackage[nointegrals]{wasysym}%
 \RequirePackage{stmaryrd}%
 
-%% Russian substitute
+%% Math replace
+\let\oldbtright\blacktriangleright%
+\let\oldbtleft\blacktriangleleft%
 \newcommand\bigsetminus{\setminus} % too ugly
 \renewcommand\setminus{\smallsetminus} % Default is too ugly
 \renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}} % Default is
+\renewcommand\blacktriangleright{\ensuremath{\scriptstyle\oldbtright}}
+\renewcommand\blacktriangleleft{\ensuremath{\scriptstyle\oldbtleft}}
 % big
 \newcommand\oldemptyset{\emptyset}%
 \renewcommand\emptyset{\varnothing}%
@@ -258,7 +262,7 @@ main=english]{babel}
   \proof[\textnormal{\bfseries{#1}}]%
   \ensuremath{\scriptstyle\blacktriangleright}
 }{
-\renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacktriangleleft}}
+\renewcommand\qedsymbol{\ensuremath{\blacktriangleleft}}
 \endproof}
 }{}
 \makeatother
