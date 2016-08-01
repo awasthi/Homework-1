@@ -55,7 +55,25 @@
   \(G\). In the former case, there is a unique \(r\)-Sylow subgroup \(R\)
   which implies \(R\trileq G\). In the latter case, there are \(pq\)
   \(r\)-Sylow subgroups in \(G\) and that implies that we have
-  \(pq(r-1)=pqr-pq\) elements of order \(r\).
+  \(pq(r-1)=pqr-pq\) elements of order \(r\). That leaves room for exactly
+  \(pq\) elements that do not have order \(r\). Now we ask, what are the
+  possible number of \(p\)- and \(q\)-Sylow subgroups? At minimum, we have
+  \(1\) \(p\)- and \(1\) \(q\)-Sylow subgroups. This yields a total of
+  \begin{align*}
+    (p-1)+(q-1)+1&=p+q-1\\
+                 &<pq
+  \end{align*}
+  which flows under the total number of elements to complete the size of
+  the group. What is the next smallest possible number of \(p\)- and
+  \(q\)-Sylow subgroups is \(r\). In this case, we have
+  \begin{align*}
+    r(p-1)+r(q-1)+1&=rp-r+rq-r+1\\
+                   &=r(p+q-2)+1\\
+                   &>pq
+  \end{align*}
+  since \(r>p\) and \(p+q-2>2p-2>p\). Thus, we cannot have \(pq\)
+  \(r\)-Sylow subgroups in \(G\). It follows that there is only \(1\)
+  \(r\)-Sylow subgroup \(R\) in \(G\) and so \(R\trileq G\).
 \end{solution}
 
 \begin{problem}
