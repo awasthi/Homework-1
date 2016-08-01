@@ -9,10 +9,23 @@
 \begin{solution}
   Suppose \(\card G=2^n\cdot 3\). By Sylow's theorem, \(G\) contains a
   \(2\)-Sylow subgroup \(P\) of order \(\card P=2^n\). If \(P\) is the
-  unique \(2\)-Sylow subgroup in \(G\), \(P\trileq G\). Otherwise, Sylow's
-  theorem implies that \(\card({\Syl_2(G)})\) must divide \(3\) and, since
-  \(3\) is prime, must in fact equal \(3\). Then, each \(Q\in\Syl_2(G)\) is
-  conjugate to \(P\).
+  unique \(2\)-Sylow subgroup in \(G\), \(P\trileq G\).
+
+  Otherwise, Sylow's theorem implies that \(\card({\Syl_2(G)})\) must
+  divide \(3\) and, since \(3\) is prime, must in fact equal \(3\). Then,
+  each \(Q\in\Syl_2(G)\) is conjugate to \(P\). Enumerate the set
+  \(\Syl_2(G)=\left\{P,P',P''\right\}\) and let \(G\) act on \(\Syl_2(G)\)
+  by conjugation. This action gives rise to a homomorphism
+  \(\varphi\colon G\to S_3\) given by the permutation representation of the
+  action. This action is nontrivial since there exists elements
+  \(g_1,g_2\in G\) such that \(P'=g_1P{g_1}^{-1}\) and
+  \(P''=g_2P{g_2}^{-1}\) (which correspond to the permutations \((1\,2)\)
+  and \((1\,3)\)). By the first isomorphism theorem,
+  \(\Ker\varphi\trileq G\) and \([G:{\Ker\varphi}]\mid \card S_3=6\). But
+  we observed that the image of \(G\) in \(S_3\) contains at least \(3\)
+  permutations: \((1\,2)\), \((1\,3)\) and
+  \((1\,2)(1\,3)=(1\,3\,2)\). Thus, \([G:{\Ker\varphi}]=3\) or \(6\). In
+  either case, \(\Ker\varphi\) is a \(2\)-subgroup of \(G\).
 \end{solution}
 
 \begin{problem}
@@ -21,6 +34,14 @@
   in \(G\).
 \end{problem}
 \begin{solution}
+  % Suppose \(\card G=p^2q\). We may assume, without loss of generality, that
+  % \(p<q\). If the number of \(q\)-Sylow subgroups of \(G\) is \(p^2\), then
+  % by counting all the distinct elements of order \(q\), we see that
+  % \(p^2(q-1)=p^2q-p^2\) there is room for exactly one \(p\)-Sylow
+  % subgroup. Since this is the only \(p\)-Sylow subgroup of \(G\), it must
+  % be normal.
+
+  % On the other hand, if \(G\) contains \(q\) \(p\)-Sylow subgroups,
 \end{solution}
 
 \begin{problem}
