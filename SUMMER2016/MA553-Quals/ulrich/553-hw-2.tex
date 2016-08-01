@@ -34,21 +34,16 @@
   in \(G\).
 \end{problem}
 \begin{solution}
-  % Suppose \(\card G=p^2q\). Let us first consider the \(q\)-Sylow subgroups
-  % of \(G\). If \(p<q\) and \(1\nequiv p^2\pmod{q}\) then \(G\) contains a
-  % single \(q\)-Sylow subgroup \(Q\) which implies \(Q\trileq
-  % G\). Otherwise, \(G\) contains \(p^2\) \(q\)-Sylow subgroups so, counting
-  % the number of elements of order \(q\) in \(G\), we have
-  % \(p^2(q-1)=p^2q-p^2\) elements remaining; this leaves room for exactly
-  % one \(p\)-Sylow subgroup \(P\) which implies that \(P\trileq
-  % G\). Otherwise, \(p>q\) and \(1\equiv p\pmod{q}\) so \(G\) may contain
-  % \(p\) \(q\)-Sylow subgroups. However, \(1\equiv p\pmod{q}\) implies
-  % \(p=kq+1\) which implies that the number of \(p\)-Sylow subgroups must be
-  % \(1\).
   Suppose \(\card G=p^2q\). Assuming \(p<q\) there are \(1\) or \(p^2\)
   \(q\)-Sylow subgroups. If there is \(1\) \(q\)-Sylow subgroup \(Q\) then
   \(Q\trileq G\). Otherwise, there are \(p^2\) \(q\)-Sylow subgroups in
-  \(G\) and
+  \(G\) and, counting the total number of elements of order \(q\), there
+  are \(p^2(q-1)=p^2q-p^2\) remaining elements in \(G\) which leaves just
+  enough room for \(1\) \(p\)-Sylow subgroup \(P\) which implies that
+  \(P\trileq G\). Otherwise, \(p>q\) and we must be one \(1\) \(p\)-Sylow
+  subgroup \(P\) in \(G\) which implies \(P\trileq G\). In each case, we
+  either have a normal \(p\)-Sylow subgroup or a normal \(q\)-Sylow
+  subgroup.
 \end{solution}
 
 \begin{problem}
@@ -56,6 +51,11 @@
   \(r\)-Sylow subgroup of \(G\) is normal in \(G\).
 \end{problem}
 \begin{solution}
+  By Sylow's theorem, we have \(1\) or \(pq\) \(r\)-Sylow subgroup in
+  \(G\). In the former case, there is a unique \(r\)-Sylow subgroup \(R\)
+  which implies \(R\trileq G\). In the latter case, there are \(pq\)
+  \(r\)-Sylow subgroups in \(G\) and that implies that we have
+  \(pq(r-1)=pqr-pq\) elements of order \(r\).
 \end{solution}
 
 \begin{problem}
