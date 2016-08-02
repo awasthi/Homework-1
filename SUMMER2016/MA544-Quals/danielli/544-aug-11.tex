@@ -78,31 +78,16 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  Part (a) is a special case of the Radon--Riesz representation theorem:
-  since \(\|f_n\|_2\to\|f\|_2\), given \(\varepsilon>0\) there exists an
-  index \(N'\in\bbN\) such that
+  Part (a) is a special case of the Radon--Riesz representation
+  theorem. Let \(\varepsilon>0\) be given. Then, since
+  \(\|f_n\|_2\to\|f\|_2\), there exists an index \(N'\in\bbN\) such that
+  \(n\geq N'\) implies
   \[
-    \bigl|
-    \|f_n\|_2-\|f\|_2
-    \bigr|
-    =
-    \biggl|
-    \int_E\bigl(|f_n|^2-|f|^2\bigr)\rmd x
-    \biggr|
-    <\frac{\varepsilon}{2}.
+    \bigl|%
+    \|f_n\|_2-\|f\|_2%
+    \bigr|%
+    <\varepsilon.
   \]
-  whenever \(n\geq N'\). Moreover, since
-  \[
-    \int_E f_ng\longrightarrow\int_E fg,
-  \]
-  for every \(g\in\L^1(\bbR)\), there exists \(N''\in\bbN\) such that
-  \[
-    \biggl|
-    \int_E\bigl(f_nf_n-ff_n\bigr)\rmd x
-    \biggr|
-    <\varepsilon
-  \]
-  whenever \(n\geq N''\).
 \end{solution}
 
 \begin{problem}
