@@ -36,13 +36,14 @@
   \(\bbR\).
 
   For part (b): since \(f\in L^1(\bbR)\), \(f\) there exists a sequence of
-  simple functions \(\{s_n\}\), \(n\in\bbN\), such that \(\int_\bbR
-  s_n\to\|f\|_1\). Therefore, it suffices to show the result for
-  characteristic functions. Let \(f=\chi_{[a,b]}\) and consider the limit
+  simple functions \(\{s_n\}\), \(n\in\bbN\), such that
+  \(\int_\bbR s_n\to\|f\|_1\). Therefore, it suffices to show the result
+  for characteristic functions. Let \(f=\indicate_{[a,b]}\) and consider
+  the limit
   \[
     \lim_{x\to\infty}\hat f(x)=\lim_{x\to\infty}\int_\bbR f(t)\cos(xt)\diff t.
   \]
-  Since \(f(t)=\chi_{[a,b]}(t)\), we have
+  Since \(f(t)=\indicate_{[a,b]}(t)\), we have
   \begin{align*}
     \lim_{x\to\infty}\int_\bbR f(t)\cos(xt)\diff t
     &=\lim_{x\to\infty}\int_a^b\cos(xt)\diff t\\
@@ -77,9 +78,9 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  Part (a) is a special case of the Riesz representation theorem: since
-  \(\|f_n\|_2\to\|f\|_2\), given \(\varepsilon>0\) there exists an index
-  \(N'\in\bbN\) such that
+  Part (a) is a special case of the Radon--Riesz representation theorem:
+  since \(\|f_n\|_2\to\|f\|_2\), given \(\varepsilon>0\) there exists an
+  index \(N'\in\bbN\) such that
   \[
     \bigl|
     \|f_n\|_2-\|f\|_2

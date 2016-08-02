@@ -179,6 +179,9 @@ main=english]{babel}
 \renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}} % Default is
 \newcommand\oldemptyset{\emptyset}
 \renewcommand\emptyset{\varnothing}
+\newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+      \hbox{\scriptsize.}\hbox{\scriptsize.}}}%
+  =}%
 
 \else % Use the regular CM fonts
 \RequirePackage{amssymb}%
@@ -479,6 +482,7 @@ main=english]{babel}
 \DeclareMathOperator{\diam}{diam}
 \DeclareMathOperator{\disc}{disc}
 \DeclareMathOperator{\Isom}{Isom}
+\DeclareMathOperator{\indicate}{\mathbf{1}}
 \DeclareMathOperator{\supp}{supp}
 \DeclareMathOperator{\Supp}{Supp}
 
