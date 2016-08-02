@@ -15,9 +15,9 @@
   \@libertinetrue
 }
 
-\newif\if@eucal\@eucalfalse
-\DeclareOption{eucal}{
-  \@eucaltrue
+\newif\if@eulermath\@eulermathfalse
+\DeclareOption{eulermath}{
+  \@eulermathtrue
 }
 
 \newif\if@arabi\@arabifalse
@@ -209,7 +209,7 @@ main=english]{babel}
   =}%
 \mleftright%
 
-\if@eucal % Euler mathcal
+\if@eulermath % Euler mathcal
 \RequirePackage[bb=ams,frak=euler,cal=euler,scr=rsfso]{mathalfa}%
 \else % AMS mathcal
 \RequirePackage[bb=ams,cal=cm,frak=euler,scr=rsfso]{mathalfa}%
