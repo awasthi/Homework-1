@@ -3,18 +3,55 @@
 \setcounter{equation}{0}
 
 \begin{problem}
-  Let \(f\in L^1(\bbR)\), and let \(F(t)=\int_{\bbR} f(x)\cos(tx)\diff x\).
-\begin{enumerate}[label=(\alph*),noitemsep]
-\item Prove that \(F(t)\) is continuous for \(t\in\bbR\).
-\item Prove the following \emph{Riemman--Lebesgue lemma}:
-\[
-\lim_{t\to\infty}F(t)=0.
-\]
-\end{enumerate}
-\emph{Hint}: Start by proving the statement for \(f=\chi_{[a,b]}\).
+  Let \(f\in L^1(\bbR)\), and let
+  \(\hat f(x)=\int_{\bbR} f(t)\cos(xt)\diff t\).
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item Prove that \(\hat f(x)\) is continuous for \(x\in\bbR\).
+  \item Prove the following \emph{Riemman--Lebesgue lemma}:
+    \[
+      \lim_{x\to\infty}\hat f(x)=0.
+    \]
+  \end{enumerate}
+  \emph{Hint}: Start by proving the statement for \(f=\chi_{[a,b]}\).
 \end{problem}
 \begin{solution}
-  For part (a), consider the set
+  For part (a): let \(\varepsilon>0\) be given. Then, since \(\cos(xt)\) is
+  continuous there exists \(\delta'>0\) such that \(|x-y|<\delta\) implies
+  \[
+    |\cos(xt)-\cos(yt)|<\frac{\varepsilon}{\|f\|_1}.
+  \]
+  Now, let \(\delta=\delta'\). Then we have
+  \begin{align*}
+    |\hat f(x)-\hat f(y)|
+    &=\left|
+      \int_\bbR f(t)\cos(xt)\diff t
+      -\int_\bbR f(t)\cos(yt)\diff t
+      \right|\\
+    &\leq\int_\bbR|f(t)||\cos(xt)-\cos(yt)|\diff t\\
+    &<\frac{\varepsilon}{\|f\|_1}\int_\bbR|f(t)|\diff t\\
+    &=\frac{\varepsilon}{\|f\|_1}\|f\|_1\\
+    &=\varepsilon.
+  \end{align*}
+  Since this can be done for any \(x\in\bbR\), \(\hat f\) is continuous on
+  \(\bbR\).
+
+  For part (b): since \(f\in L^1(\bbR)\), \(f\) there exists a sequence of
+  simple functions \(\{s_n\}\), \(n\in\bbN\), such that \(\int_\bbR
+  s_n\to\|f\|_1\). Therefore, it suffices to show the result for
+  characteristic functions. Let \(f=\chi_{[a,b]}\) and consider the limit
+  \[
+    \lim_{x\to\infty}\hat f(x)=\lim_{x\to\infty}\int_\bbR f(t)\cos(xt)\diff t.
+  \]
+  Since \(f(t)=\chi_{[a,b]}(t)\), we have
+  \begin{align*}
+    \lim_{x\to\infty}\int_\bbR f(t)\cos(xt)\diff t
+    &=\lim_{x\to\infty}\int_a^b\cos(xt)\diff t\\
+    &=\lim_{x\to\infty}\frac{1}{x}(\sin(xa)-\sin(xb))\\
+    &=\lim_{x\to\infty}\frac{\sin(xa)}{x}-\frac{\sin(xb)}{x}\\
+    &=1-1\\
+    &=0,
+  \end{align*}
+  as we set out to show.
 \end{solution}
 
 \begin{problem}
@@ -40,6 +77,7 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
+  For part (a):
 \end{solution}
 
 \begin{problem}
