@@ -8,10 +8,10 @@
   \(\partial f(x,y)/\partial x\) is a bounded function of \((x,y)\). Prove
   that \(\partial f(x,y)/\partial x\) is a measurable function of \(y\) for
   each \(x\) and
-\[
-\frac{\rmd}{\rmd x}\int_0^1f(x,y)\diff y=
-\int_0^1\frac{\partial f(x,y)}{\partial x}\diff y.
-\]
+  \[
+    \frac{\rmd}{\rmd x}\int_0^1f(x,y)\diff y= \int_0^1\frac{\partial
+      f(x,y)}{\partial x}\diff y.
+  \]
 \end{problem}
 \begin{solution}
 \end{solution}
@@ -20,11 +20,12 @@
   Let \(f\) be a function of bounded variation on \([a,b]\),
   \(-\infty<a<b<\infty\). If \(f=g+h\), with \(g\) absolutely continuous
   and \(h\) singular, show that
-\[
-\int_a^b\varphi\diff f=\int_a^b\varphi f'\diff x+\int_a^b\varphi\diff h.
-\]
-\\\\
-\emph{Hint}: A function \(h\) is said to be singular if \(h'=0\).
+  \[
+    \int_a^b\varphi\diff f=\int_a^b\varphi f'\diff x+\int_a^b\varphi\diff
+    h.
+  \]
+  \\\\
+  \emph{Hint}: A function \(h\) is said to be singular if \(h'=0\).
 \end{problem}
 \begin{solution}
 \end{solution}
@@ -33,46 +34,50 @@
   Let \(E\subseteq\bbR\) be a measurable set, and let \(K\) be a measurable
   function on \(E\times E\). Assume that there exists a positive constant
   \(C\) such that
-\begin{equation}
-\label{eq:jan-12:1}
-\int_E K(x,y)\diff x\leq C
-\end{equation}
-for a.e.\@ \(y\in E\), and
-\begin{equation}
-\label{eq:jan-12:2}
-\int_E K(x,y)\diff y\leq C
-\end{equation}
-for a.e.\@ \(x\in E\).
+  \[
+    \label{eq:jan-12:1}
+    \tag{\(\bigstar\)}
+    \int_E K(x,y)\diff x\leq C
+  \]
+  for a.e.\@ \(y\in E\), and
+  \[
+    \label{eq:jan-12:2}
+    \tag{\(\clubsuit\)}
+    \int_E K(x,y)\diff y\leq C
+  \]
+  for a.e.\@ \(x\in E\).
 
-Let \(1<p<\infty\), \(f\in L^p(E)\), and define
-\[
-T_f(x)=\int_E K(x,y)f(y)\diff y.
-\]
-\begin{enumerate}[label=(\alph*),noitemsep]
-\item Prove that \(T_f\in L^p(E)\) and
-\begin{equation}
-\label{eq:jan-12:3}
-\|T_f\|_p\leq C\|f\|_p.
-\end{equation}
-\item Is \eqref{eq:jan-12:3} still valid if \(p=1\) or \(\infty\)? If so,
-  are assumptions \eqref{eq:jan-12:1} and \eqref{eq:jan-12:2} needed?
-\end{enumerate}
+  Let \(1<p<\infty\), \(f\in L^p(E)\), and define
+  \[
+    T_f(x)=\int_E K(x,y)f(y)\diff y.
+  \]
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item Prove that \(T_f\in L^p(E)\) and
+    \[
+      \label{eq:jan-12:3}
+      \tag{\(\spadesuit\)}
+      \|T_f\|_p\leq C\|f\|_p.
+    \]
+  \item Is \eqref{eq:jan-12:3} still valid if \(p=1\) or \(\infty\)? If so,
+    are assumptions \eqref{eq:jan-12:1} and \eqref{eq:jan-12:2} needed?
+  \end{enumerate}
 \end{problem}
 \begin{solution}
 \end{solution}
 
 \begin{problem}
   Let \(f\) be a nonnegative measurable function on \([0,1]\) satisfying
-\begin{equation}
-  \label{eq:jan-12:4}
-\left|\left\{\,x\in[0,1]:f(x)>\alpha\,\right\}\right|<\frac{1}{1+\alpha^2}
-\end{equation}
-for \(\alpha>0\).
-\begin{enumerate}[label=(\alph*),noitemsep]
-\item Determine values of \(p\in[1,\infty)\) for which \(f\in L^p[0,1]\).
-\item If \(p_0\) is the minimum value of \(p\) for which \(p\) may fail to
-  be in \(L^p\), give an example of a function which satisfies
-  \eqref{eq:jan-12:4}, but which is not in \(L^{p_0}[0,1]\).
+  \[
+    \label{eq:jan-12:4}%
+    \tag{\(\)}%
+    m\left\{\,x\in[0,1]:f(x)>\alpha\,\right\}<\frac{1}{1+\alpha^2}
+  \]
+  for \(\alpha>0\).
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item Determine values of \(p\in[1,\infty)\) for which \(f\in L^p[0,1]\).
+  \item If \(p_0\) is the minimum value of \(p\) for which \(p\) may fail
+    to be in \(L^p\), give an example of a function which satisfies
+    \eqref{eq:jan-12:4}, but which is not in \(L^{p_0}[0,1]\).
 \end{enumerate}
 \end{problem}
 \begin{solution}
