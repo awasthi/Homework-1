@@ -65,13 +65,13 @@
     \[
       \label{eq:aug-11:1}
       \tag{\(\bigstar\)}
-      \int_E f_kg\longrightarrow\int_E fg
+      \int_E f_kg\too\int_E fg
     \]
     as \(k\to\infty\) for all \(g\in L^2(E)\). If, in addition,
     \(\|f_k\|_2\to\|f\|_2\) show that \(f_k\) converges to \(f\) in
     \(L^2\), i.e., that
     \[
-      \int_E|f-f_k|^2\longrightarrow 0
+      \int_E|f-f_k|^2\too 0
     \]
     as \(k\to\infty\).
   \item Provide an example of a sequence \(f_k\) in \(L^2\) and a function
@@ -80,47 +80,19 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  Part (a) is a special case of the Riesz representation theorem: since
-  \(\|f_n\|_2\to\|f\|_2\), given \(\varepsilon>0\) there exists an index
-  \(N\in\bbN\) such that
-  \[
-    \bigl|
-    {\|f\|_2}^{\!2}-{\|f_n\|_2}^{\!2}
-    \bigr|
-    =
-    \biggl|
-    \int_E|f|^2-|f_n|^2\diff x
-    \biggr|<\varepsilon.
-  \]
-  whenever \(n\geq N\). Now, consider the difference
-  \[
-    \int_E |f-f_n|^2\diff x=\int_Ef^2-2ff_n+{f_n}^2\diff x.
-  \]
-  Now, since \(\int_E f_ng\to\int_E fg\) for all \(g\in L^2(E)\), there
-  exists \(N''\in\bbN\) such that
-  \[
-    \int_E(ff_{n}-{f_n}^{\!2})\diff x<\frac{\varepsilon}{4}.
-  \]
-  Thus, by our previous estimates, we have
+  For part (a): expand the estimate
   \begin{align*}
     \int_E|f-f_n|^2\diff x
-    &=\int_E f^2-{f_n}^{\!2}+2\bigl(ff_n-{f_n}^{\!2}\bigr)\diff x\\
-    &=\int_E \bigl(f^2-{f_n}^{\!2}\bigl)\diff x
-      +2\int_E\bigl(ff_n-{f_n}^{\!2}\bigl)\diff x\\
-    &=\frac{\varepsilon}{2}+2\frac{\varepsilon}{4}\\
-    &=\varepsilon.
+    &=\int_E\bigl(|f|^2-2|ff_n|+|f|_n^2\bigr)\diff x\\
+    &=\|f_n\|_2+\|f\|_2-2\int_E ff_n\diff x.
   \end{align*}
-  Hence, \(f_n\to f\) in \(L^2(E)\).
-
-
-  For part (b), for \(f\in L^2[0,2\pi]\), consider the function
+  Since
   \[
-    f_n(t)=f(t)\cos(nt).
+    \int_Ef_ng\diff x\too \int_E fg\diff x
   \]
-  Since \(L^2[0,2\pi]\subseteq L^1[0,2\pi]\), \(f\in L^1[0,2\pi]\) and so,
-  by the Riemann--Lebesgue theorem,
+  for every \(g\in L^p(E)\),
   \[
-    \lim_{n\to\infty}\int_0^{2\pi}f(t)\cos(nt)\diff t=0.
+    -2\int_E f_nf\diff x\too\int_E
   \]
 \end{solution}
 
