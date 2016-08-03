@@ -125,6 +125,7 @@ main=english]{babel}
 \newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}%
 \newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}%
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}%
+\newcommand{\textzhit}[1]{\begin{CJK*}{UTF8}{bkai}#1\end{CJK*}}
 \fi%
 
 %%% Math packages
@@ -160,7 +161,7 @@ main=english]{babel}
                 % cmintegrals
                 ]{newtxmath} % Shitty math fonts
 \RequirePackage[bb=boondox,frak=pxtx,cal=boondoxo]{mathalfa}
-
+\RequirePackage{bm}
 \useosf % oldstyle figs
 
 %% Use Libertine for Greek and Russian (Libertine is magnificent font)
@@ -817,6 +818,35 @@ main=english]{babel}
 \newcommand{\scrX}{\mathscr{X}}
 \newcommand{\scrY}{\mathscr{Y}}
 \newcommand{\scrZ}{\mathscr{Z}}
+
+\if@libertine % Better spaced bfcp
+\renewcommand{\bfa}{\bm{\rma}}
+\renewcommand{\bfb}{\bm{\rmb}}
+\renewcommand{\bfc}{\bm{\rmc}}
+\renewcommand{\bfd}{\bm{\rmd}}
+\renewcommand{\bfe}{\bm{\rme}}
+\renewcommand{\bff}{\bm{\rmf}}
+\renewcommand{\bfg}{\bm{\rmg}}
+\renewcommand{\bfh}{\bm{\rmh}}
+\renewcommand{\bfi}{\bm{\rmi}}
+\renewcommand{\bfj}{\bm{\rmj}}
+\renewcommand{\bfk}{\bm{\rmk}}
+\renewcommand{\bfl}{\bm{\rml}}
+\renewcommand{\bfm}{\bm{\rmm}}
+\renewcommand{\bfn}{\bm{\rmn}}
+\renewcommand{\bfo}{\bm{\rmo}}
+\renewcommand{\bfp}{\bm{\rmp}}
+\renewcommand{\bfq}{\bm{\rmq}}
+\renewcommand{\bfr}{\bm{\rmr}}
+\renewcommand{\bfs}{\bm{\rms}}
+\renewcommand{\bft}{\bm{\rmt}}
+\renewcommand{\bfu}{\bm{\rmu}}
+\renewcommand{\bfv}{\bm{\rmv}}
+\renewcommand{\bfw}{\bm{\rmw}}
+\renewcommand{\bfx}{\bm{\rmx}}
+\renewcommand{\bfy}{\bm{\rmy}}
+\renewcommand{\bfz}{\bm{\rmz}}
+\fi
 
 %%% Units
 \usepackage{siunitx}

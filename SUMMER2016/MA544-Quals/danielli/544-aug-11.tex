@@ -78,11 +78,19 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  Part (a) is a special case of the Radon--Riesz representation
-  theorem. Expand the equation
+  Part (a) is a special case of the Riesz representation theorem (perhaps
+  looking at this problem as a problem in functional analysis helps shed
+  some light on its proof): define the inner product
+  \(\langle\cdot,\cdot\rangle\colon L^2(E)\times L^2(E)\to\bbR\) by
   \[
-    \int_E |f-f_n|^2\leq \int_E |f^2-2ff_n+f^2|
+    \langle f,g \rangle=\int_E fg\diff x.
   \]
+  Then, we have
+  \begin{align*}
+    {\|f-f_n\|_2}^{\!2}
+    &=\int_E|f-f_n|^2\diff x\\
+    &=\int_E|f|
+  \end{align*}
 \end{solution}
 
 \begin{problem}
@@ -122,7 +130,7 @@
   \item Use part (a) to show that that if \(1\leq p,q,r\leq\infty\), with
     \(1/p+1/q=1/r+1\), \(f\in L^p(\bbR)\), and \(g\in L^p(\bbR)\), then
     \[
-      |(f*g)(x)|^r\leq\|f\|_p^{r-p}\|g\|_q^{r-q}\int|f(y)|^p|g(x-y)|^q\diff
+      |(f*g)(x)|^r\leq{\|f\|_p}^{\!r-p}{\|g\|_q}^{\!r-q}\int|f(y)|^p|g(x-y)|^q\diff
       y.
     \]
     \\\\
