@@ -306,7 +306,7 @@ main=english]{babel}
   \array{#1}}
 \makeatother
 
-%% smallbmatrix
+%% small matrices
 \newenvironment{smallbmatrix}
 {
 \left[
@@ -315,6 +315,16 @@ main=english]{babel}
 {
 \end{smallmatrix}\right]
 }
+
+\newenvironment{smallpmatrix}
+{
+\left(
+\begin{smallmatrix}
+}%
+{
+\end{smallmatrix}\right)
+}
+
 
 %%% Special sets and operators
 %%% General

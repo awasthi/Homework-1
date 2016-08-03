@@ -80,20 +80,26 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  For part (a): expand the estimate
-  \begin{align*}
-    \int_E|f-f_n|^2\diff x
-    &=\int_E\bigl(|f|^2-2|ff_n|+|f|_n^2\bigr)\diff x\\
-    &=\|f_n\|_2+\|f\|_2-2\int_E ff_n\diff x.
-  \end{align*}
+  For part (a): expand the limit
+  \begin{gather}
+    \label{eq:aug-11:2-a}
+    \begin{aligned}
+      \lim_{n\to\infty}\int_E|f-f_n|^2\diff x
+      &=\lim_{n\to\infty}\biggl[\int_E\bigl(|f|^2-2|ff_n|+|f|_n^2\bigr)\diff x\biggr]\\
+      &=\lim_{n\to\infty}\biggl[\|f_n\|_2+\|f\|_2-2\int_E ff_n\diff x\biggr]\\
+      &=\lim_{n\to\infty}\|f_n\|_2+\lim_{n\to\infty}\|f\|_2+-2\lim_{n\to\infty}\int_E
+      ff_n\diff x.
+    \end{aligned}
+  \end{gather}
   Since
   \[
     \int_Ef_ng\diff x\too \int_E fg\diff x
   \]
   for every \(g\in L^p(E)\),
   \[
-    -2\int_E f_nf\diff x\too\int_E
+    \int_E f_nf\diff x\too \int_Ef^2\diff x={\|f\|_2}^{\!2}.
   \]
+  Moreover, \(\|f_n\|_2\to\|f\|_2\) so the limit in \eqref{eq:aug-11:2-a}
 \end{solution}
 
 \begin{problem}
