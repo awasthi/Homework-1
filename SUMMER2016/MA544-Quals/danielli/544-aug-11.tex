@@ -80,10 +80,9 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  Part (a) is a special case of the Riesz representation theorem (perhaps
-  looking at this problem as a problem in functional analysis helps shed
-  some light on its proof): since \(\|f_n\|_2\to\|f\|_2\), given
-  \(\varepsilon>0\) there exists an index \(N\in\bbN\) such that
+  Part (a) is a special case of the Riesz representation theorem: since
+  \(\|f_n\|_2\to\|f\|_2\), given \(\varepsilon>0\) there exists an index
+  \(N\in\bbN\) such that
   \[
     \bigl|
     {\|f\|_2}^{\!2}-{\|f_n\|_2}^{\!2}
@@ -93,7 +92,36 @@
     \int_E|f|^2-|f_n|^2\diff x
     \biggr|<\varepsilon.
   \]
-  whenever \(n\geq N\).
+  whenever \(n\geq N\). Now, consider the difference
+  \[
+    \int_E |f-f_n|^2\diff x=\int_Ef^2-2ff_n+{f_n}^2\diff x.
+  \]
+  Now, since \(\int_E f_ng\to\int_E fg\) for all \(g\in L^2(E)\), there
+  exists \(N''\in\bbN\) such that
+  \[
+    \int_E(ff_{n}-{f_n}^{\!2})\diff x<\frac{\varepsilon}{4}.
+  \]
+  Thus, by our previous estimates, we have
+  \begin{align*}
+    \int_E|f-f_n|^2\diff x
+    &=\int_E f^2-{f_n}^{\!2}+2\bigl(ff_n-{f_n}^{\!2}\bigr)\diff x\\
+    &=\int_E \bigl(f^2-{f_n}^{\!2}\bigl)\diff x
+      +2\int_E\bigl(ff_n-{f_n}^{\!2}\bigl)\diff x\\
+    &=\frac{\varepsilon}{2}+2\frac{\varepsilon}{4}\\
+    &=\varepsilon.
+  \end{align*}
+  Hence, \(f_n\to f\) in \(L^2(E)\).
+
+
+  For part (b), for \(f\in L^2[0,2\pi]\), consider the function
+  \[
+    f_n(t)=f(t)\cos(nt).
+  \]
+  Since \(L^2[0,2\pi]\subseteq L^1[0,2\pi]\), \(f\in L^1[0,2\pi]\) and so,
+  by the Riemann--Lebesgue theorem,
+  \[
+    \lim_{n\to\infty}\int_0^{2\pi}f(t)\cos(nt)\diff t=0.
+  \]
 \end{solution}
 
 \begin{problem}
