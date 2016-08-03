@@ -47,8 +47,10 @@
   \begin{align*}
     \lim_{x\to\infty}\int_\bbR f(t)\cos(xt)\diff t
     &=\lim_{x\to\infty}\int_a^b\cos(xt)\diff t\\
-    &=\lim_{x\to\infty}\frac{1}{x}(\sin(xa)-\sin(xb))\\
-    &=\lim_{x\to\infty}\frac{\sin(xa)}{x}-\frac{\sin(xb)}{x}\\
+    &=\lim_{x\to\infty}\biggl[\frac{1}{x}(\sin(xa)-\sin(xb))\biggr]\\
+    &=\lim_{x\to\infty}\biggl[\frac{\sin(xa)}{x}-\frac{\sin(xb)}{x}\biggr]\\
+    &=\biggl[\lim_{x\to\infty}\frac{\sin(xa)}{x}\biggr]
+      -\biggl[\lim_{x\to\infty}\frac{\sin(xb)}{x}\biggr]\\
     &=1-1\\
     &=0,
   \end{align*}
@@ -80,17 +82,18 @@
 \begin{solution}
   Part (a) is a special case of the Riesz representation theorem (perhaps
   looking at this problem as a problem in functional analysis helps shed
-  some light on its proof): define the inner product
-  \(\langle\cdot,\cdot\rangle\colon L^2(E)\times L^2(E)\to\bbR\) by
+  some light on its proof): since \(\|f_n\|_2\to\|f\|_2\), given
+  \(\varepsilon>0\) there exists an index \(N\in\bbN\) such that
   \[
-    \langle f,g \rangle=\int_E fg\diff x.
+    \bigl|
+    {\|f\|_2}^{\!2}-{\|f_n\|_2}^{\!2}
+    \bigr|
+    =
+    \biggl|
+    \int_E|f|^2-|f_n|^2\diff x
+    \biggr|<\varepsilon.
   \]
-  Then, we have
-  \begin{align*}
-    {\|f-f_n\|_2}^{\!2}
-    &=\int_E|f-f_n|^2\diff x\\
-    &=\int_E|f|
-  \end{align*}
+  whenever \(n\geq N\).
 \end{solution}
 
 \begin{problem}
@@ -103,10 +106,10 @@
   \(h\in\bbR\).
   \\\\
   \emph{Hint}: For \(h>0\), write
-\[
-\int_{\bbR} |f(x+h)-f(x)|\diff x=
-\sum_{n=-\infty}^\infty\int_{nh}^{(n+1)h}|f(x+h)-f(x)|\diff x.
-\]
+  \[
+    \int_{\bbR} |f(x+h)-f(x)|\diff x=
+    \sum_{n=-\infty}^\infty\int_{nh}^{(n+1)h}|f(x+h)-f(x)|\diff x.
+  \]
 \item
   \(\displaystyle\left|\int_{\bbR} f(x)\varphi'(x)\diff x\right|\leq A\),
   where \(\varphi\) is any function of class \(C^1\), of bounded variation,
