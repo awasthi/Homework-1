@@ -187,8 +187,9 @@
   (\(\varphi\) is differentiable on a compact set, thus, by the mean value
   theorem \(|\varphi(x)-\varphi(y)|\leq \varphi'(\xi)|x-y|\) for some
   \(\xi\in\Supp\varphi\)). Assuming \(\Supp\varphi\) has nonempty interior,
-  \(\Supp\varphi\) contains a closed interval \(I=[a,b]\) and thus, by
-  integration by parts, we have
+  \(\Supp\varphi\) contains a closed interval \(I=[a,b]\) (in fact, it is
+  of the form \(\bigcup_{n\in\bbN} I_n\)) and thus, by integration by
+  parts, we have
   \begin{align*}
     \int_a^b f\varphi'\diff x%
     &=f(b)\varphi(b)-f(a)\varphi(a)
@@ -198,8 +199,13 @@
     &=f(b)\varphi(b)-f(a)\varphi(a)
       -\bigl(f(a)-f(b)\bigr)\\
     &=f(b)(\varphi(b)+1)-f(a)(\varphi(a)+1)\\
-    &\leq 2(f(b)-f(a))
+    &\leq 2(f(b)-f(a))\\
+    &\leq 2V[a,b;f]
   \end{align*}
+  Thus, summing over every
+  \[
+    \sum_{n=0}^\infty \int_{a_n}^{b_n} f\varphi'\diff x\leq 2|A|.
+  \]
 \end{solution}
 
 \begin{problem}
