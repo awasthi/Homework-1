@@ -210,7 +210,7 @@
   \begin{enumerate}[label=(\alph*),noitemsep]
   \item Prove the \emph{generalized Hölder's inequality}: Assume
     \(1\leq p\leq\infty\), \(j=1,\dotsc,n\), with
-    \(\sum_{j=1}^\infty 1/p_j=1/r\leq 1\). If \(E\) is a measurable set and
+    \(\sum_{j=1}^n 1/p_j=1/r\leq 1\). If \(E\) is a measurable set and
     \(f_j\in L^{p_j}(E)\) for \(j=1,\dotsc,n\), then
     \(\prod_{j=1}^n f_j\in L^r(E)\) and
     \[
@@ -233,7 +233,15 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  For (a)
+  For (a) we shall proceed by induction on \(n\) the number of measurable
+  functions \(f_n\in L^{p_n}(E)\). The case \(n=2\) holds by using Hölder's
+  inequality on the exponents \(r/p+r/q=1\),
+  \begin{align*}
+    \biggl[\int_E|f_1f_2|^r\biggr]^{1/r}\rmd x
+    &=\|{f_1}^r{f_2}^r\|_1\\
+    &\leq\|{f_1}^r\|_{p/r}\|{f_2}^r\|_{q/r}\\
+    &=\|f_1\|_p\|f_2\|_q.
+  \end{align*}
 \end{solution}
 
 %%% Local Variables:
