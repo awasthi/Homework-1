@@ -237,7 +237,7 @@
   functions \(f_j\in L^{p_j}(E)\), \(1\leq j\leq n\). The case \(n=2\)
   holds by using Hölder's inequality on the exponents \(r/p+r/q=1\),
   \begin{align*}
-    \biggl[\int_E|f_1f_2|^{\!r}\biggr]^{1/r}\rmd x
+    \biggl[\int_E|f_1f_2|^r\biggr]^{1/r}\rmd x
     &=\|{f_1}^{\!r}{f_2}^{\!r}\|_1\\
     &\leq\|{f_1}^{\!r}\|_{p/r}\|{f_2}^{\!r}\|_{q/r}\\
     &=\|f_1\|_p\|f_2\|_q.
@@ -245,7 +245,25 @@
   Now, suppose this holds for \(n-1\) measurable functions
   \(f_j\in L^{p_j}(E)\), \(1\leq j\leq n-1\). Then for
   \(f_j\in L^{p_j}(E)\) with \(\sum_{j=1}^n 1/p_j=1/r\), we have
-  \(\sum_{j=1}^{n-1}1/p_j=1/r-1/p_n\)
+  \(r'=\sum_{j=1}^{n-1}1/p_j=1/r-1/p_n\) so by the inductive step
+  \[
+    \|f_1\dotsm f_{n-1}\|_{r'}\leq%
+    \|f_1\|_{p_1}\dotsm\|f_{n-1}\|_{p_{n-1}}
+  \]
+  hence, \(f_1\dotsm f_{n-1}\in L^{r'}(E)\). Thus,
+  \begin{align*}
+    \|f_1\dotsm f_{n-1}f_n\|_r
+    &\leq \|f_1\dotsm f_{n-1}\|_{r'}\|f_n\|_{p_n}\\
+    &\leq\|f_1\|_{p_1}\dotsm\|f_{n-1}\|_{p_{n-1}}\|f_n\|_{p_n},
+  \end{align*}
+  as we set out to show.
+
+  For part (b), by the generalized Hölder's inequality, we have
+  \begin{align*}
+    |f*g|^r
+    &=\biggl[\int_\bbR f(y)g(x-y)\diff y\biggr]^r\\
+    &=
+  \end{align*}
 \end{solution}
 
 %%% Local Variables:
