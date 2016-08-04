@@ -168,6 +168,9 @@ main=english]{babel}
 \substitutefont{T2A}{\rmdefault}{LinuxLibertineT}%
 
 %% Other Libertine specific math settings
+\DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
+% \DeclareMathSymbol{;}{\mathpunct}{operators}{"2C}
+\DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
 \newcommand\Bigstar{\bigstar} % too ugly
 \renewcommand\bigstar{\star} % too ugly
 \newcommand\bigsetminus{\setminus} % too ugly
@@ -176,6 +179,8 @@ main=english]{babel}
       \hbox{\scriptsize.}\hbox{\scriptsize.}}}%
   =}%
 \DeclareMathOperator{\indicate}{\mathbb{1}}
+\newcommand\oldemptyset{\emptyset}
+\renewcommand\emptyset{\varnothing}
 
 \else % Use the regular CM fonts
 \RequirePackage{amssymb}%
