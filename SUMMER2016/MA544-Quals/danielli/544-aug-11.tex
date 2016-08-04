@@ -12,7 +12,7 @@
       \lim_{x\to\infty}\hat f(x)=0.
     \]
   \end{enumerate}
-  \emph{Hint}: Start by proving the statement for \(f=\chi_{[a,b]}\).
+  \emph{Hint}: Start by proving the statement for \(f=\indicate_{[a,b]}\).
 \end{problem}
 \begin{solution}
   For part (a): let \(\varepsilon>0\) be given. Then, since \(\cos(xt)\) is
@@ -102,7 +102,7 @@
   Moreover, \(\|f_n\|_2\to\|f\|_2\) so the limit in \eqref{eq:aug-11:2-a}
   converges to
   \[
-    \lim_{n\to\infty}\|f_n|_2+\lim_{n\to\infty}\|f\|_2-2\lim_{n\to\infty}\int_E
+    \lim_{n\to\infty}\|f_n\|_2+\lim_{n\to\infty}\|f\|_2-2\lim_{n\to\infty}\int_E
     ff_n\diff x
     =%
     \|f\|_2+\|f\|_2-2\|f\|_2=0
@@ -111,7 +111,23 @@
 
   For part (b), consider the sequence \(\{f_n\}\), \(n\in\bbN\), where
   \(f_n(x)=\log(n)\exp(-nx)\). Then, we claim that
-  \(f_n\xrightarrow{L^2[0,1]}0\), but that \(f\nrightarrow 0\) pointwise.
+  \(f_n\xrightarrow{L^2[0,1]}0\), but that \(f_n\nrightarrow 0\)
+  pointwise. To see the former, first note that
+  \[
+    \begin{aligned}
+      \lim_{n\to\infty}\biggl[\int_0^1 f_n(x)\diff x\biggr]
+      &=\lim_{n\to\infty}\biggl[\int_0^1\log(n)\exp(-nx)\diff x\biggr]\\
+      &=\lim_{n\to\infty}\biggl[\log(n)\exp(-nx)\bigr|_0^1\biggr]\\
+      &=\lim_{n\to\infty}\biggl[
+      \frac{1}{n}\log(n)-\frac{1}{n}\log(n)\exp(-n)
+      \biggr]\\
+      &=\lim_{n\to\infty}\left[%
+        \biggl(\frac{1-\exp(-n)}{n}\biggr)\log(n)%
+      \right]\\
+      &=0.
+    \end{aligned}
+  \]
+  However, \(f_n\) does not converge to \(0\) a.e.
 \end{solution}
 
 \begin{problem}

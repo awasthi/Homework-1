@@ -159,7 +159,7 @@ main=english]{babel}
                 bigdelims,%
                 % cmintegrals
                 ]{newtxmath} % Shitty math fonts
-\RequirePackage[bb=boondox,frak=pxtx,cal=boondoxo]{mathalfa}
+\RequirePackage[bb=boondox,frak=esstix,cal=boondoxo,scr=boondox]{mathalfa}
 
 \useosf % oldstyle figs
 
@@ -177,11 +177,12 @@ main=english]{babel}
 \newcommand\bigsetminus{\setminus} % too ugly
 \renewcommand\setminus{\smallsetminus} % Default is too ugly
 \renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}} % Default is
-% \newcommand\oldemptyset{\emptyset}
-% \renewcommand\emptyset{\varnothing}
+\newcommand\oldemptyset{\emptyset}
+\renewcommand\emptyset{\varnothing}
 \newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
       \hbox{\scriptsize.}\hbox{\scriptsize.}}}%
   =}%
+\DeclareMathOperator{\indicate}{\mathbb{1}}
 
 \else % Use the regular CM fonts
 \RequirePackage{amssymb}%
@@ -198,6 +199,7 @@ main=english]{babel}
 \renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}} % Default is
 % \newcommand\oldemptyset{\emptyset}
 % \renewcommand\emptyset{\varnothing}
+\DeclareMathOperator{\indicate}{\mathbf{1}}
 
 \def\upint{\mathchoice%
     {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
@@ -497,7 +499,6 @@ main=english]{babel}
 \DeclareMathOperator{\diam}{diam}
 \DeclareMathOperator{\disc}{disc}
 \DeclareMathOperator{\Isom}{Isom}
-\DeclareMathOperator{\indicate}{\mathbf{1}}
 \DeclareMathOperator{\supp}{supp}
 \DeclareMathOperator{\Supp}{Supp}
 
