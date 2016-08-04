@@ -127,7 +127,12 @@
       &=0.
     \end{aligned}
   \]
-  However, \(f_n\) does not converge to \(0\) a.e.
+  However, \(f_n\) does not converge to \(0\) a.e.\@ since, for
+  \(x=0\) there exist no \(N\in\bbN\) such that
+  \[
+    |\log(n)|<1.
+  \]
+  for all \(n\geq N\).
 \end{solution}
 
 \begin{problem}
@@ -151,6 +156,21 @@
 \end{enumerate}
 \end{problem}
 \begin{solution}
+  For part (a), it suffices to consider only positive \(h\) as, making the
+  change of variables \(u=x+h\) yields
+  \[
+    \int_{\bbR} |f(u)-f(u-h)|\diff u=
+    \int_{\bbR} |f(u+(-h))-f(u)|\diff u
+  \]
+  where \(-h\) is positive (and letting \(h=0\), we have a trivial
+  inequality). Now, taking the hint, write
+  \[
+    \int_{\bbR} |f(x+h)-f(x)|\diff x=%
+    \sum_{n=-\infty}^\infty\int_{nh}^{(n+1)h}|f(x+h)-f(x)|\diff x.
+  \]
+  Now, since \(|f((n+1)h)-f(nh)|\) is a sum in the total variation of \(f\)
+  on the interval \([nh,(n+1)h]\), \(|f(x+h)-f(x)|\diff x\) is bounded by
+  \(V[nh,(n+1)h;f]\).
 \end{solution}
 
 \begin{problem}
