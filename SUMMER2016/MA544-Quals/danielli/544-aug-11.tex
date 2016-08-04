@@ -218,7 +218,7 @@
       \|f_1\dotsm f_n\|_r\leq\|f_1\|_{p_1}\dotsm\|f_n\|_{p_n}.
     \]
   \item Use part (a) to show that that if \(1\leq p,q,r\leq\infty\), with
-    \(1/p+1/q=1/r+1\), \(f\in L^p(\bbR)\), and \(g\in L^p(\bbR)\), then
+    \(1/p+1/q=1/r+1\), \(f\in L^p(\bbR)\), and \(g\in L^q(\bbR)\), then
     \[
       |(f*g)(x)|^r\leq{\|f\|_p}^{\!r-p}{\|g\|_q}^{\!r-q}\int|f(y)|^p|g(x-y)|^q\diff
       y.
@@ -262,11 +262,9 @@
   For part (b), by the generalized Hölder's inequality, we have
   \begin{align*}
     |f*g|
-    &=\biggl|\int_\bbR f(y)g(x-y)\diff y\biggr|\\
-    &=\biggl|%
-      \int_\bbR \bigl(f(y)^{1/p+1/q}g(x-y)^{1/p+1/q}\bigr)^r\rmd y%
-      \biggr|\\
-    &=
+    &=\int_\bbR\bigl|f(y)g(x-y)\bigr|\rmd y\\
+    &=\int_\bbR\bigl(|f(y)|^{1/r}|g(x-y)|^{1/r}\bigr)^r\rmd y\\
+    &=\int_\bbR\bigl(|f(y)|^{1/p+1/q}|g(x-y)|^{1/p+1/q}\bigr)^r\rmd y\\
   \end{align*}
 \end{solution}
 
