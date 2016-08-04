@@ -86,9 +86,9 @@
     \begin{aligned}
       \lim_{n\to\infty}\int_E|f-f_n|^2\diff x
       &=\lim_{n\to\infty}\biggl[\int_E\bigl(|f|^2-2|ff_n|+|f|_n^2\bigr)\diff x\biggr]\\
-      &=\lim_{n\to\infty}\biggl[\|f_n\|_2+\|f\|_2-2\int_E ff_n\diff x\biggr]\\
+      &=\lim_{n\to\infty}\biggl[\|f_n\|_2+\|f\|_2-2\int_E f_nf\diff x\biggr]\\
       &=\lim_{n\to\infty}\|f_n\|_2+\lim_{n\to\infty}\|f\|_2-2\lim_{n\to\infty}\int_E
-      ff_n\diff x.
+      f_nf\diff x.
     \end{aligned}
   \end{gather}
   Since
@@ -103,7 +103,7 @@
   converges to
   \[
     \lim_{n\to\infty}\|f_n\|_2+\lim_{n\to\infty}\|f\|_2-2\lim_{n\to\infty}\int_E
-    ff_n\diff x
+    f_nf\diff x
     =%
     \|f\|_2+\|f\|_2-2\|f\|_2=0
   \]
@@ -187,9 +187,10 @@
   (\(\varphi\) is differentiable on a compact set, thus, by the mean value
   theorem \(|\varphi(x)-\varphi(y)|\leq \varphi'(\xi)|x-y|\) for some
   \(\xi\in\Supp\varphi\)). Assuming \(\Supp\varphi\) has nonempty interior,
-  \(\Supp\varphi\) contains a closed interval \(I=[a,b]\) (in fact, it is
-  of the form \(\bigcup_{n\in\bbN} I_n\)) and thus, by integration by
-  parts, we have
+  \(\Supp\varphi\) contains a closed interval \(I=[a,b]\) (in fact,
+  \(\Supp\varphi\) is of the form \([a,b]\setminus\bigcup_{n\in\bbN} I_n\)
+  where \(I_n=(a_n,b_n)\) with \(a_n,b_n\in\Supp\varphi\)) and thus, by
+  integration by parts, we have
   \begin{align*}
     \int_a^b f\varphi'\diff x%
     &=f(b)\varphi(b)-f(a)\varphi(a)
