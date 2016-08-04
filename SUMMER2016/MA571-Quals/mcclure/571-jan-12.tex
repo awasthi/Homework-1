@@ -111,12 +111,12 @@
 \begin{problem}
   Let \(X\) be a set with \(2\) elements \(\{a,b\}\). Give \(X\) the
   \emph{discrete} topology. Let \(Y\) be any topological space. Recall that
-  \(\scrC(X,Y)\) denotes the set of continuous functions from \(X\) to
-  \(Y\), with the compact-open topology. Prove that \(\scrC(X,Y)\) is
+  \(\calC(X,Y)\) denotes the set of continuous functions from \(X\) to
+  \(Y\), with the compact-open topology. Prove that \(\calC(X,Y)\) is
   homeomorphic to \(Y\times Y\) (with the product topology).
 \end{problem}
 \begin{solution}
-  Consider the map \(F\colon\scrC(X,Y)\to Y\times Y\) given by
+  Consider the map \(F\colon\calC(X,Y)\to Y\times Y\) given by
   \(F(f)=(f(a),f(b))\). This map is continuous by Theorem 18.4, since
   \(\pi_1(F)\) and \(\pi_2(F)\) are, respectively, the evaluation of \(f\)
   at \(a\) and the evaluation of \(f\) and \(b\), both of which are
@@ -130,7 +130,7 @@
 
   Now it suffices to find a continuous inverse. For any
   \((y_1,y_2)\in Y\times Y\), define the map
-  \(g\colon Y\times Y\to\scrC(X,Y)\).
+  \(g\colon Y\times Y\to\calC(X,Y)\).
   \[
     g(y_1,y_2)= f (y)=\begin{cases}
       a&\text{if \(y=y_1\)}\\
