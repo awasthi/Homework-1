@@ -234,14 +234,16 @@
 \end{problem}
 \begin{solution}
   For (a) we shall proceed by induction on \(n\) the number of measurable
-  functions \(f_n\in L^{p_n}(E)\). The case \(n=2\) holds by using Hölder's
-  inequality on the exponents \(r/p+r/q=1\),
+  functions \(f_j\in L^{p_{n_j}}(E)\), \(1\leq j\leq n\). The case \(n=2\)
+  holds by using Hölder's inequality on the exponents \(r/p+r/q=1\),
   \begin{align*}
     \biggl[\int_E|f_1f_2|^r\biggr]^{1/r}\rmd x
     &=\|{f_1}^r{f_2}^r\|_1\\
     &\leq\|{f_1}^r\|_{p/r}\|{f_2}^r\|_{q/r}\\
     &=\|f_1\|_p\|f_2\|_q.
   \end{align*}
+  Now, suppose this holds for \(n-1\) measurable functions
+  \(f_j\in L^{p_j}(E)\), \(1\leq j\leq n-1\).
 \end{solution}
 
 %%% Local Variables:
