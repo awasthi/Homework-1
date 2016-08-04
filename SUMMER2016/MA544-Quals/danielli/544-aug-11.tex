@@ -170,7 +170,36 @@
   \]
   Now, since \(|f((n+1)h)-f(nh)|\) is a sum in the total variation of \(f\)
   on the interval \([nh,(n+1)h]\), \(|f(x+h)-f(x)|\) is bounded by
-  \(V[nh,(n+1)h;f]\).
+  \(V[nh,(n+2)h;f]\). Thus, we have
+  \begin{align*}
+    \int_{\bbR} |f(x+h)-f(x)|\diff x
+    &=\sum_{n=-\infty}^\infty\int_{nh}^{(n+1)h}|f(x+h)-f(x)|\diff x\\
+    &\leq\sum_{n=-\infty}^\infty\int_{nh}^{(n+1)h}V[nh,(n+2)h;f]\diff x\\
+    &=\sum_{n=-\infty}^\infty V[nh,(n+2)h;f]\int_{nh}^{(n+1)h}\diff x\\
+    &=\sum_{n=-\infty}^\infty V[nh,(n+2)h;f]|h|\\
+    &=2A|h|.
+  \end{align*}
+  I suspect there is an error here as the most obvious bound we can get is
+  \(2A|h|\) and not the stricter \(A|h|\).
+
+  For part (b), \(f\) is absolutely continuous since it is of bounded
+  variation and \(\varphi\) is absolutely continuous since it is Lipschitz
+  (\(\varphi\) is differentiable on a compact set, thus, by the mean value
+  theorem \(|\varphi(x)-\varphi(y)|\leq \varphi'(\xi)|x-y|\) for some
+  \(\xi\in\Supp\varphi\)). Assuming \(\Supp\varphi\) has nonempty interior,
+  \(\Supp\varphi\) contains a closed interval \(I=[a,b]\) and thus, by
+  integration by parts, we have
+  \begin{align*}
+    \int_a^b f\varphi'\diff x%
+    &=f(b)\varphi(b)-f(a)\varphi(a)
+      -\int_a^b f'\varphi\diff x\\
+    &\leq f(b)\varphi(b)-f(a)\varphi(a)
+      -\int_a^b f'\diff x\\
+    &=f(b)\varphi(b)-f(a)\varphi(a)
+      -\bigl(f(a)-f(b)\bigr)\\
+    &=f(b)(\varphi(b)+1)-f(a)(\varphi(a)+1)\\
+    &\leq 2(f(b)-f(a))
+  \end{align*}
 \end{solution}
 
 \begin{problem}
