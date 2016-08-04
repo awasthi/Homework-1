@@ -35,11 +35,11 @@
   Since this can be done for any \(x\in\bbR\), \(\hat f\) is continuous on
   \(\bbR\).
 
-  For part (b): since \(f\in L^1(\bbR)\), \(f\) there exists a sequence of
-  simple functions \(\{s_n\}\), \(n\in\bbN\), such that
-  \(\int_\bbR s_n\to\|f\|_1\). Therefore, it suffices to show the result
-  for characteristic functions. Let \(f=\indicate_{[a,b]}\) and consider
-  the limit
+  For part (b): since simple functions are dense in \(L^1(\bbR)\), \(f\)
+  there exists a sequence of simple functions \(\{s_n\}\), \(n\in\bbN\),
+  such that \(\int_\bbR s_n\to\|f\|_1\). Therefore, it suffices to prove
+  the result for characteristic functions. Let \(f=\indicate_{[a,b]}\) and
+  consider the limit
   \[
     \lim_{x\to\infty}\hat f(x)=\lim_{x\to\infty}\int_\bbR f(t)\cos(xt)\diff t.
   \]
@@ -108,6 +108,8 @@
     \|f\|_2+\|f\|_2-2\|f\|_2=0
   \]
   as \(n\to\infty\).
+
+  For part (b), the following counterexample works for any \(L^p\) space: let
 \end{solution}
 
 \begin{problem}
