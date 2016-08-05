@@ -276,8 +276,7 @@
       \bigl\|\bigl(|f(y)|^p|g(x)|^q\bigr)^{1/r}\bigr\|_r
       \bigl\||f(y)|^{(r-p)/r}\bigr\|_{pr/(r-p)}
       \bigl\||g(x-y)|^{(r-q)/r}\bigr\|_{qr/(r-q)}\\
-    &=
-    &={\|f\|_p}^{\!r-p}{\|g\|_q}^{\!r-q}
+    &={\|f\|_p}^{\!(r-p)/r}{\|g\|_q}^{\!(r-q)/r}
       \biggl[\int_\bbR|f(y)|^p|g(x-y)|^q\diff y\biggr]^{1/r}.
   \end{align*}
   Raising both sides to the power \(r\), we have
@@ -286,6 +285,17 @@
     y,
   \]
   as desired.
+
+  For part (c), using the estimate we worked out in part (b), we have
+  \begin{align*}
+    {\|f*g\|_r}^{\!r}
+    &=\int_\bbR|f*g(x)|^r\diff x\\
+    &\leq\int_\bbR
+      \biggl[
+      {\|f\|_p}^{\!r-p}{\|g\|_q}^{\!r-q}\int|f(y)|^p|g(x-y)|^q\diff y
+      \biggr]\\
+    &=
+  \end{align*}
 \end{solution}
 
 %%% Local Variables:
