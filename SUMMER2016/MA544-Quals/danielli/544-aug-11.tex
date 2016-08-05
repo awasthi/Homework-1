@@ -286,16 +286,26 @@
   \]
   as desired.
 
-  For part (c), using the estimate we worked out in part (b), we have
+  For part (c), using the estimate we worked out in part (b) together with
+  Tonelli's theorem, we have
   \begin{align*}
     {\|f*g\|_r}^{\!r}
     &=\int_\bbR|f*g(x)|^r\diff x\\
     &\leq\int_\bbR
       \biggl[
-      {\|f\|_p}^{\!r-p}{\|g\|_q}^{\!r-q}\int|f(y)|^p|g(x-y)|^q\diff y
+      {\|f\|_p}^{\!r-p}{\|g\|_q}^{\!r-q}\int_\bbR|f(y)|^p|g(x-y)|^q\diff y
       \biggr]\\
-    &=
+    &={\|f\|_p}^{\!r-p}{\|g\|_q}^{\!r-q}\iint\limits_{\bbR\times\bbR}|f(y)|^p|g(x-y)|^q\diff
+      y\\
+    &={\|f\|_p}^{\!r-p}{\|g\|_q}^{\!r-q}\int_\bbR|f(y)|^p\biggl[\int_\bbR
+      |g(x-y)|^q\diff y\biggr]\rmd x\\
+    &\leq{\|f\|_p}^{\!r-p}{\|g\|_q}^{\!r-q}{\|f\|_p}^{\!p}{\|g_q\|}^{\!q}\\
+    &={\|f\|_p}^{\!r}{\|g\|_q}^{\!r}.
   \end{align*}
+  Taking the \(r\)th root on each side, we achieve the desired estimate
+  \[
+    \|f*g\|_r\leq \|f\|_p\|g\|_q.
+  \]
 \end{solution}
 
 %%% Local Variables:
