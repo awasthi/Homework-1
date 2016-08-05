@@ -25,11 +25,14 @@
   \(\{f_n'(x_0,y)\}\) converges to \(\partial f/\partial x(x_0,y)\). Now,
   since \(|\partial f/\partial x(x,y)|\leq M\) for some \(M\in\bbR^+\) for
   all \((x,y)\in[0,1]\times[0,1]\), by the bounded convergence theorem
-  \begin{align*}
-    \lim_{n\to\infty}\int_0^1 f'_n(y)\diff y
-    &=\int_0^1\lim_{n\to\infty} f'_n(y)\diff y\\
-    &=\int_0^1 \frac{\partial f(x_0,y)}{\partial x}\diff y.
-  \end{align*}
+  \begin{gather}
+    \label{eq:jan-12:bounded-conv-est}
+    \begin{aligned}
+      \lim_{n\to\infty}\int_0^1 f'_n(y)\diff y
+      &=\int_0^1\lim_{n\to\infty} f'_n(y)\diff y\\
+      &=\int_0^1 \frac{\partial f(x_0,y)}{\partial x}\diff y.
+    \end{aligned}
+  \end{gather}
 \end{solution}
 
 \begin{problem}
