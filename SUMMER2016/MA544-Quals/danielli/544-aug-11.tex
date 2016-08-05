@@ -262,9 +262,10 @@
   For part (b), by the generalized Hölder's inequality, we have
   \begin{align*}
     |f*g|
-    &=\int_\bbR\bigl|f(y)g(x-y)\bigr|\rmd y\\
-    &=\int_\bbR\bigl(|f(y)|^{1/r}|g(x-y)|^{1/r}\bigr)^r\rmd y\\
-    &=\int_\bbR\bigl(|f(y)|^{1/p+1/q}|g(x-y)|^{1/p+1/q}\bigr)^r\rmd y\\
+    &=\biggl|\int_\bbR f(y)g(x-y)\diff y\biggr|\\
+    &\leq\int_\bbR\bigl|f(y)g(x-y)\bigr|\diff y\\
+    &=\int_\bbR|f(y)|^{1/p+1/q-1/r}|g(x-y)|^{1/p+1/q-1/r}\diff y\\
+    &=
   \end{align*}
 \end{solution}
 
