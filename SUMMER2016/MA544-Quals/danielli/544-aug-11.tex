@@ -259,13 +259,27 @@
   \end{align*}
   as we set out to show.
 
-  For part (b), by the generalized Hölder's inequality, we have
+  For part (b), (to reiterate) we want to show that
+  \[
+    |(f*g)(x)|^r\leq{\|f\|_p}^{\!r-p}{\|g\|_q}^{\!r-q}\int|f(y)|^p|g(x-y)|^q\diff y
+  \]
+  Applying the generalized Hölder's inequality we proved in part (a),
   \begin{align*}
     |f*g|
     &=\biggl|\int_\bbR f(y)g(x-y)\diff y\biggr|\\
     &\leq\int_\bbR\bigl|f(y)g(x-y)\bigr|\diff y\\
-    &=\int_\bbR|f(y)|^{1/p+1/q-1/r}|g(x-y)|^{1/p+1/q-1/r}\diff y\\
-    &=
+    &=\int_\bbR|f(y)|^{1+p/r-p/r}|g(x-y)|^{1+q/r-q/r}\diff y\\
+    &=\int_\bbR|f(y)|^{p/r}|g(x)|^{q/r}|f(y)|^{1-p/r}|g(x-y)|^{1-q/r}\diff
+      y\\
+    &=\int_\bbR|f(y)|^{p/r}|g(x)|^{q/r}|f(y)|^{(r-p)/r}|g(x-y)|^{(r-q)/r}\diff
+      y\\
+    &=\int_\bbR\bigl(|f(y)|^p|g(x)|^q\bigr)^{1/r}|f(y)|^{(r-p)/r}
+      |g(x-y)|^{(r-q)/r}\diff y\\
+    &\leq
+      \bigl\|\bigl(|f(y)|^p|g(x)|^q\bigr)^{1/r}\bigr\|_r
+      \bigl\||f(y)|^{(r-p)/r}\bigr\|_{pr/(r-p)}
+      \bigl\||g(x-y)|^{(r-q)/r}\bigr\|_{qr/(r-q)}\\
+    &={\|f\|_p}^{\!r-p}{\|g\|_q}^{\!r-q}\int|f(y)|^p|g(x-y)|^q\diff y.
   \end{align*}
 \end{solution}
 
