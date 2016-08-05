@@ -42,7 +42,23 @@ effect).
   \]
   as sets, so \(m(B_r)=|r|^nm(B_1)\). Now, let \(C=m(B_1)\).
 
-  For part (ii), note that we can write the map \(\varphi_E\) as
+  For part (ii), note that for any \(|x|,|y|\in\bbR\), by part (i), we have
+  \begin{align*}
+    |\varphi_E(x)-\varphi_E(y)|
+    &\leq\bigr|C|x|-C|y|\bigl|\\
+    &=C\bigl||x|-|y|\bigr|.
+  \end{align*}
+  In particular, given \(\varepsilon>0\), there exists \(\delta>0\) such
+  that
+  \[
+    \bigl||x|-|y|\bigr|<\frac{\varepsilon}{C}.
+  \]
+  Thus,
+  \begin{align*}
+    |\varphi_E(x)-\varphi_E(y)|
+    &\leq \frac{C}{\varepsilon}{C}\\
+    &=\varepsilon.
+  \end{align*}
 \end{solution}
 
 \begin{problem}
