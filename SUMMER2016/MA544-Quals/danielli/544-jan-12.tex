@@ -33,6 +33,21 @@
       &=\int_0^1 \frac{\partial f(x_0,y)}{\partial x}\diff y.
     \end{aligned}
   \end{gather}
+  It remains to show that the left side of
+  \eqref{eq:jan-12:bounded-conv-est} is the derivative of the integral of
+  \(f(x_0,y)\) as a function of \(y\). But this is exactly
+  \begin{align*}
+    \lim_{n\to\infty}\int_0^1 f'_n(y)\diff y
+    &=\lim_{n\to\infty}\int_0^1 \frac{f(x_0+h_n,y)-f(x_0,y)}{h_n}\rmd x\\
+    &=lim_{n\to\infty}\frac{\int_0^1 f(x_0+h_h,y)-f(x_0,y)}{h_n}\rmd x\\
+    &=\frac{\rmd}{\rmd x}\int_0^1 f(x_0,y)\diff y.
+  \end{align*}
+  It follows that for any \(x\in[0,1]\),
+  \[
+    \frac{\rmd}{\rmd x}\int_0^1f(x,y)\diff y= \int_0^1\frac{\partial
+      f(x,y)}{\partial x}\diff y
+  \]
+  so \(\partial f/\partial x(x,y)\) is a measurable function of \(y\).
 \end{solution}
 
 \begin{problem}
@@ -47,6 +62,7 @@
   \emph{Hint}: A function \(h\) is said to be singular if \(h'=0\).
 \end{problem}
 \begin{solution}
+  Let
 \end{solution}
 
 \begin{problem}
