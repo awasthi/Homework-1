@@ -28,11 +28,22 @@ effect).
   (\emph{Hint}: Think of \(B_r\) as \(\left\{\,rx:x\in B_1\,\right\}\).)
 \item Let \(E\subseteq\bbR^n\) be a measurable set and let
   \(\varphi_E\colon\bbR^n\to\bbR\) be defined
-  \(\varphi_E(x)=\bigl|E\cap B_{|x|}\bigr|\). Use part (i) to prove that
+  \(\varphi_E(x)=m(E\cap B_{|x|})\). Use part (i) to prove that
   \(\varphi_E\) is continuous.
 \end{enumerate}
 \end{problem}
 \begin{solution}
+  For part (i), as in the practice problems, define the linear map
+  \(T\colon\bbR^n\to\bbR^n\) by \(T(x)=rx\). Note that this map is
+  Lipschitz so the image of a measurable set \(E\) under \(T\) is
+  measurable and \(m(T(E))=|{\det T}|m(E)=|r|^nm(E)\). It is not too
+  difficult to see that
+  \[
+    T(B_1)=B_r
+  \]
+  as sets, so \(m(B_r)=|r|^nm(B_1)\). Now, let \(C=m(B_1)\).
+
+  For part (ii), note that we can write the map \(\varphi_E\) as
 \end{solution}
 
 \begin{problem}
