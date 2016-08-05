@@ -34,12 +34,12 @@
   \]
 \end{problem}
 \begin{solution}
-  Here's a quick and dirty way of proving this: let \(\chi_{E_n}\) be the
+  Here's a quick and dirty way of proving this: let \(\indicate_{E_n}\) be the
   characteristic function of \(E_n\). Then, by Fatou's lemma,
   \begin{equation}
     \label{eq:ex-1-prep:fatou}
-    \int\liminf_{n\to\infty}\chi_{E_n}(x)\diff x
-    \leq\liminf_{n\to\infty}\int\chi_{E_n}(x)\diff x.
+    \int\liminf_{n\to\infty}\indicate_{E_n}(x)\diff x
+    \leq\liminf_{n\to\infty}\int\indicate_{E_n}(x)\diff x.
   \end{equation}
   By definition of the characteristic function, it is easy to see that the
   right hand-side of the Equation \eqref{eq:ex-1-prep:fatou} is
@@ -49,38 +49,38 @@
   But what about the left-hand side of \eqref{eq:ex-1-prep:fatou}? We claim
   that
   \[
-    \liminf_{n\to\infty}\chi_{E_n}=\chi_{E}
+    \liminf_{n\to\infty}\indicate_{E_n}=\indicate_{E}
   \]
   where \(E=\liminf_{n\to\infty} E_n\).
   \begin{quote}
     \begin{proof}[Proof of claim]
       Suppose \(x\in E\). We must show that
-      \(\liminf_{n\to\infty}\chi_{E_n}(x)=1\). By definition
+      \(\liminf_{n\to\infty}\indicate_{E_n}(x)=1\). By definition
       \[
-        \liminf_{n\to\infty}\chi_{E_n}=%
-        \lim_{n\to\infty}\left[\inf_{k\geq n}\chi_{E_k}\right].
+        \liminf_{n\to\infty}\indicate_{E_n}=%
+        \lim_{n\to\infty}\left[\inf_{k\geq n}\indicate_{E_k}\right].
       \]
       Now \(x\in E\) if and only if \(x\in \bigcap_{k=N}^\infty E_k\) for
       some \(N\in\bbN\). Then for \(k\geq N\)
       \[
-        \inf_{k\geq n}\chi_{E_k}(x)=1
+        \inf_{k\geq n}\indicate_{E_k}(x)=1
       \]
-      so \(\liminf_{n\to\infty}\chi_{E_n}(x)=1\).
+      so \(\liminf_{n\to\infty}\indicate_{E_n}(x)=1\).
 
       On the other hand, if \(x\notin E\) then
       \(x\notin\bigcap_{k=n}^\infty E_k\) for all \(n\in\bbN\). Thus, for
       all \(n\in\bbN\),
       \[
-        \inf_{k\geq n}\chi_{E_k}(x)=0
+        \inf_{k\geq n}\indicate_{E_k}(x)=0
       \]
-      so \(\liminf_{n\to\infty}\chi_{E_k}=0\).
+      so \(\liminf_{n\to\infty}\indicate_{E_k}=0\).
     \end{proof}
   \end{quote}
   Having established this equivalence, we have
   \[
-    m\left(\liminf_{n\to\infty}E_n\right)=%
-    \int\liminf_{n\to\infty}\chi_{E_n}(x)\diff x\leq%
-    \liminf_{n\to\infty}\int\chi_{E_n}(x)\diff x=%
+    m\Bigl(\liminf_{n\to\infty}E_n\Bigr)=%
+    \int\liminf_{n\to\infty}\indicate_{E_n}(x)\diff x\leq%
+    \liminf_{n\to\infty}\int\indicate_{E_n}(x)\diff x=%
     \liminf_{n\to\infty}m(E_n).
   \]
 \end{solution}
@@ -90,7 +90,7 @@
   \[
     F(x)=
     \begin{cases}
-      m(B(\mathbf{0},x))&x>0,\\
+      m\bigl(B(\mathbf{0},x)\bigr)&x>0,\\
       0&x=0.
     \end{cases}
   \]
@@ -101,11 +101,12 @@
 \begin{solution}
   Let \(T\colon\bbR^n\times[0,x)\to\bbR^n\) be the linear map given by
   \(T(x,r)=rx\). By Problem 1, we know that
-  \(T(B(\mathbf{0},1),r)=B(\mathbf{0},r)\) and consequently,
-  \(m(B(\mathbf{0},1))=|r|^nm(B(\mathbf{0},1))\). Interpreting
-  \(B(\mathbf{0},0)=\emptyset\), we have \(F(x)=|r|^nm(B(\mathbf{0},1))\)
-  and it is easy to see that \(F\) is both monotonically increasing and
-  continuous since it is a polynomial in \(r\).
+  \(T\bigl(B(\mathbf{0},1),r\bigr)=B(\mathbf{0},r)\) and consequently,
+  \(m\bigl(B(\mathbf{0},1)\bigr)=|r|^nm\bigl(B(\mathbf{0},1)\bigr)\). Interpreting
+  \(B(\mathbf{0},0)=\emptyset\), we have
+  \(F(x)=|r|^nm\bigl(B(\mathbf{0},1)\bigr)\) and it is easy to see that
+  \(F\) is both monotonically increasing and continuous since it is a
+  polynomial in \(r\).
 \end{solution}
 
 \begin{problem}
@@ -117,15 +118,15 @@
   Let \(C\) be the subset of \(\bbR\) where \(f\) is continuous, i.e., the
   set
   \[
-    C=\left\{\,x\in\bbR:\text{given \(\varepsilon>0\) there exist
+    C=\bigl\{\,x\in\bbR:\text{given \(\varepsilon>0\) there exist
         \(\delta>0\) such that \(|f(x)-f(y)|<\varepsilon\) whenever
-      \(|x-y|<\delta\)}\,\right\}.
+      \(|x-y|<\delta\)}\,\bigr\}.
   \]
   In light of the latter equality, for each \(n\in\bbN\) define the
   following family of subsets of \(C\),
   \[
-    G_n=\left\{\,x\in\bbR:\text{there exists \(\delta_n>0\) such that
-        \(|f(x)-f(y)|<\frac{1}{n}\) whenever \(|x-y|<\delta_n\)}\,\right\}.
+    G_n=\Bigl\{\,x\in\bbR:\text{there exists \(\delta_n>0\) such that
+        \(|f(x)-f(y)|<\frac{1}{n}\) whenever \(|x-y|<\delta_n\)}\,\Bigr\}.
   \]
   We claim that (i) the \(G_n\) are open and (ii)
   \(C=\bigcap_{n\in\bbN}G_n\).
@@ -190,7 +191,7 @@
   Let \(\{f_k\}\) be a sequence of measurable functions on \(\bbR\). Prove
   that the set
   \[
-    \left\{\,x:\text{\(\lim_{k\to\infty} f_k(x)\) exists}\,\right\}
+    \Bigl\{\,x:\text{\(\lim_{k\to\infty} f_k(x)\) exists}\,\Bigr\}
   \]
   is measurable.
 \end{problem}
@@ -198,7 +199,7 @@
   Suppose \({\{f_n\}}\), \(n\in\bbN\), is a sequence of measurable
   functions and let
   \[
-    E=\left\{\,x: \text{\(\lim_{n\to\infty} f_n(x)\) exists} \,\right\}.
+    E=\Bigl\{\,x: \text{\(\lim_{n\to\infty} f_n(x)\) exists} \,\Bigr\}.
   \]
   Then, by general properties of the limit supremum and the limit infimum,
   we know that \(\lim_{n\to\infty}f_n(x)\) exists if and only if
@@ -207,7 +208,7 @@
   \]
   Both of these functions are measurable so the set
   \[
-    E=\left\{\,x:\limsup_{n\to\infty}f_n(x)=\liminf_{n\to\infty}f_n(x)\,\right\}.
+    E=\Bigl\{\,x:\limsup_{n\to\infty}f_n(x)=\liminf_{n\to\infty}f_n(x)\,\Bigr\}.
   \]
   is measurable.
 \end{solution}
@@ -241,11 +242,11 @@
 
 \begin{problem}
   Let \(f\) be a continuous function from \([a,b]\) into \(\bbR\). Let
-  \(\chi_{\{c\}}\) be the characteristic function of a singleton
-  \(\left\{c\right\}\), that is, \(\chi_{\{c\}}(x)=0\) if \(x\neq c\) and
-  \(\chi_{\{c\}}(c)=1\). Show that
+  \(\indicate_{\{c\}}\) be the characteristic function of a singleton
+  \(\left\{c\right\}\), that is, \(\indicate_{\{c\}}(x)=0\) if \(x\neq c\) and
+  \(\indicate_{\{c\}}(c)=1\). Show that
   \[
-    \int_a^b f d \chi_{\{c\}}=
+    \int_a^b f d \indicate_{\{c\}}=
     \begin{cases}
       0&\text{if \(c\in(a,b)\),}\\
       -f(a)&\text{if \(c=a\),}\\
@@ -256,16 +257,16 @@
 \begin{solution}
   There are three cases to consider (1) \(c\in(a,b)\), (2) \(c=a\) and (3)
   \(c=b\). Cases (2) and (3) can be handled easily: if \(c=a\) then the
-  Rieman--Stieltjes integral of \(f\) with respect to \(\chi_{\{c\}}\) is
+  Rieman--Stieltjes integral of \(f\) with respect to \(\indicate_{\{c\}}\) is
   the supremum over all sums
   \[
-    \sum_{n=1}^N f(\xi_n)\bigl[ \chi_{\{c\}}(x_n)-\chi_{\{c\}}(x_{n-1})\bigr]
+    \sum_{n=1}^N f(\xi_n)\bigl[ \indicate_{\{c\}}(x_n)-\indicate_{\{c\}}(x_{n-1})\bigr]
   \]
   where \(x_0=a\) and \(x_N=b\) for all partitions
   \(\Gamma=\{x_0,\dotsc,x_N\}\) of \([a,b]\). Thus, the sum
   \[
     \sum_{n=1}^N
-    f(\xi_n)\bigl[\chi_{\{c\}}(x_n)-\chi_{\{c\}}(x_{n-1})\bigr]
+    f(\xi_n)\bigl[\indicate_{\{c\}}(x_n)-\indicate_{\{c\}}(x_{n-1})\bigr]
     =\begin{cases}
       -f(\xi_0)&\text{if \(c=a\),}\\
       f(\xi_N)&\text{if \(c=b\).}
@@ -274,7 +275,7 @@
   Letting \(\Delta(\Gamma)\to 0\), \(\xi_0\to a\) and \(\xi_N\to b\) giving
   us
   \[
-    \int_a^b f d \chi_{\{c\}}=
+    \int_a^b f \diff\indicate_{\{c\}}=
     \begin{cases}
       -f(a)&\text{if \(c=a\),}\\
       f(b)&\text{if \(c=b\).}
@@ -283,20 +284,20 @@
 
   It remains to show that
   \[
-    \int_a^b f\diff\chi_{\{c\}}=0
+    \int_a^b f\diff\indicate_{\{c\}}=0
   \]
   if \(c\in(a,b)\). To that end, note that if \(\Gamma_c\) is a partition
   containing the point \(c\), say, \(x_m=c\) for some \(1\leq m\leq N\),
   the partial sums yield
   \[
     \sum_{n=1}^N
-    f(\xi_n)\bigl[\chi_{\{c\}}(x_n)-\chi_{\{c\}}(x_{n-1})\bigr]
+    f(\xi_n)\bigl[\indicate_{\{c\}}(x_n)-\indicate_{\{c\}}(x_{n-1})\bigr]
     =f(\xi_{m+1})-f(\xi_m).
   \]
   Letting \(\Delta(\Gamma_c)\to 0\), since \(f\) is continuous,
   \(f(\xi_{m+1})\to f(\xi_m)\). Thus,
   \[
-    \int_a^b f\diff\chi_{\{c\}}=0.
+    \int_a^b f\diff\indicate_{\{c\}}=0.
   \]
 \end{solution}
 
