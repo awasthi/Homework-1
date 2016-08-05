@@ -216,10 +216,12 @@ main=english]{babel}
 \mleftright%
 
 \if@eulermath % Euler mathcal
-\RequirePackage[bb=ams,cal=euler,frak=euler,scr=rsfso]{mathalfa}%
+\RequirePackage[bb=ams,cal=euler,frak=euler,scr=rsfs]{mathalfa}%
 \else % AMS mathcal
-\RequirePackage[bb=ams,cal=cm,frak=euler,scr=euler]{mathalfa}%
-\fi \fi \fi
+\RequirePackage[bb=ams,cal=cm,frak=euler,scr=rsfso]{mathalfa}%
+\fi%
+\fi%
+\fi
 
 %% Theorems and definitions
 \theoremstyle{plain}
