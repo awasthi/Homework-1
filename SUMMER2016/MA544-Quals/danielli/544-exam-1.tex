@@ -56,9 +56,10 @@ effect).
   Thus,
   \begin{align*}
     |\varphi_E(x)-\varphi_E(y)|
-    &\leq \frac{C}{\varepsilon}{C}\\
-    &=\varepsilon.
+    &\leq C\Bigl(\frac{\varepsilon}{C}\Bigl)\\
+    &=\varepsilon
   \end{align*}
+  and \(\varphi_E\) is continuous.
 \end{solution}
 
 \begin{problem}
@@ -66,6 +67,10 @@ effect).
   \([a,b]\). Prove that \(f\) is measurable.
 \end{problem}
 \begin{solution}
+  Suppose that \(f\colon[a,b]\to\bbR\) is b.v.\@ on \([a,b]\). Then \(f\),
+  by Jordan's theorem, \(f=g-h\) where \(g\) and \(h\) are monotone
+  increasing functions. Since monotone functions are a.e.\@ continuous,
+  \(g\) and \(h\) are measurable functions. Thus, \(f\) is measurable.
 \end{solution}
 
 %%% Local Variables:
