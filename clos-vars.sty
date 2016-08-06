@@ -2,7 +2,7 @@
 %% My preference of symbols and variables
 %%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{clos-vars}[2016/08/01 v2.3 personal shortcuts]
+\ProvidesPackage{clos-vars}[2016/08/06 v2.4 personal shortcuts]
 
 %%% Options
 \newif\if@times\@timesfalse
@@ -218,7 +218,7 @@ main=english]{babel}
 \if@eulermath % Euler mathcal
 \RequirePackage[bb=ams,cal=euler,frak=euler,scr=rsfso]{mathalfa}%
 \else % AMS mathcal
-\RequirePackage[bb=ams,cal=cm,frak=euler,scr=euler]{mathalfa}%
+\RequirePackage[bb=ams,cal=cm,frak=euler,scr=rsfs]{mathalfa}%
 \fi \fi \fi
 
 %% Theorems and definitions
@@ -857,6 +857,18 @@ main=english]{babel}
 \if@times
 \AtBeginDocument{\LGCscale}
 \fi
+\makeatletter
+\@ifclassloaded{exam}
+{\AtBeginDocument{
+\pointsinmargin
+\CorrectChoiceEmphasis{\color{Red!85!black}\bfseries}
+\if@times
+\qformat{Problem {\fontfamily{ntxtlf}\selectfont\thequestion}: \hfill (\thepoints)}
+\else
+\qformat{Problem \thequestion:\hfill (\thepoints)}
+\fi}}
+{}
+\makeatother
 
 \endinput
 
