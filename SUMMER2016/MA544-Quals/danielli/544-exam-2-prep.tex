@@ -23,16 +23,16 @@
   Danielli gave a wonderful solution to this problem by using spherical
   coordinates to compute the integral. However, she did not justify the use
   of polar coordinates, or even make it clear what exactly the meaning of
-  \(\rmd x\) and \(rmd \sigma\) mean in this context. Here, we shed some
-  light into this method and prove the polar decomposition of the Lebesgue
-  measure.
-
-  First, note that, given \(\varepsilon>0\), \(f(x)\neq 0\) for any
-  \(x\in\bbR^n\setminus B_r(\mathbf{0})\). Now, define the map
-  \(\Phi\colon\bbR^n\setminus\{\mathbf{0}\}\to(0,\infty)\times S^{n-1}\) by
-  the rule \(\Phi(x)=(\|x\|,x/\|x\|)\). This map is smooth with a smooth
-  inverse \(\Phi^{-1}(r,y)=ry\) and Jacobian
-  \(\partial\Phi(x_1,\dotsc,x_n)/\partial(r,x)=\)
+  \(\rmd x\) and \(rmd \sigma\) mean in this context. The justification
+  comes from the polar decomposition of the Lebesgue measure (we shall not
+  prove this here). Changing the integral in question to polar coordinates,
+  we have
+  \begin{align*}
+    \int\limits_{\bbR^n\setminus B(\mathbf{0},\varepsilon)}f(x)\diff x
+    &=\int\limits_{S^{n-1}(\mathbf{0},r)}\int\limits_{(\varepsilon,\infty)}
+      \frac{1}{r^{n+1}}\diff r\rmd\sigma\\
+    &=
+  \end{align*}
 \end{solution}
 
 \begin{problem}
