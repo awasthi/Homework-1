@@ -64,7 +64,32 @@
   \(f_n\to f\) a.e.\@ in \(\bbR^n\), we clearly have
   \(f_n\restrict E\to f\restrict E\) and
   \(f_n\restrict{\bbR^n\setminus E}\to f\restrict{\bbR^n\setminus
-    E}\). Now, by Fatou's lemma, we have
+    E}\). By the monotonicity of the Lebesgue integral,
+  \[
+    \lim_{n\to\infty}\int_{\bbR^n}f\diff x
+    =\lim_{n\to\infty}
+    \left[
+      \int_E f_n\diff x+
+      \int_{\bbR^n\setminus E}f_n\diff x
+    \right]
+  \]
+  and by basic properties of the limit supremum, we have
+  % \begin{equation}
+  %   \label{eq:ex-2-prep:limsup-props}
+  \begin{align*}
+    \limsup_{n\to\infty}\int_E f_n\diff x
+    +\liminf_{n\to\infty}\int_{\bbR^n\setminus E}f_n\diff x\\
+    &\leq%
+      \int_{\bbR^n}f\diff x\\
+    &=
+      \int_E f\diff x
+      +\int_{\bbR^n\setminus E}f\diff x\\
+    &\leq
+    \limsup_{n\to\infty}\int_E f_n\diff x
+    +\limsup_{n\to\infty}\int_{\bbR^n\setminus E} f_n\diff x.
+  \end{align*}
+  % \end{equation}
+  by Fatou's lemma, we have
   \begin{align*}
     \int_Ef\diff x%
     &=\int_E\liminf_{n\to\infty} f_n\diff x\\
