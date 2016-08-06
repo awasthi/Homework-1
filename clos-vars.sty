@@ -145,11 +145,12 @@ main=english]{babel}
                 scr=boondoxo]{mathalfa}%
 
 \useosf % oldstyle figs
+\renewcommand{\theequation}{\liningnums{\arabic{equation}}} % regular
+                                % numbering for equation numbers
 
 %% Use Tempora for Greek and Russian
 \substitutefont{LGR}{\rmdefault}{Tempora}%
 \substitutefont{T2A}{\rmdefault}{Tempora}%
-\AtBeginDocument{\LGCscale}
 
 %% Times specific commands
 \newcommand{\indicate}{\mathbb{1}}
@@ -851,6 +852,10 @@ main=english]{babel}
 \DeclareSIUnit[number-unit-product = {\thinspace}]{\pint}{pt}
 \DeclareSIUnit[number-unit-product = {\thinspace}]{\quart}{qt}
 \DeclareSIUnit[number-unit-product = {\thinspace}]{\gallon}{gal}
+
+\if@times
+\AtBeginDocument{\LGCscale}
+\fi
 
 \endinput
 
