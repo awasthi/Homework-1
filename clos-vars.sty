@@ -37,7 +37,6 @@
 \RequirePackage{amsthm}
 \RequirePackage{mathtools}
 \mathtoolsset{mathic=true}
-\RequirePackage{mleftright}
 
 %%% Othe useful packages
 \@ifpackageloaded{hyperref}{}{\RequirePackage{hyperref}}
@@ -134,8 +133,9 @@ main=english]{babel}
 \RequirePackage[scale=.95,type1]{cabin}% sans
 \RequirePackage[varqu,varl,scaled=.94]{zi4}% mono
 
-\RequirePackage[varg,bigdelims,nosymbolsc]{newtxmath}%
-\RequirePackage[bb=boondox,frak=pxtx,frakscaled=1.1,cal=boondoxo]{mathalfa}%
+\RequirePackage[varg,bigdelims,
+nosymbolsc]{newtxmath}%
+\RequirePackage[bb=boondox,frak=pxtx,frakscaled=1.1,cal=pxtx,scr=boondoxo]{mathalfa}%
 
 \useosf % oldstyle figs
 
@@ -151,7 +151,7 @@ main=english]{babel}
 \newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
       \hbox{\scriptsize.}\hbox{\scriptsize.}}}%
   =}%
-\DeclareMathOperator{\indicate}{\mathbb{1}}
+\newcommand{\indicate}{\mathbb{1}}
 \newcommand\oldemptyset{\emptyset}
 \renewcommand\emptyset{\varnothing}
 
@@ -219,6 +219,7 @@ main=english]{babel}
 \newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
       \hbox{\scriptsize.}\hbox{\scriptsize.}}}%
   =}%
+\RequirePackage{mleftright}
 \mleftright%
 
 \if@eulermath % Euler mathcal
