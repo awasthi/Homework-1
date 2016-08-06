@@ -20,7 +20,7 @@
       inequality}: Let \(0<p<\infty\) and \(E\subseteq\bbR^n\) be
     measurable. assume that \(|f|^p\in L^1(E)\). Then
     \[
-      \left|\left\{\,x\in E:f( x )>\alpha\,\right\}\right|
+      m\bigl\{\,x\in E:f(x)>\alpha\,\bigr\}
       \leq\frac{1}{\alpha^p}\int_{\left\{\,f>\alpha\,\right\}}f^p,
     \]
     for \(\alpha>0\).
@@ -31,8 +31,8 @@
     Recall that \(f_k\to f\) in measure on \(E\) if and only if for every
     \(\varepsilon>0\)
     \[
-      \lim_{k\to\infty}\left|\left\{\, x \in E:|f_k( x )-f( x
-          )|>\varepsilon\,\right\}\right|=0.
+      \lim_{k\to\infty}m\bigl\{\,x\in
+      E:|f_k(x)-f(x)|>\varepsilon\,\bigr\}=0.
     \]
 \end{enumerate}
 \end{problem}
@@ -52,7 +52,7 @@
 \begin{problem}
   Use repeated integration techniques to prove that
   \[
-    \int_{\bbR^n} e^{-| x |^2}\diff x=\pi^{n/2}.
+    \int_{\bbR^n} e^{-|x|^2}\diff x=\pi^{n/2}.
   \]
   \\\\
   \emph{Hint}: Start from the case \(n=1\) by using the polar coordinates
