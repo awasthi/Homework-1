@@ -57,19 +57,25 @@
   \]
   for all measurable subsets \(E\) of \(\bbR^n\). Moreover, show that this
   is not necessarily true if
-  \(\int_{\bbR^n} f=\lim_{k\to\infty} f_k=\infty\).
+  \(\int_{\bbR^n} f=\lim_{k\to\infty}\int_{\bbR^n} f_k=\infty\).
 \end{problem}
 \begin{solution}
-  Let \(E\) be a measurable subset of \(\bbR^n\). By Fatou's lemma, we have
-  the following estimates
+  Let \(E\) be a measurable subset of \(\bbR^n\). First, note that since
+  \(f_n\to f\) a.e.\@ in \(\bbR^n\), we clearly have
+  \(f_n\restrict E\to f\restrict E\) and
+  \(f_n\restrict{\bbR^n\setminus E}\to f\restrict{\bbR^n\setminus
+    E}\). Now, by Fatou's lemma, we have
   \begin{align*}
     \int_Ef\diff x%
     &=\int_E\liminf_{n\to\infty} f_n\diff x\\
     &\leq\liminf_{n\to\infty}\int_E f_n\diff x\\
     \int\limits_{\mathclap{\bbR^n\setminus E}}f\diff x
     &=\int\limits_{\mathclap{\bbR^n\setminus E}}\liminf_{n\to\infty} f_n\diff x\\
-    &\leq\liminf_{n\to\infty}\int\limits_{\mathclap{\bbR^n\setminus E}} f_n\diff x.
+    &\leq\liminf_{n\to\infty}\int\limits_{\mathclap{\bbR^n\setminus E}} f_n\diff x,
   \end{align*}
+  both of which are finite since \(f\in L^1(\bbR^n)\) and
+  \(\lim_{n\to\infty}\int_{\bbR^n}f_n\diff x<\infty\); by the monotonicity
+  of the Lebesgue integral.
 \end{solution}
 
 \begin{problem}

@@ -149,11 +149,13 @@ main=english]{babel}
 %% Use Tempora for Greek and Russian
 \substitutefont{LGR}{\rmdefault}{Tempora}%
 \substitutefont{T2A}{\rmdefault}{Tempora}%
+\AtBeginDocument{\LGCscale}
 
 %% Times specific commands
 \newcommand{\indicate}{\mathbb{1}}
 \newcommand\defeq{\coloneqq}
 \let\setminus\smallsetminus
+\renewcommand\qedsymbol{\ensuremath{\blacksquare}}
 
 \else
 \if@libertine %% Use Libertine (a beautiful free font)
