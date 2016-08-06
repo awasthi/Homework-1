@@ -20,12 +20,19 @@
   \]
 \end{problem}
 \begin{solution}
+  Danielli gave a wonderful solution to this problem by using spherical
+  coordinates to compute the integral. However, she did not justify the use
+  of polar coordinates, or even make it clear what exactly the meaning of
+  \(\rmd x\) and \(rmd \sigma\) mean in this context. Here, we shed some
+  light into this method and prove the polar decomposition of the Lebesgue
+  measure.
+
   First, note that, given \(\varepsilon>0\), \(f(x)\neq 0\) for any
   \(x\in\bbR^n\setminus B_r(\mathbf{0})\). Now, define the map
   \(\Phi\colon\bbR^n\setminus\{\mathbf{0}\}\to(0,\infty)\times S^{n-1}\) by
   the rule \(\Phi(x)=(\|x\|,x/\|x\|)\). This map is smooth with a smooth
   inverse \(\Phi^{-1}(r,y)=ry\) and Jacobian
-  \(\partial(x_1,\ldots,x_n)/\partial(r,x)(\Phi)=\)
+  \(\partial\Phi(x_1,\dotsc,x_n)/\partial(r,x)=\)
 \end{solution}
 
 \begin{problem}
