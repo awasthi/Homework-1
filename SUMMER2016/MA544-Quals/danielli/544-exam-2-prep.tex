@@ -29,10 +29,19 @@
   we have
   \begin{align*}
     \int\limits_{\bbR^n\setminus B(\mathbf{0},\varepsilon)}f(x)\diff x
-    &=\int\limits_{S^{n-1}(\mathbf{0},r)}\int\limits_{(\varepsilon,\infty)}
-      \frac{1}{r^{n+1}}\diff r\rmd\sigma\\
-    &=
+    &=\int\limits_{S^{n-1}(\mathbf{0},r)}\int_\varepsilon^\infty
+      \frac{1}{r^{n+1}}\diff r\rmd\sigma
+      \intertext{which, by Tonelli's theorem, becomes}
+    &=\int_\varepsilon^\infty
+      \frac{1}{r^{n+1}}
+      \biggl[\int_{S^{n-1}(\mathbf{0},r)}\rmd\sigma\biggr]\rmd r
+      \intertext{which, by a problem from the homework, becomes}
+    &=C_n\int_\varepsilon^\infty r^{n-1}\Bigl[\frac{1}{r^{n+1}}\Bigr]\rmd
+      r\\
+    &=C_n\int_\varepsilon^\infty\frac{1}{r^2}\diff r\\
+    &=\frac{C_n}{\varepsilon},
   \end{align*}
+  as desired.
 \end{solution}
 
 \begin{problem}
@@ -51,6 +60,7 @@
   \(\int_{\bbR^n} f=\lim_{k\to\infty} f_k=\infty\).
 \end{problem}
 \begin{solution}
+
 \end{solution}
 
 \begin{problem}
