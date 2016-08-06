@@ -23,12 +23,12 @@
   Danielli gave a wonderful solution to this problem by using spherical
   coordinates to compute the integral. However, she did not justify the use
   of polar coordinates, or even make it clear what exactly the meaning of
-  \(\rmd x\) and \(rmd \sigma\) mean in this context. The justification
+  \(\rmd x\) and \(\rmd\sigma\) mean in this context. The justification
   comes from the polar decomposition of the Lebesgue measure (we shall not
   prove this here). Changing the integral in question to polar coordinates,
   we have
   \begin{align*}
-    \int\limits_{\bbR^n\setminus B(\mathbf{0},\varepsilon)}f(x)\diff x
+    \int\limits_{\mathclap{\bbR^n\setminus B(\mathbf{0},\varepsilon)}}f(x)\diff x
     &=\int\limits_{S^{n-1}(\mathbf{0},r)}\int_\varepsilon^\infty
       \frac{1}{r^{n+1}}\diff r\rmd\sigma
       \intertext{which, by Tonelli's theorem, becomes}
@@ -60,7 +60,16 @@
   \(\int_{\bbR^n} f=\lim_{k\to\infty} f_k=\infty\).
 \end{problem}
 \begin{solution}
-
+  Let \(E\) be a measurable subset of \(\bbR^n\). By Fatou's lemma, we have
+  the following estimates
+  \begin{align*}
+    \int_Ef\diff x%
+    &=\int_E\liminf_{n\to\infty} f_n\diff x\\
+    &\leq\liminf_{n\to\infty}\int_E f_n\diff x\\
+    \int\limits_{\mathclap{\bbR^n\setminus E}}f\diff x
+    &=\int\limits_{\mathclap{\bbR^n\setminus E}}\liminf_{n\to\infty} f_n\diff x\\
+    &\leq\liminf_{n\to\infty}\int\limits_{\mathclap{\bbR^n\setminus E}} f_n\diff x.
+  \end{align*}
 \end{solution}
 
 \begin{problem}

@@ -97,7 +97,7 @@
   \]
   for every \(g\in L^p(E)\),
   \[
-    \int_E f_nf\diff x\too \int_Ef^2\diff x={\|f\|_2}^{\!2}.
+    \int_E f_nf\diff x\too \int_Ef^2\diff x={\|f\|_2}^{\cramped 2}.
   \]
   Moreover, \(\|f_n\|_2\to\|f\|_2\) so the limit in \eqref{eq:aug-11:2-a}
   converges to
@@ -220,7 +220,7 @@
   \item Use part (a) to show that that if \(1\leq p,q,r\leq\infty\), with
     \(1/p+1/q=1/r+1\), \(f\in L^p(\bbR)\), and \(g\in L^q(\bbR)\), then
     \[
-      |(f*g)(x)|^r\leq{\|f\|_p}^{\!r-p}{\|g\|_q}^{\!r-q}\int|f(y)|^p|g(x-y)|^q\diff
+      |(f*g)(x)|^r\leq{\|f\|_p}^{\cramped r-p}{\|g\|_q}^{\cramped r-q}\int|f(y)|^p|g(x-y)|^q\diff
       y.
     \]
     \\\\
@@ -239,8 +239,8 @@
   holds by using Hölder's inequality on the exponents \(r/p+r/q=1\),
   \begin{align*}
     \biggl[\int_E|f_1f_2|^r\biggr]^{1/r}\rmd x
-    &=\|{f_1}^{\!r}{f_2}^{\!r}\|_1\\
-    &\leq\|{f_1}^{\!r}\|_{p/r}\|{f_2}^{\!r}\|_{q/r}\\
+    &=\|{f_1}^{\cramped{r}}{f_2}^{\cramped{r}}\|_1\\
+    &\leq\|{f_1}^{\cramped r}\|_{p/r}\|{f_2}^{\cramped r}\|_{q/r}\\
     &=\|f_1\|_p\|f_2\|_q.
   \end{align*}
   Now, suppose this holds for \(n-1\) measurable functions
@@ -276,12 +276,12 @@
       \bigl\|\bigl(|f(y)|^p|g(x)|^q\bigr)^{1/r}\bigr\|_r
       \bigl\||f(y)|^{(r-p)/r}\bigr\|_{pr/(r-p)}
       \bigl\||g(x-y)|^{(r-q)/r}\bigr\|_{qr/(r-q)}\\
-    &={\|f\|_p}^{\!(r-p)/r}{\|g\|_q}^{\!(r-q)/r}
+    &={\|f\|_p}^{\cramped{(r-p)/r}}{\|g\|_q}^{\cramped{(r-q)/r}}
       \biggl[\int_\bbR|f(y)|^p|g(x-y)|^q\diff y\biggr]^{1/r}.
   \end{align*}
   Raising both sides to the power \(r\), we have
   \[
-    |(f*g)(x)|^r\leq{\|f\|_p}^{\!r-p}{\|g\|_q}^{\!r-q}\int|f(y)|^p|g(x-y)|^q\diff
+    |(f*g)(x)|^r\leq{\|f\|_p}^{\cramped{r-p}}{\|g\|_q}^{\cramped{r-q}}\int|f(y)|^p|g(x-y)|^q\diff
     y,
   \]
   as desired.
@@ -289,18 +289,22 @@
   For part (c), using the estimate we worked out in part (b) together with
   Tonelli's theorem, we have
   \begin{align*}
-    {\|f*g\|_r}^{\!r}
+    {\|f*g\|_r}^{\cramped{r}}
     &=\int_\bbR|f*g(x)|^r\diff x\\
     &\leq\int_\bbR
       \biggl[
-      {\|f\|_p}^{\!r-p}{\|g\|_q}^{\!r-q}\int_\bbR|f(y)|^p|g(x-y)|^q\diff y
+      {\|f\|_p}^{\cramped{r-p}}{\|g\|_q}^{\cramped{r-q}}
+      \int_\bbR|f(y)|^p|g(x-y)|^q\diff y
       \biggr]\\
-    &={\|f\|_p}^{\!r-p}{\|g\|_q}^{\!r-q}\iint\limits_{\bbR\times\bbR}|f(y)|^p|g(x-y)|^q\diff
+    &={\|f\|_p}^{\cramped{r-p}}{\|g\|_q}^{\cramped{r-q}}
+      \iint\limits_{\bbR\times\bbR}|f(y)|^p|g(x-y)|^q\diff
       y\\
-    &={\|f\|_p}^{\!r-p}{\|g\|_q}^{\!r-q}\int_\bbR|f(y)|^p\biggl[\int_\bbR
+    &={\|f\|_p}^{\cramped{r-p}}{\|g\|_q}^{\cramped{r-q}}
+      \int_\bbR|f(y)|^p\biggl[\int_\bbR
       |g(x-y)|^q\diff y\biggr]\rmd x\\
-    &\leq{\|f\|_p}^{\!r-p}{\|g\|_q}^{\!r-q}{\|f\|_p}^{\!p}{\|g_q\|}^{\!q}\\
-    &={\|f\|_p}^{\!r}{\|g\|_q}^{\!r}.
+    &\leq{\|f\|_p}^{\cramped r-p}{\|g\|_q}^{\cramped{r-q}}
+      {\|f\|_p}^{\cramped{p}}{\|g_q\|}^{\cramped{q}}\\
+    &={\|f\|_p}^{\cramped{r}}{\|g\|_q}^{\cramped{r}}.
   \end{align*}
   Taking the \(r\)th root on each side, we achieve the desired estimate
   \[

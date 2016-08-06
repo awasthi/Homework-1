@@ -134,7 +134,7 @@ main=english]{babel}
 \RequirePackage[scale=.95,type1]{cabin}% sans
 \RequirePackage[varqu,varl,scaled=.94]{zi4}% mono
 
-\RequirePackage[varg,bigdelims,cmintegrals]{newtxmath}%
+\RequirePackage[varg,bigdelims]{newtxmath}%
 \RequirePackage[bb=boondox,frak=boondox,cal=boondoxo]{mathalfa}%
 
 \useosf % oldstyle figs
@@ -143,9 +143,17 @@ main=english]{babel}
 \substitutefont{LGR}{\rmdefault}{Tempora}%
 \substitutefont{T2A}{\rmdefault}{Tempora}%
 
-\renewcommand\qedsymbol{\ensuremath{\blacksquare}} % Default is
-\newcommand\bigsetminus{\setminus}%
-\renewcommand\setminus{\smallsetminus}%
+%% Renew some commands
+\newcommand\Bigstar{\bigstar} % too ugly
+\renewcommand\bigstar{\star} % too ugly
+\newcommand\bigsetminus{\setminus} % too ugly
+\renewcommand\setminus{\smallsetminus} % Default is too ugly
+\newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+      \hbox{\scriptsize.}\hbox{\scriptsize.}}}%
+  =}%
+\DeclareMathOperator{\indicate}{\mathbb{1}}
+\newcommand\oldemptyset{\emptyset}
+\renewcommand\emptyset{\varnothing}
 
 \else
 \if@libertine %% Use Libertine (a beautiful free font)
@@ -156,8 +164,8 @@ main=english]{babel}
 \RequirePackage[varqu,varl,scaled=.94]{zi4} % mono
 \RequirePackage[libertine,%
                 libaltvw,%
-                % bigdelims,%
-                % cmintegrals,%
+                bigdelims,%
+                cmintegrals,%
                 cmbraces%
                 ]{newtxmath} % Shitty math fonts
 \RequirePackage[bb=boondox,frak=esstix,cal=boondoxo,scr=boondox]{mathalfa}
@@ -186,10 +194,8 @@ main=english]{babel}
 
 \else % Use the regular CM fonts
 \RequirePackage{amssymb}%
-% \RequirePackage{lmodern}
 \RequirePackage[nointegrals]{wasysym}%
 \RequirePackage{stmaryrd}%
-
 %% Math replace
 \let\oldbtright\blacktriangleright%
 \let\oldbtleft\blacktriangleleft%
@@ -216,12 +222,10 @@ main=english]{babel}
 \mleftright%
 
 \if@eulermath % Euler mathcal
-\RequirePackage[bb=ams,cal=euler,frak=euler,scr=rsfs]{mathalfa}%
+\RequirePackage[bb=ams,cal=euler,frak=euler,scr=rsfso]{mathalfa}%
 \else % AMS mathcal
-\RequirePackage[bb=ams,cal=cm,frak=euler,scr=rsfso]{mathalfa}%
-\fi%
-\fi%
-\fi
+\RequirePackage[bb=ams,cal=cm,frak=euler,scr=euler]{mathalfa}%
+\fi \fi \fi
 
 %% Theorems and definitions
 \theoremstyle{plain}
