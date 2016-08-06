@@ -130,12 +130,12 @@ main=english]{babel}
 %%% Math packages
 %% Times clones
 \if@times % TeX Gyre for text and mathematics
-\RequirePackage[largesc]{newtxtext}% roman
+\RequirePackage[largesc,theoremfont]{newtxtext}% roman
 \RequirePackage[scale=.95,type1]{cabin}% sans
 \RequirePackage[varqu,varl,scaled=.94]{zi4}% mono
 
-\RequirePackage[varg,bigdelims]{newtxmath}%
-\RequirePackage[bb=boondox,frak=boondox,cal=boondoxo]{mathalfa}%
+\RequirePackage[varg,bigdelims,nosymbolsc]{newtxmath}%
+\RequirePackage[bb=boondox,frak=pxtx,frakscaled=1.1,cal=boondoxo]{mathalfa}%
 
 \useosf % oldstyle figs
 
