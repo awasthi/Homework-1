@@ -47,10 +47,10 @@
   \begin{align*}
     \lim_{x\to\infty}\int_\bbR f(t)\cos(xt)\diff t
     &=\lim_{x\to\infty}\int_a^b\cos(xt)\diff t\\
-    &=\lim_{x\to\infty}\biggl[\frac{1}{x}(\sin(xa)-\sin(xb))\biggr]\\
-    &=\lim_{x\to\infty}\biggl[\frac{\sin(xa)}{x}-\frac{\sin(xb)}{x}\biggr]\\
-    &=\biggl[\lim_{x\to\infty}\frac{\sin(xa)}{x}\biggr]
-      -\biggl[\lim_{x\to\infty}\frac{\sin(xb)}{x}\biggr]\\
+    &=\lim_{x\to\infty}\left[\frac{1}{x}(\sin(xa)-\sin(xb))\right]\\
+    &=\lim_{x\to\infty}\left[\frac{\sin(xa)}{x}-\frac{\sin(xb)}{x}\right]\\
+    &=\left[\lim_{x\to\infty}\frac{\sin(xa)}{x}\right]
+      -\left[\lim_{x\to\infty}\frac{\sin(xb)}{x}\right]\\
     &=1-1\\
     &=0,
   \end{align*}
@@ -85,8 +85,8 @@
     \label{eq:aug-11:2-a}
     \begin{aligned}
       \lim_{n\to\infty}\int_E|f-f_n|^2\diff x
-      &=\lim_{n\to\infty}\biggl[\int_E\bigl(|f|^2-2|ff_n|+|f|_n^2\bigr)\diff x\biggr]\\
-      &=\lim_{n\to\infty}\biggl[\|f_n\|_2+\|f\|_2-2\int_E f_nf\diff x\biggr]\\
+      &=\lim_{n\to\infty}\left[\int_E\bigl(|f|^2-2|ff_n|+|f|_n^2\bigr)\diff x\right]\\
+      &=\lim_{n\to\infty}\left[\|f_n\|_2+\|f\|_2-2\int_E f_nf\diff x\right]\\
       &=\lim_{n\to\infty}\|f_n\|_2+\lim_{n\to\infty}\|f\|_2-2\lim_{n\to\infty}\int_E
       f_nf\diff x.
     \end{aligned}
@@ -115,14 +115,14 @@
   pointwise. To see the former, first note that
   \[
     \begin{aligned}
-      \lim_{n\to\infty}\biggl[\int_0^1 f_n(x)\diff x\biggr]
-      &=\lim_{n\to\infty}\biggl[\int_0^1\log(n)\exp(-nx)\diff x\biggr]\\
-      &=\lim_{n\to\infty}\biggl[\log(n)\exp(-nx)\bigr|_0^1\biggr]\\
-      &=\lim_{n\to\infty}\biggl[
+      \lim_{n\to\infty}\left[\int_0^1 f_n(x)\diff x\right]
+      &=\lim_{n\to\infty}\left[\int_0^1\log(n)\exp(-nx)\diff x\right]\\
+      &=\lim_{n\to\infty}\left[\log(n)\exp(-nx)\bigr|_0^1\right]\\
+      &=\lim_{n\to\infty}\left[
       \frac{1}{n}\log(n)-\frac{1}{n}\log(n)\exp(-n)
-      \biggr]\\
+      \right]\\
       &=\lim_{n\to\infty}\left[%
-        \biggl(\frac{1-\exp(-n)}{n}\biggr)\log(n)%
+        \left(\frac{1-\exp(-n)}{n}\right)\log(n)%
       \right]\\
       &=0.
     \end{aligned}
@@ -220,8 +220,9 @@
   \item Use part (a) to show that that if \(1\leq p,q,r\leq\infty\), with
     \(1/p+1/q=1/r+1\), \(f\in L^p(\bbR)\), and \(g\in L^q(\bbR)\), then
     \[
-      |(f*g)(x)|^r\leq{\|f\|_p}^{\cramped r-p}{\|g\|_q}^{\cramped r-q}\int|f(y)|^p|g(x-y)|^q\diff
-      y.
+      |(f*g)(x)|^r\leq{\|f\|_{p}}^{\cramped{r-p}}
+      {\|g\|_q}^{\cramped{r-q}}
+      \int|f(y)|^p|g(x-y)|^q\diff y.
     \]
     \\\\
     (Recall that \((f*g)(x)=\int f(y)g(x-y)\diff y\).)
@@ -238,7 +239,7 @@
   functions \(f_j\in L^{p_j}(E)\), \(1\leq j\leq n\). The case \(n=2\)
   holds by using Hölder's inequality on the exponents \(r/p+r/q=1\),
   \begin{align*}
-    \biggl[\int_E|f_1f_2|^r\biggr]^{1/r}\rmd x
+    \left[\int_E|f_1f_2|^r\right]^{1/r}\rmd x
     &=\|{f_1}^{\cramped{r}}{f_2}^{\cramped{r}}\|_1\\
     &\leq\|{f_1}^{\cramped r}\|_{p/r}\|{f_2}^{\cramped r}\|_{q/r}\\
     &=\|f_1\|_p\|f_2\|_q.
@@ -263,7 +264,7 @@
   part (a),
   \begin{align*}
     |f*g|
-    &=\biggl|\int_\bbR f(y)g(x-y)\diff y\biggr|\\
+    &=\left|\int_\bbR f(y)g(x-y)\diff y\right|\\
     &\leq\int_\bbR\bigl|f(y)g(x-y)\bigr|\diff y\\
     &=\int_\bbR|f(y)|^{1+p/r-p/r}|g(x-y)|^{1+q/r-q/r}\diff y\\
     &=\int_\bbR|f(y)|^{p/r}|g(x)|^{q/r}|f(y)|^{1-p/r}|g(x-y)|^{1-q/r}\diff
@@ -277,7 +278,7 @@
       \bigl\||f(y)|^{(r-p)/r}\bigr\|_{pr/(r-p)}
       \bigl\||g(x-y)|^{(r-q)/r}\bigr\|_{qr/(r-q)}\\
     &={\|f\|_p}^{\cramped{(r-p)/r}}{\|g\|_q}^{\cramped{(r-q)/r}}
-      \biggl[\int_\bbR|f(y)|^p|g(x-y)|^q\diff y\biggr]^{1/r}.
+      \left[\int_\bbR|f(y)|^p|g(x-y)|^q\diff y\right]^{1/r}.
   \end{align*}
   Raising both sides to the power \(r\), we have
   \[
@@ -292,16 +293,16 @@
     {\|f*g\|_r}^{\cramped{r}}
     &=\int_\bbR|f*g(x)|^r\diff x\\
     &\leq\int_\bbR
-      \biggl[
+      \left[
       {\|f\|_p}^{\cramped{r-p}}{\|g\|_q}^{\cramped{r-q}}
       \int_\bbR|f(y)|^p|g(x-y)|^q\diff y
-      \biggr]\\
+      \right]\\
     &={\|f\|_p}^{\cramped{r-p}}{\|g\|_q}^{\cramped{r-q}}
       \iint\limits_{\bbR\times\bbR}|f(y)|^p|g(x-y)|^q\diff
       y\\
     &={\|f\|_p}^{\cramped{r-p}}{\|g\|_q}^{\cramped{r-q}}
-      \int_\bbR|f(y)|^p\biggl[\int_\bbR
-      |g(x-y)|^q\diff y\biggr]\rmd x\\
+      \int_\bbR|f(y)|^p\left[\int_\bbR
+      |g(x-y)|^q\diff y\right]\rmd x\\
     &\leq{\|f\|_p}^{\cramped r-p}{\|g\|_q}^{\cramped{r-q}}
       {\|f\|_p}^{\cramped{p}}{\|g_q\|}^{\cramped{q}}\\
     &={\|f\|_p}^{\cramped{r}}{\|g\|_q}^{\cramped{r}}.
