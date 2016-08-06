@@ -124,6 +124,7 @@ main=english]{babel}
 \newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}%
 \newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}%
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}%
+\newcommand{\textzhit}[1]{\begin{CJK}{UTF8}{bkai}#1\end{CJK}}
 \fi%
 
 %%% Math packages
@@ -133,9 +134,15 @@ main=english]{babel}
 \RequirePackage[scale=.95,type1]{cabin}% sans
 \RequirePackage[varqu,varl,scaled=.94]{zi4}% mono
 
-\RequirePackage[varg,bigdelims,
-nosymbolsc]{newtxmath}%
-\RequirePackage[bb=boondox,frak=pxtx,frakscaled=1.1,cal=pxtx,scr=boondoxo]{mathalfa}%
+\RequirePackage[varg,%
+                bigdelims,%
+                cmintegrals,%
+                nosymbolsc]{newtxmath}%
+\RequirePackage[bb=boondox,%
+                frak=pxtx,%
+                frakscaled=1.1,%
+                cal=pxtx,%
+                scr=boondoxo]{mathalfa}%
 
 \useosf % oldstyle figs
 
