@@ -145,7 +145,9 @@ main=english]{babel}
                 scr=boondoxo]{mathalfa}%
 
 \useosf % oldstyle figs
-\renewcommand{\theequation}{\liningnums{\arabic{equation}}} % lining numbers
+\renewcommand{\theequation}
+             {\fontfamily{ntxtlf}\selectfont{\arabic{equation}}} % lining numbers
+\setenumerate{label=(\fontfamily{ntxtlf}\selectfont{\arabic*})}
 
 %% Use Tempora for Greek and Russian
 \substitutefont{LGR}{\rmdefault}{Tempora}%
