@@ -143,17 +143,10 @@ nosymbolsc]{newtxmath}%
 \substitutefont{LGR}{\rmdefault}{Tempora}%
 \substitutefont{T2A}{\rmdefault}{Tempora}%
 
-%% Renew some commands
-\newcommand\Bigstar{\bigstar} % too ugly
-\renewcommand\bigstar{\star} % too ugly
-\newcommand\bigsetminus{\setminus} % too ugly
-\renewcommand\setminus{\smallsetminus} % Default is too ugly
-\newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
-      \hbox{\scriptsize.}\hbox{\scriptsize.}}}%
-  =}%
+%% Times specific commands
 \newcommand{\indicate}{\mathbb{1}}
-\newcommand\oldemptyset{\emptyset}
-\renewcommand\emptyset{\varnothing}
+\newcommand\defeq{\coloneqq}
+\let\setminus\smallsetminus
 
 \else
 \if@libertine %% Use Libertine (a beautiful free font)
@@ -180,17 +173,6 @@ nosymbolsc]{newtxmath}%
 \DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
 \DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
 \DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
-
-\newcommand\Bigstar{\bigstar} % too ugly
-\renewcommand\bigstar{\star} % too ugly
-\newcommand\bigsetminus{\setminus} % too ugly
-\renewcommand\setminus{\smallsetminus} % Default is too ugly
-\newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
-      \hbox{\scriptsize.}\hbox{\scriptsize.}}}%
-  =}%
-\DeclareMathOperator{\indicate}{\mathbb{1}}
-\newcommand\oldemptyset{\emptyset}
-\renewcommand\emptyset{\varnothing}
 
 \else % Use the regular CM fonts
 \RequirePackage{amssymb}%
