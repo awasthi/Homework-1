@@ -142,7 +142,7 @@
 \begin{solution}
   \(\implies\) Suppose that \(f\) is integrable on \(E\). Let
   \[
-    E_n=\bigl\{\,x\in E:f(x)\geq k\,\bigr\}.
+    E_n=\bigl\{\,x\in E:f(x)\geq n\,\bigr\}.
   \]
   Define the sequence of measurable sets \(\{E'_n:n\in\bbN\}\) where
   \[
@@ -150,7 +150,18 @@
   \]
   Now, we note that
   \[
-    E_n=\bigcup_{k=1}^{n-1} E_k'.
+    E_n=\bigcup_{k=n}^\infty E_k'.
+  \]
+  and since the \(E_k'\) are disjoint,
+  \[
+    m(E_n)=\sum_{k=n}^\infty m\bigl(E_k'\bigr).
+  \]
+
+  Thus,
+  \[
+    E=%
+    \bigcup_{n=1}^\infty E_n=%
+    \bigcup_{n=1}^\infty\left(\bigcup_{k=n}^\infty E_k'\right).
   \]
 \end{solution}
 
