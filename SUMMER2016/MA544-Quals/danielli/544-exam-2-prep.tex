@@ -140,32 +140,18 @@
   \]
 \end{problem}
 \begin{solution}
-  \(\implies\) Suppose that \(f\) is integrable and consider the
-  inequalities
+  \(\impliedby\) Suppose that
   \[
-    f(x)-1\leq\sum_{n=1}^\infty\indicate_{E_n}(x)\leq f(x)
-  \]
-  where \(E_n=\bigl\{\,x\in E:f(x)\geq n\,\bigr\}\). Then,
-  \[
-    \int_E f(x)-1\diff x
-    \leq%
-    \int_{n=1}^\infty\indicate_{E_n}(x)\diff x
-    \leq%
-    \int_E f(x)\diff x
-  \]
-  which, by the Borel--Cantelli lemma, implies that
-  \[
-    \sum_{n=1}^\infty m(E_n)<\infty.
-  \]
-
-  \(\impliedby\) On the other hand, if
-  \[
-    \sum_{n=1}^\infty \int\indicate_{E_n}(x)\diff x
-    =
     \sum_{n=1}^\infty m(E_n)<\infty,
   \]
-  by the Borel--Cantelli lemma, a.e.\@ \(x\in E\) belongs to at most
-  finitely many \(x\in E_n\).
+  where \(E_n=\bigl\{\,x\in E:f(x)\geq n\,\bigr\}\). Then, by the
+  definition of the Lebesgue measure,
+  \[
+    \sum_{n=1}^\infty m(E_n)=\sum_{n=1}^\infty\int_\bbR
+    \indicate_{E_n}(x)\diff x.
+  \]
+
+  \(\implies\) On the other hand
 \end{solution}
 
 \begin{problem}
