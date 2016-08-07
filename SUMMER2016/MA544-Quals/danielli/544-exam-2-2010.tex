@@ -6,12 +6,26 @@
   Suppose \(f\in L^1(\bbR^n)\). Show that for every \(\varepsilon>0\) there
   exists a ball \(B\), centered at the origin, such that
   \[
-    \int_{\bbR^n\setminus B}|f|<\varepsilon.
+    \int\limsclap{\bbR^n\setminus B}|f|<\varepsilon.
   \]
   \\\\
   \emph{Hint}: Use the monotone convergence theorem.
 \end{problem}
 \begin{solution}
+  Consider the sequence of functions \(\{f_n(x):n\in\bbN\}\) where
+  \[
+    f_n(x)=|f(x)|\indicate_{B(\mathbf{0},n)}(x).
+  \]
+  Then, \(f_n\uparrow |f|\) so by the monotone convergence theorem, given
+  \(\varepsilon>0\), there exists an index \(N\in\bbN\) such that
+  \(n\geq N\) implies
+  \begin{align*}
+    \int_{\bbR^n}|f(x)|\diff x-\int_{\bbR^n}f_n(x)\diff x
+    &=\int_{\bbR^n}|f(x)|-|f(x)|\indicate_{B(\mathbf{0},n)}\diff x\\
+    &=\int\limsclap{\bbR^n\setminus B(\mathbf{0},n)}|f(x)|\diff x\\
+    &<\varepsilon.
+  \end{align*}
+  Let \(B=B(\mathbf{0},N+1)\).
 \end{solution}
 \begin{problem}
   \hfill
