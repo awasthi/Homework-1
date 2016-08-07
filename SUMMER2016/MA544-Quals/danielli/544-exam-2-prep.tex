@@ -259,7 +259,7 @@
 \begin{problem}
   Define the \emph{gamma function} \(\Gamma\colon\bbR^+\to\bbR\) by
   \[
-    \Gamma(y)=\int_0^\infty e^{-u}u^{y-1}\diff u,
+    \Gamma(y)=\int_0^\infty\rme^{-u}u^{y-1}\diff u,
   \]
   and the \emph{beta function} \(\beta\colon\bbR^+\times\bbR^+\to\bbR\) by
   \[
@@ -276,7 +276,8 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  For part (a), suppose that
+  For part (a), we must show that the map \(\gamma(u)=\rme^{-u}u^{y-1}\) is
+  in \(L^1(\bbR^+)\) for all \(y\in\bbR^+\).
 \end{solution}
 
 \begin{problem}
