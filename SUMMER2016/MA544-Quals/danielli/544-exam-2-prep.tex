@@ -267,7 +267,7 @@
   \]
   \begin{enumerate}[label=(\alph*)]
   \item Prove that the definition of the gamma function is well-posed,
-    i.e., the function \(u\mapsto e^{-u}u^{y-1}\) is in \(L(\bbR^+)\) for
+    i.e., the function \(u\mapsto \rme^{-u}u^{y-1}\) is in \(L(\bbR^+)\) for
     all \(y\in\bbR^+\).
   \item Show that
     \[
@@ -294,8 +294,38 @@
   \]
 \end{problem}
 \begin{solution}
-  Since \(C_{\text{comp}}(\bbR^n)\) is dense in \(L^1(\bbR^n)\), there
-  exist a sequence of compactly supported
+  Since \(C_\rmc(\bbR^n)\) is dense in \(L^1(\bbR^n)\), there exist a
+  sequence of compactly supported continuous functions \(\{g_n:n\in\bbN\}\)
+  such that \(g_n\to f\) as \(n\to\infty\), i.e., given \(\varepsilon>0\),
+  there exists an index \(N\in\bbN\) such that \(n\geq N\) implies
+  \[
+    |f(x)-g_n(x)|<\frac{\varepsilon}{3}
+  \]
+  for all \(x\in\bbR^n\). Moreover, for any sequence \(\{h_n:n\in\bbN\}\)
+  such that \(h_n\to\mathbf{0}\), by the uniform continuity of \(g_n\)
+  (since \(g_n\) is continuous on a compact set), there exist an index
+  \(N'\in\bbN\) such that
+  \[
+    |g_n(x+h_k)-g_n(x)|<\frac{\varepsilon}{3}
+  \]
+  whenever \(k\geq N'\). Thus, we have
+  \begin{align*}
+    |f(x+h_n)-f(x)|
+    &=\Bigl|\bigl(f(x+h_n)-g_n(x+h_n)\bigr)
+      +\bigl(g_n(x+h_n)-g_n(x)\bigr)
+      +\bigr(-g_n(x)-f(x)\bigr)\Bigr|\\
+    &\leq|f(x+h_n)-g_n(x+h_n)|
+      +|g_n(x+h_n)-g_n(x)|
+      +|f(x)-g_n(x)|\\
+    &<\frac{\varepsilon}{3}
+      +\frac{\varepsilon}{3}
+      +\frac{\varepsilon}{3}\\
+    &=\varepsilon.
+  \end{align*}
+  Thus,
+  \[
+    \lim_{h\to\mathbf{0}}\int_{\bbR^n}|f_h-f|=0.
+  \]
 \end{solution}
 
 \begin{problem}
@@ -328,7 +358,7 @@
   \[
     \lim_{n\to\infty}\int_{\bbR^n}g_n(x)\diff x=\int_{\bbR^n} g(x)\diff x.
   \]
-  Then, by Lebesgue's dominated convergence theorem
+  Then, by Lebesgue's dominated convergence theorem \(\calL^1(\bbR^n)\)
 \end{solution}
 
 %%% Local Variables:
