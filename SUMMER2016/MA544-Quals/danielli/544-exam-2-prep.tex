@@ -158,9 +158,7 @@
   \]
   Moreover,
   \[
-    E=%
-    \bigcup_{n=1}^\infty E_n=%
-    \bigcup_{n=1}^\infty\left(\bigcup_{k=n}^\infty E_k'\right).
+    E=\bigcup_{n=1}^\infty E_n'
   \]
   so
   \[
@@ -169,9 +167,20 @@
   Thus,
   \begin{align*}
     \sum_{n=1}^\infty m(E_n)
-    &=\sum_{n=1}^\infty\left[\sum_{k=n}^\infty m\bigl(E_k'\bigr)\right]\\
-    &=\im z and \re z
+    &=\sum_{n=1}^\infty\left[\sum_{k=n}^\infty m\bigl(E_k'\bigr)\right]
+    \intertext{by reordering the latter sum,}
+    &=\sum_{n=1}^\infty nm\bigl(E_n'\bigr)\\
+    &\leq\sum_{n=1}^\infty\int_{E_n'}f\diff x\\
+    &=\int_E f\diff x\\
+    &<\infty.
   \end{align*}
+  Thus, \(\sum_{n=1}^\infty m(E_n)<\infty\).
+
+  \(\impliedby\) On the other hand, suppose that
+  \[
+    \sum_{n=1}^\infty m(E_n)<\infty.
+  \]
+  Then
 \end{solution}
 
 \begin{problem}
