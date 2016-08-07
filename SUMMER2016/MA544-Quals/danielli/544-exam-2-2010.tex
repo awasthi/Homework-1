@@ -125,6 +125,34 @@
   \]
 \end{problem}
 \begin{solution}
+  We shall proceed by induction. For the case \(n=1\), note that
+  \begin{align*}
+    \left[\int_{\bbR} \rme^{-x^2}\diff x\right]^2
+    &=\left[\int_{\bbR} \rme^{-x^2}\diff x\right]%
+      \left[\int_{\bbR} \rme^{-x^2}\diff y\right]\\
+    &=\int\limsclap{\bbR\times\bbR}\rme^{-x^2+y^2}\diff x\rmd y.
+  \end{align*}
+  Making a smooth change of variables via polar coordinates, we have
+  \[
+    \left[\int_{\bbR} \rme^{-x^2}\diff x\right]^2
+    =\int_0^{2\pi}\int_0^\infty\rme^{-r^2}r\diff r\diff\theta=\pi.
+  \]
+  Thus,
+  \[
+    \int_\bbR\rme^{-x^2}\diff x=\sqrt{\pi}.
+  \]
+
+  Now, suppose
+  \[
+    \int_{\bbR^k}\rme^{\cramped{-{x_1}^2-\dotsb-{x_k}^2}}\diff
+    x_1\dotsm\rmd x_k=\sqrt[k]{\pi}
+  \]
+  for all \(k\leq n-1\). Then, for the case \(n\), we have
+  \begin{align*}
+    \int_{\bbR^n}\rme^{\cramped{-{x_1}^2\dotsb-{x_{n-1}}^2-{x_n}^2}}\diff x
+    &=\int_{\bbR}\rme^{\cramped{-{x_1}^2\dotsb-{x_{n-1}}^2}}\rme^{\cramped{-{x_n}^2}}\diff
+      x_1\dotsm\rmd x_{n-1}\rmd x_n
+  \end{align*}
 \end{solution}
 
 %%% Local Variables:
