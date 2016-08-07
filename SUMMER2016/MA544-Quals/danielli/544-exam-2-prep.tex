@@ -180,7 +180,19 @@
   \[
     \sum_{n=1}^\infty m(E_n)<\infty.
   \]
-  Then
+  Then, using the sequence \(\{E_n:n\in\bbbN\}\) above together with
+  \[
+    E_0=\bigl\{\,x\in E:1>f(x)\geq 0\,\bigr\},
+  \]
+  we have
+  \begin{align*}
+    \int_X f\diff x
+    &=\lim_{n\to\infty}\sum_{k=0}^n\int_{E_k'}f\diff x\\
+    &\leq\lim_{n\to\infty}\sum_{k=0}^n (n+1)m\bigl(E_n'\bigr)\\
+    &=m(X)+m(E_1)+\dotsb\\
+    &<\infty.
+  \end{align*}
+  Thus, \(f\) is integrable.
 \end{solution}
 
 \begin{problem}
