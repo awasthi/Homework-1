@@ -51,21 +51,26 @@
 \end{enumerate}
 \end{problem}
 \begin{solution}
-  For part (a), suppose that \(|f|^p\in L^1(E)\). Then
+  Part (a) is almost trivial. Let
   \[
-    \int_E |f|^p\diff x<\infty.
+    E_\alpha=\bigl\{\,x\in E:f(x)>\alpha\,\bigr\}.
   \]
-  Given \(\alpha>0\), take the set \(E\) and partition it into
+  Then, \(|f|^p\geq \alpha^p\) for all \(x\in E_\alpha\). Thus,
   \[
-    E_\alpha=\bigl\{\,x\in E:f(x)>\alpha\,\bigr\}
+    \int_{E_\alpha}\alpha^p\diff x=\alpha^pm(E_\alpha)\leq\int_{E_\alpha}|f|^p\diff x,
   \]
-  and its complement \(E\setminus E_\alpha\). Then
+  as was to be shown.
+
+  Part (b) follows directly from Chebyshev's inequality, as
   \[
-    \int_{E_\alpha}|f|^p\diff x
-    +\int\limsclap{E\setminus E_\alpha}|f|^p\diff x=
-    \int_E |f|^p\diff x<\infty.
+    \lim_{n\to\infty}m(E_\varepsilon) <\lim_{n\to\infty}
+    \left[\frac{1}{\varepsilon^p}\int_{E_\varepsilon}|f_n(x)-f(x)|^p\diff
+      x\right]=
+    \frac{1}{\varepsilon^p}\lim_{n\to\infty}\int_{E_\varepsilon}|f_n(x)-f(x)|\diff
+    x=0,
   \]
-  Thus,
+  where \(E_\varepsilon=\bigl\{\,x\in
+  E:|f_n(x)-f(x)|>\varepsilon\,\bigr\}\).
 \end{solution}
 
 \begin{problem}
@@ -87,15 +92,10 @@
   \emph{Hint}: Start from the case \(n=1\) by using the polar coordinates
   in
   \[
-    \left[\int_{\bbR} e^{-x^2}\diff x\right]^2=%
-    \left[\int_{\bbR} e^{-x^2}\diff x\right]%
-    \left[\int_{\bbR} e^{-x^2}\diff y\right]%
+    \left[\int_{\bbR} \rme^{-x^2}\diff x\right]^2=%
+    \left[\int_{\bbR} \rme^{-x^2}\diff x\right]%
+    \left[\int_{\bbR} \rme^{-x^2}\diff y\right]%
   \]
-\end{problem}
-\begin{solution}
-\end{solution}
-
-\begin{problem}
 \end{problem}
 \begin{solution}
 \end{solution}
