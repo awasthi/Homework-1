@@ -214,7 +214,7 @@
   \]
   whenever \(n\geq N\). This implies that the measure of the set
   \[
-    E_\varepsilon=\bigr\{\,x\in E:|f_n(x)-f(x)|\geq\varepsilon\,\bigl\}
+    E_\varepsilon=\bigr\{\,x\in E:|f_n(x)-f(x)|>\varepsilon\,\bigl\}
   \]
   goes to \(0\) as \(n\to\infty\) since
   \begin{align*}
@@ -222,7 +222,7 @@
     &>\int_E \frac{|f_n(x)-f(x)|}{1+|f_n(x)-f(x)|}\diff x\\
     &\geq \int_{E_\varepsilon}
     \frac{|f_n(x)-f(x)|}{1+|f_n(x)-f(x)|}\diff x\\
-    &\geq\int_{E_\varepsilon}\frac{\varepsilon}{1+\varepsilon}\\
+    &\geq\int_{E_\varepsilon}\frac{\varepsilon}{1+\varepsilon}\diff x\\
     &=\frac{\varepsilon m(E_\varepsilon)}{1+\varepsilon}
   \end{align*}
   which implies that
@@ -235,16 +235,25 @@
   \(E\). Then, for every \(\varepsilon>0\)
   \[
     \lim_{n\to\infty}m\bigl\{\,x\in
-    E:|f(x)-f_n(x)|\geq\varepsilon\,\bigr\}=0.
+    E:|f(x)-f_n(x)|>\varepsilon\,\bigr\}=0.
   \]
   Then, we note that
   \begin{align*}
     \rho(f_n,f)
     &=\int_E \frac{|f_n(x)-f(x)|}{1+|f_n(x)-f(x)|}\diff x\\
     &=\int_{E\setminus E_\varepsilon} \frac{|f_n(x)-f(x)|}{1+|f_n(x)-f(x)|}\diff x
-      +\int_{E_\varepsilon} \frac{|f_n(x)-f(x)|}{1+|f_n(x)-f(x)|}\diff x.
+      +\int_{E_\varepsilon} \frac{|f_n(x)-f(x)|}{1+|f_n(x)-f(x)|}\diff x\\
+    &\leq
+      m(E_\varepsilon)+\frac{1+\varepsilon}{\varepsilon}m(E_\varepsilon)\\
+    &=\left(1+\frac{1+\varepsilon}{\varepsilon}\right)m(E_\varepsilon)\\
+    &=\left(\frac{1+2\varepsilon}{\varepsilon}\right)m(E_\varepsilon).
   \end{align*}
-  Now, this implies that
+  Taking the limit on both sides of this inequality, we see that
+  \(\rho(f_n,f)\to 0\) as \(n\to\infty\) since
+  \[
+    \left(\frac{1+2\varepsilon}{\varepsilon}\right)m(E_\varepsilon)\too 0
+  \]
+  as \(n\to\infty\).
 \end{solution}
 
 \begin{problem}
@@ -267,6 +276,7 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
+  For part (a), suppose that
 \end{solution}
 
 \begin{problem}
