@@ -353,12 +353,45 @@
 \end{enumerate}
 \end{problem}
 \begin{solution}
-  For part (a), suppose that \(|f_n|\leq g_n\),
-  \(\lim_{n\to\infty}g_n(x)=g(x)\) pointwise a.e.\@ and
+  For part (a), suppose that \(|f_n|\leq g_n\), then \(g_n(x)-f_n(x)\),
+  \(g_n(x)+f_n(x)\geq 0\) for all \(x\in\bbR^n\). Thus, by Fatou's lemma,
+  we have
+  \begin{align*}
+    \int_{\bbR^n}\liminf_{n\to\infty}\bigl(g_n(x)-f_n(x)\bigr)\rmd x
+    &\leq\liminf_{n\to\infty}\left[\int_{\bbR^n}g_n(x)-f_n(x)\diff x\right]\\
+    \int_{\bbR^n}g(x)-f(x)\diff x
+    &\leq\liminf_{n\to\infty}\int_{\bbR^n}g_n(x)+\liminf_{n\to\infty}\int_{\mathrlap{\bbR^n}\phantom{-}}-f_n(x)\diff
+      x\\
+    \int_{\bbR^n}g(x)\diff x-\int_{\bbR^n}f(x)\diff x
+    &\leq\int_{\bbR^n}g(x)\diff x-\limsup_{n\to\infty}\int_{\bbR^n}f_n(x)\diff
+      x\\
+    \limsup_{n\to\infty}\int_{\bbR^n}f(x)\diff x&\leq\int_{\bbR^n}f(x)\diff
+                                                  x
+  \end{align*}
+  and
+  \begin{align*}
+    \int_{\bbR^n}\liminf_{n\to\infty}\bigl(g_n(x)+f_n(x)\bigr)\rmd x
+    &\leq\liminf_{n\to\infty}\left[\int_{\bbR^n}g_n(x)+f_n(x)\diff
+      x\right]\\
+    \int_{\bbR^n}g(x)+f(x)\diff x
+    &\leq\liminf_{n\to\infty}\int_{\bbR^n}g_n(x)\diff x
+      +\liminf_{n\to\infty}\int_{\bbR^n}f_n(x)\diff x\\
+    \int_{\bbR^n}g(x)\diff x+\int_{\bbR^n}f(x)\diff x
+    &\leq\int_{\bbR^n}g(x)\diff
+      x+\liminf_{n\to\infty}\int_{\bbR^n}f_n(x)\diff x\\
+    \int_{\bbR^n}f(x)\diff x&\liminf_{n\to\infty}\int_{\bbR^n}f_n(x)\diff x.
+  \end{align*}
+  Thus,
   \[
-    \lim_{n\to\infty}\int_{\bbR^n}g_n(x)\diff x=\int_{\bbR^n} g(x)\diff x.
+    \limsup_{n\to\infty}\int_{\bbR^n}f_n(x)\diff x\leq
+    \int_{\bbR^n}f(x)\diff x\leq
+    \liminf_{n\to\infty}\int_{\bbR^n}f_n(x)\diff x
   \]
-  Then, by Lebesgue's dominated convergence theorem \(\calL^1(\bbR^n)\)
+  which implies that
+  \[
+    \int_{\bbR^n}f_n(x)\diff x\too\int_{\bbR^n}f(x)\diff x
+  \]
+  as \(n\to\infty\).
 \end{solution}
 
 %%% Local Variables:
