@@ -158,6 +158,10 @@ main=english]{babel}
 \newcommand\defeq{\coloneqq}
 \let\setminus\smallsetminus
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}}
+\let\oldbtright\blacktriangleright%
+\let\oldbtleft\blacktriangleleft%
+\renewcommand\blacktriangleright{\ensuremath{\scriptstyle\oldbtright}}
+\renewcommand\blacktriangleleft{\ensuremath{\scriptstyle\oldbtleft}}
 
 \else
 \if@libertine %% Use Libertine (a beautiful free font)
@@ -297,7 +301,7 @@ main=english]{babel}
 \newcommand\trileq{\trianglelefteq}
 \newcommand\trireq{\trianglerighteq}
 \newcommand\restrict[1]{\raisebox{-.5ex}{\ensuremath\restriction}_{#1}}
-\newcommand\limclap[1]{\limits_{\mathclap{#1}}}
+\newcommand\limsclap[1]{\limits_{\mathclap{#1}}}
 
 %% Redefinitions & commands not available in the default CM
 \providecommand{\nequiv}{\ensuremath{\not\equiv}}
