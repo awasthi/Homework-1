@@ -87,6 +87,27 @@
     |F(\xi)|= \left| \int_\bbR f(x)\cos(2\pi x\xi)\diff x \right \leq
     \left|\int_\bbR f(x)\diff x\right|\leq \|f\|_1.
   \]
+
+  To see that \(F\) is in fact continuous, note that since \(\cos(2\pi
+  x\xi)\) is continuous, as a function of \(\xi\), given \(\varepsilon>0\)
+  there exist \(\delta>0\) such that \(|\xi-\chi|<\delta\) implies
+  \[
+    |{\cos(2\pi x\xi)-\cos(2\pi x\chi)}|<\frac{\varepsilon}{\|f\|_1}.
+  \]
+  Thus, for \(|\xi-\chi|<\delta\), we have
+  \begin{align*}
+    |F(\xi)-F(\xi)|
+    &=\left|
+      \int_\bbR f(x)\cos(2\pi x\xi)\diff x
+      -\int_\bbR f(x)\cos(2\pi x\chi)\diff x
+      \right|\\
+    &\leq
+      \int_\bbR\Bigl|f(x)\bigl(\cos(2\pi x\xi)-\cos(2\pi x\chi)\bigr)\Bigr|\diff x
+    \\
+    &\leq \frac{\varepsilon}{\|f\|_1}\int_\bbR |f(x)|\diff x\\
+    &=\varepsilon.
+  \end{align*}
+  Thus, \(F\) is continuous.
 \end{solution}
 
 \begin{problem}
