@@ -110,6 +110,25 @@
     \int_E f_n\diff x\too\int_E f\diff x
   \]
   as \(n\to\infty\).
+
+  This is not true in general as the sequence
+  \[
+    f_n(x)=
+    \begin{cases}
+      k^2/2&\text{if \(x\in(-1/k,1/k)\),}\\
+      1&\text{otherwise.}
+    \end{cases}
+  \]
+  Then, \(f\to 1\) a.e.\@ in \(\bbR\) and
+  \[
+    \lim_{n\to\infty}\int_\bbR f_n\diff x=\int_\bbR f\diff x=\infty,
+  \]
+  but for \(E=(0,1)\),
+  \begin{align*}
+    \int_E f\diff x&=1
+  \intertext{while}
+    \lim_{n\to\infty}\int_E f\diff x&=\infty.
+  \end{align*}
 \end{solution}
 
 \begin{problem}
