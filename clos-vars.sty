@@ -49,7 +49,6 @@
 %% Language settings
 \RequirePackage{substitutefont}%
 \RequirePackage[full]{textcomp}%
-% \RequirePackage{tipa}%
 \RequirePackage{cmap}%
 
 \if@arabi%
@@ -165,35 +164,54 @@ main=english]{babel}
 
 \else
 \if@libertine %% Use Libertine (a beautiful free font)
-\pdfmapfile{+libertinelgc.map}%
-\RequirePackage[sb]{libertine} % roman
-% \RequirePackage{libertinextras}%
+\pdfmapfile{+libertinelgc.map}
+\RequirePackage[sb]{libertine}
+\RequirePackage{libertinextras}
 \RequirePackage[scale=.95,type1]{cabin} % sans
 \RequirePackage[varqu,varl,scaled=.94]{zi4} % mono
 \RequirePackage[libertine,%
                 libaltvw,%
                 bigdelims,%
-                cmintegrals,%
+                % cmintegrals,%
                 % cmbraces%
                 ]{newtxmath} % Shitty math fonts
-\RequirePackage[bb=boondox,frak=pxtx,frakscaled=1.1,cal=boondoxo,scr=boondox]{mathalfa}%
+\RequirePackage[bb=boondox,%
+                frak=pxtx,%
+                frakscaled=1.1,
+                cal=boondoxo,%
+                scr=boondox]{mathalfa}%
 
-% \useosf % oldstyle figs
+\useosf % oldstyle figs
+\renewcommand{\theequation}
+             {\fontfamily{ntxtlf}\selectfont{\arabic{equation}}}
+\setenumerate{label=(\fontfamily{ntxtlf}\selectfont{\arabic*})}
 
 %% Use Libertine for Greek and Russian (Libertine is magnificent font)
 \substitutefont{LGR}{\rmdefault}{LinuxLibertineT}%
 \substitutefont{T2A}{\rmdefault}{LinuxLibertineT}%
+
 
 %% Other Libertine specific math settings
 \DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
 \DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
 \DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
 
+\newcommand{\indicate}{\mathbb{1}}
+\newcommand\defeq{\coloneqq}
+\let\setminus\smallsetminus
+\renewcommand\qedsymbol{\ensuremath{\blacksquare}}
+\let\oldbtright\blacktriangleright%
+\let\oldbtleft\blacktriangleleft%
+\renewcommand\blacktriangleright{\ensuremath{\scriptstyle\oldbtright}}
+\renewcommand\blacktriangleleft{\ensuremath{\scriptstyle\oldbtleft}}
+
 \else % Use the regular CM fonts
 \RequirePackage{amssymb}%
 \RequirePackage[nointegrals]{wasysym}%
 \RequirePackage{stmaryrd}%
+
 %% Math replace
+\let\emptyset\varnothing%
 \let\oldbtright\blacktriangleright%
 \let\oldbtleft\blacktriangleleft%
 \renewcommand\blacktriangleright{\ensuremath{\scriptstyle\oldbtright}}
@@ -201,9 +219,6 @@ main=english]{babel}
 \newcommand\bigsetminus{\setminus} % too ugly
 \renewcommand\setminus{\smallsetminus} % Default is too ugly
 \renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}} % Default is
-% \newcommand\oldemptyset{\emptyset}
-% \renewcommand\emptyset{\varnothing}
-\DeclareMathOperator{\indicate}{\mathbf{1}}
 
 \def\upint{\mathchoice%
     {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
