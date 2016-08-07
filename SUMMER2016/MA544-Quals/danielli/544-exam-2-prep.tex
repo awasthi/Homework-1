@@ -276,19 +276,26 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  For part (a), we must show that the map \(\gamma(u)=\rme^{-u}u^{y-1}\) is
-  in \(L^1(\bbR^+)\) for all \(y\in\bbR^+\).
+  For part (a), we break the proof into two cases: fix \(y_0\in\bbR^+\)
+  then (1) \(0\leq y_0\leq 1\), or (2) \(y>1\). In case (1), we have
+  \begin{align*}
+    \int_0^\infty \rme^{-u}u^{y_0-1}\diff x
+    &\leq\int_0^\infty\rme^{-u}\diff u\\
+    &<\infty.
+  \end{align*}
+  In case (2),
 \end{solution}
 
 \begin{problem}
-  Let \(f\in L(\bbR^n)\) and for \(\mathbf{h}\in\bbR^n\) define
-  \(f_{\mathbf{h}}\colon\bbR^n\to\bbR\) be
-  \(f_{\mathbf{h}}( x )= f( x -\mathbf{h})\). Prove that
+  Let \(f\in L(\bbR^n)\) and for \(h\in\bbR^n\) define
+  \(f_{h}\colon\bbR^n\to\bbR\) be \(f_{h}( x )= f( x -h)\). Prove that
   \[
-    \lim_{\mathbf{h}\to\mathbf{0}}\int_{\bbR^n}\left|f_{\mathbf{h}}-f\right|=0.
+    \lim_{h\to\mathbf{0}}\int_{\bbR^n}\left|f_{h}-f\right|=0.
   \]
 \end{problem}
 \begin{solution}
+  Let \(\{h_n:n\in\bbN\}\) be a sequence of points in \(\bbR^n\)
+  converging to \(\mathbf{0}\). Then, there exists
 \end{solution}
 
 \begin{problem}
