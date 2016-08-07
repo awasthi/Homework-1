@@ -32,7 +32,7 @@
   \begin{enumerate}[label=(\alph*)]
   \item Prove the following generalization of \emph{Chebyshev's
       inequality}: Let \(0<p<\infty\) and \(E\subseteq\bbR^n\) be
-    measurable. assume that \(|f|^p\in L^1(E)\). Then
+    measurable. Assume that \(|f|^p\in L^1(E)\). Then
     \[
       m\bigl\{\,x\in E:f(x)>\alpha\,\bigr\}
       \leq\frac{1}{\alpha^p}\int\limsclap{\left\{\,f>\alpha\,\right\}}f^p,
@@ -51,7 +51,21 @@
 \end{enumerate}
 \end{problem}
 \begin{solution}
-  For part (a), suppose that
+  For part (a), suppose that \(|f|^p\in L^1(E)\). Then
+  \[
+    \int_E |f|^p\diff x<\infty.
+  \]
+  Given \(\alpha>0\), take the set \(E\) and partition it into
+  \[
+    E_\alpha=\bigl\{\,x\in E:f(x)>\alpha\,\bigr\}
+  \]
+  and its complement \(E\setminus E_\alpha\). Then
+  \[
+    \int_{E_\alpha}|f|^p\diff x
+    +\int\limsclap{E\setminus E_\alpha}|f|^p\diff x=
+    \int_E |f|^p\diff x<\infty.
+  \]
+  Thus,
 \end{solution}
 
 \begin{problem}
