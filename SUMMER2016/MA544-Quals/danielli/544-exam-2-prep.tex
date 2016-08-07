@@ -209,21 +209,35 @@
   \(\implies\) Suppose that \(\rho(f_n,f)\to 0\) as \(n\to\infty\). Then,
   given \(\varepsilon>0\) there exist an index \(N\in\bbN\) such that
   \[
-    \int_E \frac{|f_n(x)-f(x)|}{1+|f_n(x)-f(x)|}\diff x<\varepsilon
+    \int_E \frac{|f_n(x)-f(x)|}{1+|f_n(x)-f(x)|}\diff x
+    <\frac{\varepsilon^2}{1+\varepsilon}
   \]
   whenever \(n\geq N\). This implies that the measure of the set
   \[
     E_\varepsilon=\bigr\{\,x\in E:|f_n(x)-f(x)|\geq\varepsilon\,\bigl\}
   \]
-  goes to \(0\) as \(n\to\infty\); otherwise,
+  goes to \(0\) as \(n\to\infty\) since
   \begin{align*}
-    \int_{E_\varepsilon}
-    \frac{|f_n(x)-f(x)|}{1+|f_n(x)-f(x)|}\diff x
+    \frac{\varepsilon^2}{1+\varepsilon}
+    &>\int_E \frac{|f_n(x)-f(x)|}{1+|f_n(x)-f(x)|}\diff x\\
+    &\geq \int_{E_\varepsilon}
+    \frac{|f_n(x)-f(x)|}{1+|f_n(x)-f(x)|}\diff x\\
     &\geq\int_{E_\varepsilon}\frac{\varepsilon}{1+\varepsilon}\\
-    &=\frac{\varepsilon m(E_\varepsilon)}{1+\varepsilon}.
+    &=\frac{\varepsilon m(E_\varepsilon)}{1+\varepsilon}
   \end{align*}
+  which implies that
+  \[
+    m(E_\varepsilon)<\varepsilon.
+  \]
+  Thus, \(f_n\to f\) a.e.
 
-  \(\impliedby\)
+  \(\impliedby\) On the other hand, suppose that \(f_n\to f\) a.e.\@ on
+  \(E\). Then, given \(\varepsilon>0\), there exists an index \(N\in\bbN\)
+  such that
+  \[
+    |f(x)-f_n(x)|<\varepsilon
+  \]
+  whenever \(n\geq N\), for a.e.\@ \(x\in E\).
 \end{solution}
 
 \begin{problem}
