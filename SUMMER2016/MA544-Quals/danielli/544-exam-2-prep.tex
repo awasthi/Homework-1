@@ -189,7 +189,7 @@
     \int_X f\diff x
     &=\lim_{n\to\infty}\sum_{k=0}^n\int_{E_k'}f\diff x\\
     &\leq\lim_{n\to\infty}\sum_{k=0}^n (n+1)m\bigl(E_n'\bigr)\\
-    &=m(X)+m(E_1)+\dotsb\\
+    &=m(E)+m(E_1)+\dotsb\\
     &<\infty.
   \end{align*}
   Thus, \(f\) is integrable.
@@ -229,15 +229,24 @@
   \[
     m(E_\varepsilon)<\varepsilon.
   \]
-  Thus, \(f_n\to f\) a.e.
+  Thus, \(f_n\to f\) for a.e.\@ \(x\in E\).
 
   \(\impliedby\) On the other hand, suppose that \(f_n\to f\) a.e.\@ on
-  \(E\). Then, given \(\varepsilon>0\), there exists an index \(N\in\bbN\)
-  such that
+  \(E\). Then, for every \(\varepsilon>0\)
   \[
-    |f(x)-f_n(x)|<\varepsilon
+    m\bigl\{\,x\in E:|f(x)-f_n(x)|\geq\varepsilon\,\bigr\}=0.
   \]
-  whenever \(n\geq N\), for a.e.\@ \(x\in E\).
+  Then, we note that
+  \begingroup
+  \allowdisplaybreaks
+  \begin{align*}
+    \rho(f_n,f)
+    &=\int_E \frac{|f_n(x)-f(x)|}{1+|f_n(x)-f(x)|}\diff x\\
+    &=\int_{E\setminus E_\varepsilon} \frac{|f_n(x)-f(x)|}{1+|f_n(x)-f(x)|}\diff x
+      +\int_{E_\varepsilon} \frac{|f_n(x)-f(x)|}{1+|f_n(x)-f(x)|}\diff x\\
+    &=\int
+  \end{align*}
+  \endgroup
 \end{solution}
 
 \begin{problem}
