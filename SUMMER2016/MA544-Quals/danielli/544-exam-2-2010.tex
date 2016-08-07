@@ -81,6 +81,12 @@
   Prove that \(F\) is continuous and bounded on \(\bbR\).
 \end{problem}
 \begin{solution}
+  It is easy to see that \(F\) is bounded as \(|{\cos(2\pi x\xi)}|<1\) for
+  all \(\chi\in\bbR\) so
+  \[
+    |F(\xi)|= \left| \int_\bbR f(x)\cos(2\pi x\xi)\diff x \right \leq
+    \left|\int_\bbR f(x)\diff x\right|\leq \|f\|_1.
+  \]
 \end{solution}
 
 \begin{problem}
