@@ -395,9 +395,37 @@
 
   For part (b), \(\implies\) suppose that
   \[
-    \int_{\bbR^n}|f_n(x)-f(x)|\rmd x\too 0
+    \int_{\bbR^n}|f_n(x)-f(x)|\diff x\too 0
   \]
-  as \(n\to\infty\). Then
+  as \(n\to\infty\). Then, by the reverse triangle inequality, we have
+  \begin{align*}
+    \left|\int_{\bbR^n}
+    |f_n(x)|-|f(x)|
+    \diff x\right|
+    &\leq
+      \int_{\bbR^n}
+      \bigl||f_n(x)|-|f(x)|\bigr|
+      \diff x\\
+    &\leq\int_{\bbR^n}
+      \bigl|f_n(x)-f(x)\bigr|
+      \diff x.
+  \end{align*}
+  Thus,
+  \[
+    \lim_{n\to\infty}\int_{\bbR^n}|f_n(x)|\diff x=\int_{\bbR^n}|f(x)|\diff x.
+  \]
+
+  \(\impliedby\) On the other hand, suppose that
+  \[
+    \int_{\bbR^n}|f_n(x)|\diff x\too\int_{\bbR^n}|f(x)|\diff x
+  \]
+  as \(n\to\infty\). Then \(|f_n(x)-f(x)|\leq |f_n(x)|\) so by the
+  generalized Lebesgue's dominated convergence theorem,
+  \[
+    \lim_{n\to\infty}\int_{\bbR^n}
+    |f_n(x)-f(x)|\diff x=
+    \int_{\bbR^n}\left[\lim_{n\to\infty}|f_n(x)-f(x)|\right]\rmd x=0.
+  \]
 \end{solution}
 
 %%% Local Variables:
