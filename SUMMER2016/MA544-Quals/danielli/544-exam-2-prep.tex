@@ -84,7 +84,8 @@
       -\liminf_{n\to\infty}\int\limsclap{\bbR^n\setminus
         E}f_n\diff x\\
       &=\limsup_{n\to\infty}\left[ \int_{\bbR^n}f_n\diff x
-        -\int_{\bbR^n\setminus E}f_n\diff x\right].
+        -\int_{\bbR^n\setminus E}f_n\diff x\right]
+      &=\limsup_{n\to\infty}\int_E f_n\diff x.
     \end{aligned}
   \end{equation}
   Now, by Fatou's lemma, we have
@@ -98,7 +99,17 @@
     &\leq\liminf_{n\to\infty}\int\limsclap{\bbR^n\setminus E} f_n\diff x,
   \end{align*}
   both of which are finite since \(f\in L^1(\bbR^n)\) and
-  \(\lim_{n\to\infty}\int_{\bbR^n}f_n\diff x<\infty\).
+  \(\lim_{n\to\infty}\int_{\bbR^n}f_n\diff x<\infty\). Thus,
+  \[
+    \limsup_{n\to\infty}\int_E f_n\diff x\leq
+    \int_E f\diff x\leq
+    \liminf_{n\to\infty}\int_E f_n\diff x\leq.
+  \]
+  Therefore,
+  \[
+    \int_E f_n\diff x\too\int_E f\diff x
+  \]
+  as \(n\to\infty\).
 \end{solution}
 
 \begin{problem}
