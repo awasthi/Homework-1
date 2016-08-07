@@ -140,20 +140,14 @@
   \]
 \end{problem}
 \begin{solution}
-  \(\impliedby\) Suppose that
+  \(\implies\) Suppose that \(f\) is integrable on \(E\). Let
   \[
-    \sum_{n=1}^\infty m(E_n)<\infty,
+    E_n=\bigl\{\,x\in E:f(x)\geq k\,\bigr\}.
   \]
-  where \(E_n=\bigl\{\,x\in E:f(x)\geq n\,\bigr\}\). Then, by the
-  definition of the Lebesgue measure,
+  Define the sequence of measurable sets \(\{E'_n:n\in\bbN\}\) where
   \[
-    \sum_{n=1}^\infty m(E_n)=\sum_{n=1}^\infty\int_\bbR
-    \indicate_{E_n}(x)\diff x=\int_\bbR
-    \left[\sum_{n=1}^\infty\chi_{E_n}(x)\diff x\right].
+    E_n'=\bigl\{\,x\in E:n+1>f(x)\geq n\,\bigr\}.
   \]
-  Thus,
-
-  \(\implies\) On the other hand
 \end{solution}
 
 \begin{problem}
