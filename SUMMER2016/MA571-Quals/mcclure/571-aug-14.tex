@@ -150,21 +150,20 @@
   % path \(p\colon I\to Y\) from \(p(0)=y\) to \(p(1)\in f(X)\). Let
   % \(y\in Y\setminus f(X)\).
   First we prove the following important result:
-  \begin{lemma}
-    \label{lem:path-connected-image}
+  \begin{lemma*}
+    % \label{lem:path-connected-image}
     Path-connectedness is a topological property, i.e., if \(X\) is
     path-connected and \(f\colon X\to Y\) is a continuous map then,
     \(f(X)\) is path connected.
-  \end{lemma}
-  \begin{solution}
-    \renewcommand\qedsymbol{\(\clubsuit\)} Since \(X\) is path-connected,
-    for any pair of points \(x,x'\in X\) there exists a continuous map
-    \(p\colon [0,1]\to X\) such that \(p(0)=x\) and \(p(1)=x'\). Since
-    composition of continuous maps is continuous,
-    \(f\circ p\colon[0,1]\to Y\) is a path from \(f(x)\) to
+  \end{lemma*}
+  \begin{subproof}
+    Since \(X\) is path-connected, for any pair of points \(x,x'\in X\)
+    there exists a continuous map \(p\colon [0,1]\to X\) such that
+    \(p(0)=x\) and \(p(1)=x'\). Since composition of continuous maps is
+    continuous, \(f\circ p\colon[0,1]\to Y\) is a path from \(f(x)\) to
     \(f(x')\). Since this property holds for any \(y\in f(X)\), it follows
     that \(f(X)\) is path-connected.
-  \end{solution}
+  \end{subproof}
   Now, suppose that \(X\) is homotopy-equivalent to \(Y\). Then there
   exists continuous maps \(f\colon X\to Y\) and \(g\colon Y\to X\) such
   that \(g\circ f\simeq\id_X\) and \(f\circ g\simeq\id_Y\). Now, since
@@ -240,21 +239,20 @@
   \(V_\alpha\supset C\) is homeomorphic to \(U\) by the restriction
   \(\left.p\right|_{V_\alpha}\), \(p(C)\) is a connected component of \(U\)
   as the following lemma shows
-  \begin{lemma}
+  \begin{lemma*}
     Suppose \(C\) is a connected component of \(X\) and \(h\colon X\to Y\)
     is a homeomorphism. Then \(h(C)\) is a connected component of \(Y\).
-  \end{lemma}
-  \begin{solution}[Solution of lemma]
-    \renewcommand\qedsymbol{\(\clubsuit\)} Let \(C\) be a connected
-    component of \(X\). By theorem 23.5, \(h(C)\) is a connected subset of
-    \(Y\), moreover, is open. By Theorem 25.1, \(h(C)\) is contained in a
-    connected component of \(Y\), say \(D\). Hence, we must show that
-    \(D\subseteq h(C)\). Now, since \(h\) is a homeomorphism, \(h^{-1}(D)\)
-    is a connected subset of \(X\), by Theorem 23.5, so is contained in
-    only one component of \(X\). But \(h^{-1}(D)\cap C\neq\emptyset\) so
-    \(h^{-1}(D)\subseteq C\). Thus, since \(h\) is a set-bijection,
-    \(D\subseteq h(C)\).
-  \end{solution}
+  \end{lemma*}
+  \begin{subproof}[Solution of lemma]
+    Let \(C\) be a connected component of \(X\). By theorem 23.5, \(h(C)\)
+    is a connected subset of \(Y\), moreover, is open. By Theorem 25.1,
+    \(h(C)\) is contained in a connected component of \(Y\), say
+    \(D\). Hence, we must show that \(D\subseteq h(C)\). Now, since \(h\)
+    is a homeomorphism, \(h^{-1}(D)\) is a connected subset of \(X\), by
+    Theorem 23.5, so is contained in only one component of \(X\). But
+    \(h^{-1}(D)\cap C\neq\emptyset\) so \(h^{-1}(D)\subseteq C\). Thus,
+    since \(h\) is a set-bijection, \(D\subseteq h(C)\).
+  \end{subproof}
   so by Theorem 25.3, \(p(C)\) is open in \(B\) since \(B\) is locally
   connected. Thus, the restriction \(\left.p\right|_{C}\) is a
   homeomorphism onto its image \(W= p(C)\), by Lemma A, which is a
