@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Arch Linux)
+This is BibTeX, Version 0.99d (TeX Live 2016/Arch Linux)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: MA544-Quals.aux
 A level-1 auxiliary file: danielli/544-hw-1.aux
@@ -21,13 +21,17 @@ A level-1 auxiliary file: danielli/544-exam-2.aux
 A level-1 auxiliary file: danielli/544-final-prep.aux
 A level-1 auxiliary file: danielli/544-final-2010.aux
 A level-1 auxiliary file: danielli/544-final.aux
-A level-1 auxiliary file: danielli/544-jan-12.aux
 A level-1 auxiliary file: danielli/544-aug-11.aux
+A level-1 auxiliary file: danielli/544-jan-12.aux
+A level-1 auxiliary file: banuelos/544-aug-00.aux
+A level-1 auxiliary file: banuelos/544-jan-02.aux
+A level-1 auxiliary file: banuelos/544-jan-07.aux
+A level-1 auxiliary file: banuelos/544-jan-13.aux
 The style file: acm.bst
 Database file #1: anal-bib.bib
 You've used 4 entries,
             2253 wiz_defined-function locations,
-            573 strings with 4909 characters,
+            577 strings with 5001 characters,
 and the built_in function-call counts, 1018 in all, are:
 = -- 98
 > -- 38

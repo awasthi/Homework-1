@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Arch Linux)
+This is BibTeX, Version 0.99d (TeX Live 2016/Arch Linux)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: MA553-Quals.aux
 A level-1 auxiliary file: ulrich/553-hw-1.aux
@@ -15,11 +15,13 @@ A level-1 auxiliary file: ulrich/553-hw-11.aux
 A level-1 auxiliary file: ulrich/553-hw-12.aux
 A level-1 auxiliary file: ulrich/553-hw-13.aux
 A level-1 auxiliary file: ulrich/553-jan-02.aux
+A level-1 auxiliary file: ulrich/553-aug-06.aux
+A level-1 auxiliary file: ulrich/553-aug-09.aux
 The style file: acm.bst
 Database file #1: alg-bib.bib
 You've used 5 entries,
             2253 wiz_defined-function locations,
-            569 strings with 4525 characters,
+            571 strings with 4567 characters,
 and the built_in function-call counts, 1152 in all, are:
 = -- 102
 > -- 40
