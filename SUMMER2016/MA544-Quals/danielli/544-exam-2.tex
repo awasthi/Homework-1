@@ -57,11 +57,11 @@
 \begin{problem}
   Let \(\{f_k\}\) be a family in \(L^1(E)\) satisfying the following
   property: For any \(\varepsilon>0\) there exits \(\delta>0\) such that
-  \(|A|<\delta\) implies
+  \(m(A)<\delta\) implies
   \[
     \int_A |f_k|<\varepsilon
   \]
-  for all \(k\in\bbN\). Assume \(|E|<\infty\), and \(f_k(x)\to f(x)\) as
+  for all \(k\in\bbN\). Assume \(m(E)<\infty\), and \(f_k(x)\to f(x)\) as
   \(k\to\infty\) for a.e.\@ \(x\in E\). Show that
   \[
     \lim_{k\to\infty}\int_E f_k=\int_E f.
@@ -69,13 +69,27 @@
   (\emph{Hint:} Use Egorov's theorem.)
 \end{problem}
 \begin{solution}
-  By
+  Let \(\varepsilon>0\) be given. Then, there exists \(\delta>0\) such that
+  \(m(A)<\delta\) implies
+  \[
+    \int_A|f_n|<\frac{\varepsilon}{2^n}.
+  \]
+  Then by Egorov's theorem, there exists a closed subset \(F\) of \(E\)
+  such that \(m(E\setminus F)<\delta\) and \(f_n\to f\) uniformly on
+  \(F\). Thus,
+  \begin{align*}
+    \lim_{n\to\infty}\int_E f_n\diff x
+    &=\lim_{n\to\infty}
+      \left[\int_F f_n\diff x
+      +\int_{E\setminus F}f_n\right]\\
+    &=
+  \end{align*}
 \end{solution}
 
 \begin{problem}
-  Let \(I=[0,1]\), \(f\in L(I)\), and define
+  Let \(I=[0,1]\), \(f\in L^1(I)\), and define
   \(g(x)=\int_x^1 t^{-1}f(t) \diff t\) for \(x\in I\). Prove that
-  \(g\in L(I)\) and
+  \(g\in L^1(I)\) and
   \[
     \int_I g=\int_I f.
   \]
