@@ -145,8 +145,9 @@ main=english]{babel}
                 cal=pxtx,%
                 scr=boondoxo]{mathalfa}%
 
+% don't use osf for equation labels or enumerate labels
 \renewcommand{\theequation}
-             {\fontfamily{ntxtlf}\selectfont{\arabic{equation}}} % lining numbers
+    {\fontfamily{ntxtlf}\selectfont{\arabic{equation}}} % lining numbers
 \setenumerate{label=(\fontfamily{ntxtlf}\selectfont{\arabic*})}
 
 %% Use Tempora for Greek and Russian
