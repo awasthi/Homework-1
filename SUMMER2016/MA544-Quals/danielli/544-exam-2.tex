@@ -15,6 +15,13 @@
   \[
     f_n(x)=f(x)\indicate_{B(\mathbf{0},n)}.
   \]
+  Then \(f_n\uparrow f\) so by the monotone convergence theorem, given
+  \(\varepsilon>0\) there exists an index \(N\in\bbN\) such that
+  \[
+    \int_{\bbR^n}f(x)\diff x-\int_{\bbR^n}f_n(x)\diff
+    x=\int\limsclap{\bbR^n\setminus B(\mathbf{0},n)} f(x)\diff x<\varepsilon
+  \]
+  whenever \(n\geq N\). Set \(B=B(\mathbf{0},N+1)\).
 \end{solution}
 
 \begin{problem}
@@ -26,6 +33,8 @@
   \]
 \end{problem}
 \begin{solution}
+  Suppose that \(\{E_n:n\in\bbN\}\) is a sequence of pairwise disjoint
+  measurable subsets of \(E\) such that \(\bigcup_{n=1}^\infty E_n=E\).
 \end{solution}
 
 \begin{problem}
