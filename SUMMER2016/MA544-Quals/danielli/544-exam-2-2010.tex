@@ -84,7 +84,7 @@
   It is easy to see that \(F\) is bounded as \(|{\cos(2\pi x\xi)}|<1\) for
   all \(\chi\in\bbR\) so
   \[
-    |F(\xi)|= \left| \int_\bbR f(x)\cos(2\pi x\xi)\diff x \right \leq
+    |F(\xi)|= \left| \int_\bbR f(x)\cos(2\pi x\xi)\diff x \right| \leq
     \left|\int_\bbR f(x)\diff x\right|\leq \|f\|_1.
   \]
 
@@ -135,7 +135,7 @@
   Making a smooth change of variables via polar coordinates, we have
   \[
     \left[\int_{\bbR} \rme^{-x^2}\diff x\right]^2
-    =\int_0^{2\pi}\int_0^\infty\rme^{-r^2}r\diff r\diff\theta=\pi.
+    =\int_0^{2\pi}\int_0^\infty\rme^{-r^2}r\diff r\rmd\theta=\pi.
   \]
   Thus,
   \[
@@ -144,14 +144,15 @@
 
   Now, suppose
   \[
-    \int_{\bbR^k}\rme^{\cramped{-{x_1}^2-\dotsb-{x_k}^2}}\diff
-    x_1\dotsm\rmd x_k=\sqrt[k]{\pi}
+    \int_{\bbR^m}\rme^{\cramped{-{x_1}^2-\dotsb-{x_m}^2}}\diff
+    x_1\dotsm\rmd x_k=\sqrt[m]{\pi}
   \]
-  for all \(k\leq n-1\). Then, for the case \(n\), we have
+  for all \(m\leq n-1\). Then, for the case \(n\), we have
   \begin{align*}
     \int_{\bbR^n}\rme^{\cramped{-{x_1}^2\dotsb-{x_{n-1}}^2-{x_n}^2}}\diff x
-    &=\int_{\bbR}\rme^{\cramped{-{x_1}^2\dotsb-{x_{n-1}}^2}}\rme^{\cramped{-{x_n}^2}}\diff
-      x_1\dotsm\rmd x_{n-1}\rmd x_n
+    &=\int_\bbR\rme^{\cramped{-{x_1}^2\dotsb-{x_{n-1}}^2}}\rme^{\cramped{-{x_n}^2}}\diff
+      x_1\dotsm\rmd x_{n-1}\rmd x_n\\
+    &=\int_\bbR
   \end{align*}
 \end{solution}
 

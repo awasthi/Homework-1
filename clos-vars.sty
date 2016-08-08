@@ -113,7 +113,7 @@ main=english]{babel}
 
 %% Must be loaded after Babel
 \RequirePackage{cleveref}%
-\RequirePackage[final,babel]{microtype}%
+\RequirePackage[babel=true,auto]{microtype}%
 \RequirePackage{enumitem}%
 \RequirePackage{listings}%
 
@@ -129,13 +129,15 @@ main=english]{babel}
 %%% Math packages
 %% Times clones
 \if@times % TeX Gyre for text and mathematics
-\RequirePackage[largesc,theoremfont]{newtxtext}% roman
+\pdfmapfile{+newtx.map}
+\RequirePackage[osf,largesc,theoremfont]{newtxtext}% roman
 \RequirePackage[scale=.95,type1]{cabin}% sans
 \RequirePackage[varqu,varl,scaled=.94]{zi4}% mono
 
 \RequirePackage[varg,%
                 bigdelims,%
                 % cmintegrals,%
+                smallerops,
                 nosymbolsc]{newtxmath}%
 \RequirePackage[bb=boondox,%
                 frak=pxtx,%
@@ -143,7 +145,6 @@ main=english]{babel}
                 cal=pxtx,%
                 scr=boondoxo]{mathalfa}%
 
-\useosf % oldstyle figs
 \renewcommand{\theequation}
              {\fontfamily{ntxtlf}\selectfont{\arabic{equation}}} % lining numbers
 \setenumerate{label=(\fontfamily{ntxtlf}\selectfont{\arabic*})}
@@ -165,6 +166,7 @@ main=english]{babel}
 \else
 \if@libertine %% Use Libertine (a beautiful free font)
 \pdfmapfile{+libertinelgc.map}
+\pdfmapfile{+newtx.map}
 \RequirePackage[sb]{libertine}
 \RequirePackage{libertinextras}
 \RequirePackage[scale=.95,type1]{cabin} % sans
@@ -172,6 +174,7 @@ main=english]{babel}
 \RequirePackage[libertine,%
                 libaltvw,%
                 bigdelims,%
+                smallerops,
                 % cmintegrals,%
                 % cmbraces%
                 ]{newtxmath} % Shitty math fonts
@@ -190,11 +193,10 @@ main=english]{babel}
 \substitutefont{LGR}{\rmdefault}{LinuxLibertineT}%
 \substitutefont{T2A}{\rmdefault}{LinuxLibertineT}%
 
-
 %% Other Libertine specific math settings
-\DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
-\DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
-\DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
+% \DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
+% \DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
+% \DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
 
 \newcommand{\indicate}{\mathbb{1}}
 \newcommand\defeq{\coloneqq}
