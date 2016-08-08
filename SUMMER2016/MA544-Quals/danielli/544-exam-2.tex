@@ -25,7 +25,7 @@
 \end{solution}
 
 \begin{problem}
-  Let \(f\in L(E)\), and let \(\{E_j\}\) be a countable collection of
+  Let \(f\in L^1(E)\), and let \(\{E_j\}\) be a countable collection of
   pairwise disjoint measurable subsets of \(E\), such that
   \(E=\bigcup_{j=1}^\infty E_j\). Prove that
   \[
@@ -42,14 +42,20 @@
     f_n(x)=\sum_{k=1}^n f(x)\chi_{E_k}(x).
   \]
   Then \(f_n\uparrow f\) so by the monotone convergence theorem, we have
-  \[
-    \lim_{n=1}^\infty \int_E f_n(x)\diff x=\int_E f(x)\diff x.
-  \]
-  However,
+  \begin{align*}
+    \lim_{n\to\infty}\int_E f_n(x)\diff x
+    &=\lim_{n\to\infty}\left[\int_E\sum_{n=1}^\infty f_n(x)\diff x\right]\\
+    &=\lim_{n\to\infty}\left[\sum_{k=1}^n\int_E f(x)\chi_{E_n}(x)\diff x\right]\\
+    &=\lim_{n\to\infty}\left[\sum_{k=1}^n\int_{E_n} f(x)\diff x\right]\\
+    &=\sum_{n=1}^\infty\int_{E_n}f(x)\diff x\\
+    &=\int_E \lim_{n\to\infty}f_n(x)\diff x\\
+    &=\int_E f(x)\diff x,
+  \end{align*}
+  as desired.
 \end{solution}
 
 \begin{problem}
-  Let \(\{f_k\}\) be a family in \(L(E)\) satisfying the following
+  Let \(\{f_k\}\) be a family in \(L^1(E)\) satisfying the following
   property: For any \(\varepsilon>0\) there exits \(\delta>0\) such that
   \(|A|<\delta\) implies
   \[
@@ -63,6 +69,7 @@
   (\emph{Hint:} Use Egorov's theorem.)
 \end{problem}
 \begin{solution}
+  By
 \end{solution}
 
 \begin{problem}
