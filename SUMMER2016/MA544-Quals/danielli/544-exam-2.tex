@@ -72,7 +72,7 @@
   Let \(\varepsilon>0\) be given. Then, there exists \(\delta>0\) such that
   \(m(A)<\delta\) implies
   \[
-    \int_A|f_n|<\frac{\varepsilon}{2^n}.
+    \int_A|f_n|<\left(1+2^{-n}\right)\varepsilon.
   \]
   Then by Egorov's theorem, there exists a closed subset \(F\) of \(E\)
   such that \(m(E\setminus F)<\delta\) and \(f_n\to f\) uniformly on
@@ -82,8 +82,15 @@
     &=\lim_{n\to\infty}
       \left[\int_F f_n\diff x
       +\int_{E\setminus F}f_n\right]\\
-    &=
+    &=\lim_{n\to\infty}\int_F f_n\diff x+
+      \lim_{n\to\infty}\int_{E\setminus F}f_n\diff x\\
+    &\leq\int_F f\diff x+\varepsilon.
   \end{align*}
+  Now, note that by Fatou's lemma
+  \[
+    \int_F\liminf_{n\to\infty}f_n(x)\diff x
+    \leq \liminf_{n\to\infty}\int_F f_n\diff x.
+  \]
 \end{solution}
 
 \begin{problem}
