@@ -155,7 +155,7 @@ main=english]{babel}
 \substitutefont{T2A}{\rmdefault}{Tempora}%
 
 %% Times specific commands
-\newcommand{\indicate}{\mathbb{1}}
+\newcommand{\indicate}{\chi}
 \newcommand\defeq{\coloneqq}
 \let\setminus\smallsetminus
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}}
@@ -888,9 +888,9 @@ main=english]{babel}
 \pointsinmargin
 \CorrectChoiceEmphasis{\color{Red!85!black}\bfseries}
 \if@times
-\qformat{Problem {\fontfamily{ntxtlf}\selectfont\thequestion}: \hfill (\thepoints)}
+\qformat{Problem {\fontfamily{ntxtlf}\selectfont\thequestion}\dotfill(\thepoints)}
 \else
-\qformat{Problem \thequestion:\hfill (\thepoints)}
+\qformat{Problem \thequestion\dotfill(\thepoints)}
 \fi}}
 {}
 \makeatother
