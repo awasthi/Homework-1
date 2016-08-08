@@ -9,19 +9,37 @@
   \(N\subseteq H\).
 \end{problem}
 \begin{solution}
+  Suppose \(N<G\) with \(n=[G:N]<\infty\). Let \(G\) act on \(H\) by
+  translation. This action gives a homomorphism \(\varphi\colon G\to
+  S_n\). Then, by the first isomorphism theorem
+  \([G:{\Ker\varphi}]\mid \card S_n=n!\). Thus, \(\Ker\varphi\) is a normal
+  subgroup of \(G\) with finite index.
 \end{solution}
 
 \begin{problem}
   Show that every group of order \(992\) (\(=32\cdot 31)\) is solvable.
 \end{problem}
 \begin{solution}
+  Suppose \(\card G=992=32\cdot 31=2^5\cdot 31\). By Sylow's theorem, \(G\)
+  has \(1\) or \(32\) \(31\)-Sylow subgroups. In the former case, this
+  implies that there is a unique \(31\)-Sylow subgroup \(P\) and therefore
+  \(P\trileq G\). Moreover, since \(\card(G/P)=2^3\), \(G/P\) is solvable
+  since it is a \(p\)-group. Thus, both \(G/P\) and \(P\) are solvable
+  (the latter since it is Abelian), which implies that \(G\) is solvable.
+
+  On the other hand, if \(G\) contains \(32\) \(31\)-Sylow subgroups, then
+  there are exactly \(32\cdot 31-32\cdot 30=32\) elements not of order
+  \(31\). This implies that there is exactly one \(2\)-Sylow subgroup \(Q\)
+  in \(G\). Again, since \(\card G/Q=31\), \(G/Q\) is solvable and \(Q\) is
+  solvable since it is a \(p\)-group. Thus, \(G\) is solvable.
+
+  In every case, \(G\) we see that is solvable.
 \end{solution}
 
 \begin{problem}
   Let \(G\) be a group of order \(56\) with a normal \(2\)-Sylow subgroup
   \(Q\), and let \(P\) be a \(7\)-Sylow subgroup of \(G\). Show that either
   \(G\cong P\times Q\) or \(Q\cong\bbZ/(2)\times\bbZ/(2)\times\bbZ/(2)\).
-
   [\emph{Hint}: \(P\) acts on \(Q\setminus\{e\}\) via conjugation. Show
   that this action is either trivial or transitive.]
 \end{problem}
