@@ -33,8 +33,19 @@
   \]
 \end{problem}
 \begin{solution}
-  Suppose that \(\{E_n:n\in\bbN\}\) is a sequence of pairwise disjoint
-  measurable subsets of \(E\) such that \(\bigcup_{n=1}^\infty E_n=E\).
+  Since \(f\in L^1(E)\), both \(\int_E f^+\diff x\) and
+  \(int_E f^-\diff x\) are finite. Because we can make this decomposition,
+  it suffices to prove the result for \(f\geq 0\). Using the countable
+  sequence of measurable sets \(E_n\) define a sequence of measurable
+  functions \(\{f_n:n\in\bbN\}\) by
+  \[
+    f_n(x)=\sum_{k=1}^n f(x)\chi_{E_k}(x).
+  \]
+  Then \(f_n\uparrow f\) so by the monotone convergence theorem, we have
+  \[
+    \lim_{n=1}^\infty \int_E f_n(x)\diff x=\int_E f(x)\diff x.
+  \]
+  However,
 \end{solution}
 
 \begin{problem}
