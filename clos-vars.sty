@@ -40,6 +40,7 @@
 
 %%% Othe useful packages
 \@ifpackageloaded{hyperref}{}{\RequirePackage{hyperref}}
+\@ifpackageloaded{natbib}{}{\RequirePackage{natbib}}
 \@ifpackageloaded{xcolor}
                  {\PassOptionsToPackage{dvipsnames}{xcolor}}
                  {\RequirePackage[dvipsnames]{xcolor}}
@@ -148,6 +149,8 @@ main=english]{babel}
 % don't use osf for equation labels or enumerate labels
 \renewcommand{\theequation}
     {\fontfamily{ntxtlf}\selectfont{\arabic{equation}}} % lining numbers
+\renewcommand{\bibnumfmt}[1]{[\fontfamily{ntxtlf}\selectfont#1]}
+\renewcommand{\citenumfont}[1]{{\fontfamily{ntxtlf}\selectfont#1}}
 \setenumerate{label=(\fontfamily{ntxtlf}\selectfont{\arabic*})}
 
 %% Use Tempora for Greek and Russian
