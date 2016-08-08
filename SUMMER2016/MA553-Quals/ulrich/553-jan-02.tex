@@ -80,16 +80,25 @@
 \begin{solution}
   For part (a), \(\implies\) seeking a contradiction, suppose that \(1+ab\)
   is not a unit. By Krull's theorem, there exists a maximal ideal
-  \(\frakm\) containing \(1+ab\). However, since \(a\in\frakm'\) for every
-  maximal ideal \(\frakm'\) in \(R\), \(a\in\frakm\). This implies that
+  \(\frakm\) containing \(1+ab\). However, since \(a\in\frakm\) for every
+  maximal ideal \(\frakm\) in \(R\), \(a\in\frakm\). This implies that
   \(ab\in\frakm\) so \(1+ab-ab=1\in\frakm\). This contradicts the
   assumption that \(\frakm\) is a maximal ideal. Thus, \(1+ab\) must have
   been a unit.
 
-  \(\impliedby\) On the other hand, if \(1+ab\) is a unit for every \(b\in
-  R\).
+  \(\impliedby\) On the other hand, suppose \(1+ab\) is a unit for every
+  \(b\in R\). If \(a\notin\Rad R\), then \(a\notin\frakm\) for some maximal
+  ideal \(\frakm\). By maximality, \((a)+\frakm=R\), i.e., there exists
+  \(x\in R\) and \(m\in\frakm\) such that \(ax+m=1\). Thus,
+  \(m=1-ax=1+a(-x)\), but \(1+ab\) is a unit for every \(b\in R\). This
+  contradicts the fact that \(\frakm\) is a maximal ideal.
 
-  For part (b)
+  For part (b), by part (a), \(f\in\Rad(R[X])\) if and only if
+  \(1+fg\) is a unit for every \(g\in R[X]\). Since the only units in
+  \(R[X]\) are in \(R\), this implies that \(1+fg\in R\) for every \(g\in
+  R[X]\). This is true if and only if \(f=0\) for otherwise \(1+fX\) is a
+  polynomial contained in \(R\), but \(R\cap(x)=\{0\}\). Thus, \(\Rad
+  R=\{0\}\).
 \end{solution}
 
 \begin{problem}
@@ -103,6 +112,7 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
+  For part (a), pick \(f\in\frakp\) of minimal degree. By Gauß's lemma
 \end{solution}
 
 \begin{problem}
