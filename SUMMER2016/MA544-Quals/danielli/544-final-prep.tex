@@ -54,8 +54,19 @@
     }\frac{1}{|r|^n}\int_{B_r}|f( t )-f( x )|\diff t =\lim_{r\to 0}A(r).
   \]
   by making the change of variables \(t=x-y\).
-  \\\\
-  (b)
+
+  For part (b), note that by part (a) there exists a constant \(C\) such
+  that
+  \[
+    A(r)\leq C
+  \]
+  for all \(r\in]0,1]\). If \(r\geq 1\),
+  \begin{align*}
+    A(r)
+    &\leq\int_{\bbR^n}\bigl|f(x-y)-f(x)\bigr|\diff x\\
+    &\leq 2\|f\|_1.
+  \end{align*}
+  Let \(M=C+2\|f\|_1\).
 \end{solution}
 
 \begin{problem}
@@ -110,6 +121,13 @@
   for all functions \(\varphi\) continuous on \([a,b]\).
 \end{problem}
 \begin{solution}
+  Since \(\varphi\) is continuous on \([a,b]\), by the extreme value
+  theorem, \(\varphi\) is bounded so its Riemann--Stieltjes integral with
+  respect to \(f\) exists, i.e.,
+  \[
+    \int_a^b \varphi\diff f<\infty.
+  \]
+  Now, by integration by parts, we have
 \end{solution}
 
 %%% Local Variables:
