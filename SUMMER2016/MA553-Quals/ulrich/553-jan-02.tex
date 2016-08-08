@@ -39,13 +39,32 @@
 \begin{problem}
   Let \(G\) be a group of order \(56\) with a normal \(2\)-Sylow subgroup
   \(Q\), and let \(P\) be a \(7\)-Sylow subgroup of \(G\). Show that either
-  \(G\cong P\times Q\) or \(Q\cong\bbZ/(2)\times\bbZ/(2)\times\bbZ/(2)\).
+  \(G\simeq P\times Q\) or \(Q\simeq\bbZ/(2)\times\bbZ/(2)\times\bbZ/(2)\).
   [\emph{Hint}: \(P\) acts on \(Q\setminus\{e\}\) via conjugation. Show
   that this action is either trivial or transitive.]
 \end{problem}
 \begin{solution}
   Suppose \(G\) is a group of order \(56=2^3\cdot 7\) with a normal
-  \(2\)-Sylow subgroup \(Q\) and let \(P\in\Syl_7(G)\).
+  \(2\)-Sylow subgroup \(Q\) and let \(P\in\Syl_7(G)\). Taking the hint,
+  let \(P\) act on \(Q\) by conjugation. This action gives a homomorphism
+  \(\varphi\colon P\to \Aut Q\). The kernel of this action is exactly the
+  centralizer \(Q\) in \(P\), \(\Ker\varphi=\rmC_P(Q)\). Considering the
+  Cardinality of \(P\), either \(\Ker\varphi=P\) or
+  \(\Ker\varphi=\{e\}\). In the former case, this implies that \(pq=qp\)
+  for every \(p\in P\), \(q\in Q\). In particular, \(Q\) is in the
+  normalizer of \(P\) and since \(\card P\mid\rmN_G(P)\), we must have
+  \(\rmN_G(P)=G\). Thus, since \(P,Q\trileq G\), \(P\cap Q=\{e\}\) and
+  \(PQ=G\), we have \(G\simeq P\times Q\).
+
+  On the other hand, if \(\Ker\varphi=\{e\}\) then \(P\) acts transitively
+  on \(Q\). Since conjugation is an order preserving action, and \(Q\)
+  contains at least one element of order \(2\) (by Cauchy's theorem), every
+  element \(q\in Q\) is of order \(2\). Now, if \(a,b\in Q\) are distinct
+  nontrivial elements, \(a=a^{-1},b=b^{-1}\) and \((ab)^2=e\) implies
+  \(ab=b^{-1}a^{-1}=ba\). Thus, \(Q\) must be Abelian. It follows that
+  \(Q\simeq Z_2\times Z_2\times Z_2\) (since this is the only group of
+  order \(8\), up to isomorphism, such that every nontrivial element has
+  order \(2\)).
 \end{solution}
 
 \begin{problem}
@@ -59,6 +78,18 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
+  For part (a), \(\implies\) seeking a contradiction, suppose that \(1+ab\)
+  is not a unit. By Krull's theorem, there exists a maximal ideal
+  \(\frakm\) containing \(1+ab\). However, since \(a\in\frakm'\) for every
+  maximal ideal \(\frakm'\) in \(R\), \(a\in\frakm\). This implies that
+  \(ab\in\frakm\) so \(1+ab-ab=1\in\frakm\). This contradicts the
+  assumption that \(\frakm\) is a maximal ideal. Thus, \(1+ab\) must have
+  been a unit.
+
+  \(\impliedby\) On the other hand, if \(1+ab\) is a unit for every \(b\in
+  R\).
+
+  For part (b)
 \end{solution}
 
 \begin{problem}
