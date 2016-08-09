@@ -149,11 +149,12 @@ main=english]{babel}
                 scr=boondoxo]{mathalfa}%
 
 % don't use osf for equation labels or enumerate labels
+\newcommand\liningnums[1]{\fontfamily{ntxtlf}\selectfont{#1}}
 \renewcommand{\theequation}
-    {\fontfamily{ntxtlf}\selectfont{\arabic{equation}}} % lining numbers
-\renewcommand{\bibnumfmt}[1]{[\fontfamily{ntxtlf}\selectfont#1]}
-\renewcommand{\citenumfont}[1]{{\fontfamily{ntxtlf}\selectfont#1}}
-\setenumerate{label=(\fontfamily{ntxtlf}\selectfont{\arabic*})}
+    {\liningnums{\arabic{equation}}} % lining numbers
+\renewcommand{\bibnumfmt}[1]{[\liningnums{#1}]}
+\renewcommand{\citenumfont}[1]{{\liningnums{#1}}}
+\setenumerate{label=(\liningnums{\arabic*})}
 
 %% Use Tempora for Greek and Russian
 \substitutefont{LGR}{\rmdefault}{Tempora}%
@@ -922,7 +923,7 @@ main=english]{babel}
 \pointsinmargin
 \CorrectChoiceEmphasis{\color{Red!85!black}\bfseries}
 \if@times
-\qformat{Problem {\fontfamily{ntxtlf}\selectfont\thequestion}\dotfill(\thepoints)}
+\qformat{Problem \liningnums{\thequestion}\dotfill(\thepoints)}
 \else
 \qformat{Problem \thequestion\dotfill(\thepoints)}
 \fi}}

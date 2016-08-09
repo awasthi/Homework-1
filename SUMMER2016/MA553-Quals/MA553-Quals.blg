@@ -17,28 +17,28 @@ A level-1 auxiliary file: ulrich/553-hw-13.aux
 A level-1 auxiliary file: ulrich/553-jan-02.aux
 A level-1 auxiliary file: ulrich/553-aug-06.aux
 A level-1 auxiliary file: ulrich/553-aug-09.aux
-The style file: acm.bst
+The style file: plain.bst
 Database file #1: alg-bib.bib
 You've used 5 entries,
-            2253 wiz_defined-function locations,
-            571 strings with 4567 characters,
-and the built_in function-call counts, 1152 in all, are:
+            2118 wiz_defined-function locations,
+            541 strings with 4681 characters,
+and the built_in function-call counts, 1125 in all, are:
 = -- 102
-> -- 40
+> -- 41
 < -- 0
 + -- 17
 - -- 12
-* -- 53
+* -- 43
 := -- 200
 add.period$ -- 16
 call.type$ -- 5
 change.case$ -- 18
 chr.to.int$ -- 0
 cite$ -- 5
-duplicate$ -- 55
-empty$ -- 116
+duplicate$ -- 50
+empty$ -- 111
 format.name$ -- 12
-if$ -- 244
+if$ -- 240
 int.to.chr$ -- 0
 int.to.str$ -- 5
 missing$ -- 6
@@ -48,10 +48,10 @@ pop$ -- 41
 preamble$ -- 1
 purify$ -- 16
 quote$ -- 0
-skip$ -- 32
+skip$ -- 33
 stack$ -- 0
 substring$ -- 25
-swap$ -- 10
+swap$ -- 5
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
