@@ -126,10 +126,19 @@
   \(\gcd\{b_n,\dotsc,b_1,b_0\}=1\).
 
   For part (b), it is clear that \((g)\subseteq\frakp\). Let \(f\in\frakp\)
-  and \(F=\Frac R\). Then, by the Euclidean algorithm, \(f\) factors over
-  \(F[X]\) as \(f=pg+r\) for some \(p,r\in F[X]\) with \(\deg r<\deg g\) or
-  \(\deg r\). By Gauß's lemma, there exists \(a,b\in F\) such that
-  \(ap,ar\in R[X]\). Since
+  and \(F=\Frac R\). To see the reverse containment note that \(g\) is
+  irreducible in \(R\) since, by Gauß's lemma, if \(g=pq\) for some
+  nontrivial (\(\deg>0\)) polynomials \(p,q\in F[X]\), then there exists
+  \(a,b\in F[x]\) such that \(p'=ap,q'=bq\in R[X]\) and \(g=p'q'\). By
+  primality of \(\frakp\), this implies either \(p'\in\frakp\) or
+  \(q'\in\frakp\). But this is an impossibility since \(g\) is of minimal
+  degree in \(\frakp\). Now, let \(f\in\frakp\). Then, embedding \(R\) in
+  its field of fractions \(F\), by the Euclidean algorithm there exists
+  \(p,r\in F[X]\) with \(\deg r<\deg g\) or \(r=0\) such that
+  \(f=pg+r\). Clearing denominators if necessary, \(r\) (or some multiple
+  of it) is in \(\frakp\). Thus, \(r=0\) for otherwise, we contradict the
+  minimality of \(\deg g\) in \(\frakp\). Thus, \((g)=\frakp\) as was to be
+  shown.
 \end{solution}
 
 \begin{problem}
@@ -138,6 +147,15 @@
   has a root in \(k\). Show that \(k\) is algebraically closed.
 \end{problem}
 \begin{solution}
+  We show that every polynomial \(f\in k[X]\) has a root in \(k\). Let
+  \(K\) be the splitting field of \(f\). Then \([K:k]=2^\alpha m\) for some
+  odd positive integer \(m\). Let \(G=\Gal(K/k)\) and let \(P\) be a
+  \(2\)-Sylow subgroup of \(G\). By the Galois correspondence, \(K^P\) is a
+  subfield of \(K\) of index \([G:P]=m\) over \(k\). Since every extension
+  over a field of characteristic \(0\) is separable, by the primitive
+  element theorem, \(K^P=K(\alpha)\) where \(\alpha\) is the root of some
+  polynomial \(f\) of degree \(m\). But by assumption, \(f\) has a root in
+  \(\alpha\)
 \end{solution}
 
 \begin{problem}
@@ -155,5 +173,5 @@
 
 %%% Local Variables:
 %%% mode: latex
-%%% TeX-master: "../MA553-Quals"
+
 %%% End:
