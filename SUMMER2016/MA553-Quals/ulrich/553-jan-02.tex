@@ -157,13 +157,18 @@
   irreducible polynomial \(f\) of degree \(m\) (namely, its minimal
   polynomial). But by assumption, \(f\) has a root in \(\alpha\). Thus,
   \(k(\alpha)\subseteq k\). Thus, the degree of the splitting field must be
-  \([K:k]=2^\alpha\). Thus, \(\card G=2^\alpha\) so \(G\) is nilpotent.
+  \([K:k]=2^\alpha\). Thus, \(\card G=2^\alpha\) so \(G\) is has a normal
+  subgroup of order \(p^k\) for every \(0\leq k\leq\alpha\). Take \(N\) of
+  index \([G:N]=2\). Then, by the primitive element theorem
+  \(K^N=k(\beta)\) for \(\beta\) the root of polynomial \(g\) of degree
+  \(2\). Thus, \(k(\beta)\subseteq k\). Repeat this method recursively
+  until \(\alpha=0\). Thus, \(k\) is algebraically closed.
 \end{solution}
 
 \begin{problem}
   Let \(k\subseteq K\) be a finite Galois extension with Galois group
-  \(\Gal(K/k)\), let \(L\) be a field with \( k\subseteq L\subseteq K\),
-  and set \(H=\left\{\,\sigma\in\Gal(K/k):\sigma(L)=L\,\right\}\).
+  \(\Gal(K/k)\), let \(L\) be a field with \(k\subseteq L\subseteq K\), and
+  set \(H=\bigl\{\,\sigma\in\Gal(K/k):\sigma(L)=L\,\bigr\}\).
   \begin{enumerate}[label=(\alph*)]
   \item Show that \(H\) is the normalizer of \(\Gal(K/L)\) in
     \(\Gal(K/k)\).
@@ -171,6 +176,22 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
+  For part (a), let \(N\) denote the normalizer of \(\Gal(K/L)\) in
+  \(\Gal(K/k)\). Then for any \(\sigma\in H\), \(\tau\in\Gal(K/L)\) and
+  \(x\in L\) we have
+  \begin{align*}
+    \sigma^{-1}\circ\tau\sigma(x)
+    &=\sigma^{-1}(\tau(\sigma(x)))\\
+    &=\sigma^{-1}(\tau(x))\\
+    &=\sigma^{-1}(x)\\
+    &=x.
+  \end{align*}
+  Thus, \(\sigma\circ\tau\sigma^{-1}\) fixes \(L\) so
+  \(\sigma\circ\tau\sigma^{-1}\in\Gal(K/L)\) so \(H\subseteq N\). On the
+  other hand, if \(\sigma\in N\) then
+  \[
+    \sigma^{-1}\circ\tau\circ\sigma\in\Gal(K/L).
+  \]
 \end{solution}
 
 %%% Local Variables:
