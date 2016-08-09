@@ -182,16 +182,21 @@
   \begin{align*}
     \sigma^{-1}\circ\tau\sigma(x)
     &=\sigma^{-1}(\tau(\sigma(x)))\\
-    &=\sigma^{-1}(\tau(x))\\
-    &=\sigma^{-1}(x)\\
+    &=\sigma^{-1}(\sigma(x))\\
     &=x.
   \end{align*}
   Thus, \(\sigma\circ\tau\sigma^{-1}\) fixes \(L\) so
   \(\sigma\circ\tau\sigma^{-1}\in\Gal(K/L)\) so \(H\subseteq N\). On the
-  other hand, if \(\sigma\in N\) then
-  \[
-    \sigma^{-1}\circ\tau\circ\sigma\in\Gal(K/L).
-  \]
+  other hand, if \(\sigma\in N\) then we claim \(\sigma(L)=L\). Otherwise
+  there exists \(x\in L\) such that \(\sigma(x)\notin L\). Since \(K\) is
+  Galois over \(k\), it is Galois over \(L\). Thus, there is an element
+  \(\tau\in\Gal(K/L)\) such that \(\tau\circ\sigma(x)\neq\sigma(x)\). Thus,
+  \(\sigma^{-1}\circ\tau\sigma(x)\neq x\) so
+  \(\sigma^{-1}\circ\tau\sigma\notin\Gal(K/L)\). This is a
+  contradiction. Thus, we conclude that \(H=N\).
+
+  For part (b), we say that \(H/{\Gal(K/L)}\) is precisely the
+  automorphisms on \(L\) which do not leave \(L\).
 \end{solution}
 
 %%% Local Variables:
