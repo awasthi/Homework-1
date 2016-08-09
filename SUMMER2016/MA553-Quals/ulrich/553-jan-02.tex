@@ -112,7 +112,21 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  For part (a), pick \(f\in\frakp\) of minimal degree. By Gauß's lemma
+  For part (a), pick \(f\in\frakp\) of degree \(n\). Then
+  \[
+    f(X)=a_nX^n+\dotsb+a_1X+a_0.
+  \]
+  Since \(R\) is a u.f.d.\@, we can take the
+  \(a=\gcd\{a_n,\dotsc,a_1,a_0\}\) and \(b_i\in R\) such that
+  \(a_i=ab_i\). Then,
+  \[
+    g(X)=b_nX^n+\dotsb+b_1X+b_0
+  \]
+  is a primitive polynomial since, by construction
+  \(\gcd\{b_n,\dotsc,b_1,b_0\}=1\).
+
+  For part (b), it is clear that \((g)\subseteq\frakp\). Let
+  \(f\in\frakp\). By Gauß's lemma, \(f\) factors over \(({\Frac R})[X]\)
 \end{solution}
 
 \begin{problem}
