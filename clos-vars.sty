@@ -55,7 +55,6 @@
 \if@arabi%
 \RequirePackage[LHE,LAE,LFE,LGR,T2A,T1]{fontenc}%
 \RequirePackage[utf8]{inputenc}%
-\RequirePackage{substitutefont}%
 
 \def\spanishoptions{mexico}%
 \RequirePackage[%
@@ -157,8 +156,9 @@ main=english]{babel}
 \setenumerate{label=(\liningnums{\arabic*})}
 
 %% Use Tempora for Greek and Russian
-\substitutefont{LGR}{\rmdefault}{Tempora}%
-\substitutefont{T2A}{\rmdefault}{Tempora}%
+\substitutefont{LGR}{\rmdefault}{Tempora-TLF}%
+\substitutefont{T2A}{\rmdefault}{Tempora-TLF}%
+% \substitutefont{T1}{\rmdefault}{Tempora-TOsF}%
 
 %% Times specific commands
 \newcommand{\indicate}{\chi}
