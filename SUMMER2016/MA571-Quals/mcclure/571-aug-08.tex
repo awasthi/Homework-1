@@ -157,14 +157,18 @@
   continuous function. Let \(x_0\in X\) and let \(y_0=f(x_0)\). Find an
   example in which \(f\) is onto but
   \(f_*\colon\pi_1(X,x_0)\to\pi_1(Y,y_0)\) is not onto. Prove that your
-  example really has this property. You may use any fact from Munkres. Let
-  \(X\) and \(Y\) be topological spaces and let \(f\colon X\to Y\) be a
-  continuous function. Let \(x_0\in X\) and let \(y_0=f(x_0)\). Find an
-  example in which f is onto but \(f_*\colon\pi_1(X,x_0)\to\pi_1(Y,y_0)\)
-  is not onto. Prove that your example really has this property. You may
-  use any fact from Munkres.
+  example really has this property. You may use any fact from Munkres.
 \end{problem}
 \begin{solution}
+  Consider the punctured plane \(X=\bbR^2\setminus\{(0,0)\}\) and fix the
+  point \(x_0=(1,0)\). Then since \(X\simeq S^1\), the fundamental group of
+  \(X\) is isomorphic to \(\bbZ\). Let \(f\colon X\to X^+\) be the map
+  given by \(f(x,y)=(x^2,y)\) where
+  \(X^+=\bigl\{\,(x,y)\in X:x>0\,\bigr\}\). This map is onto because for
+  any \((x,y)\in X^+\), \(\bigl(\sqrt{x},y\bigr)\mapsto (x,y)\). However,
+  the set \(X^+\) is homeomorphic to the plane \(\bbR^2\) which is
+  path-connected and therefore has fundamental group isomorphic to
+  \(\{0\}\).
 \end{solution}
 
 \begin{problem}
@@ -173,9 +177,9 @@
   Munkres.
 \end{problem}
 \begin{solution}
-\end{%solution
+\end{solution}
 
-  %%% Local Variables:
-  %%% mode: latex
-  %%% TeX-master: "../MA571-Quals"
-  %%% End:
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA571-Quals"
+%%% End:
