@@ -60,18 +60,52 @@
   onto. Prove that there must be a point \(x\in X\) with \(f(x)=g(x)\).
 \end{problem}
 \begin{solution}
-  Suppose there does not exists such a point, i.e., \(f(x)\neq g(x)\) for
-  any \(x\in X\). Define the map \(h\colon X\to I\) by \(h(x)=f(x)-g(x)\)
+  Seeking a contradiction, suppose \(f(x)\neq g(x)\) for any \(x\in
+  X\). Consider the map \(h\colon X\to I\times I\) given by
+  \(h(x)=\bigl(f(x),g(x)\bigr)\). This map is continuous by the u.m.p.\@ of
+  the product topology since each projection
+  \(\pi_1\circ h=f,\pi_2\circ h=g\) is continuous. Since \(f(x)\neq g(x)\),
+  \(h(x)\subseteq I\times I\setminus\Delta\) for otherwise, there is a
+  point \(x\in X\) such that \(h(x)=\bigl(f(x),g(x)\bigr)\in\Delta\) which
+  implies \(f(x)=g(x)\). Now, we note that the set
+  \((I\times I)\setminus\Delta\) consists of two connected components,
+  \begin{align*}
+    C&=\bigl\{\,x\in X:f(x)>g(x)\,\bigr\}\\
+    D&=\bigl\{\,x\in X:f(x)<g(x)\,\bigr\}.
+  \end{align*}
+  Thus, since \(X\) is connected, \(h(X)\subseteq C\) or \(h(X)\subseteq
+  D\). In the former case, since \(f\) is onto, \(f(x)=0\) for some \(x\in
+  X\) so \(g(x)<0\), which contradicts the assumption that the image of
+  \(X\) under \(g\) lies in \(I\). Similarly, if \(h(X)\subseteq D\), then
+  since \(f\) is onto, \(f(x)=1\) for some \(x\in X\), which implies
+  \(g(x)>1\). Again, this is nonsense. Therefore, the image of \(X\) under
+  \(h\) must contain a point in the diagonal \(\Delta\), i.e.,
+  \(f(x)=g(x)\) for some \(x\in X\).
 \end{solution}
 
 \begin{problem}
-  Let X be the two-point set \(\{0,1\}\) with the discrete topology. Let
-  \(Y\) be a countable product of copies of \(X\); thus an element of \(Y\)
-  is a sequence of \(0\)s and \(1\)s.  Let \(A\) be the subset of \(Y\)
-  consisting of sequences with only a finite number of \(1\)s. Is A closed?
-  Prove or disprove.
+  Let \(X\) be the two-point set \(\{0,1\}\) with the discrete
+  topology. Let \(Y\) be a countable product of copies of \(X\); thus an
+  element of \(Y\) is a sequence of \(0\)s and \(1\)s.  Let \(A\) be the
+  subset of \(Y\) consisting of sequences with only a finite number of
+  \(1\)s. Is A closed?  Prove or disprove.
 \end{problem}
 \begin{solution}
+  We shall disprove this by showing that the sequence consisting of
+  infinitely many \(1\)s is in the closure of this set. It suffices to show
+  that for every basic neighborhood \(U\) of \(\mathbf{1}\),
+  \(U\cap A\neq\emptyset\). Let \(U\) be a basic open neighborhood of
+  \(\mathbf{1}\). Then \(U=\prod_{i\in\bbN} U_i\) where only finitely many
+  of then \(U_i\neq \{0,1\}\). Let \(U_N\) be the last such \(U_i\). Then,
+  for \(1\leq i\leq N\), \(U_i\supseteq\{1\}\) otherwise \(\mathbf{1}\) is
+  not in the set \(U\). Let \(\bfx\) be the sequence consisting of \(N\)
+  \(1\)s and \(0\)s for the remainder of the sequence. Then \(\bfx\in A\)
+  since it contains finitely many \(1\)s and \(\bfx\in U\) since the first
+  \(N\) terms of the sequence \(\bfx\) are in one of the \(U_i\) and the
+  last terms in the sequence are in \(\{0,1\}\). Since this can be done for
+  any basic neighborhood of \(\mathbf{1}\), it follows that \(\mathbf{1}\)
+  is contained in the closure of \(A\). In particular, \(A\) is not
+  closed.
 \end{solution}
 
 \begin{problem}
@@ -81,6 +115,7 @@
   \(X\) containing \(x_0\) with \(W\times Y\subseteq N\).
 \end{problem}
 \begin{solution}
+  Let
 \end{solution}
 
 \begin{problem}
