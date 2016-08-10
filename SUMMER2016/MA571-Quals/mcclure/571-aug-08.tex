@@ -123,21 +123,33 @@
   \[
     f(Y)=\{x_0\}\times Y
   \]
-  is compact. For each point \((x_0,y)\in \{x_0\}\times Y\), take an
-  neighborhood \(V_y\subseteq N\); we can do this since \(N\) is open. Then
-  the collection \(\{V_y:y\in Y\}\) forms an open cover of
-  \(\{x_0\}\times Y\) since the sets \(V_y\) are open and for any
-  \((x_0,y)\in Y\), \((x_0,y)\in V_y\) so
+  is compact. For each point \((x_0,y)\in \{x_0\}\times Y\), take an basic
+  neighborhood \(U_y\times V_y\subseteq N\); we can do this since \(N\) is
+  open. Then the collection \(\bigl\{U_y\times V_y:y\in Y\bigr\}\) forms an
+  open cover of \(\{x_0\}\times Y\) since the sets \(U_y\times V_y\) are
+  open and for any \((x_0,y)\in Y\), \((x_0,y)\in U_y\times V_y\) so
   \[
-    \bigcup_{y\in Y}V_y\supseteq \{x_0\}\times Y.
+    \bigcup_{y\in Y}U_y\times V_y\supseteq \{x_0\}\times Y.
   \]
   Now, since \(\{x_0\}\times Y\) is compact, there exists a finite
-  subcover, say \(\{V_1,\dotsc,V_N\}\) of \(\{V_y:y\in Y\}\) that covers
-  \(\{x_0\}\times Y\). Now, since the projection map is open
+  subcover, say \(\bigl\{U_1\times V_1,\dotsc,U_i\times V_i\bigr\}\) of
+  \(\bigl\{U_y\times V_y:y\in Y\bigr\}\) that covers \(\{x_0\}\times
+  Y\). Now, since the projection map is open
   \[
-    W=\pi_1\left(\bigcup\nolimits_{n=1}^NV_n\right)
+    W=\bigcap_{i=1}^N\pi_1(U_i\times V_i)=\bigcap_{i=1}^NU_i
   \]
-  is open in \(X\). We claim that \(W\times Y\subseteq N\).
+  is open in \(X\) and it contains \(x_0\) since each \(U_i\) does. We
+  claim that \(W\times Y\subseteq N\). In fact, \(W\times
+  Y\subseteq\bigcup_{i=1}^N U_i\times V_i\). Let \((x,y)\in W\) and
+  \((x_0,y)\in\{x_0\},Y\) containing the same \(y\) point. Then since
+  \(\bigl\{U_1\times V_1,\dotsc,U_i\times V_i\bigr\}\) covers
+  \(\{x_0\}\times Y\), some \(U_i\times V_i\) contains \((x_0,y)\) so
+  \(y\in V_i\). But, \(x\in U_i\) for all \(1\leq i\leq N\). Thus,
+  \((x,y)\in U_i\times V_i\). Thus,
+  \[
+    W\times Y\subseteq\bigcup_{i=1}^N U_i\times V_i\subseteq N,
+  \]
+  as desired.
 \end{solution}
 
 \begin{problem}
@@ -161,9 +173,9 @@
   Munkres.
 \end{problem}
 \begin{solution}
-\end{solution}
+\end{%solution
 
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: "../MA571-Quals"
-%%% End:
+  %%% Local Variables:
+  %%% mode: latex
+  %%% TeX-master: "../MA571-Quals"
+  %%% End:
