@@ -160,19 +160,10 @@
   example really has this property. You may use any fact from Munkres.
 \end{problem}
 \begin{solution}
-  % Consider the punctured plane \(X=\bbR^2\setminus\{(0,0)\}\) and fix the
-  % point \(x_0=(1,0)\). Then since \(X\simeq S^1\), the fundamental group of
-  % \(X\) is isomorphic to \(\bbZ\). Let \(f\colon X\to X^+\) be the map
-  % given by \(f(x,y)=(x^2,y)\) where
-  % \(X^+=\bigl\{\,(x,y)\in X:x>0\,\bigr\}\). This map is onto because for
-  % any \((x,y)\in X^+\), \(\bigl(\sqrt{x},y\bigr)\mapsto (x,y)\). However,
-  % the set \(X^+\) is homeomorphic to the plane \(\bbR^2\) (you may, for
-  % example, take the map \((x,y)\mapsto (\log x,y)\) this map is continuous
-  % with a continuous inverse \((x,y)\mapsto (\exp x,y)\)) which is
-  % path-connected and therefore has fundamental group isomorphic to
-  % \(\{0\}\).
-  Let \(X=B^2\), \(Y=S^1\) and \(x_0=(1,0)\) and consider the restriction
-  \(f\colon B^2\to S^1\).
+  Borrowing from complex analysis, let \(X=\bbC\), \(Y=\bbC\setminus\{0\}\)
+  and \(x=1\). Then the map \(f\colon X\to Y\) given by \(z\mapsto \exp z\)
+  is continuous and onto, but \(Y\simeq S^1\) so \(\pi_1(Y)\cong\bbZ\)
+  whereas \(\pi_1(X)\cong\{0\}\) since \(X\) is contractible.
 \end{solution}
 
 \begin{problem}
