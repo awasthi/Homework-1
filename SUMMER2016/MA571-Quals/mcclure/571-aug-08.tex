@@ -115,7 +115,24 @@
   \(X\) containing \(x_0\) with \(W\times Y\subseteq N\).
 \end{problem}
 \begin{solution}
-  Let
+  Let \(f\colon Y\to X\times Y\) be the map \(f(y)=(x_0,y)\) for a fixed
+  \(x_0\in X\). This map is continuous since the projections
+  \(\pi_1\circ f=x_0\) and \(\pi_2\circ f=\id_Y\) are continuous. Thus,
+  since the image of a compact space under a continuous map is compact, the
+  set
+  \[
+    f(Y)=\{x_0\}\times Y
+  \]
+  is compact. For each point \((x_0,y)\in \{x_0\}\times Y\), take an
+  neighborhood \(V_y\). Then the collection \(\{V_y:y\in Y\}\) forms an
+  open cover of \(\{x_0\}\times Y\) since the sets \(V_y\) are open and for
+  any \((x_0,y)\in Y\), \((x_0,y)\in V_y\) so
+  \[
+    \bigcup_{y\in Y}V_y\supseteq \{x_0\}\times Y.
+  \]
+  Now, since \(\{x_0\}\times Y\) is compact, there exists a finite
+  subcover, say \(\{V_1,\dotsc,V_N\}\) of \(\{V_y:y\in Y\}\) that covers
+  \(\{x_0\}\times Y\).
 \end{solution}
 
 \begin{problem}
