@@ -124,9 +124,10 @@
     f(Y)=\{x_0\}\times Y
   \]
   is compact. For each point \((x_0,y)\in \{x_0\}\times Y\), take an
-  neighborhood \(V_y\). Then the collection \(\{V_y:y\in Y\}\) forms an
-  open cover of \(\{x_0\}\times Y\) since the sets \(V_y\) are open and for
-  any \((x_0,y)\in Y\), \((x_0,y)\in V_y\) so
+  neighborhood \(V_y\subseteq N\); we can do this since \(N\) is open. Then
+  the collection \(\{V_y:y\in Y\}\) forms an open cover of
+  \(\{x_0\}\times Y\) since the sets \(V_y\) are open and for any
+  \((x_0,y)\in Y\), \((x_0,y)\in V_y\) so
   \[
     \bigcup_{y\in Y}V_y\supseteq \{x_0\}\times Y.
   \]
@@ -136,7 +137,7 @@
   \[
     W=\pi_1\left(\bigcup\nolimits_{n=1}^NV_n\right)
   \]
-  is open in \(X\).
+  is open in \(X\). We claim that \(W\times Y\subseteq N\).
 \end{solution}
 
 \begin{problem}
