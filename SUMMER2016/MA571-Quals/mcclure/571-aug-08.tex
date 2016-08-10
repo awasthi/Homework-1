@@ -11,6 +11,12 @@
   for all subsets \(A\) of \(X\).
 \end{problem}
 \begin{solution}
+  This is another characterization of continuity. Let \(x\in\bar A\). Then
+  for every neighborhood \(U\) of \(x\), \(U\cap A\neq\emptyset\). In
+  particular, if \(U\) is an neighborhood of \(f(x)\), \(f^{-1}(V)\)
+  is a neighborhood of \(x\) so \(f^{-1}(V)\cap A\neq\emptyset\). Thus,
+  \(V\cap f(A)\neq\emptyset\) so \(f(x)\in\overline{f(A)}\). It follows
+  that \(f(\bar A)\subseteq\overline{f(A)}\).
 \end{solution}
 
 \begin{problem}
@@ -18,6 +24,34 @@
   path-connected open neighborhood. Prove that \(X\) is path-connected.
 \end{problem}
 \begin{solution}
+  Let \(x,y\in X\) and suppose there does not exists a path from \(x\) to
+  \(y\). Hence, the sets
+  \begin{align*}
+    C&=\bigl\{\,y\in X:\text{there exists a path \(p\colon I\to X\)
+       from \(x\) to \(y\)}\,\bigr\}\\
+    D&=\bigl\{\,y\in X:\text{there does not exists a path \(p\colon I\to X\)
+       from \(x\) to \(y\)}\,\bigr\}
+  \end{align*}
+  are nonempty. We claim that both \(C\) and \(D\) form a separation of
+  \(X\). First we must show that these sets are open and that their union
+  \(X\). The latter is immediate as every point in \(X\) is either
+  connected to \(x\) by a path or it is not, i.e., \(C=X\setminus D\), and
+  at least one of these sets is nonempty, namely, \(C\). To see that \(C\)
+  is open let \(y\in C\). Then there exists a path-connected open
+  neighborhood \(U\) of \(y\). If \(U\cap D\neq\emptyset\) and \(z\) is a
+  point in that intersection, there exists a path \(q\colon I\to X\) from
+  \(y\) to \(z\). But there exists a path \(p\colon I\to X\) from \(x\) to
+  \(y\) so \(q*p\colon I\to Xs\) is a path from \(x\) to \(z\), which is a
+  contradiction. Thus, \(U\subset C\) and \(C\) must be open. Consequently,
+  a similar argument tells us that \(C\) is closed since if \(y\in\bar C\),
+  \(U\cap C\neq\emptyset\) for every neighborhood of \(y\). In particular,
+  for that special path-connected neighborhood \(U\) of \(y\), there is
+  some \(z\in C\cap U\). If \(y\in D\), then there exist a path
+  \(p\colon I\to X\) from \(x\) to \(y\), namely, the composite of the path
+  from \(x\) to \(z\) and from \(z\) to \(y\). This yields a contradiction
+  so \(y\in C\). Thus, \(C\) is closed so \(X\setminus D\) is open. It
+  follows that \(C\) and \(D\) form a separation of \(X\). But \(X\) is
+  connected
 \end{solution}
 
 \begin{problem}
@@ -26,6 +60,7 @@
   onto. Prove that there must be a point \(x\in X\) with \(f(x)=g(x)\).
 \end{problem}
 \begin{solution}
+  Suppose
 \end{solution}
 
 \begin{problem}
