@@ -104,13 +104,21 @@
   \(K\). Prove that \(A\) is closed.
 \end{problem}
 \begin{solution}
-  Here's what I have so far:
-
-  We will try to show that \(\bar A\subseteq A\). Let \(x\in\bar A\). Then,
-  for every neighborhood \(U\) of \(x\), \(U\cap A\neq\emptyset\). Now,
-  since \(X\) is locally compact, there exists a neighborhood \(V\) of
-  \(x\) such that \(\bar V\) is compact and is a subset of \(U\). Since
-  \(X\) is Hausdorff, \(\bar V\) is compact so \(\bar V\cap A\) is closed.
+  Here's an idea: It suffices to show that \(A\) contains all of its limit
+  points. Let \(\{x_n:n\in\bbN\}\) with \(x_n\in A\) be a sequence of
+  points converging to \(x\in X\). Then the set
+  \[
+    K=\bigl\{\,x_n:n\in\bbN\,\bigr\}\cup\{x\}
+  \]
+  is compact since for every neighborhood \(U\) of \(\{x\}\), there exists
+  an index \(N\in\bbN\) such that \(n\geq N\) implies \(x_n\in U\) for all
+  \(n\geq N\); in particular, given a cover \(\calU\) of \(K\), choose
+  \(U_N\in\calU\) containing \(x\), then there exists an index \(N\in\bbN\)
+  such that \(x_n\in U_N\) for all \(n\geq N\) and since \(\calU\) covers
+  \(K\), pick \(U_1,\dotsc,U_{N_1}\) containing
+  \(x_1,\dotsc,x_{N-1}\). Thus, \(K\) is compact. Now, since \(A\cap K\) is
+  closed, it must contain every limit point; in particular, \(x\in A\cap
+  K\) so \(x\in A\). Thus, \(A\) is closed.
 \end{solution}
 \begin{problem}
   Let \(X\) and \(Y\) be path-connected and let \(h\colon X\to Y\) be a

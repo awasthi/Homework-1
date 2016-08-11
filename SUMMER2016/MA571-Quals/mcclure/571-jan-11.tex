@@ -89,17 +89,28 @@
   Let \(p\colon E\to B\) be a covering map. Let \(e_0\in E\) and
   \(b_0\in B\) with \(p(e_0)=b_0\). Let \(Y\) be simply connected (in
   particular, \(Y\) is path-connected). Let \(y_0\in Y\). Let
-  \(f\colon Y\to B\) be continuous, with \(f(y_0)=b_0\).
-
-  Prove that the following function \(g\colon Y\to E\) is well-defined:
-  Given \(y\in Y\), choose a path \(\gamma\) from \(y_0\) to \(y\); let
-  \(\beta\) be the lift of \(f\circ\gamma\) to \(E\) starting at \(e_0\);
-  now define \(g(y)=\beta(1)\).
-
-  You may use the fact (without proving it) that the lift of a path
-  homotopy is again a path homotopy.
+  \(f\colon Y\to B\) be continuous, with \(f(y_0)=b_0\). Prove that the
+  following function \(g\colon Y\to E\) is well-defined: Given \(y\in Y\),
+  choose a path \(\gamma\) from \(y_0\) to \(y\); let \(\beta\) be the lift
+  of \(f\circ\gamma\) to \(E\) starting at \(e_0\); now define
+  \(g(y)=\beta(1)\). You may use the fact (without proving it) that the
+  lift of a path homotopy is again a path homotopy.
 \end{problem}
 \begin{solution}
+  Let \(\gamma_1\) and \(\gamma_2\) be two paths beginning at \(y_0\) and
+  ending at \(y\). Now, lift \(f\circ\gamma_1\) to \(\beta_1\) beginning at
+  \(e_0\) and ending at \(e_1=\beta_1(1)\) and lift \(f\circ\bar \gamma_2\)
+  to \(\beta_2\) beginning at \(e_1\) and ending at
+  \(e_2=\beta_2(1)\). Then \(\beta_1*\beta_2\) is a lifting of the loop
+  \(f\circ(\gamma_1*\bar\gamma_2)\). But by hypothesis
+  \[
+    \pi_1\bigl(\pi_1(Y,y_0)\bigr)\subseteq p_*\bigl(\pi_1(E,e_0)\bigr)
+  \]
+  so \(\bigl[f\circ(\gamma_1*\bar \gamma_2)\bigr]\) is in
+  \(p_*\bigl(\pi_1(E,e_0)\bigr)\). By Theorem 54.6, \(\beta_1*\beta_2\) is
+  a loop in \(E\) so we must have \(e_2=e_0\). Thus,  lifting of
+  \(f\circ\gamma_1\) and \(f\circ\gamma_2\) must begin and end at the same
+  point so \(g\) is well defined.
 \end{solution}
 
 \begin{problem}
