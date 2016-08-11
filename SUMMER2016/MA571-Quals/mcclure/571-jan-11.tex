@@ -20,9 +20,18 @@
   which the group operations are continuous) and let \(H\) be a subgroup of
   \(G\). Suppose that \(G\) is connected, that \(H\) is a normal subgroup
   of \(G\), and that the subspace topology on \(H\) is discrete. Prove that
-  \(g h=hg\) for every \(g\in G\), \(h\in G\).
+  \(gh=hg\) for every \(g\in G\), \(h\in G\).
 \end{problem}
 \begin{solution}
+  Fix \(h\in H\) and consider the map \(f_h \colon H\to H\) given by
+  \(f_h(g)=ghg^{-1}\). Since \(H\) is normal in \(G\), \(ghg^{-1}\in H\)
+  and since multiplication is continuous in \(G\) and \(f_h\) is the
+  composition \(g\mapsto gh\mapsto ghg^{-1}\), \(f_h\) is continuous. Now,
+  since \(H\) has the discrete topology, it is totally disconnected, i.e.,
+  singleton sets \(\{h\}\) are the only connected components of \(H\) and
+  since \(G\) is connected, \(f_h(G)=\{h'\}\) for some \(h'\in H\). Since
+  \(ehe^{-1}=h\), \(h'=h\). Since we can do this for any \(h\in H\),  it
+  follows that \(gh=hg\) for all \(g\in G\), \(h\in H\).
 \end{solution}
 
 \begin{problem}
@@ -31,6 +40,15 @@
   connected components of \(Y\)? Prove that your answer is correct.
 \end{problem}
 \begin{solution}
+  Let \(X=\{a,b\}\). The connected components of \(Y\) are precisely the
+  singleton sets, i.e., the sets consisting of a single sequence \(a\)s and
+  \(b\)s. First, note that if \(C\) is a component of \(Y\), then
+  \(\pi_n(C)\) is either contained in \(\{a\}\) or \(\{b\}\) since
+  \(\{a\}\) and \(\{b\}\) are the components of \(X\). Suppose, without
+  loss of generality, that \(\pi_n(C)=\{a\}\). Then \(C\) must consist of
+  those sequences of \(a\) and \(b\) which have \(a\) as their \(n\)th
+  term. Proceeding in this fashion, we see that \(C\) must be a sequence of
+  \(a\), \(b\) and not a collection of these.
 \end{solution}
 
 \begin{problem}
@@ -41,6 +59,7 @@
   that \(U\times V\subseteq N\).
 \end{problem}
 \begin{solution}
+  Same as the proof of the tube lemma.
 \end{solution}
 
 \begin{problem}
@@ -48,6 +67,22 @@
   that \(X\) is connected. Prove that \(Y\) is connected.
 \end{problem}
 \begin{solution}
+  Suppose that \(X\simeq Y\). Then there exists a continuous maps
+  \(f\colon X\to Y\) and \(g\colon Y\to X\) such that the composition
+  \(g\circ f\colon X\to X\) is homotopic to \(\id_X\) and
+  \(f\circ g\colon Y\to Y\) is homotopic to \(\id_Y\). Seeking a
+  contradiction, suppose \(C\), \(D\) is a separation of \(Y\). Then
+  \(f^{-1}(C)\) and \(f^{-1}(D)\) are open and disjoint in \(X\); that
+  these sets are open follows from continuity, that they are disjoint:
+  suppose not, then \(x\in f^{-1}(C)\cap f^{-1}(D)\) so \(f(x)\in C\cap
+  D\), but \(C,D\) is a separation of \(Y\) (in particular, \(C\cap
+  D=\emptyset\)). It follows that either \(f^{-1}(C)\) or \(f^{-1}(D)\) is
+  empty. Assume the latter. Then \(f\circ g(Y)\subseteq V\). But since
+  \(f\circ g\simeq \id_Y\) there exists a homotopy \(H\colon I\times Y\to
+  Y\) such that \(H(y,0)=f\circ g(y)\) and \(H(y,1)=y\). Fix \(y\in Y\),
+  then the map \(p_y=H(y,\cdot)\) is a path from \(y\) to \(f\circ
+  g(y)\). It follows that \(y\in V\). Thus, \(V=Y\) and \(U=\emptyset\) so
+  \(Y\) is connected.
 \end{solution}
 
 \begin{problem}
