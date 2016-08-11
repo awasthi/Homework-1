@@ -149,6 +149,7 @@ main=english]{babel}
 
 % don't use osf for equation labels or enumerate labels
 \newcommand\liningnums[1]{\fontfamily{Tempora-TLF}\selectfont{#1}}
+\newcommand\upnums[1]{\liningnums{#1}}
 \renewcommand{\theequation}
     {\liningnums{\arabic{equation}}} % lining numbers
 \renewcommand{\bibnumfmt}[1]{[\liningnums{#1}]}
