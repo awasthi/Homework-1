@@ -1,0 +1,61 @@
+\def\auth{Carlos Salinas}
+\def\tight{Conrad's Differential Geometry Notes}
+\def\short{Conrad-Diffgeom}
+\def\class{diffgeom}
+\def\subject{differential geometry}
+\def\email{salinac@purdue.edu}
+
+\documentclass[11pt]{article}
+\usepackage{geometry}
+
+%% Base customization and variables
+\usepackage[times]{clos-vars}
+
+%% Formatting
+
+%% Footnote style
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+%% Hyperref setup
+\hypersetup{%
+  breaklinks,%
+  colorlinks=true,%
+  linkcolor=black,%
+  citecolor=black,%
+  filecolor=black,%
+  menucolor=black,%
+  runcolor=black,%
+  urlcolor=black,%
+  pdftitle={\short},%
+  pdfauthor={\auth},%
+  pdfkeywords={\subject},%
+  pdfsubject={\class},%
+  pageanchor={false},%
+  unicode
+}
+
+%% Graphics path as it says
+\graphicspath{{figures/}}
+
+%% Fix AMS counter bug
+\renewenvironment{problem}
+                 {\begin{exercise}}%
+                 {\end{exercise}}%
+
+\begin{document}
+\author{\href{mailto:\email}{\auth}}
+\title{\tight}
+\date{\today}
+
+\maketitle
+\tableofcontents
+\include{notes/closure}
+\bibliographystyle{plain}
+\bibliography{top-bib}
+% \printindex
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

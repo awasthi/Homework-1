@@ -1,0 +1,93 @@
+\section{Interior, closure and boundary}
+We wish to develop some basic geometric concepts in metric spaces which
+make precise intuitive ideas centered on the themes of ``interior'' and
+``boundary'' of a subset of a metric space. One warning must be
+given. Although there are a number of results proven in this handout, none
+of it is particularly deep. If you carefully study the proofs, then you'll
+see that none of this requires going much beyond the basic definitions. We
+will certainly encounter some serious ideas and nontrivial proofs in due
+course, but at this point the central aim is to acquire some linguistic
+ability when discussing some basic geometric ideas in a metric space. Thus,
+the main goal is to familiarize ourselves with some very convenient
+geometric terminology in terms of which we can discuss more sophisticated
+ideas later on.
+\subsection{Interior and closure}
+Let \(X\) be a metric space and \(A\subseteq X\) a subset. We define the
+\emph{interior} of \(A\) to be the set
+\[
+  A^\circ=\Int A=\bigl\{\,a\in A:\text{there exists \(\varepsilon>0\) such that
+    \(B(a,\varepsilon)\subseteq A\)}\,\bigr\}
+\]
+consisting of points for which \(A\) is a ``neighborhood''. We define the
+\emph{closure}  of \(A\) to be the set
+\[
+  \bar A=\Cls A=\bigl\{\,x\in X:\text{\(x=\lim_{n\to\infty} a_n\) with
+    \(a_n\in A\) for all \(n\in\bbN\)}\,\bigr\}.
+\]
+
+In words, the interior consists of points in \(A\) for which all nearby
+points of \(X\) are also in \(A\) whereas the closure allows for ``points
+on the edge of \(A\)''. Note that obviously
+\[
+  A^\circ\subseteq\bar A.
+\]
+We will see shortly (after some examples) that \(A^\circ\) is the largest
+open set inside of \(A\) --- that is, it is open and contains any open
+lying inside of \(A\) (so in fact \(A\) is open if and only if
+\(A=A^\circ\)) --- while \(\bar A\) is the smallest closed set containing
+\(A\); i.e., \(\bar A\) is closed and lies inside any closed set containing
+\(A\) (so  in fact \(A\) is closed if and only if \(\bar A=A\)).
+
+\emph{Beware that we have to prove that the closure is actually closed!}
+Just because we call  something the ``closure'' does not mean the concept
+is automatically endowed with linguistically similarly sounding
+properties. The proof won't be particularly deep, as we'll see.
+
+\begin{example}
+  Let's work out the interior and closure of the ``half-open'' square
+  \[
+    A=\bigl\{\,(x,y)\in\bbR^2:-1\leq x\leq
+    1,-1<y<1\,\bigr\}=[-1,1]\times(-1,1)
+  \]
+  inside the metric space \(X=\bbR^2\) (the phrase ``half-open'' is purely
+  intuitive; it has no precise meaning, but the picture should make it
+  clear why we use this terminology). Intuitively, this is a square region
+  whose horizontal edges are ``left out''. The interior of \(A\) should be
+  \((-1,1)\times(-1,1)\) and the closure should be \([-1,1]\times[-1,1]\),
+  as drawing a picture should convince you. Of course, we want to see that
+  such conclusions really do follow from our precise definitions.
+
+  First we check that \(A^\circ\) is correctly described. If \(-1<x<1\) and
+  \(-1<y<1\) then for
+  \[
+    r=\min\bigl\{|-1-x|,|1-x|,1-1-y|,|1-y|\bigr\}>0
+  \]
+  it is easy to check that
+  \(B\bigl((x,y),r\bigr)\subseteq(-1,1)\times(-1,1)\) (since a square box
+  with side-length \(r\) contains the disc of radius \(r\) with the same
+  center). Thus, \((-1,1)\times(-1,1)\subseteq A\) is an open subset of
+  \(X=\bbR^2\). To check it is the full interior of \(A\), we just have to
+  show that the ``missing points'' of the form \(\pm 1,y\) do not lie in
+  the interior. But for any such point \(p=(\pm 1,y)\in A\), for any
+  positive small \(r>0\) there is always a point in \(B(p,r)\) with the
+  same \(y\)-coordinate but with the \(x\)-coordinate either slightly
+  larger than \(1\) or slightly less than \(-1\). Such a point is not in
+  \(A\). Thus, \(p\notin A^\circ\).
+
+  Now we check that \(\bar A=[-1,1]\times[-1,1]\). Since convergence in
+  \(\bbR^2\) forces convergence in coordinates, to see
+  \[
+    \bar A\subseteq[-1,1]\times[-1,1]
+  \]
+  it suffices to check that \([-1,1]\) is closed in \(\bbR\) (since
+  certainly \(A\subseteq[-1,1]\times[-1,1]\)). But this is clear (either by
+  using sequences or by explicitly showing its complement in \(\bbR\) to be
+  open). To see that \(\bar A\) fills up all of \([-1,1]\times[-1,1]\), we
+  have to show that each point in \([-1,1]\times[-1,1]\) can be obtained as
+  a limit of a sequence in \(A\). We just have to show
+\end{example}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Diffgeo"
+%%% End:
