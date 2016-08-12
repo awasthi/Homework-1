@@ -195,7 +195,24 @@ Now we prove Theorem \ref{thm:metric-space-bar}.
   \[
     X\setminus\overline{X\setminus A}=A^\circ.
   \]
-  Taking complements of both sides within \(Y\) yields.
+  Taking complements of both sides within \(X\) yields
+  \[
+    \overline{X\setminus A}=X\setminus A^\circ,
+  \]
+  as desired.
+\end{proof}
+\begin{corollary}
+  Let \(A\) be a subset of a metric space \(X\). Then \(\bar A\) is closed
+  and is contained inside of any closed subset of \(X\) which contains
+  \(A\).
+\end{corollary}
+\begin{proof}
+  Since the complement of \(\bar A\) is equal to \((X\setminus A)^\circ\),
+  which we know to be open, it follows that \(\bar A\) is closed. If \(Z\)
+  is any closed set containing \(A\), we want to prove that \(Z\) contains
+  \(\bar A\) (so \(\bar A\) is ``minimal'' among closed sets containing
+  \(A\)). But this is clear for several reasons. On the one hand, by
+  definition every point \(x\in\bar A\) is the limit
 \end{proof}
 
 %%% Local Variables:
