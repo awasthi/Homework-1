@@ -132,6 +132,33 @@ properties. The proof won't be particularly deep, as we'll see.
   \(B(u,r)\subseteq A\), so \(u\in A^\circ\). This is true for all \(u\in
   U\), so \(U\subseteq A^\circ\).
 \end{proof}
+\begin{corollary}
+  A subset \(A\) in a metric space \(X\) is open if and only if
+  \(A=A^\circ\).
+\end{corollary}
+\begin{proof}
+  By the theorem, \(A^\circ\) is the unique largest open subset of \(X\)
+  contained in \(A\). But obviously \(A\) is open if anf only if such a
+  unique maximal  open subset of \(X\) lying in \(A\) is actually equal to
+  \(A\). This establishes the corollary.
+\end{proof}
+
+We next want to show that the closure of a subset \(A\) in \(X\) is related
+to closed subsets of \(X\) containing \(A\) in a manner very similar to the
+way in whic hthe interior of \(A\) is related to open subsets of \(X\)
+which lie inside of \(A\). This goes along with the general idea that
+openness and closedness are ``complementary'' points to view (recall that a
+subset \(S\) in a metric space \(X\) is open (resp.\@ closed) if and only
+if its complement \(X\setminus S\) is closed (resp.\@ open)). It is
+actually more convenient for us to first show that closures and interiors
+have complementary relationship, and to then use this to deduce our desired
+properties of closure from already-established properties of interior.
+
+\begin{theorem}
+  Let \(A\) be a subset of a metric space \(X\). Then \(X\setminus\bar
+  A=(X\setminus A)^\circ\) and \(X\setminus A^\circ=\overline{X\setminus
+    A}\).
+\end{theorem}
 
 %%% Local Variables:
 %%% mode: latex

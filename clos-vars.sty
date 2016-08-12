@@ -2,7 +2,7 @@
 %% My preference of symbols and variables
 %%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{clos-vars}[2016/08/06 v2.4 personal shortcuts]
+\ProvidesPackage{clos-vars}[2016/08/12 v2.5 personal shortcuts]
 
 %%% Options
 \newif\if@times\@timesfalse
@@ -252,7 +252,7 @@ main=english]{babel}
 
 %% Theorems and definitions
 \theoremstyle{plain}
-\newtheorem{theorem}{Theorem}
+\newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{claim}[theorem]{Claim}
@@ -266,7 +266,7 @@ main=english]{babel}
 \newtheorem*{theorem*}{Theorem}
 
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}
+\newtheorem{definition}{Definition}[section]
 \newtheorem{example}{Examples}
 \newtheorem{examples}[example]{Example}
 
@@ -275,22 +275,22 @@ main=english]{babel}
 \newtheoremstyle{exercise}
     {24pt plus 4pt minus 4pt} % Space above
     {12pt plus 4pt minus 4pt} % Space below
-    {} % Body font
-    {} % Indent amount
-    {\bfseries} % Theorem head font
-    {.} % Punctuation after theorem head
-    {.5em} % Space after theorem head
-    {} % Theorem head spec (can be left empty, meaning ‘normal’)
+    {}                        % Body font
+    {}                        % Indent amount
+    {\bfseries}               % Theorem head font
+    {.}                       % Punctuation after theorem head
+    {.5em}                    % Space after theorem head
+    {}                         % Theorem head spec (can be left empty, meaning 'normal')
 
 \theoremstyle{exercise}
-\newtheorem{exercise}{Exercise}
+\newtheorem{exercise}{Exercise}[section]
 \newtheorem{problem}[exercise]{Problem}
 
 \newtheorem*{exercise*}{Exercise}
 \newtheorem*{problem*}{Problem}
 
 \theoremstyle{remark}
-\newtheorem{remark}{Remark}
+\newtheorem{remark}{Remark}[section]
 \newtheorem{remarks}[remark]{Remarks}
 
 \newtheorem*{remark*}{Remark}
@@ -316,7 +316,7 @@ main=english]{babel}
 \end{quote}
 }
 
-%% Some personal shortcutts
+%% Some personal shortcuts
 \newcommand\ntrileq{\ntrianglelefteq}
 \newcommand\ntrireq{\ntrianglerighteq}
 \newcommand\too{\longrightarrow}
