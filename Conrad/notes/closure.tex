@@ -96,11 +96,42 @@ properties. The proof won't be particularly deep, as we'll see.
   \(A^\circ=A\) and \(\bar A=A\)! Indeed, quite generally for any metric
   space \(X\) we have \(X^\circ=X\) and \(\bar X=X\). These are easy
   consequences of thee definitions. Likewise, the empty subset
-  \(\emptyset\) in any  metric space has interior and closuer equal to the
+  \(\emptyset\) in any metric space has interior and closure equal to the
   subset \(\emptyset\).
 
-  The moral is that one has to always.
+  The moral is that one has to always keep in mind what ambient metric
+  space one is working in when forming interiors and closures! One could
+  imagine that perhaps our notation for interior and closure should somehow
+  incorporate a designation of the ambient metric space. But just as we
+  freely use the same symbols ``\(+\)'' and ``\(0\)'' to denote the
+  addition and additive identity in any vector space, even when working
+  with several spaces at once, it would simply make life too cumbersome
+  (and the notation too cluttered) to always write things like \(\Int_X A\)
+  or \(\Cls_X A\). One just has to pay careful attention to what is going
+  on so as to keep track of the ambient metric space with respect to which
+  one is forming interiors and closures. The context will usually make it
+  obvious what one is using as the ambient metric space, though if
+  considering several ambient spaces at once it is sometimes helpful to use
+  more precise notation such as \(\Int_XA\).
 \end{example}
+\begin{theorem}
+  Let \(A\) be a subset of a metric space \(X\). Then \(A^\circ\) is open
+  and is the largest open set of \(X\) inside of \(A\) (i.e., it contains
+  all others).
+\end{theorem}
+\begin{proof}
+  We first show that \(A^\circ\) is open. By definition, if \(x\in
+  A^\circ\), then some \(B(x,r)\subseteq A\). But then since \(B(x,r)\) is
+  itsefl an open set we see that any \(y\in B(x,r)\) has some
+  \(B(y,s)\subseteq B(x,r)\subseteq A\), which forces \(y\in
+  A^\circ\). That is, we have shown \(B(x,r)\subseteq A^\circ\), whence
+  \(A^\circ\) is open.
+
+  If \(U\subseteq A\) is an open set in \(X\), then for each \(u\in U\)
+  there is some \(r>0\) such that \(B(u,r)\subseteq U\) whence
+  \(B(u,r)\subseteq A\), so \(u\in A^\circ\). This is true for all \(u\in
+  U\), so \(U\subseteq A^\circ\).
+\end{proof}
 
 %%% Local Variables:
 %%% mode: latex
