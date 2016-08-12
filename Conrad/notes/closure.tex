@@ -155,10 +155,48 @@ have complementary relationship, and to then use this to deduce our desired
 properties of closure from already-established properties of interior.
 
 \begin{theorem}
-  Let \(A\) be a subset of a metric space \(X\). Then \(X\setminus\bar
-  A=(X\setminus A)^\circ\) and \(X\setminus A^\circ=\overline{X\setminus
-    A}\).
+  \label{thm:metric-space-bar}
+  Let \(A\) be a subset of a metric space \(X\). Then
+  \(X\setminus\bar A=(X\setminus A)^\circ\) and
+  \(X\setminus A^\circ=\overline{X\setminus A}\).
 \end{theorem}
+Before proving this theorem, we illustrate with an example. Consider
+\(X=\bbR^2\) with the usual metric, and let \(A=[-1,1]\times(-1,1)\) be the
+``half-open'' square as considered above. By drawing pictures of
+\(X\setminus A\) and of the complements of \(\bar A\) and \(A^\circ\), you
+should convince yourself intuitively that the assertions in this theorem
+make sense in this case.
+
+Now we prove Theorem \ref{thm:metric-space-bar}.
+
+\begin{proof}
+  We begin by proving \(X\setminus\bar A=(X\setminus A)^\circ\). If \(x\in
+  X\) is not in \(\bar A\), there must exist some \(B(x,1/2^n)\) not
+  meeting \(A\), for otherwise we'd have some \(x_n\in B(x,1/2^n)\cap A\)
+  for all \(n\in\bbN\), so clearly \(x_n\to x\), contrary to the fact that
+  \(x\notin\bar A\) is not a limit of a sequence of elements of \(A\). This
+  shows
+  \[
+    X\setminus\bar A\subseteq(X\setminus A)^\circ.
+  \]
+  Conversely, if \(x\) is in the interior of \(X\setminus A\) then some
+  \(B(x,r)\) lies in \(X\setminus A\) and hence is disjoint from \(A\). It
+  follows that no sequnece in \(A\) can possibly converge to \(x\) because
+  for \(\varepsilon=r>0\) we'd run into problems (i.e., there's nothing in
+  \(A\) within a distance of less that \(\varepsilon\) from \(x\), since
+  \(B(x,\varepsilon)\subseteq X\setminus A\)).
+
+  Applying the \emph{general} equality
+  \[
+    X\setminus\bar A=(X\setminus A)^\circ
+  \]
+  for arbitrary subsets \(A\) to \(X\) to the subset \(X\setminus A\) in
+  the role of \(A\), we get
+  \[
+    X\setminus\overline{X\setminus A}=A^\circ.
+  \]
+  Taking complements of both sides within \(Y\) yields.
+\end{proof}
 
 %%% Local Variables:
 %%% mode: latex
