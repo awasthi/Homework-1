@@ -15,8 +15,8 @@ ideas later on.
 Let \(X\) be a metric space and \(A\subseteq X\) a subset. We define the
 \emph{interior} of \(A\) to be the set
 \[
-  A^\circ=\Int A=\bigl\{\,a\in A:\text{there exists \(\varepsilon>0\) such that
-    \(B(a,\varepsilon)\subseteq A\)}\,\bigr\}
+  A^\circ=\Int A=\bigl\{\,a\in A:\text{there exists \(r>0\) such that
+    \(B(a,)\subseteq A\)}\,\bigr\}
 \]
 consisting of points for which \(A\) is a ``neighborhood''. We define the
 \emph{closure}  of \(A\) to be the set
@@ -84,7 +84,22 @@ properties. The proof won't be particularly deep, as we'll see.
   using sequences or by explicitly showing its complement in \(\bbR\) to be
   open). To see that \(\bar A\) fills up all of \([-1,1]\times[-1,1]\), we
   have to show that each point in \([-1,1]\times[-1,1]\) can be obtained as
-  a limit of a sequence in \(A\). We just have to show
+  a limit of a sequence in \(A\). We just have to deal with points not in
+  \(A=[-1,1]\times(-1,1)\) since points in \(A\) are limits of constant
+  sequences. That is, we're faced with studying points of the form \((x,\pm
+  1)\) with \(x\in [-1,1]\). Such a point is a limit of a sequence
+  \((x,q_n)\) with \(q_n\in(-1,1)\) having limit \(\pm 1\).
+\end{example}
+\begin{example}
+  What happens if we work with the same set \(A\) but view it inside of a
+  metric space \(X=A\) (with the Euclidean metric)? In this case,
+  \(A^\circ=A\) and \(\bar A=A\)! Indeed, quite generally for any metric
+  space \(X\) we have \(X^\circ=X\) and \(\bar X=X\). These are easy
+  consequences of thee definitions. Likewise, the empty subset
+  \(\emptyset\) in any  metric space has interior and closuer equal to the
+  subset \(\emptyset\).
+
+  The moral is that one has to always.
 \end{example}
 
 %%% Local Variables:
