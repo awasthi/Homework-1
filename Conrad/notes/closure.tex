@@ -212,7 +212,33 @@ Now we prove Theorem \ref{thm:metric-space-bar}.
   is any closed set containing \(A\), we want to prove that \(Z\) contains
   \(\bar A\) (so \(\bar A\) is ``minimal'' among closed sets containing
   \(A\)). But this is clear for several reasons. On the one hand, by
-  definition every point \(x\in\bar A\) is the limit
+  definition every point \(x\in\bar A\) is the limit of a sequnece of
+  elements in \(A\subseteq Z\), so by closedness of \(Z\) such limit points
+  \(x\) are also in \(Z\). This shows \(\bar A\subseteq Z\). On the other
+  hand, one can argue by noting that passage to complement takes \(Z\) to
+  an open set \(X\setminus Z\) contained inside of \(X\setminus A\), so by
+  maximality this open \(X\setminus Z\) must lie inside the interior of
+  \(X\setminus A\), which we have seen is the complement \(X\setminus\bar
+  A\) of \(\bar A\). Passage back to complements then gives
+  \[
+    \bar A=X\setminus(X\setminus\bar A)=X\setminus(X\setminus
+    A)^\circ\subseteq X\setminus(X\setminus Z)\subseteq Z
+  \]
+  as desired.
+\end{proof}
+\begin{corollary}
+  For subsets \(A_1,\dotsc,A_n\) in a metric space \(X\), the closure of
+  \(A_1\cup\cdotsb\cup A_n\) is equal to \(\bigcup_{i=1}^n \bar A_i\); that
+  is, the formation ofa finite union commutes with the formation of a
+  closure.
+\end{corollary}
+\begin{proof}
+  A closed set \(Z\) contains \(\bigcup_{i=1}^n A_i\) if and only if it
+  contains each \(A_i\), and so if and only if it contains \(\bar A_i\) for
+  every \(i\). Since \(\bigcup_{i=1}^n\bar A_i\) is a finite union of
+  closed sets, it is closed. We conclude that this closed set is minimal
+  among all closed sets containing \(\bigcup_{i=1}^n A_i\), so it is the
+  closure of \(\bigcup_{i=1}^n A_i\).
 \end{proof}
 
 %%% Local Variables:
