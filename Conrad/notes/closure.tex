@@ -241,6 +241,35 @@ Now we prove Theorem \ref{thm:metric-space-bar}.
   closure of \(\bigcup_{i=1}^n A_i\).
 \end{proof}
 
+\subsection{Further aspects of interior and closure}
+The ``interior'' and ``closure'' constructions have been seen to be
+well-behaved with respect to the formation of complements within a metric
+space. However, these notions are not well-behaved with respect
+intersections within a metric space. Also, one cannot capture the closure
+of a set just from knowing its interior. For example, a set can have empty
+interior and yet the closure equal to the whole space: think about the
+subset \(\bbQ\) in \(\bbR\).
+
+Here is one mildly positive result.
+\begin{theorem}
+  The formation of closures is local in the sense that if \(U\) is open in
+  a metric space \(X\) and \(A\) is an arbitrary subset of \(X\), then the
+  closure of \(A\cap U\) in \(X\) meets \(U\) in \(\bar A\cap U\) (where
+  \(\bar A\) denotes the closure of \(A\) in \(X\)). In particular, if
+  \(Z\) is closed in \(X\) then \(U\cap\overline{Z\cap U}=Z\cap U\).
+
+  Also if \(U\) is the interior of a closed set \(Z\) in \(X\), then
+  \({\bar U}^\circ=U\).
+\end{theorem}
+
+After proving the theorem, we'll present an interesting example of an open
+subset of a metric space which is \emph{not} equal to the interior of its
+closure (and hence, by the second part of the theorem, cannot be expressed
+as the interior of any closed set at all). It is probably not immediately
+obvious to you how to find such open sets, since typical open sets one
+writes down in \(\bbR\) or \(\bbR^2\) tend to be the interior of their
+closures.
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../Diffgeo"
