@@ -270,6 +270,28 @@ obvious to you how to find such open sets, since typical open sets one
 writes down in \(\bbR\) or \(\bbR^2\) tend to be the interior of their
 closures.
 
+\begin{proof}
+  Since \(\bar A\cap U\) is a closed set in \(U\) that contains
+  \(A\cap U\), for the first part of the theorem we need to prove that
+  every point \(x\in\bar A\cap U\) is a limit of a sequence of points
+  \(x_n\in A\cap U\). Since \(x\in\bar A\) we can write
+  \(x=\lim_{n\to\infty}x_n\) with \(x_n\in A\). By hypothesis \(x\in U\),
+  so by the openness of \(U\) we must have some \(B(x,r)\subseteq U\), and
+  so since \(x_n\to x\) by considering just sufficiently large \(n\) we
+  have \(x_n\in U\). Thus, for large \(n\) the sequence \(\{x_n\}\) lies in
+  \(A\cap U\) and converges to \(x\).
+
+  Now we assume that \(U\) is the interior of a closed set \(Z\) and we
+  wish to prove \(U\) is the interior of \(\bar U\). Since \(Z\) is a
+  closed set containing \(U\), it also contains the closure of \(U\), and
+  by openness of \(U\) the open subset \(U\) inside of \(\bar U\) must lie
+  inside the interior of \(\bar U\). To summarize we have
+  \[
+    U\subseteq{\bar U}^\circ\subseteq Z^\circ=U,
+  \]
+  so equality is forced throughout.
+\end{proof}
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../Diffgeo"
