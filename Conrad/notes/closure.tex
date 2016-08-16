@@ -307,7 +307,118 @@ and (if \(q\notin 10\bbZ\)) begins on the right with a nonzero digit in the
 \(10^{-n(q)}\)-slot. Define \(U\) to be the union of the intervals
 \(B_{1/10^{n(q)+2}}(q)\) for \(q\in S\). This union is certainly open, as
 it is the union of open intervals. This union \(U\) is certainly open, as
-it is the union of open intervals. Try to draw a picture where \(U\)
+it is the union of open intervals. Try to draw a picture where \(U\) meets
+\([0,1]\); it's pretty big though, but after working out a bunch of
+intervals in \(U\) you'll get a sense for what \(U\) looks like: it's very
+``sparse'', yet somehow all over the place since certainly \(S\subseteq
+U\). The problem is that ``most'' elements of \(S\) have pretty big
+denominators, and the tiny interval from \(U\) surrounding a choice of
+\(q\in S\) is \emph{really} tiny (depending on how big the denominator of
+\(q\) is).
+
+Since \(q\in S\) has a decimal expansion which terminates at the \(n(q)\)th
+digit past the decimal point, all points in \(B_{1/10^{n(q)+2}}(q)\) have a
+\(10^{-n(q)-1}\)th digit equal to either \(0\) or \(9\) (think about
+\(.253\pm.00000998\)), but not \(2,\dotsc,8\). In particular, if we
+consider real numbers whose fractional parts consist \emph{entirely} of
+digits from \(2\) to \(8\), such numbers cannot lie in \(U\). Actually, a
+lot more can't lie in \(U\) (as your picture should convince you), but one
+needs measure theory to give a precise description of how sparse \(U\)
+is. In any case, we have at least shown that \(U\) is a proper open subset
+of \(\bbR\). But every real number is a limit of a sequence in \(S\subseteq
+U\), so the closure of \(U\) is equal to \(\bbR\).
+
+Let us conclude with considerations related to the local nature of closedness.
+
+\begin{theorem}
+  Let \(X\) be a metric space, and \(A\subseteq X\) a subset. Let
+  \(\{U_i\}\) be an open cover of \(X\). The set \(A\) is closed in \(X\)
+  if and only if the subset \(A\cap U_i\) is closed in \(U_i\) for all
+  \(i\).
+\end{theorem}
+\begin{proof}
+  Replacing \(A\) with \(X\setminus A\), it is equivalent to say that \(X\)
+  is open in \(X\) if and only if \(A\cap U_i\) is open in \(U_i\) for all
+  \(i\). However, a subset of \(U_i\) is open in \(U_i\) if and only if it
+  is open in \(X\) (as \(U_i\) is open in \(X\)), so it is equivalent to
+  say that \(A\) is open in \(X\) if and only if \(A\cap U_i\) if open in
+  \(X\) for all \(i\). This implication \(\implies\) is clear, and the
+  converse follows from the observation that \(A\) is the union of the
+  overlaps \(A\cap U_i\).
+\end{proof}
+
+Note that it is crucial in the preceding theorem that the \(U_i\) cover all
+of \(X\), and not just \(A\). For example, if \(A=[0,1)\) in \(X=\bbR\) and
+we take \(U=(-\infty,1)\) and \(V=(1,\infty)\) then the open sets \(U\) and
+\(V\) barely fail to cover \(X\) (\(U\cup V=X\setminus\{1\}\)), and
+although \(U\cap A=A\) is closed in \(U\) and \(V\cap A=\emptyset\) is
+closed in \(V\), clearly \(A\) is not closed in \(X\). Sometimes when we
+are trying to analyze the geometry of \(A\) rather than locally near
+arbitrary points of \(X\). In such cases we clearly cannot hope to prove
+that \(A\) is closed in \(X\), and so the best we can hope to do is verify
+the conditions in the following definitions:
+
+\begin{definition}
+  A subset \(A\) in a metric space \(X\) is \emph{locally closed} if for
+  all \(a\in A\) there exists an open set \(U_a\subseteq X\) containing
+  \(a\) such that \(U_a\cap A\) is closed in \(U_a\).
+\end{definition}
+
+The point of this definition is that the union of the \(U_a\) may fail to
+equal \(X\), though it does contain \(A\). As an example, \(A=[0,1)\) is
+locally closed in \(X=\bbR\): for every \(a\in A\) distinct from \(1\), we
+can take \(U_a=(0,1)\) and for \(a=1\) we can take \(U_a=(-1,1)\). More
+interesting examples are \((-1,1)\times\{0\}\) in \(\bbR^2\) (using
+\(U_a=(-1,1)\times\bbR\) for all \(a\)) and any open subset \(U\) of a
+topological space \(X\) (taking \(U_a=U\) for all \(U\)).
+
+The reason for interest in locally closed sets is that they naturally arise
+when trying to prove closedness of \(A\) in \(X\) in situations where one
+is only able to study the situation locally near elements of \(A\). The
+point worth noting is that locally closed sets look closed if we replace
+the ambient set with a suitable open around \(A\):
+
+\begin{theorem}
+  Let \(A\) be a subset of a metric space \(X\). The subset \(A\) is
+  locally closed in \(X\) if and only if there exists an open set
+  \(U\subseteq X\) containing \(A\) with \(A\) a closed subset of \(U\); in
+  other words, \(A=C\cap U\) for a closed subset \(C\subseteq X\).
+\end{theorem}
+\begin{proof}
+  If \(A=C\cap U\) for closed \(C\) in \(X\) and open \(U\) in \(X\) then
+  we verify the definition of local closedness by taking \(U_a=U\) for all
+  \(a\in A\). Conversely, if \(A\) is locally closed in \(X\) then let
+  \(U=\bigcup_{a\in A}U_a\) where \(U_a\subseteq X\) is an open set
+  containing \(a\in A\) such that \(A\cap U_a\) is closed in
+  \(U_a\). Clearly \(A\) is a subset of the metric space \(U\) and the
+  \(U_a\) continue an open covering \(U\). Thus, the local nature of
+  closedness in metric spaces (applied to \(U\)) implies that \(A\) is
+  closed in \(U\).
+\end{proof}
+
+\subsection{Boundary}
+We now introduce a notion that sits somewhere between the closure and the
+interior: the boundary.
+
+\begin{definition}
+  Let \(A\) be a subset of a metric space \(X\). We define the
+  \emph{boundary \(\partial A\)} of \(A\) to be \(\bar A\setminus
+  A^\circ\).
+\end{definition}
+
+As with the concepts of interior and closure, the boundary depends on the
+ambient space (though we suppress this in the notaton).
+
+\begin{example}
+  If \(A=[-1,1]\times(-1,1)\) inside \(X=\bbR^2\), then \(\partial A=\bar
+  A\setminus A^\circ\) consists of points \((x,y)\) on the edge of the unit
+  square: it is equal to
+  \[
+    \bigl(\{-1,1\}\times[-1,1]\bigr)\cup
+    \bigl([-1,1]\times\{-1,1\}\bigr),
+  \]
+  as you can check.
+\end{example}
 
 %%% Local Variables:
 %%% mode: latex
