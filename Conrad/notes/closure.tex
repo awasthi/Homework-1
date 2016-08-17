@@ -1,4 +1,5 @@
-\section{Interior, closure and boundary}
+\chapter{Differential Geometry}
+\subsection{Interior, closure and boundary}
 We wish to develop some basic geometric concepts in metric spaces which
 make precise intuitive ideas centered on the themes of ``interior'' and
 ``boundary'' of a subset of a metric space. One warning must be
@@ -11,7 +12,7 @@ ability when discussing some basic geometric ideas in a metric space. Thus,
 the main goal is to familiarize ourselves with some very convenient
 geometric terminology in terms of which we can discuss more sophisticated
 ideas later on.
-\subsection{Interior and closure}
+\subsubsection{Interior and closure}
 Let \(X\) be a metric space and \(A\subseteq X\) a subset. We define the
 \emph{interior} of \(A\) to be the set
 \[
@@ -241,7 +242,7 @@ Now we prove Theorem \ref{thm:metric-space-bar}.
   closure of \(\bigcup_{i=1}^n A_i\).
 \end{proof}
 
-\subsection{Further aspects of interior and closure}
+\subsubsection{Further aspects of interior and closure}
 The ``interior'' and ``closure'' constructions have been seen to be
 well-behaved with respect to the formation of complements within a metric
 space. However, these notions are not well-behaved with respect
@@ -396,7 +397,7 @@ the ambient set with a suitable open around \(A\):
   closed in \(U\).
 \end{proof}
 
-\subsection{Boundary}
+\subsubsection{Boundary}
 We now introduce a notion that sits somewhere between the closure and the
 interior: the boundary.
 
@@ -419,6 +420,41 @@ ambient space (though we suppress this in the notaton).
   \]
   as you can check.
 \end{example}
+
+\begin{example}
+  Consider the subset \(A=\bbQ\subseteq\bbR\). We have
+  \(A^\circ=\emptyset\) because no nonempty open interval can fail to
+  contain irrationals (i.e., to be contained inside of \(A=\bbQ\)), and
+  \(\bar A=\bbR\) since every real number is a limit of a sequence of
+  rationals. Thus, in this case \(\partial A=\bbR\).
+\end{example}
+
+Just as it is geometrically reasonable that an open subset of a metric
+space is one which is equal to its interior, a closed subset ought to be
+exactly one which is equal to its own interior, a closed subset ought to be
+exactly one which contains its boundary. This is the first part of:
+
+\begin{theorem}
+  Let \(A\) be a subset of a metric space \(X\). Then \(A\) is closed if
+  and only if it contains \(\partial A\), and in general
+  \[
+    \partial A=\bar A\cap\overline{X\setminus A}=\partial(X\setminus A).
+  \]
+\end{theorem}
+
+If on again considers our friend the half-open square
+\(A=[-1,1]\times(-1,1)\) in \(\bbR^2\), it is instructive to recall our
+earlier determinations of the closures of \(A\) and \(X\setminus A\) and to
+see that, sure enough, their intersection is just what the boundary ought
+to be.
+
+\begin{proof}
+  The boundary \(\partial A\subseteq A\) we get \(\bar A\subseteq A\) and
+  therefore (the reverse inclusion being obvious) that \(A=\bar A\), so
+  \(A\) is indeed closed. Conversely, if \(A\) is closed then since
+  \(\partial A\subseteq\bar A\) by definition and \(\bar A=A\) for closed
+  \(A\) we get \(\partial A\subseteq A\).
+\end{proof}
 
 %%% Local Variables:
 %%% mode: latex
