@@ -449,11 +449,32 @@ see that, sure enough, their intersection is just what the boundary ought
 to be.
 
 \begin{proof}
-  The boundary \(\partial A\subseteq A\) we get \(\bar A\subseteq A\) and
+  The boundary \(\partial A\) is \emph{defined} as \(\bar A\setminus
+  A^\circ\). Thus,
+  \[
+    \bar A=A^\circ\cup\partial A\subseteq A\cup\partial A,
+  \]
+  so when \(\partial A\subseteq A\) we get \(\bar A\subseteq A\) and
   therefore (the reverse inclusion being obvious) that \(A=\bar A\), so
   \(A\) is indeed closed. Conversely, if \(A\) is closed then since
   \(\partial A\subseteq\bar A\) by definition and \(\bar A=A\) for closed
   \(A\) we get \(\partial A\subseteq A\).
+
+  One we establish that \(\partial A=\bar A \cap\overline{X\setminus A}\),
+  then since the right hand side is unaffected by replacing \(A\) with
+  \(X\setminus A\) everywhere (because \(X\setminus (X\setminus A)=A\)), it
+  follows that \(\partial A=\partial(X\setminus A)\). As for verifying that
+  \(\partial A\) is the intersection of the closures of \(A\) and
+  \(X\setminus A\), we use the definition of \(\partial A\) to rewrite this
+  as:
+  \[
+    \bar A\setminus A^\circ=\bar A\cap\overline{X\setminus A}.
+  \]
+  Since \(\bar A\setminus A^\circ=\bar A\cap(X\setminus A^\circ)\), it
+  suffices to check that
+  \[
+    X\setminus A^\circ=\overline{X\setminus A}.
+  \]
 \end{proof}
 
 %%% Local Variables:

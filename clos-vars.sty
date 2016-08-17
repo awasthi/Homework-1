@@ -251,7 +251,7 @@ main=english]{babel}
 
 %% Theorems and definitions
 
-\@ifclassloaded{memoir}
+% \@ifclassloaded{memoir}
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[chapter]
 \newtheorem{proposition}[theorem]{Proposition}
@@ -296,52 +296,52 @@ main=english]{babel}
 
 \newtheorem*{remark*}{Remark}
 \newtheorem*{remarks*}{Remarks}
-\else
-\theoremstyle{plain}
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{claim}[theorem]{Claim}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{axiom}[theorem]{Axiom}
+% \else
+% \theoremstyle{plain}
+% \newtheorem{theorem}{Theorem}[section]
+% \newtheorem{proposition}[theorem]{Proposition}
+% \newtheorem{corollary}[theorem]{Corollary}
+% \newtheorem{claim}[theorem]{Claim}
+% \newtheorem{lemma}[theorem]{Lemma}
+% \newtheorem{axiom}[theorem]{Axiom}
 
-\newtheorem*{corollary*}{Corollary}
-\newtheorem*{claim*}{Claim}
-\newtheorem*{lemma*}{Lemma}
-\newtheorem*{proposition*}{Proposition}
-\newtheorem*{theorem*}{Theorem}
+% \newtheorem*{corollary*}{Corollary}
+% \newtheorem*{claim*}{Claim}
+% \newtheorem*{lemma*}{Lemma}
+% \newtheorem*{proposition*}{Proposition}
+% \newtheorem*{theorem*}{Theorem}
 
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
-\newtheorem{example}{Example}[section]
-\newtheorem{examples}[example]{Examples}
+% \theoremstyle{definition}
+% \newtheorem{definition}{Definition}[section]
+% \newtheorem{example}{Example}[section]
+% \newtheorem{examples}[example]{Examples}
 
-\newtheorem*{example*}{Example}
+% \newtheorem*{example*}{Example}
 
-\newtheoremstyle{exercise}
-    {24pt plus 4pt minus 4pt} % Space above
-    {12pt plus 4pt minus 4pt} % Space below
-    {}                        % Body font
-    {}                        % Indent amount
-    {\bfseries}               % Theorem head font
-    {.}                       % Punctuation after theorem head
-    {.5em}                    % Space after theorem head
-    {}                         % Theorem head spec (can be left empty, meaning 'normal')
+% \newtheoremstyle{exercise}
+%     {24pt plus 4pt minus 4pt} % Space above
+%     {12pt plus 4pt minus 4pt} % Space below
+%     {}                        % Body font
+%     {}                        % Indent amount
+%     {\bfseries}               % Theorem head font
+%     {.}                       % Punctuation after theorem head
+%     {.5em}                    % Space after theorem head
+%     {}                         % Theorem head spec (can be left empty, meaning 'normal')
 
-\theoremstyle{exercise}
-\newtheorem{exercise}{Exercise}[section]
-\newtheorem{problem}[exercise]{Problem}
+% \theoremstyle{exercise}
+% \newtheorem{exercise}{Exercise}[section]
+% \newtheorem{problem}[exercise]{Problem}
 
-\newtheorem*{exercise*}{Exercise}
-\newtheorem*{problem*}{Problem}
+% \newtheorem*{exercise*}{Exercise}
+% \newtheorem*{problem*}{Problem}
 
-\theoremstyle{remark}
-\newtheorem{remark}{Remark}[section]
-\newtheorem{remarks}[remark]{Remarks}
+% \theoremstyle{remark}
+% \newtheorem{remark}{Remark}[section]
+% \newtheorem{remarks}[remark]{Remarks}
 
-\newtheorem*{remark*}{Remark}
-\newtheorem*{remarks*}{Remarks}
-\fi
+% \newtheorem*{remark*}{Remark}
+% \newtheorem*{remarks*}{Remarks}
+% \fi
 
 \makeatletter
 \@ifundefined{solution}{%
