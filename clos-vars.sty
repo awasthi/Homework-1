@@ -131,7 +131,7 @@ main=english]{babel}
 %% Times clones
 \if@times % TeX Gyre for text and mathematics
 \pdfmapfile{+newtx.map}
-\RequirePackage[osf,largesc,theoremfont]{newtxtext}% roman
+\RequirePackage[largesc,theoremfont]{newtxtext}% roman
 \RequirePackage[scale=.95,type1]{cabin}% sans
 \RequirePackage[varqu,varl,scaled=.94]{zi4}% mono
 
@@ -146,6 +146,8 @@ main=english]{babel}
                 cal=pxtx,%
                 scr=boondox]{mathalfa}%
 
+%% Use oldstyle figs
+% \useosf
 % don't use osf for equation labels or enumerate labels
 \newcommand\liningnums[1]{\fontfamily{Tempora-TLF}\selectfont{#1}}
 \newcommand\upnums[1]{\liningnums{#1}}
@@ -158,11 +160,11 @@ main=english]{babel}
 %% Use Tempora for Greek and Russian
 \substitutefont{LGR}{\rmdefault}{Tempora-TLF}%
 \substitutefont{T2A}{\rmdefault}{Tempora-TLF}%
-\substitutefont{T1}{\rmdefault}{Tempora-TOsF}%
+\substitutefont{T1}{\rmdefault}{Tempora-TLF}%
+% \substitutefont{T1}{\rmdefault}{Tempora-TOsF}%
 
 %% Times specific commands
-\newcommand{\indicate}{\chi}
-\newcommand\defeq{\coloneqq}
+% \let\emptyset\varnothing%
 \let\setminus\smallsetminus
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}}
 \let\oldbtright\blacktriangleright%
@@ -205,8 +207,6 @@ main=english]{babel}
 % \DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
 % \DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
 
-\newcommand{\indicate}{\mathbb{1}}
-\newcommand\defeq{\coloneqq}
 \let\setminus\smallsetminus
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}}
 \let\oldbtright\blacktriangleright%
