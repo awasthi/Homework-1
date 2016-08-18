@@ -1,0 +1,70 @@
+\def\auth{Carlos Salinas}%
+\def\tight{Language Intros}%
+\def\short{Lang-Intros}%
+\def\subject{language learning}%
+\def\keys{french, german, italian, russian, polish, farsi, turkish,
+  chinese, japanese, korean}%
+\def\email{salinac@purdue.edu}
+
+\documentclass{memoir}
+\usepackage{geometry}
+
+%% Base customization and variables
+\usepackage[times,CJK,arabi]{clos-vars}
+
+%% Formatting
+
+%% Footnote style
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+%% Hyperref setup
+\hypersetup{%
+  breaklinks,%
+  colorlinks=true,%
+  linkcolor=black,%
+  citecolor=black,%
+  filecolor=black,%
+  menucolor=black,%
+  runcolor=black,%
+  urlcolor=black,%
+  pdftitle={\short},%
+  pdfauthor={\auth},%
+  pdfkeywords={\keys},%
+  pdfsubject={\subject},%
+  pageanchor={false},%
+  unicode
+}
+
+%% Graphics path as it says
+\graphicspath{{figures/}}
+
+%% Fix AMS counter bug
+\renewenvironment{problem}
+                 {\begin{exercise}}%
+                 {\end{exercise}}%
+
+\begin{document}
+\author{\href{mailto:\email}{\auth}}
+\title{\tight}
+\date{\today}
+
+\frontmatter
+\maketitle
+\tableofcontents
+
+\mainmatter
+\include{german/german-grammar}
+\include{french/french-grammar}
+\include{russian/russian-grammar}
+\include{farsi/farsi-grammar}
+\include{turkish/turkish-grammar}
+\include{chinese/chinese-grammar}
+\include{japanese/japanese-grammar}
+\include{korean/korean-grammar}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
