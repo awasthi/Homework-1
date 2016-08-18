@@ -475,6 +475,43 @@ to be.
   \[
     X\setminus A^\circ=\overline{X\setminus A}.
   \]
+  But this was one of the ``complementary'' relationships proved earlier
+  between interiors and closures.
+\end{proof}
+
+We conclude with a geometrically pleasing corollary.
+
+\begin{corollary}
+  Let \(A\) be a subset of a metric space \(X\). Then \(X\) can be
+  expressed as a disjoint union
+  \[
+    A=A^\circ\cup\partial A\cup{(X\setminus A)}^\circ.
+  \]
+  In other words, every point of \(X\) satisfies exactly one of the
+  following properties: it is the interior to \(A\), interior to
+  \(X\setminus A\), or on the common boundary \(\partial
+  A=\partial(X\setminus A)\).
+\end{corollary}
+
+The disjointness in this corollary ``justifies'' the idea that \(\partial
+A=\partial(X\setminus A)\) is sort of a ``common interface'' between \(A\)
+and \(X\setminus A\). For ugly subsets \(A\subseteq X\) one can't take this
+intuition too seriously.
+
+\begin{proof}
+  Since \(X\setminus A^\circ=\overline{X\setminus A}\) by an earlier
+  theorem, the assertion of the corollary is exactly the statement
+  \[
+    \overline{X\setminus A}=\partial A\cup(X\setminus A)^\circ
+  \]
+  with \(\partial A\) disjoint from \({(X\setminus A)}^\circ\). But by
+  definition of the boundary for \(X\setminus A\) we have a \emph{disjoint}
+  union decomposition
+  \[
+    \overline{X\setminus A}=\partial(X\setminus A)\cup{(X\setminus A)}^\circ.
+  \]
+  This, it suffices to show \(\partial A=\partial (X\setminus A)\). But
+  this latter equality was shown in the preceding theorem.
 \end{proof}
 
 %%% Local Variables:

@@ -1,0 +1,40 @@
+\section{Product topology}
+The aim of this handout is to address two points: metrizability of finite
+products of metric spaces, and the abstract characterization of the product
+topology in terms of the universal mapping properties among topological
+spaces. This latter issue is related to explaining0 why the definition of
+the product topology is not merely \emph{ad hoc} but in a sense the
+``right'' definition. In particular, when you study topology more
+systematically and encounter the problem of topologizing infinite products
+of topological spaces, if you think in terms of the universal property to
+be discussed below then you will be inexorably led to the right
+definition of the product topology for a product of infinitely many
+topological spaces (it is not what one would naively expect to be, based on
+experience with the case of finite products).
+
+\subsection{Metrics of finite products}
+Let \(X_1,\dotsc,X_d\) be metrizable topological spaces. The product set
+\[
+  X=\prod_{i=1}^d X_i
+\]
+admits a natural product topology. It is natural to ask if, upon choosing
+metrics \(\rho_j\) inducing the given topology on each \(X_j\), we can
+define a metric \(\rho\) on \(X\) in terms of \(\rho_j\) such that \(\rho\)
+induces the product topology on \(X\). The basic idea is to find a metric
+which describes the idea of ``coordinate-wise closedness'', but several
+natural candidates leap out, none of which are evidently better than others
+\begin{align*}
+  \rho^{\text{max}}\bigl((x_1,\dotsc,x_d),(x_1',\dotsc,x_d')\bigr)
+  &=\max_{\mathclap{1\leq j\leq d}}\rho_j(x_j,x_j')\\
+  \rho^{\text{Euc}}\bigl((x_1,\dotsc,x_d),(x_1',\dotsc,x_d')\bigr)
+  &=\sqrt{\sum_{i=1}^d\rho_j(x_j,x_j')^2}\\
+  \rho_1\bigl((x_1,\dotsc,x_d),(x_1',\dotsc,x_d')\bigr)
+  &=\sum_{i=1}^d\rho_j(x_j,x_j')\\
+  \rho_p\bigl((x_1,\dotsc,x_d),(x_1',\dotsc,x_d')\bigr)
+  &=\left[\sum_{j=1}^d\rho_j(x_j,x_j')^p\right]^{1/p},&p\geq 1.
+\end{align*}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Diffgeo"
+%%% End:
