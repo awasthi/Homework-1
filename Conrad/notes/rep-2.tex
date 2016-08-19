@@ -88,6 +88,18 @@ be block-diagonal, with blocks \({J_k}^n\), so we must have
 \[
 J^n=\bigl(\lambda\Id+N\bigr)^n=\lambda^n\Id+\binom{n}{1}\lambda^{n-1}N+\binom{n}{2}\lambda^{n-2}N^2+\dotsb.
 \]
+Notice that for the above to be \(\Id\), since \(N^p\) is the matrix of
+zeros and ones only, with the ones in index position \((i,j)\) with
+\(i=j+k\) (a line parallel to the diagonal, \(k\) steps above it). So the
+sum above can be \(\Id\) if and only if \(\lambda^n=1\) and \(N=0\). In
+other words, \(J\) is a \(1\times 1\) black, and \(\rho(g)\) is
+\emph{diagonal} in this basis. We conclude the following.
+
+\begin{proposition}
+  If \(V\) is a representation of the cyclic group \(G\) of order \(n\),
+  there exists a basis in which the action of every group element is
+  diagonal, with the \(n\)-th roots of unity on the diagonal.
+\end{proposition}
 
 %%% Local Variables:
 %%% mode: latex
