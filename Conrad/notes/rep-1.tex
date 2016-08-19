@@ -95,16 +95,72 @@ action \(a\) of \(H\) on \(X\) and group homomorphism
   Let \(V\) be a complex vector space of dimension \(n<\infty\). After
   choosing a basis, we can identify it with \(\bbC^n\), although we shal
   lavoid doing so without good reason. Recall that the \emph{endomorphism
-    algebra \(\End V\)} is the set of all linear maps (or \emph{operators})
+    algebra \(\End(V)\)} is the set of all linear maps (or \emph{operators})
   \(L\colon V\to V\), with the natural addition of linear maps and the
   composition as multiplication. If \(V\) has been identified with
   \(\bbC^n\), a linear map is uniquely representable by a matrix, and the
   addition of linear maps becomes the entrywise addition, while the
   composition becomes the matrix multiplication.
 
-  Inside \(\End V\), there is contained the group \(\GL V\) of invertible
+  Inside \(\End(V)\), there is contained the group \(\GL(V)\) of invertible
   linear operators; the group operation, of course, is composition.
 \end{example}
+
+\begin{proposition}
+  \(V\) is naturally a representation of \(\GL(V)\).
+\end{proposition}
+It is called the \emph{standard} representation of \(\GL(V)\). The following
+corresponds to Prop.\@ 1.1, involvinge the same abuse of language.
+
+\begin{proposition}
+  A representation of \(G\) on \(V\) ``is the same as'' a group
+  homomorphism from \(G\) to \(\GL(V)\).
+\end{proposition}
+\begin{proof}
+  Observe that, to give a linear action of \(G\) on \(V\), we must assign
+  to each \(g\in G\) a linear self-map \(\rho(g)\in\End(V)\). Compatibility
+  of the action with the group law requires
+  \begin{align*}
+    \rho(h)\bigl(\rho(g)(\bfv)\bigr)&=\rho(hg)(\bfv),
+    &\rho(1)(\bfv)&=\bfv,
+  \end{align*}
+  for all \(\bfv\in V\), whence we conclude that \(\rho(1)=\id\),
+  \(\rho(hg)=\rho(h)\circ\rho(g)\). Taking \(h=g^{-1}\) shows that
+  \(\rho(g)\) is invertible, hence lands in \(\GL(V)\). The first relation
+  then says that we are dealing with a group homomorphism.
+\end{proof}
+
+\begin{definition}
+  An \emph{isomorphism \(\varphi\)} between two representation
+  \((\rho_1,V_1)\) and \((\rho_2,V_2)\) of \(G\) is a linear isomorphism
+  \(\varphi\colon V_1\to V_2\) which intertwines with the action of \(G\),
+  that is, satisfies
+  \[
+    \varphi\bigl(\rho_1(h)(\bfv)\bigr)=\rho_2(g)\bigl(\varphi(\bfv)\bigr).
+  \]
+\end{definition}
+
+Note that the equality makes sense even if \(\varphi\) is not invertible,
+in which case it is just called an \emph{intertwining operator} or
+\emph{\(G\)-linear map}. However, if \(\varphi\) is invertible, we can
+write instead
+\begin{equation}
+  \label{eq:conj-operator}
+  \rho_2=\varphi\circ\rho_1\circ\varphi^{-1},
+\end{equation}
+meaning that we have an equality of linear maps after intserting any group
+element \(g\). Observe that this relation determines \(\rho_2\) if
+\(\rho_1\) and \(\varphi\) are known. We can finally formulate the basic
+problem of representation theory: Classify all representation of a given
+group \(G\), up to isomorphism.
+
+For arbitrary \(G\), this is very hard! We shall concentrate on finite
+groups, where a very good general theory exists. Later on, we shall study
+some examples of topological compact groups, such as \(\Unit(1)\) and
+\(\SU(2)\). The general theory for compact groups is also completely
+understood, but requires more difficult methods.
+
+I close with a simple observation.
 
 %%% Local Variables:
 %%% mode: latex
