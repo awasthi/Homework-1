@@ -57,25 +57,22 @@ action \(a\) of \(H\) on \(X\) and group homomorphism
 \(\varphi^*a=a\circ\varphi\). In the original definition, the action sends
 \((g,x)\) to \(\varphi(g)(x)\).
 
-\begin{example}[Tautological action of \(\Sym X\) on \(X\)]
-  This is the obvious action, call it \(T\), sending \(f,x\) to \(f(x)\),
-  where \(f\colon X\to X\) is a bijection and \(x\in X\). In this language,
-  the action \(a\) of \(G\) on \(X\) is \(\alpha^*T\) with the homomorphism
-  \(\alpha\) of the proposition -- the pull-back under \(\alpha\) of the
-  tautological action.
-\end{example}
+\section{Tautological action of \(\Sym X\) on \(X\)}
+This is the obvious action, call it \(T\), sending \(f,x\) to \(f(x)\),
+where \(f\colon X\to X\) is a bijection and \(x\in X\). In this language,
+the action \(a\) of \(G\) on \(X\) is \(\alpha^*T\) with the homomorphism
+\(\alpha\) of the proposition -- the pull-back under \(\alpha\) of the
+tautological action.
 
-\begin{example}[Linearity]
-  The question of classifying all possible \(X\) with action of \(G\) is
-  hopeless in such generality, but one should recall that, in first
-  approximation, mathematics is linear. So we shall take our \(X\) to be
-  a\emph{vector space} over some ground \emph{field}, and ask that the
-  action of \(G\) be linear, as well, in other words, that it should
-  preserve the vector space structure. Our interest is mostly confined to
-  the case when the field of scalars is \(\bbC\), although we shall
-  occasionally mention how the picture changes when other fields are
-  studied.
-\end{example}
+\section{Linearity}
+The question of classifying all possible \(X\) with action of \(G\) is
+hopeless in such generality, but one should recall that, in first
+approximation, mathematics is linear. So we shall take our \(X\) to be
+a\emph{vector space} over some ground \emph{field}, and ask that the action
+of \(G\) be linear, as well, in other words, that it should preserve the
+vector space structure. Our interest is mostly confined to the case when
+the field of scalars is \(\bbC\), although we shall occasionally mention
+how the picture changes when other fields are studied.
 
 \begin{definition}
   A linear representation \(\rho\) of \(G\) on a complex vector space \(V\)
@@ -91,20 +88,19 @@ action \(a\) of \(H\) on \(X\) and group homomorphism
   \emph{finite-dimensional complex representation}.
 \end{definition}
 
-\begin{example}[The general linear group]
-  Let \(V\) be a complex vector space of dimension \(n<\infty\). After
-  choosing a basis, we can identify it with \(\bbC^n\), although we shal
-  lavoid doing so without good reason. Recall that the \emph{endomorphism
-    algebra \(\End(V)\)} is the set of all linear maps (or \emph{operators})
-  \(L\colon V\to V\), with the natural addition of linear maps and the
-  composition as multiplication. If \(V\) has been identified with
-  \(\bbC^n\), a linear map is uniquely representable by a matrix, and the
-  addition of linear maps becomes the entrywise addition, while the
-  composition becomes the matrix multiplication.
+\section{The general linear group}
+Let \(V\) be a complex vector space of dimension \(n<\infty\). After
+choosing a basis, we can identify it with \(\bbC^n\), although we shal
+lavoid doing so without good reason. Recall that the \emph{endomorphism
+  algebra \(\End(V)\)} is the set of all linear maps (or \emph{operators})
+\(L\colon V\to V\), with the natural addition of linear maps and the
+composition as multiplication. If \(V\) has been identified with
+\(\bbC^n\), a linear map is uniquely representable by a matrix, and the
+addition of linear maps becomes the entrywise addition, while the
+composition becomes the matrix multiplication.
 
-  Inside \(\End(V)\), there is contained the group \(\GL(V)\) of invertible
-  linear operators; the group operation, of course, is composition.
-\end{example}
+Inside \(\End(V)\), there is contained the group \(\GL(V)\) of invertible
+linear operators; the group operation, of course, is composition.
 
 \begin{proposition}
   \(V\) is naturally a representation of \(\GL(V)\).
@@ -124,7 +120,7 @@ corresponds to Prop.\@ 1.1, involvinge the same abuse of language.
     \rho(h)\bigl(\rho(g)(\bfv)\bigr)&=\rho(hg)(\bfv),
     &\rho(1)(\bfv)&=\bfv,
   \end{align*}
-  for all \(\bfv\in V\), whence we conclude that \(\rho(1)=\id\),
+  for all \(\bfv\in V\), whence we conclude that \(\rho(1)=\Id\),
   \(\rho(hg)=\rho(h)\circ\rho(g)\). Taking \(h=g^{-1}\) shows that
   \(\rho(g)\) is invertible, hence lands in \(\GL(V)\). The first relation
   then says that we are dealing with a group homomorphism.
@@ -167,7 +163,7 @@ isomorphism \(\varphi\). Then, by formula \eqref{eq:conj-operator}, we can
 define a new representation \(\rho_2\) of \(G\) on \(\bbC^n\), which is
 isomorphic to \((\rho,V)\). So any \(n\)-dimensional representation of
 \(G\) is isomorphic to a representation on \(\bbC^n\). The use of an
-abstract vector space does not lead to 'new' representation, but it does
+abstract vector space does not lead to `new' representation, but it does
 free us from the presence of a distinguished basis.
 
 %%% Local Variables:

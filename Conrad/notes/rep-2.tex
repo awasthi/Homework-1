@@ -1,5 +1,93 @@
 \chapter{Lecture 2}
-Hello
+In this section, we shall discuss the representations of a cyclic group,
+and then proceed to define the important notions of irreducibility and
+complete reducibility.
+\section{Concrete realization of isomorphism classes}
+We observed last time that every \(m\)-dimensional representation of a
+group \(G\) was isomorphic to a representation on \(\bbC^m\). This leads to
+a concrete realization of the set of \(m\)-dimensional isomorphism classes
+of representations.
+
+\begin{proposition}
+  The set of \(m\)-dimensional isomorphism classes of \(G\)-representations
+  is in bijection with the quotient
+  \[
+    \Hom\bigl(G,\GL(m,\bbC)\bigr)/\GL(m,\bbC)
+  \]
+  of the set of group homomorphisms to \(\GL(m)\) by the overall
+  conjugation action on the latter.
+\end{proposition}
+\begin{proof}
+  This feels rather tautological, but conjugation by \(\varphi\in\GL(m)\)
+  sends a homomorphism \(\rho\) to the new homomorphism
+  \(g\mapsto \varphi\circ\rho(g)\varphi^{-1}\). According to Def.\@ 1.2,
+  this has exactly the effect of identifying isomorphic representations.
+\end{proof}
+
+\begin{remark}
+  The proposition is not as useful as it looks (at least to us). It can be
+  helpful in undesrtanding certain infinite discrete groups (such as the
+  following example, \(\bbZ\)) in which case the set \(\Hom\) can have
+  interesting geometric structures. However, for finite groups, the set of
+  isomorphism classes is finite so its description above is not too
+  enlightening.
+\end{remark}
+
+\section{Representation of \(\bbZ\)}
+We shall classify all representations of the group \(\bbZ\), with its
+additive structure. We must have \(\rho(0)=\Id\). Aside from that, we must
+specify an invertible matrix \(\rho(n)\) for every \(n\in\bbZ\). However,
+given \(\rho(1)\), we can recover \(\rho(n)\) as
+\(\rho(1+\dotsb+1)=\rho(1)^n\). So there is no choice involved. Conversely,
+for any invertible map \(\rho(1)\in\GL(m)\), we obtain a representation of
+\(\bbZ\) this way.
+
+Thus, \(m\)-dimensional isomorphism classes of representations of \(\bbZ\)
+are in bijection with conjugacy classes in \(\GL(m)\). These can be
+parametrized by the \emph{Jordan canonical form} (see the next
+example). We will have \(m\) continuous parameters -- the eigenvalues,
+which are nonzero complex numbers, and are defined up to reordering -- and
+some discrete parameters whenever two or more eigenvalues coincide,
+specifying the Jordan block sizes.
+
+\section{The cyclic group of order \(n\)}
+Let \(G=\{1,g,\dotsc,g^{n-1}\}\), with the relation \(g^n=1\). A
+representation of \(G\) on \(V\) defines an invertible endomorphism
+\(\rho(g)\in \GL(V)\). As before, \(\rho(1)=\Id\) and
+\(\rho(g^k)=\rho(g)^k\), so all other images of \(\rho\) are determined by
+the single operator \(\rho(g)\).
+
+Choosing a basis of \(V\) allows us to convert \(\rho(g)\) into a matrix
+\(A\), but we shall want to be careful with our choice. Recall that from
+general theory that there exists a \emph{Jordan basis} in which \(\rho(g)\)
+takes its block-diagonal \emph{Jordan normal form}
+\[
+  A=
+  \begin{bmatrix}
+    J_1&0&\cdots&0\\
+    0&J_2&\cdots&0\\
+    \vdots&\vdots&\ddots&\vdots\\
+    0&0&\cdots&J_m
+  \end{bmatrix}
+\]
+where the \emph{Jordan blocks \(J_k\)} take the form
+\[
+J_k=
+\begin{bmatrix}
+  \lambda&1&0&\cdots&0\\
+  0&\lambda&1&\cdots&0\\
+  \vdots&\vdots&\vdots&\ddots&\vdots\\
+  0&0&0&\cdots&1\\
+  0&0&0&\cdots&\lambda
+\end{bmatrix}.
+\]
+However, we must impose the condition \(A^n=\Id\). But \(A^n\) itself will
+be block-diagonal, with blocks \({J_k}^n\), so we must have
+\({J_k}^n=1\). To compute that, let \(N\) be the Jordan matrix with
+\(\lambda=0\); then we have \(J=\lambda\Id+N\), so
+\[
+J^n=\bigl(\lambda\Id+N\bigr)^n=\lambda^n\Id+\binom{n}{1}\lambda^{n-1}N+\binom{n}{2}\lambda^{n-2}N^2+\dotsb.
+\]
 
 %%% Local Variables:
 %%% mode: latex
