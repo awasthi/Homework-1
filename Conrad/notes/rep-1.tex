@@ -1,0 +1,108 @@
+\chapter{What is Representation Theory?}
+Groups arise in nature as ``sets of symmetries (of an object), which are
+closed under composition and under taking inverses''. For example, the
+\emph{symmetric group \(S_n\)} is the group of all permutations
+(symmetries) of \(\{1,\dotsc,n\}\); the \emph{alternating group \(A_n\)} is
+the set of all symmetries preserving the parity of the number of ordered
+pairs; the \emph{dihedral group \(D_{2n}\)} is the group of symmetries of
+the regular \(n\)-gon in the plane. The \emph{orthogonal group
+  \(\Orth(3)\)} is the group of distance-preserving transformations of
+Euclidean space which fix the origin. There is also the group of \emph{all}
+distance preserving transformations, which includes the translations along
+with \(\Orth(3)\).\footnote{This group is isomorphic to the
+  \emph{semi-direct product \(\Orth(3)\ltimes\bbR^3\)}.}
+
+The official definition is of course more abstract, a group is a set \(G\)
+with a binary operation \(*\) which is associative, has a unit element
+\(e\) and for which inverses exist. Associativity allows a convenient abuse
+of notation, where we write \(gh\) for \(g*h\); we have \(ghk=(gh)k=g(hk)\)
+and parentheses are unnecessary. I will often write \(1\) for \(e\), but
+this is dangerous on rare occasions, such that when studying the group
+\(\bbZ\) under addition; in that case, \(e=0\).
+
+The abstract definition notwithstanding, the interesting situation involves
+a group ``acting'' on a set. Formally, an action of a group \(G\) on a set
+\(X\) is an ``action map'' \(a\colon G\times X\to X\) which is
+\emph{compatible with the group law}, in the sense that
+\begin{align*}
+  a\bigl(h,a(g,x)\bigr)&=a(hg,x)\\
+  a(e,x)&=x.
+\end{align*}
+This justifies the abuse of notation \(a(g,x)=gx\), for we have
+\(h(gx)=(hg)x\).
+
+From this point of view, geometry asks, ``Given a geometric object \(X\),
+what is its group of symetries?'' Representation theory reverses the
+quostion to ``Given a group \(G\), what objects \(X\) does it act on?'' and
+attempts to answer this question by classifying such \(X\) up to
+isomorphism.
+
+Before restricting to the linear case, our main concern, let us remember
+another way to describe an action of \(G\) on \(X\). Every \(g\in G\)
+defines a map \(a(g)\colon X\to X\) by \(x\mapsto gx\). This map is a
+bijection, with inverse map \(a(g^{-1})\): indeed, \(\bigl(a(g^{-1})\circ
+a(g)\bigr)(x)=g^{-1}gx=ex=x\) from the properties of the action. Hence
+\(a(g)\) belongs to the set \(\Sym X\) of bijective self-maps of
+\(X\). This set forms a group under composition, and the properties of an
+action imply that
+\begin{proposition}
+  An action of \(G\) on \(X\) ``is the same as'' a group homomorphism
+  \(\alpha\colon G\to\Sym X\).
+\end{proposition}
+
+The formulation of Prop.\@ 1.1 leads to the following observation. For any
+action \(a\) of \(H\) on \(X\) and group homomorphism
+\(\varphi\colon G\to H\), there is defined a \emph{restricted} or
+\emph{pulled-back} action \(\varphi^*a\) of \(G\) on \(X\), as
+\(\varphi^*a=a\circ\varphi\). In the original definition, the action sends
+\((g,x)\) to \(\varphi(g)(x)\).
+
+\begin{example}[Tautological action of \(\Sym X\) on \(X\)]
+  This is the obvious action, call it \(T\), sending \(f,x\) to \(f(x)\),
+  where \(f\colon X\to X\) is a bijection and \(x\in X\). In this language,
+  the action \(a\) of \(G\) on \(X\) is \(\alpha^*T\) with the homomorphism
+  \(\alpha\) of the proposition -- the pull-back under \(\alpha\) of the
+  tautological action.
+\end{example}
+
+\begin{example}[Linearity]
+  The question of classifying all possible \(X\) with action of \(G\) is
+  hopeless in such generality, but one should recall that, in first
+  approximation, mathematics is linear. So we shall take our \(X\) to be
+  a\emph{vector space} over some ground \emph{field}, and ask that the
+  action of \(G\) be linear, as well, in other words, that it should
+  preserve the vector space structure. Our interest is mostly confined to
+  the case when the field of scalars is \(\bbC\), although we shall
+  occasionally mention how the picture changes when other fields are
+  studied.
+\end{example}
+
+\begin{definition}
+  A linear representation \(\rho\) of \(G\) on a complex vector space \(V\)
+  is a set-theoretic action on \(V\) which preserves the linear structure,
+  i.e.,
+  \begin{align*}
+    \rho(g)(\bfv_1+\bfv_2)&=\rho(g)\bfv_1+\rho(g)\bfv_2,&&\text{for all
+                                                          \(\bfv_1,\bfv_2\in
+                                                          V\)},\\
+    \rho(g)(k\bfv)&=k\rho(g)\bfv&&\text{for all \(k\in\bbC\), \(\bfv\in V\).}
+  \end{align*}
+  Unless otherwise mentioned, a \emph{representation} will mean a
+  \emph{finite-dimensional complex representation}.
+\end{definition}
+
+\begin{example}[The general linear group]
+  Let \(V\) be a complex vector space of dimension \(n<\infty\). After
+  choosing a basis, we can identify it with \(\bbC^n\), although we shal
+  lavoid doing so without good reason. Recall that the \emph{endomorphism
+    algebra \(\End V\)} is the set of all linear maps (or \emph{operators})
+  \(L\colon V\to V\), with the natural addition of linear maps and the
+  composition as multiplication. If \(V\) has been identified with
+  \(\bbC^n\), a linear map is uniquely representable by a matrix, and the
+  addition of linear
+\end{example}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../RepTheo"
+%%% End:
