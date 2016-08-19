@@ -119,12 +119,16 @@ main=english]{babel}
 %%% East Asian languages
 \if@CJK%
 \RequirePackage{CJKutf8}%
+\newcommand{\textmj}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}%
+\newcommand{\textmin}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}%
+\newcommand{\textgoth}[1]{\begin{CJK}{UTF8}{goth}#1\end{CJK}}%
+\newcommand{\textmaru}[1]{\begin{CJK}{UTF8}{maru}#1\end{CJK}}%
+\newcommand{\textbsmi}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}%
+\newcommand{\textbkai}[1]{\begin{CJK}{UTF8}{bkai}#1\end{CJK}}
+
 \newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}%
 \newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}%
-\newcommand{\textjpbf}[1]{\begin{CJK}{UTF8}{goth}#1\end{CJK}}%
-\newcommand{\textjptt}[1]{\begin{CJK}{UTF8}{maru}#1\end{CJK}}%
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}%
-\newcommand{\textzhit}[1]{\begin{CJK}{UTF8}{bkai}#1\end{CJK}}
 \fi%
 
 %%% Math packages
@@ -458,18 +462,18 @@ main=english]{babel}
 
 %%% Algebra
 %% Some special groups (mostly Lie groups)
-\newcommand{\GL}{\mathrm{GL}}
-\newcommand{\Orth}{\mathrm{O}}
-\newcommand{\Unit}{\mathrm{U}}
-\newcommand{\Simp}{\mathrm{S}}
-\newcommand{\SL}{\mathrm{SL}}
-\newcommand{\SO}{\mathrm{SO}}
-\newcommand{\Sp}{\mathrm{Sp}}
-\newcommand{\SU}{\mathrm{SU}}
-\newcommand{\PGL}{\mathrm{PGL}}
-\newcommand{\PSL}{\mathrm{PSL}}
-\newcommand{\PSO}{\mathrm{PSO}}
-\newcommand{\PSU}{\mathrm{SU}}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\Orth}{O}
+\DeclareMathOperator{\Unit}{U}
+\DeclareMathOperator{\Simp}{S}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\SU}{SU}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PSO}{PSO}
+\DeclareMathOperator{\PSU}{SU}
 
 %% Some special algebras and rings (mostly Lie groups)
 \newcommand{\frakgl}{\mathfrak{gl}}
