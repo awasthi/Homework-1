@@ -1,0 +1,42 @@
+\chapter{Complete Reducibility and Unitarity}
+In the homework, you find an example of a complex representation of the
+group \(\bbZ\) which is not completely reducible, and also of a
+representation of the cyclic group of prime order \(p\) over the finite
+field \(\bbF_p\) which is not completely reducible. This underlines the
+importance of the following complete reducibility theorem for finite
+groups.
+
+\begin{theorem}
+  Every complex representation of a finite group is completely reducible.
+\end{theorem}
+
+The theorem is so important that we shall give two proofs. The first uses
+inner products and so applies only to \(\bbR\) or \(\bbC\), but generalizes
+to \emph{compact groups}. The more algebraic proof, on the other hand,
+extends to any field of scalars \emph{whose characteristic does not divide
+  the order of the group} (equivalently, the order of the group should not
+be \(0\) in the field).
+
+Beautiful as it is, the result would have limited value without some supply
+of irreducible representations. It turns out that the following example
+provides an adequate supply.
+
+\section{The regular representation}
+Let \(\bbC[G]\) be the vector space of complex functions on \(G\). It has a
+basis \(\{\bfe_g:g\in G\}\), with \(\bfe_g\) representing the function
+equual to \(1\) at \(g\) and \(0\) elsewhere. \(G\) acts on this basis as
+follows:
+\[
+  \lambda(g)(\bfe_h)=\bfe_{gh}.
+\]
+This set theoretic action extends by linearity to the vector space:
+\[
+  \lambda(g)\Bigl(\sum\nolimits_{h\in G} v_h\cdot\bfe_h\Bigr)
+  =\sum_{h\in G}v_h\cdot\lambda(g)\bfe_h
+  =\sum_{h\in G}v_h\cdot\bfe_{gh}.
+\]
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../RepTheo"
+%%% End:

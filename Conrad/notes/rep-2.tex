@@ -100,6 +100,99 @@ other words, \(J\) is a \(1\times 1\) black, and \(\rho(g)\) is
   there exists a basis in which the action of every group element is
   diagonal, with the \(n\)-th roots of unity on the diagonal.
 \end{proposition}
+\section{Finite Abelian groups}
+The discussion for cyclic groups generalizes to any finite Abelian group
+\(A\). (The resulting classification of representations is more or less
+explicit, depending on whether we are willing to use the classification
+theorem for finite Abelian groups.) We recall the following fact from
+linear algebra:
+\begin{proposition}
+  Any family of commuting, separately diagonalizable \(m\times m\) matrices
+  can be simultaneously diagonalized.
+\end{proposition}
+
+The proof of this can be found in most linear algebra books.
+
+This implies that any representation of \(A\) is isomorphic to one where
+every group element acts diagonally. Each diagonal entry then determines a
+\emph{one-dimensional} representation of \(A\). So the classification
+reads: \(m\)-dimensional isomorphism classes of representations of \(A\)
+are in bijection with unordered \(m\)-tuples of \(1\)-dimensional
+representations. Note that for \(1\)-dimensional representations, viewed as
+homomorphisms \(\rho\colon A\to\bbC^\times\), there is no distinction
+between identity and isomorphism (the conjugation action of
+\(\GL(1,\bbC)\) on itself is trivial) .
+
+To say more, we must invoke the classification of finite Abelian groups,
+according to which \(A\) is isomorphic to a direct product of cyclic
+groups. To specify a \(1\)-dimensional representation of \(A\) we must then
+specify a root of unity of the appropriate order independently for each
+generator.
+
+\section{Subrepresentations and reducibility}
+Let \(\rho\colon G\to\GL(V)\) be a representation of \(G\).
+
+\begin{definition}
+  A sub representation of \(V\) is a \(G\)-invariant subspace
+  \(W\subseteq V\); i.e., for every \(\bfw\in W\), \(g\in G\) we have
+  \(\rho(g)(\bfw)\in W\). \(W\) becomes a representation under the action
+  \(\rho(g)\).
+\end{definition}
+
+Recall that, given a subspace \(W\subseteq V\), we can form the
+\emph{quotient space \(V/W\)}, the set of \(W\)-cosets \(\bfv+V\). If \(W\)
+was \(G\)-invariant, the \(G\)-action on \(V\) \emph{descends to} an action
+on \(V/W\) by setting \(g(\bfv+W)=\rho(g)(\bfv)+W\). If we choose another
+\(\bfv'\) in the same coset as \(\bfv\), then \(\bfv-\bfv'\in W\), so
+\(\rho(g)(\bfv-\bfv')\in W\), and then the cosets \(\rho(\bfv)+W\) and
+\(\rho(\bfv')+W\) agree.
+
+\begin{definition}
+  With this action, \(V/W\) is called the \emph{quotient representation} of
+  \(V\) under \(W\).
+\end{definition}
+
+\begin{definition}
+  The \emph{direct sum} of two representations \((\rho_1,V_1)\) and
+  \((\rho_2,V_2)\) is the space \(V_1\oplus V_2\) with the block-diagonal
+  action \(\rho_1\oplus\rho_2\) of \(G\).
+\end{definition}
+
+In the direct sum \(V_1\oplus V_2\), \(V_1\) is a subrepresentation and
+\(V_2\) is isomorphic to the associated quotient representation. Of course
+the roles of \(1\) and \(2\) can be interchanged. However, one should take
+care that for an \emph{arbitrary} group, it need not be the case that any
+representation \(V\) with subrepresentation \(W\) decomposes as
+\(W\oplus W/V\). This will be proved for complex representations of
+\emph{finite} groups.
+
+\begin{definition}
+  A representation is called \emph{irreducible} if it contains no proper
+  invariant subspaces. It is called \emph{completely reducible} if it
+  decomposes as a direct sum of irreducible subrepresentation.
+\end{definition}
+
+In particular, irreducible representations are completely reducible.
+
+For example, \(1\)-dimensional representations of any group are
+irreducible. Earlier, we thus proved that finite-dimensional complex
+representations of a finite Abelian group are completely reducible: indeed,
+we decomposed \(V\) into a direct sum of lines \(\bigoplus_{i=1}^nL_i\),
+where \(n=\dim V\), along the vectors in the diagonal basis. Each line is
+preserved by the action of the group. In the cyclic case, the possible
+actions of \(C_n\) on the line correspond to the \(n\) eligible roots of
+unity to specify for \(\rho(g)\).
+
+\begin{proposition}
+  Every complex representation of a finite Abelian group is completely
+  reducible, and every irreducible representation is \(1\)-dimensional.
+\end{proposition}
+
+It will be our goal to establish an analogous proposition for every finite
+group \(G\). The result is called the \emph{complete reducibility
+  theorem}. For nonAbelian groups, we shall have to give up on the
+\(1\)-dimensional requirement, but we shall still salvage a canonical
+decomposition.
 
 %%% Local Variables:
 %%% mode: latex
