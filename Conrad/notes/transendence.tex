@@ -1,5 +1,5 @@
-\section{Transendence}
-\subsection{Transendence bases}
+\section{Transcendence}
+\subsection{Transcendence bases}
 Let \(K\) be an extension field of a field \(k\). Let \(S\) be a subset of
 \(K\). We recall that \(S\) (or the elements of \(S\)) are said to be
 algebraically independent over \(k\), if whenever we have arelation
@@ -14,9 +14,9 @@ We can introduce an ordering among algebraically independent subsets of
 ordered, and thus there exists maximal elements. If \(S\) is a subset of
 \(K\) which is algebraically independent over \(k\), and if the cardinality
 of \(S\) is greatest among all such subsets, then we call this cardinality
-the \emph{transendence degree or dimension} of \(K\) over \(k\). Actually,
-we shall need to distinguish only between finite transendence degree or
-infinite transendence degree. We observe that the notion of transendence
+the \emph{transcendence degree or dimension} of \(K\) over \(k\). Actually,
+we shall need to distinguish only between finite transcendence degree or
+infinite transcendence degree. We observe that the notion of transcendence
 degree bears to the notion of algebraic independence the same relation as
 the notion of dimension bears to the notion of independence.
 
@@ -28,11 +28,46 @@ algebraically independent over \(k\).
 
 A subset \(S\) of \(K\) which is algebraically independent over \(k\) and
 is maximal with respect to the inclusion ordering will be called a
-\emph{transendence base} of \(K\) over \(k\). From the maximality, it is
-clear that if \(S\) is a transendence base of \(K\) over \(k\), then \(K\)
+\emph{transcendence base} of \(K\) over \(k\). From the maximality, it is
+clear that if \(S\) is a transcendence base of \(K\) over \(k\), then \(K\)
 is algebraic over \(k(S)\).
 
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: "../Diffgeo"
-%%% End:
+\begin{theorem}
+  Let \(K\) be an extension of a field \(k\). Any two transcendence bases of
+  \(K\) over \(k\) have the same cardinality. If \(\Gamma\) is a set of
+  generators of \(K\) over \(k\) (i.e., \(K=k(\Gamma)\)) and \(S\) is a
+  subset of \(\Gamma\) which is algebraically independent over \(k\), then
+  there exists a transcendence base \(\calB\) of \(K\) over \(k\) such that
+  \(S\subseteq\calB\subseteq\Gamma\).
+\end{theorem}
+\begin{proof}
+  We shall prove that if there exists one finite transcendence base, say
+  \(\{x_1,\dotsc,x_m\}\), \(m\geq 1\), then any other transcendence must
+  also have \(m\) elements. For this it will suffice to prove: If
+  \(w_1,\dotsc,w_n\) are elements of \(K\) which are algebraically
+  independent over \(k\) then \(n\geq m\) (for we can use symmetry). By
+  assumption, there exists a nonzero polynomial \(f_1\) in \(m+1\)
+  variables with coefficients in \(k\) such that
+  \[
+    f_1(w_1,x_1,\dotsc,x_m)=0.
+  \]
+  Furthermore, by hypothesis,  \(w_1\) occurs in \(f_1\), and some \(x_i\)
+  also occurs in \(f_1\), say \(x_1\). Then \(x_1\) is algebraic over
+  \(k(w_1,x_2,\dotsc,x_m)\). Suppose inductively that after a suitable
+  renumbering of \(x_2,\dotsc,x_m\) we have found \(w_1,\dotsc,w_r\)
+  \((r<n)\) such that \(K\) is algebraic over
+  \[
+    k(w_1,\dotsc,w_r,x_{r+1},\dotsc,x_m).
+  \]
+  Then there exists a nonzero polynomial \(f\) in \(m+1\) variables with
+  coefficients in \(k\) such that
+  \[
+    f(w_{r+1},w_1,\dotsc,w_r,x_{r+1},\dotsc,x_m)=0,
+  \]
+  and such that \(w_{r+1}\) actually occurs in \(f\).
+\end{proof}
+
+  %%% Local Variables:
+  %%% mode: latex
+  %%% TeX-master: "../Diffgeo"
+  %%% End:

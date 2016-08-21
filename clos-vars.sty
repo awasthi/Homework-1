@@ -135,7 +135,8 @@ main=english]{babel}
 %% Times clones
 \if@times % TeX Gyre for text and mathematics
 \pdfmapfile{+newtx.map}
-\RequirePackage[largesc,theoremfont]{newtxtext}% roman
+%% Use Tempora for Greek and Russian
+\RequirePackage[largesc]{newtxtext}% roman
 \RequirePackage[scale=.95,type1]{cabin}% sans
 \RequirePackage[varqu,varl,scaled=.94]{zi4}% mono
 
@@ -150,6 +151,11 @@ main=english]{babel}
                 cal=pxtx,%
                 scr=boondox]{mathalfa}%
 
+\substitutefont{LGR}{\rmdefault}{Tempora-TLF}%
+\substitutefont{T2A}{\rmdefault}{Tempora-TLF}%
+\substitutefont{T1}{\rmdefault}{Tempora-TLF}%
+% \substitutefont{T1}{\rmdefault}{Tempora-TOsF}%
+
 %% Use oldstyle figs
 % \useosf
 % don't use osf for equation labels or enumerate labels
@@ -160,12 +166,6 @@ main=english]{babel}
 \renewcommand{\bibnumfmt}[1]{[\liningnums{#1}]}
 \renewcommand{\citenumfont}[1]{{\liningnums{#1}}}
 \setenumerate{label=(\liningnums{\arabic*})}
-
-%% Use Tempora for Greek and Russian
-\substitutefont{LGR}{\rmdefault}{Tempora-TLF}%
-\substitutefont{T2A}{\rmdefault}{Tempora-TLF}%
-\substitutefont{T1}{\rmdefault}{Tempora-TLF}%
-% \substitutefont{T1}{\rmdefault}{Tempora-TOsF}%
 
 %% Times specific commands
 % \let\emptyset\varnothing%
