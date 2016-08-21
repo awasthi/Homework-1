@@ -64,7 +64,18 @@ is algebraic over \(k(S)\).
   \[
     f(w_{r+1},w_1,\dotsc,w_r,x_{r+1},\dotsc,x_m)=0,
   \]
-  and such that \(w_{r+1}\) actually occurs in \(f\).
+  and such that \(w_{r+1}\) actually occurs in \(f\). Since the \(w\) are
+  algebraically independent over \(k\), it follows that some \(x_j\)
+  (\(j=r+1,\dotsc,m\)) also occurs in \(f\). After renumbering we may
+  assume \(j=r+1\). Then \(x_{r+1}\) is algebraic over
+  \[
+    k(w_1,\dotsc,w_{r+1},x_{r+2},\dotsc,x_m).
+  \]
+  Since a tower of algebraic extension is algebraic, it follows that \(K\)
+  is algebraic over \(k(w_1,\dotsc,w_{r+1},x_{r+2},\dotsc,x_m)\). We can
+  repeat the procedure and if \(n\geq m\) we can replace all the \(x\) by
+  \(w\); to see that \(K\) is algebraic over \(k(w_1,\dotsc,w_m)\). This
+  shows that \(n\geq m\) implies \(n=m\), as desired.
 \end{proof}
 
   %%% Local Variables:
