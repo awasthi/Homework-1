@@ -134,16 +134,15 @@ main=english]{babel}
 %%% Math packages
 %% Times clones
 \if@times % TeX Gyre for text and mathematics
-\pdfmapfile{+newtx.map}
 %% Use Tempora for Greek and Russian
 \RequirePackage[largesc]{newtxtext}% roman
+\RequirePackage{tempora}
 \RequirePackage[scale=.95,type1]{cabin}% sans
 \RequirePackage[varqu,varl,scaled=.94]{zi4}% mono
 
 \RequirePackage[varg,%
                 bigdelims,%
                 % cmintegrals,%
-                smallerops,
                 nosymbolsc]{newtxmath}%
 \RequirePackage[bb=boondox,%
                 frak=pxtx,%
@@ -151,13 +150,8 @@ main=english]{babel}
                 cal=pxtx,%
                 scr=boondox]{mathalfa}%
 
-\substitutefont{LGR}{\rmdefault}{Tempora-TLF}%
-\substitutefont{T2A}{\rmdefault}{Tempora-TLF}%
-% \substitutefont{T1}{\rmdefault}{Tempora-TLF}%
-% \substitutefont{T1}{\rmdefault}{Tempora-TOsF}%
-
 %% Use oldstyle figs
-% \useosf
+\useosf
 % don't use osf for equation labels or enumerate labels
 \newcommand\liningnums[1]{\fontfamily{Tempora-TLF}\selectfont{#1}}
 \newcommand\upnums[1]{\liningnums{#1}}
@@ -175,19 +169,19 @@ main=english]{babel}
 \let\oldbtleft\blacktriangleleft%
 \renewcommand\blacktriangleright{\ensuremath{\scriptstyle\oldbtright}}
 \renewcommand\blacktriangleleft{\ensuremath{\scriptstyle\oldbtleft}}
+\newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+      \hbox{.}\hbox{.}}}%
+  =}%
 
 \else
 \if@libertine %% Use Libertine (a beautiful free font)
-\pdfmapfile{+libertinelgc.map}
-\pdfmapfile{+newtx.map}
-\RequirePackage[sb]{libertine}
-\RequirePackage{libertinextras}
+\RequirePackage{libertine}
+\RequirePackage{libertinegc} %% Greek and Cyrillic Libertine
 \RequirePackage[scale=.95,type1]{cabin} % sans
 \RequirePackage[varqu,varl,scaled=.94]{zi4} % mono
 \RequirePackage[libertine,%
                 libaltvw,%
                 bigdelims,%
-                smallerops,
                 % cmintegrals,%
                 % cmbraces%
                 ]{newtxmath} % Shitty math fonts
@@ -196,14 +190,6 @@ main=english]{babel}
                 frakscaled=1.1,
                 cal=boondoxo,%
                 scr=boondox]{mathalfa}%
-
-\renewcommand{\theequation}
-             {\fontfamily{ntxtlf}\selectfont{\arabic{equation}}}
-\setenumerate{label=(\fontfamily{ntxtlf}\selectfont{\arabic*})}
-
-%% Use Libertine for Greek and Russian (Libertine is magnificent font)
-\substitutefont{LGR}{\rmdefault}{LinuxLibertineT}%
-\substitutefont{T2A}{\rmdefault}{LinuxLibertineT}%
 
 %% Other Libertine specific math settings
 \DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
@@ -216,6 +202,9 @@ main=english]{babel}
 \let\oldbtleft\blacktriangleleft%
 \renewcommand\blacktriangleright{\ensuremath{\scriptstyle\oldbtright}}
 \renewcommand\blacktriangleleft{\ensuremath{\scriptstyle\oldbtleft}}
+\newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+      \hbox{.}\hbox{.}}}%
+  =}%
 
 \else % Use the regular CM fonts
 \RequirePackage{amssymb}%
@@ -241,7 +230,7 @@ main=english]{babel}
 \def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}%
 
 \newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
-      \hbox{\scriptsize.}\hbox{\scriptsize.}}}%
+      \hbox{.}\hbox{.}}}%
   =}%
 \RequirePackage{mleftright}
 \mleftright%
@@ -318,6 +307,15 @@ main=english]{babel}
 \endproof
 \end{quote}
 }
+
+%% Some commands
+\catcode `\@ = 11\relax
+\def\replicate#1{%
+  \expandafter\replicate@aux\romannumeral\number #1000Q{}
+}
+\def\replicate@aux#1{\csname replicate@aux@#1\endcsname}
+\long\def\replicate@aux@m#1Q#2#3{\replicate@aux#1Q{#2#3}{#3}}
+\long\def\replicate@aux@Q#1#2{#1}
 
 %% Some personal shortcuts
 \newcommand\ntrileq{\ntrianglelefteq}
@@ -531,6 +529,7 @@ main=english]{babel}
 %% Metric space
 \DeclareMathOperator{\diam}{diam}
 \DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\Derv}{D}
 \DeclareMathOperator{\Isom}{Isom}
 \DeclareMathOperator{\supp}{supp}
 \DeclareMathOperator{\Supp}{Supp}
