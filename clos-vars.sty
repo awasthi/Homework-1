@@ -153,7 +153,7 @@ main=english]{babel}
 
 \substitutefont{LGR}{\rmdefault}{Tempora-TLF}%
 \substitutefont{T2A}{\rmdefault}{Tempora-TLF}%
-\substitutefont{T1}{\rmdefault}{Tempora-TLF}%
+% \substitutefont{T1}{\rmdefault}{Tempora-TLF}%
 % \substitutefont{T1}{\rmdefault}{Tempora-TOsF}%
 
 %% Use oldstyle figs
@@ -197,7 +197,6 @@ main=english]{babel}
                 cal=boondoxo,%
                 scr=boondox]{mathalfa}%
 
-\useosf % oldstyle figs
 \renewcommand{\theequation}
              {\fontfamily{ntxtlf}\selectfont{\arabic{equation}}}
 \setenumerate{label=(\fontfamily{ntxtlf}\selectfont{\arabic*})}
@@ -207,9 +206,9 @@ main=english]{babel}
 \substitutefont{T2A}{\rmdefault}{LinuxLibertineT}%
 
 %% Other Libertine specific math settings
-% \DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
-% \DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
-% \DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
+\DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
+\DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
+\DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
 
 \let\setminus\smallsetminus
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}}
