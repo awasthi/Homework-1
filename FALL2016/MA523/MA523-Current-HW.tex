@@ -1,0 +1,75 @@
+\def\auth{Carlos Salinas}
+\def\hwnum{1}
+\def\tight{MA 523: Homework \hwnum}
+\def\short{MA519-HW-\hwnum}
+\def\class{MA 52300}
+\def\subject{partial differential equations}
+\def\email{salinac@purdue.edu}
+
+\documentclass[article,oneside,11pt]{memoir}
+\usepackage{geometry}
+
+%% Base customization and variables
+\usepackage[times]{clos-vars}
+
+%% Formatting
+
+%% Footnote style
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+%% Hyperref setup
+\hypersetup{%
+  breaklinks,%
+  colorlinks=true,%
+  linkcolor=black,%
+  citecolor=black,%
+  filecolor=black,%
+  menucolor=black,%
+  runcolor=black,%
+  urlcolor=black,%
+  pdftitle={\short},%
+  pdfauthor={\auth},%
+  pdfkeywords={\subject},%
+  pdfsubject={\class},%
+  pageanchor={false},%
+  unicode
+}
+
+%% Graphics path as it says
+\graphicspath{{figures/}}
+
+\renewenvironment{problem}[1][]% environment name
+{% begin code
+  \stepcounter{exercise}
+  \par\vspace{\baselineskip}\noindent
+  \ifx &#1&%
+  {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem}
+  \global\def\exercisename{Problem~\hwnum.\theproblem}%
+  \else
+  {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem~(#1)}
+  \global\def\exercisename{Problem~\hwnum.\theproblem(#1)}
+  \fi
+  \par\vspace{\baselineskip}%
+  \noindent\ignorespaces
+  % \begin{linenumbers}
+}%
+{% end code
+  \par\vspace{\baselineskip}%
+  \noindent\ignorespacesafterend
+  % \end{linenumbers}
+}
+
+\begin{document}
+\frontmatter
+\author{\href{mailto:\email}{\auth}}
+\title{\tight}
+\date{\today}
+\maketitle
+\thispagestyle{empty}
+\mainmatter
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
