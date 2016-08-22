@@ -6,7 +6,7 @@
 \def\subject{partial differential equations}
 \def\email{salinac@purdue.edu}
 
-\documentclass[article,oneside,11pt]{memoir}
+\documentclass[oneside]{memoir}
 \usepackage{geometry}
 
 %% Base customization and variables
@@ -47,7 +47,7 @@
   \global\def\exercisename{Problem~\hwnum.\theproblem}%
   \else
   {\normalfont\Large\bfseries\scshape Problem~\hwnum.\theproblem~(#1)}
-  \global\def\exercisename{Problem~\hwnum.\theproblem(#1)}
+  \global\def\exname{Problem~\hwnum.\theproblem(#1)}
   \fi
   \par\vspace{\baselineskip}%
   \noindent\ignorespaces
@@ -59,14 +59,38 @@
   % \end{linenumbers}
 }
 
+\numberwithin{equation}{subsection}
+\renewcommand\theequation{\hwnum.\arabic{equation}}
+
 \begin{document}
 \frontmatter
+\aliaspagestyle{title}{empty}
+\pagestyle{title}
 \author{\href{mailto:\email}{\auth}}
 \title{\tight}
 \date{\today}
 \maketitle
-\thispagestyle{empty}
+\cleartooddpage
+\makepagestyle{my-headings}
+\makeoddhead{my-headings}
+        {\small{\MakeUppercase{\itshape\auth}}}
+        {}
+        {\small{\MakeUppercase{\itshape\exname}}}
+\makeoddfoot{my-headings}{{\itshape\tight}}
+                      {}
+                      {\thepage}
+\makeevenhead{my-headings}
+        {\small{\MakeUppercase{\itshape\auth}}}
+        {}
+        {\small{\MakeUppercase{\itshape\exname}}}
+\makeevenfoot{my-headings}{{\itshape\tight}}
+                      {}
+                      {\thepage}
+\makeheadrule{my-headings}{\textwidth}{.25pt}
+\pagestyle{my-headings}
+% \makerunningwidth{headings}{1.15\textwidth}
 \mainmatter
+\include{homeworks/ma523-\hwnum}
 \end{document}
 
 %%% Local Variables:
