@@ -1,0 +1,192 @@
+\subsection{McClure: Summer 2008}
+\setcounter{exercise}{0}
+\setcounter{equation}{0}
+
+\begin{problem}
+  Let \(X\) and \(Y\) be topological spaces and let \(f\colon X\to Y\) be a
+  continuous function. Prove that
+  \[
+    f(\bar A)\subseteq\overline{f(A)}
+  \]
+  for all subsets \(A\) of \(X\).
+\end{problem}
+\begin{solution}
+  This is another characterization of continuity. Let \(x\in\bar A\). Then
+  for every neighborhood \(U\) of \(x\), \(U\cap A\neq\emptyset\). In
+  particular, if \(U\) is an neighborhood of \(f(x)\), \(f^{-1}(V)\)
+  is a neighborhood of \(x\) so \(f^{-1}(V)\cap A\neq\emptyset\). Thus,
+  \(V\cap f(A)\neq\emptyset\) so \(f(x)\in\overline{f(A)}\). It follows
+  that \(f(\bar A)\subseteq\overline{f(A)}\).
+\end{solution}
+
+\begin{problem}
+  Suppose that \(X\) is connected and every point of \(X\) has a
+  path-connected open neighborhood. Prove that \(X\) is path-connected.
+\end{problem}
+\begin{solution}
+  Let \(x,y\in X\) and suppose there does not exists a path from \(x\) to
+  \(y\). Hence, the sets
+  \begin{align*}
+    C&=\bigl\{\,y\in X:\text{there exists a path \(p\colon I\to X\)
+       from \(x\) to \(y\)}\,\bigr\}\\
+    D&=\bigl\{\,y\in X:\text{there does not exists a path \(p\colon I\to X\)
+       from \(x\) to \(y\)}\,\bigr\}
+  \end{align*}
+  are nonempty. We claim that both \(C\) and \(D\) form a separation of
+  \(X\). First we must show that these sets are open and that their union
+  \(X\). The latter is immediate as every point in \(X\) is either
+  connected to \(x\) by a path or it is not, i.e., \(C=X\setminus D\), and
+  at least one of these sets is nonempty, namely, \(C\). To see that \(C\)
+  is open let \(y\in C\). Then there exists a path-connected open
+  neighborhood \(U\) of \(y\). If \(U\cap D\neq\emptyset\) and \(z\) is a
+  point in that intersection, there exists a path \(q\colon I\to X\) from
+  \(y\) to \(z\). But there exists a path \(p\colon I\to X\) from \(x\) to
+  \(y\) so \(q*p\colon I\to Xs\) is a path from \(x\) to \(z\), which is a
+  contradiction. Thus, \(U\subset C\) and \(C\) must be open. Consequently,
+  a similar argument tells us that \(C\) is closed since if \(y\in\bar C\),
+  \(U\cap C\neq\emptyset\) for every neighborhood of \(y\). In particular,
+  for that special path-connected neighborhood \(U\) of \(y\), there is
+  some \(z\in C\cap U\). If \(y\in D\), then there exist a path
+  \(p\colon I\to X\) from \(x\) to \(y\), namely, the composite of the path
+  from \(x\) to \(z\) and from \(z\) to \(y\). This yields a contradiction
+  so \(y\in C\). Thus, \(C\) is closed so \(X\setminus D\) is open. It
+  follows that \(C\) and \(D\) form a separation of \(X\). But \(X\) is
+  connected
+\end{solution}
+
+\begin{problem}
+  Let \(X\) be a topological space and let \(f,g\colon X\to[0,1]\) be a
+  continuous function. Suppose that \(X\) is connected and \(f\) is
+  onto. Prove that there must be a point \(x\in X\) with \(f(x)=g(x)\).
+\end{problem}
+\begin{solution}
+  Seeking a contradiction, suppose \(f(x)\neq g(x)\) for any \(x\in
+  X\). Consider the map \(h\colon X\to I\times I\) given by
+  \(h(x)=\bigl(f(x),g(x)\bigr)\). This map is continuous by the u.m.p.\@ of
+  the product topology since each projection
+  \(\pi_1\circ h=f,\pi_2\circ h=g\) is continuous. Since \(f(x)\neq g(x)\),
+  \(h(x)\subseteq I\times I\setminus\Delta\) for otherwise, there is a
+  point \(x\in X\) such that \(h(x)=\bigl(f(x),g(x)\bigr)\in\Delta\) which
+  implies \(f(x)=g(x)\). Now, we note that the set
+  \((I\times I)\setminus\Delta\) consists of two connected components,
+  \begin{align*}
+    C&=\bigl\{\,x\in X:f(x)>g(x)\,\bigr\}\\
+    D&=\bigl\{\,x\in X:f(x)<g(x)\,\bigr\}.
+  \end{align*}
+  Thus, since \(X\) is connected, \(h(X)\subseteq C\) or \(h(X)\subseteq
+  D\). In the former case, since \(f\) is onto, \(f(x)=0\) for some \(x\in
+  X\) so \(g(x)<0\), which contradicts the assumption that the image of
+  \(X\) under \(g\) lies in \(I\). Similarly, if \(h(X)\subseteq D\), then
+  since \(f\) is onto, \(f(x)=1\) for some \(x\in X\), which implies
+  \(g(x)>1\). Again, this is nonsense. Therefore, the image of \(X\) under
+  \(h\) must contain a point in the diagonal \(\Delta\), i.e.,
+  \(f(x)=g(x)\) for some \(x\in X\).
+\end{solution}
+
+\begin{problem}
+  Let \(X\) be the two-point set \(\{0,1\}\) with the discrete
+  topology. Let \(Y\) be a countable product of copies of \(X\); thus an
+  element of \(Y\) is a sequence of \(0\)s and \(1\)s.  Let \(A\) be the
+  subset of \(Y\) consisting of sequences with only a finite number of
+  \(1\)s. Is A closed?  Prove or disprove.
+\end{problem}
+\begin{solution}
+  We shall disprove this by showing that the sequence consisting of
+  infinitely many \(1\)s is in the closure of this set. It suffices to show
+  that for every basic neighborhood \(U\) of \(\mathbf{1}\),
+  \(U\cap A\neq\emptyset\). Let \(U\) be a basic open neighborhood of
+  \(\mathbf{1}\). Then \(U=\prod_{i\in\bbN} U_i\) where only finitely many
+  of then \(U_i\neq \{0,1\}\). Let \(U_N\) be the last such \(U_i\). Then,
+  for \(1\leq i\leq N\), \(U_i\supseteq\{1\}\) otherwise \(\mathbf{1}\) is
+  not in the set \(U\). Let \(\bfx\) be the sequence consisting of \(N\)
+  \(1\)s and \(0\)s for the remainder of the sequence. Then \(\bfx\in A\)
+  since it contains finitely many \(1\)s and \(\bfx\in U\) since the first
+  \(N\) terms of the sequence \(\bfx\) are in one of the \(U_i\) and the
+  last terms in the sequence are in \(\{0,1\}\). Since this can be done for
+  any basic neighborhood of \(\mathbf{1}\), it follows that \(\mathbf{1}\)
+  is contained in the closure of \(A\). In particular, \(A\) is not
+  closed.
+\end{solution}
+
+\begin{problem}
+  Prove the Tube Lemma: given topological spaces \(X\) and \(Y\) with \(Y\)
+  compact, a point \(x_0\in X\), and an open set \(N\) of \(X\times Y\)
+  containing \(\{x_0\}\times Y\), prove that there is an open set \(W\) of
+  \(X\) containing \(x_0\) with \(W\times Y\subseteq N\).
+\end{problem}
+\begin{solution}
+  Let \(f\colon Y\to X\times Y\) be the map \(f(y)=(x_0,y)\) for a fixed
+  \(x_0\in X\). This map is continuous since the projections
+  \(\pi_1\circ f=x_0\) and \(\pi_2\circ f=\id_Y\) are continuous. Thus,
+  since the image of a compact space under a continuous map is compact, the
+  set
+  \[
+    f(Y)=\{x_0\}\times Y
+  \]
+  is compact. For each point \((x_0,y)\in \{x_0\}\times Y\), take an basic
+  neighborhood \(U_y\times V_y\subseteq N\); we can do this since \(N\) is
+  open. Then the collection \(\bigl\{U_y\times V_y:y\in Y\bigr\}\) forms an
+  open cover of \(\{x_0\}\times Y\) since the sets \(U_y\times V_y\) are
+  open and for any \((x_0,y)\in Y\), \((x_0,y)\in U_y\times V_y\) so
+  \[
+    \bigcup_{y\in Y}U_y\times V_y\supseteq \{x_0\}\times Y.
+  \]
+  Now, since \(\{x_0\}\times Y\) is compact, there exists a finite
+  subcover, say \(\bigl\{U_1\times V_1,\dotsc,U_i\times V_i\bigr\}\) of
+  \(\bigl\{U_y\times V_y:y\in Y\bigr\}\) that covers \(\{x_0\}\times
+  Y\). Now, since the projection map is open
+  \[
+    W=\bigcap_{i=1}^N\pi_1\bigl(U_i\times V_i\bigr)=\bigcap_{i=1}^NU_i
+  \]
+  is open in \(X\) and it contains \(x_0\) since each \(U_i\) does. We
+  claim that \(W\times Y\subseteq N\). In fact, \(W\times
+  Y\subseteq\bigcup_{i=1}^N U_i\times V_i\). Let \((x,y)\in W\) and
+  \((x_0,y)\in\{x_0\},Y\) containing the same \(y\) point. Then since
+  \(\bigl\{U_1\times V_1,\dotsc,U_i\times V_i\bigr\}\) covers
+  \(\{x_0\}\times Y\), some \(U_i\times V_i\) contains \((x_0,y)\) so
+  \(y\in V_i\). But, \(x\in U_i\) for all \(1\leq i\leq N\). Thus,
+  \((x,y)\in U_i\times V_i\). Thus,
+  \[
+    W\times Y\subseteq\bigcup_{i=1}^N U_i\times V_i\subseteq N,
+  \]
+  as desired.
+\end{solution}
+
+\begin{problem}
+  Let \(X\) and \(Y\) be topological spaces and let \(f\colon X\to Y\) be a
+  continuous function. Let \(x_0\in X\) and let \(y_0=f(x_0)\). Find an
+  example in which \(f\) is onto but
+  \(f_*\colon\pi_1(X,x_0)\to\pi_1(Y,y_0)\) is not onto. Prove that your
+  example really has this property. You may use any fact from Munkres.
+\end{problem}
+\begin{solution}
+  Borrowing from complex analysis, let \(X=\bbC\), \(Y=\bbC\setminus\{0\}\)
+  and \(x=1\). Then the map \(f\colon X\to Y\) given by \(z\mapsto \exp z\)
+  is continuous and onto, but \(Y\simeq S^1\) so \(\pi_1(Y)\cong\bbZ\)
+  whereas \(\pi_1(X)\cong\{0\}\) since \(X\) is contractible.
+\end{solution}
+
+\begin{problem}
+  Prove that every continuous map from \(S^2\) to \(S^1\) is homotopic to a
+  constant map (\emph{Hint}: use covering spaces). You may use any fact
+  from Munkres.
+\end{problem}
+\begin{solution}
+  Let \(p\colon\bbR\to S^1\) be the exponential covering map, i.e.,
+  \(p(t)=\exp(2\pi\rmi t)\) and let \(p_0\colon I\to S^1\) be its
+  restriction to the unit interval. Then \([p_0]\) is a generator of
+  \(\pi_1(S^1)\) since \(p_0\) is a loop in \(S^1\) whose lift to \(\bbR\)
+  begins at \(0\) and ends at \(1\).
+
+  Now, fix \(x_0\in S^2\) and let \(y_0=f(x_0)\). Then, since
+  \(\pi_1(S^2,x_0)\cong\{0\}\), the induced homomorphism
+  \(f_*\colon\pi_1(S^2,x_0)\to\pi_1(S^1,y_0)\) must be the trivial
+  homomorphism. Thus, the map
+
+  {\color{Red!85!black}\textbf{Unfinished!}}
+\end{solution}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA571-Quals"
+%%% End:

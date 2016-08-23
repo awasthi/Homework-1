@@ -1,0 +1,166 @@
+\subsection{McClure:  Winter 2014}
+\setcounter{exercise}{0}
+\begin{problem}
+  Let \(X\) be a topological space, let \(A\) be a subset of \(X\), and let
+  \(U\) be an open subset of \(X\). Prove that
+  \(U\cap\bar A\subseteq\overline{U\cap A}\).
+\end{problem}
+\begin{solution}
+  The solution is simple and we have shown this before in the August 2014
+  quals, it goes as follows: If \(U\cap\bar A=\emptyset\), there is nothing
+  to show. Let \(x\in U\cap\bar A\). Then \(x\in U\) and \(x\in\bar
+  A\). Since \(x\in U\) and \(U\) is open, by Lemma C, there exists a
+  neighborhood \(V\) of \(x\) such that \(V\subseteq U\); in particular,
+  note that \(V\cap U\neq\emptyset\). But \(x\in\bar A\) so
+  \(V\cap A\neq\emptyset\). Thus, \(V\cap(U\cap A)\neq\emptyset\). Thus,
+  \(x\in\overline{U\cap A}\).
+\end{solution}
+\begin{problem}
+  Let \(\sim\) be an equivalence relation on \(\bbR^2\) defined by
+  \((x,y)\sim(x',y')\) if and only if there is a nonzero \(t\) with
+  \((x,y)=(tx',ty')\). Prove that the quotient space \(\bbR^2/{\sim}\) is
+  compact but not Hausdorff.
+\end{problem}
+\begin{solution}
+  To show that \(\bbR^2/{\sim}\) is compact, we need to show that for every
+  open covering \(\calA\) of \(\bbR^2/{\sim}\), there is a finite subcover
+  \(\calA'\subseteq\calA\). Let \(q\colon\bbR^2\to\bbR^2/{\sim}\) denote
+  the quotient map. Then, since \(q\) is continuous and onto
+  \(\bbR^2/{\sim}\), the set
+  \(\left\{q^{-1}(A_\alpha)\right\}_{A_\alpha\in\calA}\) is an open cover
+  of \(\bbR^2\). In particular, there exists at least one \(A_\alpha\) such
+  that \(q^{-1}(A_\alpha)\) is a neighborhood of \((0,0)\). By Lemma C,
+  there exists a basic open neighborhood, i.e., an open ball
+  \(B((0,0),\varepsilon)\subseteq q^{-1}(A_\alpha)\) for
+  \(\varepsilon>0\). Now, for any point \([(x,y)]\in\bbR^2\) pick a
+  representative \((x,y)\in\bbR^2\). Then, by the Archimedean principle,
+  there exists a positive real numbers \(t',t''>0\) such that
+  \(t'x<\sqrt{\varepsilon}\) and \(t''y<\sqrt{\varepsilon}\). Define
+  \(t=\min\{t',t''\}\). Then \(tx<\sqrt{\varepsilon}\) and
+  \(ty<\varepsilon\). Thus, \((tx,ty)\in A_\alpha\) (since
+  \(t^2x^2+t^2y^2<\varepsilon\). Since we can do this for any point
+  \([x]\in\bbR^2/{\sim}\), it follows that
+  \(A_\alpha\supset\bbR^2/{\sim}\). Thus,
+  \(\calA'=\left\{A_\alpha\right\}\) is a finite subset of \(\calA\) which
+  covers \(\bbR^2/{\sim}\). Thus, \(\bbR^2/{\sim}\) is compact.
+
+  To show that \(\bbR^2/{\sim}\) is not compact, we will employ a very
+  similar strategy, that is, we will show that every neighborhood of the
+  point \([0,0]\in\bbR^2/{\sim}\), contains every point
+  \([x,y]\in\bbR^2/{\sim}\). Let \([x,y]\in\bbR^2/{\sim}\) and let \(U\) be
+  a neighborhood of \([0,0]\). Then \(q^{-1}(U)\) is an open neighborhood
+  of \((0,0)\), i.e., there exists an open ball
+  \(B((0,0),\varepsilon)\subseteq q^{-1}(U)\). But as we have just shown,
+  for sufficiently small values of \(t>0\),
+  \((tx,ty)\in B((0,0),\varepsilon)\subseteq q^{-1}(U)\). Thus,
+  \([x,y]\in U\). In particular, for any open neighborhood \(V\) of
+  \([x,y]\), \(V\cap U\neq\emptyset\). Thus, \(\bbR^2/{\sim}\) is not
+  Hausdorff.
+\end{solution}
+\begin{problem}
+  Let \(X\) and \(Y\) be topological spaces. Let \(x_0\in X\) and let \(C\)
+  be a compact subset of \(Y\). Let \(N\) be an open set in \(X\times Y\)
+  containing \(\left\{x_0\right\}\times C\). Prove that there is an open
+  set \(U\) containing \(x_0\) and an open set \(V\) containing \(C\) such
+  that \(U\times V\subseteq N\).
+\end{problem}
+\begin{solution}
+  This is a classical theorem called the tube lemma. We shall prove first
+  in the style of Munkres and second in the style of McClure (if I can find
+  the solution or somehow reconstruct it).
+
+  Let \(X\), \(Y\), \(x_0\), \(N\), and \(C\) be as above. Note that since
+  \(C\) is compact and the injection
+  \(\iota_{x_0}\colon X\hookrightarrow X\times Y\) given by
+  \(\iota_{x_0}(y)=(x_0,y)\) is continuous by Theorem 18.4 (since its
+  components, i.e., projections to \(X\) and \(Y\), are continuous these
+  are \(\pi_1(\iota_{x_0})(x)=x_0\) and \(\pi_1(\iota_{x_0})(y)=y\) a
+  constant map and identity map, respectively) so the image of \(C\) under
+  \(\iota_{x_0}\), \(\{x_0\}\times C\), is compact by Theorem 23.5. For
+  every point \(x\in\left\{x_0\right\}\times C\), let \(U_x\times V_x\) be
+  a basic open neighborhood of \(x\) contained in \(N\) (this can be
+  arranged by Lemma C). Then the collection
+  \(\calA=\left\{U_x\times V_x\right\}_{x\in\left\{x_0\right\}\times Y}\)
+  forms an open covering of \(\left\{x_0\right\}\times C\). Thus, there
+  exists a finite subcover \(\left\{U_{x_i}\times V_{x_i}\right\}_{i=1}^n\)
+  of \(\calA\).
+
+  Define \(W= U_{x_1}\cap\dotsb\cap U_{x_n}\). This set is clearly open
+  since it is a finite intersection of open sets and contains \(x_0\) since
+  every \(U_{x_i}\times V_{x_i}\) intersects
+  \(\left\{x_0\right\}\times Y\). Define \(W'=\pi_2(N)\cap Y\). This set is
+  open since it is a finite intersection of open sets in \(Y\). The
+  \(W\times W'\subseteq N\). This is clear since every point
+  \((x,y)\in W\times W'\) is in \(N\) (\(x\in W\subseteq U_{x_i}\) for all
+  \(i\) which in turn is a subset of \(\pi_1(N)\) and \(y\in
+  W'=\pi_2(N)\). Lastly, \(W\times W'\supset \{x_0\}\times C\) since
+  \(x_0\in W\) and \(W'=\pi_1(N)\supset C\). Thus,
+  \(W\times W'\subseteq N\) containing \(\left\{x_0\right\}\times C\) as
+  desired.
+\end{solution}
+\begin{problem}
+  Let \(X\) be a locally compact Hausdorff space and let \(A\) be a subset
+  with the property that \(A\cap K\) is closed for every compact
+  \(K\). Prove that \(A\) is closed.
+\end{problem}
+\begin{solution}
+  Here's an idea: It suffices to show that \(A\) contains all of its limit
+  points. Let \(\{x_n:n\in\bbN\}\) with \(x_n\in A\) be a sequence of
+  points converging to \(x\in X\). Then the set
+  \[
+    K=\bigl\{\,x_n:n\in\bbN\,\bigr\}\cup\{x\}
+  \]
+  is compact since for every neighborhood \(U\) of \(\{x\}\), there exists
+  an index \(N\in\bbN\) such that \(n\geq N\) implies \(x_n\in U\) for all
+  \(n\geq N\); in particular, given a cover \(\calU\) of \(K\), choose
+  \(U_N\in\calU\) containing \(x\), then there exists an index \(N\in\bbN\)
+  such that \(x_n\in U_N\) for all \(n\geq N\) and since \(\calU\) covers
+  \(K\), pick \(U_1,\dotsc,U_{N_1}\) containing
+  \(x_1,\dotsc,x_{N-1}\). Thus, \(K\) is compact. Now, since \(A\cap K\) is
+  closed, it must contain every limit point; in particular, \(x\in A\cap
+  K\) so \(x\in A\). Thus, \(A\) is closed.
+\end{solution}
+\begin{problem}
+  Let \(X\) and \(Y\) be path-connected and let \(h\colon X\to Y\) be a
+  continuous function which induces the trivial homomorphism of fundamental
+  groups. Let \(x_0,x_1\in X\) and let \(f\) and \(g\) be paths from
+  \(x_0\) to \(x_1\). Prove that \(h\circ f\) and \(h\circ g\) are
+  homotopic.
+\end{problem}
+\begin{solution}
+  Consider the path-product \(\gamma= f*\bar g\). \(\gamma\) is a loop
+  based at \(x_0\) since \(\gamma(0)=f(0)=x_0\) and
+  \(\gamma(1)=\bar g(2-1)=\bar g(1)=x_0\). Thus,
+  \([\gamma]\in\pi_1(X,x_0)\). Now, since
+  \(h_*\colon\pi_1(X,x_0)\to\pi_1(Y,h(x_0))\) induces the trivial
+  homomorphism, i.e., \(h(\gamma)\simeq_p e_{x_0}\), there exists a
+  homotopy \(H\colon [0,1]\times[0,1]\to Y\) such that
+  \(H(s,0)=h\circ\gamma(s)\) and \(H(s,1)=e_{x_0}(s)\). Now, since \(Y\) is
+  path-connected, there exists a path \(\delta\colon[0,1]\to Y\) from
+  \(h(x_0)\) to \(h(x_1)\).
+\end{solution}
+\begin{problem}
+  Let \(X\) be the quotient space obtained from an \(8\)-sided polygonal
+  region \(P\) by pasting its edges together according to the labelling
+  scheme \(aabbcdc^{-1}d^{-1}\).
+  \begin{enumerate}[noitemsep,label=(\roman*)]
+  \item Calculate \(H_1(X)\).
+  \item Assuming \(X\) is homeomorphic to one of the standard surfaces in
+    the classification theorem, which surface is it?
+  \end{enumerate}
+\end{problem}
+\begin{solution}
+\end{solution}
+\begin{problem}
+  Let \(p\colon E\to B\) be a covering map with \(B\) locally connected,
+  and let \(x\in B\). Prove that \(x\) has a neighborhood \(W\) with the
+  following property: for every connected component \(C\) of \(p^{-1}(W)\),
+  the map \(p\colon C\to W\) is a homeomorphism.
+\end{problem}
+\begin{solution}
+\end{solution}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA571-Quals"
+%%% End:
