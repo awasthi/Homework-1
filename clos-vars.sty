@@ -135,6 +135,7 @@ main=english]{babel}
 %% Times clones
 \if@times % TeX Gyre for text and mathematics
 %% Use Tempora for Greek and Russian
+\pdfmapfile{+newtx.map}
 \RequirePackage[largesc]{newtxtext}% roman
 \RequirePackage{tempora}
 \RequirePackage[scale=.95,type1]{cabin}% sans
@@ -175,6 +176,8 @@ main=english]{babel}
 
 \else
 \if@libertine %% Use Libertine (a beautiful free font)
+\pdfmapfile{+newtx.map}
+\pdfmapfile{+libertinelgc.map}
 \RequirePackage{libertine}
 \RequirePackage{libertinegc} %% Greek and Cyrillic Libertine
 \RequirePackage[scale=.95,type1]{cabin} % sans
