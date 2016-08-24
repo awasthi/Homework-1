@@ -13,12 +13,19 @@
     \frac{\rmd^m}{\rmd t^m}g(t)
     =\sum_{|\alpha|=m}\frac{m!}{|\alpha|!} D^\alpha f(tx)x^\alpha,
   \]
-  by induction in \(m\).
+  by induction on \(m\).
 \end{problem}
 \begin{solution}
-  Taking the hint, fix \(x\in\bbR^n\) and consider the function in one
-  variable \(g(t)\defeq f(tx)\). By Taylor's formula in one variable, we
-  have
+  Taking the hint, fix a point \(x\in\bbR^n\) and consider the function in
+  one variable \(g(t)\defeq f(tx)\). We claim that
+  \[
+    \frac{\rmd^m}{\rmd t^m}g(t)
+    =\sum_{|\alpha|=m}\frac{m!}{|\alpha|!} D^\alpha f(tx)x^\alpha,
+  \]
+  \begin{subproof}[Proof of claim]
+    We proceed by induction on \(m\). For the case \(m=1\), the formula
+    holds by Taylor's theorem in \(1\) variable
+  \end{subproof}
 \end{solution}
 \newpage
 
@@ -29,7 +36,7 @@
     \tag{\(*\)}
     u_t+b\cdot Du=f
   \]
-  in \(\bbR^n\times(0,\infty)\), where \(b\in\bbR^n\). Using the
+  on \(\bbR^n\times(0,\infty)\), where \(b\in\bbR^n\). Using the
   characteristic equation, solve \eqref{eq:1:1} subject to the initial
   condition
   \[
