@@ -2,7 +2,7 @@
   Let \(f\colon\bbR^n\to\bbR\) be smooth, \(n\geq 2\). Prove that
   \[
     f(x)=\sum_{|\alpha|\leq k}
-    \frac{1}{|\alpha|!}D^\alpha f(0)x^\alpha+\rmO\bigl(|x|^{k+1}\bigr)
+    \frac{1}{\alpha!}D^\alpha f(0)x^\alpha+\rmO\bigl(|x|^{k+1}\bigr)
   \]
   as \(x\to\mathbf{0}\) for each \(k=1,2,\dotsc\), assuming that you know this
   formula for \(n=1\).
@@ -10,8 +10,8 @@
   \emph{Hint}: Fix \(x\in\bbR^n\) and consider the function of one variable
   \(g(t)\defeq f(tx)\). Prove that
   \[
-    \frac{\rmd^m}{\rmd t^m}g(t)
-    =\sum_{|\alpha|=m}\frac{m!}{|\alpha|!} D^\alpha f(tx)x^\alpha,
+    \frac{d^m}{d t^m}g(t)
+    =\sum_{|\alpha|=m}\frac{m!}{\alpha!} D^\alpha f(tx)x^\alpha,
   \]
   by induction on \(m\).
 \end{problem}
@@ -19,12 +19,21 @@
   Taking the hint, fix a point \(x\in\bbR^n\) and consider the function in
   one variable \(g(t)\defeq f(tx)\). We claim that
   \[
+<<<<<<< HEAD
     \frac{\rmd^m}{\rmd t^m}g(t)
     =\sum_{|\alpha|=m}\frac{m!}{|\alpha|!} D^\alpha f(tx)x^\alpha,
   \]
   \begin{subproof}[Proof of claim]
     We proceed by induction on \(m\). For the case \(m=1\), the formula
     holds by Taylor's theorem in \(1\) variable
+=======
+    \frac{d^m}{d t^m}g(t)
+    =\sum_{|\alpha|=m}\frac{m!}{\alpha!} D^\alpha f(tx)x^\alpha.
+  \]
+  \begin{subproof}[Proof of claim]
+    We shall prove this by induction on \(m\). The case \(m=1\) follows
+    easily from
+>>>>>>> 4958ead772c44a43cea9a2ecaa85d411d96fb14d
   \end{subproof}
 \end{solution}
 \newpage

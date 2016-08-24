@@ -199,6 +199,7 @@ main=english]{babel}
 \DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
 
 \let\setminus\smallsetminus
+\let\emptyset\varnothing%
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}}
 \let\oldbtright\blacktriangleright%
 \let\oldbtleft\blacktriangleleft%
@@ -538,8 +539,8 @@ main=english]{babel}
 
 %% Real analysis
 \DeclareMathOperator{\Lip}{Lip}
-\newcommand*\diff{\mathop{}\!\rmd}
-\newcommand*\Diff[1]{\mathop{}\!{\rmd^#1}}
+\newcommand*\diff{\mathop{}\!d}
+\newcommand*\Diff[1]{\mathop{}\!{d^#1}}
 \DeclareMathOperator{\var}{var}
 
 %% Complex analysis
