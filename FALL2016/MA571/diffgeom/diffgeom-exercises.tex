@@ -1,36 +1,6 @@
 \chapter{Differential Geometry Review}
-Review exercises for differential geometry taken from Fernandes's notes
-from UIUC's differential geometry course.
-\section{Basic Concepts}
-\subsection{Manifolds and subsets of Euclidean spaces}
-\begin{proposition}
-  Let \(X\subseteq\bbR^n\), \(Y\subseteq\bbR^m\) and
-  \(Z\subseteq\bbR^p\). If \(f\colon X\to Y\) and \(g\colon Y\to Z\) are
-  smooth maps, then \(g\circ f\colon X\to Z\) is also a smooth map.
-\end{proposition}
-\begin{proof}
-  Consider the composition \(g\circ f\colon X\to Z\) of the smooth maps
-  \(f\colon X\to Y\) and \(g\colon Y\to Z\). Fix a point \(x\in X\) and set
-  \(y\defeq f(x)\). Since \(f\) and \(g\) are smooth, there exists
-  neighborhoods \(U\subseteq\bbR^n\) and \(V\subseteq\bbR^m\) of \(x\) and
-  \(y\), respectively, such that there are smooth maps
-  \(F\colon U\to\bbR^m\) and \(G\colon V\to\bbR^p\) with
-  \(F\restrict{X\cap U}=f\) and \(G\restrict{Y\cap V}=g\). Then, setting
-  \(W\defeq U\cap F^{-1}(V)\), the map
-  \[
-    G\circ F\colon W\too\bbR^p
-  \]
-  is a smooth map since, fixing all but one variable \(x_i\), the partial
-  \[
-    \frac{\partial G\circ F}{\partial x_i}=
-  \]
-  . Thus, since
-  \(G\circ F\restrict{X\cap W}=g\circ f\restrict{X\cap W}\), the
-  composition \(g\circ f\) is smooth.
-\end{proof}
-
-\section{Lie Theory}
-\section{Differential Forms}
+Review exercises for differential geometry taken from Lee's book on Smooth
+Manifolds.
 
 
 %%% Local Variables:
