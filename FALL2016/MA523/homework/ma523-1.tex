@@ -16,9 +16,16 @@
   by induction in \(m\).
 \end{problem}
 \begin{solution}
-  Taking the hint, fix \(x\in\bbR^n\) and consider the function in one
-  variable \(g(t)\defeq f(tx)\). By Taylor's formula in one variable, we
-  have
+  Taking the hint, fix a point \(x\in\bbR^n\) and consider the function in
+  one variable \(g(t)\defeq f(tx)\). We claim that
+  \[
+    \frac{d^m}{d t^m}g(t)
+    =\sum_{|\alpha|=m}\frac{m!}{|\alpha|!} D^\alpha f(tx)x^\alpha.
+  \]
+  \begin{subproof}[Proof of claim]
+    We shall prove this by induction on \(m\). The case \(m=1\) follows
+    easily from
+  \end{subproof}
 \end{solution}
 \newpage
 
