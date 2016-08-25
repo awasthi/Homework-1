@@ -232,6 +232,9 @@ main=english]{babel}
 \fi \fi \fi
 
 %% Theorems and definitions
+\makeatletter%
+\@ifclassloaded{memoir}%
+{
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[chapter] %% Assumes memoir is loaded
 \newtheorem{proposition}[theorem]{Proposition}
@@ -285,6 +288,60 @@ main=english]{babel}
 }{
 \renewcommand\qedsymbol{\ensuremath{\blacktriangleleft}}
 \endproof}
+}{
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section] %% Assumes memoir is loaded
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{axiom}[theorem]{Axiom}
+
+\newtheorem*{corollary*}{Corollary}
+\newtheorem*{claim*}{Claim}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem*{theorem*}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{examples}[theorem]{Examples}
+
+\newtheorem*{example*}{Example}
+
+\newtheoremstyle{exercise}
+    {24pt plus 4pt minus 4pt} % Space above
+    {12pt plus 4pt minus 4pt} % Space below
+    {}                        % Body font
+    {}                        % Indent amount
+    {\bfseries}               % Theorem head font
+    {.}                       % Punctuation after theorem head
+    {.5em}                    % Space after theorem head
+    {}                         % Theorem head spec (can be left empty, meaning 'normal')
+
+\theoremstyle{exercise}
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem{problem}[exercise]{Problem}
+
+\newtheorem*{exercise*}{Exercise}
+\newtheorem*{problem*}{Problem}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{remarks}[theorem]{Remarks}
+
+\newtheorem*{remark*}{Remark}
+\newtheorem*{remarks*}{Remarks}
+
+\makeatletter
+\@ifundefined{solution}{%
+\newenvironment{solution}[1][Solution]{%
+  \proof[\textnormal{\bfseries{#1}}]%
+  \ensuremath{\!\blacktriangleright}~
+}{
+\renewcommand\qedsymbol{\ensuremath{\blacktriangleleft}}
+\endproof}
 }{}
 \makeatother
 
@@ -295,8 +352,22 @@ main=english]{babel}
 }{
 % \renewcommand\qedsymbol{\ensuremath{\star}}
 \endproof
-\end{quote}
+\end{quote}}
 }
+\makeatother
+
+\newenvironment{subproof}[1][Proof]{
+\begin{quote}
+\proof[\textnormal{\textit{#1}}]%
+\renewcommand\qedsymbol{\ensuremath{\square}}
+}{
+% \renewcommand\qedsymbol{\ensuremath{\star}}
+\endproof
+\end{quote}}
+}%
+{
+}%
+\makeatother%
 
 %% Some commands
 \catcode `\@ = 11\relax

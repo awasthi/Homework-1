@@ -37,7 +37,7 @@
   \[
     0\too A\too B\too C\too 0
   \]
-  fix any \(M\in\MOD_R\).
+  fix any \(M\in\RMod{R}\).
   \begin{enumerate}[label=(\alph*)]
   \item Show that
     \[
@@ -56,20 +56,34 @@
 \newpage
 
 \begin{problem}
+  A short exact sequence
+  \[
+    0\too A\too B\xrightarrow{\,\,p\,\,} 0
+  \]
+  splits if theere is a homomorphism \(\colon C\to B\) called the
+  \emph{splitting} such that \(p\circ s=\id_C\). In which case, we can put
+  \[
+    0\too\Hom(C,M)\too\Hom(B,M)\Hom(A,M)\too 0
+  \]
+  and
+  \[
+    0\too\Hom(M,A)\too\Hom(M,B)\Hom(M,C)\too 0.
+  \]
 \end{problem}
 \begin{solution}
 \end{solution}
 \newpage
 
 \begin{problem}
+  Find an example which shows that \(\Hom(\blank,M)\) is \emph{not} exact.
 \end{problem}
 \begin{solution}
-\end{solution}
-\newpage
-
-\begin{problem}
-\end{problem}
-\begin{solution}
+  Consider the following example: let \(A=B=M=\bbZ\) and \(C=\bbZ/2\bbZ\)
+  then the sequence
+  \[
+    0\too\bbZ\xrightarrow{\,\,f=2\,\,}\bbZ\too\bbZ/2\bbZ\too 0
+  \]
+  is exact, however
 \end{solution}
 
 %%% Local Variables:
