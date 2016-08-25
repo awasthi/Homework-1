@@ -135,15 +135,13 @@ main=english]{babel}
 %% Times clones
 \if@times % TeX Gyre for text and mathematics
 %% Use Tempora for Greek and Russian
-\pdfmapfile{+newtx.map}
-\RequirePackage[largesc]{newtxtext}% roman
-\RequirePackage{tempora}
+\RequirePackage{newtxtext}% roman
 \RequirePackage[scale=.95,type1]{cabin}% sans
 \RequirePackage[varqu,varl,scaled=.94]{zi4}% mono
 
 \RequirePackage[varg,%
                 bigdelims,%
-                smallerops,
+                % smallerops,
                 nosymbolsc]{newtxmath}%
 \RequirePackage[bb=boondox,%
                 frak=pxtx,%
@@ -151,19 +149,10 @@ main=english]{babel}
                 cal=pxtx,%
                 scr=boondox]{mathalfa}%
 
-%% Use oldstyle figs
-\useosf
-% don't use osf for equation labels or enumerate labels
-\newcommand\liningnums[1]{\fontfamily{Tempora-TLF}\selectfont{#1}}
-\newcommand\upnums[1]{\liningnums{#1}}
-\renewcommand{\theequation}
-    {\liningnums{\arabic{equation}}} % lining numbers
-\renewcommand{\bibnumfmt}[1]{[\liningnums{#1}]}
-\renewcommand{\citenumfont}[1]{{\liningnums{#1}}}
-\setenumerate{label=(\liningnums{\arabic*})}
+\RequirePackage{tempora}
 
 %% Times specific commands
-% \let\emptyset\varnothing%
+\let\emptyset\varnothing%
 \let\setminus\smallsetminus
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}}
 \let\oldbtright\blacktriangleright%
@@ -176,8 +165,6 @@ main=english]{babel}
 
 \else
 \if@libertine %% Use Libertine (a beautiful free font)
-\pdfmapfile{+newtx.map}
-\pdfmapfile{+libertinelgc.map}
 \RequirePackage{libertine}
 \RequirePackage{libertinegc} %% Greek and Cyrillic Libertine
 \RequirePackage[scale=.95,type1]{cabin} % sans
@@ -185,7 +172,7 @@ main=english]{babel}
 \RequirePackage[libertine,%
                 libaltvw,%
                 bigdelims,%
-                smallerops,
+                % smallerops,
                 ]{newtxmath} % Shitty math fonts
 \RequirePackage[bb=boondox,%
                 frak=pxtx,%
