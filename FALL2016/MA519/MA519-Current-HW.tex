@@ -64,12 +64,10 @@
 \renewcommand\theequation{\hwnum.\arabic{equation}}
 
 \begin{document}
-\frontmatter
-\aliaspagestyle{title}{empty}
-\pagestyle{title}
-\author{\href{mailto:\email}{\auth}}
-\title{\tight}
-\date{\today}
+\frontmatter \aliaspagestyle{title}{empty} \pagestyle{title}
+\author{\href{mailto:\email}{\auth}}%
+\title{\tight}%
+\date{\today}%
 \maketitle
 \cleartooddpage
 \makepagestyle{my-headings}
