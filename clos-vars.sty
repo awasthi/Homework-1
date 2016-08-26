@@ -135,15 +135,14 @@ main=english]{babel}
 %% Times clones
 \if@times % TeX Gyre for text and mathematics
 %% Use Tempora for Greek and Russian
-\pdfmapfile{+newtx.map}
-\pdfmapfile{=tempora.map}
+% \pdfmapfile{+newtx.map}
 \RequirePackage{newtxtext}% roman
 \RequirePackage[scale=.95,type1]{cabin}% sans
 \RequirePackage[varqu,varl,scaled=.94]{zi4}% mono
 
 \RequirePackage[varg,%
                 bigdelims,%
-                smallerops,
+                % smallerops,
                 nosymbolsc]{newtxmath}%
 \RequirePackage[bb=boondox,%
                 frak=boondox,%
@@ -168,7 +167,6 @@ main=english]{babel}
 
 \else
 \if@libertine %% Use Libertine (a beautiful free font)
-\pdfmapfile{+newtx.map}
 \RequirePackage{libertine}
 \RequirePackage{libertinegc} %% Greek and Cyrillic Libertine
 \RequirePackage[scale=.95,type1]{cabin} % sans
@@ -176,7 +174,7 @@ main=english]{babel}
 \RequirePackage[libertine,%
                 libaltvw,%
                 bigdelims,%
-                smallerops,
+                % smallerops,
                 ]{newtxmath} % Shitty math fonts
 
 \RequirePackage[bb=boondox,%
