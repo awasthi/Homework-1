@@ -1,18 +1,26 @@
-\begin{problem}[Handout 1, \# 5 \protect{[Feller Vol. \@ 1]}]
+\begin{problem}[Handout 1, \# 5 \protect{[Feller Vol.\@ 1]}]
   A closet contains five pairs of shoes. If four shoes are selected at
   random, what is the probability that there is at least one complete pair
   among the four?
 \end{problem}
 \begin{solution}
-  \emph{We shall assume throughout our homework, unless otherwise stated,
-    that all sample points are equally likely!}
-  \\\\
   First, since the closet contains \(5\) pairs of shoes, it contains, in
-  total, \(10\) shoes.
+  total, \(10\) shoes. Now, let count the number of points in the sample
+  space: since we are selecting \(4\) shoes out of \(10\) and the order
+  does not matter, there are
+  \begin{equation}
+    \label{eq:1-1}
+    \binom{10}{4}=%
+    \frac{10!}{4!6!}=%
+    \frac{10\cdot 9\cdot 8\cdot 7\cdot 6!}{4\cdot 3\cdot 2\cdot 6!}=%
+    10\cdot 3\cdot 7=%
+    210
+  \end{equation}
+  total sample points. Now, which of those points are actually ones we care about?
 \end{solution}
 \newpage
 
-\begin{problem}[Handout 1, \# 7 \protect{[Feller Vol. \@ 1]}]
+\begin{problem}[Handout 1, \# 7 \protect{[Feller Vol.\@ 1]}]
   A gene consists of \(10\) subunits, each of which is normal or
   mutant. For a particular cell, there are \(3\) mutant and \(7\) normal
   subunits. Before the cell divides into \(2\) daughter cells, the gene
@@ -26,7 +34,7 @@
 \end{solution}
 \newpage
 
-\begin{problem}[Handout 1, \# 9 \protect{[Feller Vol. \@ 1]}]
+\begin{problem}[Handout 1, \# 9 \protect{[Feller Vol.\@ 1]}]
   From a sample of size \(n\), \(r\) elements are sampled at random. Find
   the probability that none of the \(N\) prespecified elements are included
   in the sample, if sampling is
