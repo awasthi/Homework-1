@@ -136,6 +136,7 @@ main=english]{babel}
 \if@times % TeX Gyre for text and mathematics
 %% Use Tempora for Greek and Russian
 \pdfmapfile{+newtx.map}
+\pdfmapfile{=tempora.map}
 \RequirePackage{newtxtext}% roman
 \RequirePackage[scale=.95,type1]{cabin}% sans
 \RequirePackage[varqu,varl,scaled=.94]{zi4}% mono
@@ -145,15 +146,16 @@ main=english]{babel}
                 smallerops,
                 nosymbolsc]{newtxmath}%
 \RequirePackage[bb=boondox,%
-                frak=pxtx,%
-                frakscaled=1.1,%
-                cal=pxtx,%
+                frak=boondox,%
+                cal=boondoxo,%
                 scr=boondox]{mathalfa}%
 
-\RequirePackage{tempora}
+% \RequirePackage{tempora}
+\substitutefont{LGR}{\rmdefault}{Tempora-TLF}
+\substitutefont{T2A}{\rmdefault}{Tempora-TLF}
 
 %% Times specific commands
-\let\emptyset\varnothing%
+% \let\emptyset\varnothing%
 \let\setminus\smallsetminus
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}}
 \let\oldbtright\blacktriangleright%
@@ -176,6 +178,7 @@ main=english]{babel}
                 bigdelims,%
                 smallerops,
                 ]{newtxmath} % Shitty math fonts
+
 \RequirePackage[bb=boondox,%
                 frak=pxtx,%
                 frakscaled=1.1,

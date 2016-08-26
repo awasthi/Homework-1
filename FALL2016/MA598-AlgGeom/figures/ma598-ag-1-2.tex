@@ -1,16 +1,17 @@
 \documentclass[crop,tikz]{standalone}
 \usetikzlibrary{cd}
 
-\usepackage[libertine]{clos-vars}
+\usepackage[times]{clos-vars}
+
 \begin{document}
 \begin{tikzcd}
   &\Ker f\arrow{r}\arrow{d}
   &\Ker g\arrow{r}\arrow{d}
   &\Ker h\arrow{d}\\
   0\arrow{r}
-  &A\arrow{r}\arrow{d}{f}
-  &B\arrow{r}\arrow{d}{g}
-  &C\arrow{r}\arrow{d}{h}
+  &A\arrow{r}\arrow{d}
+  &B\arrow{r}\arrow{d}
+  &C\arrow{r}\arrow{d}
   &0\\
   0\arrow{r}&\arrow{r}A'\arrow{r}\arrow{d}
   &B'\arrow{r}\arrow{d}
