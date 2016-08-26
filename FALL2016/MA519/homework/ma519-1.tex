@@ -19,8 +19,21 @@
   \end{equation}
   total sample points. Now, which of these points are actually ones we care
   about? Assuming that no two pairs of shoes are alike, we count the number
-  of favorable sample points: choose \(1\) shoe from the \(10\) then there
-  are
+  of favorable sample points: there \(\displaystyle\binom{5}{1}\) ways to
+  choose a pair \((\sfL,\sfR)\) and we can arrange them in
+  \(2\cdot 3+2\cdot 2+2\cdot 1=12\) ways corresponding to the diagrams
+  \begin{align*}
+    \sfL\sfR\star\star&&\star\sfL\sfR\star&&\star\star\sfL\sfR\\
+    \sfL\star\sfR\star&&\star\sfL\star\sfR\\
+    \sfL\star\star\sfR
+  \end{align*}
+  where \(\star\) here corresponds to any other shoe that is not part of
+  the chosen pair \((\sfL,\sfR)\) (the factor of \(2\) comes from the
+  permutation of \(\sfL\) and \(\sfR\)). For the remaining spots, we have
+  \[
+    \binom{8}{2}=\frac{8!}{2!6!}=\frac{8\cdot 7\cdot 6!}{2\cdot 6!}=4\cdot
+    7=24.
+  \]
 \end{solution}
 \newpage
 
