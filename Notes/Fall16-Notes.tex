@@ -1,0 +1,60 @@
+\def\auth{Carlos Salinas}
+\def\tight{Fall 2016 Notes}
+\def\short{F16-Notes}
+\def\class{mathematics}
+\def\subject{probability, differential equations, point-set topology,
+  classical mechanics, algebraic geometry, category theory}
+\def\email{salinac@purdue.edu}
+
+\documentclass[oneside]{memoir}
+\usepackage{geometry}
+
+%% Base customization and variables
+\usepackage[libertine]{clos-vars}
+
+%% Formatting
+
+%% Footnote style
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+%% Hyperref setup
+\hypersetup{%
+  breaklinks,%
+  colorlinks=true,%
+  linkcolor=black,%
+  citecolor=black,%
+  filecolor=black,%
+  menucolor=black,%
+  runcolor=black,%
+  urlcolor=black,%
+  pdftitle={\short},%
+  pdfauthor={\auth},%
+  pdfkeywords={\subject},%
+  pdfsubject={\class},%
+  pageanchor={false},%
+  unicode
+}
+
+%% Graphics path as it says
+\graphicspath{{figures/}}
+
+%% Fix AMS counter bug
+\renewenvironment{problem}
+                 {\begin{exercise}}%
+                 {\end{exercise}}%
+
+\begin{document}
+\author{\href{mailto:\email}{\auth}}
+\title{\tight}
+\date{\today}
+
+\maketitle
+\tableofcontents
+\include{fall16/cattheory}
+\include{fall16/prob}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
