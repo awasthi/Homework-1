@@ -3,26 +3,15 @@ Some (mostly discrete) probability theory for MA 51900.
 
 \section{Basics}
 In this section we will talk about concepts related to discrete
-probability. Before we begin, we have to define the concepts we will be
-working with throughout the rest of this section (ye this chapter). First
-and foremost, to do probability we need a \emph{sample space \(\Omega\)}
-and a probability function \(p\colon\calP(\Omega)\to[0,1]\) which assigns
-values between \(0\) and \(1\) to subsets of \(\Omega\) (usually, one needs
-to specify a \(\sigma\)-algebra on \(\Omega\), but for the rest of the
-section, since \(\Omega\) is at least countable, the power set
-\(\calP(\Omega)\) is a \(\sigma\)-algebra by default). A \emph{sample
-  point} \(\omega\) is a point of \(\Omega\) and an event
-\(A\subseteq\calP(\Omega)\) is a collection of sample points.
-
-In this section we will talk about concepts related to discrete
-probability. Before we begin, we introduce the objects we will be working
-with. First and foremost, to do probability we need a \emph{sample space
+probability. Before we begin, we introduce the axioms we will be working
+under. First and foremost, to do probability we need a \emph{sample space
   \(\Omega\)} and a \emph{probability \(p\colon\calM\to[0,1]\)} which
 assigns values between \(0\) and \(1\) to \emph{special} subsets of
 \(\Omega\) which we denote by \(\calM\) (more formally, this \(\calM\) is
 called a
 \href{https://en.wikipedia.org/wiki/Sigma-algebra}{\emph{\(\sigma\)-algebra}}
-and \(p\) is called a
+by analysts or a \emph{algebra of events} by probabilists and \(p\) is
+called a
 \href{https://en.wikipedia.org/wiki/Probability_measure}{\emph{probability
     measure}} and there are certain axioms it must satisfy for us to be
 able to assign consistent values to subsets of \(\Omega\) with \(p\)). An
@@ -30,14 +19,77 @@ element \(\omega\in\Omega\) is called a \emph{sample point} and a (special)
 collection of \(\omega\), \(A\in\calM\), is called an event. We call the
 triplet \((\Omega,\calM,p)\) a probability space.
 
-With that out of the way, let us get down to the crux of the matter (at
-least at this point in the class): counting. Since our sample spaces will
-be finite (at least for now), we need to be able to count sample points in
-\(\Omega\) by way of combinatorics (this is in my opinion, a lot tougher
-than working with infinite sample spaces for which we must make certain
-assumptions about the sample points and the probability measure -- it is
-less tedious to solve problems with sane assumptions than it is to count
-points).
+The algebra of events comes \(\calM\) with a natural multiplication and
+addition given, naturally, by union and intersection of events (\ie{}
+\(A+B\defeq A\cup B\) and \(AB\defeq A\cap B\)) and an additive as well as
+multiplicative identity \(\emptyset\) and \(\Omega\), \etc{} If
+\(AB=\emptyset\) we say that the events \(A\) and \(B\) are \emph{mutually
+  exclusive}.
+\begin{remark}
+  We won't always use the notation \(A+B\) and \(AB\) to mean \(A\cup B\)
+  and \(A\cap B\), respectively (since I prefer the set-theoretic notation
+  over the algebraic one), but Prof.\@ DasGupta makes has a preference for
+  the latter and Feller uses a mix of the two. Now, you may ask ``Why
+  introduce this notation at all if you are going to disregard it?'' The
+  reason is that I will be using examples from Feller and DasGupta's book
+  and sometimes I will be too rushed to bother translating the notation and
+  though I don't expect anybody but myself to read this, it may very well
+  happen that I pass these notes on to somebody else.
+\end{remark}
+
+In this section, we shall assume that our sample space \(\Omega\) is
+discrete,\ie{} \(\#\Omega<\infty\) or at the very least \(\aleph^0\). We
+additionally require that for each point \(\omega\) in the space \(\Omega\)
+its probability \(p(\omega)\) in non-negative and
+\begin{equation}
+  \label{eq:convention-prob}
+  \sum_{\omega\in\Omega}p(\omega)=1.
+\end{equation}
+
+There are of course a whole number of beautiful relationships that \(p\)
+satisfies (those that any sane measure would satisfy like countable
+additivity, subadditivity, \etc{}), but we shall not talk about them here,
+instead let us get down to the crux of the matter (at least at this point
+in the class): counting. Since our sample spaces will be finite (at least
+for now), we need to be able to count sample points in \(\Omega\) by way of
+combinatorics (this is in my opinion, a lot tougher than working with
+infinite sample spaces for which we must make certain assumptions about the
+sample points and the probability measure -- it is less tedious to solve
+problems with sane assumptions than it is to count points).
+
+\subsection{Basic Combinatorics}
+It is often reasonable to assume that the probability of any particular
+sample point \(\omega\in\Omega\) is just as likely as that of any other
+sample point. We say that in such a sample space each sample point is
+\emph{equally likely} to happen. This means that the probability of
+\(\omega\in\Omega\) happening is precisely
+\[
+  p(\omega)=\frac{1}{\#\Omega}.
+\]
+Thus, to compute the probability of an event \(A\) happening, we need only
+count the number of points in \(A\) and divide by the cardinality of
+\(\Omega\), \(\#\Omega\).
+
+Here are a couple of results about counting that will be useful to us
+throughout this section:
+\begin{lemma}
+  With \(m\) elements \(a_1,\dotsc,a_m\) and \(n\) elements
+  \(b_1,\dotsc,b_n\), it is possible to form \(mn\) pairs \((a_i,b_j)\)
+  containing one element from each group.
+\end{lemma}
+\begin{proof}
+  Arrange the elements \(a_1,\dotsc,a_m\) in a column and
+  \(b_1,\dotsc,b_n\) in a row and form a multiplication table where the
+  \(ij\)-th element is \(a_ib_j\). Then this assertion becomes obvious.
+
+  More formally, choose an element \(a\) from among \(a_1,\dotsc,a_m\)
+  (there are \(m\) choices) then to form a pair \((a,\blank)\) we can
+  choose from among \(n\) elements \(b_1,\dotsc,b_n\). Thus, the number of
+  pairs that can be formed with \(a\) is \(n\) and there are \(m\) possible
+  choices for \(a\) so there are \(mn\) possible pairs.
+\end{proof}
+
+
 
 %%% Local Variables:
 %%% mode: latex
