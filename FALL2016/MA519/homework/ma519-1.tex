@@ -6,62 +6,67 @@
 \begin{solution}
   Let \(\Omega\) denote the sample space and \(A\) denote the event that at
   least \(1\) complete pair of shoes is among the \(4\). We can reduce the
-  problem of finding the probability of \(A\) into finding the
-  probabilities of the events
+  problem of finding \(p(A)\) into finding the probabilities of the
+  mutually exclusive events
+ \[
+   A_1\defeq\bigl\{\,\text{exactly \(1\) pair is among the \(4\)}\,\bigr\}
+  \]
+  and
+  \[
+    A_1\defeq\bigl\{\,\text{exactly \(2\) pairs are among the
+      \(4\)}\,\bigr\}.
+  \]
+  since \(A=A_1\cup A_2\), and using the additivity of \(p\),
+  \[
+    p(A)=p(A_1)+p(A_2).
+  \]
+  (To keep the problem short, we will not show that
+  \(A_1\cap A_2=\emptyset\) and \(A=A_1\cup A_2\).)
 
-  % First, since the closet contains \(5\) pairs of shoes, it contains, in
-  % total, \(10\) shoes. Now, let us count the number of points in the sample
-  % space: since we are selecting \(4\) shoes out of \(10\) and the order
-  % does not matter, the cardinality of the sample space \(\Omega\) is
-  % \begin{equation}
-  %   \label{eq:1-1}
-  %   \#\Omega=%
-  %   \binom{10}{4}=%
-  %   \frac{10!}{4!6!}=%
-  %   \frac{10\cdot 9\cdot 8\cdot 7\cdot 6!}{4\cdot 3\cdot 2\cdot 6!}=%
-  %   10\cdot 3\cdot 7=%
-  %   210
-  % \end{equation}
-  % total sample points. Now, which of these points are actually ones we care
-  % about? Let \(A\) denote the event that at least \(1\) complete pair of
-  % shoes is among the \(4\). Then we can split \(A\) (as a set) as the union
-  % of
-  % \[
-  %   A_1\defeq\bigl\{\,\text{exactly \(1\) pair is among the \(4\)}\,\bigr\}
-  % \]
-  % and
-  % \[
-  %   A_1\defeq\bigl\{\,\text{exactly \(2\) pairs are among the \(4\)}\,\bigr\}.
-  % \]
-  % We can count the number of points in \(A_2\) easily enough these are
-  % \begin{equation}
-  %   \label{eq:1-2}
-  %  \#A_2=%
-  %  \binom{5}{2}=%
-  %  \frac{5!}{2!3!}=%
-  %  \frac{5\cdot 4\cdot 3!}{2\cdot 3!}=%
-  %  5\cdot 2=10,
-  % \end{equation}
-  % since we are not taking into consideration the order in which we select
-  % the pair.
+  First, let us count the number of sample points in \(\Omega\): since the
+  closet contains \(5\) pairs of shoes it contains a total of \(10\) choose
+  out of which we are selecting \(4\). Hence, the number of sample points
+  is
+  \begin{equation}
+    \label{eq:1-1}
+    \#\Omega=%
+    \binom{10}{4}=%
+    \frac{10!}{4!6!}=%
+    \frac{10\cdot 9\cdot 8\cdot 7\cdot 6!}{4\cdot 3\cdot 2\cdot 6!}=%
+    10\cdot 3\cdot 7=%
+    210.
+  \end{equation}
 
-  % To count the points in \(A_1\) we observe that there are \(5\) pairs to
-  % choose from and for the remaining two shoes we must choose one shoe
-  % (either a right or a left) from the remaining \(4\) pairs which leaves
-  % \(7-1=6\) other shoes to choose from; \ie{} there are exactly
-  % \begin{equation}
-  %   \label{eq:1-3}
-  %   5\cdot 4\cdot 6=120
-  % \end{equation}
-  % ways to choose one pair. Taking \eqref{eq:1-2} and \eqref{eq:1-3}, the
-  % probability that there is at least one complete pair among the four is
-  % \[
-  %   \#A_1=%
-  %   p(A)=%
-  %   p(A_1)+p(A_2)=%
-  %   \frac{120}{210}+\frac{10}{210}=\frac{130}{210}\approx%
-  %   0.6190.
-  % \]
+  Now we count the sample points in \(A_1\) and \(A_2\): counting the
+  points in \(A_2\) is immediate since we are not taking into consideration
+  the order in which we select the pair
+  \begin{equation}
+    \label{eq:1-2}
+    \#A_2=%
+    \binom{5}{2}=%
+    \frac{5!}{2!3!}=%
+    \frac{5\cdot 4\cdot 3!}{2\cdot 3!}=%
+    5\cdot 2=10.
+  \end{equation}
+  Counting the points in \(A_1\) is not much harder:
+  first, we observe that there are \(5\) pairs to
+  choose from and for the remaining two shoes we must choose one shoe
+  (either a right or a left) from the remaining \(4\) pairs which leaves
+  \(7-1=6\) other shoes to choose from; \ie{} the number of sample points
+  in \(A_1\) is
+  \begin{equation}
+    \label{eq:1-3}
+    5\cdot 4\cdot 6=120.
+  \end{equation}
+  Taking the results of \eqref{eq:1-1}, \eqref{eq:1-2} and \eqref{eq:1-3},
+  the probability that there is at least one complete pair among the four
+  is
+  \[
+    p(A)=%
+    p(A_1)+p(A_2)=%
+    \frac{120}{210}+\frac{10}{210}=\frac{130}{210}\approx%
+    0.6190.
+  \]
 \end{solution}
 \newpage
 
@@ -75,6 +80,7 @@
   all normal subunits.
 \end{problem}
 \begin{solution}
+  We shall
   First, let \(A\) denote the event that one of the cells contains all
   normal units. Like Problem 1.1, we can reduce the problem of finding the
   probability of \(A\) to finding the probability of
