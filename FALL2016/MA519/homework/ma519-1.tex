@@ -138,47 +138,54 @@
 \begin{solution}
   For part (a), with replacement, the number of points in the sample space
   \(\Omega_a\) is given by the expression
-  \begin{equation}
-    \label{eq:1-6}
+  \[
     \#\Omega_a=\binom{n+r-1}{r}.
-  \end{equation}
+  \]
   Let \(A_a\) be the event that none of the \(N\) prespecified elements
   appear (with \(N\leq r\)). Now to find \(p(A_a)\), we count the sample
   points in \(A_a\) these are: there are \(N\) elements to avoid so \(n-N\)
   elements to choose from with replacement. This gives us
-  \begin{equation}
-    \label{eq:1-7}
-    \#A_a=\binom{(n-N)+r-1}{r}.
-  \end{equation}
-  Thus, the probability of \(A_a\) happening is
   \[
-    p(A_a)=
-    \binom{n+r-1}{r}
-    \biggl/
-    \binom{(n-N)+r-1}{r}=
-    \frac{(n+r-1)\dotsm\bigl((n-N+1)+r-1\bigr)}{(n-r)\dotsm\bigl((n-N)-r\bigr)}.
+    \#A_a=\binom{(n-N)+r-1}{r}.
   \]
+  Thus, the probability of \(A_a\) happening is
+  \begin{equation}
+    \label{eq:prob-a-a}
+    p(A_a)=%
+    \binom{(n-N)+r-1}{r}\biggl/\binom{n+r-1}{r}=%
+    \frac{(n-1)\dotsm\bigl((n-1)-N+1\bigr)}
+    {(n+r-1)\dotsm\bigl((n+r-1)-N+1\bigr)}.
+  \end{equation}
 
   For part (b), without replacement, the number of points in the sample
-  space \(\Omega_b\)is given by the expression
-  \begin{equation}
-    \label{eq:1-8}
+  space \(\Omega_b\) is given by the expression
+  \[
     \#\Omega_b=\binom{n}{r}.
-  \end{equation}
+  \]
   Let \(A_b\) be the event that none of the \(N\) prespecified elements
   appear (with \(N\leq r\)). Again, to find \(p(A_b)\) we need only count
   the sample points in \(A_b\): there are \(N\) elements to avoid so
   \(n-N\) elements to choose from without replacement. Hence,
-  \begin{equation}
-    \label{eq:1-9}
-    \#A_b=
-    \binom{n-N}{r}.
-  \end{equation}
-  Thus, the probability of \(A_b\) happening is
   \[
+    \#A_b=\binom{n-N}{r}.
+  \]
+  Thus, the probability of \(A_b\) happening is
+  \begin{equation}
+    \label{eq:prob-a-b}
     p(A_b)=%
-    \binom{n}{r}\biggl/\binom{n-N}{r}=%
-    \frac{n!r!\bigl((n-N)-r\bigr)!}{r!(n-r)!(n-N)!}=%
+    \binom{n-N}{r}\biggl/\binom{n}{r}=%
+    \frac{(n-1)\dotsm (n-N)}{(n+r-1)\dotsm (n+r-N)}.
+  \end{equation}
+
+  Lastly, we compute, using Eqs.\@ \eqref{eq:prob-a-a} and
+  \eqref{eq:prob-a-b}, we compute the probabilities in (a) and (b) with
+  \(r=N=10\) and \(n=100\). These are:
+  \[
+    p(A_a)=\frac{99\dotsm 90}{109\dotsm 100}\approx 0.3654,
+  \]
+  and
+  \[
+    p(A_b)=\frac{90\dotsm 81}{100\dotsm 91}\approx 0.3305.
   \]
 \end{solution}
 \newpage
@@ -190,6 +197,16 @@
   all the digits are chosen completely at random?
 \end{problem}
 \begin{solution}
+  Let \(\Omega\) be the sample space and let \(A\) be the event that at
+  \(0\) appears at most once in a telephone number if all the digits are
+  chosen completely at random. First, let us count the number of elements
+  in the sample space, this is
+  \[
+    \#\Omega=9\cdot 10^9
+  \]
+  where the first digit is taken from among \(1,2,\dotsc,9\) and the
+  remaining \(9\) out of \(0,1,2\dotsc,9\). Now, let us count the number of
+  elements in the event \(A\). These are given by
 \end{solution}
 \newpage
 
