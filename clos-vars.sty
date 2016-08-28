@@ -136,12 +136,13 @@ main=english]{babel}
 \if@times % TeX Gyre for text and mathematics
 %% Use Tempora for Greek and Russian
 \pdfmapfile{+newtx.map}
-\RequirePackage{newtxtext}% roman
+\RequirePackage[theoremfont]{newtxtext}% roman
 \RequirePackage[scale=.95,type1]{cabin}% sans
 \RequirePackage[varqu,varl,scaled=.94]{zi4}% mono
 
 \RequirePackage[varg,%
                 % bigdelims,%
+                upint,
                 smallerops,
                 nosymbolsc]{newtxmath}%
 \RequirePackage[bb=boondox,%
@@ -175,6 +176,7 @@ main=english]{babel}
 \RequirePackage[libertine,%
                 libaltvw,%
                 % bigdelims,%
+                upint,
                 smallerops,
                 ]{newtxmath} % Shitty math fonts
 
@@ -383,6 +385,10 @@ main=english]{babel}
 \long\def\replicate@aux@Q#1#2{#1}
 
 %% Some personal shortcuts
+\newcommand\ie{\emph{i.e.}\@}
+\newcommand\eg{\emph{e.g.}\@}
+\newcommand\etc{\emph{etc.}}
+
 \newcommand\ntrileq{\ntrianglelefteq}
 \newcommand\ntrireq{\ntrianglerighteq}
 \newcommand\too{\longrightarrow}
