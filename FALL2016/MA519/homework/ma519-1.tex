@@ -205,8 +205,26 @@
     \#\Omega=9\cdot 10^9
   \]
   where the first digit is taken from among \(1,2,\dotsc,9\) and the
-  remaining \(9\) out of \(0,1,2\dotsc,9\). Now, let us count the number of
-  elements in the event \(A\). These are given by
+  remaining \(9\) out of \(0,1,2\dotsc,9\). Assuming randomness (\ie{} that
+  every sample point is equally likely), it suffices to count the sample
+  points in the event. We do this by decomposing \(A\) into the union of
+  mutually exclusive events
+  \[
+    A_i=\bigl\{\text{telephone numbers with exactly one \(0\) in the
+      \(i\)-th position}\bigr\}.
+  \]
+  The number of sample points in \(A_i\) is
+  \[
+    \# A_i=9\cdot 9^8
+  \]
+  since we must choose \(8\) digits of the number from among \(1,\dotsc,9\)
+  digits (with repetition). Thus,
+  \[
+    p(A)=%
+    p(A_1)+\dotsm p(A_9)=%
+    \frac{9\cdot 9\cdot 9^8}{9\cdot 10^9}=%
+    \left(\frac{9}{8}\right)^9\approx 0.3874.
+  \]
 \end{solution}
 \newpage
 
@@ -222,7 +240,13 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
+  For part (a), using the axioms of a measure, exactly two events occurring
+  is \(AB\)
+  \[
+    p(AB+AC+BC)=p(AB)+p(AC)+p(BC)-2p(ABC).
+  \]
 
+  For part (b), exactly one event occuring is
 \end{solution}
 \newpage
 
