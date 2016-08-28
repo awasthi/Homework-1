@@ -140,18 +140,44 @@
   \(\Omega_a\) is given by the expression
   \begin{equation}
     \label{eq:1-6}
-    \#\Omega_a=\binom{n+r-1}{n}.
+    \#\Omega_a=\binom{n+r-1}{r}.
   \end{equation}
-  Let \(A\) be the event that none of the \(N\) prespecified elements
-  appear (with \(N\leq r\)).
+  Let \(A_a\) be the event that none of the \(N\) prespecified elements
+  appear (with \(N\leq r\)). Now to find \(p(A_a)\), we count the sample
+  points in \(A_a\) these are: there are \(N\) elements to avoid so \(n-N\)
+  elements to choose from with replacement. This gives us
+  \begin{equation}
+    \label{eq:1-7}
+    \#A_a=\binom{(n-N)+r-1}{r}.
+  \end{equation}
+  Thus, the probability of \(A_a\) happening is
+  \[
+    p(A_a)=
+    \displaystyle\binom{n+r-1}{r}
+    \biggl/
+    \binom{(n-N)+r-1}{r}=
+    \frac{(n+r-1)\dotsm\bigl((n-N+1)+r-1\bigr)}{(n-r)\dotsm\bigl((n-N)-r\bigr)}.
+  \]
 
   For part (b), without replacement, the number of points in the sample
   space \(\Omega_b\)is given by the expression
   \begin{equation}
-    \label{eq:1-7}
+    \label{eq:1-8}
     \#\Omega_b=\binom{n}{r}.
   \end{equation}
-
+  Let \(A_b\) be the event that none of the \(N\) prespecified elements
+  appear (with \(N\leq r\)). Again, to find \(p(A_b)\) we need only count
+  the sample points in \(A_b\): there are \(N\) elements to avoid so
+  \(n-N\) elements to choose from without replacement. Hence,
+  \begin{equation}
+    \label{eq:1-9}
+    \#A_b=
+    \binom{n-N}{r}.
+  \end{equation}
+  Thus, the probability of \(A_b\) happening is
+  \[
+    p(A_b)=\binom{n}{r}\biggl/\binom{n-N}{r}=\frac{}{}
+  \]
 \end{solution}
 \newpage
 
@@ -162,12 +188,6 @@
   all the digits are chosen completely at random?
 \end{problem}
 \begin{solution}
-  First, since order matters, the number of points in the sample space
-  \(\Omega\) is
-  \begin{equation}
-    \label{eq:1-ex}
-    \#\Omega=9\cdot 10^9.
-  \end{equation}
 \end{solution}
 \newpage
 
@@ -175,7 +195,7 @@
   Events \(A\), \(B\) and \(C\) are defined in a sample space
   \(\Omega\). Find expressions for the following probabilities in terms of
   \(P(A)\), \(P(B)\), \(P(C)\), \(P(AB)\), \(P(AC)\), \(P(BC)\) and
-  \(P(ABC)\); here \(AB\) means \(A\cap B\), etc.:
+  \(P(ABC)\); here \(AB\) means \(A\cap B\), \etc{}:
   \begin{enumerate}[label=(\alph*)]
   \item the probability that exactly two of \(A\), \(B\), \(C\) occur;
   \item the probability that exactly one of these events occur;
