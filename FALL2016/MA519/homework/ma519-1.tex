@@ -6,7 +6,7 @@
 \begin{solution}
   Let \(\Omega\) denote the sample space and \(A\) denote the event that at
   least \(1\) complete pair of shoes is among the \(4\). We can reduce the
-  problem of finding \(p(A)\) into finding the probabilities of the
+  problem of finding \(P(A)\) into finding the probabilities of the
   mutually exclusive events
  \[
    A_1\defeq\bigl\{\,\text{exactly \(1\) pair is among the \(4\)}\,\bigr\}
@@ -18,7 +18,7 @@
   \]
   since \(A=A_1\cup A_2\), and using the additivity of \(p\),
   \[
-    p(A)=p(A_1)+p(A_2).
+    P(A)=P(A_1)+P(A_2).
   \]
   (To keep the problem short, we will not show that
   \(A_1\cap A_2=\emptyset\) and \(A=A_1\cup A_2\).)
@@ -29,7 +29,7 @@
   is
   \begin{equation}
     \label{eq:1-1}
-    \#\Omega=%
+    \card\Omega=%
     \binom{10}{4}=%
     \frac{10!}{4!6!}=%
     \frac{10\cdot 9\cdot 8\cdot 7\cdot 6!}{4\cdot 3\cdot 2\cdot 6!}=%
@@ -42,7 +42,7 @@
   the order in which we select the pair
   \begin{equation}
     \label{eq:1-2}
-    \#A_2=%
+    \card A_2=%
     \binom{5}{2}=%
     \frac{5!}{2!3!}=%
     \frac{5\cdot 4\cdot 3!}{2\cdot 3!}=%
@@ -62,8 +62,8 @@
   the probability that there is at least one complete pair among the four
   is
   \[
-    p(A)=%
-    p(A_1)+p(A_2)=%
+    P(A)=%
+    P(A_1)+P(A_2)=%
     \frac{120}{210}+\frac{10}{210}=\frac{130}{210}\approx%
     0.6190.
   \]
@@ -98,7 +98,7 @@
   matter, we have
   \begin{equation}
     \label{eq:1-4}
-      \#\Omega=\binom{20}{10}=184756
+      \card \Omega=\binom{20}{10}=184756
   \end{equation}
   sample points.
 
@@ -107,18 +107,18 @@
   giving us
   \begin{equation}
     \label{eq:1-5}
-    \#A_1=\binom{14}{10}=1001
+    \card A_1=\binom{14}{10}=1001
   \end{equation}
   sample points. For \(A_2\), we must choose all \(6\) mutant subunits
   leaving \(4\) choices from among the \(14\) normal subunits giving us
   \begin{equation}
     \label{eq:1-6}
-    \#A_1=\binom{14}{4}=1001.
+    \card A_1=\binom{14}{4}=1001.
   \end{equation}
   Thus, we have
   \[
-    p(A)=%
-    p(A_1)+p(A_2)=%
+    P(A)=%
+    P(A_1)+P(A_2)=%
     \frac{1001}{184756}+\frac{1001}{184756}\approx%
     0.01083.
   \]
@@ -139,19 +139,19 @@
   For part (a), with replacement, the number of points in the sample space
   \(\Omega_a\) is given by the expression
   \[
-    \#\Omega_a=\binom{n+r-1}{r}.
+    \card \Omega_a=\binom{n+r-1}{r}.
   \]
   Let \(A_a\) be the event that none of the \(N\) prespecified elements
-  appear (with \(N\leq r\)). Now to find \(p(A_a)\), we count the sample
+  appear (with \(N\leq r\)). Now to find \(P(A_a)\), we count the sample
   points in \(A_a\) these are: there are \(N\) elements to avoid so \(n-N\)
   elements to choose from with replacement. This gives us
   \[
-    \#A_a=\binom{(n-N)+r-1}{r}.
+    \card A_a=\binom{(n-N)+r-1}{r}.
   \]
   Thus, the probability of \(A_a\) happening is
   \begin{equation}
     \label{eq:prob-a-a}
-    p(A_a)=%
+    P(A_a)=%
     \binom{(n-N)+r-1}{r}\biggl/\binom{n+r-1}{r}=%
     \frac{(n-1)\dotsm\bigl((n-1)-N+1\bigr)}
     {(n+r-1)\dotsm\bigl((n+r-1)-N+1\bigr)}.
@@ -160,19 +160,19 @@
   For part (b), without replacement, the number of points in the sample
   space \(\Omega_b\) is given by the expression
   \[
-    \#\Omega_b=\binom{n}{r}.
+    \card \Omega_b=\binom{n}{r}.
   \]
   Let \(A_b\) be the event that none of the \(N\) prespecified elements
-  appear (with \(N\leq r\)). Again, to find \(p(A_b)\) we need only count
+  appear (with \(N\leq r\)). Again, to find \(P(A_b)\) we need only count
   the sample points in \(A_b\): there are \(N\) elements to avoid so
   \(n-N\) elements to choose from without replacement. Hence,
   \[
-    \#A_b=\binom{n-N}{r}.
+    \card A_b=\binom{n-N}{r}.
   \]
   Thus, the probability of \(A_b\) happening is
   \begin{equation}
     \label{eq:prob-a-b}
-    p(A_b)=%
+    P(A_b)=%
     \binom{n-N}{r}\biggl/\binom{n}{r}=%
     \frac{(n-1)\dotsm (n-N)}{(n+r-1)\dotsm (n+r-N)}.
   \end{equation}
@@ -181,11 +181,11 @@
   \eqref{eq:prob-a-b}, we compute the probabilities in (a) and (b) with
   \(r=N=10\) and \(n=100\). These are:
   \[
-    p(A_a)=\frac{99\dotsm 90}{109\dotsm 100}\approx 0.3654,
+    P(A_a)=\frac{99\dotsm 90}{109\dotsm 100}\approx 0.3654,
   \]
   and
   \[
-    p(A_b)=\frac{90\dotsm 81}{100\dotsm 91}\approx 0.3305.
+    P(A_b)=\frac{90\dotsm 81}{100\dotsm 91}\approx 0.3305.
   \]
 \end{solution}
 \newpage
@@ -202,7 +202,7 @@
   chosen completely at random. First, let us count the number of elements
   in the sample space, this is
   \[
-    \#\Omega=9\cdot 10^9
+    \card \Omega=9\cdot 10^9
   \]
   where the first digit is taken from among \(1,2,\dotsc,9\) and the
   remaining \(9\) out of \(0,1,2\dotsc,9\). Assuming randomness (\ie{} that
@@ -215,13 +215,13 @@
   \]
   The number of sample points in \(A_i\) is
   \[
-    \# A_i=9\cdot 9^8
+    \card A_i=9\cdot 9^8
   \]
   since we must choose \(8\) digits of the number from among \(1,\dotsc,9\)
   digits (with repetition). Thus,
   \[
-    p(A)=%
-    p(A_1)+\dotsm p(A_9)=%
+    P(A)=%
+    P(A_1)+\dotsm P(A_9)=%
     \frac{9\cdot 9\cdot 9^8}{9\cdot 10^9}=%
     \left(\frac{9}{8}\right)^9\approx 0.3874.
   \]
@@ -240,22 +240,21 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  For part (a), using the axioms of a measure, exactly two events occurring
-  is \(AB+AC+BC-ABC\)
+  These are all easy consequences of the inclusion-exclusion formula. For
+  part (a) we have is \(AB+AC+BC-ABC\)
   \[
-    p(AB+AC+BC)=p(AB)+p(AC)+p(BC)-2p(ABC).
+    P(AB+AC+BC)=P(AB)+P(AC)+P(BC)-2P(ABC).
   \]
 
-  For part (b), exactly one event occurring is
+  For part (b) we have
   \[
-    p(A)+p(B)+p(C)-p(AB)-p(AC)-p(BC)+p(ABC).
+    P(A)+P(B)+P(C)-P(AB)-P(AC)-P(BC)+P(ABC).
   \]
 
-  For part (c), the probability that no event occurs is
+  Lastly, for part (c) we have
   \[
-    p(\Omega)-p(A)-p(B)-p(C)+p(AB)+p(AC)+p(BC)+2p(ABC).
+    P(\Omega)-P(A)-P(B)-P(C)+P(AB)+P(AC)+P(BC)+2P(ABC).
   \]
-  This is easy to see using the diagram
 \end{solution}
 \newpage
 
@@ -267,14 +266,15 @@
   and theorems of probability?
 \end{problem}
 \begin{solution}
-
+  The probabilities seem to be consistent with the axioms and theorems of
+  probability. If the event \(A\) it will rain tomorrow implies that \(B\)
+  it will rain the day after tomorrow then \(p(B)\leq p(A)\).
 \end{solution}
 \newpage
 
 \begin{problem}[Handout 1, \# 16]
   Consider a particular player, say North, in a Bridge game. Let \(X\) be
-  the number of aces in his hand. find the distribution of be the number of
-  aces in his hand. find the distribution of \(X\).
+  the number of aces in his hand. Find the distribution of \(X\).
 \end{problem}
 \begin{solution}
 

@@ -23,12 +23,12 @@
     =\sum_{|\alpha|=m}\frac{m!}{\alpha!}D^\alpha f(tx)x^\alpha.%
   \]
   \begin{subproof}[Proof of claim]
-    We shall prove this by induction on \(m\). The case \(m=1\) follows
-    from Taylor's formula in \(1\) dimension as
+    We shall prove this by induction on \(m\). The case \(m=1\) is
+    straightforward by the chain rule
     \begin{align*}
       \frac{d}{dt}g(t)&=\frac{d}{dt}f(tx)\\
-                      &=\frac{d}{dt}f(tx_1,\dotsc,tx_n)\\
-                      &=
+                      &=f_{x_1}(tx)x_1+\dotsb+f_{x_n}(tx)x_n\\
+                      &=\sum_{|\alpha|=1}\frac{1!}{\alpha!}D^1f(tx)x^\alpha.
     \end{align*}
   \end{subproof}
 \end{solution}
