@@ -50,8 +50,12 @@
         \right)\\
       &=\sum_{|\alpha|=m-1}\frac{(m-1)!}{\alpha!}%
         \left[%
-        \sum_{|\beta|=1}\frac{1!}{\beta!}D^\beta D^\alpha\bigl(f(tx)x^\alpha\bigr)x^\beta
+        \sum_{|\beta|=1}\frac{1!}{\beta!}
+       \bigl[
+        D^\beta D^\alpha f(tx)x^{\alpha+\beta}+D^\alpha f(tx)D^\beta x^\alpha
+        \bigr]
         \right]\\
+      &=\\
       &=\sum_{|\alpha+\beta|=m}
         \frac{(m-1)!1!}{\alpha!\beta!}D^{\alpha+\beta}f(tx)x^{\alpha+\beta}\\
       \intertext{now, note that
