@@ -35,19 +35,27 @@
     Now, assume this for \(m-1\) and consider the \(m\)-th derivative of
     \(g\) we have
     \begin{align*}
-      \frac{d^m}{dt^m}g(t)
-      &=\frac{d}{dt}\left[\frac{d^{m-1}}{dt^{m-1}}g(t)\right]\\
-      &=\frac{d}{dt}
-        \left[
-        \sum\nolimits_{|\alpha|=m-1}\frac{(m-1)!}{\alpha!}D^\alpha f(tx)x^\alpha
+      \frac{d^m}{dt^m}g(t)%
+      &=\frac{d}{dt}\left[\frac{d^{m-1}}{dt^{m-1}}g(tx)\right]\\
+      &=\frac{d}{dt}%
+        \left[%
+        \sum_{|\alpha|=m-1}\frac{(m-1)!}{\alpha!}D^\alpha f(tx)x^\alpha%
         \right]\\
-      &=\sum_{|\alpha|=m-1}\frac{(m-1)!}{\alpha!}
-        \left[\frac{d}{dt}D^\alpha f(tx)x^\alpha\right]\\
-      &=\sum_{|\alpha|=m-1}\frac{(m-1)!}{\alpha!}
-        \bigl[
-        D^{(1,0,\dotsc,0)}D^\alpha
-        f(tx)x_1+\dotsb+D^{(0,\dotsc,0,1)}D^\alpha f(tx)x_n
-        \bigr]\\
+      &=\sum_{|\alpha|=m-1}\frac{(m-1)!}{\alpha!}%
+        \frac{d}{dt}%
+        \left(
+        \bigl[%
+        D^\alpha f(tx)x^\alpha%
+        \bigr]
+        \right)\\
+      &=\sum_{|\alpha|=m-1}\frac{(m-1)!}{\alpha!}%
+        \left[%
+        \sum_{|\beta|=1}\frac{1!}{\beta!}D^\beta D^\alpha\bigl(f(tx)x^\alpha\bigr)x^\beta
+        \right]\\
+      &=\sum_{|\alpha+\beta|=m}
+        \frac{(m-1)!1!}{\alpha!\beta!}D^{\alpha+\beta}f(tx)x^{\alpha+\beta}\\
+      \intertext{now, note that
+      \((\alpha+\beta)!=\prod_{i=0}^{\beta_1}(\alpha_1+\beta_1-i)\dotsm\prod_{i=0}^{\beta_n}(\alpha_n+\beta_n-i)\alpha!=\)}
       &=
     \end{align*}
   \end{subproof}
