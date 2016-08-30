@@ -22,38 +22,48 @@
     \frac{\rmd^m}{\rmd t^m}g(t)%
     =\sum_{|\alpha|=m}\frac{m!}{\alpha!}D^\alpha f(tx)x^\alpha.%
   \]
-  The proof of this follows from Leibniz's formula (which I found easier to
-  prove)
-  \begin{lemma*}[Leibniz's rule]
-    Let \(u,v\colon\bbR^n\to\bbR\) be smooth. Then
-    \[
-      D^\alpha uv
-      =\sum_{\beta\leq\alpha}\binom{\alpha}{\beta}D^\beta uD^{\alpha-\beta}v.
-    \]
-  \end{lemma*}
-  \begin{subproof}[Proof of lemma]
-    We proceed by induction on \(m=|\alpha|\). For \(m=1\), we have
+  \begin{subproof}[Proof of claim]
+    We shall proceed by induction on \(m\). The case \(m=1\) follows easily
+    from the chain rule:
     \begin{align*}
-      D^\alpha uv
-      &=\frac{\partial}{\partial x_i}uv\\
-      &=u_{x_i}v+uv_{x_i}\\
-      &=\sum_{\beta\leq\alpha}\binom{\alpha}{\beta}D^\beta uD^{\alpha-\beta}v.
+      \frac{\rmd}{\rmd t}g(t)
+      &=\frac{\rmd}{\rmd t}f(tx)\\
+      &=D^{(1,0,\dotsc,0)}f(tx)x_1+\dotsb+D^{(0,\dotsc,0,1)}f(tx)x_n\\
+      &=\bigl(D^{(1,0,\dotsc,0)}x_1+\dotsb+D^{(0,\dotsc,0,1)}x_n\bigr)f(tx)
     \end{align*}
-
-    Now assume the result for all \(n\leq m-1\). Then for \(|\alpha|=m\) we
-    have
+    More generally, applying the equation above recursively, we have
     \begin{align*}
-      D^\alpha uv
-      &=\frac{\partial}{\partial x_i} D^{\alpha'} uv
-        \shortintertext{where \(\alpha'=\alpha-(0,\dotsc,1,\dotsc,0)\) in
-        the \(i\)-th position}
-      &=\frac{\partial}{\partial x_i}
-        \left[
-        \sum_{\beta\leq\alpha'}\binom{\alpha'}{\beta}D^\beta uD^{\alpha'-\beta}v
-        \right]\\
-      &=
+      \frac{\rmd^m}{\rmd t^m}g(t)
+      &=%
+        \bigl(D^{(1,0,\dotsc,0)}x_1+\dotsb+D^{(0,\dotsc,0,1)}x_n\bigr)^m f(tx)
+      \intertext{by the multinomial theorem}
+      &=\sum_{|\alpha|=m}\binom{|\alpha|}{\alpha}D^\alpha x^\alpha f(tx)\\
+      &=\sum_{|\alpha|=m}\binom{|\alpha|}{\alpha}D^\alpha f(tx)x^\alpha\\
+      &=\sum_{|\alpha|=m}\frac{m!}{\alpha!}D^\alpha f(tx)x^\alpha
     \end{align*}
+    as desired.
   \end{subproof}
+  Now, applying Taylor's formula in \(1\) variable to \(g(t)\)
+  \begin{align*}
+    g(t)
+    &=\sum_{i=0}^k\frac{g^{(i)}(0)}{i!}t^i+\rmR_k(g)\\
+    &=\sum_{i=0}^k\frac{1}{i!}\sum_{|\alpha|=i}\frac{i!}{\alpha!}D^\alpha
+      f(tx)x^\alpha+\rmR_k(g)\\
+    &=\sum_{i=0}^k\sum_{|\alpha|=i}\frac{1}{\alpha!}D^\alpha f(0)x^\alpha t^i+\rmR_k(g)\\
+    &=\sum_{|\alpha|\leq k}\frac{1}{\alpha!}D^\alpha f(0)x^\alpha t^i+\rmR_k(g)
+  \end{align*}
+  and evaluating at \(t=1\) we have
+  \begin{align*}
+    g(1)
+    &=\sum_{|\alpha|\leq k}\frac{1}{\alpha!}D^\alpha f(0)x^\alpha t^i\\
+    &=\sum_{|\alpha|\leq k}\frac{1}{\alpha!}D^\alpha
+      f(0)x^\alpha+\rmR_k(g)\\
+    &=\sum_{|\alpha|\leq k}\frac{1}{\alpha!}D^\alpha
+      f(0)x^\alpha+\rmR_k(g)
+      \intertext{where the remainder \(\rmR_k(g)\asymp |x|^{k+1}\)}
+    &=\sum_{|\alpha|\leq k}\frac{1}{\alpha!}D^\alpha
+      f(0)x^\alpha+\rmR_k\bigl(|x|^{k+1}\bigr).
+  \end{align*}
 \end{solution}
 \newpage
 
@@ -103,9 +113,9 @@
 \end{problem}
 \begin{solution}
 
-\end{solution}
+\end{%solution
 
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: "../MA523-Current-HW"
-%%% End:
+  %%% Local Variables:
+  %%% mode: latex
+  %%% TeX-master: "../MA523-Current-HW"
+  %%% End:
