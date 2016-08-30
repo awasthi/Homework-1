@@ -10,7 +10,7 @@
   \emph{Hint}: Fix \(x\in\bbR^n\) and consider the function of one variable
   \(g(t)\defeq f(tx)\). Prove that
   \[
-    \frac{d^m}{d t^m}g(t)
+    \frac{\rmd^m}{\rmd t^m}g(t)
     =\sum_{|\alpha|=m}\frac{m!}{\alpha!} D^\alpha f(tx)x^\alpha,
   \]
   by induction on \(m\).
@@ -19,48 +19,38 @@
   Taking the hint, fix \(x\in\bbR^n\) and consider the function of one
   variable \(g(t)\defeq f(tx)\). We claim that
   \[
-    \frac{d^m}{d t^m}g(t)%
+    \frac{\rmd^m}{\rmd t^m}g(t)%
     =\sum_{|\alpha|=m}\frac{m!}{\alpha!}D^\alpha f(tx)x^\alpha.%
   \]
-  \begin{subproof}[Proof of claim]
-    We shall prove this by induction on \(m\). The case \(m=1\) is
-    straightforward by the chain rule
+  The proof of this follows from Leibniz's formula (which I found easier to
+  prove)
+  \begin{lemma*}[Leibniz's rule]
+    Let \(u,v\colon\bbR^n\to\bbR\) be smooth. Then
+    \[
+      D^\alpha uv
+      =\sum_{\beta\leq\alpha}\binom{\alpha}{\beta}D^\beta uD^{\alpha-\beta}v.
+    \]
+  \end{lemma*}
+  \begin{subproof}[Proof of lemma]
+    We proceed by induction on \(m=|\alpha|\). For \(m=1\), we have
     \begin{align*}
-      \frac{d}{dt}g(t)
-      &=\frac{d}{dt}f(tx)\\
-      &=D^{(1,0,\dotsc,0)}f(tx)x_1+\dotsb+D^{(0,\dotsc,0,1)}f(tx)x_n\\
-      &=\sum_{|\alpha|=1}\frac{1!}{\alpha!}D^\alpha f(tx)x^\alpha.
+      D^\alpha uv
+      &=\frac{\partial}{\partial x_i}uv\\
+      &=u_{x_i}v+uv_{x_i}\\
+      &=\sum_{\beta\leq\alpha}\binom{\alpha}{\beta}D^\beta uD^{\alpha-\beta}v.
     \end{align*}
 
-    Now, assume this for \(m-1\) and consider the \(m\)-th derivative of
-    \(g\) we have
+    Now assume the result for all \(n\leq m-1\). Then for \(|\alpha|=m\) we
+    have
     \begin{align*}
-      \frac{d^m}{dt^m}g(t)%
-      &=\frac{d}{dt}\left[\frac{d^{m-1}}{dt^{m-1}}g(tx)\right]
-      \shortintertext{since \(g\) is smooth,}
-      &=\frac{d}{dt}%
-        \left[%
-        \sum_{|\alpha|=m-1}\frac{(m-1)!}{\alpha!}D^\alpha f(tx)x^\alpha%
+      D^\alpha uv
+      &=\frac{\partial}{\partial x_i} D^{\alpha'} uv
+        \shortintertext{where \(\alpha'=\alpha-(0,\dotsc,1,\dotsc,0)\) in
+        the \(i\)-th position}
+      &=\frac{\partial}{\partial x_i}
+        \left[
+        \sum_{\beta\leq\alpha'}\binom{\alpha'}{\beta}D^\beta uD^{\alpha'-\beta}v
         \right]\\
-      &=\sum_{|\alpha|=m-1}\frac{(m-1)!}{\alpha!}%
-        \frac{d}{dt}%
-        \left(
-        \bigl[%
-        D^\alpha f(tx)x^\alpha%
-        \bigr]
-        \right)\\
-      &=\sum_{|\alpha|=m-1}\frac{(m-1)!}{\alpha!}%
-        \left[%
-        \sum_{|\beta|=1}\frac{1!}{\beta!}
-       \bigl[
-        D^\beta D^\alpha f(tx)x^{\alpha+\beta}+D^\alpha f(tx)D^\beta x^\alpha
-        \bigr]
-        \right]\\
-      &=\\
-      &=\sum_{|\alpha+\beta|=m}
-        \frac{(m-1)!1!}{\alpha!\beta!}D^{\alpha+\beta}f(tx)x^{\alpha+\beta}
-      \intertext{now, note that
-      \((\alpha+\beta)!=\prod_{i=0}^{\beta_1}(\alpha_1+\beta_1-i)\dotsm\prod_{i=0}^{\beta_n}(\alpha_n+\beta_n-i)\alpha!=\)}
       &=
     \end{align*}
   \end{subproof}
