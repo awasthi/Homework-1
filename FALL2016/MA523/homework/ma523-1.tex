@@ -36,7 +36,8 @@
     \(g\) we have
     \begin{align*}
       \frac{d^m}{dt^m}g(t)%
-      &=\frac{d}{dt}\left[\frac{d^{m-1}}{dt^{m-1}}g(tx)\right]\\
+      &=\frac{d}{dt}\left[\frac{d^{m-1}}{dt^{m-1}}g(tx)\right]
+      \shortintertext{since \(g\) is smooth,}
       &=\frac{d}{dt}%
         \left[%
         \sum_{|\alpha|=m-1}\frac{(m-1)!}{\alpha!}D^\alpha f(tx)x^\alpha%
@@ -57,7 +58,7 @@
         \right]\\
       &=\\
       &=\sum_{|\alpha+\beta|=m}
-        \frac{(m-1)!1!}{\alpha!\beta!}D^{\alpha+\beta}f(tx)x^{\alpha+\beta}\\
+        \frac{(m-1)!1!}{\alpha!\beta!}D^{\alpha+\beta}f(tx)x^{\alpha+\beta}
       \intertext{now, note that
       \((\alpha+\beta)!=\prod_{i=0}^{\beta_1}(\alpha_1+\beta_1-i)\dotsm\prod_{i=0}^{\beta_n}(\alpha_n+\beta_n-i)\alpha!=\)}
       &=
