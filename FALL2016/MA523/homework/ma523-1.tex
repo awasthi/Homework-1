@@ -10,7 +10,7 @@
   \emph{Hint}: Fix \(x\in\bbR^n\) and consider the function of one variable
   \(g(t)\defeq f(tx)\). Prove that
   \[
-    \frac{\rmd^m}{\rmd t^m}g(t)
+    \frac{d^m}{dt^m}g(t)
     =\sum_{|\alpha|=m}\frac{m!}{\alpha!} D^\alpha f(tx)x^\alpha,
   \]
   by induction on \(m\).
@@ -19,21 +19,21 @@
   Taking the hint, fix \(x\in\bbR^n\) and consider the function of one
   variable \(g(t)\defeq f(tx)\). We claim that
   \[
-    \frac{\rmd^m}{\rmd t^m}g(t)%
+    \frac{d^m}{dt^m}g(t)%
     =\sum_{|\alpha|=m}\frac{m!}{\alpha!}D^\alpha f(tx)x^\alpha.%
   \]
   \begin{subproof}[Proof of claim]
     We shall proceed by induction on \(m\). The case \(m=1\) follows easily
     from the chain rule:
     \begin{align*}
-      \frac{\rmd}{\rmd t}g(t)
-      &=\frac{\rmd}{\rmd t}f(tx)\\
+      \frac{d}{dt}g(t)
+      &=\frac{d}{dt}f(tx)\\
       &=D^{(1,0,\dotsc,0)}f(tx)x_1+\dotsb+D^{(0,\dotsc,0,1)}f(tx)x_n\\
       &=\bigl(D^{(1,0,\dotsc,0)}x_1+\dotsb+D^{(0,\dotsc,0,1)}x_n\bigr)f(tx)
     \end{align*}
     More generally, applying the equation above recursively, we have
     \begin{align*}
-      \frac{\rmd^m}{\rmd t^m}g(t)
+      \frac{d^m}{dt^m}g(t)
       &=%
         \bigl(D^{(1,0,\dotsc,0)}x_1+\dotsb+D^{(0,\dotsc,0,1)}x_n\bigr)^m f(tx)
       \intertext{by the multinomial theorem}
@@ -60,10 +60,19 @@
       f(0)x^\alpha+\rmR_k(g)\\
     &=\sum_{|\alpha|\leq k}\frac{1}{\alpha!}D^\alpha
       f(0)x^\alpha+\rmR_k(g)
-      \intertext{where the remainder \(\rmR_k(g)\asymp |x|^{k+1}\)}
-    &=\sum_{|\alpha|\leq k}\frac{1}{\alpha!}D^\alpha
-      f(0)x^\alpha+\rmR_k\bigl(|x|^{k+1}\bigr).
   \end{align*}
+  where the remainder is given by
+  \[
+    \rmR_k(g)=\frac{1}{k!}\int_0^1(1-\tau)
+    \sum_{|\alpha|=k+1}\frac{(k+1)!}{\alpha!}D^\alpha f(0)x^\alpha\sim
+    \rmO\bigl(|x|^{k+1}\bigr)
+  \]
+  so
+  \[
+    g(1)=f(x)=\sum_{|\alpha|\leq k}\frac{1}{\alpha!}D^\alpha
+    f(0)x^\alpha+\rmO_k\bigl(|x|^{k+1}\bigr)
+  \]
+  as desired
 \end{solution}
 \newpage
 
@@ -84,7 +93,13 @@
   in \S 2.1.2 of [E].
 \end{problem}
 \begin{solution}
+  For reference, formula (5) in \S 2.1.2 of [E] is
+  \[
+    u(x,t)=g(x -tb)+\int_0^1 f\bigl(x+(s-t)b,s\bigr)\diff s
+    \qquad (x\in\bbR^n,t>0)
+  \]
 
+  Let
 \end{solution}
 \newpage
 
@@ -113,9 +128,9 @@
 \end{problem}
 \begin{solution}
 
-\end{%solution
+\end{solution}
 
-  %%% Local Variables:
-  %%% mode: latex
-  %%% TeX-master: "../MA523-Current-HW"
-  %%% End:
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA523-Current-HW"
+%%% End:
