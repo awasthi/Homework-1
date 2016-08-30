@@ -175,10 +175,11 @@ main=english]{babel}
 \RequirePackage[varqu,varl,scaled=.94]{zi4} % mono
 \RequirePackage[libertine,%
                 libaltvw,%
-                % bigdelims,%
+                liby,%
+                bigdelims,%
                 upint,
                 smallerops,
-                ]{newtxmath} % Shitty math fonts
+                nosymbolsc]{newtxmath} % Shitty math fonts
 
 \RequirePackage[bb=boondox,%
                 frak=pxtx,%
@@ -191,6 +192,7 @@ main=english]{babel}
 \DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
 \DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
 
+\let\partial\uppartial
 \let\setminus\smallsetminus
 \let\emptyset\varnothing%
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}}
