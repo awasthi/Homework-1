@@ -29,7 +29,7 @@
   is
   \begin{equation}
     \label{eq:1-1}
-    \card\Omega=%
+    \#\Omega=%
     \binom{10}{4}=%
     \frac{10!}{4!6!}=%
     \frac{10\cdot 9\cdot 8\cdot 7\cdot 6!}{4\cdot 3\cdot 2\cdot 6!}=%
@@ -42,7 +42,7 @@
   the order in which we select the pair
   \begin{equation}
     \label{eq:1-2}
-    \card A_2=%
+    \# A_2=%
     \binom{5}{2}=%
     \frac{5!}{2!3!}=%
     \frac{5\cdot 4\cdot 3!}{2\cdot 3!}=%
@@ -98,7 +98,7 @@
   matter, we have
   \begin{equation}
     \label{eq:1-4}
-      \card\Omega=\binom{20}{10}=184756
+      \#\Omega=\binom{20}{10}=184756
   \end{equation}
   sample points.
 
@@ -107,13 +107,13 @@
   giving us
   \begin{equation}
     \label{eq:1-5}
-    \card A_1=\binom{14}{10}=1001
+    \# A_1=\binom{14}{10}=1001
   \end{equation}
   sample points. For \(A_2\), we must choose all \(6\) mutant subunits
   leaving \(4\) choices from among the \(14\) normal subunits giving us
   \begin{equation}
     \label{eq:1-6}
-    \card A_1=\binom{14}{4}=1001.
+    \# A_1=\binom{14}{4}=1001.
   \end{equation}
   Thus, we have
   \[
@@ -139,14 +139,14 @@
   For part (a), with replacement, the number of points in the sample space
   \(\Omega_a\) is given by the expression
   \[
-    \card\Omega_a=\binom{n+r-1}{r}.
+    \#\Omega_a=\binom{n+r-1}{r}.
   \]
   Let \(A_a\) be the event that none of the \(N\) prespecified elements
   appear (with \(N\leq r\)). Now to find \(P(A_a)\), we count the sample
   points in \(A_a\) these are: there are \(N\) elements to avoid so \(n-N\)
   elements to choose from with replacement. This gives us
   \[
-    \card A_a=\binom{(n-N)+r-1}{r}.
+    \# A_a=\binom{(n-N)+r-1}{r}.
   \]
   Thus, the probability of \(A_a\) happening is
   \begin{equation}
@@ -160,14 +160,14 @@
   For part (b), without replacement, the number of points in the sample
   space \(\Omega_b\) is given by the expression
   \[
-    \card\Omega_b=\binom{n}{r}.
+    \#\Omega_b=\binom{n}{r}.
   \]
   Let \(A_b\) be the event that none of the \(N\) prespecified elements
   appear (with \(N\leq r\)). Again, to find \(P(A_b)\) we need only count
   the sample points in \(A_b\): there are \(N\) elements to avoid so
   \(n-N\) elements to choose from without replacement. Hence,
   \[
-    \card A_b=\binom{n-N}{r}.
+    \# A_b=\binom{n-N}{r}.
   \]
   Thus, the probability of \(A_b\) happening is
   \begin{equation}
@@ -202,7 +202,7 @@
   chosen completely at random. First, let us count the number of elements
   in the sample space, this is
   \[
-    \card\Omega=9\cdot 10^9
+    \#\Omega=9\cdot 10^9
   \]
   where the first digit is taken from among \(1,2,\dotsc,9\) and the
   remaining \(9\) out of \(0,1,2\dotsc,9\). Assuming randomness (\ie{} that
@@ -215,7 +215,7 @@
   \]
   The number of sample points in \(A_i\) is
   \[
-    \card A_i=9\cdot 9^8
+    \# A_i=9\cdot 9^8
   \]
   since we must choose \(8\) digits of the number from among \(1,\dotsc,9\)
   digits (with repetition). Thus,

@@ -30,6 +30,8 @@
       &=\frac{d}{dt}f(tx)\\
       &=D^{(1,0,\dotsc,0)}f(tx)x_1+\dotsb+D^{(0,\dotsc,0,1)}f(tx)x_n\\
       &=\bigl(D^{(1,0,\dotsc,0)}x_1+\dotsb+D^{(0,\dotsc,0,1)}x_n\bigr)f(tx)
+        \intertext{which we can write compactly as}
+      &=\sum_{|\alpha|=1}\frac{1!}{\alpha!}D^\alpha f(tx)x^\alpha.
     \end{align*}
     More generally, applying the equation above recursively, we have
     \begin{align*}
