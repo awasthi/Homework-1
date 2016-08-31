@@ -119,25 +119,41 @@
     &=u_t+\bfb\cdot Du\\
     &=(\bfb,1)\cdot Du.
   \end{align*}
-  Using the structure of characteristic ODE, we have
+  Using the structure of characteristic ODE, we have the PDE
   \[
-    F(p,z,x)=(\bfb,1)\cdot p.
+    F(p,z,x)=(\bfb,1)\cdot p
   \]
-  This in turn gives us
-  \begin{equation}
-    \label{eq:1-2}
-    \dot x=D_p F(p,z,x)=(\bfb,1),
-  \end{equation}
-  whose solution is easily seen to be the line \((\bfb t+\bfx,t)\) where
-  \(\bfx\) is some point in the hyperplane
-  \(\bbR^n\simeq \bbR^n\times\{0\}\), and
+  with characteristics
   \[
-    \dot z=D_p F(p,z,x)=(\bfb,1)\cdot p=f
+    \dot x=b,\qquad
+    \dot t=1,\qquad
+    \dot z=f.
   \]
-  with solution
+  Now, given a point \((\bfx,t)\in\bbR^n\times(0,\infty)\) we can solve the
+  ODEs \(\dot x\) and \(\dot t\) easily as the lines
+  \(x(s)=\bfx-\bfb t+\bfb s\) and \(t=s\). Substituting these solutions
+  into \(\dot z\), we have
   \[
-    z()
+    \dot z=f\bigl(x(s),t(s)\bigr)=f\bigl(\bfx+\bfb(s-t),s\bigr)
   \]
+  so
+  \begin{align*}
+    \int_0^t f\bigl(x(s),t(s)\bigr)=f\bigl(\bfx+\bfb(s-t),s\bigr)\diff s
+    &=\int_0^t \dot z\diff s\\
+    &=z(t)-z(0)\\
+    &= u(\bfx,t)-u(\bfx-\bfb t,0).
+  \end{align*}
+  Thus,
+  \begin{align*}
+    u(\bfx,t)
+    &=u(\bfx-\bfb t,0)%
+      +\int_0^t f\bigl(x(s),t(s)\bigr)=f\bigl(\bfx+\bfb(s-t),s\bigr)\diff
+      s\\
+    &=g(\bfx-\bfb)
+      +\int_0^t f\bigl(x(s),t(s)\bigr)=f\bigl(\bfx+\bfb(s-t),s\bigr)\diff
+      s
+  \end{align*}
+  as desired.
 \end{solution}
 \newpage
 
@@ -152,31 +168,23 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  For part (a), we have
+  For part (a), employing the method of characteristics, we write
   \[
-    \bigl(x^2\bigr)\cdot Du=u^2.
+    F(p,z,x)=\bigl(x_1^2,x_2^2\bigr)\cdot p=z^2.
   \]
-  Using the method of characteristic gives us
+  From here, we have
   \[
-    F(p,z,x)=\bigl(x^2\bigr)\cdot p=z^2.
+    \dot x=\bigl(x_1^2,x_2^2\bigr),\qquad
+    \dot z= z^2.
   \]
-  Thus, the characteristics are
-  \[
-    \dot x=\bigl(x_1^2,x_2^2\bigr)
-  \]
-  and
-  \[
-    \dot z=\bigl(x_1^2,x_2^2\bigr)\cdot p=z^2
-  \]
-  with initial conditions
+  Now fix \(\bfx=(2t,t)\) on the line \(x_2=2x_1\) and solve for \(\dot
+  x\),
   \begin{align*}
-    x_1(0)&=x^0&x_2(0)&=2x^0\\
-    z(0)&=1.
+    \int_0^{2t}\diff s&=\int_0^{2t}\frac{1}{x_1(s)^2}\diff x_1(s)
+    &\int_0^t\diff s&=\int_0^t\frac{1}{x_1(s)^2}\diff x_1(s)\\
+    2t&=\frac{1}{x_1(2t)}-\frac{1}{x_1(0)}
+    &t&=\frac{1}{x_2(s)}-\frac{1}{x_2(0)}.
   \end{align*}
-
-  For part (b), we have
-
-  For part (c), we have
 \end{solution}
 \newpage
 
