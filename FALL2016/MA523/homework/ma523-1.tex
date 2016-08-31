@@ -106,31 +106,38 @@
   For reference, formula (5) in \S 2.1.2 of [E] is the solution to the
   nonhomogeneous problem
   \[
-    u(x,t)=g(x -tb)+\int_0^1 f\bigl(x+(s-t)b,s\bigr)\diff s
+    u(\bfx,t)=g(\bfx-t\bfb)+\int_0^1 f\bigl(\bfx+(s-t)\bfb,s\bigr)\diff s
   \]
-  where \(x\in\bbR^n\), \(t>0\).
+  where \(\bfx\in\bbR^n\), \(t>0\).
 
-  First, we write \eqref{eq:1:1} as the directional derivative along
-  \((b,1)\),
+  To make the notation more bearable, we will use \(\bfb\) and \(\bfx\) to
+  denote the original vectors in \eqref{eq:1:1}. First, we write
+  \eqref{eq:1:1} as the directional derivative along \((\bfb,1)\), (note
+  the abuse of notation)
   \begin{align*}
     f%
-    &=u_t+b\cdot Du\\
-    &=(b,1)\cdot Du\\
-    &=D_{(b,1)} u.
+    &=u_t+\bfb\cdot Du\\
+    &=(\bfb,1)\cdot Du.
   \end{align*}
-
   Using the structure of characteristic ODE, we have
-  \begin{align*}
-    \dot p(s)&=\\
-    \dot z(s)&=\\
-    \dot x(s)&=
-  \end{align*}
-  with initial conditions
-  \begin{align*}
-    \dot p(s)&=\\
-    \dot z(s)&=\\
-    \dot x(s)&=.
-  \end{align*}
+  \[
+    F(p,z,x)=(\bfb,1)\cdot p.
+  \]
+  This in turn gives us
+  \begin{equation}
+    \label{eq:1-2}
+    \dot x=D_p F(p,z,x)=(\bfb,1),
+  \end{equation}
+  whose solution is easily seen to be the line \((\bfb t+\bfx,t)\) where
+  \(\bfx\) is some point in the hyperplane
+  \(\bbR^n\simeq \bbR^n\times\{0\}\), and
+  \[
+    \dot z=D_p F(p,z,x)=(\bfb,1)\cdot p=f
+  \]
+  with solution
+  \[
+    z()
+  \]
 \end{solution}
 \newpage
 
@@ -145,7 +152,31 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
+  For part (a), we have
+  \[
+    \bigl(x^2\bigr)\cdot Du=u^2.
+  \]
+  Using the method of characteristic gives us
+  \[
+    F(p,z,x)=\bigl(x^2\bigr)\cdot p=z^2.
+  \]
+  Thus, the characteristics are
+  \[
+    \dot x=\bigl(x_1^2,x_2^2\bigr)
+  \]
+  and
+  \[
+    \dot z=\bigl(x_1^2,x_2^2\bigr)\cdot p=z^2
+  \]
+  with initial conditions
+  \begin{align*}
+    x_1(0)&=x^0&x_2(0)&=2x^0\\
+    z(0)&=1.
+  \end{align*}
 
+  For part (b), we have
+
+  For part (c), we have
 \end{solution}
 \newpage
 
