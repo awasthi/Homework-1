@@ -177,14 +177,51 @@
     \dot x=\bigl(x_1^2,x_2^2\bigr),\qquad
     \dot z= z^2.
   \]
-  Now fix \(\bfx=(2t,t)\) on the line \(x_2=2x_1\) and solve for \(\dot
-  x\),
+  Now say \(x(0)=(2t',t')\) and solve for \(\dot x\),
   \begin{align*}
-    \int_0^{2t}\diff s&=\int_0^{2t}\frac{1}{x_1(s)^2}\diff x_1(s)
+    \int_0^{t}\diff s&=\int_0^t\frac{1}{x_1(s)^2}\diff x_1(s)
     &\int_0^t\diff s&=\int_0^t\frac{1}{x_1(s)^2}\diff x_1(s)\\
-    2t&=\frac{1}{x_1(2t)}-\frac{1}{x_1(0)}
-    &t&=\frac{1}{x_2(s)}-\frac{1}{x_2(0)}.
+    t&=-\frac{1}{x_1(t)}+\frac{1}{x_1(0)}
+    &t&=-\frac{1}{x_2(s)}+\frac{1}{x_2(0)}\\
+    x_1(t)&=\frac{1}{1/x_1(0)-t}
+    &x_2(t)&=\frac{1}{1/x_2(0)-t}\\
+    &=\frac{2t'}{1-2tt'}&
+    &=\frac{t'}{1-tt'}.
   \end{align*}
+  Thus,
+  \[
+    x(t)=\left(\frac{2t'}{1-2tt'},\frac{t'}{1-tt'}\right)
+  \]
+  and solving for \(z\) similarly yields
+  \[
+    z(t)=\frac{z(0)}{1-tz(0)}=\frac{1}{1-t}
+  \]
+  since \(z=u^2=1\) on the line \(x_2=2x_1\). Lastly, solving for \(t\) in
+  terms of \(x_1\) and \(x_2\), we have
+  \begin{align*}
+    t'&=\frac{x_1}{2(tx_1+1)}\\
+      &=\frac{x_2}{tx_2+1}
+  \end{align*}
+  which, with a little algebra, can be turned into
+  \[
+    t=\frac{1-2x_2/x_1}{x_2}=\frac{x_2-2x_1}{x_1x_2}.
+  \]
+  Now substituting this into the solution \(z(t)\), we have
+  \begin{align*}
+    u(x,y)&=z(t)\\
+          &=\frac{1}{1-t}\\
+          &=\frac{1}{1-(x_2-2x_1)/(x_1x_2)}\\
+          &=\frac{x_1x_2}{x_1x_2-x_2+2x_1}.
+  \end{align*}
+
+  For part (b), write
+  \[
+    F(p,z,x)=(x_1,1)\cdot p=1.
+  \]
+  Then, we have
+  \[
+    \dot x=(z,1),\qquad\dot z=1.
+  \]
 \end{solution}
 \newpage
 
