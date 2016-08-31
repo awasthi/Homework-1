@@ -33,53 +33,61 @@
         \intertext{which we can write compactly as}
       &=\sum_{|\alpha|=1}\frac{1!}{\alpha!}D^\alpha f(tx)x^\alpha.
     \end{align*}
-    More generally, applying the equation above recursively, we have
-    \begin{align*}
+
+    Now, assume the result for \(n\leq m-1\). Then
+    \begin{align}
       \frac{d^m}{dt^m}g(t)
-      &=%
-        \bigl(D^{(1,0,\dotsc,0)}x_1+\dotsb+D^{(0,\dotsc,0,1)}x_n\bigr)^m f(tx)
-      \intertext{by the multinomial theorem}
-      &=\sum_{|\alpha|=m}\binom{|\alpha|}{\alpha}D^\alpha x^\alpha f(tx)\\
-      &=\sum_{|\alpha|=m}\binom{|\alpha|}{\alpha}D^\alpha f(tx)x^\alpha\\
-      &=\sum_{|\alpha|=m}\frac{m!}{\alpha!}D^\alpha f(tx)x^\alpha
+      &=\frac{d}{dt}\left[\frac{d^{m-1}}{dt^{m-1}}g(t)\right]\nonumber\\
+      &=\frac{d}{dt}\left[\sum_{|\alpha|=m-1}\frac{(m-1)!}{\alpha!}D^\alpha
+        f(tx)x^\alpha\right]\nonumber
+        \intertext{since the derivative is a linear operator, we have}
+      &=\sum_{|\alpha|=m-1}\frac{(m-1)!}{\alpha!}\frac{d}{dt}
+        \bigl[D^\alpha f(tx)x^\alpha\bigr]\nonumber\\
+      &=\sum_{|\alpha|=m-1}\frac{(m-1)!}{\alpha!}\sum_{|\beta|=1}D^{\alpha+\beta}f(tx)x^{\alpha+\beta}\nonumber
+        \intertext{but since \(f\) is smooth, the order
+        in which we take derivatives does not matter and, hence the operators
+        commute giving us }
+      &\label{eq:1-1}
+        =\left[\sum_{|\beta|=1}(Dx)^\beta
+        \sum_{|\alpha|=m-1}\frac{(m-1)!}{\alpha!}(Dx)^\alpha\right] f(tx).
+    \end{align}
+    From here it suffices to do some combinatorics on the operators and
+    reduce it to the desired expression. By the multinomial theorem, we have
+    \[
+      \left(\sum\nolimits_{|\alpha'|=1} (Dx)^{\alpha'}\right)^{m-1}
+      =\sum_{|\alpha|=m-1}\binom{|\alpha|}{\alpha}(Dx)^\alpha
+      =\sum_{|\alpha|=m-1}\frac{(m-1)!}{\alpha!}(Dx)^\alpha.
+    \]
+    Thus \eqref{eq:1-1} becomes
+    \begin{align*}
+      \left[\sum_{|\beta|=1}(Dx)^\beta
+      \sum_{|\alpha|=m-1}\frac{(m-1)!}{\alpha!}(Dx)^\alpha\right] f(tx)
+      &=\left[\sum_{|\beta|=1}(Dx)^\beta\left(\sum\nolimits_{|\alpha'|=1}
+        (Dx)^{\alpha'}\right)^{m-1}\right]f(tx)\\
+      &=\left[\left(\sum\nolimits_{|\beta|=1}
+        (Dx)^{\beta}\right)^m\right]f(tx)\\
+      &=\sum_{|\alpha|=m}\frac{m!}{\alpha!}(Dx)^\alpha f(tx)\\
+      &=\sum_{|\alpha|=m}\frac{m!}{\alpha!}D^\alpha f(tx)x^\alpha,
     \end{align*}
     as desired.
   \end{subproof}
-  Now, applying Taylor's formula in \(1\) variable to \(g(t)\)
+  Now, applying Taylor's formula in \(1\) variable to \(g(t)\) and
+  evaluating at \(t=1\) we have
   \begin{align*}
-    g(t)
-    &=\sum_{i=0}^k\frac{g^{(i)}(0)}{i!}t^i+\rmR_k(g)\\
+    f(x)
+    &=g(1)\\
+    &=\sum_{i=0}^k\frac{g^{(i)}(0)}{i!}1^i+\rmO\bigl(|x|^{k+1}\bigr)\\
     &=\sum_{i=0}^k\frac{1}{i!}\sum_{|\alpha|=i}\frac{i!}{\alpha!}D^\alpha
-      f(tx)x^\alpha+\rmR_k(g)\\
-    &=\sum_{i=0}^k\sum_{|\alpha|=i}\frac{1}{\alpha!}D^\alpha f(0)x^\alpha t^i+\rmR_k(g)\\
-    &=\sum_{|\alpha|\leq k}\frac{1}{\alpha!}D^\alpha f(0)x^\alpha t^i+\rmR_k(g)
+      f(tx)x^\alpha+\rmO\bigl(|x|^{k+1}\bigr)\\
+    &=\sum_{i=0}^k\sum_{|\alpha|=i}\frac{1}{\alpha!}D^\alpha f(0)x^\alpha+\rmO\bigl(|x|^{k+1}\bigr)\\
+    &=\sum_{|\alpha|\leq k}\frac{1}{\alpha!}D^\alpha f(0)x^\alpha+\rmO\bigl(|x|^{k+1}\bigr)
   \end{align*}
-  and evaluating at \(t=1\) we have
-  \begin{align*}
-    g(1)
-    &=\sum_{|\alpha|\leq k}\frac{1}{\alpha!}D^\alpha f(0)x^\alpha t^i\\
-    &=\sum_{|\alpha|\leq k}\frac{1}{\alpha!}D^\alpha
-      f(0)x^\alpha+\rmR_k(g)\\
-    &=\sum_{|\alpha|\leq k}\frac{1}{\alpha!}D^\alpha
-      f(0)x^\alpha+\rmR_k(g)
-  \end{align*}
-  where the remainder is given by
-  \[
-    \rmR_k(g)=\frac{1}{k!}\int_0^1(1-\tau)
-    \sum_{|\alpha|=k+1}\frac{(k+1)!}{\alpha!}D^\alpha f(0)x^\alpha\sim
-    \rmO\bigl(|x|^{k+1}\bigr)
-  \]
-  so
-  \[
-    g(1)=f(x)=\sum_{|\alpha|\leq k}\frac{1}{\alpha!}D^\alpha
-    f(0)x^\alpha+\rmO_k\bigl(|x|^{k+1}\bigr)
-  \]
-  as desired
+  as desired.
 \end{solution}
 \newpage
 
 \begin{problem}
-  Write down the characteristic equation for the p.d.e.\@
+  Write down the characteristic equation for the PDE
   \[
     \label{eq:1:1}
     \tag{\(*\)}
@@ -95,13 +103,22 @@
   in \S 2.1.2 of [E].
 \end{problem}
 \begin{solution}
-  For reference, formula (5) in \S 2.1.2 of [E] is
+  For reference, formula (5) in \S 2.1.2 of [E] is the solution to the
+  nonhomogeneous problem
   \[
     u(x,t)=g(x -tb)+\int_0^1 f\bigl(x+(s-t)b,s\bigr)\diff s
-    \qquad (x\in\bbR^n,t>0)
   \]
+  where \(x\in\bbR^n\), \(t>0\).
 
-  Let \(x\in\bbR^n\)
+  Using the structure of characteristic ODE, we have
+  \begin{align*}
+    \dot p(s)
+    &=-D_xF\bigl(p(s),z(s),x(s)\bigr)-D_zF\bigl(p(s),z(s),x(s)\bigr)p(s)\\
+    \dot z(s)
+    &=D_pF\bigl(p(s),z(s),x(s)\bigr)\cdot p(s)\\
+    \dot x(s)
+    &=D_pF\bigl(p(s),z(s),x(s)\bigr).
+  \end{align*}
 \end{solution}
 \newpage
 
