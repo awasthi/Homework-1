@@ -266,15 +266,20 @@
   and theorems of probability?
 \end{problem}
 \begin{solution}
-  No. Let \(\Omega = \{(0,0),(0,1),(1,0),(1,1)\) be the sample space, where \( (0,0)\) corresponds to the event that it rains on neither day, \( (0,1)\) corresponds to the event that it rains tomorrow only, \( (1,0)\) corresponds to the event that it rains the day after tomorrow only, and \( (1,1)\) corresponds to the event that it rains on both days. Mrs. \@ Jones has predicted that \(P((0,1))=0 \), \(P((0,1)) + P((1,1))=1/2 \), and \(P((1,0)) + P((1,1))=1/3 \). We can solve this system of equations: We get that 
-  
-  \[
-  	P((0,1)) &= 0
-    P((1,1)) &= 1/2
-    P((1,0)) &- -1/6
+  No. Let \(\Omega = \{(0,0),(0,1),(1,0),(1,1)\) be the sample space, where
+\( (0,0)\) corresponds to the event that it rains on neither day, \(
+(0,1)\) corresponds to the event that it rains tomorrow only, \( (1,0)\)
+corresponds to the event that it rains the day after tomorrow only, and \(
+(1,1)\) corresponds to the event that it rains on both days. Mrs. \@ Jones
+has predicted that \(P((0,1))=0 \), \(P((0,1)) + P((1,1))=1/2 \), and
+\(P((1,0)) + P((1,1))=1/3 \). We can solve this system of equations: We get
+that
+
+  \[ P((0,1)) &= 0 P((1,1)) &= 1/2 P((1,0)) &- -1/6
   \]
-  
-which fails our axioms of probability: we have an event that has negative probability.
+
+which fails our axioms of probability: we have an event that has negative
+probability.
 \end{solution}
 \newpage
 
@@ -284,27 +289,32 @@ which fails our axioms of probability: we have an event that has negative probab
 \end{problem}
 \begin{solution}
 
-First, we recall that any one player in a Bridge game has 13 cards out of the 52 in the deck, and that there are four (distinct) aces in the 52 card deck. Let \( \Omega\) be the sample space of hands that North could have drawn. Let \(A_i\) be the event that North has drawn \(i\) aces. It is clear that \(P(A_i) = 0\) for all \(i \neq 0,1,2,3,4\).
+  First, we recall that any one player in a Bridge game has 13 cards out of
+  the 52 in the deck, and that there are four (distinct) aces in the 52
+  card deck. Let \( \Omega\) be the sample space of hands that North could
+  have drawn. Let \(A_i\) be the event that North has drawn \(i\) aces. It
+  is clear that \(P(A_i) = 0\) for all \(i \neq 0,1,2,3,4\).
 
-First, 
+  First,
 
-\[
+  \[
     \# \Omega= \binom{52}{13}
-\]
+  \]
 
-and 
+  and
 
-\[
+  \[
     \# A_i= \binom{4}{i} \cdot \binom{48}{13-i}
-\]
+  \]
 
-So that
+  So that
 
-\[
+  \[
     P(A_i)= \frac{\binom{4}{i} \cdot \binom{48}{13-i}}{\binom{52}{13}}
-\]
+  \]
 
-(note that this holds even when \(i \neq 0,1,2,3,4\), as the \(\binom{4}{i}\) term is zero in those cases.)
+  (note that this holds even when \(i \neq 0,1,2,3,4\), as the
+  \(\binom{4}{i}\) term is zero in those cases.)
 
 \end{solution}
 \newpage
