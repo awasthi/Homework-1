@@ -318,6 +318,27 @@
   approximate it as \(n\) tends to \(\infty\).
 \end{problem}
 \begin{solution}
+  First, we do the general case since that is what was tackled first. In
+  the general case, we can reduce the problem to counting the solutions to
+  \[
+    \sum_{j=1}^{n-i}X_j=n
+  \]
+  where \(1<X_j\leq n\). Letting \(Y_j=X_j\) we can forget about the
+  condition that \(X_j>1\) and we have
+  \[
+    \sum_{j=1}^{n-i}Y_j=n-(n-i)=i.
+  \]
+  It is shown in Feller that the number of distinguishable distributions
+  are
+  \[
+    \binom{n+i-1}{n}.
+  \]
+  Thus, if we let \(A_i\) be the event that \(i\) bins are left empty,
+  \[
+    \# A_i=\binom{n+i-1}{n}.
+  \]
+  Lastly, we must count the number of points in our sample space
+  \(\Omega\).
 \end{solution}
 
 %%% Local Variables:
