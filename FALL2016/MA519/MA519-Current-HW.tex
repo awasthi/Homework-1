@@ -64,22 +64,25 @@
 \renewcommand\theequation{\hwnum.\arabic{equation}}
 
 \begin{document}
+\def\authst{Carlos Salinas,\quad Max Jeter}
+\def\auths{Carlos Salinas, Max Jeter}
 \frontmatter \aliaspagestyle{title}{empty} \pagestyle{title}
-\author{\href{mailto:\email}{\auth}}%
+% \authsor{\href{mailto:\email}{\auths}}
+\author{\authst}
 \title{\tight}%
 \date{\today}%
 \maketitle
 \cleartooddpage
 \makepagestyle{my-headings}
 \makeoddhead{my-headings}
-        {\small{\MakeUppercase{\itshape\auth}}}
+        {\small{\MakeUppercase{\itshape\auths}}}
         {}
         {\small{\MakeUppercase{\itshape\exname}}}
 \makeoddfoot{my-headings}{{\itshape\tight}}
                       {}
                       {\thepage}
 \makeevenhead{my-headings}
-        {\small{\MakeUppercase{\itshape\auth}}}
+        {\small{\MakeUppercase{\itshape\auths}}}
         {}
         {\small{\MakeUppercase{\itshape\exname}}}
 \makeevenfoot{my-headings}{{\itshape\tight}}

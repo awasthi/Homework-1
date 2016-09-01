@@ -1,8 +1,11 @@
 \begin{problem}
   Verify assertion (36) in [E, \S 3.2.3], that when \(\Gamma\) is not flat
-  near \(x^0\) the noncharacteristic condition is D p F (p 0 , z 0 , x 0 )
-  · ν(x 0 ) 6 = 0.  (Here ν(x 0 ) denotes the normal to the hypersurface Γ
-  at x 0 ).
+  near \(x^0\) the noncharacteristic condition is
+  \[
+    D_pF(p^0,z^0,x^0)\cdot \nu(x^0)\neq 0.
+  \]
+  (Here \(\nu(x^0)\) denotes the normal to the hypersurface \(\Gamma\) at
+  \(x^0\)).
 \end{problem}
 \begin{solution}
 
@@ -10,11 +13,17 @@
 \newpage
 
 \begin{problem}
-  2. Show that the solution of the quasilinear PDE u t + a(u)u x = 0 with
-  initial conditions u(x, 0) = g(x) is given implicitly by u = g(x −
-  a(u)t).  Show that the solution develops a shock (becomes singular) for
-  some t > 0, unless a(g(x)) is a nondecreasing function of x.
-
+  Show that the solution of the quasilinear PDE
+  \[
+    u_t+a(u)u_x=0
+  \]
+  with initial conditions \(u(x,0)=g(x)\) is given implicitly by
+  \[
+    u=g\bigl(x−a(u)t\bigr).
+  \]
+  Show that the solution develops a shock (becomes singular) for some
+  \(t>0\), unless \(a\bigl(g(x)\bigr)\) is a nondecreasing function of
+  \(x\).
 \end{problem}
 \begin{solution}
 
@@ -22,15 +31,18 @@
 \newpage
 
 \begin{problem}
- Show that the function u(x, t) defined for t ≥ 0 by
-√
- 2
-− 3 (t + 3x + t 2 ) for 4x + t 2 > 0
-u(x, t) =
-0
-for 4x + t 2 < 0
-is an (unbounded) entropy solution of the conservation law u t + (u 2 /2) x = 0 (inviscid Burger’s
-equation).
+  Show that the function \(u(x,t)\) defined by \(t\geq 0\) by
+  \[
+    u(x,t)=
+    \begin{cases}
+      \displaystyle-\frac{2}{3}\left(t+\sqrt{3x+t^2}\right)
+      &\text{for \(4x+t^2>0\)}\\
+      0
+      &\text{for \(4x+t^2<0\)}
+    \end{cases}
+  \]
+  is an (unbounded) entropy solution of the conservation law
+  \(u_t+(u^2/2)_x=0\) (\emph{inviscid Burger's equation}).
 \end{problem}
 \begin{solution}
 
