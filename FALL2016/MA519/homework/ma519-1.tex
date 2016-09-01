@@ -139,22 +139,19 @@
   For part (a), with replacement, the number of points in the sample space
   \(\Omega_a\) is given by the expression
   \[
-    \#\Omega_a=\binom{n+r-1}{r}.
+    \#\Omega_a=n^r.
   \]
   Let \(A_a\) be the event that none of the \(N\) prespecified elements
   appear (with \(N\leq r\)). Now to find \(P(A_a)\), we count the sample
   points in \(A_a\) these are: there are \(N\) elements to avoid so \(n-N\)
   elements to choose from with replacement. This gives us
   \[
-    \# A_a=\binom{(n-N)+r-1}{r}.
+    \# A_a=(n-N)^r
   \]
   Thus, the probability of \(A_a\) happening is
   \begin{equation}
     \label{eq:prob-a-a}
-    P(A_a)=%
-    \binom{(n-N)+r-1}{r}\biggl/\binom{n+r-1}{r}=%
-    \frac{(n-1)\dotsm\bigl((n-1)-N+1\bigr)}
-    {(n+r-1)\dotsm\bigl((n+r-1)-N+1\bigr)}.
+    P(A_a)=\frac{(n-N)^r}{n^r}=\left(\frac{n-N}{n}\right)^r.
   \end{equation}
 
   For part (b), without replacement, the number of points in the sample
