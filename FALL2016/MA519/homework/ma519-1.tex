@@ -323,22 +323,38 @@
   \[
     \sum_{j=1}^{n-i}X_j=n
   \]
-  where \(1<X_j\leq n\). Letting \(Y_j=X_j\) we can forget about the
+  where \(1<X_j\leq n\). Letting \(Y_j=X_j-1\) we can forget about the
   condition that \(X_j>1\) and we have
   \[
-    \sum_{j=1}^{n-i}Y_j=n-(n-i)=i.
+    \sum_{j=1}^{n-i}Y_j=n-(n-i)=i
   \]
-  It is shown in Feller that the number of distinguishable distributions
-  are
+  for \(0\leq Y_j\leq n-1\). It is shown in Feller that the number of
+  distinguishable distributions are
   \[
     \binom{n+i-1}{n}.
   \]
   Thus, if we let \(A_i\) be the event that \(i\) bins are left empty,
   \[
-    \# A_i=\binom{n+i-1}{n}.
+    \# A_i=\binom{n+i-1}{n}
+    =\binom{n+i-1}{i-1}.
   \]
   Lastly, we must count the number of points in our sample space
-  \(\Omega\).
+  \(\Omega\). This is given by
+  \[
+    \#\Omega=%
+    \binom{2n-1}{n}.
+  \]
+  This gives us an expected value of
+  \begin{align*}
+    \bfE[\Omega]
+    &=\frac{1}{\binom{2n-1}{n}}\sum_{i=1}^ni\binom{n+i-1}{n}\\
+    &=\frac{1}{\binom{2n-1}{n}}\sum_{i=1}^ni\binom{n+i-1}{i-1}\\
+    &=\frac{1}{\binom{2n-1}{n}}\sum_{i=0}^n(i-1)\binom{n+i}{i}\\
+    &=\frac{1}{\binom{2n-1}{n}}
+      \left[\sum_{i=0}^ni\binom{n+i}{i}-\sum_{i=0}^n\binom{n+i}{i}\right]\\
+  \end{align*}
+
+  Now, for the last part, consider the estimates we must
 \end{solution}
 
 %%% Local Variables:
