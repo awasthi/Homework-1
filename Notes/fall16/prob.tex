@@ -66,29 +66,10 @@ sample point. We say that in such a sample space each sample point is
 \[
   p(\omega)=\frac{1}{\#\Omega}.
 \]
-Thus, to compute the probability of an event \(A\) happening, we need only
-count the number of points in \(A\) and divide by the cardinality of
-\(\Omega\), \(\#\Omega\).
+Thus, to compute the probability of an event \(A\), we need clever ways of
+counting points.
 
-Here are a couple of results about counting that will be useful to us
-throughout this section:
-\begin{lemma}
-  With \(m\) elements \(a_1,\dotsc,a_m\) and \(n\) elements
-  \(b_1,\dotsc,b_n\), it is possible to form \(mn\) pairs \((a_i,b_j)\)
-  containing one element from each group.
-\end{lemma}
-\begin{proof}
-  Arrange the elements \(a_1,\dotsc,a_m\) in a column and
-  \(b_1,\dotsc,b_n\) in a row and form a multiplication table where the
-  \(ij\)-th element is \(a_ib_j\). Then this assertion becomes obvious.
-
-  More formally, choose an element \(a\) from among \(a_1,\dotsc,a_m\)
-  (there are \(m\) choices) then to form a pair \((a,\blank)\) we can
-  choose from among \(n\) elements \(b_1,\dotsc,b_n\). Thus, the number of
-  pairs that can be formed with \(a\) is \(n\) and there are \(m\) possible
-  choices for \(a\) so there are \(mn\) possible pairs.
-\end{proof}
-
+The following material is taken, mostly, from Feller's book.
 
 
 %%% Local Variables:
