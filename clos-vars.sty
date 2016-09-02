@@ -135,34 +135,25 @@ main=english]{babel}
 %% Times clones
 \if@times % TeX Gyre for text and mathematics
 %% Use Tempora for Greek and Russian
-\pdfmapfile{+newtx.map}
-\RequirePackage[scosf,theoremfont]{cochineal}
+% \pdfmapfile{+newtx.map}
+\RequirePackage{nimbusserif}
+\RequirePackage{nimbussans}
+\RequirePackage{nimbusmono}
 \RequirePackage[varqu,varl,var0]{inconsolata}
 \RequirePackage[scale=.95,type1]{cabin}
 
-\RequirePackage[cochineal,
-                varg,
-                % bigdelims,%
-                upint,
-                smallerops,
+\RequirePackage[varg,
+                bigdelims,
+                % upint,
+                % smallerops,
                 nosymbolsc]{newtxmath}%
 \RequirePackage[bb=boondox,%
-                frak=pxtx,%
+                frak=boondox,%
                 cal=boondoxo,%
                 scr=boondox]{mathalfa}%
 
-% \RequirePackage{tempora}
-% \substitutefont{LGR}{\rmdefault}{Tempora-TLF}
-% \substitutefont{T2A}{\rmdefault}{Tempora-TLF}
-
-\DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
-\DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
-\DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
-
 %% Times specific commands
-\let\partial\uppartial
 \let\setminus\smallsetminus
-\let\emptyset\varnothing%
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}}
 \newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
       \hbox{.}\hbox{.}}}%
@@ -170,7 +161,7 @@ main=english]{babel}
 
 \else
 \if@libertine %% Use Libertine (a beautiful free font)
-\pdfmapfile{+newtx.map}
+% \pdfmapfile{+newtx.map}
 \RequirePackage{libertine}
 \RequirePackage{libertinegc} %% Greek and Cyrillic Libertine
 \RequirePackage[scale=.95,type1]{cabin} % sans
@@ -178,9 +169,9 @@ main=english]{babel}
 \RequirePackage[libertine,%
                 libaltvw,%
                 liby,%
-                % bigdelims,%
-                upint,
-                smallerops,
+                bigdelims,%
+                % upint,
+                % smallerops,
                 nosymbolsc]{newtxmath} % Shitty math fonts
 
 \RequirePackage[bb=boondox,%
@@ -194,7 +185,6 @@ main=english]{babel}
 \DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
 \DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
 
-\let\partial\uppartial
 \let\setminus\smallsetminus
 \let\emptyset\varnothing%
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}}
