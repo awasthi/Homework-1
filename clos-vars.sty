@@ -136,12 +136,10 @@ main=english]{babel}
 \if@times % TeX Gyre for text and mathematics
 %% Use Tempora for Greek and Russian
 % \pdfmapfile{+newtx.map}
+\RequirePackage[largesc,p]{newtxtext}
 \RequirePackage{nimbusserif}
 \RequirePackage{nimbussans}
-\RequirePackage{nimbusmono}
-\RequirePackage[varqu,varl,var0]{inconsolata}
-\RequirePackage[scale=.95,type1]{cabin}
-
+\RequirePackage{nimbusmononarrow}
 \RequirePackage[varg,
                 bigdelims,
                 % upint,
@@ -152,7 +150,11 @@ main=english]{babel}
                 cal=boondoxo,%
                 scr=boondox]{mathalfa}%
 
-%% Times specific commands
+\DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
+\DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
+\DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
+
+%% Redefinitions
 \let\setminus\smallsetminus
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}}
 \newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
@@ -980,7 +982,8 @@ main=english]{babel}
 \DeclareSIUnit[number-unit-product = {\thinspace}]{\gallon}{gal}
 
 \if@times
-\AtBeginDocument{\LGCscale}
+\AtBeginDocument{\LGCscale
+}
 \fi
 \makeatletter
 \@ifclassloaded{exam}
