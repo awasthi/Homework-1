@@ -133,8 +133,7 @@ main=english]{babel}
 
 %%% Math packages
 %% Times clones
-\if@times % TeX Gyre for text and mathematics
-%% Use Tempora for Greek and Russian
+\if@times % TeX Gyre for math and Nimbus for text
 % \pdfmapfile{+newtx.map}
 \RequirePackage[largesc,p]{newtxtext}
 \RequirePackage{nimbusserif}
@@ -150,6 +149,8 @@ main=english]{babel}
                 cal=boondoxo,%
                 scr=boondox]{mathalfa}%
 
+%% Until the new version of newxtmath is available in the repo
+%% this fixes the mathpuct spacing problems
 \DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
 \DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
 \DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
