@@ -5,75 +5,11 @@ Feller's \emph{An introduction to probability theory and its applications,
   Volume 1} \cite{feller} and DasGupta's \emph{Fundamentals of Probability:
 A First Course}\cite{dasgupta}.
 
-\section{The Basics}
-In this section we will talk about concepts related to discrete
-probability. Before we begin, we introduce the axioms we will be working
-under. First and foremost, to do probability we need a \emph{sample space
-  \(\Omega\)} and a \emph{probability \(p\colon\calM\to[0,1]\)} which
-assigns values between \(0\) and \(1\) to \emph{special} subsets of
-\(\Omega\) which we denote by \(\calM\) (more formally, this \(\calM\) is
-called a
-\href{https://en.wikipedia.org/wiki/Sigma-algebra}{\emph{\(\sigma\)-algebra}}
-by analysts or a \emph{algebra of events} by probabilists and \(p\) is
-called a
-\href{https://en.wikipedia.org/wiki/Probability_measure}{\emph{probability
-    measure}} and there are certain axioms it must satisfy for us to be
-able to assign consistent values to subsets of \(\Omega\) with \(p\)). An
-element \(\omega\in\Omega\) is called a \emph{sample point} and a (special)
-collection of \(\omega\), \(A\in\calM\), is called an event. We call the
-triplet \((\Omega,\calM,p)\) a probability space.
+\section{Discrete Probability}
+We will follow the first few chapters of \cite{feller} for this part of the
+chapter (which is discrete probability) and \cite{dasgupta} for the rest.
+\subsection{Background}
 
-The algebra of events comes \(\calM\) with a natural multiplication and
-addition given, naturally, by union and intersection of events (\ie{}
-\(A+B\defeq A\cup B\) and \(AB\defeq A\cap B\)) and an additive as well as
-multiplicative identity \(\emptyset\) and \(\Omega\), \etc{} If
-\(AB=\emptyset\) we say that the events \(A\) and \(B\) are \emph{mutually
-  exclusive}.
-\begin{remark}
-  We won't always use the notation \(A+B\) and \(AB\) to mean \(A\cup B\)
-  and \(A\cap B\), respectively (since I prefer the set-theoretic notation
-  over the algebraic one), but Prof.\@ DasGupta makes has a preference for
-  the latter and Feller uses a mix of the two. Now, you may ask ``Why
-  introduce this notation at all if you are going to disregard it?'' The
-  reason is that I will be using examples from Feller and DasGupta's book
-  and sometimes I will be too rushed to bother translating the notation and
-  though I don't expect anybody but myself to read this, it may very well
-  happen that I pass these notes on to somebody else.
-\end{remark}
-
-In this section, we shall assume that our sample space \(\Omega\) is
-discrete, \ie{} \(\#\Omega<\infty\) or at the very least \(\aleph^0\). We
-additionally require that for each point \(\omega\) in the space \(\Omega\)
-its probability \(P(\omega)\) in non-negative and
-\begin{equation}
-  \label{eq:convention-prob}
-  \sum_{\omega\in\Omega}P(\omega)=1.
-\end{equation}
-
-There are of course a whole number of beautiful relationships that \(p\)
-satisfies (those that any sane measure would satisfy like countable
-additivity, subadditivity, \etc{}), but we shall not talk about them here,
-instead let us get down to the crux of the matter (at least at this point
-in the class): counting. Since our sample spaces will be finite (at least
-for now), we need to be able to count sample points in \(\Omega\) by way of
-combinatorics (this is in my opinion, a lot tougher than working with
-infinite sample spaces for which we must make certain assumptions about the
-sample points and the probability measure -- it is less tedious to solve
-problems with sane assumptions than it is to count points).
-
-\subsection{Basic Combinatorics}
-It is often reasonable to assume that the probability of any particular
-sample point \(\omega\in\Omega\) is just as likely as that of any other
-sample point. We say that in such a sample space each sample point is
-\emph{equally likely} to happen. This means that the probability of
-\(\omega\in\Omega\) happening is precisely
-\[
-  P(\omega)=\frac{1}{\#\Omega}.
-\]
-Thus, to compute the probability of an event \(A\), we need clever ways of
-counting points.
-
-The following material is taken, mostly, from Feller's book.
 
 %%% Local Variables:
 %%% mode: latex
