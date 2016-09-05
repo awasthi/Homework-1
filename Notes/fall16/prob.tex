@@ -12,20 +12,55 @@ with minor detours to \cite{dasgupta}. We will not reference any particular
 pages in either book (unless we feel particularly lazy).
 
 \subsection{Background}
-We begin with axioms and terminology. We shall call the result of an
-experiment (which shall not be defined) as an \emph{event}. Thus we shall
-speak of the event that of five coins tossed more than three fell heads. We
-also make a distinction between \emph{compound} (or decomposable) and
-\emph{simple} (or indecomposable) \emph{events}. E.g., saying that two
-tosses of a coin resulted in one head and one tail amounts to saying that
-it resulted in \((H,T)\) or \((T,H)\) and this enumeration decomposes the
-event ``two tosses of a coin resulted in one head and one tail'' into two
-indecomposable events.
+Given a discrete sample space \(\Omega\) with sample points
+\(\omega_1,\omega_2,\dotsc\), we shall assume that with each point
+\(\omega_j\) there is associated a number, called the probability of
+\(\omega_j\) and denoted by \(P(\omega_i)\). It is nonnegative and such
+that
+\begin{equation}
+  \label{eq:prob-sum}
+  \sum_{i\in\bbN} P(\omega_i)=1.
+\end{equation}
 
-Now comes the rigor. If we want to speak about the outcome of experiments
-in a theoretical way with no ambiguity, we must first agree on the simple
-events representing the thinkable outcomes; \emph{they define the idealized
-experiment}.
+\begin{definition}
+  The probability \(P(A)\) of an event \(A\) is the sum of the
+  probabilities of all sample points in it.
+\end{definition}
+
+Since the probability of \(\Omega\) is \(1\) by \eqref{eq:prob-sum}, it
+follows that for any event \(A\)
+\begin{equation}
+  \label{eq:prob-event}
+  0\leq P(A)\leq 1.
+\end{equation}
+
+Let \(A_1\) and \(A_2\) be arbitrary events. To compute the probability
+\(P(A_1\cup A_2)\) that either \(A_1\) or \(A_2\) or both occur, we have to
+add the probabilities of the sample points contained either in \(A_1\) or
+in \(A_2\), but each point is to be counted only once. Therefore, we have
+\begin{equation}
+  \label{eq:prob-union-bound}
+  P(A_1\cup A_2)\leq P(A_1)+P(A_2).
+\end{equation}
+Now, if \(\omega\) is any point contained in both \(A_1\) and \(A_2\) the
+probability of \(\omega\), \(P(\omega)\), appears on the right-hand side of
+\eqref{ep:prob-union-bound} twice but only once in the left-hand side. This
+analysis leads us to conclude that the probability \(P(A_1\cap A_2)\)
+occurs twice on right-hand side of \eqref{eq:prob-union-bound}, and we have
+the important result
+\begin{theorem}
+  For any two events \(A_1\) and \(A_2\) the probability that either
+  \(A_1\) or \(A_2\) or both occur is given by
+  \begin{equation}
+    \label{eq:prob-union-exact}
+    P(A_1\cup A_2)=P(A_1)+P(A_2)-P(A_1\cap A_2).
+  \end{equation}
+  If \(A_1\cap A_2=\emptyset\), that is, if \(A_1\) and \(A_2\) are
+  mutually exclusive, then \eqref{eq:prob-union-exact} reduces to
+  \[
+    P(A_1\cup A_2)=P(A_1)+P(A_2).
+  \]
+\end{theorem}
 
 %%% Local Variables:
 %%% mode: latex
