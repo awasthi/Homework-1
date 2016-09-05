@@ -162,10 +162,12 @@ main=english]{babel}
 
 %% Redefinitions
 \let\setminus\smallsetminus
+\let\emptyset\varnothing
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}}
 \newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
       \hbox{.}\hbox{.}}}%
   =}%
+
 \else
 \if@cochineal
 \pdfmapfile{+newtx.map}
@@ -191,7 +193,7 @@ main=english]{babel}
 \DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
 
 \let\setminus\smallsetminus
-\let\emptyset\varnothing%
+\let\emptyset\varnothing
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}}
 \newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
       \hbox{.}\hbox{.}}}%
