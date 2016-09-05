@@ -19,7 +19,7 @@
 \begin{problem}[DasGupta, 1.7]
   Let \(E\), \(F\), and \(G\) be three events. Find expressions for the
   following events:
-  \begin{enumerate}[label=(\alph*)]
+  \begin{enumerate}[label=(\alph*),noitemsep]
   \item only \(E\) occurs;
   \item both \(E\) and \(G\) occur, but not \(F\);
   \item all three occur;
@@ -28,7 +28,24 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-
+  These expressions can be deduced logically from the axioms of set theory:
+  \\\\
+  For (a), the probability that only \(E\) occurs is the sum of the
+  probabilities of the sample points in \(E\) that do not belong to either
+  \(F\) or \(G\). Symbolically, this is expressed as
+  \(P(E\cap F^\sfc\cap G^\sfc)\).
+  \\\\
+  For (b), the probability that both \(E\) and \(G\) but not \(F\) occur is
+  the sum of the probabilities of the sample points in \(E\) and \(G\) that
+  do not belong to \(F\), that is, \(P(E\cap G\cap F^\sfc)\).
+  \\\\
+  For (c), the probability that \(E\), \(F\) and \(G\) occur is the sum of
+  the sample points in their intersection, that is, \(P(E\cap F\cap G)\).
+  \\\\
+  For (d), the probability that at least one of the events occurs is the
+  same as one of the following possibilities ``\(E\) occurs, \(F\) occurs,
+  \(G\) occurs, \(E\) and \(F\) occurs, \(E\) and \(G\) occurs, \(G\) and
+  \(F\) occurs and \(E\), \(F\) and \(G\) occurs''.
 \end{solution}
 \newpage
 
@@ -37,7 +54,15 @@
   probability that exactly \(1\) cell remains empty.
 \end{problem}
 \begin{solution}
-
+  Let \(\Omega\) denote the sample space and \(A\) denote the event that
+  exactly \(1\) cell remains empty. Then the number of sample points in
+  \(\Omega\) is
+  \[
+    \#\Omega=n^n.
+  \]
+  Now we count the number of points in \(A\): The number of ways in which
+  we can choose the empty cell is exactly \(n\) and we have \(n-1\) ways in
+  which the remaining
 \end{solution}
 \newpage
 
