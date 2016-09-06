@@ -28,24 +28,45 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  These expressions can be deduced logically from the axioms of set theory:
+  The following equalities can be derived from the axioms of set theory.
   \\\\
-  For (a), the probability that only \(E\) occurs is the sum of the
-  probabilities of the sample points in \(E\) that do not belong to either
-  \(F\) or \(G\). Symbolically, this is expressed as
-  \(P(E\cap F^\sfc\cap G^\sfc)\).
-  \\\\
-  For (b), the probability that both \(E\) and \(G\) but not \(F\) occur is
-  the sum of the probabilities of the sample points in \(E\) and \(G\) that
-  do not belong to \(F\), that is, \(P(E\cap G\cap F^\sfc)\).
-  \\\\
-  For (c), the probability that \(E\), \(F\) and \(G\) occur is the sum of
-  the sample points in their intersection, that is, \(P(E\cap F\cap G)\).
-  \\\\
-  For (d), the probability that at least one of the events occurs is the
-  same as one of the following possibilities ``\(E\) occurs, \(F\) occurs,
-  \(G\) occurs, \(E\) and \(F\) occurs, \(E\) and \(G\) occurs, \(G\) and
-  \(F\) occurs and \(E\), \(F\) and \(G\) occurs''.
+  For part (a), the event that only \(E\) occurs is equivalent to the
+  collection of sample points in \(E\) not in \(F\) and not in \(G\), that
+  is,
+  \[
+    \bigl(E\setminus(E\cap G)\bigr)\setminus(E\cap F)
+    =E\cap F^\sfc\cap G^\sfc.
+  \]
+
+  For part (b), the event that both \(E\) and \(G\) but not \(F\) occur is
+  equivalent to the collection of sample points contained in both \(E\) and
+  \(G\) that are not in \(F\), that is,
+  \[
+    (E\cap G)\setminus F=E\cap G\cap F^\sfc.
+  \]
+
+  For part (c), the event that all three \(E\), \(F\) and \(G\) occur is
+  equal to the collection of sample points contained in all three of \(E\),
+  \(G\) and \(F\), that is, their intersection
+  \[
+    E\cap G\cap F.
+  \]
+
+  For part (d), the event that at least one \(E\), \(F\) or \(G\) occur is
+  equal to the collection of sample points in any of \(E\), or \(G\) or
+  \(F\), that is, their union
+  \[
+    E\cup G\cup F.
+  \]
+
+  For part (e), the event that at most two of \(E\), \(F\) and \(G\) occur
+  is the collection of sample points in \(E\) or \(F\) but not \(G\), \(E\)
+  or \(G\) but not \(F\), or \(F\) and \(G\) but not \(E\), that is,
+  \[
+   \bigl((E\cup F)\setminus G\bigr)\cup
+   \bigl((E\cup G)\setminus F\bigr)\cup
+   \bigl((F\cup G)\setminus E\bigr)
+  \]
 \end{solution}
 \newpage
 
