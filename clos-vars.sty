@@ -139,15 +139,15 @@ main=english]{babel}
 %%% Math packages
 %% Times clones
 \if@times % TeX Gyre for math and Nimbus for text
-% \pdfmapfile{+newtx.map}
+\pdfmapfile{+newtx.map}
 \RequirePackage[largesc,p]{newtxtext}
 \RequirePackage{nimbusserif}
 \RequirePackage{nimbussans}
 \RequirePackage{nimbusmononarrow}
 \RequirePackage[varg,
-                bigdelims,
-                % upint,
-                % smallerops,
+                % bigdelims,
+                upint,
+                smallerops,
                 nosymbolsc]{newtxmath}%
 \RequirePackage[bb=boondox,%
                 frak=boondox,%
@@ -171,14 +171,14 @@ main=english]{babel}
 
 \else
 \if@cochineal
-% \pdfmapfile{+newtx.map}
+\pdfmapfile{+newtx.map}
 \RequirePackage{cochineal}
 \RequirePackage[scale=.95,type1]{cabin} % sans
 \RequirePackage[varqu,varl,scaled=.94]{zi4} % mono
 \RequirePackage[cochineal,
                 % bigdelims,%
-                % upint,
-                % smallerops,
+                upint,
+                smallerops,
                 nosymbolsc]{newtxmath} % Shitty math fonts
 
 \RequirePackage[bb=boondox,%
@@ -202,7 +202,7 @@ main=english]{babel}
 
 \else
 \if@libertine %% Use Libertine (a beautiful free font)
-% \pdfmapfile{+newtx.map}
+\pdfmapfile{+newtx.map}
 \RequirePackage[largesc,p]{newtxtext}
 \RequirePackage{libertine}
 \RequirePackage{libertinegc} %% Greek and Cyrillic Libertine
@@ -212,8 +212,8 @@ main=english]{babel}
                 libaltvw,%
                 liby,%
                 % bigdelims,%
-                % upint,
-                % smallerops,
+                upint,
+                smallerops,
                 nosymbolsc]{newtxmath} % Shitty math fonts
 
 \RequirePackage[bb=boondox,%
@@ -431,7 +431,7 @@ main=english]{babel}
 \newcommand\surjto{\twoheadleftarrow}
 \newcommand\trileq{\trianglelefteq}
 \newcommand\trireq{\trianglerighteq}
-\newcommand\restrict[1]{\raisebox{-.5ex}{\ensuremath\restriction}_{#1}}
+\newcommand\restrict[1]{\raisebox{-.5ex}{\ensuremath|}_{#1}}
 \newcommand\limsclap[1]{\limits_{\mathclap{#1}}}
 
 %% Redefinitions & commands not available in the default CM

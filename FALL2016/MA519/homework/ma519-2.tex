@@ -16,57 +16,17 @@
 \end{solution}
 \newpage
 
-\begin{problem}[DasGupta, 1.7]
-  Let \(E\), \(F\), and \(G\) be three events. Find expressions for the
-  following events:
+\begin{problem}[DasGupta, 1.9]
+  n which of the following are events \(A\) and \(B\) mutually exclusive?
   \begin{enumerate}[label=(\alph*),noitemsep]
-  \item only \(E\) occurs;
-  \item both \(E\) and \(G\) occur, but not \(F\);
-  \item all three occur;
-  \item at least one of the events occurs;
-  \item at most two of them occur.
-  \end{enumerate}
+  \item Roll two dice. \(A\) is the event of a sum of 9; \(B\) is the event of
+    a double (i.e., the same value on both dice).
+  \item Draw 13 cards from a deck of 52 cards. \(A\) is the event of drawing at
+    least one club; \(B\) is the event of drawing no aces.
+  \item Toss a coin twice. \(A\) is the event of a head on the first toss;
+    \(B\) is the event of a head on the second toss.
 \end{problem}
 \begin{solution}
-  The following equalities can be derived from the axioms of set theory.
-  \\\\
-  For part (a), the event that only \(E\) occurs is equivalent to the
-  collection of sample points in \(E\) not in \(F\) and not in \(G\), that
-  is,
-  \[
-    \bigl(E\setminus(E\cap G)\bigr)\setminus(E\cap F)
-    =E\cap F^\sfc\cap G^\sfc.
-  \]
-
-  For part (b), the event that both \(E\) and \(G\) but not \(F\) occur is
-  equivalent to the collection of sample points contained in both \(E\) and
-  \(G\) that are not in \(F\), \ie{},
-  \[
-    (E\cap G)\setminus F=E\cap G\cap F^\sfc.
-  \]
-
-  For part (c), the event that all three \(E\), \(F\) and \(G\) occur is
-  equal to the collection of sample points contained in all three of \(E\),
-  \(G\) and \(F\), \ie{}, their intersection
-  \[
-    E\cap G\cap F.
-  \]
-
-  For part (d), the event that at least one \(E\), \(F\) or \(G\) occur is
-  equal to the collection of sample points in any of \(E\), or \(G\) or
-  \(F\), \ie{}, their union
-  \[
-    E\cup G\cup F.
-  \]
-
-  For part (e), the event that at most two of \(E\), \(F\) and \(G\) occur
-  is the collection of sample points in \(E\) or \(F\) but not \(G\), \(E\)
-  or \(G\) but not \(F\), or \(F\) and \(G\) but not \(E\), \ie{},
-  \[
-   \bigl((E\cup F)\setminus G\bigr)\cup
-   \bigl((E\cup G)\setminus F\bigr)\cup
-   \bigl((F\cup G)\setminus E\bigr)=(E\cup F\cup G)\setminus(E\cap F\cap G).
-  \]
 \end{solution}
 \newpage
 
@@ -75,20 +35,9 @@
   probability that exactly \(1\) cell remains empty.
 \end{problem}
 \begin{solution}
-  Let \(\Omega\) denote the sample space and \(A\) denote the event that
-  exactly \(1\) cell remains empty. It is easy to see that the number of
-  sample points in \(\Omega\) is
-  \[
-    \#\Omega=n^n;
-  \]
-  \ie{} in each cell we may put up to \(n\) balls.
-
-  Solution should be
-  \[
-    \left(1-\frac{1}{n}\right)^n.
-  \]
 \end{solution}
 \newpage
+
 
 \begin{problem}[Feller, Prob.\@ 21, p.\@ 56]
   \emph{Spread of rumors.} In a town of \(n+1\) inhabitants, a person tells
