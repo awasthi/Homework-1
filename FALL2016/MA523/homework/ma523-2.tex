@@ -23,9 +23,25 @@
 
   To show \eqref{eq:2-1}, we will straighten the boundary near \(x^0\) and
   apply the noncharacteristic boundary conditions. Let
-  \(\varphi,\psi\colon\bbR^n\to\bbR^n\) be smooth maps such that
-  \(\psi=\varphi^{-1}\) and \(\varphi\) straightens out \(\partial U\) near
-  \(x^0\). Then, setting \(y^0\defeq (y_1,\dotsc,y_{n-1},0)=\varphi(x^0)\)
+  \(\Phi,\Psi\colon\bbR^n\to\bbR^n\) be smooth maps such that
+  \(\Psi=\Phi^{-1}\) and \(\Phi\) straightens out \(\partial U\) near
+  \(x^0\). Then, setting \(y^0\defeq (y_1,\dotsc,y_{n-1},0)=\Phi(x^0)\) and
+  \(v(y)=u(\Psi(y))\), our PDE becomes
+  \[
+    0=F\bigl(Dv(y)D\Phi(\Psi(y)),v(y),\Psi(y)\bigr).
+  \]
+
+
+  From here we follow the proof of Lemma 1 in [E, \S 3.2.3]. Let
+  \(G\colon\bbR^n\times\bbR^n\to\bbR^n\) be the map given by
+  \[
+    \left\{
+      \begin{aligned}
+        G^i(p,y)&=p_i-g_{x_i}(y),\\
+        G^n(p,y)&=F\bigl(p,g(y),y\bigr).
+      \end{aligned}
+    \right.
+  \]
 \end{solution}
 \newpage
 
