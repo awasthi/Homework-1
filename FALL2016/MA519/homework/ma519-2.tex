@@ -75,9 +75,20 @@
 
 \begin{problem}[Handout 2, \# 12]
   If \(n\) balls are placed at random into \(n\) cells, find the
-  probability that exactly \(1\) cell remains empty.
+  probability that exactly one cell remains empty.
 \end{problem}
 \begin{solution}
+  % Let \(\Omega\) denote the sample space. Then by Feller's solution (i) to
+  % the occupancy problem, we have
+  % \[
+  %   \#\Omega=\binom{2n-1}{n}=\frac{(2n-1)!}{n!(n-1)!}.
+  % \]
+  The probability can be computed directly. Fix a bin. Then the probability
+  that a the first ball is not placed in \(1-1/n\). Repeating this \(n\)
+  times, we have
+  \[
+    P(A)=\left(1-\frac{1}{n}\right)^n.
+  \]
 \end{solution}
 \newpage
 
