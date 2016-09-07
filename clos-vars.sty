@@ -117,7 +117,15 @@ main=english]{babel}
 % \renewcommand{\textru}[1]{\foreignlanguage{russian}{#1}}%
 
 %% Must be loaded after Babel
-\RequirePackage[babel=true,auto]{microtype}%
+% \RequirePackage{microtype}%
+\usepackage[activate={true,nocompatibility},
+            final,
+            tracking=true,
+            kerning=true,
+            spacing=true,
+            factor=1100,
+            stretch=10,
+            shrink=10]{microtype}
 \RequirePackage{enumitem}%
 \RequirePackage{listings}%
 
@@ -157,9 +165,9 @@ main=english]{babel}
 
 %% Until the new version of newxtmath is available in the repo
 %% this fixes the mathpuct spacing problems
-\DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
-\DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
-\DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
+% \DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
+% \DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
+% \DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
 
 %% Redefinitions
 \let\setminus\smallsetminus
