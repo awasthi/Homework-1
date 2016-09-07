@@ -14,33 +14,29 @@
     D_pF(p^0,z^0,x^0)\cdot \nu(x^0)\neq 0
   \end{equation}
   reduces to the noncharacteristic boundary condition when \(\Gamma\) is
-  flat near \(x^0\) since \(\nu(x^0)=(0,\dotsc,0,-1)\) giving us
+  flat near \(x^0\) since \(\nu(x^0)=(0,\dotsc,0,1)\) giving us
   \begin{align*}
-    0&\neq D_pF(p^0,z^0,x^0)\cdot (0,\dotsc,0,-1)\\
-     &=-F_{p_n}(p^0,z^0,x^0)\\
+    0&\neq D_pF(p^0,z^0,x^0)\cdot (0,\dotsc,0,1)\\
      &=F_{p_n}(p^0,z^0,x^0).
   \end{align*}
 
   To show \eqref{eq:2-1}, we will straighten the boundary near \(x^0\) and
-  apply the noncharacteristic boundary conditions. Let
-  \(\Phi,\Psi\colon\bbR^n\to\bbR^n\) be smooth maps such that
-  \(\Psi=\Phi^{-1}\) and \(\Phi\) straightens out \(\partial U\) near
-  \(x^0\). Then, setting \(y^0\defeq (y_1,\dotsc,y_{n-1},0)=\Phi(x^0)\) and
-  \(v(y)=u(\Psi(y))\), our PDE becomes
-  \[
-    0=F\bigl(Dv(y)D\Phi(\Psi(y)),v(y),\Psi(y)\bigr).
-  \]
-
-
-  From here we follow the proof of Lemma 1 in [E, \S 3.2.3]. Let
-  \(G\colon\bbR^n\times\bbR^n\to\bbR^n\) be the map given by
+  apply the noncharacteristic boundary conditions. Write \(y=\Phi(x)\)
+  where we set
   \[
     \left\{
       \begin{aligned}
-        G^i(p,y)&=p_i-g_{x_i}(y),\\
-        G^n(p,y)&=F(p,g(y),y).
+        \Phi^1(x)&=x_1,\\
+        &\vdotswithin{=}\\
+        \Phi^n(x)&=x_n-\varphi(x_1,\dotsc,x_{n-1}),
       \end{aligned}
     \right.
+  \]
+  with \(\varphi(x_1^0,\dotsc,x_{n-1}^0)=x_n^0\). Then the image of
+  \(\Gamma\) under this transformation is flat near \(y^0=\Phi(x^0)\) and
+  we can apply the noncharacteristic boundary conditions on the PDE
+  \[
+    F_{p_n}(q^0,z^0,x^0)\neq 0.
   \]
 \end{solution}
 \newpage
