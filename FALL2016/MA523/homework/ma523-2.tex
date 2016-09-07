@@ -38,7 +38,7 @@
     \left\{
       \begin{aligned}
         G^i(p,y)&=p_i-g_{x_i}(y),\\
-        G^n(p,y)&=F\bigl(p,g(y),y\bigr).
+        G^n(p,y)&=F(p,g(y),y).
       \end{aligned}
     \right.
   \]
@@ -52,10 +52,10 @@
   \]
   with initial conditions \(u(x,0)=g(x)\) is given implicitly by
   \[
-    u=g\bigl(x-a(u)t\bigr).
+    u=g(x-a(u)t).
   \]
   Show that the solution develops a shock (becomes singular) for some
-  \(t>0\), unless \(a\bigl(g(x)\bigr)\) is a nondecreasing function of
+  \(t>0\), unless \(a(g(x))\) is a nondecreasing function of
   \(x\).
 \end{problem}
 \begin{solution}
@@ -68,7 +68,7 @@
   \[
     u(x,t)=
     \begin{cases}
-      \displaystyle-\frac{2}{3}\left(t+\sqrt{3x+t^2}\right)
+      \displaystyle-\frac{2}{3}\Bigl(t+\sqrt{3x+t^2}\Bigr)
       &\text{for \(4x+t^2>0\)}\\
       0
       &\text{for \(4x+t^2<0\)}
