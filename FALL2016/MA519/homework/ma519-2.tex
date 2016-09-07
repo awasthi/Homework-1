@@ -44,7 +44,22 @@
   count the number of sample points in \(\Omega\)
   \[
     \#\Omega=\binom{52}{13,13,13,13}
+    =53644737765488792839237440000.
   \]
+
+  Now, partition the deck into the \(4\) suits and from each deck draw a
+  card to put into each player's hand. For the first player, this gives us
+  \[
+    13^4\cdot\binom{48}{9}=47899842745040
+  \]
+  potential hands for the first player
+  \[
+    12^4\cdot{31}{9}
+  \]
+  for the second and
+  \begin{align*}
+    11^4\cdot\binom{31-13-4}{9}&=&10^4\cdot\binom{n}{n}
+  \end{align*}
 \end{solution}
 \newpage
 
