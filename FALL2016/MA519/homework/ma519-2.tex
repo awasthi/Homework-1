@@ -1,36 +1,31 @@
-\begin{problem}[DasGupta, 1.5]
-  The population of Danville is \(20000\). Can it be said with certainty
-  that there must be two or more people in Danville with exactly the same
-  three initials?
+\begin{problem}[Handout 2, \# 5]
+  Four men throw their watches into the sea, and the sea brings each man
+  one watch back at random. What is the probability that at least one man
+  gets his own watch back?
 \end{problem}
 \begin{solution}
-  Yes. To see this we provide the following purely combinatorial
-  argument. Let \(A\) denote the event that two or more people in Danville
-  have exactly the same three initials and consider its converse
-  \(A^\sfc\), \ie{}, the event that no two people in Danvillle have
-  exactly the same three initials. Since the Latin alphabet consists of
-  \(26\) letters to any given person we may assign one of \(26^3=17576\)
-  possible initials. Since there are \(20000\) people living in Danville by
-  the pigeon-hole principle there must be two people (in fact, as many as
-  \(20000-17576=2424\)) with the same three initials.
+  The number of different arrangements, i.e., the sample space \(\Omega\),
+  corresponds to the symmetric group on four numbers \(S_4\) and therefore
+  \begin{equation}
+    \label{eq:2-1}
+    \#\Omega=4!=24.
+  \end{equation}
+  Let \(A\) denote the event that at least one man gets his own watch
+  back. In this case, it is easier to count the sample points in the
+  complement of \(A\), i.e., the event \(\Omega\setminus A\) that no man
+  gets his own watch back.
 \end{solution}
 \newpage
 
-\begin{problem}[DasGupta, 1.9]
-  n which of the following are events \(A\) and \(B\) mutually exclusive?
-  \begin{enumerate}[label=(\alph*),noitemsep]
-  \item Roll two dice. \(A\) is the event of a sum of 9; \(B\) is the event of
-    a double (i.e., the same value on both dice).
-  \item Draw 13 cards from a deck of 52 cards. \(A\) is the event of drawing at
-    least one club; \(B\) is the event of drawing no aces.
-  \item Toss a coin twice. \(A\) is the event of a head on the first toss;
-    \(B\) is the event of a head on the second toss.
+\begin{problem}[Handout 2, \#7]
+  Calculate the probability that in Bridge, the hand of at least one player
+  is void in a particular suit.
 \end{problem}
 \begin{solution}
 \end{solution}
 \newpage
 
-\begin{problem}[Feller, Prob.\@ 9, p.\@ 55]
+\begin{problem}[Handout 2, \# 12]
   If \(n\) balls are placed at random into \(n\) cells, find the
   probability that exactly \(1\) cell remains empty.
 \end{problem}
@@ -39,7 +34,7 @@
 \newpage
 
 
-\begin{problem}[Feller, Prob.\@ 21, p.\@ 56]
+\begin{problem}[Handout 2, \# 13]
   \emph{Spread of rumors.} In a town of \(n+1\) inhabitants, a person tells
   a rumor to a second person, who in turn repeats it to a third person,
   \etc{} At each step the recipient of the rumor is chosen at random from the
@@ -58,7 +53,7 @@
 \end{solution}
 \newpage
 
-\begin{problem}[Feller, Prob.\@ 24, p.\@ 56]
+\begin{problem}[Handout 2, \# 14]
   \emph{A family problem.} In a certain family four girls take turns at
   washing dishes. Out of a total of four breakages, three were caused by
   the youngest girl, and she was thereafter called clumsy. Was she
@@ -70,7 +65,7 @@
 \end{solution}
 \newpage
 
-\begin{problem}[Feller, Prob.\@ 27, p.\@ 57]
+\begin{problem}[Handout 2, \# 15]
   A car is parked among \(N\) cars in a row, not at either end. On his
   return the owner finds exactly \(r\) of the \(N\) places still
   occupied. What is the probability that both neighboring places are empty?
@@ -80,7 +75,7 @@
 \end{solution}
 \newpage
 
-\begin{problem}[Feller, Prob.\@ 42, p.\@ 58]
+\begin{problem}[Handout 2, \# 16]
   Find the probability that in a random arrangement of \(52\) bridge card
   no two aces are adjacent.
 \end{problem}
@@ -89,7 +84,7 @@
 \end{solution}
 \newpage
 
-\begin{problem}
+\begin{problem}[Handout 2, \# 17]
   Suppose \(P(A)=3/4\), and \(P(B)=1/3\).
 
   Prove that \(P(A\cap B)\geq 1/12\). Can it be equal to \(1/12\)?
@@ -99,7 +94,7 @@
 \end{solution}
 \newpage
 
-\begin{problem}
+\begin{problem}[Handout 2, \# 18]
   Suppose you have infinitely many events \(A_1,A_2,\dotsc\), and each one
   is sure to occur, i.e., \(P(A_i)=1\) for any \(i\).
   \\\\
@@ -110,7 +105,7 @@
 \end{solution}
 \newpage
 
-\begin{problem}
+\begin{problem}[Handout 2, \# 19]
   There are \(n\) blue, \(n\) green, \(n\) red, and \(n\) white balls in an
   urn. Four balls are drawn from the urn with replacement. Find the
   probability that there are balls of at least three different colors among

@@ -187,98 +187,39 @@
 \end{solution}
 \newpage
 
-\begin{problem}[Handout 1, \# 11 \protect{[Text 1.3]}]
-  A telephone number consists of ten digits, of which the first digit is
-  one of \(1,2,\dotsc,9\) and the others can be \(0,1,2,\dotsc,9\). What is
-  the probability that \(0\) appears at most once in a telephone number, if
-  all the digits are chosen completely at random?
+\begin{problem}[Handout 1, \# 11 \protect{[Text 1.7]}]
+  Let \(E\), \(F\), and \(G\) be three events. Find expressions for the
+  following events:
+  \begin{enumarate}[label=(\alph*),noitemsep]
+  \item only \(E\) occurs;
+  \item both \(E\) and \(G\) occur, but not \(F\);
+  \item all three occur;
+  \item at least one of the events occurs;
+  \item at most two of them occur.
+  \end{enumerate}
 \end{problem}
 \begin{solution}
-  Let \(\Omega\) be the sample space and let \(A\) be the event that at
-  \(0\) appears at most once in a telephone number if all the digits are
-  chosen completely at random. First, let us count the number of elements
-  in the sample space, this is
-  \[
-    \#\Omega=9\cdot 10^9
-  \]
-  where the first digit is taken from among \(1,2,\dotsc,9\) and the
-  remaining \(9\) out of \(0,1,2\dotsc,9\). Assuming randomness (\ie{} that
-  every sample point is equally likely), it suffices to count the sample
-  points in the event. We do this by decomposing \(A\) into the union of
-  mutually exclusive events
-  \[
-    A_i=\bigl\{\,\text{telephone numbers with exactly one \(0\) in the
-      \(i\)-th position}\,\bigr\}.
-  \]
-  The number of sample points in \(A_i\) is
-  \[
-    \# A_i=9\cdot 9^8
-  \]
-  since we must choose \(8\) digits of the number from among \(1,\dotsc,9\)
-  digits (with repetition). Thus,
-  \[
-    P(A)=%
-    P(A_1)+\dotsm P(A_9)=%
-    \frac{9\cdot 9\cdot 9^8}{9\cdot 10^9}=%
-    \left(\frac{9}{8}\right)^9\approx 0.3874.
-  \]
 \end{solution}
 \newpage
 
 \begin{problem}[Handout 1, \# 12 \protect{[Text 1.6]}]
-  Events \(A\), \(B\) and \(C\) are defined in a sample space
-  \(\Omega\). Find expressions for the following probabilities in terms of
-  \(P(A)\), \(P(B)\), \(P(C)\), \(P(AB)\), \(P(AC)\), \(P(BC)\) and
-  \(P(ABC)\); here \(AB\) means \(A\cap B\), \etc{}:
-  \begin{enumerate}[label=(\alph*)]
-  \item the probability that exactly two of \(A\), \(B\), \(C\) occur;
-  \item the probability that exactly one of these events occur;
-  \item the probability that none of these events occur.
+  Which is more likely:
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item Obtaining at least one six in six rolls of a fair die, or
+  \item Obtaining at least one double six in six rolls of a pair of fair
+    dice.
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  These are all easy consequences of the inclusion-exclusion formula. For
-  part (a) we have is \(AB+AC+BC-ABC\)
-  \[
-    P(AB+AC+BC)=P(AB)+P(AC)+P(BC)-2P(ABC).
-  \]
-
-  For part (b) we have
-  \[
-    P(A)+P(B)+P(C)-P(AB)-P(AC)-P(BC)+P(ABC).
-  \]
-
-  Lastly, for part (c) we have
-  \[
-    P(\Omega)-P(A)-P(B)-P(C)+P(AB)+P(AC)+P(BC)+2P(ABC).
-  \]
 \end{solution}
 \newpage
 
 \begin{problem}[Handout 1, \# 13 \protect{[Text 1.8]}]
-  Mrs.\@ Jones predicts that if it rains tomorrow it is bound to rain the
-  day after tomorrow. She also thinks that the chance of rain tomorrow is
-  \(1/2\) and that the chance of rain the day after tomorrow is
-  \(1/3\). Are these subjective probabilities consistent with the axioms
-  and theorems of probability?
+  There are \(n\) people are lined up at random for a photograph. What is
+  the probability that a specified set of \(r\) people happen to be next to
+  each other?
 \end{problem}
 \begin{solution}
-  No. Let \(\Omega=\{(0,0),(0,1),(1,0),(1,1)\}\) be the sample space, where
-  \((0,0)\) corresponds to the event that it rains on neither day,
-  \((0,1)\) corresponds to the event that it rains tomorrow only, \((1,0)\)
-  corresponds to the event that it rains the day after tomorrow only, and
-  \((1,1)\) corresponds to the event that it rains on both days. Mrs.\@
-  Jones has predicted that \(P\bigl((0,1)\bigr)=0 \),
-  \(P\bigl((0,1)\bigr)+P\bigl((1,1)\bigr)=1/2\), and
-  \(P\bigl((1,0)\bigr)+P\bigl((1,1)\bigr)=1/3\). We can solve this system
-  of equations: We get that
-  \begin{align*}
-    P\bigl((0,1)\bigr)&=0,
-    &P\bigl((1,1)\bigr)&=\frac{1}{2},
-    &P\bigl((1,0)\bigr)&=-\frac{1}{6}
-  \end{align*}
-  which fails our axioms of probability: we have an event that has negative
-  probability.
 \end{solution}
 \newpage
 
