@@ -13,21 +13,13 @@
   Let \(A\) denote the event that at least one man gets his own watch
   back. In this case, it is easier to count the sample points in the
   complement of \(A\), i.e., the event \(\Omega\setminus A\) that no man
-  gets his own watch back. Let
-  \[
-    A_i=\bigl\{\,\text{the \(i\)th man does not get back his own
-      watch}\,\bigr\}.
-  \]
-  Then, by the inclusion-exclusion formula, we have
-  \begin{align*}
-    P(A_1\cup A_2\cup A_3\cup A_4)
-    &=P(A_1)+P(A_2)+P(A_3)+P(A_4)-P(A_1\cap A_2)-P(A_1\cap A_3)-P(A_1\cap
-      A_4)\\
-    &-P(A_2\cap A_3)-P(A_2\cap A_4)-P(A_3\cap A_4)\\
-    &+P(A_1\cap A_2\cap A_3)+P(A_1\cap A_2\cap A_4)+P(A_1\cap A_3\cap
-      A_4)+P(A_2\cap A_3\cap A_4)\\
-    &-P(A_1\cap A_2\cap A_3\cap A_4)
-  \end{align*}
+  gets his own watch back.
+
+  Now we count the sample points in \(\Omega\setminus A\): There are \(3\)
+  ways for the first man to get back a watch other than his own. For the
+  second man, either the first man picked his watch or he did not. In the
+  first case, there are \(3\) ways for him to get back a watch not his own,
+  whereas in the second only \(2\) ways.
 \end{solution}
 \newpage
 
