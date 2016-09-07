@@ -50,16 +50,26 @@
   Now, partition the deck into the \(4\) suits and from each deck draw a
   card to put into each player's hand. For the first player, this gives us
   \[
-    13^4\cdot\binom{48}{9}=47899842745040
+    13^4\cdot\binom{36}{9}=2688826220080
   \]
   potential hands for the first player
   \[
-    12^4\cdot{31}{9}
+    12^4\cdot{27}{9}=97186003200
   \]
   for the second and
   \begin{align*}
-    11^4\cdot\binom{31-13-4}{9}&=&10^4\cdot\binom{n}{n}
+    11^4\cdot\binom{18}{9}&=711845420
+    &10^4\cdot\binom{9}{9}&=10000.
   \end{align*}
+  Therefore, we have
+  \[
+    \#(\Omega\setminus A)=2786724078700
+  \]
+  total hands where each player has a card from each suit. Thus,
+  \[
+    P(A)=1-P(\Omega\setminus
+    A)=1-\frac{2786724078700}{53644737765488792839237440000}\approx 1.
+  \]
 \end{solution}
 \newpage
 
