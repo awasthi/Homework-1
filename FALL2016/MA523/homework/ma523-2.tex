@@ -47,11 +47,12 @@
   First, consider the gradient \(D(\bfx(y))\). Looking at the \(i\)-th
   coordinate of this function, by the chain rule, we have
   \begin{align*}
-    u_{x_i}(\bfx(y^0))
+    u_{x_i}(x)
     &=\sum_{j=1}^n u_{x_i}\frac{\partial x_i}{\partial y_j}\\
-    &=u_{x_i}(x^0)+u_{x_n}\varphi_{y_i}(y^0),\\
-    u_{x_n}(\bfx(y^0))
-    &=u_{x_n}(x^0).
+    &=u_{x_i}(x)+u_{x_n}(x)\varphi_{y_i}(y),\\
+    u_{x_n}(x)
+    &=\sum_{j=1}^nu_{x_n}(x)\frac{\partial x_n}{\partial y_j}\\
+    &=\sum_{j=1}^nu_{x_n}(x)\varphi_{y_j}(y).
   \end{align*}
 \end{solution}
 \newpage
