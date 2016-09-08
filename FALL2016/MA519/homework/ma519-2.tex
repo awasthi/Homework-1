@@ -34,39 +34,9 @@
   is void in a particular suit.
 \end{problem}
 \begin{solution}
-  Let \(\Omega\) denote the sample space and \(A\) denote the event that at
-  least one player is void in a particular suit. As in the previous
-  problem, it is easier to compute the probability of \(\Omega\setminus A\)
-  the event that no player is void in a particular suit. But first, we
-  count the number of sample points in \(\Omega\)
-  \[
-    \#\Omega=\binom{52}{13,13,13,13}
-    =53644737765488792839237440000.
-  \]
-
-  Now, partition the deck into the \(4\) suits and from each deck draw a
-  card to put into each player's hand. For the first player, this gives us
-  \[
-    13^4\cdot\binom{36}{9}=2688826220080
-  \]
-  potential hands for the first player
-  \[
-    12^4\cdot{27}{9}=97186003200
-  \]
-  for the second and
-  \begin{align*}
-    11^4\cdot\binom{18}{9}&=711845420
-    &10^4\cdot\binom{9}{9}&=10000.
-  \end{align*}
-  Therefore, we have
-  \[
-    \#(\Omega\setminus A)=2786724078700
-  \]
-  total hands where each player has a card from each suit. Thus,
-  \[
-    P(A)=1-P(\Omega\setminus
-    A)=1-\frac{2786724078700}{53644737765488792839237440000}\approx 1.
-  \]
+  We employ the same strategy as the last problem, i.e., we will use the
+  inclusion-exclusion principle to solve this. Consider the event of
+  distributing \(\heartsuit\)s to the four players \(N,W,S,E\).
 \end{solution}
 \newpage
 
