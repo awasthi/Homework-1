@@ -35,10 +35,28 @@
 \end{problem}
 \begin{solution}
   We employ the same strategy as the last problem, i.e., we will use the
-  inclusion-exclusion principle to solve this. Consider the event of
-  distributing \(\heartsuit\)s to the four players. By Feller's solution to
-  the occupancy problem, there are \(\displaystyle\binom{13+4-1}{13}\) ways
-  to distribute \(13\) hearts to four people.
+  inclusion-exclusion principle to solve this. We may, without loss of
+  generality, assume that the particular suit is heart. Now, by Feller's
+  solution to the occupancy problem, there are
+  \(\displaystyle\binom{13+4-1}{13}=560\) ways to distribute \(13\) hearts to
+  four people; this is the size of our sample space. Then, there are
+  \[
+    \begin{aligned}
+      \binom{13+3-1}{13}&=\binom{15}{13}=15\cdot 7=105\\
+      \binom{13+2-1}{13}&=\binom{14}{13}=14\\
+      \binom{13+1-1}{13}&=\binom{13}{13}=1\\
+    \end{aligned}
+  \]
+  ways to distribute \(13\) hearts between \(3\) (excluding \(N\)), \(2\)
+  (excluding \(N\) and \(E\)), and \(1\) person (excluding \(N\), \(E\) and
+  \(S\)). By the inclusion-exclusion principle and symmetry of the events,
+  we have
+  \begin{align*}
+    P(\text{at least one player is void in hearts})
+    &=\frac{105+14+1}{560}\\
+    &=\frac{120}{560}\\
+    &\approx 0.2142.
+  \end{align*}
 \end{solution}
 \newpage
 
