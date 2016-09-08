@@ -37,22 +37,23 @@
     \right.
   \]
   with \(\varphi\) a sufficiently regular map
-  \(\varphi\colon\bbR^{n-1}\to\bbR\). Let \(\bfx=\bfy^{-1}\). Now, note
-  that \(y^0=y(x_1^0,\dotsc,x_n^0)=(y_1,\dotsc,y_{n-1},0)\) and hence
+  \(\varphi\colon\bbR^{n-1}\to\bbR\) such that
+  \(x_n^0=\varphi(x_1^0,\dotsc,x_{n-1}^0)\). Let \(\bfx=\bfy^{-1}\). Now,
+  note that \(y^0=y(x_1^0,\dotsc,x_n^0)=(y_1,\dotsc,y_{n-1},0)\) and hence
   \(\Delta=\bfy(\Gamma)\) is flat near \(y^0\) so we can apply the standard
   noncharacteristic boundary conditions on the transformed PDE,
   \[
-    0\neq F_{u_n}\bigl(Du(\bfx(y^0)),u(\bfx(y^0)),\bfx(y^0)\bigr).
+    0\neq F_{u_{y_n}}\bigl(Du(\bfx(y^0)),u(\bfx(y^0)),\bfx(y^0)\bigr).
   \]
   First, consider the gradient \(D(\bfx(y))\). Looking at the \(i\)-th
   coordinate of this function, by the chain rule, we have
   \begin{align*}
-    u_{x_i}(x)
+    u_{y_i}(\bf\bfx(y)(y))
     &=\sum_{j=1}^n u_{x_i}\frac{\partial x_i}{\partial y_j}\\
-    &=u_{x_i}(x)+u_{x_n}(x)\varphi_{y_i}(y),\\
-    u_{x_n}(x)
-    &=\sum_{j=1}^nu_{x_n}(x)\frac{\partial x_n}{\partial y_j}\\
-    &=\sum_{j=1}^nu_{x_n}(x)\varphi_{y_j}(y).
+    &=u_{x_i}(\bfx(y))+u_{x_n}(\bfx(y))\varphi_{y_i}(y),\\
+    u_{y_n}(\bf\bfx(y)(y))
+    &=\sum_{j=1}^nu_{x_n}(\bfx(y))\frac{\partial x_n}{\partial y_j}\\
+    &=\sum_{j=1}^nu_{x_n}(\bfx(y))\varphi_{y_j}(y).
   \end{align*}
 \end{solution}
 \newpage
