@@ -120,12 +120,19 @@
   the connection with random placement of balls.
 \end{problem}
 \begin{solution}
-  Let \(A\) denote the event that the youngest girl broke a dish and \(B\)
-  denote the event that somebody broke a dish. By Bayes' theorem
+  By assuming that every sample point in our sample space is equally
+  likely, we can relate the problem at hand to the probability of the event
+  \(A\) that out of four indistinguishable balls, three fall in a specific
+  bin, say, the first one. First, \(\#\Omega=4^4\) since we are including
+  the possibility that no sister is responsible for breaking the dish. Now,
+  there are \(3\) ways to attribute dishes to the youngest sister and the
+  last dish can go into one of \(4\) places, the three other sisters or
+  none of them. This gives us a probability of
   \[
-    P(A\mid B)=\frac{P(B\mid A)P(A)}{P(B\mid A)P(A)+P(B\mid A^\sfc)P(A^\sfc)}.
+    P(A)=\frac{4\cdot 3}{4^4}=\frac{4\cdot 3}{265}\approx 0.0469.
   \]
-  We know that \(P(A)=3/4\) and that \(P(B\mid A^\sfc)\)
+  Since this probability is rather small, the sisters are justified in
+  calling her clumsy.
 \end{solution}
 \newpage
 
@@ -144,13 +151,24 @@
   no two aces are adjacent.
 \end{problem}
 \begin{solution}
-
+  We can simplify this problem by using the sticks and stars analogy. There
+  are \(4\) aces and, if we want to avoid placing the aces next to each
+  other, we count the spaces between the remaining cards \(48\) cards, this
+  is \(52-4+1=49\) and place the \(4\) aces in between. This gives a total
+  of \(\displaystyle\binom{48}{4}\) arrangements (where the order in which
+  we do it does not matter) out \(\displaystyle\binom{52}{4}\) possible
+  arrangements including the possibility of two aces being next to each
+  other. Thus, the probability that no two aces are adjacent is
+  \[
+    \frac{\displaystyle\binom{48}{4}}{\displaystyle\binom{52}{4}}\approx
+    0.7187.
+  \]
 \end{solution}
 \newpage
 
 \begin{problem}[Handout 2, \# 17]
   Suppose \(P(A)=3/4\), and \(P(B)=1/3\).
-
+  \\\\
   Prove that \(P(A\cap B)\geq 1/12\). Can it be equal to \(1/12\)?
 \end{problem}
 \begin{solution}
@@ -165,7 +183,31 @@
   Prove that \(P\bigl(\bigcap_{i=1}^n A_i\bigr)=1\).
 \end{problem}
 \begin{solution}
-
+  Consider the sequence of probabilities \(\{P_n:n\in\bbN\}\) where
+  \(P_n=P\bigl(\bigcap_{i=1}^n A_i\bigr)\). Note that
+  \(\bigcap_{i=1}^n A_i\downarrow\bigcap_{i=1}^\infty A_i\). First we show,
+  by induction, that \(P_n=1\). The case \(n=1\) is trivial. Now, assume
+  the result holds for \(n-1\) and consider
+  \(P_n=P\bigl(\bigcap_{i=1}^n A_i\bigr)\). Writing
+  \(A'=\bigcap_{i=1}^{n-1}A_i\), we have
+  \[
+    P_n=P(A'\cap A_n).
+  \]
+  By the inclusion-exclusion principle,
+  \begin{align*}
+    P_n&=P(A')+P(A_n)-P(A'\cup A_n)\\
+       &=1+1-P(A'\cup A_n)
+         \intertext{and since \(P(A'\cup A_n)\geq P(A')=1\) by the monotonicity
+         of the probability measure, \(P(A'\cup A_n)=1\) since \(P(A'\cup
+         A_n)\leq P(\Omega)=1\), thus}
+       &=1+1-1\\
+       &=1.
+  \end{align*}
+  It follows that \(\{P_n:n\in\bbN\}\) is the constant sequence
+  \(\{1\}\). By Theorem 1.1 from DasGupta, we have
+  \[
+    P\left(\bigcap\nolimits_{i=1}^\infty A_i\right)=\lim_{n\to\infty} 1=1.
+  \]
 \end{solution}
 \newpage
 
