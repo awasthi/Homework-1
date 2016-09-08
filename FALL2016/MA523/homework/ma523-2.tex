@@ -21,22 +21,25 @@
      &=F_{p_n}(p^0,z^0,x^0).
   \end{align*}
 
-  To show \eqref{eq:2-1}, we will first straighten the boundary near
-  \(x^0\) and then apply the noncharacteristic boundary conditions to the
-  straightened region. Write \(y=\Phi(x)\) where
+  We shall verify the noncharacteristic condition \eqref{eq:2-1} by first
+  flattening the boundary near \(x^0\) and then applying the
+  noncharacteristic boundary conditions to the flattened region. Make a
+  change of variables \((y_1,\dotsc,y_n)=y(x_1,\dotsc,x_n)\) where
   \[
     \left\{
       \begin{aligned}
-        \Phi^1(x)&=x_1,\\
+        y_1&=x_1,\\
         &\vdotswithin{=}\\
-        \Phi^n(x)&=x_n-\varphi(x_1,\dotsc,x_{n-1}),
+        y_{n-1}&=x_{n-1},\\
+        y_n&=x_n-\varphi(x_1,\dotsc,x_{n-1}),
       \end{aligned}
     \right.
   \]
-  with \(\varphi(x_1^0,\dotsc,x_{n-1}^0)=x_n^0\) and let \(\Psi=\Phi^{-1}\)
-  and \(v(y)=u(\Phi(x))\). Then the image of \(\Gamma\) under \(\Phi\) is
-  flat near \(y^0=\Phi(x^0)=(x_1^0,\dotsc,x_{n-1}^0,0)\) so we can apply
-  the standard noncharacteristic boundary conditions on the PDE,
+  with \(\varphi\) a sufficiently regular map
+  \(\varphi\colon\bbR^{n-1}\to\bbR\). Then, note that
+  \(y^0=y(x_1^0,\dotsc,x_n^0)=(y_1,\dotsc,y_{n-1},0)\) and hence
+  \(\Delta=y(\Gamma)\) is flat near \(y^0\) so we can apply the standard
+  noncharacteristic boundary conditions on the transformed PDE,
   \begin{equation}
     \label{eq:2-2}
     0\neq G_{p_n}(p,z,y),
