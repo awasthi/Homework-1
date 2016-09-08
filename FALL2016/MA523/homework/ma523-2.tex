@@ -13,16 +13,17 @@
     \label{eq:2-1}
     D_pF(p^0,z^0,x^0)\cdot \nu(x^0)\neq 0
   \end{equation}
-  reduces to the noncharacteristic boundary condition when \(\Gamma\) is
-  flat near \(x^0\) since \(\nu(x^0)=(0,\dotsc,0,1)\) giving us
+  reduces to the standard noncharacteristic boundary condition if
+  \(\Gamma\) is flat near \(x^0\) because in such case we have
+  \(\nu(x^0)=(0,\dotsc,0,1)\) so
   \begin{align*}
     0&\neq D_pF(p^0,z^0,x^0)\cdot (0,\dotsc,0,1)\\
      &=F_{p_n}(p^0,z^0,x^0).
   \end{align*}
 
-  To show \eqref{eq:2-1}, we will straighten the boundary near \(x^0\) and
-  apply the noncharacteristic boundary conditions. Write \(y=\Phi(x)\)
-  where we set
+  To show \eqref{eq:2-1}, we will first straighten the boundary near
+  \(x^0\) and then apply the noncharacteristic boundary conditions to the
+  straightened region. Write \(y=\Phi(x)\) where
   \[
     \left\{
       \begin{aligned}
@@ -32,12 +33,42 @@
       \end{aligned}
     \right.
   \]
-  with \(\varphi(x_1^0,\dotsc,x_{n-1}^0)=x_n^0\). Then the image of
-  \(\Gamma\) under this transformation is flat near \(y^0=\Phi(x^0)\) and
-  we can apply the noncharacteristic boundary conditions on the PDE
+  with \(\varphi(x_1^0,\dotsc,x_{n-1}^0)=x_n^0\) and let \(\Psi=\Phi^{-1}\)
+  and \(v(y)=u(\Phi(x))\). Then the image of \(\Gamma\) under \(\Phi\) is
+  flat near \(y^0=\Phi(x^0)=(x_1^0,\dotsc,x_{n-1}^0,0)\) so we can apply
+  the standard noncharacteristic boundary conditions on the PDE,
+  \begin{equation}
+    \label{eq:2-2}
+    0\neq G_{p_n}(p,z,y),
+  \end{equation}
+  where \(G\) is the PDE \(F\) after applying the transformation \(\Phi\),
+  i.e., the PDE
   \[
-    F_{p_n}(q^0,z^0,x^0)\neq 0.
+    G(Dv,v,y)=F(Dv(y)D\Phi(\Psi(y)),v(y),\Psi(y)).
   \]
+  We are done after we relate \eqref{eq:2-2} to the original PDE
+  \(F\). Note that by the equation above we have
+  \[
+    p(y)D\Phi(\Psi(y))=
+    \left\{
+      \begin{aligned}
+        &p_1(y)-p_n(y)\varphi_{x_1}(y_1,\dotsc,y_{n-1}),\\
+        &\vdotswithin{p_{i}-p_n(y)\varphi_{x_{i}}(y_1,\dotsc,y_{n-1})}\\
+        &p_{n-1}-p_n(y)\varphi_{x_{n-1}}(y_1,\dotsc,y_{n-1}),\\
+        &p_n(y).
+      \end{aligned}
+    \right.
+  \]
+  Thus,
+  \begin{align*}
+    G_{p_n}(p,z,\tilde y)
+    &=F_{p_n}(pD\Phi(\Psi(\tilde y)),z,\Psi(\tilde y))
+      \intertext{which, by the chain rule, is equal to}
+    &=-F_{p_1}\varphi_{x_1}(\tilde
+      y)-\dotsb-F_{p_{n-1}}\varphi_{x_{n-1}}+F_{p_n}\\
+    &=D F(p^0,z^0,x^0)\cdot \bigl(-D\varphi(x_1^0,\dotsc,x_{n-1}^0),1\bigr)\\
+    &=D F(p^0,z^0,x^0)\cdot\nu(x^0)
+  \end{align*}
 \end{solution}
 \newpage
 
