@@ -10,10 +10,22 @@
   \[
     \#\Omega=4!=24.
   \]
-  Since, at least in this case, it is easier to list the ways in which no
-  man gets his own watch back, we will compute the probability of the
-  complement of \(A\), i.e., the probability that no man gets his own watch
-  back. We find this probability by using the inclusion-exclusion principle
+  Now, let \(A_i\) be the event that man \(i\) gets his wallet back, where
+  \(1\leq i\leq 4\). Then \(A=A_1\cup A_2\cup A_3\cup A_4\) and by the
+  inclusion-exclusion principle, we have
+  \begin{align*}
+    P(A)
+    &=4P(A_1)-6P(A_1\cap A_2)+4P(A_1\cap A_2\cap A_3)-P(A_1\cap A_2\cap
+      A_3\cap A_4)\\
+    &=4\frac{3!}{24}-6\frac{2!}{24}+4\frac{1}{24}-\frac{1}{24}\\
+    &=1-\frac{1}{2}+\frac{3}{24}\\
+    &=\frac{1}{2}+\frac{3}{24}\\
+    &=\frac{15}{24}
+  \end{align*}
+  where, because of the symmetry of the events,
+  \(P(A_i\cap A_j)=P(A_k\cap A_\ell)\),
+  \(P(A_i\cap A_j\cap A_k)=P(A_\ell\cap A_n\cap A_m)\) etc., thereby
+  simplifying the above expression.
 \end{solution}
 \newpage
 
@@ -63,14 +75,14 @@
   probability that exactly one cell remains empty.
 \end{problem}
 \begin{solution}
-  Let $n$ balls be placed at random into $n$ cells. (As was pointed out in
-  the feedback, we will assume that these $n$ balls are distinct.)
+  Let \(n\) balls be placed at random into \(n\) cells. (As was pointed out
+  to us in the last homework, we will assume that the \(n\) balls are
+  distinct.) Thus, there are \(n^n\) ways to arrange the \(n\) balls into
+  the \(n\) bins.
 
-  There are $n^n$ ways to do this.
-
-  There are
+  Now, there are
   \[
-    \binom{n}{1} \cdot \binom{n}{2} \cdot \binom{n-1}{1} \cdot (n-2)!
+    \binom{n}{1}\binom{n}{2}\binom{n-1}{1}(n-2)!
   \]
   ways to put $n$ balls into $n$ slots with exactly one remaining empty (we
   pick $1$ of our $n$ slots to be empty, we pick $2$ of our $n$ balls to
@@ -79,8 +91,9 @@
 
   Thus, the probability that exactly $1$ cell remains empty is
   \begin{align*}
-    \frac{\binom{n}{1} \cdot \binom{n}{2} \cdot \binom{n-1}{1} \cdot (n-2)!}{n^n} &= \frac{n \cdot \binom{n}{2} \cdot (n-1) \cdot (n-2)!}{n^n} \\
-                                                                                  &= \frac{n! \cdot \frac{n-1}{2}}{n^n} \\
+    \frac{\displaystyle\binom{n}{1}\binom{n}{2}\binom{n-1}{1}(n-2)!}{n^n}
+    &= \frac{\displaystyle n\binom{n}{2}(n-1)(n-2)!}{n^n} \\
+    &= \frac{n!(n-1)/2}{n^n} \\
 \end{align*}
 \end{solution}
 \newpage
@@ -153,12 +166,12 @@
 \end{problem}
 \begin{solution}
   There are \(r-1\) cars not belonging to the owner with \(N-1\) spots for
-  them. Thus, there are \(\binom{N-1}{r-1}\) possible
+  them. Thus, there are \(\displaystyle \binom{N-1}{r-1}\) possible
   arrangements. Out of those arrangements, we insist that that the spots to
   the left and to the right of the car's owner be empty, leaving \(N-3\)
   spots for \(r-1\) cars. This gives us a probability of
   \[
-    \frac{\binom{N-3}{r-1}}{\binom{N-1}{r-1}}.
+    \frac{\displaystyle\binom{N-3}{r-1}}{\displaystyle\binom{N-1}{r-1}}.
   \]
 \end{solution}
 \newpage
@@ -172,12 +185,12 @@
   are \(4\) aces and, if we want to avoid placing the aces next to each
   other, we count the spaces between the remaining cards \(48\) cards, this
   is \(52-4+1=49\) and place the \(4\) aces in between. This gives a total
-  of \(\binom{48}{4}\) arrangements (where the order in which
-  we do it does not matter) out \(\binom{52}{4}\) possible
+  of \(\displaystyle\binom{48}{4}\) arrangements (where the order in which
+  we do it does not matter) out \(\displaystyle\binom{52}{4}\) possible
   arrangements including the possibility of two aces being next to each
   other. Thus, the probability that no two aces are adjacent is
   \[
-    \frac{\binom{48}{4}}{\binom{52}{4}}\approx 0.7187.
+    \frac{\displaystyle \binom{48}{4}}{\displaystyle \binom{52}{4}}\approx 0.7187.
   \]
 \end{solution}
 \newpage
@@ -259,13 +272,13 @@
 \end{problem}
 \begin{solution}
   Each ball has an equal probability of being drawn on each draw. That is,
-  each (ordered) set of 4 draws is equally likely to occur.
+  each (ordered) set of \(4\) draws is equally likely to occur.
 
   There are $4^4$ ways to draw $4$ balls.
 
   There are $4!$ ways to draw one ball of each color.
 
-  There are $4 \cdot 3 \cdot \binom{4}{2} \cdot 2!$ ways to draw 4 balls,
+  There are $\displaystyle 4\cdot 3\binom{4}{2}2!$ ways to draw 4 balls,
   missing exactly one color (pick a color to be missed, pick a color to be
   drawn twice, pick two draws for that color to be drawn on, rearrange the
   other two colors into the other two draws.)
@@ -273,9 +286,9 @@
   Thus, the probability of having at least three different colors being
   drawn among those four is
 \begin{align*}
-  \frac{4! + 4 \cdot 3 \cdot \binom{4}{2} \cdot 2!}{4^4} &= \frac{3!+6 \cdot \frac{4!}{2!2!}}{4^3} \\
-                                                         &= \frac{6+36}{4^3}\\
-                                                         &\cong 0.65625\\
+  \frac{\displaystyle 4! + 4 \cdot 3 \cdot \binom{4}{2} \cdot 2!}{4^4} &= \frac{3!+6 \cdot 4!/(2!2!)}{4^3} \\
+                                                                       &= \frac{6+36}{4^3}\\
+                                                                       &\cong 0.65625\\
 \end{align*}
 \end{solution}
 
