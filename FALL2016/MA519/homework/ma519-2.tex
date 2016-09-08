@@ -117,7 +117,7 @@
   excluding the people who told him the rumor. This gives us a probability
   of
   \[
-    \frac{n(n-1)\dotsc(n-r+1)}{n^r}
+    \frac{n(n-1)\dotsm(n-r+1)}{n^r}
   \]
   of the rumor not being repeated to anybody.
 
@@ -152,7 +152,7 @@
   last dish can go into one of \(4\) places, the three other sisters or
   none of them. This gives us a probability of
   \[
-    P(A)=\frac{4\cdot 3}{4^4}=\frac{4\cdot 3}{265}\approx 0.0469.
+    P(A)=\frac{4\cdot 3}{4^4}=\frac{12}{265}\approx 0.0469.
   \]
   Since this probability is rather small, the sisters are justified in
   calling her clumsy.
@@ -239,9 +239,10 @@
   Consider the sequence of probabilities \(\{P_n:n\in\bbN\}\) where
   \(P_n=P\bigl(\bigcap_{i=1}^n A_i\bigr)\). Note that
   \(\bigcap_{i=1}^n A_i\downarrow\bigcap_{i=1}^\infty A_i\). First we show,
-  by induction, that \(P_n=1\). The case \(n=1\) is trivial. Now, assume
-  the result holds for \(n-1\) and consider
-  \(P_n=P\bigl(\bigcap_{i=1}^n A_i\bigr)\). Writing
+  by induction, that \(P_n=1\).
+
+  The case \(n=1\) is trivial. Now, assume the result holds for \(n-1\) and
+  consider \(P_n=P\bigl(\bigcap_{i=1}^n A_i\bigr)\). Writing
   \(A'=\bigcap_{i=1}^{n-1}A_i\), we have
   \[
     P_n=P(A'\cap A_n).
@@ -257,9 +258,13 @@
        &=1.
   \end{align*}
   It follows that \(\{P_n:n\in\bbN\}\) is the constant sequence
-  \(\{1\}\). By Theorem 1.1 from DasGupta, we have
+  \(\{1\}\).
+
+  By Theorem 1.1 from DasGupta (this theorem is proved in Wheeden and
+  Zygmund in more generality, not this problem, but DasGupta's Theorem
+  1.1), we have
   \[
-    P\left(\bigcap\nolimits_{i=1}^\infty A_i\right)=\lim_{n\to\infty} 1=1.
+    P\left(\bigcap\nolimits_{i=1}^\infty A_i\right)=\lim_{n\to\infty} P_n=1.
   \]
 \end{solution}
 \newpage
