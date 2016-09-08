@@ -108,7 +108,24 @@
   special case \(N=1\)).
 \end{problem}
 \begin{solution}
+  For part (a), the originator can chose from among \(n\) different people
+  and at each step, each person can chose from among \(n-1\) people
+  (excluding the originator). This gives us a probability of
+  \[
+    \frac{n(n-1)^r}{n^r}=\left(\frac{n-1}{n}\right)^{r-1}
+  \]
+  of the rumor not returning to the originator.
 
+  For part (b), the originator can chose from among \(n\) different people
+  and at each step \(i\) each person can chose from among \(n-i+1\) people
+  excluding the people who told him the rumor. This gives us a probability
+  of
+  \[
+    \frac{n(n-1)\dotsc(n-r+1)}{n^r}
+  \]
+  of the rumor not being repeated to anybody.
+
+  Lastly,
 \end{solution}
 \newpage
 
@@ -142,7 +159,14 @@
   occupied. What is the probability that both neighboring places are empty?
 \end{problem}
 \begin{solution}
-
+  There are \(r-1\) cars not belonging to the owner with \(N-1\) spots for
+  them. Thus, there are \(\binom{N-1}{r-1}\) possible
+  arrangements. Out of those arrangements, we insist that that the spots to
+  the left and to the right of the car's owner be empty, leaving \(N-3\)
+  spots for \(r-1\) cars. This gives us a probability of
+  \[
+    \frac{\binom{N-3}{r-1}}{\binom{N-1}{r-1}}.
+  \]
 \end{solution}
 \newpage
 
@@ -155,13 +179,12 @@
   are \(4\) aces and, if we want to avoid placing the aces next to each
   other, we count the spaces between the remaining cards \(48\) cards, this
   is \(52-4+1=49\) and place the \(4\) aces in between. This gives a total
-  of \(\displaystyle\binom{48}{4}\) arrangements (where the order in which
-  we do it does not matter) out \(\displaystyle\binom{52}{4}\) possible
+  of \(\binom{48}{4}\) arrangements (where the order in which
+  we do it does not matter) out \(\binom{52}{4}\) possible
   arrangements including the possibility of two aces being next to each
   other. Thus, the probability that no two aces are adjacent is
   \[
-    \frac{\displaystyle\binom{48}{4}}{\displaystyle\binom{52}{4}}\approx
-    0.7187.
+    \frac{\binom{48}{4}}{\binom{52}{4}}\approx 0.7187.
   \]
 \end{solution}
 \newpage
@@ -172,7 +195,31 @@
   Prove that \(P(A\cap B)\geq 1/12\). Can it be equal to \(1/12\)?
 \end{problem}
 \begin{solution}
+  By the inclusion-exclusion principle, we have
+  \[
+    P(A\cup B)=P(A)+P(B)-P(A\cap B)
+  \]
+  so
+  \[
+    P(A\cap B)=P(A)+P(B)-P(A\cup B).
+  \]
+  But, since \(A\cup B\subseteq\Omega\) and \(P(\Omega)=1\), \(P(A\cup
+  B)\leq P(\Omega)=1\) so \(-P(A\cup B)\geq -1\). Thus,
+  \begin{align*}
+    P(A\cap B)&=P(A)+P(B)-P(A\cup B)\\
+              &\geq P(A)+P(B)-1\\
+              &=\frac{3}{4}+\frac{1}{3}-1\\
+              &=\frac{9}{12}+\frac{4}{12}-\frac{12}{12}\\
+              &=\frac{1}{12}.
+  \end{align*}
 
+  Lastly, we show that \(P(A\cap B)\) can in fact be equal to
+  \(1/12\). Consider the closed unit interval \(I=[0,1]\) equipped with the
+  Lebesgue measure. Set \(A=(0,3/4)\) and \(B=(1-1/3,1)=(2/3,1)\). Then the
+  intersection \(A\cap B=(2/3,3/4)\) has Lebesgue measure
+  \[
+    m(A\cap B)=\frac{3}{4}-\frac{2}{3}=\frac{1}{12}.
+  \]
 \end{solution}
 \newpage
 
