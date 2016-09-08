@@ -39,10 +39,19 @@
   with \(\varphi\) a sufficiently regular map
   \(\varphi\colon\bbR^{n-1}\to\bbR\). Let \(\bfx=\bfy^{-1}\). Now, note
   that \(y^0=y(x_1^0,\dotsc,x_n^0)=(y_1,\dotsc,y_{n-1},0)\) and hence
-  \(\Delta=y(\Gamma)\) is flat near \(y^0\) so we can apply the standard
+  \(\Delta=\bfy(\Gamma)\) is flat near \(y^0\) so we can apply the standard
   noncharacteristic boundary conditions on the transformed PDE,
+  \[
+    0\neq F_{u_n}\bigl(Du(\bfx(y^0)),u(\bfx(y^0)),\bfx(y^0)\bigr).
+  \]
+  First, consider the gradient \(D(\bfx(y))\). Looking at the \(i\)-th
+  coordinate of this function, by the chain rule, we have
   \begin{align*}
-    0&\neq F_{u_n}\bigl(Du(\bfx(y)),u(\bfx(y)),\bfx(y)\bigr)
+    u_{x_i}(\bfx(y^0))
+    &=\sum_{j=1}^n u_{x_i}\frac{\partial x_i}{\partial y_j}\\
+    &=u_{x_i}(x^0)+u_{x_n}\varphi_{y_i}(y^0),\\
+    u_{x_n}(\bfx(y^0))
+    &=u_{x_n}(x^0).
   \end{align*}
 \end{solution}
 \newpage
