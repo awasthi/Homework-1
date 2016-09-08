@@ -4,16 +4,16 @@
   gets his own watch back?
 \end{problem}
 \begin{solution}
-  The sample space \(\Omega\) is in correspondence with \(S_4\) the set of
-  bijections from the set \(\{1,2,3,4\}\) to itself and therefore
-  \begin{equation}
-    \label{eq:2-1}
-    \#\Omega=\# S_4=4!=24.
-  \end{equation}
-  Let \(A\) denote the event that at least one man gets his own watch
-  back. This is a case where it is easier find the probability of the
-  complement of \(A\), i.e., the event \(\Omega\setminus A\) that no man
-  gets his own watch back.
+  Let \(\Omega\) denote the sample space and let \(A\) denote the event
+  that at least one man gets his own watch back. Since the order of
+  distributing wallets to each man matters,
+  \[
+    \#\Omega=4!=24.
+  \]
+  Since, at least in this case, it is easier to list the ways in which no
+  man gets his own watch back, we will compute the probability of the
+  complement of \(A\), i.e., the probability that no man gets his own watch
+  back. We count this in the following ways
 
   In this case, we can explicitly list the ways in which no man gets his
   own watch back: We can translate, i.e., each man receives the \(i\)-th
@@ -32,7 +32,7 @@
 \end{solution}
 \newpage
 
-\begin{problem}[Handout 2, \#7]
+\begin{problem}[Handout 2, \# 7]
   Calculate the probability that in Bridge, the hand of at least one player
   is void in a particular suit.
 \end{problem}
@@ -78,17 +78,25 @@
   probability that exactly one cell remains empty.
 \end{problem}
 \begin{solution}
-  Let \(\Omega\) denote the sample space. Then by Feller's occupancy
-  problem, we have
+  Let $n$ balls be placed at random into $n$ cells. (As was pointed out in
+  the feedback, we will assume that these $n$ balls are distinct.)
+
+  There are $n^n$ ways to do this.
+
+  There are
   \[
-    \#\Omega=\binom{2n-1}{n}.
+    \binom{n}{1} \cdot \binom{n}{2} \cdot \binom{n-1}{1} \cdot (n-2)!
   \]
-  Now, there are \(n\) ways to choose a bin to be empty and \(n-1\) ways
-  for the extra ball to go into the remaining cells. Thus, the event \(A\)
-  that exactly one cell remains empty has probability
-  \[
-    P(A)=\frac{n(n-1)}{\binom{2n-1}{n}}.
-  \]
+  ways to put $n$ balls into $n$ slots with exactly one remaining empty (we
+  pick $1$ of our $n$ slots to be empty, we pick $2$ of our $n$ balls to
+  share a slot, we pick one of our remaining $n-1$ slots for those $2$
+  balls to go into, we fill the rest with one ball each.)
+
+  Thus, the probability that exactly $1$ cell remains empty is
+  \begin{align*}
+    \frac{\binom{n}{1} \cdot \binom{n}{2} \cdot \binom{n-1}{1} \cdot (n-2)!}{n^n} &= \frac{n \cdot \binom{n}{2} \cdot (n-1) \cdot (n-2)!}{n^n} \\
+                                                                                  &= \frac{n! \cdot \frac{n-1}{2}}{n^n} \\
+\end{align*}
 \end{solution}
 \newpage
 
@@ -265,7 +273,25 @@
   the four drawn.
 \end{problem}
 \begin{solution}
+  Each ball has an equal probability of being drawn on each draw. That is,
+  each (ordered) set of 4 draws is equally likely to occur.
 
+  There are $4^4$ ways to draw $4$ balls.
+
+  There are $4!$ ways to draw one ball of each color.
+
+  There are $4 \cdot 3 \cdot \binom{4}{2} \cdot 2!$ ways to draw 4 balls,
+  missing exactly one color (pick a color to be missed, pick a color to be
+  drawn twice, pick two draws for that color to be drawn on, rearrange the
+  other two colors into the other two draws.)
+
+  Thus, the probability of having at least three different colors being
+  drawn among those four is
+\begin{align*}
+  \frac{4! + 4 \cdot 3 \cdot \binom{4}{2} \cdot 2!}{4^4} &= \frac{3!+6 \cdot \frac{4!}{2!2!}}{4^3} \\
+                                                         &= \frac{6+36}{4^3}\\
+                                                         &\cong 0.65625\\
+\end{align*}
 \end{solution}
 
 %%% Local Variables:
