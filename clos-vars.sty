@@ -38,30 +38,30 @@
 \ProcessOptions\relax
 
 %%% Required math packages
-\RequirePackage{amsmath}
-\RequirePackage{amsthm}
-\RequirePackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
 \mathtoolsset{mathic=true}
 
 %%% Othe useful packages
-\@ifpackageloaded{hyperref}{}{\RequirePackage{hyperref}}
-\@ifpackageloaded{natbib}{}{\RequirePackage{natbib}}
+\@ifpackageloaded{hyperref}{}{\usepackage{hyperref}}
+\@ifpackageloaded{natbib}{}{\usepackage{natbib}}
 \@ifpackageloaded{xcolor}
                  {\PassOptionsToPackage{dvipsnames}{xcolor}}
-                 {\RequirePackage[dvipsnames]{xcolor}}
-\RequirePackage{graphicx}
+                 {\usepackage[dvipsnames]{xcolor}}
+\usepackage{graphicx}
 
 %% Language settings
-\RequirePackage{substitutefont}%
-\RequirePackage[full]{textcomp}%
-\RequirePackage{cmap}%
+\usepackage{substitutefont}%
+\usepackage[full]{textcomp}%
+\usepackage{cmap}%
 
 \if@arabi%
-\RequirePackage[LHE,LAE,LFE,LGR,T2A,T1]{fontenc}%
-\RequirePackage[utf8]{inputenc}%
+\usepackage[LHE,LAE,LFE,LGR,T2A,T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
 
 \def\spanishoptions{mexico}%
-\RequirePackage[%
+\usepackage[%
 arabic,%
 farsi,%
 french,%
@@ -85,11 +85,11 @@ main=english]{babel}
 \newcommand{\textfa}[1]{\textpa{\textRL{#1}}}%
 
 \else%
-\RequirePackage[LGR,T2A,T1]{fontenc}%
-\RequirePackage[utf8]{inputenc}%
+\usepackage[LGR,T2A,T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
 
 \def\spanishoptions{mexico}%
-\RequirePackage[%
+\usepackage[%
 french,%
 german,%
 greek.plutoniko,%
@@ -116,7 +116,7 @@ main=english]{babel}
 % \renewcommand{\textru}[1]{\foreignlanguage{russian}{#1}}%
 
 %% Must be loaded after Babel
-% \RequirePackage{microtype}%
+% \usepackage{microtype}%
 \usepackage[activate={true,nocompatibility},
             final,
             tracking=true,
@@ -125,12 +125,12 @@ main=english]{babel}
             factor=1100,
             stretch=10,
             shrink=10]{microtype}
-\RequirePackage{enumitem}%
-\RequirePackage{listings}%
+\usepackage{enumitem}%
+\usepackage{listings}%
 
 %%% East Asian languages
 \if@CJK%
-\RequirePackage{CJKutf8}%
+\usepackage{CJKutf8}%
 \newcommand{\textmj}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}%
 \newcommand{\textmin}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}%
 \newcommand{\textgoth}[1]{\begin{CJK}{UTF8}{goth}#1\end{CJK}}%
@@ -147,27 +147,27 @@ main=english]{babel}
 %% Times clones
 \if@times % TeX Gyre for math and Nimbus for text
 \pdfmapfile{+newtx.map}
-\RequirePackage[largesc,p]{newtxtext}
-\RequirePackage{nimbusserif}
-\RequirePackage{nimbussans}
-\RequirePackage{nimbusmononarrow}
-\RequirePackage[varg,
+\usepackage[largesc,p]{newtxtext}
+\usepackage{nimbusserif}
+\usepackage{nimbussans}
+\usepackage{nimbusmononarrow}
+\usepackage[varg,
                 % bigdelims,
                 upint,
                 smallerops,
                 % nosymbolsc
                 ]{newtxmath}%
-\RequirePackage[bb=boondox,%
+\usepackage[bb=boondox,%
                 frak=boondox,%
                 cal=boondoxo,%
                 scr=boondox]{mathalfa}%
-\RequirePackage{bm}
+\usepackage{bm}
 
 %% Until the new version of newxtmath is available in the repo
 %% this fixes the mathpuct spacing problems
-\DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
-\DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
-\DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
+% \DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
+% \DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
+% \DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
 
 %% Redefinitions
 \let\setminus\smallsetminus
@@ -182,22 +182,22 @@ main=english]{babel}
 \else
 \if@cochineal
 \pdfmapfile{+newtx.map}
-\RequirePackage{cochineal}
-\RequirePackage[scale=.95,type1]{cabin} % sans
-\RequirePackage[varqu,varl,scaled=.94]{zi4} % mono
-\RequirePackage[cochineal,
+\usepackage{cochineal}
+\usepackage[scale=.95,type1]{cabin} % sans
+\usepackage[varqu,varl,scaled=.94]{zi4} % mono
+\usepackage[cochineal,
                 % bigdelims,%
                 upint,
                 smallerops,
                 % nosymbolsc
                 ]{newtxmath} % Shitty math fonts
 
-\RequirePackage[bb=boondox,%
+\usepackage[bb=boondox,%
                 frak=pxtx,%
                 frakscaled=1.1,
                 cal=boondoxo,%
                 scr=boondox]{mathalfa}%
-\RequirePackage{bm}
+\usepackage{bm}
 
 %% Other Libertine specific math settings
 \DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
@@ -215,12 +215,12 @@ main=english]{babel}
 \else
 \if@libertine %% Use Libertine (a beautiful free font)
 \pdfmapfile{+newtx.map}
-\RequirePackage[largesc,p]{newtxtext}
-\RequirePackage{libertine}
-\RequirePackage{libertinegc} %% Greek and Cyrillic Libertine
-\RequirePackage[scale=.95,type1]{cabin} % sans
-\RequirePackage[varqu,varl,scaled=.94]{zi4} % mono
-\RequirePackage[libertine,%
+\usepackage[largesc,p]{newtxtext}
+\usepackage{libertine}
+\usepackage{libertinegc} %% Greek and Cyrillic Libertine
+\usepackage[scale=.95,type1]{cabin} % sans
+\usepackage[varqu,varl,scaled=.94]{zi4} % mono
+\usepackage[libertine,%
                 libaltvw,%
                 liby,%
                 % bigdelims,%
@@ -229,12 +229,12 @@ main=english]{babel}
                 % nosymbolsc
                 ]{newtxmath} % Shitty math fonts
 
-\RequirePackage[bb=boondox,%
+\usepackage[bb=boondox,%
                 frak=pxtx,%
                 frakscaled=1.1,
                 cal=boondoxo,%
                 scr=boondox]{mathalfa}%
-\RequirePackage{bm}
+\usepackage{bm}
 
 %% Other Libertine specific math settings
 \DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
@@ -250,9 +250,9 @@ main=english]{babel}
 \@ifpackageloaded{tikz}{\tikzcdset{arrow style=math font}}{}
 
 \else % Use the regular CM fonts
-\RequirePackage{bm}
-\RequirePackage{amssymb}
-\RequirePackage{stmaryrd}%
+\usepackage{bm}
+\usepackage{amssymb}
+\usepackage{stmaryrd}%
 
 %% Math replace
 \let\setminus\smallsetminus%
@@ -274,13 +274,13 @@ main=english]{babel}
 \newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
       \hbox{.}\hbox{.}}}%
   =}%
-\RequirePackage{mleftright}
+\usepackage{mleftright}
 \mleftright%
 
 \if@eucal % Euler mathcal
-\RequirePackage[bb=ams,cal=euler,frak=euler,scr=rsfso]{mathalfa}%
+\usepackage[bb=ams,cal=euler,frak=euler,scr=rsfso]{mathalfa}%
 \else % AMS mathcal
-\RequirePackage[bb=ams,cal=cm,frak=euler,scr=rsfso]{mathalfa}%
+\usepackage[bb=ams,cal=cm,frak=euler,scr=rsfso]{mathalfa}%
 \fi \fi \fi \fi
 
 %% Theorems and definitions
@@ -1052,8 +1052,8 @@ main=english]{babel}
 \makeatother
 
 %% Make emph parentheses upright
-\RequirePackage{expl3}
-\RequirePackage{xparse}
+\usepackage{expl3}
+\usepackage{xparse}
 \ExplSyntaxOn
 \cs_new_eq:Nc \emph_old:n { emph~ } % Copying the old definition of `\emph`
 \cs_new_protected:Npn \emph_braces:n #1 % Set up how braces should be typeset.
