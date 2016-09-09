@@ -208,10 +208,16 @@
   linear interpolation, we have
   \begin{align*}
     u(x+z,t)-u(x,t)
-    &\leq\sup_{\mathclap{x>-t^2/4}}\bigl\{u_x(x,t)\bigr\}(x+z-x)\\
-    &\leq\sup_{x>-t^2/4}\left\{\frac{1}{\sqrt{3x+t^2}}\right\}z\\
-    &=
+    &\leq\sup_{x>-t^2/4}\bigl\{u_x(x,t)\bigr\}(x+z-x)\\
+    &=\sup_{x>-t^2/4}\left\{\frac{1}{\sqrt{3x+t^2}}\right\}z\\
+    \intertext{and since the function \(u_x\) is decreasing on
+    \(x>-t^2/4\), it achieves its maximum as \(x-\to -t^2/4\)}
+    &=\frac{1}{\sqrt{-(3/4)t^2+t^2}}z
+    &=\frac{2}{t}z.
   \end{align*}
+  Thus, \(u\) satisfies the entropy condition on \(x>-t^2/4\).
+
+  For case (a), we have
 \end{solution}
 
 %%% Local Variables:
