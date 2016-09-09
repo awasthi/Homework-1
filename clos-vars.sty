@@ -50,7 +50,6 @@
                  {\PassOptionsToPackage{dvipsnames}{xcolor}}
                  {\RequirePackage[dvipsnames]{xcolor}}
 \RequirePackage{graphicx}
-\@ifpackageloaded{tikz}{\tikzcdset{arrow style=math font}}{}
 
 %% Language settings
 \RequirePackage{substitutefont}%
@@ -166,9 +165,9 @@ main=english]{babel}
 
 %% Until the new version of newxtmath is available in the repo
 %% this fixes the mathpuct spacing problems
-% \DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
-% \DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
-% \DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
+\DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
+\DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
+\DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
 
 %% Redefinitions
 \let\setminus\smallsetminus
@@ -177,6 +176,8 @@ main=english]{babel}
 \newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
       \hbox{.}\hbox{.}}}%
   =}%
+
+\@ifpackageloaded{tikz}{\tikzcdset{arrow style=math font}}{}
 
 \else
 \if@cochineal
@@ -209,6 +210,7 @@ main=english]{babel}
 \newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
       \hbox{.}\hbox{.}}}%
   =}%
+\@ifpackageloaded{tikz}{\tikzcdset{arrow style=math font}}{}
 
 \else
 \if@libertine %% Use Libertine (a beautiful free font)
@@ -245,10 +247,10 @@ main=english]{babel}
 \newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
       \hbox{.}\hbox{.}}}%
   =}%
+\@ifpackageloaded{tikz}{\tikzcdset{arrow style=math font}}{}
 
 \else % Use the regular CM fonts
 \RequirePackage{amssymb}%
-\RequirePackage[nointegrals]{wasysym}%
 \RequirePackage{stmaryrd}%
 
 %% Math replace
