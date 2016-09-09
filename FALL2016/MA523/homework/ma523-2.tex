@@ -24,13 +24,12 @@
   We shall verify the noncharacteristic condition \eqref{eq:2-1} by first
   flattening the boundary near \(x^0\) and then applying the
   noncharacteristic boundary conditions to the flattened region. Assuming
-  some regularity near \(x^0\), \(\Gamma\) is a hypersurface of dimension
-  \(n-1\). Assuming some degree of regularity near \(x^0\), e.g., that the
-  boundary be smooth, we may express \(\Gamma\) near \(x^0\) as the graph
-  of a smooth function \(f\colon\bbR^{n-1}\to\bbR\), i.e., \(x=(y,f(y))\)
-  on \(\Gamma\) and \(x_n\geq f(y)\) after reorienting the coordinate
-  axes. Then we flatten out \(\Gamma\) via the map
-  \(\Phi(x)\colon\bbR^n\to\bbR^n\) given by
+  some degree of regularity near \(x^0\), e.g., that the boundary of \(U\)
+  be smooth, we may express \(\Gamma\) near \(x^0\) as the graph of a
+  smooth function \(f\colon\bbR^{n-1}\to\bbR\), i.e.,
+  \(x=(x_1,\dotsc,x_{n-1},f(x_1,\dotsc,x_{n-1}))\) on \(\Gamma\) and
+  \(x_n\geq f(y)\) after reorienting the coordinate axes. Then we flatten
+  out \(\Gamma\) via the map \(\Phi(x)\colon\bbR^n\to\bbR^n\) given by
   \[
     \left\{
       \begin{aligned}
@@ -41,63 +40,47 @@
       \end{aligned}
     \right.
   \]
-  and write \(y=\Phi(x)\).
+  and write \(y=\Phi(x)\). Let \(\Psi=\Phi^{-1}\) and rewrite our PDE \(F\)
+  in terms of \(y\) as follows,
+  \begin{equation}
+    \label{eq:2-2}
+    0=F\bigl(Du(\Psi(y)),u(\Psi(y)),\Psi(y)\bigr).
+  \end{equation}
+  Since \(\Delta=\Phi(\Gamma)\) is flat near
+  \(y^0=\Phi(x^0)=(y_1^0,\dotsc,y_{n-1}^0,0)\), we may apply the standard
+  noncharacteristic condition on \eqref{eq:2-2} and get
+  \[
+    0\neq F_{u_{y_n}}\bigl(Du(\Psi(y^0)),u(\Psi(y^0)),\Psi(y^0)\bigr).
+  \]
+  Before we move on to finding an expression for this derivative, let us
+  consider the gradient \(Du(\Psi(y))\). By the chain rule, we have
+  \begin{align*}
+    u_{y_i}(\Psi(y))
+    &=\sum_{j=1}^n u_{x_j}(\Psi(y))\frac{\partial x_j}{\partial y_i}\\
+    &=u_{x_i}(\Psi(y))+u_{x_n}(\Psi(y))f_{y_i}(y_1,\dotsc,y_{n-1}),\\
+    u_{y_n}(\Psi(y))
+    &=\sum_{j=1}^n u_{x_j}(\Psi(y))\frac{\partial x_j}{\partial y_n}\\
+    &=u_{x_n}(\Psi(y)),
+  \end{align*}
+  Then, substituting \(u_{y_n}\) for \(u_{x_n}\), we have
+  \[
+    u_{y_i}(\Psi(y))=u_{x_i}(\Psi(y))+u_{y_n}(\Psi(y))f_{y_i}(y_1,\dotsc,y_{n-1}),\\
+  \]
+  Now, by the chain rule on \eqref{eq:2-2}, we have
+  \begin{align*}
+    0&\neq F_{u_{y_n}}\bigl(Du(\Psi(y^0)),u(\Psi(y^0)),\Psi(y^0)\bigr)\\
+     &=F_{u_{y_n}}
+       \bigl(
+       u_{x_1}+u_{y_n}f_{y_1},\dotsc,
+       u_{x_{n-1}}+u_{y_n}f_{y_{n-1}},u_{y_n},z^0,x^0
+       \bigr)\\
+     &=F_{u_{x_1}}f_{y_1}+\dotsb+F_{u_{x_{n-1}}}f_{y_{n-1}}+F_{u_{x_n}}\\
+     &=D_pF(p^0,z^0,x^0)\cdot(Df(x^0),1)\\
+     &=D_pF(p^0,z^0,x^0)\cdot\nu(x^0),
+  \end{align*}
+  as we set out to show.
 \end{solution}
 \newpage
-% We shall verify the noncharacteristic condition \eqref{eq:2-1} by first
-% flattening the boundary near \(x^0\) and then applying the
-% noncharacteristic boundary conditions to the flattened region. Assuming
-% some regularity near \(x^0\), \(\Gamma\) is a hypersurface of dimension
-% \(n-1\).
-
-% Make a change of variables \((y_1,\dotsc,y_n)=\bfy(x_1,\dotsc,x_n)\)
-% where \(\bfy\colon\bbR^n\to\bbR^n\) is the change of coordinates
-%   \[
-%     \left\{
-%       \begin{aligned}
-%         y_1&=x_1,\\
-%         &\vdotswithin{=}\\
-%         y_{n-1}&=x_{n-1},\\
-%         y_n&=x_n-\varphi(x_1,\dotsc,x_{n-1}),
-%       \end{aligned}
-%     \right.
-%   \]
-%   with \(\varphi\) a sufficiently regular map
-%   \(\varphi\colon\bbR^{n-1}\to\bbR\) such that
-%   \(x_n^0=\varphi(x_1^0,\dotsc,x_{n-1}^0)\). Let \(\bfx=\bfy^{-1}\). Now,
-%   note that \(y^0=y(x_1^0,\dotsc,x_n^0)=(y_1,\dotsc,y_{n-1},0)\) and hence
-%   \(\Delta=\bfy(\Gamma)\) is flat near \(y^0\) so we can apply the standard
-%   noncharacteristic boundary conditions on the transformed PDE,
-%   \begin{equation}
-%     \label{eq:2-2}
-%     0\neq F_{u_{y_n}}\bigl(Du(\bfx(y^0)),u(\bfx(y^0)),\bfx(y^0)\bigr).
-%   \end{equation}
-%   First, consider the gradient \(D(\bfx(y))\). Looking at the \(i\)-th
-%   coordinate of this function, by the chain rule, we have
-%   \begin{align*}
-%     u_{y_i}(\bfx(y))
-%     &=\sum_{j=1}^n u_{x_j}(\bfx(y))\frac{\partial x_j}{\partial y_i}\\
-%     &=u_{x_i}(\bfx(y))+u_{x_n}(\bfx(y))\varphi_{y_i}(y_1,\dotsc,y_{n-1}),\\
-%     u_{y_n}(\bfx(y))
-%     &=\sum_{j=1}^n u_{x_j}(\bfx(y))\frac{\partial x_j}{\partial y_n}\\
-%     &=u_{x_n}(\bfx(y)).
-%   \end{align*}
-%   Thus,
-%   \[
-%     u_{y_i}(\bfx(y))=u_{x_i}(\bfx(y))+u_{y_n}(\bfx(y))\varphi_{y_i}(y_1,\dotsc,y_{n-1}).
-%   \]
-%   Now, evaluating the derivative in \eqref{eq:2-2}, we have
-%   \begin{align*}
-%     0
-%     &\neq F_{u_{y_n}}\bigl(Du(\bfx(y^0)),u(\bfx(y^0)),\bfx(y^0)\bigr)\\
-%     &=F_{u_{y_n}}\bigl(u_{x_1}(\bfx(y^0))+u_{y_n}(\bfx(y^0))\varphi_{y_1}(y^0),\dotsc,u_{y_n}(\bfx(y^0)),u(\bfx(y^0)),\bfx(y^0)\bigr)
-%     \intertext{which, by the chain rule, becomes}
-%     &=F_{u_{y_1}}(Du(\bfx(y^0)),u(\bfx(y^0)),y^0)\varphi_{y_1}(y^0)
-%       +\dotsb+F_{u_{y_n}}(Du(\bfx(y^0)),u(\bfx(y^0)),y^0)\varphi_{y_1}(y^0)\\
-%     &=D_{Du} F\bigl(Du(\bfx(y^0)),u(\bfx(y^0)),\bfx(y^0)\bigr)\cdot(D\varphi,1)\\
-%     &=D_p F(p^0,z^0,y^0)\cdot \nu(x^0)
-%   \end{align*}
-%   where \(D\varphi,1\) is the normal to \(\Gamma\) at \(x^0\).
 
 \begin{problem}
   Show that the solution of the quasilinear PDE
@@ -113,7 +96,12 @@
   \(x\).
 \end{problem}
 \begin{solution}
-
+  Using the method of characteristics, the characteristic ODEs are
+  \begin{align*}
+    \dot t&=1,\\
+    \dot x&=a(z),\\
+    \dot z&=1.
+  \end{align*}
 \end{solution}
 \newpage
 
