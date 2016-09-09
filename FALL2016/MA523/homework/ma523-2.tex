@@ -194,7 +194,18 @@
     F\rrbracket=-\frac{t^2}{2}=\left(-\frac{t}{2}\right)t=\sigma\llbracket
     u\rrbracket
   \]
-  satisfies the Rankine--Hugoniot condition.
+  satisfies the Rankine--Hugoniot condition and hence, is an integral
+  solution.
+
+  Lastly, we verify that \(u\) satisfies the entropy condition, i.e., that
+  \(u_\ell>u_r\) along any shock curve. Fix a point \(x_0\in\bbR\) and let
+  \(y>0\). Then, if \(x_0>-t^2/4\), we have
+  \begin{align*}
+    u(x_0+y,t)-u(x_0,t)
+    &=\sup_{x>-t^2/4}\bigl\{ u_x(x_0,t)\bigr\}y\\
+    &=\sup_{x>-t^2/4}\left\{\frac{1}{\sqrt{3x+t^2}}\right\}y\\
+    &=\frac{2}{t}y
+  \end{align*}
 \end{solution}
 
 %%% Local Variables:
