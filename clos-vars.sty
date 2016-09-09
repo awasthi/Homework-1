@@ -255,13 +255,12 @@ main=english]{babel}
 \RequirePackage{stmaryrd}%
 
 %% Math replace
-% \let\emptyset\varnothing%
+\let\setminus\smallsetminus
+\let\emptyset\varnothing%
 \let\oldbtright\blacktriangleright%
 \let\oldbtleft\blacktriangleleft%
 \renewcommand\blacktriangleright{\ensuremath{\scriptstyle\oldbtright}}
 \renewcommand\blacktriangleleft{\ensuremath{\scriptstyle\oldbtleft}}
-\newcommand\bigsetminus{\setminus} % too ugly
-\renewcommand\setminus{\smallsetminus} % Default is too ugly
 \renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}} % Default is
 
 \def\upint{\mathchoice%
@@ -281,7 +280,7 @@ main=english]{babel}
 \if@eucal % Euler mathcal
 \RequirePackage[bb=ams,cal=euler,frak=euler,scr=rsfso]{mathalfa}%
 \else % AMS mathcal
-\RequirePackage[bb=ams,cal=cm,frak=euler,scr=rsfs]{mathalfa}%
+\RequirePackage[bb=ams,cal=cm,frak=euler,scr=rsfso]{mathalfa}%
 \fi \fi \fi \fi
 
 %% Theorems and definitions
