@@ -101,18 +101,18 @@
     \label{eq:2-3}
     \dot t=1,\qquad \dot x=a(z),\qquad \dot z=0.
   \end{equation}
-  with initial conditions \(t^0=0\), \(x^0=x(0)\) and \(z(x^0,0)=g(x^0)\)
-  with \((x^0,0)\in\bbR\times(0,\infty)\). Hence, we have
+  with initial conditions \(t_0=0\), \(x_0=x(0)\) and \(z(x_0,0)=g(x_0)\)
+  with \((x_0,0)\in\bbR\times(0,\infty)\). Hence, we have
   \[
-    t(s)=s,\qquad x(s)=a(g(x^0))s+x^0,\qquad z(s)=g(x^0).
+    t(s)=s,\qquad x(s)=a(g(x_0))s+x_0,\qquad z(s)=g(x_0).
   \]
-  Thus, solving for \(x^0\) and \(s\) in terms of \(t\), \(x\) and \(z\),
+  Thus, solving for \(x_0\) and \(s\) in terms of \(t\), \(x\) and \(z\),
   we have
   \begin{align*}
-    x&=a(g(x^0))s+x^0\\
-     &=a(z)t+x^0,
-    \shortintertext{so, moving \(x^0\) to the left-hand side}
-    x^0
+    x&=a(g(x_0))s+x_0\\
+     &=a(z)t+x_0,
+    \shortintertext{so, moving \(x_0\) to the left-hand side}
+    x_0
      &=x-a(z)t
        \shortintertext{hence,}
        z&=g(x-a(z)t),
@@ -131,7 +131,10 @@
     \label{eq:2-4}
     y=-\frac{x_1-x_2}{a(g(x_1))-a(g(x_2))}>0.
   \end{equation}
-  Then
+  Then, we have
+  \[
+    x_0=x_1+a(g(x_1))y=x_2+a(g(x_2))y
+  \]
 \end{solution}
 \newpage
 
