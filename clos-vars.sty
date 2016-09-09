@@ -20,11 +20,6 @@
   \@cochinealtrue
 }
 
-\newif\if@eucal\@eucalfalse
-\DeclareOption{eucal}{
-  \@eucaltrue
-}
-
 \newif\if@arabi\@arabifalse
 \DeclareOption{arabi}{
   \@arabitrue
@@ -146,21 +141,20 @@ main=english]{babel}
 %%% Math packages
 %% Times clones
 \if@times % TeX Gyre for math and Nimbus for text
-\pdfmapfile{+newtx.map}
+% \pdfmapfile{+newtx.map}
 \usepackage[largesc,p]{newtxtext}
 \usepackage{nimbusserif}
 \usepackage{nimbussans}
 \usepackage{nimbusmononarrow}
 \usepackage[varg,
-                % bigdelims,
-                upint,
-                smallerops,
-                nosymbolsc
-                ]{newtxmath}%
+            bigdelims,
+            % upint,
+            % smallerops,
+            nosymbolsc]{newtxmath}%
 \usepackage[bb=boondox,%
-                frak=boondox,%
-                cal=boondoxo,%
-                scr=boondox]{mathalfa}%
+            frak=boondox,%
+            cal=boondoxo,%
+            scr=boondox]{mathalfa}%
 \usepackage{bm}
 
 %% Until the new version of newxtmath is available in the repo
@@ -181,17 +175,16 @@ main=english]{babel}
 
 \else
 \if@cochineal
-\pdfmapfile{+newtx.map}
+% \pdfmapfile{+newtx.map}
 \usepackage{cochineal}
 \usepackage[scale=.95,type1]{cabin} % sans
 \usepackage[varqu,varl,scaled=.94]{zi4} % mono
 \usepackage[cochineal,
-                % bigdelims,%
-                upint,
-                smallerops,
+                bigdelims,%
+                % upint,
+                % smallerops,
                 nosymbolsc
                 ]{newtxmath} % Shitty math fonts
-
 \usepackage[bb=boondox,%
                 frak=pxtx,%
                 frakscaled=1.1,
@@ -214,7 +207,7 @@ main=english]{babel}
 
 \else
 \if@libertine %% Use Libertine (a beautiful free font)
-\pdfmapfile{+newtx.map}
+% \pdfmapfile{+newtx.map}
 \usepackage[largesc,p]{newtxtext}
 \usepackage{libertine}
 \usepackage{libertinegc} %% Greek and Cyrillic Libertine
@@ -223,12 +216,11 @@ main=english]{babel}
 \usepackage[libertine,%
                 libaltvw,%
                 liby,%
-                % bigdelims,%
-                upint,
-                smallerops,
+                bigdelims,%
+                % upint,
+                % smallerops,
                 nosymbolsc
                 ]{newtxmath} % Shitty math fonts
-
 \usepackage[bb=boondox,%
                 frak=pxtx,%
                 frakscaled=1.1,
@@ -253,6 +245,7 @@ main=english]{babel}
 \usepackage{bm}
 \usepackage{amssymb}
 \usepackage[heavycircles]{stmaryrd}%
+\usepackage[bb=ams,cal=cm,frak=euler,scr=rsfso]{mathalfa}%
 
 
 %% Math replace
@@ -277,12 +270,7 @@ main=english]{babel}
   =}%
 \usepackage{mleftright}
 \mleftright%
-
-\if@eucal % Euler mathcal
-\usepackage[bb=ams,cal=euler,frak=euler,scr=rsfso]{mathalfa}%
-\else % AMS mathcal
-\usepackage[bb=ams,cal=cm,frak=euler,scr=rsfso]{mathalfa}%
-\fi \fi \fi \fi
+\fi \fi \fi
 
 %% Theorems and definitions
 \makeatletter%
