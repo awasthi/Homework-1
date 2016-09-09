@@ -133,14 +133,16 @@
   \end{equation}
   Then, we have
   \[
-    x_0=x_1+a(g(x_1))y=x_2+a(g(x_2))y.
+    t_0=x_1+a(g(x_1))y=x_2+a(g(x_2))y.
   \]
   Thus,
   \begin{align*}
-    g(x_0)
-    &=u\bigl(x_0+a(g(x_0)),t\bigr)\\
-    &=
+    u(x,t_0)&=g(x_1)\\
+            &=u\bigl(x_1+a(g(x_1))t_0,t_0\bigr)\\
+            &=g(x_2)\\
+            &=u\bigl(x_2+a(g(x_2))t_0,t_0\bigr).
   \end{align*}
+  However, \(g(x_1)\neq g(x_2)\) since \(a(g(x_1))>a(g(x_2))\).
 \end{solution}
 \newpage
 
@@ -159,6 +161,15 @@
   \(u_t+(u^2/2)_x=0\) (\emph{inviscid Burger's equation}).
 \end{problem}
 \begin{solution}
+  First, we verify that the equation given by \(u\) above is in fact a
+  solution to the inviscid Burger's equation: on \(4x+t^2<0\) the equation
+  is trivially satisfied whereas for \(4x+t^2>0\) we have,
+  \[
+    -\frac{2}{3}\left(1+\frac{t}{\sqrt{3x+t^2}}\right)
+    +\frac{2}{9}\left(3+\frac{3t}{\sqrt{3x+t^2}}\right)
+    =0.
+  \]
+  So indeed \(u\) is a solution to the inviscid Burger's equation.
 \end{solution}
 
 %%% Local Variables:
