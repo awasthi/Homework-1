@@ -96,10 +96,33 @@
   \(x\).
 \end{problem}
 \begin{solution}
-  Using the method of characteristics, the characteristic ODEs are
+  The characteristic ODEs of this PDE are
+  \begin{equation}
+    \label{eq:2-3}
+    \dot t=1,\qquad \dot x=a(z),\qquad \dot z=0.
+  \end{equation}
+  with initial conditions \(t^0=0\), \(x^0=x(0)\) and \(z(x^0,0)=g(x^0)\)
+  with \((x^0,0)\in\bbR^n\times(0,\infty)\). Hence, we have
   \[
-    \dot t=1,\qquad \dot x=a(z),\qquad \dot z=1.
+    t(s)=s,\qquad x(s)=a(g(x^0))s+x^0,\qquad z(s)=g(x^0).
   \]
+  Thus, solving for \(x^0\) and \(s\) in terms of \(t\), \(x\) and \(z\),
+  we have
+  \begin{align*}
+    x&=a(g(x^0))s+x^0\\
+     &=a(z)t+x^0,
+    \shortintertext{so, moving \(x^0\) to the left-hand side}
+    x^0
+     &=x-a(z)t
+       \shortintertext{hence,}
+       z&=g(x-a(z)t),
+          \shortintertext{i.e.,}
+          u&=g(x-a(u)t),
+  \end{align*}
+  as desired.
+
+  For the latter half, suppose \(a\) is not nondecreasing. Then there
+  exists \(0<t_1<t_2\) such that \(a(t_1)>a(t_2)\).
 \end{solution}
 \newpage
 
