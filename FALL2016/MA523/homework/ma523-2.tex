@@ -176,17 +176,19 @@
   Now we examine the behavior of \(u\) along the curve \(C\). First, we
   have
   \begin{align*}
-    \sigma&=\dot s(t)\\
-          &=-\frac{t}{2},\\
-    \llbracket u\rrbracket
-          &=u_\ell-u_r\\
-          &=0+\frac{2}{3}\left(t+\sqrt{-\tfrac{3}{4}t^2+t^2}\right)\\
-          &=0+\frac{2}{3}\left(\frac{3}{2}t\right)\\
-          &=t,\\
-    \llbracket F\rrbracket
-          &=F(u_\ell)-F(u_r)\\
-          &=0-\frac{\llbracket u_r\rrbracket^2}{2}\\
-          &=0-\frac{t^2}{2}.
+    \sigma&=\dot s(t)
+    &\llbracket u\rrbracket
+    &=u_\ell-u_r
+    &\llbracket F\rrbracket
+    &=F(u_\ell)-F(u_r)\\
+          &=-\frac{t}{2},
+    &&=0+\frac{2}{3}\left(t+\sqrt{-\tfrac{3}{4}t^2+t^2}\right)
+    &&=0-\frac{\llbracket u_r\rrbracket^2}{2}\\
+          &&
+    &=0+\frac{2}{3}\left(\frac{3}{2}t\right)
+    &&=0-\frac{t^2}{2}
+    \\
+          &&&=t,&&=-\frac{t^2}{2}.
   \end{align*}
   Thus,
   \[
@@ -197,15 +199,12 @@
   satisfies the Rankine--Hugoniot condition and hence, is an integral
   solution.
 
-  Lastly, we verify that \(u\) satisfies the entropy condition, i.e., Eq.\@
-  (17) from [E, \S 3.4.b], that \(F'(u_\ell)>\sigma>F(u_r)\). Fix a point
-  \(x_0\in\bbR\) and let \(y>0\). Then, if \(x_0>-t^2/4\), we have
-  \begin{align*}
-    u(x_0+y,t)-u(x_0,t)
-    &=\sup_{x>-t^2/4}\bigl\{ u_x(x_0,t)\bigr\}y\\
-    &=\sup_{x>-t^2/4}\left\{\frac{1}{\sqrt{3x+t^2}}\right\}y\\
-    &=\frac{2}{t}y
-  \end{align*}
+  Lastly, we verify that \(u\) satisfies the entropy condition, i.e., the
+  one-sided jump estimate, Eq.\@ (36) from [E, \S 3.4.3]. We break this
+  test into two cases, (a) \(u\) is to the left of \(C\) and (b) \(u\) is
+  to the right of \(C\).
+
+  For (a), we have \(x<-t^2/4\), \(t>0\), and \(z>0\).
 \end{solution}
 
 %%% Local Variables:
