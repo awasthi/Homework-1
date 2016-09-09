@@ -102,7 +102,7 @@
     \dot t=1,\qquad \dot x=a(z),\qquad \dot z=0.
   \end{equation}
   with initial conditions \(t^0=0\), \(x^0=x(0)\) and \(z(x^0,0)=g(x^0)\)
-  with \((x^0,0)\in\bbR^n\times(0,\infty)\). Hence, we have
+  with \((x^0,0)\in\bbR\times(0,\infty)\). Hence, we have
   \[
     t(s)=s,\qquad x(s)=a(g(x^0))s+x^0,\qquad z(s)=g(x^0).
   \]
@@ -121,7 +121,17 @@
   \end{align*}
   as desired.
 
-  For the latter half of the problem,
+  For the latter half of the problem, write
+  \[
+    u\bigl(x+a(g(x))t,t\bigr)=g(x).
+  \]
+  Suppose that \(a(g(x))\) is not a nondecreasing function of \(x\). Then,
+  there exists \(0<x_1<x_2\) such that \(a(g(x_1))>a(g(x_2))\). Define
+  \begin{equation}
+    \label{eq:2-4}
+    y=-\frac{x_1-x_2}{a(g(x_1))-a(g(x_2))}>0.
+  \end{equation}
+  Then
 \end{solution}
 \newpage
 
