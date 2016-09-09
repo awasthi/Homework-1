@@ -158,12 +158,12 @@
     \end{cases}
   \]
   is an (unbounded) entropy solution of the conservation law
-  \(u_t+(u^2/2)_x=0\) (\emph{inviscid Burger's equation}).
+  \(u_t+(u^2/2)_x=0\) (\emph{inviscid Burgers' equation}).
 \end{problem}
 \begin{solution}
   The shock occurs along the curve \(C\) given by \(s(t)=-t^2/4\). First,
   we verify that the equation given by \(u\) above is in fact a solution to
-  the inviscid Burger's equation to the right and to the left of \(C\): to
+  the inviscid Burgers' equation to the right and to the left of \(C\): to
   the left of \(C\), \(4x+t^2<0\), the equation is trivially satisfied
   whereas to the right, \(4x+t^2>0\), we have,
   \[
@@ -171,9 +171,19 @@
     +\frac{2}{9}\left(3+\frac{3t}{\sqrt{3x+t^2}}\right)
     =0.
   \]
-  So \(u\) is indeed a solution to the inviscid Burger's
-  equation.
+  So \(u\) is indeed a solution to the inviscid Burgers' equation.
 
+  Now we examine the behavior of \(u\) along the curve \(C\). First, we
+  have
+  \begin{align*}
+    \sigma&=\dot s(t)\\
+          &=-\frac{1}{2}t\\
+    \llbracket F\rrbracket
+          &=F(u_\ell)-F(ur)\\
+          &=
+    \llbracket u\rrbracket
+          &=u_\ell-u_r\\
+  \end{align*}
 \end{solution}
 
 %%% Local Variables:
