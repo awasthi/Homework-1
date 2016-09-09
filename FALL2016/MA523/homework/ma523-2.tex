@@ -177,14 +177,24 @@
   have
   \begin{align*}
     \sigma&=\dot s(t)\\
-          &=-\frac{1}{2}t\\
-    \llbracket F\rrbracket
-          &=F(u_\ell)-F(u_r)\\
-          &=\\
+          &=-\frac{t}{2},\\
     \llbracket u\rrbracket
           &=u_\ell-u_r\\
-          &=
+          &=0+\frac{2}{3}\left(t+\sqrt{-\tfrac{3}{4}t^2+t^2}\right)\\
+          &=0+\frac{2}{3}\left(\frac{3}{2}t\right)\\
+          &=t,\\
+    \llbracket F\rrbracket
+          &=F(u_\ell)-F(u_r)\\
+          &=0-\frac{\llbracket u_r\rrbracket^2}{2}\\
+          &=0-\frac{t^2}{2}.
   \end{align*}
+  Thus,
+  \[
+    \llbracket
+    F\rrbracket=-\frac{t^2}{2}=\left(-\frac{t}{2}\right)t=\sigma\llbracket
+    u\rrbracket
+  \]
+  satisfies the Rankine--Hugoniot condition.
 \end{solution}
 
 %%% Local Variables:
