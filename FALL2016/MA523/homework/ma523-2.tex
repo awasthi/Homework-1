@@ -204,9 +204,13 @@
   test into two cases, (a) \(u\) is to the left of \(C\) and (b) \(u\) is
   to the right of \(C\).
 
-  For (a), we have \(x<-t^2/4\), \(t>0\), and \(z>0\). Then,
+  First we deal with case (b). When \(x>-t^2/4\), \(t>0\), \(z>0\), using
+  linear interpolation, we have
   \begin{align*}
-    u(x+z,t)-u(x,t)&\leq\sup_{\mathclap{x<-t^2/4}}
+    u(x+z,t)-u(x,t)
+    &\leq\sup_{\mathclap{x>-t^2/4}}\bigl\{u_x(x,t)\bigr\}(x+z-x)\\
+    &\leq\sup_{x>-t^2/4}\left\{\frac{1}{\sqrt{3x+t^2}}\right\}z\\
+    &=
   \end{align*}
 \end{solution}
 
