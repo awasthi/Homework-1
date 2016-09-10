@@ -5,14 +5,27 @@ mostly reference Donu's notes available here
 Vakil's \emph{Fundamentals of Algebraic Geometry} \cite{vakil} available
 here \url{https://math216.wordpress.com/}.
 
-\section{The de Rham Complex}
-Donu began his first lecture by talking about the de Rham complex and de
-Rham cohomology so let us also begin by on his lecture. For this section,
-we cite the first chapter of Bott and Tu's \emph{Differential Forms in
-  Algebraic Topology} \cite{bott-tu}. Then, the integral
+\section{The statement of de Rham's theorem}
+These are almost verbatim Arapura's notes on the de Rham Complex and
+cohomology.
+
+Before doing anything fancy, let's start at the beginning. Let
+\(U\subseteq\bbR^3\) be an open set. In calculus class, we learn about
+operations
 \[
-  \iiint_{\partial\Omega} Fd S
+  \{\,\text{functions}\,\}
+  \xrightarrow{\,\nabla\,}
+  \{\,\text{vector fields}\,\}
+  \xrightarrow{\,\nabla\times\,}
+  \{\,\text{vector fields}\,\}
+  \xrightarrow{\,\nabla\cdot\,}
+  \{\,\text{functions}\,\}
 \]
+such that \((\nabla\times)(\nabla)=0\) and
+\((\nabla\cdot)(\nabla\times)=0\).
+
+
+
 
 
 %%% Local Variables:

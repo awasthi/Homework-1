@@ -140,17 +140,17 @@ main=english]{babel}
 %%% Math packages
 %% Times clones
 \if@times % TeX Gyre for math and Nimbus for text
-\pdfmapfile{+newtx.map}
-\usepackage[largesc,p]{newtxtext}
-\usepackage[varg,
-            % bigdelims,
-            upint,
-            smallerops,
-            nosymbolsc]{newtxmath}%
-\usepackage[bb=boondox,%
-            frak=boondox,%
-            cal=boondoxo,%
-            scr=boondox]{mathalfa}%
+% \pdfmapfile{+newtx.map}
+% \usepackage[largesc,p]{newtxtext}
+% \usepackage[varg,
+%             % bigdelims,
+%             upint,
+%             smallerops,
+%             nosymbolsc]{newtxmath}%
+% \usepackage[bb=boondox,%
+%             frak=boondox,%
+%             cal=boondoxo,%
+%             scr=boondox]{mathalfa}%
 
 \usepackage[notext,not1,lcgreekalpha]{stix}
 \usepackage{nimbusserif}
@@ -174,7 +174,8 @@ main=english]{babel}
 \let\blacktriangleright\smallblacktriangleright%
 \let\blacktriangleleft\smallblacktriangleleft%
 
-\@ifpackageloaded{tikz}{\tikzcdset{arrow style=math font}}{}
+\@ifpackageloaded{tikz}
+                {\tikzset{commutative diagrams/arrow style=math font}}{}
 
 \else
 \if@cochineal
