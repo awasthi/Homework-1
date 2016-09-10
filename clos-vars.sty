@@ -431,20 +431,15 @@ main=english]{babel}
 \long\def\replicate@aux@m#1Q#2#3{\replicate@aux#1Q{#2#3}{#3}}
 \long\def\replicate@aux@Q#1#2{#1}
 
-%% Some personal shortcuts
-\newcommand\ie{\emph{i.e.}\@}
-\newcommand\eg{\emph{e.g.}\@}
-\newcommand\etc{\emph{etc.}}
-
-\newcommand\ntrileq{\ntrianglelefteq}
-\newcommand\ntrireq{\ntrianglerighteq}
-\newcommand\too{\longrightarrow}
-\newcommand\mapstoo{\longmapsto}
-\newcommand\injto{\hookrightarrow}
-\newcommand\surjto{\twoheadleftarrow}
+\newcommand\To{\longrightarrow}
+\newcommand\Mapsto{\longmapsto}
+\newcommand\injectto{\hookrightarrow}
+\newcommand\surjectto{\twoheadleftarrow}
 \newcommand\trileq{\trianglelefteq}
+\newcommand\ntrileq{\ntrianglelefteq}
 \newcommand\trireq{\trianglerighteq}
-\newcommand\restrict[1]{\raisebox{-.5ex}{\ensuremath|}_{#1}}
+\newcommand\ntrireq{\ntrianglerighteq}
+\newcommand\restrict[1]{\raisebox{-.5ex}{\ensuremath\restriction}_{#1}}
 \newcommand\limsclap[1]{\limits_{\mathclap{#1}}}
 
 %% Redefinitions & commands not available in the default CM
