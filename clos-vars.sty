@@ -80,14 +80,13 @@ main=english]{babel}
 \newcommand{\textfa}[1]{\textpa{\textRL{#1}}}%
 
 \else%
-\usepackage[LGR,T2A,T1]{fontenc}%
+\usepackage[T2A,T1]{fontenc}%
 \usepackage[utf8]{inputenc}%
 
 \def\spanishoptions{mexico}%
 \usepackage[%
 french,%
 german,%
-greek.plutoniko,%
 spanish,%
 russian,%
 main=english]{babel}
@@ -141,21 +140,22 @@ main=english]{babel}
 %%% Math packages
 %% Times clones
 \if@times % TeX Gyre for math and Nimbus for text
-% \pdfmapfile{+newtx.map}
+\pdfmapfile{+newtx.map}
 \usepackage[largesc,p]{newtxtext}
-\usepackage{nimbusserif}
-\usepackage{nimbussans}
-\usepackage{nimbusmononarrow}
 \usepackage[varg,
-            bigdelims,
-            % upint,
-            % smallerops,
+            % bigdelims,
+            upint,
+            smallerops,
             nosymbolsc]{newtxmath}%
 \usepackage[bb=boondox,%
             frak=boondox,%
             cal=boondoxo,%
             scr=boondox]{mathalfa}%
-\usepackage{bm}
+
+\usepackage[notext,not1,lcgreekalpha]{stix}
+\usepackage{nimbusserif}
+\usepackage{nimbussans}
+\usepackage{nimbusmononarrow}
 
 %% Until the new version of newxtmath is available in the repo
 %% this fixes the mathpuct spacing problems
@@ -165,26 +165,28 @@ main=english]{babel}
 
 %% Redefinitions
 \let\setminus\smallsetminus
-\let\emptyset\varnothing
-\renewcommand\qedsymbol{\ensuremath{\blacksquare}}
+% \let\emptyset\varnothing
+\renewcommand\qedsymbol{\ensuremath{\QED}}
 \newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
       \hbox{.}\hbox{.}}}%
   =}%
+
+\let\blacktriangleright\smallblacktriangleright%
+\let\blacktriangleleft\smallblacktriangleleft%
 
 \@ifpackageloaded{tikz}{\tikzcdset{arrow style=math font}}{}
 
 \else
 \if@cochineal
-% \pdfmapfile{+newtx.map}
+\pdfmapfile{+newtx.map}
 \usepackage{cochineal}
 \usepackage[scale=.95,type1]{cabin} % sans
 \usepackage[varqu,varl,scaled=.94]{zi4} % mono
 \usepackage[cochineal,
-                bigdelims,%
-                % upint,
-                % smallerops,
-                nosymbolsc
-                ]{newtxmath} % Shitty math fonts
+            % bigdelims,%
+            upint,
+            smallerops,
+            nosymbolsc]{newtxmath} % Shitty math fonts
 \usepackage[bb=boondox,%
                 frak=pxtx,%
                 frakscaled=1.1,
@@ -193,9 +195,9 @@ main=english]{babel}
 \usepackage{bm}
 
 %% Other Libertine specific math settings
-\DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
-\DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
-\DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
+% \DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
+% \DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
+% \DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
 
 \let\setminus\smallsetminus
 \let\emptyset\varnothing
@@ -207,25 +209,28 @@ main=english]{babel}
 
 \else
 \if@libertine %% Use Libertine (a beautiful free font)
-% \pdfmapfile{+newtx.map}
-\usepackage[largesc,p]{newtxtext}
+\pdfmapfile{+newtx.map}
 \usepackage{libertine}
 \usepackage{libertinegc} %% Greek and Cyrillic Libertine
 \usepackage[scale=.95,type1]{cabin} % sans
 \usepackage[varqu,varl,scaled=.94]{zi4} % mono
 \usepackage[libertine,%
-                libaltvw,%
-                liby,%
-                bigdelims,%
-                % upint,
-                % smallerops,
-                nosymbolsc
-                ]{newtxmath} % Shitty math fonts
+            libaltvw,%
+            liby,%
+            % largelibfigs,
+            % subscriptcorrection,
+            % bigdelims,%
+            upint,
+            smallerops,
+            nosymbolsc]{newtxmath} % Shitty math fonts
 \usepackage[bb=boondox,%
                 frak=pxtx,%
                 frakscaled=1.1,
                 cal=boondoxo,%
                 scr=boondox]{mathalfa}%
+\usepackage[supstfm=libertinesups,%
+            supscaled=1.2,%
+            raised=-.13em]{superiors}
 \usepackage{bm}
 
 %% Other Libertine specific math settings
@@ -244,9 +249,14 @@ main=english]{babel}
 \else % Use the regular CM fonts
 \usepackage{bm}
 \usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{lmodern}
+\substitutefont{T2A}{lmr}{fcm}
+\substitutefont{T2A}{lmss}{fcs}
+\substitutefont{T2A}{lmtt}{fct}
+
 \usepackage[heavycircles]{stmaryrd}%
 \usepackage[bb=ams,cal=cm,frak=euler,scr=rsfso]{mathalfa}%
-
 
 %% Math replace
 \let\setminus\smallsetminus%
