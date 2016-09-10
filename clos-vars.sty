@@ -195,7 +195,6 @@ main=english]{babel}
 \newcommand{\bfmu}{\mathbf{\mu}}
 \newcommand{\bfnu}{\mathbf{\nu}}
 \newcommand{\bfxi}{\mathbf{\xi}}
-\newcommand{\bfomicron}{\mathbf{\omicron}}
 \newcommand{\bfpi}{\mathbf{\pi}}
 \newcommand{\bfrho}{\mathbf{\rho}}
 \newcommand{\bfsigma}{\mathbf{\sigma}}
@@ -206,28 +205,15 @@ main=english]{babel}
 \newcommand{\bfpsi}{\mathbf{\psi}}
 \newcommand{\bfomega}{\mathbf{\omega}}
 
-\newcommand{\bfAlpha}{\mathbf{\Alpha}}
-\newcommand{\bfBeta}{\mathbf{\Beta}}
 \newcommand{\bfGamma}{\mathbf{\Gamma}}
 \newcommand{\bfDelta}{\mathbf{\Delta}}
-\newcommand{\bfEpsilon}{\mathbf{\Epsilon}}
-\newcommand{\bfZeta}{\mathbf{\Zeta}}
-\newcommand{\bfEta}{\mathbf{\Eta}}
 \newcommand{\bfTheta}{\mathbf{\Theta}}
-\newcommand{\bfIota}{\mathbf{\Iota}}
-\newcommand{\bfKappa}{\mathbf{\Kappa}}
 \newcommand{\bfLambda}{\mathbf{\Lambda}}
-\newcommand{\bfMu}{\mathbf{\Mu}}
-\newcommand{\bfNu}{\mathbf{\Nu}}
 \newcommand{\bfXi}{\mathbf{\Xi}}
-\newcommand{\bfOmicron}{\mathbf{\Omicron}}
 \newcommand{\bfPi}{\mathbf{\Pi}}
-\newcommand{\bfRho}{\mathbf{\Rho}}
 \newcommand{\bfSigma}{\mathbf{\Sigma}}
-\newcommand{\bfTau}{\mathbf{\Tau}}
 \newcommand{\bfUpsilon}{\mathbf{\Upsilon}}
 \newcommand{\bfPhi}{\mathbf{\Phi}}
-\newcommand{\bfChi}{\mathbf{\Chi}}
 \newcommand{\bfPsi}{\mathbf{\Psi}}
 \newcommand{\bfOmega}{\mathbf{\Omega}}
 
@@ -244,22 +230,15 @@ main=english]{babel}
             cal=boondoxo,%
             scr=boondox]{mathalfa}%
 
-%% Until the new version of newxtmath is available in the repo
-%% this fixes the mathpuct spacing problems
-% \DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
-% \DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
-% \DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
-
 %% Redefinitions
 \let\setminus\smallsetminus
-% \let\emptyset\varnothing
-\renewcommand\qedsymbol{\ensuremath{\QED}}
+\renewcommand\qedsymbol{\ensuremath{\blacksquare}}
 \newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
       \hbox{.}\hbox{.}}}%
   =}%
 
 \@ifpackageloaded{tikz}
-                {\tikzset{commutative diagrams/arrow style=math font}}{}
+{\tikzset{commutative diagrams/arrow style=math font}}{}
 
 \else
 \if@cochineal
@@ -279,12 +258,11 @@ main=english]{babel}
 \usepackage{bm}
 
 %% Other Libertine specific math settings
-% \DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
-% \DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
-% \DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
+\DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
+\DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
+\DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
 
 \let\setminus\smallsetminus
-\let\emptyset\varnothing
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}}
 \newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
       \hbox{.}\hbox{.}}}%
@@ -300,9 +278,6 @@ main=english]{babel}
 \usepackage[libertine,%
             libaltvw,%
             liby,%
-            % largelibfigs,
-            % subscriptcorrection,
-            % bigdelims,%
             upint,
             smallerops,
             nosymbolsc]{newtxmath} % Shitty math fonts
