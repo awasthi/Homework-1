@@ -149,6 +149,10 @@ main=english]{babel}
 \let\blacktriangleleft\smallblacktriangleleft%
 \@ifpackageloaded{tikz}
                 {\tikzset{commutative diagrams/arrow style=math font}}{}
+\newenvironment{solution}[1][Solution]{%
+  \proof[\textnormal{\bfseries{#1}}]%
+}{
+\endproof}
 
 \else
 \if@times % TeX Gyre for math and Nimbus for text
