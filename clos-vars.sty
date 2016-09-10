@@ -141,10 +141,12 @@ main=english]{babel}
 \usepackage{nimbusserif}
 \usepackage{nimbussans}
 \usepackage{nimbusmononarrow}
+
+\let\setminus\smallsetminus
+\let\emptyset\varnothing
 \renewcommand\qedsymbol{\ensuremath{\QED}}
 \let\blacktriangleright\smallblacktriangleright%
 \let\blacktriangleleft\smallblacktriangleleft%
-
 \@ifpackageloaded{tikz}
                 {\tikzset{commutative diagrams/arrow style=math font}}{}
 
