@@ -172,10 +172,6 @@ main=english]{babel}
 \let\blacktriangleleft\smallblacktriangleleft%
 \@ifpackageloaded{tikz}
                 {\tikzset{commutative diagrams/arrow style=math font}}{}
-\newenvironment{solution}[1][Solution]{%
-  \proof[\textnormal{\bfseries{#1}}]%
-}{
-  \endproof}
 
 \newcommand{\bba}{\mathbb{a}}
 \newcommand{\bbb}{\mathbb{b}}
@@ -464,9 +460,9 @@ main=english]{babel}
 \@ifundefined{solution}{%
 \newenvironment{solution}[1][Solution]{%
   \proof[\textnormal{\bfseries{#1}}]%
-  \ensuremath{\!\blacktriangleright}~
+  % \ensuremath{\!\blacktriangleright}~
 }{
-\renewcommand\qedsymbol{\ensuremath{\blacktriangleleft}}
+% \renewcommand\qedsymbol{\ensuremath{\blacktriangleleft}}
 \endproof}}
 \makeatother
 
