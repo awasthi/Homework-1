@@ -5,6 +5,11 @@
 \ProvidesPackage{clos-vars}[2016/08/12 v2.5 personal shortcuts]
 
 %%% Options
+\newif\if@minionmath\@minionmathfalse
+\DeclareOption{minionmath}{
+  \@minionmathtrue
+}
+
 \newif\if@stix\@stixfalse
 \DeclareOption{stix}{
   \@stixtrue
@@ -133,7 +138,25 @@ main=english]{babel}
 \newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}%
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}%
 \fi%
+\if@minionmath
+\pdfmapfile{+minionmath.map}
+% \usepackage{amssymb}
+% \usepackage{minionmath}
 
+\usepackage{unicode-math}
+\usepackage{unicode-minionmath}
+\setmainfont[Ligatures=TeX]{Minion Pro}
+\setsansfont[Ligatures=TeX]{Myriad Pro}
+\setmonofont{Courier Std}
+
+\setmathfont{Minion Math}
+\setmathfont[range={\mathfrak}]{XITS Math}
+\setmathfont[range={\mathcal},StylisticSet=1]{XITS Math}
+\setmathfont[range={\mathscr}]{XITS Math}
+% \setmathfont[range={\mathfrak}]{Latin Modern Math}
+% \setmathfont[range={\mathcal}]{Latin Modern Math}
+\setmathfont[range={}]{Minion Math}
+\else
 %%% Math packages
 %% Times clones
 \if@stix
@@ -221,14 +244,20 @@ main=english]{babel}
 \if@times % TeX Gyre for math and Nimbus for text
 \usepackage[largesc,p]{newtxtext}
 \usepackage[varg,
-            % bigdelims,
-            upint,
-            smallerops,
+            bigdelims,
+            % upint,
+            % smallerops,
             nosymbolsc]{newtxmath}%
 \usepackage[bb=boondox,%
             frak=boondox,%
             cal=boondoxo,%
             scr=boondox]{mathalfa}%
+
+% 3. Set up the substitutions:
+% \usepackage{substitutefont}
+% \substitutefont{T2A}{\rmdefault}{PTSerif-TLF}
+% \substitutefont{T2A}{\sfdefault}{PTSans-TLF}
+% \substitutefont{T2A}{\ttdefault}{PTMono-TLF}
 
 %% Redefinitions
 \let\setminus\smallsetminus
@@ -333,7 +362,7 @@ main=english]{babel}
   =}%
 \usepackage{mleftright}
 \mleftright%
-\fi \fi \fi \fi
+\fi \fi \fi \fi \fi
 
 %% Theorems and definitions
 \makeatletter%
