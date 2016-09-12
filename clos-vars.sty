@@ -5,6 +5,11 @@
 \ProvidesPackage{clos-vars}[2016/08/12 v2.5 personal shortcuts]
 
 %%% Options
+\newif\if@unicodemath\@unicodemathfalse
+\DeclareOption{unicodemath}{
+  \@unicodemathtrue
+}
+
 \newif\if@minionmath\@minionmathfalse
 \DeclareOption{minionmath}{
   \@minionmathtrue
@@ -142,7 +147,7 @@ main=english]{babel}
 \pdfmapfile{+minionmath.map}
 % \usepackage{amssymb}
 % \usepackage{minionmath}
-
+\usepackage{fontspec}
 \usepackage{unicode-math}
 \usepackage{unicode-minionmath}
 \setmainfont[Ligatures=TeX]{Minion Pro}
@@ -156,6 +161,9 @@ main=english]{babel}
 % \setmathfont[range={\mathfrak}]{Latin Modern Math}
 % \setmathfont[range={\mathcal}]{Latin Modern Math}
 \setmathfont[range={}]{Minion Math}
+\let\setminus\smallsetminus
+\renewcommand\qedsymbol{\ensuremath{\QED}}
+\providecommand{\textti}{\textnormal}
 \else
 %%% Math packages
 %% Times clones
@@ -330,6 +338,24 @@ main=english]{babel}
 \@ifpackageloaded{tikz}{\tikzcdset{arrow style=math font}}{}
 
 \else % Use the regular CM fonts
+\if@unicodemath
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\setmainfont{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
+% \setmathfont{Latin Modern Math}
+\tikzset{commutative diagrams/.cd,
+                 arrow style=math font,
+                 default arrow/.append style={line width=0.4pt},
+                 font arrows/.cd,
+                 declare head={math to}{→}{2.5pt}{1ex},
+                 declare tail={math cap}{→}{2.5pt}{1ex},
+                 declare tail={math right hook}{↪}{2.5pt}{1ex},
+                 declare head={math double to}{↠}{2.5pt}{1.4ex},
+               }
+
+\else
 \usepackage{bm}
 \usepackage{amssymb}
 \usepackage{amsfonts}
@@ -403,7 +429,7 @@ main=english]{babel}
   =}%
 \usepackage{mleftright}
 \mleftright%
-\fi \fi \fi \fi \fi
+\fi \fi \fi \fi \fi \fi
 
 %% Theorems and definitions
 \makeatletter%
