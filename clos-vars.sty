@@ -246,32 +246,100 @@ main=english]{babel}
 
 \else
 \if@times % TeX Gyre for math and Nimbus for text
-\usepackage[largesc,p]{newtxtext}
+\pdfmapfile{=mtpro2.map}
+% \usepackage[largesc,p]{newtxtext}
+\usepackage{nimbusserif}
+\usepackage{nimbussans}
+\usepackage{nimbusmononarrow}
 \usepackage[varg,
             bigdelims,
             % upint,
             % smallerops,
             nosymbolsc]{newtxmath}%
+\usepackage[lite,subscriptcorrection,nofontinfo]{mtpro2}%
 \usepackage[bb=boondox,%
             frak=boondox,%
             cal=boondoxo,%
             scr=boondox]{mathalfa}%
 
-% 3. Set up the substitutions:
-% \usepackage{substitutefont}
-% \substitutefont{T2A}{\rmdefault}{PTSerif-TLF}
-% \substitutefont{T2A}{\sfdefault}{PTSans-TLF}
-% \substitutefont{T2A}{\ttdefault}{PTMono-TLF}
+\providecommand{\textti}{\textnormal}
+\providecommand{\textprob}{\textbf}
 
 %% Redefinitions
+\let\smallsetminus\setdif
 \let\setminus\smallsetminus
+\let\smile\cupprod
+\let\frown\capprod
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}}
 \newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
       \hbox{.}\hbox{.}}}%
   =}%
 
 \@ifpackageloaded{tikz}
-{\tikzset{commutative diagrams/arrow style=math font}}{}
+                {\tikzset{commutative diagrams/arrow style=math font}}{}
+
+\newcommand{\bba}{\mathbb{a}}
+\newcommand{\bbb}{\mathbb{b}}
+\newcommand{\bbc}{\mathbb{c}}
+\newcommand{\bbd}{\mathbb{d}}
+\newcommand{\bbe}{\mathbb{e}}
+\newcommand{\bbf}{\mathbb{f}}
+\newcommand{\bbg}{\mathbb{g}}
+\newcommand{\bbh}{\mathbb{h}}
+\newcommand{\bbi}{\mathbb{i}}
+\newcommand{\bbj}{\mathbb{j}}
+\newcommand{\bbk}{\mathbb{k}}
+\newcommand{\bbl}{\mathbb{l}}
+\newcommand{\bbm}{\mathbb{m}}
+\newcommand{\bbn}{\mathbb{n}}
+\newcommand{\bbo}{\mathbb{o}}
+\newcommand{\bbp}{\mathbb{p}}
+\newcommand{\bbq}{\mathbb{q}}
+\newcommand{\bbr}{\mathbb{r}}
+\newcommand{\bbs}{\mathbb{s}}
+\newcommand{\bbt}{\mathbb{t}}
+\newcommand{\bbu}{\mathbb{u}}
+\newcommand{\bbv}{\mathbb{v}}
+\newcommand{\bbw}{\mathbb{w}}
+\newcommand{\bbx}{\mathbb{x}}
+\newcommand{\bby}{\mathbb{y}}
+\newcommand{\bbz}{\mathbb{z}}
+
+\newcommand{\bfalpha}{\mathbf{\alpha}}
+\newcommand{\bfbeta}{\mathbf{\beta}}
+\newcommand{\bfgamma}{\mathbf{\gamma}}
+\newcommand{\bfdelta}{\mathbf{\delta}}
+\newcommand{\bfepsilon}{\mathbf{\epsilon}}
+\newcommand{\bfzeta}{\mathbf{\zeta}}
+\newcommand{\bfeta}{\mathbf{\eta}}
+\newcommand{\bftheta}{\mathbf{\theta}}
+\newcommand{\bfiota}{\mathbf{\iota}}
+\newcommand{\bfkappa}{\mathbf{\kappa}}
+\newcommand{\bflambda}{\mathbf{\lambda}}
+\newcommand{\bfmu}{\mathbf{\mu}}
+\newcommand{\bfnu}{\mathbf{\nu}}
+\newcommand{\bfxi}{\mathbf{\xi}}
+\newcommand{\bfpi}{\mathbf{\pi}}
+\newcommand{\bfrho}{\mathbf{\rho}}
+\newcommand{\bfsigma}{\mathbf{\sigma}}
+\newcommand{\bftau}{\mathbf{\tau}}
+\newcommand{\bfupsilon}{\mathbf{\upsilon}}
+\newcommand{\bfphi}{\mathbf{\phi}}
+\newcommand{\bfchi}{\mathbf{\chi}}
+\newcommand{\bfpsi}{\mathbf{\psi}}
+\newcommand{\bfomega}{\mathbf{\omega}}
+
+\newcommand{\bfGamma}{\mathbf{\Gamma}}
+\newcommand{\bfDelta}{\mathbf{\Delta}}
+\newcommand{\bfTheta}{\mathbf{\Theta}}
+\newcommand{\bfLambda}{\mathbf{\Lambda}}
+\newcommand{\bfXi}{\mathbf{\Xi}}
+\newcommand{\bfPi}{\mathbf{\Pi}}
+\newcommand{\bfSigma}{\mathbf{\Sigma}}
+\newcommand{\bfUpsilon}{\mathbf{\Upsilon}}
+\newcommand{\bfPhi}{\mathbf{\Phi}}
+\newcommand{\bfPsi}{\mathbf{\Psi}}
+\newcommand{\bfOmega}{\mathbf{\Omega}}
 
 \else
 \if@cochineal
@@ -358,9 +426,7 @@ main=english]{babel}
 \else
 \usepackage{bm}
 \usepackage{amssymb}
-\usepackage{amsfonts}
 \usepackage[heavycircles]{stmaryrd}%
-\usepackage[bb=ams,cal=cm,frak=euler,scr=rsfso]{mathalfa}%
 \usepackage{lmodern}
 \usepackage[rm={proportional,lining},
             sf={proportional,oldstyle},
@@ -370,6 +436,7 @@ main=english]{babel}
   \proof[{\textsi{#1}}]%
 }{
   \endproof}
+\providecommand\textprob{\textsc}
 
 %% Math replace
 \let\setminus\smallsetminus%
