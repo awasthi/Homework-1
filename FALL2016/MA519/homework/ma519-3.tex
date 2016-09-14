@@ -9,47 +9,54 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  For part (a): there are \(2n\) ways of choosing a part of a stick and,
-  once we have made that choice, only one way of choosing the original
-  complement to it. The probability of making this choice on our first try
-  is
+  For part (a): let \(A_i\) denote the event that at the \(i\)th we choose
+  a pair of sticks we get pair that joins up to one of the original
+  sticks. We are after the probability of \(A\) the event that all the
+  parts are joined in their original order, i.e.,
+  \(A=\bigcap_{i=1}^n A_i\). First, we find \(P(A_i)\). There are \(2n\)
+  ways of choosing a part of a stick and, once we have made that choice,
+  only one way of choosing the original complement to it. The probability
+  of making this choice on our first try is
   \[
-    \frac{2n}{2n(2n-1)}=\frac{1}{2n-1}.
+    P(A_1)=\frac{2n}{2n(2n-1)}=\frac{1}{2n-1}.
   \]
   Now, assuming that the event of choosing a part of a stick and its
   original complement is independent from our other choices, we have
   \(2n-2\) choices for our next stick and only one way to chose its
   complement. Therefore, the probability of making this choice is
   \[
-    \frac{2n-2}{(2n-2)(2n-3)}=\frac{1}{2n-3}.
+    P(A_2)=\frac{2n-2}{(2n-2)(2n-3)}=\frac{1}{2n-3}.
   \]
   Proceeding in this way we see that at the \(i\)th step, the probability
   of choosing a two broken sticks that make up an original stick is
   \[
-    \frac{1}{2(n-i+1)-1}.
+    P(A_i)=\frac{1}{2(n-i+1)-1}.
   \]
-  Thus, the probability that the sticks are paired in their original order
-  is
+  Thus, by the hierarchical multiplicative formula, the probability that
+  the sticks are paired in their original order is
   \[
-    \left(\frac{1}{2n-1}\right)\left(\frac{1}{2n-3}\right)
-    \dotsm
+    P(A)=\left(\frac{1}{2n-1}\right)\left(\frac{1}{2n-3}\right) \dotsm
     \left(\frac{1}{3}\right)\left(\frac{1}{1}\right).
   \]
 
-  For part (b): there are \(2n\) ways to choose the first stick and \(n\)
-  ways to chose either a long or a short part. Thus, the probability of
-  choosing a long and a short part on the first try is
+  For part (b): let \(A_i\) denote the event that at the \(i\)th step we
+  pair a long stick with a short stick. Then, to find the probability of
+  \(A=\bigcap_{i=1}^n A_i\), we first find the probabilities of the
+  \(A_i\). There are \(2n\) ways to choose the first stick and \(n\) ways
+  to chose either a long or a short part. Thus, the probability of choosing
+  a long and a short part on the first try is
   \[
-    \frac{2n\cdot n}{2n(2n-1)}=\frac{n}{2n-1}.
+    P(A_1)=\frac{2n\cdot n}{2n(2n-1)}=\frac{n}{2n-1}.
   \]
   As in part (a), at the \(i\)th step, the probability of choosing a long
   and a short stick together is
   \[
-    \frac{n-i+1}t{2(n-i+1)-1}.
+    P(A_i)=\frac{n-i+1}t{2(n-i+1)-1}.
   \]
-  Thus, the probability that each long and short stick is paired together is
+  Thus, the probability of event \(A\), that each long and short stick is
+  paired together, is
   \[
-    \left(\frac{n}{2n-1}\right)\left(\frac{n-1}{2n-3}\right)\dotsm
+    P(A)=\left(\frac{n}{2n-1}\right)\left(\frac{n-1}{2n-3}\right)\dotsm
     \left(\frac{2}{3}\right)\left(\frac{1}{1}\right).
   \]
 \end{solution}
