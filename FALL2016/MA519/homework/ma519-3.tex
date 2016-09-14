@@ -150,11 +150,38 @@
   i.e., the events \(A_i\) are mutually exclusive. Consider the following
   partition of \(\Omega\)
   \[
-    A_i=\bigl\{\,\text{exactly \(i\) black balls are put into the second urn}\,\bigr\}.
+    A_i=\bigl\{\,\text{exactly \(i\) white balls are put into the second
+      urn}\,\bigr\}.
   \]
-  The events \(A_i\), \(1\leq i\leq 5\), are clearly mutually
-  exclusive. Therefore, to find \(P(A)\), we need only find the
-  probabilities \(P(B|A_i)\) and \(P(A_i)\).
+  The events \(A_i\), \(1\leq i\leq 4\), are clearly mutually exclusive (we
+  omit the event \(A_5\) since we know that at least one ball in the urn is
+  white). Therefore, to find \(P(A)\), we need only find the probabilities
+  \(P(B|A_i)\) and \(P(A_i)\).
+
+  The probabilities of \(A_i\) are easy to calculate: the configurations
+  are \(\binom{10}{5}=252\) and the number of ways of choosing exactly
+  \(i\) black balls are \(\binom{5}{5-i}\). Thus,
+  \[
+    P(A_i)=\frac{\binom{5}{5-i}\binom{5}{i}}{252}
+    =\binom{5}{i}^{\mathrlap{2}}\Bigm/252.
+  \]
+
+  The probabilities of \(B\) given \(A_i\) are also easy to calculte
+  \[
+    P(B|A_i)=\frac{i}{4},
+  \]
+  since we have removed one ball and it was not white and there are \(i\)
+  white balls remaining.
+
+  Thus, by the total probability formula,
+  \begin{align*}
+    P(B)
+    &=\left(\frac{1}{4}\right)\left(\frac{25}{252}\right)+
+      \left(\frac{2}{4}\right)\left(\frac{100}{252}\right)+
+      \left(\frac{3}{4}\right)\left(\frac{100}{252}\right)+
+      \left(\frac{4}{4}\right)\left(\frac{25}{252}\right)\\
+    &\approx\num{0.6200396825396824}
+  \end{align*}
 \end{solution}
 \newpage
 
