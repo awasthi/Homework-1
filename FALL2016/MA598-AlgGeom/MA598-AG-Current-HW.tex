@@ -31,7 +31,7 @@
   pdfauthor={\auth},%
   pdfkeywords={\subject},%
   pdfsubject={\class},%
-  pageanchor={false},%
+  % pageanchor={false},%
   unicode
 }
 
@@ -75,21 +75,19 @@
 \cleartooddpage
 \makepagestyle{my-headings}
 \makeoddhead{my-headings}
-        {\small\itshape{\MakeUppercase{\auth}}}
+        {\small\itshape{\MakeUppercase{\auths}}}
         {}
         {\small\itshape{\MakeUppercase{\exname}}}
 \makeoddfoot{my-headings}{\itshape{\tight}}
                       {}
-                      {\thepage}
+                      {\emph{--\thepage\ of \pageref{LastPage}--}}
 \makeevenhead{my-headings}
-        {\small\itshape{\MakeUppercase{\auth}}}
+        {\small\itshape{\MakeUppercase{\auths}}}
         {}
         {\small\itshape{\MakeUppercase{\exname}}}
 \makeevenfoot{my-headings}{\itshape{\tight}}
                       {}
-                      {\thepage}
-\makeheadrule{my-headings}{\textwidth}{.25pt}
-\pagestyle{my-headings}
+                      {--\emph{\thepage\ of \pageref{LastPage}--}}
 % \makerunningwidth{headings}{1.15\textwidth}
 \mainmatter
 \include{homework/ma598-ag-\hwnum}
