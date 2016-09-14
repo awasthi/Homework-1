@@ -32,8 +32,8 @@
   \[
     P(A_i)=\frac{1}{2(n-i+1)-1}.
   \]
-  Thus, by the hierarchical multiplicative formula, the probability that
-  the sticks are paired in their original order is
+  Thus, by the hierarchical multiplicative formula the probability that the
+  sticks are paired in their original order is
   \[
     P(A)=\left(\frac{1}{2n-1}\right)\left(\frac{1}{2n-3}\right) \dotsm
     \left(\frac{1}{3}\right)\left(\frac{1}{1}\right).
@@ -142,7 +142,19 @@
   is chosen from among the remaining \(4\) balls in the first urn?
 \end{problem}
 \begin{solution}
-
+  We shall use the total probability formula to figure out the
+  probabilities in question. Let \(B\) denote the event that that on our
+  second drawing we draw a white ball. First, we must find a suitable
+  partition \(A_1,\dotsc,A_n\) of \(\Omega\) such that
+  \(A_i\cap A_j=\emptyset\) whenever \(i\neq j\), for \(1\leq i,j\leq n\),
+  i.e., the events \(A_i\) are mutually exclusive. Consider the following
+  partition of \(\Omega\)
+  \[
+    A_i=\bigl\{\,\text{exactly \(i\) black balls are put into the second urn}\,\bigr\}.
+  \]
+  The events \(A_i\), \(1\leq i\leq 5\), are clearly mutually
+  exclusive. Therefore, to find \(P(A)\), we need only find the
+  probabilities \(P(B|A_i)\) and \(P(A_i)\).
 \end{solution}
 \newpage
 
