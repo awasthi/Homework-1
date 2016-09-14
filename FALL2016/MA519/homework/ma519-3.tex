@@ -9,22 +9,27 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-<<<<<<< HEAD
-  For part (a): let \(\Omega\) denote the sample space and let \(A\) denote
-  the event that two parts of the broken sticks are paired together in
-  their original order. First, we count the number of sample points in
-  \(\Omega\). There are \(2n\) ways to chose the first half of a stick and
-  \(2n-1\) ways to chose the second. Therefore,
+  For part (a): there are \(2n\) ways of choosing a part of a stick and,
+  once we have made that choice, only one way of choosing the original
+  complement to it. The probability of making this choice on our first try
+  is
   \[
-    \#\Omega=2n(2n-1).
+    \frac{2n}{2n(2n-1)}=\frac{1}{2n-1}.
   \]
-  Next we count the number of sample points in \(A\). Once we make a choice
-  from among the \(2n\) broken sticks,
-=======
-  For part (a): there are \(2n\) ways to chose the first stick and only one
-  way to pair it up with the original stick, this gives us a probability of
-  \(2n/2n(2n-1)\)
->>>>>>> ac722b3bb15c346855f29af21ac552cf7f679f1a
+  Now, assuming that the event of choosing a part of a stick and its
+  original complement is independent from our other choices, we have
+  \(2n-2\) choices for our next stick and only one way to chose its
+  complement. Therefore, the probability of making this choice is
+  \[
+    \frac{2n-2}{(2n-2)(2n-3)}=\frac{1}{2n-3}.
+  \]
+  Proceeding in this way until we exhaust all possibilities, that every
+  stick is paired with its complement is
+  \[
+    \left(\frac{1}{2n-1}\right)\left(\frac{1}{2n-3}\right)
+    \dotsm
+    \left(\frac{1}{3}\right)\left(\frac{1}{1}\right).
+  \]
 \end{solution}
 \newpage
 
