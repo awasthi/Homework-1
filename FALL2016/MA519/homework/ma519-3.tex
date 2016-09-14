@@ -32,8 +32,8 @@
   \[
     P(A_i)=\frac{1}{2(n-i+1)-1}.
   \]
-  Thus, by the hierarchical multiplicative formula, the probability that
-  the sticks are paired in their original order is
+  Thus, by the hierarchical multiplicative formula the probability that the
+  sticks are paired in their original order is
   \[
     P(A)=\left(\frac{1}{2n-1}\right)\left(\frac{1}{2n-3}\right) \dotsm
     \left(\frac{1}{3}\right)\left(\frac{1}{1}\right).
@@ -51,7 +51,7 @@
   As in part (a), at the \(i\)th step, the probability of choosing a long
   and a short stick together is
   \[
-    P(A_i)=\frac{n-i+1}{2(n-i+1)-1}.
+    P(A_i)=\frac{n-i+1}n{2(n-i+1)-1}.
   \]
   Thus, the probability of event \(A\), that each long and short stick is
   paired together, is
@@ -109,7 +109,7 @@
 \newpage
 
 \begin{problem}[Handout 4, \# 10]
-  \emph{Bridge.} In a bridge party West has no ace. What probability should
+  \emph{(Bridge).} In a bridge party West has no ace. What probability should
   he attribute to the event of his partner having
   \begin{enumerate}[label=(\alph*),noitemsep]
   \item no ace,
@@ -142,8 +142,46 @@
   is chosen from among the remaining \(4\) balls in the first urn?
 \end{problem}
 \begin{solution}
-  We will use the total probability formula to compute the probability of
-  event \(A\)
+  We shall use the total probability formula to figure out the
+  probabilities in question. Let \(B\) denote the event that that on our
+  second drawing we draw a white ball. First, we must find a suitable
+  partition \(A_1,\dotsc,A_n\) of \(\Omega\) such that
+  \(A_i\cap A_j=\emptyset\) whenever \(i\neq j\), for \(1\leq i,j\leq n\),
+  i.e., the events \(A_i\) are mutually exclusive. Consider the following
+  partition of \(\Omega\)
+  \[
+    A_i=\bigl\{\,\text{exactly \(i\) white balls are put into the second
+      urn}\,\bigr\}.
+  \]
+  The events \(A_i\), \(1\leq i\leq 4\), are clearly mutually exclusive (we
+  omit the event \(A_5\) since we know that at least one ball in the urn is
+  white). Therefore, to find \(P(A)\), we need only find the probabilities
+  \(P(B|A_i)\) and \(P(A_i)\).
+
+  The probabilities of \(A_i\) are easy to calculate: the configurations
+  are \(\binom{10}{5}=252\) and the number of ways of choosing exactly
+  \(i\) black balls are \(\binom{5}{5-i}\). Thus,
+  \[
+    P(A_i)=\frac{\binom{5}{5-i}\binom{5}{i}}{252}
+    =\binom{5}{i}^{\mathrlap{2}}\Bigm/252.
+  \]
+
+  The probabilities of \(B\) given \(A_i\) are also easy to calculte
+  \[
+    P(B|A_i)=\frac{i}{4},
+  \]
+  since we have removed one ball and it was not white and there are \(i\)
+  white balls remaining.
+
+  Thus, by the total probability formula,
+  \begin{align*}
+    P(B)
+    &=\left(\frac{1}{4}\right)\left(\frac{25}{252}\right)+
+      \left(\frac{2}{4}\right)\left(\frac{100}{252}\right)\\
+    &\phantom{{}={}}+\left(\frac{3}{4}\right)\left(\frac{100}{252}\right)+
+      \left(\frac{4}{4}\right)\left(\frac{25}{252}\right)\\
+    &\approx\num{0.6200396825396824}.
+  \end{align*}
 \end{solution}
 \newpage
 
@@ -151,7 +189,7 @@
   Events \(A\), \(B\), \(C\) have probabilities \(p_1\), \(p_2\),
   \(p_3\). Given that exactly two of the three events occured, the
   probability that \(C\) occured is greater than \(1/2\) if and only if
-  ... (write down the necessary and sufficient condition).
+  ...\@ (write down the necessary and sufficient condition).
 \end{problem}
 \begin{solution}
 

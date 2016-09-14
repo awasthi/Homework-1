@@ -60,6 +60,7 @@
                  {\PassOptionsToPackage{dvipsnames}{xcolor}}
                  {\usepackage[dvipsnames]{xcolor}}
 \usepackage{graphicx}
+\usepackage{lastpage}
 
 %% Language settings
 \usepackage{substitutefont}%
@@ -400,7 +401,6 @@ main=english]{babel}
 \usepackage{bm}
 \usepackage{amssymb}
 \usepackage[heavycircles]{stmaryrd}%
-\usepackage{lmodern}
 \usepackage[rm={proportional,lining},
             sf={proportional,oldstyle},
             tt={lining,tabular,monowidth}]{cfr-lm}
@@ -1170,6 +1170,25 @@ main=english]{babel}
 \if@times
 \AtBeginDocument{\LGCscale}
 \fi
+
+%% \emph up parentheses
+\usepackage{expl3,xparse}
+\ExplSyntaxOn
+\cs_new_eq:Nc \emph_old:n { emph~ } % Copying the old definition of `\emph`
+\cs_new_protected:Npn \emph_braces:n #1 % Set up how braces should be typeset.
+  { \mode_if_math:TF {#1} { \textup{#1} } }
+\cs_new:Npn \emph_new:n #1 {
+  \tl_set:Nn \l_emph_tl {#1}
+  \tl_replace_all:Nnn \l_emph_tl {(}{\emph_braces:n{(}}
+  \tl_replace_all:Nnn \l_emph_tl {)}{\emph_braces:n{)}}
+  \tl_replace_all:Nnn \l_emph_tl {[}{\emph_braces:n{[}}
+  \tl_replace_all:Nnn \l_emph_tl {]}{\emph_braces:n{]}}
+  \exp_args:NV \emph_old:n \l_emph_tl
+}
+\RenewDocumentCommand {\emph} {sm} {
+  \IfBooleanTF {#1} {\emph_old:n {#2}} {\emph_new:n {#2}}
+}
+\ExplSyntaxOff
 
 \endinput
 
