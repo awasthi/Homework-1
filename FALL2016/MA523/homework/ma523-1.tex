@@ -1,5 +1,5 @@
 \begin{problem}[Taylor's formula]
-  Let \(f\colon\bbR^n\to\bbR\) be smooth, \(n\geq 2\). Prove that
+  Let \(f\colon\bfR^n\to\bfR\) be smooth, \(n\geq 2\). Prove that
   \[
     f(x)=\sum_{|\alpha|\leq k}
     \frac{1}{\alpha!}D^\alpha f(0)x^\alpha+\rmO\bigl(|x|^{k+1}\bigr)
@@ -7,7 +7,7 @@
   as \(x\to\mathbf{0}\) for each \(k=1,2,\dotsc\), assuming that you know this
   formula for \(n=1\).
   \\\\
-  \emph{Hint}: Fix \(x\in\bbR^n\) and consider the function of one variable
+  \emph{Hint}: Fix \(x\in\bfR^n\) and consider the function of one variable
   \(g(t)\defeq f(tx)\). Prove that
   \[
     \frac{d^m}{dt^m}g(t)
@@ -16,7 +16,7 @@
   by induction on \(m\).
 \end{problem}
 \begin{solution}
-  Taking the hint, fix \(x\in\bbR^n\) and consider the function of one
+  Taking the hint, fix \(x\in\bfR^n\) and consider the function of one
   variable \(g(t)\defeq f(tx)\). We claim that
   \[
     \frac{d^m}{dt^m}g(t)%
@@ -93,13 +93,13 @@
     \tag{\(*\)}
     u_t+b\cdot Du=f
   \]
-  on \(\bbR^n\times(0,\infty)\), where \(b\in\bbR^n\). Using the
+  on \(\bfR^n\times(0,\infty)\), where \(b\in\bfR^n\). Using the
   characteristic equation, solve \eqref{eq:1:1} subject to the initial
   condition
   \[
     u=g
   \]
-  on \(\bbR^n\times\{t=0\}\). Make sure the answer agrees with formula (5)
+  on \(\bfR^n\times\{t=0\}\). Make sure the answer agrees with formula (5)
   in \S 2.1.2 of [E].
 \end{problem}
 \begin{solution}
@@ -108,7 +108,7 @@
   \[
     u(\bfx,t)=g(\bfx-t\bfb)+\int_0^1 f\bigl(\bfx+(s-t)\bfb,s\bigr)\diff s
   \]
-  where \(\bfx\in\bbR^n\), \(t>0\).
+  where \(\bfx\in\bfR^n\), \(t>0\).
 
   To make the notation more bearable, we will use \(\bfb\) and \(\bfx\) to
   denote the original vectors in \eqref{eq:1:1}. First, we write
@@ -129,7 +129,7 @@
     \dot t=1,\qquad
     \dot z=f.
   \]
-  Now, given a point \((\bfx,t)\in\bbR^n\times(0,\infty)\) we can solve the
+  Now, given a point \((\bfx,t)\in\bfR^n\times(0,\infty)\) we can solve the
   ODEs \(\dot x\) and \(\dot t\) easily as the lines
   \(x(s)=\bfx-\bfb t+\bfb s\) and \(t=s\). Substituting these solutions
   into \(\dot z\), we have
@@ -222,7 +222,7 @@
   \[
     \dot x=\left(z,1\right),\qquad\dot z=1.
   \]
-  From here, fix \(x^0\in\bbR\) and reparameterize \(x(t)\) such
+  From here, fix \(x^0\in\bfR\) and reparameterize \(x(t)\) such
   \(x(0)=(x^0,x^0)\) then solutions have the form
   \begin{align*}
     x_1(t)&=\frac{t^2}{2}+\frac{x^0}{2}t+x^0,
