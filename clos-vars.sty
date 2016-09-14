@@ -181,33 +181,6 @@ main=english]{babel}
 \@ifpackageloaded{tikz}
                 {\tikzset{commutative diagrams/arrow style=math font}}{}
 
-\newcommand{\bba}{\mathbb{a}}
-\newcommand{\bbb}{\mathbb{b}}
-\newcommand{\bbc}{\mathbb{c}}
-\newcommand{\bbd}{\mathbb{d}}
-\newcommand{\bbe}{\mathbb{e}}
-\newcommand{\bbf}{\mathbb{f}}
-\newcommand{\bbg}{\mathbb{g}}
-\newcommand{\bbh}{\mathbb{h}}
-\newcommand{\bbi}{\mathbb{i}}
-\newcommand{\bbj}{\mathbb{j}}
-\newcommand{\bbk}{\mathbb{k}}
-\newcommand{\bbl}{\mathbb{l}}
-\newcommand{\bbm}{\mathbb{m}}
-\newcommand{\bbn}{\mathbb{n}}
-\newcommand{\bbo}{\mathbb{o}}
-\newcommand{\bbp}{\mathbb{p}}
-\newcommand{\bbq}{\mathbb{q}}
-\newcommand{\bbr}{\mathbb{r}}
-\newcommand{\bbs}{\mathbb{s}}
-\newcommand{\bbt}{\mathbb{t}}
-\newcommand{\bbu}{\mathbb{u}}
-\newcommand{\bbv}{\mathbb{v}}
-\newcommand{\bbw}{\mathbb{w}}
-\newcommand{\bbx}{\mathbb{x}}
-\newcommand{\bby}{\mathbb{y}}
-\newcommand{\bbz}{\mathbb{z}}
-
 \newcommand{\bfalpha}{\mathbf{\alpha}}
 \newcommand{\bfbeta}{\mathbf{\beta}}
 \newcommand{\bfgamma}{\mathbf{\gamma}}
@@ -256,11 +229,11 @@ main=english]{babel}
             % upint,
             % smallerops,
             nosymbolsc]{newtxmath}%
-\usepackage[lite,subscriptcorrection,nofontinfo]{mtpro2}%
 \usepackage[bb=boondox,%
             frak=boondox,%
             cal=boondoxo,%
             scr=boondox]{mathalfa}%
+\usepackage[lite,straightbraces,subscriptcorrection,nofontinfo]{mtpro2}%
 
 \providecommand{\textti}{\textnormal}
 \providecommand{\textprob}{\textbf}
@@ -494,6 +467,8 @@ main=english]{babel}
 \newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
       \hbox{.}\hbox{.}}}%
   =}%
+% \newcommand{\Card}{\ensuremath\mathop{\raisebox{1.5pt}{\(\scriptstyle\#\)}}}
+
 \usepackage{mleftright}
 \mleftright%
 \fi \fi \fi \fi \fi \fi
@@ -670,7 +645,7 @@ main=english]{babel}
 %%% General
 %% Set theory
 \DeclareMathOperator{\card}{card}
-\DeclareMathOperator{\Card}{Card}
+% \DeclareMathOperator{\Card}{Card}
 \DeclareMathOperator{\codom}{codom}
 \DeclareMathOperator{\Codom}{Codom}
 \DeclareMathOperator{\dom}{dom}
