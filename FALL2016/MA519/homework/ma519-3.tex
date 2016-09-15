@@ -46,7 +46,7 @@
   to chose either a long or a short part. Thus, the probability of choosing
   a long and a short part on the first try is
   \[
-    P(A_1)=\frac{2n\cdot n}{2n(2n-1)}=\frac{n}{2n-1}.
+    P(A_1)=\frac{2n(n)}{2n(2n-1)}=\frac{n}{2n-1}.
   \]
   As in part (a), at the \(i\)th step, the probability of choosing a long
   and a short stick together is
@@ -140,8 +140,7 @@
 
   By Bayes' theorem,
   \[
-    P(T|F) = \frac{P(F|T) \cdot P(T)}{P(F|T)
-      \cdot P(T) + P(F|L) \cdot P(L)}
+    P(T|F) = \frac{P(F|T)P(T)}{P(F|T)P(T) + P(F|L)P(L)}
   \]
   which reduces to
   \[
@@ -172,18 +171,18 @@
   \end{align*}
   Which means that, by Bayes' theorem,
   \begin{align*}
-    P(A|D) &=\frac{P(D|A)\cdot P(A)}{P(D|A)P(A)
-                  +P(D|B)P(B)+P(D|C)P(C)} \\
-                &=\frac{0.05 \cdot 0.25}{0.05 \cdot 0.25 + 0.04 \cdot 0.35 + 0.02 \cdot 0.4 } \\
-                &= \frac{0.0125}{0.0125 + 0.014 + 0.008} \\
-                &= \frac{0.0125}{0.0345} \\
-                &\approx \num{0.36231884057971014}, \\
+    P(A|D) &=\frac{P(D|A)P(A)}{P(D|A)P(A)
+             +P(D|B)P(B)+P(D|C)P(C)} \\
+           &=\frac{0.05 \cdot 0.25}{0.05 \cdot 0.25 + 0.04 \cdot 0.35 + 0.02 \cdot 0.4 } \\
+           &= \frac{0.0125}{0.0125 + 0.014 + 0.008} \\
+           &= \frac{0.0125}{0.0345} \\
+           &\approx \num{0.36231884057971014}, \\
     P(B|D) &= \frac{0.014}{0.0125 + 0.014 + 0.008} \\
-                &= \frac{0.014}{0.0345} \\
-                &\approx \num{0.40579710144927533}, \\
+           &= \frac{0.014}{0.0345} \\
+           &\approx \num{0.40579710144927533}, \\
     P(C|D) &= \frac{0.008}{0.0125 + 0.014 + 0.008} \\
-                &= \frac{0.008}{0.0345} \\
-                &\approx \num{0.23188405797101447}.\\
+           &= \frac{0.008}{0.0345} \\
+           &\approx \num{0.23188405797101447}.\\
   \end{align*}
   That is, there's about a $36$ percent chance that our defective bolt came
   from $A$, a $41$ percent chance it came from $B$, and a $23$ percent
@@ -198,18 +197,18 @@
   females to be in equal numbers.)
 \end{problem}
 \begin{solution}
-  Let $\mathsf{\mathsf{CB}}$ be the event that a randomly chosen person is
+  Let $C$ be the event that a randomly chosen person is
   color blind. Let $M$ be the event that the randomly chosen person was
   male, and let $F$ be the event that the randomly chosen person was
   female. Then
   \begin{align*}
-    P(\mathsf{CB}|M) &= 0.05 \\
-    P(\mathsf{CB}|F) &= 0.0025
+    P(C|M)&=0.05\\
+    P(C|F)& 0.0025
   \end{align*}
   So, by Bayes' theorem,
   \begin{align*}
-    P(M|\mathsf{CB})
-    &=\frac{P(\mathsf{CB}|M)P(M)}{P(\mathsf{CB}|M)P(M) + P(\mathsf{CB}|F)P(F)}\\
+    P(M|C)
+    &=\frac{P(C|M)P(M)}{P(C|M)P(M)+P(C|F)P(F)}\\
     &=\frac{0.05}{0.05+0.0025}\\
     &=\frac{0.05}{0.0525}\\
     &\approx\num{0.9523809523809524}.
@@ -230,7 +229,6 @@
 \end{problem}
 \begin{solution}
   For part (a): let \(A\) be the event of West's partner having an ace
-  \(\clubsuit\).
 \end{solution}
 \newpage
 
