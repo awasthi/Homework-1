@@ -151,25 +151,27 @@
   partition \(A_1,\dotsc,A_n\) of \(\Omega\) such that
   \(A_i\cap A_j=\emptyset\) whenever \(i\neq j\), for \(1\leq i,j\leq n\),
   i.e., the events \(A_i\) are mutually exclusive. Consider the following
-  partition of \(\Omega\)
+  partition of \(\Omega\),
   \[
     A_i=\bigl\{\,\text{exactly \(i\) white balls are put into the second
       urn}\,\bigr\}.
   \]
-  The events \(A_i\), \(1\leq i\leq 4\), are clearly mutually exclusive (we
-  omit the event \(A_5\) since we know that at least one ball in the urn is
-  white). Therefore, to find \(P(A)\), we need only find the probabilities
-  \(P(B|A_i)\) and \(P(A_i)\).
+  The events \(A_i\), \(1\leq i\leq 4\), are clearly mutually exclusive (if
+  we have exactly \(i\) white balls in the urn, we cannot simultaneously
+  have \(j\) white balls in the urn for \(i\neq j\)). Therefore, to find
+  \(P(A)\), we need only find the probabilities \(P(B|A_i)\) and
+  \(P(A_i)\).
 
-  The probabilities of \(A_i\) are easy to calculate: the configurations
-  are \(\binom{10}{5}=252\) and the number of ways of choosing exactly
-  \(i\) black balls are \(\binom{5}{5-i}\). Thus,
+  The probabilities of \(A_i\) are easy to calculate: there are
+  \(\binom{10}{5}=252\) ways to chose \(5\) balls from the urn containing
+  the \(5\) white and \(5\) black balls, and the number of ways of choosing
+  exactly \(i\) black balls are \(\binom{5}{5-i}\). Thus,
   \[
-    P(A_i)=\frac{\binom{5}{5-i}\binom{5}{i}}{252}
+    P(A_i)=\frac{\binom{5}{i}}{252}
     =\binom{5}{i}^{\mathrlap{2}}\Bigm/252.
   \]
 
-  The probabilities of \(B\) given \(A_i\) are also easy to calculte
+  The probabilities of \(B\) given \(A_i\) are also easy to calculate
   \[
     P(B|A_i)=\frac{i}{4},
   \]
@@ -195,7 +197,28 @@
   ...\@ (write down the necessary and sufficient condition).
 \end{problem}
 \begin{solution}
-
+  For convenience, let \(D\) denote the event that two of \(A,B,C\)
+  occured. By Bayes' theorem, we have
+  \begin{align*}
+    P(C|D)
+    &=\frac{P(D|C)P(C)}{P(D)}\\
+    &=\frac{P(D|C)P(C)}{P(D|C)P(C)+P(D|\lnot C)P(\lnot C)}\\
+    &=\frac{P\bigl((A\cup B)\setminus (A\cap B)\bigr)p_3}
+      {P\bigl((A\cup B)\setminus (A\cap B)\bigr)p_3
+      +P\bigl((A\cup B)\setminus C\bigr)(1-p_3)},
+      \intertext{but by the inclusion-exclusion principle, \(P\bigl((A\cup
+      B)\setminus (A\cap B)\bigr)=P(A)+P(B)-2P(A\cap B)\) so, letting
+      \(x=P(A\cap B)\), the above becomes}
+    &=\frac{(p_1+p_2-2x)p_3}{(p_1+p_2-2x)p_3+x(1-p_3)}\\
+    &=\frac{p_1p_3+p_2p_3-2xp_3}{p_1p_3+p_2p_3+x-3xp_3}\\
+    &\geq\frac{1}{2}
+  \end{align*}
+  if and only if
+  \begin{align*}
+    2(p_1p_3+p_2p_3-2xp_3)&\geq p_1p_3+p_2p_3+x-3xp_3,
+    \intertext{that is,}
+    p_1p_3+p_2p_3&\geq x+xp_3.
+  \end{align*}
 \end{solution}
 \newpage
 
@@ -208,8 +231,14 @@
   What is the probability that the other side of this coin is a tail?
 \end{problem}
 \begin{solution}
-
-\end{solution}
+  Let let \(A\) denote the event that a coin with a head is chosen and
+  \(B\) denote the event that for a given coin its other side is a tail. By
+  the total probability formula,
+  \begin{align*}
+    P(B)
+    &=P(B|A)P(A)+P(B|\lnot A)P(\lnot A)\\
+    &=\frac{3}{5}P(B|A)+\frac{2}{5}
+  \end{align*}
 \newpage
 
 \begin{problem}[Handout 5, \# 2]

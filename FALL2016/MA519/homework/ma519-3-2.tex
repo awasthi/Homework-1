@@ -1,0 +1,301 @@
+\begin{problem}[Handout 3, \# 3]
+  \(n\) sticks are broken into one short and one long part. The \(2n\)
+  parts are then randomly paired up to form \(n\) new sticks. Find the
+  probability that
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item the parts are joined in their original order, i.e., the new sticks
+    are the same as the old sticks;
+  \item each long part is paired up with a short part.
+  \end{enumerate}
+\end{problem}
+\begin{solution}
+  For part (a), let \(\Omega\) denote the sample space. Then, there are
+  \(2n(2n-1)\) ways to pair the sticks together. Let \(A\) denote the event
+  that two parts are joined in their original order. We have \(2n\) ways to
+  chose one end and, once we have made that choice, only \(1\) way to chose
+  the complementary end. Thus,
+  \[
+    P(A)=\frac{2n\cdot 1}{2n(2n-1)}=\frac{1}{2n-1}.
+  \]
+
+  For part (b), the sample space \(\Omega\) remains as before. Let \(A\)
+  denote the event that each long part is joined with a short part. Then we
+  have
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 3, \# 5]
+  In a town, there are \(3\) plumbers. On a certain day, \(4\) residents
+  need a plumber and they each call one plumber at random.
+  
+  a) What is the probability that all the calls go to one plumber (not necessarily a specific one)?
+  
+  b) What is the expected value of the number of plumbers who get a call?
+\end{problem}
+\begin{solution}
+
+Label the plumbers as $a$, $b$, and $c$. Let $A$ be the event that plumber $a$ gets every call, let $B$ be the event that plumber $b$ gets every call, and let $C$ be the event that plumber $c$ gets every call.
+
+For a): Let $A$ be the event that plumber $a$ gets every call, let $B$ be the event that plumber $b$ gets every call, and let $C$ be the event that plumber $c$ gets every call.
+Then $P(A) = P(B) = P(C) = \frac{1}{3^4}$. (The probability of plumber $a$ getting called by the first resident is $1/3$. The residents call independently, the probability that all $4$ residents call him is $(1/3)^4$). Because all events are disjoint, $P(A \cup B \cup C) = \frac{1}{3^4} + \frac{1}{3^4} + \frac{1}{3^4}$.
+
+That is, the probability that some plumber gets every call is $\frac{1}{3^3} = \frac{1}{27} \cong 0.037$.
+
+For b): Let $\scrX$ be the number of plumbers who get called.
+
+As above, 
+
+\[
+P(\scrX = 1) = \frac{1}{27}.
+\]
+
+Similar to the above,
+
+\[
+P(\scrX = 2) = 3\left(\left(\frac{2}{3}\right)^4 - \frac{2}{3^4} \right)
+\]
+
+(The probability of a resident calling either plumber $a$ or plumber $b$ is $(2/3)$. The probability of every resident calling one of plumber $a$ or $b$ is $(2/3)^4$. The probability that plumber $a$ was the only plumber called is $(1/3)^4$. The probability that plumber $b$ was the only plumber called is $(1/3)^4$. Thus, the probability that plumber $a$ and plumber $b$ have both been called without calling plumber $c$ is $(2/3)^4 - 2/3^4$. The probability that two plumbers have been called is the sum of the probabilities that exactly plumbers $a$ and $b$ have been called, exactly plumbers $b$ and $c$ have been called, and exactly plumbers $a$ and $c$ have been called; that is, it is as given above.)
+
+Last,
+
+\[
+P(\scrX = 3) = 1-P(\scrX = 1)-P(\scrX = 2)
+\]
+
+So that
+
+\begin{align*}
+E(\scrX) &= P(\scrX=1) + 2P(\scrX=2) + 3P(\scrX = 3) \\
+&= \frac{1}{27} + 6\left(\left(\frac{2}{3}\right)^4 - \frac{2}{3^4} \right) + 3\left(1-\frac{1}{27} -  3\left(\left(\frac{2}{3}\right)^4 - \frac{2}{3^4} \right)\right) \\
+&= \frac{1}{27} + 6\frac{2^4}{3^4} - \frac{12}{3^4} + 3-\frac{1}{9} -  9\left(\left(\frac{2}{3}\right)^4 - \frac{2}{3^4} \right)\\
+&= \frac{1}{27} + 6\frac{16}{81} - \frac{12}{81} + 3-\frac{1}{9} -  \frac{16}{9} - \frac{2}{9}\\
+&= \frac{53}{27}\\
+&\cong 1.962
+\end{align*}
+
+That is, the expected number of plumbers that get called is $\frac{53}{27}$, which is slightly less than two.
+
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 4, \# 7]
+  \emph{(Polygraphs).} Polygraphs are routinely administered to job
+  applicants for sensitive government positions. Suppose someone actually
+  lying fails the polygraph \(90\%\) of the time. But someone telling the
+  truth also fails the polygraph \(15\%\) of the time. If a polygraph
+  indicates that an applicant is lying, what is the probability that he is
+  in fact telling the truth? Assume a general prior probability \(p\) that
+  the person is telling the truth.
+\end{problem}
+\begin{solution}
+
+Let $TRUTH$ denote the event that the person is telling the truth. Set $P(TRUTH) = p$.
+
+Let $FAIL$ denote the event that the person fails the polygraph. Let $LIE$ denote the event that the person has lied. Then $P(FAIL | LIE) = 0.9$, and $P(FAIL | TRUTH) = 0.15$.
+
+By Bayes' Theorem,
+
+\[
+P(TRUTH | FAIL) = \frac{P(FAIL | TRUTH) \cdot P(TRUTH)}{P(FAIL | TRUTH) \cdot P(TRUTH) + P(FAIL | LIE) \cdot P(LIE)}
+\]
+
+which reduces to
+
+\[
+P(TRUTH | FAIL) = \frac{0.15p}{0.15p + 0.9 - 0.9p} = \frac{0.15p}{0.9 - 0.75p}
+\]
+
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 4, \# 8]
+  In a bolt factory machines \(A\), \(B\), \(C\) manufacture, respectively,
+  \(25\), \(35\), and \(40\) per cent of the total. Of their output \(5\),
+  \(4\), and \(2\) per cent are defective bolts. A bolt is drawn at random
+  from the produce and is found defective. What are the probabilities that
+  it was manufactured by machines \(A\), \(B\), \(C\)?
+\end{problem}
+\begin{solution}
+
+Let $DEF$ denote the event in which the random bolt we have drawn was defective. Let $A$, $B$, and $C$ denote the events in which we have drawn our bolts from machines $A$, $B$, and $C$ (respectively).
+
+Then
+
+\begin{align*}
+P(DEF | A) &= 0.05 \\
+P(DEF | B) &= 0.04 \\
+P(DEF | C) &= 0.02 \\
+P(A) &= 0.25 \\
+P(B) &= 0.35 \\
+P(C) &= 0.4 \\
+\end{align*}
+
+Which means that, by Bayes' Theorem,
+
+\begin{align*}
+P(A | DEF) &= \frac{P(DEF | A) \cdot P(A)}{P(DEF | A)P(A) + P(DEF |B) P(B) + P(DEF|C)P(C)} \\
+&= \frac{0.05 \cdot 0.25}{0.05 \cdot 0.25 + 0.04 \cdot 0.35 + 0.02 \cdot 0.4 } \\
+&= \frac{0.0125}{0.0125 + 0.014 + 0.008} \\
+&= \frac{0.0125}{0.0345} \\
+&\cong 0.36 \\
+\end{align*}
+
+\begin{align*}
+P(B | DEF) &= \frac{0.014}{0.0125 + 0.014 + 0.008} \\
+&= \frac{0.014}{0.0345} \\
+&\cong 0.41 \\
+\end{align*}
+
+\begin{align*}
+P(C | DEF) &= \frac{0.008}{0.0125 + 0.014 + 0.008} \\
+&= \frac{0.008}{0.0345} \\
+&\cong 0.23 \\
+\end{align*}
+
+That is, there's about a $36$ percent chance that our defective bolt came from $A$, a $41$ percent chance it came from $B$, and a $23$ percent chance it came from $C$.
+
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 4, \# 9]
+  Suppose that \(5\) men out of \(100\) and \(25\) women out of
+  \(\num{10000}\) are colorblind. A colorblind person is chosen at
+  random. What is the probability of his being male? (Assume males and
+  females to be in equal numbers.)
+\end{problem}
+\begin{solution}
+
+Let $CB$ be the event that a randomly chosen person is color blind. Let $M$ be the event that the randomly chosen person was male, and let $F$ be the event that the randomly chosen person was female.
+
+Then
+
+\begin{align*}
+P(CB | M) &= 0.05 \\
+P(CB | F) &= 0.0025
+\end{align*}
+
+So, by Bayes' Theorem,
+
+\begin{align*}
+P(M | CB) &= \frac{P(CB|M)P(M)}{P(CB|M)P(M) + P(CB|F)P(F)}\\
+&= \frac{0.05}{0.05+0.0025}\\
+&= \frac{0.05}{0.0525}\\
+&\cong 0.95
+\end{align*}
+
+That is, there is about a $95$ percent chance that the randomly chosen color blind person was male.
+
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 4, \# 10]
+  \emph{Bridge.} In a bridge party West has no ace. What probability should
+  he attribute to the event of his partner having
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item no ace,
+  \item two or more aces?
+  \end{enumerate}
+  Verify the result by a direct argument.
+\end{problem}
+\begin{solution}
+
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 4, \# 12]
+  A true-false question will be posed to a couple on a game show. The
+  husband and the wife each has a probability \(p\) of picking the correct
+  answer. Should they decide to let one of the answer the question, or
+  decide that they will give the common answer if they agree and toss a
+  coin to pick the answer if they disagree?
+\end{problem}
+\begin{solution}
+
+The probability that the couple wins if they let one of them answer the question is $p$ (that is, it is the probability that that person gets it right.)
+
+The probability that the couple wins if they give a common answer if they agree and toss a coin to pick the answer if they disagree is the sum of the probabilities that they agree on the correct answer and the probability that they guess differently and then win on the coin flip.
+
+The probability that they agree on the correct answer is $p^2$.
+
+The probability that they guess differently is $2(1-p)p$; that is, this is the probability that the husband is wrong and the wife is right plus the probability that the wife is wrong and the husband is right. The probability that they win, given that they've guessed differently, is $1/2$. So, the probability that they win because of the coin flip after they guess differently is $(1-p)p$.
+
+So, the probability that they win in this fashion is $p^2 + (1-p)p = p$.
+
+That is, from the perspective of the game, it does not matter which course of action they take. They should do whichever thing is most likely to make them the least mad at each other if they lose.
+
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 4, \# 13]
+  An urn containing \(5\) balls has been filled up by taking \(5\) balls at
+  random from a second urn which originally had \(5\) black and \(5\) white
+  balls. A ball is chosen at random from the first urn and is fonud to be
+  black. What is the probability of drawing a white ball if a second ball
+  is chosen from among the remaining \(4\) balls in the first urn?
+\end{problem}
+\begin{solution}
+
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 4, \# 15]
+  Events \(A\), \(B\), \(C\) have probabilities \(p_1\), \(p_2\),
+  \(p_3\). Given that exactly two of the three events occured, the
+  probability that \(C\) occured is greater than \(1/2\) if and only if
+  ... (write down the necessary and sufficient condition).
+\end{problem}
+\begin{solution}
+
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 5, \# 1]
+  There are five coins on a desk: \(2\) are double-headed, \(2\) are
+  double-tailed, and \(1\) is a normal coin.
+  \\\\
+  One of the coins is selected at random and tossed. It shows heads.
+  \\\\
+  What is the probability that the other side of this coin is a tail?
+\end{problem}
+\begin{solution}
+
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 5, \# 2]
+  \emph{(Genetic testing).} There is a \(50\)-\(50\) chance that the Queen
+  carries the gene for hemophilia. If she does, then each Prince has a
+  \(50\)-\(50\) chance of carrying it. Three Princesses were recently
+  tested and found to be non-carriers. Find the following probabilities:
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item that the Queen is a carrier;
+  \item that the fourth Princess is a carrier.
+  \end{enumerate}
+\end{problem}
+\begin{solution}
+
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 5, \# 4]
+  \emph{(Is Johnny in Jail).} Johnny and you are roommates. You are a
+  terrific student and spend Friday evenings drowned in books. Johnny
+  always goes out on Friday evenings. \(40\%\) of the times, he goes out
+  with his girlfriend, and \(60\%\) of the times he goes to a bar. If he
+  goes out with his girlfriend, \(30\%\) of the times he is just too lazy
+  to come back and spends the night at hers. If he goes to a bar, \(40\%\)
+  of the times he gets mad at the person sitting on his right, beats him
+  up, and goes to jail.
+  \\\\
+  On one Saturday morning, you wake up to see Johnny is missing. Where is
+  Johnny?
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA519-Current-HW"
+%%% End:
