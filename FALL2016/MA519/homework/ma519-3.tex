@@ -233,7 +233,15 @@
   What is the probability that the other side of this coin is a tail?
 \end{problem}
 \begin{solution}
-  Let \(A\) denote the event that
+  Let \(A\) denote the event that the other side of a coin is tail and let
+  \(B\) denote the event that after picking a coin at random and tossing
+  it, it comes up heads. By Bayes' theorem,
+  \begin{align*}
+    P(A|B)&=\frac{P(B|A)P(A)}{P(B)}\\
+          &=\frac{(1/6)\bigl((1+4)/10\bigr)}{(1+4)/10}\\
+          &=\frac{1}{6}\\
+          &\approx\num{0.16666666666666666}.
+  \end{align*}
 \end{solution}
 \newpage
 
