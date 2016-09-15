@@ -35,6 +35,11 @@
   \@cochinealtrue
 }
 
+\newif\if@baskerville\@baskervillefalse
+\DeclareOption{baskerville}{
+  \@baskervilletrue
+}
+
 \newif\if@arabi\@arabifalse
 \DeclareOption{arabi}{
   \@arabitrue
@@ -396,6 +401,28 @@ main=english]{babel}
                  declare tail={math right hook}{↪}{2.5pt}{1ex},
                  declare head={math double to}{↠}{2.5pt}{1.4ex},
                }
+\else
+\if@baskerville
+\usepackage{Baskervaldx}
+\usepackage[baskervaldx,
+            cmintegrals,
+            bigdelims,
+            vvarbb]{newtxmath}
+\usepackage[cal=boondoxo]{mathalfa} %
+
+\newenvironment{solution}[1][Solution]{%
+  \proof[{\textsc{#1}}]%
+}{
+  \endproof}
+\providecommand\textprob{\textsc}
+%% Math replace
+\let\setminus\smallsetminus%
+% \let\emptyset\varnothing%
+\let\oldbtright\blacktriangleright%
+\let\oldbtleft\blacktriangleleft%
+\renewcommand\blacktriangleright{\ensuremath{\scriptstyle\oldbtright}}
+\renewcommand\blacktriangleleft{\ensuremath{\scriptstyle\oldbtleft}}
+\renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}} % Default is
 
 \else
 \usepackage{bm}
@@ -404,7 +431,7 @@ main=english]{babel}
 \usepackage[rm={proportional,lining},
             sf={proportional,oldstyle},
             tt={lining,tabular,monowidth}]{cfr-lm}
-
+% \usepackage{old-arrows}
 \newenvironment{solution}[1][Solution]{%
   \proof[{\textsi{#1}}]%
 }{
@@ -1150,6 +1177,7 @@ main=english]{babel}
 
 %%% Units
 \usepackage{siunitx}
+\sisetup{round-mode=places,round-precision=4}
 %% English units
 %% Distance
 \DeclareSIUnit[number-unit-product = {\thinspace}]{\inch}{in}
