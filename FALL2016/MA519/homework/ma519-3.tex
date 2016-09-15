@@ -61,13 +61,70 @@
   \]
 \end{solution}
 \newpage
-
 \begin{problem}[Handout 3, \# 5]
   In a town, there are \(3\) plumbers. On a certain day, \(4\) residents
   need a plumber and they each call one plumber at random.
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item What is the probability that all the calls go to one plumber (not
+    necessarily a specific one)?
+  \item What is the expected value of the number of plumbers who get a
+    call?
+  \end{enumerate}
 \end{problem}
 \begin{solution}
+  Label the plumbers as $a$, $b$, and $c$. Let $A$ be the event that
+  plumber $a$ gets every call, let $B$ be the event that plumber $b$ gets
+  every call, and let $C$ be the event that plumber $c$ gets every call.
 
+  For (a): let $A$ be the event that plumber $a$ gets every call, let $B$
+  be the event that plumber $b$ gets every call, and let $C$ be the event
+  that plumber $c$ gets every call.  Then $P(A)=P(B)=P(C)=1/3^4$. (The
+  probability of plumber $a$ getting called by the first resident is
+  $1/3$. The residents call independently, the probability that all $4$
+  residents call him is $(1/3)^4$). Because all events are disjoint,
+  $P(A\cup B\cup C)=1/3^4+1/3^4+1/3^4$.
+
+  That is, the probability that some plumber gets every call is
+  $1/3^3=1/27\approx 0.037$.
+
+  For (b): let $X$ be the number of plumbers who get called.
+
+  As above,
+  \[
+    P(X = 1)=\frac{1}{27}.
+  \]
+
+  Similar to the above,
+  \[
+    P(X = 2) = 3\left(\left(\frac{2}{3}\right)^4 - \frac{2}{3^4}
+    \right)
+  \]
+  (The probability of a resident calling either plumber $a$ or plumber $b$
+  is $(2/3)$. The probability of every resident calling one of plumber $a$
+  or $b$ is $(2/3)^4$. The probability that plumber $a$ was the only
+  plumber called is $(1/3)^4$. The probability that plumber $b$ was the
+  only plumber called is $(1/3)^4$. Thus, the probability that plumber $a$
+  and plumber $b$ have both been called without calling plumber $c$ is
+  $(2/3)^4-2/3^4$. The probability that two plumbers have been called is
+  the sum of the probabilities that exactly plumbers $a$ and $b$ have been
+  called, exactly plumbers $b$ and $c$ have been called, and exactly
+  plumbers $a$ and $c$ have been called; that is, it is as given above.)
+
+  Lastly,
+  \[
+    P(X = 3) = 1-P(X = 1)-P(X = 2)
+  \]
+  so that
+  \begin{align*}
+    E(X) &= P(X=1) + 2P(X=2) + 3P(X = 3) \\
+             &= \frac{1}{27} + 6\left(\left(\frac{2}{3}\right)^4 - \frac{2}{3^4} \right) + 3\left(1-\frac{1}{27} -  3\left(\left(\frac{2}{3}\right)^4 - \frac{2}{3^4} \right)\right) \\
+             &= \frac{1}{27} + 6\frac{2^4}{3^4} - \frac{12}{3^4} + 3-\frac{1}{9} -  9\left(\left(\frac{2}{3}\right)^4 - \frac{2}{3^4} \right)\\
+             &= \frac{1}{27} + 6\frac{16}{81} - \frac{12}{81} + 3-\frac{1}{9} -  \frac{16}{9} - \frac{2}{9}\\
+             &= \frac{53}{27}\\
+             &\approx 1.962
+  \end{align*}
+  That is, the expected number of plumbers that get called is $53/27$,
+  which is slightly less than two.
 \end{solution}
 \newpage
 
@@ -81,9 +138,20 @@
   the person is telling the truth.
 \end{problem}
 \begin{solution}
-  By the total probability formula, we have
+  Let $\sfT$ denote the event that the person is telling the truth. Set
+  $P(\sfT) = p$. Let $\sfF$ denote the event that the person fails the
+  polygraph. Let $\sfL$ denote the event that the person has lied. Then
+  $P(\sfF | \sfL) = 0.9$, and $P(\sfF | \sfT) = 0.15$.
+
+  By Bayes' theorem,
   \[
-    P(C)=P(C|A)P(A)+P(A)
+    P(\sfT | \sfF) = \frac{P(\sfF | \sfT) \cdot P(\sfT)}{P(\sfF | \sfT)
+      \cdot P(\sfT) + P(\sfF | \sfL) \cdot P(\sfL)}
+  \]
+  which reduces to
+  \[
+    P(\sfT | \sfF) = \frac{0.15p}{0.15p + 0.9 - 0.9p} = \frac{0.15p}{0.9 -
+      0.75p}
   \]
 \end{solution}
 \newpage
@@ -96,7 +164,38 @@
   it was manufactured by machines \(A\), \(B\), \(C\)?
 \end{problem}
 \begin{solution}
+  Let $\sfD$ denote the event in which the random bolt we have drawn was
+  defective. Let $A$, $B$, and $C$ denote the events in which we have drawn
+  our bolts from machines $A$, $B$, and $C$ (respectively).
 
+  Then
+  \begin{align*}
+    P(\sfD | A) &= 0.05 \\
+    P(\sfD | B) &= 0.04 \\
+    P(\sfD | C) &= 0.02 \\
+    P(A) &= 0.25 \\
+    P(B) &= 0.35 \\
+    P(C) &= 0.4 \\
+  \end{align*}
+
+  Which means that, by Bayes' theorem,
+  \begin{align*}
+    P(A | \sfD) &=\frac{P(\sfD|A)\cdot P(A)}{P(\sfD|A)P(A)
+                  +P(\sfD|B)P(B)+P(\sfD|C)P(C)} \\
+                &=\frac{0.05 \cdot 0.25}{0.05 \cdot 0.25 + 0.04 \cdot 0.35 + 0.02 \cdot 0.4 } \\
+                &= \frac{0.0125}{0.0125 + 0.014 + 0.008} \\
+                &= \frac{0.0125}{0.0345} \\
+                &\approx 0.36, \\
+    P(B | \sfD) &= \frac{0.014}{0.0125 + 0.014 + 0.008} \\
+                &= \frac{0.014}{0.0345} \\
+                &\approx 0.41 \\
+    P(C | \sfD) &= \frac{0.008}{0.0125 + 0.014 + 0.008} \\
+                &= \frac{0.008}{0.0345} \\
+                &\approx 0.23 \\
+\end{align*}
+That is, there's about a $36$ percent chance that our defective bolt came
+from $A$, a $41$ percent chance it came from $B$, and a $23$ percent chance
+it came from $C$.
 \end{solution}
 \newpage
 
@@ -107,12 +206,30 @@
   females to be in equal numbers.)
 \end{problem}
 \begin{solution}
+  Let $CB$ be the event that a randomly chosen person is color blind. Let
+  $M$ be the event that the randomly chosen person was male, and let $F$ be
+  the event that the randomly chosen person was female.
 
+  Then
+  \begin{align*}
+    P(CB | M) &= 0.05 \\
+    P(CB | F) &= 0.0025
+  \end{align*}
+  So, by Bayes' theorem,
+  \begin{align*}
+  P(M | CB) &= \frac{P(CB|M)P(M)}{P(CB|M)P(M) + P(CB|F)P(F)}\\
+            &= \frac{0.05}{0.05+0.0025}\\
+            &= \frac{0.05}{0.0525}\\
+            &\approx 0.95
+\end{align*}
+
+That is, there is about a \(95\) percent chance that the randomly chosen
+color blind person was male.
 \end{solution}
 \newpage
 
 \begin{problem}[Handout 4, \# 10]
-  \emph{(Bridge).} In a bridge party West has no ace. What probability should
+  \emph{Bridge.} In a bridge party West has no ace. What probability should
   he attribute to the event of his partner having
   \begin{enumerate}[label=(\alph*),noitemsep]
   \item no ace,
@@ -133,7 +250,29 @@
   coin to pick the answer if they disagree?
 \end{problem}
 \begin{solution}
+  The probability that the couple wins if they let one of them answer the
+  question is $p$ (that is, it is the probability that that person gets it
+  right.)
 
+  The probability that the couple wins if they give a common answer if they
+  agree and toss a coin to pick the answer if they disagree is the sum of
+  the probabilities that they agree on the correct answer and the
+  probability that they guess differently and then win on the coin flip.
+
+  The probability that they agree on the correct answer is $p^2$.
+
+  The probability that they guess differently is $2(1-p)p$; that is, this
+  is the probability that the husband is wrong and the wife is right plus
+  the probability that the wife is wrong and the husband is right. The
+  probability that they win, given that they've guessed differently, is
+  $1/2$. So, the probability that they win because of the coin flip after
+  they guess differently is $(1-p)p$.
+
+  So, the probability that they win in this fashion is $p^2 + (1-p)p = p$.
+
+  That is, from the perspective of the game, it does not matter which
+  course of action they take. They should do whichever thing is most likely
+  to make them the least mad at each other if they lose.
 \end{solution}
 \newpage
 
