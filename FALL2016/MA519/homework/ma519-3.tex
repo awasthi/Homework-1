@@ -276,9 +276,26 @@
   \end{align*}
   Thus,
   \[
-    P(A|B)=\frac{(1/8)(1/2)}{9/16}=\frac{1}{9}\approx\num{0.11111111111111}.
+    P(A|B)=\frac{(1/8)(1/2)}{9/16}=\frac{1}{9}\approx\num{0.1111}.
   \]
-  For part (b):
+
+  For part (b): let \(A\) denote the event that the fourth princess is a
+  carrier and \(B\) remain as above, i.e., the event that three princesses
+  were found to be non-carriers. By Bayes' theorem,
+  \[
+    P(A|B)=\frac{P(B|A)P(A)}{P(B)}.
+  \]
+  If the fourth princess is a carrier then the Queen is a carrier. Thus,
+  \(P(B)=9/16\) and \(P(B|A)=1/8\) as above. Now,
+  \(P(A)=P(A|C)P(C)+P(A|\lnot C)P(\lnot C)\) where \(C\) denotes the event
+  that the Queen is a carrier. Thus,
+  \[
+    P(A)=\left(\frac{1}{2}\right)\frac{1}{2}=\frac{1}{4}.
+  \]
+  Thus,
+  \[
+    P(A|B)=\frac{(1/8)(1/4)}{9/16}=\frac{1}{18}\approx\num{0.0556}.
+  \]
 \end{solution}
 \newpage
 
