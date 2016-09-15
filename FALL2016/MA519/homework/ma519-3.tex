@@ -266,12 +266,18 @@
   \[
     P(A|B)=\frac{P(B|A)P(A)}{P(B)}.
   \]
-  By assumption, \(P(A)=1/2\). We cannot calculate \(P(B)\) directly but,
-  by the total probability formula,
+  By assumption, \(P(A)=1/2\). We cannot calculate \(P(B)\) directly
+  but, by the total probability formula,
+  \begin{align*}
+    P(B)&=P(B|A)P(A)+P(B|\lnot A)P(\lnot A)\\
+        &=\left(\frac{1}{8}\right)\left(\frac{1}{2}\right)
+          +1\left(\frac{1}{2}\right)\\
+        &=\frac{9}{16}.
+  \end{align*}
+  Thus,
   \[
-    P(B)=P(B|A)P(A)+P(B|\lnot A)P(\lnot A)
+    P(A|B)=\frac{(1/8)(1/2)}{9/16}=\frac{1}{9}\approx\num{0.11111111111111}.
   \]
-
   For part (b):
 \end{solution}
 \newpage
