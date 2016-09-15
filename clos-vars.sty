@@ -432,6 +432,7 @@ main=english]{babel}
             sf={proportional,oldstyle},
             tt={lining,tabular,monowidth}]{cfr-lm}
 % \usepackage{old-arrows}
+
 \newenvironment{solution}[1][Solution]{%
   \proof[{\textsi{#1}}]%
 }{
@@ -440,7 +441,7 @@ main=english]{babel}
 
 %% Math replace
 \let\setminus\smallsetminus%
-% \let\emptyset\varnothing%
+\let\emptyset\varnothing%
 \let\oldbtright\blacktriangleright%
 \let\oldbtleft\blacktriangleleft%
 \renewcommand\blacktriangleright{\ensuremath{\scriptstyle\oldbtright}}
