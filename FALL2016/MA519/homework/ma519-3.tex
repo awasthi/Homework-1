@@ -219,8 +219,8 @@
 \newpage
 
 \begin{problem}[Handout 4, \# 10]
-  \emph{Bridge.} In a Bridge party West has no ace. What probability should
-  he attribute to the event of his partner having
+  \emph{(Bridge.)} In a Bridge party West has no ace. What probability
+  should he attribute to the event of his partner having
   \begin{enumerate}[label=(\alph*),noitemsep]
   \item no ace,
   \item two or more aces?
@@ -228,7 +228,34 @@
   Verify the result by a direct argument.
 \end{problem}
 \begin{solution}
-  For part (a): let \(A\) be the event of West's partner having an ace
+  For part (a): let \(A\) be the event of West's partner having an ace and
+  \(B\) be the event that West has no ace. We can compute the probability
+  \(P(A|B)\) directly. Since West has no aces, there are \(52-13=39\)
+  cards, \(4\) of which are aces. Then, the probability that West's partner
+  has no aces is
+  \begin{align*}
+    P(A|B)
+    &=\binom{39-4}{13}\Bigm/\binom{39}{13}\\
+    &=\frac{\num{1476337800}}{\num{8122425444}}\\
+    &\approx\num{0.18176070807649755}.
+  \end{align*}
+
+  For part (b): let \(A\) denote the event that West's partner has two or
+  more aces and let \(B\) remain as above. Then, by the inclusion-exclusion
+  principle we need only find the probability that West's partner has
+  exactly one ace. This is,
+  \begin{align*}
+    \binom{38}{12}\Bigm/\binom{39}{13}
+    &=\frac{\num{2707475148}}{\num{8122425444}}\\
+    &=\frac{1}{3}\\
+    &\approx\num{0.3333333333333333}.
+  \end{align*}
+  Then, the probability that West's partner has two or more aces is
+  \begin{align*}
+    P(A|B)
+    &=(1-\num{0.18176070807649755})-\num{0.3333333333333333}\\
+    &\approx\num{0.4849059585901691}.
+  \end{align*}
 \end{solution}
 \newpage
 
