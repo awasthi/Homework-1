@@ -308,12 +308,22 @@
   to come back and spends the night at hers. If he goes to a bar, \(40\%\)
   of the times he gets mad at the person sitting on his right, beats him
   up, and goes to jail.
-  \\\\
+
+  \noindent
   On one Saturday morning, you wake up to see Johnny is missing. Where is
   Johnny?
 \end{problem}
 \begin{solution}
-
+  Let \(A\) denote the event that Johnny is in jail and \(B\) denote the
+  event that Johnny is missing. Then, by Bayes' theorem,
+  \[
+    P(A|B)=\frac{P(B|A)P(A)}{P(B)}.
+  \]
+  Now, let \(C\) denote the event that Johnny went to the bar. Then, by the
+  total probability formula,
+  \[
+    P(A)=P(A|C)P(C)+P(A|\lnot C)P(\lnot C)=(0.4)(0.4)+0=0.16.
+  \]
 \end{solution}
 
 %%% Local Variables:
