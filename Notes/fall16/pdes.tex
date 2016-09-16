@@ -232,6 +232,22 @@ second derivative terms provided we first set
   \dot{x}^j(s)=\frac{\partial}{\partial
     p_j}F\bigl(\bfp(s),z(s),\bfx(s)\bigr).
 \]
+Assuming now that the above equation holds, we can evaluate the partials
+\[
+  \begin{aligned}
+    \sum_{j=1}^n\frac{\partial}{\partial
+      p_j}F\bigl(&\bfp(s),z(s),\bfx(s)\bigr)\\
+    &+\frac{\partial}{\partial z}F\bigl(\bfp(s),z(s),\bfx(s)\bigr)p^{i}(s)
+    +\frac{\partial}{\partial x_i}F\bigl(\bfp(s),z(s),\bfx(s)\bigr)=0.
+  \end{aligned}
+\]
+Substitute this expression and the previous one into the derivative for
+\(\dot{p}^i\) and we get
+\[
+  \begin{aligned}
+    \dot{p}^i(s)=\frac{\partial}{\partial x_i}F\bigl(\bfp(s),z(s),\bfx(s)\bigr)
+  \end{aligned}
+\]
 
 %%% Local Variables:
 %%% mode: latex
