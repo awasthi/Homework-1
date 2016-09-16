@@ -464,6 +464,11 @@ main=english]{babel}
 % \providecommand\textti{\textnormal}
 \providecommand\texto{\textnormal}
 \providecommand\textprob{\textsc}
+
+\usepackage{xpatch}
+\xpatchcmd{\proof}{\itshape}{\normalfont\proofnameformat}{}{}
+\newcommand{\proofnameformat}{\textsi}
+
 \newenvironment{solution}[1][Solution]{%
   \proof[\textsi{#1}]%
 }{
