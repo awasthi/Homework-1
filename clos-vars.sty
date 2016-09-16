@@ -231,29 +231,35 @@ main=english]{babel}
 \else
 \if@times % TeX Gyre for math and Nimbus for text
 \pdfmapfile{=mtpro2.map}
+\pdfmapfile{=newtx.map}
 % \usepackage[largesc,p]{newtxtext}
 \usepackage{nimbusserif}
 \usepackage{nimbussans}
 \usepackage{nimbusmononarrow}
+\usepackage[lite]{mtpro2}%
 \usepackage[varg,
-            bigdelims,
-            % upint,
-            % smallerops,
+            upint,
+            smallerops,
             nosymbolsc]{newtxmath}%
-\usepackage[bb=boondox,%
-            frak=boondox,%
-            cal=boondoxo,%
-            scr=boondox]{mathalfa}%
-\usepackage[lite,straightbraces,subscriptcorrection,nofontinfo]{mtpro2}%
+% \usepackage[bb=boondox,%
+%             frak=boondox,%
+%             cal=boondoxo,%
+%             scr=boondox]{mathalfa}%
 
+\DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
+\DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
+\DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
+
+\providecommand{\texto}{\textnormal}
 \providecommand{\textti}{\textnormal}
 \providecommand{\textprob}{\textbf}
 
 %% Redefinitions
-\let\smallsetminus\setdif
+
+% \let\smallsetminus\setdif
 \let\setminus\smallsetminus
-\let\smile\cupprod
-\let\frown\capprod
+% \let\smile\cupprod
+% \let\frown\capprod
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}}
 \newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
       \hbox{.}\hbox{.}}}%
