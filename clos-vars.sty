@@ -468,20 +468,20 @@ main=english]{babel}
 \usepackage[rm={proportional,lining},
             sf={proportional,oldstyle},
             tt={lining,tabular,monowidth}]{cfr-lm}
-\providecommand\textsi{\textsc}
-\providecommand\textti{\textnormal}
-\providecommand\texto{\textnormal}
-\providecommand\textprob{\textsc}
 
 \usepackage{xpatch}
 \xpatchcmd{\proof}{\itshape}{\normalfont\proofnameformat}{}{}
-\newcommand{\proofnameformat}{\textsi}
+\newcommand{\proofnameformat}{\sishape}
 
 \newenvironment{solution}[1][Solution]{%
-  \proof[\textsi{#1}]%
+  \proof[#1]%
 }{
   \endproof}
 
+% \providecommand\textsi{\textsc}
+% \providecommand\textti{\textnormal}
+% \providecommand\texto{\textnormal}
+\providecommand\textprob{\textsc}
 
 %% Math replace
 \let\setminus\smallsetminus%
