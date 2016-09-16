@@ -231,28 +231,36 @@ main=english]{babel}
 \else
 \if@times % TeX Gyre for math and Nimbus for text
 \pdfmapfile{=mtpro2.map}
+\usepackage[lite]{mtpro2}%
+
 \pdfmapfile{=newtx.map}
-% \usepackage[largesc,p]{newtxtext}
+\usepackage[largesc,p]{newtxtext}
 \usepackage{nimbusserif}
 \usepackage{nimbussans}
 \usepackage{nimbusmononarrow}
-\usepackage[lite]{mtpro2}%
 \usepackage[varg,
             upint,
             smallerops,
             nosymbolsc]{newtxmath}%
-% \usepackage[bb=boondox,%
-%             frak=boondox,%
-%             cal=boondoxo,%
-%             scr=boondox]{mathalfa}%
+\usepackage[bb=boondox,%
+            frak=boondox,%
+            cal=boondoxo,%
+            scr=boondox]{mathalfa}%
 
-\DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
-\DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
-\DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
+\DeclareMathSymbol{:}{\mathrel}{operators}{58}
+% \DeclareMathSymbol{\colon}{\mathpunct}{operators}{58}
+\DeclareMathSymbol{;}{\mathpunct}{operators}{59}
+\DeclareMathSymbol{=}{\mathrel}{lettersA}{61}
+\DeclareMathSymbol{?}{\mathclose}{operators}{63}
 
-\providecommand{\texto}{\textnormal}
-\providecommand{\textti}{\textnormal}
-\providecommand{\textprob}{\textbf}
+% \DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
+% \DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
+% \DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
+
+\providecommand\textsi{\textsc}
+\providecommand\textti{\textnormal}
+\providecommand\texto{\textnormal}
+\providecommand{\textprob}{\scshape}
 
 %% Redefinitions
 
@@ -459,29 +467,30 @@ main=english]{babel}
 
 \else
 % \usepackage{old-arrows}
-% \RequirePackage{fix-cm}
+\RequirePackage{fix-cm}
 \usepackage{amssymb}
 \usepackage[heavycircles]{stmaryrd}%
 \usepackage{bm}
 
 %% Use Latin Modern instead
-\usepackage[rm={proportional,lining},
-            sf={proportional,oldstyle},
-            tt={lining,tabular,monowidth}]{cfr-lm}
+% \usepackage[rm={proportional,lining},
+%             sf={proportional,oldstyle},
+%             tt={lining,tabular,monowidth}]{cfr-lm}
+
+\providecommand\textsi{\scshape}
+\providecommand\textti{\textnormal}
+\providecommand\texto{\textnormal}
+\providecommand{\textprob}{\bfseries\scshape}
 
 \usepackage{xpatch}
 \xpatchcmd{\proof}{\itshape}{\normalfont\proofnameformat}{}{}
-\newcommand{\proofnameformat}{\sishape}
+% \newcommand{\proofnameformat}{\sishape}
+\newcommand{\proofnameformat}{\bfseries\itshape}
 
 \newenvironment{solution}[1][Solution]{%
   \proof[#1]%
 }{
   \endproof}
-
-% \providecommand\textsi{\textsc}
-% \providecommand\textti{\textnormal}
-% \providecommand\texto{\textnormal}
-\providecommand\textprob{\textsc}
 
 %% Math replace
 \let\setminus\smallsetminus%
@@ -1222,7 +1231,7 @@ main=english]{babel}
 
 %%% Units
 \usepackage{siunitx}
-\sisetup{round-mode=places,round-precision=4}
+\sisetup{round-mode=places,round-precision=3}
 %% English units
 %% Distance
 \DeclareSIUnit[number-unit-product = {\thinspace}]{\inch}{in}
