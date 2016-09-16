@@ -145,6 +145,27 @@ typical time and \(u\colon\bfR\times[0,\infty)\to\bfR\) is the unknown,
 \(u=u(x,t)\). We write \(Du=D_xu=(u_{x_1},\dotsc,u_{x_n})\) for the
 gradient of \(u\) with respect to the spatial variable \(x\).
 
+So, which functions solve \eqref{eq:pde:ptrans}? Well, let us suppose for a
+moment that \(u\) is a smooth solution to the PDE and let us try to compute
+it. To do so, we first recognize that \eqref{eq:pde:ptrans} asserts that a
+particular directional derivative of \(u\) vanishes, namely, \(D_bu=0\). We
+exploit this by fixing a point \((x,t)\in\bfR^n\times(0,\infty)\) and
+defining
+\[
+z(s)\defeq u(x+sb,t+s)\qquad s\in\bfR.
+\]
+Then we calculate
+\begin{align*}
+  \dot z(s)&=Du(x+sb,t+s)\cdot b+u_t(x+sb,t+s)\\
+           &=0,
+\end{align*}
+the second equality holding by \eqref{eq:pde:ptrans}. Thus, \(z\) is a
+constant function of \(s\), and consequently for each \((x,t)\), \(u\) is
+constant on the line through \((x,t)\) with direction
+\((b,1)\in\bfR^{n+1}\). Hence, if we know the value of \(u\) at any point
+on ecah such line, we know its value everywhere in
+\(\bfR^n\times(0,\infty)\).
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../Fall16-Notes"
