@@ -191,6 +191,32 @@ which we can compute \(u\). Since \eqref{eq:initial-cond-1} says \(u=g\) on
 \(\Gamma\), we know the value of \(u\) at the one end \(x^0\). We hope then
 to be able to calculate \(u\) all along the curve, and so in particular at
 \(x\).
+\subsubsection{Finding the characteristic ODEs}
+How can we choose the curve so all this will work? Let us suppose it is
+described parametrically by the function
+\(\bfx(s)=\bigl(x^1(s),\dotsc,x^n(s)\bigr)\), the parameter \(s\) lying in
+some subinterval of \(\bfR\). Assuming \(u\) is a \(C^2\) solution of
+\eqref{eq:pde:pde-1}, we define also
+\[
+  z(s)\defeq u\bigl(\bfx(s)\bigr).
+\]
+In addition, set
+\[
+  \bfp(s)\defeq Du(\bfx(s));
+\]
+that is, \(\bfp(s)=\bigl(p^1(s),\dotsc,p^n(s)\bigr)\), where
+\begin{equation}
+  \label{eq:pde:char-curve-p-i}
+  p^i(s)=u_{x_i}\bigl(\bfx(s)\bigr),
+\end{equation}
+\(1\leq i\leq n\). So \(z\) gives the values of \(u\) along the curve and
+\(\bfp\) records the values of the gradient \(Du\). We must choose a
+function \(\bfx\) in such a way that we can compute \(z\) and \(\bfp\).
+
+For this, first differentiate \eqref{eq:pde:char-curve-p-i}
+\[
+  \dot{p}^i(s)=\sum_{j=1}^n u_{x_ix_j}\bigl(\bfx(s)\bigr)\dot{x}^j(s)
+\]
 
 %%% Local Variables:
 %%% mode: latex
