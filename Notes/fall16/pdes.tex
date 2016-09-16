@@ -14,7 +14,7 @@ summarizing the appropriate chapters from \cite{evans}.
   \begin{equation}
     \label{eq:pde:def-of-pde}
     F\bigl(D^ku(x),D^{k-1}u(x),\dotsc,Du(x),u(x),x\bigr)=0,
-    \qquad x\in U,
+    \quad x\in U,
   \end{equation}
   is called a \emph{\(k\)th-order partial differential equation (PDE)},
   where
@@ -64,7 +64,7 @@ a collection of several PDEs for several unknown functions.
   \begin{equation}
     \label{eq:pde:k-order-system}
     \bfF\bigl(D^k\bfu(x),D^{k-1}\bfu(x),\dotsc,D\bfu(x),\bfu(x),x\bigr)=0,
-    \qquad x\in U,
+    \quad x\in U,
   \end{equation}
   is called a \emph{\(k\)th-order system of PDEs}, where
   \[
@@ -73,7 +73,7 @@ a collection of several PDEs for several unknown functions.
   \]
   is given and
   \[
-    \bfu\colon U\too\bfR^m,\qquad\bfu=(u^1,\dotsc,u^m)
+    \bfu\colon U\too\bfR^m,\quad\bfu=(u^1,\dotsc,u^m)
   \]
   is the unknown.
 \end{definition}
@@ -137,7 +137,7 @@ We begin our study with one of the simplest PDEs, the \emph{transport
   equation} with constant coefficients. This is the PDE
 \begin{equation}
   \label{eq:pde:ptrans}
-  u_t+b\cdot Du=0,\qquad \text{in \(\bfR^n\times(0,\infty)\),}
+  u_t+b\cdot Du=0,\quad \text{in \(\bfR^n\times(0,\infty)\),}
 \end{equation}
 where \(b\) is a fixed vector in \(\bfR^n\), \(b=(b_1,\dotsc,b_n)\),
 \(x=(x_1,\dotsc,x_n)\in\bfR^n\) is a typical point in space, \(t\geq 0\)
@@ -152,7 +152,7 @@ particular directional derivative of \(u\) vanishes, namely, \(D_bu=0\). We
 exploit this by fixing a point \((x,t)\in\bfR^n\times(0,\infty)\) and
 defining
 \[
-  z(s)\defeq u(x+sb,t+s),\qquad s\in\bfR.
+  z(s)\defeq u(x+sb,t+s),\quad s\in\bfR.
 \]
 Then we calculate
 \begin{align*}
@@ -165,9 +165,33 @@ constant on the line through \((x,t)\) with direction
 \((b,1)\in\bfR^{n+1}\). Hence, if we know the value of \(u\) at any point
 on ecah such line, we know its value everywhere in
 \(\bfR^n\times(0,\infty)\).
-\[
-  \left\{\,x\in\bfR^n:x^2\,\right\}
-\]
+
+\section{Characteristics}
+\subsection{Derivation of characteristic ODEs}
+Consider the nonlinear first-order PDE
+\begin{equation}
+  \label{eq:pde:pde-1}
+  F(Du,u,x)=0\quad\text{in \(U\),}
+\end{equation}
+subject now to the boundary condition
+\begin{equation}
+  \label{eq:pde:initial-cond-1}
+  u=g\quad\text{on \(\Gamma\),}
+\end{equation}
+where \(\Gamma\subseteq\partial U\) and \(g\colon\Gamma\to\bfR\) are
+given. We hereafter suppose that \(F\), \(g\) are smooth functions.
+
+We now develop the method of \emph{characteristics}, which solves
+\eqref{eq:pde:pde-1} and \eqref{eq:pde:initial-cond-1}. Suppose \(u\)
+solves the \eqref{eq:pde:pde-1}, \eqref{eq:pde:initial-cond-1} and fix any
+point \(x\in U\). We would like to calculate \(u(x)\) by finding some curve
+lying within \(U\), connecting \(x\) with a point \(x^0\in\Gamma\) and
+along which we can compute \(u\). Since \eqref{eq:initial-cond-1} says
+\(u=g\) on \(\Gamma\), we know the value of \(u\) at the one end
+\(x^0\). We hope then to be able to calculate \(u\) all along the curve,
+and so in particular at \(x\).
+
+
 
 %%% Local Variables:
 %%% mode: latex
