@@ -1,0 +1,59 @@
+\def\auth{Carlos Salinas}
+\def\tight{MA 523: Homework, Midterms and Practice Problems Solutions}
+\def\short{MA523-HW-ALL}
+\def\class{MA 523}
+\def\subject{partial differential equations}
+\def\email{salinac@purdue.edu}
+\documentclass[oneside]{article}
+\usepackage{geometry}
+
+%% Base customization and variables
+\usepackage{clos-vars}
+
+%% Formatting
+
+%% Footnote style
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+%% Hyperref setup
+\hypersetup{%
+  breaklinks,%
+  colorlinks=true,%
+  linkcolor=black,%
+  citecolor=black,%
+  filecolor=black,%
+  menucolor=black,%
+  runcolor=black,%
+  urlcolor=black,%
+  pdftitle={\short},%
+  pdfauthor={\auth},%
+  pdfkeywords={\subject},%
+  pdfsubject={\class},%
+  % pageanchor={false},%
+  unicode
+}
+
+%% Graphics path as it says
+\graphicspath{{figures/}}
+
+%% Fix AMS counter bug
+\renewenvironment{problem}
+                 {\begin{exercise}}%
+                 {\end{exercise}}%
+
+\begin{document}
+% \author{\href{mailto:\email}{\auth}}
+\author{\textti\auth}
+\title{\textti\tight}%
+\date{\textti{Last compiled: \texto{\today}}}
+\maketitle
+\tableofcontents
+%% DasGupta's homework
+\include{homework/523-hw-1-run}
+\include{homework/523-hw-2-run}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

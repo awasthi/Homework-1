@@ -2,9 +2,66 @@
 Here we summarize some important points about PDEs. The material is mostly
 taken from Evans's \emph{Partial Differential Equations} \cite{evans} with
 occasional detours to Strauss's \emph{Partial Differential Equations: An
-  Introduction} \cite{strauss}.
+  Introduction} \cite{strauss}. We will be following Dr.\@ Petrosyan's
+\textsf{Course Log} which can be found here
+\url{https://www.math.purdue.edu/~arshak/F16/MA523/courselog/}, i.e.,
+summarizing the appropriate chapters from \cite{evans}.
 
+\section{Introduction}
+\subsection{Partial differential equations}
+\begin{definition}
+  An expression of the form
+  \begin{equation}
+    \label{eq:pde:def-of-pde}
+    F\bigl(D^ku(x),D^{k-1}u(x),\dotsc,Du(x),u(x),x\bigr)=0
+    \qquad (x\in U)
+  \end{equation}
+  is called a \emph{\(k\)th-order partial differential equation (PDE)},
+  where
+  \[
+    F\colon\bfR^{n^k}\times\bfR^{n^{k-1}}\times\dotsb\times\bfR^n\times U\too\bfR
+  \]
+  is given, and
+  \[
+    u\colon U\too\bfR
+  \]
+  is the unknown.
+\end{definition}
 
+Here are some more definitions,
+\begin{definition}
+  \hfill
+  \begin{enumerate}[label=(\roman*)]
+  \item The partial differential equation \eqref{eq:pde:def-of-pde} is
+    called \emph{linear} if it has the form
+    \[
+      \sum_{|\alpha|\leq k}a_\alpha(x)D^\alpha u=f(x)
+    \]
+    for given functions \(a_\alpha(|\alpha|\leq k)\), \(f\). This linear
+    PDE is \emph{homogeneous} if \(f=0\).
+  \item The PDE \eqref{eq:pde:def-of-pde} is \emph{semilinear} if it has
+    the form
+    \[
+      \sum_{|\alpha|=k}a_\alpha D^\alpha u
+      +a_0\bigl(D^{k-1}u,\dotsc,Du,u,x\bigr)=0.
+    \]
+  \item The PDE \eqref{eq:pde:def-of-pde} is \emph{quasilinear} if it has
+    the form
+    \[
+      \sum_{|\alpha|=k}a_\alpha\bigl(D^{k-1}u,\dotsc,Du,u,x\bigr)D^\alpha u
+      +a_0\bigl(D^{k-1}u,\dotsc,Du,u,x\bigr)=0.
+    \]
+  \item The PDE \eqref{eq:pde:def-of-pde} is \emph{fully nonlinear} if it
+    depends upon the highest order derivatives.
+  \end{enumerate}
+\end{definition}
+
+A \emph{system} of partial differential equations is, informally speaking,
+a collection of several PDEs for several unknown functions.
+
+\begin{definition}
+  An expression of the form
+\end{definition}
 
 %%% Local Variables:
 %%% mode: latex
