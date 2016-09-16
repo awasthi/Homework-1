@@ -30,6 +30,11 @@
   \@libertinetrue
 }
 
+\newif\if@gentium\@gentiumfalse
+\DeclareOption{gentium}{
+  \@gentiumtrue
+}
+
 \newif\if@cochineal\@cochinealfalse
 \DeclareOption{cochineal}{
   \@cochinealtrue
@@ -242,7 +247,6 @@ main=english]{babel}
 \usepackage[lite,straightbraces,subscriptcorrection,nofontinfo]{mtpro2}%
 
 \providecommand{\textti}{\textnormal}
-\providecommand{\texto}{\textnormal}
 \providecommand{\textprob}{\textbf}
 
 %% Redefinitions
@@ -338,7 +342,7 @@ main=english]{babel}
                 scr=boondox]{mathalfa}%
 \usepackage{bm}
 
-%% Other Libertine specific math settings
+%% Other Cochineal specific commands
 \DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
 \DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
 \DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
@@ -372,10 +376,30 @@ main=english]{babel}
             raised=-.13em]{superiors}
 \usepackage{bm}
 
+\providecommand{\textti}{\textnormal}
 %% Other Libertine specific math settings
 \DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
 \DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
 \DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
+
+\let\setminus\smallsetminus
+\let\emptyset\varnothing%
+\renewcommand\qedsymbol{\ensuremath{\blacksquare}}
+\newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+      \hbox{.}\hbox{.}}}%
+  =}%
+\@ifpackageloaded{tikz}{\tikzcdset{arrow style=math font}}{}
+
+\else
+
+\if@gentium %% Use Libertine (a beautiful free font)
+
+\usepackage{amssymb}
+\usepackage{gentium}
+\usepackage{eulervm}
+
+\providecommand{\textti}{\textnormal}
+\providecommand\textprob{\textsc}
 
 \let\setminus\smallsetminus
 \let\emptyset\varnothing%
