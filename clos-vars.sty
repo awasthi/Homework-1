@@ -439,7 +439,9 @@ main=english]{babel}
   \proof[{\textsc{#1}}]%
 }{
   \endproof}
+
 \providecommand\textprob{\textsc}
+
 %% Math replace
 \let\setminus\smallsetminus%
 % \let\emptyset\varnothing%
@@ -453,20 +455,24 @@ main=english]{babel}
 \usepackage{bm}
 \usepackage{amssymb}
 \usepackage[heavycircles]{stmaryrd}%
+% \usepackage{old-arrows}
 \usepackage[rm={proportional,lining},
             sf={proportional,oldstyle},
             tt={lining,tabular,monowidth}]{cfr-lm}
-% \usepackage{old-arrows}
 
+\providecommand\textsi{\textsc}
+% \providecommand\textti{\textnormal}
+\providecommand\texto{\textnormal}
+\providecommand\textprob{\textsc}
 \newenvironment{solution}[1][Solution]{%
-  \proof[{\textsi{#1}}]%
+  \proof[\textsi{#1}]%
 }{
   \endproof}
-\providecommand\textprob{\textsc}
+
 
 %% Math replace
 \let\setminus\smallsetminus%
-\let\emptyset\varnothing%
+% \let\emptyset\varnothing%
 \let\oldbtright\blacktriangleright%
 \let\oldbtleft\blacktriangleleft%
 \renewcommand\blacktriangleright{\ensuremath{\scriptstyle\oldbtright}}
