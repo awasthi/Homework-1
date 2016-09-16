@@ -467,29 +467,29 @@ main=english]{babel}
 
 \else
 % \usepackage{old-arrows}
-\RequirePackage{fix-cm}
+% \RequirePackage{fix-cm}
 \usepackage{amssymb}
-\usepackage[bb=ams,%
-            frak=euler,%
-            cal=cm,%
+\usepackage[% bb=ams,%
+            % frak=euler,%
+            % cal=cm,%
             scr=rsfso]{mathalfa}%
 \usepackage[heavycircles]{stmaryrd}%
 \usepackage{bm}
 
 %% Use Latin Modern instead
-% \usepackage[rm={proportional,lining},
-%             sf={proportional,oldstyle},
-%             tt={lining,tabular,monowidth}]{cfr-lm}
+\usepackage[rm={proportional,lining},
+            sf={proportional,oldstyle},
+            tt={lining,tabular,monowidth}]{cfr-lm}
 
-\providecommand\textsi{\scshape}
-\providecommand\textti{\textnormal}
-\providecommand\texto{\textnormal}
-\providecommand{\textprob}{\bfseries\scshape}
+% \providecommand\textsi{\scshape}
+% \providecommand\textti{\textnormal}
+% \providecommand\texto{\textnormal}
+\providecommand{\textprob}{\scshape}
 
 \usepackage{xpatch}
 \xpatchcmd{\proof}{\itshape}{\normalfont\proofnameformat}{}{}
-% \newcommand{\proofnameformat}{\sishape}
-\newcommand{\proofnameformat}{\bfseries\itshape}
+\newcommand{\proofnameformat}{\sishape}
+% \newcommand{\proofnameformat}{\bfseries\itshape}
 
 \newenvironment{solution}[1][Solution]{%
   \proof[#1]%
