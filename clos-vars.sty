@@ -370,6 +370,7 @@ main=english]{babel}
 
 \else
 \if@libertine %% Use Libertine (a beautiful free font)
+\pdfmapfile{=newtx.map}
 \usepackage{libertine}
 \usepackage{libertinegc} %% Greek and Cyrillic Libertine
 \usepackage[scale=.95,type1]{cabin} % sans
@@ -390,7 +391,12 @@ main=english]{babel}
             raised=-.13em]{superiors}
 \usepackage{bm}
 
-\providecommand{\textti}{\textnormal}
+%% Some commands I use
+\providecommand\textsi{\scshape}
+\providecommand\textti{\textnormal}
+\providecommand\texto{\textnormal}
+\providecommand{\textprob}{\scshape}
+
 %% Other Libertine specific math settings
 \DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
 \DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
@@ -406,7 +412,7 @@ main=english]{babel}
 
 \else
 
-\if@gentium %% Use Libertine (a beautiful free font)
+\if@gentium
 
 \usepackage{amssymb}
 \usepackage{gentium}
