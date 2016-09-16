@@ -36,7 +36,48 @@ Using notation as in \cite{feller}, the number
 \]
 represents the number of different ways that a group of \(r\) items could
 be selected from \(n\) items when the order of selection is relevant, and
-as each group of \(r\) items
+as each group of \(r\) items will be counted \(r!\) times in this count, it
+follows that the number of different groups of \(r\) items that could be
+formed from a set of \(n\) items is
+\[
+  \frac{(n)_r}{r!}=\frac{n!}{(n-r)!r!}
+\]
+for which we reserve the notation
+\[
+  \binom{n}{r}
+\]
+read \(n\) choose \(r\). (This is called a binomial coefficient since it
+appears in the binomial expansion \((a+b)^n\).)
+
+A useful combinatorial identity on binomial coefficients is the following
+\[
+  \binom{n}{r}=\binom{n-1}{r-1}+\binom{n-1}{r}
+\]
+for \(1\leq r\leq n\).
+
+\begin{theorem}[The binomial theorem]
+  \[
+    (a+b)^n=\sum_{i=1}^n\binom{n}{i}x^iy^{n-i}.
+  \]
+\end{theorem}
+\begin{proof}
+  We provide a combinatiorial proof of the theorem. Consider the product
+  \[
+    (a_1+b_1)\dotsm(a_n+b_n).
+  \]
+  Its expansion consists of the sum of \(2^n\) terms, each term being the
+  product of \(n\) factors. Furthermore, each of the \(2^n\) terms in the
+  sum will contain as a factor either \(a_i\) or \(b_i\) for each
+  \(1\leq i\leq n\). Now, how many of the \(2^n\) terms in the sum will
+  have \(k\) of the \(a_i\) and \(n-k\) of the \(b_i\) as factors? As each
+  term consisting of \(k\) of the \(a_i\) and \(n-k\) of the \(b_i\)
+  correspond to a choice of a group of \(k\) from the values
+  \(a_1,\dotsc,a_n\), there are \(\binom{n}{k}\) such terms. Thus, letting
+  \(a_i=a\), \(b_i=b\), \(1\leq i\leq n\), we see that
+  \[
+    (a+b)^n=\sum_{i=0}^n\binom{n}{i}x^iy^{n-i}.
+  \]
+\end{proof}
 
 %%% Local Variables:
 %%% mode: latex
