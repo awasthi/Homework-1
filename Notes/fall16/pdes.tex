@@ -217,6 +217,21 @@ For this, first differentiate \eqref{eq:pde:char-curve-p-i}
 \[
   \dot{p}^i(s)=\sum_{j=1}^n u_{x_ix_j}\bigl(\bfx(s)\bigr)\dot{x}^j(s)
 \]
+This expression is not too promising, since it involves the second
+derivatives of \(u\). On the other hand, we can also differentiate the PDE
+\eqref{eq:pde:pde-1} with respect to \(x_i\) to get
+\[
+  \sum_{j=1}^n
+  \frac{\partial}{\partial p_j}F(Du,u,x)u_{x_jx_i}
+  +\frac{\partial}{\partial z}F(Du,u,x)u_{x_i}
+  +\frac{\partial}{\partial x_i}F(Du,u,x)=0.
+\]
+We are able to employ this identity to get rid of the \emph{dangerous}
+second derivative terms provided we first set
+\[
+  \dot{x}^j(s)=\frac{\partial}{\partial
+    p_j}F\bigl(\bfp(s),z(s),\bfx(s)\bigr).
+\]
 
 %%% Local Variables:
 %%% mode: latex
