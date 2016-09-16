@@ -7,72 +7,36 @@ discrete noncalculus portion of the class) and DasGupta's own book
 \emph{Fundamentals of Probability: A First Course} \cite{dasgupta}.
 
 \section{Discrete Probability}
-The material in this section is pulled almost entirely from \cite{feller}
-with minor detours to \cite{dasgupta}. We will not reference any particular
-pages in either book (unless we feel particularly lazy).
+The material in this chapter is mostly pulled from Sheldon Ross's \emph{A
+  First Course in Probability Theory} with some examples from
+\cite{dasgupta} and \cite{feller}. I find Ross's book to be better
+structured than the latter two.
 
-\subsection{Background}
-Given a discrete sample space \(\Omega\) with sample points
-\(\omega_1,\omega_2,\dotsc\), we shall assume that with each point
-\(\omega_j\) there is associated a number, called the probability of
-\(\omega_j\) and denoted by \(P(\omega_i)\). It is nonnegative and such
-that
-\begin{equation}
-  \label{eq:prob-sum}
-  \sum_{i\in\bfN} P(\omega_i)=1.
-\end{equation}
-
-\begin{definition}
-  The probability \(P(A)\) of an event \(A\) is the sum of the
-  probabilities of all sample points in it.
-\end{definition}
-
-Since the probability of \(\Omega\) is \(1\) by \eqref{eq:prob-sum}, it
-follows that for any event \(A\)
-\begin{equation}
-  \label{eq:prob-event}
-  0\leq P(A)\leq 1.
-\end{equation}
-
-Let \(A_1\) and \(A_2\) be arbitrary events. To compute the probability
-\(P(A_1\cup A_2)\) that either \(A_1\) or \(A_2\) or both occur, we have to
-add the probabilities of the sample points contained either in \(A_1\) or
-in \(A_2\), but each point is to be counted only once. Therefore, we have
-\begin{equation}
-  \label{eq:prob-union-bound}
-  P(A_1\cup A_2)\leq P(A_1)+P(A_2).
-\end{equation}
-Now, if \(\omega\) is any point contained in both \(A_1\) and \(A_2\) the
-probability of \(\omega\), \(P(\omega)\), appears on the right-hand side of
-\eqref{ep:prob-union-bound} twice but only once in the left-hand side. This
-analysis leads us to conclude that the probability \(P(A_1\cap A_2)\)
-occurs twice on right-hand side of \eqref{eq:prob-union-bound}, and we have
-the important result
-\begin{theorem}
-  For any two events \(A_1\) and \(A_2\) the probability that either
-  \(A_1\) or \(A_2\) or both occur is given by
-  \begin{equation}
-    \label{eq:prob-union-exact}
-    P(A_1\cup A_2)=P(A_1)+P(A_2)-P(A_1\cap A_2).
-  \end{equation}
-  If \(A_1\cap A_2=\emptyset\), that is, if \(A_1\) and \(A_2\) are
-  mutually exclusive, then \eqref{eq:prob-union-exact} reduces to
-  \[
-    P(A_1\cup A_2)=P(A_1)+P(A_2).
-  \]
+\subsection{Combinatorial Analysis}
+These are the main results from this section.
+\begin{theorem}[The basic principle of counting]
+  Suppose that two experiments are to be performed. Then if experiment 1
+  can result in any one of \(m\) possible outcomes and if, for each outcome
+  of experiment 1, there are \(n\) possible outcomes of experiment 2, then
+  together there are \(mn\) possible outcomes of the two experiments.
+\end{theorem}
+\begin{theorem}[The generalized principle of counting]
+  If \(r\) experiments that are to be performed are such that the first one
+  may result in any of \(n_1\) possible outcomes; and if, for each of these
+  \(n_1\) possible outcomes, there are \(n_2\) possible outcomes for the
+  second experiment; and if, for each of the possible outcomes of the first
+  two experiments, there are \(n_3\) possible outcomes for the third
+  experiment; etc.\@ ..., then there is a total of \(n_1n_2\dotsm n_r\)
+  possible outcomes of the \(r\) experiments.
 \end{theorem}
 
-We may similarly continue to consider the probability of (countably)
-arbitrarily many events \(A_1,A_2,\dotsc\),
-\begin{equation}
-  \label{eq:booles-inequality}
-  P\left(\bigcup\nolimits_{i\in\bfN} A_i\right)\leq\sum_{i\in\bfN} P(A_i).
-\end{equation}
-This equation is referred to as \emph{Boole's inequality}. In the special
-case where the events \(A_1,A_2,\dotsc\) are mutually exclusive, we have
+Using notation as in \cite{feller}, the number
 \[
-  P\left( \bigcup\nolimits_{i\in\bfN} A_i\right)=\sum_{i\in\bfN} P(A_i).
+  (n)_r=n(n-1)\dotsm(n-r+1)
 \]
+represents the number of different ways that a group of \(r\) items could
+be selected from \(n\) items when the order of selection is relevant, and
+as each group of \(r\) items
 
 %%% Local Variables:
 %%% mode: latex
