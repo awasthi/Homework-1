@@ -61,7 +61,89 @@ a collection of several PDEs for several unknown functions.
 
 \begin{definition}
   An expression of the form
+  \begin{equation}
+    \label{eq:pde:k-order-system}
+    \bfF\bigl(D^k\bfu(x),D^{k-1}\bfu(x),\dotsc,D\bfu(x),\bfu(x),x\bigr)=0\qquad
+    (x\in U)
+  \end{equation}
+  is called a \emph{\(k\)th-order system of PDEs}, where
+  \[
+    \bfF\colon\bfR^{mn^k}\times\bfR^{mn^{k-1}}\times\dotsc\times\bfR^{mn}\times\bfR^m\times
+    U\too\bfR^m
+  \]
+  is given and
+  \[
+    \bfu\colon U\too\bfR^m,\qquad\bfu=(u^1,\dotsc,u^m)
+  \]
+  is the unknown.
 \end{definition}
+\begin{remark}
+  We haven't talked much about systems of PDEs and I suspect we will not do
+  so very much in this course.
+\end{remark}
+\subsection{Examples}
+This is only a fraction of the PDEs listed in Evan's chapter.
+
+\subsubsection{Linear equations}
+\begin{enumerate}[label=\arabic*.,noitemsep]
+\item Laplace's equation
+  \[
+    \Delta u=\sum_{i=1}^n u_{x_ix_i}=0.
+  \]
+\item Helmholtz's (or eigenvalue) equation
+  \[
+    -\Delta u=\lambda u.
+  \]
+\item Linear transport equation
+  \[
+    u_t+\sum_{i=1}^n b^iu_{x_i}=0.
+  \]
+\item Liouville's equation
+  \[
+    u_t-\sum_{i=1}^n(b^iu)_{x_i}=0.
+  \]
+\item Heat (or diffusion) equation
+  \[
+    u_t-\Delta u=0.
+  \]
+\item Wave equation
+  \[
+    u_{tt}-\Delta u=0.
+  \]
+\item Telegraph equation
+  \[
+    u_{tt}+du_t-u_{xx}=0.
+  \]
+\end{enumerate}
+\subsubsection{Nonlinear equations}
+\begin{enumerate}[label=\arabic*.,noitemsep]
+\item Eikonal equation
+  \[
+    |Du|=1.
+  \]
+\item Nonlinear Poisson equation
+  \[
+    -\Delta u=f(u).
+  \]
+\item Inviscid Burgers' equation
+  \[
+    u_t+uu_x=0.
+  \]
+\end{enumerate}
+and so on.
+
+\section{The transport equation}
+We begin our study with one of the simplest PDEs, the \emph{transport
+  equation} with constant coefficients. This is the pde
+\begin{equation}
+  \label{eq:pde:ptrans}
+  u_t+b\cdot Du=0\qquad \text{in \(\bfR^n\times(0,\infty)\),}
+\end{equation}
+where \(b\) is a fixed vector in \(\bfR^n\), \(b=(b_1,\dotsc,b_n)\),
+\(x=(x_1,\dotsc,x_n)\in\bfR^n\) is a point in space, \(t\geq 0\) denotes a
+typical time and \(u\colon\bfR\times[0,\infty)\to\bfR\) is the unknown,
+\(u=u(x,t)\). We write \(Du=D_xu=(u_{x_1},\dotsc,u_{x_n})\) for the
+gradient of \(u\) with respect to the spatial variable \(x\).
 
 %%% Local Variables:
 %%% mode: latex
