@@ -187,7 +187,7 @@ PDE into an appropriate system of ODEs. Suppose \(u\) solves the
 \eqref{eq:pde:pde-1}, \eqref{eq:pde:initial-cond-1} and fix any point
 \(x\in U\). We would like to calculate \(u(x)\) by finding some curve lying
 within \(U\), connecting \(x\) with a point \(x^0\in\Gamma\) and along
-which we can compute \(u\). Since \eqref{eq:initial-cond-1} says \(u=g\) on
+which we can compute \(u\). Since \eqref{eq:pde:initial-cond-1} says \(u=g\) on
 \(\Gamma\), we know the value of \(u\) at the one end \(x^0\). We hope then
 to be able to calculate \(u\) all along the curve, and so in particular at
 \(x\).
@@ -260,16 +260,17 @@ the second equality holding by --fuck this guy for numbering every
 expression--(5) and (8)--whatever they are.
 
 We summarize by rewriting equations (8)--(10) in vector notation:
-\[
+\begin{equation}
+  \label{eq:pde:characteristics}
   \left\{
     \begin{aligned}
-      \dot\bfp(s)&=-D_xF\bigl(\bfp(s),z(s),\bfx(s)\bigr)
+      \text{(a) }\dot\bfp(s)&=-D_xF\bigl(\bfp(s),z(s),\bfx(s)\bigr)
       -D_zF\bigl(\bfp(s),z(s),\bfx(s)\bigr)\bfp(s),\\
-      \dot z(s)&=D_pF\bigl(\bfp(s),z(s),\bfx(s)\bigr)\cdot\bfp(s),\\
-      \dot\bfx(s)&=D_pF(\bfp(s),z(s),\bfx(s)).
+      \text{(b) }\dot z(s)&=D_pF\bigl(\bfp(s),z(s),\bfx(s)\bigr)\cdot\bfp(s),\\
+      \text{(c) }\dot\bfx(s)&=D_pF\bigl(\bfp(s),z(s),\bfx(s)\bigr).
     \end{aligned}
   \right.
-\]
+\end{equation}
 
 This important system of \(2n+1\) first-order ODEs comprises the
 \emph{characteristic equations} of the nonlinear first-order PDE
@@ -279,6 +280,16 @@ sometimes refer to \(\bfx\) as the \emph{projected characteristics}: it is
 the projection of the full characteristics
 \((\bfp,z,\bfx)\subseteq\bfR^{2n+1}\) onto the physical region
 \(U\subseteq\bfR^n\).
+
+\begin{theorem}[Structure of characteristic ODEs]
+  Let \(u\in C^2(U)\) solve the nonlinear, first-order partial differential
+  equation \eqref{eq:pde:pde-1} in \(U\). Assume \(\bfx\) solves the ODEs
+  \eqref{eq:pde:characteristics}\textnormal{(c)}, where \(\bfp=Du\),
+  \(z=u\). Then \(\bfp\) solves the ODE
+  \eqref{eq:pde:characteristics}\textnormal{(a)} and \(z\) solves the ODE
+  \eqref{eq:pde:characteristics}\textnormal{(b)}, for those \(s\) such that
+  \(\bfx\in U\).
+\end{theorem}
 
 %%% Local Variables:
 %%% mode: latex
