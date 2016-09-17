@@ -248,8 +248,37 @@ Substitute this expression and the previous one into the derivative for
     \dot{p}^i(s)=\frac{\partial}{\partial x_i}F\bigl(\bfp(s),z(s),\bfx(s)\bigr)
   \end{aligned}
 \]
+Finally, we differentiate \(z\) to get
+\[
+  \dot z(s)=
+  \sum_{j=1}^n\frac{\partial}{\partial x_j}u\bigl(\bfx(s)\bigr)
+  \dot{x}^j(s)=
+  \sum_{j=1}^n p^j(s)\frac{\partial}{\partial
+    p_j}F\bigl(\bfp(s),z(s),\bfx(s)\bigr),
+\]
+the second equality holding by --fuck this guy for numbering every
+expression--(5) and (8)--whatever they are.
 
-Let \(u\in\scrC^\infty(\Omega)\)
+We summarize by rewriting equations (8)--(10) in vector notation:
+\[
+  \left\{
+    \begin{aligned}
+      \dot\bfp(s)&=-D_xF\bigl(\bfp(s),z(s),\bfx(s)\bigr)
+      -D_zF\bigl(\bfp(s),z(s),\bfx(s)\bigr)\bfp(s),\\
+      \dot z(s)&=D_pF\bigl(\bfp(s),z(s),\bfx(s)\bigr)\cdot\bfp(s),\\
+      \dot\bfx(s)&=D_pF(\bfp(s),z(s),\bfx(s)).
+    \end{aligned}
+  \right.
+\]
+
+This important system of \(2n+1\) first-order ODEs comprises the
+\emph{characteristic equations} of the nonlinear first-order PDE
+\eqref{eq:pde:pde-1}. The functions \(\bfp=(p^1,\dotsc,p^n)\), \(z\),
+\(\bfx=(x^1,\dotsc,x^n)\) are a called the \emph{characteristics}. We will
+sometimes refer to \(\bfx\) as the \emph{projected characteristics}: it is
+the projection of the full characteristics
+\((\bfp,z,\bfx)\subseteq\bfR^{2n+1}\) onto the physical region
+\(U\subseteq\bfR^n\).
 
 %%% Local Variables:
 %%% mode: latex
