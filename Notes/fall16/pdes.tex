@@ -290,6 +290,47 @@ the projection of the full characteristics
   \eqref{eq:pde:characteristics}\textnormal{(b)}, for those \(s\) such that
   \(\bfx\in U\).
 \end{theorem}
+\subsubsection{Examples}
+\subsubsection[\(F\) linear]{\(\bm F\)  linear}
+Consider first the situation that \eqref{eq:pde:pde-1} is linear and
+homogeneous, and thus has the form
+\[
+  F(Du,u,x)=\bfb(x)\cdot D u(x)+c(x)u(x)=0,\qquad x\in U.
+\]
+Then \(F(p,z,x)=\bfb(x)\cdot p+c(x)z\), and so
+\[
+  D_pF=\bfb(x).
+\]
+In this circumstance \eqref{eq:pde:characteristics}(c) becomes
+\[
+  \bfx(s)=\bfb\bigl(\bfx(s)\bigr),
+\]
+an ODE involving only the function \(\bfx\). Furthermore
+\eqref{eq:pde:characteristics}(b) becomes
+\begin{equation}
+  \label{eq:pde:1st-order-linear}
+  \dot z(s)=\bfb\bigl(\bfx(s)\bigr)\cdot\bfp(s).
+\end{equation}
+Since \(\bfp(\cdot)=Du\bigl(\bfx(\cdot)\bigr)\), the PDE simplifies the
+above to
+\[
+  \dot z(s)=-c\bigl(\bfx(s)\bigr)z(s).
+\]
+This ODE is linear in \(z\), once we know the function \(\bfx\) by solving
+its ODE.
+
+In summary,
+\begin{equation}
+  \label{eq:pde:1st-order-linear-chars}
+  \left\{
+    \begin{aligned}
+      \text{(a) }\dot\bfx(s)&=\bfb\bigl( \bfx(s) \bigr)\\
+      \text{(b) }\dot z(s)&=-c\bigl(\bfx(s)\bigr)z(s)
+    \end{aligned}
+  \right.
+\end{equation}
+comprise the characteristic equations for the linear, first-order PDE
+\eqref{eq:pde:1st-order-linear}.
 
 %%% Local Variables:
 %%% mode: latex
