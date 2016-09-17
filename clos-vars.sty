@@ -45,6 +45,11 @@
   \@baskervilletrue
 }
 
+\newif\if@babel\@babelfalse
+\DeclareOption{babel}{
+  \@babeltrue
+}
+
 \newif\if@arabi\@arabifalse
 \DeclareOption{arabi}{
   \@arabitrue
@@ -106,6 +111,7 @@ main=english]{babel}
 \newcommand{\textfa}[1]{\textpa{\textRL{#1}}}%
 
 \else%
+\if@babel
 \usepackage[T2A,T1]{fontenc}%
 \usepackage[utf8]{inputenc}%
 
@@ -122,11 +128,8 @@ main=english]{babel}
   de=german,%
   en=english,%
   es=spanish,%
-  he=greek,%
   ru=russian%
 }
-
-\fi
 
 % \renewcommand{\textfr}[1]{\foreignlanguage{french}{#1}}%
 % \renewcommand{\textde}[1]{\foreignlanguage{german}{#1}}%
@@ -134,6 +137,9 @@ main=english]{babel}
 % \renewcommand{\texten}[1]{\foreignlanguage{english}{#1}}%
 % \renewcommand{\texthe}[1]{\foreignlanguage{greek}{#1}}%
 % \renewcommand{\textru}[1]{\foreignlanguage{russian}{#1}}%
+
+\fi \fi
+
 
 %% Must be loaded after Babel
 \usepackage{microtype}
@@ -154,6 +160,8 @@ main=english]{babel}
 \newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}%
 \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}%
 \fi%
+
+
 \if@minionmath
 \pdfmapfile{+minionmath.map}
 % \usepackage{amssymb}
@@ -433,10 +441,18 @@ main=english]{babel}
 \if@unicodemath
 \usepackage{fontspec}
 \usepackage{unicode-math}
-\setmainfont{CMU Serif}
-\setsansfont{CMU Sans Serif}
-\setmonofont{CMU Typewriter Text}
+\setmainfont{Latin Modern Roman}
+\setsansfont{Latin Modern Sans}
+\setmonofont{Latin Modern Mono}
 % \setmathfont{Latin Modern Math}
+
+\providecommand\textsi{\scshape}
+\providecommand\textti{\textnormal}
+\providecommand\texto{\textnormal}
+\providecommand{\textprob}{\scshape}
+
+\renewcommand\qedsymbol{\ensuremath{\QED}} % Default is
+
 \tikzset{commutative diagrams/.cd,
                  arrow style=math font,
                  default arrow/.append style={line width=0.4pt},
