@@ -71,7 +71,7 @@
 
 %%% Othe useful packages
 \@ifpackageloaded{hyperref}{}{\usepackage{hyperref}}
-\@ifpackageloaded{natbib}{}{\usepackage{natbib}}
+% \@ifpackageloaded{natbib}{}{\usepackage{natbib}}
 \@ifpackageloaded{xcolor}
                  {\PassOptionsToPackage{dvipsnames}{xcolor}}
                  {\usepackage[dvipsnames]{xcolor}}
@@ -255,7 +255,7 @@ main=english]{babel}
             scr=boondox]{mathalfa}%
 
 \DeclareMathSymbol{:}{\mathrel}{operators}{58}
-% \DeclareMathSymbol{\colon}{\mathpunct}{operators}{58}
+\DeclareMathSymbol{\colon}{\mathpunct}{operators}{58}
 \DeclareMathSymbol{;}{\mathpunct}{operators}{59}
 \DeclareMathSymbol{=}{\mathrel}{lettersA}{61}
 \DeclareMathSymbol{?}{\mathclose}{operators}{63}
@@ -380,14 +380,15 @@ main=english]{babel}
 \pdfmapfile{=newtx.map}
 \usepackage{libertine}
 \usepackage{libertinegc} %% Greek and Cyrillic Libertine
+\usepackage{libertinust1math}
 \usepackage[scale=.95,type1]{cabin} % sans
 \usepackage[varqu,varl,scaled=.94]{zi4} % mono
-\usepackage[libertine,%
-            libaltvw,%
-            liby,%
-            upint,
-            smallerops,
-            nosymbolsc]{newtxmath} % Shitty math fonts
+% \usepackage[libertine,%
+%             libaltvw,%
+%             liby,%
+%             upint,
+%             smallerops,
+%             nosymbolsc]{newtxmath} % Shitty math fonts
 \usepackage[bb=boondox,%
                 frak=pxtx,%
                 frakscaled=1.1,
@@ -405,9 +406,9 @@ main=english]{babel}
 \providecommand{\textprob}{\scshape}
 
 %% Other Libertine specific math settings
-\DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
-\DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
-\DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
+% \DeclareMathSymbol{,}{\mathpunct}{operators}{"2C}
+% \DeclareMathSymbol{.}{\mathpunct}{operators}{"2E}
+% \DeclareMathSymbol{;}{\mathpunct}{operators}{"3B}
 
 \let\setminus\smallsetminus
 \let\emptyset\varnothing%
@@ -440,10 +441,20 @@ main=english]{babel}
 \if@unicodemath
 \usepackage{fontspec}
 \usepackage{unicode-math}
-\setmainfont{Latin Modern Roman}
-\setsansfont{Latin Modern Sans}
-\setmonofont{Latin Modern Mono}
+% \setmainfont{Latin Modern Roman}
+% \setsansfont{Latin Modern Sans}
+% \setmonofont{Latin Modern Mono}
 % \setmathfont{Latin Modern Math}
+
+\setmainfont{ztm}
+\setsansfont{Nimbus Sans L}
+\setmonofont{Nimbus Mono}
+\setmathfont{TeX Gyre Termes Math}
+
+% \setmainfont{Libertinus Serif}
+% \setsansfont{Libertinus Sans}
+% \setmonofont{Libertinus Mono}
+% \setmathfont[AutoFakeBold]{Libertinus Math}
 
 \providecommand\textsi{\scshape}
 \providecommand\textti{\textnormal}
@@ -451,16 +462,8 @@ main=english]{babel}
 \providecommand{\textprob}{\scshape}
 
 \renewcommand\qedsymbol{\ensuremath{\QED}} % Default is
+\newcommand*{\defeq}{\coloneqq}
 
-\tikzset{commutative diagrams/.cd,
-                 arrow style=math font,
-                 default arrow/.append style={line width=0.4pt},
-                 font arrows/.cd,
-                 declare head={math to}{→}{2.5pt}{1ex},
-                 declare tail={math cap}{→}{2.5pt}{1ex},
-                 declare tail={math right hook}{↪}{2.5pt}{1ex},
-                 declare head={math double to}{↠}{2.5pt}{1.4ex},
-               }
 \else
 \if@baskerville
 \usepackage{Baskervaldx}
@@ -494,7 +497,7 @@ main=english]{babel}
             % frak=euler,%
             % cal=cm,%
             scr=rsfso]{mathalfa}%
-\usepackage[heavycircles]{stmaryrd}%
+% \usepackage[heavycircles]{stmaryrd}%
 \usepackage{bm}
 
 %% Use Latin Modern instead
@@ -712,7 +715,7 @@ main=english]{babel}
 \newcommand\ntrileq{\ntrianglelefteq}
 \newcommand\trireq{\trianglerighteq}
 \newcommand\ntrireq{\ntrianglerighteq}
-\newcommand\restrict[1]{\raisebox{-.5ex}{\ensuremath\restriction}_{#1}}
+\newcommand\restrict[1]{\raisebox{-.5ex}{\ensuremath|}_{#1}}
 
 %% Redefinitions & commands not available in the default CM
 \providecommand{\nequiv}{\ensuremath{\not\equiv}}
