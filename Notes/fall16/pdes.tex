@@ -451,6 +451,111 @@ are the characteristic equations for the quasilinear first-order PDE.
   This solution of course make sense only if \(1-x_2g(x_1-x_2)\neq 0\).
 \end{example}
 
+\subsubsection[\(F\) fully nonlinear]{\(\bm F\) fully nonlinear}
+In the general case, the full characteristic equations
+\eqref{eq:pde:characteristics} must be integrated, if possible.
+\begin{example}
+  Consider the fully nonlinear problem
+  \begin{equation}
+    \label{eq:pde:nonlinear-ex-3}
+    \left\{
+    \begin{aligned}
+      u_{x_1}u_{x_2}&=u\quad\text{on \(U\)}\\
+      u&={x_2}^2\quad\text{on \(\Gamma\)}
+    \end{aligned}
+    \right.
+  \end{equation}
+  where \(U=\{\,x_1>0\,\}\), \(\Gamma=\{\,x_1=0\,\}=\partial U\). Here
+  \(F(p,z,x)=p_1p_2-z\), and hence the characteristic ODEs
+  \eqref{eq:pde:characteristics} become
+  \[
+    \left\{
+    \begin{aligned}
+      (\dot p^1,\dot p^2)&=(p^1,p^2)\\
+      \dot z&=2p^1p^2\\
+      (\dot x^1,\dot x^2)&=(p^2,p^1).
+    \end{aligned}
+    \right.
+  \]
+  We integrate these equations to find
+  \[
+    \left\{
+    \begin{aligned}
+      (x^1,x^2)(s)&=\bigl(p_2^0(\rme^s-1),p_1^0(\rme^s-1)\bigr)\\
+      z(s)&=z^0+p_1^0p_2^0(\rme^{2s}-1)\\
+      (p^1,p^2)(s)&=(p_1^0\rme^s,p_2^0\rme^s),
+    \end{aligned}
+    \right.
+  \]
+  where \(x^0\in\bfR\), \(s\in\bfR\), and \(z^0={(x^0)}^2\).
+
+  We must determine \(p^0=(p_1^0,p_2^0)\). Since \(u={x_2}^2\) on
+  \(\Gamma\), \(p_2^0=u_{x_2}(0,x^0)=2x^0\). Furthermore the PDE
+  \(u_{x_1}u_{x_2}=u\) itself implies \(p_1^0p_2^0=z^0={(x^0)}^2\), and so
+  \(p_1^0=x^2/2\). Consequently the formulas above become
+  \[
+    \left\{
+      \begin{aligned}
+        (x^1,x^2)(s)&=\bigl(2x^9(\rme^s-1),x^0(\rme^s+1)/2\bigr)\\
+        z(s)&={(x^0)}^2\rme^{2s}\\
+        (p^1,p^2)(s)&=(x^0\rme^s/2,2x^0\rme^s).
+      \end{aligned}
+    \right.
+  \]
+
+  Fix a point \((x_1,x_2)\in U\). Select \(s\) and \(x^0\) so that
+  \[
+    (x_1,x_2)=\bigl( x^1(s),x^2(s) \bigr)=\bigl(
+    2x^0(\rme^s-1),x^0(\rme^s+1)/2 \bigr).
+  \]
+  This equality implies \(x^0=(4x_2-x_1)/4\),
+  \(\rme^s=(x_1+4x_2)/(4x_2-x_1)\); and so
+  \begin{align*}
+    u(x_1,x_2)&=u\bigl( x^1(s),x^2(s) \bigr)\\
+              &=\frac{(x_1+4x_2)^2}{16}.
+  \end{align*}
+\end{example}
+
+\section{Boundary conditions}
+\subsection{Straightening the boundary}
+We intend in the following section to invoke the characteristic ODE
+\eqref{eq:pde:characteristics} to actually solve the boundary-value problem
+\eqref{eq:pde:pde-1}, \eqref{eq:pde:initial-cond-1}, at least in a small
+region near an appropriate portion \(\Gamma\) of \(\partial U\). In order
+to simplify the relevant calculations, it is convenient first fix any point
+\(x^0\in\partial U\). Then utilizing the notation from the appendix \S C.1
+of \cite{evans}, we find smooth mappings
+\(\bfPhi,\bfPsi\colon\bfR^n\to\bfR^n\) such that \(\bfPsi=\bfPhi^{-1}\) and
+\(\bfPhi\) straightens \(\partial U\) near \(x^0\).
+
+Given a function \(u\colon U\to\bfR\), let us write \(V\defeq\bfPhi(U)\)
+and set
+\begin{equation}
+  \label{eq:pde:straight-sol}
+  v(y)\defeq u\bigl( \bfPsi(y) \bigr)\qquad\text{\(y\in V\).}
+\end{equation}
+Then
+\begin{equation}
+  \label{eq:pde:unstraight-sol}
+  u(x)=v\bigl( \bfPhi(x) \bigr)\qquad\text{\(x\in U\)}.
+\end{equation}
+Now suppose that \(u\) is a \(C^1\) solution of our boundary-value problem
+\eqref{eq:pde:pde-1}, \eqref{eq:pde:initial-cond-1} in \(U\). What PDE does
+\(v\) then satisfy in \(V\)?
+
+According to \eqref{eq:pde:unstraight-sol}, we have
+\[
+  u_{x_i}(x)=\sum_{k=1}^n v_{y_k}\bigl( \bfPhi(x) \bigr)\Phi_{x_i}^k(x)
+\]
+i.e.,
+\[
+  Du(x)=Dv(y)D\bfPhi(x).
+\]
+Thus,
+\begin{align*}
+  0&=F\bigl(Du(x),u(x),x\bigr)\\
+   &=F\bigl( Dv(y),D\bfPhi\bigl(\bfPsi(y)\bigr),v(y),\Psi(y) \bigr)
+\end{align*}
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../Fall16-Notes"
