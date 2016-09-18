@@ -403,6 +403,42 @@ by \eqref{eq:pde:1st-order-quasilinear}. Consequently
 \end{equation}
 are the characteristic equations for the quasilinear first-order PDE.
 
+\begin{example}
+  The characteristic ODEs \eqref{eq:pde:1st-order-quasilinear-chars} are in
+  general difficult to solve, and so we work out in this example the
+  simpler case of a boundary-value problem for a semilinear PDE:
+  \begin{equation}
+    \label{eq:pde:quasilinear-ex-2}
+    \left\{
+      \begin{aligned}
+        u_{x_1}+u_{x_2}&=u^2\quad\text{in \(U\)}\\
+        u&=g\quad\text{on \(\Gamma\).}
+      \end{aligned}
+    \right.
+  \end{equation}
+  Now \(U\) is the half-space \(\{\,x_2>0\,\}\) and
+  \(\Gamma=\{\,x_2=0\,h\}=\partial U\). Here \(\bfb=(1,1)\) and
+  \(c=-z^2\). Then \eqref{eq:pde:1st-order-quasilinear-chars} becomes
+  \[
+    \left\{
+      \begin{aligned}
+        (\dot{x}^1,\dot{x}^2)&=1\\
+        \dot z&=z^2.
+      \end{aligned}
+    \right.
+  \]
+  Consequently
+  \[
+    \left\{
+    \begin{aligned}
+      (x^1,x^2)(s)&=(x^0+s,s)\\
+      z(s)&=\displaystyle\frac{z^0}{1-sz^0}\\
+      &=\displaystyle\frac{g(x^0)}{1-sg(x^0)},
+    \end{aligned}
+    \right.
+  \]
+\end{example}
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../Fall16-Notes"
