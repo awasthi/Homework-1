@@ -619,6 +619,98 @@ lies in the plane \(\{\,x_n=0\,\}\), and that the triple \((p^0,z^0,x^0)\)
 is admissible. We are planning to construct a solution \(u\) of
 \eqref{eq:pde:pde-1}, \eqref{eq:pde:initial-cond-1} in \(U\) near \(x^0\)
 by integrating by parts the characteristic ODE
+\eqref{eq:pde:characteristics}. So far we have ascertained \(\bfx(0)=x^0\),
+\(z(0)=z^0\), \(\bfp(0)=p^0\) are appropriate boundary conditions for the
+characteristic ODE, with \(\bfx\) intersecting \(\Gamma\) at \(x^0\). But
+we will need in fact to solve these ODEs for \emph{nearby} initial points
+as well, and must consequently now ask if we can somehow appropriately
+perturb \((p^0,z^0,x^0)\), keeping the compatibility conditions.
+
+In other words, given a point \(y=(y_1,\dotsc,y_{n-1},0)\in\Gamma\), with
+\(y\) close to \(x^0\), we intend to solve the characteristic ODE
+\begin{equation}
+  \label{eq:pde:chars-2}
+  \left\{
+    \begin{aligned}
+      \text{(a) }\dot\bfp(s)
+      &=-D_xF\bigl(\bfp(s),z(s),\bfx(s)\bigr)
+      -D_zF\bigl(\bfp(s),z(s),\bfx(s)\bigr)\\
+      \text{(b) }\dot z(s)&=D_pF\bigl(\bfp(s),z(s),\bfx(s)\bigr)\cdot\bfp(s)\\
+      \text{(c) }\dot\bfx(s)&=D_pF\bigl(\bfp(s),z(s),\bfx(s)\bigr),
+    \end{aligned}
+  \right.
+\end{equation}
+with the initial conditions
+\begin{equation}
+  \label{eq:pde:initial-cond-2}
+  \bfp(0)=\bfq(y),\quad z(0)=g(y),\quad\bfx(0)=y.
+\end{equation}
+
+Our task then is to find a function \(\bfq=(q^1,\dotsc,q^n)\), so that
+\begin{equation}
+  \label{eq:pde:initial-q}
+  \bfq(x^0)=p^0
+\end{equation}
+and \(\bigl(\bfq(y),g(y),y\bigr)\) is admissible; that is, the
+compatibility conditions
+\begin{equation}
+  \label{eq:pde:compat-cond-q}
+  \left\{
+    \begin{aligned}
+      q^i(y)&=g_{x_i}(y)\qquad 1\leq i\leq n-1\\
+      F\bigl( \bfq(y),g(y),y \bigr)&=0
+    \end{aligned}
+  \right.
+\end{equation}
+hold for all \(y\in\Gamma\) close to \(x^0\).
+
+\begin{lemma}[Noncharacteristic boundary conditions]
+  There exists a unique solution \(\bfq\) of \eqref{eq:pde:initial-q},
+  \eqref{eq:pde:compat-cond-q} for all \(y\in\Gamma\) sufficiently close to
+  \(x^0\), provided
+  \begin{equation}
+    \label{eq:pde:nonchar-cond}
+    F_{p_n}(p^0,z^0,x^0)\neq 0.
+  \end{equation}
+\end{lemma}
+
+We say the admissible triple \((p^0,z^0,x^0)\) is \emph{noncharacteristic}
+if \eqref{eq:pde:nonchar-cond} holds. We henceforth assume this condition.
+\begin{proof}
+  To simplify notation, let us now temporarily write
+  \(y=(y_1,\dotsc,y_n)\in\bfR^n\). We apply the implicit function theorem
+  to the mapping
+  \[
+    \bfG\colon\bfR^n\times\bfR^n\too\bfR^n,\qquad
+    \bfG(p,y)=\bigl(G^1(p,y),\dotsc,G^n(p,y)\bigr),
+  \]
+  where
+  \[
+    \left\{
+      \begin{aligned}
+        G^i(p,y)&=p_i-g_{x_i}(y)\qquad 1\leq i\leq n-1,\\
+        G^n(p,y)&=F\bigl(p,g(y),y\bigr).
+      \end{aligned}
+    \right.
+  \]
+  Now \(\bfG(p^0,x^0)=0\), according to \eqref{eq:pde:initial-z},
+  \eqref{eq:pde:initial-conds-2}. Also
+  \[
+    D_p\bfG(p^0,x^0)
+    =
+    \begin{bmatrix}
+      1&\cdots&0&0\\
+      \vdots&\ddots&\vdots&\vdots\\
+      0&\cdots&1&0\\
+      F_{p_1}(p^0,z^0,x^0)&\cdots&F_{p_{n-1}}(p^0,z^0,x^0)&F_{p_n}(p^0,z^0,x^0)
+    \end{bmatrix}
+  \]
+  and thus
+  \[
+    \det D_p\bfG(p^0,x^0)=F_{p_n}(p^0,z^0,x^0)\neq 0,
+  \]
+  in view of the noncharacteristic condition \eqref{eq:pde:nonchar-cond}.
+\end{proof}
 
 
 %%% Local Variables:
