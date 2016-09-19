@@ -559,7 +559,67 @@ Thus,
 In addition \(v=h\) on \(\Delta\), where \(\Delta\defeq\bfPhi(\Gamma)\) and
 \(h(y)\defeq g\bigl(\bfPsi(y)\bigr)\).
 
-In summary, our problem \eqref{}
+In summary, our problem \eqref{eq:pde:pde-1}, \eqref{eq:pde:initial-cond-1}
+converts into a problem having the same form.
+
+\subsubsection{Compatibility conditions on boundary}
+In view of the foregoing computations, if we are given a point
+\(x^0\in\Gamma\) we may as well assume that the outset that \(\Gamma\) is
+flat near \(x^0\), lying in the plane \(\{\,x_n=0\,\}\).
+
+We intend now to utilize the characteristic ODE to construct a solution to
+\eqref{eq:pde:pde-1}, at least near \(x^0\), and for this we must discover
+appropriate initial conditions
+\begin{equation}
+  \label{eq:pde:initial-conds-2}
+  \bfp(0)=p^0,\quad
+  z(0)=z^0,\quad
+  \bfx(0)=x^0.
+\end{equation}
+
+Now clearly if the curve \(\bfx\) passes through \(x^0\), we should insist
+that
+\begin{equation}
+  \label{eq:pde:initial-z}
+  z^0=g(x^0).
+\end{equation}
+
+What should we require concerning \(\bfp(0)=p^0\)? Since
+\eqref{eq:pde:initial-cond-1} implies
+\(u(x_1,\dotsc,x_{n-1},0)=g(x_1,\dotsc,x_{n-1})\) near \(x^0\), we may
+differentiate to find
+\[
+  u_{x_i}(x^0)=g_{x_i}(x^0)\quad \text{\(i=1,\dotsc,n-1\).}
+\]
+As we also want the PDE \eqref{eq:pde:pde-1} to hold, we should therefore
+insist \(p^0=(p_1^0,\dotsc,p_n^0)\) satisfies these relations
+\begin{equation}
+  \label{eq:pde:initial-p}
+  \left\{
+    \begin{aligned}
+      p_i^0&=g_{x_i}(x^0)\qquad\text{\(i=1,\dotsc,n-1\)}\\
+      F(p^0,z^0,x^0)&=0.
+    \end{aligned}
+  \right.
+\end{equation}
+These identities provide \(n\) equations for the \(n\) quantities
+\(p^0=(p_1^0,\dotsc,p_n^0)\).
+
+We call \eqref{eq:pde:initial-z} and \eqref{eq:pde:initial-p} the
+\emph{compatibility conditions.} A triple \((p^0,z^0,x^0)\in\bfR^{2n+1}\)
+verifying \eqref{eq:pde:initial-z}, \eqref{eq:pde:initial-p} is
+\emph{admissible}. Note that \(z^0\) is uniquely determined by the boundary
+condition and our choice of the point \(x^0\), but a vector \(p^0\)
+satisfying \eqref{eq:pde:initial-p} may not exist and it may not be
+unique.
+
+\subsubsection{Noncharacteristic boundary data}
+So now assume as above that \(x^0\in\Gamma\), that \(\Gamma\) near \(x^0\)
+lies in the plane \(\{\,x_n=0\,\}\), and that the triple \((p^0,z^0,x^0)\)
+is admissible. We are planning to construct a solution \(u\) of
+\eqref{eq:pde:pde-1}, \eqref{eq:pde:initial-cond-1} in \(U\) near \(x^0\)
+by integrating by parts the characteristic ODE
+
 
 %%% Local Variables:
 %%% mode: latex
