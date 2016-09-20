@@ -84,7 +84,35 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  For part (a):
+  For part (a) we show this explicitly by considering all cases. The case
+  \(\beta=(0,0)\) is obvious as are the cases \(\beta=(0,1)\) and
+  \(\beta=(1,0)\) since \(u_x(0,0)=0\) and
+  \begin{align*}
+    u_y(0,0)
+    &=a\bigl(0,0,u(0,0)\bigr)u_x(0,0)+b\bigl( 0,0,u(0,0) \bigr)\\
+    &=a(0,0,0)u_x(0,0)+b(0,0,0)\\
+    &=b(0,0,0)\\
+    &\geq 0
+  \end{align*}
+  since \(b\) is a series of strictly positive numbers. For
+  \(\beta=(2,0)\), we have \(u_{xx}(0,0)=0\). For \(\beta=(1,1)\), we have
+  \begin{align*}
+    u_{xy}(0,0)&=a\bigl(0,0,u(0,0)\bigr)u_{xx}(0,0)+\frac{\partial}{\partial
+                 x}a\bigl( 0,0,u(0,0) \bigr)u_x(0,0)
+                 +\frac{\partial}{\partial x} b\bigl(0,0,u(0,0)\bigr)\\
+               &=\frac{\partial}{\partial x} b(0,0,0)\\
+               &\geq 0.
+  \end{align*}
+  For \(\beta=(0,2)\), we have
+  \begin{align*}
+    u_{yy}(0,0)&=a\bigl(0,0,u(0,0)\bigr)u_{xy}(0,0)+\frac{\partial}{\partial
+                 y}a\bigl( 0,0,u(0,0) \bigr)u_x(0,0)
+                 +\frac{\partial}{\partial y} b\bigl(0,0,u(0,0)\bigr)\\
+               &=a(0,0,0)\frac{\partial}{\partial
+                 x}b(0,0,0)+\frac{\partial}{\partial y}b(0,0,0)\\
+               &\geq 0
+  \end{align*}
+  since the latter is a sum of positive numbers.
 
   For part (b):
 \end{solution}
