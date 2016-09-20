@@ -7,6 +7,62 @@
   satisfied and obtain the Taylor series of the solution about the origin.
 \end{problem}
 \begin{solution}
+  % First, we zero the boundary data by setting \(v\defeq u-(\pi/4)x\) so
+  % that
+  % \begin{align*}
+  %   0&=v(x,0)\\
+  %    &=u(x,0)-\frac{\pi}{4}x\\
+  %    &=\frac{\pi}{4}x-\frac{\pi}{4}x\\
+  %    &=0.
+  % \end{align*}
+  % Moreover,
+  % \[
+  %   \frac{\partial^n v}{\partial t^n}(x,0)=0
+  % \]
+  % for all \(n\), and all \(x\). Lastly, we note that
+  % \begin{align*}
+  %   0&=u_t-\sin u_x\\
+  %    &=\left(v+\frac{\pi}{4}x\right)_t+
+  %      \sin\left(v+\frac{\pi}{4}x\right)_x\\
+  %    &=v_t+\sin\bigl(v_x+(\pi/4)\bigr).
+  % \end{align*}
+
+  We skip checking that the assumptions of the Cauchy--Kovalevskaya theorem
+  are satisfied (since I cannot decipher Evans's notation), and show that
+  he Taylor series of \(u\) at \((0,0)\),
+  \[
+    \tilde u(x,t)=\sum_{(\alpha_1,\alpha_2)}
+    \frac{u_{\alpha_1,\alpha_2}(0)}{\alpha_1!\alpha_2!} x^{\alpha_1}t^{\alpha_2},
+  \]
+  is a solution to our PDE.
+
+  First, we must compute the coefficients
+  \[
+    \frac{u_{\alpha_1,\alpha_2}(0,0)}{\alpha_1!\alpha_2!}.
+  \]
+  To this end, we must find the partial derivatives
+  \(u_{\alpha_1,\alpha_2}\) and potentially, relations among them which
+  will help us to find these coefficients. Naïvely listing the partials
+  with respect to \(t\) and \(x\), we have
+  \begin{align*}
+    u(0,0)&=0\\
+    u_x(0,0)&=\frac{\pi}{4}\\
+    u_t(0,0)&=\sin u_x(0,0)=\frac{\sqrt{2}}{2}\\
+    u_{xx}(0,0)&=0\\
+    u_{tx}(0,0)&=0\\
+    u_{tt}(0,0)&=-\cos\bigl(u_x(0,0)\bigr)u_{xt}(0,0)=0\\
+    u_{xxx}(0,0)&=0\\
+    u_{ttx}(0,0)&=0,
+  \end{align*}
+  etc. Thus,
+  \[
+    \tilde u=\frac{\pi}{4}x+\frac{\sqrt{2}}{2}t.
+  \]
+  Plugging this equation into our PDE, we have
+  \[
+    \tilde u_t-\sin\tilde u_x=\frac{\sqrt{2}}{2}-\sin(\pi/4)=0,
+  \]
+  as desired.
 \end{solution}
 \newpage
 
@@ -36,8 +92,8 @@
   for the heat equation \(u_t=u_{xx}\). Show there does not exist an
   analytic solution \(\) of the heat equation in \(\bfR\times\bfR\), with
   \(u=1/(1+x^2)\) on \(\{t=0\}\). (\emph{Hint:} Assume there is an analytic
-  solution, compute its coefficients, and show that the resulting power
-  series diverges in any neighborhood of \((0,0)\).)
+  solution, compute its coefficients, and show instead that the resulting
+  power series diverges in any neighborhood of \((0,0)\).)
 \end{problem}
 \begin{solution}
 \end{solution}
