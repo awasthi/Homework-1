@@ -1,19 +1,19 @@
-\def\auth{Carlos Salinas}
-\def\tight{Fall 2016 Notes}
-\def\short{F16-Notes}
-\def\class{mathematics}
+\def\auth{Carlos Salinas}%
+\def\tight{Fall 2016 Notes}%
+\def\short{F16-Notes}%
+\def\class{mathematics}%
 \def\subject{probability, differential equations, point-set topology,
-  classical mechanics, algebraic geometry, category theory}
-\def\email{salinac@purdue.edu}
+  classical mechanics, algebraic geometry, category theory}%
+\def\email{salinac@purdue.edu}%
 
 \documentclass[oneside]{memoir}
 \usepackage{geometry}
 
 %% Base customization and variables
-\usepackage{general-setup}
+\usepackage{general-setup}%
 
 %% Footnote style
-\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}%
 
 %% Hyperref setup
 \hypersetup{%
@@ -30,30 +30,29 @@
   pdfkeywords={\subject},%
   pdfsubject={\class},%
   % pageanchor={false},%
-  unicode
+  unicode%
 }
 
 %% Graphics path as it says
-\graphicspath{{figures/}}
+\graphicspath{{figures/}}%
 
-\begin{document}
-\author{\textti{\auth}}
-\title{\textti{\tight}}
-\date{\textti{\today}}
+\begin{document}%
+\author{\textti{\auth}}%
+\title{\textti{\tight}}%
+\date{\textti{\today}}%
 
-\maketitle
-\tableofcontents
-\include{fall16/prob}
-\include{fall16/pdes}
-\include{fall16/alggeom}
-\include{fall16/algtop}
-\include{fall16/galoisodes}
-% \include{fall16/classmech}
+\maketitle%
+\tableofcontents%
+\include{fall16/prob}%
+\include{fall16/pdes}%
+\include{fall16/alggeom}%
+\include{fall16/algtop}%
+\include{fall16/galoisodes}%
 
-\nocite{*}
-\bibliographystyle{plain}
-\bibliography{refs-f16}
-\end{document}
+\nocite{*}%
+\bibliographystyle{plain}%
+\bibliography{refs-f16}%
+\end{document}%
 
 %%% Local Variables:
 %%% mode: latex

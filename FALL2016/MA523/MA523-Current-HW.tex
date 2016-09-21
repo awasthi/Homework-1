@@ -1,22 +1,20 @@
-\def\hwnum{4}
-\def\due{September 28, 2016}
-\def\auth{Carlos Salinas}
-\def\tight{MA 523: Homework \hwnum}
-\def\short{MA523-HW-\hwnum}
-\def\class{MA 523}
-\def\subject{partial differential equations}
-\def\email{salinac@purdue.edu}
+\def\hwnum{4}%
+\def\due{September 28, 2016}%
+\def\auth{Carlos Salinas}%
+\def\tight{MA 523: Homework \hwnum}%
+\def\short{MA523-HW-\hwnum}%
+\def\class{MA 523}%
+\def\subject{partial differential equations}%
+\def\email{salinac@purdue.edu}%
 
-\documentclass[article,oneside,leqno]{memoir}
-\usepackage{geometry}
+\documentclass[article,oneside,leqno]{memoir}%
+\usepackage{geometry}%
 
 %% Base customization and variables
-\usepackage{general-setup}
-
-%% Formatting
+\usepackage{general-setup}%
 
 %% Footnote style
-\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}%
 
 %% Hyperref setup
 \hypersetup{%
@@ -33,68 +31,68 @@
   pdfkeywords={\subject},%
   pdfsubject={\class},%
   % pageanchor={false},%
-  unicode
+  unicode%
 }
 
 %% Graphics path as it says
-\graphicspath{{figures/}}
+\graphicspath{{figures/}}%
 
-\newcounter{problem}
+\newcounter{problem}%
 \renewenvironment{problem}[1][]% environment name
 {% begin code
-  \stepcounter{problem}
-  \par\vspace{\baselineskip}\noindent
+  \stepcounter{problem}%
+  \par\vspace{\baselineskip}\noindent%
   \ifx &#1&%
   {\Large\textprob{Problem~\hwnum.\theproblem}}
   \global\def\exname{Problem~\hwnum.\theproblem}%
-  \else
-  {\Large\textprob{Problem~\hwnum.\theproblem~(#1)}}
-  \global\def\exname{Problem~\hwnum.\theproblem~(#1)}
-  \fi
+  \else%
+  {\Large\textprob{Problem~\hwnum.\theproblem~(#1)}}%
+  \global\def\exname{Problem~\hwnum.\theproblem~(#1)}%
+  \fi%
   \par\vspace{\baselineskip}%
-  \noindent\ignorespaces
+  \noindent\ignorespaces%
   % \begin{linenumbers}
 }%
 {% end code
   \par\vspace{\baselineskip}%
-  \noindent\ignorespacesafterend
+  \noindent\ignorespacesafterend%
   % \end{linenumbers}
 }
 
-\numberwithin{equation}{subsection}
-\renewcommand\theequation{\hwnum.\arabic{equation}}
+\numberwithin{equation}{subsection}%
+\renewcommand\theequation{\hwnum.\arabic{equation}}%
 
 \begin{document}
-\frontmatter
-\aliaspagestyle{title}{empty}
-\pagestyle{title}
+\frontmatter%
+\aliaspagestyle{title}{empty}%
+\pagestyle{title}%
 % \author{\href{mailto:\email}{\auth}}
-\author{\textti\auth}
+\author{\textti\auth}%
 \title{\textti\tight}%
 \date{\textti{\due}}%
-\maketitle
-\cleartooddpage
-\makepagestyle{my-headings}
-\makeoddhead{my-headings}
-        {\small\itshape{\MakeUppercase{\auth}}}
-        {}
-        {\small\itshape{\MakeUppercase{\exname}}}
-\makeoddfoot{my-headings}{\itshape{\tight}}
-                      {}
-                      {\emph{--\thepage\ of \pageref{LastPage}--}}
-\makeevenhead{my-headings}
-        {\small\itshape{\MakeUppercase{\auth}}}
-        {}
-        {\small\itshape{\MakeUppercase{\exname}}}
-\makeevenfoot{my-headings}{\itshape{\tight}}
-                      {}
-                      {--\emph{\thepage\ of \pageref{LastPage}--}}
-\makeheadrule{my-headings}{\textwidth}{.25pt}
-\pagestyle{my-headings}
+\maketitle%
+\cleartooddpage%
+\makepagestyle{my-headings}%
+\makeoddhead{my-headings}%
+        {\small\itshape{\MakeUppercase{\auth}}}%
+        {}%
+        {\small\itshape{\MakeUppercase{\exname}}}%
+\makeoddfoot{my-headings}{\itshape{\tight}}%
+                      {}%
+                      {\emph{--\thepage\ of \pageref{LastPage}--}}%
+\makeevenhead{my-headings}%
+        {\small\itshape{\MakeUppercase{\auth}}}%
+        {}%
+        {\small\itshape{\MakeUppercase{\exname}}}%
+\makeevenfoot{my-headings}{\itshape{\tight}}%
+                      {}%
+                      {--\emph{\thepage\ of \pageref{LastPage}--}}%
+\makeheadrule{my-headings}{\textwidth}{.25pt}%
+\pagestyle{my-headings}%
 % \makerunningwidth{headings}{1.15\textwidth}
-\mainmatter
-\include{homework/ma523-\hwnum}
-\end{document}
+\mainmatter%
+\include{homework/ma523-\hwnum}%
+\end{document}%
 
 %%% Local Variables:
 %%% mode: latex
