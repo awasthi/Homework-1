@@ -7,29 +7,10 @@
   satisfied and obtain the Taylor series of the solution about the origin.
 \end{problem}
 \begin{solution}
-  % First, we zero the boundary data by setting \(v\defeq u-(\pi/4)x\) so
-  % that
-  % \begin{align*}
-  %   0&=v(x,0)\\
-  %    &=u(x,0)-\frac{\pi}{4}x\\
-  %    &=\frac{\pi}{4}x-\frac{\pi}{4}x\\
-  %    &=0.
-  % \end{align*}
-  % Moreover,
-  % \[
-  %   \frac{\partial^n v}{\partial t^n}(x,0)=0
-  % \]
-  % for all \(n\), and all \(x\). Lastly, we note that
-  % \begin{align*}
-  %   0&=u_t-\sin u_x\\
-  %    &=\left(v+\frac{\pi}{4}x\right)_t+
-  %      \sin\left(v+\frac{\pi}{4}x\right)_x\\
-  %    &=v_t+\sin\bigl(v_x+(\pi/4)\bigr).
-  % \end{align*}
-
-  We skip checking that the assumptions of the Cauchy--Kovalevskaya theorem
-  are satisfied (since I cannot decipher Evans's notation), and show that
-  he Taylor series of \(u\) at \((0,0)\),
+  The initial value problem certainly satisfies the assumptions of the
+  Cauchy--Kovalevskaya theorem: setting \(\bfu=(u,u_x,u_t,t)\), the
+  \(\bfB\) are all identically \(0\) and \(\bfc(\bfu,x)=\sin u_x(x,t)\) is
+  analytic. Next we show that he Taylor series of \(u\) at \((0,0)\),
   \[
     \tilde u(x,t)=\sum_{(\alpha_1,\alpha_2)}
     \frac{u_{\alpha_1,\alpha_2}(0)}{\alpha_1!\alpha_2!} x^{\alpha_1}t^{\alpha_2},
@@ -84,6 +65,14 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
+  Write
+  \[
+    a(x,y,u)=\sum_{\beta_1,\beta_2,\alpha}
+    a_{\alpha,\beta_1,\beta_2}x^{\beta_1}y^{\beta_2}u^\alpha,\qquad
+    b(x,y,u)=\sum_{\beta_1,\beta_2,\alpha}
+    b_{\alpha,\beta_1,\beta_2}x^{\beta_1}y^{\beta_2}u^\alpha.
+  \]
+
   For part (a) we show this explicitly by considering all cases. The case
   \(\beta=(0,0)\) is obvious as are the cases \(\beta=(0,1)\) and
   \(\beta=(1,0)\) since \(u_x(0,0)=0\) and
@@ -109,7 +98,7 @@
                  y}a\bigl( 0,0,u(0,0) \bigr)u_x(0,0)
                  +\frac{\partial}{\partial y} b\bigl(0,0,u(0,0)\bigr)\\
                &=a(0,0,0)\frac{\partial}{\partial
-                 x}b(0,0,0)+\frac{\partial}{\partial y}b(0,0,0)\\
+                 y}b(0,0,0)+\frac{\partial}{\partial y}b(0,0,0)\\
                &\geq 0
   \end{align*}
   since the latter is a sum of positive numbers.
