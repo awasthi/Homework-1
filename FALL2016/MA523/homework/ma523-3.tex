@@ -151,12 +151,31 @@
   \]
   Thus, \(\Gamma\) is characteristic for \(u_t=u_{xx}\).
 
-  Next suppose \(u\) is an analytic solution to the heat equation near
-  \((0,0)\). Form the boundary condition, we have
+  Next suppose \(u\) is an analytic solution to the heat equation with
+  \[
+    u(x,t)=\sum_{m,n\in\bfN} a_{mn}x^mt^n
+  \]
+  on \(\bfR\times\bfR\).
+
+  Let us compute the coefficients \(a_{mn}\) near \((0,0)\). From the PDE,
+  we have the relation
+  \begin{equation}
+    \label{eq:3:3}
+    \begin{aligned}
+      a_{mn}
+      &=D^{(m,n)} u(0,0)\\
+      &=D^{(m,n-1)}u_t(0,0)\\
+      &=D^{(m,n-1)}u_{xx}(0,0)\\
+      &=D^{(m+2,n-1)}u(0,0)\\
+      &=a_{m+2,n-1}.
+    \end{aligned}
+  \end{equation}
+  Form the boundary condition, we have
   \[
     u(x,0)=\sum_{j=1}^\infty (-1)^j x^{2j}.
   \]
-  Taking the \(n\)th \(x\)-partial derivative at \((0,0)\), we have
+  Taking the \(n\)\textsuperscript{th} \(x\)-partial derivative at
+  \((0,0)\), we have
   \[
     D^n_x u(0,0)=
     \begin{cases}
@@ -164,8 +183,8 @@
       (-1)^k (2k)!&\text{if \(n=2k\) is even.}
     \end{cases}
   \]
-  Using the PDE to find the \(m\)th \(y\)-partial derivative at \((0,0)\),
-  we have
+  Using the PDE to find the \(m\)\textsuperscript{th} \(y\)-partial
+  derivative at \((0,0)\), we have
   \[
     D^n_yu(0,0)=D^{n-1}_y u(0,0)=D_y^{n-1}u_{xx}(0,0)=0
   \]
