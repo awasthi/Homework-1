@@ -13,7 +13,8 @@
   \(\bfc(\bfu,x)=\sin u_x(x,t)\) is analytic. Next we show that he Taylor
   series of \(u\) at \((0,0)\),
   \[
-    u(x,t)=\sum_{\alpha,\beta} a_{\alpha,\beta} x^\alpha t^\beta
+    u(x,t)=\sum_{\alpha,\beta} \frac{a_{\alpha,\beta}}{\alpha!\beta!}
+    x^\alpha t^\beta
   \]
   is a solution to our PDE.
 
@@ -150,7 +151,7 @@
 
   Next suppose \(u\) is an analytic solution to the heat equation with
   \[
-    u(x,t)=\sum_{m,n\in\bfN} a_{mn}x^mt^n
+    u(x,t)=\sum_{m,n} \frac{a_{m,n}}{m!n!}x^mt^n
   \]
   on \(\bfR\times\bfR\).
 
@@ -181,40 +182,25 @@
     \label{eq:3:boundary-relation}
     a_{m,0}=
     \begin{cases}
-      0&\text{if \(m=2k-1\) is odd}\\
+      0&\text{if \(m=2k+1\) is odd}\\
       (-1)^k(2k)!&\text{if \(m=2k\) is even.}
     \end{cases}
   \end{equation}
 
   Putting all of this information together, we deduce that
   \[
-    a_{0}
+    a_{2m+1,n}=0
   \]
-
-  with the initialization
-We deduce that
-8 n
-8 m, n
-0,
-0,
-a m+1,n = a m,n+2 ,
-a 0,2n+1 = 0,
-a 0,2n = ( 1) n (2n)!
-8 m, n 0, a m,2n+1 = 0
-using the inductive relation, and then
-Now since
-8 m, n
-0,
-a m,2n = ( 1) m+n (2(m + n))!
-(2(m + n))!
-(4n)!
-=
-⇠ Cn 1/2
-m!(2n)!
-n!(2n)!
-n n
-n
-! +1
+  for all \(m,n\) and, recursively,
+  \[
+    a_{2m,n}=a_{2m+2,n-1}=\dotsb=
+    a_{2(m+n),0}=(-1)^{m+n}\bigl(2(m+n)\bigr)!.
+  \]
+  From this we see that the coefficients of the Taylor series diverge to
+  \(\infty\), that is,
+  \[
+    (-1)^{m+n}\frac{\bigl(2(m+n)\bigr)!}{(2m)!n!}
+  \]
 \end{solution}
 
 %%% Local Variables:
