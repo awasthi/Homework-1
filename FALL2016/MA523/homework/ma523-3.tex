@@ -156,13 +156,18 @@
   \[
     u(x,0)=\sum_{j=1}^\infty (-1)^j x^{2j}.
   \]
-  Taking the \(n\)th \(x\)-derivative at \((0,0)\), we have
+  Taking the \(n\)th \(x\)-partial derivative at \((0,0)\), we have
   \[
     D^n_x u(0,0)=
     \begin{cases}
-      0&\text{if \(n\) is odd}\\
-      n!&\text{if \(n\) is even.}
+      0&\text{if \(n=2k-1\) is odd}\\
+      (-1)^k (2k)!&\text{if \(n=2k\) is even.}
     \end{cases}
+  \]
+  Using the PDE to find the \(m\)th \(y\)-partial derivative at \((0,0)\),
+  we have
+  \[
+    D^n_yu(0,0)=D^{n-1}_y u(0,0)=D_y^{n-1}u_{xx}(0,0)=0
   \]
 \end{solution}
 
