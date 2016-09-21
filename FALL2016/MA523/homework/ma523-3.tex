@@ -152,7 +152,18 @@
   Thus, \(\Gamma\) is characteristic for \(u_t=u_{xx}\).
 
   Next suppose \(u\) is an analytic solution to the heat equation near
-  \((0,0)\). Then, since the Cauchy data satisfies
+  \((0,0)\). Form the boundary condition, we have
+  \[
+    u(x,0)=\sum_{j=1}^\infty (-1)^j x^{2j}.
+  \]
+  Taking the \(n\)th \(x\)-derivative at \((0,0)\), we have
+  \[
+    D^n_x u(0,0)=
+    \begin{cases}
+      0&\text{if \(n\) is odd}\\
+      n!&\text{if \(n\) is even.}
+    \end{cases}
+  \]
 \end{solution}
 
 %%% Local Variables:
