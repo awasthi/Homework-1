@@ -41,11 +41,13 @@
                  {\usepackage[dvipsnames]{xcolor}}
 
 
+%% Text commands
 % \providecommand\textsi{\scshape}
 % \providecommand\textti{\textnormal}
 % \providecommand\texto{\textnormal}
 \providecommand{\textprob}{\scshape}
-
+\providecommand{\textsup}[1]{\textsuperscript{#1}}
+\providecommand{\textsub}[1]{\textsubscript{#1}}
 
 %% My environments
 \makeatletter%
@@ -332,7 +334,7 @@
 \DeclareMathOperator{\Mult}{Mult}
 \DeclareMathOperator{\Nullspace}{Nullspace}
 \DeclareMathOperator{\nullity}{nullity}
-\DeclareMathOperator{\Norm}{norm}
+\DeclareMathOperator{\norm}{norm}
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\Tr}{Tr}
 \DeclareMathOperator{\Range}{Range}
@@ -435,21 +437,30 @@
 \DeclareMathOperator{\Curl}{curl}
 \DeclareMathOperator{\Div}{div}
 \DeclareMathOperator{\Grad}{grad}
+\DeclareMathOperator{\Lap}{lap}
 
 %% Measure theory
 \DeclareMathOperator{\vol}{vol}
 \DeclareMathOperator{\Vol}{Vol}
 
 %% Probability
+\DeclareMathOperator{\Binom}{Binom}
 \DeclareMathOperator{\corr}{corr}
 \DeclareMathOperator{\Corr}{Corr}
 \DeclareMathOperator{\cov}{cov}
 \DeclareMathOperator{\Cov}{Cov}
 \DeclareMathOperator{\ex}{ex}
 \DeclareMathOperator{\Ex}{Ex}
+\DeclareMathOperator{\Exp}{Exp}
+\DeclareMathOperator{\Gauss}{Gauss}
+\DeclareMathOperator{\Geometric}{Geomtric}
+\DeclareMathOperator{\NegBinom}{NegBinom}
 \DeclareMathOperator{\pb}{pb}
 \DeclareMathOperator{\Pb}{Pb}
+\DeclareMathOperator{\Poisson}{Poisson}
+\DeclareMathOperator{\StDev}{StDev}
 \DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Uniform}{Uniform}
 
 %% Functional Analysis
 \DeclareMathOperator*{\esssup}{ess\,sup}

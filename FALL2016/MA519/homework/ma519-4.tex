@@ -60,19 +60,19 @@
 \newpage
 
 \begin{problem}[Handout 6, \# 7]
-  Find a discrete random variable \(X\) such that \(E(X)=E(X^3)=0\);
-  \(E(X^2)=E(X^4)=1\).
+  Find a discrete random variable \(X\) such that \(\Ex(X)=\Ex(X^3)=0\);
+  \(\Ex(X^2)=\Ex(X^4)=1\).
 \end{problem}
 \begin{solution}
   Set \(\Omega=\{0,1\}\) and define a random variable
   \(X\colon\Omega\to\bfR\) by \(X(0)= -1\), \(X(1)= 1\) as well as a
   probability \(P(0)=P(1)=1/2\). Then
   \[
-    E[X]=-1(1/2)+1(1/2)=0=(-1)^3(1/2)+1^3(1/2)=E[X^3],
+    \Ex[X]=-1(1/2)+1(1/2)=0=(-1)^3(1/2)+1^3(1/2)=\Ex[X^3],
   \]
   whereas
   \[
-    E[X^2]=(-1)^2(1/2)+1^2(1/2)=1=(-1)^4(1/2)+1^4(1/2)=E[X^4],
+    \Ex[X^2]=(-1)^2(1/2)+1^2(1/2)=1=(-1)^4(1/2)+1^4(1/2)=\Ex[X^4],
   \]
   as desired.
 \end{solution}
@@ -89,7 +89,7 @@
   \[
     A_{j,k}
     =\bigl\{\,
-    \text{\(j\)\textsuperscript{th} roll of the die comes up \(k\)}
+    \text{\(j\)\textsup{th} roll of the die comes up \(k\)}
     \,\bigr\},%
     \quad%
     1\leq j\leq n,1\leq k\leq 6.
@@ -109,9 +109,10 @@
   for every \(x\in\Omega\). Let \(A\) be the event that a six is followed
   by two or more sixes. Then
   \[
-    E[X]=\frac{1}{6^n} \sum_{\substack{1\leq j\leq n\\ 1\leq k\leq
+    \Ex[X]=\frac{1}{6^n} \sum_{\substack{1\leq j\leq n\\ 1\leq k\leq
         6}}\chi_{A_{j,k}}(x)
   \]
+  \textsup{th}
 \end{solution}
 \newpage
 
@@ -121,7 +122,9 @@
   \(365\) days and that all arrangements are equally probable.)
 \end{problem}
 \begin{solution}
-
+  Let \(\Omega\) denote the sample space and let \(A_k\) denote the event
+  that exactly \(k\) people have the same birthday. We can write \(A_k\) as
+  the intersection of events \(A_{n,k}\)
 \end{solution}
 \newpage
 
