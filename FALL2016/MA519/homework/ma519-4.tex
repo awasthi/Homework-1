@@ -87,20 +87,31 @@
 \begin{solution}
   Write \(\Omega\) as the union events
   \[
-    Ak=\bigl\{\,\text{roll of the die comes up \(n\)}\,\bigr\},%
+    A_{j,k}
+    =\bigl\{\,
+    \text{\(j\)\textsuperscript{th} roll of the die comes up \(k\)}
+    \,\bigr\},%
     \quad%
-    1\leq k\leq 6.
+    1\leq j\leq n,1\leq k\leq 6.
   \]
-  Note that the \(Ak\) are not necessarily disjoint events. Now, define a
-  random variable \(X\colon\Omega\to\bfR\) by setting
-  \(X(\omega)=\sum_{n=1}^6\chi_{Ak}(x)\) where \(\chi_{Ak}(x)=1\) if
-  \(x\in Ak\), and \(\chi_{Ak}(x)=0\) otherwise.
+  Note that the \(A_{j,k}\) are not necessarily disjoint events. Now,
+  define a random variable \(X\colon\Omega\to\bfR\) by setting
+  \[
+    \sum_{\substack{1\leq j\leq n\\ 1\leq k\leq 6}}\chi_{A_{j,k}}(x),
+  \]
+  where \(\chi_{A_{j,k}}(x)=1\) if \(x\in A_{j,k}\), and
+  \(\chi_{A_{j,k}}(x)=0\) otherwise.
 
   Assuming every sample point is equally likely,
   \[
-    P(\omega)=\frac{1}{\#\Omega}=\frac{1}{6^n}
+    P(x)=\frac{1}{\#\Omega}=\frac{1}{6^n}
   \]
-  for every \(\omega\in\Omega\). Thus
+  for every \(x\in\Omega\). Let \(A\) be the event that a six is followed
+  by two or more sixes. Then
+  \[
+    E[X]=\frac{1}{6^n} \sum_{\substack{1\leq j\leq n\\ 1\leq k\leq
+        6}}\chi_{A_{j,k}}(x)
+  \]
 \end{solution}
 \newpage
 
