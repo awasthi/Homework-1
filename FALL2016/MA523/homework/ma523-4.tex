@@ -1,22 +1,69 @@
-\begin{problem}
+\begin{problem}[Legendre transform]
+  Let \(u(x_1,x_2)\) be a solution of the quasilinear equation
+  \[
+    a^{11}(Du)u_{x_1x_1}+ 2a^{12}(Du)u_{x_1x_2}+a^{22}(Du)u_{x_2x_2}=0
+  \]
+  in some region of \(\bfR^2\), where we can invert the relations
+  \[
+    p^1=u_{x_1}(x_1,x_2),\quad p^2=u_{x_2}(x_1,x_2)
+  \]
+  to solve for
+  \[
+    x^1=x^1(p_1,p_2),\quad x^2=x^2(p_1,p_2).
+  \]
+  Define then
+  \[
+    v(p)\defeq \bfx(p)\cdot p-u\bigl(\bfx(p)\bigr),
+  \]
+  where \(\bfx=(x^1,x^2)\), \(p=(p_1,p_2)\). Show that \(v\) satisfies the
+  \emph{linear} equation
+  \[
+    a^{22}(p)v_{p_1p_2}-2a^{12}(p)v_{p_1p_2}+a^{11}(p)v_{p_1p_2}=0.
+  \]
+  (\emph{Hint:} See [Evans, 4.4.3b], prove the identities (29)).
 \end{problem}
 \begin{solution}
 \end{solution}
 \newpage
 
 \begin{problem}
+  Find the solution \(u(x,t)\) of the one-dimensional wave equation
+  \[
+    u_{tt}-u_{xx}=0
+  \]
+  in the quadrant \(x>0,t>0\) for which
+  \[
+    \left\{
+      \begin{aligned}
+        u(x,0)&=f(x),&u_t(x,0)&=g(x)&\text{for \(x>0\)}\\
+        u_t(0,t)&=\alpha u_x(0,t),&&&\text{for \(t>0\),}
+      \end{aligned}
+    \right.
+  \]
+  where \(\alpha\neq -1\) is a given constant. Show that generally no
+  solution exists when \(\alpha=-1\). (\emph{Hint:} Use a representation
+  \(u(x,t)=F(x-t)+G(x+t)\) for the solution.)
 \end{problem}
 \begin{solution}
 \end{solution}
 \newpage
 
 \begin{problem}
-\end{problem}
-\begin{solution}
-\end{solution}
-\newpage
-
-\begin{problem}
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item Let \(u\) be a solution of the wave equation \(u_{tt}-c^2u_{xx}=0\)
+    for \(0<x<\pi\), \(t>0\) such that \(u(0,t)=u(\pi,t)=0\). Show that the
+    \emph{energy}
+    \[
+      E(t)=\frac{1}{2}\int_0^\pi \bigl(u_t^2+c^2u_x^2 \bigr)\diff x,\quad t>0
+    \]
+    is independent of \(t\); i.e., \(dE/dt=0\) for \(t>0\). Assume that
+    \(u\) is \(C^2\) up to the boundary.
+  \item Express the energy \(E\) of the Fourier series solution
+    \[
+      u(x,t)=\sum_{n=1}^\infty \bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)\sin nx
+    \]
+    in terms of coefficients \(a_n\), \(b_n\).
+  \end{enumerate}
 \end{problem}
 \begin{solution}
 \end{solution}

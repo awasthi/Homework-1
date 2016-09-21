@@ -55,11 +55,11 @@
   let \(a\) and \(b\) be analytic functions of their arguments. Assume that
   \(d^\alpha a(0,0,0)\geq 0\) and \(d^\alpha b(0,0,0)\geq 0\) for all
   \(\alpha\). (Remember by definition, if \(\alpha=0\) then
-  \(d^\alpha f=f\).)
+  \(D^\alpha f=f\).)
   \begin{enumerate}[label=(\alph*),noitemsep]
-  \item Show that \(d^\beta u(0,0)\geq 0\) for all \(|\beta|\leq 2\).
-  \item Prove that \(d^\beta u(0,0)\geq 0\) for all
-    \(\beta=(\beta_1,\beta_2)\). (\emph{hint:} Argue as in the proof of the
+  \item Show that \(D^\beta u(0,0)\geq 0\) for all \(|\beta|\leq 2\).
+  \item Prove that \(D^\beta u(0,0)\geq 0\) for all
+    \(\beta=(\beta_1,\beta_2)\). (\emph{Hint:} Argue as in the proof of the
     Cauchy--Kovalevskaya theorem; i.e., use induction in \(\beta_2\))
   \end{enumerate}
 \end{problem}
@@ -108,19 +108,26 @@
   For part (b), in the proof of the Cauchy--Kovalevskaya theorem, for
   \(\beta_2=0\), we have
   \[
-    d^\beta u(0,0)=0
+    D^\beta u(0,0)=0
   \]
   since \(u\) is constant on the hypersurface \(\{\,y=0\,\}\). In
-  particular, \(d^\beta u(0,0)\geq 0\).
+  particular, \(D^\beta u(0,0)\geq 0\).
 
-  Now, suppose \(d^\beta u(0,0)\geq 0\) for all \(\beta_2\leq n-1\). Then,
+  Now, suppose \(D^\beta u(0,0)\geq 0\) for all \(\beta_2\leq n-1\). Then,
   for \(\beta=(m,n)\), we have
   \begin{align*}
-    d^\beta u(0,0)
+    D^\beta u(0,0)
     &=d^{(m,n-1)} u_y(0,0)\\
     &=d^{(m,n-1)}\bigl(au_x+b\bigr)(0,0)\\
     &=
   \end{align*}
+
+  This is essentially proven in Evans. The expression above will be given
+  by a polynomial in derivatives of lower order (as in equation
+  (23)). Since these derivatives are products of positive numbers since
+  \(D^\beta a(0,0),D^\beta b(0,0)\geq 0\), this shows that \(D^\beta
+  u(0,0)\geq 0\). I tried finding an expression for this, but it was not
+  very nice.
 \end{solution}
 \newpage
 
@@ -215,32 +222,35 @@
     &=\alpha\beta_nn^{n+1/2}
   \end{align*}
   which approaches \(\infty\) as \(n\to\infty\). This shows that for
-  \(x,t>0\), the terms \(a_{2n,n}\) grow arbitrarily large; taking
-  \(X=\min\{x,t\}\), we have
-  \begin{align*}
-    \frac{a_{2n,n}}{(2n)!n!}x^{2n}t^n
-    &\asymp\alpha\beta_nn^{n+1/2}x^{2n}t^n\\
-    &\geq\alpha\beta_nn^{n+1/2}X^{3n}.
-  \end{align*}
-  If \(X\geq 1\), these terms clearly grow arbitrarily large so suppose
-  that \(X<1\). Then we can write \(X=1/Y\) for some \(Y>1\) and we have
-  \begin{align*}
-    \alpha\beta_n \frac{n^{n+1/2}}{Y^{3n}}
-    &\geq M
-      \intertext{if and only if}
-      \frac{\alpha\beta_n n^{n+1/2}}{M}
-    &\geq Y^{3n}\\
-    \log_Y
-    \left(
-    \frac{\alpha\beta_n n^{n+1/2}}{M}
-    \right)
-    &\geq 3n.
-  \end{align*}
-  (I'm sure this can be achieved somehow).
+  \(x,t>0\), the terms \(a_{2n,n}\) grow arbitrarily large.% ; taking
+  % \(X=\min\{x,t\}\), we have
+  % \begin{align*}
+  %   \frac{a_{2n,n}}{(2n)!n!}x^{2n}t^n
+  %   &\asymp\alpha\beta_nn^{n+1/2}x^{2n}t^n\\
+  %   &\geq\alpha\beta_nn^{n+1/2}X^{3n}.
+  % \end{align*}
+  % If \(X\geq 1\), these terms clearly grow arbitrarily large so suppose
+  % that \(X<1\). Then we can write \(X=1/Y\) for some \(Y>1\) and we have
+  % \begin{align*}
+  %   \alpha\beta_n \frac{n^{n+1/2}}{Y^{3n}}
+  %   &\geq M
+  %     \intertext{if and only if}
+  %     \frac{\alpha\beta_n n^{n+1/2}}{M}
+  %   &\geq Y^{3n}\\
+  %   \log_Y
+  %   \left(
+  %   \frac{\alpha\beta_n n^{n+1/2}}{M}
+  %   \right)
+  %   &\geq 3n.
+  % \end{align*}
+  % (I'm sure this can be achieved somehow).
 
-  This shows that if such a solution exists, it has radius of convergence
-  equal to \(0\) and hence, is not a solution for the PDE on
-  \(\bfR\times\bfR\).
+  In particular, for any small \(t>0\), we want the series
+  \[
+    \sum_{n}a_{0,n}t^n
+  \]
+  to converge to \(0\) but the size of the coefficients \(a_{0,n}\) prevent
+  us from doing this. This leads to a contradiction.
 \end{solution}
 
 %%% Local Variables:
