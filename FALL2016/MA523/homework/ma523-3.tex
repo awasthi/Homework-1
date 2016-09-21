@@ -8,9 +8,10 @@
 \end{problem}
 \begin{solution}
   The initial value problem certainly satisfies the assumptions of the
-  Cauchy--Kovalevskaya theorem: setting \(\bfu=(u,u_x,u_t,t)\), the
-  \(\bfB\) are all identically \(0\) and \(\bfc(\bfu,x)=\sin u_x(x,t)\) is
-  analytic. Next we show that he Taylor series of \(u\) at \((0,0)\),
+  Cauchy--Kovalevskaya theorem, that is, setting
+  \(\bfu\defeq(u,u_x,u_t,t)\), the \(\bfB\) are all identically \(0\) and
+  \(\bfc(\bfu,x)=\sin u_x(x,t)\) is analytic. Next we show that he Taylor
+  series of \(u\) at \((0,0)\),
   \[
     \tilde u(x,t)=\sum_{(\alpha_1,\alpha_2)}
     \frac{u_{\alpha_1,\alpha_2}(0)}{\alpha_1!\alpha_2!} x^{\alpha_1}t^{\alpha_2},
@@ -106,24 +107,48 @@
   \end{align*}
   since the latter is a sum of positive numbers.
 
-  For part (b), fix \(\beta_1\in\bfZ_{\geq 0}\). As in the proof of the
-  Cauchy--Kovalevskaya theorem, for \(\beta_2=0\), we have
+  For part (b), in the proof of the Cauchy--Kovalevskaya theorem, for
+  \(\beta_2=0\), we have
   \[
     D^\beta u(0,0)=0
   \]
-  since \(u\) is constant on the hypersurface \(\{\,y=0\,\}\).
+  since \(u\) is constant on the hypersurface \(\{\,y=0\,\}\). In
+  particular, \(D^\beta u(0,0)\geq 0\).
+
+  Now, suppose \(D^\beta u(0,0)\geq 0\) for all \(\beta_2\leq n-1\). Then,
+  for \(\beta=(m,n)\), we have
+  \begin{align*}
+    D^\beta u(0,0)
+    &=D^{(m,n-1)} u_y(0,0)\\
+    &=D^{(m,n-1)}\bigl(au_x+b\bigr)(0,0)\\
+    &=
+  \end{align*}
 \end{solution}
 \newpage
 
 \begin{problem}
-  (Kovalevskaya's example) Show that the line \(\{t=0\}\) is characteristic
-  for the heat equation \(u_t=u_{xx}\). Show there does not exist an
-  analytic solution \(\) of the heat equation in \(\bfR\times\bfR\), with
-  \(u=1/(1+x^2)\) on \(\{t=0\}\). (\emph{Hint:} Assume there is an analytic
-  solution, compute its coefficients, and show instead that the resulting
-  power series diverges in any neighborhood of \((0,0)\).)
+  (Kovalevskaya's example) Show that the line \(\{\,t=0\,\}\) is
+  characteristic for the heat equation \(u_t=u_{xx}\). Show there does not
+  exist an analytic solution \(u\) of the heat equation in
+  \(\bfR\times\bfR\), with \(u=1/(1+x^2)\) on \(\{t=0\}\). (\emph{Hint:}
+  Assume there is an analytic solution, compute its coefficients, and show
+  instead that the resulting power series diverges in any neighborhood of
+  \((0,0)\).)
 \end{problem}
 \begin{solution}
+  First we show that the line \(\Gamma\defeq\{\,t=0\,\}\) is characteristic
+  for the heat equation. With \(\bfnu=(1,0)\) the normal to the line
+  \(\Gamma\), the noncharacteristic condition reads
+  \[
+    \sum_{|\alpha|=2} a_\alpha\bfnu^\alpha\neq 0.
+  \]
+  However,
+  \[
+    \sum_{|\alpha|=2} a_\alpha\bfnu^\alpha=%
+    1\cdot 1\neq%
+    0.
+  \]
+  Thus,
 \end{solution}
 
 %%% Local Variables:
