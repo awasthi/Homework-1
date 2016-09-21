@@ -13,19 +13,15 @@
   \(\bfc(\bfu,x)=\sin u_x(x,t)\) is analytic. Next we show that he Taylor
   series of \(u\) at \((0,0)\),
   \[
-    \tilde u(x,t)=\sum_{(\alpha_1,\alpha_2)}
-    \frac{u_{\alpha_1,\alpha_2}(0)}{\alpha_1!\alpha_2!} x^{\alpha_1}t^{\alpha_2},
+    u(x,t)=\sum_{\alpha,\beta} a_{\alpha,\beta} x^\alpha t^\beta
   \]
   is a solution to our PDE.
 
-  First, we must compute the coefficients
-  \[
-    \frac{u_{\alpha_1,\alpha_2}(0,0)}{\alpha_1!\alpha_2!}.
-  \]
-  To this end, we must find the partial derivatives
-  \(u_{\alpha_1,\alpha_2}\) and potentially, relations among them which
-  will help us to find these coefficients. Naïvely listing the partials
-  with respect to \(t\) and \(x\), we have
+  First, we must compute the coefficients \(a_{\alpha,\beta}\). To this
+  end, we must find the partial derivatives \(u_{\alpha,\beta}\) and
+  potentially, relations among them which will help us to find these
+  coefficients. Naïvely listing the partials with respect to \(t\) and
+  \(x\), we have
   \begin{align*}
     u(0,0)&=0\\
     u_x(0,0)&=\frac{\pi}{4}\\
@@ -157,12 +153,12 @@
   \]
   on \(\bfR\times\bfR\).
 
-  Let us compute the coefficients \(a_{mn}\) near \((0,0)\). From the PDE,
+  Let us compute the coefficients \(a_{m,n}\) near \((0,0)\). From the PDE,
   we have the relation
   \begin{equation}
-    \label{eq:3:3}
+    \label{eq:3:pde-relation}
     \begin{aligned}
-      a_{mn}
+      a_{m,n}
       &=D^{(m,n)} u(0,0)\\
       &=D^{(m,n-1)}u_t(0,0)\\
       &=D^{(m,n-1)}u_{xx}(0,0)\\
@@ -172,22 +168,22 @@
   \end{equation}
   Form the boundary condition, we have
   \[
-    u(x,0)=\sum_{j=1}^\infty (-1)^j x^{2j}.
+    u(x,0)=\sum_{k=1}^\infty (-1)^k x^{2k}
   \]
-  Taking the \(n\)\textsuperscript{th} \(x\)-partial derivative at
-  \((0,0)\), we have
-  \[
-    D^n_x u(0,0)=
+  for a sufficiently small neighborhood about \((0,0)\); the right-hand
+  side is given Taylor expansion of \(1/(1+x^2)\) about \((0,0)\).
+
+  Taking the \(m\)\textsuperscript{th} \(x\)-partial derivative at
+  \((0,0)\), we find the coefficients
+  \begin{equation}
+    \label{eq:3:boundary-relation}
+    a_{m,0}=
     \begin{cases}
-      0&\text{if \(n=2k-1\) is odd}\\
-      (-1)^k (2k)!&\text{if \(n=2k\) is even.}
+      0&\text{if \(m=2k-1\) is odd}\\
+      (-1)^k(2k)!&\text{if \(m=2k\) is even.}
     \end{cases}
-  \]
-  Using the PDE to find the \(m\)\textsuperscript{th} \(y\)-partial
-  derivative at \((0,0)\), we have
-  \[
-    D^n_yu(0,0)=D^{n-1}_y u(0,0)=D_y^{n-1}u_{xx}(0,0)=0
-  \]
+  \end{equation}
+  Thus,
 \end{solution}
 
 %%% Local Variables:
