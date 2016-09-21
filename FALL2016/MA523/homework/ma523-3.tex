@@ -4,13 +4,13 @@
     u_t=\sin u_x;\qquad u(x,0)=\frac{\pi}{4}x.
   \]
   Verify that the assumptions of the Cauchy--Kovalevskaya theorem are
-  satisfied and obtain the Taylor series of the solution about the origin.
+  satisfied and obtain the taylor series of the solution about the origin.
 \end{problem}
 \begin{solution}
   The initial value problem certainly satisfies the assumptions of the
   Cauchy--Kovalevskaya theorem, that is, setting
-  \(\bfu\defeq(u,u_x,u_t,t)\), the \(\bfB\) are all identically \(0\), and
-  \(\bfc(\bfu,x)=\sin u_x(x,t)\) is analytic. Next we show that he Taylor
+  \(\bfu\defeq(u,u_x,u_t,t)\), the \(\bfb\) are all identically \(0\), and
+  \(\bfc(\bfu,x)=\sin u_x(x,t)\) is analytic. Next we show that the Taylor
   series of \(u\) at \((0,0)\),
   \[
     u(x,t)=\sum_{\alpha,\beta} \frac{a_{\alpha,\beta}}{\alpha!\beta!}
@@ -52,14 +52,14 @@
     u_y&=a(x, y, u)u_x+b(x,y,u)\\
     u(x,0)&=0
   \end{align*}
-  Let \(a\) and \(b\) be analytic functions of their arguments. Assume that
-  \(D^\alpha a(0,0,0)\geq 0\) and \(D^\alpha b(0,0,0)\geq 0\) for all
+  let \(a\) and \(b\) be analytic functions of their arguments. Assume that
+  \(d^\alpha a(0,0,0)\geq 0\) and \(d^\alpha b(0,0,0)\geq 0\) for all
   \(\alpha\). (Remember by definition, if \(\alpha=0\) then
-  \(D^\alpha f=f\).)
+  \(d^\alpha f=f\).)
   \begin{enumerate}[label=(\alph*),noitemsep]
-  \item Show that \(D^\beta u(0,0)\geq 0\) for all \(|\beta|\leq 2\).
-  \item Prove that \(D^\beta u(0,0)\geq 0\) for all
-    \(\beta=(\beta_1,\beta_2)\). (\emph{Hint:} Argue as in the proof of the
+  \item Show that \(d^\beta u(0,0)\geq 0\) for all \(|\beta|\leq 2\).
+  \item Prove that \(d^\beta u(0,0)\geq 0\) for all
+    \(\beta=(\beta_1,\beta_2)\). (\emph{hint:} Argue as in the proof of the
     Cauchy--Kovalevskaya theorem; i.e., use induction in \(\beta_2\))
   \end{enumerate}
 \end{problem}
@@ -108,35 +108,35 @@
   For part (b), in the proof of the Cauchy--Kovalevskaya theorem, for
   \(\beta_2=0\), we have
   \[
-    D^\beta u(0,0)=0
+    d^\beta u(0,0)=0
   \]
   since \(u\) is constant on the hypersurface \(\{\,y=0\,\}\). In
-  particular, \(D^\beta u(0,0)\geq 0\).
+  particular, \(d^\beta u(0,0)\geq 0\).
 
-  Now, suppose \(D^\beta u(0,0)\geq 0\) for all \(\beta_2\leq n-1\). Then,
+  Now, suppose \(d^\beta u(0,0)\geq 0\) for all \(\beta_2\leq n-1\). Then,
   for \(\beta=(m,n)\), we have
   \begin{align*}
-    D^\beta u(0,0)
-    &=D^{(m,n-1)} u_y(0,0)\\
-    &=D^{(m,n-1)}\bigl(au_x+b\bigr)(0,0)\\
+    d^\beta u(0,0)
+    &=d^{(m,n-1)} u_y(0,0)\\
+    &=d^{(m,n-1)}\bigl(au_x+b\bigr)(0,0)\\
     &=
   \end{align*}
 \end{solution}
 \newpage
 
 \begin{problem}
-  (Kovalevskaya's example) Show that the line \(\{\,t=0\,\}\) is
+  (Kovalevskaya's example) show that the line \(\{\,t=0\,\}\) is
   characteristic for the heat equation \(u_t=u_{xx}\). Show there does not
   exist an analytic solution \(u\) of the heat equation in
   \(\bfR\times\bfR\), with \(u=1/(1+x^2)\) on \(\{t=0\}\). (\emph{Hint:}
-  Assume there is an analytic solution, compute its coefficients, and show
+  assume there is an analytic solution, compute its coefficients, and show
   instead that the resulting power series diverges in any neighborhood of
   \((0,0)\).)
 \end{problem}
 \begin{solution}
-  First we show that the line \(\Gamma\defeq\{\,t=0\,\}\) is characteristic
+  First we show that the line \(\gamma\defeq\{\,t=0\,\}\) is characteristic
   for the heat equation. With \(\bfnu=(1,0)\) the normal to the line
-  \(\Gamma\), the noncharacteristic condition reads
+  \(\gamma\), the noncharacteristic condition reads
   \[
     \sum_{|\alpha|=2} a_\alpha\bfnu^\alpha\neq 0.
   \]
@@ -147,7 +147,7 @@
     1\neq%
     0.
   \]
-  Thus, \(\Gamma\) is characteristic for \(u_t=u_{xx}\).
+  Thus, \(\gamma\) is characteristic for \(u_t=u_{xx}\).
 
   Next suppose \(u\) is an analytic solution to the heat equation with
   \[
@@ -161,10 +161,10 @@
     \label{eq:3:pde-relation}
     \begin{aligned}
       a_{m,n}
-      &=D^{(m,n)} u(0,0)\\
-      &=D^{(m,n-1)}u_t(0,0)\\
-      &=D^{(m,n-1)}u_{xx}(0,0)\\
-      &=D^{(m+2,n-1)}u(0,0)\\
+      &=d^{(m,n)} u(0,0)\\
+      &=d^{(m,n-1)}u_t(0,0)\\
+      &=d^{(m,n-1)}u_{xx}(0,0)\\
+      &=d^{(m+2,n-1)}u(0,0)\\
       &=a_{m+2,n-1}.
     \end{aligned}
   \end{equation}
@@ -175,7 +175,7 @@
     u(x,0)=\sum_{k=1}^\infty (-1)^k x^{2k}
   \end{equation}
   for a sufficiently small neighborhood about \((0,0)\), where the
-  right-hand side is given Taylor series of \(1/(1+x^2)\). Taking the
+  right-hand side is given taylor series of \(1/(1+x^2)\). Taking the
   \(m\)\textsuperscript{th} \(x\)-partial derivative at \((0,0)\), with the
   help of Eq.\@ \eqref{eq:3:taylor-exp-g} we find the coefficients
   \begin{equation}
@@ -196,11 +196,51 @@
     a_{2m,n}=a_{2m+2,n-1}=\dotsb=
     a_{2(m+n),0}=(-1)^{m+n}\bigl(2(m+n)\bigr)!.
   \]
-  From this we see that the coefficients of the Taylor series diverge to
-  \(\infty\), that is,
-  \[
-    (-1)^{m+n}\frac{\bigl(2(m+n)\bigr)!}{(2m)!n!}
-  \]
+  From this we see that the coefficients of the form \(a_{2n,n}\) grow very
+  quickly, that is,
+  \begin{align*}
+    \frac{a_{2n,n}}{(2n)!n!}
+    &=(-1)^{2n}\frac{\bigl(2(n+n)\bigr)!}{(2n)!n!}\\
+    &=\frac{(4n)!}{(2n)!n!}
+      \intertext{which, by Stirling's formula, is asymptotically equal to}
+    &\asymp\frac{\sqrt{2\pi n}(4n/\rme)^{4n}}{\sqrt{4\pi
+      n}(2n/\rme)^{2n}\sqrt{2\pi n}(n/\rme)^n}\\
+    &=\frac{\sqrt{2\pi n}(4n/\rme)^{4n}}{\sqrt{8\pi
+      n^2}(2n/\rme)^{2n}(n/\rme)^n}\\
+    &=\frac{\bigl(\sqrt{\pi/n}\bigr)4^{4n}}{2\cdot
+      2^{2n}}\left(\frac{n}{\rme}\right)^{4n-3n-n}\\
+    &=\frac{\sqrt{\pi/n}}{2}\left(\frac{16}{2}\right)^{2n}
+      \left(\frac{n}{\rme}\right)^n\\
+    &=\bigl(\sqrt{\pi/n}\bigr)2^{6n-1}\left(\frac{n}{\rme}\right)^n\\
+    &=\alpha\beta_nn^{n+1/2}
+  \end{align*}
+  which approaches \(\infty\) as \(n\to\infty\). This shows that for
+  \(x,t>0\), the terms \(a_{2n,n}\) grow arbitrarily large; taking
+  \(X=\min\{x,t\}\), we have
+  \begin{align*}
+    \frac{a_{2n,n}}{(2n)!n!}x^{2n}t^n
+    &\asymp\alpha\beta_nn^{n+1/2}x^{2n}t^n\\
+    &\geq\alpha\beta_nn^{n+1/2}X^{3n}.
+  \end{align*}
+  If \(X\geq 1\), these terms clearly grow arbitrarily large so suppose
+  that \(X<1\). Then we can write \(X=1/Y\) for some \(Y>1\) and we have
+  \begin{align*}
+    \alpha\beta_n \frac{n^{n+1/2}}{Y^{3n}}
+    &\geq M
+      \intertext{if and only if}
+      \frac{\alpha\beta_n n^{n+1/2}}{M}
+    &\geq Y^{3n}\\
+    \log_Y
+    \left(
+    \frac{\alpha\beta_n n^{n+1/2}}{M}
+    \right)
+    &\geq 3n.
+  \end{align*}
+  (I'm sure this can be achieved somehow).
+
+  This shows that if such a solution exists, it has radius of convergence
+  equal to \(0\) and hence, is not a solution for the PDE on
+  \(\bfR\times\bfR\).
 \end{solution}
 
 %%% Local Variables:
