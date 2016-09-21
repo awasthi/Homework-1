@@ -9,7 +9,7 @@
 \begin{solution}
   The initial value problem certainly satisfies the assumptions of the
   Cauchy--Kovalevskaya theorem, that is, setting
-  \(\bfu\defeq(u,u_x,u_t,t)\), the \(\bfB\) are all identically \(0\) and
+  \(\bfu\defeq(u,u_x,u_t,t)\), the \(\bfB\) are all identically \(0\), and
   \(\bfc(\bfu,x)=\sin u_x(x,t)\) is analytic. Next we show that he Taylor
   series of \(u\) at \((0,0)\),
   \[
@@ -33,12 +33,13 @@
     u_{ttx}(0,0)&=0,
   \end{align*}
   etc. Thus,
+  \begin{equation}
+    \label{eq:taylor-exp}
+    u=\frac{\pi}{4}x+\frac{\sqrt{2}}{2}t.
+  \end{equation}
+  Plugging in Eq.\@ \eqref{eq:taylor-exp} into our PDE, we have
   \[
-    \tilde u=\frac{\pi}{4}x+\frac{\sqrt{2}}{2}t.
-  \]
-  Plugging this equation into our PDE, we have
-  \[
-    \tilde u_t-\sin\tilde u_x=\frac{\sqrt{2}}{2}-\sin(\pi/4)=0,
+    u_t-\sin u_x=\frac{\sqrt{2}}{2}-\sin(\pi/4)=0,
   \]
   as desired.
 \end{solution}
