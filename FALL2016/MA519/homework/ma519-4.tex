@@ -46,8 +46,8 @@
   Note that
   \begin{align*}
     P(0) &= (1-(0.5)^4)^n \\
-    P(1) &= \binom{n}{1}(0.5)^4(1-(0.5)^4)^{n-1} \\
-    P(2) &= \binom{n}{2}(0.5)^8(1-(0.5)^4)^{n-2}
+    P(1) &= \binom{n}{1}(0.5)^4\bigl(1-(0.5)^4\bigr)^{n-1} \\
+    P(2) &= \binom{n}{2}(0.5)^8\bigl(1-(0.5)^4\bigr)^{n-2}
   \end{align*}
   (we choose a number of families to be all-girl, and then find the
   probability that that family is all-girl, while all of the rest are not
@@ -72,7 +72,7 @@
 
   The probability of rolling a specific kind of full house is
   \[
-    \binom{5}{3} \left( \frac{1}{6}\right)^3 \left(\frac{1}{6} \right)^2
+    \binom{5}{3} \left( \frac{1}{6}\right)^3 \left(\frac{1}{6} \right)^2.
   \]
   (Choose 3 dice to be the three of a kind, have them all rolled the
   specific number, have the other two dice rolled the other specific
@@ -105,8 +105,8 @@
 
   So,
   \begin{align*}
-    P(H)^4 + (1-P(H))^4 &= \frac{1}{4} \\
-    2P(H)^4 -4P(H)^3 + 6P(H)^2 - 4P(H) +1 &= \frac{1}{4} \\
+    P(H)^4 + \bigl(1-P(H)\bigr)^4 &= \frac{1}{4} \\
+    2P(H)^4 -4P(H)^3 + 6P(H)^2 - 4P(H) +1 &= \frac{1}{4}.
   \end{align*}
   We can approximate a solution to the above by $P(H) \approx 0.299$ or by
   $P(H) \approx 0.701$.
@@ -217,6 +217,7 @@
 
   For \(n=100\), this value is
   \[
+    E(X)\approx\num{0.4537037037037037}.
   \]
 \end{solution}
 \newpage
@@ -312,7 +313,7 @@
     the expected number of tests under the second plan. (Do not try
     numerical solutions.)
   \end{itemize}
-  \end{problem}
+\end{problem}
 \begin{solution}
 
 \end{solution}
