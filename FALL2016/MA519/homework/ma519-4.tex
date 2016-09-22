@@ -7,6 +7,25 @@
   selection \emph{with replacement}).
 \end{problem}
 \begin{solution}
+  Denote the events that player $A$ wins, player $B$ wins, and player $C$ wins by $A$, $B$, and $C$ respectively.
+
+  Note that $A$ wins if some multiple of 3 losses occurs, followed by a win. Also, $B$ wins if some multiple of three losses occurs, followed by a loss, then a win. Last, $C$ wins if some multiple of three losses occurs, followed by two losses then a win.
+
+  A win occurs with probability $1/3$ each time, and a loss occurs with probability $2/3$ each time. Thus, because each draw is independent,
+
+  \begin{align*}
+  P(A) &= \sum\limits_{i=0}^\infty \frac{1}{3} \left{\frac{2}{3}\right)^{3i} \\
+  P(B) &= \sum\limits_{i=0}^\infty \frac{1}{3} \left{\frac{2}{3}\right)^{3i+1} \\
+  P(C) &= \sum\limits_{i=0}^\infty \frac{1}{3} \left{\frac{2}{3}\right)^{3i+2} \\
+  \end{align*}
+
+  That is,
+
+  \begin{align*}
+  P(A) &= \sum\limits_{i=0}^\infty \frac{9}{19} \approx 0.47\\
+  P(B) &= \sum\limits_{i=0}^\infty \frac{6}{19} \approx 0.32\\
+  P(C) &= \sum\limits_{i=0}^\infty \frac{4}{19} \approx 0.21\\
+  \end{align*}
 \end{solution}
 \newpage
 
@@ -16,6 +35,26 @@
   are all girl families?
 \end{problem}
 \begin{solution}
+The probability that a family has all girls is $(0.5)^4$.
+
+In $n$ families, the probability that at least $3$ are all-girl is $1-P(0)-P(1)-P(2)$, where $P(m)$ is the probability that exactly $m$ families are all-girl.
+
+Note that
+
+\begin{align*}
+P(0) &= (1-(0.5)^4)^n \\
+P(1) &= \binom{n}{1}(0.5)^4(1-(0.5)^4)^{n-1} \\
+P(2) &= \binom{n}{2}(0.5)^8(1-(0.5)^4)^{n-2} \\
+\end{align*}
+
+(we choose a number of families to be all-girl, and then find the probability that that family is all-girl, while all of the rest are not all-girl.)
+
+So that the probability that at least $3$ are all girl is
+
+\[
+1-(1-(0.5)^4)^n - n(0.5)^4(1-(0.5)^4)^{n-1} - n(n-1)(0.5)(0.5)^8(1-(0.5)^4)^{n-2}
+\]
+
 
 \end{solution}
 \newpage
@@ -26,6 +65,21 @@
   and two rolls of another, in Yahtzee.
 \end{problem}
 \begin{solution}
+There are $30$ different kinds of full house ($6$ different three of a kinds, and $5$ different kinds of different two of a kind).
+
+The probability of rolling a specific kind of full house is
+
+\[
+\binom{5}{3} \left( \frac{1}{6}\right)^3 \left(\frac{1}{6} \right)^2
+\]
+
+(Choose 3 dice to be the three of a kind, have them all rolled the specific number, have the other two dice rolled the other specific number.)
+
+So the probability of rolling some kind of full house is
+
+\[
+30* \binom{5}{3} \left( \frac{1}{6}\right)^3 \left(\frac{1}{6} \right)^2 = \frac{25}{648} \approx 0.039
+\]
 
 \end{solution}
 \newpage
@@ -36,6 +90,32 @@
   heads and two tails?
 \end{problem}
 \begin{solution}
+Let $H$ denote the event that, on a given coin toss, that coin is heads, and let $T$ denote the event that, on a given coin toss, that coin is tails. Then, because each coin toss is independent, this says that
+
+\[
+P(H)^4 + P(T)^4 = \frac{1}{4}
+\]
+
+Moreover, because this is a coin,
+
+\[
+P(H) + P(T) = 1
+\]
+
+So,
+
+\begin{align*}
+P(H)^4 + (1-P(H))^4 &= \frac{1}{4} \\
+2P(H)^4 -4P(H)^3 + 6P(H)^2 - 4P(H) +1 &= \frac{1}{4} \\
+\end{align*}
+
+We can approximate a solution to the above by $P(H) \approx 0.299$ or by $P(H) \approx 0.701$.
+
+Now, the probability that two coin flips of four are heads is
+
+\[
+\binom{4}{2}P(H)^2P(T)^2 \approx 0.263
+\]
 
 \end{solution}
 \newpage
@@ -46,6 +126,21 @@
   occurs.
 \end{problem}
 \begin{solution}
+
+Let the events $A_1, A_2, \ldots A_n$ be independent.
+
+Then the events $A_1^c, A_2^c, \ldots A_n^c$ are independent. (Where $A^c$ denotes the event that $A$ does not happen.)
+
+The events $A_i^c$ each have probability $1-p_i$ of occurring.
+
+Thus, the probability, $p$, that none of the events occur is
+
+\[
+
+p = \prod\limits_{k=1}^n (1-p_k)
+
+
+\]
 \end{solution}
 \newpage
 
@@ -56,6 +151,29 @@
 \end{problem}
 \begin{solution}
 
+  First, we compute the probability mass function. Note that $X$ is an
+  integer between $0$ and $5$, so computing the probilities that $X$ is
+  each of $0$ through $5$ suffices to describe the PMF of $X$.
+
+  We calculate the probabilities, by counting.
+  \begin{align*}
+    P(0) &= \frac{6}{36} = \frac{1}{6}\\
+    P(1) &= \frac{10}{36} = \frac{5}{18}\\
+    P(2) &= \frac{8}{36} = \frac{2}{9}\\
+    P(3) &= \frac{6}{36} = \frac{1}{6}\\
+    P(4) &= \frac{4}{36} = \frac{1}{9}\\
+    P(5) &= \frac{2}{36} = \frac{1}{18}\\
+  \end{align*}
+  We calculate the CDF by summing.
+  \begin{align*}
+    \CDF(0) &= \frac{6}{36} = \frac{1}{6}\\
+    \CDF(1) &= \frac{16}{36} = \frac{4}{9}\\
+    \CDF(2) &= \frac{24}{36} = \frac{2}{3}\\
+    \CDF(3) &= \frac{30}{36} = \frac{5}{6}\\
+    \CDF(4) &= \frac{34}{36} = \frac{17}{18}\\
+    \CDF(5) &= \frac{36}{36} = 1\\
+  \end{align*}
+  The median is $2$.
 \end{solution}
 \newpage
 
