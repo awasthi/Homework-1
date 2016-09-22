@@ -60,19 +60,19 @@
 \newpage
 
 \begin{problem}[Handout 6, \# 7]
-  Find a discrete random variable \(X\) such that \(\Ex(X)=\Ex(X^3)=0\);
-  \(\Ex(X^2)=\Ex(X^4)=1\).
+  Find a discrete random variable \(X\) such that \(E(X)=E(X^3)=0\);
+  \(E(X^2)=E(X^4)=1\).
 \end{problem}
 \begin{solution}
   Set \(\Omega=\{0,1\}\) and define a random variable
   \(X\colon\Omega\to\bbR\) by \(X(0)= -1\), \(X(1)= 1\) as well as a
   probability \(P(0)=P(1)=1/2\). Then
   \[
-    \Ex[X]=-1(1/2)+1(1/2)=0=(-1)^3(1/2)+1^3(1/2)=\Ex[X^3],
+    E[X]=-1(1/2)+1(1/2)=0=(-1)^3(1/2)+1^3(1/2)=E[X^3],
   \]
   whereas
   \[
-    \Ex[X^2]=(-1)^2(1/2)+1^2(1/2)=1=(-1)^4(1/2)+1^4(1/2)=\Ex[X^4],
+    E[X^2]=(-1)^2(1/2)+1^2(1/2)=1=(-1)^4(1/2)+1^4(1/2)=E[X^4],
   \]
   as desired.
 \end{solution}
