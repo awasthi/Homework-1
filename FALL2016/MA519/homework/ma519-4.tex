@@ -205,13 +205,19 @@
   \]
   We need to find these \(p_i\). There are \(6^n\) points in the sample
   space \(\Omega\). Starting at the \(i\)\textsup{th} place, we can have
-  exactly \(5^{n-i-2}\) ways of choosing the remaining terms in the
+  exactly \(6^{n-3}\) ways of choosing the remaining terms in the
   sequence. Thus,
   \[
-    p_i=\frac{5^{n-2}}{6^n}
+    p_i=\frac{6^{n-3}}{6^n}=\frac{1}{6^3}.
   \]
-  \begin{align*}
-  \end{align*}
+  Then,
+  \[
+    E(X_1+\dotsb+X_{n-2})=\frac{n-1}{6^3}
+  \]
+
+  For \(n=100\), this value is
+  \[
+  \]
 \end{solution}
 \newpage
 
