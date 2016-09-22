@@ -194,15 +194,9 @@
   \(n=100\).
 \end{problem}
 \begin{solution}
-  Let \(\Omega\) denote the sample space and define a random variable
-  \(X\colon\Omega\to\bbR\) by \(x\mapsto k\) the number of times a
-  subsequence of three or more consecutive sixes shows up in \(x\). To
-  compute the mean value of \(X\), we must first find the PMF of \(X\) to
-  assign probabilities to the various possible outcomes.
-
-  Fix an integer \(k\leq n\). We must count all possible sequences
-  \(x\in\Omega\) which contain exactly \(k\) subsequences of three or more
-  consecutive sixes.
+  Let \(\Omega\) denote the sample space and let \(A\) denote the event
+  that in a sequence of \(n\) rolls of a die, a subsequence of sixes of
+  length at least three occurs.
 \end{solution}
 \newpage
 
@@ -212,7 +206,35 @@
   \(365\) days and that all arrangements are equally probable.)
 \end{problem}
 \begin{solution}
-  Let \(\Omega\) denote the sample space and \(X\colon\Omega\to\bfR\).
+  Let \(\Omega\) denote the sample space and let \(A\) denote the event
+  that exactly \(k\) people share a birthday. Define a random variable
+  \(X\colon\Omega\to\bbR\) by \(X=\chi_A\). Then,
+  \[
+    \rmE(X)=\sum_{i=1}^{365} 1\cdot P\bigl\{\,\text{exactly \(k\) people
+      born in day \(i\)}\,\bigr\}.
+  \]
+  Since the probability that exactly \(k\) have any given birthday is
+  independent of the day, the equation above simplifies to
+  \[
+    \rmE(X)=365 P\bigl\{\,\text{exactly \(k\) people are born on the
+      1\textsup{st} of January}\,\bigr\}.
+  \]
+  The latter probability is not difficult to compute. There are exactly
+  \(\binom{n}{k}\) ways to chose \(k\) people having the 1\textsup{st} of
+  January as their birthday and \((365-1)^{n-k}=364^{n-k}\) choices for we
+  can assign to the remaining \(n-k\) people and of course, the sample
+  space has cardinality \(\#\Omega=365^n\). Thus, the probability that
+  exactly \(k\) people have the 1\textsup{st} of January as their birthday
+  is
+  \[
+    P=\frac{\binom{n}{k}364^{n-k}}{365^n}.
+  \]
+  Thus,
+  \[
+    \rmE[X]
+    =365\left(\frac{\binom{n}{k}364^{n-k}}{365^n}\right)
+    =\frac{\binom{n}{k}364^{n-k}}{365^{n-1}}.
+  \]
 \end{solution}
 \newpage
 
