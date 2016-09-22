@@ -196,7 +196,8 @@
 \begin{solution}
   Let \(\Omega\) denote the sample space and let \(A\) denote the event
   that in a sequence of \(n\) rolls of a die, a subsequence of sixes of
-  length at least three occurs.
+  length at least three occurs. Define a family of random variables
+  \(X_i\colon\Omega\to\bbR\), \(1\leq i\leq n-3\) by
 \end{solution}
 \newpage
 
@@ -208,17 +209,15 @@
 \begin{solution}
   Let \(\Omega\) denote the sample space and let \(A\) denote the event
   that exactly \(k\) people share a birthday. Define a random variable
-  \(X\colon\Omega\to\bbR\) by \(X=\chi_A\). Then,
+  \(X_i\colon\Omega\to\bbR\), \(1\leq i\leq 365\), as the indicator
+  variable that the \(i\)\textsup{th} day of the year is the birthday of
+  exactly \(k\) people. Then,
   \[
-    \rmE(X)=\sum_{i=1}^{365} 1\cdot P\bigl\{\,\text{exactly \(k\) people
-      born in day \(i\)}\,\bigr\}.
+    \rmE(X_1+\dotsb+X_{365})=\rmE(X_1)+\dotsb+\rmE(X_{365})=365p,
   \]
-  Since the probability that exactly \(k\) have any given birthday is
-  independent of the day, the equation above simplifies to
-  \[
-    \rmE(X)=365 P\bigl\{\,\text{exactly \(k\) people are born on the
-      1\textsup{st} of January}\,\bigr\}.
-  \]
+  where \(p\) is the probability that a exactly \(k\) people have a given
+  day of the year as their birthday.
+
   The latter probability is not difficult to compute. There are exactly
   \(\binom{n}{k}\) ways to chose \(k\) people having the 1\textsup{st} of
   January as their birthday and \((365-1)^{n-k}=364^{n-k}\) choices for we
@@ -244,7 +243,35 @@
   \(1\)?
 \end{problem}
 \begin{solution}
+  For any given person, the probability that the other \(n-1\) people do
+  not share a birthday with them is
+  \[
+    \frac{\binom{365}{1}(365-1)^{n-1}}{365^n}=\frac{365\cdot 364^{n-1}}{365^n}
+    =\left(\frac{364}{365}\right)^{n-1}.
+  \]
+  Thus, the probability that any given person shares a birthday with
+  somebody else is
+  \[
+    p=1-\left(\frac{364}{365}\right)^{n-1}.
+  \]
+  Now, define a random variable \(X_i\colon\Omega\to\bbR\),
+  \(1\leq i\leq n\), the indicator random variable that the
+  \(i\)\textsup{th} person shares a birthday. Then
+  \begin{align*}
+    \rmE(X_1+\dotsb+X_n)
+    &=\rmE(X_1)+\dotsc+\rmE(X_1)\\
+    &=n p\\
+    &=n\left(1-\left(\frac{364}{365}\right)^{n-1}\right).
+  \end{align*}
 
+  For the expectation to exceed \(1\), we must have
+  \begin{align*}
+    1
+    &<n\left(1-\left(\frac{364}{365}\right)^{n-1}\right)\\
+    \frac{1}{n}&<1-\left(\frac{364}{365}\right)^{n-1}\\
+    \frac{365^n}{n}&<365^n-364^n.
+  \end{align*}
+  Experimentally, this number seems to be \(20\).
 \end{solution}
 \newpage
 
