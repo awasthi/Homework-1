@@ -197,14 +197,14 @@
   Let \(\Omega\) denote the sample space and let \(A\) denote the event
   that in a sequence of \(n\) rolls of a die, a subsequence of sixes of
   length at least three occurs. Define a random variables
-  \(X_i\colon\omega\to\bbR\), \(1\leq i\leq n-2\), as the indicator
+  \(X_i\colon\Omega\to\bbR\), \(1\leq i\leq n-2\), as the indicator
   variable that the there are three or more consecutive \(6\)s starting at
   the \(i\)\textsup{th} roll. Then,
   \[
     E(x_1+\dotsb+x_{n-2})=E(x_1)+\dotsb+E(x_{n-2})=p_1+\dotsb+p_{n-2}.
   \]
   We need to find these \(p_i\). There are \(6^n\) points in the sample
-  space \(\omega\). Starting at the \(i\)\textsup{th} place, we can have
+  space \(\Omega\). Starting at the \(i\)\textsup{th} place, we can have
   \(6^{n-i-2},6^{n-i-3},\dotsc,6\) different successions corresponding to
   three sixes in a row, four sixes in a row, etc. Thus,
   \begin{align*}
