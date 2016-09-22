@@ -205,12 +205,12 @@
   \]
   We need to find these \(p_i\). There are \(6^n\) points in the sample
   space \(\Omega\). Starting at the \(i\)\textsup{th} place, we can have
-  \(6^{n-i-2},6^{n-i-3},\dotsc,6\) different successions corresponding to
-  three sixes in a row, four sixes in a row, etc. Thus,
+  exactly \(5^{n-i-2}\) ways of choosing the remaining terms in the
+  sequence. Thus,
+  \[
+    p_i=\frac{5^{n-i-2}}{6^n}
+  \]
   \begin{align*}
-    p_i&=\frac{6^{n-i-2}+\dotsb+6}{6^n}\\
-       &=6^{-i-2}\bigl(1+\dotsb+6^{-n+i+3}\bigr)\\
-       &=
   \end{align*}
 \end{solution}
 \newpage
