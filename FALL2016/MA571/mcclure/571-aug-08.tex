@@ -6,7 +6,7 @@
   Let \(X\) and \(Y\) be topological spaces and let \(f\colon X\to Y\) be a
   continuous function. Prove that
   \[
-    f(\bar A)\subseteq\overline{f(A)}
+    f(\bar A)\subset\overline{f(A)}
   \]
   for all subsets \(A\) of \(X\).
 \end{problem}
@@ -16,7 +16,7 @@
   particular, if \(U\) is an neighborhood of \(f(x)\), \(f^{-1}(V)\)
   is a neighborhood of \(x\) so \(f^{-1}(V)\cap A\neq\emptyset\). Thus,
   \(V\cap f(A)\neq\emptyset\) so \(f(x)\in\overline{f(A)}\). It follows
-  that \(f(\bar A)\subseteq\overline{f(A)}\).
+  that \(f(\bar A)\subset\overline{f(A)}\).
 \end{solution}
 
 \begin{problem}
@@ -65,7 +65,7 @@
   \(h(x)=\bigl(f(x),g(x)\bigr)\). This map is continuous by the u.m.p.\@ of
   the product topology since each projection
   \(\pi_1\circ h=f,\pi_2\circ h=g\) is continuous. Since \(f(x)\neq g(x)\),
-  \(h(x)\subseteq I\times I\setminus\Delta\) for otherwise, there is a
+  \(h(x)\subset I\times I\setminus\Delta\) for otherwise, there is a
   point \(x\in X\) such that \(h(x)=\bigl(f(x),g(x)\bigr)\in\Delta\) which
   implies \(f(x)=g(x)\). Now, we note that the set
   \((I\times I)\setminus\Delta\) consists of two connected components,
@@ -73,10 +73,10 @@
     C&=\bigl\{\,x\in X:f(x)>g(x)\,\bigr\}\\
     D&=\bigl\{\,x\in X:f(x)<g(x)\,\bigr\}.
   \end{align*}
-  Thus, since \(X\) is connected, \(h(X)\subseteq C\) or \(h(X)\subseteq
+  Thus, since \(X\) is connected, \(h(X)\subset C\) or \(h(X)\subset
   D\). In the former case, since \(f\) is onto, \(f(x)=0\) for some \(x\in
   X\) so \(g(x)<0\), which contradicts the assumption that the image of
-  \(X\) under \(g\) lies in \(I\). Similarly, if \(h(X)\subseteq D\), then
+  \(X\) under \(g\) lies in \(I\). Similarly, if \(h(X)\subset D\), then
   since \(f\) is onto, \(f(x)=1\) for some \(x\in X\), which implies
   \(g(x)>1\). Again, this is nonsense. Therefore, the image of \(X\) under
   \(h\) must contain a point in the diagonal \(\Delta\), i.e.,
@@ -97,7 +97,7 @@
   \(U\cap A\neq\emptyset\). Let \(U\) be a basic open neighborhood of
   \(\mathbf{1}\). Then \(U=\prod_{i\in\bbN} U_i\) where only finitely many
   of then \(U_i\neq \{0,1\}\). Let \(U_N\) be the last such \(U_i\). Then,
-  for \(1\leq i\leq N\), \(U_i\supseteq\{1\}\) otherwise \(\mathbf{1}\) is
+  for \(1\leq i\leq N\), \(U_i\supset\{1\}\) otherwise \(\mathbf{1}\) is
   not in the set \(U\). Let \(\bfx\) be the sequence consisting of \(N\)
   \(1\)s and \(0\)s for the remainder of the sequence. Then \(\bfx\in A\)
   since it contains finitely many \(1\)s and \(\bfx\in U\) since the first
@@ -112,7 +112,7 @@
   Prove the Tube Lemma: given topological spaces \(X\) and \(Y\) with \(Y\)
   compact, a point \(x_0\in X\), and an open set \(N\) of \(X\times Y\)
   containing \(\{x_0\}\times Y\), prove that there is an open set \(W\) of
-  \(X\) containing \(x_0\) with \(W\times Y\subseteq N\).
+  \(X\) containing \(x_0\) with \(W\times Y\subset N\).
 \end{problem}
 \begin{solution}
   Let \(f\colon Y\to X\times Y\) be the map \(f(y)=(x_0,y)\) for a fixed
@@ -124,12 +124,12 @@
     f(Y)=\{x_0\}\times Y
   \]
   is compact. For each point \((x_0,y)\in \{x_0\}\times Y\), take an basic
-  neighborhood \(U_y\times V_y\subseteq N\); we can do this since \(N\) is
+  neighborhood \(U_y\times V_y\subset N\); we can do this since \(N\) is
   open. Then the collection \(\bigl\{U_y\times V_y:y\in Y\bigr\}\) forms an
   open cover of \(\{x_0\}\times Y\) since the sets \(U_y\times V_y\) are
   open and for any \((x_0,y)\in Y\), \((x_0,y)\in U_y\times V_y\) so
   \[
-    \bigcup_{y\in Y}U_y\times V_y\supseteq \{x_0\}\times Y.
+    \bigcup_{y\in Y}U_y\times V_y\supset \{x_0\}\times Y.
   \]
   Now, since \(\{x_0\}\times Y\) is compact, there exists a finite
   subcover, say \(\bigl\{U_1\times V_1,\dotsc,U_i\times V_i\bigr\}\) of
@@ -139,15 +139,15 @@
     W=\bigcap_{i=1}^N\pi_1\bigl(U_i\times V_i\bigr)=\bigcap_{i=1}^NU_i
   \]
   is open in \(X\) and it contains \(x_0\) since each \(U_i\) does. We
-  claim that \(W\times Y\subseteq N\). In fact, \(W\times
-  Y\subseteq\bigcup_{i=1}^N U_i\times V_i\). Let \((x,y)\in W\) and
+  claim that \(W\times Y\subset N\). In fact, \(W\times
+  Y\subset\bigcup_{i=1}^N U_i\times V_i\). Let \((x,y)\in W\) and
   \((x_0,y)\in\{x_0\},Y\) containing the same \(y\) point. Then since
   \(\bigl\{U_1\times V_1,\dotsc,U_i\times V_i\bigr\}\) covers
   \(\{x_0\}\times Y\), some \(U_i\times V_i\) contains \((x_0,y)\) so
   \(y\in V_i\). But, \(x\in U_i\) for all \(1\leq i\leq N\). Thus,
   \((x,y)\in U_i\times V_i\). Thus,
   \[
-    W\times Y\subseteq\bigcup_{i=1}^N U_i\times V_i\subseteq N,
+    W\times Y\subset\bigcup_{i=1}^N U_i\times V_i\subset N,
   \]
   as desired.
 \end{solution}

@@ -10,7 +10,7 @@
   \(\{B_n:n\in\bbN\}\) be an enumeration of \(\calB\) and let
   \(\calU=\{U_\alpha:\alpha\in A\}\) an open cover of \(X\). To every
   \(B_n\) in \(\calB\) associate an element \(U_n\) such that
-  \(B_n\subseteq U_n\) if such an \(n\) exists; otherwise, associate to
+  \(B_n\subset U_n\) if such an \(n\) exists; otherwise, associate to
   \(B_n\) the empty set \(\emptyset\). We claim that the subcollection
   \(\calU'=\{U_n:n\in\bbN\}\) is a countable subcover of \(\calU\).
 
@@ -59,7 +59,7 @@
   continuous function to a subspace is again continuous. Therefore,
   \(f'\colon X\to f(X)\) is continuous.
 
-  Moreover, since \(\bbR^n\) is Hausdorff and \(f(X)\subseteq\bbR^n\) is a
+  Moreover, since \(\bbR^n\) is Hausdorff and \(f(X)\subset\bbR^n\) is a
   subspace, \(f(X)\) is Hausdorff.
 
   Lastly, we show that \(f'\colon X\to f(X)\) is bijective. It is clear
@@ -185,9 +185,9 @@
   \(C\cup D=X\). Let \(x\in X\). Then \(x\in V\) for some \(V\in\calU\)
   since \(\calU\) covers \(X\). Thus, either \(V\) is reachable from \(U\)
   or \(V\) is not reachable from \(U\). In the former case, \(x\in C\) and
-  in the latter case \(x\in D\). Thus, \(C\cup D\supseteq X\) and
-  \(C\cup D=X\); it is clear that both \(C,D\subseteq X\) so the union
-  \(C\cup D\subseteq X\).
+  in the latter case \(x\in D\). Thus, \(C\cup D\supset X\) and
+  \(C\cup D=X\); it is clear that both \(C,D\subset X\) so the union
+  \(C\cup D\subset X\).
 
   Thus, \(C,D\) forms a separation of \(X\). This contradicts the
   assumption that \(X\) is connected. Therefore, it must be the case that
@@ -196,7 +196,7 @@
 
 \begin{problem}
   Let \(p\colon E\to B\) be a covering map. Suppose that points are closed
-  in \(B\). Let \(A\subseteq E\) be compact. Prove that for every
+  in \(B\). Let \(A\subset E\) be compact. Prove that for every
   \(b\in B\) the set \(A\cap p^{-1}\{b\}\) is finite.
 \end{problem}
 \begin{solution}
@@ -214,7 +214,7 @@
   form an open cover of \(A\cap p^{-1}\{b\}\). Since \(A\cap p^{-1}\{b\}\)
   is compact, only finitely many of the \(U_\alpha\), say
   \(\{U_1,\dotsc,U_N\}\), cover \(A\cap p^{-1}\{b\}\). Thus,
-  \(A\cap p^{-1}\{b\}\subseteq\bigcup_{n=1}^N U_n\). Since each
+  \(A\cap p^{-1}\{b\}\subset\bigcup_{n=1}^N U_n\). Since each
   \(U_n\approx V\), each \(U_n\cap p^{-1}\{b\}\) consists of a single
   point. Thus, the number of points in \(A\cap p^{-1}\{b\}\) is less than
   or equal to \(N\).

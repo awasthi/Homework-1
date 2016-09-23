@@ -4,7 +4,7 @@
 \begin{problem}
   Let \(A\) be a subset of a topological space \(X\) and let \(B\) be a
   subset of \(A\). Prove that
-  \(\bar A\setminus\bar B\subseteq\overline{A\setminus B}\).
+  \(\bar A\setminus\bar B\subset\overline{A\setminus B}\).
 \end{problem}
 \begin{solution}
   Let \(x\in\bar A\setminus\bar B\), then \(x\) is in the closure of \(A\),
@@ -56,7 +56,7 @@
   be a compact subset of \(Y\). Let \(N\) be an open set in \(X\times Y\)
   containing \(\left\{x_0\right\}\times C\). Prove that there is an open
   set \(U\) containing \(x_0\) and an open set \(V\) containing \(C\) such
-  that \(U\times V\subseteq N\).
+  that \(U\times V\subset N\).
 \end{problem}
 \begin{solution}
   Same as the proof of the tube lemma.
@@ -77,7 +77,7 @@
   suppose not, then \(x\in f^{-1}(C)\cap f^{-1}(D)\) so \(f(x)\in C\cap
   D\), but \(C,D\) is a separation of \(Y\) (in particular, \(C\cap
   D=\emptyset\)). It follows that either \(f^{-1}(C)\) or \(f^{-1}(D)\) is
-  empty. Assume the latter. Then \(f\circ g(Y)\subseteq V\). But since
+  empty. Assume the latter. Then \(f\circ g(Y)\subset V\). But since
   \(f\circ g\simeq \id_Y\) there exists a homotopy \(H\colon I\times Y\to
   Y\) such that \(H(y,0)=f\circ g(y)\) and \(H(y,1)=y\). Fix \(y\in Y\),
   then the map \(p_y=H(y,\cdot)\) is a path from \(y\) to \(f\circ
@@ -104,7 +104,7 @@
   \(e_2=\beta_2(1)\). Then \(\beta_1*\beta_2\) is a lifting of the loop
   \(f\circ(\gamma_1*\bar\gamma_2)\). But by hypothesis
   \[
-    \pi_1\bigl(\pi_1(Y,y_0)\bigr)\subseteq p_*\bigl(\pi_1(E,e_0)\bigr)
+    \pi_1\bigl(\pi_1(Y,y_0)\bigr)\subset p_*\bigl(\pi_1(E,e_0)\bigr)
   \]
   so \(\bigl[f\circ(\gamma_1*\bar \gamma_2)\bigr]\) is in
   \(p_*\bigl(\pi_1(E,e_0)\bigr)\). By Theorem 54.6, \(\beta_1*\beta_2\) is
