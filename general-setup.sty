@@ -13,34 +13,32 @@
 \mleftright%
 
 %% Math fonts
-\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{amssymb}%
+\usepackage[heavycircles]{stmaryrd}%
+\usepackage[nointegrals]{wasysym}%
 \usepackage[bb=ams,%
             frak=euler,%
             cal=euler,%
             scr=rsfso]{mathalfa}%
-% \usepackage[heavycircles]{stmaryrd}%
-\usepackage{bm}
 %% Use Latin Modern instead
 \usepackage[rm={proportional,lining},
             sf={proportional,oldstyle},
             tt={lining,tabular,monowidth}]{cfr-lm}
 
 %%% Useful packages
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{graphicx}
-\usepackage{lastpage}
-\usepackage{microtype}
-
+\usepackage[T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
+\usepackage{graphicx}%
+\usepackage{lastpage}%
+\usepackage{microtype}%
 \usepackage{enumitem}%
 \usepackage{listings}%
-
 \@ifpackageloaded{hyperref}{}{\usepackage{hyperref}}
 % \@ifpackageloaded{natbib}{}{\usepackage{natbib}}
 \@ifpackageloaded{xcolor}
                  {\PassOptionsToPackage{dvipsnames}{xcolor}}
                  {\usepackage[dvipsnames]{xcolor}}
-
 
 %% Text commands
 % \providecommand\textsi{\scshape}
