@@ -1,18 +1,20 @@
-\tdef\auth{Carlos Salinas}%
+\def\auth{Carlos Salinas}%
 \def\tight{MA 519: Homework, Midterms and Practice Problems Solutions}%
 \def\short{MA519-HW-ALL}%
 \def\class{MA 51900}%
 \def\subject{elementary probability}%
 \def\email{salinac@purdue.edu}%
 
-\documentclass[article,oneside,leqno]{memoir}%
-\usepackage{geometry}%
+\documentclass[article,oneside,leqno]{memoir}
+\usepackage{geometry}
 
 %% Base customization and variables
-\usepackage{general-setup}%
+\usepackage{general-setup}
+
+%% Formatting
 
 %% Footnote style
-\renewcommand*{\thefootnote}{\fnsymbol{footnote}}%
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
 %% Hyperref setup
 \hypersetup{%
@@ -29,14 +31,14 @@
   pdfkeywords={\subject},%
   pdfsubject={\class},%
   % pageanchor={false},%
-  unicode%
+  unicode
 }
 
 %% Graphics path as it says
-\graphicspath{{figures/}}%
+\graphicspath{{figures/}}
 
 %% Fix AMS counter bug
-\renewenvironment{problem}%
+\renewenvironment{problem}
                  {\begin{exercise}}%
                  {\end{exercise}}%
 
@@ -44,12 +46,12 @@
 % \author{\href{mailto:\email}{\auth}}
 \author{\auth}%
 \title{\tight}%
-\date{{Last compiled: \today}}%
+\date{Last compiled: \today}%
 \maketitle%
 \tableofcontents%
 %% DasGupta's homework
-\include{homework/519-hw-1-run}%
-\include{homework/519-hw-2-run}%
+% \include{homework/519-hw-1-run}%
+% \include{homework/519-hw-2-run}%
 \end{document}
 
 %%% Local Variables:
