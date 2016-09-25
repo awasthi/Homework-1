@@ -18,7 +18,7 @@
 \usepackage[nointegrals]{wasysym}%
 \usepackage[bb=ams,%
             frak=euler,%
-            cal=euler,%
+            cal=cm,%
             scr=rsfso]{mathalfa}%
 %% Use Latin Modern instead
 % \usepackage{lmodern}
@@ -42,6 +42,18 @@
            en=english,%
            es=spanish,%
            ru=russian}
+
+\usepackage{CJKutf8}%
+\newcommand{\textmj}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}%
+\newcommand{\textmin}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}%
+\newcommand{\textgoth}[1]{\begin{CJK}{UTF8}{goth}#1\end{CJK}}%
+\newcommand{\textmaru}[1]{\begin{CJK}{UTF8}{maru}#1\end{CJK}}%
+\newcommand{\textbsmi}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}%
+\newcommand{\textbkai}[1]{\begin{CJK}{UTF8}{bkai}#1\end{CJK}}
+
+\newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}%
+\newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}%
+\newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}%
 
 %%% Useful packages
 \usepackage{graphicx}%
@@ -69,7 +81,7 @@
 \usepackage{xpatch}
 \xpatchcmd{\proof}{\itshape}{\normalfont\proofnameformat}{}{}
 % \newcommand{\proofnameformat}{\sishape}
-\newcommand{\proofnameformat}{\bfseries\itshape}
+\newcommand{\proofnameformat}{\itshape}
 
 \@ifundefined{solution}{%
 \newenvironment{solution}[1][Solution]{%
