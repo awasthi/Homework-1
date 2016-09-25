@@ -713,7 +713,27 @@ if \eqref{eq:pde:nonchar-cond} holds. We henceforth assume this condition.
 \end{proof}
 
 \section{The One-Dimensional Wave Equation}
-We now turn our attention to second-order partial differential equations.
+We now turn our attention to second-order partial differential
+equations. In particular, the \emph{wave equation}
+\begin{equation}
+  \label{eq:pde:wave-equation}
+  u_{tt}-\Delta u=0
+\end{equation}
+and the \emph{nonhomogeneous wave equation}
+\begin{equation}
+  \label{eq:pde:nonhom-wave-equation}
+  u_{tt}-\Delta u=f,
+\end{equation}
+subject to the appropriate initial and boundary conditions. Here \(t>0\)
+and \(x\in U\), where \(U\subset\bbR^n\) is open. The unknown is
+\(u\colon \bar U\times[0,\infty)\to\bbR\), \(u=u(x,t)\), and the Laplacian
+is taken with respect to the spatial variables \(x=(x_1,\dotsc,x_n)\). In
+\eqref{eq:pde:nonhom-wave-equation} the function
+\(f\colon U\imes[0,\infty)\to\bbR\) is given. It is common to abbreviate
+\eqref{eq:pde:nonhom-wave-equation} as
+\[
+  \square u=u_{tt}-\Delta u.
+\]
 
 %%% Local Variables:
 %%% mode: latex
