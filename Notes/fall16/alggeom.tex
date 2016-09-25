@@ -25,7 +25,81 @@ such that \((\nabla\times)(\nabla)=0\) and
 \((\nabla\cdot)(\nabla\times)=0\). This is a prototype for a
 \emph{complex.} An obvious question: does \(\nabla\times v=0\) imply that
 \(v\) is a gradient? Answer: sometimes yes (e.g.\@ if \(U=\bbR^3\)) and
-sometimes no (e.g.\@ if \(U=\bbR^3\) minus a line).
+sometimes no (e.g.\@ if \(U=\bbR^3\) minus a line). To quantify the failure
+we introduce the first de Rham cohomology
+\[
+  H_{\dR}^1(U)=\frac{\bigl\{\,\text{\(v\) a vector field on
+      \(U\)}:\nabla\times v=0\,\bigr\}}{\bigl\{\,\nabla f\,\bigr\}}.
+\]
+Contrary to first appearances, for reasonable \(U\) this is finite
+dimensional and computable. This follows from the de Rham's theorem, which
+we now explain. First, let's generalize this to an open set
+\(U\subset\bbR^n\). Once \(n>3\) vector calculus is useless, but there is a
+good replacement. A differential form of degree \(p\), or \(p\)-form, is an
+expression
+\[
+  \alpha=\sum f_{i_1,\dotsc,i_p}(x_1,\dotsc,x_n)\diff
+  x_{i_1}\wedge\dotsb\wedge dx_{i_p}
+\]
+such that the \(x_i\) are coordinates, the \(f\) are \(C^\infty\)
+functions, \(dx_{i_1}\wedge\dotsb\wedge dx_{i_p}\) are symbols where
+\(\wedge\) is an anticommutative product. Let \(\calE^p(U)\) denote the
+vector space of \(p\)-forms. Define the exterior derivative by
+\[
+  d\alpha=\ssum_j\frac{\partial f_{i_1,\dotsc,i_p}}{\partial
+    x_j}\diff x_j\wedge\dotsb\wedge dx_{i_p}.
+\]
+This is a \((p+1)\)-form.
+
+\begin{lemma}
+  \(d^2=0\).
+\end{lemma}
+\begin{proof}
+  We prove it for \(p=0\). In this case, we have
+  \begin{align*}
+    df&=\sum_i\frac{\partial f}{\partial x_i}\diff x_i\\
+    d(df)&=\ssum_{i,j}\frac{\partial^2}{\partial x_j\partial x_i}\diff
+           x_j\wedge dx_i.
+  \end{align*}
+  Using anticommutativity, we can rewrite this as
+  \[
+    \sum_{j<i}\left(\frac{\partial^2 f}{\partial x_j\partial x_i}
+    -\frac{\partial^2 f}{\partial x_i\partial x_j}\right) dx_j\wedge dx_i=0.
+  \]
+\end{proof}
+
+A cochain complex is a collection of Abelian groups \(M^i\) and
+homomorphisms \(d\colon M^i\to M^{i+1}\) such that \(d^2=0\). We define the
+\(p\)th cohomology of this by
+\[
+  H^p(M^\bullet,d)=\frac{\Ker d\colon M^p\to M^{p+1}}{\Img d\colon
+    M^{p-1}\to M^p}.
+\]
+So we have an example of a complex \((\calE^\bullet(U),d)\) called the de
+Rham complex of \(U\). It's cohomology is the de Rham cohomology
+\(H_{\dR}^p(U)=H^p\bigl(\calE^\bullet(U),d\bigr)\). Here is a basic
+computation.
+
+\begin{theorem}[Poincaré's lemma]
+  \[
+    H_{\dR}^p(\bbR^n)=
+    \begin{cases}
+      \bbR&\text{if \(p=0\),}\\
+      0&\text{otherwise}.
+    \end{cases}
+  \]
+\end{theorem}
+\begin{proof}
+  We show this for \(n\leq 2\). We first treat the case \(n=1\). Clearly
+  \(H_\dR^p(\bbR)\) consists of constant functions. If \(\alpha=f(x)\diff
+  x\), then
+  \[
+    d\left(\int_0^x f(t)\diff t\right)=\alpha.
+  \]
+  There are no \(p\)-forms for \(p>1\).
+
+  Next, we treat \(n=2\) which contains all of the ideas
+\end{proof}
 
 %%% Local Variables:
 %%% mode: latex

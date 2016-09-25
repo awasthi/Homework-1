@@ -65,7 +65,27 @@ condition need not be satisfied since \(\psi\) can have arbitrary values on
 these edges. Thus we see that the cohomology group \(H^1(X;G)\) is a direct
 product of copies of the group \(G\), one copy for each edge of \(X\) not
 in one of the chosen maximal trees. This can be compared with the homology
-group \(H_1(X;G)\) which consists of a direct \emph{sum} of copies
+group \(H_1(X;G)\) which consists of a direct \emph{sum} of copies of
+\(G\), one for each edge of \(X\) not in one of the maximal trees. Note
+that the relation between \(H^1(X;G)\) and \(H^1(X;G)\) is the same as the
+relation between \(H^0(X;G)\) and \(H_0(X;G)\), with \(H^0(X;G)\) being a
+direct product of copies of \(G\) and \(H_0(X;G)\) a direct sum, with one
+copy for each component of \(X\) in either case.
+
+Now let us move up a dimensino, taking \(X\) to be a \(2\)-dimensional
+\(\Delta\)-complex. Define \(\Delta^0(X;G)\) and \(\Delta^1(X;G)\) as
+before, as functions from vertices and edges of \(X\) to be Abelian group
+\(G\), and define \(\Delta^2(X;G)\) to be functions from \(2\)-simplices of
+\(X\) to \(G\), and define \(\Delta^2(X;G)\) to be functions from
+\(2\)-simplices of \(X\) to \(G\). A homomorphism
+\(\delta\colon\Delta^1(X;G)\to\Delta^2(X;G)\) is defined by
+\(\delta\psi([v_0,v_1,v_2])=\psi([v_0,v_1])+\psi([v_1,v_2])-\psi([v_0,v_2])\),
+a signed sum of values of \(\psi\) on the three edges in the boundary of
+\([v_0,v_1,v_2]\), just as \(\delta\varphi([v_0,v_1])\) for
+\(\varphi\in\Delta^0(X;G)\) we have
+\(\delta\delta\varphi=\bigl(\varphi(v_1)-\varphi(v_0)\bigr)+\bigl(\varphi(v_2)-\varphi(v_2)\bigr)-\bigl(\varphi(v_2)-\varphi(v_0)\bigr)=0\). Extending
+this chain complex by \(0\)s on each end, the resulting homology groups are
+by definition the cohomology groups \(H^i(X;G)\).
 
 %%% Local Variables:
 %%% mode: latex
