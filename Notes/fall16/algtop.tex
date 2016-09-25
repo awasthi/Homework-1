@@ -45,7 +45,28 @@ this equation means deciding whether specifying the change in \(\varphi\)
 across each edge of \(X\) determines an actual function
 \(\varphi\in\Delta^0(X;G)\). This is rather like the calculus problem of
 finding a function having a specified derivative, with the difference
-operator \(\delta\) playing the role of differentiation.
+operator \(\delta\) playing the role of differentiation. As in calculus, if
+a solution of \(\delta\varphi=\psi\) exists, it will be unique up to adding
+an element of the kernel of \(\delta\), i.e., a f unction constant on each
+component of \(X\).
+
+The equation \(\delta\varphi=\psi\) is always solvable if \(X\) is a tree
+since if we choose arbitrarily a value for \(\varphi\) at a base point
+vertex \(v_0\), then if the change in \(\varphi\) across each edge of \(X\)
+is specified, this uniquely determines the value of \(\varphi\) at ever
+other vertex \(v\) by induction along the unique path from \(v_0\) to \(v\)
+in a tree. Then, since every vertex lies in one of these maximal trees, the
+values of \(\psi\) on the edges of the maximal trees determine \(\varphi\)
+uniquely up to a constant on each component of \(X\). But in order for the
+equation \(\delta\varphi=\psi\) to hold, the value of \(\psi\) on each edge
+is not in any of the maximal trees must equal the difference in the
+already-determined values of \(\varphi\) at the two ends of the edge. This
+condition need not be satisfied since \(\psi\) can have arbitrary values on
+these edges. Thus we see that the cohomology group \(H^1(X;G)\) is a direct
+product of copies of the group \(G\), one copy for each edge of \(X\) not
+in one of the chosen maximal trees. This can be compared with the homology
+group \(H_1(X;G)\) which consists of a direct \emph{sum} of copies
+
 
 %%% Local Variables:
 %%% mode: latex
