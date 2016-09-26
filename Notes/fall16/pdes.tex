@@ -729,11 +729,25 @@ and \(x\in U\), where \(U\subset\bbR^n\) is open. The unknown is
 \(u\colon \bar U\times[0,\infty)\to\bbR\), \(u=u(x,t)\), and the Laplacian
 is taken with respect to the spatial variables \(x=(x_1,\dotsc,x_n)\). In
 \eqref{eq:pde:nonhom-wave-equation} the function
-\(f\colon U\imes[0,\infty)\to\bbR\) is given. It is common to abbreviate
+\(f\colon U\times[0,\infty)\to\bbR\) is given. It is common to abbreviate
 \eqref{eq:pde:nonhom-wave-equation} as
 \[
   \square u=u_{tt}-\Delta u.
 \]
+
+\subsubsection{d'Alembert's formula}
+We first focus our attention on the initial-value problem for the
+one-dimensional wave equation in all of \(\bbR\):
+\begin{equation}
+  \label{eq:pde:oned-wave-equation}
+  \left\{
+    \begin{aligned}
+      u_{tt}-u_{xx}&=0,&&\quad\text{in \(\bbR\times(0,\infty)\)},\\
+      u&=g,&u_t,&=h\quad\text{on \(bbR\times\{\,t=0\,\}\)},
+    \end{aligned}
+\right.
+\end{equation}
+where \(g\), \(h\) are given.
 
 %%% Local Variables:
 %%% mode: latex
