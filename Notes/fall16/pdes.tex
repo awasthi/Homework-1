@@ -743,11 +743,52 @@ one-dimensional wave equation in all of \(\bbR\):
   \left\{
     \begin{aligned}
       u_{tt}-u_{xx}&=0,&&&&\text{in \(\bbR\times(0,\infty)\)},\\
-      u&=g,&u_t,&=h&&\text{on \(\bbR\times\{\,t=0\,\}\)},
+      u&=g,&u_t&=h,&&\text{on \(\bbR\times\{\,t=0\,\}\)},
     \end{aligned}
 \right.
 \end{equation}
-where \(g\), \(h\) are given.
+where \(g\), \(h\) are given. We desire to derive a formula for \(u\) in
+terms of \(g\) and \(h\).
+
+Let us first note the PDE in \eqref{eq:pde:oned-wave-equation} can be
+factored, to read
+\begin{equation}
+  \label{eq:pde:oned-factored-wave}
+  \left( \frac{\partial}{\partial t}+\frac{\partial}{\partial x} \right)
+  \left( \frac{\partial}{\partial t}-\frac{\partial}{\partial x} \right)u=
+  u_{tt}-u_{xx}=0.
+\end{equation}
+Write
+\begin{equation}
+  \label{eq:pde:defv}
+  v(x,t)\defeq=\left( \frac{\partial}{\partial t}-\frac{\partial}{\partial
+      x} \right)u(x,t).
+\end{equation}
+Then \eqref{eq:pde:oned-factored-wave} says
+\[
+  v_t(x,t)+v_x(x,t)=0
+\]
+for \(x\in\bbR\), \(t>0\). This is a transport equation with constant
+coefficient. Applying this formula, we find
+\begin{equation}
+  \label{eq:pde:transport-solution}
+  v(x,t)=a(x-t)
+\end{equation}
+for \(a(x)\defeq v(x,0)\). Combining these equations together, we obtain
+\[
+  u_t(x,t)-u_x(x,t)=a(x-t)
+\]
+in \(\bbR\times(0,\infty)\). This is a nonhomogeneous transport equation;
+and so formula (5) from \S 2.1.2 implies
+\begin{equation}
+  \label{eq:pde:u-solution-1}
+  \begin{aligned}
+    u(x,t)
+    &=\int_0^t a\bigl( x+(t-s)-s \bigr)\diff s+b(x+t)\\
+    &=\frac{1}{2}\int_{x-t}^{x+t}a(y)\diff y+b(x,t),
+  \end{aligned}
+\end{equation}
+where we have \(\b(x)\defeq u(x,0)\).
 
 %%% Local Variables:
 %%% mode: latex
