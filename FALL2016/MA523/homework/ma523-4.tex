@@ -56,7 +56,7 @@
     \[
       E(t)=\frac{1}{2}\int_0^\pi \bigl(u_t^2+c^2u_x^2 \bigr)\diff x,\quad t>0
     \]
-    is independent of \(t\); i.e., \(dE/dt=0\) for \(t>0\). Assume that
+    is independent of \(t\); i.e., \(\frac{d}{dt}E=0\) for \(t>0\). Assume that
     \(u\) is \(C^2\) up to the boundary.
   \item Express the energy \(E\) of the Fourier series solution
     \[
@@ -99,7 +99,27 @@
     \intertext{and}
     u_x(x,t)%
     &=\tfrac{\partial}{\partial x} u(x,t)\\
-    &=\sum_{n=1}^\infty n\bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)cos(nx).
+    &=\sum_{n=1}^\infty n\bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)\cos(nx).
+  \end{align*}
+  Thus,
+  \begin{align*}
+    E(t)
+    &=\frac{1}{2}\int_0^\pi
+      \left[
+      \biggl(
+      \sum_{n=1}^\infty
+      cn\bigl(
+      b_n\cos(nct)-a_n\sin(nct)
+      \bigr)\sin(nx)
+      \biggr)^2\right.\\
+    &\qquad\quad
+      \left.
+      +c^2
+      \biggl(
+      \sum_{n=1}^\infty n\bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)\cos(nx)
+      \biggr)^2
+      \right]\\
+    &=
   \end{align*}
 \end{solution}
 
