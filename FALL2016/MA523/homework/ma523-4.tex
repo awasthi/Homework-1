@@ -91,13 +91,14 @@
   \[
     u(x,t)=\sum_{n=1}^\infty \bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)\sin(nx).
   \]
-  First we compute \(u_t\) and \(u_x\). These are
+  First we compute \(u_t\) and \(u_x\). They are
   \begin{align*}
     u_t(x,t)%
-    &=\tfrac{\partial}{\partial t} u(x,t)%
-    &u_x(x,t)%
+    &=\tfrac{\partial}{\partial t} u(x,t)\\
+    &=\sum_{n=1}^\infty cn\bigl(b_n\cos(nct)-a_n\sin(nct)\bigr)\sin(nx)
+    \intertext{and}
+    u_x(x,t)%
     &=\tfrac{\partial}{\partial x} u(x,t)\\
-    &=\sum_{n=1}^\infty cn\bigl(b_n\cos(nct)-a_n\sin(nct)\bigr)\sin(nx)&
     &=\sum_{n=1}^\infty n\bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)cos(nx).
   \end{align*}
 \end{solution}
