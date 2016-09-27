@@ -206,25 +206,6 @@
 \long\def\replicate@aux@m#1Q#2#3{\replicate@aux#1Q{#2#3}{#3}}
 \long\def\replicate@aux@Q#1#2{#1}
 
-\def\upint{\mathchoice%
-    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-  \int}%
-\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}%
-\DeclareMathOperator*{\ssum}{\sum\sum}
-\newcommand{\llrrbracket}[1]{% \llrrbracket{..}
-  \left[\mkern-3mu\left[#1\right]\mkern-3mu\right]}
-\newcommand{\llrrparen}[1]{% \llrrparen{..}
-  \left(\mkern-6mu\left(#1\right)\mkern-6mu\right)}
-
-\newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
-      \hbox{.}\hbox{.}}}%
-  =}%
-\newcommand*{\eqdef}{=\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
-      \hbox{.}\hbox{.}}}}%
-
 %% Replace some default math fonts
 \let\setminus\smallsetminus%
 \let\emptyset\varnothing%
@@ -236,13 +217,14 @@
 
 %% Arrows
 \newcommand\too{\longrightarrow}
-\newcommand\TO{\longrightarrow}
+\newcommand\To{\longrightarrow}
 \newcommand\from{\leftarrow}
+\newcommand\From{\longleftarrow}
 \newcommand\mapstoo{\longmapsto}
-\newcommand\mapsTO{\longmapsto}
+\newcommand\Mapsto{\longmapsto}
 \newcommand\injects{\hookrightarrow}
 \newcommand\surjects{\twoheadleftarrow}
-\newcommand\act{\curvearrowright}
+\newcommand\actson{\curvearrowright}
 \newcommand\actedon{\curvearrowleft}
 
 %% Relations
@@ -257,7 +239,26 @@
 
 %% Misc
 \newcommand\restrict[1]{\raisebox{-.5ex}{\ensuremath|}_{#1}}
+\newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+      \hbox{.}\hbox{.}}}%
+  =}%
+\newcommand*{\eqdef}{=\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+      \hbox{.}\hbox{.}}}}%
 
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}%
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}%
+
+\DeclareMathOperator*{\ssum}{\sum\sum}
+
+\newcommand{\llrrbracket}[1]{% \llrrbracket{..}
+  \left[\mkern-3mu\left[#1\right]\mkern-3mu\right]}
+\newcommand{\llrrparen}[1]{% \llrrparen{..}
+  \left(\mkern-6mu\left(#1\right)\mkern-6mu\right)}
 
 %% Augmented matrix
 \makeatletter
