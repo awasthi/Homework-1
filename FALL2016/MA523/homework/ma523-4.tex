@@ -51,6 +51,24 @@
   \end{equation}
   Now, taking the partial with respect to \(p_2\) of
   \eqref{eq:3:v-partial-p1}, we have
+  \begin{equation}
+    \label{eq:3:v-partial-p1p1}
+    \begin{aligned}
+      \tfrac{\partial}{\partial p_1}v_{p_1}%
+      &=\tfrac{\partial}{\partial p_1}
+      \bigl(x^1(p)+x^1_{p_1}(p)p^1+x^2_{p_1}(p)p^2
+      -u_{x_1}\bigl(\bfx(p)\bigr)x^1_{p_1}(p)
+      -u_{x_2}\bigl(\bfx(p)\bigr)x^2_{p_1}(p)\bigr)\\
+      &=x^1_{p_1}+x^1_{p_1}(p)+x^1_{p_1p_1}(p)p^1+x_{p_1p_1}^2(p)p^2\\
+      &\phantom{{}={}}-u_{x_1}\bigl(\bfx(p)\bigr)x^1_{p_1p_1}(p)
+      -\bigl(u_{x_1x_1}\bigl(\bfx(p)\bigr)x^1_{p_1}(p)
+      +u_{x_1x_2}\bigl(\bfx(p)\bigr)x^2_{p_1}(p)\bigr)x_{p_1}^1(p)\\
+      &\phantom{{}={}}-u_{x_2}\bigl(\bfx(p)\bigr)x_{p_1p_2}^2(p)
+      -\bigl(u_{x_1x_2}\bigl(\bfx(p)\bigr)x^1_{p_1}(p)
+      +u_{x_2x_2}\bigl(\bfx(p)\bigr)x^2_{p_1}(p)\bigr)x^2_{p_2}(p)\\
+      &=
+    \end{aligned}
+  \end{equation}
 \end{solution}
 \newpage
 
