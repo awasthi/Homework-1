@@ -66,6 +66,20 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
+  For part (a), suppose that \(u\) is, as above, a solution to the wave
+  equation which is \(C^2\) up to the boundary. We show that its energy is
+  independent of \(t\), i.e., that \(dE/dt=0\). Assuming the energy is
+  bounded, the dominated convergence theorem allows us to permute the order
+  of integration and differentiation like so
+  \begin{align*}
+    \frac{dE(t)}{dt}%
+    &=\frac{d}{dt}\left(\frac{1}{2}\int_0^\pi
+      \bigl(u_t^2+c^2u_x^2\bigr)\diff x\right)\\
+    &=\frac{1}{2}\int_0^\pi\frac{d}{dt}\bigl(u_t^2+c^2u_x^2\bigr)\diff x\\
+    &=\frac{1}{2}\int_0^\pi 2u_tu_{tt}+2c^2u_xu_{xt}\diff x\\
+    &=\int_0^\pi c^2u_tu_{xx}+c^2u_xu_{xt}\diff x\\
+    &=
+  \end{align*}
 \end{solution}
 
 %%% Local Variables:
