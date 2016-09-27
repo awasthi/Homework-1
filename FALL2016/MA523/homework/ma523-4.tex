@@ -60,7 +60,8 @@
     \(u\) is \(C^2\) up to the boundary.
   \item Express the energy \(E\) of the Fourier series solution
     \[
-      u(x,t)=\sum_{n=1}^\infty \bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)\sin nx
+      u(x,t)=\sum_{n=1}^\infty
+      \bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)\sin(nx)
     \]
     in terms of coefficients \(a_n\), \(b_n\).
   \end{enumerate}
@@ -75,14 +76,29 @@
     \frac{dE(t)}{dt}%
     &=\frac{d}{dt}\left(\frac{1}{2}\int_0^\pi
       \bigl(u_t^2+c^2u_x^2\bigr)\diff x\right)\\
-    &=\frac{1}{2}\int_0^\pi\frac{\partial}{\partial t}
+    &=\frac{1}{2}\int_0^\pi\tfrac{\partial}{\partial t}
       \bigl(u_t^2+c^2u_x^2\bigr)\diff x\\
     &=\frac{1}{2}\int_0^\pi 2u_tu_{tt}+2c^2u_xu_{xt}\diff x
       \intertext{which, after using the relation \(u_{tt}=c^2u_{xx}\), becomes}
     &=c^2\int_0^\pi u_tu_{xx}+u_xu_{xt}\diff x\\
-    &=c^2\int_0^\pi\frac{\partial}{\partial x}(u_xu_t)\diff x\\
+    &=c^2\int_0^\pi\tfrac{\partial}{\partial x}(u_xu_t)\diff x\\
     &=c^2\bigl(u_x(\pi,t)u_t(\pi,t)-u_x(0,t)u_t(0,t)\bigr)\\
     &=0.
+  \end{align*}
+
+  For part (b), suppose \(u\) is a Fourier series solution to the wave
+  equation, i.e.,
+  \[
+    u(x,t)=\sum_{n=1}^\infty \bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)\sin(nx).
+  \]
+  First we compute \(u_t\) and \(u_x\). These are
+  \begin{align*}
+    u_t(x,t)%
+    &=\tfrac{\partial}{\partial t} u(x,t)%
+    &u_x(x,t)%
+    &=\tfrac{\partial}{\partial x} u(x,t)\\
+    &=\sum_{n=1}^\infty cn\bigl(b_n\cos(nct)-a_n\sin(nct)\bigr)\sin(nx)&
+    &=\sum_{n=1}^\infty n\bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)cos(nx).
   \end{align*}
 \end{solution}
 
