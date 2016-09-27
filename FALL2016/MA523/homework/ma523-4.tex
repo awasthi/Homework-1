@@ -122,15 +122,19 @@
     &\phantom{\frac{1}{2}\int_0^\pi
       \sum_{n,m=1}^\infty
       c^2nm\bigl(}
-      -a_nb_m\cos(mct)\sin(nct)-a_mb_n\cos(nct)\sin(mct)\bigr)\sin^2(nx)\\
+      -a_nb_m\cos(mct)\sin(nct)-a_mb_n\cos(nct)\sin(mct)\bigr)\sin(nx)\sin(mx)\\
     &\phantom{=\frac{1}{2}\int_0^\pi}
       -c^2\sum_{n,m=1}^\infty
       n^2\bigl(a_na_m\cos(nct)\cos(mct)+b_nb_m\sin(nct)\sin(mct)\\
     &\phantom{=\frac{1}{2}\int_0^\pi
       \sum_{n,m=1}^\infty
       c^2nm\bigl(}
-      +a_nb_m\cos(nct)\sin(mct)+a_mb_n\cos(mct)\sin(nct)\bigr)\cos^2(nx)\Biggr]\\
-    &=\int_0^\pi\sum
+      +a_nb_m\cos(nct)\sin(mct)+a_mb_n\cos(mct)\sin(nct)\bigr)\cos(nx)\cos(mx)\Biggr]\\
+    &=\frac{1}{2}\int_0^\pi
+      \sum_{n=1}^\infty \biggl(
+      cn^2\bigl(b_n^2\cos^2(nct)+a_n^2\sin^2(nct)\bigr)\sin^2(nx)
+      -cn^2\bigl(a_n^2\cos^2(nct)+b_n^2\sin^2(nct)\bigr)\cos^2(nx)
+      \biggr)
   \end{align*}
 \end{solution}
 
