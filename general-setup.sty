@@ -16,9 +16,9 @@
 \usepackage{amssymb}%
 \usepackage[heavycircles]{stmaryrd}%
 \usepackage[nointegrals]{wasysym}%
-\usepackage[% bb=ams,%
-            % frak=euler,%
-            % cal=cm,%
+\usepackage[bb=ams,%
+            frak=euler,%
+            cal=cm,%
             scr=rsfso]{mathalfa}%
 %% Use Latin Modern instead
 \usepackage{lmodern}
@@ -234,22 +234,30 @@
 \renewcommand\blacktriangleleft{\ensuremath{\scriptstyle\oldbtleft}}
 \renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}} % Default is
 
-%% Shortcuts
+%% Arrows
 \newcommand\too{\longrightarrow}
+\newcommand\TO{\longrightarrow}
+\newcommand\from{\leftarrow}
 \newcommand\mapstoo{\longmapsto}
-\newcommand\injectto{\hookrightarrow}
-\newcommand\surjectto{\twoheadleftarrow}
+\newcommand\mapsTO{\longmapsto}
+\newcommand\injects{\hookrightarrow}
+\newcommand\surjects{\twoheadleftarrow}
+\newcommand\act{\curvearrowright}
+\newcommand\actedon{\curvearrowleft}
+
+%% Relations
 \newcommand\trileq{\trianglelefteq}
 \newcommand\ntrileq{\ntrianglelefteq}
 \newcommand\trireq{\trianglerighteq}
 \newcommand\ntrireq{\ntrianglerighteq}
-\newcommand\restrict[1]{\raisebox{-.5ex}{\ensuremath|}_{#1}}
-
-%% Redefinitions & commands not available in the default CM
 \providecommand{\nequiv}{\ensuremath{\not\equiv}}
 \providecommand{\nsubset}{\ensuremath{\not\subset}}
 \providecommand{\nsupset}{\ensuremath{\not\supset}}
 \providecommand{\nsimeq}{\ensuremath{\not\simeq}}
+
+%% Misc
+\newcommand\restrict[1]{\raisebox{-.5ex}{\ensuremath|}_{#1}}
+
 
 %% Augmented matrix
 \makeatletter
