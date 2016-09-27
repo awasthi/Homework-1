@@ -83,8 +83,10 @@
     &=c^2\int_0^\pi u_tu_{xx}+u_xu_{xt}\diff x\\
     &=c^2\int_0^\pi\tfrac{\partial}{\partial x}(u_xu_t)\diff x\\
     &=c^2\bigl(u_x(\pi,t)u_t(\pi,t)-u_x(0,t)u_t(0,t)\bigr)\\
-    &=0.
+    &=0
   \end{align*}
+  since the boundary conditions, i.e., \(u=0\), implies \(u_x=u_t=0\) at
+  the boundary.
 
   For part (b), suppose \(u\) is a Fourier series solution to the wave
   equation, i.e.,
@@ -102,25 +104,18 @@
     &=\sum_{n=1}^\infty n\bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)\cos(nx).
   \end{align*}
   Thus,
-  \begin{align*}
-    E(t)
-    &=\frac{1}{2}\int_0^\pi
-      \left[
-      \biggl(
-      \sum_{n=1}^\infty
-      cn\bigl(
-      b_n\cos(nct)-a_n\sin(nct)
-      \bigr)\sin(nx)
-      \biggr)^2\right.\\
-    &\qquad\quad
-      \left.
-      +c^2
-      \biggl(
-      \sum_{n=1}^\infty n\bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)\cos(nx)
-      \biggr)^2
-      \right]\\
-    &=
-  \end{align*}
+    \begin{align*}
+      E(t)%
+      &=\frac{1}{2}\int_0^\pi%
+        \left[\biggl( \sum_{n=1}^\infty cn\bigl(
+        b_n\cos(nct)-a_n\sin(nct) \bigr)\sin(nx)
+        \biggr)^2\right.\\
+      &\phantom{=\frac{1}{2}\int_0^\pi\Biggl[}%
+        \left.+c^2 \biggl(\sum_{n=1}^\infty
+        n\bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)\cos(nx) \biggr)^2 \right]\\
+      &=
+    \end{align*}
+    % \]
 \end{solution}
 
 %%% Local Variables:
