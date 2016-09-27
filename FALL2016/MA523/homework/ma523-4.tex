@@ -107,30 +107,30 @@
   \begin{align*}
     E(t)%
     &=\frac{1}{2}\int_0^\pi%
-      \left[\biggl( \sum_{n=1}^\infty cn\bigl(
+      \Biggl[\biggl( \sum_{n=1}^\infty cn\bigl(
       b_n\cos(nct)-a_n\sin(nct) \bigr)\sin(nx)
-      \biggr)^2\right.\\
+      \biggr)^2\\
     &\phantom{=\frac{1}{2}\int_0^\pi\Biggl[}%
-      \left.+c^2 \biggl(\sum_{n=1}^\infty
-      n\bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)\cos(nx) \biggr)^2 \right]
+      +c^2 \biggl(\sum_{n=1}^\infty
+      n\bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)\cos(nx) \biggr)^2 \Biggr]
       \intertext{which, after expanding and using the fact that
       \(\cos(nct)\), \(\sin(nct)\), \(\cos(nx)\), and \(\sin(nx)\) are
       orthogonal, becomes}
     &=\frac{1}{2}\int_0^\pi
-      \sum_{n,m=1}^\infty
+      \Biggl[\sum_{n,m=1}^\infty
       c^2nm\bigl(b_nb_m\cos(nct)\cos(mct)+a_na_m\sin(nct)\sin(mct)\\
     &\phantom{\frac{1}{2}\int_0^\pi
       \sum_{n,m=1}^\infty
       c^2nm\bigl(}
       -a_nb_m\cos(mct)\sin(nct)-a_mb_n\cos(nct)\sin(mct)\bigr)\sin^2(nx)\\
     &\phantom{=\frac{1}{2}\int_0^\pi}
-      \sum_{n,m=1}^\infty
-      c^2nm\bigl(b_nb_m\cos(nct)\cos(mct)+a_na_m\sin(nct)\sin(mct)\\
+      -c^2\sum_{n,m=1}^\infty
+      n^2\bigl(a_na_m\cos(nct)\cos(mct)+b_nb_m\sin(nct)\sin(mct)\\
     &\phantom{=\frac{1}{2}\int_0^\pi
       \sum_{n,m=1}^\infty
       c^2nm\bigl(}
-      -a_nb_m\cos(mct)\sin(nct)-a_mb_n\cos(nct)\sin(mct)\bigr)\sin^2(nx)\\
-    &=
+      +a_nb_m\cos(nct)\sin(mct)+a_mb_n\cos(mct)\sin(nct)\bigr)\cos^2(nx)\Biggr]\\
+    &=\int_0^\pi\sum
   \end{align*}
 \end{solution}
 
