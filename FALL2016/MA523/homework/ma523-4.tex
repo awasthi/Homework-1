@@ -131,7 +131,9 @@
   \(u(x,t)=F(x-t)+G(x+t)\) for the solution.)
 \end{problem}
 \begin{solution}
-  From [E], we know that d'Alembert's solution
+  Suppose \(u(x,t)=F(x-t)+G(x-t)\) is a classical solution to the
+  one-dimensional wave equation. From [E], we know that d'Alembert's
+  solution
   \begin{equation}
     \label{eq:3:dalembert-sol}
     u(x,t)=\frac{f(x+t)+f(x-t)}{2}+\frac{1}{2}\int^{x+t}_{x-t}g(s)\diff s
@@ -145,10 +147,11 @@
     &=\alpha\bigl(f'(t)+f'(-t)+g(t)-g(-t)\bigr),
   \end{align*}
   hence,
-  \[
-    (1-\alpha)f'(t)-(1+\alpha)f'(-t)&=(\alpha-1)\bigl(g(t)-g(-t)\bigr).
-  \]
+  \begin{align*}
+    (-\alpha+1)f'(t)-(\alpha+1)f'(-t)&=(\alpha-1)\bigl(g(t)-g(-t)\bigr)\\
+    f'(t)-\bigl(\tfrac{\alpha+1}{\alpha-1}\bigr)f'(-t)&=g(t)-g(-t).
   \end{align*}
+  From our assumptions on the form of \(u\), we have
 \end{solution}
 \newpage
 % initial and boundary conditions say that
