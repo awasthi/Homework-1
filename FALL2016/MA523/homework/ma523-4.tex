@@ -169,11 +169,12 @@
   By the boundary condition, we have
   \begin{align*}
     u_t(0,t)
-    &=\frac{f(t)+g(t)}{2}-\frac{f(-t)+g(-t)}{2}\\
-    &=\frac{f(t)}+f(-t)}{2}+\alpha
-      \left[
+    &=\frac{f(t)+g(t)-f(-t)-g(-t)}{2}\\
+    &=\alpha\left[
+      \frac{f(t)+f(-t)+g(t)-g(-t)}{2}
       \right]\\
-    &=
+    (1-\alpha)\bigl(g(t)-g(-t)\bigr)
+    &=(\alpha-1)f(t)+(\alpha+1)f(-t).
   \end{align*}
 \end{solution}
 \newpage
