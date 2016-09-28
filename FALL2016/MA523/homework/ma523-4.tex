@@ -153,11 +153,14 @@
       \begin{aligned}
         F(x)&=f(x)-G(x)\\
         F'(x)&=G'(x)-g(x)\\
-        F'(-t)&=-\bigl(\tfrac{\alpha-1}{\alpha+1}\bigr)G'(t).
+        F'(t)&=-\bigl(\tfrac{\alpha-1}{\alpha+1}\bigr)G'(-t).
       \end{aligned}
     \right.
   \end{equation}
-  Thus,
+  After a bit of calculation using equations (4.12) from [J], we have
+  \[
+    \int_{x-t}^{x+t}g(s)\diff s=\alpha\bigl(f(x+t)+f(x-t)\bigr).
+  \]
 \end{solution}
 \newpage
 
@@ -249,7 +252,6 @@
       -cn^2\bigl(a_n^2\cos^2(nct)+b_n^2\sin^2(nct)\bigr)\cos^2(nx)
       \biggr)
   \end{align*}
-  Consider the map \(X\from Y\)
 \end{solution}
 
 %%% Local Variables:
