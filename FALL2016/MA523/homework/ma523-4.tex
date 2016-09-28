@@ -139,9 +139,11 @@
   \]
   is a solution to the PDE with the prescribed initial conditions.
 
-  Now, using the initial conditions prescribed above, particularly, the
-  restriction on the derivative of \(u\) at \(x=0\), we obtain the
-  following relations on \(G\) and \(F\),
+  Using the method of reflection, extend \(f\), \(g\), and
+  \(h(x+t)\defeq \int_0^{x+t}g(s)\diff s\) to all of \(\bbR^2\). Now, using
+  the initial conditions prescribed above, particularly, the restriction on
+  the derivative of \(u\) at \(x=0\), we obtain the following relations on
+  \(G\) and \(F\),
   \begin{align*}
     u(x,0)
     &=F(x)+G(x)\\
@@ -164,9 +166,38 @@
       \end{aligned}
     \right.
   \end{equation}
+  This gives us, after a bit of calculation,
+  \begin{align*}
+    f'(-t)-g(-t)
+    &=-\bigl(\tfrac{\alpha-1}{\alpha+1}\bigr)\bigl(f'(t)+g(t)\bigr)\\
+    f(x+t)-f(x-t)-\int_{x-t}^{x+t}g(s)\diff s
+    &=-\left(\frac{\alpha-1}{\alpha+1}\right)
+      \left[
+      f(x+t)-f(x-t)+\int^{x+t}_{x-t}g(s)\diff s
+      \right]\\
+    \frac{f(x+t)+f(x-t)}{2}+\frac{1}{2}\int_{x-t}^{x+t}g(s)\diff s
+    &=-\frac{1}{2}\left(\frac{\alpha+1}{\alpha-1}\right)
+      \left[
+      f(x+t)-f(x-t)-\int_{x-t}^{x+t}g(s)\diff s
+      \right]+f(x-t).
+  \end{align*}
+  Thus,
+  \begin{equation}
+    \label{eq:3:solution-2}
+    u(x,t)
+    =-\frac{1}{2}\left(\frac{\alpha+1}{\alpha-1}\right)
+      \left[
+      f(x+t)-f(x-t)-\int_{x-t}^{x+t}g(s)\diff s
+      \right]+f(x-t)
+  \end{equation}
+  is a solution to the PDE with the prescribed initial conditions.
 
-  Suppose \(\alpha=-1\).
 
+  Suppose \(\alpha=-1\). Then \eqref{eq:3:solution-2} tells us that
+  \[
+    u(x,t)=f(x-t).
+  \]
+  Thus, \(f'(x)=g(x)\) and
 \end{solution}
 \newpage
 
