@@ -132,26 +132,30 @@
 \end{problem}
 \begin{solution}
   Suppose \(u(x,t)=F(x-t)+G(x-t)\) is a classical solution to the
-  one-dimensional wave equation. From [E], we know that d'Alembert's
-  solution
-  \begin{equation}
-    \label{eq:3:dalembert-sol}
-    u(x,t)=\frac{f(x+t)+f(x-t)}{2}+\frac{1}{2}\int^{x+t}_{x-t}g(s)\diff s
-  \end{equation}
-  is a solution to the one-dimensional wave equation.
+  one-dimensional wave equation. Then, \(F,G\in C^2\) and \(F\) solves the
+  PDE \(v_t+v_x=0\), whereas \(G\) solves the PDE \(w_t-w_x=0\).
 
-  Now, taking the boundary conditions into consideration, we have
-  \begin{align*}
-    2u_t(0,t)
-    &=f'(t)-f'(-t)+g(t)-g(-t)\\
-    &=\alpha\bigl(f'(t)+f'(-t)+g(t)-g(-t)\bigr),
-  \end{align*}
-  hence,
-  \begin{align*}
-    (-\alpha+1)f'(t)-(\alpha+1)f'(-t)&=(\alpha-1)\bigl(g(t)-g(-t)\bigr)\\
-    f'(t)-\bigl(\tfrac{\alpha+1}{\alpha-1}\bigr)f'(-t)&=g(t)-g(-t).
-  \end{align*}
-  From our assumptions on the form of \(u\), we have
+  % Suppose \(u(x,t)=F(x-t)+G(x-t)\) is a classical solution to the
+  % one-dimensional wave equation. From [E], we know that d'Alembert's
+  % solution
+  % \begin{equation}
+  %   \label{eq:3:dalembert-sol}
+  %   u(x,t)=\frac{f(x+t)+f(x-t)}{2}+\frac{1}{2}\int^{x+t}_{x-t}g(s)\diff s
+  % \end{equation}
+  % is a solution to the one-dimensional wave equation.
+
+  % Now, taking the boundary conditions into consideration, we have
+  % \begin{align*}
+  %   2u_t(0,t)
+  %   &=f'(t)-f'(-t)+g(t)-g(-t)\\
+  %   &=\alpha\bigl(f'(t)+f'(-t)+g(t)-g(-t)\bigr),
+  % \end{align*}
+  % hence,
+  % \begin{align*}
+  %   (-\alpha+1)f'(t)-(\alpha+1)f'(-t)&=(\alpha-1)\bigl(g(t)-g(-t)\bigr)\\
+  %   f'(t)-\bigl(\tfrac{\alpha+1}{\alpha-1}\bigr)f'(-t)&=g(t)-g(-t).
+  % \end{align*}
+  % From our assumptions on the form of \(u\), we have
 \end{solution}
 \newpage
 % initial and boundary conditions say that
