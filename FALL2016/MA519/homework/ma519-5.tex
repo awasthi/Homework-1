@@ -10,7 +10,54 @@
   \end{itemize}
 \end{problem}
 \begin{solution}
-  Let
+  For part (d), let \(A_n\) denote the event ``it takes \(n\) tosses of a
+  fair coin to obtain a head for the first time.'' Note that the \(A_n\)
+  form a disjoint sequence of events and that
+  \(\bigcup_{n=1}^\infty A_n=\Omega\). Using this fact, we can compute the
+  mean
+  \[
+    \mu=\sum_{n=1}^\infty n\left(\frac{1}{2^n}\right).
+  \]
+  But what is the value of \(\mu\) explicitly?
+
+  Consider the series
+  \[
+    \sum_{n=1}^\infty n x^n=x\left[\sum_{n=1}^\infty nx^{n-1}\right].
+  \]
+  Set \(f(x)\defeq\sum_{n=1}^\infty nx^{n-1}\). Then, with a little
+  calculus, we have
+  \[
+    \int f\diff x=\sum_{n=1}^\infty x^n
+    =-1+\sum_{n=0}^\infty x^n=-1+\frac{1}{1-x}
+    =\frac{x}{1-x},
+  \]
+  so
+  \[
+    f(x)=\frac{d}{dx}\left[\frac{x}{1-x}\right]=\frac{1}{(1-x)^2}.
+  \]
+  Now we can obtain the mean by evaluating \(xf(x)\) at \(1/2\),
+  \[
+    \mu=(1/2)f(1/2)=\frac{(1/2)}{\bigl(1-(1/2)\bigr)^2}=
+    \frac{(1/2)}{(1/2)^2}=\frac{1}{2}=0.5
+  \]
+
+  By the proposition in DasGupta's book,
+  \[
+    \Var(X)=E(X^2)-\mu^2,
+  \]
+  so the only thing we need to compute is the expectation \(E(X^2)\). This
+  is given by the series
+  \[
+    E(X^2)=\sum_{n=1}^\infty n^2\left(\frac{1}{2^n}\right).
+  \]
+  This can also be computed in a similar fashion, yielding
+  \[
+    E(X^2)=12.
+  \]
+  Thus,
+  \[
+    \Var(X)=12-0.5=11.5.
+  \]
 \end{solution}
 \newpage
 
