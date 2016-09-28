@@ -131,73 +131,101 @@
   \(u(x,t)=F(x-t)+G(x+t)\) for the solution.)
 \end{problem}
 \begin{solution}
+  % Suppose \(u(x,t)=F(x-t)+G(x+t)\) is a classical solution to the
+  % one-dimensional wave equation. From Evans, we know d'Alembert's formula,
+  % i.e.,
+  % \[
+  %   u(x,t)=\frac{f(x+t)+f(x-t)}{2}+\frac{1}{2}\int^{x+t}_{x-t}g(s)\diff s,
+  % \]
+  % is a solution to the PDE with the prescribed initial conditions.
+
+  % Using the method of reflection, extend \(f\), \(g\), and
+  % \(h(x+t)\defeq \int_0^{x+t}g(s)\diff s\) to all of \(\bbR^2\). Now, using
+  % the initial conditions prescribed above, particularly, the restriction on
+  % the derivative of \(u\) at \(x=0\), we obtain the following relations on
+  % \(G\) and \(F\),
+  % \begin{align*}
+  %   u(x,0)
+  %   &=F(x)+G(x)\\
+  %   &=f(x),
+  %   \\
+  %   u_t(x,0)
+  %   &=-F'(x)+G'(x)\\
+  %   &=g(x),\\
+  %   u_t(0,t)&=\alpha u_x(0,t)\\
+  %   -F'(-t)+G'(t)&=\alpha \bigl(F'(-t)+G'(t)\bigr),
+  % \end{align*}
+  % which, more concisely, reads
+  % \begin{equation}
+  %   \label{eq:3:relations}
+  %   \left\{
+  %     \begin{aligned}
+  %       F(x)&=f(x)-G(x)\\
+  %       F'(x)&=G'(x)-g(x)\\
+  %       F'(-t)&=-\bigl(\tfrac{\alpha-1}{\alpha+1}\bigr)G'(t).
+  %     \end{aligned}
+  %   \right.
+  % \end{equation}
+  % This gives us, after a bit of calculation,
+  % \begin{align*}
+  %   f'(-t)-g(-t)
+  %   &=-\bigl(\tfrac{\alpha-1}{\alpha+1}\bigr)\bigl(f'(t)+g(t)\bigr)\\
+  %   f(x+t)-f(x-t)-\int_{x-t}^{x+t}g(s)\diff s
+  %   &=-\left(\frac{\alpha-1}{\alpha+1}\right)
+  %     \left[
+  %     f(x+t)-f(x-t)+\int^{x+t}_{x-t}g(s)\diff s
+  %     \right]\\
+  %   \frac{f(x+t)+f(x-t)}{2}+\frac{1}{2}\int_{x-t}^{x+t}g(s)\diff s
+  %   &=-\frac{1}{2}\left(\frac{\alpha+1}{\alpha-1}\right)
+  %     \left[
+  %     f(x+t)-f(x-t)-\int_{x-t}^{x+t}g(s)\diff s
+  %     \right]+f(x-t).
+  % \end{align*}
+  % Thus,
+  % \begin{equation}
+  %   \label{eq:3:solution-2}
+  %   u(x,t)
+  %   =-\frac{1}{2}\left(\frac{\alpha+1}{\alpha-1}\right)
+  %     \left[
+  %     f(x+t)-f(x-t)-\int_{x-t}^{x+t}g(s)\diff s
+  %     \right]+f(x-t)
+  % \end{equation}
+  % is a solution to the PDE with the prescribed initial conditions.
+
+  % Suppose \(\alpha=-1\). Then \eqref{eq:3:solution-2} tells us that
+  % \[
+  %   u(x,t)=f(x-t).
+  % \]
+  % Thus, \(f'(x)=g(x)\) and
   Suppose \(u(x,t)=F(x-t)+G(x+t)\) is a classical solution to the
-  one-dimensional wave equation. From Evans, we know d'Alembert's formula,
-  i.e.,
+  one-dimensional wave equation with the prescribed initial
+  conditions. Then, we want to extend the data to all of \(x\) so that we
+  can exploit d'Alembert's formula. Suppose we gave done this by, e.g.,
+  taking the odd reflection of \(\tilde f\), \(\tilde g\), and
+  \(\tilde h(x,t)\defeq \int_{x-t}^{x+t} \tilde g(s)ds\). All we need to do
+  is use the initial data to find the relation between \(\tilde f\),
+  \(\tilde g\), and \(\tilde g\) at \(x=0\).
+
+  Using d'Alembert's formula,
   \[
-    u(x,t)=\frac{f(x+t)+f(x-t)}{2}+\frac{1}{2}\int^{x+t}_{x-t}g(s)\diff s,
+    \tilde u(x,t) =\frac{\tilde f(x+t)+\tilde
+      f(x-t)}{2}+\frac{1}{2}\int_{x-t}^{x+t}\tilde g(s)\diff s,
   \]
-  is a solution to the PDE with the prescribed initial conditions.
+  we compute \(\tilde u_t(0,t)\) and \(\alpha\tilde u_x(0,t)\) to match
+  our initial data.
 
-  Using the method of reflection, extend \(f\), \(g\), and
-  \(h(x+t)\defeq \int_0^{x+t}g(s)\diff s\) to all of \(\bbR^2\). Now, using
-  the initial conditions prescribed above, particularly, the restriction on
-  the derivative of \(u\) at \(x=0\), we obtain the following relations on
-  \(G\) and \(F\),
+  Hence,
   \begin{align*}
-    u(x,0)
-    &=F(x)+G(x)\\
-    &=f(x),
-    \\
-    u_t(x,0)
-    &=-F'(x)+G'(x)\\
-    &=g(x),\\
-    u_t(0,t)&=\alpha u_x(0,t)\\
-    -F'(-t)+G'(t)&=\alpha \bigl(F'(-t)+G'(t)\bigr),
+    u_t(0,t)&=\tfrac{1}{2}
+              \bigl(-\tilde f(-t)+\tilde f(t)+\tilde g(t)-\tilde g(-t)\bigr),\\
+    u_x(0,t)&=\tfrac{1}{2}
+              \bigl(\tilde f(-t)+\tilde f(t)+\tilde g(t)-\tilde g(-t)\bigr),
   \end{align*}
-  which, more concisely, reads
-  \begin{equation}
-    \label{eq:3:relations}
-    \left\{
-      \begin{aligned}
-        F(x)&=f(x)-G(x)\\
-        F'(x)&=G'(x)-g(x)\\
-        F'(-t)&=-\bigl(\tfrac{\alpha-1}{\alpha+1}\bigr)G'(t).
-      \end{aligned}
-    \right.
-  \end{equation}
-  This gives us, after a bit of calculation,
-  \begin{align*}
-    f'(-t)-g(-t)
-    &=-\bigl(\tfrac{\alpha-1}{\alpha+1}\bigr)\bigl(f'(t)+g(t)\bigr)\\
-    f(x+t)-f(x-t)-\int_{x-t}^{x+t}g(s)\diff s
-    &=-\left(\frac{\alpha-1}{\alpha+1}\right)
-      \left[
-      f(x+t)-f(x-t)+\int^{x+t}_{x-t}g(s)\diff s
-      \right]\\
-    \frac{f(x+t)+f(x-t)}{2}+\frac{1}{2}\int_{x-t}^{x+t}g(s)\diff s
-    &=-\frac{1}{2}\left(\frac{\alpha+1}{\alpha-1}\right)
-      \left[
-      f(x+t)-f(x-t)-\int_{x-t}^{x+t}g(s)\diff s
-      \right]+f(x-t).
-  \end{align*}
-  Thus,
-  \begin{equation}
-    \label{eq:3:solution-2}
-    u(x,t)
-    =-\frac{1}{2}\left(\frac{\alpha+1}{\alpha-1}\right)
-      \left[
-      f(x+t)-f(x-t)-\int_{x-t}^{x+t}g(s)\diff s
-      \right]+f(x-t)
-  \end{equation}
-  is a solution to the PDE with the prescribed initial conditions.
-
-
-  Suppose \(\alpha=-1\). Then \eqref{eq:3:solution-2} tells us that
+  so
   \[
-    u(x,t)=f(x-t).
+    0=\tfrac{1}{2}\bigl(-(1+\alpha)\tilde f(-t)+(1-\alpha)\tilde
+    f(t)+(1-\alpha)(\tilde g(t)-\tilde g(t))\bigr)
   \]
-  Thus, \(f'(x)=g(x)\) and
 \end{solution}
 \newpage
 
@@ -246,50 +274,75 @@
   \[
     u(x,t)=\sum_{n=1}^\infty \bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)\sin(nx).
   \]
-  First we compute \(u_t\) and \(u_x\). They are
+  First, we compute \(u_x\) and \(u_t\), they are
+  \begin{equation}
+    \label{eq:3:ux-ut}
+    \begin{aligned}
+      u_x(x,t)
+      &=\sum_{n=1}^\infty n\bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)\cos(nx),\\
+      u_t(x,t)
+      &=\sum_{n=1}^\infty nc\bigl(-a_n\sin(nct)+b_n\cos(nct)\bigr)\sin(nx).
+    \end{aligned}
+  \end{equation}
+  Let \(u_x^k(x,t)\) and \(u_t^k(x,t)\) be the partial sums of the
+  equations above so \(u_x^k\to u_x\) and \(u_t^k\to u_t\) as
+  \(k\to\infty\). Then
   \begin{align*}
-    u_t(x,t)%
-    &=\tfrac{\partial}{\partial t} u(x,t)\\
-    &=\sum_{n=1}^\infty cn\bigl(b_n\cos(nct)-a_n\sin(nct)\bigr)\sin(nx)
-    \intertext{and}
-    u_x(x,t)%
-    &=\tfrac{\partial}{\partial x} u(x,t)\\
-    &=\sum_{n=1}^\infty n\bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)\cos(nx).
+    E_k(t)
+    &=\frac{1}{2}\int_0^\pi (u_t^k)^2+c^2(u_x^k)^2\diff t
+    \intertext{taking into account orthogonality relations of \(\cos\) and
+    \(\sin\), we have}
+    &=\frac{1}{2}\sum_{n=1}^k n^2c^2
+      \left[
+      \left(\int_0^\pi\bigl(a_n^2\sin(nct)+b_n^2\cos(nct)\bigr)\right)\sin^2(nx)\right.\\
+    &\phantom{{}={}\frac{1}{2}\sum_{n=1}^k n^2c^2}
+      \left.+\left(\int_0^\pi\bigl(a_n^2\cos(nct)+a_n^2\sin(nct)\bigr)\right)\cos^2(nx)
+      \right]\\
+    &=\sum_{n=1}^k n^2c^2\pi(a_n^2+b_n^2).
   \end{align*}
   Thus,
-  \begin{align*}
-    E(t)%
-    &=\frac{1}{2}\int_0^\pi%
-      \Biggl[\biggl( \sum_{n=1}^\infty cn\bigl(
-      b_n\cos(nct)-a_n\sin(nct) \bigr)\sin(nx)
-      \biggr)^2\\
-    &\phantom{=\frac{1}{2}\int_0^\pi\Biggl[}%
-      +c^2 \biggl(\sum_{n=1}^\infty
-      n\bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)\cos(nx) \biggr)^2 \Biggr]
-      \intertext{which, after expanding and using the fact that
-      \(\cos(nct)\), \(\sin(nct)\), \(\cos(nx)\), and \(\sin(nx)\) are
-      orthogonal, becomes}
-    &=\frac{1}{2}\int_0^\pi
-      \Biggl[\sum_{n,m=1}^\infty
-      c^2nm\bigl(b_nb_m\cos(nct)\cos(mct)+a_na_m\sin(nct)\sin(mct)\\
-    &\phantom{\frac{1}{2}\int_0^\pi
-      \sum_{n,m=1}^\infty
-      c^2nm\bigl(}
-      -a_nb_m\cos(mct)\sin(nct)-a_mb_n\cos(nct)\sin(mct)\bigr)\sin(nx)\sin(mx)\\
-    &\phantom{=\frac{1}{2}\int_0^\pi}
-      -c^2\sum_{n,m=1}^\infty
-      n^2\bigl(a_na_m\cos(nct)\cos(mct)+b_nb_m\sin(nct)\sin(mct)\\
-    &\phantom{=\frac{1}{2}\int_0^\pi
-      \sum_{n,m=1}^\infty
-      c^2nm\bigl(}
-      +a_nb_m\cos(nct)\sin(mct)+a_mb_n\cos(mct)\sin(nct)\bigr)\cos(nx)\cos(mx)\Biggr]\\
-    &=\frac{1}{2}\int_0^\pi
-      \sum_{n=1}^\infty \biggl(
-      cn^2\bigl(b_n^2\cos^2(nct)+a_n^2\sin^2(nct)\bigr)\sin^2(nx)
-      -cn^2\bigl(a_n^2\cos^2(nct)+b_n^2\sin^2(nct)\bigr)\cos^2(nx)
-      \biggr)
-  \end{align*}
+  \begin{equation}
+    \label{eq:3:fourier-energy}
+    E(t)=\lim_{k\to\infty}E_k(t)=\sum_{n=1}^\infty n^2c^2\pi(a_n^2+b_n^2).
+  \end{equation}
 \end{solution}
+% They are
+%   \begin{align*}
+%     u_t(x,t)%
+%     &=\tfrac{\partial}{\partial t} u(x,t)\\
+%     &=\sum_{n=1}^\infty cn\bigl(b_n\cos(nct)-a_n\sin(nct)\bigr)\sin(nx)
+%     \intertext{and}
+%     u_x(x,t)%
+%     &=\tfrac{\partial}{\partial x} u(x,t)\\
+%     &=\sum_{n=1}^\infty n\bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)\cos(nx).
+%   \end{align*}
+%   Thus,
+%   \begin{align*}
+%     E(t)%
+%     &=\frac{1}{2}\int_0^\pi%
+%       \Biggl[\biggl( \sum_{n=1}^\infty cn\bigl(
+%       b_n\cos(nct)-a_n\sin(nct) \bigr)\sin(nx)
+%       \biggr)^2\\
+%     &\phantom{=\frac{1}{2}\int_0^\pi\Biggl[}%
+%       +c^2 \biggl(\sum_{n=1}^\infty
+%       n\bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)\cos(nx) \biggr)^2 \Biggr],
+%   \end{align*}
+%   which, after expanding and using the fact that \(\cos(nct)\),
+%   \(\sin(nct)\), \(\cos(nx)\), and \(\sin(nx)\) are orthogonal, becomes
+%   \begin{align*}
+%   E(t)&=\frac{1}{2}\int_0^\pi \Biggl[\sum_{n,m=1}^\infty
+%   c^2nm\bigl(b_nb_m\cos(nct)\cos(mct)+a_na_m\sin(nct)\sin(mct)\\
+%   &\phantom{\frac{1}{2}\int_0^\pi \sum_{n,m=1}^\infty c^2nm\bigl(}
+%   -a_nb_m\cos(mct)\sin(nct)-a_mb_n\cos(nct)\sin(mct)\bigr)\sin(nx)\sin(mx)\\
+%   &\phantom{=\frac{1}{2}\int_0^\pi} -c^2\sum_{n,m=1}^\infty
+%   n^2\bigl(a_na_m\cos(nct)\cos(mct)+b_nb_m\sin(nct)\sin(mct)\\
+%   &\phantom{=\frac{1}{2}\int_0^\pi \sum_{n,m=1}^\infty c^2nm\bigl(}
+%   +a_nb_m\cos(nct)\sin(mct)+a_mb_n\cos(mct)\sin(nct)\bigr)\cos(nx)\cos(mx)\Biggr]\\
+%   &=\frac{1}{2}\int_0^\pi \sum_{n=1}^\infty \biggl(
+%   cn^2\bigl(b_n^2\cos^2(nct)+a_n^2\sin^2(nct)\bigr)\sin^2(nx)
+%     -cn^2\bigl(a_n^2\cos^2(nct)+b_n^2\sin^2(nct)\bigr)\cos^2(nx) \biggr)\\
+%     &=\sum_{n=1}^\infty\frac{\pi c^2n^2}{2}(a_n^2+b_n^2).
+%   \end{align*}
 
 %%% Local Variables:
 %%% mode: latex
