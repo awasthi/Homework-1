@@ -16,10 +16,11 @@
 \usepackage{amssymb}%
 \usepackage[heavycircles]{stmaryrd}%
 \usepackage[nointegrals]{wasysym}%
-\usepackage[%bb=ams,%
-            %frak=euler,%
-            %cal=cm,%
+\usepackage[bb=ams,%
+            frak=euler,%
+            cal=cm,%
             scr=rsfso]{mathalfa}%
+
 %% Use Latin Modern instead
 \usepackage{lmodern}
 \usepackage[rm={proportional,lining},
@@ -213,7 +214,9 @@
 \let\oldbtleft\blacktriangleleft%
 \renewcommand\blacktriangleright{\ensuremath{\scriptstyle\oldbtright}}
 \renewcommand\blacktriangleleft{\ensuremath{\scriptstyle\oldbtleft}}
-\renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}} % Default is
+\renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}}
+\let\oldcomplement\complement
+\renewcommand\complement{\ensuremath{\scriptscriptstyle\oldcomplement}}
 
 %% Arrows
 \newcommand\too{\longrightarrow}
