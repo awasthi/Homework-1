@@ -148,7 +148,17 @@
       -F'(-t)+G'(t)&=\alpha \bigl(F'(-t)+G'(t)\bigr).
     \end{aligned}
   \end{equation}
-  Thus
+  Thus,
+  \begin{align*}
+    G'(x)
+    &=F'(x)+g(x)\\
+    G(x)
+    &=F(x)+\int_0^x g(\xi)\diff \xi+C\\
+    &=f(x)-G(x)+\int_0^x g(\xi)\diff \xi+C\\
+    &=\frac{f(x)}{2}+\frac{1}{2}\int_0^x g(\xi)\diff\xi+C',
+      \intertext{and similarly,}
+      F(x)&=\frac{f(x)}{2}+\frac{1}{2}\int_0^x g(\xi)\diff\xi+C''.
+  \end{align*}
 \end{solution}
 \newpage
 
