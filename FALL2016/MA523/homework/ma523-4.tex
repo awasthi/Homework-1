@@ -133,76 +133,53 @@
 \begin{solution}
   Suppose \(u(x,t)=F(x-t)+G(x-t)\) is a classical solution to the
   one-dimensional wave equation. Then, \(F,G\in C^2\) and \(F\) solves the
-  PDE \(v_t+v_x=0\), whereas \(G\) solves the PDE \(w_t-w_x=0\).
+  PDE \(v_t+v_x=0\), whereas \(G\) solves the PDE \(w_t-w_x=0\). The
+  initial and boundary conditions say that
+  \begin{equation}
+    \label{eq:3:bound-conds}
+    \begin{aligned}
+      u(x,0)
+      &=F(x)+G(x)\\
+      &=f(x),
+      \\
+      u_t(x,0)
+      &=-F'(x)+G'(x)\\
+      &=g(x),\\
+      u_t(0,t)&=\alpha u_x(0,t)\\
+      -F'(-t)+G'(t)&=\alpha \bigl(F'(-t)+G'(t)\bigr).
+    \end{aligned}
+  \end{equation}
+  Thus,
+  \begin{align*}
+    G'(x)
+    &=F'(x)+g(x)\\
+    G(x)
+    &=F(x)+\int_0^x g(\xi)\diff \xi+C\\
+    &=f(x)-G(x)+\int_0^x g(\xi)\diff \xi+C\\
+    &=\frac{f(x)}{2}+\frac{1}{2}\int_0^x g(\xi)\diff\xi+C',
+      \intertext{and similarly,}
+      F(x)&=\frac{f(x)}{2}-\frac{1}{2}\int_0^x g(\xi)\diff\xi+C'',
+  \end{align*}
+  where \(C'+C''=0\). Hence, the solution to the PDE has the form
+  \begin{equation}
+    \label{eq:3:sol}
+    u(x,t)
+    =\frac{f(x+t)+f(x-t)}{2}+\frac{1}{2}\int^{x+t}_{x-t}g(\xi)\diff\xi.
+  \end{equation}
 
-  % Suppose \(u(x,t)=F(x-t)+G(x-t)\) is a classical solution to the
-  % one-dimensional wave equation. From [E], we know that d'Alembert's
-  % solution
-  % \begin{equation}
-  %   \label{eq:3:dalembert-sol}
-  %   u(x,t)=\frac{f(x+t)+f(x-t)}{2}+\frac{1}{2}\int^{x+t}_{x-t}g(s)\diff s
-  % \end{equation}
-  % is a solution to the one-dimensional wave equation.
-
-  % Now, taking the boundary conditions into consideration, we have
-  % \begin{align*}
-  %   2u_t(0,t)
-  %   &=f'(t)-f'(-t)+g(t)-g(-t)\\
-  %   &=\alpha\bigl(f'(t)+f'(-t)+g(t)-g(-t)\bigr),
-  % \end{align*}
-  % hence,
-  % \begin{align*}
-  %   (-\alpha+1)f'(t)-(\alpha+1)f'(-t)&=(\alpha-1)\bigl(g(t)-g(-t)\bigr)\\
-  %   f'(t)-\bigl(\tfrac{\alpha+1}{\alpha-1}\bigr)f'(-t)&=g(t)-g(-t).
-  % \end{align*}
-  % From our assumptions on the form of \(u\), we have
+  By the boundary condition, we have
+  \begin{align*}
+    u_t(0,t)
+    &=\frac{f(t)+g(t)-f(-t)-g(-t)}{2}\\
+    &=\alpha\left[
+      \frac{f(t)+f(-t)+g(t)-g(-t)}{2}
+      \right]\\
+    (1-\alpha)\bigl(g(t)-g(-t)\bigr)
+    &=(\alpha-1)f(t)+(\alpha+1)f(-t)\\
+    g(t)-g(-t)&=-f(t)-\tfrac{\alpha+1}{\alpha-1}f(-t)
+  \end{align*}
 \end{solution}
 \newpage
-% initial and boundary conditions say that
-  % \begin{equation}
-  %   \label{eq:3:bound-conds}
-  %   \begin{aligned}
-  %     u(x,0)
-  %     &=F(x)+G(x)\\
-  %     &=f(x),
-  %     \\
-  %     u_t(x,0)
-  %     &=-F'(x)+G'(x)\\
-  %     &=g(x),\\
-  %     u_t(0,t)&=\alpha u_x(0,t)\\
-  %     -F'(-t)+G'(t)&=\alpha \bigl(F'(-t)+G'(t)\bigr).
-  %   \end{aligned}
-  % \end{equation}
-  % Thus,
-  % \begin{align*}
-  %   G'(x)
-  %   &=F'(x)+g(x)\\
-  %   G(x)
-  %   &=F(x)+\int_0^x g(\xi)\diff \xi+C\\
-  %   &=f(x)-G(x)+\int_0^x g(\xi)\diff \xi+C\\
-  %   &=\frac{f(x)}{2}+\frac{1}{2}\int_0^x g(\xi)\diff\xi+C',
-  %     \intertext{and similarly,}
-  %     F(x)&=\frac{f(x)}{2}-\frac{1}{2}\int_0^x g(\xi)\diff\xi+C'',
-  % \end{align*}
-  % where \(C'+C''=0\). Hence, the solution to the PDE has the form
-  % \begin{equation}
-  %   \label{eq:3:sol}
-  %   u(x,t)
-  %   =\frac{f(x+t)+f(x-t)}{2}+\frac{1}{2}\int^{x+t}_{x-t}g(\xi)\diff\xi.
-  % \end{equation}
-
-  % By the boundary condition, we have
-  % \begin{align*}
-  %   u_t(0,t)
-  %   &=\frac{f(t)+g(t)-f(-t)-g(-t)}{2}\\
-  %   &=\alpha\left[
-  %     \frac{f(t)+f(-t)+g(t)-g(-t)}{2}
-  %     \right]\\
-  %   (1-\alpha)\bigl(g(t)-g(-t)\bigr)
-  %   &=(\alpha-1)f(t)+(\alpha+1)f(-t)\\
-  %   g(t)-g(-t)&=-f(t)-\tfrac{\alpha+1}{\alpha-1}f(-t)
-  % \end{align*}
-
 \begin{problem}
   \begin{enumerate}[label=(\alph*),noitemsep]
   \item Let \(u\) be a solution of the wave equation \(u_{tt}-c^2u_{xx}=0\)
