@@ -132,9 +132,16 @@
 \end{problem}
 \begin{solution}
   Suppose \(u(x,t)=F(x-t)+G(x+t)\) is a classical solution to the
-  one-dimensional wave equation. Then, by the boundary and initial
-  conditions prescribed above, we obtain the following relations on \(G\)
-  and \(F\),
+  one-dimensional wave equation. From Evans, we know d'Alembert's formula,
+  i.e.,
+  \[
+    u(x,t)=\frac{f(x+t)+f(x-t)}{2}+\frac{1}{2}\int^{x+t}_{x-t}g(s)\diff s,
+  \]
+  is a solution to the PDE with the prescribed initial conditions.
+
+  Now, using the initial conditions prescribed above, particularly, the
+  restriction on the derivative of \(u\) at \(x=0\), we obtain the
+  following relations on \(G\) and \(F\),
   \begin{align*}
     u(x,0)
     &=F(x)+G(x)\\
@@ -144,23 +151,22 @@
     &=-F'(x)+G'(x)\\
     &=g(x),\\
     u_t(0,t)&=\alpha u_x(0,t)\\
-    -F'(-t)+G'(t)&=\alpha \bigl(F'(-t)+G'(t)\bigr).
+    -F'(-t)+G'(t)&=\alpha \bigl(F'(-t)+G'(t)\bigr),
   \end{align*}
-  More concisely,
+  which, more concisely, reads
   \begin{equation}
     \label{eq:3:relations}
     \left\{
       \begin{aligned}
         F(x)&=f(x)-G(x)\\
         F'(x)&=G'(x)-g(x)\\
-        F'(t)&=-\bigl(\tfrac{\alpha-1}{\alpha+1}\bigr)G'(-t).
+        F'(-t)&=-\bigl(\tfrac{\alpha-1}{\alpha+1}\bigr)G'(t).
       \end{aligned}
     \right.
   \end{equation}
-  After a bit of calculation using equations (4.12) from [J], we have
-  \[
-    \int_{x-t}^{x+t}g(s)\diff s=\alpha\bigl(f(x+t)+f(x-t)\bigr).
-  \]
+
+  Suppose \(\alpha=-1\).
+
 \end{solution}
 \newpage
 
