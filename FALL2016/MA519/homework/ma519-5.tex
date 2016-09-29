@@ -275,7 +275,12 @@
   What can you say about the nature of \(X\)?
 \end{problem}
 \begin{solution}
-  By Holder's inequality, we have
+  By Hölder's inequality,
+  \[
+    \mu=E(X)\leq E(X^2)<\infty.
+  \]
+  Similarly, we can show that for any \(n\in\bbN\), \(X^n\) has finite
+  mean.
 \end{solution}
 \newpage
 
@@ -354,7 +359,21 @@
   \end{itemize}
 \end{problem}
 \begin{solution}
+  From DasGupta's book, \(X\) has the PMF
+  \[
+    P(X=n)=\binom{N}{n}p^n(1-p)^{N-n}
+  \]
+  where \(N\) is the number of trials.
 
+  The mean can be easily computed by taking the series
+  \begin{align*}
+    E(X)&=\sum_{n=0}^N\left[\binom{N}{n}p^n(1-p)^{N-n}\right]p\\
+        &=p\left[\sum_{n=0}^N\binom{N}{n}p^n(1-p)^{N-n}\right]\\
+    \intertext{which, by the binomial identity
+    \((x+y)^N=\sum_{n=0}^N\binom{N}{n}x^ny^{N-n}\), gives us}
+        &=p\bigl(p+(1-p)\bigr)\\
+        &=p.
+  \end{align*}
 \end{solution}
 \newpage
 
