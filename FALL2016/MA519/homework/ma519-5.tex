@@ -12,7 +12,7 @@
 \begin{solution}
   Recall that the variance of a random variable can be computed as
   \[
-    \Var(X)=E(X^2)-\bigl(E(X)\bigr)^2.
+    \Var(X)=E(X^2)-E(X)^2.
   \]
 
   For part (d), let \(X\) be as above. First, note that \(X\) takes every
@@ -74,7 +74,7 @@
 
   Putting all of this together, the variance is
   \[
-    \Var(X)=6-(2)^2=2.
+    \boxed{\Var(X)=6-(2)^2=2.}
   \]
   \\\\
   For part (f), again, we let \(X\) be as above. The PMF of \(X\) is given
@@ -97,7 +97,30 @@
 
 \end{problem}
 \begin{solution}
+  For part (a), note that $p(x)$ given above satisfies the requirements to
+  be a probability mass function. First, set
+  $1/c = \sum_{x=1}^\infty 1/x^3$, and note that indeed $c$ is well defined
+  (because the relevant series converges, by the \(p\)-test.)
 
+  This means that $1=\sum_{x=1}^\infty c/x^3 = \sum p(x)$, by
+  definition. Moreover, because $p(x) = c/x^3 > 0$ for all $x$ in our
+  domain, $p(x) \in [0,1]$. That is, $p$ is a valid probability mass
+  function.
+
+  Set $X$ equal to the random variable described by $p$. Next, note that
+  \begin{align*}
+    E(X) &= \sum_{n=1}^\infty n \frac{c}{n^3}\\
+         &= \sum_{n=1}^\infty \frac{c}{n^2}\\
+  \end{align*}
+  which converges (and thus exists), again by the \(p\)-test.
+
+  However,
+  \begin{align*}
+    E(X^2) &= \sum_{n=1}^\infty n^2 \frac{c}{n^3}\\
+           &= \sum_{n=1}^\infty \frac{c}{n}\\
+  \end{align*}
+  which does not converge, again by the \(p\)-test. That is, the variance
+  $E(X^2)-E(X)^2$ does not exist.
 \end{solution}
 \newpage
 
@@ -149,20 +172,68 @@
   For part (b) we have a similar setup. We compute the PMF of \(X\)
   explicitly
   \begin{align*}
-    p(2)&=\frac{1}{5}\cdot\frac{2}{6}=\frac{1}{15}
-    &
+    p(2)&=\frac{2}{6}\cdot\frac{1}{5}=\frac{1}{15},
+    &p(3)&=\frac{4}{6}\cdot\frac{2}{5}\cdot\frac{1}{4}+\frac{2}{6}\cdot\frac{4}{5}\cdot\frac{1}{4}
+           =\frac{2}{15},\\
+    p(4)&=3\cdot\frac{4}{6}\cdot\frac{3}{5}\cdot\frac{2}{4}\cdot\frac{1}{3}
+          =\frac{3}{15},
+    &p(5)&=4\cdot\frac{4}{6}\cdot\frac{3}{5}\cdot\frac{2}{4}
+           \cdot\frac{2}{3}\cdot\frac{1}{2}
+           =\frac{4}{15},\\
+    p(6)&=5\cdot\frac{4}{6}\cdot\frac{3}{5}\cdot
+          \frac{2}{4}\cdot\frac{1}{3}\cdot\frac{2}{2}\cdot 1
+          =\frac{5}{15}.
   \end{align*}
+  Thus,
+  \[
+    \boxed{
+      \begin{aligned}
+        E(X)
+        &=\frac{2+3\cdot 2+4\cdot 3+5\cdot 4+6\cdot 5}{15}\\
+        &=\frac{14}{3}\\
+        &\approx\num{4.666666666666667}.
+      \end{aligned}
+    }
+  \]
+
+  Similarly,
+  \begin{align*}
+    E(X^2)
+    &=\frac{2^2+3^2\cdot 2+4^2\cdot 3+5^2\cdot 4+6^2\cdot 5}{15}\\
+    &=\frac{70}{3}\\
+    &\approx\num{23.333333333333332}.
+  \end{align*}
+
+  Thus,
+  \[
+    \boxed{\Var(X)\approx
+      \frac{70}{3}-\left(\frac{14}{3}\right)^2\approx\num{1.55555555555555}.}
+  \]
 \end{solution}
 \newpage
 
 \begin{problem}[Handout 7, \# 10]
   Suppose \(X\) has a \emph{discrete uniform distribution} on the set
   \(\{1,\dotsc,N\}\).
-
+  \\\\
   Find formulas for the mean and the variance of \(X\).
 \end{problem}
 \begin{solution}
 
+  First, we find the mean:
+  \begin{align*}
+    E(X) &= \sum_{n=1}^N n \frac{1}{N}\\
+         &= \frac{1}{N} \frac{N(N+1)}{2}\\
+         &=\frac{(N+1)}{2}
+  \end{align*}
+
+  Next, we find the variance:
+\begin{align*}
+  E(X^2) - E(X)^2
+  &= \sum_{n=1}^N n^2 \frac{1}{N} - \left[\frac{(N+1)}{2}\right]^2\\
+  &=\frac{N^2}{3}+\frac{N}{2}+\frac{1}{6}\left[\frac{(N+1)}{2}\right]^2-
+                  % &=  \frac{\pi^2}{6N} - \left(\frac{(N+1)}{2}\right)^2.
+\end{align*}
 \end{solution}
 \newpage
 
@@ -171,7 +242,32 @@
   \(1\) and variance \(100\).
 \end{problem}
 \begin{solution}
+Let $X$ be the random variable whose PMF is given by
+\begin{align*}
+p(X = -10-1) &= 0.5\\
+p(X = 10-1) &= 0.5\\
+p(X \neq \pm \sqrt{10}-1) &= 0\\
+\end{align*}
 
+(Note that those expressions are very easy to simplify (-10-1 =-11, 10-1=9), but leaving them in that form makes the arithmetic more obvious.)
+
+Then we see that the mean of $X$ is given by
+
+\begin{align*}
+E(X) &= 0.5 (-10-1 +10-1)\\
+&= 1
+\end{align*}
+
+and the variance of $X$ is given by
+
+\begin{align*}
+E((X-E(X))^2) &= E((X-1)^2) \\
+&= 0.5 (10^2 + (-10)^2) \\
+&= 0.5 (10^2 + (-10)^2) \\
+&= 100
+\end{align*}
+
+so that $X$ is such a random variable as described in the problem.
 \end{solution}
 \newpage
 
@@ -209,7 +305,25 @@
   \]
 \end{problem}
 \begin{solution}
-
+  First, note that
+  \begin{align*}
+    p(X=0) &= \frac{1}{16},&
+    p(X=1) &= \frac{4}{16},\\
+    p(X=2) &= \frac{6}{16},&
+    p(X=3) &= \frac{4}{16},\\
+    p(X=4) &= \frac{1}{16}.\\
+  \end{align*}
+  Thus, computing the expected value of the function, we get
+  \begin{align*}
+    E\left[\log\bigl( 2+\sin(\tfrac{\pi}{4}X) \bigr)\right]
+    &= \sum_{x=0}^4 p(X=x)\log\bigl( 2+\sin(\tfrac{\pi}{4}x) \bigr)\\
+    &= \frac{1}{16} \left[\log(2) +4 \log \bigl(2+\tfrac{\sqrt{2}}{2}
+      \bigr) +6 \log (2+1) +4 \log \bigl(2+\tfrac{\sqrt{2}}{2}
+      \bigr) + \log(2)\right]\\
+    &=\frac{1}{16} \left[2\log(2) +8 \log \bigl(2+\tfrac{\sqrt{2}}{2}
+      \bigr) +6 \log (3) \right]\\
+    &\approx 0.9966.
+  \end{align*}
 \end{solution}
 \newpage
 
