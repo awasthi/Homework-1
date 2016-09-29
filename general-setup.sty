@@ -16,11 +16,10 @@
 \usepackage{amssymb}%
 \usepackage[heavycircles]{stmaryrd}%
 \usepackage[nointegrals]{wasysym}%
-\usepackage[bb=ams,%
-            frak=euler,%
-            cal=cm,%
+\usepackage[%bb=ams,%
+            %frak=euler,%
+            %cal=cm,%
             scr=rsfso]{mathalfa}%
-
 %% Use Latin Modern instead
 \usepackage{lmodern}
 \usepackage[rm={proportional,lining},
@@ -214,9 +213,7 @@
 \let\oldbtleft\blacktriangleleft%
 \renewcommand\blacktriangleright{\ensuremath{\scriptstyle\oldbtright}}
 \renewcommand\blacktriangleleft{\ensuremath{\scriptstyle\oldbtleft}}
-\renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}}
-\let\oldcomplement\complement
-\renewcommand\complement{\ensuremath{\scriptscriptstyle\oldcomplement}}
+\renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}} % Default is
 
 %% Arrows
 \newcommand\too{\longrightarrow}
@@ -887,9 +884,9 @@
   { \mode_if_math:TF {#1} { \textup{#1} } }
 \cs_new:Npn \emph_new:n #1 {
   \tl_set:Nn \l_emph_tl {#1}
-  \tl_replace_all:Nnn \l_emph_tl {(}{\emph_braces:n{(}}
+  \tl_replace_all:Nnn \l_emph_tl {(}{\emph_braces:n{(\!}}
   \tl_replace_all:Nnn \l_emph_tl {)}{\emph_braces:n{)}}
-  \tl_replace_all:Nnn \l_emph_tl {[}{\emph_braces:n{[}}
+  \tl_replace_all:Nnn \l_emph_tl {[}{\emph_braces:n{[\!}}
   \tl_replace_all:Nnn \l_emph_tl {]}{\emph_braces:n{]}}
   \exp_args:NV \emph_old:n \l_emph_tl
 }
