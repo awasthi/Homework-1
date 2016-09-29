@@ -367,13 +367,46 @@
 
   The mean can be easily computed by taking the series
   \begin{align*}
-    E(X)&=\sum_{n=0}^N\left[\binom{N}{n}p^n(1-p)^{N-n}\right]p\\
-        &=p\left[\sum_{n=0}^N\binom{N}{n}p^n(1-p)^{N-n}\right]\\
-    \intertext{which, by the binomial identity
-    \((x+y)^N=\sum_{n=0}^N\binom{N}{n}x^ny^{N-n}\), gives us}
-        &=p\bigl(p+(1-p)\bigr)\\
-        &=p.
+    E(X)&=\sum_{n=0}^N\left[\binom{N}{n}p^n(1-p)^{N-n}\right]n\\
+        &=\sum_{n=1}^N\left[n\binom{N}{n}\right]p^n(1-p)^{N-n}\\
+        &=N\sum_{n=1}^N\binom{N-1}{n-1}p^n(1-p)^{N-n}\\
+        &=Np\sum_{n=1}^N\binom{N-1}{n-1}p^{n-1}(1-p)^{(N-1)-(n-1)}
+          \intertext{now we can use the binomial identity
+          \((x+y)^n=\sum_{n=0}^N\binom{N}{n}x^ny^{N-n}\) to obtain}
+        &=Np\bigl(p+(1-p)\bigr)^{N-1}\\
+        &=Np.
   \end{align*}
+
+  To find the variance, we must first compute the second moment of
+  \(X\). But first, note that
+  \begin{align*}
+    n^2\binom{N}{n}
+    &=Nn\binom{N-1}{n-1}\\
+    &=N(n-1)\binom{N-1}{n-1}+N\binom{N-1}{n-1}\\
+    &=N(N-1)\binom{N-2}{n-2}+N\binom{N-1}{n-1};
+  \end{align*}
+  this will be helpful in computing the second moment. Now,
+  \begin{align*}
+    E(X)&=\sum_{n=0}^N\left[\binom{N}{n}p^n(1-p)^{N-n}\right]n^2\\
+        &=\underbrace{N(N-1)\sum_{n=0}^N\binom{N-2}{n-2}p^n(1-p)^{N-n}}_{S_1}+
+          \underbrace{N\sum_{n=0}^N\binom{N-1}{n-1}p^n(1-p)^{N-n}}_{S_2}.
+  \end{align*}
+  Note that \(S_2\) is exactly the mean of \(X\) and hence \(S_2=Np\).  To
+  find \(S_1\) we use a similar trick
+  \begin{align*}
+    S_1&=N(N-1)\sum_{n=0}^N\binom{N-2}{n-2}p^n(1-p)^{N-n}\\
+       &=N(N-1)p^2\sum_{n=2}^N\binom{N-2}{n-2}p^{n-2}(1-p)^{(N-2)-(n-2)}\\
+       &=N(N-1)p^2.
+  \end{align*}
+  Thus, the second moment is
+  \[
+    E(X^2)=N(N-1)p^2+Np=N^2p^2+Np(1-p).
+  \]
+
+  Lastly, the variance of \(X\) is
+  \[
+    \Var(X)=N^2p^2+Np(1-p)-(Np)^2=Np(1-p).
+  \]
 \end{solution}
 \newpage
 
