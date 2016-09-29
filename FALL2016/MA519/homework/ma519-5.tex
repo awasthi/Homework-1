@@ -450,7 +450,28 @@
   given in II, 7, but are not required for the present problem.)
 \end{problem}
 \begin{solution}
+  For part (a), the mean is
+  \begin{align*}
+    E(X)
+    &=\sum_{k=1}^n \frac{k}{n}\\
+    &=\frac{1}{n}\left[\frac{n(n+1)}{2}\right]\\
+    &=\frac{n+1}{2}.
+  \end{align*}
 
+  The second moment is
+  \begin{align*}
+    E(X^2)
+    &=\frac{1}{n}\sum_{k=1}^nk^2\\
+    &=\frac{1}{n}\left[\frac{n^3}{3}+\frac{n^2}{2}+\frac{n}{6}\right]\\
+    &=\frac{n^2}{3}+\frac{n}{2}+\frac{1}{6}.
+  \end{align*}
+
+  Thus, the variance is
+  \[
+    \Var(X)=\frac{n^2}{3}+\frac{n}{2}+\frac{1}{6}-\left[\frac{n-1}{2}\right]^2.
+  \]
+
+  For part (b), the mean is
 \end{solution}
 
 %%% Local Variables:
