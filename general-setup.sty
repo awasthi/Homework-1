@@ -885,9 +885,9 @@
 \cs_new:Npn \emph_new:n #1 {
   \tl_set:Nn \l_emph_tl {#1}
   \tl_replace_all:Nnn \l_emph_tl {(}{\emph_braces:n{(}}
-  \tl_replace_all:Nnn \l_emph_tl {)}{\emph_braces:n{)}}
+  \tl_replace_all:Nnn \l_emph_tl {)}{\emph_braces:n{\:)}}
   \tl_replace_all:Nnn \l_emph_tl {[}{\emph_braces:n{[}}
-  \tl_replace_all:Nnn \l_emph_tl {]}{\emph_braces:n{]}}
+  \tl_replace_all:Nnn \l_emph_tl {]}{\emph_braces:n{\:]}}
   \exp_args:NV \emph_old:n \l_emph_tl
 }
 \RenewDocumentCommand {\emph} {sm} {
