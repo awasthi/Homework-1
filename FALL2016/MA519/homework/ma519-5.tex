@@ -294,7 +294,20 @@
   \end{align*}
 \end{problem}
 \begin{solution}
-
+  We show that the first of these inequalities is not true in
+  general. Consider the probability space \(\Omega=\{0,1\}\) and the random
+  variable \(X(0)=-1\), \(X(1)=2\) with PMF \(P(X=0)=P(X=1)=1/2\). Then,
+  \begin{align*}
+    E(X)&=-\frac{1}{2}+1=\frac{1}{2},&
+    E(X^2)&=\frac{1}{2}+2=\frac{5}{2},\\
+    E(X^3)&=-\frac{1}{2}+4=\frac{7}{2},&
+    E(X^4)&=\frac{1}{2}+8=\frac{17}{2},
+  \end{align*}
+  so
+  \[
+    \frac{17}{4}=\frac{1}{2}\cdot\frac{17}{2}\ngeq
+    \frac{5}{2}\cdot\frac{7}{2}=\frac{35}{4}.
+  \]
 \end{solution}
 \newpage
 
