@@ -4,6 +4,13 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{general-setup}[2016/09/18 v1.0 my setup]
 
+\newif\if@eulermath\@eulermathfalse
+\DeclareOption{eulermath}{
+  \@eulermathtrue
+}
+
+\ProcessOptions\relax
+
 %%% Required math packages
 \usepackage{amsmath}
 \usepackage{amsthm}
@@ -20,42 +27,21 @@
             %frak=euler,%
             %cal=cm,%
             scr=rsfso]{mathalfa}%
-%% Use Latin Modern instead
+
+%% Use Latin Modern instead of default CM
 \usepackage{lmodern}
 \usepackage[rm={proportional,lining},
             sf={proportional,oldstyle},
             tt={lining,tabular,monowidth}]{cfr-lm}
 
-%% Language settings
-% \RequirePackage{fix-cm}
-% \usepackage{type1ec}%
+\if@eulermath %% Use Euler and Palatino-like Pazo (mostly for notes)
+\usepackage{mathpazo}
+\usepackage{eulervm}
+\fi
+
+%% Encoding settings
 \usepackage[utf8]{inputenc}%
-\usepackage[% T2A,
-            T1]{fontenc}%
-
-% \def\spanishoptions{mexico}%
-% \usepackage[french,%
-%             german,%
-%             spanish,%
-%             russian,%
-%             main=english]{babel}
-
-% \babeltags{fr=french,%
-%            de=german,%
-%            en=english,%
-%            es=spanish,%
-%            ru=russian}
-
-% \usepackage{CJKutf8}%
-% \newcommand{\textmj}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}%
-% \newcommand{\textmin}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}%
-% \newcommand{\textgoth}[1]{\begin{CJK}{UTF8}{goth}#1\end{CJK}}%
-% \newcommand{\textmaru}[1]{\begin{CJK}{UTF8}{maru}#1\end{CJK}}%
-% \newcommand{\textbsmi}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}%
-% \newcommand{\textbkai}[1]{\begin{CJK}{UTF8}{bkai}#1\end{CJK}}
-% \newcommand{\textkr}[1]{\begin{CJK}{UTF8}{mj}#1\end{CJK}}%
-% \newcommand{\textjp}[1]{\begin{CJK}{UTF8}{min}#1\end{CJK}}%
-% \newcommand{\textzh}[1]{\begin{CJK}{UTF8}{bsmi}#1\end{CJK}}%
+\usepackage[T1]{fontenc}%
 
 %%% Useful packages
 \usepackage{graphicx}%
