@@ -35,13 +35,17 @@
             tt={lining,tabular,monowidth}]{cfr-lm}
 
 \if@eulermath %% Use Euler and Palatino-like Pazo (mostly for notes)
-\usepackage{mathpazo}
+\usepackage[sc,osf]{mathpazo}
+\usepackage[euler-digits]{eulervm}
+\usepackage[scaled]{helvet} % ss
+\usepackage{courier} % tt
 \usepackage{eulervm}
+\normalfont
 \fi
-
 %% Encoding settings
 \usepackage[utf8]{inputenc}%
 \usepackage[T1]{fontenc}%
+
 
 %%% Useful packages
 \usepackage{graphicx}%
