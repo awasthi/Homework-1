@@ -1,0 +1,63 @@
+\def\auth{Carlos Salinas}%
+\def\tight{Micro Teaching Session}%
+\def\short{MCSess}%
+\def\due{October 3, 2016}%
+\def\class{mathematics}%
+\def\subject{calculus ii, recitation}
+\def\email{salinac@purdue.edu}%
+
+\documentclass[article,oneside]{memoir}
+\usepackage{geometry}
+
+%% Base customization and variables
+\usepackage[eulermath]{general-setup}%
+
+%% Footnote style
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}%
+
+%% Hyperref setup
+\hypersetup{%
+  breaklinks,%
+  colorlinks=true,%
+  linkcolor=black,%
+  citecolor=black,%
+  filecolor=black,%
+  menucolor=black,%
+  runcolor=black,%
+  urlcolor=black,%
+  pdftitle={\short},%
+  pdfauthor={\auth},%
+  pdfkeywords={\subject},%
+  pdfsubject={\class},%
+  % pageanchor={false},%
+  unicode%
+}
+
+%% Graphics path as it says
+\graphicspath{{figures/}}%
+
+\begin{document}%
+\author{\textti{\auth}}%
+\title{\textti{\tight}}%
+\date{\textti{\due}}%
+
+\frontmatter
+\maketitle%
+\thispagestyle{empty}
+\tableofcontents%
+
+\newpage
+\mainmatter
+\chapter{Script}
+\section{Review of l'Hôpital's rule}
+\textsf{Hello world!} Harô za worudo!
+\newpage
+\chapter{Homework Solutions}
+\newpage
+\chapter{Sample Quiz}
+\end{document}%
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
