@@ -1,27 +1,61 @@
 \begin{problem}
+  Prove that Laplace's equation \(\Delta u=0\) is rotation invariant; that
+  is, if \(O\) is an orthogonal \(n\times n\) matrix and we define
+  \(v(x)\defeq u(Ox)\), \(x\in\bbR^n\), then \(\Delta v=0\).
 \end{problem}
 \begin{solution}
 \end{solution}
 \newpage
 
 \begin{problem}
+  Let \(n=2\) and \(U\) be the halfplane \(\{\,x_2>0\,\}\). Prove that
+  \[
+    \sup_U u=\sup_{\partial U}u
+  \]
+  for \(u\in C^2(U)\cap C(\bar U)\) which are harmonic in \(U\) under the
+  additional assumption that \(u\) is bounded from above in \(\bar
+  U\). (The additional assumption is needed to exclude examples like
+  \(u=x_2\).)
+
+  \noindent
+  [\emph{Hint:} Take for \(\varepsilon>0\) the harmonic function
+  \[
+    u(x_1,x_2)+\varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}.
+  \]
+  Apply the maximum principle to a region
+  \(\bigl\{\,x_1^2+(x_2+1)^2<a_2,x_2>0\,\bigr\}\) with large \(a\). Let
+  \(\varepsilon\to 0\).]
 \end{problem}
 \begin{solution}
 \end{solution}
 \newpage
 
 \begin{problem}
-\end{problem}
-\begin{solution}
-\end{solution}
-\newpage
+  Let \(U\subset\bbR^n\) be an open set. We say \(v \in C^2(U)\) is
+  subharmonic if
+  \[
+    -\Delta v\leq 0\qquad\text{in \(U\).}
+  \]
+  \begin{itemize}
+  \item[(a)] Let \(\varphi\colon\bbR^m\to\bbR\) be smooth and
+    convex. Assume \(u^1,\dotsc,u^m\) are harmonic in \(U\) and
+    \[
+      v\defeq\varphi(u_1,\dotsc,u_m).
+    \]
+    Prove \(v\) is sub harmonic.
 
-\begin{problem}
+    \noindent
+    [\emph{Hint:} Convexity for a smooth function \(\varphi(z)\) is
+    equivalent to \(\sum_{j,k=1}^m\varphi_{z_j,z_k}(z)\xi_j\xi_j\geq 0\)
+    for any \(\xi\in\bbR^m\).]
+  \item[(b)] Prove \(v\defeq|Du|^2\) is subharmonic, whenever \(u\) is
+    harmonic. (Assume that harmonic functions are \(C^\infty\).)
+  \end{itemize}
 \end{problem}
 \begin{solution}
 \end{solution}
 
 %%% Local Variables:
 %%% mode: latex
-%%% TeX-master: "../MA523-Current-HW"
+%%% TeX-master: "../MA523-HW-Current"
 %%% End:
