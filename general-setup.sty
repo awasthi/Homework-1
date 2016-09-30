@@ -47,7 +47,7 @@
 \usepackage[scaled=0.88]{beraserif}
 \usepackage[scaled=0.85]{berasans}
 \usepackage[scaled=0.84]{beramono}
-\usepackage[sc]{mathpazo} % sometimes I like to pass the osf option
+\usepackage[sc,osf]{mathpazo}
 \usepackage[T1,small,euler-digits]{eulervm}
 
 \providecommand\textsi{\itshape}
@@ -59,9 +59,14 @@
 %%% Useful packages
 \usepackage{microtype}%
 \usepackage{lastpage}%
+\usepackage{booktabs} % for better rules in tables
 
 %% Enumerate
 \usepackage{enumitem}%
+\newenvironment{aenumerate} % Enumeration environment with small caps
+    {\def\theenumi{\textsc{\alph{enumi}}}%
+     \enumerate}
+   {\endenumerate}
 
 \usepackage{listings}%
 \lstset{basicstyle=\ttfamily,breaklines=true}
@@ -69,8 +74,14 @@
 %% hyperref with xcolor
 \@ifpackageloaded{hyperref}{}{\usepackage{hyperref}}
 \@ifpackageloaded{xcolor}
-                 {\PassOptionsToPackage{dvipsnames}{xcolor}}
-                 {\usepackage[dvipsnames]{xcolor}}
+{\PassOptionsToPackage{dvipsnames}{xcolor}}
+{\usepackage[dvipsnames]{xcolor}}
+\definecolor{halfgray}{gray}{0.55} % chapter numbers will be semi transparent .5 .55 .6 .0
+\definecolor{webgreen}{rgb}{0,.5,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+%\definecolor{Maroon}{cmyk}{0, 0.87, 0.68, 0.32}
+%\definecolor{RoyalBlue}{cmyk}{1, 0.50, 0, 0}
+%\definecolor{Black}{cmyk}{0, 0, 0, 0}
 
 %% Graphics
 \usepackage{graphicx}%
@@ -89,6 +100,10 @@
 
 \@ifclassloaded{memoir}%
 {
+\begin{KeepFromToc} %% Remove the ToC  from memoir's ToC
+  \tableofcontents
+\end{KeepFromToc}
+
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[chapter] %% Assumes memoir is loaded
 \newtheorem{proposition}[theorem]{Proposition}
