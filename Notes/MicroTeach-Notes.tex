@@ -59,14 +59,16 @@ Suppose we are trying to analyze the behavior of the function
   F(x)=\frac{\ln x}{x-1}.
 \]
 Although \(F\) is not defined when \(x=1\), we need to know how \(F\)
-behaves \emph{near \(1\)}. In particular, we would like to evaluate
+behaves \emph{near \(1\)}. In particular, we would like to evaluate the
+limit
 \begin{equation}
   \label{eq:rec:1}
   \lim_{x\to 1}\frac{\ln x}{x-1}.
 \end{equation}
 In computing this limit, we cannot proceed with the typical strategy which
-is to compute the
-
+is to compute the limit of the numerator and the limit of the denominator
+and take their quotients because in this case \(\lim_{x\to 1}x-1=0\) and
+the quotient \(0/0\) is not defined.
 
 \newpage
 \section{Homework Solutions}
