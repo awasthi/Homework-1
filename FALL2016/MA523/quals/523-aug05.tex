@@ -59,7 +59,28 @@
 \end{solution}
 
 \begin{problem}
-  Consider thet
+  Consider the so-called \(2\)-dimensional wave equation with dissipation
+  \[
+    \left\{
+      \begin{aligned}
+        u_{tt}-\Delta u+\alpha u_t&=0,&&\text{in \(\bbR^2\times(0,\infty)\),}\\
+        u(x,0)&=g(x),&u_t(x,0)&=h(x),&&x\in\bbR^2,
+      \end{aligned}
+    \right.
+  \]
+  where \(g,h\in C_0^\infty(\bbR^2)\) and \(\alpha\geq 0\) is a constant.
+  \begin{itemize}[noitemsep]
+  \item[(a)] Show that for an appropriate choice of constant \(\lambda\)
+    and \(\mu\) the function
+    \[
+      v(x_1,x_2,x_3,t)\defeq e^{\lambda t+\mu x_3}u(x_1,x_2,t)
+    \]
+    solves the \(3\)-dimensional wave equation \(v_{tt}-\Delta v=0\).
+  \item[(b)] Use (a) to prove the following domain of dependence result:
+    for any point \((x_0,t_0)\in\bbR^2\times(0,\infty)\) the value
+    \(u(x_0,t_0)\) is uniquely determined by values of \(g\) and \(h\) in
+    \(\overline{B_{t_0}(x_0)}\defeq\{\,|x-x_0|\leq t_0\,\}\)
+  \end{itemize}
 \end{problem}
 \begin{solution}
 \end{solution}
