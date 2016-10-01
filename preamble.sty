@@ -44,11 +44,8 @@
 \newcommand{\textsub}[1]{\textsubscript{#1}}
 
 \if@eulermath %% Use Euler and Palatino-like Pazo (mostly for notes)
-\usepackage[scaled=0.88]{beraserif}
-\usepackage[scaled=0.85]{berasans}
-\usepackage[scaled=0.84]{beramono}
-\usepackage[sc,osf]{mathpazo}
-\usepackage[T1,small,euler-digits]{eulervm}
+\usepackage{mathpazo}
+\usepackage[T1,small]{eulervm}
 
 \providecommand\textsi{\itshape}
 \providecommand\textti{\textnormal}
@@ -879,6 +876,9 @@
 \DeclareSIUnit[number-unit-product = {\thinspace}]{\pint}{pt}
 \DeclareSIUnit[number-unit-product = {\thinspace}]{\quart}{qt}
 \DeclareSIUnit[number-unit-product = {\thinspace}]{\gallon}{gal}
+
+%% Speed
+\DeclareSIUnit[number-unit-product = {\thinspace}]{\mph}{mph}
 
 % %% \emph up parentheses
 % \usepackage{expl3,xparse}
