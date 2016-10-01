@@ -1,0 +1,145 @@
+\chapter{Midterms and Qualifying Exams}
+\section{Qualifying Exam, August '04}
+\begin{problem}
+  Consider the initial value problem
+  \[
+    \left\{
+      \begin{aligned}
+        a(x,y)u_x+b(x,y)u_y&=-u,\\
+        u&=f,&\text{on \(S^1=\bigl\{\,x^2+y^2=1\,\bigr\}\)},
+      \end{aligned}
+    \right.
+  \]
+  where \(a\) and \(b\) satisfy
+  \[
+    a(x,y)+b(x,y)y>0
+  \]
+  for any \(x,y\in\bbR^n\setminus(0,0)\).
+  \begin{itemize}[noitemsep]
+  \item[(a)] Show that the initial value problem has a unique solution in a
+    neighborhood of \(S^1\). Assume that \(a\), \(b\), and \(f\) are
+    smooth.
+  \item[(b)] Show that the solution of the initial value problem actually
+    exists in \(\bbR^2\setminus(0,0)\).
+  \end{itemize}
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}
+  Let \(u\in C^2\bigl(\bbR\times[0,\infty)\bigr)\) be a solution of the
+  initial value problem for the one-dimensional wave equation
+  \[
+    \left\{
+      \begin{aligned}
+        u_{tt}-u_{xx}&=0,&&&&\text{on \(\bbR\times(0,\infty)\),}\\
+        u&=f,&u_t&=g,&&\text{in \(\bbR\times 0\),}
+      \end{aligned}
+    \right.
+  \]
+  where \(f\) and \(g\) have compact support. Define the kinetic energy by
+  \[
+    K(t)=\frac{1}{2}\int_{-\infty}^\infty u_t^2(x,t)\diff x,
+  \]
+  and the potential energy by
+  \[
+    P(t)=\frac{1}{2}\int_{-\infty}^\infty u_x^2(x,t)\diff x.
+  \]
+  Show that
+  \begin{itemize}[noitemsep]
+  \item[(a)] \(K(t)+P(t)\) is constant in \(t\),
+  \item[(b)] \(K(t)=P(t)\) for all large enough times \(t\).
+  \end{itemize}
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}
+  Use Kirchhoff's formula and Duhamel's principle to obtain an integral
+  representation of the solution of the following Cauchy problem
+  \[
+    \left\{
+      \begin{aligned}
+        u_{tt}-\Delta u&=e^{-t} g(x),&&\text{for \(x\in\bbR^3\), \(t>0\),}\\
+        u(x,0)&=u_t(x,0)=0,&&\text{for \(x\in\bbR^3\).}
+      \end{aligned}
+    \right.
+  \]
+  Verify that the integral representation reduces to the obvious solution
+  \(u=e^{-t}+t-1\) when \(g(x)=1\).
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}
+  Let \(\Omega\) be a bounded open set in \(\bbR^n\) and \(g\in
+  C_0^\infty(\Omega)\). Consider the solutions of the initial boundary
+  value problem
+  \[
+    \left\{
+      \begin{aligned}
+        \Delta u-u_t&=0,&&\text{for \(x\in\Omega\), \(t>0\),}\\
+        u(x,0)&=g(x)&&\text{for \(x\in\Omega\),}\\
+        u(x,t)&=0&&\text{for \(xi\in\partial\Omega\), \(t\geq 0\),}
+      \end{aligned}
+    \right.
+  \]
+  and the Cauchy problem
+  \[
+    \left\{
+      \begin{aligned}
+        \Delta v-v_t&=0,&&\text{for \(x\in\bbR^n\), \(t>0\),}\\
+        v(x,0)&=|g(x)|&&\text{for \(x\in\bbR^n\),}
+      \end{aligned}
+    \right.
+  \]
+  where we put \(g=0\) outside \(\Omega\).
+  \begin{itemize}[noitemsep]
+  \item[(a)] Show that
+    \[
+      -v(x,t)\leq u(x,t)\leq v(x,t)
+    \]
+    for any \(x\in\Omega\), \(t>0\).
+  \item[(b)] Use (a) to conclude that
+    \[
+      \lim_{t\to\infty} u(x,t)=0,
+    \]
+    for any \(x\in\Omega\).
+  \end{itemize}
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}
+  Let \(P_k(x)\) and \(P_m(x)\) be homogeneous harmonic polynomials in
+  \(\bbR^n\) of degrees \(k\) and \(m\) respectively; i.e.,
+  \[
+    P_k(\lambda x)=\lambda^kP_k(x),\qquad P_m(\lambda x)=\lambda^mP_m(x),
+  \]
+  for any \(x\in\bbR^n\), \(\lambda>0\),
+  \[
+    \Delta P_k=0,\qquad\Delta P_m=0
+  \]
+  in \(\bbR^n\).
+  \begin{itemize}[noitemsep]
+  \item[(a)] Show that
+    \[
+      \frac{\partial P_k(x)}{\partial\nu}=kP_k(x),\qquad
+      \frac{\partial P_m(x)}{\partial \nu}=mP_m(x)
+    \]
+    on \(\partial B_1\), where \(B_1=\{\,|x|<1\,\}\) and \(\nu\) is the
+    outward normal on \(\partial B_1\).
+  \item[(b)] Use (a) and Green's second identity to prove that
+    \[
+      \int_{\partial B_1} P_k(x)P_m(x)\diff S=0,
+    \]
+    if \(k\neq m\).
+  \end{itemize}
+\end{problem}
+\begin{solution}
+\end{solution}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA523-HW-ALL"
+%%% End:
