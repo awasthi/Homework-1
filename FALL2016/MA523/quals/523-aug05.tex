@@ -7,7 +7,7 @@
       \left\{
         \begin{aligned}
           yu_x+xu_y&=xy,\\
-          u&=1,&&\text{on \(S^1=\bigl\{\,x^2+y^2=1\,\bigr\}\)}.
+          u&=1&&\text{on \(S^1=\bigl\{\,x^2+y^2=1\,\bigr\}\)}.
         \end{aligned}
       \right.
     \]
@@ -52,7 +52,7 @@
     c=\int_{\bbR^n}f(y)\diff y.
   \]
 
-  \noitemsep [\emph{Hint:} Use spherical (polar) coordinates and the mean
+  \noindent [\emph{Hint:} Use spherical (polar) coordinates and the mean
   value property.]
 \end{problem}
 \begin{solution}
@@ -63,8 +63,8 @@
   \[
     \left\{
       \begin{aligned}
-        u_{tt}-\Delta u+\alpha u_t&=0,&&\text{in \(\bbR^2\times(0,\infty)\),}\\
-        u(x,0)&=g(x),&u_t(x,0)&=h(x),&&x\in\bbR^2,
+        u_{tt}-\Delta u+\alpha u_t&=0&&&&\text{in \(\bbR^2\times(0,\infty)\),}\\
+        u(x,0)&=g(x),&u_t(x,0)&=h(x)&&\text{for \(x\in\bbR^2\),}
       \end{aligned}
     \right.
   \]
@@ -79,13 +79,28 @@
   \item[(b)] Use (a) to prove the following domain of dependence result:
     for any point \((x_0,t_0)\in\bbR^2\times(0,\infty)\) the value
     \(u(x_0,t_0)\) is uniquely determined by values of \(g\) and \(h\) in
-    \(\overline{B_{t_0}(x_0)}\defeq\{\,|x-x_0|\leq t_0\,\}\)
+    \(\overline{B_{t_0}(x_0)}\defeq\{\,|x-x_0|\leq t_0\,\}\). (You may use
+    the corresponding result for the wave equation without proof.)
   \end{itemize}
 \end{problem}
 \begin{solution}
 \end{solution}
 
 \begin{problem}
+  Let \(u(x,t)\) be a bounded solution of the heat equation \(u_t=u_{xx}\)
+  in \(\bbR\times(0,\infty)\) with the initial condition
+  \[
+    u(x,0)=u_0(x)
+  \]
+  for \(x\in\bbR\), where \(u_0\in C^\infty\) is \(2\pi\)-periodic, i.e.,
+  \(u_0(x+2\pi)=u_0(x)\). Show that
+  \[
+    \lim_{t\to\infty} u(x,t)=a_0,
+  \]
+  uniformly in \(x\in\bbR\), where
+  \[
+    a_0\defeq\frac{1}{2\pi}\int_0^{2\pi} u_0(x)\diff x.
+  \]
 \end{problem}
 \begin{solution}
 \end{solution}
