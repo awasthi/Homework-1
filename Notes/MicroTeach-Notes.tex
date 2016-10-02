@@ -52,49 +52,83 @@
 \chapter{Script}
 This is my script for the \emph{Micro-teaching recitation presentation} on
 Monday, October 3, 2016. I have attached a sample 15-minute quiz at the end
-of this script.
+the document.
 
-\section{A review of l'Hôpital's rule}
-Suppose we are trying to analyze the behavior of the function
-\[
-  F(x)=\frac{\ln x}{x-1}.
-\]
-Although \(F\) is not defined when \(x=1\), we need to know how \(F\)
-behaves \emph{near \(1\)}. In particular, we would like to evaluate the
-limit
-\begin{equation}
-  \label{eq:rec:1}
-  \lim_{x\to 1}\frac{\ln x}{x-1}.
-\end{equation}
-In computing this limit, we cannot proceed with the typical strategy which
-is to compute the limit of the numerator and the limit of the denominator
-and take their quotients because in this case \(\lim_{x\to 1}x-1=0\) and
-the quotient \(0/0\) is not defined.
+\section{L'Hôpital's rule}
+Students! This week, you have learned about l'Hôpital's rule and how to use
+it to evaluate limits of (a) quotients \(f/g\), and limits of (b) products
+\(fg\) where in the first case we may have
 
-In general, if we have a limit of the form
-\[
-  \lim_{x\to a}\frac{f(x)}{g(x)}
-\]
-where both \(f(x)\to 0\) and \(g(x)\to 0\) as \(x\to a\), the limit may or
-may not exist; we will call a limit of this type a \emph{indeterminate form
-  of type \(0/0\)}.
 
-\begin{theorem}[L'Hôpital's Rule]
-  Suppose \(f\) and \(g\) are differentiable and \(g'(x)\neq 0\) on an open
-  interval \(I\) that contains \(a\) (except possibly at \(a\)). Suppose
-  that
+\begin{problem*}[WebAssign, \# 2]
+  Find the limit. Use l'Hôpital's rule if appropriate. If there is a more
+  elementary method, consider using it.
   \[
-    \lim_{x\to a}f(x)=0,\pm\infty\qquad\qquad\lim_{x\to a} g(x)=0,\pm\infty.
+    \lim_{x\to 0}\frac{\sin 2x}{\sin 3x}.
   \]
-  Then
-  \[
-    \lim_{x\to a}\frac{f(x)}{g(x)}=\lim_{x\to a}\frac{f'(x)}{g'(x)}
-  \]
-  if the limit on the right side exists or is \(\pm\infty\).
-\end{theorem}
+\end{problem*}
+\begin{solution*}
+\end{solution*}
 
-\newpage
-\section{Homework Solutions}
+\begin{problem*}[WebAssign, \# 3]
+  Find the limit. Use l'Hôpital's rule if appropriate. If there is a more
+  elementary method, consider using it.
+  \[
+    \lim_{x\to 0}\frac{e^{7x}-1-7x}{x^2}.
+  \]
+\end{problem*}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem*}[WebAssign, \# 4]
+  Find the limit. Use l'Hôpital's rule if appropriate. If there is a more
+  elementary method, consider using it.
+  \[
+    \lim_{x\to\infty}\frac{\bigl( \ln(x) \bigr)^2}{5x}.
+  \]
+\end{problem*}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem*}[WebAssign, \# 7]
+  Find the limit. Use l'Hôpital's rule if appropriate. If there is a more
+  elementary method, consider using it.
+  \[
+    \lim_{x\to\infty} x\tan(5/x).
+  \]
+\end{problem*}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem*}[WebAssign, \# 8]
+  Find the limit. Use l'Hôpital's rule if appropriate. If there is a more
+  elementary method, consider using it.
+  \[
+    \lim_{x\to 0}\bigl(\csc(x)-\cot(x)\bigr).
+  \]
+\end{problem*}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem*}[WebAssign, \# 9]
+  Find the limit. Use l'Hôpital's rule if appropriate. If there is a more
+  elementary method, consider using it.
+  \[
+    \lim_{x\to 0}(1-8x)^{1/x}.
+  \]
+\end{problem*}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem*}[WebAssign, \# 10]
+  Find the limit. Use l'Hôpital's rule if appropriate. If there is a more
+  elementary method, consider using it.
+  \[
+    \lim_{x\to\infty}x^{8/x}.
+  \]
+\end{problem*}
+\begin{solution*}
+\end{solution*}
 
 \newpage
 \section{Sample Quiz}

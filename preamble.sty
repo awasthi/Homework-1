@@ -95,12 +95,28 @@
 \xpatchcmd{\proof}{\itshape}{\normalfont\proofnameformat}{}{}
 \newcommand{\proofnameformat}{\sishape}
 
+%% Proof environments
+\@ifundefined{proof*}{%
+\newenvironment{proof*}[1][Proof]{%
+  \renewcommand{\proofnameformat}{\itshape}
+  \proof[#1]%
+}{
+  \endproof}}
+
 \@ifundefined{solution}{%
 \newenvironment{solution}[1][Solution]{%
   \proof[#1]%
 }{
   \endproof}}
 
+\@ifundefined{solution*}{%
+\newenvironment{solution*}[1][Solution]{%
+  \renewcommand{\proofnameformat}{\itshape}
+  \proof[#1]%
+}{
+  \endproof}}
+
+%% Theorems, corollaries, lemmas, etc.
 \@ifclassloaded{memoir}%
 {
 
