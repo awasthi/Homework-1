@@ -97,6 +97,19 @@
 }{
   \endproof}}
 
+
+\ifdefined\newtheoremstyle
+\newtheoremstyle{plain}
+{\topsep}   % ABOVESPACE
+{\topsep}   % BELOWSPACE
+{\slshape}  % BODYFONT--\slshape is defined to be \itshape with upright figures and punctuation
+{}       % INDENT (empty value is the same as 0pt)
+{\bfseries} % HEADFONT--you may want to add \tlfstyle so the number is tab lining, regardless of text figure selection
+{.}         % HEADPUNCT
+{5pt plus 1pt minus 1pt} % HEADSPACE
+{}          % CUSTOM-HEAD-SPEC\newtheorem{thm}{Theorem}[section]
+\fi%
+
 \@ifclassloaded{memoir}%
 {
 
@@ -881,25 +894,6 @@
 
 %% Speed
 \DeclareSIUnit[number-unit-product = {\thinspace}]{\mph}{mph}
-
-% %% \emph up parentheses
-% \usepackage{expl3,xparse}
-% \ExplSyntaxOn
-% \cs_new_eq:Nc \emph_old:n { emph~ } % Copying the old definition of `\emph`
-% \cs_new_protected:Npn \emph_braces:n #1 % Set up how braces should be typeset.
-%   { \mode_if_math:TF {#1} { \textup{#1} } }
-% \cs_new:Npn \emph_new:n #1 {
-%   \tl_set:Nn \l_emph_tl {#1}
-%   \tl_replace_all:Nnn \l_emph_tl {(}{\emph_braces:n{(}}
-%   \tl_replace_all:Nnn \l_emph_tl {)}{\emph_braces:n{\:)}}
-%   \tl_replace_all:Nnn \l_emph_tl {[}{\emph_braces:n{[}}
-%   \tl_replace_all:Nnn \l_emph_tl {]}{\emph_braces:n{\:]}}
-%   \exp_args:NV \emph_old:n \l_emph_tl
-% }
-% \RenewDocumentCommand {\emph} {sm} {
-%   \IfBooleanTF {#1} {\emph_old:n {#2}} {\emph_new:n {#2}}
-% }
-% \ExplSyntaxOff
 
 \endinput
 
