@@ -55,13 +55,37 @@ Monday, October 3, 2016. I have attached a sample 15-minute quiz at the end
 the document.
 
 \section{L'Hôpital's rule}
-This week you've all been learning about l'Hôpital's rule and how to use it
-to evaluate limits of quotients \(f/g\) and limits of products \(fg\).
+Today we go over some of your
+\textsf{Web\color{Red!85!black}{\textbf{Assign}}} problems to show you how
+to use l'Hôpital's rule to evaluate the limits of quotients \(f/g\) and
+products \(fg\).
 
+The problems we will be discussing in today's recitations are problems 2,
+3, 4, 7, 8, 9, and 10. But first, a vote. (Draw a table on the chalkboard
+\[
+  \left.
+    \begin{tabular}{|c|c|c|c|}
+  \hline
+  Problem&Votes&
+  Problem&Votes\\
+  \hline
+  2&&
+  3&\\
+  4&&
+  7&\\
+  8&&
+  9&\\
+  10&&&\\
+  \hline
+  \end{tabular}
+  \;
+  \right)
+\]
+Raise your hand if you want to
+see a detailed solution to problem 2 [pause], problem 3, etc.
 
 \section{Exercises}
-The
-\begin{problem*}[WebAssign, \# 2]
+\begin{problem*}[\textsf{Web\color{Red!85!black}{\textbf{Assign}}}, \# 2]
   Find the limit. Use l'Hôpital's rule if appropriate. If there is a more
   elementary method, consider using it.
   \[
@@ -69,9 +93,41 @@ The
   \]
 \end{problem*}
 \begin{solution}
+  First, let's look at the limit of the numerator and the limit of the
+  denominator, individually. For the numerator, we have
+  \[
+    \lim_{x\to 0}\sin 2x=0
+  \]
+  and, similarly, for the denominator
+  \[
+    \lim_{x\to 0}\sin 3x=0.
+  \]
+  As you may remember for class, this is a limit of the type \(0/0\) and a
+  prime candidate for l'Hôpital's rule.
+
+  Remember that l'Hôpital's rule says that the limit of a quotient
+  \(f/g\) is the limit of the quotient of their derivatives \(f'/g'\),
+  i.e.,
+  \[
+    \lim_{x\to 0}\frac{\sin 2x}{\sin 3x}=
+    \lim_{x\to 0}\frac{2\cos 2x }{3\cos 3x}.
+  \]
+  Now, the limit of the \(\cos\) in the numerator and denominator, as
+  \(x\to 0\), is \(1\), so
+  \[
+    \lim_{x\to 0}\frac{\sin 2x}{\sin 3x}=%
+    \frac{2}{3}
+    \left[%
+      \frac{\lim_{x\to 0}\cos 2x}{\lim_{x\to 0}\cos 3x}%
+    \right]
+    =\frac{3}{2}.
+  \]
+  easy, right?
+
+  Let's have a look at the next problem.
 \end{solution}
 
-\begin{problem*}[WebAssign, \# 3]
+\begin{problem*}[\textsf{Web\color{Red!85!black}{\textbf{Assign}}}, \# 3]
   Find the limit. Use l'Hôpital's rule if appropriate. If there is a more
   elementary method, consider using it.
   \[
@@ -81,7 +137,7 @@ The
 \begin{solution}
 \end{solution}
 
-\begin{problem*}[WebAssign, \# 4]
+\begin{problem*}[\textsf{Web\color{Red!85!black}{\textbf{Assign}}}, \# 4]
   Find the limit. Use l'Hôpital's rule if appropriate. If there is a more
   elementary method, consider using it.
   \[
@@ -91,7 +147,7 @@ The
 \begin{solution}
 \end{solution}
 
-\begin{problem*}[WebAssign, \# 7]
+\begin{problem*}[\textsf{Web\color{Red!85!black}{\textbf{Assign}}}, \# 7]
   Find the limit. Use l'Hôpital's rule if appropriate. If there is a more
   elementary method, consider using it.
   \[
@@ -101,7 +157,7 @@ The
 \begin{solution}
 \end{solution}
 
-\begin{problem*}[WebAssign, \# 8]
+\begin{problem*}[\textsf{Web\color{Red!85!black}{\textbf{Assign}}}, \# 8]
   Find the limit. Use l'Hôpital's rule if appropriate. If there is a more
   elementary method, consider using it.
   \[
@@ -111,7 +167,7 @@ The
 \begin{solution}
 \end{solution}
 
-\begin{problem*}[WebAssign, \# 9]
+\begin{problem*}[\textsf{Web\color{Red!85!black}{\textbf{Assign}}}, \# 9]
   Find the limit. Use l'Hôpital's rule if appropriate. If there is a more
   elementary method, consider using it.
   \[
@@ -121,7 +177,7 @@ The
 \begin{solution}
 \end{solution}
 
-\begin{problem*}[WebAssign, \# 10]
+\begin{problem*}[\textsf{Web\color{Red!85!black}{\textbf{Assign}}}, \# 10]
   Find the limit. Use l'Hôpital's rule if appropriate. If there is a more
   elementary method, consider using it.
   \[
