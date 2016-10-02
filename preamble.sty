@@ -4,9 +4,9 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{preamble}[2016/09/30 v1.2 my setup]
 
-\newif\if@eulermath\@eulermathfalse
-\DeclareOption{eulermath}{
-  \@eulermathtrue
+\newif\if@palatino\@palatinofalse
+\DeclareOption{palatino}{
+  \@palatinotrue
 }
 
 \ProcessOptions\relax
@@ -43,9 +43,11 @@
 \newcommand{\textsup}[1]{\textsuperscript{#1}}
 \newcommand{\textsub}[1]{\textsubscript{#1}}
 
-\if@eulermath %% Use Euler and Palatino-like Pazo (mostly for notes)
-\usepackage{mathpazo}
-\usepackage[T1,small]{eulervm}
+\if@palatino %% Use Euler and Palatino-like Pazo (mostly for notes)
+% \usepackage{mathpazo}
+\usepackage{newpxtext}
+\usepackage{eulervm}
+% \usepackage{newpxmath}
 
 \providecommand\textsi{\itshape}
 \providecommand\textti{\textnormal}
