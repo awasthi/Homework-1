@@ -135,6 +135,20 @@ see a detailed solution to problem 2 [pause], problem 3, etc.
   \]
 \end{problem*}
 \begin{solution}
+  For this problem we have
+  \[
+    \lim_{x\to 0}\frac{e^{7x}-1-7x}{x^2}.
+  \]
+  Note that as \(x\to 0\), the denominator goes to \(0\). Thus, by
+  l'Hôpital's rule
+  \begin{align*}
+    \lim_{x\to 0}\frac{e^{7x}-1-7x}{x^2}
+    &=\lim_{x\to 0}\frac{7e^{7x}-7}{x},
+      \intertext{but here the denominator still goes to \(0\), so we use
+      l'Hôpital's rule again}
+    &=\lim_{x\to 0}\frac{49e^{7x}}{1}\\
+    &=49.
+  \end{align*}
 \end{solution}
 
 \begin{problem*}[\textsf{Web\color{Red!85!black}{\textbf{Assign}}}, \# 4]
@@ -145,6 +159,17 @@ see a detailed solution to problem 2 [pause], problem 3, etc.
   \]
 \end{problem*}
 \begin{solution}
+  Both the numerator and denominator go to \(\infty\). This is a limit of
+  the type \(\infty/\infty\). Here, we have
+  \begin{align*}
+    \lim_{x\to\infty}\frac{\bigl( \ln(x) \bigr)^2}{5x}
+    &=\lim_{x\to\infty}\frac{2(\ln x)(1/x)}{5}\\
+    &=\lim_{x\to\infty}\frac{2\ln x}{5x},
+      \intertext{using l'Hôpital's rule again, we have}
+    &=\lim_{x\to\infty}\frac{2(1/x)}{5}\\
+    &=\lim_{x\to\infty}\frac{2}{5x}\\
+    &=0.
+  \end{align*}
 \end{solution}
 
 \begin{problem*}[\textsf{Web\color{Red!85!black}{\textbf{Assign}}}, \# 7]
@@ -155,16 +180,53 @@ see a detailed solution to problem 2 [pause], problem 3, etc.
   \]
 \end{problem*}
 \begin{solution}
+  Here we do something you may not be completely familiar with, we do what
+  is called a \emph{change of variables}. Setting \(u\defeq 1/x\) we see
+  that as \(x\to\infty\), \(u\to 0\) so we can turn the problem
+  \[
+    \lim_{x\to\infty} x\tan(5/x)
+  \]
+  into the equivalent problem
+  \[
+    \lim_{u\to 0}\frac{\tan(5u)}{u}.
+  \]
+  You see this, right?
+
+  Now, by l'Hôpital's rule
+  \begin{align*}
+    \lim_{x\to\infty} x\tan(5/x)
+    &=\lim_{u\to 0}\frac{\tan(5u)}{u}\\
+    &=\lim_{u\to 0}\frac{5\sec^2 u}{1}\\
+    &=\lim_{u\to 0}\frac{5}{\cos^2 u}\\
+    &=5.
+  \end{align*}
 \end{solution}
 
 \begin{problem*}[\textsf{Web\color{Red!85!black}{\textbf{Assign}}}, \# 8]
   Find the limit. Use l'Hôpital's rule if appropriate. If there is a more
   elementary method, consider using it.
   \[
-    \lim_{x\to 0}\bigl(\csc(x)-\cot(x)\bigr).
+    \lim_{x\to 0}(\csc x-\cot x).
   \]
 \end{problem*}
 \begin{solution}
+  Let's write \(\csc(x)-\cot(x)\) under a single quotient
+  \begin{align*}
+    \csc x-\cot x
+    &=\frac{1}{\sin x}-\frac{1}{\tan x}\\
+    &=\frac{1}{\sin x}-\frac{\cos x}{\sin x}\\
+    &=\frac{1-\cos x}{\sin x}.
+  \end{align*}
+  Now we can start looking at the limit.
+
+  By l'Hôpital's rule, we have
+  \begin{align*}
+    \lim_{x\to 0}(\csc x-\cot x)
+    &=\lim_{x\to 0}\left[\frac{1-\cos x}{\sin x}\right]\\
+    &=\lim_{x\to 0}\frac{\sin x}{\cos x}\\
+    &=\lim_{x\to 0}\tan x\\
+    &=0.
+  \end{align*}
 \end{solution}
 
 \begin{problem*}[\textsf{Web\color{Red!85!black}{\textbf{Assign}}}, \# 9]
@@ -175,6 +237,39 @@ see a detailed solution to problem 2 [pause], problem 3, etc.
   \]
 \end{problem*}
 \begin{solution}
+  For this problem, we can again use the \emph{change of variables}
+  \(u=(1/x)\) and solve the problem
+  \[
+    \lim_{u\to\infty}\left(1-\frac{8}{u}\right)^{u}
+  \]
+  You may have seen this limit before in yours study of sequences, if you
+  have, you will immediately recognize the limit of this function as
+  \(e^{-8}\).
+
+  If you don't, that's alright; we'll provide some details. Suppose for a
+  moment that the limit of this function is \(L\). Then, using log rules,
+  we have
+  \begin{align*}
+    \frac{\ln L}{\ln\bigl((u-8)/u\bigr)}&=u\\
+    \ln L&=u\ln\left(\frac{u-8}{u}\right).
+  \end{align*}
+  Now, let's take the limit
+  \begin{align*}
+    \lim_{u\to\infty}u\ln\left(\frac{u-8}{u}\right)
+    &=\lim_{u\to\infty}\frac{\ln\bigl((u-8)/u\bigr)}{1/u},
+    \intertext{which, by l'Hôpital's rule, becomes}
+    &=\lim_{u\to\infty}\frac{\bigl((u-u+8)/u^2\bigr)\bigl(u/(u-8)\bigr)}{-1/u^2}\\
+    &=\lim_{u\to\infty}\frac{-8u}{u-8}
+      \intertext{and again}
+    &=\lim_{u\to\infty}-8.\\
+  \end{align*}
+
+  Thus, the log of the limit is \(-8\), i.e.,
+  \begin{align*}
+    \ln L&=-8
+    \intertext{so}
+    L&=e^{-8}.
+  \end{align*}
 \end{solution}
 
 \begin{problem*}[\textsf{Web\color{Red!85!black}{\textbf{Assign}}}, \# 10]
@@ -185,11 +280,59 @@ see a detailed solution to problem 2 [pause], problem 3, etc.
   \]
 \end{problem*}
 \begin{solution}
+  We use the same approach. Let \(u\defeq 1/x\). Then,
+  \[
+    L=\lim_{x\to\infty} x^{8/x}=\lim_{u\to 0}\left(\frac{1}{u}\right)^{8u},
+  \]
+  if it exists.
+
+  Thus, taking the natural log of both sides
+  \begin{align*}
+    \frac{\ln L}{\ln (1/u)}&=8u\\
+    \ln L&=8u\ln(1/u).
+  \end{align*}
+
+  Now,
+  \begin{align*}
+    \lim_{u\to 0} u\ln(1/u)
+    &=\lim_{u\to 0}\frac{\ln(1/u)}{(1/u)}
+      \intertext{which, by l'Hôpital's rule, becomes}
+    &=\lim_{u\to 0}\frac{u(-1/u^2)}{-1/u^2}\\
+    &=\lim_{u\to 0}u\\
+    &=0.
+  \end{align*}
+
+  Thus,
+  \begin{align*}
+    \ln L&=0\\
+    L&=e^0=1.
+  \end{align*}
 \end{solution}
 
 \newpage
 \section{Sample Quiz}
-
+You have \textbf{15 minutes} to complete this quiz. You may work in groups,
+but you are not allowed to use any other resources.
+\begin{problem*}[\textsc{a}]
+  Evaluate the limit
+  \[
+    \lim_{t\to\infty}\frac{\ln t}{t^2}.
+  \]
+\end{problem*}
+\vspace{80pt}
+\begin{problem*}[\textsc{b}]
+   Evaluate the limit
+  \[
+    \lim_{x\to 4}\frac{x^2-16}{x-4}.
+  \]
+\end{problem*}
+\vspace{80pt}
+\begin{problem*}[\textsc{c}]
+  Evaluate the limit
+  \[
+    \lim_{x\to 2}\frac{x^3-7x^2+10x}{x^2+x-6}.
+  \]
+\end{problem*}
 \end{document}
 
 %%% Local Variables:
