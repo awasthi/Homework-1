@@ -45,8 +45,8 @@
 
 \if@palatino %% Use Euler and Palatino-like Pazo (mostly for notes)
 % \usepackage{mathpazo}
-\usepackage{newpxtext}
 \usepackage{eulervm}
+\usepackage{newpxtext}
 % \usepackage{newpxmath}
 
 \providecommand\textsi{\itshape}
@@ -67,6 +67,10 @@
      \enumerate}
    {\endenumerate}
 
+%% Upright parentheses
+\usepackage{embrac}
+
+%% For coding
 \usepackage{listings}%
 \lstset{basicstyle=\ttfamily,breaklines=true}
 
@@ -96,19 +100,6 @@
   \proof[#1]%
 }{
   \endproof}}
-
-
-\ifdefined\newtheoremstyle
-\newtheoremstyle{plain}
-{\topsep}   % ABOVESPACE
-{\topsep}   % BELOWSPACE
-{\slshape}  % BODYFONT--\slshape is defined to be \itshape with upright figures and punctuation
-{}       % INDENT (empty value is the same as 0pt)
-{\bfseries} % HEADFONT--you may want to add \tlfstyle so the number is tab lining, regardless of text figure selection
-{.}         % HEADPUNCT
-{5pt plus 1pt minus 1pt} % HEADSPACE
-{}          % CUSTOM-HEAD-SPEC\newtheorem{thm}{Theorem}[section]
-\fi%
 
 \@ifclassloaded{memoir}%
 {
@@ -227,6 +218,7 @@
 \long\def\replicate@aux@Q#1#2{#1}
 
 %% Replace some default math fonts
+\renewcommand\cent{\text{\textcent}}%
 \let\setminus\smallsetminus%
 \let\emptyset\varnothing%
 \let\oldbtright\blacktriangleright%
