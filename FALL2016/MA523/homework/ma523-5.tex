@@ -151,18 +151,17 @@
   \(\varepsilon\to 0\).]
 \end{problem}
 \begin{solution}
-  Suppose that \(u\) is harmonic and there exists \(M\) such that
-  \(u\leq M\) for all \((x_1,x_2)\in\bar U\). Consider the harmonic
-  function
+  Consider the harmonic function
   \[
     u_\varepsilon(x_1,x_2)\defeq
     u(x_1,x_2)+\varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}.
   \]
-  Set \(U_a\defeq \bigl\{\,x_1^2+(x_2+1)^2<a_2,x_2>0\,\bigr\}\) for large
-  \(a\).
+  Set \(U_a\defeq \bigl\{\,x_1^2+(x_2+1)^2<a_2,x_2>0\,\bigr\}\) where
+  \(a=(a_1,a_2)\).
 
-  Note that \(u_\varepsilon\downarrow u\) as \(\varepsilon\to 0\) uniformly, i.e.,
-  given \(\eta>0\), for \(0<\varepsilon<2\eta/{\ln a_2}\), we have
+  First, we note that \(u_\varepsilon\downarrow u\) as \(\varepsilon\to 0\)
+  uniformly, i.e., given \(\eta>0\), for \(0<\varepsilon<2\eta/{\ln a_2}\),
+  we have
   \begin{align*}
     |u_\varepsilon(x_1,x_2)-u(x_1,x_2)|
     &<\left|
@@ -183,10 +182,9 @@
     \max_{\bar U_a}u_\varepsilon=\max_{\partial U_a}u_\varepsilon.
   \]
   In particular,
-  \begin{equation}
-    \label{eq:5:sup-epsilon}
+  \[
     \sup_{\bar U_a}u_\varepsilon=\sup_{\partial U_a}u_\varepsilon.
-  \end{equation}
+  \]
 
   Now, since \(u_\varepsilon\downarrow u\) uniformly,
   \[
@@ -194,6 +192,28 @@
     \lim_{\varepsilon\to 0}\biggl[\sup_{\bar U_a}u_\varepsilon\biggr]=%
     \lim_{\varepsilon\to 0}\biggl[\sup_{\partial U_a}u_\varepsilon\biggr]=%
     \sup_{\partial U_a}u.
+  \]
+  Thus, we have shown that for any \(a\),
+  \begin{equation}
+    \label{eq:5:sup-ua}
+    \sup_{\bar U_a}u=\sup_{\partial U_a}u.
+  \end{equation}
+  We now extend this result to all of \(U\).
+
+  Since \(u\) is bounded on \(U\), \(u\leq \sup u\) for all \((x_1,x_2)\in
+  U\). Now, as \(|a|\to\infty\), \(U_a\to U\) we have
+  \[
+    \sup_{\bar U_a}u=\sup_{\partial U_a}u,
+  \]
+  and in particular,
+  \[
+    u\leq\sup_{\partial U_a}u.
+  \]
+
+  Suppose by contradiction that \(\sup_{\bar U}u\neq\sup_{\partial U}u\).
+  Then, necessarily, \(\sup_{\bar U}u>\sup_{\partial U}u\) or
+  \[
+    M-\sup_{\partial U}u>\sup_{\bar U}u-\sup_{\partial U}u>0
   \]
 \end{solution}
 \newpage
@@ -210,7 +230,7 @@
     \[
       v\defeq\varphi(u_1,\dotsc,u_m).
     \]
-    Prove \(v\) is sub harmonic.
+    Prove \(v\) is subharmonic.
 
     \noindent
     [\emph{Hint:} Convexity for a smooth function \(\varphi(z)\) is
@@ -221,7 +241,10 @@
   \end{itemize}
 \end{problem}
 \begin{solution}
-
+  For part (a), by the chain rule, we have
+  \begin{align*}
+    \tfrac{\partial}{\partial x_i}
+  \end{align*}
 \end{solution}
 
 %%% Local Variables:
