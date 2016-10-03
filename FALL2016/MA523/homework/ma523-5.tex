@@ -89,15 +89,18 @@
       0&0&\cdots&1
       \end{bmatrix}.
   \end{align*}
-  Thus, for \(1\leq k,\ell\leq n\), \(k\neq\ell\), we have
-  \[
-    \left\{%
-      \begin{aligned}
-        \sum_{j=1}^na_{jk}^2=1,\\
-        \sum_{j=1}^na_{jk}a_{j\ell}=0
-      \end{aligned}
-    \right.
-  \]
+
+  We can sum up the results of our calculation as:
+  \begin{equation}
+    \label{eq:5:ortho-matrix}
+    \begin{cases}
+    \sum_{j=1}^na_{jk}a_{j\ell}=\sum_{j=1}^na_{jk}^2=1&\text{if \(k=\ell\),}\\
+    \sum_{j=1}^na_{jk}a_{j\ell}=0&\text{if \(k\neq\ell\).}
+    \end{cases}
+  \end{equation}
+  for \(1\leq k,\ell\leq n\).
+
+  Now, going back to \eqref{eq:5:laplacian-k-part},
 \end{solution}
 \newpage
 
