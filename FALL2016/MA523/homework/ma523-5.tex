@@ -234,7 +234,7 @@
 
     \noindent
     [\emph{Hint:} Convexity for a smooth function \(\varphi(z)\) is
-    equivalent to \(\sum_{j,k=1}^m\varphi_{z_j,z_k}(z)\xi_j\xi_j\geq 0\)
+    equivalent to \(\sum_{j,k=1}^m\varphi_{z_j,z_k}(z)\xi_j\xi_k\geq 0\)
     for any \(\xi\in\bbR^m\).]
   \item[(b)] Prove \(v\defeq|Du|^2\) is subharmonic, whenever \(u\) is
     harmonic. (Assume that harmonic functions are \(C^\infty\).)
@@ -242,9 +242,41 @@
 \end{problem}
 \begin{solution}
   For part (a), by the chain rule, we have
+  \[
+    v_{x_i}=%
+    \tfrac{\partial}{\partial x_i}v=%
+    \varphi_{u_1}u^1_{x_i}+\dotsb+\varphi_{u_m}u^m_{x_i}.
+  \]
+  Taking another partial, we have
+  \begin{equation}
+    \label{eq:5:partial-xi}
+    \begin{aligned}
+      v_{x_ix_i}
+      &=\tfrac{\partial^2}{\partial x_i\partial x_i} v\\
+      &=\tfrac{\partial}{\partial x_i}v_{x_i}\\
+      &=\tfrac{\partial}{\partial x_i}
+      \bigl(\varphi_{u_1}u^1_{x_i}+\dotsb+\varphi_{u_m}u^m_{x_i}\bigr)\\
+      &=\varphi_{u_1}u^1_{x_ix_i}+\dotsb+\varphi_{u_m}u_{x_ix_i}^m\\
+      &\phantom{{}={}}+\bigl(\varphi_{u_1u_1}u_{x_i}^1
+      +\dotsb+\varphi_{u_1u_m}u_{x_i}^m\bigr)u_{x_i}^1\\
+      &\phantom{{}={}}+\dotsb+\bigl(\varphi_{u_1u_m}u_{x_i}^1
+      +\dotsb+\varphi_{u_mu_m}u_{x_i}^m\bigr)u_{x_i}^m.
+    \end{aligned}
+  \end{equation}
+
+  Now, taking the sum
   \begin{align*}
-    \tfrac{\partial}{\partial x_i}
+    \sum_{i=1}^nv_{x_ix_i}
+    &=\sum_{i=1}^n\sum_{j=1}^m\varphi_{u_j}u^j_{x_ix_i}\\
+    &=\sum_{j=1}^m\sum_{i=1}^n\varphi_{u_j}u^j_{x_ix_i}\\
+    &=\sum_{j=1}^m\bigl(\varphi_{u_j}u^j_{x_1x_1}+\dotsb+\varphi_{u_j}u^j_{x_nx_n}\bigr)\\
+    &=\sum_{j=1}^m\varphi_{u_j}\bigl(u^j_{x_1x_1}+\dotsb+u^j_{x_nx_n}\bigr)\\
+    &=0,
   \end{align*}
+  since \(\Delta u^j=0\) for all \(j\).
+
+  What about the remaining terms in \eqref{eq:5:partial-xi}? These terms
+  can be written
 \end{solution}
 
 %%% Local Variables:
