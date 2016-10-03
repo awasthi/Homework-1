@@ -63,7 +63,7 @@
       &\phantom{{}={}}+\dotsb+a_{nk}
       (a_{1k}u_{x_1x_n}+\dotsb+a_{nk}u_{x_nx_n})\\
       &=a_{1k}^2u_{x_1x_1}+a_{2k}^2u_{x_2x_2}+\dotsb+a_{kk}^2u_{x_kx_k}\\
-      &\phantom{{}={}}+\dotsb+a_{n1}^2u_{x_nx_n}+\text{mixed terms}.
+      &\phantom{{}={}}+\dotsb+a_{nk}^2u_{x_nx_n}+\{\text{mixed terms}\}.
     \end{aligned}
   \end{equation}
 
@@ -83,7 +83,7 @@
       \end{bmatrix}\\
     &=%
       \begin{bmatrix}
-        a_{11}^2+\dotsb+a_{n1}^2&a_{11}a_{12}+\dotsb+a_{n1}a_{n2}
+        a_{11}^2+\dotsb+a_{1n}^2&a_{11}a_{12}+\dotsb+a_{n1}a_{n2}
         &\cdots&a_{11}a_{1n}+\dotsb+a_{n1}a_{nn}\\
         \vdots&\vdots&\ddots&\vdots\\
         a_{1n}a_{11}+\dotsb+a_{nn}a_{n1}&a_{1n}a_{12}+\dotsb+a_{nn}a_{n2}
@@ -100,8 +100,8 @@
   \begin{equation}
     \label{eq:5:ortho-matrix}
     \begin{cases}
-    \sum_{j=1}^na_{jk}a_{j\ell}=\sum_{j=1}^na_{jk}^2=1&\text{if \(k=\ell\),}\\
-    \sum_{j=1}^na_{jk}a_{j\ell}=0&\text{if \(k\neq\ell\).}
+    \text{(a) }\sum_{j=1}^na_{jk}a_{j\ell}=\sum_{j=1}^na_{jk}^2=1&\text{if \(k=\ell\),}\\
+    \text{(b) }\sum_{j=1}^na_{jk}a_{j\ell}=0&\text{if \(k\neq\ell\).}
     \end{cases}
   \end{equation}
   for \(1\leq k,\ell\leq n\).
@@ -111,7 +111,20 @@
     \Div Dv
     &=\sum_{k=1}^n\Biggl[\frac{\partial}{\partial x_k}\sum_{j=1}^n
       a_{jk}u_{x_j}\Biggr]\\
-    &=
+    &=(a_{11}^2+a_{12}^2+\dotsb+a_{1n}^2)u_{x_1x_1}+(a_{12}^2+a_{22}^2+\dotsb+a_{2n}^2)u_{x_2x_2}\\
+    &\phantom{{}={}}+\dotsb+(a_{1n}^2+\dotsb+a_{nn}^2)u_{x_nx_n}+\{\text{mixed
+      terms}\}\\
+    &=u_{x_1x_1}+u_{x_2x_2}+\dotsb+u_{x_nx_n}\\
+    &=0,
+  \end{align*}
+  as desired.
+
+  All that is left to show as that the mixed terms in the expression above
+  actually have coefficients of the form in \eqref{eq:5:ortho-matrix}
+  (b). A little routine calculation shows that indeed, the mixed terms have
+  the form
+  \begin{align*}
+    2(a_{11}a_{12}+a_{12}a_{13}+\dotsb+a_{})
   \end{align*}
 \end{solution}
 \newpage
