@@ -155,13 +155,33 @@
   \(u\leq M\) for all \((x_1,x_2)\in\bar U\). Consider the harmonic
   function
   \[
-    v(x_1,x_2)\defeq
+    u_\varepsilon(x_1,x_2)\defeq
     u(x_1,x_2)+\varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}.
   \]
-  Set \(V\defeq \bigl\{\,x_1^2+(x_2+1)^2<a_2,x_2>0\,\bigr\}\) for large
-  \(a\). By the maximum principle,
+  Set \(U_a\defeq \bigl\{\,x_1^2+(x_2+1)^2<a_2,x_2>0\,\bigr\}\) for large
+  \(a\).
+
+  Note that \(u_\varepsilon\to u\) as \(\varepsilon\to 0\) uniformly: Let
+  \(\eta>0\) be given. Then for
+  \(\varepsilon<2\eta/\ln\sqrt{a_2}\), we have
+  \begin{align*}
+    |u_\varepsilon(x_1,x_2)-u(x_1,x_2)|
+    &<\left|
+      u(x_1,x_2)+\varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}
+      -u(x_1,x_2)
+      \right|\\
+    &=\left|
+      \varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}
+      \right|\\
+    &=\varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}\\
+    &<\varepsilon\ln\sqrt{a_2}\\
+    &<\eta,
+  \end{align*}
+  for any \((x_1,x_2)\in U_a\).
+
+  By the maximum principle,
   \[
-    \max_{\bar V} v=\max_{\partial V}v.
+    \max_{\bar U_a}u_\varepsilon=\max_{\partial U_a}u_\varepsilon.
   \]
 \end{solution}
 \newpage
