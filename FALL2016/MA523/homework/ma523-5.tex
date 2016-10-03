@@ -6,43 +6,55 @@
 \begin{solution}
   Let
   \[
-    O=\begin{bmatrix}
-      a_{11}&a_{12}&\cdots&a_{1n}\\
+    O=
+    \begin{bmatrix}
+      a_{11}&a_{12}&\dotsc&a_{1n}\\
       \vdots&\vdots&\ddots&\vdots\\
       a_{n1}&a_{n2}&\cdots&a_{nn}
     \end{bmatrix}
   \]
-  and set \(y(x)=Ox\). We will show that
-  \[
-    \Delta v(y)=0
-  \]
-  where \(v(x)=u\bigl(y(x)\bigr)\).
+  be an orthogonal \(n\times n\) matrix. We will show that \(\Delta v=0\),
+  where \(v(x)=u(Ox)\).
 
-  First, note that
+  First, let us compute the gradient of \(v\):
   \begin{align*}
-    Dy
-    &=D(Ox)\\
-    &=D\bigl(a_{11}x_1+\dotsb+a_{1n}x_n,\dotsc,a_{n1}x_1+\dotsb+a_{nn}x_n\bigr)\\
-    &=
-      \begin{bmatrix}
-        a_{11}&a_{12}&\cdots&a_{1n}\\
-        \vdots&\vdots&\ddots&\vdots\\
-        a_{n1}&a_{n2}&\cdots&a_{nn}
-      \end{bmatrix}\\
-    &=O.
+    Dv(x)
+    &=Du(Ox)\\
+    &=Du\bigl(a_{11}x_1+\dotsb+a_{1n}x_n,\dotsc,a_{n1}x_1+\dotsb+a_{nn}x_n\bigr)\\
+    &=\left(\sum\nolimits_{j=1}^na_{j1}u_{x_j},%
+      \dotsc,%
+      \sum\nolimits_{j=1}^n a_{jn}u_{x_j}\right)\\
+    &=O^\rmT Du(x).
   \end{align*}
-  Thus, by the chain rule
+
+  Lastly, we compute the divergence of \(Dv\):
   \begin{align*}
-    Dv
-    &=O(D u)\bigl(y(x)\bigr)\\
-    &=\bigl(a_{11}u_{x_1}+\dotsb+a_{1n}u_{x_n},\dotsc,a_{n1}u_{x_1}+\dotsb+a_{nn}u_{x_n}\bigr).
+    \Delta v(x)
+    &=\Div Dv(x)\\
+    &=\Div%
+      \left(\sum\nolimits_{j=1}^na_{j1}u_{x_j},%
+      \dotsc,%
+      \sum\nolimits_{j=1}^n a_{jn}u_{x_j}\right).
   \end{align*}
-  Now,
+  Here the partial derivatives become unwieldy so we will first examine the
+  partial \(\frac{\partial}{\partial x_1}\) of the first term and proceed
+  from there. In this case,
   \begin{align*}
-    \Delta v
-    &=\Div D v\\
-    &=\Div(a_{11}u_{x_1}+\dotsb+a_{1n}u_{x_n},\dotsc,a_{n1}u_{x_1}+\dotsb+a_{nn}u_{x_n}\bigr)\\
-    &=
+    \frac{\partial}{\partial x_1}\sum_{j=1}^n a_{j1}u_{x_j}
+    &=a_{11}\tfrac{\partial}{\partial
+      x_1}u_{x_1}+a_{12}\tfrac{\partial}{\partial
+      x_1}u_{x_2}+\dotsb+a_{1n}\tfrac{\partial}{\partial x_1}u_{x_n}\\
+    &=a_{11}\bigl(a_{11}u_{x_1x_1}+a_{21}u_{x_1x_2}+\dotsb+a_{n1}u_{x_1x_n}\bigr)\\
+    &\phantom{{}={}}+\dotsb+a_{n1}\bigl(a_{11}u_{x_1x_n}+a_{21}u_{x_2x_n}
+      +\dotsb+a_{n1}u_{x_nx_n}\bigr).
+  \end{align*}
+
+  Similarly, taking the \(k\)\textsup{th} partial of the \(k\)\textsup{th}
+  entry of \(Dv\), we have
+  \begin{align*}
+    \frac{\partial}{\partial x_k}\sum_{j=1}^n a_{jk}u_{x_j}
+    &=a_{1k}\bigl(a_{1k}u_{x_1x_1}+\dotsb+a_{nk}u_{x_1x_n}\bigr)\\
+    &\phantom{{}={}}+\dotsb+a_{kn}\bigl(\bigr)
   \end{align*}
 \end{solution}
 \newpage
