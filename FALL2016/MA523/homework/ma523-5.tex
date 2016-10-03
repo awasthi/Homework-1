@@ -16,7 +16,7 @@
   be an orthogonal \(n\times n\) matrix. We will show that \(\Delta v=0\),
   where \(v(x)=u(Ox)\).
 
-  First, let us compute the gradient of \(v\):
+  First, let us compute the gradient of \(v\),
   \begin{align*}
     Dv(x)
     &=Du(Ox)\\
@@ -27,7 +27,7 @@
     &=O^\rmT Du(x).
   \end{align*}
 
-  Lastly, we compute the divergence of \(Dv\):
+  Lastly, we compute the divergence of \(Dv\),
   \begin{align*}
     \Delta v(x)
     &=\Div Dv(x)\\
@@ -47,7 +47,7 @@
     &=a_{11}\bigl(a_{11}u_{x_1x_1}+a_{21}u_{x_1x_2}+\dotsb+a_{n1}u_{x_1x_n}\bigr)\\
     &\phantom{{}={}}+\dotsb+a_{1n}\bigl(a_{11}u_{x_1x_n}+a_{21}u_{x_2x_n}
       +\dotsb+a_{n1}u_{x_nx_n}\bigr)\\
-    &=(a_{11}a_{11}+\dotsb+a_{1n}a_{11})u_{x_1x_1}
+    &=(a_{11}a_{11}+\dotsb+a_{1n}a_{11})u_{x_1x_1}+()u_{x_1x_2}
   \end{align*}
 
   Similarly, taking the \(k\)\textsup{th} partial of the \(k\)\textsup{th}
@@ -91,7 +91,7 @@
       \end{bmatrix}.
   \end{align*}
 
-  We can sum up the results of our calculation as:
+  We can sum up the results of our calculation as
   \begin{equation}
     \label{eq:5:ortho-matrix}
     \begin{cases}
