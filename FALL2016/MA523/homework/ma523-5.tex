@@ -45,10 +45,11 @@
       +a_{21}\tfrac{\partial}{\partial x_1}u_{x_2}%
       +\dotsb%
       +a_{1n}\tfrac{\partial}{\partial x_1}u_{x_n}\\
-    &=a_{11}\bigl(a_{11}u_{x_1x_1}+a_{21}u_{x_1x_2}+\dotsb+a_{n1}u_{x_1x_n}\bigr)\\
-    &\phantom{{}={}}+\dotsb+a_{1n}\bigl(a_{11}u_{x_1x_n}+a_{21}u_{x_2x_n}
-      +\dotsb+a_{n1}u_{x_nx_n}\bigr)\\
-    &=(a_{11}a_{11}+\dotsb+a_{1n}a_{11})u_{x_1x_1}+()u_{x_1x_2}
+    &=a_{11}(a_{11}u_{x_1x_1}+a_{21}u_{x_1x_2}+\dotsb+a_{n1}u_{x_1x_n})\\
+    &\phantom{{}={}}+\dotsb+a_{1n}(a_{11}u_{x_1x_n}+a_{21}u_{x_2x_n}%
+      +\dotsb+a_{n1}u_{x_nx_n})\\
+    &=(a_{11}a_{11}+\dotsb+a_{1n}a_{11})u_{x_1x_1}+2a_{11}a_{21}u_{x_1x_2}\\
+    &\phantom{{}={}}+\dotsb+
   \end{align*}
 
   Similarly, taking the \(k\)\textsup{th} partial of the \(k\)\textsup{th}
@@ -57,9 +58,9 @@
     \label{eq:5:laplacian-k-part}
     \begin{aligned}
       \frac{\partial}{\partial x_k}\sum_{j=1}^n a_{jk}u_{x_j}
-      &=a_{k1}\bigl(a_{1k}u_{x_1x_1}+\dotsb+a_{nk}u_{x_1x_n}\bigr)\\
+      &=a_{k1}(a_{1k}u_{x_1x_1}+\dotsb+a_{nk}u_{x_1x_n})\\
       &\phantom{{}={}}+\dotsb+a_{kn}
-      \bigl(a_{1k}u_{x_1x_n}+\dotsb+a_{nk}u_{x_nx_n}\bigr).
+      (a_{1k}u_{x_1x_n}+\dotsb+a_{nk}u_{x_nx_n}).
     \end{aligned}
   \end{equation}
 
