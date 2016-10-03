@@ -69,25 +69,26 @@
 
   Now, since \(O\) is orthogonal, we have
   \begin{align*}
-    O^\rmT O
+    OO^\rmT
     &=%
-      \begin{bmatrix}
-      a_{11}&a_{21}&\dotsc&a_{n1}\\
-      \vdots&\vdots&\ddots&\vdots\\
-      a_{1n}&a_{2n}&\cdots&a_{nn}
-      \end{bmatrix}
-      \begin{bmatrix}
+    \begin{bmatrix}
       a_{11}&a_{12}&\dotsc&a_{1n}\\
       \vdots&\vdots&\ddots&\vdots\\
       a_{n1}&a_{n2}&\cdots&a_{nn}
-      \end{bmatrix}\\
+    \end{bmatrix}
+    \begin{bmatrix}
+      a_{11}&a_{21}&\dotsc&a_{n1}\\
+      \vdots&\vdots&\ddots&\vdots\\
+      a_{1n}&a_{2n}&\cdots&a_{nn}
+    \end{bmatrix}
+    \\
     &=%
       \begin{bmatrix}
-        a_{11}^2+\dotsb+a_{1n}^2&a_{11}a_{12}+\dotsb+a_{n1}a_{n2}
-        &\cdots&a_{11}a_{1n}+\dotsb+a_{n1}a_{nn}\\
+        a_{11}^2+\dotsb+a_{1n}^2&a_{11}a_{21}+\dotsb+a_{1n}a_{2n}
+        &\cdots&a_{11}a_{n1}+\dotsb+a_{1n}a_{nn}\\
         \vdots&\vdots&\ddots&\vdots\\
-        a_{1n}a_{11}+\dotsb+a_{nn}a_{n1}&a_{1n}a_{12}+\dotsb+a_{nn}a_{n2}
-        &\cdots&a_{1n}^2+\dotsb+a_{nn}^2
+        a_{n1}a_{11}+\dotsb+a_{nn}a_{1n}&a_{n1}a_{21}+\dotsb+a_{nn}a_{2n}
+        &\cdots&a_{n1}^2+\dotsb+a_{nn}^2
       \end{bmatrix}\\
     &=\begin{bmatrix}
       1&0&\cdots&0\\
