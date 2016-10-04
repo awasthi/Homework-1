@@ -47,7 +47,15 @@
   Label the players ``player \(i\)'' for \(1\leq i\leq 4\). Let \(A_i\)
   denote the event that player \(i\) is void in a particular suit. Then
   the probability of the event \(A\) that at least one player is void in a
-  particular suit is \(P(A)=P\bigl(\bigcup_{i=1}^4 A_i\bigr)\)
+  particular suit is \(P(A)=P\bigl(\bigcup_{i=1}^4 A_i\bigr)\). Again, we
+  can decompose this into
+  \[
+    P(A)=4P(A_1)-6P(A_1\cap A_2)+4P(A_1\cap A_2\cap A_3)-P(A_1\cap A_2\cap
+    A_3\cap A_4).
+  \]
+  Thus, it suffices to fill in the blanks in the equation above, i.e., find
+  the probabilities \(P(A_1)\), \(P(A_1\cap A_2)\), etc. To this end, the
+  probability that player \(1\) is void in a particular suit, say red
 \end{solution*}
 
 \begin{problem}[Handout 2, \# 12]
