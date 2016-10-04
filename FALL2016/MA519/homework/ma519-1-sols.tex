@@ -35,8 +35,15 @@
   all normal subunits.
 \end{problem}
 \begin{solution}
-  Assuming the cells units can be arranged in any order (an absurd
-  situation)
+  Let \(A\) denote the event that at least one of the cells consists of all
+  normal subunits. Assuming that these cell units can be arranged in any
+  order, each new cell can get \(10\) of the \(20\) subunits in
+  \(\binom{20}{10}=184756\) ways. Suppose cell \(1\) receives all \(14\) of
+  the normal subunits. There are \(\binom{14}{10}=1001\) ways to do
+  this. Since we can do this for cell \(2\) as well, we have
+  \[
+    P(A)=\frac{2\binom{14}{10}}{\binom{20}{10}}\approx\boxed{\num{0.0108359133}.}
+  \]
 \end{solution}
 
 \begin{problem}[Handout 1, \# 9]
