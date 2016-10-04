@@ -11,7 +11,8 @@
   the probability that at least one man gets his own watch back is the
   event \(A=A_1\cup A_2\cup A_3\cup A_4\). By the inclusion-exclusion
   principle, we have
-  \[
+  \begin{equation}
+    \label{eq:inclusion-exclusion-4}
     \begin{aligned}
       P(
       A)&=P(A_1)+P(A_2)+P(A_3)+P(A_4)\\
@@ -21,7 +22,7 @@
       &\phantom{{}={}}+P(A_1\cap A_3\cap A_4)+P(A_2\cap A_3\cap A_4)\\
       &\phantom{{}={}}-P(A_1\cap A_2\cap A_3\cap A_4).
     \end{aligned}
-  \]
+  \end{equation}
   Since the probabilities \(P(A_i)=P(A_j)\), \(P(A_i\cap A_j)=P(A_k\cap
   A_\ell)\), etc., the equation above reduces to
   \[
@@ -107,6 +108,16 @@
   special case \(N=1\)).
 \end{problem}
 \begin{solution*}
+  For part (a), the originator can tell any one of the other \(n\)
+  inhabitants the rumor. In turn, the non-originator can tell the other
+  \(n-1\) inhabitants (not including the originator). Thus, the probability
+  of the event \(A\) that the rumor told \(r\) does not return to the
+  originator is
+  \[
+    P(A)=\frac{n(n-1)^{r-1}}{n^r}=\left(\frac{n-1}{n}\right)^{r-1}.
+  \]
+  \\\\
+  For part (b),
 \end{solution*}
 
 \begin{problem}[Handout 2, \# 14]
