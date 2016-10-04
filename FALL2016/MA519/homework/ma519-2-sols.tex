@@ -56,6 +56,24 @@
   Thus, it suffices to fill in the blanks in the equation above, i.e., find
   the probabilities \(P(A_1)\), \(P(A_1\cap A_2)\), etc. To this end, the
   probability that player \(1\) is void in a particular suit, say red
+  hearts, is
+  \[
+    P(A_1)=\frac{\binom{52-13}{13}}{\binom{52}{13}}.
+  \]
+  Similarly, the probability that player \(1\) and player \(2\) is void in
+  red hearts is
+  \[
+    P(A_1)=\frac{\binom{52-13}{13}}{\binom{52}{13}}\cdot\frac{\binom{52-13-13}{13}}{\binom{52-13}{13}}=\frac{\binom{52-13-13}{13}}{\binom{52}{13}};
+  \]
+  and so on.
+
+  Thus,
+  \[
+    P(A)=4\cdot\frac{\binom{52-13}{13}}{\binom{52}{13}}
+    -6\cdot\frac{\binom{52-13-13}{13}}{\binom{52}{13}}
+    +4\cdot\frac{\binom{52-13-13-13}{13}}{\binom{52}{13}}
+    -1\cdot0\approx \num{0.051065521}.
+  \]
 \end{solution*}
 
 \begin{problem}[Handout 2, \# 12]
@@ -63,6 +81,15 @@
   probability that exactly one cell remains empty.
 \end{problem}
 \begin{solution*}
+  There are \(n\) ways to choose a cell to be left empty. Of the remaining
+  \(n-1\) cells, one must contain \(2\) balls. That cell can be chosen in
+  \(n-1\) ways and the two balls to be placed in it can be chosen in
+  \(\binom{2}{n}\) ways. Of the remaining cells, each must contain \(1\)
+  ball and this pairing can be done in \((n-2)!\) ways. Thus, the
+  probability of the event \(A\) that exactly one cell remains empty is
+  \[
+    P(A)=\frac{n(n-1)\binom{2}{n}(n-2)!}{n^n}=\frac{\binom{2}{n}n!}{n^n}.
+  \]
 \end{solution*}
 
 \begin{problem}[Handout 2, \# 13]
