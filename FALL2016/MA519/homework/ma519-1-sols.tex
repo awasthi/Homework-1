@@ -21,7 +21,7 @@
     &=1-P(\lnot A)\\
     &=1-\frac{\binom{5}{4}2^4}{\binom{10}{4}}\\
     &=1-\frac{8}{21}\\
-    &\approx\boxed{\num{0.6190476190476191}.}
+    &\approx\num{0.6190476190476191}.
   \end{align*}
 \end{solution}
 
@@ -42,7 +42,7 @@
   the normal subunits. There are \(\binom{14}{10}=1001\) ways to do
   this. Since we can do this for cell \(2\) as well, we have
   \[
-    P(A)=\frac{2\binom{14}{10}}{\binom{20}{10}}\approx\boxed{\num{0.0108359133}.}
+    P(A)=\frac{2\binom{14}{10}}{\binom{20}{10}}\approx\num{0.0108359133}.
   \]
 \end{solution}
 
@@ -57,9 +57,23 @@
   Compute it for \(r=N=10\), \(n=100\).
 \end{problem}
 \begin{solution}
-  For part (a)
+  For part (a) there are a total of \(n^r\) possible draws (this is the
+  order of the sample space). There are \(n-N\) elements that have not been
+  prespecified and \((n-N)^r\) ways to draw them. Therefore, the
+  probability of the event \(A\) that none of the \(N\) prespecified
+  elements are included in the sample with replacement is
+  \[
+    P(A)=\frac{(n-N)^r}{n^r}.
+  \]
   \\\\
-  For part (b)
+  For part (b) there are a total of \(\binom{n}{r}\) possible draws (this
+  is the order of the sample space). Again, there are \(n-N\) elements that
+  have not been prespecified and \(\binom{n-N}{r}\) ways to draw
+  them. Thus, the probability of the event \(A\) that none of the \(N\)
+  prespecified elements are included in the sample without replacement is
+  \[
+    P(A)9\frac{\binom{n-N}{r}}{\binom{n}{r}}.
+  \]
 \end{solution}
 
 \begin{problem}[Handout 1, \# 11]
