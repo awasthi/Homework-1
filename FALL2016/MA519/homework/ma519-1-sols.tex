@@ -168,6 +168,25 @@
   the number of aces in his hand. Find the distribution of \(X\).
 \end{problem}
 \begin{solution*}
+  The number of aces in North's hand \(X\) is a random variable which takes
+  integer values between \(0\) and \(4\). Therefore, we must compute the
+  probabilities \(P(X=i)\), \(0\leq i\leq 4\).
+
+  From a deck with \(52\) cards, \(13\) cards can be selected in
+  \(\binom{52}{13}\) ways among which the player will have \(x\) number of
+  aces in \(\binom{4}{x}\binom{48}{13-x}\) ways. Thus, the distribution is
+  given by
+  \[
+    P(X=x)=\frac{\binom{4}{x}\binom{48}{13-x}}{\binom{52}{13}}.
+  \]
+  The explicit values are
+  \begin{align*}
+    P(X=0)&\approx 0.304,
+    &P(X=1)&\approx 0.439,\\
+    P(X=2)&\approx 0.213,
+    &P(X=3)&\approx 0.041,\\
+    P(X=4)&\approx 0.003.
+  \end{align*}
 \end{solution*}
 
 \begin{problem}[Handout 1, \# 20]
