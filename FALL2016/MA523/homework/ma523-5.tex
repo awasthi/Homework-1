@@ -199,22 +199,6 @@
     \sup_{\bar U_a}u=\sup_{\partial U_a}u.
   \end{equation}
   We now extend this result to all of \(U\).
-
-  Since \(u\) is bounded on \(U\), \(u\leq \sup u\) for all \((x_1,x_2)\in
-  U\). Now, as \(|a|\to\infty\), \(U_a\to U\) we have
-  \[
-    \sup_{\bar U_a}u=\sup_{\partial U_a}u,
-  \]
-  and in particular,
-  \[
-    u\leq\sup_{\partial U_a}u.
-  \]
-
-  Suppose by contradiction that \(\sup_{\bar U}u\neq\sup_{\partial U}u\).
-  Then, necessarily, \(\sup_{\bar U}u>\sup_{\partial U}u\) or
-  \[
-    M-\sup_{\partial U}u>\sup_{\bar U}u-\sup_{\partial U}u>0
-  \]
 \end{solution}
 \newpage
 
@@ -312,18 +296,27 @@
   \begin{align*}
     \frac{\Delta v}{2}
     &=\sum_{i,j=1}^n\bigl(u_{x_j}u_{x_jx_ix_i}+u_{x_jx_i}^2\bigr)\\
-    &=\sum_{i,j=1}^nu_{x_j}u_{x_jx_ix_i}+\sum_{i,j=1}^nu_{x_jx_i}^2\\
+    &=\sum_{i,j=1}^nu_{x_j}u_{x_jx_ix_i}+\sum_{i,j=1}^nu_{x_jx_i}^2,
+    \intertext{splitting the second term into the sum}
     &=\sum_{i,j=1}^nu_{x_j}u_{x_jx_ix_i}
       +\sum_{1\leq j<i\leq n}u_{x_jx_i}^2\\
     &\phantom{{}={}}
       +\sum_{1\leq i<j\leq n}u_{x_jx_i}^2
-      +\sum_{1\leq i=j\leq n}u_{x_ix_i}^2\\
+      +\sum_{1\leq i=j\leq n}u_{x_ix_i}^2,
+      \intertext{where the last term is \(0\) since \(u\) is harmonic,
+      giving us}
     &=\sum_{i,j=1}^nu_{x_j}u_{x_jx_ix_i}
       +\sum_{1\leq j<i\leq n}u_{x_jx_i}^2
       +\sum_{1\leq i<j\leq n}u_{x_jx_i}^2\\
     &=\sum_{i,j=1}^nu_{x_j}u_{x_jx_ix_i}
-      +2\sum_{1\leq j<i\leq n}u_{x_jx_i}^2
+      +2\sum_{1\leq j<i\leq n}u_{x_jx_i}^2,
+      \intertext{here \(u_{x_ix_jx_j}=\Delta u_{x_i}\), so}
+    &=\sum_{j=1}^nu_{x_j}(\Delta u_{x_j})
+      +2\sum_{1\leq j<i\leq n}u_{x_jx_i}^2\\
+    &=2\sum_{1\leq j<i\leq n}u_{x_jx_i}^2\\
+    &\geq 0,
   \end{align*}
+  as desired. That is, \(\Delta v\geq 0\) so \(v\) is subharmonic.
 \end{solution}
 
 %%% Local Variables:
