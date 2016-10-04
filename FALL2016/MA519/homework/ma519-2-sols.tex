@@ -13,7 +13,8 @@
   principle, we have
   \[
     \begin{aligned}
-      P(A)&=P(A_1)+P(A_2)+P(A_3)+P(A_4)\\
+      P(
+      A)&=P(A_1)+P(A_2)+P(A_3)+P(A_4)\\
       &\phantom{{}={}}-P(A_1\cap A_2)-P(A_1\cap A_3)-P(A_1\cap A_4)\\
       &\phantom{{}={}}-P(A_2\cap A_3)-P(A_2\cap A_4)-P(A_3\cap A_4)\\
       &\phantom{{}={}}+P(A_1\cap A_2\cap A_3)+P(A_1\cap A_2\cap A_4)\\
@@ -22,15 +23,16 @@
     \end{aligned}
   \]
   Since the probabilities \(P(A_i)=P(A_j)\), \(P(A_i\cap A_j)=P(A_k\cap
-  A_\ell)\), etc., we have
+  A_\ell)\), etc., the equation above reduces to
   \[
     P(A)=4P(A_1)-6P(A_1\cap A_2)+4P(A_1\cap A_2\cap A_3)-P(A_1\cap A_2\cap
     A_3\cap A_4).
   \]
-  All we need to do now is fill in the blanks. These are,
-  \begin{align*}
-    P(A_1)&=\frac{1}{4}.
-  \end{align*}
+  All we need to do now is fill in the blanks. Intuitively, the probability
+  that the \(1\)\textsup{st} man gets back his own wallet is \(1/4\) since
+  only one wallet is his own out of the \(4\). Now, the probability that
+  the \(1\)\textsup{st} and the \(2\)\textsup{nd} man get their own
+  wallets back is
 \end{solution*}
 
 \begin{problem}[Handout 2, \# 7]
