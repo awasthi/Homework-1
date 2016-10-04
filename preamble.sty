@@ -95,28 +95,12 @@
 \xpatchcmd{\proof}{\itshape}{\normalfont\proofnameformat}{}{}
 \newcommand{\proofnameformat}{\sishape}
 
-%% Proof environments
-\@ifundefined{proof*}{%
-\newenvironment{proof*}[1][Proof]{%
-  \renewcommand{\proofnameformat}{\itshape}
-  \proof[#1]%
-}{
-  \endproof}}
-
 \@ifundefined{solution}{%
 \newenvironment{solution}[1][Solution]{%
   \proof[#1]%
 }{
   \endproof}}
 
-\@ifundefined{solution*}{%
-\newenvironment{solution*}[1][Solution]{%
-  \renewcommand{\proofnameformat}{\itshape}
-  \proof[#1]%
-}{
-  \endproof}}
-
-%% Theorems, corollaries, lemmas, etc.
 \@ifclassloaded{memoir}%
 {
 
@@ -146,7 +130,7 @@
     {12pt plus 4pt minus 4pt} % Space below
     {}                        % Body font
     {}                        % Indent amount
-    {\scshape}               % Theorem head font
+    {\bfseries}               % Theorem head font
     {.}                       % Punctuation after theorem head
     {.5em}                    % Space after theorem head
     {}                         % Theorem head spec (can be left empty, meaning 'normal')
@@ -167,7 +151,7 @@
 }
 {
 \theoremstyle{plain}
-\newtheorem{theorem}{Theorem}[section] %% Assumes memoir is loaded
+\newtheorem{theorem}{Theorem}%[section] %% Assumes memoir is loaded
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{claim}[theorem]{Claim}
@@ -192,13 +176,13 @@
     {12pt plus 4pt minus 4pt} % Space below
     {}                        % Body font
     {}                        % Indent amount
-    {\scshape}               % Theorem head font
+    {\bfseries}               % Theorem head font
     {.}                       % Punctuation after theorem head
     {.5em}                    % Space after theorem head
     {}                         % Theorem head spec (can be left empty, meaning 'normal')
 
 \theoremstyle{exercise}
-\newtheorem{exercise}{Exercise}[section]
+\newtheorem{exercise}{Exercise}%[section]
 \newtheorem{problem}[exercise]{Problem}
 
 \newtheorem*{exercise*}{Exercise}
