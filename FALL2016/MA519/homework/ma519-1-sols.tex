@@ -154,6 +154,13 @@
   each other?
 \end{problem}
 \begin{solution*}
+  The \(r\) specified people can stand as a group starting at positions
+  \(1,2,\dotsc,n-r+1\). They can be permuted among themselves in \(r!\)
+  ways. The remaining \(n-r\) people can be permuted among themselves in
+  \((n-r)!\) ways. Thus, we have
+  \[
+    P=\frac{(n-r+1)r!(n-r)!}{n!}=\frac{(n-r+1)!r!}{n!}.
+  \]
 \end{solution*}
 
 \begin{problem}[Handout 1, \# 16]
