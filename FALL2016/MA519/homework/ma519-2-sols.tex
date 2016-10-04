@@ -31,8 +31,12 @@
   All we need to do now is fill in the blanks. Intuitively, the probability
   that the \(1\)\textsup{st} man gets back his own wallet is \(1/4\) since
   only one wallet is his own out of the \(4\). Now, the probability that
-  the \(1\)\textsup{st} and the \(2\)\textsup{nd} man get their own
-  wallets back is
+  the \(1\)\textsup{st} and the \(2\)\textsup{nd} man get their own wallet
+  back is \((1/4)(1/3)=1/2\). Proceeding in this fashion, we have
+  \[
+    P(A)=4\cdot\frac{1}{4}-6\cdot\frac{1}{12}+4\cdot\frac{1}{24}-\frac{1}{24}
+    =0.625.
+  \]
 \end{solution*}
 
 \begin{problem}[Handout 2, \# 7]
@@ -40,6 +44,9 @@
   is void in a particular suit.
 \end{problem}
 \begin{solution*}
+  Let's label the players in Bridge ``player \(i\)'' and the suits ``suit
+  \(j\)'' for \(1\leq i,j\leq 4\), and let \(A_i^j\) denote the event that
+  ``player \(i\) lacks suit \(j\).''
 \end{solution*}
 
 \begin{problem}[Handout 2, \# 12]
