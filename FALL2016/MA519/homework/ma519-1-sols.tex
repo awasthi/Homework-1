@@ -72,7 +72,7 @@
   them. Thus, the probability of the event \(A\) that none of the \(N\)
   prespecified elements are included in the sample without replacement is
   \[
-    P(A)9\frac{\binom{n-N}{r}}{\binom{n}{r}}.
+    P(A)=\frac{\binom{n-N}{r}}{\binom{n}{r}}.
   \]
 \end{solution}
 
@@ -88,6 +88,35 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
+  The solution to this problem reduces to naive set theory.
+  \\\\
+  For part (a), the event that only \(E\) occurs is the event
+  \[
+    E\cap\lnot F\cap \lnot G.
+  \]
+  \\\\
+  For part (b), the event that both \(E\) and \(G\) occur, but not \(F\) is
+  \[
+    E\cap G\cap \lnot F.
+  \]
+  \\\\
+  For part (c), the event that all three of \(E\), \(F\), and \(G\) occur
+  is
+  \[
+    E\cap F\cap G.
+  \]
+  \\\\
+  For part (d), the event that at least one of \(E\), \(F\), or \(G\)
+  occur is
+  \[
+    E\cup F\cup G.
+  \]
+  \\\\
+  For part (e), the event that at most two ocur is the event that not all
+  three occur, this is
+  \[
+    \lnot(E\cap F\cap G)=\lnot E\cup\lnot F\cup\lnot G.
+  \]
 \end{solution}
 
 \begin{problem}[Handout 1, \# 12]
