@@ -5,6 +5,32 @@
   gets his own watch back?
 \end{problem}
 \begin{solution*}
+  Suppose \(4\) men throw their watches into the sea. Label these men ``the
+  \(i\)\textsup{th} man'' for \(1\leq i\leq 4\). Let \(A_i\) denote the
+  probability that the \(i\)\textsup{th} man gets his own watch back. Then
+  the probability that at least one man gets his own watch back is the
+  event \(A=A_1\cup A_2\cup A_3\cup A_4\). By the inclusion-exclusion
+  principle, we have
+  \[
+    \begin{aligned}
+      P(A)&=P(A_1)+P(A_2)+P(A_3)+P(A_4)\\
+      &\phantom{{}={}}-P(A_1\cap A_2)-P(A_1\cap A_3)-P(A_1\cap A_4)\\
+      &\phantom{{}={}}-P(A_2\cap A_3)-P(A_2\cap A_4)-P(A_3\cap A_4)\\
+      &\phantom{{}={}}+P(A_1\cap A_2\cap A_3)+P(A_1\cap A_2\cap A_4)\\
+      &\phantom{{}={}}+P(A_1\cap A_3\cap A_4)+P(A_2\cap A_3\cap A_4)\\
+      &\phantom{{}={}}-P(A_1\cap A_2\cap A_3\cap A_4).
+    \end{aligned}
+  \]
+  Since the probabilities \(P(A_i)=P(A_j)\), \(P(A_i\cap A_j)=P(A_k\cap
+  A_\ell)\), etc., we have
+  \[
+    P(A)=4P(A_1)-6P(A_1\cap A_2)+4P(A_1\cap A_2\cap A_3)-P(A_1\cap A_2\cap
+    A_3\cap A_4).
+  \]
+  All we need to do now is fill in the blanks. These are,
+  \begin{align*}
+    P(A_1)&=\frac{1}{4}.
+  \end{align*}
 \end{solution*}
 
 \begin{problem}[Handout 2, \# 7]

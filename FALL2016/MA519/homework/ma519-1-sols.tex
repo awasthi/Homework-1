@@ -170,7 +170,7 @@
 \begin{solution*}
   The number of aces in North's hand \(X\) is a random variable which takes
   integer values between \(0\) and \(4\). Therefore, we must compute the
-  probabilities \(P(X=i)\), \(0\leq i\leq 4\).
+  probabilities \(P(X=x)\), \(0\leq x\leq 4\).
 
   From a deck with \(52\) cards, \(13\) cards can be selected in
   \(\binom{52}{13}\) ways among which the player will have \(x\) number of
@@ -179,7 +179,7 @@
   \[
     P(X=x)=\frac{\binom{4}{x}\binom{48}{13-x}}{\binom{52}{13}}.
   \]
-  The explicit values are
+  The explicit values are approximately
   \begin{align*}
     P(X=0)&\approx 0.304,
     &P(X=1)&\approx 0.439,\\
@@ -197,6 +197,31 @@
   approximate it as \(n\) tends to \(\infty\).
 \end{problem}
 \begin{solution*}
+  Let \(X\) be the random variable denoting the number of empty
+  cells. Define indicator variables \(X_1,\dotsc,X_n\) by
+  \[
+    X_i=
+    \begin{cases}
+      1&\text{if the \(i\)\textsup{th} cell is empty,}\\
+      0&\text{otherwise.}
+    \end{cases}
+  \]
+  Then
+  \[
+    X=\sum_{i=1}^n X_i
+  \]
+  and so the mean of this random variable is given by
+  \begin{align*}
+    E(X)
+    &=\sum_{i=1}^n E(X_i)\\
+    &=\sum_{i=1}^n P(X_i=1)\\
+    &=\sum_{i=1}^n\frac{(n-1)^n}{n^n}\\
+    &=n\left(1-\frac{1}{n}\right)^n,
+  \end{align*}
+  which approaches \(\infty\) as \(n\to\infty\) since
+  \(\bigl(1-\frac{1}{n}\bigr)^n\to e^{-1}\).
+  \\\\
+  For \(n=100\), we have \(E(X)\approx 36.60\).
 \end{solution*}
 
 %%% Local Variables:
