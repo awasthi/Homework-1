@@ -101,6 +101,13 @@
 }{
   \endproof}}
 
+
+\@ifundefined{solution*}{%
+\newenvironment{solution*}[1][Solution]{%
+  \begin{quote}\proof[#1]%
+}{
+\endproof\end{quote}}}
+
 \@ifclassloaded{memoir}%
 {
 
