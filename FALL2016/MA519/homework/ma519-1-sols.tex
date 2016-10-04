@@ -6,11 +6,18 @@
   among the four?
 \end{problem}
 \begin{solution}
-  We compute the probability of the complement of the event, i.e., that
-  there is no complete pair among the \(4\) selected shoes.
+  Let \(A\) denote the event that ``at least \(1\) complete pair is among
+  the \(4\) selected shoes.'' We compute the probability of \(\lnot A\) the
+  event that there is no complete pair among the \(4\) selected shoes.
 
   We can choose \(4\) shoes from the \(5\) pairs in \(\binom{10}{4}=210\)
-  ways.
+  ways and \(4\) pairs of shoes can be chosen in \(\binom{5}{4}\) ways out
+  of which we choose one of \(2\), either a left or a right shoe.
+
+  Thus,
+  \[
+    P(A)=1-\frac{\binom{5}{4}2^4}{\binom{10}{4}}\approx0.61904.
+  \]
 \end{solution}
 
 \begin{problem}[Handout 1, \# 7]
