@@ -147,35 +147,49 @@
     u(x_1,x_2)+\varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}.
   \]
   Apply the maximum principle to a region
-  \(\bigl\{\,x_1^2+(x_2+1)^2<a_2,x_2>0\,\bigr\}\) with large \(a\). Let
+  \(\bigl\{\,x_1^2+(x_2+1)^2<a^2,x_2>0\,\bigr\}\) with large \(a\). Let
   \(\varepsilon\to 0\).]
 \end{problem}
 \begin{solution}
   Consider the harmonic function
   \[
     u_\varepsilon(x_1,x_2)\defeq
-    u(x_1,x_2)+\varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}.
+    u(x_1,x_2)-\varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}.
   \]
-  Set \(U_a\defeq \bigl\{\,x_1^2+(x_2+1)^2<a_2,x_2>0\,\bigr\}\) where
-  \(a=(a_1,a_2)\).
+  Set \(U_a\defeq \bigl\{\,x_1^2+(x_2+1)^2<a^2,x_2>0\,\bigr\}\).
 
-  First, we note that \(u_\varepsilon\downarrow u\) as \(\varepsilon\to 0\)
-  uniformly, i.e., given \(\eta>0\), for \(0<\varepsilon<2\eta/{\ln a_2}\),
+  First, we note that \(u_\varepsilon\uparrow u\) as \(\varepsilon\to 0\)
+  uniformly, i.e., given \(\eta>0\), for \(0<\varepsilon<\eta/{\ln a}\),
   we have
   \begin{align*}
     |u_\varepsilon(x_1,x_2)-u(x_1,x_2)|
     &<\left|
-      u(x_1,x_2)+\varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}
+      u(x_1,x_2)-\varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}
       -u(x_1,x_2)
       \right|\\
     &=\left|
       \varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}
       \right|\\
     &=\varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}\\
-    &<\varepsilon\ln\sqrt{a_2}\\
+    &<\varepsilon\ln a\\
     &<\eta,
   \end{align*}
   for any \((x_1,x_2)\in U_a\).
+
+  Moreover, a simple calculation shows that \(u_\varepsilon\) is in fact
+  harmonic. By the linearity the Laplacian, it suffices to show that
+  \[
+    \Delta%
+    \left(%
+      \varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}%
+    \right)=0.
+  \]
+  First, we calculate he partial derivatives
+  \(\tfrac{\partial^2}{\partial x_1\partial x_1}\) and
+  \(\tfrac{\partial^2}{\partial x_2\partial x_2}\)
+  \begin{align*}
+    &
+  \end{align*}
 
   By the maximum principle,
   \[
@@ -184,39 +198,6 @@
   In particular,
   \[
     \sup_{\bar U_a}u_\varepsilon=\sup_{\partial U_a}u_\varepsilon.
-  \]
-
-  Now, since \(u_\varepsilon\downarrow u\) uniformly,
-  \[
-    \sup_{\bar U_a}u=%
-    \lim_{\varepsilon\to 0}\biggl[\sup_{\bar U_a}u_\varepsilon\biggr]=%
-    \lim_{\varepsilon\to 0}\biggl[\sup_{\partial U_a}u_\varepsilon\biggr]=%
-    \sup_{\partial U_a}u.
-  \]
-  Thus, we have shown that for any \(a\),
-  \begin{equation}
-    \label{eq:5:sup-ua}
-    \sup_{\bar U_a}u=\sup_{\partial U_a}u.
-  \end{equation}
-  We now extend this result to all of \(U\).
-
-  By the definition of the supremum, given \(\delta>0\), there exists a
-  point \((x_1,x_2)\in U\), such that
-  \[
-    \sup_U u-\delta<u(x_1,x_2).
-  \]
-  Choose \(a\) large enough so that \((x_1,x_2)\in U_a\). Then, as we have
-  previously demonstrated
-  \[
-    \sup_U u-\delta<u(x_1,x_2)\leq\sup_{\partial U_a}u\leq\sup_{\partial U}u.
-  \]
-  In particular,
-  \[
-    \sup_U u-\delta<\sup_{\partial U}u.
-  \]
-  Letting \(\delta\to 0\), we obtain
-  \[
-    \sup_U u\leq \sup_{\partial U}u.
   \]
 \end{solution}
 \newpage
