@@ -159,8 +159,11 @@
   Set \(U_a\defeq \bigl\{\,x_1^2+(x_2+1)^2<a^2,x_2>0\,\bigr\}\).
 
   First, we note that \(u_\varepsilon\uparrow u\) as \(\varepsilon\to 0\)
-  pointwise, i.e., given \(\eta>0\), for \(0<\varepsilon<\eta/{\ln a}\), we
-  have
+  pointwise, i.e., given \(\eta>0\), for
+  \[
+    0<\varepsilon(x_1,x_2)<\eta/{\ln\sqrt{x_1^2+(x_2+1)^2}},
+  \]
+  we have
   \begin{align*}
     |u_\varepsilon(x_1,x_2)-u(x_1,x_2)|
     &=\left|
@@ -171,7 +174,6 @@
       \varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}
       \right|\\
     &=\varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}\\
-    &<\varepsilon\ln a\\
     &<\eta,
   \end{align*}
   for any \((x_1,x_2)\in U_a\).
@@ -212,10 +214,15 @@
   \]
   Choose \(a\) large enough so
   \[
-    \sup_{\partial U_a} u-\varepsilon\ln a%
-    <\sup_{\partial U}u.
+    \sup_{\bar U_a} u_\varepsilon%
+    \leq \sup_{\partial U_a} u_\varepsilon%
+    \leq\sup_{\partial U}u.
   \]
-  Then, since
+  Then, letting \(a\to\infty\), we have
+  \[
+    \sup_{\bar U} u_\varepsilon%
+    \leq\sup_{\partial U}u.
+  \]
 \end{solution}
 \newpage
 
