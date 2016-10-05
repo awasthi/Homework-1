@@ -131,6 +131,74 @@ computation.
   cohomology.
 \end{proof}
 
+Before describing de Rham's theorem, we have to say what's happening at the
+othe rend. The standard \(n\) dimensional simplex, or \(n\)-simplex,
+\(\Delta^n\subset\bbR^{n+1}\) is the convex hull of the unit vectors
+\((1,0,\dotsc,0),(0,1,\dotsc,0),\dotsc\). The convex hull of the subset of
+these is called a face. This is homeomorphic to a simplex of smaller
+dimension. Omitting all but the \(i\)\textsup{th} vertex is called the
+\(i\)\textsup{th} face of \(\Delta^n\). We have a standard homeomorphism
+\[
+  \delta_i\colon\Delta^{n-1}\to\text{\(i\)\textsup{th} face of \(\Delta^n\)}.
+\]
+
+A geometric simplicial complex is given by a collection of simplices glued
+along faces. Historically, the first cohomology theory was defined for
+simplicial complexes. A bit later singular cohomology was developed, which
+is an arbitrary topological space \(X\). A (real/complex) singular
+\(p\)-cochain \(\alpha\) is an integer (real/complex) valued function on
+the set of all continuous maps \(f\colon\Delta^p\to X\). It might help to
+think of \(\alpha(f)\) as a combinatorial integral \(\int_f\alpha\). Let
+\(s^p(X)\) (\(S^p(X,\bbR)\), \(S^p(X,\bbC)\)) denote the group of these
+cochains. Define \(\delta\colon S^p(X)\to S^{p+1}(X)\) by
+\[
+  \delta(\alpha)(f)=\sum(-1)^i\alpha(f\circ\delta_i).
+\]
+
+\begin{lemma}
+  \[\delta^2=0.\]
+\end{lemma}
+\begin{proof}[For \(p=0\)]
+  Let \(\alpha\in S^0\). Fix \(f\colon\Delta^2\to X\). Label the
+  restriction of \(f\) to the vertices by \(0,1,2\) and faces
+  \(01,02,12\). Then
+  \begin{align*}
+    \delta^2(f)&=\delta\alpha(12)-\delta\alpha(02)+\delta\alpha(01)\\
+               &=\alpha(1)-\alpha(2)-\alpha(0)+\alpha(2)+\alpha(0)-\alpha(1)\\
+               &=0.
+  \end{align*}
+\end{proof}
+
+Thus we have a complex. Singular cohomology is defined by
+\(H^p(X,\bbZ)=H^p(S^\bullet(X),\delta)\), and similarly for real or complex
+valued singular cohomology. These groups are highly computable.
+
+\begin{theorem}[de Rham]
+  If \(X\subset\bbR^n\) is open, or more generally a manifold, then
+  \(H^p_\dR(X,\bbR)\cong H^p(X,\bbR)\) for all \(p\).
+\end{theorem}
+
+We will give a proof of this later on as an easy application of sheaf
+theory. Sheaf methods will help obtain parallel theorems.
+
+\begin{theorem}[Holomorphic de Rham]
+  If \(X\subset\bbC^n\) is a complex manifold, then \(H^p(X,\bbC)\) can be
+  computed using algebraic differential forms.
+\end{theorem}
+
+The last theorem is due to Grothendieck. The proof is a lot harder, so
+we'll try to give the proof by the end of the semester, but there's no
+guarantee.
+
+\section{A crash course in homological algebra}
+By the 1940s techniques from algebraic topology began to be applied to pure
+algebra, giving rise to a new subject. To begin with, recall that a
+category \(\scrC\) consists of a set or class of objects (e.g., sets,
+groups, topological spaces) and morphisms (e.g., functions, homomorphisms,
+continuous maps) between pairs of objects \(\Hom_\scrC(A,B)\). We require
+an identity \(\id_A\in\Hom(A,A)\) for each object \(A\), and associative
+composition law
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../Fall16-Notes"
