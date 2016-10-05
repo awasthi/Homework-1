@@ -186,16 +186,23 @@
   \(\tfrac{\partial^2}{\partial x_1\partial x_1}\) and
   \(\tfrac{\partial^2}{\partial x_2\partial x_2}\)
   \begin{align*}
-   \frac{\partial}{\partial x_1}\frac{v_\varepsilon}{\varepsilon}
+   \frac{(v_\varepsilon)_{x_1}}{\varepsilon}
     &=-\frac{x_1}{x_1^2+(x_2+1)^2}
-    &\frac{\partial}{\partial x_2}\frac{v_\varepsilon}{\varepsilon}
+    &\frac{(v_\varepsilon)_{x_2}}{\varepsilon}
     &=-\frac{(x_2+1)}{x_1^2+(x_2+1)^2}\\
-    \frac{\partial}{\partial x_1}\frac{(v_{\varepsilon})_{x_1}}{\varepsilon}
+    \frac{(v_{\varepsilon})_{x_1x_1}}{\varepsilon}
     &=-\frac{-x_1^2+(x_2+1)^2}{\bigl(x_1^2+(x_2+1)^2\bigr)^2}
-    &\frac{\partial}{\partial
-      x_2}\frac{(v_{\varepsilon})_{x_2}}{\varepsilon}
-    &=-\frac{-x_1^2+(x_2+1)^2}{\bigl(x_1^2+(x_2+1)^2\bigr)^2}
+    &\frac{(v_{\varepsilon})_{x_2x_2}}{\varepsilon}
+    &=-\frac{x_1^2-(x_2+1)^2}{\bigl(x_1^2+(x_2+1)^2\bigr)^2}.
   \end{align*}
+  Thus,
+  \[
+    \Delta v_\varepsilon=\varepsilon
+    \left(
+      -\frac{-x_1^2+(x_2+1)^2}{\bigl(x_1^2+(x_2+1)^2\bigr)^2}
+      -\frac{x_1^2-(x_2+1)^2}{\bigl(x_1^2+(x_2+1)^2\bigr)^2}
+    \right)=0.
+  \]
 
   By the maximum principle,
   \[
