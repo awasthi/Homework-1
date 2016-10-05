@@ -41,10 +41,10 @@
   from there. In this case,
   \begin{align*}
     \frac{\partial}{\partial x_1}\sum_{j=1}^n a_{j1}u_{x_j}
-    &=a_{11}\tfrac{\partial}{\partial x_1}u_{x_1}%
-      +a_{21}\tfrac{\partial}{\partial x_1}u_{x_2}%
+    &=a_{11}(u_{x_1})_{x_1}%
+      +a_{21}(u_{x_2})_{x_1}%
       +\dotsb%
-      +a_{n1}\tfrac{\partial}{\partial x_1}u_{x_n}\\
+      +a_{n1}(u_{x_n})_{x_1}\\
     &=a_{11}(a_{11}u_{x_1x_1}+a_{21}u_{x_1x_2}+\dotsb+a_{n1}u_{x_1x_n})\\
     &\phantom{{}={}}+\dotsb+a_{n1}(a_{11}u_{x_1x_n}+a_{21}u_{x_2x_n}%
       +\dotsb+a_{n1}u_{x_nx_n})\\
@@ -151,6 +151,7 @@
   \(\varepsilon\to 0\).]
 \end{problem}
 \begin{solution}
+  Suppose \(u\) is harmonic on \(U\) and is bounded above by, say, \(M\).
   Consider the harmonic function
   \[
     u_\varepsilon(x_1,x_2)\defeq
@@ -183,8 +184,8 @@
     v_\varepsilon(x)\defeq\varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}%
   \]
   is \(0\). First, we calculate he partial derivatives
-  \(\tfrac{\partial^2}{\partial x_1\partial x_1}\) and
-  \(\tfrac{\partial^2}{\partial x_2\partial x_2}\)
+  \(\frac{\partial^2}{\partial x_1\partial x_1}\) and
+  \(\frac{\partial^2}{\partial x_2\partial x_2}\)
   \begin{align*}
    \frac{(v_\varepsilon)_{x_1}}{\varepsilon}
     &=-\frac{x_1}{x_1^2+(x_2+1)^2}
@@ -213,8 +214,9 @@
   \[
     \sup_{\bar U_a} u_\varepsilon%
     =\sup_{\partial U_a} u-\varepsilon\ln a%
-    <\sup_{\partial U} u.
+    <-M.
   \]
+  On the other hand, since \(u_\varepsilon(0,0)=u(0,0)\geq -M\)
 \end{solution}
 \newpage
 
@@ -243,18 +245,15 @@
 \begin{solution}
   For part (a), by the chain rule, we have
   \[
-    v_{x_i}=%
-    \tfrac{\partial}{\partial x_i}v=%
-    \varphi_{u_1}u^1_{x_i}+\dotsb+\varphi_{u_m}u^m_{x_i}.
+    v_{x_i}=\varphi_{u_1}u^1_{x_i}+\dotsb+\varphi_{u_m}u^m_{x_i}.
   \]
   Taking another partial, we have
   \begin{equation}
     \label{eq:5:partial-xi}
     \begin{aligned}
       v_{x_ix_i}
-      &=\tfrac{\partial^2}{\partial x_i\partial x_i} v\\
-      &=\tfrac{\partial}{\partial x_i}v_{x_i}\\
-      &=\tfrac{\partial}{\partial x_i}
+      &=(v_{x_i})_{x_i}\\
+      &=\frac{\partial}{\partial x_i}
       \bigl(\varphi_{u_1}u^1_{x_i}+\dotsb+\varphi_{u_m}u^m_{x_i}\bigr)\\
       &=\varphi_{u_1}u^1_{x_ix_i}+\dotsb+\varphi_{u_m}u_{x_ix_i}^m\\
       &\phantom{{}={}}+\bigl(\varphi_{u_1u_1}u_{x_i}^1
@@ -294,16 +293,15 @@
   Taking the partial derivative with respect to \(x_i\), we have
   \begin{align*}
     v_{x_i}
-    &=\tfrac{\partial}{\partial x_i}v\\
-    &=\tfrac{\partial}{\partial x_i}
+    &=\frac{\partial}{\partial x_i}
       \bigl(u_{x_1}^2+\dotsb+u_{x_n}^2\bigr)\\
     &=2u_{x_1}u_{x_1x_i}+\dotsb+2u_{x_n}u_{x_ix_n},
   \end{align*}
   and again
   \begin{align*}
     v_{x_ix_i}
-    &=\tfrac{\partial}{\partial x_i}v_{x_i}\\
-    &=\tfrac{\partial}{\partial x_i}
+    &=(v_{x_i})_{x_i}\\
+    &=\frac{\partial}{\partial x_i}
       \bigl(2u_{x_1}u_{x_1x_i}+\dotsb+2u_{x_n}u_{x_ix_n}\bigr)\\
     &=2u_{x_1}u_{x_1x_ix_i}+2u_{x_1x_i}^2+\dotsb+2u_{x_n}u_{x_ix_ix_n}+2u_{x_ix_n}^2\\
     &=2\sum_{j=1}^n\bigl(u_{x_j}u_{x_jx_ix_i}+u_{x_jx_i}^2\bigr).
@@ -326,7 +324,7 @@
       +\sum_{1\leq i<j\leq n}u_{x_jx_i}^2\\
     &=\sum_{i,j=1}^nu_{x_j}u_{x_jx_ix_i}
       +2\sum_{1\leq j<i\leq n}u_{x_jx_i}^2,
-      \intertext{here \(u_{x_ix_jx_j}=\Delta u_{x_i}=0\) since the
+      \intertext{here \(\sum_{j=1}^nu_{x_ix_jx_j}=\Delta u_{x_i}=0\) since the
       derivatives of harmonic functions are harmonic, so}
     &=\sum_{j=1}^nu_{x_j}(\Delta u_{x_j})
       +2\sum_{1\leq j<i\leq n}u_{x_jx_i}^2\\
