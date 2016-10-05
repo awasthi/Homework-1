@@ -70,9 +70,9 @@ This is a \((p+1)\)-form.
 
 A cochain complex is a collection of Abelian groups \(M^i\) and
 homomorphisms \(d\colon M^i\to M^{i+1}\) such that \(d^2=0\). We define the
-\(p\)th cohomology of this by
+\(p\)\textsup{th} cohomology of this by
 \[
-  H^p(M^\bullet,d)=\frac{\Ker d\colon M^p\to M^{p+1}}{\Img d\colon
+  H^p_\dR(M^\bullet,d)=\frac{\Ker d\colon M^p\to M^{p+1}}{\Img d\colon
     M^{p-1}\to M^p}.
 \]
 So we have an example of a complex \((\calE^\bullet(U),d)\) called the de
@@ -98,7 +98,40 @@ computation.
   \]
   There are no \(p\)-forms for \(p>1\).
 
-  Next, we treat \(n=2\) which contains all of the ideas
+  Next, we treat \(n=2\) which contains all of the ideas of the general
+  case. Let \(x,y\) be coordinates. We define some operators
+  \[
+    \includegraphics{sheaves-1-n-2-case}
+  \]
+  where \(\pi^*\) is the pullback along the projection
+  \(\bbR^2\to\bbR\). It takes a form in \(x\) and treats it as a form in
+  \(x,y\). The pullback along the zero section \(s^*\) sets \(y\) and
+  \(dy\) to zero. Note that \(s^*\circ\pi^*\) is the identity. Although
+  \(\pi^*\circ s^*\) is not the identity, we will show that it induces the
+  identity on cohomology. This will show that \(H_\dR^*(\bbR^2)\cong
+  H_\dR^*(\bbR)\), which is all we need. This involves a new concept. We
+  introduce an operator \(H\colon\calE^p(\bbR^2)\to\calE^{p-1}(\bbR^2)\) of
+  degree \(-1\) called a \emph{homotopy}. It integrates \(y\) as follows:
+  \begin{align*}
+    H\bigl(f(x,y)\bigr)&=0\\
+    H\bigl(f(x,y)\diff x)&=0\\
+    H\bigl(f(x,y)\diff y\bigr)
+                       &=\int_0^y f(x,t)\diff t\\
+    H\bigl(f(x,y)\diff x\wedge dy\bigr)
+    &=\left[\int_0^y f(x,t)\diff t\right]dx.
+  \end{align*}
+
+  A computation using nothing more than the fundamental theorem of calculus
+  shows that
+  \[
+    1-\pi^*s^*=\pm(Hd-dH).
+  \]
+  This implies that the left side induces \(0\) on \(H^*_{\dR}(\bbR^2)\),
+  or equivalently \(\pi^*\circ s^*\) acts like the identity on
+  cohomology. The
+  \[
+    H^*_{\etale}
+  \]
 \end{proof}
 
 %%% Local Variables:
