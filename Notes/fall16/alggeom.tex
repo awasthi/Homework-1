@@ -224,6 +224,35 @@ A sequence
 \[
   A\xright{f}B\xright{g}C
 \]
+is called \emph{exact} if \(\Ker g=\Img f\). A useful skill in this
+business is to be able to prove things by diagram chasing.
+
+\begin{exercise}
+  Given a commutative diagram with exact rows
+  \[
+    \includegraphics{exercise-2-1}
+  \]
+  show that \(g\) is an isomorphism if \(f\) and \(h\) are isomorphisms.
+\end{exercise}
+\begin{solution*}
+
+\end{solution*}
+
+\begin{theorem}[Snake lemma]
+  If
+  \[
+    \includegraphics{snake-lemma-2}
+  \]
+  is a commutative diagram with exact rows, then there is an exact sequence
+  \[
+    0\To\Ker f
+    \To\Ker g
+    \To\Ker h
+    \xright{\partial}\Coker f
+    \To\Coker g
+    \To\Coker h.
+  \]
+\end{theorem}
 
 %%% Local Variables:
 %%% mode: latex
