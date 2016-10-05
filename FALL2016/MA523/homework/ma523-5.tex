@@ -108,26 +108,35 @@
   for \(1\leq k,\ell\leq n\).
 
   Now, going back to \eqref{eq:5:laplacian-k-part}, we have
-  \begin{align*}
-    \Div Dv
-    &=\sum_{k=1}^n\Biggl[\frac{\partial}{\partial x_k}\sum_{j=1}^n
+  \begin{equation}
+    \label{eq:5:laplacian-full}
+    \begin{aligned}
+      \Div Dv &=\sum_{k=1}^n\Biggl[\frac{\partial}{\partial
+        x_k}\sum_{j=1}^n
       a_{jk}u_{x_j}\Biggr]\\
-    &=(a_{11}^2+a_{12}^2+\dotsb+a_{1n}^2)u_{x_1x_1}+(a_{12}^2+a_{22}^2+\dotsb+a_{2n}^2)u_{x_2x_2}\\
-    &\phantom{{}={}}+\dotsb+(a_{1n}^2+\dotsb+a_{nn}^2)u_{x_nx_n}+\{\text{mixed
-      terms}\}\\
-    &=u_{x_1x_1}+u_{x_2x_2}+\dotsb+u_{x_nx_n}\\
-    &=0,
-  \end{align*}
+      &=(a_{11}^2+a_{12}^2+\dotsb+a_{1n}^2)u_{x_1x_1}+(a_{12}^2+a_{22}^2+\dotsb+a_{2n}^2)u_{x_2x_2}\\
+      &\phantom{{}={}}+\dotsb+(a_{1n}^2+\dotsb+a_{nn}^2)u_{x_nx_n}+\{\text{mixed
+        terms}\}\\
+      &=u_{x_1x_1}+u_{x_2x_2}+\dotsb+u_{x_nx_n}\\
+      &=0,
+    \end{aligned}
+  \end{equation}
   as desired.
 
   All that is left to show as that the mixed terms in the expression above
   actually have coefficients of the form in \eqref{eq:5:ortho-matrix}
-  (b). A little routine calculation shows that indeed, the mixed terms have
-  the form. Here is the first mixed term
+  (b). And in fact one can see, expanding \eqref{eq:5:laplacian-full}, that
+  the mixed terms have the form
   \[
-    2(a_{11}a_{21}+a_{12}a_{22}+\dotsb+a_{1n}a_{2n})u_{x_1x_2}
-    =0.
+    \sum_{j=1}^na_{kj}a_{\ell j}=0.
   \]
+  For example, the first member in the mixed terms sequence is
+  \[
+    2(a_{11}a_{21}+a_{12}a_{22}+\dotsb+a_{1n}a_{2n})u_{x_1x_2}=0.
+  \]
+  (Time permits, I will provide a better argument than simply expanding
+  \eqref{eq:5:laplacian-full}; but a little routine calculation shows that
+  these terms in fact have the form we have described.)
 \end{solution}
 \newpage
 
@@ -211,18 +220,39 @@
   \[
     \max_{\bar U_a}u_\varepsilon=\max_{\partial U_a}u_\varepsilon
   \]
-  for any \(a\). Let us choose \(a\) large enough so
+  for any \(a\). Choose \(a\) large enough so
   \[
-    \sup_{\partial U_a}u_\varepsilon=\sup_{\partial U_a} u-\varepsilon\ln a
-    \leq%
-    \sup_{\partial U}u
+    \sup_{\partial U_a}u_\varepsilon\leq
+    \sup_{\partial U}u.
   \]
-  or
+  Then,
   \[
-    \sup_{\partial U_a}u_\varepsilon
-    \leq%
-    \sup_{\partial U}u+\varepsilon\ln a.
+    \sup_{\bar U_a}u_\varepsilon\leq\sup_{\partial U}u
   \]
+  so, taking \(a\to\infty\), we have
+  \[
+    \sup_{\bar U}u_\varepsilon\leq\sup_{\partial U}u.
+  \]
+  Thus, for every \(x_1,x_2\in U\),
+  \[
+    u(x_1,x_2)-\varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}<\sup_{\partial U}u.
+  \]
+  Letting \(\varepsilon\to 0\), we achieve the desired inequality, i.e.,
+  \[
+    \sup_{\bar U}u\leq\sup_{\partial U}u.
+  \]
+
+  The last inequality is obvious and stems from the fact that
+  \(\partial U\subset\bar U\), i.e., the inequality
+  \[
+    \sup_{\partial U}u\leq\sup_{\bar U}u.
+  \]
+
+  We conclude that
+  \[
+    \sup_{\partial U}u=\sup_{\bar U}u,
+  \]
+  as was to be shown.
 \end{solution}
 \newpage
 
