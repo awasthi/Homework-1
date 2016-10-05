@@ -177,18 +177,24 @@
   for any \((x_1,x_2)\in U_a\).
 
   Moreover, a simple calculation shows that \(u_\varepsilon\) is in fact
-  harmonic. By the linearity the Laplacian, it suffices to show that
+  harmonic. By the linearity the Laplacian, it suffices to show that the
+  Laplacian of
   \[
-    \Delta%
-    \left(%
-      \varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}%
-    \right)=0.
+    v_\varepsilon(x)\defeq\varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}%
   \]
-  First, we calculate he partial derivatives
+  is \(0\). First, we calculate he partial derivatives
   \(\tfrac{\partial^2}{\partial x_1\partial x_1}\) and
   \(\tfrac{\partial^2}{\partial x_2\partial x_2}\)
   \begin{align*}
-    &
+   \frac{\partial}{\partial x_1}\frac{v_\varepsilon}{\varepsilon}
+    &=-\frac{x_1}{x_1^2+(x_2+1)^2}
+    &\frac{\partial}{\partial x_2}\frac{v_\varepsilon}{\varepsilon}
+    &=-\frac{(x_2+1)}{x_1^2+(x_2+1)^2}\\
+    \frac{\partial}{\partial x_1}\frac{(v_{\varepsilon})_{x_1}}{\varepsilon}
+    &=-\frac{-x_1^2+(x_2+1)^2}{\bigl(x_1^2+(x_2+1)^2\bigr)^2}
+    &\frac{\partial}{\partial
+      x_2}\frac{(v_{\varepsilon})_{x_2}}{\varepsilon}
+    &=-\frac{-x_1^2+(x_2+1)^2}{\bigl(x_1^2+(x_2+1)^2\bigr)^2}
   \end{align*}
 
   By the maximum principle,
