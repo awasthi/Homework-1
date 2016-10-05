@@ -134,7 +134,7 @@ computation.
 Before describing de Rham's theorem, we have to say what's happening at the
 othe rend. The standard \(n\) dimensional simplex, or \(n\)-simplex,
 \(\Delta^n\subset\bbR^{n+1}\) is the convex hull of the unit vectors
-\((1,0,\dotsc,0),(0,1,\dotsc,0),\dotsc\). The convex hull of the subset of
+\((1,0,\dotsc,0),(0,1,0,\dotsc,0),\dotsc\). The convex hull of the subset of
 these is called a face. This is homeomorphic to a simplex of smaller
 dimension. Omitting all but the \(i\)\textsup{th} vertex is called the
 \(i\)\textsup{th} face of \(\Delta^n\). We have a standard homeomorphism
@@ -149,7 +149,7 @@ is an arbitrary topological space \(X\). A (real/complex) singular
 \(p\)-cochain \(\alpha\) is an integer (real/complex) valued function on
 the set of all continuous maps \(f\colon\Delta^p\to X\). It might help to
 think of \(\alpha(f)\) as a combinatorial integral \(\int_f\alpha\). Let
-\(s^p(X)\) (\(S^p(X,\bbR)\), \(S^p(X,\bbC)\)) denote the group of these
+\(S^p(X)\) (\(S^p(X,\bbR)\), \(S^p(X,\bbC)\)) denote the group of these
 cochains. Define \(\delta\colon S^p(X)\to S^{p+1}(X)\) by
 \[
   \delta(\alpha)(f)=\sum(-1)^i\alpha(f\circ\delta_i).
@@ -197,7 +197,33 @@ category \(\scrC\) consists of a set or class of objects (e.g., sets,
 groups, topological spaces) and morphisms (e.g., functions, homomorphisms,
 continuous maps) between pairs of objects \(\Hom_\scrC(A,B)\). We require
 an identity \(\id_A\in\Hom(A,A)\) for each object \(A\), and associative
-composition law
+composition law.
+
+In this section, we will focus on one particular example. Let \(R\) be an
+associative (but possibly noncommutative ring) with identity \(1\), and let
+\(\RMod R\) be the category of left \(R\)-modules and homomorphisms. We
+write \(\Hom_R(\blank,\blank)\) for the morphisms. It is worth noting that
+\(\RMod\bbZ\) is the category of Abelian groups. These categories have the
+following features:
+\begin{enumerate}
+\item \(\Hom_R(\blank,\blank)\) is an Abelian group, and composition is
+  distributive.
+\item There is a zero object \(0\) such that \(\Hom_R(0,M)=\Hom_R(M,0)=0\).
+\item Every pair of objects \(A\), \(B\) has a direct sum \(A\oplus b\)
+  characterized by certain universal properties.
+\item Morphisms have kernels and images, characterized by the appropriate
+  universal properties.
+\end{enumerate}
+
+We will encounter other categories satisfying these conditions later
+on. Such categories are called Abelian. We have been a bit vague about the
+precise axioms; se Weibel's Homological Algebra for this.
+
+\subsection{Diagram Chasing}
+A sequence
+\[
+  A\xright{f}B\xright{g}C
+\]
 
 %%% Local Variables:
 %%% mode: latex
