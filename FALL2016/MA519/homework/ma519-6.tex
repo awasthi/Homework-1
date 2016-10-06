@@ -50,9 +50,18 @@
     &=\sum_{k=0}^{n-1} kP(X=k)+n\bigl(1-P(X<n)\bigr)\\
     &=n+\sum_{k=0}^{n-1}kP(X=k)-nP(X<n)\\
     &=n+\sum_{k=0}^{n-1}kP(X=k)-n\sum_{k=0}^{n-1}P(X=k)\\
-    &=n+\sum_{k=0}^{n-1}k\binom{n-1}{k}0.5^k0.5^{n-k}-n\sum_{k=0}^{n-1}\binom{n-1}{k}0.5^k0.5^{n-k}\\
-    &=
+    &=n+\sum_{k=0}^{n-1}k\binom{n-1}{k}0.5^k0.5^{n-1-k}
+      -n\sum_{k=0}^{n-1}\binom{n-1}{k}0.5^k0.5^{n-1-k}\\
+    &=n+\sum_{k=0}^{n-1}k\binom{n-1}{k}0.5^{n-1}
+      -n\sum_{k=0}^{n-1}\binom{n-1}{k}0.5^{n-1}\\
+    &=n+(n-1)0.5-n0.5^{n-1} 2^{n-1}\\
+    &=\frac{n-1}{2}.
   \end{align*}
+
+  Thus,
+  \[
+    E(Y)=0.35E(S)-0.25n=0.175(n-1)-0.25n=
+  \]
 \end{solution}
 \newpage
 
@@ -62,17 +71,35 @@
   \(1/2\) or better? Solve again for some player instead of a given one.
 \end{problem}
 \begin{solution}
-
+  Without loss of generality, let us assume it is North that is the
+  preassigned player. Let \(X\) be the number of dealings required in order
+  for North to have four aces with probability greater than or equal to
+  \(1/2\).
 \end{solution}
 \newpage
-
 \begin{problem}[Handout 8, \# 13]
   A book of \(500\) pages contains \(500\) misprints. Estimate the chances
   that a given page contains at least three misprints.
 \end{problem}
 \begin{solution}
-
+  Let $X$ be the number of misprints on the given page. The probability
+  that a given misprint is on that page is $1/500$. Now,
+  $P(X \geq 3) = 1- P(X=0) - P(X=1) - P(X=2)$. Also,
+  \begin{align*}
+    P(X=0) &= \left(\frac{499}{500}\right)^{500}\\
+    P(X=1) &= 500\left(\frac{1}{500}\right)\left(\frac{499}{500}\right)^{499} \\
+    P(X=2) &= \frac{500 \cdot 499}{2}\left(\frac{1}{500}\right)^2\left(\frac{499}{500}\right)^{498}
+  \end{align*}
+  So that
+  \begin{align*}
+    P(X \geq 3) &= 1- P(X=0) - P(X=1) - P(X=2)\\
+                &= 1- \left(\frac{499}{500}\right)^{500} - 500\left(\frac{1}{500}\right)\left(\frac{499}{500}\right)^{499} - \frac{500 \cdot 499}{2}\left(\frac{1}{500}\right)^2\left(\frac{499}{500}\right)^{498}\\
+                &\approx 0.08
+  \end{align*}
+  that is, the probability that the given page has at least \(3\) misprints
+  is about \(8\) percent.
 \end{solution}
+
 \newpage
 
 \begin{problem}[Handout 8, \# 14]
@@ -81,7 +108,9 @@
   probability of its containing a colorblind person is to be \(0.95\) or more?
 \end{problem}
 \begin{solution}
+Let $n$ be the sample size. The probability of the sample containing no colorblind people is $0.99^n$. Solving the equation $0.99^n=0.05$, we see that (for the naturals) taking $n = 299$ is (minimally) sufficient for $0.99^n$ to be less than $0.05$.
 
+The probability that the sample has some colorblind person is equal to $1-0.99^n$. This is at least 95 percent if $0.99^n$ is less than $0.05$. That is, having $299$ people in the sample is (minimally) sufficient for there to be a 95 percent chance of having some colorblind person.
 \end{solution}
 \newpage
 
@@ -114,6 +143,31 @@
   where \(e\) is the number such that \(\ln e=1\).
 \end{problem}
 \begin{solution}
+
+Let $W = 2Z-Y/2+e X$. Then
+
+\begin{align*}
+E(W^2) &= E((2Z-Y/2+e X)^2)\\
+&= E(4Z^2 -2ZY + 4eZX + Y^2/4 -eYX + e^2X^2)\\
+&= 4E(Z^2) -2E(Z)E(Y) + 4eE(Z)E(X) + E(Y^2)/4 -eE(Y)E(X) + e^2E(X^2)\\
+&= 4\cdot 10 + 2  + 3/4  + e^2\cdot 4\\
+&= \frac{171}{4} + 4e^2\\
+&\approx 72.31
+\end{align*}
+
+and
+
+\begin{align*}
+Var(W) &= E(W^2) - E(W)^2 \\
+&= \frac{171}{4} + 4e^2 - (2E(Z) + E(Y)/2 +eE(X))^2\\
+&= \frac{171}{4} + 4e^2 - (2 -1/2)^2\\
+&= \frac{171}{4} + 4e^2 - (3/2)^2\\
+&= \frac{81}{2} +4e^2\\
+&\approx 70.06
+\end{align*}
+
+That is, the second moment is ``about $72.31$'' and the variance is ``about
+$70.06$''
 
 \end{solution}
 \newpage
