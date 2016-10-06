@@ -110,7 +110,7 @@
   \begin{align*}
     \sum_{k=0}^n\left(\frac{\binom{n}{k}}{2^n}\cdot
     \frac{\binom{n}{k}}{2^n}\right)
-    &=\frac{1}{2^{2n}}\sum_{k=0}^n\binrom{n}{k}^2,
+    &=\frac{1}{2^{2n}}\sum_{k=0}^n\binom{n}{k}^2,
       \intertext{which, by the binomial identity of the sum of squares of
       binomial coefficients, gives us}
     &=\frac{1}{2^{2n}}\binom{2n}{n}.
@@ -119,15 +119,21 @@
 \newpage
 
 \begin{problem}[Handout 8, \# 16]
-  Binomial approximation to the hypergeometric distribution. A population
-  of TV elements is divided into red and black elements in the proportion
-  \(p:q\) (where \(p+q=1\)). A sample of size \(n\) is taken without
-  replacement. The probability that it contains exactly \(k\) red elements
-  is given by the hypergeometric distribution of II, 6. Show that as
-  \(n\to\infty\) this probability approaches \(\Binom(n,p)\).
+  \emph{(Binomial approximation to the hypergeometric distribution.)} A
+  population of TV elements is divided into red and black elements in the
+  proportion \(p:q\) (where \(p+q=1\)). A sample of size \(n\) is taken
+  without replacement. The probability that it contains exactly \(k\) red
+  elements is given by the hypergeometric distribution of II, 6. Show that
+  as \(n\to\infty\) this probability approaches \(\Binom(n,p)\).
 \end{problem}
 \begin{solution}
-
+  The hypergeometric distribution has the following PMF
+  \begin{align*}
+    P(X=k)=\left.\binom{r}{k}\binom{n-r}{pn-k}\right/\binom{n}{pn}
+    &=\frac{r!(n-r)!(pn)!(qn)!}{k!(r-k)!(pn-k)!(qn-(r-k))!(pn)!n!}\\
+    &=
+  \end{align*}
+  Now, take the limit as \(n\to\infty\)
 \end{solution}
 \newpage
 
