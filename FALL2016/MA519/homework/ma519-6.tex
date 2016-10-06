@@ -130,7 +130,10 @@
   The hypergeometric distribution has the following PMF
   \begin{align*}
     P(X=k)=\left.\binom{r}{k}\binom{n-r}{pn-k}\right/\binom{n}{pn}
-    &=\frac{r!(n-r)!(pn)!(qn)!}{k!(r-k)!(pn-k)!(qn-(r-k))!(pn)!n!}\\
+    &=\frac{r!(n-r)!(pn)!(qn)!}{k!(r-k)!(pn-k)!(qn-(r-k))!n!}\\
+    &=\binom{pn}{k}\left(\frac{r!(n-r)!(qn)!}{(r-k)!(qn-(r-k))!n!}\right)\\
+    &=\binom{pn}{k}\left(\frac{r\dotsm(r-k+1)qn\dotsm
+      (qn-(r-k)+1)}{n\dotsm(n-r+1)}\right)\\
     &=
   \end{align*}
   Now, take the limit as \(n\to\infty\)
