@@ -71,12 +71,56 @@
   \(1/2\) or better? Solve again for some player instead of a given one.
 \end{problem}
 \begin{solution}
-  Without loss of generality, let us assume it is North that is the
-  preassigned player. Let \(X\) be the number of dealings required in order
-  for North to have four aces with probability greater than or equal to
-  \(1/2\).
+  Without loss of generality, assume North is the preassigned player. Let
+  \(X\) be the number of dealings required for North to have a probability
+  greater than or equal to \(1/2\)
 \end{solution}
 \newpage
+
+  % Without loss of generality, let us assume it is North that is the
+  % preassigned player.
+
+  % If North is dealt first, there is a
+  % \[
+  %   \frac{\binom{52-4}{13-4}}{\binom{52}{13}}=\frac{\num{1677106640}}{\num{635013559600}}
+  %   \approx\num{0.0026410564225690276}
+  % \]
+  % probability that he is dealt four aces.
+
+  % If North is dealt second, assuming none of the aces have been dealt to
+  % the other players, we have a
+  % \[
+  %   \frac{\binom{52-13-4}{13-4}}{\binom{52-13}{13}}=
+  %   \frac{70607460}{8122425444}
+  %   \approx\num{0.008692903429745534}
+  % \]
+  % probability of being dealt four aces.
+
+  % If North is dealt third,
+  % \[
+  %   \frac{\binom{52-13-13-4}{13-4}}{\binom{52-13-13}{13}}=
+  %   \frac{497420}{10400600}
+  %   \approx\num{0.04782608695652174}.
+  % \]
+
+  % If North is dealt last,
+  % \[
+  %   \frac{\binom{52-13-13-13-4}{13-4}}{\binom{52-13-13-13}{13}}=1.
+  % \]
+
+  % Now, the probability that at the \(i\)\textsup{th} dealing, the four aces
+  % are still in the deck is
+  % \[
+  %   p_i=\left(1-\frac{\binom{52-13(i-1)-4}{13}}{\binom{52-13(i-1)}{13}}\right)p_{i-1}.
+  % \]
+  % Numerically, these values are
+  % \begin{align*}
+  %   p_1&\approx\num{0.6961824729891957}
+  %   &p_2&\approx\num{0.5696438537482323}\\
+  %   p_3&\approx\num{0.5424000172646213}
+  %   &p_4&=0.
+  % \end{align*}
+
 \begin{problem}[Handout 8, \# 13]
   A book of \(500\) pages contains \(500\) misprints. Estimate the chances
   that a given page contains at least three misprints.
