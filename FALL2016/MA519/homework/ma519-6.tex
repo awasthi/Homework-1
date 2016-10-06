@@ -101,7 +101,20 @@
   they will score the same number of heads.
 \end{problem}
 \begin{solution}
-  Let \(X\) denote the number
+  Let \(X\) denote the number of heads that, say, person 1 gets. Then
+  \[
+    P(X=k)=\frac{\binom{n}{k}}{2^n}.
+  \]
+  Then, assuming independnece, the probability that they score the same
+  number of heads is given by the expression
+  \begin{align*}
+    \sum_{k=0}^n\left(\frac{\binom{n}{k}}{2^n}\cdot
+    \frac{\binom{n}{k}}{2^n}\right)
+    &=\frac{1}{2^{2n}}\sum_{k=0}^n\binrom{n}{k}^2,
+      \intertext{which, by the binomial identity of the sum of squares of
+      binomial coefficients, gives us}
+    &=\frac{1}{2^{2n}}\binom{2n}{n}.
+  \end{align*}
 \end{solution}
 \newpage
 
@@ -161,7 +174,43 @@ $70.06$''
   \noindent If it can, when?
 \end{problem}
 \begin{solution}
+  Yes. In fact, if \(X\) and \(Y\) are constant random variables \(\Var
+  X=\Var Y=0\) so clearly
+  \[
+    \Var(XY)=\Var X\Var Y=0.
+  \]
+  The problem is finding sufficient conditions for this to be true.
 
+  Since \(X\) and \(Y\) are independent, we know that
+  \[
+    E(XY)=E(X)E(Y)
+  \]
+  and therefore
+  \begin{align*}
+    \Var(XY)
+    &=E(X^2Y^2)-E(XY)^2\\
+    &=E(X^2)E(Y^2)-E(X)^2E(Y)^2
+  \end{align*}
+  and we want this to be equal to
+  \begin{align*}
+    \Var X\Var Y
+    &=\bigl(E(X^2)-E(X)^2\bigr)
+      \bigl(E(Y^2)-E(Y)^2\bigr)\\
+    &=E(X^2)E(Y^2)+E(X)^2E(Y)^2-E(X)^2E(Y^2)-E(X^2)E(Y)^2\\
+    &=E(X^2)E(Y^2)-E(X)^2E(Y^2)\\
+    &\phantom{{}={}}-\bigl(E(X)^2E(Y^2)-E(X)^2E(Y)^2+E(X^2)E(Y^2)-E(X)^2E(Y^2)\bigr)\\
+    &=\Var(XY)-\Var(Y) E(X^2)-\Var(X)E(Y^2).
+  \end{align*}
+  This happens precisely when the quantity
+  \[
+    \Var(Y) E(X^2)+\Var(X)E(Y^2)=0.
+  \]
+  Since \(\Var X,\Var Y,E(X^2),E(Y^2)\geq 0\), this forces the equality
+  \[
+    \Var(Y) E(X^2)=\Var(X)E(Y^2)=0.
+  \]
+  This happens when both \(X=Y=0\) or, more generally, if and only if \(X\)
+  and \(Y\) are constant.
 \end{solution}
 
 %%% Local Variables:
