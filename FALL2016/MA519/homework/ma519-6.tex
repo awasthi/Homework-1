@@ -134,9 +134,18 @@
     &=\binom{pn}{k}\left(\frac{r!(n-r)!(qn)!}{(r-k)!(qn-(r-k))!n!}\right)\\
     &=\binom{pn}{k}\left(\frac{r!/(r-k)!}{n!/(n-k)!}\cdot\frac{(n-r)!/(n-pn-(r-k))!}{(n-pn+(pn-k))!/(qn)!}\right)\\
     &=\binom{pn}{k}\prod_{j=1}^k\frac{r-k+j}{n-k+j}\prod_{j=1}^{np-k}
-      \frac{n-r-(np-k)+j}{n-np+j}.
+      \frac{n-r-(np-k)+j}{n-np+j}\\
+    &=\binom{pn}{k}\prod_{j=1}^k\frac{r-k+j}{n-k+j}\prod_{j=1}^{np-k}
+      \frac{nq-(r-k)+j}{nq+j}.
   \end{align*}
   Now, take the limit as \(n\to\infty\)
+  \[
+    \lim_{n\to\infty}\prod_{j=1}^k\frac{r-k+j}{n-k+j}=
+  \]
+  and
+  \[
+    \lim_{n\to\infty}\prod_{j=1}^{np-k} \frac{nq-(r-k)+j}{nq+j}=
+  \]
 \end{solution}
 \newpage
 
