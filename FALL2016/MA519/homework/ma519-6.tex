@@ -29,38 +29,10 @@
 \end{problem}
 \begin{solution}
   Let \(X\sim\Binom(50,0.5)\) denote the daily demand for papers and \(n\)
-  the number of copies bought by the newsboy. Then, the random variable
-  \(S=\min\{X,n\}\) denotes the number of copies actually sold by the
-  newsboy. His daily profit is, therefore, measured by the random variable
+  the number of copies bought by the newsboy. Then, we must find the
+  \(\ell\) such that the sum
   \[
-    Y=0.35S-0.25n.
-  \]
-
-  Now let us compute the average sales of the newsboy. By the linearity of
-  expected value, we have
-  \begin{align*}
-    E(S)
-    &=\sum_{k=0}^nkP(S=k)\\
-    &=\sum_{k=0}^{n-1} kP(\min\{X,n\}=k)+nP(\min\{X,n\}=n),
-      \intertext{where \(P(\min\{X,n\}=k)=P(X=k)\) the probability that there
-      is a demand for \(k\) copies, and \(P(\min\{X,n\}=n)=P(X\geq n)\) the
-      probability that the demand exceeds the number of copies the newsboy
-      bought, giving us}
-    &=\sum_{k=0}^{n-1} kP(X=k)+nP(X\geq n)\\
-    &=\sum_{k=0}^{n-1} kP(X=k)+n\bigl(1-P(X<n)\bigr)\\
-    &=n+\sum_{k=0}^{n-1}kP(X=k)-nP(X<n)\\
-    &=n+\sum_{k=0}^{n-1}kP(X=k)-n\sum_{k=0}^{n-1}P(X=k)\\
-    &=n+\sum_{k=0}^{n-1}k\binom{n-1}{k}0.5^k0.5^{n-1-k}
-      -n\sum_{k=0}^{n-1}\binom{n-1}{k}0.5^k0.5^{n-1-k}\\
-    &=n+\sum_{k=0}^{n-1}k\binom{n-1}{k}0.5^{n-1}
-      -n\sum_{k=0}^{n-1}\binom{n-1}{k}0.5^{n-1}\\
-    &=n+(n-1)0.5-n0.5^{n-1} 2^{n-1}\\
-    &=\frac{n-1}{2}.
-  \end{align*}
-
-  Thus,
-  \[
-    E(Y)=0.35E(S)-0.25n=0.175(n-1)-0.25n=
+    \sum_{k=\ell}^{50}\binom{50}{k}0.5^{50}-\sum_{k=0}^{\ell-1}binom{50}{k}0.5^{50}
   \]
 \end{solution}
 \newpage
@@ -79,10 +51,12 @@
   \begin{align*}
     P(X=4)&=\frac{4}{52}\cdot\frac{3}{48}
             \cdot\frac{2}{44}\cdot\frac{1}{40}\approx\num{5.463286713286714e-06}\\
-    P(X=5)&=frac{4}{52}\cdot\frac{3}{48}
+    P(X=5)&=\frac{4}{52}\cdot\frac{3}{48}
             \cdot\frac{2}{44}\cdot\frac{1}{40}
-            +\frac{4}{51}\cdot\frac{3}{47}\cdot\frac{2}{43}\cdot\frac{1}{40}\\
-          &=
+            +\frac{4}{51}\cdot\frac{3}{47}\cdot\frac{2}{43}\cdot\frac{1}{40}
+            \approx\num{1.1433779047547711e-05}\\
+          &\vdotswithin{=}\\
+    P(X=k)&=P(X=4)+P(X=5)+\dotsb+P(X=k-1)
   \end{align*}
 \end{solution}
 \newpage
