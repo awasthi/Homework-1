@@ -47,7 +47,11 @@
       probability that the demand exceeds the number of copies the newsboy
       bought, giving us}
     &=\sum_{k=0}^{n-1} kP(X=k)+nP(X\geq n)\\
-    &=\sum_{k=0}^{n-1} kP(X=k)+n\bigl(1-P(X<n)\bigr).
+    &=\sum_{k=0}^{n-1} kP(X=k)+n\bigl(1-P(X<n)\bigr)\\
+    &=n+\sum_{k=0}^{n-1}kP(X=k)-nP(X<n)\\
+    &=n+\sum_{k=0}^{n-1}kP(X=k)-n\sum_{k=0}^{n-1}P(X=k)\\
+    &=n+\sum_{k=0}^{n-1}k\binom{n-1}{k}0.5^k0.5^{n-k}-n\sum_{k=0}^{n-1}\binom{n-1}{k}0.5^k0.5^{n-k}\\
+    &=
   \end{align*}
 \end{solution}
 \newpage
