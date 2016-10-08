@@ -4,72 +4,8 @@
   random, what is the probability that there is at least one complete pair
   among the four?
 \end{problem}
-\begin{solution}
-  Let \(\Omega\) denote the sample space and \(A\) denote the event that at
-  least \(1\) complete pair of shoes is among the \(4\). We can reduce the
-  problem of finding \(P(A)\) into finding the probabilities of the
-  mutually exclusive events
- \[
-   A_1\defeq\bigl\{\,\text{exactly \(1\) pair is among the \(4\)}\,\bigr\}
-  \]
-  and
-  \[
-    A_1\defeq\bigl\{\,\text{exactly \(2\) pairs are among the
-      \(4\)}\,\bigr\}.
-  \]
-  since \(A=A_1\cup A_2\), and using the additivity of \(p\),
-  \[
-    P(A)=P(A_1)+P(A_2).
-  \]
-  (To keep the problem short, we will not show that
-  \(A_1\cap A_2=\emptyset\) and \(A=A_1\cup A_2\).)
-
-  First, let us count the number of sample points in \(\Omega\): since the
-  closet contains \(5\) pairs of shoes it contains a total of \(10\) shoes
-  out of which we are selecting \(4\). Hence, the number of sample points
-  is
-  \begin{equation}
-    \label{eq:1-1}
-    \#\Omega=%
-    \binom{10}{4}=%
-    \frac{10!}{4!6!}=%
-    \frac{10\cdot 9\cdot 8\cdot 7\cdot 6!}{4\cdot 3\cdot 2\cdot 6!}=%
-    10\cdot 3\cdot 7=%
-    210.
-  \end{equation}
-
-  Now we count the sample points in \(A_1\) and \(A_2\): counting the
-  points in \(A_2\) is immediate since we are not taking into consideration
-  the order in which we select the pair
-  \begin{equation}
-    \label{eq:1-2}
-    \# A_2=%
-    \binom{5}{2}=%
-    \frac{5!}{2!3!}=%
-    \frac{5\cdot 4\cdot 3!}{2\cdot 3!}=%
-    5\cdot 2=10.
-  \end{equation}
-  Counting the points in \(A_1\) is not much harder:
-  first, we observe that there are \(5\) pairs to
-  choose from and for the remaining two shoes we must choose one shoe
-  (either a right or a left) from the remaining \(4\) pairs which leaves
-  \(7-1=6\) other shoes to choose from; \ie{} the number of sample points
-  in \(A_1\) is
-  \begin{equation}
-    \label{eq:1-3}
-    5\cdot 4\cdot 6=120.
-  \end{equation}
-  Taking the results of \eqref{eq:1-1}, \eqref{eq:1-2} and \eqref{eq:1-3},
-  the probability that there is at least one complete pair among the four
-  is
-  \[
-    P(A)=%
-    P(A_1)+P(A_2)=%
-    \frac{120}{210}+\frac{10}{210}=\frac{130}{210}\approx%
-    0.6190.
-  \]
-\end{solution}
-\newpage
+\begin{solution*}
+\end{solution*}
 
 \begin{problem}[Handout 1, \# 7 \protect{[Feller Vol.\@ 1]}]
   A gene consists of \(10\) subunits, each of which is normal or
@@ -80,51 +16,8 @@
   gets the rest. What is the probability that one of the cells consists of
   all normal subunits.
 \end{problem}
-\begin{solution}
-  We shall employ the sames strategy as that of Problem 1.1. Let \(A\)
-  denote the event that one of the cells contains all normal units. Then,
-  like Problem 1.1, we can reduce the problem of finding the probability of
-  \(A\) to finding the probability of
-  \[
-    A_1\defeq\bigl\{\,\text{cell \(1\) consists of all normal subunits}\,\bigr\}
-  \]
-  and
-  \[
-    A_2\defeq\bigl\{\,\text{cell \(1\) contains \(6\) mutant cells}\,\bigr\}
-  \]
-  and taking their sum.
-
-  Now, let us count the number of points in our sample space
-  \(\Omega\). Assuming the configuration of the subunits in a gene does not
-  matter, we have
-  \begin{equation}
-    \label{eq:1-4}
-      \# \Omega=\binom{20}{10}=184756
-  \end{equation}
-  sample points.
-
-  Now we count the number of points in \(A_1\) and \(A_2\) these are: for
-  \(A_1\) we choose \(10\) subunits from among the \(14\) normal subunits
-  giving us
-  \begin{equation}
-    \label{eq:1-5}
-    \# A_1=\binom{14}{10}=1001
-  \end{equation}
-  sample points. For \(A_2\), we must choose all \(6\) mutant subunits
-  leaving \(4\) choices from among the \(14\) normal subunits giving us
-  \begin{equation}
-    \label{eq:1-6}
-    \# A_1=\binom{14}{4}=1001.
-  \end{equation}
-  Thus, we have
-  \[
-    P(A)=%
-    P(A_1)+P(A_2)=%
-    \frac{1001}{184756}+\frac{1001}{184756}\approx%
-    0.01083.
-  \]
-\end{solution}
-\newpage
+\begin{solution*}
+\end{solution*}
 
 \begin{problem}[Handout 1, \# 9 \protect{[Feller Vol.\@ 1]}]
   From a sample of size \(n\), \(r\) elements are sampled at random. Find
@@ -136,60 +29,8 @@
   \end{enumerate}
   Compute it for \(r=N=10\), \(n=100\).
 \end{problem}
-\begin{solution}
-  For part (a), with replacement, the number of points in the sample space
-  \(\Omega_a\) is given by the expression
-  \[
-    \# \Omega_a=\binom{n+r-1}{r}.
-  \]
-  Let \(A_a\) be the event that none of the \(N\) prespecified elements
-  appear (with \(N\leq r\)). Now to find \(P(A_a)\), we count the sample
-  points in \(A_a\) these are: there are \(N\) elements to avoid so \(n-N\)
-  elements to choose from with replacement. This gives us
-  \[
-    \# A_a=\binom{(n-N)+r-1}{r}.
-  \]
-  Thus, the probability of \(A_a\) happening is
-  \begin{equation}
-    \label{eq:prob-a-a}
-    P(A_a)=%
-    \binom{(n-N)+r-1}{r}\biggl/\binom{n+r-1}{r}=%
-    \frac{(n-1)\dotsm\bigl((n-1)-N+1\bigr)}
-    {(n+r-1)\dotsm\bigl((n+r-1)-N+1\bigr)}.
-  \end{equation}
-
-  For part (b), without replacement, the number of points in the sample
-  space \(\Omega_b\) is given by the expression
-  \[
-    \# \Omega_b=\binom{n}{r}.
-  \]
-  Let \(A_b\) be the event that none of the \(N\) prespecified elements
-  appear (with \(N\leq r\)). Again, to find \(P(A_b)\) we need only count
-  the sample points in \(A_b\): there are \(N\) elements to avoid so
-  \(n-N\) elements to choose from without replacement. Hence,
-  \[
-    \# A_b=\binom{n-N}{r}.
-  \]
-  Thus, the probability of \(A_b\) happening is
-  \begin{equation}
-    \label{eq:prob-a-b}
-    P(A_b)=%
-    \binom{n-N}{r}\biggl/\binom{n}{r}=%
-    \frac{(n-1)\dotsm (n-N)}{(n+r-1)\dotsm (n+r-N)}.
-  \end{equation}
-
-  Lastly, we compute, using Eqs.\@ \eqref{eq:prob-a-a} and
-  \eqref{eq:prob-a-b}, we compute the probabilities in (a) and (b) with
-  \(r=N=10\) and \(n=100\). These are:
-  \[
-    P(A_a)=\frac{99\dotsm 90}{109\dotsm 100}\approx 0.3654,
-  \]
-  and
-  \[
-    P(A_b)=\frac{90\dotsm 81}{100\dotsm 91}\approx 0.3305.
-  \]
-\end{solution}
-\newpage
+\begin{solution*}
+\end{solution*}
 
 \begin{problem}[Handout 1, \# 11 \protect{[Text 1.3]}]
   A telephone number consists of ten digits, of which the first digit is
@@ -197,37 +38,8 @@
   the probability that \(0\) appears at most once in a telephone number, if
   all the digits are chosen completely at random?
 \end{problem}
-\begin{solution}
-  Let \(\Omega\) be the sample space and let \(A\) be the event that at
-  \(0\) appears at most once in a telephone number if all the digits are
-  chosen completely at random. First, let us count the number of elements
-  in the sample space, this is
-  \[
-    \# \Omega=9\cdot 10^9
-  \]
-  where the first digit is taken from among \(1,2,\dotsc,9\) and the
-  remaining \(9\) out of \(0,1,2\dotsc,9\). Assuming randomness (\ie{} that
-  every sample point is equally likely), it suffices to count the sample
-  points in the event. We do this by decomposing \(A\) into the union of
-  mutually exclusive events
-  \[
-    A_i=\bigl\{\,\text{telephone numbers with exactly one \(0\) in the
-      \(i\)-th position}\,\bigr\}.
-  \]
-  The number of sample points in \(A_i\) is
-  \[
-    \# A_i=9\cdot 9^8
-  \]
-  since we must choose \(8\) digits of the number from among \(1,\dotsc,9\)
-  digits (with repetition). Thus,
-  \[
-    P(A)=%
-    P(A_1)+\dotsm P(A_9)=%
-    \frac{9\cdot 9\cdot 9^8}{9\cdot 10^9}=%
-    \left(\frac{9}{10}\right)^9\approx 0.3874.
-  \]
-\end{solution}
-\newpage
+\begin{solution*}
+\end{solution*}
 
 \begin{problem}[Handout 1, \# 12 \protect{[Text 1.6]}]
   Events \(A\), \(B\) and \(C\) are defined in a sample space
@@ -240,24 +52,8 @@
   \item the probability that none of these events occur.
   \end{enumerate}
 \end{problem}
-\begin{solution}
-  These are all easy consequences of the inclusion-exclusion formula. For
-  part (a) we have is \(AB+AC+BC-ABC\)
-  \[
-    P(AB+AC+BC)=P(AB)+P(AC)+P(BC)-2P(ABC).
-  \]
-
-  For part (b) we have
-  \[
-    P(A)+P(B)+P(C)-P(AB)-P(AC)-P(BC)+P(ABC).
-  \]
-
-  Lastly, for part (c) we have
-  \[
-    P(\Omega)-P(A)-P(B)-P(C)+P(AB)+P(AC)+P(BC)+2P(ABC).
-  \]
-\end{solution}
-\newpage
+\begin{solution*}
+\end{solution*}
 
 \begin{problem}[Handout 1, \# 13 \protect{[Text 1.8]}]
   Mrs.\@ Jones predicts that if it rains tomorrow it is bound to rain the
@@ -266,59 +62,15 @@
   \(1/3\). Are these subjective probabilities consistent with the axioms
   and theorems of probability?
 \end{problem}
-\begin{solution}
-  No. Let \(\Omega = \{(0,0),(0,1),(1,0),(1,1)\) be the sample space, where
-\( (0,0)\) corresponds to the event that it rains on neither day, \(
-(0,1)\) corresponds to the event that it rains tomorrow only, \( (1,0)\)
-corresponds to the event that it rains the day after tomorrow only, and \(
-(1,1)\) corresponds to the event that it rains on both days. Mrs. \@ Jones
-has predicted that \(P((0,1))=0 \), \(P((0,1)) + P((1,1))=1/2 \), and
-\(P((1,0)) + P((1,1))=1/3 \). We can solve this system of equations: We get
-that
-
-  \[ P((0,1)) &= 0 P((1,1)) &= 1/2 P((1,0)) &- -1/6
-  \]
-
-which fails our axioms of probability: we have an event that has negative
-probability.
-\end{solution}
-\newpage
+\begin{solution*}
+\end{solution*}
 
 \begin{problem}[Handout 1, \# 16]
   Consider a particular player, say North, in a Bridge game. Let \(X\) be
   the number of aces in his hand. Find the distribution of \(X\).
 \end{problem}
-\begin{solution}
-
-  First, we recall that any one player in a Bridge game has 13 cards out of
-  the 52 in the deck, and that there are four (distinct) aces in the 52
-  card deck. Let \( \Omega\) be the sample space of hands that North could
-  have drawn. Let \(A_i\) be the event that North has drawn \(i\) aces. It
-  is clear that \(P(A_i) = 0\) for all \(i \neq 0,1,2,3,4\).
-
-  First,
-
-  \[
-    \# \Omega= \binom{52}{13}
-  \]
-
-  and
-
-  \[
-    \# A_i= \binom{4}{i} \cdot \binom{48}{13-i}
-  \]
-
-  So that
-
-  \[
-    P(A_i)= \frac{\binom{4}{i} \cdot \binom{48}{13-i}}{\binom{52}{13}}
-  \]
-
-  (note that this holds even when \(i \neq 0,1,2,3,4\), as the
-  \(\binom{4}{i}\) term is zero in those cases.)
-
-\end{solution}
-\newpage
+\begin{solution*}
+\end{solution*}
 
 \begin{problem}[Handout 1, \# 20]
   If \(100\) balls are distributed completely at random into \(100\) cells,
@@ -327,8 +79,8 @@ probability.
   Replace \(100\) by \(n\) and derive the general expression. Now
   approximate it as \(n\) tends to \(\infty\).
 \end{problem}
-\begin{solution}
-\end{solution}
+\begin{solution*}
+\end{solution*}
 
 %%% Local Variables:
 %%% mode: latex
