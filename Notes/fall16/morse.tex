@@ -53,7 +53,7 @@ map then
 topological sum (i.e., disjoint union) of \(Y\) and \(\bbD^k\), and
 identifying each \(x\in \bbS^{k-1}\) with \(g(x)\in Y\). To take care of
 the case \(k=0\) let \(\bbD^0\) be a point and let
-\(\partial\bbD^0=S^{-1}\) be vacuous, so that \(Y\) is a \(0\)-cell
+\(\partial\bbD^0=\bbS^{-1}\) be vacuous, so that \(Y\) is a \(0\)-cell
 attached to just the union of \(Y\) and a disjoint point.
 
 As one might expect, the point \(p\), \(q\), \(r\), and \(s\) at which the
@@ -61,12 +61,50 @@ homotopy type of \(M^a\) changes, have as simple characterization in terms
 of \(f\). They are the critical points of the function. If we choose any
 coordinate system \((x,y)\) near these points, then the derivatives
 \(\frac{\partial f}{\partial x}\) and \(\frac{\partial f}{\partial y}\) are
-both zero. At \(p\) we can choose \((x,y)\) so that \(f=x^2+y^2\), at
-\(s\) so that \(f=C-x^2-y^2\), and at \(q\) and \(r\) so that
+both zero. At \(p\) we can choose \((x,y)\) so that \(f=x^2+y^2\), at \(s\)
+so that \(f=C-x^2-y^2\), and at \(q\) and \(r\) so that
 \(f=C+x^2-y^2\). Note that the number of minus signs in the expression for
 \(f\) at eeach point is the dimension of the cell we must attach to go from
-\(M^a\) to \(M^b\), where \(a<f(*)<b\). Our first theorems will generalizet
-hese facts for any differentiable function on a manifold.
+\(M^a\) to \(M^b\), where \(a<f(\cdot)<b\). Our first theorems will
+generalize these facts for any differentiable function on a manifold.
+
+\section{Non-degenerate functions}
+\subsection{Definitions and lemmas}
+The word \emph{smooth} and \emph{differentiable} will be used
+interchangeably to mean differentiable of class \(C^\infty\). The tangent
+space of a smooth manifold \(M\) at a point \(p\) will be denoted by
+\(T_pM\). If \(g\colon M\to N\) is a smooth map with \(g(p)=q\), then the
+induced linear map of tangent spaces will be denoted by \(g_*\colon T_pM\to
+T_qN\).
+
+Now let \(f\) be a smooth real valued function on a manifold \(M\). A point
+\(p\in M\) is called a \emph{critical point} of \(f\) if the induced map
+\(f_*\colon T_pM\to T_{f(p)}\bbR\) is zero. If we choose local coordinates
+\((x^1,\dotsc,x^n)\) in a neighborhood \(U\) of \(p\) this means
+\[
+  \frac{\partial f}{\partial x^1}(p)=\dotsb=\frac{\partial f}{\partial x^n}=0.
+\]
+The real number \(f(p)\) is called a \emph{critical value} of \(f\).
+
+We denote by \(M^a\) the set of all points \(x\in M\) such that \(f(x)\leq
+a\). If \(a\) is not a critical value of \(f\) then it follows from the
+implicit function theorem that \(M^a\) is a smooth manifold with
+boundary. The boundary \(f^{-1}(a)\) is a smooth submanifold of \(M\).
+
+A critical point \(p\) is called \emph{non-degenerate} if and only if the
+\[
+  \frac{\partial^2 f}{\partial x^i\partial x^j}(p)
+\]
+is non-singular. It can be checked directly that non-degeneracy does not
+depend on the coordinate system. This will follow also from the following
+intrinsic definition.
+
+If \(p\) is a critical point of \(f\) we define a symmetric bilinear
+functional \(f_{**}\) on \(T_pM\), called the \emph{Hessian} of \(f\) at
+\(p\). If \(v,w\in T_pM\) then \(v\) and \(w\) have extensions \(\tilde v\)
+and \(\tilde w\) to vector fields. We let \(f_{**}(v,w)\defeq \tilde
+v_p(\tilde w(f))\), where \(\tilde v_p\) is, of course, just
+\(v\). We must show that this is symmetric and well-defined.
 
 %%% Local Variables:
 %%% mode: latex
