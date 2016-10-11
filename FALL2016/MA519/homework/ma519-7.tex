@@ -8,7 +8,13 @@
   We use the Poisson distribution as an approximation to the binomial
   distribution; the latter being a more appropriate model of the problem.
 
-  First, we compute the parameters of the Poisson distribution.
+  First, we compute the parameters of the Poisson distribution. In this
+  case, we have \(n=100\). For any given person, the probability that he
+  obtains exactly \(100\) heads and \(100\) tails, in no particular order,
+  is
+  \[
+    \frac{\binom{200}{100}}{2^{200}}\approx\num{0.05634847900925642}.
+  \]
 \end{solution}
 \newpage
 
@@ -17,7 +23,20 @@
   variable. Can three different values of \(X\) have an equal probability?
 \end{problem}
 \begin{solution}
-
+  Suppose \(X\sim\Poisson(n,\lambda)\). Then the PMF of \(X\) has the form
+  \[
+    P(X=k)=\frac{e^{-\lambda}\lambda^k}{k!}.
+  \]
+  Then, three different values of \(X\) having the same probability means
+  that
+  \[
+    \frac{e^{-\lambda}\lambda^{k_1}}{k_1!}
+    =
+    \frac{e^{-\lambda}\lambda^{k_2}}{k_2!}
+    =
+    \frac{e^{-\lambda}\lambda^{k_3}}{k_3!}
+  \]
+  for \(k_1\), \(k_2\), \(k_3\) all distinct positive integers.
 \end{solution}
 \newpage
 
@@ -76,7 +95,7 @@
 \begin{problem}[Handout 10, \# 11]
   Prove
   \[
-    \Poisson(0;\lambda)+\dotsb+\Poisson(n;\lambda)
+    \Poisson(0,\lambda)+\dotsb+\Poisson(n,\lambda)
     =\frac{1}{n!}\int_\lambda^\infty e^{-x}x^n\diff x.
   \]
 \end{problem}
