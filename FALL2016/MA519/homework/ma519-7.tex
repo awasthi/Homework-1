@@ -5,16 +5,28 @@
   \(100\) tails.
 \end{problem}
 \begin{solution}
-  We use the Poisson distribution as an approximation to the binomial
-  distribution; the latter being a more appropriate model of the problem.
-
-  First, we compute the parameters of the Poisson distribution. In this
-  case, we have \(n=100\). For any given person, the probability that he
-  obtains exactly \(100\) heads and \(100\) tails, in no particular order,
-  is
+  Let \(X\) denote the number of people who obtain exactly \(100\) heads
+  and (consequently) \(100\) tails. First, we compute the probability that
+  any one given person obtains exactly \(100\) heads. There are \(2^{200}\)
+  possible outcomes for \(200\) tosses of a fair coin, and
+  \(\binom{200}{100}\) possible ways of obtaining exactly \(100\)
+  heads. Thus, the probability that any one person obtains exactly \(100\)
+  head in \(200\) tosses of a fair coin is
   \[
-    \frac{\binom{200}{100}}{2^{200}}\approx\num{0.05634847900925642}.
+    p=\frac{\binom{200}{100}}{2^{200}}\approx\num{0.05634847900925642}.
   \]
+
+  Now, assuming \(X\sim\Poisson(100,\num{0.05634847900925642})\), the
+  probability that at least \(10\) of the \(100\) people have each obtained
+  exactly \(100\) heads and \(100\) tails is
+  \begin{align*}
+    P(X\geq 10)
+    &=1-P(X<10)\\
+    &=1-\sum_{i=1}^9 P(X=i)\\
+    &1-\sum_{i=1}^9\frac{e^{-\num{0.05634847900925642}}\num{0.05634847900925642}^i}
+      {i!}\\
+    &=
+  \end{align*}
 \end{solution}
 \newpage
 
