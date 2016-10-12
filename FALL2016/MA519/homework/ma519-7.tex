@@ -66,9 +66,15 @@
 \end{problem}
 \begin{solution}
   Let \(X\) count the number of husbands which have been seated directly
-  across from their wives. First, we compute the probability that, say, the
-  only the first man is seated directly across from his wife. After we have
-  made this choice, there are \(20-1\) women left to pair up with men.
+  across from their wives. First, we find the probability exactly one man
+  is seated across from his wife. To this end, we compute the probability
+  of the complement, that either no men are seated next to their wives or
+  at least two men are seated next to their wives. There are \(20!\) ways
+  of pairing men with women; fixing a man, there are \(19\) ways in which
+  that man is not paired with his own wife, and, assuming he picked the
+  next man's wife,
+
+  Now, assume that \(X\sim\Poisson\)
 \end{solution}
 \newpage
 
