@@ -39,20 +39,41 @@
 \begin{solution}
   No. Let \(X\sim\Poisson(\lambda)\). First, we show that given any two
   values \(k_1,k_2\in\bbZ_{\geq 0}\), there exists \(\lambda\) such that
-  \(p(k_1)=p(k_2)\). Observe that for \(p(k_1)=p(k_2)\) we must have
+  \(p(k_1)=p(k_2)\).
+
+  Observe that for \(p(k_1)=p(k_2)\) we must have
   \begin{align*}
     e^{-\lambda}\frac{\lambda^{k_1}}{k_1!}
     &=e^{-\lambda}\frac{\lambda^{k_2}}{k_2!}\\
     \lambda^{k_1-k_2}
     &=\frac{k_1!}{k_2!}
-      \intertext{this implies that}
+      \intertext{this implies that, given \(k_1\) and \(k_2\),}
       (k_1-k_2)\ln\lambda&=\ln(k_1!/k_2!)\\
-    \lambda&=e^{\ln(k_1!/k_2!)/(k_1-k_2)}.
+    \lambda(k_1,k_2)&=e^{\ln(k_1!/k_2!)/(k_1-k_2)}.
   \end{align*}
-  For example, if \(k_1=3\) and \(k_2=5\), we have
-  \(\lambda\approx\num{4.472135954999579}\) and
+  For example, \(\lambda(3,5)\approx\num{4.472135954999579}\) and
   \[
     p(3)\approx\num{0.17028240507308132}\approx p(5).
+  \]
+
+  We now prove our original claim. Assume for a moment that \(X\) is
+  continuous. We will show that the PMF \(p\) of \(X\) has at most one
+  critical point. Write the PMF of \(p\) as its continuous analogue
+  \[
+    p(x)=P(X=x)=\frac{e^{-\lambda}\lambda^x}{\Gamma(x)}.
+  \]
+  Then, taking the derivative of \(p\), we have
+  \begin{align*}
+    p'(x)
+    &=e^{-\lambda}\frac{\Gamma(x)\lambda^x\ln\lambda-\lambda^x\Gamma(x)}{\Gamma(x)^2}\\
+    &=\frac{e^{-\lambda}\lambda^x}{\Gamma(x)}
+      \left[\ln\lambda-\frac{\Gamma'(x)}{\Gamma(x)}\right]\\
+    &=p(x)\left[\ln\lambda-\frac{\Gamma'(x)}{\Gamma(x)}\right].
+  \end{align*}
+  Since \(\Gamma,\Gamma'>0\) for all \(x\in\bbR_{\geq 0}\), \(p'(x)=0\) if
+  and only if
+  \[
+    \ln\lambda=\frac{\Gamma'(x)}{\Gamma(x)}.
   \]
 \end{solution}
 \newpage
