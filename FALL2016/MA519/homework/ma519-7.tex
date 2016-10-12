@@ -16,7 +16,7 @@
     p=\frac{\binom{200}{100}}{2^{200}}\approx\num{0.05634847900925642}.
   \]
 
-  Now, assuming \(X\sim\Poisson(100,\num{5.634847900925642})\), the
+  Now, assuming \(X\sim\Poisson(\num{5.634847900925642})\), the
   probability that at least \(10\) of the \(100\) people have each obtained
   exactly \(100\) heads and \(100\) tails is
   \begin{align*}
@@ -37,32 +37,11 @@
   variable. Can three different values of \(X\) have an equal probability?
 \end{problem}
 \begin{solution}
-  Suppose \(X\sim\Poisson(n,\lambda)\). Then the PMF of \(X\) has the form
+  Suppose \(X\sim\Poisson(\lambda)\) and let us consider the case in which
+  \(X\) is continuous and takes values on \(\bbR_{\geq 0}\). Then, the PMF
+  of \(X\) has the form
   \[
-    P(X=k)=\frac{e^{-\lambda}\lambda^k}{k!}.
-  \]
-  Then, three different values of \(X\) having the same probability means
-  that
-  \[
-    \frac{e^{-\lambda}\lambda^{k_1}}{k_1!}
-    =
-    \frac{e^{-\lambda}\lambda^{k_2}}{k_2!}
-    =
-    \frac{e^{-\lambda}\lambda^{k_3}}{k_3!}
-  \]
-  for \(k_1\), \(k_2\), \(k_3\) all distinct positive integers, i.e.,
-  \[
-    \lambda^{k_1}k_2!k_3!
-    =
-    \lambda^{k_2}k_1!k_3!
-    =
-    \lambda^{k_3}k_1!k_2!.
-  \]
-  Taking the log on the equalities above, we have
-  \[
-    k_1\ln \lambda \bigl(\sqrt[k_1]{k_2!k_3!}\bigr)=
-    k_2\ln \lambda \bigl(\sqrt[k_2]{k_1!k_3!}\bigr)=
-    k_3\ln \lambda \bigl(\sqrt[k_3]{k_1!k_2!}\bigr)=
+    p'(x)=e^{-\lambda}\frac{\lambda^x}{\Gamma(x)}
   \]
 \end{solution}
 \newpage

@@ -79,6 +79,28 @@ for \(1\leq r\leq n\).
   \]
 \end{proof}
 
+\section{Discrete random variables}
+Let us talk about discrete random variables now. A random variable is
+called \emph{discrete} if it takes on at most countably many values. We
+define the \emph{probability mass function (PMF) \(p(a)\)}  of \(X\) by
+\[
+  p(a)=P(X=a).
+\]
+The PMF \(p(a)\) is positive for at most a countable number of values of
+\(a\). That is, if \(X\) must assume one of the values \(x_1,x_2,\dotsc\),
+then
+\[
+  \begin{aligned}
+    p(x_i)&\geq 0&&\text{for \(i=1,2,\dotsc\),}\\
+    p(x)&=0&&\text{for all other values of \(x\)}
+  \end{aligned}
+\]
+Since \(X\) must take on the values \(x_i\), we have
+\[
+  \sum_{i=1}^\infty p(x_i)=1.
+\]
+
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../Fall16-Notes"
