@@ -37,11 +37,22 @@
   variable. Can three different values of \(X\) have an equal probability?
 \end{problem}
 \begin{solution}
-  Suppose \(X\sim\Poisson(\lambda)\) and let us consider the case in which
-  \(X\) is continuous and takes values on \(\bbR_{\geq 0}\). Then, the PMF
-  of \(X\) has the form
+  No. Let \(X\sim\Poisson(\lambda)\). First, we show that given any two
+  values \(k_1,k_2\in\bbZ_{\geq 0}\), there exists \(\lambda\) such that
+  \(p(k_1)=p(k_2)\). Observe that for \(p(k_1)=p(k_2)\) we must have
+  \begin{align*}
+    e^{-\lambda}\frac{\lambda^{k_1}}{k_1!}
+    &=e^{-\lambda}\frac{\lambda^{k_2}}{k_2!}\\
+    \lambda^{k_1-k_2}
+    &=\frac{k_1!}{k_2!}
+      \intertext{this implies that}
+      (k_1-k_2)\ln\lambda&=\ln(k_1!/k_2!)\\
+    \lambda&=e^{\ln(k_1!/k_2!)/(k_1-k_2)}.
+  \end{align*}
+  For example, if \(k_1=3\) and \(k_2=5\), we have
+  \(\lambda\approx\num{4.472135954999579}\) and
   \[
-    p'(x)=e^{-\lambda}\frac{\lambda^x}{\Gamma(x)}
+    p(3)\approx\num{0.17028240507308132}\approx p(5).
   \]
 \end{solution}
 \newpage
@@ -54,7 +65,10 @@
   least three are; at most three are.
 \end{problem}
 \begin{solution}
-
+  Let \(X\) count the number of husbands which have been seated directly
+  across from their wives. First, we compute the probability that, say, the
+  only the first man is seated directly across from his wife. After we have
+  made this choice, there are \(20-1\) women left to pair up with men.
 \end{solution}
 \newpage
 
