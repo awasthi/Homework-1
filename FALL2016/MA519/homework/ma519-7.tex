@@ -90,7 +90,14 @@
   Let \(X\) count the number of husbands that have been seated directly
   across from their wives. First, we find the probability that exactly one
   man has been seated across from his wife. To this end, we compute the
-  probability of the complement that ``.''
+  probability of the complement that ``the probability that either (1) no
+  men are paired with their wives or (2) at least two men are paired with
+  their wives.'' The latter is easy to compute: There are \(20!\) possible
+  arrangement and, fixing two men with their respective wives, \(18!\)
+  arrangements for the other couples giving us a probability of
+  \[
+    p_2=\frac{18!}{20!}=\frac{1}{19\cdot 20}.
+  \]
 \end{solution}
 \newpage
 
@@ -107,8 +114,8 @@
 \newpage
 
 \begin{problem}[Handout 10, \# 8]
-  A book of \(500\) pages contains 500 misprints. Estimate the chances that
-  a given page contains at least three misprints.
+  A book of \(500\) pages contains \(500\) misprints. Estimate the chances
+  that a given page contains at least three misprints.
 \end{problem}
 \begin{solution}
 
