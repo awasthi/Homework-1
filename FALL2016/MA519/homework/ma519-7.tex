@@ -90,14 +90,29 @@
   Let \(X\) count the number of husbands that have been seated directly
   across from their wives. First, we find the probability that exactly one
   man has been seated across from his wife. To this end, we compute the
-  probability of the complement that ``the probability that either (1) no
-  men are paired with their wives or (2) at least two men are paired with
-  their wives.'' The latter is easy to compute: There are \(20!\) possible
-  arrangement and, fixing two men with their respective wives, \(18!\)
-  arrangements for the other couples giving us a probability of
+  probability of the complement, i.e., the probability that either \(A_1\),
+  no men are paired with their wives, or \(A_2\), at least two men are
+  paired with their wives, occur. The latter, \(p_2=P(A_2)\), is easy to
+  compute: There are \(20!\) possible arrangements and, fixing two men with
+  their respective wives, \(18!\) arrangements for the other couples,
+  giving us a probability of
   \[
     p_2=\frac{18!}{20!}=\frac{1}{19\cdot 20}.
   \]
+  To compute the probability \(p_1=P(A_1)\) we employ the
+  inclusion-exclusion principle: Let \(B_i\), \(1\leq i\leq 20\), denote
+  the event that the \(i\)\textsup{th} man is not paired with his
+  wife. Since all the probabilities \(B_i=B_j\), \(B_i\cap B_j=B_k\cap
+  B_\ell\), etc., are equivalent, we need only find \(P(B_1),P(B_1\cap
+  B_2),P(B_1\cap B_2\cap B_3)\), etc., as follows
+  \begin{align*}
+    P(B_1)&=\frac{19!}{20!}\\
+    P(B_1\cap B_2)&=\frac{19!+}{20!}\\
+          &\vdotswithin{=}\\
+    P\bigl({\textstyle\bigcap_{i=1}^{20}B_i}\bigr)&=
+          &\vdotswithin{=}\\
+    P\bigl({\textstyle\bigcap_{i=1}^{20}B_i}\bigr)&=
+  \end{align*}
 \end{solution}
 \newpage
 
