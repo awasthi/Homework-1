@@ -91,31 +91,28 @@
   across from their respective wives. We approximate the probabilities that
   (i) exactly two husbands are seated directly across from their wives,
   (ii) at least three are, and (iii) at most three are, by assuming that
-  \(X\sim\Poisson(\lambda)\). But first, we compute the probability \(p\)
-  that exactly one husband has been seated directly across from his wife.
+  \(X\sim\Poisson(\lambda)\). But first, we compute the mean of \(X\).
 
-  There are \(20!\) arrangements for the
-  couples. Fixing the husbands, there are \(20\) ways to pick the wife that
-  is to be seated directly across from her husband. There remain \(19\)
-  couples and we want none of these to be seated right across from each
-  other. To this end, and in order to save some time, we use the formula
-  for counting \emph{derangements}, which can be derived from the
-  inclusion-exclusion principle,
-  \begin{align*}
-    !19&=19!\sum_{i=0}^n\frac{(-1)^i}{i!}\\
-       &=\num{44750731559645100}.
-  \end{align*}
-  Thus,
+  Fixing the men, the probability that any given man is sitting directly
+  across from his wife is \(1/20\). Since the distribution of \(X\) is
+  binomial, its mean is \(20(1/20)=1\). Thus, \(\lambda=1\).
+
+  For (i), the probability that exactly two husbands are seated directly
+  from their wives is
   \[
-    p=\frac{20(!19)}{20!}=\frac{!19}{19!}\approx\num{0.3678794411714423},
+    p(2;1)=e^{-1}\frac{1}{2!}\approx\num{0.18393972058572117}.
   \]
-  so \(\lambda\approx\num{7.357588823428846}\).
 
-  With this, we can proceed to approximate (i) the probability that exactly
-  two husbands are seated across from their wives. This is given by
+  For (iii), the probability is
   \[
-    p(2)=e^{-\num{7.357588823428846}}\frac{\num{7.357588823428846}^2}{2!}
-    \approx\num{0.01726159034832215}
+    p(x\geq
+    3;1)=1-e^{-1}\left[1+1+\frac{1}{2}\right]\approx\num{0.08030139707139416}.
+  \]
+
+  For (iii), the probability is
+  \[
+    p(x\leq 3;1)=
+    e^{-1}\left[1+1+\frac{1}{2}+\frac{1}{6}\right]\approx\num{0.9810118431238462}.
   \]
 \end{solution}
 \newpage
@@ -173,7 +170,8 @@
   \[
     \frac{\lambda^0 e^{-\lambda}}{0!} = e^{-\lambda} \leq 0.01
   \]
-  which occurs for $\lambda \geq -\ln(0.01) = \ln(100) \approx 4.60517$.
+  which occurs for
+  $\lambda \geq -\ln(0.01) = \ln(100) \approx \num{4.60517}$.
 
   That is, we want there to be about $4.6$ raisins per cookie in order to
   guarantee that no more than one out of one hundred cookies is raisinless.
@@ -185,7 +183,7 @@
   maximum when \(k\) is the largest integer not exceeding \(\lambda\).
 \end{problem}
 \begin{solution}
-  First, set $\lceil{\lambda}\rceil$ equal to the largest integer not
+  First, set $\lfloor{\lambda}\rfloor$ equal to the largest integer not
   exceeding $\lambda$. Then we show $p(k;\lambda)$ is increasing on
   $[0,\lfloor{\lambda}\rfloor]$ and decreasing on
   $[\lfloor{\lambda}\rfloor, \infty)$; this suffices to show that the maximum
@@ -193,9 +191,10 @@
 
   Now, note that for all $k$,
   \begin{align*}
-    p(k; \lambda) - p(k+1;\lambda) &= \frac{\lambda^k e^{-\lambda}}{k!} -\frac{\lambda^{k+1} e^{-\lambda}}{(k+1)!}\\
-                                   &= \frac{e^{-\lambda} \lambda^k}{k!} \left( 1 -\frac{\lambda}{k+1} \right)\\
-                                   &= \frac{e^{-\lambda} \lambda^k}{k!} \left( 1 -\frac{\lambda}{k+1} \right)\\
+    p(k; \lambda) - p(k+1;\lambda)
+    &= \frac{\lambda^k e^{-\lambda}}{k!} -\frac{\lambda^{k+1} e^{-\lambda}}{(k+1)!}\\
+    &= \frac{e^{-\lambda} \lambda^k}{k!} \left[ 1 -\frac{\lambda}{k+1} \right]\\
+    &= \frac{e^{-\lambda} \lambda^k}{k!} \left[ 1 -\frac{\lambda}{k+1} \right]
   \end{align*}
   which is positive exactly when $k < \lambda +1$ and negative exactly when
   $k \geq lambda +1$. That is, $p(k+1;\lambda)$ is larger than
@@ -244,10 +243,10 @@
   $P(X_n = m) = \binom{n}{m} \left( 0.5 \right)^n$.  So, the distribution
   of $X$ is given by
   \begin{align*}
-    P(X=m) &= \sum\limits_{n=0}^\infty P(X_n = m) P(N=n) \\
-           &= \sum\limits_{n=0}^\infty \binom{n}{m} \left( 0.5 \right)^n \frac{e^{-\mu} \mu^n}{n!} \\
-           &= e^{-\mu} \sum\limits_{n=0}^\infty \frac{n!}{(n-m)!m!n!} (0.5 \mu)^n \\
-           &= \frac{e^{-\mu}}{m!} \sum\limits_{n=0}^\infty \frac{(0.5 \mu)^n}{(n-m)!}
+    P(X=m) &= \sum_{n=0}^\infty P(X_n = m) P(N=n) \\
+           &= \sum_{n=0}^\infty \binom{n}{m} \left( 0.5 \right)^n \frac{e^{-\mu} \mu^n}{n!} \\
+           &= e^{-\mu} \sum_{n=0}^\infty \frac{n!}{(n-m)!m!n!} (0.5 \mu)^n \\
+           &= \frac{e^{-\mu}}{m!} \sum_{n=0}^\infty \frac{(0.5 \mu)^n}{(n-m)!}
   \end{align*}
 \end{solution}
 \newpage
@@ -259,9 +258,9 @@
 \begin{solution}
   Let $X$ be a poisson distribution with mean $\lambda$. Then
   \begin{align*}
-    M_X(t) &= \sum\limits_{n=0}^\infty e^{tn} P(X = n) \\
-           &= \sum\limits_{n=0}^\infty e^{tn} \frac{e^{-\lambda} \lambda^n}{n!} \\
-           &= e^{-\lambda} \sum\limits_{n=0}^\infty \frac{(e^t \lambda)^n}{n!} \\
+    M_X(t) &= \sum_{n=0}^\infty e^{tn} P(X = n) \\
+           &= \sum_{n=0}^\infty e^{tn} \frac{e^{-\lambda} \lambda^n}{n!} \\
+           &= e^{-\lambda} \sum_{n=0}^\infty \frac{(e^t \lambda)^n}{n!} \\
            &= e^{-\lambda} e^{\lambda e^t} \\
   \end{align*}
   Note that
@@ -282,7 +281,26 @@
   probability that two do; three do; at most five do.
 \end{problem}
 \begin{solution}
+  Like in Problem 7.3, \(\lambda=1\).
 
+  Using a Poisson approximation, the probability that two husbands are
+  seated directly across from their wives is
+  \[
+    p(2;1)=e^{-1}\frac{1}{2}\approx\num{0.18393972058572117}.
+  \]
+
+  The probability that three do is
+  \[
+    p(3;1)=e^{-1}\frac{1}{6}\approx\num{0.06131324019524039}.
+  \]
+
+  The probability that at most five do
+  \[
+    p(x\leq 5;1)=%
+    e^{-1}%
+    \left[1+1+\frac{1}{2}+\frac{1}{6}+\frac{1}{24}+\frac{1}{120}\right]\approx%
+    \num{0.9994058151824182}.
+  \]
 \end{solution}
 
 %%% Local Variables:
