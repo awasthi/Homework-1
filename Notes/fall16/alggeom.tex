@@ -253,6 +253,16 @@ business is to be able to prove things by diagram chasing.
     \To\Coker h.
   \]
 \end{theorem}
+\section[\(\Hom\) Functors]{\(\boldsymbol\Hom\) Functors}
+A \emph{(covariant) functor \(F\)} from one category to another is a
+function taking objects to objects and morphisms to morphisms such that if
+\(f\colon A\to B\) then \(F(f)\colon F(A)\to F(B)\),
+\(F(\id_A)=\id_{F(A)}\), and \(F(f\circ g)=F(f)\circ F(g)\). A
+contravariant functor reverses direction in the sense that
+\(F(f)\colon F(B)\to F(A)\), \(F(\id_A)=\id_{F(A)}\), and
+\(F(f\circ g)=F(g)\circ F(f)\). Here are two basic examples: If
+\(M\in\RMod R\), then \(F(\blank)=\Hom_R(M,\blank)\) is a covariant functor
+from \(\RMod R\) to \(\RMod{\bbZ}\).
 
 %%% Local Variables:
 %%% mode: latex
