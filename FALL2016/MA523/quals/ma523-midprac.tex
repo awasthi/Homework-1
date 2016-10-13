@@ -1,6 +1,183 @@
-\chapter{Exams}
-\section{Midterm Practice Problems}
+\section{Exams}
+\subsection{Midterm Practice Problems}
+\begin{problem}
+  Solve \(u_{x_1}^2+x_2u_{x_2}=u\) with initial conditions
+  \(u(x,1)=x^2/4+1\).
+\end{problem}
+\begin{solution*}
+\end{solution*}
 
+\begin{problem}
+  Find the maximal \(t_0>0\) for which the (classical) solution of the
+  Cauchy problem
+  \[
+    \left\{
+      \begin{aligned}
+        uu_x+u_t&=0,\\
+        u(x,0)&=e^{-x^2/2},
+      \end{aligned}
+    \right.
+  \]
+  exists in \(\bbR\times[0,t)\); i.e., the first time \(t=t_0\) when the
+  shock develops.
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+  If \(\rho_0\) denotes the maximum density of cars on a highway (i.e.,
+  under bumpet-to-bumper conditions), then a reasonable model for traffic
+  density \(\rho\) is given by
+  \[
+     \left\{
+       \begin{aligned}
+         \rho_t+(F(\rho))_x&=0,\\
+         F(\rho)&=cp\left(1-\frac{\rho}{\rho_0}\right),
+      \end{aligned}
+    \right.
+  \]
+  where \(c>0\) is a constant (free speed of highway). Suppose the initial
+  density is
+  \[
+    \rho(x,0)=
+    \begin{cases}
+      \frac{1}{2}\rho_0&\text{if \(x<0\),}\\
+      \rho_0&\text{if \(x>0\).}
+    \end{cases}
+  \]
+  Find the shock curve and describe the wak solution. (Interpret your
+  result for the traffic flow.)
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+  Find the characteristics of the second order equation
+  \[
+    u_{xx}-2\cos x u_5xy-(3\sin^2 x)u_{yy}-yu_y=0,
+  \]
+  and transform it to the canonical form.
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+  Let \(Lu\defeq u_{xx}-4u_{yy}+\sin(y+2x)u_{x}=0\).
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item Consider the level curve \(\Gamma=\{\,(x,y):\varphi(x,y)=C\,\}\)
+    where \(|D\varphi|\neq 0\) on \(\Gamma\). Define what it means for
+    \(\Gamma\) to be characteristic with respect to \(L\) at a point
+    \((x_0,y_0)\in\Gamma\).
+  \item Find the points at which the curve \(x^2+y^2=5\) is
+    characteristic.
+  \item Is it true that every smooth simple closed curve \(\Gamma\) in
+    \(\bbR^2\) has at least one point at which it is characteristic with
+    respect to \(L\)?
+  \end{enumerate}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+  Consider the second order equation
+  \[
+    Lu\defeq u_{xx}-2xu_{xy}+x^2u_{yy}-2u_y=0.
+  \]
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item Find the characteristic curves of \(Lu=0\). What is the type of
+    this equation?
+  \item Find the points on the line
+    \(\Gamma\defeq\{\,(x,y)\in\bbR^2:x+y=1\,\}\) at which \(\Gamma\) is
+    characteristic with respect to \(Lu=0\).
+  \end{enumerate}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+  Solve the initial boundary value problem for the equation
+  \(u_{tt}=u_{xx}\) in \(\{\,x>0,t>0\,\}\) satisfying
+    \[
+     \left\{
+       \begin{aligned}
+         u(x,0)&=\sin^2x,&u_t(x,0)&=\sin x,\\
+         u(0,t)&=0.
+      \end{aligned}
+    \right.
+  \]
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+  Consider the initial/boundary value problem
+    \[
+     \left\{
+       \begin{aligned}
+         u_{tt}-u_{xx}&=0&&&&\text{for \(0<x<\pi\), \(t>0\),}\\
+         u(x,0)&=x,&u_t(x,0)&=0&&\text{for \(0<x<\pi\),}\\
+         u_x(0,t)&=0,&u_x(\pi,t)&=0&&\text{for \(t>0\).}
+      \end{aligned}
+    \right.
+  \]
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item Find a weak solution of the problem.
+  \item Is the solution unique? Continuous? \(C^1\)?
+  \end{enumerate}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+  Let \(B_1^+\) denote the open half-ball
+  \(\{\,x\in\bbR^n:|x|<1,x_n>0\,\}\). Assume \(u\in C(\bar B_1^+)\) is
+  harmonic in \(B_1^+\) with \(u=0\) on \(\partial
+  B_1^+\cap\{\,x_n=0\,\}\). Set
+  \[
+    v(x)\defeq
+    \begin{cases}
+      u(x)&\text{if \(x_n\geq 0\),}\\
+      -u(x_1,\dotsc,x_{n-1},-x_n)&\text{if \(x_n<0\),}
+    \end{cases}
+  \]
+  for \(x\in B_1\). Prove \(v\) is harmonic in \(B_1\).
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+  Let \(u\) and \(v\) be harmonic functions in the unit ball
+  \(B_1\subset\bbR^n\). What can you conclude about \(u\) and \(v\) if
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item \(D^\alpha u(0)=D^\alpha v(0)\) for every multiindex \(\alpha\)?
+  \item \(u(x)\leq v(x)\) for every \(x\in B_1\) and \(u(0)=v(0)\)?
+  \end{enumerate}
+  Justify your answer in each case.
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+  Let \(\Phi\) be the fundamental solution of the Laplace equation in
+  \(\bbR^n\) and \(f\in C_0^\infty(\bbR^n)\). Then the convolution
+  \[
+    u(x)\defeq(\Phi* f)(x)=\int_{\bbR^n}\Phi(x-y)f(y)\diff y
+  \]
+  is a solution to the Poisson equation \(-\Delta u=f\) in \(\bbR^n\). Show
+  that if \(f\) is radial, i.e., \(f(y)=f(|y|)\), and supported in
+  \(B_R\defeq\{\,|x|<R\,\}\), then
+  \[
+    u(x)=c\Phi(x)
+  \]
+  for any \(x\in\bbR^n\setminus B_R\), where
+  \[
+    c=\int_{\bbR^n}f(y)\diff y.
+  \]
+  [\emph{Hint:} Use polar (spherical) coordinates and apply the mean value
+  property for harmonic functions.]
+\end{problem}
+\begin{solution*}
+\end{solution*}
 
 %%% Local Variables:
 %%% mode: latex
