@@ -13,12 +13,14 @@
   heads. Thus, the probability that any one person obtains exactly \(100\)
   head in \(200\) tosses of a fair coin is
   \[
-    p=\frac{\binom{200}{100}}{2^{200}}\approx\num{0.05634847900925642}.
+    p=\frac{\binom{200}{100}}{2^{200}}\approx\num{0.05634847900925642},
   \]
+  so the mean of \(X\) is approximately \(\num{5.634847900925642})\).
 
-  Now, assuming \(X\sim\Poisson(\num{5.634847900925642})\), the
-  probability that at least \(10\) of the \(100\) people have each obtained
-  exactly \(100\) heads and \(100\) tails is
+  Now, assuming \(X\sim\Poisson(\lambda)\) with
+  \(\lambda\approx\num{5.634847900925642}\), the probability that at least
+  \(10\) of the \(100\) people have each obtained exactly \(100\) heads and
+  \(100\) tails is
   \begin{align*}
     P(X\geq 10)
     &=1-P(X<10)\\
