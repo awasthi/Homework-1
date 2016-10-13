@@ -88,31 +88,35 @@
 \end{problem}
 \begin{solution}
   Let \(X\) count the number of husbands that have been seated directly
-  across from their wives. First, we find the probability that exactly one
-  man has been seated across from his wife. To this end, we compute the
-  probability of the complement, i.e., the probability that either \(A_1\),
-  no men are paired with their wives, or \(A_2\), at least two men are
-  paired with their wives, occur. The latter, \(p_2=P(A_2)\), is easy to
-  compute: There are \(20!\) possible arrangements and, fixing two men with
-  their respective wives, \(18!\) arrangements for the other couples,
-  giving us a probability of
-  \[
-    p_2=\frac{18!}{20!}=\frac{1}{19\cdot 20}.
-  \]
-  To compute the probability \(p_1=P(A_1)\) we employ the
-  inclusion-exclusion principle: Let \(B_i\), \(1\leq i\leq 20\), denote
-  the event that the \(i\)\textsup{th} man is not paired with his
-  wife. Since all the probabilities \(B_i=B_j\), \(B_i\cap B_j=B_k\cap
-  B_\ell\), etc., are equivalent, we need only find \(P(B_1),P(B_1\cap
-  B_2),P(B_1\cap B_2\cap B_3)\), etc., as follows
+  across from their respective wives. We approximate the probabilities that
+  (i) exactly two husbands are seated directly across from their wives,
+  (ii) at least three are, and (iii) at most three are, by assuming that
+  \(X\sim\Poisson(\lambda)\). But first, we compute the probability \(p\)
+  that exactly one husband has been seated directly across from his wife.
+
+  There are \(20!\) arrangements for the
+  couples. Fixing the husbands, there are \(20\) ways to pick the wife that
+  is to be seated directly across from her husband. There remain \(19\)
+  couples and we want none of these to be seated right across from each
+  other. To this end, and in order to save some time, we use the formula
+  for counting \emph{derangements}, which can be derived from the
+  inclusion-exclusion principle,
   \begin{align*}
-    P(B_1)&=\frac{19!}{20!}\\
-    P(B_1\cap B_2)&=\frac{19!+}{20!}\\
-          &\vdotswithin{=}\\
-    P\bigl({\textstyle\bigcap_{i=1}^{20}B_i}\bigr)&=
-          &\vdotswithin{=}\\
-    P\bigl({\textstyle\bigcap_{i=1}^{20}B_i}\bigr)&=
+    !19&=19!\sum_{i=0}^n\frac{(-1)^i}{i!}\\
+       &=\num{44750731559645100}.
   \end{align*}
+  Thus,
+  \[
+    p=\frac{20(!19)}{20!}=\frac{!19}{19!}\approx\num{0.3678794411714423},
+  \]
+  so \(\lambda\approx\num{7.357588823428846}\).
+
+  With this, we can proceed to approximate (i) the probability that exactly
+  two husbands are seated across from their wives. This is given by
+  \[
+    p(2)=e^{-\num{7.357588823428846}}\frac{\num{7.357588823428846}^2}{2!}
+    \approx\num{0.01726159034832215}
+  \]
 \end{solution}
 \newpage
 
@@ -120,11 +124,22 @@
   \emph{(Poisson Approximation.)} There are \(5\) coins on a desk, with
   probabilities \(0.05\), \(0.1\), \(0.05\), \(0.01\), and \(0.04\) for
   heads. By using a Poisson approximation, find the probability of
-  obtaining at least one head when the five coins are each tossed once. Is
-  the number of heads obtained binomially distributed in this problem?
+  obtaining at least one head when the five coins are each tossed once.
+
+  \noindent Is the number of heads obtained binomially distributed in this
+  problem?
 \end{problem}
 \begin{solution}
-
+  First, let us find the probability \(p\) that the toss of a coin randomly
+  selected from the \(5\) comes up heads. This is given by
+  \[
+    p=\frac{0.05+0.1+0.05+0.01+0.04}{5}=0.05.
+  \]
+  Now, \(\lambda=0.25\) so the probability of obtaining at least one head
+  is
+  \[
+    e^{-0.25}\sum_{i=1}^5 \frac{0.25^i}{i!}\approx\num{0.22119894311503177}.
+  \]
 \end{solution}
 \newpage
 
