@@ -148,7 +148,15 @@
   that a given page contains at least three misprints.
 \end{problem}
 \begin{solution}
-
+  We approximate the distribution of \(X\) the number of misprints on a
+  given page using a Poisson distribution with parameter \(\lambda=1\) the
+  density of misprints throughout the book. Under these assumptions, the
+  probability that a given page contains at least three misprints is given
+  by
+  \[
+    1-e^{-1}\frac{1}{1!}-e^{-1}\frac{1}{1!}-e^{-1}\frac{1}{2!}
+    \approx\num{0.08030139707139416}.
+  \]
 \end{solution}
 \newpage
 
@@ -163,8 +171,8 @@
 \newpage
 
 \begin{problem}[Handout 10, \# 10]
-  The terms \(\Poisson(k;X)\) of the Poisson distribution reach their
-  maximum when \(k\) is the largest integer not exceeding \(X\).
+  The terms \(p(k;\lambda)\) of the Poisson distribution reach their
+  maximum when \(k\) is the largest integer not exceeding \(\lambda\).
 \end{problem}
 \begin{solution}
 
@@ -174,12 +182,24 @@
 \begin{problem}[Handout 10, \# 11]
   Prove
   \[
-    \Poisson(0,\lambda)+\dotsb+\Poisson(n,\lambda)
+    p(0,\lambda)+\dotsb+p(n,\lambda)
     =\frac{1}{n!}\int_\lambda^\infty e^{-x}x^n\diff x.
   \]
 \end{problem}
 \begin{solution}
-
+  By integration by parts, we have
+  \begin{align*}
+    \frac{1}{n!}\int_\lambda^\infty e^{-x}x^n\diff x
+    &=\frac{1}{n!}e^{-x}x^n\Bigr|_\lambda^\infty-\frac{1}{n!}\int_\lambda^\infty
+      -ne^{-x}x^{n-1}\diff x\\
+    &=\frac{e^{-\lambda}\lambda^n}{n!}+\frac{1}{(n-1)!}\int_\lambda^\infty
+      e^{-x}x^{n-1}\diff x\\
+    &\vdotswithin{=}\\
+    &=\frac{e^{-\lambda}\lambda^n}{n!}+\frac{e^{-\lambda}\lambda^{n-1}}{(n-1)!}+\dotsb+
+      \frac{e^{-\lambda}\lambda^{0}}{0!}\\
+    &=p(n;\lambda)+\dotsb+p(0;\lambda),
+  \end{align*}
+  as was to be shown.
 \end{solution}
 \newpage
 
