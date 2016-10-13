@@ -166,8 +166,8 @@
   should be without raisin.
 \end{problem}
 \begin{solution}
-  The number of raisins in a cookie is given by a poisson distribution: Let
-  $X_{\lambda}$ be the number of raisins in a cookie that came out of a batch
+  The number of raisins in a cookie is given by a poisson distribution: let
+  $X_{\la}$ be the number of raisins in a cookie that came out of a batch
   where the average number of raisins per cookie was $\lambda$. We want
   $P(X_{\lambda} = 0) \leq 0.01$. That is, we want
   \[
@@ -185,11 +185,10 @@
   maximum when \(k\) is the largest integer not exceeding \(\lambda\).
 \end{problem}
 \begin{solution}
-  First, set $\lceil{\lambda}\rceil$ equal to the largest integer not
-  exceeding $\lambda$. Then we show $p(k;\lambda)$ is increasing on
-  $[0,\lfloor{\lambda}\rfloor]$ and decreasing on
-  $[\lfloor{\lambda}\rfloor, \infty)$; this suffices to show that the maximum
-  occurs at $\lfloor{\lambda}\rfloor$.
+  First, set $\floor{\lambda}$ equal to the largest integer not exceeding
+  $\lambda$. Then we show $p(k;\lambda)$ is increasing on
+  $[0,\floor{\lambda}]$ and decreasing on $[\floor{\lambda}, \infty)$; this
+  suffices to show that the maximum occurs at $\floor{\lambda}$.
 
   Now, note that for all $k$,
   \begin{align*}
@@ -201,8 +200,8 @@
   $k \geq lambda +1$. That is, $p(k+1;\lambda)$ is larger than
   $p(k; \lambda)$ exactly when $k < \lambda +1$; that is, $p(k;\lambda)$
   increases until the largest integer not exceeding $\lambda$;
-  $p(k;\lambda)$ is increasing on $[0,\lfloor {\lambda} \rfloor$ and decreasing on
-  $[\lfloor  {\lambda}\rfloor,\infty)$, as desired.
+  $p(k;\lambda)$ is increasing on $[0,\floor{\lambda}$ and decreasing on
+  $[\floor{\lambda},\infty)$, as desired.
 \end{solution}
 \newpage
 
@@ -239,10 +238,10 @@
   \noindent Find the distribution of \(X\).
 \end{problem}
 \begin{solution}
-  First, note that $P(N=n)=e^{-\mu} \mu^n/n!$.  Given that there are $n$
-  coins in your pocket, let $X_n$ denote the number of heads shown. Then
-  $P(X_n = m) = \binom{n}{m} \left( 0.5 \right)^n$.  So, the distribution
-  of $X$ is given by
+  First, note that $P(N=n) = \frac{e^{-\mu} \mu^n}{n!}$.  Given that there
+  are $n$ coins in your pocket, let $X_n$ denote the number of heads
+  shown. Then $P(X_n = m) = \binom{n}{m} \left( 0.5 \right)^n$.  So, the
+  distribution of $X$ is given by
   \begin{align*}
     P(X=m) &= \sum\limits_{n=0}^\infty P(X_n = m) P(N=n) \\
            &= \sum\limits_{n=0}^\infty \binom{n}{m} \left( 0.5 \right)^n \frac{e^{-\mu} \mu^n}{n!} \\
@@ -257,20 +256,18 @@
   mean and the variance of an arbitrary Poisson distribution are equal.
 \end{problem}
 \begin{solution}
-  Let $X$ be a poisson distribution with mean $\lambda$. Then
-  \begin{align*}
-    M_X(t) &= \sum\limits_{n=0}^\infty e^{tn} P(X = n) \\
-           &= \sum\limits_{n=0}^\infty e^{tn} \frac{e^{-\lambda} \lambda^n}{n!} \\
-           &= e^{-\lambda} \sum\limits_{n=0}^\infty \frac{(e^t \lambda)^n}{n!} \\
-           &= e^{-\lambda} e^{\lambda e^t} \\
-  \end{align*}
-  Note that
-  $M_X'(t) = e^{-\lambda} \left(\lambda e^{\lambda e^t + t} \right)$ and
-  $M_X''(t) = e^{-\lambda} \left(\lambda e^{\lambda e^t + t} \right)
-  \left(\lambda e^t +1 \right)$.
+Let $X$ be a poisson distribution with mean $\lambda$. Then
 
-  Evaluating at $0$, we get that $E(X) = M_X'(0) = \lambda$ and
-  $E(X^2) = M_X''(0) /2= \lambda$.
+\begin{align*}
+M_X(t) &= \sum\limits_{n=0}^\infty e^{tn} P(X = n) \\
+&= \sum\limits_{n=0}^\infty e^{tn} \frac{e^{-\lambda} \lambda^n}{n!} \\
+&= e^{-\lambda} \sum\limits_{n=0}^\infty \frac{(e^t \lambda)^n}{n!} \\
+&= e^{-\lambda} e^{\lambda e^t} \\
+\end{align*}
+
+Note that $M_X'(t) = e^{-\lambda} \left(\lambda e^{\lambda e^t + t} \right)$ and $M_X''(t) = e^{-\lambda} \left(\lambda e^{\lambda e^t + t} \right) \left(\lambda e^t +1 \right)$.
+
+Evaluating at $0$, we get that $E(X) = M_X'(0) = \lambda$ and $E(X^2) = M_X''(0) /2= \lambda$.
 \end{solution}
 \newpage
 
