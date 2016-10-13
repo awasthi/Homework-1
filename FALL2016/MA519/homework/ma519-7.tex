@@ -127,16 +127,20 @@
   problem?
 \end{problem}
 \begin{solution}
-  First, let us find the probability \(p\) that the toss of a coin randomly
-  selected from the \(5\) comes up heads. This is given by
+  Let \(X_i\), \(1\leq i\leq 5\), count the number of heads of a toss of
+  the \(i\)\textsup{th} coin. First, let us find the mean of
+  \(X=X_1+\dotsb+X_5\). This is given by
   \[
-    p=\frac{0.05+0.1+0.05+0.01+0.04}{5}=0.05.
+   0.05+0.1+0.05+0.01+0.04=0.25.
   \]
-  Now, \(\lambda=0.25\) so the probability of obtaining at least one head
-  is
+  Set \(\lambda=0.25\). Then, using a Poisson approximation to the PMF of
+  \(X\), the probability of obtaining at least one head is
   \[
     e^{-0.25}\sum_{i=1}^5 \frac{0.25^i}{i!}\approx\num{0.22119894311503177}.
   \]
+
+  Theorem 1.28(a) from the Text suggests that the distribution may not be
+  binomial unless the probabilities of each head are identical.
 \end{solution}
 \newpage
 
