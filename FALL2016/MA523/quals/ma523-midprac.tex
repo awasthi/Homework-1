@@ -8,17 +8,18 @@
   Assuming \(u(x,1)=x^2/4+1\) was meant to be written
   \(u(x_1,1)=x_1^2/4+1\), an obvious candidate for the solution is
   \[
-    \hat u(x_1,x_2)=\frac{x_1^2}{4}+x_2.
+    \hat u(x_1,x_2)\defeq\frac{x_1^2}{4}+x_2.
   \]
   First, note that \(u\) does in fact solve the PDE,
   \begin{align*}
     \hat u_{x_1}^2+x_2\hat u_{x_2}
     &=\left(\frac{x_1^2}{4}+x_2\right)_{x_1}^2
-    +x_2\left(\frac{x_1^2}{4}+x_2\right)\\
+    +x_2\left(\frac{x_1^2}{4}+x_2\right)_{x_2}\\
     &=\left(\frac{x_1}{2}\right)^2+x_2\\
     &=\frac{x_1^2}{4}+x_2\\
     &=\hat u.
   \end{align*}
+  It is clear that \(\hat u\) satisfies the conditions at \(x_2=1\).
 \end{solution*}
 
 \begin{problem}
@@ -36,6 +37,7 @@
   shock develops.
 \end{problem}
 \begin{solution*}
+  Let
 \end{solution*}
 
 \begin{problem}
