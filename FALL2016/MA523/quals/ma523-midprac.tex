@@ -5,6 +5,20 @@
   \(u(x,1)=x^2/4+1\).
 \end{problem}
 \begin{solution*}
+  Assuming \(u(x,1)=x^2/4+1\) was meant to be written
+  \(u(x_1,1)=x_1^2/4+1\), an obvious candidate for the solution is
+  \[
+    \hat u(x_1,x_2)=\frac{x_1^2}{4}+x_2.
+  \]
+  First, note that \(u\) does in fact solve the PDE,
+  \begin{align*}
+    \hat u_{x_1}^2+x_2\hat u_{x_2}
+    &=\left(\frac{x_1^2}{4}+x_2\right)_{x_1}^2
+    +x_2\left(\frac{x_1^2}{4}+x_2\right)\\
+    &=\left(\frac{x_1}{2}\right)^2+x_2\\
+    &=\frac{x_1^2}{4}+x_2\\
+    &=\hat u.
+  \end{align*}
 \end{solution*}
 
 \begin{problem}
