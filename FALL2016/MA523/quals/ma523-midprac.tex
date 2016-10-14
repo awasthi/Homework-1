@@ -37,23 +37,31 @@
   shock develops.
 \end{problem}
 \begin{solution*}
-  By the Cauchy--Kovalevskaya theorem, since the initial data is analytic
-  and the coefficients of the PDE are analytic, there exists a unique
-  analytic solution \(\hat u\) to the PDE. We compute \(\hat u\) as follows
-  \begin{align*}
-    u_t&=uu_x\\
-    u_{xt}
-       &=(uu_x)_{x}\\
-       &=uu_{xx}+u_x^2\\
-    u_{xxt}
-       &=(uu_{xx})_x+(u_x^2)_x\\
-       &=uu_{xxx}+u_xu_{xx}+2u_{xx}u_x\\
-       &=uu_{xxx}+3u_xu_{xx}\\
-    u_{xxxt}
-       &=(uu_{xxx})_x+3(u_xu_{xx})_x\\
-       &=uu_{xxxx}+u_xu_{xxx}+3(u_xu_{xxx}+u_{xx}^2)\\
-       &=uu_{xxxx}+4u_{x}u_{xxx}+3u_{xx}^2.
-  \end{align*}
+  First, let us find a solution to the problem using the method of
+  characteristics. Let
+  \[
+    \left\{
+      \begin{aligned}
+        \dot x&=z,&
+        \dot t&=1,\\
+        \dot z&=0,
+      \end{aligned}
+    \right.
+  \]
+  then
+  \[
+    \left\{
+      \begin{aligned}
+        x(s)&=z_0s,&
+        t(s)&=s,\\
+        z(s)&=z_0.
+      \end{aligned}
+    \right.
+  \]
+  Thus,
+  \[
+    x=u_0
+  \]
 \end{solution*}
 
 \begin{problem}
