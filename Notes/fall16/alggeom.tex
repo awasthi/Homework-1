@@ -263,6 +263,55 @@ contravariant functor reverses direction in the sense that
 \(F(f\circ g)=F(g)\circ F(f)\). Here are two basic examples: If
 \(M\in\RMod R\), then \(F(\blank)=\Hom_R(M,\blank)\) is a covariant functor
 from \(\RMod R\) to \(\RMod{\bbZ}\).
+\[
+  \includegraphics{mod-functor}
+\]
+When \(R\) is commutative, \(F(\blank)\) is naturally an \(R\)-module, but
+not otherwise. Similarly, \(\Hom_R(\blank,M)\) is a contravariant functor
+from \(\RMod R\) to \(\RMod\bbZ\) (or \(\RMod R\)) when \(R\) is
+commutative).
+
+\begin{lemma}
+  Suppose that
+  \[
+    0\To A\To B\To C\To 0
+  \]
+  is exact. Then
+  \begin{enumerate}[label=\emph{(\alph*)},noitemsep]
+  \item \[0\To\Hom(M,A)\To\Hom(M,B)\To\Hom(M,C),\]
+  \item \[0\To\Hom(C,M)\To\Hom(B,M)\To\Hom(A,M)\]
+  \end{enumerate}
+  are both exact.
+\end{lemma}
+The proof is straight forward and will be omitted.
+
+\begin{exercise}
+  Prove the lemma.
+\end{exercise}
+
+\begin{exercise}
+  Prove that
+  \[0\To\Hom(M,A)\To\Hom(M,B)\To\Hom(M,C),\]
+  and
+  \[0\To\Hom(C,M)\To\Hom(B,M)\To\Hom(A,M)\]
+  are exact when the sequence
+  \[0\To A\To B\To C\To 0\]
+  is split exact. This means that there exists a map \(s\colon C\to B\),
+  called a splitting, such that \(p\circ s=\id_C\).
+\end{exercise}
+
+A (contravariant) functor is called exact if it preserves exact
+sequences. The lemma says that the \(\Hom\) functors have the weaker
+property left exactness. They are not exact, in general:
+
+\begin{example}
+  Let \(R=\bbZ\), \(M=\bbZ/2\). Note that \(\Hom(M,\bbZ)=0\) and
+  \(\Hom(M,M)=\bbZ/2\). So \(\Hom(M,\blank)\) applied to
+  \[0\To\bbZ\xright{2}\bbZ\To\bbZ/2\To 0\]
+  yields the sequence
+  \[0\To 0\To 0\To\bbZ/2.\]
+  The last map is certainly not onto.
+\end{example}
 
 %%% Local Variables:
 %%% mode: latex

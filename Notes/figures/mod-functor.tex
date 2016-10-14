@@ -1,0 +1,16 @@
+\documentclass[crop,tikz]{standalone}
+\usetikzlibrary{cd}
+\usepackage{general-setup}
+
+\begin{document}
+\begin{tikzcd}
+  A\arrow{r}{f}
+  &B\\
+  M\arrow{u}{g}\arrow[dashed]{ru}[swap]{F(f)=f\circ g}
+\end{tikzcd}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
