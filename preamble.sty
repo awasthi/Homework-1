@@ -4,11 +4,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{preamble}[2016/09/30 v1.2 my setup]
 
-\newif\if@garamond\@garamondfalse
-\DeclareOption{garamond}{
-  \@garamondtrue
-}
-
 \newif\if@palatino\@palatinofalse
 \DeclareOption{palatino}{
   \@palatinotrue
@@ -73,24 +68,10 @@
 % \providecommand{\textprob}{\bfseries\scshape}
 \providecommand{\textprob}{\scshape}
 
-\if@garamond
-\pdfmapfile{=newtx.map}
-\pdfmapfile{=zgm.map}
-% \usepackage{ebgaramond}
-% \usepackage{ebgaramond-maths}
-\usepackage{garamondx}
-\usepackage[garamondx]{newtxmath}
-
-\providecommand\textsi{\itshape}
-\providecommand\textti{\textnormal}
-\providecommand\texto{\textnormal}
-\providecommand{\textprob}{\scshape}
-\fi
-
 \if@palatino %% Use Euler and Palatino-like Pazo (mostly for notes)
-% \usepackage{mathpazo}
+\usepackage{mathpazo}
 \usepackage{eulervm}
-\usepackage{newpxtext}
+% \usepackage{newpxtext}
 % \usepackage{newpxmath}
 
 \providecommand\textsi{\itshape}
