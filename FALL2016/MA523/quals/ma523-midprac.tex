@@ -37,18 +37,23 @@
   shock develops.
 \end{problem}
 \begin{solution*}
-  The equation is linear, so the method of characteristics applies
-  here. Set \(\dot x\defeq u\), \(\dot t\defeq 1\), and \(\dot z\defeq
-  0\). Thus, \(z=C\) for some constant \(C\in\bbR\) and
+  By the Cauchy--Kovalevskaya theorem, since the initial data is analytic
+  and the coefficients of the PDE are analytic, there exists a unique
+  analytic solution \(\hat u\) to the PDE. We compute \(\hat u\) as follows
   \begin{align*}
-    x(s)
-    &=\int_0^s C\diff\tau\\
-    &=Cs,\\
-    t&=s-0.
+    u_t&=uu_x\\
+    u_{xt}
+       &=(uu_x)_{x}\\
+       &=uu_{xx}+u_x^2\\
+    u_{xxt}
+       &=(uu_{xx})_x+(u_x^2)_x\\
+       &=uu_{xxx}+u_xu_{xx}+2u_{xx}u_x\\
+       &=uu_{xxx}+3u_xu_{xx}\\
+    u_{xxxt}
+       &=(uu_{xxx})_x+3(u_xu_{xx})_x\\
+       &=uu_{xxxx}+u_xu_{xxx}+3(u_xu_{xxx}+u_{xx}^2)\\
+       &=uu_{xxxx}+4u_{x}u_{xxx}+3u_{xx}^2.
   \end{align*}
-
-  The equation is linear, so the method of characteristics applies
-  here. Setting \(\dot x\)
 \end{solution*}
 
 \begin{problem}
