@@ -2,7 +2,12 @@
 \begin{problem}
   Consider the initial value problem
   \[
-    u_t=\sin u_x;\qquad u(x,0)=\frac{\pi}{4}x.
+    \left\{
+      \begin{aligned}
+        u_t&=\sin u_x,\\
+        u(x,0)&=\frac{\pi}{4}x.
+      \end{aligned}
+    \right.
   \]
   Verify that the assumptions of the Cauchy--Kovalevskaya theorem are
   satisfied and obtain the taylor series of the solution about the origin.
@@ -12,12 +17,16 @@
 
 \begin{problem}
   Consider the Cauchy problem for \(u(x,y)\)
-  \begin{align*}
-    u_y&=a(x, y, u)u_x+b(x,y,u)\\
-    u(x,0)&=0
-  \end{align*}
+  \[
+    \left\{
+      \begin{aligned}
+        u_y&=a(x, y, u)u_x+b(x,y,u),\\
+        u(x,0)&=0,
+      \end{aligned}
+    \right.
+  \]
   let \(a\) and \(b\) be analytic functions of their arguments. Assume that
-  \(d^\alpha a(0,0,0)\geq 0\) and \(d^\alpha b(0,0,0)\geq 0\) for all
+  \(D^\alpha a(0,0,0)\geq 0\) and \(D^\alpha b(0,0,0)\geq 0\) for all
   \(\alpha\). (Remember by definition, if \(\alpha=0\) then
   \(D^\alpha f=f\).)
   \begin{enumerate}[label=(\alph*),noitemsep]
