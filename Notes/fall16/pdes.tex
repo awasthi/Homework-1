@@ -379,6 +379,17 @@ needed (at least in the linear and quasilinear cases).
     \right.
   \]
   where \(x^0\in\bbR\), \(s\geq 0\), provided the denominator is not zero.
+
+  Now, fix a point \((x_1,x_2)\in U\) and select \(s>0\) and \(x^0\in\bbR\)
+  so \((x_1,x_2)=(x^1(s),x^2(s))=(x^0+s,s)\), i.e., \(x^0=x_1-x_2\),
+  \(s=x_2\). Then
+  \begin{align*}
+    u(x)&=u(x^1(s),x^2(s))\\
+        &=z(s)\\
+        &=\frac{g(x^0)}{1-sg(x^0)}\\
+        &=\frac{g(x_1-x_2)}{1-x_2g(x_1-x_2)}.
+  \end{align*}
+  This solution of course only makes sense if \(1-x_2g(x_1-x_2)\neq 0\).
 \end{example}
 
 %%% Local Variables:
