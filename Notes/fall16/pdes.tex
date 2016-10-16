@@ -724,6 +724,72 @@ We now briefly review the concept of analytic functions.
   the sum taken over all multiindices \(\alpha\).
 \end{definition}
 
+\begin{remarks}
+  \hfill
+  \begin{enumerate}[label=(\roman*),noitemsep]
+  \item Remember that when we write \(x^\alpha\) we mean
+    \(x^\alpha=x_1^{\alpha_1}\dotsm x_n^{\alpha_n}\).
+  \item If \(f\) is analytic near \(x_0\), then \(f\) is \(C^\infty\) near
+    \(x_0\). Furthermore the coefficients \(f_\alpha\) are computed as
+    \(f_\alpha=D^\alpha f(x_0)/\alpha!\), where \(\alpha!=\alpha_1!\dotsm
+    \alpha_n!\). Thus \(f\) equals its Taylor formula about \(x_0\)
+    \[
+      f(x)
+      =\sum_{\alpha}\frac{1}{\alpha!} D^\alpha f(x_0)(x-x_0)^\alpha\qquad
+      |x-x_0|<r.
+    \]
+    To simplify, we hereafter take \(x_0\) to be \(0\).
+  \end{enumerate}
+\end{remarks}
+
+\begin{example}
+  Let us look at an example of an analytic function. For \(r>0\), set
+  \[
+    f(x)\defeq \frac{r}{r-(x_1+\dotsm+x_n)}
+    \qquad
+    \text{for \(|x|<r/\sqrt{n}\).}
+  \]
+  Then
+  \begin{align*}
+    f(x)
+    &=\frac{1}{\displaystyle 1-\frac{x_1+\dotsb+x_n}{r}}\\
+    &=\sum_{k=0}^\infty\left(\frac{x_1+\dotsb+x_n}{r}\right)^k\\
+    &=\sum_{k=0}^\infty\frac{1}{r^k}\sum_{|\alpha|=k}\binom{|\alpha|}{\alpha}x^\alpha\\
+    &=\sum_\alpha\frac{|\alpha|!}{r^{|\alpha|}\alpha!}x^\alpha.
+  \end{align*}
+  We employed the multinomial theorem for the third equality above and
+  recalled that \(\binom{|\alpha|}{\alpha}=|\alpha|!/\alpha!\). This power
+  series is absolutely convergent for \(|x|<r/\sqrt{n}\). Indeed,
+  \[
+    \sum_\alpha\frac{|\alpha|!}{r^{|\alpha|}{\alpha!}}|x^\alpha|
+    =\sum_{k=0}^\infty\left(\frac{|x_1|+\dotsb+|x_n|}{r}\right)^k<\infty,
+  \]
+  since \(|x_1|+\dotsb+|x_n|\leq |x|\sqrt{n}<r\).
+\end{example}
+
+The analytic equation we have just considered is quite important as it
+allows us to \emph{majorize}, and therefore confirm the convergence of,
+other power series.
+
+\begin{definition}
+  Let
+  \[
+    f=\sum_\alpha f_\alpha x^\alpha,\qquad g=\sum_\alpha g_\alpha x^\alpha
+  \]
+  be two power series. We say that \emph{\(g\) majorizes \(f\)}, written
+  \(g\gg f\), if
+  \[
+    g_\alpha\geq |f_\alpha|\qquad\text{for all \(\alpha\).}
+  \]
+\end{definition}
+
+Here is an important result:
+\begin{lemma}[Majorants]
+  \hfill
+  \begin{enumerate}[label=(\roman*),noitemsep]
+  \item
+  \end{enumerate}
+\end{lemma}
 
 %%% Local Variables:
 %%% mode: latex
