@@ -91,7 +91,91 @@ the PDE into a system of ODEs. We proceed as follows: Suppose \(u\) solves
 \eqref{eq:pde:first-order}, \eqref{eq:pde:boundary-condition} and fix a
 point \(x\in U\). We would like to calculate \(u(x)\) by finding some curve
 lying within \(U\), connecting \(x\) with a point \(x^0\in\Gamma\) and
-along which we can compute \(u\).
+along which we can compute \(u\). Since \eqref{eq:pde:boundary-condition}
+says \(u=g\) on \(\Gamma\), we know the value of \(u\) at one end
+\(x^0\). We hope to be able to calculate \(u\) all along the curve, and so
+in particular at \(x\).
+
+\subsubsection{Finding the characteristic curve}
+
+But how do we choose a path in \(U\) so all of this will work? Suppose the
+curve is described parametrically by the function
+\(\bfx(x)=(x^1(s),\dotsc,x^n(s))\), the parameter \(s\) lying in some
+subinterval \(I\subset\bbR\). Assuming \(u\) is a \(C^2\) solution of
+\eqref{eq:pde:first-order}, we define also
+\begin{equation}
+  \label{eq:pde:parametrized-sol}
+  z(s)\defeq u(\bfx(s)).
+\end{equation}
+In addition, set
+\begin{equation}
+  \label{eq:pde:parametrized-grad}
+  \bfp(s)\defeq Du(\bfx(s));
+\end{equation}
+that is, \(\bfp(s)=(p^1(s),\dotsc,p^n(s))\), where
+\begin{equation}
+  \label{eq:pde:parametrized-grad-comp}
+  p^i(s)=u_{xi}(\bfx(s)),\qquad 1\leq i\leq n..
+\end{equation}
+So \(z(\blank)\) gives us the values of \(u\) along the curve and
+\(\bfp(\blank)\) records the values of gradient \(Du\). We must choose a
+function \(\bfx(\blank)\) that will allow us to compute \(z(\blank)\) and
+\(\bfp(\blank)\).
+
+Differentiating \eqref{eq:pde:parametrized-grad-comp}, we have
+\begin{equation}
+  \label{eq:pde:parametrized-grad-derivative}
+  \dot p^i(s)=\sum_{j=1}^n u_{x_ix_j}(\bfx(s))\dot x^j(s).
+\end{equation}
+But this expression is not too promising since it involves second order
+derivatives of \(u\) which we do not know (in fact, our solution need not
+be so regular as to have second order derivatives). On the other hand, if
+we differentiate \eqref{eq:pde:first-order} with respect to \(x_i\), we
+have
+\begin{equation}
+  \label{eq:pde:first-order-derivative}
+  \sum_{j=1}^n F_{p_j}(Du,u,x)u_{x_jx_i}+F_z(Du,u,x)u_{x_i}+F_{x_i}(Du,u,x)=0.
+\end{equation}
+We can use this identity to get rid of the second order derivatives in
+\eqref{eq:pde:parametrized-sol-derivative}, provided we first set
+\begin{equation}
+  \label{eq:pde:parametrized-curve-derivative}
+  \dot x^j(s)=F_{p_j}(\bfp(s),z(s),\bfx(s)),\qquad 1\leq j\leq n.
+\end{equation}
+Assuming \eqref{eq:pde:parametrized-curve-derivative} holds, we evaluate
+\eqref{eq:pde:first-order-derivative} at \(x=\bfx(s)\), thereby obtaining
+from \eqref{eq:pde:parametrized-sol} and \eqref{eq:pde:parametrized-grad}
+the identity
+\[
+  \sum_{j=1}^n F_{p_j}(\bfp(s),z(s),\bfx(s))u_{x_ix_j}(\bfx(s))+
+  F_z(\bfp(s),z(s),\bfx(s))p^i(s)+F_{x_i}(\bfp(s),z(s),\bfx(s))=0
+\]
+Finally, we differentiate \eqref{eq:pde:parametrized-sol} to give us
+\begin{equation}
+  \label{eq:pde:parametrized-sol-derivative}
+  \begin{aligned}
+    \dot z(s)
+    &=\sum_{j=1}^n u_{x_j}(\bfx(s))\dot x^j(s)\\
+    &=\sum_{j=1}^n p^j(s)F_{p_j}(\bfp(s),z(s),\bfx(s)),
+  \end{aligned}
+\end{equation}
+the second equality holding by \eqref{eq:pde:parametrized-grad-comp} and
+\eqref{eq:pde:parametrized-grad-derivative}.
+
+We summarize our results by rewriting equations
+\eqref{eq:pde:parametrized-curve-derivative},
+\eqref{eq:pde:parametrized-curve-derivative}, and
+\eqref{eq:pde:parametrized-sol-derivative} as
+\begin{equation}
+  \label{eq:pde:first-order-characteristics}
+  \left\{
+    \begin{aligned}
+      \text{(a) }\\
+      \text{(b) }
+      \text{(c) }
+    \end{aligned}
+  \right.
+\end{equation}
 
 %%% Local Variables:
 %%% mode: latex
