@@ -250,11 +250,28 @@ summary, we have
   \label{eq:pde:first-order-linear-characteristics}
   \left\{
     \begin{aligned}
-      \text{(a) }\dot\bfx(s)&=\bfb(\bfx(s)),
+      \text{(a) }\dot\bfx(s)&=\bfb(\bfx(s)),\\
       \text{(b) }\dot z(s)&=-c(\bfx(s))z(s).
     \end{aligned}
   \right.
 \end{equation}
+
+\begin{example}
+  Let's now look at a simple example to see how to use
+  \eqref{eq:pde:first-order-linear-characteristics} to solve a PDE.
+  Consider the PDE
+  \[
+    \tag{\(*\)}
+    \left\{
+      \begin{aligned}
+        x_1u_{x_2}-x_2u_{x_1}&=u&&\text{in \(U\),}\\
+        u&=g&&\text{on \(\Gamma\),}
+      \end{aligned}
+    \right.
+  \]
+  where \(U=\{\,x_1>0,x_2>0\,\}\) and
+  \(\Gamma=\{\,x_1>0,x_2=0\,\}\subset\partial U\).
+\end{example}
 
 \subsubsection{The quasilinear case}
 
