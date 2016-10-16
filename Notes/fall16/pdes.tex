@@ -10,7 +10,8 @@ summarizing the appropriate chapters from \cite{evans}.
 \section{First-Order PDEs}
 \subsection{The transport equation}
 In this section, we consider the simplest first-order PDE, the
-\emph{transport equation} with constant coefficients, i.e., the PDE
+\emph{transport equation}\footnote{For more details, refer to \cite[\S
+  2.1]{evans}.} with constant coefficients, i.e., the PDE
 \begin{equation}
   \label{eq:pde:transport-equation}
   u_t+b\cdot Du=0\qquad\text{in \(\bbR\times(0,\infty)\),}
@@ -66,7 +67,8 @@ for \(x\in\bbR^n\), \(t\geq 0\). So if
 
 \section{Characteristics}
 We now turn our attention to a very important method for solving
-first-order PDEs, the method of \emph{characteristics}.
+first-order PDEs, the method of \emph{characteristics}. This section is
+paraphrased if copied not verbatim from \cite[\S 3.2]{evans}.
 \subsection{Derivation of characteristic ODEs}
 Consider the first-order (possibly non-linear) PDE
 \begin{equation}
@@ -422,6 +424,12 @@ must look at the PDE on a case-by-case basis.
     \right.
   \]
 \end{example}
+
+\subsection{Boundary Conditions}
+In order to effectively use \eqref{eq:pde:first-order-characteristics}, we
+need to be able to solve \eqref{eq:pde:first-order} with respect to the
+condition \eqref{eq:pde:boundary-condition} we need to figure out the
+conditions under which the method of characteristics will give us
 
 %%% Local Variables:
 %%% mode: latex
