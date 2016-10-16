@@ -64,6 +64,25 @@ for \(x\in\bbR^n\), \(t\geq 0\). So if
 \(u\) (at least \(C^1\)), it must certainly be given by
 \eqref{eq:pde:transport-equation-init-sol}.
 
+\section{Characteristics}
+We now turn our attention to a very important method for solving
+first-order PDEs, the method of \emph{characteristics}.
+\subsection{Derivation of characteristic ODEs}
+Consider the first-order (possibly non-linear) PDE
+\begin{equation}
+  \label{eq:pde:first-order}
+  \begin{aligned}
+    F(Du,u,x)&=0&&\text{in \(U\),}
+  \end{aligned}
+\end{equation}
+subject to the \emph{boundary condition}
+\begin{equation}
+  \label{eq:pde:boundary-condition}
+  \begin{aligned}
+    u&=g&&\text{on \(\Gamma\),}
+  \end{aligned}
+\end{equation}
+where \(\Gamma\subset\partial U\) and \(g\colon\Gamma\to\bbR\) are known.
 
 %%% Local Variables:
 %%% mode: latex
