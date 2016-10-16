@@ -465,11 +465,202 @@ so
 \end{align*}
 \end{example}
 
-\subsection{Boundary Conditions}
-In order to effectively use \eqref{eq:pde:first-order-characteristics}, we
-need to be able to solve \eqref{eq:pde:first-order} with respect to the
-condition \eqref{eq:pde:boundary-condition} we need to figure out the
-conditions under which the method of characteristics will give us
+\subsection{Compatibility conditions on boundary data}
+Let \(x^0\in\Gamma\). We intend to use the characteristic ODEs
+\eqref{eq:pde:first-order-characteristics} to construct a solution \(u\) to
+\eqref{eq:pde:first-order}, \eqref{eq:pde:boundary-condition}, at least
+near \(x^0\), and for this, we must determine appropriate initial
+conditions
+\begin{equation}
+  \label{eq:pde:first-order-linear-characteristics}
+  \bfp(0)=p^0,\qquad
+  z(0)=z^0,\qquad
+  \bfx(0)=x^0.
+\end{equation}
+We will assume throughout that \(\Gamma\) is flat (i.e., isometric to
+\(\{\,x_n=0\,\}\)) at least near \(x^0\).\footnote{This can always be
+  achieved, assuming some regularity of \(\Gamma\).}
+
+Clearly if the curve \(\bfx(\blank)\) passes through \(x^0\), we should
+insist that
+\begin{equation}
+  \label{eq:pde:initial-sol}
+  z^0=g(x^0).
+\end{equation}
+
+What should we require concerning \(\bfp(0)=p^0\)? Since
+\eqref{eq:pde:boundary-condition} implies
+\[
+  u(x_1,\dotsc,x_{n-1},0)=g(x_1,\dotsc,x_{n-1})
+\]
+near \(x^0\), we may differentiate this to find
+\[
+  u_{x_i}(x^0)=g_{x_i}(x^0).
+\]
+This, along with the PDE \eqref{eq:pde:first-order}, forces \(p^0\) to
+satisfy
+\begin{equation}
+  \label{eq:pde:initial-grad}
+  \left\{
+    \begin{aligned}
+      p_i^0&=g_{x_i}(x^0)&&1\leq i\leq n-1,\\
+      F(p^0,z^0,x^0)&=0.
+    \end{aligned}
+  \right.
+\end{equation}
+These identities provide \(n\) equations for the \(n\) quantities
+\(p^0=(p_1^0,\dotsc,p_n^0)\).
+
+We call \eqref{eq:pde:initial-sol} and \eqref{eq:pde:initial-grad}
+\emph{compatibility conditions}. A triple \(p^0,z^0,x^0\in\bbR^{2n+1}\)
+satisfying \eqref{eq:pde:initial-sol}, \eqref{eq:pde:initial-grad}, is
+called \emph{admissible}. Note \(z^0\) is uniquely determined by the
+boundary condition and our choice of \(x^0\), but \(p^0\) satisfying
+\eqref{eq:pde:initial-grad} may not exist or be unique.
+
+Having ascertained what are appropriate boundary conditions for the
+characteristic ODEs with \(\bfx(\blank)\) intersecting \(\Gamma\) at
+\(x^0\), we proceed to construct a solution to \eqref{eq:pde:first-order},
+\eqref{eq:pde:boundary-condition}, near \(x^0\). We now ask, can we somehow
+appropriately perturb \((p^0,z^0,x^0)\), keeping the compatibility
+conditions?
+
+In other words, given a point \(y=(y_1,\dotsc,y_{n-1},0)\in\Gamma\), with
+\(y\) close enough to \(x^0\), we intend to solve the ODEs
+\eqref{eq:pde:first-order-characteristics} with initial conditions
+\begin{equation}
+  \label{eq:pde:first-order-inits-y}
+  \bfp(0)=\bfq(y),\qquad
+  z(0)=g(y),\qquad
+  \bfx(0)=y.
+\end{equation}
+
+Our task is now to find a function
+\(\bfq(\blank)=(q^1(\blank),\dotsc,q^n(\blank))\), so that
+\begin{equation}
+  \label{eq:pde:condition-grad-q}
+  \bfq(x^0)=p^0
+\end{equation}
+and \(\bfq(y),g(y),y\) is admissible; i.e., so
+\begin{equation}
+  \label{eq:pde:condition-grad-q-init}
+  \left\{
+    \begin{aligned}
+      q^i(y)&=g_{x_i}(y)&&1\leq i\leq n-1,\\
+      F(\bfq(y),g(y),y)&=0,
+    \end{aligned}
+  \right.
+\end{equation}
+hold for all \(y\in\Gamma\) close to \(x^0\).
+
+\begin{lemma}[Noncharacteristic boundary conditions]
+  There exists a unique solution \(\bfq(\blank)\) of
+  \eqref{eq:pde:condition-grad-q}, \eqref{eq:pde:condition-grad-q-init},
+  for all \(y\in\Gamma\) sufficiently close to \(x^0\), provided
+  \[
+    F_{p_n}(p^0,z^0,x^0)\neq 0.
+  \]
+\end{lemma}
+See \cite[\S 3.2 c]{evans} for proof.
+
+More generally,
+\[
+  D_pF(p^0,z^0,x^0)\cdot\bfnu(x^0)\neq 0,
+\]
+\(\bfnu(x^0)\) denoting the outward unit normal to \(\partial U\) at
+\(x^0\).
+
+Now, given a point \(y=(y_1,\dotsc,y_{n-1},0)\) sufficiently close to
+\(x^0\) we solve the characteristic ODEs \eqref{eq:pde:condition-grad-q}
+subject to \eqref{eq:pde:condition-grad-q-init}.
+
+Write
+\[
+  \left\{
+    \begin{aligned}
+      \bfp(s)&=\bfp(y,s)=\bfp(y_1,\dotsc,y_{n-1},s),\\
+      z(s)&=z(y,s)=z(y_1,\dotsc,y_{n-1},s),\\
+      \bfx(s)&=\bfx(y,s)=\bfx(y_1,\dotsc,y_{n-1},s),
+    \end{aligned}
+  \right.
+\]
+displaying the dependence of the solution of
+\eqref{eq:pde:condition-grad-q}, \eqref{eq:pde:condition-grad-q-init}, with
+respect to \(s\) and \(y\).
+
+\begin{lemma}[Local invertibility]
+  Assume we have the noncharacteristic condition \(F_{p_n}(p^0,z^0,x^0)\neq
+  0\). Then there exists an open interval \(I\subset\bbR\) containing
+  \(0\), a neighborhood \(W\) of \(x^0\) in \(\Gamma\subset\bbR^{n-1}\),
+  and a neighborhood \(V\) of \(x^0\) in \(\bbR^n\), such that for each
+  \(x\in V\) there exists a unique \(s\in I\), \(y\in W\) such that
+  \[
+    x=\bfx(y,s).
+  \]
+  The mappings \(x\mapsto s,y\) are \(C^2\).
+\end{lemma}
+
+In view of this lemma, for each \(x\in V\), we can uniquely solve (at least
+locally) the equation
+\begin{equation}
+  \label{eq:pde:local-equations-sy}
+  \left\{
+    \begin{aligned}
+      x&=\bfx(y,s),\\
+      y&=\bfy(x),&s&=s(x).
+    \end{aligned}
+  \right.
+\end{equation}
+
+Define
+\begin{equation}
+  \label{eq:pde:solution-in-sy}
+  \left\{
+    \begin{aligned}
+      u(x)&\defeq z(\bfy(x),s(x)),\\
+      \bfp(x)&=\bfp(\bfy(x),s(x)),
+    \end{aligned}
+  \right.
+\end{equation}
+for \(x\in V\), \(s\) and \(y\) as in \eqref{eq:pde:local-equations-sy}.
+
+Putting all of this together, we have the following result:
+\begin{theorem}[Local existence theorem]
+  The function \(u\) defined above is \(C^2\) and solves the PDE
+  \[
+    F(Du(x),u(x),x)=0\qquad x\in V,
+  \]
+  with the boundary condition
+  \[
+    u(x)=g(x)\qquad x\in \Gamma\cap V.
+  \]
+\end{theorem}
+See \cite[\S 3.2.4]{evans} for more details.
+
+\section{Power Series}
+We now turn our attention to an important class of solutions to PDEs,
+analytic solutions. We begin this section with a brief discussion on
+noncharacteristic surfaces.
+
+\subsection{Noncharacteristic surfaces}
+Consider the \(k\)\textsup{th}-order quasilinear PDE
+\begin{equation}
+  \label{eq:pde:k-order-quasilinear}
+  \sum_{|\alpha|=k}a_\alpha(D^{k-1}u,\dotsc,u,x)D^\alpha
+  u+a_0(D^{k-1}u,\dotsc,u,x)=0,
+\end{equation}
+in some region in \(U\subset\bbR^n\). Let us assume for simplicity that
+\(\Gamma\) is a smooth \((n-1)\)-dimensional hypersurface in \(U\). For any
+\(x^0\in\Gamma\) let \(\bfnu(x^0)=\bfnu=(\nu_1,\dotsc,\nu_n)\) denote the
+unit normal to \(\Gamma\) at \(x^0\). Furthermore, we define the
+\emph{\(j\)\textsup{th} normal derivative} of \(u\) at \(x^0\in\Gamma\) by
+\[
+  \frac{\partial^j u}{\partial \bfnu^j}
+  \defeq\sum_{|\alpha|=j}\binom{j}{\alpha}D^\alpha u\bfnu^\alpha
+  =\sum_{\alpha_1+\dotsb+\alpha_n=j}\binom{j}{\alpha}
+  \frac{\partial^j u}{\partial^{\alpha_1}x_1\dotsm\partial^{\alpha_n}x_n}
+  \nu_1^{\alpha_1}\dotsm\nu_n^{\alpha_n}.
+\]
 
 %%% Local Variables:
 %%% mode: latex
