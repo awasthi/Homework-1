@@ -393,6 +393,27 @@ needed (at least in the linear and quasilinear cases).
 \end{example}
 
 \subsubsection{The fully nonlinear case}
+In the general case, we must integrate the full characteristics
+\eqref{eq:pde:first-order-characteristcs} if possible. In this case, we
+cannot generally reduce \eqref{eq:pde:first-order-characteristics} and we
+must look at the PDE on a case-by-case basis.
+
+\begin{example}
+  Let's look at an example. Consider the fully nonlinear PDE
+  \[
+    \tag{\(*\)}
+    \left\{
+      \begin{aligned}
+        u_{x_1}u_{x_2}&=u&&\text{in \(U\),}\\
+        u&=x_2^2&&\text{on \(\Gamma\),}
+      \end{aligned}
+    \right.
+  \]
+  where \(U=\{\,x_2>0\,\}\), \(\Gamma=\partial U=\{\,x_1=0\,\}\). Here,
+  \(F(p,z,x)=p_1p_2-z\), and
+\end{example}
+
+
 
 %%% Local Variables:
 %%% mode: latex
