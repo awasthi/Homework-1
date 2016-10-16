@@ -82,7 +82,16 @@ subject to the \emph{boundary condition}
     u&=g&&\text{on \(\Gamma\),}
   \end{aligned}
 \end{equation}
-where \(\Gamma\subset\partial U\) and \(g\colon\Gamma\to\bbR\) are known.
+where \(\Gamma\subset\partial U\) and \(g\colon\Gamma\to\bbR\) are
+known. We shall assume, for simplicity, that \(F\) and \(g\) are smooth.
+
+We now develop the \emph{method of characteristics} to solve
+\eqref{eq:pde:first-order}, \eqref{eq:pde:boundary-condition} by converting
+the PDE into a system of ODEs. We proceed as follows: Suppose \(u\) solves
+\eqref{eq:pde:first-order}, \eqref{eq:pde:boundary-condition} and fix a
+point \(x\in U\). We would like to calculate \(u(x)\) by finding some curve
+lying within \(U\), connecting \(x\) with a point \(x^0\in\Gamma\) and
+along which we can compute \(u\).
 
 %%% Local Variables:
 %%% mode: latex
