@@ -655,12 +655,31 @@ in some region in \(U\subset\bbR^n\). Let us assume for simplicity that
 unit normal to \(\Gamma\) at \(x^0\). Furthermore, we define the
 \emph{\(j\)\textsup{th} normal derivative} of \(u\) at \(x^0\in\Gamma\) by
 \[
-  \frac{\partial^j u}{\partial \bfnu^j}
+  \frac{\partial^j u}{\partial\nu^j}
   \defeq\sum_{|\alpha|=j}\binom{j}{\alpha}D^\alpha u\bfnu^\alpha
   =\sum_{\alpha_1+\dotsb+\alpha_n=j}\binom{j}{\alpha}
   \frac{\partial^j u}{\partial^{\alpha_1}x_1\dotsm\partial^{\alpha_n}x_n}
   \nu_1^{\alpha_1}\dotsm\nu_n^{\alpha_n}.
 \]
+
+Let \(g_0,\dotsc,g_{k-1}\colon\Gamma\to\bbR\) be \(k\) given functions. The
+\emph{Cauchy problem} is to find a function \(u\) solving the PDE
+\eqref{eq:pde:k-order-quasilinear}, subject to the boundary conditions
+\begin{equation}
+  \label{eq:pde:k-order-boundary-conditions}
+  \left\{
+    \begin{aligned}
+      u&=g_0,\\
+      \frac{\partial u}{\partial\nu}
+      &=g_1,\\
+      &\vdotswithin{=}\\
+      \frac{\partial^{k-1} u}{\partial\nu^{k-1}} &=g_{k-1}
+    \end{aligned}
+  \right.
+  \qquad\text{on \(\Gamma\).}
+\end{equation}
+We say that \eqref{eq:pde:k-order-boundary-conditions} prescribe the
+\emph{Cauchy data} on \(\Gamma\).
 
 %%% Local Variables:
 %%% mode: latex
