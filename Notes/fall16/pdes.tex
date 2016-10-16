@@ -24,9 +24,45 @@ To address this task, let us suppose for a moment that we have a (smooth)
 solution \(u\) and try to compute it using the PDE
 \eqref{eq:pde:transport-equation}. First, note that
 \eqref{eq:pde:transport-equation} asserts that the directional derivative
-\(D_{(b,1)}u=0\).
+\(D_{(b,1)}u=0\). Fix a point \((x,t)\in\bbR^n\times(0,\infty)\) and define
+\[
+  z(s)\defeq u(x+sb,t+s)
+\]
+for \(s\in\bbR\). Then
+\[
+  \dot z(s)=Du(x+sb,t+s)\cdot b+u_t(x+sb,t+s)=0.
+\]
+Thus, \(z\) is a constant function of \(s\) and, consequently for each
+\((x,t)\), \(u\) is constant on the line through \((x,t)\) with direction
+\((b,1)\in\bbR^{n+1}\). Hence if we know the value of \(u\) at any point on
+each such line, we know its value everywhere in \(\bbR^n\times(0,\infty)\).
 
-
+\subsubsection{Initial-value problem}
+Let's now look at the transport equation with \emph{initial conditions}
+\begin{equation}
+  \label{eq:pde:transport-equation-init}
+  \left\{
+    \begin{aligned}
+      u_t+b\cdot Du&=0&&\text{in \(\bbR^n\times(0,\infty)\),}\\
+      u&=g&&\text{on \(\bbR^n\times\{\,t=0\,\}\).}
+    \end{aligned}
+  \right.
+\end{equation}
+Here \(b\in\bbR^n\) and \(g\colon\bbR^n\to\bbR\) are known, and \(u\) is
+the unknown. Given \((x,t)\), the line through \((x,t)\) with direction
+\((b,1)\) is represented parametrically by \((x+sb,t+s)\) for
+\(s\in\bbR\). This line hits the plane
+\(\Gamma\defeq\bbR^n\times\{\,t=0\,\}\) when \(s=-t\), at the point
+\((x-tb,0)\). Since \(u\) is constant on the line and
+\(u(x-tb,0)=g(x-tb)\), we deduce
+\begin{equation}
+  \label{eq:pde:transport-equation-init-sol}
+  u(x,t)=g(x-tb)
+\end{equation}
+for \(x\in\bbR^n\), \(t\geq 0\). So if
+\eqref{eq:pde:transport-equation-init} has a sufficiently regular solution
+\(u\) (at least \(C^1\)), it must certainly be given by
+\eqref{eq:pde:transport-equation-init-sol}.
 
 
 %%% Local Variables:
