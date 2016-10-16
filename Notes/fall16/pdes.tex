@@ -704,8 +704,26 @@ for all values of the arguments of the coefficients
   Assume that \(\Gamma\) is noncharacteristic for the PDE
   \eqref{eq:pde:k-order-quasilinear}. Then if \(u\) is a smooth solution of
   \eqref{eq:pde:k-order-quasilinear} satisfying the Cauchy data
-  \eqref{eq:pde:k-order-boundary-conditions}, then
+  \eqref{eq:pde:k-order-boundary-conditions}, we can uniquely compute all
+  of the partial derivatives of \(u\) along \(\Gamma\) in terms of
+  \(\Gamma\), the functions \(g_0,\dotsc,g_{k-1}\), and the coefficients
+  \(a_\alpha(|\alpha|=k)\), \(a_0\).
 \end{theorem}
+
+See \cite[\S 4.6.b]{evans} for a proof.
+
+\subsection{Real analytic functions}
+We now briefly review the concept of analytic functions.
+\begin{definition}
+  A function \(f\colon\bbR^n\to\bbR\) is said to be \emph{(real) analytic
+    near \(x_0\)} if there exists \(r>0\) and constants \(\{f_\alpha\}\)
+  such that
+  \[
+    f(x)=\sum_\alpha f_\alpha(x-x_0)^\alpha\qquad |x-x_0|<r,
+  \]
+  the sum taken over all multiindices \(\alpha\).
+\end{definition}
+
 
 %%% Local Variables:
 %%% mode: latex
