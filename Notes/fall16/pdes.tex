@@ -396,7 +396,7 @@ needed (at least in the linear and quasilinear cases).
 
 \subsubsection{The fully nonlinear case}
 In the general case, we must integrate the full characteristics
-\eqref{eq:pde:first-order-characteristcs} if possible. In this case, we
+\eqref{eq:pde:first-order-characteristics} if possible. In this case, we
 cannot generally reduce \eqref{eq:pde:first-order-characteristics} and we
 must look at the PDE on a case-by-case basis.
 
@@ -680,6 +680,32 @@ Let \(g_0,\dotsc,g_{k-1}\colon\Gamma\to\bbR\) be \(k\) given functions. The
 \end{equation}
 We say that \eqref{eq:pde:k-order-boundary-conditions} prescribe the
 \emph{Cauchy data} on \(\Gamma\).
+
+Evans demonstrates how to extend the notion of noncharacteristic
+curve/surface to the PDE \eqref{eq:pde:k-order-quasilinear},
+\eqref{eq:pde:k-order-boundary-conditions}, first in the case that
+\(\Gamma\) is flat and then makes some remarks about the case that
+\(\Gamma\) is nonflat. The most important result from this section is the
+notion of noncharacteristic surface for \eqref{eq:pde:k-order-quasilinear},
+\eqref{eq:pde:k-order-boundary-conditions} which is summarized in the
+following definition:
+\begin{definition}
+  We say the surface \(\Gamma\) is noncharacteristic for the PDE
+  \eqref{eq:pde:k-order-quasilinear} provided
+\begin{equation}
+  \label{eq:pde:k-order-noncharacteristic}
+  \sum_{|\alpha|=k}a_\alpha\bfnu^\alpha\neq 0.
+\end{equation}
+for all values of the arguments of the coefficients
+\(a_\alpha(|\alpha|=k)\).
+\end{definition}
+
+\begin{theorem}[Cauchy data and noncharacteristic surfaces]
+  Assume that \(\Gamma\) is noncharacteristic for the PDE
+  \eqref{eq:pde:k-order-quasilinear}. Then if \(u\) is a smooth solution of
+  \eqref{eq:pde:k-order-quasilinear} satisfying the Cauchy data
+  \eqref{eq:pde:k-order-boundary-conditions}, then
+\end{theorem}
 
 %%% Local Variables:
 %%% mode: latex
