@@ -170,12 +170,93 @@ We summarize our results by rewriting equations
   \label{eq:pde:first-order-characteristics}
   \left\{
     \begin{aligned}
-      \text{(a) }\\
+      \text{(a) }
+      \dot\bfp(s)&=
+      -D_xF(\bfp(s),z(s),\bfx(s))-D_zF(\bfp(s),z(s),\bfx(s))\bfp(s),\\
       \text{(b) }
+      \dot z(s)&=
+      D_pF(\bfp(s),z(s),\bfx(s))\cdot\bfp(s),\\
       \text{(c) }
+      \dot\bfx(s)&=D_pF(\bfp(s),z(s),\bfx(s)).
     \end{aligned}
   \right.
 \end{equation}
+Furthermore,
+\begin{equation}
+  \label{eq:pde:first-order-pzx}
+  F(\bfp(s),z(s),\bfx(s))=0.
+\end{equation}
+These identities hold for \(s\in I\).
+
+The system \eqref{eq:pde:first-order-characteristics} of \(2n+1\) first
+order ODEs comprises the \emph{characteristic equotions/ODEs} of the
+nonlinear first-order PDE \eqref{eq:pde:first-order}. The functions
+\(\bfp(\blank)\), \(\bfx(\blank)\) are called \emph{characteristics} and
+\(\bfx(\blank)\) is called the \emph{projected characteristic} (it is the
+projection of the full characteristics \((\bfp,z,\bfx)\subset\bbR^{2n+1}\)
+onto the physical region \(U\subset\bbR^n\)).
+
+\begin{theorem}[Structure of characteristic ODEs]
+  Let \(u\in C^2(U)\) solve the nonlinear, first-order partial differential
+  equation \eqref{eq:pde:first-order} in \(U\). Assume \(\bfx(\blank)\)
+  solves the ODE \emph{\eqref{eq:pde:first-order-characteristics}(c)},
+  where \(\bfp(\blank)=Du(\bfx(\blank))\),
+  \(z(\blank)=u(\bfx(\blank))\). Then \(\bfp(\blank)\) solves the ODE
+  \emph{\eqref{eq:pde:first-order-characteristics}(a)} and \(z(\blank)\)
+  solves the ODE \emph{\eqref{eq:pde:first-order-characteristics}(b)}, for
+  those \(s\) such that \(\bfx(s)\in U\).
+\end{theorem}
+
+We still need to discover appropriate initial conditions for
+\eqref{eq:pde:first-order-characteristics} to be useful. We do that in the
+following section.
+
+\subsection{Examples}
+But before we move on, we look at some examples to show you how to use
+\eqref{eq:pde:first-order-characteristics} to find solutions to
+\eqref{eq:pde:first-order}.
+
+\subsubsection{The linear case}
+Suppose \eqref{eq:pde:first-order} is linear, i.e., has the form
+\begin{equation}
+  \label{eq:pde:first-order-linear}
+  F(D,u,x)=\bfx\cdot Du(x)+c(x)u(x)=0,\qquad x\in U.
+\end{equation}
+Then, rewriting \eqref{eq:pde:first-order-linear} in terms of \(p\), \(z\),
+and \(x\), we have\(F(p,z,x)=\bfb(x)\cdot p+c(x)z\), so
+\[
+  D_pF=\bfb(x)
+\]
+so \eqref{eq:pde:first-order-characteristics}(c) becomes
+\begin{equation}
+  \label{eq:pde:first-order-linear-dotx}
+  \dot\bfx(s)=\bfx(\bfx(s)),
+\end{equation}
+an ODE involving only the function \(\bfx(\blank)\). Furthermore
+\eqref{eq:pde:first-order-characteristics}(b) becomes
+\begin{equation}
+  \label{eq:pde:first-order-linear-dotz}
+  \dot z(s)=\bfb(\bfx(s))\cdot\bfp(s).
+\end{equation}
+Then equation \eqref{eq:pde:first-order-pzx} simplifies
+\eqref{eq:pde:first-order-linear-dotz}, yielding
+\[
+  \dot z(s)=-c(\bfx(s))z(s).
+\]
+This ODE is linear in \(z(\blank)\), noce we know the function
+\(\bfx(\blank)\) by solving \eqref{eq:pde:first-order-linear-dotx}. In
+summary, we have
+\begin{equation}
+  \label{eq:pde:first-order-linear-characteristics}
+  \left\{
+    \begin{aligned}
+      \text{(a) }\dot\bfx(s)&=\bfb(\bfx(s)),
+      \text{(b) }\dot z(s)&=-c(\bfx(s))z(s).
+    \end{aligned}
+  \right.
+\end{equation}
+
+\subsubsection{The quasilinear case}
 
 %%% Local Variables:
 %%% mode: latex
