@@ -877,6 +877,54 @@ equations in \eqref{eq:pde:cauchy-problem-to-analytic-system} read
   +c^k(\bfu,x'),\qquad 1\leq k\leq m.
 \end{equation}
 
+Having reduced to the special form
+\eqref{eq:pde:cauchy-problem-to-analytic-system}, we can now expand
+\(\bfu\) into a power series near \(0\).
+
+\begin{theorem}[Cauchy--Kovalevskaya theorem]
+  Assume \({\{B_j\}}_{j=1}^{n-1}\) and \(\bfc\) are real analytic
+  functions. Then there exists \(r>0\) and a real analytic function
+  \begin{equation}
+    \label{eq:pde:cauchy-kovalevskaya-solution}
+    \bfu=\sum_\alpha\bfu_\alpha x^\alpha
+  \end{equation}
+  solving the boundary-value problem
+  \eqref{eq:pde:cauchy-problem-to-analytic-system}.
+\end{theorem}
+
+\section{Second-order PDEs}
+We now turn our attention to second-order partial differential
+equations. For this section, we will mainly refer to \cite[\S 2]{john}
+starting with a minor detour to \cite[\S 7.2.5]{evans}.
+
+\subsection{Equations in two variables}
+In this section, we consider second-order hyperbolic PDEs involving only
+two variables. The rough idea is that since a function in two variables has
+only three second order partial derivatives, algebraic and analytic
+simplifications in the structure of the PDE may be possible, which are
+unavailable for more than two variables.
+
+We begin by considering a general linear second-order PDE in two variables
+\begin{equation}
+  \label{eq:pde:second-order-linear-two-vars}
+  \sum_{i,j=1}^2 a^{ij}u_{x_ix_j}+\sum_{i=1}^2 b^i u_{x_i}+cu=0,
+\end{equation}
+where the coefficients \(a^{ij}\), \(b^i\), \(c\), \(1\leq i,j\leq 2\),
+with \(a^{ij}=a^{ji}\), and the unknown \(u\) are functions of the two
+variables \(x_1\) and \(x_2\) in some region \(U\subset\bbR^2\). Note that
+for the moment, and in contrast to the theory developed above, we do
+\emph{not} identify ether \(x_1\) or \(x_2\) wit the variable \(t\)
+denoting time.
+
+We now pose the following question:
+\begin{quote}
+  \textsl{Is it possible to simplify the structure of the PDE
+    \eqref{eq:pde:second-order-linear-two-vars} by introducing new
+    independent variables?}
+\end{quote}
+In other words, can we expect to turn the PDE into a nicer form by
+rewriting in terms of new variables \(y=\bfPhi(x)\)?
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../Fall16-Notes"
