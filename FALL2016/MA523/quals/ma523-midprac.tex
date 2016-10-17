@@ -111,19 +111,36 @@
       \end{aligned}
     \right.
   \]
+
   Thus, integrating the characteristic ODEs from \((x^0,0)\), we have
   \[
     \left\{
       \begin{aligned}
-        \bigl(p^1(s), p^2(s)\bigr)
-        &=,\\
         \dot z(s)
         &=z^0,\\
         \bigl(x(s),t(s)\bigr)
-        &=(z^0s+x^0,s).
+        &=(z^0s+x^0,s);
       \end{aligned}
     \right.
   \]
+  since the PDE is quasilinear, we disregard \((p^1,p^2)\).
+
+  Applying the boundary conditions, we see that
+  \[
+    z^0=u(x^0,0)=e^{-x_0^2/2}.
+  \]
+
+  Here's where it gets tricky. After a little struggling, we see that there
+  is really no way to solve for \(z\) in terms of \((x(s),t(s))\). However,
+  we can solve for the projected characteristics:
+  \[
+    (x(t),t)=(e^{-x_0^2/2}t+x^0,t);
+  \]
+  and this is really all that matters for us to find the time \(t_0\)  when
+  the shock develops, i.e., the time when the projected characteristic
+  fails to be injective.
+
+  A little calculation shows that this happens precisely when
 \end{solution*}
 
 \begin{problem}
