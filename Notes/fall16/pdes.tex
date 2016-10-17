@@ -787,9 +787,82 @@ Here is an important result:
 \begin{lemma}[Majorants]
   \hfill
   \begin{enumerate}[label=(\roman*),noitemsep]
-  \item
+  \item If \(g\gg f\) and \(g\) converges for \(|x|<r\), then \(f\) also
+    converges for \(|x|<r\).
+  \item If \(f=\sum_\alpha f_\alpha x^\alpha\) converges for \(|x|<r\) and
+    \(0<s\sqrt{n}<r\), then \(f\) has a majorant for \(|x|<s/\sqrt{n}\).
   \end{enumerate}
 \end{lemma}
+
+\subsection{Cauchy--Kovalevskaya theorem}
+We now turn our attention to a very important theorem regarding analytic
+solutions to \eqref{eq:pde:k-order-quasilinear} with analytic Cauchy data
+\eqref{eq:pde:k-order-boundary-conditions} specified on an analytic,
+noncharacteristic hypersurface \(\Gamma\).
+
+\subsubsection{Reduction to a first-order system}
+We intend to construct a solution \(u\) as a power series, but we must
+first transform \eqref{eq:pde:k-order-quasilinear},
+\eqref{eq:pde:k-order-boundary-conditions} into a more convenient form.
+
+First of all, upon flattening out the boundary by an analytic mapping, we
+can reduce to the situation that
+\(\Gamma\subset\{\,x_n=0\,\}\). Additionally, by subtracting off
+appropriate analytic functions, we may assume that the Cauchy data are
+identically zero. Consequently, we may assume, without loss of generality,
+that our problem reads:
+\begin{equation}
+  \label{eq:pde:flattening-cauchy-problem}
+  \left\{
+    \begin{aligned}
+      \sum_{|\alpha|=k}a_\alpha(D^{k-1}u,\dotsc,u,x)D^\alpha u
+      +a_0(D^{k-1}u,\dotsc,u,x)&=0&&\text{for \(|x|<r\),}\\
+      u&=0,\\
+      \frac{\partial u}{\partial x_n}&=0,&&\text{for \(|x'|<r\),
+        \(x_n=0\),}\\
+      &\vdotswithin{=}\\
+      \frac{\partial^{k-1} u}{\partial x_n^{k-1}}&=0,
+    \end{aligned}
+  \right.
+\end{equation}
+\(r>0\) to be found. Here \(a_\alpha(|\alpha|=k)\) and \(a_0\) are analytic
+are analytic, and as usual we write \(x'=(x_1,\dotsc,x_{n-1})\).
+
+Finally, we this to a first-order \emph{system}. To do so, we set
+\[
+  \bfu\defeq\left(u,\tfrac{partial}{\partial
+      x_1}u,\dotsc,\tfrac{\partial^{k-1}}{\partial x_n^{k-1}}u\right),
+\]
+the components of which are all the partial derivatives of \(u\) of order
+less than \(k\). Let \(m\) hereafter denote the number of components of
+\(\bfu\), so \(\bfu\colon\bbR^n\to\bbR^m\),
+\(\bfu=(u^1,\dotsc,u^m)\). Observe from the boundary condition in
+\eqref{eq:pde:flattening-cauchy-problem} that \(\bfu=0\) for \(|x'|<r\),
+\(x_n=0\).
+
+For \(1\leq k\leq m-1\), we can compute \(u_{x_n}^k\) in terms o
+\({\{\bfu_{x_j}\}}_{j=1}^{n-1}\). Furthermore in view of the
+noncharacteristic condition \(a_{(0,\dotsc,0,k)}\neq 0\) near \(0\), we can
+utilize the PDE in \eqref{eq:pde:flattening-cauchy-problem} to solve for
+\(u_{x_n}^m\) in terms of \(\bfu\) and \({\{\bfu_{x_j}\}}_{j=1}^{n-1}\).
+
+Employing these relations, we can consequently transform
+\eqref{eq:pde:flattening-cauchy-problem} into a boundary-value problem for
+a first-order system \(\bfu\), the coefficients of which are analytic
+functions. This system is of the form
+\begin{equation}
+  \label{eq:pde:cauchy-problem-to-analytic-system}
+  \left\{
+    \begin{aligned}
+      \bfu_{x_n}&=\sum_{j=1}^{n-1}\bfB_j(\bfu,x')\bfu_{x_j}+\bfc(\bfu,x')
+      &&\text{for \(|x|<r\),}\\
+      \bfu&=0&&\text{for \(|x'|<r\), \(x_n=0\),}
+    \end{aligned}
+  \right.
+\end{equation}
+where we are given the analytic function
+\(\bfB_j\colon\bbR^m\times\bbR^{n-1}\to M(m,\bbR)\), \(1\leq j\leq n-1\),
+and \(\bfc\colon\bbR^{m}\times\bbR^{n-1}\to\bbR^m\).
 
 %%% Local Variables:
 %%% mode: latex
