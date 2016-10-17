@@ -2,45 +2,77 @@
 \subsection{Midterm Practice Problems}
 \begin{problem}
   Solve \(u_{x_1}^2+x_2u_{x_2}=u\) with initial conditions
-  \(u(x,1)=x_1^2/4+1\).
+  \(u(x_1,1)=x_1^2/4+1\).
 \end{problem}
 \begin{solution*}
-  We solve this problem using the method of characteristics. First, write
+  By inspection, we may suspect that \(v(x_1,x_2)=x_1^2/4+x_2\) is a
+  solution to the PDE. It certainly satisfies the boundary condition. A
+  routine calculation shows that \(v\) is in fact a solution to the
+  PDE. Lucky guess!
+
+  More formally, let us solve this problem using the method of
+  characteristics. First, write
   \[
-    F(p,z,x)={(p^1)}^2+x^2p^2-z=0.
+    F(p,z,x)={(p^1(s))}^2+x^2(s)p^2(s)-z(s)=0.
   \]
   Then, the characteristic ODEs are
   \[
     \left\{
       \begin{aligned}
         \bigl(\dot p^1(s),\dot p^2(s)\bigr)
-        &=-(0,p^2)+(p^1,p^2)\\
-        &=(p^1,0),\\
+        &=-(0,p^2(s))+(p^1(s),p^2(s))\\
+        &=(p^1(s),0),\\
         \dot z(s)
-        &=(2p^1,x^2)\cdot (p^1,p^2)\\
-        &=2{(p^1)}^2+x^2p^2,\\
-        \bigl(\dot x^1(s),\dot x^2(s)\bigr)&=(2p^1,x^2).
+        &=(2p^1(s),x^2(s))\cdot (p^1(s),p^2(s))\\
+        &=2p^1(s)^2+x^2(s)p^2(s),\\
+        \bigl(\dot x^1(s),\dot x^2(s)\bigr)&=(2p^1(s),x^2(s)).
       \end{aligned}
     \right.
   \]
 
-  Now, choose \(s>0\) so \((x^1(s),x^2(s))=(x^0,1)\) and, integrating the
-  characteristics, we have
+  Now, for \((x^1(0),x^2(0))=(x^0,1)\), integrating the characteristics, we
+  get
   \[
     \left\{
       \begin{aligned}
         \bigl(p^1(s),p^2(s)\bigr)&=\bigl(p_0^1e^s,p^2_0\bigr),\\
         \bigl(x^1(s),x^2(s)\bigr)
-        &=\bigl(2p_0^1(e^s-1),e^s\bigr),\\
-        z(s)&={(p_0^1)}^2e^{2s}+p_0^2e^s.
+        &=\bigl(2p_0^1e^s+x_0^1,x_0^2e^s\bigr),\\
+        z(s)&=\frac{{(x^0)}^2}{4}e^{2s}+p_0^2e^s+z^0
       \end{aligned}
     \right.
   \]
-  Using the initial condition, we can solve for \(p_0^1\) in terms of
-  \(x^0\)
+
+  Using the initial condition and the PDE, we find that
   \[
-    p_0^1=\frac{x^0}{2}
+    \begin{aligned}
+      p_0^1&=\frac{x^0}{2},&
+      p_0^2&=\frac{{(x^0)}^2}{4}+1-\frac{{(x^0)}^2}{4}=1,\\
+      x_0^1&=0,&
+      x_0^2&=1\\
+      z^0&=0,
+    \end{aligned}
   \]
+  and consequently
+  \[
+    \left\{
+      \begin{aligned}
+        \bigl(x^1(s),x^2(s)\bigr)
+        &=\bigl(x^0e^s,e^s\bigr),\\
+        z(s)&=\frac{{(x^0)}^2}{4}e^{2s}+e^s
+      \end{aligned}
+    \right.
+  \]
+  so, rewriting \(z\) in terms of \((x^1,x^2)\), we have
+  \begin{align*}
+    z(s)
+    &=\frac{{(x^0)}^2}{4}e^{2s}+e^s\\
+    &=\frac{{(x^1(s))}^2}{4}+x^2(s),
+      \intertext{so the solution in terms of \((x_1,x_2)\), is}
+    u(x_1,x_2)
+    &=\frac{x_1^2}{4}+x_2,
+  \end{align*}
+  just as we suspected.
 \end{solution*}
 
 \begin{problem}
@@ -58,6 +90,40 @@
   shock develops.
 \end{problem}
 \begin{solution*}
+  First, let us find a solution to the PDE using the method of
+  characteristics. Write
+  \[
+    F(p,z,x)=z(s)p^1(s)+p^2(s).
+  \]
+  Then, the characteristic ODEs are
+  \[
+    \left\{
+      \begin{aligned}
+        \bigl(\dot p^1(s),\dot p^2(s)\bigr)
+        &=-(0,0)-p^1(p^1(s),p^2(s))\\
+        &=\bigl(-p^1(s)^2,-p^1(s)p^2(s)\bigr),\\
+        \dot z(s)
+        &=(z(s),1)\cdot(p^1(s),p^2(s))\\
+        &=z(s)p^1(s)+p^2(s)\\
+        &=0,\\
+        \bigl(\dot x(s),\dot t(s)\bigr)
+        &=(z(s),1).
+      \end{aligned}
+    \right.
+  \]
+  Thus, integrating the characteristic ODEs from \((x^0,0)\), we have
+  \[
+    \left\{
+      \begin{aligned}
+        \bigl(p^1(s), p^2(s)\bigr)
+        &=,\\
+        \dot z(s)
+        &=z^0,\\
+        \bigl(x(s),t(s)\bigr)
+        &=(z^0s+x^0,s).
+      \end{aligned}
+    \right.
+  \]
 \end{solution*}
 
 \begin{problem}
