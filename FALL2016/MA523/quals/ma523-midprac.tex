@@ -246,11 +246,64 @@
 \begin{problem}
   Find the characteristics of the second order equation
   \[
-    u_{xx}-(2\cos x)u_{xy}-(3\sin^2 x)u_{yy}-yu_y=0,
+    u_{xx}-(2\cos x)u_{xy}-(3+\sin^2 x)u_{yy}-yu_y=0,
   \]
   and transform it to the canonical form.
 \end{problem}
 \begin{solution*}
+  First, writing the PDE in the form
+  \[
+    Au_{xx}+2Bu_{xy}+Cu_{yy}+2Du_x+2Eu_y+Fu=0,
+  \]
+  we see that \(A=1\), \(B=-\cos x\), \(C=-3\sin^2 x\), and \(E=-y/2\).
+  We solve for the characteristic curve by find a solution to the ODEs
+  \begin{align*}
+    \frac{dy}{dx}
+    &=\frac{B\pm\sqrt{B^2-AC}}{A}\\
+    &=-\cos x\pm\sqrt{\cos^2 x+3+\sin^2 x}\\
+    &=-\cos x\pm 2.
+  \end{align*}
+  The solutions give us the following ODEs
+  \[\left\{
+      \begin{aligned}
+        y&=-\sin x+2x+\xi(x,y),\\
+        y&=-\sin x-2x+\eta(x,y).
+      \end{aligned}
+    \right.\]%
+  Integrating these equations, we have
+  \[\left\{
+      \begin{aligned}
+        \xi(x,y)
+        &=y+\sin x-2x,\\
+        \eta(x,y) &=y+\sin x+2x.
+      \end{aligned}
+    \right.\]%
+  These are the characteristic strips for the PDE.
+
+  To put this PDE in canonical form, we first compute the following partial
+  derivatives
+  \begin{align*}
+    u_{x}(\xi,\eta)
+    &=u_\xi\xi_x+u_\eta\eta_x,\\
+    u_{y}(\xi,\eta)
+    &=u_\xi\xi_y+u_\eta\eta_y,\\
+    u_{xx}(\xi,\eta)
+    &=u_\xi\xi_{xx}+u_\eta\eta_{xx}+(u_{\xi\xi}\xi_x
+      +u_{\xi\eta}\eta_x)\xi_x+(u_{\xi\eta}\xi_x+u_{\eta\eta}\eta_x)\eta_x\\
+    &=u_{\xi\xi}(\xi_x)^2+u_{\eta\eta}(\eta_x)^2+2u_{\xi\eta}\xi_x\eta_x
+      +u_\xi\xi_{xx}+u_\eta\eta_{xx},\\
+    \intertext{exploiting symmetry, we can find \(u_{yy}\) by replacing
+    \(x\) with \(y\) above}
+    u_{yy}(\xi,\eta)
+    &=u_{\xi\xi}(\xi_y)^2+u_{\eta\eta}(\eta_y)^2+2u_{\xi\eta}\xi_y\eta_y
+      +u_\xi\xi_{yy}+u_\eta\eta_{yy},
+      \intertext{the last thing we need to figure out is the mixed partial}
+    u_{xy}(\xi,\eta)
+    &=u_\xi\xi_{xy}+u_\eta\eta_{xy}+(u_{\xi\xi}\xi_y+u_{\xi\eta}\eta_y)\xi_x
+      +(u_{\xi\eta}\xi_y+u_{\eta\eta}\eta_y)\eta_x\\
+    &=u_{\xi\xi}\xi_x\xi_y+u_{\eta\eta}\eta_x\eta_y+u_{\xi\eta}(\xi_x\eta_y+\xi_y\eta_x)
+      +u_\xi\xi_{xy}+u_\eta\eta_{xy}.
+  \end{align*}
 \end{solution*}
 
 \begin{problem}
