@@ -169,11 +169,79 @@
   result for the traffic flow.)
 \end{problem}
 \begin{solution*}
-  The shock curve is
+  First, note that
+  \begin{align*}
+    (F(\rho))_x
+    &=F'(\rho)\rho_x\\
+    &=\left[-c\frac{\rho}{\rho_0}+c\left(1-\frac{\rho}{\rho_0}\right)\right]\rho_x\\
+    &=\left(c-\frac{2c\rho}{\rho_0}\right)\rho_x.
+  \end{align*}
+  Let us find a solution to the PDE using the method of
+  characteristics. Write
   \[
-    F'(\rho(x^0))t+x^0
+    G(p,z,x)=p^2(s)+F'(z(s))p^1(s).
   \]
+  Then, the characteristic ODEs are
+  \[
+    \left\{
+      \begin{aligned}
+        \bigl(\dot p^1(s),\dot p^2(s)\bigr)
+        &=\bigl(-F''(z(s))p^1(s),-F''(z(s))p^2(s)\bigr),\\
+        \dot z(s)
+        &=F'(z(s))p^1(s)+p^2(s)\\
+        &=0,\\
+        \bigl(\dot x^1(s),\dot x^2(s)\bigr)
+        &=\bigl(F'(z(s)),1\bigr).
+      \end{aligned}
+    \right.
+  \]
+
+  Now, integrating the characteristics, we have
+  \[
+    \left\{
+      \begin{aligned}
+         z(s)
+        &=z^0,\\
+        \bigl(x^1(s),x^2(s)\bigr)
+        &=\bigl(F'(z^0)s+x^0,s\bigr).
+      \end{aligned}
+    \right.
+  \]
+
+  We have two cases to consider, \(x^0<0\) or \(x^0>0\). For \(x^0<0\),
+  \(z^0=\rho_0/2\) and the projected characteristics look like
+  \begin{align*}
+    \left(
+      F'(\rho_0/2)t+x^0
+    ,t\right)
+    &=\left(
+      \left[c-\frac{2c(\rho_0/2)}{\rho_0}\right]t+x^0,t
+      \right)\\
+    &=(0\cdot t+x^0,t)\\
+    &=(x^0,t)
+  \end{align*}
+  (where we have replaced \(s\) with the more appropriate \(t\)). Whereas
+  for \(x^0>0\), we have
+  \begin{align*}
+    \left(
+    F'(\rho_0)t+x^0
+    ,t\right)
+    &=\left(
+       \left[c-\frac{2c\rho_0}{\rho_0}\right]t+x^0,t
+      \right)\\
+    &=(-ct+x^0,t).
+  \end{align*}
+
+  These characteristics intersect precisely when
+  \[
+    t=\frac{x_1^0-x_2^0}{c},
+  \]
+  where \(x_1^0>0\), \(x_2^0<0\).
 \end{solution*}
+% The shock curve is
+% \[
+%   F'(\rho(x^0))t+x^0
+% \]
 
 \begin{problem}
   Find the characteristics of the second order equation
