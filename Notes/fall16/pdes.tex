@@ -894,7 +894,7 @@ Having reduced to the special form
 
 \section{Second-order PDEs}
 We now turn our attention to second-order partial differential
-equations. For this section, we will mainly refer to \cite[\S 2]{john}
+equations. For this section, we will mainly refer to \cite[\S 3]{john}
 starting with a minor detour to \cite[\S 7.2.5]{evans}.
 
 \subsection{Equations in two variables}
@@ -924,6 +924,50 @@ We now pose the following question:
 \end{quote}
 In other words, can we expect to turn the PDE into a nicer form by
 rewriting in terms of new variables \(y=\bfPhi(x)\)?
+
+More precisely, set
+\begin{equation}
+  \label{eq:pde:second-order-linear-new-variables}
+  y_1&=\Phi^1(x_1,x_2)\\
+  y_2&=\Phi^2(x_1,x_2)
+\end{equation}
+
+\section{Second-order linear PDEs}
+That last section was a bit useless, now we'll get down to developing some
+useful theory.
+
+\subsection{Characteristics for linear and quasilinear second-order equations}
+We start with the general quasilinear second-order equation for a function
+with \(u(x,y)\)
+\begin{equation}
+  \label{eq:pde:second-order-quasilinear}
+  au_{xx}+2bu_{xy}+cu_{yy}-d=0,
+\end{equation}
+where \(a\), \(b\), \(c\), and \(d\) depend on \(x\), \(y\), \(u\),
+\(u_x\), \(u_y\). Here the \emph{Cauchy problem} consists of finding a
+solution \(\u\) of \eqref{eq:pde:second-order-quasilinear} with given
+(compatible) values of \(u\), \(u_x\), \(u_y\) on a curve \(\Gamma\) in the
+\(xy\)-plane. Thus, for \(\Gamma\) given parametrically by
+\begin{equation}
+  \label{eq:pde:second-order-parametrized-boundary}
+    \begin{aligned}
+      x&=f(s),&y&=g(s),
+    \end{aligned}
+\end{equation}
+we prescribe on \(\Gamma\)
+\begin{equation}
+  \label{eq:pde:second-order-boundary-conditions}
+    \begin{aligned}
+      u&=h(s),u_x&=\varphi(s),&u_y&=\psi(s).
+    \end{aligned}
+\end{equation}
+The values of any function \(v(x,y)\) and of its first derivative
+\(v_x(v,y,v_y(}x,y))\) along the curve \(\Gamma\) are connected by the
+compatibility condition
+\[
+  \dot v=v_xf'(s)+v_yg'(s)
+\]
+which follows by differentiating \(v(f(s),g(s))\) with respect to \(s\).
 
 %%% Local Variables:
 %%% mode: latex
