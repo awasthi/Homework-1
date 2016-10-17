@@ -862,7 +862,20 @@ functions. This system is of the form
 \end{equation}
 where we are given the analytic function
 \(\bfB_j\colon\bbR^m\times\bbR^{n-1}\to\Mat(m,\bbR)\), \(1\leq j\leq n-1\),
-and \(\bfc\colon\bbR^{m}\times\bbR^{n-1}\to\bbR^m\).
+and \(\bfc\colon\bbR^{m}\times\bbR^{n-1}\to\bbR^m\). We will write
+\(\bfB_j=\bigl((b_j^{k\ell})\bigr)\) and
+\(\bfc=(c^1,\dotsc,c^m)\). Carefully note that we have assumed
+\({\{\bfB_j\}}_{j=1}^{n-1}\) and \(\bfc\) do not depend on \(x_n\)> We can
+always reduce to this situation by introducing if necessary a new
+component \(u^{m+1}\) of the unknown \(\bfu\), with \(u^{m+1}\equiv x_n\).
+
+In particular, the components of the system of partial differential
+equations in \eqref{eq:pde:cauchy-problem-to-analytic-system} read
+\begin{equation}
+  \label{eq:cauchy-problem-to-analytic-system-comps}
+  u_{x_n}^k=\sum_{j=1}^{n-1}\sum_{\ell=1}^m b_j^{k\ell}(\bfu,x')u_{x_j}^\ell
+  +c^k(\bfu,x'),\qquad 1\leq k\leq m.
+\end{equation}
 
 %%% Local Variables:
 %%% mode: latex
