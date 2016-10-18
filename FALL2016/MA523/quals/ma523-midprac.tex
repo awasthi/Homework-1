@@ -35,10 +35,10 @@
   \[
     \left\{
       \begin{aligned}
-        \bigl(p^1(s),p^2(s)\bigr)&=\bigl(p_0^1e^s,p^2_0\bigr),\\
+        \bigl(p^1(s),p^2(s)\bigr)&=\bigl(p_0^1\rme^s,p^2_0\bigr),\\
         \bigl(x^1(s),x^2(s)\bigr)
-        &=\bigl(2p_0^1e^s+x_0^1,x_0^2e^s\bigr),\\
-        z(s)&=\frac{{(x^0)}^2}{4}e^{2s}+p_0^2e^s+z^0
+        &=\bigl(2p_0^1\rme^s+x_0^1,x_0^2\rme^s\bigr),\\
+        z(s)&=\frac{{(x^0)}^2}{4}\rme^{2s}+p_0^2\rme^s+z^0
       \end{aligned}
     \right.
   \]
@@ -58,15 +58,15 @@
     \left\{
       \begin{aligned}
         \bigl(x^1(s),x^2(s)\bigr)
-        &=\bigl(x^0e^s,e^s\bigr),\\
-        z(s)&=\frac{{(x^0)}^2}{4}e^{2s}+e^s
+        &=\bigl(x^0\rme^s,\rme^s\bigr),\\
+        z(s)&=\frac{{(x^0)}^2}{4}\rme^{2s}+\rme^s
       \end{aligned}
     \right.
   \]
   so, rewriting \(z\) in terms of \((x^1,x^2)\), we have
   \begin{align*}
     z(s)
-    &=\frac{{(x^0)}^2}{4}e^{2s}+e^s\\
+    &=\frac{{(x^0)}^2}{4}\rme^{2s}+\rme^s\\
     &=\frac{{(x^1(s))}^2}{4}+x^2(s),
       \intertext{so the solution in terms of \((x_1,x_2)\), is}
     u(x_1,x_2)
@@ -82,7 +82,7 @@
     \left\{
       \begin{aligned}
         uu_x+u_t&=0,\\
-        u(x,0)&=e^{-x^2/2},
+        u(x,0)&=\rme^{-x^2/2},
       \end{aligned}
     \right.
   \]
@@ -127,21 +127,21 @@
 
   Applying the boundary conditions, we see that
   \[
-    z^0=u(x^0,0)=e^{-{(x^0)}^2/2}.
+    z^0=u(x^0,0)=\rme^{-{(x^0)}^2/2}.
   \]
 
   Here's where it gets tricky. After a little struggling, we see that there
   is really no way to solve for \(z\) in terms of \((x(s),t(s))\). However,
   we can solve for the projected characteristics:
   \[
-    (x(t,y),t)=(e^{-y^2/2}t+y,t);
+    (x(t,y),t)=(\rme^{-y^2/2}t+y,t);
   \]
   and this is really all that matters for us to find the time \(t_0\)  when
   the shock develops, i.e., the time when the projected characteristic
   fails to be injective.
 
   A little calculation shows that this happens precisely when
-  \(t=e^{-1/2}\).
+  \(t=\rme^{-1/2}\).
 \end{solution*}
 
 \begin{problem}
