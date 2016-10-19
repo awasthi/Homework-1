@@ -8,7 +8,7 @@
   \[
     f(x)=
     \begin{cases}
-      \displaystyle\frac{1}{b-a}&\text{if \(a\leq x\leq b\),}\\
+      \frac{1}{b-a}&\text{if \(a\leq x\leq b\),}\\
       0&\text{otherwise.}
     \end{cases}
   \]
@@ -16,26 +16,22 @@
   We compute the CDF of \(X\) by evaluating \(F(x)=P(X\leq x)\). To this
   end, we have
   \begin{align*}
-    P(X\leq x)
+    F(x)&=P(X\leq x)\\
     &=\int_{-\infty}^x f(x)\diff x\\
     &=
       \begin{cases}
-      \displaystyle
-      \int_b^x 0\diff x+\int_a^b\frac{1}{b-a}\diff x+\int_{-\infty}^a 0\diff x
-      &\text{if \(x>b\),}\\
-      \displaystyle
-      \int_a^x\frac{1}{b-a}\diff x+\int_{-\infty}^a 0\diff x
-      &\text{if \(a\leq x\leq b\),}\\
-      \displaystyle
-      \int_{-\infty}^x 0\diff x
-      &\text{if \(x<a\),}
+        \int_b^x 0\diff x+\int_a^b\frac{1}{b-a}\diff x+\int_{-\infty}^a
+        0\diff x
+        &\text{if \(x>b\),}\\
+        \int_a^x\frac{1}{b-a}\diff x+\int_{-\infty}^a 0\diff x
+        &\text{if \(a\leq x\leq b\),}\\
+        \int_{-\infty}^x 0\diff x &\text{if \(x<a\),}
     \end{cases}\\
     &=
       \begin{cases}
-      1&\text{if \(x>b\),}\\
-      \displaystyle
-      \frac{x-a}{b-a}&\text{if \(a\leq x\leq b\),}\\
-      0&\text{if \(x<a\).}
+        1&\text{if \(x>b\),}\\
+        \frac{x-a}{b-a}&\text{if \(a\leq x\leq b\),}\\
+        0&\text{if \(x<a\).}
     \end{cases}
   \end{align*}
 
@@ -48,7 +44,7 @@
   PDF
   \[
     f(x)=\begin{cases}
-      \displaystyle\frac{4x-x^2}{9}&\text{if \(1\leq x\leq 4\),}\\
+      \frac{4x-x^2}{9}&\text{if \(1\leq x\leq 4\),}\\
       0&\text{otherwise.}
     \end{cases}
   \]
