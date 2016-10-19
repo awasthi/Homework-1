@@ -116,7 +116,78 @@
   longer piece of the pencil.
 \end{problem}
 \begin{solution}
+  Let \(I\defeq [0,6]\) denote Jen's six-inch pencil and let
+  \(X\colon\Omega\to I\setminus\{0,6\}\) denote the point in \(I\)
+  (excluding the endpoints) at which Jen's dog broke her pencil. Then
+  \[
+    Y=
+    \begin{cases}
+      \frac{6-X}{X}&\text{for \(0<X<3\),}\\
+      \frac{X}{6-X}&\text{for \(3\leq X<6\),}\\
+      0&\text{otherwise,}
+    \end{cases}
+  \]
+  denotes the ratio of the shorter piece to the longer piece.
 
+  First, let us find the PDF of \(X\). The random variable
+  \(X\sim\Uniform[0,6]\) since every point in \(I\setminus\{0,6\}\) has an
+  equal probability of being the point at which the pencil is broken. Thus,
+  \[
+    f_X(x)=
+    \begin{cases}
+      \frac{1}{6}&\text{if \(0\leq x\leq 6\),}\\
+      0&\text{otherwise.}
+    \end{cases}
+  \]
+  From this, we can compute the PDF of \(Y\) by first finding \(F_Y\) the
+  CDF of \(Y\) and differentiating:
+  \begin{align*}
+    F_Y(x)
+    &=P(Y\leq x)\\
+    &=\begin{cases}
+        P\bigl(\frac{6-X}{X}\leq x\bigr)&\text{if \(0<x<3\),}\\
+        P\bigl(\frac{X}{6-X}\leq x\bigr)&\text{if \(3\leq x<6\)}
+      \end{cases}\\
+    &=\begin{cases}
+      P\bigl(X\geq\frac{6}{x+1}\bigr)&\text{if \(0<x<3\),}\\
+      P\bigl(X\leq\frac{6x}{x+1}\bigr)&\text{if \(3\leq x<6\)}
+    \end{cases}\\
+    &=\begin{cases}
+      P\bigl(\bigr)&\\
+      P\bigl(\bigr)&
+      \end{cases}
+  \end{align*}
+
+  With this information, we can compute
+  \begin{align*}
+    E(Y)
+    &=\int_{-\infty}^\infty
+     \left[
+      \begin{cases}
+        \frac{6-x}{x}&\text{for \(0<x<3\),}\\
+        \frac{x}{6-x}&\text{for \(3\leq x<6\),}\\
+        0&\text{otherwise}
+      \end{cases}\right]
+      \left[
+      \begin{cases}
+      \frac{1}{6}&\text{if \(0<x<6\),}\\
+      0&\text{otherwise}
+      \end{cases}
+     \right]dx\\
+    &=\int_{-\infty}^\infty
+    \left[
+    \begin{cases}
+    \frac{6-x}{6x}&\text{for \(0<x<3\),}\\
+    \frac{x}{6(6-x)}&\text{for \(3\leq x<6\)}
+    \end{cases}
+    \right]dx\\
+    &=
+      \begin{cases}
+        \int_{-\infty}^\infty\\
+        \int_{-\infty}^\infty
+      \end{cases}\\
+    &=
+  \end{align*}
 \end{solution}
 \newpage
 
