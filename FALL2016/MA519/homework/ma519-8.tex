@@ -316,14 +316,42 @@
   \]
   To find the PDF of \(Y\) we first compute its CDF and differentiate:
   \begin{align*}
-    F_Y(x)
-    &=P(Y\leq x)\\
-    &=\begin{cases}
-      0&\text{for \(x<0\),}\\
-      \frac{x}{x+1}&\text{for \(0\leq x<3\),}\\
-      \frac{1}{x+1}&\text{for \(3\leq x<6\),}\\
-      1&\text{for \(6\leq x\).}
-      \end{cases}
+    1-F_Y(x)
+    &=1-P(Y\leq x)\\
+    &=P(Y<x)\\
+    &=P\left(\frac{6x}{1+x}<X<\frac{6}{1+x}\right)\\
+    &=F_X\bigl(\tfrac{6}{1+x}\bigr)-F_X\bigl(\tfrac{6x}{1+x}\bigr).
+  \end{align*}
+
+  Thus,
+  \[
+    F_Y(x)=1-F_X\bigl(\tfrac{6}{1+x}\bigr)+F_X\bigl(\tfrac{6x}{1+x}\bigr).
+  \]
+
+  Hence, the PDF of \(Y\) is given by
+  \begin{align*}
+    f_Y(x)
+    &=\frac{F_Y(x)}{dx}\\
+    &=\frac{6}{(1+x)^2}f_X\bigl(\tfrac{6}{1+x}\bigr)
+      +\frac{6}{(1+x)^2}f_X\bigl(\tfrac{6x}{1+x}\bigr)\\
+    &=\frac{6}{(1+x)^2}\left(
+      f_X\bigl(\tfrac{6}{1+x}\bigr)
+      +f_X\bigl(\tfrac{6x}{1+x}\bigr)
+      \right).
+  \end{align*}
+
+  Finally, the expected value of \(Y\) is
+  \begin{align*}
+    E(Y)
+    &=\int_{-\infty}^\infty xf_Y(x)\diff x\\
+    &=\int_{-\infty}^\infty
+      \frac{6}{(1+x)^2}\left(
+      f_X\bigl(\tfrac{6}{1+x}\bigr)
+      +f_X\bigl(\tfrac{6x}{1+x}\bigr)
+      \right)dx\\
+    &=\int_0^\infty\frac{2}{(1+x)^2}\diff x\\
+    &=\lim_{x\to\infty}\frac{2}{0+1}-\frac{2}{x+1}\\
+    &=2.
   \end{align*}
 \end{solution}
 \newpage
