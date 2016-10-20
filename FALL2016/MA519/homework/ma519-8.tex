@@ -249,24 +249,34 @@
   plot the CDF. What is unusual about this CDF?
 \end{problem}
 \begin{solution}
-  The CDF of the payout is given by
+  Let \(X\colon\Omega\to\bbR\) denote the payout. First, note that the CDF
+  of the payout is given by
   \[
     F(x) =
     \begin{cases}
-      1.25x&\text{for \(0\leq x<2.5\),}\\
+      \frac{x}{2.5}&\text{for \(0\leq x<2.5\),}\\
       1&\text{for \(2.5\leq x<\infty\).}
     \end{cases}
   \]
+  Hence,
+  \begin{align*}
+    f(x)
+    &=\frac{dF(x)}{dx}\\
+    &=\begin{cases}
+      \frac{1}{2.5}&\text{for \(0\leq x\leq 2.5\),}\\
+      0&\text{otherwise.}
+    \end{cases}
+  \end{align*}
 
   The expected value of the payout is
   \begin{align*}
-    \int_{-\infty}^\infty f(x) \diff x
-    &=\int_{-\infty}^0 0\diff x+\int_0^{2.5} 1.25x\diff x
-      +\int_{2.5}^\infty
-    &= \int_0^{2.5} xf(x) + \frac{2.5}{2} \diff x\\
-    &= \int_0^{2.5} \frac{x}{5}+\frac{2.5}{2} \diff x\\
-    &= 0.625 + 1.25 \\
-    &= 1.875
+    E(X)
+    &=\int_{-\infty}^\infty xf(x) \diff x\\
+    &=\int_{-\infty}^0 0\diff x%
+      +\int_0^{2.5}\frac{x}{2.5} \diff x%
+      +\int_{2.5}^\infty 0\diff x\\
+    &=\frac{2.5^2}{5}\\
+    &=1.25.
   \end{align*}
   (with this figure being in thousands of dollars).
 
