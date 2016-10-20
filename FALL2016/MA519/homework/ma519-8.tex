@@ -213,9 +213,9 @@
   \[
     f(x)\defeq
     \begin{cases}
-      2(1/2-x) & \text{for \(0\leq x<\frac{1}{2}\)},\\
-      8(x-1/2) & \text{for \(1/2\leq x<\frac{3}{4}\),}\\
-      -\frac{1}{1+\ln 4}\ln(-(x-1)) &\text{for \(\frac{3}{4}\leq x<1\)},\\
+      2(\frac{1}{2}-x) & \text{for \(0\leq x<\frac{1}{2}\)},\\
+      8(x-\frac{1}{2}) & \text{for \(\frac{1}{2}\leq x<\frac{3}{4}\),}\\
+      -\frac{1}{1+\ln 4}\ln(1-x) &\text{for \(\frac{3}{4}\leq x<1\)},\\
       0 & \text{otherwise.}
     \end{cases}
   \]
@@ -225,10 +225,10 @@
     \int_{-\infty}^\infty f(x)\diff x
     &=\int_0^1 f(x) \diff x\\
     &=\int_{-\infty}^0 0\diff x
-      +\int_0^{1/2} 2\left(\frac{1}{2}-x\right) dx%
-      +\int_{1/2}^{3/4} 8\left(x-\frac{1}{2}\right) dx\\
+      +\int_0^{1/2} 1-2x\diff x%
+      +\int_{1/2}^{3/4} 8x-4\diff x\\
     &\phantom{{}={}}%
-      +\int_{3/4}^1-\frac{1}{1+\ln 4}\ln\bigl(-(x-1)\bigr) dx%
+      +\int_{3/4}^1-\frac{\ln(1-x)}{1+\ln 4}\diff x%
       +\int_1^\infty 0\diff x\\
     &=0+\frac{1}{2}+\frac{1}{4}+\frac{1}{4}+0\\
     &=1.
@@ -253,17 +253,20 @@
   \[
     F(x) =
     \begin{cases}
-      1.25x& x \in [0,2.5),\\
-      1& x \in [2.5, \infty)
+      1.25x&\text{for \(0\leq x<2.5\),}\\
+      1&\text{for \(2.5\leq x<\infty\).}
     \end{cases}
   \]
 
   The expected value of the payout is
   \begin{align*}
-    \int_0^5 f(x) \diff x &= \int_0^{2.5} xf(x) + \frac{2.5}{2} \\
-                          &= \int_0^{2.5} \frac{x}{5}+\frac{2.5}{2} \\
-                          &= 0.625 + 1.25 \\
-                          &= 1.875
+    \int_{-\infty}^\infty f(x) \diff x
+    &=\int_{-\infty}^0 0\diff x+\int_0^{2.5} 1.25x\diff x
+      +\int_{2.5}^\infty
+    &= \int_0^{2.5} xf(x) + \frac{2.5}{2} \diff x\\
+    &= \int_0^{2.5} \frac{x}{5}+\frac{2.5}{2} \diff x\\
+    &= 0.625 + 1.25 \\
+    &= 1.875
   \end{align*}
   (with this figure being in thousands of dollars).
 
@@ -374,10 +377,21 @@
 \begin{solution}
   Suppose \(X\sim\Uniform[0,10.5]\). Define \(Y\defeq \lfloor X \rfloor\)
   the integer part of \(X\) and \(Z\defeq X-Y\) the fractional part of
-  \(X\). Then \(X=Y+Z\) and thus
+  \(X\). Then \(Y=X-Z\). The fractional part \(Z\sim\Uniform[0,1)\) so
   \[
-    E(X)=\int_{-\infty}^\infty f_X(x)
+    f_Z(x)=
+    \begin{cases}
+      1&\text{for \(0\leq x<1\),}\\
+      0&\text{otherwise.}
+    \end{cases}
   \]
+
+  Then the CDF of \(Y\) is
+  \begin{align*}
+    F_Y(x)&=P(Y\leq y)\\
+          &=P(X-Z\leq y)\\
+          &=
+  \end{align*}
 \end{solution}
 \newpage
 
