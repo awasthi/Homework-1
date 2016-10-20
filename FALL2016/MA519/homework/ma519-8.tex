@@ -296,7 +296,7 @@
   \[
     Y=
     \begin{cases}
-      \frac{X}{6-X}&\text{for \(0<X<3\),}\\
+      \frac{X}{6-X}&\text{for \(0\leq X<3\),}\\
       \frac{6-X}{X}&\text{for \(3\leq X<6\),}\\
       0&\text{otherwise.}
     \end{cases}
@@ -305,7 +305,12 @@
   \begin{align*}
     F_Y(x)
     &=P(Y\leq x)\\
-    &=
+    &=\begin{cases}
+      0&\text{for \(x<0\),}\\
+      \frac{x}{x+1}&\text{for \(0\leq x<3\),}\\
+      \frac{1}{x+1}&\text{for \(3\leq x<6\),}\\
+      1&\text{for \(6\leq x\).}
+      \end{cases}
   \end{align*}
 \end{solution}
 \newpage
@@ -338,7 +343,27 @@
   compute it for \(p=0.75\).
 \end{problem}
 \begin{solution}
+  Recall that the standard Cauchy density is given by
+  \[
+    f(x)=\frac{1}{\pi(1+x^2)}.
+  \]
+  Thus, its CDF is
+  \begin{align*}
+    F(x)
+    &=\int_{-\infty}^xf(y)\diff y\\
+    &=\int_{-\infty}^x\frac{1}{\pi(1+y^2)}\diff y\\
+    &=\frac{\tan^{-1}x}{\pi}-\frac{-\frac{\pi}{2}}{\pi}\\
+    &=\frac{\tan^{-1}x}{\pi}+\frac{1}{2}.
+  \end{align*}
 
+  Recall that the \(p\)\textsup{th} percentile is
+  \begin{align*}
+    F^{-1}(p)
+    &=\inf\{\,x: F(x)\geq p\,\}\\
+    &=\inf\left\{\,x:\frac{\tan^{-1}x}{\pi}+\frac{1}{2}\geq p\,\right\}\\
+    &=\inf\left\{\,x:x\geq \tan\left(\pi\left[p-\frac{1}{2}\right]\right)\,\right\}\\
+    &=\tan\left(\pi\left[p-\frac{1}{2}\right]\right).
+  \end{align*}
 \end{solution}
 \newpage
 
