@@ -377,20 +377,31 @@
 \begin{solution}
   Suppose \(X\sim\Uniform[0,10.5]\). Define \(Y\defeq \lfloor X \rfloor\)
   the integer part of \(X\) and \(Z\defeq X-Y\) the fractional part of
-  \(X\). Then \(Y=X-Z\). The fractional part \(Z\sim\Uniform[0,1)\) so
+  \(X\). Then \(Y=X-Z\). The fractional part \(Z\sim\Uniform[0,1)\) and its
+  PDF is given by
   \[
     f_Z(x)=
     \begin{cases}
       1&\text{for \(0\leq x<1\),}\\
+      0&\text{otherwise,}
+    \end{cases}
+  \]
+  so
+  \[
+    f_{{-}Z}(x)=
+    \begin{cases}
+      1&\text{for \(-1<x\leq 0\),}\\
       0&\text{otherwise.}
     \end{cases}
   \]
 
   Then the CDF of \(Y\) is
   \begin{align*}
-    F_Y(x)&=P(Y\leq y)\\
-          &=P(X-Z\leq y)\\
-          &=
+    F_Y(x)
+    &=P(Y\leq y)\\
+    &=P(X+({-}Z)\leq y)\\
+    &=\int_{-\infty}^x\int_{-\infty}^\infty f_X(s-t)f_{{-}Z}(t)\diff t ds\\
+    &=
   \end{align*}
 \end{solution}
 \newpage
