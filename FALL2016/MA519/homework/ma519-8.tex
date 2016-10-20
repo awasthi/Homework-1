@@ -12,7 +12,7 @@
     \end{cases}
   \]
 
-  Next we compute the CDF:
+  Next, we compute the CDF of \(X\):
   \begin{align*}
     F(x)&=P(X\leq x)\\
         &=\int_{-\infty}^x f(y)\diff y\\
@@ -31,22 +31,33 @@
         \end{cases}
   \end{align*}
 
-  The mean of $X$ is given by
-  \[
-    \int_a^b \frac{x}{b-a} \diff x = \frac{b-a}{2}
-  \]
+  Next, we compute the mean of \(X\):
+  \begin{align*}
+    E(X)
+    &=\int_{-\infty}^\infty xf(x)\diff x\\
+    &=\int_{-\infty}^a 0\diff x%
+      +\int_a^b\frac{x}{b-a}\diff x%
+      +\int_b^\infty 0\diff x\\
+    &=\frac{b^2-a^2}{2(b-a)}\\
+    &=\frac{(b+a)(b-a)}{2(b-a)}\\
+    &=\frac{b+a}{2}.
+  \end{align*}
 
   The second moment of $X$ is given by
-  \[
-    \int_a^b \frac{x^2}{b-a} \diff x = \frac{b^3-a^3}{3(b-a)}
-  \]
-
-  so that the variance of $X$ is given by
-  \[
-    E(X^2) - E(X)^2 = \frac{b^3-a^3}{3(b-a)} - \left(\frac{b-a}{2}\right)^2
-  \]
-
-
+  \begin{align*}
+    E(X^2)
+    &=\int_{-\infty}^\infty x^2f(x)\diff x\\
+    &=\int_{-\infty}^a 0\diff x%
+      +\int_a^b \frac{x^2}{b-a}\diff x%
+      +\int_b^\infty 0\diff x\\
+    &=\frac{b^3-a^3}{3(b-a)}
+  \end{align*}
+  and hence, the variance of \(X\) is
+  \begin{align*}
+    \Var(X)
+    &=E(X^2)-E(X)^2\\
+    &=\frac{b^3-a^3}{3(b-a)}-\left(\frac{b+a}{2}\right)^2.
+  \end{align*}
 \end{solution}
 \newpage
 
@@ -63,15 +74,17 @@
   Find the average diameter of disks coming from this machine (in inches).
 \end{problem}
 \begin{solution}
-  The expected value of the diameter of the disks coming from this machine
-  is
+  Let \(X\colon\Omega\to\bbR\) denote the diameter of disks coming from
+  this machine. Then
   \begin{align*}
-    E(X) &= \int_{-\infty}^\infty xf(x) \diff x\\
-         &= \int_1^4 x \frac{4x-x^2}{9} \diff x\\
-         &= \int_1^4 \frac{4x^2-x^3}{9} \diff x\\
-         &= \int_1^4 \frac{4x^2-x^3}{9} \diff x\\
-         &= \frac{9}{4}\\
-         &= 2.25
+    E(X) &=\int_{-\infty}^\infty xf(x) \diff x\\
+         &=\int_{-\infty}^1 0\diff x%
+           +\int_1^4 x \left(\frac{4x-x^2}{9}\right) dx%
+           +\int_4^\infty 0\diff x\\
+         &=\int_1^4 \frac{4x^2-x^3}{9} \diff x\\
+         &=\int_1^4 \frac{4x^2-x^3}{9} \diff x\\
+         &=\frac{9}{4}\\
+         &=2.25.
   \end{align*}
 \end{solution}
 \newpage
@@ -81,20 +94,18 @@
   \(P(-0.5\leq \sin X\leq 0.5)\).
 \end{problem}
 \begin{solution}
-
-  Note to the grader: the sheet says ``$[0,2]$''. After talking with
-  Dr. Dasgupta, he told me that he meant ``$[0,2\pi]$.''
-
-  The probability that $sin(X) \in [-0.5,0.5]$ is the same as the
-  probability that
-  $X \in [0,\pi/6] \cup [5\pi/6,7\pi/6] \cup [11\pi/6,2\pi]$.
-
-  Because $X$ is uniform, this is
-  \[
-    \frac{1}{2\pi} \left(\frac{\pi}{6} + \frac{2\pi}{6} +
-      \frac{\pi}{6}\right) = \frac{1}{3} \approx 0.33333
-  \]
-
+  Note that
+  \begin{align*}
+    P(-0.5\leq\sin X\leq 0.5)
+    &=P\bigl([0,\pi/6]\cup[5\pi/6,7\pi/6]\cup[11\pi/6,2\pi]\bigr)\\
+    \intertext{these are the intervals at which \(-0.5\leq \sin X\leq
+    0.5\), so by countable aditivity}
+    &=P[0,\pi/6]+P[5\pi/6,7\pi/6]+P[11\pi/6,2\pi]\\
+    \intertext{which, since \(X\sim\Uniform[0,2\pi]\), equals}
+    &=\frac{\pi/6}{2\pi}+\frac{\pi/3}{2\pi}+\frac{\pi/6}{2\pi}\\
+    &=\frac{1}{3}\\
+    &\approx\num{0.3333333333333333}.
+  \end{align*}
 \end{solution}
 \newpage
 
