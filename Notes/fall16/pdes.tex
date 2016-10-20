@@ -289,7 +289,8 @@ summary, we have
     \left\{
       \begin{aligned}
         x^1(s)&=x^0\cos s,&x^2(s)&=x^0\sin x,\\
-        z(s)&=z^0\rme^s=g(x^0)\rme^s,
+        z(s)&=z^0\rme^s\\
+        &=g(x^0)\rme^s,
       \end{aligned}
     \right.
   \]
@@ -928,8 +929,10 @@ rewriting in terms of new variables \(y=\bfPhi(x)\)?
 More precisely, set
 \begin{equation}
   \label{eq:pde:second-order-linear-new-variables}
-  y_1&=\Phi^1(x_1,x_2)\\
-  y_2&=\Phi^2(x_1,x_2)
+  \begin{aligned}
+    y_1&=\Phi^1(x_1,x_2)\\
+    y_2&=\Phi^2(x_1,x_2)
+  \end{aligned}
 \end{equation}
 
 \section{Second-order linear PDEs}
@@ -945,7 +948,7 @@ with \(u(x,y)\)
 \end{equation}
 where \(a\), \(b\), \(c\), and \(d\) depend on \(x\), \(y\), \(u\),
 \(u_x\), \(u_y\). Here the \emph{Cauchy problem} consists of finding a
-solution \(\u\) of \eqref{eq:pde:second-order-quasilinear} with given
+solution \(u\) of \eqref{eq:pde:second-order-quasilinear} with given
 (compatible) values of \(u\), \(u_x\), \(u_y\) on a curve \(\Gamma\) in the
 \(xy\)-plane. Thus, for \(\Gamma\) given parametrically by
 \begin{equation}
@@ -962,7 +965,7 @@ we prescribe on \(\Gamma\)
     \end{aligned}
 \end{equation}
 The values of any function \(v(x,y)\) and of its first derivative
-\(v_x(v,y,v_y(}x,y))\) along the curve \(\Gamma\) are connected by the
+\(v_x(v,y,v_y(x,y))\) along the curve \(\Gamma\) are connected by the
 compatibility condition
 \[
   \dot v=v_xf'(s)+v_yg'(s)

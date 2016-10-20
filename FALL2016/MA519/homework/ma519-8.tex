@@ -117,10 +117,10 @@
   \([3,6]\), and \([6,10]\). Write its density function.
 \end{problem}
 \begin{solution}
-  Suppose \(X\) is piecewise uniform on \(I_1=[0,1]\), \(I_2=[1,3]\),
-  \(I_3=[3,6]\), and \(I_4=[6,10]\). Then we compute the PDF of \(X\) by
-  summing the individual PDFs on \(X_i\sim\Uniform(I_i)\), \(1\leq i\leq
-  4\), and renormalizing
+  Suppose \(X\) is piecewise uniform on \(I_1\defeq[0,1]\),
+  \(I_2\defeq[1,3]\), \(I_3\defeq[3,6]\), and \(I_4\defeq[6,10]\). Then we
+  compute the PDF of \(X\) by summing the individual PDFs on
+  \(X_i\sim\Uniform(I_i)\), \(1\leq i\leq 4\), and renormalizing
   \begin{align*}
     f(x)
     &=\left(1+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}\right)
@@ -156,7 +156,7 @@
 \begin{solution}
   Let \(0\leq p\leq 1\) and define
   \[
-    f_p(x)=
+    f_p(x)\defeq
     \begin{cases}
       p\sin x+(1-p)\cos x&\text{for \(0\leq x\leq\frac{\pi}{2}\),}\\
       0&\text{otherwise.}
@@ -211,7 +211,7 @@
 \begin{solution}
   Consider the density function given by
   \[
-    f(x) =
+    f(x)\defeq
     \begin{cases}
       2(1/2-x) & \text{for \(0\leq x<\frac{1}{2}\)},\\
       8(x-1/2) & \text{for \(1/2\leq x<\frac{3}{4}\),}\\
@@ -278,7 +278,7 @@
   longer piece of the pencil.
 \end{problem}
 \begin{solution}
-  Let \(I=[0,6]\) denote Jen's six-inch pencil and let
+  Let \(I\defeq[0,6]\) denote Jen's six-inch pencil and let
   \(X\colon\Omega\to I\setminus\{0,6\}\) denote the point in \(I\)
   (excluding the end points) at which Jen's dog broke her pencil. Assuming
   \(X\sim\Uniform[0,6]\), the PDF of \(X\) is given by
@@ -321,9 +321,9 @@
   function for any \(c\).
 \end{problem}
 \begin{solution}
-  Set $C = \sum_{n=1}^\infty \frac{1}{\sqrt{n}(n+1)}$. Consider
-  $f\colon [0,1] \to \bbR$ where $f(x) = \frac{1}{C} \sqrt{n}$ if
-  $x \in [\frac{1}{n+1},\frac{1}{n}]$. Then
+  Set $C \defeq\sum_{n=1}^\infty \frac{1}{\sqrt{n}(n+1)}$. Consider
+  $f\colon [0,1] \to \bbR$ where $f(x)\defeq\frac{1}{C}\sqrt{n}$ for
+  $\frac{1}{n+1}\leq x\leq \frac{1}{n}$. Then
   \[
     \int_0^1 f(x) \diff x = \frac{1}{C} \sum_{n=1}^\infty
     \frac{1}{\sqrt{n}(n+1)} =1,
@@ -372,7 +372,12 @@
   \([0,10.5]\). Find the expected value of the integer part of \(X\).
 \end{problem}
 \begin{solution}
-
+  Suppose \(X\sim\Uniform[0,10.5]\). Define \(Y\defeq \lfloor X \rfloor\)
+  the integer part of \(X\) and \(Z\defeq X-Y\) the fractional part of
+  \(X\). Then \(X=Y+Z\) and thus
+  \[
+    E(X)=\int_{-\infty}^\infty f_X(x)
+  \]
 \end{solution}
 \newpage
 

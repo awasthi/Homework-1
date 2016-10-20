@@ -1,10 +1,10 @@
 \documentclass[crop,tikz]{standalone}
 \usepackage{preamble}
 \begin{document}
-\begin{tikzpicture}
-  \draw (-1.5,0) -- (1.5,0);
-  \draw (0,-1.5) -- (0,1.5);
-\end{tikzpicture}
+\tikz \draw[thick,rounded corners=8pt]
+        (0,0) -- (0,2) -- (1,3.25) --
+        (2,2) -- (2,0) -- (0,2) -- (2,2) --
+        (0,0) -- (2,0);
 \end{document}
 
 %%% Local Variables:
