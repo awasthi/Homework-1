@@ -7,7 +7,7 @@
   \[
     f(x)=
     \begin{cases}
-      \frac{1}{b-a}&\text{if \(a\leq x\leq b\),}\\
+      \frac{1}{b-a}&\text{for \(a\leq x\leq b\),}\\
       0&\text{otherwise.}
     \end{cases}
   \]
@@ -17,17 +17,17 @@
     F(x)&=P(X\leq x)\\
         &=\int_{-\infty}^x f(y)\diff y\\
         &=\begin{cases}
-          \int_{-\infty}^x 0\diff y&\text{if \(x<a\),}\\
+          \int_{-\infty}^x 0\diff y&\text{for \(x<a\),}\\
           \int_{-\infty}^a 0\diff y%
-          +\int_a^x\frac{1}{b-a}\diff y&\text{if \(a\leq x<b\),}\\
+          +\int_a^x\frac{1}{b-a}\diff y&\text{for \(a\leq x<b\),}\\
           \int_{-\infty}^a 0\diff y%
           +\int_a^b\frac{1}{b-a}\diff y%
-          +\int_b^\infty 0\diff y&\text{if \(x\geq b\)}
+          +\int_b^\infty 0\diff y&\text{for \(x\geq b\)}
           \end{cases}\\
         &=\begin{cases}
-          0&\text{if \(x<a\),}\\
-          \frac{x-a}{b-a}&\text{if \(a\leq x<b\),}\\
-          1&\text{if \(x\geq b\).}
+          0&\text{for \(x<a\),}\\
+          \frac{x-a}{b-a}&\text{for \(a\leq x<b\),}\\
+          1&\text{for \(x\geq b\).}
         \end{cases}
   \end{align*}
 
@@ -67,7 +67,7 @@
   \[
     f(x)=%
     \begin{cases}
-      \frac{4x-x^2}{9}&\text{if \(1\leq x\leq 4\),}\\
+      \frac{4x-x^2}{9}&\text{for \(1\leq x\leq 4\),}\\
       0&\text{otherwise.}
     \end{cases}
   \]
@@ -114,16 +114,33 @@
   \([3,6]\), and \([6,10]\). Write its density function.
 \end{problem}
 \begin{solution}
-  Let $f$ be the PDF of $X$. Then
-  \[
-    f(x) =
-    \begin{cases}
-      \frac{12}{25}&x\in[0,1)\\
-      \frac{6}{25}&x\in[1,3)\\
-      \frac{4}{25}&x\in[3,6)\\
-      \frac{3}{25}&x\in[6,10)
-    \end{cases}
-  \]
+  Suppose \(X\) is piecewise uniform on \(I_1=[0,1]\), \(I_2=[1,3]\),
+  \(I_3=[3,6]\), and \(I_4=[6,10]\). Then we compute the PDF of \(X\) by
+  summing the individual PDFs on \(X_i\sim\Uniform(I_i)\), \(1\leq i\leq
+  4\), and renormalizing
+  \begin{align*}
+    f(x)
+    &=\left(1+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}\right)
+      \begin{cases}
+      \frac{1}{1}&\text{for \(0\leq x<1\)},\\
+      \frac{1}{2}&\text{for \(1\leq x<3\),}\\
+      \frac{1}{3}&\text{for \(3\leq x<6\),}\\
+      \frac{1}{4}&\text{for \(6\leq x\leq 10\)}
+      \end{cases}\\
+    &=\frac{12}{25}
+      \begin{cases}
+      \frac{1}{1}&\text{for \(0\leq x<1\)},\\
+      \frac{1}{2}&\text{for \(1\leq x<3\),}\\
+      \frac{1}{3}&\text{for \(3\leq x<6\),}\\
+      \frac{1}{4}&\text{for \(6\leq x\leq 10\)}
+      \end{cases}\\
+    &=\begin{cases}
+      \frac{12}{25}&\text{for \(0\leq x<1\)},\\
+      \frac{6}{25}&\text{for \(1\leq x<3\),}\\
+      \frac{4}{25}&\text{for \(3\leq x<6\),}\\
+      \frac{3}{25}&\text{for \(6\leq x\leq 10\).}
+      \end{cases}
+  \end{align*}
 \end{solution}
 \newpage
 
@@ -233,7 +250,7 @@
   \[
     f_X(x)=
     \begin{cases}
-      \frac{1}{6}&\text{if \(0\leq x\leq 6\),}\\
+      \frac{1}{6}&\text{for \(0\leq x\leq 6\),}\\
       0&\text{otherwise.}
     \end{cases}
   \]
@@ -244,8 +261,8 @@
   \[
     Y=
     \begin{cases}
-      \frac{X}{6-X}&\text{if \(0<X<3\),}\\
-      \frac{6-X}{X}&\text{if \(3\leq X<6\),}\\
+      \frac{X}{6-X}&\text{for \(0<X<3\),}\\
+      \frac{6-X}{X}&\text{for \(3\leq X<6\),}\\
       0&\text{otherwise.}
     \end{cases}
   \]
@@ -254,10 +271,10 @@
     F_Y(x)
     &=P(Y\leq x)\\
     &=\begin{cases}
-      P(0\leq 0)&\text{if \(x\leq 0\)}\\
-      P(0\leq 0)+P\bigl(\frac{X}{6-X}\leq x\bigr)&\text{if \(0<x<3\),}\\
+      P(0\leq 0)&\text{for \(x\leq 0\)}\\
+      P(0\leq 0)+P\bigl(\frac{X}{6-X}\leq x\bigr)&\text{for \(0<x<3\),}\\
       P(0\leq 0)+P\bigl(\frac{X}{6-X}\leq 3\bigr)+
-      P\bigl(\frac{6-X}{X}\leq x\bigr)&\text{if \(3\leq x\)}
+      P\bigl(\frac{6-X}{X}\leq x\bigr)&\text{for \(3\leq x\)}
     \end{cases}\\
     &=
   \end{align*}
