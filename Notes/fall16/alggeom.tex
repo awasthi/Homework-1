@@ -326,7 +326,20 @@ property left exactness. They are not exact, in general:
   \[
     \includegraphics{hom-exact}
   \]
+  The horizontal map on the bottom is clearly surjective.
 \end{proof}
+
+Given a module \(M\), let
+\[
+  R^{(M)}=\bigoplus_{m\in M} R.
+\]
+This is a very big free module which maps onto \(M\) by sending the \(1\)
+in the \(m\)\textsup{th} copy of \(R\) to \(m\). Let \(\Ker M\) be the
+kernel. We have a \emph{canonical} exact sequence
+\begin{equation}
+  \label{eq:alggeom:canonical-exact-seq}
+  0\To\Ker M\To R^{(M)}\To M\To 0.
+\end{equation}
 
 %%% Local Variables:
 %%% mode: latex
