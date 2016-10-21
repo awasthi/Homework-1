@@ -4,9 +4,9 @@
 
 \begin{document}
 \begin{tikzcd}
-  A\arrow{r}{f}
-  &B\\
-  M\arrow{u}{g}\arrow[dashed]{ru}[swap]{F(f)=f\circ g}
+  \Hom(M,B)\arrow{r}{f}\arrow{d}[swap]{\cong}\arrow{r}
+  &\Hom(M,C)\arrow{d}{\cong}\\
+  \prod_S B\arrow{r}{\prod f}&\prod_S C
 \end{tikzcd}
 \end{document}
 
