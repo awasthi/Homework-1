@@ -1,11 +1,22 @@
 \begin{problem}
   For \(n=2\) find Green's function for the quadrant
-  \(\{\,x_1>0,x_2>0\,\}\) by repeated reflection.
+  \(U=\{\,x_1,x_2>0\,\}\) by repeated reflection.
 \end{problem}
 \begin{solution}
-  Set
-  \[
+  Taking the hit, set \(x'=(x_1,-x_2)\) and \(x''=(-x_1,x_2)\) and define
+  \begin{equation}
+    \label{eq:6:corrector}
     \varphi^x(y)\defeq \Phi(x-y)+\Phi(x'-y)-\Phi(x''-y).
+  \end{equation}
+
+  We claim that \(\varphi^x\) as defined above solves
+  \[
+    \left\{
+      \begin{aligned}
+        \Delta\varphi^x&=0&&\text{in \(U\),}\\
+        \varphi^x(y)&=\Phi(x-y)&&\text{on \(\partial U\).}
+      \end{aligned}
+    \right.
   \]
 \end{solution}
 \newpage
