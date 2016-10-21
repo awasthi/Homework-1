@@ -25,7 +25,7 @@
 
 %% Math fonts
 \usepackage{amssymb}% more math symbols
-\usepackage[heavycircles]{stmaryrd}% power series ring symbol
+\usepackage{stmaryrd}% power series ring symbol
 \usepackage[nointegrals]{wasysym}% happy faces, etc.
 % \usepackage{esint}% integral symbols
 \usepackage[bb=ams,% math alphabets
@@ -354,7 +354,7 @@
 % \newcommand{\blank}{{-}} % useful for categories
 \newcommand{\blank}{{}\cdot{}} % useful for categories
 \renewcommand{\hom}{\mathop{hom}}
-\newcommand{\kAlg}[1]{#1\textnormal{-}\catname{Alg}}
+\newcommand{\kAlg}[1]{#1\textnormal{{}-{}}\catname{Alg}}
 \newcommand{\catname}[1]{\mathbf{#1}}
 \newcommand{\AbGrp}{\catname{AbGrp}}
 \newcommand{\Grp}{\catname{Grp}}
@@ -362,7 +362,7 @@
 \newcommand{\Haus}{\catname{Haus}}
 \newcommand{\Man}{\catname{Man}}
 \newcommand{\Met}{\catname{Met}}
-\newcommand{\RMod}[1]{#1\textnormal{-}\catname{Mod}}
+\newcommand{\RMod}[1]{#1\textnormal{{}-{}}\catname{Mod}}
 \newcommand{\Ord}{\catname{Ord}}
 \newcommand{\Poset}{\catname{Poset}}
 \newcommand{\Ring}{\catname{Ring}}
@@ -370,7 +370,7 @@
 \newcommand{\Topo}{\catname{Top}}
 \newcommand{\starTop}{\catname{Top}_\star}
 \newcommand{\VECT}{\catname{Vect}}
-\newcommand{\kVect}[1]{#1\textnormal{-}\VECT}
+\newcommand{\kVect}[1]{#1\textnormal{{}-{}}\VECT}
 
 %% Subscripts
 \newcommand{\dR}{\mathrm{dR}} % for de Rham cohomology
@@ -378,8 +378,6 @@
 \newcommand{\Euc}{\mathrm{Euc}}
 \newcommand{\Newt}{\mathrm{Newt}}
 \newcommand{\Lor}{\mathrm{Lor}}
-
-%% Misc
 \newcommand{\opp}{\mathrm{opp}}
 
 %%% Algebra

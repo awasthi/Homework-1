@@ -313,6 +313,34 @@ property left exactness. They are not exact, in general:
   The last map is certainly not onto.
 \end{example}
 
+\begin{exercise}
+  Find an example for which \(\Hom(\blank,M)\) isn't exact.
+\end{exercise}
+
+\begin{lemma}
+  If \(M\) is a free module, then \(\Hom(M,\blank)\) is exact.
+\end{lemma}
+\begin{proof}
+  Let \(M=\bigoplus_S R\), where \(S\) might be infinite. Given \(f\colon
+  B\to C\) surjective, we have
+  \[
+    \includegraphics{hom-exact}
+  \]
+  The horizontal map on the bottom is clearly surjective.
+\end{proof}
+
+Given a module \(M\), let
+\[
+  R^{(M)}=\bigoplus_{m\in M} R.
+\]
+This is a very big free module which maps onto \(M\) by sending the \(1\)
+in the \(m\)\textsup{th} copy of \(R\) to \(m\). Let \(\Ker M\) be the
+kernel. We have a \emph{canonical} exact sequence
+\begin{equation}
+  \label{eq:alggeom:canonical-exact-seq}
+  0\To\Ker M\To R^{(M)}\To M\To 0.
+\end{equation}
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../Fall16-Notes"
