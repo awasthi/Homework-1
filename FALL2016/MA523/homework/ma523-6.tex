@@ -39,16 +39,24 @@
 \begin{problem}
   Let \(P_k(x)\) and \(P_m(x)\) be homogeneous harmonic polynomials in
   \(\bbR^n\) of degrees \(k\) and \(m\) respectively; i.e.,
-  \begin{align*}
-    P_k(\lambda x)&=\lambda^k P_k(x),&P_m(\lambda x)&=\lambda^m P_m(x)
-    &&\text{for every \(x\in\bbR^n\), \(\lambda>0\),}\\
-    \Delta P_k&=0,&\Delta P_m&=0&&\text{in \(\bbR^n\).}
-  \end{align*}
+  \[
+    \left\{%
+      \begin{aligned}
+        P_k(\lambda x)&=\lambda^k P_k(x),&P_m(\lambda x)&=\lambda^m P_m(x)
+        &&\text{for every \(x\in\bbR^n\), \(\lambda>0\),}\\
+        \Delta P_k&=0,&\Delta P_m&=0&&\text{in \(\bbR^n\).}
+      \end{aligned}
+    \right.
+  \]
   \begin{enumerate}[label=(\alph*),noitemsep]
   \item Show that
     \[
-      \frac{\partial P_k}{\partial \nu}=kP_k(x),\qquad
-      \frac{\partial P_m}{\partial\nu}=mP_m(x)\qquad\text{on \(\partial B(0,1)\)}
+      \left\{%
+        \begin{aligned}
+          \frac{\partial P_k}{\partial \nu}&=kP_k(x),& \frac{\partial
+            P_m}{\partial\nu}&=mP_m(x)&&\text{on \(\partial B(0,1)\),}
+        \end{aligned}
+      \right.
     \]
     where \(B(0,1)=\{\,x\in\bbR^n:|x|<1\,\}\) and \(\nu\) is the outward
     normal on \(\partial B(0,1)\).
