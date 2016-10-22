@@ -340,6 +340,16 @@ kernel. We have a \emph{canonical} exact sequence
   \label{eq:alggeom:canonical-exact-seq}
   0\To\Ker M\To R^{(M)}\To M\To 0.
 \end{equation}
+\subsection[\(\Ext\)]{\(\boldsymbol\Ext\)}
+Inductively, define
+\begin{align*}
+  \Ext^1_R(M,N)
+  &=\Coker\bigl\{\Hom(R^{(M)},N)\to\Hom(\Ker M,N)\bigr\},\\
+  \Ext_R^{i+1}(M,N)
+  &=\Ext_R^i(\Ker M,N).
+\end{align*}
+This is not the way these groups are usually defined, but we will get to
+that later. These are clearly covariant functors in the second variable.
 
 %%% Local Variables:
 %%% mode: latex
