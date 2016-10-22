@@ -75,16 +75,28 @@
 \else
 
 \if@times
+% \usepackage{tgtermes}
+% \pdfmapfile{+mtpro2.map}
+% \usepackage[lite,subscriptcorrection,slantedGreek,nofontinfo]{mtpro2}
+
 % \usepackage{nimbusserif}
 % \usepackage{nimbussans}
 % \usepackage{nimbusmono}
-\usepackage[theoremfont,largesc]{newtxtext}
-\usepackage[varg,smallerops,subscriptcorrection,nosymbolsc]{newtxmath}
+% \usepackage[theoremfont,largesc]{newtxtext}
+% \usepackage[libertine,varg,smallerops,subscriptcorrection,nosymbolsc]{newtxmath}
+% \usepackage{libertinegc}
+\usepackage[lining,semibold]{libertine}
+\usepackage[libertine,
+            liby,
+            libaltvw,
+            smallerops,
+            upint,
+            subscriptcorrection,
+            nosymbolsc]{newtxmath}
 \usepackage[bb=boondox,% math alphabets
             frak=boondox,%
             cal=boondoxo,%
             scr=boondox]{mathalfa}%
-
 \providecommand\textsi{\itshape}
 \providecommand\textti{\textnormal}
 \providecommand\texto{\textnormal}
@@ -232,7 +244,7 @@
 }
 {
 \theoremstyle{plain}
-\newtheorem{theorem}{Theorem}[section] %% Assumes memoir is loaded
+\newtheorem{theorem}{Theorem}[subsection] %% Assumes memoir is loaded
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{claim}[theorem]{Claim}
@@ -263,7 +275,7 @@
     {}                         % Theorem head spec (can be left empty, meaning 'normal')
 
 \theoremstyle{exercise}
-\newtheorem{exercise}{Exercise}[section]
+\newtheorem{exercise}{Exercise}[subsection]
 \newtheorem{problem}[exercise]{Problem}
 
 \newtheorem*{exercise*}{Exercise}
