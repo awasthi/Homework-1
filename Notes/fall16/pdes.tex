@@ -294,16 +294,16 @@ summary, we have
       \end{aligned}
     \right.
   \]
-  where \(x^0\geq 0\), \(0\leq s\leq \pi/2\). Now, fix \((x_1,x_2)\in
+  where \(x^0\geq 0\), \(0\leq s\leq \tfrac{\pi}{2}\). Now, fix \((x_1,x_2)\in
   U\). Select \(s>0\), \(x^0>0\) so that
   \((x_1,x_2)=(x^1(s),x^2(s))=(x^0\cos s,x^0\sin s)\) and solve for
   \(x^0\), in this case, \(x^0=\sqrt{x_1^2+x_2^2}\),
-  \(s=\arctan(x_2/x_1)\), and therefore
+  \(s=\arctan(\tfrac{x_2}{x_1})\), and therefore
   \begin{align*}
     u(x)&=u(x^1(s),x^2(s))\\
         &=z(s)\\
         &=g(x^0)\rme^s\\
-        &=g\Bigl({\textstyle\sqrt{x_1^2+x_2^2}}\Bigr)\rme^{\arctan(x_2/x_1)}.
+        &=g\Bigl({\textstyle\sqrt{x_1^2+x_2^2}}\Bigr)\rme^{\arctan(\tfrac{x_2}{x_1})}.
   \end{align*}
 \end{example}
 
@@ -438,7 +438,7 @@ where \(x^0\in\bbR\), \(s\in\bbR\), and \(z^0={(x^0)}^2\).
 
 We must determine \(p^0=(p_1^0,p_2^0)\). Since \(u=x_2^2\) on \(\Gamma\),
 \(p_2^0=u_{x_2}(0,x^0)=2x^0\). Furthermore the PDE \(u_{x_1x_2}=u\) itself
-implies \(p_1^0p_2^0=z^0={(x^0)}^2\), and so \(p_1^0=x^0/2\). Consequently
+implies \(p_1^0p_2^0=z^0={(x^0)}^2\), and so \(p_1^0=\frac{x^0}{2}\). Consequently
 the formulas above become
 \[
   \left\{
@@ -732,8 +732,9 @@ We now briefly review the concept of analytic functions.
     \(x^\alpha=x_1^{\alpha_1}\dotsm x_n^{\alpha_n}\).
   \item If \(f\) is analytic near \(x_0\), then \(f\) is \(C^\infty\) near
     \(x_0\). Furthermore the coefficients \(f_\alpha\) are computed as
-    \(f_\alpha=D^\alpha f(x_0)/\alpha!\), where \(\alpha!=\alpha_1!\dotsm
-    \alpha_n!\). Thus \(f\) equals its Taylor formula about \(x_0\)
+    \(f_\alpha=\frac{D^\alpha f(x_0)}{\alpha!}\), where
+    \(\alpha!=\alpha_1!\dotsm \alpha_n!\). Thus \(f\) equals its Taylor
+    formula about \(x_0\)
     \[
       f(x)
       =\sum_{\alpha}\frac{1}{\alpha!} D^\alpha f(x_0)(x-x_0)^\alpha\qquad
@@ -748,7 +749,7 @@ We now briefly review the concept of analytic functions.
   \[
     f(x)\defeq \frac{r}{r-(x_1+\dotsm+x_n)}
     \qquad
-    \text{for \(|x|<r/\sqrt{n}\).}
+    \text{for \(|x|<\frac{r}{\sqrt{n}}\).}
   \]
   Then
   \begin{align*}
