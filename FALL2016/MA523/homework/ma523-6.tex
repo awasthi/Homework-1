@@ -47,7 +47,10 @@
 
   Therefore, Green's function on \(U\) is
   \[
-    G(x,y)=\Phi(y-x)-\Phi(y-x')-\Phi(y-x'')+\Phi(y-x''').
+    G(x,y)
+    =\Phi(y-x)-\phi^x(y)%
+    =\Phi(y-x)-\Phi(y-x')-\Phi(y-x'')+\Phi(y-x''').%
+    \qedhere
   \]
 \end{solution}
 \newpage
@@ -64,7 +67,21 @@
   \(B(0,r)=\{\,x\in\bbR^n:|x|<r\,\}\).
 \end{problem}
 \begin{solution}
-
+  Recall Poisson's formula for the ball
+  \begin{equation}
+    \label{eq:6:poissons-formula}
+    u(x)=\frac{r^2-|x|^2}{n\alpha_nr}
+    \int_{\partial B(0,r)}\frac{g(y)}{|x-y|^n}\diff S(y),
+  \end{equation}
+  where \(x\in B(0,r)\) and \(u\) solves the boundary-value problem
+  \[
+    \left\{
+      \begin{aligned}
+        \Delta u&=0&&\text{in \(B(0,r)\),}\\
+        u&=g&&\text{on \(\partial B(0,r)\).}
+      \end{aligned}
+    \right.
+  \]
 \end{solution}
 \newpage
 
