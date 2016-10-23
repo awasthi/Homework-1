@@ -352,6 +352,7 @@ This is not the way these groups are usually defined, but we will get to
 that later. These are clearly covariant functors in the second variable.
 
 \begin{theorem}
+  \label{thm:ext-is-covariant}
   \(\Ext^i(\blank,N)\) is a covariant functor in the first variable. Given
   a short exact sequence
   \[
@@ -362,6 +363,103 @@ that later. These are clearly covariant functors in the second variable.
     0\To\Hom(C,N)\To\Hom(B,N)\To\Hom(N,A)\To\Ext^1(C,N)\To\Ext^1(B,N)\To\cdots.
   \]
 \end{theorem}
+\begin{proof}
+  We prove the first part about the theorem. The second part is
+  similar. One constructs a commutative diagram with exact rows and columns
+  \[
+    \includegraphics{ext-thm-kra}
+  \]
+  Note that the middle column is split exact. \(\Hom\) the top two rows
+  into \(N\) to get
+  \[
+    \includegraphics{ext-thm-homd-rows}
+  \]
+\end{proof}
+We use the split exactness to see that the top row is exact. Now the snake
+lemma gives the first \(6\) terms of the exact sequence. Applying this to
+\[
+  0\To\Ker A\To\Ker B\To\Ker C\To 0
+\]
+yields
+\[
+  \dotsc\To\Hom(\Ker C,N)\xright{\delta}\Ext^2(A,N)\To\dotsc.
+\]
+
+We need to show that this map factors through \(\Ext^1(C,N)\). To see this,
+use the fact that \(z\) below is zero because \(b\) is surjective.
+\[
+  \includegraphics{ext-thm-b-surj}
+\]
+It follows that the original \(6\) terms sequence can be continued to a
+\(9\) term sequence. This can be continued indefinitely.
+
+
+\begin{lemma}
+  If \(M\) is free then \(\Ext^1(M,N)=0\) for any \(N\).
+\end{lemma}
+\begin{proof}
+  If \(M\) is free, then we can choose a basis \(m_i\). Let \(s\colon M\to
+  R^{(M)}\) be the homomorphism which sends \(m_i\) to \(1\) in the
+  \(m_i\)\textsup{th} copy of \(R\). This gives a splitting of
+  \eqref{eq:alggeom:canonical-exact-seq}. It follows that
+  \[
+    \Hom(R^{(M)},N)\To\Hom(\Ker M,N)
+  \]
+  is surjective. Therefore \(\Ext^1\) vanishes.
+\end{proof}
+
+\begin{lemma}
+  If
+  \[
+    0\To K\To F\To M\To 0
+  \]
+  is exact, then
+  \[
+    \Ext^1(M,N)\cong\Coker\bigl\{\,\Hom(F,N)\to\Hom(K,N)\,\bigr\}.
+  \]
+\end{lemma}
+\begin{proof}
+  This follows from the previous lemma and theorem
+  \ref{thm:ext-is-covariant}.
+
+  We have a free resolution
+  \[
+    \dotsc\To F_2\To F_1\To K_0\To 0.
+  \]
+  Denote the ``tail'' by \(F_{\geq 1}\). The previous case implies that
+  \[
+    \Ext^2(M,N)\cong\Ext^1(K_0,N)\cong H^1(\Hom(F_{\geq
+      1},N))=H^2(\Hom(F_\bullet,N)).
+  \]
+  This implies the theorem for \(i=2\), etc.
+\end{proof}
+
+Notethat in the usual approach, it is not a priori clear that
+\(H^i(\Hom(F_\bullet,N))\) is well defined. This would require proof. Here
+is an example which shows the utility of this description.
+
+\begin{exercise}
+  Let \(R=k[x,y]\) and \(M=R/(x,y)\cong k\). Construct a free resolution of
+  \(M\) (which is a special case of the Koszul complex)
+  \[
+    0\To R\xright{\begin{smallbmatrix}-y\\ x\end{smallbmatrix}}
+    R^2\xright{\begin{smallbmatrix}x&y\end{smallbmatrix}}
+    M\To
+    0
+  \]
+  where the maps are given by the indicated matrices. Using this, we can
+  see that
+  \[
+    \Ext^i(M,M)=
+    \begin{cases}
+      k^2&\text{if \(i=1\),}\\
+      k&\text{if \(i=2\),}\\
+      0&\text{if \(i>2\).}
+    \end{cases}
+  \]
+\end{exercise}
+
+This description can also be used
 
 %%% Local Variables:
 %%% mode: latex

@@ -1,0 +1,19 @@
+\documentclass[crop,tikz]{standalone}
+\usetikzlibrary{cd}
+\usepackage{preamble}
+
+\begin{document}
+\begin{tikzcd}
+  \Hom(R^{(B)},N)\arrow{r}{b}
+  &\Hom(R^{(C)},N)\arrow{d}\arrow{rd}{z}\\
+  \dotsc\arrow{r}
+  &\Hom(\Ker C,N)\arrow{r}{\delta}\arrow{d}
+  &\Ext^2(A,N)\\
+  &\Ext^1(C,N)\arrow[dashed]{ru}
+\end{tikzcd}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

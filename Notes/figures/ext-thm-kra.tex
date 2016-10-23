@@ -1,0 +1,26 @@
+\documentclass[crop,tikz]{standalone}
+\usetikzlibrary{cd}
+\usepackage{preamble}
+
+\begin{document}
+\begin{tikzcd}
+  &0\arrow{d}&0\arrow{d}&0\arrow{d}\\
+  0\arrow{r}
+  &\Ker A\arrow{r}\arrow{d}
+  &\Ker B\arrow{r}\arrow{d}
+  &\Ker C\arrow{r}\arrow{d}
+  &0\\
+  0\arrow{r}
+  &R^{(A)}\arrow{r}\arrow{d}
+  &R^{(B)}\arrow{r}\arrow{d}
+  &R^{(C)}\arrow{r}\arrow{d}
+  &0\\
+  0\arrow{r}&A\arrow{r}\arrow{d}&B\arrow{r}\arrow{d}&C\arrow{r}\arrow{d}&0\\
+  &0&0&0.
+\end{tikzcd}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

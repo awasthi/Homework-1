@@ -1,0 +1,23 @@
+\documentclass[crop,tikz]{standalone}
+\usetikzlibrary{cd}
+\usepackage{preamble}
+
+\begin{document}
+\begin{tikzcd}
+  0\arrow{r}
+  &\Hom(R^{(C)},N)\arrow{r}\arrow{d}
+  &\Hom(R^{(B)},N)\arrow{r}\arrow{d}
+  &\Hom(R^{(A)},N)\arrow{r}\arrow{d}
+  &0
+  \\
+  0\arrow{r}
+  &\Hom(\Ker C,N)\arrow{r}
+  &\Hom(\Ker B,N)\arrow{r}
+  &\Hom(\Ker A,N).
+\end{tikzcd}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
