@@ -82,6 +82,24 @@
       \end{aligned}
     \right.
   \]
+
+  By the mean value property, for \(x\in B(0,r)\) and \(r'\) sufficiently
+  small, we have
+  \begin{align*}
+    u(x)
+    &=
+      \frac{1}{|B(x,r-|x|)|}\int_{B(x,r-|x|)}%
+      \left[%
+      \frac{r^2-|z|^2}{n\alpha_nr}
+      \int_{\partial B(0,r)}\frac{g(y)}{|z-y|^n}\diff S(y)%
+      \right] dz\\
+    &\leq
+      \frac{1}{|B(x,r')|}\int_{B(0,r)}%
+      \left[%
+      \frac{r^2-|x|^2}{n\alpha_nr}
+      \int_{\partial B(0,r)}\frac{g(y)}{|x-y|^n}\diff S(y)%
+      \right] dx\\
+  \end{align*}
 \end{solution}
 \newpage
 
