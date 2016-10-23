@@ -2,10 +2,10 @@
 \subsection{Midterm Practice Problems}
 \begin{problem}
   Solve \(u_{x_1}^2+x_2u_{x_2}=u\) with initial conditions
-  \(u(x_1,1)=x_1^2/4+1\).
+  \(u(x_1,1)=\frac{x_1^2}{4}+1\).
 \end{problem}
 \begin{solution*}
-  By inspection, we may suspect that \(v(x_1,x_2)=x_1^2/4+x_2\) is a
+  By inspection, we may suspect that \(v(x_1,x_2)=\frac{x_1^2}{4}+x_2\) is a
   solution to the PDE. It certainly satisfies the boundary condition. A
   routine calculation shows that \(v\) is in fact a solution to the
   PDE. Lucky guess!
@@ -82,7 +82,7 @@
     \left\{
       \begin{aligned}
         uu_x+u_t&=0,\\
-        u(x,0)&=\rme^{-x^2/2},
+        u(x,0)&=\rme^{-\frac{x^2}{2}},
       \end{aligned}
     \right.
   \]
@@ -127,21 +127,21 @@
 
   Applying the boundary conditions, we see that
   \[
-    z^0=u(x^0,0)=\rme^{-{(x^0)}^2/2}.
+    z^0=u(x^0,0)=\rme^{-\frac{{(x^0)}^2}{2}}.
   \]
 
   Here's where it gets tricky. After a little struggling, we see that there
   is really no way to solve for \(z\) in terms of \((x(s),t(s))\). However,
   we can solve for the projected characteristics:
   \[
-    (x(t,y),t)=(\rme^{-y^2/2}t+y,t);
+    (x(t,y),t)=(\rme^{-\frac{y^2}{2}}t+y,t);
   \]
   and this is really all that matters for us to find the time \(t_0\)  when
   the shock develops, i.e., the time when the projected characteristic
   fails to be injective.
 
   A little calculation shows that this happens precisely when
-  \(t=\rme^{-1/2}\).
+  \(t=\rme^{-\frac{1}{2}}\).
 \end{solution*}
 
 \begin{problem}
@@ -209,13 +209,13 @@
   \]
 
   We have two cases to consider, \(x^0<0\) or \(x^0>0\). For \(x^0<0\),
-  \(z^0=\rho_0/2\) and the projected characteristics look like
+  \(z^0=\frac{\rho_0}{2}\) and the projected characteristics look like
   \begin{align*}
     \left(
-      F'(\rho_0/2)t+x^0
+    F'(\tfrac{\rho_0}{2})t+x^0
     ,t\right)
     &=\left(
-      \left[c-\frac{2c(\rho_0/2)}{\rho_0}\right]t+x^0,t
+      \left[c-\frac{2c(\tfrac{\rho_0}{2})}{\rho_0}\right]t+x^0,t
       \right)\\
     &=(0\cdot t+x^0,t)\\
     &=(x^0,t)
@@ -255,8 +255,9 @@
   \[
     Au_{xx}+2Bu_{xy}+Cu_{yy}+2Du_x+2Eu_y+Fu=0,
   \]
-  we see that \(A=1\), \(B=-\cos x\), \(C=-3\sin^2 x\), and \(E=-y/2\).
-  We solve for the characteristic curve by find a solution to the ODEs
+  we see that \(A=1\), \(B=-\cos x\), \(C=-3\sin^2 x\), and
+  \(E=-\frac{y}{2}\).  We solve for the characteristic curve by find a
+  solution to the ODEs
   \begin{align*}
     \frac{dy}{dx}
     &=\frac{B\pm\sqrt{B^2-AC}}{A}\\

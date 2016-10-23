@@ -55,13 +55,13 @@
   \[
     \begin{aligned}
       |u(x,t)-u(y,t)|&\leq M|x-y|^\alpha,&&x,y\in\bbR,t>0,\\
-      |u(x,t)-u(x,s)|&\leq C_\alpha M|t-s|^{\alpha/2},&&x\in\bbR,t,s>0.
+      |u(x,t)-u(x,s)|&\leq C_\alpha M|t-s|^{\frac{\alpha}{2}},&&x\in\bbR,t,s>0.
     \end{aligned}
   \]
 
   \noindent [\emph{Hint:} For the last inequality, in the representation
   formula of \(u(x,t)\) as a convolution with the heat kernel
-  \(\Phi(y,t)\), make a change of variables \(z=y/\sqrt{t}\) and use that
+  \(\Phi(y,t)\), make a change of variables \(z=\frac{y}{\sqrt{t}}\) and use that
   $\left|\sqrt{t}-\sqrt{s}\right|\leq\sqrt{|t-s|}$.]
 \end{problem}
 \begin{solution*}
@@ -71,12 +71,12 @@
   Let \(u\) be a positive harmonic function in the unit ball \(B_1\) in
   \(\bbR^n\). Show that
   \[
-    \bigl|D(\ln u)\bigr|\leq M\qquad \text{in \(B_{1/2}\)}
+    \bigl|D(\ln u)\bigr|\leq M\qquad \text{in \(B_{\frac{1}{2}}\)}
   \]
   for a constant \(M\) depending only on the dimension \(n\).
 
   \noindent [\emph{Hint:} Use the interior derivative estimate
-  \(\bigl|Du(x)\bigr|\leq(C_n/r)\sup_{B_r(x)}|u|\) for
+  \(\bigl|Du(x)\bigr|\leq(\frac{C_n}{r})\sup_{B_r(x)}|u|\) for
   \(B_r(x)\subset B_1\) as well as the Harnack inequality for harmonic
   functions.]
 \end{problem}
@@ -96,7 +96,7 @@
   for some \(k\geq 0\). Prove that there exists a function \(\varphi(r)\)
   such that
   \[
-    u(x,t)=t^{k+2}\varphi\bigl(|x|/t\bigr).
+    u(x,t)=t^{k+2}\varphi\bigl(\tfrac{|x|}{t}\bigr).
   \]
 
   \noindent [\emph{Hint:} As one of the steps show that \(u\) is
