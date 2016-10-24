@@ -157,6 +157,18 @@
 \endproof\end{quote}}}
 \makeatother
 \renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}} % Default is
+
+%% Dashed integral
+\def\Xint#1{\mathchoice
+{\XXint\displaystyle\textstyle{#1}}%
+{\XXint\textstyle\scriptstyle{#1}}%
+{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$ }
+\vcenter{\hbox{$#2#3$ }}\kern-.6\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
 \fi \fi
 
 %%% Useful packages
