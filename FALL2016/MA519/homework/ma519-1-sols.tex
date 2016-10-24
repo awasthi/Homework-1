@@ -53,7 +53,7 @@ the fall semester of 2016.
   that at least one of the two daughter cells consists entirely of normal
   subunits is
   \[
-    P(A)=\frac{2002}{184756}\approx\num{0.0108359133}.
+    P(A)=\frac{2002}{184756}\approx\num{0.0108359133}.\qedhere
   \]
 \end{solution*}
 
@@ -76,7 +76,7 @@ the fall semester of 2016.
   we sample \(r\) elements randomly with replacement is
   \begin{equation}
     \label{eq:1:with-replacement}
-    p_1=\frac{(n-N)^r}{n^r}.
+    p_1(n,N,r)=\frac{(n-N)^r}{n^r}.
   \end{equation}
 
   The argument for part (b) is similar. There number of elements in the
@@ -89,10 +89,16 @@ the fall semester of 2016.
   replacement is
   \begin{equation}
     \label{eq:1:without-replacement}
-    p_2=\frac{\binom{n-N}{r}}{\binom{n}{r}}.
+    p_2(n,N,r)=\frac{\binom{n-N}{r}}{\binom{n}{r}}.
   \end{equation}
 
-  Finally,
+  Finally, we compute \(p_1\) and \(p_2\) for \(r=N=10\), \(n=100\) using
+  equations \eqref{eq:1:with-replacement} and
+  \eqref{eq:1:without-replacement} above:
+  \begin{align*}
+    p_1(100,10,10)&\approx\num{0.3486784401},\\
+    p_2(100,10,10)&\approx\num{0.3304762208462021}.\qedhere
+  \end{align*}
 \end{solution*}
 
 \begin{problem}[Handout 1, \# 11]
