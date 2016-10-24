@@ -68,23 +68,31 @@ the fall semester of 2016.
   Compute it for \(r=N=10\), \(n=100\).
 \end{problem}
 \begin{solution*}
-  For part (a) there are a total of \(n^r\) possible draws (this is the
-  order of the sample space). There are \(n-N\) elements that have not been
-  prespecified and \((n-N)^r\) ways to draw them. Therefore, the
-  probability of the event \(A\) that none of the \(N\) prespecified
-  elements are included in the sample with replacement is
-  \[
-    P(A)=\frac{(n-N)^r}{n^r}.
-  \]
-  \\\\
-  For part (b) there are a total of \(\binom{n}{r}\) possible draws (this
-  is the order of the sample space). Again, there are \(n-N\) elements that
-  have not been prespecified and \(\binom{n-N}{r}\) ways to draw
-  them. Thus, the probability of the event \(A\) that none of the \(N\)
-  prespecified elements are included in the sample without replacement is
-  \[
-    P(A)=\frac{\binom{n-N}{r}}{\binom{n}{r}}.
-  \]
+  For part (a), the sample space contains \(|\Omega|=n^r\) elements; these
+  correspond to all of the possible draws of \(r\) with replacement. If
+  \(n\) elements are specified, \(n-N\) have not and therefore, there are
+  \((n-N)^r\) ways of drawing \(r\) of the non-prespecified elements. Thus,
+  the probability that note of the \(N\) prespecified elements are drawn if
+  we sample \(r\) elements randomly with replacement is
+  \begin{equation}
+    \label{eq:1:with-replacement}
+    p_1=\frac{(n-N)^r}{n^r}.
+  \end{equation}
+
+  The argument for part (b) is similar. There number of elements in the
+  sample space is \(|\Omega|=\binom{n}{r}\); these correspond to the
+  passible draws of \(r\) elements without replacement. As before, \(n-N\)
+  of the elements have not been prespecified and therefore, we have
+  \(\binom{n-N}{r}\) ways of drawing \(r\) of the non-prespecified
+  elements. Thus, the probability that note of the \(N\) prespecified
+  elements are drawn if we sample \(r\) elements randomly without
+  replacement is
+  \begin{equation}
+    \label{eq:1:without-replacement}
+    p_2=\frac{\binom{n-N}{r}}{\binom{n}{r}}.
+  \end{equation}
+
+  Finally,
 \end{solution*}
 
 \begin{problem}[Handout 1, \# 11]
