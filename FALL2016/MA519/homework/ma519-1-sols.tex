@@ -1,4 +1,6 @@
 \section{Homework Solutions}
+These are my (corrected) solutions to DasGupta's Math/Stat 519 homework for
+the fall semester of 2016.
 \subsection{Homework 1}
 \begin{problem}[Handout 1, \# 5]
   A closet contains five pairs of shoes. If four shoes are selected at
@@ -6,22 +8,27 @@
   among the four?
 \end{problem}
 \begin{solution*}
-  Let \(A\) denote the event that ``at least \(1\) complete pair is among
-  the \(4\) selected shoes.'' We compute the probability of \(\lnot A\) the
-  event that there is no complete pair among the \(4\) selected shoes.
+  Let \(A\) denote the event ``at least one complete pair is among the four
+  shoes that were selected at random''. We compute the probability
+  \(P(\Omega\setminus A)\), i.e., the probability of the event ``there is
+  no complete pair among the four shoes that were selected at random''.
 
-  We can choose \(4\) shoes from the \(5\) pairs in \(\binom{10}{4}=210\)
-  ways (this is the order of the sample space), in order that we do not
-  select a pair, we choose one of \(2\) a left or a right from \(4\) pairs
-  of shoes which can be chosen in \(\binom{5}{4}\) ways.
+  Under the equal likeliness assumption, the problem reduces to
+  combinatorics. There are \(\binom{10}{4}=210\) ways to choose four shoes
+  from five pairs. Therefore, \(|\Omega|=210\) and every point
+  \(x\in\Omega\) has a corresponding probability of \(\frac{1}{210}\). Now,
+  in order to avoid selecting a pair, we can choose one of two (a left or a
+  right) shoe from four pairs of shoes which we can choose in
+  \(\binom{5}{4}=5\) ways.
 
-  Thus,
+  Thus, the probability that there is at least one pair of shoes among the
+  four shoes selected at random is
   \begin{align*}
     P(A)
-    &=1-P(\lnot A)\\
-    &=1-\frac{\binom{5}{4}2^4}{\binom{10}{4}}\\
+    &=1-P(\Omega\setminus A)\\
+    &=1-\frac{5\cdot 2^4}{210}\\
     &=1-\frac{8}{21}\\
-    &\approx\num{0.6190476190476191}.
+    &\approx\num{0.6190476190476191}.\qedhere
   \end{align*}
 \end{solution*}
 
@@ -35,14 +42,18 @@
   all normal subunits.
 \end{problem}
 \begin{solution*}
-  Let \(A\) denote the event that at least one of the cells consists of all
-  normal subunits. Assuming that these cell units can be arranged in any
-  order, each new cell can get \(10\) of the \(20\) subunits in
-  \(\binom{20}{10}=184756\) ways. Suppose cell \(1\) receives all \(14\) of
-  the normal subunits. There are \(\binom{14}{10}=1001\) ways to do
-  this. Since we can do this for cell \(2\) as well, we have
+  Let \(A\) denote the event ``at least one of the two cells consists of
+  all normal subunits''. Assuming we can arrange these subunits in any
+  order, each daughter cell can receive \(10\) of the \(20\) subunits in
+  \(\binom{20}{10}=184756\) ways. Hence, \(|\Omega|=184756\). Now, suppose
+  one of the daughter cells receives a full \(10\) normal subunits. There
+  are \(\binom{14}{10}=1001\) ways to do this. Since we can do this for the
+  other cell as well, there are \(2\cdot 1001=2002\) ways of giving
+  daughter one cell a full \(10\) normal subunits. Thus, the probability
+  that at least one of the two daughter cells consists entirely of normal
+  subunits is
   \[
-    P(A)=\frac{2\binom{14}{10}}{\binom{20}{10}}\approx\num{0.0108359133}.
+    P(A)=\frac{2002}{184756}\approx\num{0.0108359133}.
   \]
 \end{solution*}
 
