@@ -136,7 +136,8 @@
       \right.
     \]
     where \(B(0,1)=\{\,x\in\bbR^n:|x|<1\,\}\) and \(\nu\) is the outward
-    normal on \(\partial B(0,1)\).
+    normal
+    on \(\partial B(0,1)\).
   \item Use (a) and Green's formula to prove that
     \[
       \int_{\partial B(0,1)}P_k(x)P_m(x)\diff\sigma=0,\qquad\text{if
@@ -148,6 +149,53 @@
   For part (a), let
   \[
     P_k(x)=\sum_{|\alpha|=k}a_\alpha x^\alpha.
+  \]
+  Then, since \(\nu=(x_1,\dotsc,x_n)\), the derivative along \(\nu\) is
+  given by
+  \begin{align*}
+    \frac{\partial P_k(x)}{\partial\nu}
+    &=\sum_{i=1}^n (P_k)_{x_i}x_i\\
+    &=\sum_{i=1}^n\left(\sum\nolimits_{|\alpha|=k}a_\alpha
+      x^\alpha\right)_{x_i}x_i\\
+    &=\sum_{i=1}^n\left(\sum\nolimits_{j=1}^ma_\alpha
+      x_1^{\alpha_1^j}\dotsm x^{\alpha_i^j}\dotsm
+      x^{\alpha_n^j}\right)_{x_i}x_i
+      \intertext{where \(\sum_{i=1}^n\alpha_i^j=k\) and \(1\leq j\leq
+      \binom{n+k-1}{n}\eqdef m\) (by the stars and bars theorem)}
+    &=\sum_{i=1}^n\sum_{j=1}^m
+      \left(
+      \alpha_i^j
+      a_\alpha
+      x_1^{\alpha_1^j}\dotsm x^{\alpha_i^j-1}\dotsm
+      x^{\alpha_n^j}\right)x_i\\
+    &=\sum_{i=1}^n\sum_{j=1}^m
+      \alpha_i^j
+      a_\alpha
+      x_1^{\alpha_1^j}\dotsm x^{\alpha_i^j}\dotsm
+      x^{\alpha_n^j}\\
+    &=\sum_{i=1}^n\sum_{j=1}^m
+      \alpha_i^j a_\alpha x^\alpha
+      \intertext{switching the order of summation, we have}
+    &=\sum_{j=1}^m\sum_{i=1}^n
+      \alpha_i^j
+      a_\alpha x^\alpha\\
+    &=\sum_{j=1}^m ka_\alpha x^\alpha\\
+    &=k\sum_{j=1}^m a_\alpha x^\alpha\\
+    &=kP_k(x).
+  \end{align*}
+  This argument, of course, applies to every \(k\in\bbN\).
+
+  For part (b), by Green's theorem, we have
+  \begin{align*}
+    \int_{B(0,r)}P_k(x)\Delta P_m(x)-(\Delta P_k(x))P_m(x)\diff x
+    &=\int_{\partial B(0,r)}P_k(x)\tfrac{\partial}{\partial\nu}P_m(x)-\tfrac{\partial}{\partial\nu}
+      P_k(x)P_m(x)\diff S(x)\\
+    &=\int_{\partial B(0,r)}(m-k) P_k(x)P_m(x)\diff S(x),
+  \end{align*}
+  where the left-hand side is equal to \(0\) since both \(\Delta P_k\) and
+  \(\Delta P_m\) are \(0\). Since \(m\neq k\), it must be the case that
+  \[
+    \int_{\partial B(0,r)}P_k(x)P_m(x)\diff S(x)=0.
   \]
 \end{solution}
 
