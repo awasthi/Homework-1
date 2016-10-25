@@ -17,7 +17,7 @@
     &=\int_{-\infty}^\infty
       \frac{x^n}{2\sigma}\rme^{-\frac{|x|}{\sigma}}\diff x\\
     &=\underbrace{\int_{-\infty}^0\frac{x^n}{2\sigma}\rme^{\frac{x}{\sigma}}\diff x}_L
-      +\int_0^\infty\frac{x^n}{2\sigma}\rme^{-\frac{x}{\sigma}}\diff x
+      +\int_0^\infty\frac{x^n}{2\sigma}\rme^{-\frac{x}{\sigma}}\diff x,
       \intertext{making the substitution \(x\mapsto -y\) to \(L\) and relabeling
       \(y\) to \(x\) again, we see that}
     &=\int_{-\infty}^0\frac{x^n+(-1)x^n}{2\sigma}\rme^{-\frac{x}{\sigma}}\diff x\\
@@ -27,7 +27,6 @@
       \text{if \(n=2k\) is even.}
       \end{cases}
   \end{align*}
-
   To evaluate \(I\) we use integration by parts recursively to arrive at
   \begin{align*}
     I
@@ -44,11 +43,16 @@
   this distribution exist.
 
   For part (b), the MGF associated to \(f\) is
-  \[
-    m(t)=\sum_{i=0}^\infty \frac{t^iE(X^i)}{i!}=\sum_{i=0}^\infty t^i\sigma^i.
-  \]
+  \begin{equation}
+    \label{eq:9:mgf-double-exp}
+    m(t)=\sum_{n=0}^\infty \frac{t^n E(X^n)}{n!}=\sum_{n=0}^\infty t^n\sigma^n.
+  \end{equation}
   This is a geometric series and so converges for all
-  \(-\frac{1}{\sigma}<t<\frac{1}{\sigma}\).
+  \(-\frac{1}{\sigma}<t<\frac{1}{\sigma}\), in which case
+  \eqref{eq:9:mgf-double-exp} becomes
+  \[
+    m(t)=\frac{1}{1-t\sigma}.\qedhere
+  \]
 \end{solution}
 \newpage
 
