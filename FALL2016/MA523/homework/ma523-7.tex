@@ -1,22 +1,62 @@
 \begin{problem}
+  Solve the Dirichlet problem for the Laplace equation in \(\bbR^2\)
+  \[
+    \left\{
+      \begin{aligned}
+        \Delta u&=0&&\text{in \(1<|x|<2\),}\\
+        u&=x_1&&\text{on \(|x|=1\),}\\
+        u&=1+x_1x_2&&\text{on \(|x|=2\).}
+      \end{aligned}
+    \right.
+  \]
+
+  \noindent (\emph{Hint:} Use Laurent series.)
 \end{problem}
 \begin{solution}
 \end{solution}
 \newpage
 
 \begin{problem}
+  Let \(\Omega\) be a bounded domain with a \(C^1\) boundary, \(g\in
+  C^2(\partial\Omega)\) and \(f\in C(\bar\Omega)\). Consider the so called
+  \emph{Neumann problem}
+  \[
+    \label{eq:7:neumann-problem}%
+    \tag{\(*\))}%
+    \left\{
+      \begin{aligned}
+        -\Delta u&=f&&\text{in \(\Omega\),}\\
+        \frac{\partial u}{\partial\nu}&=g&&\text{on \(\partial\Omega\),}
+      \end{aligned}
+    \right.
+  \]
+  where \(\nu\) is the outer normal on \(\partial\Omega\). Show that the
+  solution of \eqref{eq:7:neumann-problem} in \(C^2(\Omega)\cap
+  C^1(\bar\Omega)\) is unique up to a constant; i.e., if \(u_1\) and
+  \(u_2\) are both solutions of \eqref{eq:7:neumann-problem}, then
+  \(u_2=u_1+\text{const.\@}\) in \(\Omega\).
+
+  \noindent (\emph{Hint:} Look at the proof of the uniqueness for the
+  Dirichlet problem by Energy methods [E, 2.2.5a].)
 \end{problem}
 \begin{solution}
 \end{solution}
 \newpage
 
 \begin{problem}
-\end{problem}
-\begin{solution}
-\end{solution}
-\newpage
+  Write down an explicit formula for a solution of
+  \[
+    \left\{
+      \begin{aligned}
+        u_t-\Delta u+cu&=f&&\text{in \(\bbR^n\times(0,\infty)\),}\\
+        u&=g&&\text{on \(\bbR^n\times\{\,t=0\,\}\),}
+      \end{aligned}
+    \right.
+  \]
+  where \(c\in\bbR\).
 
-\begin{problem}
+  \noindent (\emph{Hint:} Rewrite the problem in terms of
+  \(v(x,t)\defeq\rme^{ct}u(x,t)\).)
 \end{problem}
 \begin{solution}
 \end{solution}
