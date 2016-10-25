@@ -13,10 +13,12 @@
   direct calculation, we have
   \begin{align*}
     E(X^n)
-    &=\int_{-\infty}^\infty x f(x)\diff x\\
+    &=\int_{-\infty}^\infty x^nf(x)\diff x\\
     &=\int_{-\infty}^\infty
-      \frac{x}{2\sigma}\rme^{-\frac{|x|}{\sigma}}\diff x\\
-    &=
+      \frac{x^n}{2\sigma}\rme^{-\frac{|x|}{\sigma}}\diff x\\
+    &=\underbrace{\int_{-\infty}^0\frac{x}{2\sigma}\rme^{-\frac{x}{\sigma}}\diff
+      x}_{I}
+      +\underbrace{\int_0^\infty \frac{x}{2\sigma}\rme^{\frac{x}{\sigma}}\diff x}_{J}.
   \end{align*}
 \end{solution}
 \newpage
