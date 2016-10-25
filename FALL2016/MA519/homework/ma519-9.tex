@@ -16,10 +16,40 @@
     &=\int_{-\infty}^\infty x^nf(x)\diff x\\
     &=\int_{-\infty}^\infty
       \frac{x^n}{2\sigma}\rme^{-\frac{|x|}{\sigma}}\diff x\\
-    &=\underbrace{\int_{-\infty}^0\frac{x}{2\sigma}\rme^{-\frac{x}{\sigma}}\diff
+    &=
+      \underbrace{\int_{-\infty}^0\frac{x^n}{2\sigma}\rme^{\frac{x}{\sigma}}\diff
       x}_{I}
-      +\underbrace{\int_0^\infty \frac{x}{2\sigma}\rme^{\frac{x}{\sigma}}\diff x}_{J}.
+      +\underbrace{\int_0^\infty
+      \frac{x^n}{2\sigma}\rme^{-\frac{x}{\sigma}}\diff x}_{J}.
   \end{align*}
+
+  To evaluate \(I\) we make the substitution \(x\mapsto -y\) and use
+  integration by parts
+  \begin{equation}
+    \label{eq:9:I-integration-by-parts}
+    \begin{aligned}
+      I
+      &=\int_{-\infty}^0\frac{x^n}{2\sigma}\rme^{\frac{x}{\sigma}}\\
+      &=\int_0^\infty(-1)^n\frac{y^n}{2\sigma}\rme^{-\frac{y}{\sigma}}\\
+      &=\left.(-1)^{n+1}\frac{y^n}{2}\rme^{-\frac{y}{\sigma}}\right|_0^\infty
+      -\int_0^\infty
+      n(-1)^{n+1}\frac{y^{n-1}}{2}\rme^{-\frac{y}{\sigma}}\diff x\\
+      &=\left.(-1)^{n+1}\frac{y^n}{2}\rme^{-\frac{y}{\sigma}}
+        +n(-1)^{n+2}\sigma\frac{y^{n-1}}{2}\rme^{-\frac{y}{\sigma}}\right|_0^\infty\\
+      &\phantom{{}={}}
+      +\int_0^\infty
+      n(n-1)(-1)^{n+2}\sigma\frac{y^{n-2}}{2}\rme^{-\frac{y}{\sigma}}\diff x\\
+      &\vdotswithin{=}\\
+      &=\left.p(x)\rme^{-\frac{y}{\sigma}}\right|_0^\infty\\
+      &=p(0)\\
+      &<\infty,
+    \end{aligned}
+  \end{equation}
+  where \(p\) is some polynomial of degree \(n\). One can similarly show
+  that \(I=q(0)\) for some polynomial \(q\) of degree \(n\). Therefore,
+  \(E(X^n)<\infty\) for all \(n\in\bbN\).
+
+  For part (b),
 \end{solution}
 \newpage
 
