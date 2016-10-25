@@ -78,15 +78,18 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  For part (a), consider the random variable \(X\colon[0,1]\to[0,1]\)
-  defined by \(x\mapsto x\) with uniform distribution over \([0,1]\). Then
-  the mean is
+  First, note that \([0,1]\) is a probability space under the standard
+  Lebesgue measure on \(\bbR\). Therefore, it makes sense to consider
+  \(X\colon[0,1]\to\bbR\) random variables.
+
+  For part (a), consider the random variable \(X\colon[0,1]\to\bbR\)
+  defined by \(x\mapsto x\) with \(X\sim\Uniform[0,1]\). Then the mean is
   \[
     \mu=\int_{-\infty}^\infty xf(x)\diff x=\int_0^1 x\diff x=\frac{1}{2}
   \]
   and the median is
   \[
-    \inf\left\{\,m:F(m)=m\geq 0.5\,\right\}=\frac{1}{2}.
+    m=\inf\left\{\,x:F(x)=x\geq 0.5\,\right\}=\frac{1}{2}.
   \]
 
   For part (b), consider again the random variable \(X(x)=x\) for
