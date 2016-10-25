@@ -21,7 +21,7 @@
 \usepackage{amsthm}
 \usepackage{mathtools}
 \mathtoolsset{mathic=true}
-\usepackage{mleftright} % remove spacing before/after produced by \left-\right
+\usepackage{mleftright} % too much space before/after the \left \right commands
 \mleftright%
 
 %% Encoding settings
@@ -602,25 +602,22 @@
 \DeclareMathOperator{\Vol}{Vol}
 
 %% Probability and statistics
-\DeclareMathOperator{\Binom}{Binom}
-\DeclareMathOperator{\CDF}{CDF}
 \DeclareMathOperator{\corr}{corr}
 \DeclareMathOperator{\Corr}{Corr}
 \DeclareMathOperator{\cov}{cov}
 \DeclareMathOperator{\Cov}{Cov}
-\DeclareMathOperator{\ex}{ex}
-\DeclareMathOperator{\Ex}{Ex}
-\DeclareMathOperator{\Exp}{Exp}
-\DeclareMathOperator{\Gauss}{Gauss}
+\DeclareMathOperator{\Var}{Var}
+
+%%% Distributions (continuous and dicrete)
+\DeclareMathOperator{\Bernoulli}{Bernoulli}
+\DeclareMathOperator{\Binomial}{Binomial}
+\DeclareMathOperator{\Cauchy}{Cauchy}
+\DeclareMathOperator{\Exponential}{Exponential}
+\DeclareMathOperator{\Gaussian}{Gaussian}
 \DeclareMathOperator{\Geometric}{Geomtric}
 \DeclareMathOperator{\NegBinom}{NegBinom}
-\DeclareMathOperator{\pb}{pb}
-\DeclareMathOperator{\Pb}{Pb}
-\DeclareMathOperator{\PDF}{PDF}
-\DeclareMathOperator{\PMF}{PMF}
+\DeclareMathOperator{\Normal}{Normal}
 \DeclareMathOperator{\Poisson}{Poisson}
-\DeclareMathOperator{\StDev}{StDev}
-\DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\Uniform}{Uniform}
 
 %% Functional Analysis
