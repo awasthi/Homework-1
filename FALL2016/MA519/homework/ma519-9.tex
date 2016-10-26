@@ -78,12 +78,35 @@
   \begin{align*}
     E(X)
     &=\int_{-\infty}^\infty xf(x)\diff x\\
-    &=\frac{1}{\pi}\int_{-\infty}^\infty \frac{x}{x^2+1}\diff x\\
-    &=\frac{1}{\pi}\int_0^\infty \frac{x}{x^2+1}\diff x
-      +\frac{1}{\pi}\int_{-\infty}^0 \frac{x}{x^2+1}\diff x,
-    \intertext{which by substitution with \(u=x^2\), \(du=2x\diff x\), becomes}
-    &=\frac{2}{\pi}\int_0^\infty
+    &=\frac{1}{\pi}\int_{-\infty}^\infty\frac{x}{x^2+1}\diff x,
+    \intertext{which by substitution with \(u=x^2+1\), \(du=2x\diff x\),
+    evaluates to}
+    &=\lim_{x_1,x_2\to\infty}\tfrac{2}{\pi}\ln\left(\frac{x_2^2+1}{x_1^2+1}\right).
   \end{align*}
+  Fix \(x_2\). Then,
+  \[
+    \lim_{x_1\to\infty}\tfrac{2}{\pi}\ln\left(\frac{x_2^2+1}{x_1^2+1}\right)=\infty.
+  \]
+  Whereas, if we fix \(x_1\),
+  \[
+    \lim_{x_2\to\infty}\tfrac{2}{\pi}\ln\left(\frac{x_2^2+1}{x_1^2+1}\right)=-\infty.
+  \]
+  We conclude that the limit of this function as \(x_1,x_2\to\infty\) does
+  not exists. Thus, \(E(X)\) does not exist.
+
+  For \(-X\), first we find the CDF:
+  \begin{align*}
+    F_{-X}(x)
+    &=P(-X\leq x)\\
+    &=1-P(X\leq x)\\
+    &=1-\frac{1}{\pi}\tan^{-1}(x)-\frac{1}{2}\\
+    &=\frac{1}{2}-\frac{1}{\pi}\tan^{-1}(x).
+  \end{align*}
+
+  Thus,
+  \[
+    f_{-X}(x)=\frac{dF_{-X}(x)}{dx}=-\frac{1}{\pi(x^2+1)}.
+  \]
 \end{solution}
 \newpage
 
