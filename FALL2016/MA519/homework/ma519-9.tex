@@ -9,18 +9,18 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  For part (a), we show that \(E(X^n)<\infty\) for all \(n\in\bbN\). By
-  direct calculation, we have
+  For part (a), we show that the moments \(m_n\defeq E(X^n)<\infty\) for
+  all \(n\in\bbN\). By direct calculation, we have
   \begin{align*}
-    E(X^n)
+    m_n
     &=\int_{-\infty}^\infty x^nf(x)\diff x\\
     &=\int_{-\infty}^\infty
       \frac{x^n}{2\sigma}\rme^{-\frac{|x|}{\sigma}}\diff x\\
     &=\underbrace{\int_{-\infty}^0\frac{x^n}{2\sigma}\rme^{\frac{x}{\sigma}}\diff x}_L
       +\int_0^\infty\frac{x^n}{2\sigma}\rme^{-\frac{x}{\sigma}}\diff x,
       \intertext{making the substitution \(x\mapsto -y\) to \(L\) and relabeling
-      \(y\) to \(x\) again, we see that}
-    &=\int_{-\infty}^0\frac{x^n+(-1)x^n}{2\sigma}\rme^{-\frac{x}{\sigma}}\diff x\\
+      \(y\) to \(x\) again, the above becomes}
+    &=\int_0^\infty\frac{x^n+(-1)x^n}{2\sigma}\rme^{-\frac{x}{\sigma}}\diff x\\
     &=\begin{cases}
       0&\text{if \(n\) is odd,}\\
       I\defeq\int_0^\infty \frac{x^n}{\sigma}\rme^{-\frac{x}{\sigma}}\diff x&
@@ -39,14 +39,15 @@
     &=(-0-0)+\dotsb+(-0+0)+(-0+n!\sigma^n)\\
     &=n!\sigma^n.
   \end{align*}
-  Therefore, \(E(X^n)<\infty\) for all \(n\in\bbN\), i.e., all moments of
-  this distribution exist.
+  Therefore, \(m_n<\infty\) for all \(n\in\bbN\), i.e., all moments of this
+  distribution exist.
 
-  For part (b), the MGF associated to \(f\) is
+  Set \(m_0\defeq 1\). Then for part (b), the MGF associated to \(f\) is
   \begin{equation}
     \label{eq:9:mgf-double-exp}
-    m(t)=1+\sum_{n=1}^\infty \frac{t^n E(X^n)}{n!}=1+\sum_{k=1}^\infty
-    t^{2k}\sigma^{2k}.
+    m(t)=%
+    \sum_{n=0}^\infty \frac{t^nm_n}{n!}=%
+    \sum_{k=1}^\infty t^{2k}\sigma^{2k}.
   \end{equation}
   This is a geometric series and so converges for all
   \(-\frac{1}{\sigma}<t<\frac{1}{\sigma}\), in which case
