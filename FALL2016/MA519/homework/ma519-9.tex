@@ -9,8 +9,8 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  For part (a), we show that the moments \(m_n\defeq E(X^n)<\infty\) for
-  all \(n\in\bbN\). By direct calculation, we have
+  For part (a), we show that the moments \(m_n\defeq E(X^n)\) for all
+  \(n\in\bbN\). By direct calculation, we have
   \begin{align*}
     m_n
     &=\int_{-\infty}^\infty x^nf(x)\diff x\\
@@ -27,29 +27,28 @@
       \text{if \(n=2k\) is even.}
       \end{cases}
   \end{align*}
-  To evaluate \(I\) we use integration by parts recursively to arrive at
+  To evaluate \(I\) we apply integration by parts repeatedly to arrive at
   \begin{align*}
     I
     &=\int_{-\infty}^0\frac{x^n}{\sigma}\rme^{-\frac{x}{\sigma}}\\
     &=(-0+0)+\int_0^\infty
       n\sigma x^{n-1}\rme^{-\frac{x}{\sigma}}\diff x\\
     &=(-0+0)+(-0+0)+\int_0^\infty
-      n(n-1)\sigma^2 x^{n-1}\rme^{-\frac{x}{\sigma}}\diff x\\
+      n(n-1)\sigma^2 x^{n-1}\rme^{-\frac{x}{\sigma}}\diff x
     &\vdotswithin{=}\\
     &=(-0-0)+\dotsb+(-0+0)+(-0+n!\sigma^n)\\
     &=n!\sigma^n.
   \end{align*}
-  Therefore, \(m_n<\infty\) for all \(n\in\bbN\), i.e., all moments of this
-  distribution exist.
+  Therefore, \(m_n\) exist and are finite for all \(n\in\bbN\).
 
-  Set \(m_0\defeq 1\). Then for part (b), the MGF associated to \(f\) is
+  Fr part (b), the MGF associated to \(f\) is given by the series
   \begin{equation}
     \label{eq:9:mgf-double-exp}
     m(t)=%
     \sum_{n=0}^\infty \frac{t^nm_n}{n!}=%
     \sum_{k=1}^\infty t^{2k}\sigma^{2k}.
   \end{equation}
-  This is a geometric series and so converges for all
+  This series is geometric and, as such, converges for all
   \(-\frac{1}{\sigma}<t<\frac{1}{\sigma}\), in which case
   \eqref{eq:9:mgf-double-exp} becomes
   \[
@@ -68,45 +67,121 @@
   \]
 \end{problem}
 \begin{solution}
-  Suppose \(X\sim\Cauchy(0,1)\). Then the PDF of \(X\) is given by
-  \begin{equation}
-    \label{eq:9:pdf-of-X}
+  Suppose \(X\sim\Cauchy(0,1)\). Then the PDF of \(X\) is given by the
+  expression
+  \[
     f(x)=\frac{1}{\pi(x^2+1)}.
-  \end{equation}
+  \]
+  Now we proceed to find the expectations of (i) \(X\), (ii) \(-X\),
+  (iii) \(\frac{1}{X}\), (iv) \(\sin X\), (v) \(\ln|X|\), (vi) \(\rme^X\),
+  (vii) \(\rme^{{-}|X|}\).
 
-  We now find the expectations in question. For \(X\) itself, we have
-  \begin{align*}
+  For (i), the expectation does not even exist. We repeat the argument
+  given in class: Consider
+  \[
     E(X)
-    &=\int_{-\infty}^\infty xf(x)\diff x\\
-    &=\frac{1}{\pi}\int_{-\infty}^\infty\frac{x}{x^2+1}\diff x,
-    \intertext{which by substitution with \(u=x^2+1\), \(du=2x\diff x\),
-    evaluates to}
-    &=\lim_{x_1,x_2\to\infty}\tfrac{2}{\pi}\ln\left(\frac{x_2^2+1}{x_1^2+1}\right).
-  \end{align*}
-  Fix \(x_2\). Then,
-  \[
-    \lim_{x_1\to\infty}\tfrac{2}{\pi}\ln\left(\frac{x_2^2+1}{x_1^2+1}\right)=\infty.
+    =\frac{1}{\pi}\int_{-\infty}^\infty \frac{x}{x^2+1}\diff x
+    =\lim_{x_1,x_2}\frac{1}{\pi}\int_{-x_1}^{x_2}\frac{x}{x^2+1}\diff x.
   \]
-  Whereas, if we fix \(x_1\),
+  Then, making the substitution \(u=x^2+1\), \(du=2x\diff x\), the integral
+  above evaluates to
   \[
-    \lim_{x_2\to\infty}\tfrac{2}{\pi}\ln\left(\frac{x_2^2+1}{x_1^2+1}\right)=-\infty.
+    E(X)=\lim_{x_1,x_2\to\infty}\frac{1}{2\pi}\ln\left(\frac{x_2^2+1}{x_1^2+1}\right).
   \]
-  We conclude that the limit of this function as \(x_1,x_2\to\infty\) does
-  not exists. Thus, \(E(X)\) does not exist.
+  However, the limit of this expression is undefined! Fix positive real
+  number \(\alpha\) and let \(x_2=\alpha x_1\). Then
+  \[
+    E(X)=%
+    \lim_{x_1\to\infty}\frac{1}{2\pi}\ln\left(\frac{\alpha^2x_1^2+1}{x_1^2+1}\right)=%
+    \frac{1}{2\pi}\ln\alpha^2.
+  \]
+  This value is distinct for each \(\alpha\). Therefore, the limit is not
+  unique and so is undefined.
 
-  For \(-X\), first we find the CDF:
+  For (ii), the CDF of \(-X\) is given by
   \begin{align*}
     F_{-X}(x)
     &=P(-X\leq x)\\
-    &=1-P(X\leq x)\\
-    &=1-\frac{1}{\pi}\tan^{-1}(x)-\frac{1}{2}\\
-    &=\frac{1}{2}-\frac{1}{\pi}\tan^{-1}(x).
+    &=P(X\geq -x)\\
+    &=1-P(X<-x)\\
+    &=1-\int_{-\infty}^{-x}\frac{1}{\pi(y^2+1)}\diff y\\
+    &=\frac{1}{2}-\frac{1}{\pi}\tan^{-1}(-x).
+  \end{align*}
+  Thus, the PDF of \(-X\) is
+  \[
+    f_{-X}(x)=\frac{dF_{-X}(x)}{dx}=\frac{1}{\pi(x^2+1)}.
+  \]
+  Thus, \(-X\sim\Cauchy(0,1)\) and as we have previously shown,
+  \(E(X)=E(-X)\) is undefined.
+
+  For (iii), we have
+  \[
+    X=
+    \begin{cases}
+      X&\text{if \(X>0\),}\\
+      -X&\text{if \(X\leq 0\).}
+    \end{cases}
+  \]
+  Thus, the CDF of \(|X|\) is
+  \begin{align*}
+    F_{|X|}(x)
+    &=P(|X|\leq x)\\
+    &=P(-x\leq X\leq x)\\
+    &=\frac{1}{\pi}\int_{-x}^x\frac{1}{y^2+1}\diff y\\
+    &=\frac{1}{\pi}\left(\tan^{-1}(x)-\tan^{-1}(-x)\right)\\
+    &=\frac{2}{\pi}\tan^{-1}(x),
+  \end{align*}
+  and hence its PDF is
+  \[
+    f_{|X|}(x)=%
+    \frac{dF_{|X|}(x)}{dx}=%
+    \begin{cases}
+      \frac{2}{\pi(x^2+1)}&\text{if \(x\geq 0\),}\\
+      0&\text{otherwise.}
+    \end{cases}
+  \]
+  Thus,
+  \begin{align*}
+    E(X)&=\int_0^\infty \frac{2x}{x^2+1}\diff x\\
+        &=\lim_{x\to\infty}\ln(x^2+1)\\
+        &=\infty.
   \end{align*}
 
-  Thus,
-  \[
-    f_{-X}(x)=\frac{dF_{-X}(x)}{dx}=-\frac{1}{\pi(x^2+1)}.
-  \]
+  For (iv), as discussed in class \(\frac{1}{X}\sim\Cauchy(0,1)\). Let us
+  show this. First, we find the CDF of \(X\):
+  \begin{align*}
+    F_{\frac{1}{X}}(x)
+    &=P\left(\frac{1}{X}\leq x\right)\\
+    &=P\left(X\geq\frac{1}{x}\right)\\
+    &=1-P\left(X<\frac{1}{x}\right)\\
+    &=1-\frac{1}{\pi}\int_{-\infty}^{\frac{1}{x}}\frac{1}{y^2+1}\diff y\\
+    &=1-\tan^{-1}\left(\frac{1}{x}\right)-\frac{1}{2}\\
+    &=\frac{1}{2}-\tan^{-1}\left(\frac{1}{x}\right).
+  \end{align*}
+  Thus, the PDF of \(\frac{1}{X}\) is
+  \begin{align*}
+    f_{\frac{1}{X}}(x)
+    &=\frac{dF_{\frac{1}{X}}(x)}{dx}\\
+    &=-\left(-\frac{1}{x^2}\right)\left(\frac{1}{\left(\frac{1}{x}\right)^2+1}\right)\\
+    &=\frac{1}{x^2+1}.
+  \end{align*}
+  Thus, \(\frac{1}{X}\sim\Cauchy(0,1)\) so its expectation is not defined.
+
+  For (v), the CDF of \(\sin X\) is given by
+  \begin{align*}
+    F_{\sin X}(x)
+    &=P(\sin X\leq x),
+      \intertext{for \(-1\leq x\leq 1\), we have}
+    &=\sum_{-\infty<n<\infty}P\left((2n+1)\pi-\sin^{-1}%
+      x\leq%
+      X\leq (2n+2)\pi+\sin^{-1}x\right)\\
+    &=\frac{1}{\pi}\sum_{-\infty<n<\infty}\int_{(2n+1)\pi-\sin^{-1}x}^{(2n+2)+\sin^{-1}x}
+      \frac{1}{y^2+1}\diff y\\
+    &=\frac{1}{\pi}\sum_{-\infty<n<\infty}
+      \tan^{-1}\left((2n+2)\pi+\sin^{-1}x\right)
+      +\tan^{-1}\left((2n+1)\pi-\sin^{-1}x\right).
+  \end{align*}
+  Thus, the PDF of \(\sin X\) is
 \end{solution}
 \newpage
 
