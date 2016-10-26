@@ -63,44 +63,26 @@
   functions have finite expectation
   \[
     \begin{aligned}
-      X;&&-X;&&|x|;&&\frac{1}{X};&&\sin X;&&\ln|X|;&&\rme^X;&&\rme^{-|X|}?
+      X;&&-X;&&|X|;&&\frac{1}{X};&&\sin X;&&\ln|X|;&&\rme^X;&&\rme^{-|X|}?
     \end{aligned}
   \]
 \end{problem}
 \begin{solution}
-  Recall from Handout 13, \# 6, that \(X\) is the horizontal distance along
-  the wall when a flashlight is aimed at random with angle
-  \(\Theta\sim\Uniform[-\pi,\pi]\). First, let us find the PDF of
-  \(X\). Let \(y\) be the vertical distance from the light source to the
-  wall. Then, by elementary trigonometry, we have the following relation
-  between \(X\) and \(\Theta\):
+  Suppose \(X\sim\Cauchy(0,1)\). Then the PDF of \(X\) is given by
   \begin{equation}
-    \label{eq:9:theta-x-relation}
-    X=y\tan\Theta.
+    \label{eq:9:pdf-of-X}
+    f(x)=\frac{1}{\pi(x^2+1)}.
   \end{equation}
 
-  Using \eqref{eq:9:theta-x-relation}, we can figure out the CDF of \(X\)
-  and consequently its PDF:
+  We now find the expectations in question. For \(X\) itself, we have
   \begin{align*}
-    F(x)
-    &=P(X\leq x)\\
-    &=P\left(y\tan\Theta\leq x\right)\\
-    &=P\left(\Theta\leq \tan^{-1}\left(\frac{x}{y}\right)\right)\\
-    &=P\left(-\frac{\pi}{2}\leq%
-      \Theta\leq%
-      \tan^{-1}\left(\frac{x}{y}\right)\right)
-      +P
-    \\
-    &=\\
-    &=\frac{1}{2\pi}\int_{-\pi}^{\tan^{-1}(\frac{x}{y})} 1\diff y\\
-    &=\frac{1}{2\pi}\left[\tan^{-1}\left(\frac{x}{y}\right)+\pi\right]\\
-    &=\frac{1}{2\pi}\tan^{-1}\left(\frac{x}{y}\right)+\frac{1}{2},
-  \end{align*}
-  therefore
-  \begin{align*}
-    f(x)
-    &=\frac{dF(x)}{dx}\\
-    &=
+    E(X)
+    &=\int_{-\infty}^\infty xf(x)\diff x\\
+    &=\frac{1}{\pi}\int_{-\infty}^\infty \frac{x}{x^2+1}dx\\
+    &=\frac{1}{\pi}\int_0^\infty \frac{x}{x^2+1}dx
+      +\frac{1}{\pi}\int_{-\infty}^0 \frac{x}{x^2+1}dx,
+    \intertext{which by substitution with \(u=x^2\), \(du=2x\diff x\), becomes}
+    &=\frac{2}{\pi}\int_0^\infty
   \end{align*}
 \end{solution}
 \newpage
