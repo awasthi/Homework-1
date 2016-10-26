@@ -175,13 +175,33 @@
     &=\sum_{-\infty<n<\infty}P\left((2n+1)\pi-\sin^{-1}%
       x\leq%
       X\leq (2n+2)\pi+\sin^{-1}x\right)\\
-    &=\frac{1}{\pi}\sum_{-\infty<n<\infty}\int_{(2n+1)\pi-\sin^{-1}x}^{(2n+2)+\sin^{-1}x}
+    &=\frac{1}{\pi}\sum_{-\infty<n<\infty}\int_{(2n+1)\pi-\sin^{-1}x}^{(2n+2)\pi+\sin^{-1}x}
       \frac{1}{y^2+1}\diff y\\
     &=\frac{1}{\pi}\sum_{-\infty<n<\infty}
       \tan^{-1}\left((2n+2)\pi+\sin^{-1}x\right)
       +\tan^{-1}\left((2n+1)\pi-\sin^{-1}x\right).
   \end{align*}
   Thus, the PDF of \(\sin X\) is
+
+  For (vi), the CDF of \(\ln |X|\) is given by
+  \begin{align*}
+    F_{\ln|X|}(x)
+    &=P\left(\ln |X|\leq x\right)\\
+    &=P\left(|X|\leq \rme^x\right)\\
+    &=P\left(-\rme^x\leq X\leq\rme^x\right)\\
+    &=\frac{1}{\pi}\int_{-\rme^x}^{\rme^x}\frac{1}{y^2+1}\diff y\\
+    &=\frac{2}{\pi}\tan^{-1}(\rme^x).
+  \end{align*}
+  Thus, the PDF of \(\ln |X|\) is
+  \[
+    f_{\ln|X|}(x)=\frac{dF_{\ln|X|}(x)}{dx}=\frac{2\rme^x}{\pi(\rme^{2x}+1)}.
+  \]
+  Thus, the expectation of \(\ln|X|\) is
+  \begin{align*}
+    E(\ln |X|)
+    &=\int_{-\infty}^\infty\frac{2\rme^x}{\pi(\rme^{2x}+1)}\diff x\\
+    &=
+  \end{align*}
 \end{solution}
 \newpage
 
