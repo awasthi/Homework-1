@@ -314,14 +314,27 @@
   Let \(Z\sim\Normal(0,1)\). Find
   \[
     \begin{aligned}
-      P\left( 0.5<\left|Z-\frac{1}{2}\right|<1.5\right);
+      P\left(0.5<\left|Z-\frac{1}{2}\right|<1.5\right);
       && P\left(\frac{\rme^Z}{1+\rme^Z}>\frac{3}{4}\right);
       &&P(\Phi(Z)<0.5).
     \end{aligned}
   \]
 \end{problem}
 \begin{solution}
+  Label the probabilities above (i), (ii), and (iii) from left to
+  right.
 
+  For (i), we can decompose the probability into a sum
+  \begin{align*}
+    P\left(0.5<\left|Z-\frac{1}{2}\right|<1.5\right)%
+    &=P\left(0.5<Z-\frac{1}{2}<1.5\right)+%
+      P\left(0.5<-Z+\frac{1}{2}<1.5\right)\\
+    &=P\left(1<Z<2\right)+%
+    P\left(0<-Z<1\right)\\
+    &=P\left(1<Z<2\right)+%
+      P\left(-1<-Z<0\right)\\
+    &=
+  \end{align*}
 \end{solution}
 \newpage
 
@@ -367,12 +380,20 @@
   probability that the random variable is between \(-2\) and \(2\)?
 \end{problem}
 \begin{solution}
-  Let \(X\) be the random variable in question. By a property of normal
-  distributions, if \(Z\sim\Normal(0,1)\), then
+  Using a table of CDF values for the standard distribution and the
+  corollary to Theorem 1.45, we have
   \begin{align*}
-    -1&=\mu+\sigma\\
-    1&=\mu+\sigma
+    -1&\approx \mu-0.67\sigma\\
+    1&\approx \mu+0.68\sigma.
   \end{align*}
+  Thus, \(\mu\approx 0\) and
+  \(\sigma\approx\num{1.4925373134328357}\). With this, we have
+  \[
+    P(-2\leq X\leq 2)
+    \approx\frac{1}{1.49\cdot1\sqrt{2\pi}}\int_{-2}^2\rme^{-\frac{x^2}{4.44}}\diff
+    x
+    \approx\num{0.820487}.\qedhere
+  \]
 \end{solution}
 
 %%% Local Variables:
