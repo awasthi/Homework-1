@@ -76,12 +76,11 @@
   (iii) \(\frac{1}{X}\), (iv) \(\sin X\), (v) \(\ln|X|\), (vi) \(\rme^X\),
   (vii) \(\rme^{{-}|X|}\).
 
-  For (i), the expectation does not even exist. We repeat the argument
-  given in class: Consider
+  For (i), the expectation does not exist. Consider
   \[
     E(X)
     =\frac{1}{\pi}\int_{-\infty}^\infty \frac{x}{x^2+1}\diff x
-    =\lim_{x_1,x_2}\frac{1}{\pi}\int_{-x_1}^{x_2}\frac{x}{x^2+1}\diff x.
+    =\lim_{x_1,x_2\to\infty}\frac{1}{\pi}\int_{-x_1}^{x_2}\frac{x}{x^2+1}\diff x.
   \]
   Then, making the substitution \(u=x^2+1\), \(du=2x\diff x\), the integral
   above evaluates to
@@ -95,11 +94,11 @@
     \lim_{x_1\to\infty}\frac{1}{2\pi}\ln\left(\frac{\alpha^2x_1^2+1}{x_1^2+1}\right)=%
     \frac{1}{2\pi}\ln\alpha^2.
   \]
-  This value is distinct for each \(\alpha\). Therefore, the limit is not
-  unique and so is undefined.
+  The value of this limit is distinct for each \(\alpha\). This contradicts
+  the uniqueness of the limit and therefore, the limit must not exist.
 
-  For the rest of these ((ii) through (viii)), we use Theorem 1.33 to forgo
-  computing the PDF.
+  For the rest of these ((ii) through (viii)), we
+  use Theorem 1.33 to forgo computing the PDF.
 
   For (ii), we have
   \[
@@ -110,7 +109,6 @@
   For (iii), we have
   \begin{align*}
     E(|X|)
-    &=\int_{-\infty}^\infty |x| f(x)\diff x\\
     &=\frac{1}{\pi}\int_{-\infty}^\infty\frac{|x|}{x^2+1}\diff x\\
     &=\frac{2}{\pi}\int_0^\infty\frac{x}{x^2+1}\diff x\\
     &=\lim_{\xi\to\infty}\frac{2}{\pi}\ln(\xi^2+1)\\
@@ -177,14 +175,21 @@
     &=0.
   \end{align*}
 
-  For (vii), we have
+  For (vii), note that \(E(\rme^X)=m(1)\) where \(m\) is the MGF of
+  \(X\). However, since the first term in the sequence \(m_1=E(X)\) is
+  undefined, it follows that \(m(1)\) is undefined so, in particular,
+  \(E(\rme^X)\) is undefined.
+
+  Lastly, for (viii), we have
   \begin{align*}
-    E(\rme^X)
-    &=\frac{1}{\pi}\int_{-\infty}^\infty\frac{\rme^x}{x^2+1}\diff x\\
-    &=\frac{1}{\pi}\int_0^\infty\frac{\rme^x+\rme^{-x}}{x^2+1}\diff x\\
-    &=\frac{2}{\pi}\int_0^\infty\frac{\cosh x}{x^2+1}\diff x\\
-    &=
+    E(\rme^{-|X|})
+    &=\frac{1}{\pi}\int_{-\infty}^\infty\frac{\rme^{-|x|}}{x^2+1}\diff x\\
+    &=\frac{2}{\pi}\int_0^{\infty}\frac{\rme^{-x}}{x^2+1}\diff x\\
+    &\leq\frac{2}{\pi}\int_0^\infty\frac{1}{x^2+1}\diff x\\
+    &=\frac{2}{\pi}\left(\frac{\pi}{2}-0\right)\\
+    &=1.
   \end{align*}
+  Thus, \(E(\rme^{-|X|})\) exists and is finite.
 \end{solution}
 \newpage
 
