@@ -332,9 +332,36 @@
     &=P\left(1<Z<2\right)+%
     P\left(0<-Z<1\right)\\
     &=P\left(1<Z<2\right)+%
-      P\left(-1<-Z<0\right)\\
-    &=
+      P\left(-1<Z<0\right)\\
+    &=\int_1^2\varphi(x)\diff x+\int_{-1}^0\varphi(x)\diff x\\
+    &\approx\num{0.135905}+\num{0.341345}\\
+    &\approx\num{0.47725}.
   \end{align*}
+
+  For (ii), we have
+  \begin{align*}
+    P\left(\frac{\rme^Z}{1+\rme^Z}>\frac{3}{4}\right)
+    &=P\left(\rme^Z>\frac{3}{4}(1+\rme^Z)\right)\\
+    &=P\left(\frac{1}{4}\rme^Z>\frac{3}{4}\right)\\
+    &=P\left(\rme^Z>3\right)\\
+    &=P\left(Z>\ln 3\right)\\
+    &=\int_{\ln 3}^\infty\varphi(x)\diff x\\
+    &\approx\num{0.135906}.
+  \end{align*}
+
+  Finally, for (iii), we have
+  \[
+    P(\Phi(Z)<0.5)=\Phi(\Phi^{-1}(0.5))=\Phi(0)=0.5.
+  \]
+  This is true in general if the \(p\)\textsup{th} percentile \(x_p\) of a
+  general random variable \(X\) with CDF \(F\) is unique:
+  \begin{align*}
+    P(F(X)<p)
+    &=F(F^{-1}(p))\\
+    &=F(x_p)\\
+    &=p,
+  \end{align*}
+  where \(F^{-1}(p)\) denotes the generalized inverse distribution.
 \end{solution}
 \newpage
 
@@ -380,8 +407,9 @@
   probability that the random variable is between \(-2\) and \(2\)?
 \end{problem}
 \begin{solution}
-  Using a table of CDF values for the standard distribution and the
-  corollary to Theorem 1.45, we have
+  Using a table of CDF values\footnote{Found here
+    \url{https://en.wikipedia.org/wiki/Standard_normal_table}.} for the
+  standard distribution and the corollary to Theorem 1.45, we have
   \begin{align*}
     -1&\approx \mu-0.67\sigma\\
     1&\approx \mu+0.68\sigma.
