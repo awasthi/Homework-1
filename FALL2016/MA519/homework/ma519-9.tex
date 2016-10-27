@@ -1,5 +1,5 @@
 \begin{problem}[Handout 13, \# 7]
-  Let \(X\) have a \emph{double exponential} density
+  Let \(X\) have a \emph{double exponential density}
   \(f(x)=\frac{1}{2\sigma}\rme^{-\frac{|x|}{\sigma}}\),
   \(-\infty<x<\infty\), \(\sigma>0\).
   \begin{enumerate}[label=(\alph*),noitemsep]
@@ -205,7 +205,7 @@
     variance does not exist.
   \item A continuous random variable with a PDF that is not differentiable
     at zero.
-  \item a positive continuous random variable for which the mode is zero,
+  \item A positive continuous random variable for which the mode is zero,
     but the mean does not exist.
   \item A continuous random variable for which all moments exist.
   \item A continuous random variable with median equal to zero, and
@@ -226,7 +226,7 @@
   \]
   and the median is
   \[
-    m=\inf\left\{\,x:F(x)=x\geq 0.5\,\right\}=\frac{1}{2}.
+    m=F^{-1}(0.5)=\frac{1}{2}.
   \]
 
   For part (b), consider again the random variable \(X(x)=x\) for
@@ -239,6 +239,42 @@
     \end{cases}
   \]
   be the PDF of \(X\). Then the mean is
+
+  For part (c), in the next problem we show that if \(X\sim\Cauchy(0,1)\),
+  the mean of \(X\) does not exist.
+
+  For part (d), again consider \(X\sim\Cauchy(0,1)\). Since the mean of
+  \(X\) does not exist and \(\Var(X)=E(X^2)-\mu^2\), then \(\Var(X)\) does
+  not exist.
+
+  For part (e), the standard exponential distribution
+  \[
+    f(x)=
+    \begin{cases}
+      \rme^{-x}&\text{if \(x\geq 0\),}\\
+      0&\text{otherwise,}
+    \end{cases}
+  \]
+  is not differentiable at \(0\) as the derivative from the left is \(0\)
+  whereas the derivative from the right is \(\lim_{x\to 0}-\rme^{-x}=-1\).
+
+  For part (f), \(X\sim\Cauchy(0,1)\) has mode \(0\), but the mean does not
+  exist.
+
+  For part (g), for Problem 9.1 part (a), we showed that the all moments of
+  the double exponential density exists.
+
+  For part (h), define the
+  \[
+    F(x)=
+    \begin{cases}
+      0&\text{if \(x<0\),}\\
+      0.5&\text{if \(x=0\)}\\
+      0.25x&\text{if \(0<x<1\),}\\
+      0.25x+0.5&\text{if \(1\leq x\leq 1\),}\\
+      1&\text{if \(x>1\).}
+    \end{cases}
+  \]
 \end{solution}
 \newpage
 
@@ -418,7 +454,7 @@
   \(\sigma\approx\num{1.4925373134328357}\). With this, we have
   \[
     P(-2\leq X\leq 2)
-    \approx\frac{1}{1.49\cdot1\sqrt{2\pi}}\int_{-2}^2\rme^{-\frac{x^2}{4.44}}\diff
+    \approx\frac{1}{1.49\cdot\sqrt{2\pi}}\int_{-2}^2\rme^{-\frac{x^2}{4.44}}\diff
     x
     \approx\num{0.820487}.\qedhere
   \]
