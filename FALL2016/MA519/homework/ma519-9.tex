@@ -98,57 +98,34 @@
   This value is distinct for each \(\alpha\). Therefore, the limit is not
   unique and so is undefined.
 
-  For (ii), the CDF of \(-X\) is given by
-  \begin{align*}
-    F_{-X}(x)
-    &=P(-X\leq x)\\
-    &=P(X\geq -x)\\
-    &=1-P(X<-x)\\
-    &=1-\int_{-\infty}^{-x}\frac{1}{\pi(y^2+1)}\diff y\\
-    &=\frac{1}{2}-\frac{1}{\pi}\tan^{-1}(-x).
-  \end{align*}
-  Thus, the PDF of \(-X\) is
+  For the rest of these ((ii) through (viii)), we use Theorem 1.33 to forgo
+  computing the PDF.
+
+  For (ii), we have
   \[
-    f_{-X}(x)=\frac{dF_{-X}(x)}{dx}=\frac{1}{\pi(x^2+1)}.
+    E(-X)=\int_{-\infty}^\infty -xf(x)\diff x=-E(X).
   \]
-  Thus, \(-X\sim\Cauchy(0,1)\) and as we have previously shown,
-  \(E(X)=E(-X)\) is undefined.
+  Thus, \(E(-X)\) is also undefined.
 
   For (iii), we have
-  \[
-    X=
-    \begin{cases}
-      X&\text{if \(X>0\),}\\
-      -X&\text{if \(X\leq 0\).}
-    \end{cases}
-  \]
-  Thus, the CDF of \(|X|\) is
   \begin{align*}
-    F_{|X|}(x)
-    &=P(|X|\leq x)\\
-    &=P(-x\leq X\leq x)\\
-    &=\frac{1}{\pi}\int_{-x}^x\frac{1}{y^2+1}\diff y\\
-    &=\frac{1}{\pi}\left(\tan^{-1}(x)-\tan^{-1}(-x)\right)\\
-    &=\frac{2}{\pi}\tan^{-1}(x),
-  \end{align*}
-  and hence its PDF is
-  \[
-    f_{|X|}(x)=%
-    \frac{dF_{|X|}(x)}{dx}=%
-    \begin{cases}
-      \frac{2}{\pi(x^2+1)}&\text{if \(x\geq 0\),}\\
-      0&\text{otherwise.}
-    \end{cases}
-  \]
-  Thus,
-  \begin{align*}
-    E(X)&=\int_0^\infty \frac{2x}{x^2+1}\diff x\\
-        &=\lim_{x\to\infty}\ln(x^2+1)\\
-        &=\infty.
+    E(|X|)
+    &=\int_{-\infty}^\infty |x| f(x)\diff x\\
+    &=\frac{1}{\pi}\int_{-\infty}^\infty\frac{|x|}{x^2+1}\diff x\\
+    &=\frac{2}{\pi}\int_0^\infty\frac{x}{x^2+1}\diff x\\
+    &=\lim_{\xi\to\infty}\frac{2}{\pi}\ln(\xi^2+1)\\
+    &=\infty.
   \end{align*}
 
-  For (iv), as discussed in class \(\frac{1}{X}\sim\Cauchy(0,1)\). Let us
-  show this. First, we find the CDF of \(X\):
+  For (iv), we have
+  \begin{align*}
+    E\left(\frac{1}{X}\right)
+    &=\frac{1}{\pi}\int_{-\infty}^\infty\frac{1}{x(x^2+1)}\diff x\\
+    &=\lim_{x_1,x_2\to\infty}\ln\left(\frac{x_2}{\sqrt{x_1^2+1}}\right)
+  \end{align*}
+  which is undefined. In fact, one can show that
+  \(\frac{1}{X}\sim\Cauchy(0,1)\): First, let us find the CDF of
+  \(\frac{1}{X}\)
   \begin{align*}
     F_{\frac{1}{X}}(x)
     &=P\left(\frac{1}{X}\leq x\right)\\
@@ -165,45 +142,156 @@
     &=-\left(-\frac{1}{x^2}\right)\left(\frac{1}{\left(\frac{1}{x}\right)^2+1}\right)\\
     &=\frac{1}{x^2+1}.
   \end{align*}
-  Thus, \(\frac{1}{X}\sim\Cauchy(0,1)\) so its expectation is not defined.
+  Thus, \(\frac{1}{X}\sim\Cauchy(0,1)\) giving us another argument for why
+  \(E(\frac{1}{X})\) is undefined.
 
-  For (v), the CDF of \(\sin X\) is given by
+  For (v), we have
   \begin{align*}
-    F_{\sin X}(x)
-    &=P(\sin X\leq x),
-      \intertext{for \(-1\leq x\leq 1\), we have}
-    &=\sum_{-\infty<n<\infty}P\left((2n+1)\pi-\sin^{-1}%
-      x\leq%
-      X\leq (2n+2)\pi+\sin^{-1}x\right)\\
-    &=\frac{1}{\pi}\sum_{-\infty<n<\infty}\int_{(2n+1)\pi-\sin^{-1}x}^{(2n+2)\pi+\sin^{-1}x}
-      \frac{1}{y^2+1}\diff y\\
-    &=\frac{1}{\pi}\sum_{-\infty<n<\infty}
-      \tan^{-1}\left((2n+2)\pi+\sin^{-1}x\right)
-      +\tan^{-1}\left((2n+1)\pi-\sin^{-1}x\right).
+    E(\sin X)
+    &=\frac{1}{\pi}\int_{-\infty}^\infty \frac{\sin x}{x^2+1}\diff x\\
+    &\leq\frac{1}{\pi}\int_{-\infty}^\infty\frac{|\sin x|}{x^2+1}\diff x
+      \intertext{since \(|{\sin x}|\leq 1\), we further have}
+    &\leq\frac{1}{\pi}\int_{-\infty}^\infty\frac{1}{x^2+1}\diff x\\
+    &=\frac{1}{\pi}\left(\frac{\pi}{2}-\left(-\frac{\pi}{2}\right)\right)\\
+    &=1.
   \end{align*}
-  Thus, the PDF of \(\sin X\) is
+  Thus, \(E(\sin X)\) exists and is finite.
 
-  For (vi), the CDF of \(\ln |X|\) is given by
+  For (vi), note that \(\ln|X|\) by symmetry,
   \begin{align*}
-    F_{\ln|X|}(x)
-    &=P\left(\ln |X|\leq x\right)\\
-    &=P\left(|X|\leq \rme^x\right)\\
-    &=P\left(-\rme^x\leq X\leq\rme^x\right)\\
-    &=\frac{1}{\pi}\int_{-\rme^x}^{\rme^x}\frac{1}{y^2+1}\diff y\\
-    &=\frac{2}{\pi}\tan^{-1}(\rme^x).
+    E({\ln|X|})
+    &=\frac{1}{\pi}\int_{-\infty}^\infty\frac{\ln|x|}{x^2+1}\diff x\\
+    &=\frac{2}{\pi}\int_0^\infty\frac{\ln x}{x^2+1}\diff x
+    \intertext{making the substitution \(\theta=\tan^{-1}x\),
+      \((x^2+1)\diff \theta=\diff x\), we have}
+    &=\int_0^{\frac{\pi}{2}}\ln\left({\tan\theta}\right)\diff\theta\\
+    &=\int_0^{\frac{\pi}{2}}\ln(\sin\theta)\diff\theta
+      -\int_0^{\frac{\pi}{2}}\ln(\cos\theta)\diff\theta\\
+    &=\int_0^{\frac{\pi}{2}}\ln(\sin\theta)\diff\theta
+      -\int_0^{\frac{\pi}{2}}\ln\left(\sin\left(\frac{\pi}{2}-\theta\right)
+      \right)\diff\theta
+      \intertext{making the substitution \(\varphi=\frac{\pi}{2}-\theta\),
+      \(-d\varphi=d\theta\), }
+    &=\int_0^{\frac{\pi}{2}}\ln(\sin\theta)\diff\theta
+      +\int_{\frac{\pi}{2}}^0\ln(\sin\varphi)\diff\varphi\\
+    &=0.
   \end{align*}
-  Thus, the PDF of \(\ln |X|\) is
-  \[
-    f_{\ln|X|}(x)=\frac{dF_{\ln|X|}(x)}{dx}=\frac{2\rme^x}{\pi(\rme^{2x}+1)}.
-  \]
-  Thus, the expectation of \(\ln|X|\) is
+
+  For (vii), we have
   \begin{align*}
-    E(\ln |X|)
-    &=\int_{-\infty}^\infty\frac{2\rme^x}{\pi(\rme^{2x}+1)}\diff x\\
+    E(\rme^X)
+    &=\frac{1}{\pi}\int_{-\infty}^\infty\frac{\rme^x}{x^2+1}\diff x\\
+    &=\frac{1}{\pi}\int_0^\infty\frac{\rme^x+\rme^{-x}}{x^2+1}\diff x\\
+    &=\frac{2}{\pi}\int_0^\infty\frac{\cosh x}{x^2+1}\diff x\\
     &=
   \end{align*}
 \end{solution}
 \newpage
+
+  % For (ii), the CDF of \(-X\) is given by
+  % \begin{align*}
+  %   F_{-X}(x)
+  %   &=P(-X\leq x)\\
+  %   &=P(X\geq -x)\\
+  %   &=1-P(X<-x)\\
+  %   &=1-\int_{-\infty}^{-x}\frac{1}{\pi(y^2+1)}\diff y\\
+  %   &=\frac{1}{2}-\frac{1}{\pi}\tan^{-1}(-x).
+  % \end{align*}
+  % Thus, the PDF of \(-X\) is
+  % \[
+  %   f_{-X}(x)=\frac{dF_{-X}(x)}{dx}=\frac{1}{\pi(x^2+1)}.
+  % \]
+  % Thus, \(-X\sim\Cauchy(0,1)\) and as we have previously shown,
+  % \(E(X)=E(-X)\) is undefined.
+
+  % For (iii), we have
+  % \[
+  %   X=
+  %   \begin{cases}
+  %     X&\text{if \(X>0\),}\\
+  %     -X&\text{if \(X\leq 0\).}
+  %   \end{cases}
+  % \]
+  % Thus, the CDF of \(|X|\) is
+  % \begin{align*}
+  %   F_{|X|}(x)
+  %   &=P(|X|\leq x)\\
+  %   &=P(-x\leq X\leq x)\\
+  %   &=\frac{1}{\pi}\int_{-x}^x\frac{1}{y^2+1}\diff y\\
+  %   &=\frac{1}{\pi}\left(\tan^{-1}(x)-\tan^{-1}(-x)\right)\\
+  %   &=\frac{2}{\pi}\tan^{-1}(x),
+  % \end{align*}
+  % and hence its PDF is
+  % \[
+  %   f_{|X|}(x)=%
+  %   \frac{dF_{|X|}(x)}{dx}=%
+  %   \begin{cases}
+  %     \frac{2}{\pi(x^2+1)}&\text{if \(x\geq 0\),}\\
+  %     0&\text{otherwise.}
+  %   \end{cases}
+  % \]
+  % Thus,
+  % \begin{align*}
+  %   E(X)&=\int_0^\infty \frac{2x}{x^2+1}\diff x\\
+  %       &=\lim_{x\to\infty}\ln(x^2+1)\\
+  %       &=\infty.
+  % \end{align*}
+
+  % For (iv), as discussed in class \(\frac{1}{X}\sim\Cauchy(0,1)\). Let us
+  % show this. First, we find the CDF of \(X\):
+  % \begin{align*}
+  %   F_{\frac{1}{X}}(x)
+  %   &=P\left(\frac{1}{X}\leq x\right)\\
+  %   &=P\left(X\geq\frac{1}{x}\right)\\
+  %   &=1-P\left(X<\frac{1}{x}\right)\\
+  %   &=1-\frac{1}{\pi}\int_{-\infty}^{\frac{1}{x}}\frac{1}{y^2+1}\diff y\\
+  %   &=1-\tan^{-1}\left(\frac{1}{x}\right)-\frac{1}{2}\\
+  %   &=\frac{1}{2}-\tan^{-1}\left(\frac{1}{x}\right).
+  % \end{align*}
+  % Thus, the PDF of \(\frac{1}{X}\) is
+  % \begin{align*}
+  %   f_{\frac{1}{X}}(x)
+  %   &=\frac{dF_{\frac{1}{X}}(x)}{dx}\\
+  %   &=-\left(-\frac{1}{x^2}\right)\left(\frac{1}{\left(\frac{1}{x}\right)^2+1}\right)\\
+  %   &=\frac{1}{x^2+1}.
+  % \end{align*}
+  % Thus, \(\frac{1}{X}\sim\Cauchy(0,1)\) so its expectation is not defined.
+
+  % For (v), the CDF of \(\sin X\) is given by
+  % \begin{align*}
+  %   F_{\sin X}(x)
+  %   &=P(\sin X\leq x),
+  %     \intertext{for \(-1\leq x\leq 1\), we have}
+  %   &=\sum_{-\infty<n<\infty}P\left((2n+1)\pi-\sin^{-1}%
+  %     x\leq%
+  %     X\leq (2n+2)\pi+\sin^{-1}x\right)\\
+  %   &=\frac{1}{\pi}\sum_{-\infty<n<\infty}\int_{(2n+1)\pi-\sin^{-1}x}^{(2n+2)\pi+\sin^{-1}x}
+  %     \frac{1}{y^2+1}\diff y\\
+  %   &=\frac{1}{\pi}\sum_{-\infty<n<\infty}
+  %     \tan^{-1}\left((2n+2)\pi+\sin^{-1}x\right)
+  %     +\tan^{-1}\left((2n+1)\pi-\sin^{-1}x\right).
+  % \end{align*}
+  % Thus, the PDF of \(\sin X\) is
+
+  % For (vi), the CDF of \(\ln |X|\) is given by
+  % \begin{align*}
+  %   F_{\ln|X|}(x)
+  %   &=P\left(\ln |X|\leq x\right)\\
+  %   &=P\left(|X|\leq \rme^x\right)\\
+  %   &=P\left(-\rme^x\leq X\leq\rme^x\right)\\
+  %   &=\frac{1}{\pi}\int_{-\rme^x}^{\rme^x}\frac{1}{y^2+1}\diff y\\
+  %   &=\frac{2}{\pi}\tan^{-1}(\rme^x).
+  % \end{align*}
+  % Thus, the PDF of \(\ln |X|\) is
+  % \[
+  %   f_{\ln|X|}(x)=\frac{dF_{\ln|X|}(x)}{dx}=\frac{2\rme^x}{\pi(\rme^{2x}+1)}.
+  % \]
+  % Thus, the expectation of \(\ln|X|\) is
+  % \begin{align*}
+  %   E(\ln |X|)
+  %   &=\int_{-\infty}^\infty\frac{2x\rme^x}{\pi(\rme^{2x}+1)}\diff x\\
+  %   &=
+  % \end{align*}
 
 \begin{problem}[Handout 13, \# 16]
   Give an example of each of the following phenomena:
