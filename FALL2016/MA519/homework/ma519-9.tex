@@ -252,10 +252,18 @@
   \[
     f(x)=
     \begin{cases}
-      \frac{1}{\lambda}\rme^{-\frac{x}{\lambda}}&\text{if \(x>0\),}\\
+      \frac{1}{4}\rme^{-\frac{x}{4}}&\text{if \(x\geq 0\),}\\
       0&\text{otherwise.}
     \end{cases}
   \]
+  Since the distribution is memoryless, we have
+  \begin{align*}
+    P(X>8|X>6)
+    &=P(X>2)\\
+    &=\frac{1}{4}\int_2^\infty\rme^{-\frac{x}{4}}\diff x\\
+    &=\rme^{-\frac{1}{2}}\\
+    &\approx\num{0.6065306597126334}.
+  \end{align*}
 \end{solution}
 \newpage
 
@@ -266,6 +274,17 @@
   using moment-generating functions.
 \end{problem}
 \begin{solution}
+  Suppose \(X\) and \(Y\) are independent random variables. Computing the
+  MGF of \(X+Y\), we have
+  \begin{align*}
+    m_{X+Y}(t)
+    &=E(\rme^{t(X+Y)})\\
+    &=E(\rme^{tX})E(\rme^{tY})\\
+    &=\left(1-\frac{t}{\lambda}\right)^{-\alpha}\left(1-\frac{t}{\lambda}\right)^{-\beta}\\
+    &=\left(1-\frac{t}{\lambda}\right)^{-\alpha-\beta}.
+  \end{align*}
+  Since the MGF uniquely determines the distribution, it follows that
+  \(X+Y\sim\Gamma(\alpha+\beta,\lambda)\).
 \end{solution}
 \newpage
 
@@ -275,7 +294,19 @@
   mean and variance of \(\prod_{i=1}^n X_i\).
 \end{problem}
 \begin{solution}
-
+  Since the \(X_1,\dotsc,X_n\) are independent, the mean of
+  \(X\defeq\prod_{i=1}^n X_n\) is
+  \begin{align*}
+    E(X)
+    &=\prod_{i=1}^n E(X_i)\\
+    &=\prod_{i=1}^n m_i
+  \end{align*}
+  and the variance is
+  \begin{align*}
+    \Var(X)
+    &=\prod_{i=1}^n\left[\Var(X_i)+E(X_1)^2\right]-\prod_{i=1}^nE(X_i)^2\\
+    &=\prod_{i=1}^n\left(2m_i+m_i^2\right)-\prod_{i=1}^n m_i^2.\qedhere
+  \end{align*}
 \end{solution}
 \newpage
 
@@ -299,7 +330,34 @@
   density bounded?
 \end{problem}
 \begin{solution}
+  Since \(g(x)=\frac{1}{x}\) is monotone decreasing, by the Jacobian
+  formula
+  \begin{align*}
+    f_{\frac{1}{Z}}(x)
+    &=\frac{f(g^{-1}(x))}{|g'(g^{-1}(x))|}\\
+    &=\frac{1}{\sqrt{2\pi}}
+      \frac{\rme^{-\frac{1}{2x^2}}}{\left|-\frac{1}{\left(\frac{1}{x}\right)^2}
+      \right|}\\
+    &=\frac{1}{\sqrt{2\pi}x^2}\rme^{-\frac{1}{2x^2}}.
+  \end{align*}
 
+  The only point at which the we may have a problem with the PDF of
+  \(\frac{1}{Z}\) is at \(x=0\). To this end, let us examine
+  \[
+    \lim_{x\to 0}\frac{\rme^{-\frac{1}{2x^2}}}{x^2}.
+  \]
+  By l'Hôpital's rule, we have
+  \begin{align*}
+    \lim_{x\to 0}\frac{\rme^{-\frac{1}{2x^2}}}{x^2}
+    &=\lim_{x\to 0}\frac{\frac{1}{x^2}}{\rme^{\frac{1}{2x^2}}}\\
+    &=\lim_{x\to 0}\frac{-\frac{2}{x^3}}{-\frac{1}{x^3}\rme^{\frac{1}{2x^2}}}\\
+    &=\lim_{x\to 0}\frac{2}{\rme^{\frac{1}{2x^2}}}\\
+    &=\lim_{x\to 0} 2\rme^{-\frac{1}{2x^2}}\\
+    &=0.
+  \end{align*}
+  With this same argument, we see that \(\lim_{x\to\pm\infty}
+  f_{\frac{1}{Z}}(x)<\infty\) and indeed since \(f_{\frac{1}{Z}}\) is
+  continuous at every other point, it is bounded.
 \end{solution}
 \newpage
 
