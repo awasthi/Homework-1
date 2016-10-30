@@ -3,7 +3,13 @@
   \(\num{3600}\) in \(\num{1000}\) rolls of a fair die.
 \end{problem}
 \begin{solution}
-
+  Let \(X\sim\Binomial(\num{1000},0.5)\) denote the result of rolling a
+  fair die. Then, by the de Moivre--Laplace central limit theorem,
+  \[
+    P(X>\num{3600})\approx 1- \Phi\left(\frac{\num{3600}-\num{1000}\cdot
+        0.5}{\sqrt{\num{1000}\cdot 0.5^2}}\right)
+    \approx 0.
+  \]
 \end{solution}
 \newpage
 
