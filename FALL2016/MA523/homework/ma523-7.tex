@@ -13,6 +13,32 @@
   \noindent (\emph{Hint:} Use Laurent series.)
 \end{problem}
 \begin{solution}
+  Suppose
+  \begin{equation}
+    \label{eq:7:laurent-series-solution}
+    u_\ell(x_1,x_2)=\sum_{\alpha,\beta\in\bbZ}
+    a_{\alpha\beta}x_1^\alpha x_2^\beta
+  \end{equation}
+  is a Laurent series solution to the Dirichlet problem above. Then
+  harmonicity implies that
+  \begin{align*}
+    0&=\Delta u_\ell(x_1,x_2)\\
+     &=\sum_{\alpha,\beta\in\bbZ}\alpha(\alpha-1)a_{\alpha\beta}
+       x_1^{\alpha-2}x_2^\beta
+       +\sum_{\alpha,\beta\in\bbZ}\beta(\beta-1)a_{\alpha\beta}x_1^\alpha,
+       x_2^{\beta-2}
+       \intertext{where, after shifting indices on both series, we have the
+       single series}
+     &=\sum_{\alpha,\beta\in\bbZ}
+       \bigl((\alpha+2)(\alpha+1)a_{\alpha+2,\beta}
+       +(\beta+2)(\beta+1)a_{\alpha,\beta+2}\bigr)x_1^\alpha x_2^\beta.
+  \end{align*}
+  Thus, the coefficients must satisfy
+  \begin{equation}
+    \label{eq:7:laurent-series-coeffs-1}
+    (\alpha+2)(\alpha+1)a_{\alpha+2,\beta}
+    +(\beta+2)(\beta+1)a_{\alpha,\beta+2}.
+  \end{equation}
 \end{solution}
 \newpage
 
@@ -43,7 +69,22 @@
   Suppose \(u_1\) and \(u_2\) are solutions to the Neumann problem
   \eqref{eq:7:neumann-problem}. Define \(v\defeq u_1-u_2\). Then \(v\) is
   harmonic in \(\Omega\) and \(\frac{\partial v}{\partial \nu}=0\) on
-  \(\partial\Omega\).
+  \(\partial\Omega\). Consider the energy functional
+  \[
+    E[v]=\frac{1}{2}\int_\Omega(Dv\cdot Dv)\diff x.
+  \]
+  By Green's formula version (ii),
+  \begin{align*}
+    E[v]
+    &=\frac{1}{2}\int_\Omega(Dv\cdot Dv)\diff x\\
+    &=-\frac{1}{2}\int v\Delta v\diff x
+      +\int_{\partial U}\frac{\partial
+      v}{\partial\nu} v\diff S(x)\\
+    &=0.
+  \end{align*}
+  This implies that \(Dv\cdot Dv=0\) which, since the standard inner
+  product on \(\bbR^n\) is positive-definite, implies that \(Dw\equiv
+  0\). It follows that \(u_1=u_2+\text{const}\).
 \end{solution}
 \newpage
 
