@@ -71,18 +71,18 @@
   harmonic in \(\Omega\) and \(\frac{\partial v}{\partial \nu}=0\) on
   \(\partial\Omega\). Consider the energy functional
   \[
-    E[v]=\frac{1}{2}\int_\Omega(Dv\cdot Dv)\diff x.
+    E[v]=\frac{1}{2}\int_\Omega|Dv|^2\diff x.
   \]
   By Green's formula version (ii),
   \begin{align*}
     E[v]
-    &=\frac{1}{2}\int_\Omega(Dv\cdot Dv)\diff x\\
+    &=\frac{1}{2}\int_\Omega|Dv|^2\diff x\\
     &=-\frac{1}{2}\int_\Omega v\Delta v\diff x
       +\int_{\partial U}\frac{\partial
       v}{\partial\nu} v\diff S(x)\\
     &=0.
   \end{align*}
-  This implies that \(Dv\cdot Dv=0\) which, since the standard inner
+  This implies that \(|Dv|^2=Dv\cdot Dv=0\) which, since the standard inner
   product on \(\bbR^n\) is positive-definite, implies that \(Dw\equiv
   0\). It follows that \(u_1=u_2+\text{const}\), i.e., the solution \(u\)
   to \eqref{eq:7:neumann-problem} is unique up to a constant.
