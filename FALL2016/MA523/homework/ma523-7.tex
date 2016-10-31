@@ -16,33 +16,15 @@
   Suppose
   \begin{equation}
     \label{eq:7:laurent-series-solution}
-    u_\ell(x_1,x_2)=\sum_{\alpha,\beta\in\bbZ}
-    a_{\alpha\beta}x_1^\alpha x_2^\beta
+    u(r\cos\theta,r\sin\theta)=
+    a_0\ln r+\sum_{n\in\bbZ} a_nr^n(\cos\theta+\sin\theta)
   \end{equation}
   is a Laurent series solution to the Dirichlet problem above. Then
   harmonicity implies that
   \begin{align*}
-    0&=\Delta u_\ell(x_1,x_2)\\
-     &=\sum_{\alpha,\beta\in\bbZ}\alpha(\alpha-1)a_{\alpha\beta}
-       x_1^{\alpha-2}x_2^\beta
-       +\sum_{\alpha,\beta\in\bbZ}\beta(\beta-1)a_{\alpha\beta}x_1^\alpha,
-       x_2^{\beta-2}
-       \intertext{where, after shifting indices on both series, we have the
-       single series}
-     &=\sum_{\alpha,\beta\in\bbZ}
-       \bigl((\alpha+2)(\alpha+1)a_{\alpha+2,\beta}
-       +(\beta+2)(\beta+1)a_{\alpha,\beta+2}\bigr)x_1^\alpha x_2^\beta.
+    0&=\Delta u\\
+     &=
   \end{align*}
-  Thus, the coefficients must satisfy
-  \begin{equation}
-    \label{eq:7:laurent-series-coeffs-1}
-    (\alpha+2)(\alpha+1)a_{\alpha+2,\beta}
-    +(\beta+2)(\beta+1)a_{\alpha,\beta+2}=0.
-  \end{equation}
-  In particular, if \(\alpha=\beta\)
-  \[
-    a_{\alpha+2,\beta}=-a_{\alpha,\beta+2}.
-  \]
 \end{solution}
 \newpage
 
