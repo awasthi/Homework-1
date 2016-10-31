@@ -19,12 +19,27 @@
     u(r\cos\theta,r\sin\theta)=
     a_0\ln r+\sum_{n\in\bbZ} a_nr^n\bigl(\cos(n\theta)+\sin(n\theta)\bigr)
   \end{equation}
-  is a Laurent series solution to the Dirichlet problem above. Then
+  is a Laurent series solution to the Dirichlet problem above. Then,
   harmonicity implies that
   \begin{align*}
     0&=\Delta u\\
-     &=
+     &=u_{rr}+\tfrac{1}{r}u_r+\tfrac{1}{r^2}u_{\theta\theta}\\
+     &=\sum_{n\in\bbZ}n(n-1)a_nr^{n-2}(\cos(n\theta)+\sin(n\theta)\bigr)\\
+     &\phantom{{}={}}%
+       +\sum_{n\in\bbZ}na_nr^{n-2}(\cos(n\theta)+\sin(n\theta)\bigr)\\
+     &\phantom{{}={}}%
+       +\sum_{n\in\bbZ}na_nr^{n-2}\bigl(-\sin(n\theta)+\cos(n\theta)\bigr)\\
+     &=\sum_{n\in\bbZ}
+       r^{n-2}\left(n^2a_n\cos(n\theta)+n(n-1)a_n\sin(n\theta)\right).
   \end{align*}
+  This implies that
+  \[
+    0=n^2a_n\cos(n\theta)+n(n-1)a_n\sin(n\theta).
+  \]
+  Hence,
+  \[
+    a_n=-\tfrac{n(n-1)}{n^2}a_n\tan(n\theta)
+  \]
 \end{solution}
 \newpage
 
