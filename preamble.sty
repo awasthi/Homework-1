@@ -75,6 +75,9 @@
 \else
 
 \if@times
+% \usepackage{nimbusserif}
+% \usepackage{nimbussans}
+% \usepackage{nimbusmono}
 \DeclareMathSymbol{1}{\mathord}{letters}{`1}
 \DeclareMathSymbol{2}{\mathord}{letters}{`2}
 \DeclareMathSymbol{3}{\mathord}{letters}{`3}
@@ -86,7 +89,8 @@
 \DeclareMathSymbol{9}{\mathord}{letters}{`9}
 \DeclareMathSymbol{0}{\mathord}{letters}{`0}
 
-\usepackage[theoremfont,largesc]{newtxtext}
+% \usepackage[theoremfont,largesc]{newtxtext}
+\usepackage{tgtermes}
 \usepackage[varg,smallerops,subscriptcorrection,nosymbolsc]{newtxmath}
 \usepackage[bb=boondox,% math alphabets
             frak=boondox,%
@@ -164,6 +168,7 @@
 \vcenter{\hbox{$#2#3$ }}\kern-.6\wd0}}
 \def\ddashint{\Xint=}
 \def\dashint{\Xint-}
+\def\fint\dashint
 \fi \fi
 
 %%% Useful packages
