@@ -34,10 +34,19 @@
   Since \(u\) is harmonic, applying Laplace's equation to
   \eqref{eq:7:polar-laurent-solution}
   \begin{align*}
-    0&=\Delta u\\
+    \Delta u
      &=u_{rr}+\tfrac{1}{r}u_r+\tfrac{1}{r^2}u_{\theta\theta}\\
-     &=b\ln r+\sum_{n\in\bbZ} (a_n r^n+\overline{a_{-n}}r^{-n})\rme^{\rmi n\theta}
+     &=b\ln r+\sum_{n\in\bbZ} (a_n r^n+\overline{a_{-n}}r^{-n})\rme^{\rmi
+       n\theta}\\
+     &=-br^{-2}+br^{-2}
+       \sum_{n\in\bbZ}
+      \left(
+      \bigl(n(n-1)+n-n^2\bigr)a_nr^n
+      +\bigl(n(n-1)+n-n^2\bigr)\overline{a_{-n}}r^{-n}\right)\rme^{\rmi
+       n\theta}\\
+    &=0,
   \end{align*}
+  which tells us nothing about the coefficients.
 \end{solution}
 \newpage
 
