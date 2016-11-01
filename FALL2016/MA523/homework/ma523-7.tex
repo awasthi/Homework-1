@@ -13,41 +13,62 @@
   \noindent (\emph{Hint:} Use Laurent series.)
 \end{problem}
 \begin{solution}
-  By theorem
-
-  Suppose \(u\) is a solution to the Dirichlet problem above with the form
-  \[
-    u(x_1,x_2)=a\ln|x|+\Re\bigl(L(x_1,x_2)\bigr)
-  \]
-  where
-  \[
-    L(x_1,x_2)=\sum_{n\in\bbZ} a_n(x_1+\rmi x_2)^n
-  \]
-  is an honest Laurent series. Make a change of variables
-  \(x_1+\rmi x_2\mapsto r\rme^{\rmi n\theta}\) and rewrite the solution \(u\)
-  in terms of our new variables
+  First, let us make the change of variables \((x_1,x_2)\mapsto
+  r\rme^{\rmi\theta}\) to the Dirichlet problem in question:
   \begin{equation}
-    \label{eq:7:polar-laurent-solution}
-    u(r\rme^{\rmi n\theta})
-    =b\ln r+\sum_{n\in\bbZ} (a_n r^n+\overline{a_{-n}}r^{-n})\rme^{\rmi n\theta}.
+    \label{eq:7:dirichlet-problem-polar}
+    \left\{
+      \begin{aligned}
+        \Delta u&=0&&\text{in \(1<r<2\),}\\
+        u&=\tfrac{1}{2}(\rme^{\rmi\theta}+\rme^{-\rmi\theta})&&\text{on \(r=1\),}\\
+        u&=1+\tfrac{1}{i}(\rme^{\rmi 2\theta}-\rme^{-\rmi 2\theta})&&\text{on \(r=2\).}
+      \end{aligned}
+    \right.
   \end{equation}
 
-  Since \(u\) is harmonic, applying Laplace's equation to
-  \eqref{eq:7:polar-laurent-solution}
+  Now, suppose \(u\) is a solution, of the form
+  \[
+    u(r\rme^{\rmi\theta})=%
+    b\ln r%
+    +\sum_{n\in\bbZ} (a_nr^n+\overline{a_{-n}}r^{-n})\rme^{\rmi n\theta},
+  \]
+  to the problem \eqref{eq:7:dirichlet-problem-polar}. It is easy to see
+  that \(u\) is in fact harmonic:
   \begin{align*}
-    \Delta u
-     &=u_{rr}+\tfrac{1}{r}u_r+\tfrac{1}{r^2}u_{\theta\theta}\\
-     &=b\ln r+\sum_{n\in\bbZ} (a_n r^n+\overline{a_{-n}}r^{-n})\rme^{\rmi
-       n\theta}\\
-     &=-br^{-2}+br^{-2}
-       \sum_{n\in\bbZ}
-      \left(
-      \bigl(n(n-1)+n-n^2\bigr)a_nr^n
-      +\bigl(n(n-1)+n-n^2\bigr)\overline{a_{-n}}r^{-n}\right)\rme^{\rmi
-       n\theta}\\
-    &=0,
+    \Delta u%
+    &=u_{rr}+\tfrac{1}{r}u_r+\tfrac{1}{r^2}u_{\theta\theta}\\
+    &=-br^{-2}+br^{-2}+\sum_{n\in\bbZ}
+      \left[\bigl(n(n-1)+n-n^2\bigr) a_nr^n\right.\\
+    &\phantom{{}={}-\frac{b}{r^2}+\frac{b}{r^2}+}
+      \left.+\bigl(n(n-1)+n-n^2\bigr)\overline{a_{-n}}r^{-n}\right]\rme^{\rmi
+      n\theta}\\
+    &=0.
   \end{align*}
-  which tells us nothing about the coefficients.
+
+  Next we use the boundary data to compute the coefficients \(a_n\),
+  \(n\in\bbZ\). Using the data \eqref{eq:7:dirichlet-problem-polar} on
+  \(r=1\), we have
+  \begin{equation}
+    \label{eq:7:data-r-1}
+    \tfrac{1}{2}(\rme^{\rmi\theta}+\rme^{-\rmi\theta})%
+    =\sum_{n\in\bbZ}(a_n+\overline{a_{-n}})\rme^{\rmi n\theta}
+  \end{equation}
+  and on \(r=2\),
+  \begin{equation}
+    \label{eq:7:data-r-2}
+    1+\tfrac{1}{i}(\rme^{\rmi 2\theta}-\rme^{-\rmi 2\theta})
+    = b\ln 2+\sum_{n\in\bbZ}(2^na_n+2^{-n}a_{-n})\rme^{\rmi n\theta}.
+  \end{equation}
+  These equations immediately tell us that \(b=1/{\ln 2}\). Moreover,
+  \[
+    \begin{aligned}
+      \frac{1}{2}&=a_1+\overline{a_{-1}},\\
+      0&=a_n+\overline{a_{-n}}&&\text{if \(n\neq\pm 1\),}\\
+      \frac{1}{i}&=2^2a_2+2^{-2}\overline{a_{-2}},\\
+      -\frac{1}{i}&=2^2a_{-2}+2^{-2}\overline{a_{2}}\\
+      0&=
+    \end{aligned}
+  \]
 \end{solution}
 \newpage
 
@@ -77,7 +98,7 @@
 \begin{solution}
   Suppose \(u_1\) and \(u_2\) are solutions to the Neumann problem
   \eqref{eq:7:neumann-problem}. Define \(v\defeq u_1-u_2\). Then \(v\) is
-  harmonic in \(\Omega\) and \(\frac{\partial v}{\partial \nu}=0\) on
+  harmonic in \(\Omega\) and \(\partial v/\partial \nu=0\) on
   \(\partial\Omega\). Consider the energy functional
   \[
     E[v]=\frac{1}{2}\int_\Omega|Dv|^2\diff x.
