@@ -15,13 +15,20 @@
 \begin{solution}
   Suppose \(u\) is a solution to the Dirichlet problem above with the form
   \[
-    u(x_1,x_2)=a\log|x|+\Re\bigl(L(x_1,x_2)\bigr)
+    u(x_1,x_2)=a\ln|x|+\Re\bigl(L(x_1,x_2)\bigr)
   \]
   where
   \[
-    L(x_1,x_2)=\sum_{n\in\bbZ} a_n(x_1+x_2\rmi)^n
+    L(x_1,x_2)=\sum_{n\in\bbZ} a_n(x_1+\rmi x_2)^n
   \]
-  is an honest Laurent series.
+  is an honest Laurent series. Make a change of variables
+  \(x_1+\rmi x_2\mapsto r\rme^{\rmi\theta}\) and rewrite the solution \(u\)
+  in terms of our new variables
+  \[
+    u(r\cos\theta,r\sin\theta)
+    =a\ln r+\Re\left(\sum\nolimits_{n\in\bbZ} a_nr^n
+      \bigl(\cos(n\theta)+{\rmi}\sin(n\theta)\bigr)\right)
+  \]
 \end{solution}
 \newpage
 
