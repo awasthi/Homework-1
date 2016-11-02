@@ -46,19 +46,17 @@
   \end{align*}
 
   Next we use the boundary data to compute the coefficients \(a_n\),
-  \(n\in\bbZ\). Using the data \eqref{eq:7:dirichlet-problem-polar} on
-  \(r=1\), we have
-  \begin{equation}
-    \label{eq:7:data-r-1}
+  \(n\in\bbZ\). Using the data \eqref{eq:7:dirichlet-problem-polar}, on
+  \(r=1\) we have
+  \[
     \tfrac{1}{2}(\rme^{\rmi\theta}+\rme^{-\rmi\theta})%
-    =\sum_{n\in\bbZ}(a_n+\overline{a_{-n}})\rme^{\rmi n\theta}
-  \end{equation}
-  and on \(r=2\),
-  \begin{equation}
-    \label{eq:7:data-r-2}
-    1+\tfrac{1}{i}(\rme^{\rmi 2\theta}-\rme^{-\rmi 2\theta})
-    = b\ln 2+\sum_{n\in\bbZ}(2^na_n+2^{-n}a_{-n})\rme^{\rmi n\theta}.
-  \end{equation}
+    =\sum_{n\in\bbZ}(a_n+\overline{a_{-n}})\rme^{\rmi n\theta},
+  \]
+  and on \(r=2\)
+  \[
+    1+\tfrac{1}{i}(\rme^{\rmi 2\theta}-\rme^{-\rmi 2\theta}) = b\ln
+    2+\sum_{n\in\bbZ}(2^na_n+2^{-n}a_{-n})\rme^{\rmi n\theta}.
+  \]
   These equations immediately tell us that \(b=1/{\ln 2}\). Moreover, the
   following relations on the coefficients hold
   \[
@@ -102,7 +100,7 @@
       &\phantom{{}={}}
       +\tfrac{4}{3}r^{-2}
       \left(\frac{r\rme^{\rmi\theta}+r\rme^{-\rmi\theta}}{2}\right)
-      -\tfrac{1}{3}r
+      -\tfrac{1}{3}
       \left(\frac{r\rme^{\rmi\theta}+r\rme^{-\rmi\theta}}{2}\right).
     \end{aligned}
   \]
@@ -111,7 +109,7 @@
     \label{eq:7:solution-to-dirichlet-problem}
     u(x_1,x_2)=\tfrac{1}{\ln 2}\ln(x_1^2+x_2^2)
     -\frac{16x_1x_2}{15{(x_1^2+x_2^2)}^2}+\frac{16x_1x_2}{15}
-    +\frac{4x_1}{3(x_1^2+x_2^2)}-\frac{{(x_1^2+x_2^2)}^{\frac{1}{2}}x_1}{3}.
+    +\frac{4x_1}{3(x_1^2+x_2^2)}-\frac{x_1}{3}.
   \end{equation}
   It is easy to see that \eqref{eq:7:solution-to-dirichlet-problem}
   satisfies the boundary data at \(|x|=1\) and \(|x|=2\).
@@ -193,8 +191,8 @@
       \end{aligned}
     \right.
   \end{equation}
-  By remark (17) from [E, \S 2.3.c], the solution to this problem has the
-  form
+  By Duhamel's principle, the problem \eqref{eq:7:heat-problem-exp} is
+  solved by
   \[
     v(x,t)=\int_{\bbR^n}\Phi(x-y,t)g(y)\diff y
     +\int_0^t\int_{\bbR^n}\Phi(x-y,t-s)\rme^{cs}f(y,s)\diff yds,
@@ -202,7 +200,7 @@
   where \(\Phi\) is the fundamental solution to the heat equation. Thus,
   the formula
   \[
-    u(x,t)=\rme^{-ct}\int_{\bbR^n}\Phi(x-y,t)g(y)\diff y
+    u(x,t)=\rme^{-ct}v(x,t)=\rme^{-ct}\int_{\bbR^n}\Phi(x-y,t)g(y)\diff y
     +\rme^{-ct}\int_0^t\int_{\bbR^n}\Phi(x-y,t-s)\rme^{cs}f(y,s)\diff yds
   \]
   solves the original problem.
