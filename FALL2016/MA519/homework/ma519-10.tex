@@ -3,9 +3,18 @@
   \(\num{3600}\) in \(\num{1000}\) rolls of a fair die.
 \end{problem}
 \begin{solution}
-  Let \(X_i\), \(1\leq i\leq\num{1000}\), denote the roll of a fair die. By
-  the de Moivre--Laplace central limit theorem since the \(X_i\sim\Bin()\) are
-  identically independently distributed random variables
+  Let \(X_i\), \(1\leq i\leq\num{1000}\), denote the roll of a fair
+  die. Then, as we have surely shown before, the mean and variance of the
+  \(X_i\) are \(\mu=3.5\) and \(\sigma^2=\num{2.916666666666666}\),
+  respectively. By the central limit theorem, we can approximate
+  \(P(\sum_{i=1}^{100}X_i\geq\num{3600})\) by
+  \begin{align*}
+    P\left(\sum\nolimits_{i=1}^{\num{1000}}X_i\geq\num{3600}\right)
+    &\approx\int_{\num{3600}}^\infty
+      \frac{\rme^{-(x-\num{3500})^2/\num{5833.333333333332}}}
+      {\sqrt{2\pi}\cdot\num{54.00617248673216}}\diff x\\
+    &\approx\num{0.51367537}.\qedhere
+  \end{align*}
 \end{solution}
 \newpage
 
@@ -16,7 +25,14 @@
   \(25\) free throws.
 \end{problem}
 \begin{solution}
+  Let \(X\) denote number of free shots (out of \(25\)) the player has
+  made. Since the outcome of the player's free shots is binary (the player
+  can either score or not score the throw)
+  \(X\sim\Bin(25,0.8)\). Therefore, by the de Moivre--Laplace central limit
+  theorem,
+  \[
 
+  \]
 \end{solution}
 \newpage
 
@@ -26,7 +42,6 @@
   \(\sum_{i=1}^n X_i^2\), when \(n=10,20,30\).
 \end{problem}
 \begin{solution}
-
 \end{solution}
 \newpage
 
