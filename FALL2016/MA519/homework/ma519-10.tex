@@ -3,13 +3,9 @@
   \(\num{3600}\) in \(\num{1000}\) rolls of a fair die.
 \end{problem}
 \begin{solution}
-  Let \(X\sim\Bin(\num{1000},0.5)\) denote the result of rolling a
-  fair die. Then, by the de Moivre--Laplace central limit theorem,
-  \[
-    P(X>\num{3600})\approx 1- \Phi\left(\frac{\num{3600}-\num{1000}\cdot
-        0.5}{\sqrt{\num{1000}\cdot 0.5^2}}\right)
-    \approx 0.
-  \]
+  Let \(X_i\), \(1\leq i\leq\num{1000}\), denote the roll of a fair die. By
+  the de Moivre--Laplace central limit theorem since the \(X_i\sim\Bin()\) are
+  identically independently distributed random variables
 \end{solution}
 \newpage
 
@@ -128,7 +124,19 @@
   \[
     \frac{1-\Phi(x)}{\varphi(x)/x}=\frac{x-x\Phi(x)}{\varphi(x)}
   \]
-  tends to \(1\) as \(x\) tends to \(\infty\).
+  tends to \(1\) as \(x\) tends to \(\infty\). By l'Hôpital's rule, we have
+  \begin{align*}
+    \lim_{x\to\infty}\frac{1-\Phi(x)}{\varphi(x)/x}
+    &=\lim_{x\to\infty}\frac{-\varphi(x)}{\varphi'(x)x^{-1}-\varphi(x)x^{-2}}\\
+    &=\lim_{x\to\infty}\frac{\varphi(x)}{\varphi(x)x^{-2}-\varphi'(x)x^{-1}}\\
+    &=\lim_{x\to\infty}\frac{\rme^{-x^2/2}}{x^{-2}\rme^{-x^2/2}+\rme^{-x^2/2}}\\
+    &=\lim_{x\to\infty}\frac{1}{x^{-2}+1}\\
+    &=\lim_{x\to\infty}\frac{x^2}{x^2+1}
+      \intertext{applying l'Hôpital's rule again gives us}
+    &=\lim_{x\to\infty}\frac{2x}{2x}\\
+    &=1
+  \end{align*}
+  as was to be shown.
 \end{solution}
 
 %%% Local Variables:
