@@ -1,3 +1,4 @@
+\subsection{Homework 7}
 \begin{problem}
   Solve the Dirichlet problem for the Laplace equation in \(\bbR^2\)
   \[
@@ -13,6 +14,106 @@
   \noindent (\emph{Hint:} Use Laurent series.)
 \end{problem}
 \begin{solution}
+  First, let us make the change of variables \((x_1,x_2)\mapsto
+  r\rme^{\rmi\theta}\) to the Dirichlet problem in question:
+  \begin{equation}
+    \label{eq:7:dirichlet-problem-polar}
+    \left\{
+      \begin{aligned}
+        \Delta u&=0&&\text{in \(1<r<2\),}\\
+        u&=\tfrac{1}{2}(\rme^{\rmi\theta}+\rme^{-\rmi\theta})&&\text{on \(r=1\),}\\
+        u&=1+\tfrac{1}{i}(\rme^{\rmi 2\theta}-\rme^{-\rmi 2\theta})&&\text{on \(r=2\).}
+      \end{aligned}
+    \right.
+  \end{equation}
+
+  Now, suppose \(u\) is a solution, of the form
+  \[
+    u(r\rme^{\rmi\theta})=%
+    b\ln r%
+    +\sum_{n\in\bbZ} (a_nr^n+\overline{a_{-n}}r^{-n})\rme^{\rmi n\theta},
+  \]
+  to the problem \eqref{eq:7:dirichlet-problem-polar}. It is easy to see
+  that \(u\) is in fact harmonic:
+  \begin{align*}
+    \Delta u%
+    &=u_{rr}+\tfrac{1}{r}u_r+\tfrac{1}{r^2}u_{\theta\theta}\\
+    &=-br^{-2}+br^{-2}+\sum_{n\in\bbZ}
+      \left[\bigl(n(n-1)+n-n^2\bigr) a_nr^n\right.\\
+    &\phantom{{}={}-\frac{b}{r^2}+\frac{b}{r^2}+}
+      \left.+\bigl(n(n-1)+n-n^2\bigr)\overline{a_{-n}}r^{-n}\right]\rme^{\rmi
+      n\theta}\\
+    &=0.
+  \end{align*}
+
+  Next we use the boundary data to compute the coefficients \(a_n\),
+  \(n\in\bbZ\). Using the data \eqref{eq:7:dirichlet-problem-polar}, on
+  \(r=1\) we have
+  \[
+    \tfrac{1}{2}(\rme^{\rmi\theta}+\rme^{-\rmi\theta})%
+    =\sum_{n\in\bbZ}(a_n+\overline{a_{-n}})\rme^{\rmi n\theta},
+  \]
+  and on \(r=2\)
+  \[
+    1+\tfrac{1}{i}(\rme^{\rmi 2\theta}-\rme^{-\rmi 2\theta}) = b\ln
+    2+\sum_{n\in\bbZ}(2^na_n+2^{-n}a_{-n})\rme^{\rmi n\theta}.
+  \]
+  These equations immediately tell us that \(b=1/{\ln 2}\). Moreover, the
+  following relations on the coefficients hold
+  \[
+    \left\{
+    \begin{aligned}
+      \frac{1}{2}&=a_1+\overline{a_{-1}}
+      &\frac{1}{2}&=a_{-1}+\overline{a_1},\\
+      \frac{1}{i}&=2^2a_2+2^{-2}\overline{a_{-2}},
+      &-\frac{1}{i}&=2^2a_{-2}+2^{-2}\overline{a_{2}},\\
+      0&=a_n+\overline{a_{-n}}&&&&\text{for \(n\neq\pm 1\),}\\
+      0&=2^{n}a_n+2^{-n}\overline{a_{-n}}&&&&\text{for \(n\neq\pm 2\).}
+    \end{aligned}
+    \right.
+  \]
+  A little calculation shows that
+  \[
+    \left\{
+      \begin{aligned}
+        a_1&=-\frac{1}{6},&a_{-1}&=\frac{2}{3},\\
+        a_2&=-\frac{4\rmi}{15},&a_{-2}&=-\frac{4\rmi}{15},\\
+        a_n&=0&&&&\text{for \(n\neq \pm 1,\pm 2\).}
+      \end{aligned}
+    \right.
+  \]
+  Thus,
+  \[
+    \begin{aligned}
+      u(r\rme^{\rmi\theta})
+      &=\tfrac{1}{\ln 2}\ln r
+      +\left(-\tfrac{4\rmi}{15}r^{-2}+\tfrac{4\rmi}{15}r^2\right)\rme^{-\rmi
+        2\theta} +\left(\tfrac{2}{3}r^{-1}-\tfrac{1}{6}r\right)\rme^{-\rmi\theta}\\
+      &\phantom{{}={}}
+      +\left(-\tfrac{1}{6}r+\tfrac{2}{3}r^{-1}\right)\rme^{\rmi\theta}
+      +\left(-\tfrac{4\rmi}{15}r^2+\tfrac{4\rmi}{15}r^{-2}\right)\rme^{\rmi
+        2\theta}\\
+      &=\tfrac{1}{\ln 2}\ln r-\tfrac{8}{15}r^{-4}
+      \left(\frac{r^2\rme^{\rmi 2\theta}-r^2\rme^{-\rmi 2\theta}}{2\rmi}\right)
+      +\tfrac{8}{15}
+      \left(\frac{r^2\rme^{\rmi 2\theta}-r^2\rme^{-\rmi
+            2\theta}}{2\rmi}\right)\\
+      &\phantom{{}={}}
+      +\tfrac{4}{3}r^{-2}
+      \left(\frac{r\rme^{\rmi\theta}+r\rme^{-\rmi\theta}}{2}\right)
+      -\tfrac{1}{3}
+      \left(\frac{r\rme^{\rmi\theta}+r\rme^{-\rmi\theta}}{2}\right).
+    \end{aligned}
+  \]
+  Substituting back, we have
+  \begin{equation}
+    \label{eq:7:solution-to-dirichlet-problem}
+    u(x_1,x_2)=\tfrac{1}{\ln 2}\ln(x_1^2+x_2^2)
+    -\frac{16x_1x_2}{15{(x_1^2+x_2^2)}^2}+\frac{16x_1x_2}{15}
+    +\frac{4x_1}{3(x_1^2+x_2^2)}-\frac{x_1}{3}.
+  \end{equation}
+  It is easy to see that \eqref{eq:7:solution-to-dirichlet-problem}
+  satisfies the boundary data at \(|x|=1\) and \(|x|=2\).
 \end{solution}
 
 \begin{problem}
@@ -30,15 +131,35 @@
     \right.
   \]
   where \(\nu\) is the outer normal on \(\partial\Omega\). Show that the
-  solution of \eqref{eq:7:neumann-problem} in \(C^2(\Omega)\cap
-  C^1(\bar\Omega)\) is unique up to a constant; i.e., if \(u_1\) and
-  \(u_2\) are both solutions of \eqref{eq:7:neumann-problem}, then
-  \(u_2=u_1+\text{const.\@}\) in \(\Omega\).
+  solution of \eqref{eq:7:neumann-problem} in
+  \(C^2(\Omega)\cap C^1(\bar\Omega)\) is unique up to a constant; i.e., if
+  \(u_1\) and \(u_2\) are both solutions of \eqref{eq:7:neumann-problem},
+  then \(u_2=u_1+\text{const.}\)\@ in \(\Omega\).
 
   \noindent (\emph{Hint:} Look at the proof of the uniqueness for the
-  Dirichlet problem by Energy methods [E, 2.2.5a].)
+  Dirichlet problem by energy methods [E, 2.2.5a].)
 \end{problem}
 \begin{solution}
+  Suppose \(u_1\) and \(u_2\) are solutions to the Neumann problem
+  \eqref{eq:7:neumann-problem}. Define \(v\defeq u_1-u_2\). Then \(v\) is
+  harmonic in \(\Omega\) and \(\partial v/\partial \nu=0\) on
+  \(\partial\Omega\). Consider the energy functional
+  \[
+    E[v]=\frac{1}{2}\int_\Omega|Dv|^2\diff x.
+  \]
+  By Green's formula version (ii),
+  \begin{align*}
+    E[v]
+    &=\frac{1}{2}\int_\Omega|Dv|^2\diff x\\
+    &=-\frac{1}{2}\int_\Omega v\Delta v\diff x
+      +\int_{\partial U}\frac{\partial
+      v}{\partial\nu} v\diff S(x)\\
+    &=0.
+  \end{align*}
+  This implies that \(|Dv|^2=Dv\cdot Dv=0\) which, since the standard inner
+  product on \(\bbR^n\) is positive-definite, implies that \(Dw\equiv
+  0\). It follows that \(u_1=u_2+\text{const}\), i.e., the solution \(u\)
+  to \eqref{eq:7:neumann-problem} is unique up to a constant.
 \end{solution}
 
 \begin{problem}
@@ -46,7 +167,7 @@
   \[
     \left\{
       \begin{aligned}
-        u_t-\Delta u+cu&=f&&\text{in \(\bbR^n\times(0,\infty)\),}\\
+        u_t-\Delta_x u+cu&=f&&\text{in \(\bbR^n\times(0,\infty)\),}\\
         u&=g&&\text{on \(\bbR^n\times\{\,t=0\,\}\),}
       \end{aligned}
     \right.
@@ -57,6 +178,31 @@
   \(v(x,t)\defeq\rme^{ct}u(x,t)\).)
 \end{problem}
 \begin{solution}
+  Taking the hint, let us rewrite the problem in terms of
+  \(v(x,t)=\rme^{ct}u(x,t)\):
+  \begin{equation}
+    \label{eq:7:heat-problem-exp}
+    \left\{
+      \begin{aligned}
+        v_t-\Delta_xv&=\rme^{ct}f&&\text{in
+          \(\bbR^n\times(0,\infty),\)}\\
+        v&=g&&\text{on \(\bbR^n\times\{\,t=0\,\}\).}
+      \end{aligned}
+    \right.
+  \end{equation}
+  By Duhamel's principle, the problem \eqref{eq:7:heat-problem-exp} is
+  solved by
+  \[
+    v(x,t)=\int_{\bbR^n}\Phi(x-y,t)g(y)\diff y
+    +\int_0^t\int_{\bbR^n}\Phi(x-y,t-s)\rme^{cs}f(y,s)\diff yds,
+  \]
+  where \(\Phi\) is the fundamental solution to the heat equation. Thus,
+  the formula
+  \[
+    u(x,t)=\rme^{-ct}v(x,t)=\rme^{-ct}\int_{\bbR^n}\Phi(x-y,t)g(y)\diff y
+    +\rme^{-ct}\int_0^t\int_{\bbR^n}\Phi(x-y,t-s)\rme^{cs}f(y,s)\diff yds
+  \]
+  solves the original problem.
 \end{solution}
 
 %%% Local Variables:
