@@ -13,7 +13,7 @@
 
   \noindent (\emph{Hint:} Use Laurent series.)
 \end{problem}
-\begin{solution}
+\begin{solution*}
   First, let us make the change of variables \((x_1,x_2)\mapsto
   r\rme^{\rmi\theta}\) to the Dirichlet problem in question:
   \begin{equation}
@@ -114,7 +114,7 @@
   \end{equation}
   It is easy to see that \eqref{eq:7:solution-to-dirichlet-problem}
   satisfies the boundary data at \(|x|=1\) and \(|x|=2\).
-\end{solution}
+\end{solution*}
 
 \begin{problem}
   Let \(\Omega\) be a bounded domain with a \(C^1\) boundary, \(g\in
@@ -139,7 +139,7 @@
   \noindent (\emph{Hint:} Look at the proof of the uniqueness for the
   Dirichlet problem by energy methods [E, 2.2.5a].)
 \end{problem}
-\begin{solution}
+\begin{solution*}
   Suppose \(u_1\) and \(u_2\) are solutions to the Neumann problem
   \eqref{eq:7:neumann-problem}. Define \(v\defeq u_1-u_2\). Then \(v\) is
   harmonic in \(\Omega\) and \(\partial v/\partial \nu=0\) on
@@ -160,7 +160,7 @@
   product on \(\bbR^n\) is positive-definite, implies that \(Dw\equiv
   0\). It follows that \(u_1=u_2+\text{const}\), i.e., the solution \(u\)
   to \eqref{eq:7:neumann-problem} is unique up to a constant.
-\end{solution}
+\end{solution*}
 
 \begin{problem}
   Write down an explicit formula for a solution of
@@ -177,7 +177,7 @@
   \noindent (\emph{Hint:} Rewrite the problem in terms of
   \(v(x,t)\defeq\rme^{ct}u(x,t)\).)
 \end{problem}
-\begin{solution}
+\begin{solution*}
   Taking the hint, let us rewrite the problem in terms of
   \(v(x,t)=\rme^{ct}u(x,t)\):
   \begin{equation}
@@ -203,7 +203,7 @@
     +\rme^{-ct}\int_0^t\int_{\bbR^n}\Phi(x-y,t-s)\rme^{cs}f(y,s)\diff yds
   \]
   solves the original problem.
-\end{solution}
+\end{solution*}
 
 %%% Local Variables:
 %%% mode: latex
