@@ -1,22 +1,63 @@
 \begin{problem}
+  Show that the function
+  \[
+    u(x,t)\defeq\sum_{k=-\infty}^\infty (-1)^k\Phi(x-2k,t)
+  \]
+  where
+  \[
+    \Phi(x,t)=\frac{\rme^{-x^2/4t}}{\sqrt{4\pi t}}
+  \]
+  is positive for \(|x|<1\), \(t>0\).
+
+  \noindent (\emph{Hint:} Show that \(u\) satisfies \(u_t=u_{xx}\) for
+  \(t>0\),
+  \[
+    \left\{
+      \begin{aligned}
+        u&=0&&\text{on \(\{\,|x|=1\,\}\times\{\,t\geq 0\,\}\),}\\
+        u&=\delta_0&&\text{on \(\{\,|x|=1\,\}\times\{\,t=0\,\}\).}
+      \end{aligned}
+    \right.
+  \]
+  Then, carefully apply the maximum/minimum principle in a domain
+  \(\{\,|x|\leq 1\,\}\times\{\,\varepsilon\leq t\leq T\,\}\) for small
+  \(\varepsilon>0\) and large \(T>0\) pass to the limit as \(\varepsilon\to
+  0^+\) and \(T\to\infty\).)
+\end{problem}
+\begin{solution}
+\end{solution}
+\newpage
+
+\begin{problem}[Tikhonov's example]
+  Let
+  \[
+    g(t)\defeq
+    \begin{cases}
+      \rme^{-t^2}&t>0,\\
+      0&t\leq 0.
+    \end{cases}
+  \]
+  Then \(g\in C^\infty(\bbR)\) and we define
+  \[
+    u(x,t)\defeq\sum_{k=0}^\infty\frac{g^{(k)}(t)}{(2k)!}x^{2k}.
+  \]
+  Assuming that the series is convergent, show that \(u(x,t)\) solves the
+  heat equation in \(\bbR\times(0,\infty)\) with the initial condition
+  \(u(x,0)=0\), \(x\in\bbR\). Why doesn't this contradict the uniqueness
+  theorem for the initial value problem.)
 \end{problem}
 \begin{solution}
 \end{solution}
 \newpage
 
 \begin{problem}
-\end{problem}
-\begin{solution}
-\end{solution}
-\newpage
-
-\begin{problem}
-\end{problem}
-\begin{solution}
-\end{solution}
-\newpage
-
-\begin{problem}
+  Evaluate the integral
+  \[
+    \int_{-\infty}^\infty \cos(ax)\rme^{-x^2}\diff x,\qquad (a>0).
+  \]
+  \noindent (\emph{Hint:} Use the separation of variables to find the
+  solution of the corresponding initial-value problem for the heat
+  equation.)
 \end{problem}
 \begin{solution}
 \end{solution}
