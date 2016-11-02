@@ -29,10 +29,13 @@
   made. Since the outcome of the player's free shots is binary (the player
   can either score or not score the throw)
   \(X\sim\Bin(25,0.8)\). Therefore, by the de Moivre--Laplace central limit
-  theorem,
-  \[
-
-  \]
+  theorem with continuity correction, we have
+  \begin{align*}
+    P(18\leq X\leq 22)
+    &\approx\Phi\left(\frac{22.5-20}{\sqrt{25\cdot 0.8\cdot 0.2}}\right)
+      -\Phi\left(\frac{17.5-20}{\sqrt{25\cdot 0.8\cdot 0.2}}\right)\\
+    &\approx
+  \end{align*}
 \end{solution}
 \newpage
 
