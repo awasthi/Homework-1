@@ -46,6 +46,21 @@
   \(\sum_{i=1}^n X_i^2\), when \(n=10,20,30\).
 \end{problem}
 \begin{solution}
+  First, let us find the PDF of the random variable \(X_i^2\). Via a
+  straightforward calculation, we get
+  \begin{align*}
+    P(X_i^2\leq x)
+    &=P\left(-\sqrt{x}\leq X_i\leq\sqrt{x}\right)\\
+    &=\Phi(\sqrt{x})-\Phi(\sqrt{x}).
+  \end{align*}
+  Thus, the PDF of \(X_i^2\) is
+    \begin{align*}
+      f_{X_i^2}(x)
+      &=\frac{\varphi(\sqrt{x})}{2\sqrt{x}}+\frac{\varphi(-\sqrt{x})}{2\sqrt{x}}
+        \intertext{which, since \(\varphi\) is even, becomes}
+      &=x^{-1/2}\varphi(\sqrt{x})\\
+      &=\frac{\rme^{-x^2/2}}{\sqrt{2\pi x}}.
+    \end{align*}
 \end{solution}
 \newpage
 
@@ -156,9 +171,9 @@
     &=1
   \end{align*}
   as was to be shown.
-\end{solution}
+\end{solution
 
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: "../MA519-HW-Current"
-%%% End:
+  %%% Local Variables:
+  %%% mode: latex
+  %%% TeX-master: "../MA519-HW-Current"
+  %%% End:
