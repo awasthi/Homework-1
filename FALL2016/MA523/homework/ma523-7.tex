@@ -167,7 +167,7 @@
   \[
     \left\{
       \begin{aligned}
-        u_t-\Delta u+cu&=f&&\text{in \(\bbR^n\times(0,\infty)\),}\\
+        u_t-\Delta_x u+cu&=f&&\text{in \(\bbR^n\times(0,\infty)\),}\\
         u&=g&&\text{on \(\bbR^n\times\{\,t=0\,\}\),}
       \end{aligned}
     \right.
@@ -178,6 +178,31 @@
   \(v(x,t)\defeq\rme^{ct}u(x,t)\).)
 \end{problem}
 \begin{solution}
+  Taking the hint, let us rewrite the problem in terms of
+  \(v(x,t)=\rme^{ct}u(x,t)\):
+  \begin{equation}
+    \label{eq:7:heat-problem-exp}
+    \left\{
+      \begin{aligned}
+        v_t-\Delta_xv&=\rme^{ct}f&&\text{in
+          \(\bbR^n\times(0,\infty),\)}\\
+        v&=g&&\text{on \(\bbR^n\times\{\,t=0\,\}\).}
+      \end{aligned}
+    \right.
+  \end{equation}
+  By remark (17) from [E, \S 2.3.c], the solution to this problem has the
+  form
+  \[
+    v(x,t)=\int_{\bbR^n}\Phi(x-y,t)g(y)\diff y
+    +\int_0^t\int_{\bbR^n}\Phi(x-y,t-s)\rme^{cs}f(y,s)\diff yds,
+  \]
+  where \(\Phi\) is the fundamental solution to the heat equation. Thus,
+  the formula
+  \[
+    u(x,t)=\rme^{-ct}\int_{\bbR^n}\Phi(x-y,t)g(y)\diff y
+    +\rme^{-ct}\int_0^t\int_{\bbR^n}\Phi(x-y,t-s)\rme^{cs}f(y,s)\diff yds
+  \]
+  solves the original problem.
 \end{solution}
 
 %%% Local Variables:
