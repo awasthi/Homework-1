@@ -243,6 +243,19 @@
   Let \(X\) denote the number of heads obtained in \(1000\) tosses of a
   fair coin. Then \(X\sim\Bin(0.5,1000)\) so by the de Moivre--Laplace
   central limit theorem
+  \begin{align*}
+    0.5&\approx\Phi\left(\frac{k+0.5-500}{0.5\cdot \sqrt{1000}}\right)
+         -\Phi\left(\frac{489.5-500}{0.5\cdot\sqrt{1000}}\right)\\
+       &\approx\Phi\left(\frac{k-499.5}{\num{15.811388300841896}}\right)
+         -\Phi(-\num{0.6640783086353597})\\
+       &\approx\Phi\left(\frac{k-499.5}{\num{15.811388300841896}}\right)
+         -\num{0.25334516}.
+  \end{align*}
+  Therefore, we must find \(k\) such that
+  \[
+    \Phi\left(\frac{k-499.5}{\num{15.811388300841896}}\right)\approx
+    \num{0.75334516}.
+  \]
 \end{solution}
 \newpage
 
