@@ -77,7 +77,39 @@
   \]
 
   First, let us find the mean and the variance of \(Y_k\), \(1\leq k\leq
-  30\).
+  30\). Suppose \(X\sim U[0,1]\), then
+  \begin{align*}
+    P(\ln X\geq x)
+    &=P(X\geq\rme^x)\\
+    &=\begin{cases}
+      \rme^x&\text{for \(-\infty<x<0\),}\\
+      1&\text{for \(x\geq 0\).}
+    \end{cases}
+  \end{align*}
+  Thus, the PDF of \(\ln X\) is
+  \[
+    f_{\ln X}(x)=
+    \begin{cases}
+      \rme^x&\text{for \(-\infty<x<0\),}\\
+      0&\text{for \(x\geq 0\).}
+    \end{cases}
+  \]
+  Hence, the mean is
+  \begin{align*}
+    E(\ln X)
+    &=\int_{-\infty}^0 x\rme^x\diff x\\
+    &=\int_0^\infty -x\rme^{-x}\diff x\\
+    &=\lim_{x\to\infty}[x\rme^{-x}+\rme^{-x}]-1\\
+    &=-1,
+  \end{align*}
+  and the variance is
+  \begin{align*}
+    \Var(\ln X)
+    &=\int_{-\infty}^0 x^2\rme^x\diff x-(-1)^2\\
+    &=\int_0^\infty x^2\rme^{-x}\diff x-1\\
+    &=\lim_{x\to\infty}[-x^2\rme^{-x}-2x\rme^{-x}-2\rme^{-x}]+2-1\\
+    &=1.
+  \end{align*}
 \end{solution}
 \newpage
 
