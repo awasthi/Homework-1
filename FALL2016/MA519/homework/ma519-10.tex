@@ -80,7 +80,7 @@
 
   Therefore, by the central limit theorem, we have
   \[
-    p_n\defeq P\left(\sum\nolimits_{k=1}^n (X_k^2-X_k)>0\right)
+    p_n\defeq P\left(\sum\nolimits_{k=1}^n (X_k^2-X_k)<0\right)
     =\frac{1}{\sqrt{2\pi}(3n)^{1/2}}\int_{-\infty}^0\rme^{-(x-n)^2/6n}.
   \]
 
@@ -175,7 +175,24 @@
   residents never reads a newspaper.
 \end{problem}
 \begin{solution}
+  Using a Poisson approximation to the binomial distribution
+  \(X\sim\Bin(50,0.015)\), we have
+  \begin{align*}
+    P(X\geq 1)
+    &=1-P(X=0)\\
+    &\approx 1-\rme^{-0.75}\\
+    &\approx\num{0.5276334472589853}.
+  \end{align*}
 
+  Using a normal approximation (without the continuity correction), we have
+  \begin{align*}
+    P(X\geq 1)
+    &\approx 1-
+      \Phi\left(\frac{1-50\cdot 0.015}{\sqrt{50\cdot
+      0.015(1-0.015)}}\right)\\
+    &\approx 1-\Phi(\num{0.29086486358157504})\\
+    &\approx\num{0.3855792}.\qedhere
+  \end{align*}
 \end{solution}
 \newpage
 
@@ -185,7 +202,9 @@
   will get more than \(60\) heads?
 \end{problem}
 \begin{solution}
-
+  Our intuition would say that it is more likely to get exactly \(50\)
+  heads than it is to get more than \(60\) heads. Let us approximate these
+  probabilities using the central limit theorem.
 \end{solution}
 \newpage
 
