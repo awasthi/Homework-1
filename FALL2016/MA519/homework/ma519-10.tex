@@ -191,7 +191,15 @@
       \Phi\left(\frac{1-50\cdot 0.015}{\sqrt{50\cdot
       0.015(1-0.015)}}\right)\\
     &\approx 1-\Phi(\num{0.29086486358157504})\\
-    &\approx\num{0.3855792}.\qedhere
+    &\approx\num{0.3855792}.
+  \end{align*}
+
+  The exact probability is
+  \begin{align*}
+    P(X\geq 1)
+    &=1-P(X=0)\\
+    &=1-\binom{50}{0}0.015^0\cdot(1-0.015)^{50}\\
+    &\approx\num{0.5303097717969989}.\qedhere
   \end{align*}
 \end{solution}
 \newpage
