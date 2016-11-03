@@ -69,7 +69,15 @@
   \(0.4\); exceeds \(0.5\).
 \end{problem}
 \begin{solution}
+  Write \(Y_k\defeq \ln X_k\), \(1\leq k\leq 30\). Then we can write the
+  geometric mean of \(X_1,\dotsc,X_{30}\) as
+  \[
+    \sqrt[30]{\prod\nolimits_{k=1}^{30} X_k}
+    =\exp\left(\frac{1}{30}\sum\nolimits_{k=1}^{30} Y_k\right).
+  \]
 
+  First, let us find the mean and the variance of \(Y_k\), \(1\leq k\leq
+  30\).
 \end{solution}
 \newpage
 
