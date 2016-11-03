@@ -116,54 +116,38 @@
   \]
 
   First, let us find the mean and the variance of \(Y_k\), \(1\leq k\leq
-  30\). Suppose \(X\sim U[0,1]\), then
+  30\).
   \begin{align*}
-    P(\ln X\geq x)
-    &=P(X\geq\rme^x)\\
-    &=\begin{cases}
-      \rme^x&\text{for \(-\infty<x<0\),}\\
-      1&\text{for \(x\geq 0\).}
-    \end{cases}
-  \end{align*}
-  Thus, the PDF of \(\ln X\) is
-  \[
-    f_{\ln X}(x)=
-    \begin{cases}
-      \rme^x&\text{for \(-\infty<x<0\),}\\
-      0&\text{for \(x\geq 0\).}
-    \end{cases}
-  \]
-  Hence, the mean is
-  \begin{align*}
-    E(\ln X)
-    &=\int_{-\infty}^0 x\rme^x\diff x\\
-    &=\int_0^\infty -x\rme^{-x}\diff x\\
-    &=\lim_{x\to\infty}[x\rme^{-x}+\rme^{-x}]-1\\
+    E(Y_k)
+    &=\int_0^1 \ln x\diff x\\
     &=-1,
   \end{align*}
   and the variance is
   \begin{align*}
-    \Var(\ln X)
-    &=\int_{-\infty}^0 x^2\rme^x\diff x-(-1)^2\\
-    &=\int_0^\infty x^2\rme^{-x}\diff x-1\\
-    &=\lim_{x\to\infty}[-x^2\rme^{-x}-2x\rme^{-x}-2\rme^{-x}]+2-1\\
+    \Var(Y_k)
+    &=\int_0^1 (\ln x)^2\diff x-(-1)^2\\
+    &=2-1\\
     &=1.
   \end{align*}
 
-  Since the mean and value of \(\ln X_k\) exist and are identical, by the
-  central limit theorem we have
+  Therefore,
+  \(S\defeq \frac{1}{30}\sum_{k=1}^{30}Y_k\approx\calN(-1,\num{0.03333333333333333})\)
+  so by the central limit theorem for \(0.4\) we have
   \begin{align*}
-    P\left(\frac{1}{30}\sum\nolimits_{k=1}^{30} Y_k>\ln 0.4\right)
-    &\approx\frac{1}{\sqrt{2\pi}}%
-      \int_{\num{-0.916290731874155}}^\infty%
-      30\cdot \rme^{-15(x+1)^2}\\
-    &\approx\num{0.005964269999999994}.
+    P(\rme^S>0.4)
+    &=1-P(\rme^{S}\leq 0.4)\\
+    &=1-P(S\leq-\num{0.916290731874155})\\
+    &\approx 1-\Phi(-\num{1.1672910343601308})\\
+    &\approx\num{0.87843519},
   \end{align*}
-  Similarly for \(0.5\), we have
-  \[
-    P\left(\sqrt{\prod\nolimits_{k=1}^{30} X_k}>0.5\right)
-    \approx 0.
-  \]
+  and for \(0.5\) we have
+  \begin{align*}
+    P(\rme^S>0.5)
+    &=1-P(\rme^{S}\leq 0.5)\\
+    &=1-P(S\leq-\num{0.6931471805599453})\\
+    &\approx 1-\Phi(-\num{1.1265507821545961})\\
+    &\approx\num{0.87002303}.\qedhere
+  \end{align*}
 \end{solution}
 \newpage
 
@@ -190,7 +174,7 @@
     &P(-0.5\leq X<0.5)\\
     &P\left(\frac{-0.5-50\cdot 0.015}{\sqrt{50\cdot 0.015(1-0.015)}}
       \leq\frac{X-50\cdot 0.015}{\sqrt{50\cdot 0.015(1-0.015)}}
-      <\frac{0.5-50\cdot 0.015}{\sqrt{50\cdo/t 0.015(1-0.015)}}
+      <\frac{0.5-50\cdot 0.015}{\sqrt{50\cdot 0.015(1-0.015)}}
       \right)\\
     &\approx\Phi(-\num{0.29086486358157504})-\Phi(-\num{1.4543243179078753})\\
     &\approx\num{0.31267056}.
