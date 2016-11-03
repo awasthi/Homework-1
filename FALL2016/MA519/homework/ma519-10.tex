@@ -41,19 +41,19 @@
 \newpage
 
 \begin{problem}[Handout 14, \# 7]
-  Suppose \(X_1,\dotsc,X_n\) are independent \(N(0,1)\) variables. Find an
-  approximation to the probability that \(\sum_{k=1}^n X_k\) is larger than
-  \(\sum_{k=1}^n X_k^2\), when \(n=10,20,30\).
+  Suppose \(X_1,\dotsc,X_n\) are independent \(\calN(0,1)\) variables. Find
+  an approximation to the probability that \(\sum_{k=1}^n X_k\) is larger
+  than \(\sum_{k=1}^n X_k^2\), when \(n=10,20,30\).
 \end{problem}
 \begin{solution}
-  Suppose \(X_1,\dotsc,X_n\) are independent \(N(0,1)\) variables. We know
-  that the sum \(S_2\defeq\sum_{k=1}^n X_k^2\) is a chi-square distribution
-  with mean \(n\), variance \(2n\), and density
+  Suppose \(X_1,\dotsc,X_n\) are independent \(\calN(0,1)\) variables. We
+  know that the sum \(S_2\defeq\sum_{k=1}^n X_k^2\) is a chi-square
+  distribution with mean \(n\), variance \(2n\), and density
   \[
-    f_{S_2}(x)=\frac{\rme^{-x/2}x^{n/2-1}}{2^{n/2}\Gamma(m/2)}.
+    f_{S_2}(x)=\frac{x^{n/2-1}\rme^{-x/2}}{2^{n/2}\Gamma(m/2)}.
   \]
   Moreover, by Theorem 1.46, the distribution of the sum
-  \(S_1\defeq\sum_{k=1}^n X_k\) is exactly a \(N(0,n)\)
+  \(S_1\defeq\sum_{k=1}^n X_k\) is exactly a \(\calN(0,n)\)
   distribution. Therefore,
   \begin{align*}
     P(S_1>S_2)
@@ -110,6 +110,21 @@
     &=\lim_{x\to\infty}[-x^2\rme^{-x}-2x\rme^{-x}-2\rme^{-x}]+2-1\\
     &=1.
   \end{align*}
+
+  Since the mean and value of \(\ln X_k\) exist and are identical, by the
+  central limit theorem we have
+  \begin{align*}
+    P\left(\frac{1}{30}\sum\nolimits_{k=1}^{30} Y_k>\ln 0.4\right)
+    &\approx\frac{1}{\sqrt{2\pi}}%
+      \int_{\num{-0.916290731874155}}^\infty%
+      30\cdot \rme^{-15(x+1)^2}\\
+    &\approx\num{0.005964269999999994}.
+  \end{align*}
+  Similarly for \(0.5\), we have
+  \[
+    P\left(\sqrt{\prod\nolimits_{k=1}^{30} X_k}>0.5\right)
+    \approx 0.
+  \]
 \end{solution}
 \newpage
 
