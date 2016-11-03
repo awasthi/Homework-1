@@ -6,7 +6,7 @@
 \end{problem}
 \begin{solution*}
   Suppose \(4\) men throw their watches into the sea. Label these men ``the
-  \(i\)\textsup{th} man'' for \(1\leq i\leq 4\). Let \(A_i\) denote the
+  \(k\)\textsup{th} man'' for \(1\leq k\leq 4\). Let \(A_k\) denote the
   probability that the \(i\)\textsup{th} man gets his own watch back. Then
   the probability that at least one man gets his own watch back is the
   event \(A=A_1\cup A_2\cup A_3\cup A_4\). By the inclusion-exclusion
@@ -23,7 +23,7 @@
       &\phantom{{}={}}-P(A_1\cap A_2\cap A_3\cap A_4).
     \end{aligned}
   \end{equation}
-  Since the probabilities \(P(A_i)=P(A_j)\), \(P(A_i\cap A_j)=P(A_k\cap
+  Since the probabilities \(P(A_k)=P(A_j)\), \(P(A_k\cap A_j)=P(A_k\cap
   A_\ell)\), etc., the equation above reduces to
   \[
     P(A)=4P(A_1)-6P(A_1\cap A_2)+4P(A_1\cap A_2\cap A_3)-P(A_1\cap A_2\cap
@@ -47,10 +47,10 @@
   is void in a particular suit.
 \end{problem}
 \begin{solution*}
-  Label the players ``player \(i\)'' for \(1\leq i\leq 4\). Let \(A_i\)
+  Label the players ``player \(i\)'' for \(1\leq k\leq 4\). Let \(A_k\)
   denote the event that player \(i\) is void in a particular suit. Then
   the probability of the event \(A\) that at least one player is void in a
-  particular suit is \(P(A)=P\bigl(\bigcup_{i=1}^4 A_i\bigr)\). Again, we
+  particular suit is \(P(A)=P\bigl(\bigcup_{k=1}^4 A_k\bigr)\). Again, we
   can decompose this into
   \[
     P(A)=4P(A_1)-6P(A_1\cap A_2)+4P(A_1\cap A_2\cap A_3)-P(A_1\cap A_2\cap
@@ -160,9 +160,9 @@
 
 \begin{problem}[Handout 2, \# 18]
   Suppose you have infinitely many events \(A_1,A_2,\dotsc\), and each one
-  is sure to occur, i.e., \(P(A_i)=1\) for any \(i\).
+  is sure to occur, i.e., \(P(A_k)=1\) for any \(i\).
 
-  \noindent Prove that \(P\bigl(\bigcap_{i=1}^n A_i\bigr)=1\).
+  \noindent Prove that \(P\bigl(\bigcap_{k=1}^n A_k\bigr)=1\).
 \end{problem}
 \begin{solution*}
 \end{solution*}

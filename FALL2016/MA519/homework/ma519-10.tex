@@ -3,13 +3,13 @@
   \(\num{3600}\) in \(\num{1000}\) rolls of a fair die.
 \end{problem}
 \begin{solution}
-  Let \(X_i\), \(1\leq i\leq\num{1000}\), denote the roll of a fair
+  Let \(X_k\), \(1\leq k\leq\num{1000}\), denote the roll of a fair
   die. Then, as we have surely shown before, the mean and variance of the
-  \(X_i\) are \(\mu=3.5\) and \(\sigma^2=\num{2.916666666666666}\),
+  \(X_k\) are \(\mu=3.5\) and \(\sigma^2=\num{2.916666666666666}\),
   respectively. By the central limit theorem, we can approximate
-  \(P(\sum_{i=1}^{100}X_i\geq\num{3600})\) by
+  \(P(\sum_{k=1}^{100}X_k\geq\num{3600})\) by
   \begin{align*}
-    P\left(\sum\nolimits_{i=1}^{\num{1000}}X_i\geq\num{3600}\right)
+    P\left(\sum\nolimits_{k=1}^{\num{1000}}X_k\geq\num{3600}\right)
     &\approx\int_{\num{3600}}^\infty
       \frac{\rme^{-(x-\num{3500})^2/\num{5833.333333333332}}}
       {\sqrt{2\pi}\cdot\num{54.00617248673216}}\diff x\\
@@ -42,38 +42,22 @@
 
 \begin{problem}[Handout 14, \# 7]
   Suppose \(X_1,\dotsc,X_n\) are independent \(N(0,1)\) variables. Find an
-  approximation to the probability that \(\sum_{i=1}^n X_i\) is larger than
-  \(\sum_{i=1}^n X_i^2\), when \(n=10,20,30\).
+  approximation to the probability that \(\sum_{k=1}^n X_k\) is larger than
+  \(\sum_{k=1}^n X_k^2\), when \(n=10,20,30\).
 \end{problem}
 \begin{solution}
-  By Theorem 1.46 we know the distribution of \(S_1\defeq\sum_{i=1}^n X_i\)
-  exactly, it is \(N(0,n)\). For the sum \(S_2\defeq\sum_{i=1}^n X_i^2\) we
-  aim to approximate its distribution via the central limit theorem, but
-  first we need to show that the variance of \(S_2\) is finite.
-
-  Let us first find the PDF of the \(X_i^2\). By direct computation, the
-  CDF of \(X_i^2\) is
-  \begin{align*}
-    P(X_i^2\leq x)
-    &=P\left(-\sqrt{x}\leq X_i\leq\sqrt{x}\right)\\
-    &=\Phi(\sqrt{x})-\Phi(-\sqrt{x}).
-  \end{align*}
-  Thus the PDF of \(X_i^2\) is
+  Suppose \(X_1,\dotsc,X_n\) are independent \(N(0,1)\) variables. We know
+  that the sum \(S_2\defeq\sum_{k=1}^n X_k^2\) is a chi-square distribution
+  with mean \(n\), variance \(2n\), and density
   \[
-    f_{X_i^2}(x)=\frac{\varphi(\sqrt{x})}{2\sqrt{x}}+\frac{\varphi(-\sqrt{x})}{2\sqrt{x}}
+    f_{S_2}(x)=\frac{\rme^{-x/2}x^{n/2-1}}{2^{n/2}\Gamma(m/2)}.
   \]
-  But since the standard normal distribution \(\varphi\) is an even
-  function, we can simplify the expression above even further
-  \[
-    f_{X_i^2}(x)=x^{-1/2}\varphi(\sqrt{x})
-  \]
-
-  Let us now show that the mean and second moment of \(X_i^2\) exist and
-  are finite. First, the average is
+  Moreover, by Theorem 1.46, the distribution of the sum
+  \(S_1\defeq\sum_{k=1}^n X_k\) is exactly a \(N(0,n)\)
+  distribution. Therefore,
   \begin{align*}
-    E(X)
-    &=\int_{-\infty}^\infty x^{1/2}\varphi(\sqrt{x})\diff x\\
-    &=\
+    P(S_1\geq S_2)
+    &=
   \end{align*}
 \end{solution}
 \newpage

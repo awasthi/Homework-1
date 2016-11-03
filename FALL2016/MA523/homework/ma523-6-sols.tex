@@ -153,33 +153,33 @@
   given by
   \begin{align*}
     \frac{\partial P_k(x)}{\partial\nu}
-    &=\sum_{i=1}^n (P_k)_{x_i}x_i\\
-    &=\sum_{i=1}^n\left(\sum\nolimits_{|\alpha|=k}a_\alpha
-      x^\alpha\right)_{x_i}x_i\\
-    &=\sum_{i=1}^n\left(\sum\nolimits_{j=1}^ma_\alpha
-      x_1^{\alpha_1^j}\dotsm x^{\alpha_i^j}\dotsm
-      x^{\alpha_n^j}\right)_{x_i}x_i
-      \intertext{where \(\sum_{i=1}^n\alpha_i^j=k\) and \(1\leq j\leq
+    &=\sum_{j=1}^n (P_k)_{x_j}x_j\\
+    &=\sum_{j=1}^n\left(\sum\nolimits_{|\alpha|=k}a_\alpha
+      x^\alpha\right)_{x_j}x_j\\
+    &=\sum_{j=1}^n\left(\sum\nolimits_{\ell=1}^ma_\alpha
+      x_1^{\alpha_1^\ell}\dotsm x^{\alpha_j^\ell}\dotsm
+      x^{\alpha_n^\ell}\right)_{x_j}x_j
+      \intertext{where \(\sum_{j=1}^n\alpha_j^\ell=k\) and \(1\leq j\leq
       \binom{n+k-1}{n}\eqdef m\) (by the stars and bars theorem)}
-    &=\sum_{i=1}^n\sum_{j=1}^m
+    &=\sum_{j=1}^n\sum_{\ell=1}^m
       \left(
-      \alpha_i^j
+      \alpha_j^\ell
       a_\alpha
-      x_1^{\alpha_1^j}\dotsm x^{\alpha_i^j-1}\dotsm
-      x^{\alpha_n^j}\right)x_i\\
-    &=\sum_{i=1}^n\sum_{j=1}^m
-      \alpha_i^j
+      x_1^{\alpha_1^\ell}\dotsm x^{\alpha_j^\ell-1}\dotsm
+      x^{\alpha_n^\ell}\right)x_j\\
+    &=\sum_{j=1}^n\sum_{\ell=1}^m
+      \alpha_j^\ell
       a_\alpha
-      x_1^{\alpha_1^j}\dotsm x^{\alpha_i^j}\dotsm
-      x^{\alpha_n^j}\\
-    &=\sum_{i=1}^n\sum_{j=1}^m
-      \alpha_i^j a_\alpha x^\alpha
+      x_1^{\alpha_1^\ell}\dotsm x^{\alpha_j^\ell}\dotsm
+      x^{\alpha_n^\ell}\\
+    &=\sum_{j=1}^n\sum_{\ell=1}^m
+      \alpha_j^\ell a_\alpha x^\alpha
       \intertext{switching the order of summation, we have}
-    &=\sum_{j=1}^m\sum_{i=1}^n
-      \alpha_i^j
+    &=\sum_{\ell=1}^m\sum_{j=1}^n
+      \alpha_j^\ell
       a_\alpha x^\alpha\\
-    &=\sum_{j=1}^m ka_\alpha x^\alpha\\
-    &=k\sum_{j=1}^m a_\alpha x^\alpha\\
+    &=\sum_{\ell=1}^m ka_\alpha x^\alpha\\
+    &=k\sum_{\ell=1}^m a_\alpha x^\alpha\\
     &=kP_k(x).
   \end{align*}
   This argument, of course, applies to every \(k\in\bbN\).
