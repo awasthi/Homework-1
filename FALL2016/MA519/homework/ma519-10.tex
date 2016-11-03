@@ -300,18 +300,19 @@
     P(X=\num{5400})
     &=P(\num{5399.5}\leq X<\num{5400.5})\\
     &\approx P
-      \left(\frac{5399.5-5000}{\sqrt{\num{10000}}\cdot 0.5}\leq X<
+      \left(\frac{5399.5-5000}{\sqrt{\num{10000}}\cdot 0.5}\leq
+      \frac{X-5000}{\sqrt{\num{10000}\cdot 0.5}}<
       \frac{5400.5-5000}{\sqrt{\num{10000}}\cdot 0.5}\right)\\
-    &\approx\Phi(\num{8.01})-\Phi(\num{7.99})\\
+    &\approx\Phi(8.01)-\Phi(7.99)\\
     &\approx 0.
   \end{align*}
-  Since the probability of this event happening is very small, we expect
+  Since the probability of this event happening is nearly zero, we expect
   the coin is skewed.
 \end{solution}
 \newpage
 
 \begin{problem}[Handout 14, \# 14]
-  Interpret in plain words the statement the problem: \emph{(Normal
+  Interpret in plain words the statement of the problem: \emph{(Normal
     approximation to the Poisson distribution).} Using Stirling's formula,
   show that, if \(\lambda\to\infty\), then for fixed \(\alpha<\beta\)
   \[
@@ -320,10 +321,14 @@
   \]
 \end{problem}
 \begin{solution}
-  Recall that \(p(k;\lambda)\) is the discrete Poisson distribution
+  The problem is saying that if \(X\sim\Poi(\lambda)\) for very large
+  \(\lambda\) we can approximate the probability
   \[
-    p(k;\lambda)=\rme^{-\lambda}\frac{\lambda^k}{k!}.
+    P\left(\lambda+\alpha\sqrt{\lambda}<X<\lambda+\beta\sqrt{\lambda}\right)
+    \approx\Phi(\beta)-\Phi(\lambda).
   \]
+
+  Let us prove this
 \end{solution}
 \newpage
 
