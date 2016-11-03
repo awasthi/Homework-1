@@ -46,19 +46,16 @@
   than \(\sum_{k=1}^n X_k^2\), when \(n=10,20,30\).
 \end{problem}
 \begin{solution}
-  Suppose \(X_1,\dotsc,X_n\) are independent \(\calN(0,1)\) variables. We
-  know that the sum \(S_2\defeq\sum_{k=1}^n X_k^2\) is a chi-square
-  distribution with mean \(n\), variance \(2n\), and density
+  We will use the central limit theorem to approximate the probability
   \[
-    f_{S_2}(x)=\frac{x^{n/2-1}\rme^{-x/2}}{2^{n/2}\Gamma(m/2)}.
+    P\left(\sum\nolimits_{k=1}^n (X_k^2-X_k)\right).
   \]
-  Moreover, by Theorem 1.46, the distribution of the sum
-  \(S_1\defeq\sum_{k=1}^n X_k\) is exactly a \(\calN(0,n)\)
-  distribution. Therefore,
-  \begin{align*}
-    P(S_1>S_2)
-    &=
-  \end{align*}
+  But first, we need to find the mean and the variance of the random
+  variables \(Y_k\defeq X_k^2-X_k\). First note than since the \(Y_k\) are
+  functions of independent random variables the \(Y_k\) are again
+  independent with respect to each other.
+
+  Now let us calculate the mean and variance of \(Y_k\):
 \end{solution}
 \newpage
 
