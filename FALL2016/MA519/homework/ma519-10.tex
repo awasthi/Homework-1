@@ -278,8 +278,15 @@
   approximately
   \begin{align*}
     P(X=\num{5400})
-    &\approx
+    &=P(\num{5399.5}\leq X<\num{5400.5})\\
+    &\approx P
+      \left(\frac{5399.5-5000}{\sqrt{\num{10000}}\cdot 0.5}\leq X<
+      \frac{5400.5-5000}{\sqrt{\num{10000}}\cdot 0.5}\right)\\
+    &\approx\Phi(\num{8.01})-\Phi(\num{7.99})\\
+    &\approx 0.
   \end{align*}
+  Since the probability of this event happening is very small, we expect
+  the coin is skewed.
 \end{solution}
 \newpage
 
