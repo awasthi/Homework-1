@@ -78,26 +78,30 @@
     &=3.
   \end{align*}
 
-  Therefore, by the central limit theorem, we have
-  \[
-    p_n\defeq P\left(\sum\nolimits_{k=1}^n (X_k^2-X_k)<0\right)
-    =\frac{1}{\sqrt{2\pi}(3n)^{1/2}}\int_{-\infty}^0\rme^{-(x-n)^2/6n}.
-  \]
-
-  For \(n=10\), we have
-  \[
-    p_{10}\approx\num{0.36944134}.
-  \]
-
-  For \(n=20\), we have
-  \[
-    p_{20}\approx\num{0.36944134}.
-  \]
-
-  Lastly, for \(n=30\), we have
-  \[
-    p_{30}\approx\num{0.36944134}.\qedhere
-  \]
+  Therefore, by the central limit theorem for \(n=10\) we have
+  \begin{align*}
+    P\left(\sum\nolimits_{k=1}^nY_k<0\right)
+    &=P\left(\frac{\sum\nolimits_{k=1}^nY_k-10}
+      {\sqrt{30}}<-\frac{10}{\sqrt{30}}\right)\\
+    &\approx\Phi(-\num{1.8257418583505538})\\
+    &\approx\num{0.03392513},
+  \end{align*}
+  for \(n=20\) we have
+  \begin{align*}
+    P\left(\sum\nolimits_{k=1}^nY_k<0\right)
+    &=P\left(\frac{\sum\nolimits_{k=1}^nY_k-20}
+      {\sqrt{60}}<-\frac{20}{\sqrt{60}}\right)\\
+    &\approx\Phi(-\num{2.581988897471611})\\
+    &\approx\num{0.00491148},
+  \end{align*}
+  and for \(n=30\) we have
+  \begin{align*}
+    P\left(\sum\nolimits_{k=1}^nY_k<0\right)
+    &=P\left(\frac{\sum\nolimits_{k=1}^nY_k-30}
+      {\sqrt{90}}<-\frac{30}{\sqrt{90}}\right)\\
+    &\approx\Phi(-\num{3.162277660168379})\\
+    &\approx\num{0.00078291}\qedhere
+  \end{align*}
 \end{solution}
 \newpage
 
