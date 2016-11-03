@@ -213,6 +213,26 @@
   Our intuition would say that it is more likely to get exactly \(50\)
   heads than it is to get more than \(60\) heads. Let us approximate these
   probabilities using the central limit theorem.
+
+  The probability that we get exactly \(50\) heads is approximately
+  \begin{align*}
+    P(X=50)
+    &=P(49.5\leq X<50.5)\\
+    &\approx P\left(\frac{49.5-50}{\sqrt{100}\cdot 0.5}\leq
+      \frac{X-50}{\sqrt{100}\cdot 0.5}<\frac{50.5-50}{\sqrt{100}\cdot
+      0.5}\right)\\
+    &\approx\Phi(0.1)-\Phi(-0.1)\\
+    &\approx\num{0.07965567999999995}.
+  \end{align*}
+
+  Whereas, the probability that we get more than \(60\) heads is smaller
+  still
+  \begin{align*}
+    P(X\geq 60)
+    &\approx 1-\Phi(\frac{60-50}{\sqrt{100}\cdot 0.5})\\
+    &\approx 1-\Phi(2)\\
+    &\approx\num{0.022750130000000035}\qedhere.
+  \end{align*}
 \end{solution}
 \newpage
 
