@@ -226,7 +226,10 @@
   central limit theorem, we have
   \begin{align*}
     P(X\geq 968)
-    &\approx 1-\Phi()
+    &\approx 1-\Phi\left(\frac{\num{968}-\num{10000}\cdot 0.1}
+      {\sqrt{\num{10000}\cdot 0.1(1-0.1)}}\right)\\
+    &\approx 1-\Phi(-\num{1.0666666666666667})\\
+    &\approx\num{0.85692375}.\qedhere
   \end{align*}
 \end{solution}
 \newpage
