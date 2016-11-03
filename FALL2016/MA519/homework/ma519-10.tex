@@ -184,14 +184,21 @@
     &\approx\num{0.5276334472589853}.
   \end{align*}
 
-  Using a normal approximation (without the continuity correction), we have
+  For the normal approximation, we first compute
   \begin{align*}
-    P(X\geq 1)
-    &\approx 1-
-      \Phi\left(\frac{1-50\cdot 0.015}{\sqrt{50\cdot
-      0.015(1-0.015)}}\right)\\
-    &\approx 1-\Phi(\num{0.29086486358157504})\\
-    &\approx\num{0.3855792}.
+    P(X=0)
+    &P(-0.5\leq X<0.5)\\
+    &P\left(\frac{-0.5-50\cdot 0.015}{\sqrt{50\cdot 0.015(1-0.015)}}
+      \leq\frac{X-50\cdot 0.015}{\sqrt{50\cdot 0.015(1-0.015)}}
+      <\frac{0.5-50\cdot 0.015}{\sqrt{50\cdot 0.015(1-0.015)}}
+      \right)\\
+    &\approx\Phi(-\num{0.29086486358157504})-\Phi(-\num{1.4543243179078753})\\
+    &\approx\num{0.31267056}.
+  \end{align*}
+  Thus, the normal approximation gives a probability of
+  \begin{align*}
+    P(X\geq 1)&=1-P(X=0)\\
+              &\approx\num{0.68732944}
   \end{align*}
 
   The exact probability is
@@ -229,7 +236,7 @@
   still
   \begin{align*}
     P(X\geq 60)
-    &\approx 1-\Phi(\frac{60-50}{\sqrt{100}\cdot 0.5})\\
+    &\approx 1-\Phi\left(\frac{60-50}{\sqrt{100}\cdot 0.5}\right)\\
     &\approx 1-\Phi(2)\\
     &\approx\num{0.022750130000000035}\qedhere.
   \end{align*}
