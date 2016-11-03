@@ -221,7 +221,13 @@
   \(7\) appears not more than \(968\) times.
 \end{problem}
 \begin{solution}
-
+  Let \(X\) denote the appearance of \(7\) in \(\num{10000}\) random
+  digits. Then \(X\sim\Bin(\num{10000},0.1)\). By the de Moivre--Laplace
+  central limit theorem, we have
+  \begin{align*}
+    P(X\geq 968)
+    &\approx 1-\Phi()
+  \end{align*}
 \end{solution}
 \newpage
 
