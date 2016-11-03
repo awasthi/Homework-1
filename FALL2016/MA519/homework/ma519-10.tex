@@ -131,19 +131,20 @@
   \end{align*}
 
   Therefore,
-  \(S\defeq \frac{1}{30}\sum_{k=1}^{30}Y_k\approx\calN(-1,\num{0.03333333333333333})\)
+  \(\bar Y\defeq
+  \frac{1}{30}\sum_{k=1}^{30}Y_k\approx\calN(-1,\num{0.03333333333333333})\)
   so by the central limit theorem for \(0.4\) we have
   \begin{align*}
-    P(\rme^S>0.4)
-    &=1-P(\rme^{S}\leq 0.4)\\
-    &=1-P(S\leq-\num{0.916290731874155})\\
+    P(\rme^{\bar Y}>0.4)
+    &=1-P(\rme^{\bar Y}\leq 0.4)\\
+    &=1-P(\bar Y\leq-\num{0.916290731874155})\\
     &\approx 1-\Phi(-\num{1.1672910343601308})\\
     &\approx\num{0.87843519},
   \end{align*}
   and for \(0.5\) we have
   \begin{align*}
-    P(\rme^S>0.5)
-    &=1-P(\rme^{S}\leq 0.5)\\
+    P(\rme^{\bar Y}>0.5)
+    &=1-P(\rme^{\bar Y}\leq 0.5)\\
     &=1-P(S\leq-\num{0.6931471805599453})\\
     &\approx 1-\Phi(-\num{1.1265507821545961})\\
     &\approx\num{0.87002303}.\qedhere
