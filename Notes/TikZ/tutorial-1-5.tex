@@ -1,0 +1,20 @@
+\documentclass[crop,tikz]{standalone}
+\usepackage{preamble}
+
+\begin{document}
+\tikzset{help lines/.style=very thin}
+\tikzset{Karl's grid/.style={help lines,color=gray}}
+\begin{tikzpicture}[scale=3]
+  \draw[step=.5cm,Karl's grid] (-1.4,-1.4) grid (1.4,1.4);
+  \draw (-1.5,0) -- (1.5,0);
+  \draw (0,-1.5) -- (0,1.5);
+  \draw (0,0) circle (1cm);
+  \draw (0,0) circle (1cm);
+  \draw (3mm,0mm) arc (0:30:3mm);
+\end{tikzpicture}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
