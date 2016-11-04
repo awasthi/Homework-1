@@ -124,9 +124,9 @@
 \usepackage[heavycircles]{stmaryrd}% power series ring symbol
 \usepackage[nointegrals]{wasysym}% happy faces, etc.
 % \usepackage{esint}% integral symbols
-\usepackage[bb=ams,% math alphabets
-            frak=euler,%
-            cal=cm,%
+\usepackage[% bb=ams,% math alphabets
+            % frak=euler,%
+            % cal=cm,%
             scr=rsfso]{mathalfa}%
 
 %% Use Latin Modern instead of default CM
@@ -134,6 +134,9 @@
 \usepackage[rm={proportional,lining},
             sf={proportional,oldstyle},
             tt={lining,tabular,monowidth}]{cfr-lm}
+\providecommand\textsi{\itshape}
+\providecommand\textti{\textnormal}
+\providecommand\texto{\textnormal}
 \providecommand{\textprob}{\scshape}
 
 %% My environments
