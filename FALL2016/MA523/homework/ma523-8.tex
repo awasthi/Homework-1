@@ -5,7 +5,7 @@
   \]
   where
   \[
-    \Phi(x,t)=\frac{\rme^{-x^2/4t}}{\sqrt{4\pi t}}
+    \Phi(x,t)=\frac{\rme^{-\frac{x^2}{4t}}}{\sqrt{4\pi t}}
   \]
   is positive for \(|x|<1\), \(t>0\).
 
@@ -25,6 +25,15 @@
   0^+\) and \(T\to\infty\).)
 \end{problem}
 \begin{solution}
+  Taking the hint, let us first show that \(u_t=u_{xx}\). By direct
+  verification, we have
+  \begin{align*}
+    \Phi_t(x,t)
+    &=\frac{d}{dt}\left(\frac{\rme^{-\frac{x^2}{4t}}}{\sqrt{4\pi t}}\right)\\
+    &=-\frac{x^2\rme^{-\frac{x^2}{4t}}}{4\sqrt{4\pi}t^{\frac{5}{2}}}
+      -\frac{\rme^{-\frac{x^2}{4t}}}{\sqrt{4\pi}t^{\frac{3}{2}}}\\
+    &=-\frac{(x^2+4t)\rme^{-\frac{x^2}{4t}}}{4\sqrt{4\pi} t^{\frac{5}{2}}}.
+  \end{align*}
 \end{solution}
 \newpage
 
