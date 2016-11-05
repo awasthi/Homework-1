@@ -1,6 +1,6 @@
 \subsection{Homework 7}
 \begin{problem}
-  Solve the Dirichlet problem for the Laplace equation in \(\bbR^2\)
+  Solve the Dirichlet problem for the Laplace equation in \(\bfR^2\)
   \[
     \left\{
       \begin{aligned}
@@ -31,7 +31,7 @@
   \[
     u(r\rme^{\rmi\theta})=%
     b\ln r%
-    +\sum_{n\in\bbZ} (a_nr^n+\overline{a_{-n}}r^{-n})\rme^{\rmi n\theta},
+    +\sum_{n=-\infty}^\infty (a_nr^n+\overline{a_{-n}}r^{-n})\rme^{\rmi n\theta},
   \]
   to the problem \eqref{eq:7:dirichlet-problem-polar}. It is easy to see
   that \(u\) is in fact harmonic:
@@ -157,7 +157,7 @@
     &=0.
   \end{align*}
   This implies that \(|Dv|^2=Dv\cdot Dv=0\) which, since the standard inner
-  product on \(\bbR^n\) is positive-definite, implies that \(Dw\equiv
+  product on \(\bfR^n\) is positive-definite, implies that \(Dw\equiv
   0\). It follows that \(u_1=u_2+\text{const}\), i.e., the solution \(u\)
   to \eqref{eq:7:neumann-problem} is unique up to a constant.
 \end{solution*}
@@ -167,12 +167,12 @@
   \[
     \left\{
       \begin{aligned}
-        u_t-\Delta_x u+cu&=f&&\text{in \(\bbR^n\times(0,\infty)\),}\\
-        u&=g&&\text{on \(\bbR^n\times\{\,t=0\,\}\),}
+        u_t-\Delta_x u+cu&=f&&\text{in \(\bfR^n\times(0,\infty)\),}\\
+        u&=g&&\text{on \(\bfR^n\times\{\,t=0\,\}\),}
       \end{aligned}
     \right.
   \]
-  where \(c\in\bbR\).
+  where \(c\in\bfR\).
 
   \noindent (\emph{Hint:} Rewrite the problem in terms of
   \(v(x,t)\defeq\rme^{ct}u(x,t)\).)
@@ -185,22 +185,22 @@
     \left\{
       \begin{aligned}
         v_t-\Delta_xv&=\rme^{ct}f&&\text{in
-          \(\bbR^n\times(0,\infty),\)}\\
-        v&=g&&\text{on \(\bbR^n\times\{\,t=0\,\}\).}
+          \(\bfR^n\times(0,\infty),\)}\\
+        v&=g&&\text{on \(\bfR^n\times\{\,t=0\,\}\).}
       \end{aligned}
     \right.
   \end{equation}
   By Duhamel's principle, the problem \eqref{eq:7:heat-problem-exp} is
   solved by
   \[
-    v(x,t)=\int_{\bbR^n}\Phi(x-y,t)g(y)\diff y
-    +\int_0^t\int_{\bbR^n}\Phi(x-y,t-s)\rme^{cs}f(y,s)\diff yds,
+    v(x,t)=\int_{\bfR^n}\Phi(x-y,t)g(y)\diff y
+    +\int_0^t\int_{\bfR^n}\Phi(x-y,t-s)\rme^{cs}f(y,s)\diff yds,
   \]
   where \(\Phi\) is the fundamental solution to the heat equation. Thus,
   the formula
   \[
-    u(x,t)=\rme^{-ct}v(x,t)=\rme^{-ct}\int_{\bbR^n}\Phi(x-y,t)g(y)\diff y
-    +\rme^{-ct}\int_0^t\int_{\bbR^n}\Phi(x-y,t-s)\rme^{cs}f(y,s)\diff yds
+    u(x,t)=\rme^{-ct}v(x,t)=\rme^{-ct}\int_{\bfR^n}\Phi(x-y,t)g(y)\diff y
+    +\rme^{-ct}\int_0^t\int_{\bfR^n}\Phi(x-y,t-s)\rme^{cs}f(y,s)\diff yds
   \]
   solves the original problem.
 \end{solution*}

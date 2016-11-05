@@ -23,7 +23,7 @@
 \end{solution*}
 
 \begin{problem}
-  Consider the second order PDE in \(\{\,x>0,y>0\,\}\subset\bbR^2\)
+  Consider the second order PDE in \(\{\,x>0,y>0\,\}\subset\bfR^2\)
   \[
     x^2u_{xx}-y^2u_{yy}=0.
   \]
@@ -41,19 +41,19 @@
 
 \begin{problem}
   Let \(\Phi\) be the fundamental solution of the Laplace equation in
-  \(\bbR^3\) and \(f\in C_0^\infty(\bbR^n)\). Then the convolution
+  \(\bfR^3\) and \(f\in C_0^\infty(\bfR^n)\). Then the convolution
   \[
-    u(x)\defeq(\Phi*f)(x)=\int_{\bbR^n}\Phi(x-y)f(y)\diff y
+    u(x)\defeq(\Phi*f)(x)=\int_{\bfR^n}\Phi(x-y)f(y)\diff y
   \]
-  is a solution of the Poisson equation \(-\Delta u=f\) in \(\bbR^n\). Show
+  is a solution of the Poisson equation \(-\Delta u=f\) in \(\bfR^n\). Show
   that if \(f\) is radial (i.e., \(f(y)=f(|y|)\)) and supported in
   \(B_R=\{\,|x|<R\,\}\), then
   \[
     u(x)=c\Phi(x),
   \]
-  for any \(x\in\bbR^n\setminus B_R\), where
+  for any \(x\in\bfR^n\setminus B_R\), where
   \[
-    c=\int_{\bbR^n}f(y)\diff y.
+    c=\int_{\bfR^n}f(y)\diff y.
   \]
 
   \noindent [\emph{Hint:} Use spherical (polar) coordinates and the mean
@@ -67,12 +67,12 @@
   \[
     \left\{
       \begin{aligned}
-        u_{tt}-\Delta u+\alpha u_t&=0&&&&\text{in \(\bbR^2\times(0,\infty)\),}\\
-        u(x,0)&=g(x),&u_t(x,0)&=h(x)&&\text{for \(x\in\bbR^2\),}
+        u_{tt}-\Delta u+\alpha u_t&=0&&&&\text{in \(\bfR^2\times(0,\infty)\),}\\
+        u(x,0)&=g(x),&u_t(x,0)&=h(x)&&\text{for \(x\in\bfR^2\),}
       \end{aligned}
     \right.
   \]
-  where \(g,h\in C_0^\infty(\bbR^2)\) and \(\alpha\geq 0\) is a constant.
+  where \(g,h\in C_0^\infty(\bfR^2)\) and \(\alpha\geq 0\) is a constant.
   \begin{itemize}[noitemsep]
   \item[(a)] Show that for an appropriate choice of constant \(\lambda\)
     and \(\mu\) the function
@@ -81,7 +81,7 @@
     \]
     solves the \(3\)-dimensional wave equation \(v_{tt}-\Delta v=0\).
   \item[(b)] Use (a) to prove the following domain of dependence result:
-    for any point \((x_0,t_0)\in\bbR^2\times(0,\infty)\) the value
+    for any point \((x_0,t_0)\in\bfR^2\times(0,\infty)\) the value
     \(u(x_0,t_0)\) is uniquely determined by values of \(g\) and \(h\) in
     \(\overline{B_{t_0}(x_0)}\defeq\{\,|x-x_0|\leq t_0\,\}\). (You may use
     the corresponding result for the wave equation without proof.)
@@ -92,16 +92,16 @@
 
 \begin{problem}
   Let \(u(x,t)\) be a bounded solution of the heat equation \(u_t=u_{xx}\)
-  in \(\bbR\times(0,\infty)\) with the initial condition
+  in \(\bfR\times(0,\infty)\) with the initial condition
   \[
     u(x,0)=u_0(x)
   \]
-  for \(x\in\bbR\), where \(u_0\in C^\infty\) is \(2\pi\)-periodic, i.e.,
+  for \(x\in\bfR\), where \(u_0\in C^\infty\) is \(2\pi\)-periodic, i.e.,
   \(u_0(x+2\pi)=u_0(x)\). Show that
   \[
     \lim_{t\to\infty} u(x,t)=a_0,
   \]
-  uniformly in \(x\in\bbR\), where
+  uniformly in \(x\in\bfR\), where
   \[
     a_0\defeq\frac{1}{2\pi}\int_0^{2\pi} u_0(x)\diff x.
   \]
