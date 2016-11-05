@@ -25,25 +25,15 @@
   0^+\) and \(T\to\infty\).)
 \end{problem}
 \begin{solution}
-  Taking the hint, let us first show that \(u_t=u_{xx}\). By direct
-  verification, we have
+  Taking the hint, let us verify that \(u_t=u_{xx}\), for \(t>0\). By
+  direct computation, we have
   \begin{align*}
     \Phi_t(x,t)
     &=\frac{\partial}{\partial t}
       \left(\frac{\rme^{-\frac{x^2}{4t}}}{\sqrt{4\pi t}}\right)\\
     &=-\frac{x^2\rme^{-\frac{x^2}{4t}}}{4\sqrt{4\pi}t^{\frac{5}{2}}}
-      -\frac{\rme^{-\frac{x^2}{4t}}}{\sqrt{4\pi}t^{\frac{3}{2}}}\\
-    &=-\frac{(x^2+4t)\rme^{-\frac{x^2}{4t}}}{4\sqrt{4\pi} t^{\frac{5}{2}}},\\
-    \Phi_x(x,t)
-    &=\frac{\partial}{\partial x}
-      \left(\frac{\rme^{-\frac{x^2}{4t}}}{\sqrt{4\pi t}}\right)\\
-    &=-\frac{x^2\rme^{-\frac{x^2}{4t}}}{4\sqrt{4\pi}t^{\frac{3}{2}}},\\
-    \Phi_{xx}(x,t)
-    &=\frac{\partial}{\partial x}\left(
-      -\frac{x^2\rme^{-\frac{x^2}{4t}}}{4\sqrt{4\pi}t^{\frac{3}{2}}}\right)\\
-    &=\frac{x^3\rme^{-\frac{x^2}{4t}}}{8\sqrt{4\pi}t^{\frac{5}{2}}}
-      -\frac{x\rme^{-\frac{x^2}{4t}}}{2\sqrt{4\pi}t^{\frac{3}{2}}}\\
-    &=\frac{(x^3-4xt)\rme^{-\frac{x^2}{4t}}}{8\sqrt{4\pi}t^{\frac{5}{2}}}
+      -\frac{\rme^{-\frac{x^2}{4t}}}{2\sqrt{4\pi}t^{\frac{3}{2}}}
+    \\
   \end{align*}
 \end{solution}
 \newpage
