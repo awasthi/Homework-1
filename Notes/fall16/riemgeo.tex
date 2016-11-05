@@ -25,6 +25,80 @@ at \(p\); \(\bfx_\alpha(U_\alpha)\) is then called a \emph{coordinate
 satisfying (1) and (2) is called a \emph{differentiable structure} on
 \(M\).
 
+\begin{remark}
+  A differentiable structure on a set \(M\) induces a natural topology on
+  \(M\). It suffices to define \(A\subset M\) to be an \emph{open set} in
+  \(M\) if and only if \(\bfx_\alpha^{-1}(A\cap\bfx_\alpha(U_\alpha))\) is
+  an open set in \(\bbR^n\) for all \(\alpha\). Observe that the topology
+  is defined in such a way that the sets \(\bfx_\alpha(U_\alpha)\) are open
+  and that the mappings \(\bfx_\alpha\) are continuous.
+\end{remark}
+
+\begin{example}
+  The \emph{real projective space \(\varbbRP^n\)}. Let us denote by
+  \(\varbbRP\) the set of straight lines of \(\bbR^{n+1}\) which pass
+  through the origin \(\mathbf{0}=(0,\dotsc,0)\in\bbR^{n+1}\); that is,
+  \(\varbbRP^n\) is the set of ``directions'' of \(\bbR^{n+1}\).
+
+  Let us introduce a differentiable structure on \(\varbbRP^n\). For this,
+  let \((x_1,\dotsc,x_{n+1})\in\bbR^{n+1}\) and observe, to begin with,
+  that \(\varbbRP^n\) is the quotient space of
+  \(\bbR^{n+1}\setminus\{\mathbf{0}\}\) by the equivalence relation:
+  \[
+    (x_1,\dotsc,x_{n+1})\sim\lambda(x_1,\dotsc,x_{n+1}), \qquad
+    (\lambda\neq 0).
+  \]
+  The points of \(\varbbRP^n\) will be denoted by
+  \([x_1,\dotsc,x_{n+1}]\). Observe that, if \(x_i\neq 0\),
+  \[
+    [x_1,\dotsc,x_{n+1}]=
+    \left[\frac{x_1}{x_i},\dotsc,\frac{x_{i-1}}{x_i},1,\frac{x_{i+1}}{x_i},\dotsc,\frac{x_{n+1}}{x_i}\right].
+  \]
+  Define subsets \(V_1,\dotsc,V_{n+1}\), of \(\varbbRP^n\), by:
+  \[
+    V_i=\bigl\{\,[x_1,\dotsc,x_{n+1}]:x_i\neq 0\,\bigr\},\qquad i=1,\dotsc,n+1.
+  \]
+
+  Geometrically, \(V_i\) is the set of straight lines in \(\bbR^{n+1}\)
+  which pass through the origin and do not belong to the hyperplane
+  \(x_i=0\). We are now going to show that we can take the \(V_i\) as
+  coordinate neighborhoods, where the coordinates on \(V_i\) are
+  \[
+    y_1=\frac{x_1}{x_i},\dotsc,y_{i-1}=\frac{x_{i-1}}{x_i},
+    y_i=\frac{x_{i+1}}{x_i},\dotsc,y_n=\frac{x_{n+1}}{x_i}.
+  \]
+  For this, we will define mappings \(\bfx_i\colon\bbR^n\to V_i\) by
+  \[
+    \bfx_i(y_1,\dotsc,y_n)=[y_1,\dotsc,y_{i-1},1,y_{i+1},\dotsc,y_n]
+    ,\qquad (y_1,\dotsc,y_n)\in\bbR^n,
+  \]
+  and will show that the family \(\{(\bbR^n,\bfx_i)\}\) is a differentiable
+  structure on \(\varbbRP^n\).
+
+  Indeed, any mapping \(\bfx_i\) is clearly bijective while
+  \(\bigcap\bfx_i(\bbR^n)=\varbbRP^n\). It remains to show that
+  \(\bfx_i^{-1}(V_i\cap V_j)\) is an open set in \(\bbR^n\) and that
+  \(\bfx_j^{-1}\circ\bfx_i\), \(j=1,\dotsc,n+1\), is differentiable
+  there. Now, if \(i>j\), the points in \(\bfx_i^{-1}(V_i\cap V_j)\) are of
+  the form:
+  \[
+    \bigl\{\,(y_1,\dotsc,y_n)\in\bbR^n:y_j\neq 0\,\bigr\}.
+  \]
+  Therefore \(\bfx_i^{-1}(V_i\cap V_j)\) is an open set in \(\bbR^n\), and
+  supposing that \(i>j\) (the case \(i<j\) is similar),
+  \begin{align*}
+    \bfx_j^{-1}\circ\bfx_i(y_1,\dotsc,y_n)
+    &=\bfx_j^{-1}[y_1,\dotsc,y_{i-1},1,y_i,\dotsc,y_n]\\
+    &=\bfx_j^{-1}\left[\frac{y_1}{y_j},\dotsc,\frac{y_{j-1}}{y_j},1,
+      \frac{y_{j+1}}{y_j},\dotsc,\frac{y_{i-1}}{y_j},\frac{1}{y_j},
+      \frac{y_i}{y_j},\dotsc,\frac{y_n}{y_j}\right]\\
+    &=\left(\frac{y_1}{y_j},\dotsc,\frac{y_{j-1}}{y_j},\frac{y_{j+1}}{y_j},
+      \dotsc,\frac{y_{i-1}}{y_j},\frac{1}{y_j},\frac{y_i}{y_j},\dotsc,
+      \frac{y_n}{y_j}\right),
+  \end{align*}
+  which is clearly differentiable.
+\end{example}
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../Fall16-Notes"
