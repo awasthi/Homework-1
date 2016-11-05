@@ -38,7 +38,7 @@
   \begin{align*}
     \Delta u%
     &=u_{rr}+\tfrac{1}{r}u_r+\tfrac{1}{r^2}u_{\theta\theta}\\
-    &=-br^{-2}+br^{-2}+\sum_{n\in\bbZ}
+    &=-br^{-2}+br^{-2}+\sum_{n=-\infty}^\infty
       \left[\bigl(n(n-1)+n-n^2\bigr) a_nr^n\right.\\
     &\phantom{{}={}-\frac{b}{r^2}+\frac{b}{r^2}+}
       \left.+\bigl(n(n-1)+n-n^2\bigr)\overline{a_{-n}}r^{-n}\right]\rme^{\rmi
@@ -47,16 +47,16 @@
   \end{align*}
 
   Next we use the boundary data to compute the coefficients \(a_n\),
-  \(n\in\bbZ\). Using the data \eqref{eq:7:dirichlet-problem-polar}, on
+  \(n\in\bfZ\). Using the data \eqref{eq:7:dirichlet-problem-polar}, on
   \(r=1\) we have
   \[
     \tfrac{1}{2}(\rme^{\rmi\theta}+\rme^{-\rmi\theta})%
-    =\sum_{n\in\bbZ}(a_n+\overline{a_{-n}})\rme^{\rmi n\theta},
+    =\sum_{n=-\infty}^\infty (a_n+\overline{a_{-n}})\rme^{\rmi n\theta},
   \]
   and on \(r=2\)
   \[
     1+\tfrac{1}{i}(\rme^{\rmi 2\theta}-\rme^{-\rmi 2\theta}) = b\ln
-    2+\sum_{n\in\bbZ}(2^na_n+2^{-n}a_{-n})\rme^{\rmi n\theta}.
+    2+\sum_{n=-\infty}^\infty (2^na_n+2^{-n}a_{-n})\rme^{\rmi n\theta}.
   \]
   These equations immediately tell us that \(b=1/{\ln 2}\). Moreover, the
   following relations on the coefficients hold
