@@ -85,6 +85,35 @@
   theorem for the initial value problem?
 \end{problem}
 \begin{solution}
+  Let \(u\) be as above. Then
+  \begin{align*}
+    u_t(x,t)
+    &=\frac{\partial}{\partial t}
+      \left(
+      \sum_{k=0}^\infty\frac{g^{(k)}(t)}{(2k)!}x^{2k}
+      \right)\\
+    &=\sum_{k=0}^\infty \frac{g^{(k+1)}(t)}{(2k)!}x^{2k}\\
+    &=\sum_{k=1}^\infty \frac{g^{(k)}(t)}{(2k-2)!}x^{2k-2},
+  \end{align*}
+  and
+  \begin{align*}
+    u_x(x,t)
+    &=\frac{\partial}{\partial x}
+      \left(
+      \sum_{k=0}^\infty\frac{g^{(k)}(t)}{(2k)!}x^{2k}
+      \right)
+    &u_{xx}(x,t)
+    &=\frac{\partial}{\partial x}
+      \left(
+      \sum_{k=0}^\infty\frac{g^{(k)}(t)}{(2k-1)!}x^{2k-1}
+      \right)\\
+    &=\sum_{k=0}^\infty\frac{g^{(k)}(t)}{(2k)!} 2kx^{2k-1}
+    &&=\sum_{k=1}^\infty \frac{g^{(k)}(t)}{(2k-1)!}(2k-1)x^{2k-2}
+       +\tfrac{\partial}{\partial x}g^{(0)}(t)\\
+    &=\sum_{k=1}^\infty\frac{g^{(k)}(t)}{(2k-1)!}x^{2k-1},
+    &&=\sum_{k=1}^\infty\frac{g^{(k)}(t)}{(2k-2)!}x^{2k-2}.
+  \end{align*}
+  Thus, \(u_t-\Delta u=0\); i.e., \(u\) solves the heat equation.
 \end{solution}
 \newpage
 
