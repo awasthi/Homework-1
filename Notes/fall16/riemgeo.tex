@@ -97,7 +97,36 @@ satisfying (1) and (2) is called a \emph{differentiable structure} on
       \frac{y_n}{y_j}\right),
   \end{align*}
   which is clearly differentiable.
+
+  In summary, the space of directions of \(\bbR^{n+1}\) (real projective
+  space \(\varbbRP^n\)) can ve covered by \(n+1\) coordinate neighborhoods
+  \(V_i\), where the \(V_i\) are made up of those directions of
+  \(\varbbRP^{n+1}\) that are not in the hyperplane \(x_i=0\); in addition,
+  in each \(V_i\) we have coordinates
+  \[
+    \left(\frac{x_1}{x_i},\dotsc,\frac{x_{i-1}}{x_i},
+    \frac{x_{i+1}}{x_i},\dotsc,\frac{x_{n+1}}{x_i}\right),
+  \]
+  where \((x_1,\dotsc,x_{n+1})\) are coordinates of \(\bbR^{n+1}\). It is
+  customary, in the classical terminology to call the coordinates of
+  \(V_i\) ``inhomogeneous coordinates'' corresponding to the ``homogeneous
+  coordinates'' \((x_1,\dotsc,x_{n+1})\in\bbR^{n+1}\).
 \end{example}
+
+\begin{definition}
+  Let \(M_1^n\) and \(M_2^m\) be differentiable manifolds. A mapping
+  \(\varphi\colon M_1\to M_2\) is \emph{differentibale at \(p\in M_1\)} if
+  given a parametrization \(\bfy\colon V\subset\bbR^m\to M_2\) at
+  \(\varphi(p)\) there exists a paremtrization \(\bfx\colon
+  U\subset\bbR^n\to M_1\) at \(p\) such that
+  \(\varphi(\bfx(U))\subset\bfy(V)\) and the mapping
+  \[
+    \bfy^{-1}\circ\varphi\bfx\colon U\subset\bbR^n\To\bbR^m
+  \]
+  is differentiable at \(\bfx^{-1}(p)\). \(\varphi\) is differentiable on
+  an open set of \(M_1\) if it is differentiable at all of the points of
+  this open set.
+\end{definition}
 
 %%% Local Variables:
 %%% mode: latex
