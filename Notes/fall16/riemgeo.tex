@@ -2,10 +2,28 @@
 Notes compiled from Do Carmo's \emph{Riemannian Geometry} book.
 \section{Differentiable manifolds}
 \begin{definition}
-  A \emph{differentiable manifold} of dimension \(n\) is a set \(M\) and  a
-  family of injective mappings \(\bfx_\alpha\colon U_\alpha\subset\bbR^n\to
-  M\)
+  A \emph{differentiable manifold} of dimension \(n\) is a set \(M\) and a
+  family of injective mappings
+  \(\bfx_\alpha\colon U_\alpha\subset\bbR^n\to M\) of open sets
+  \(U_\alpha\) of \(\bbR^n\) into \(M\) such that:
+  \begin{enumerate}[label=(\arabic*),noitemsep]
+  \item \(\bigcup_\alpha\bfx_\alpha(U_\alpha)=M\);
+  \item for any pair \(\alpha\), \(\beta\), with
+    \(\bfx_\alpha(U_\alpha)\cap\bfx_\beta(U_\beta)=W\neq\emptyset\), the
+    sets \(\bfx_\alpha^{-1}(W)\) and \(\bfx_\beta^{-1}(W)\) are open sets
+    in \(\bbR^n\) and the mappings \(\bfx_\beta^{-1}\circ\bfx_\alpha\) are
+    differentiable;
+  \item the family \(\{(U_\alpha,\bfx_\alpha)\}\) is maximal relative to
+    the conditions (1) and (2).
+  \end{enumerate}
 \end{definition}
+
+The pair \((U_\alpha,\bfx_\alpha)\) with \(p\in\bfx_\alpha(U_\alpha)\) is
+called a \emph{parametrization} (or \emph{system of coordinates}) of \(M\)
+at \(p\); \(\bfx_\alpha(U_\alpha)\) is then called a \emph{coordinate
+  neighborhood} at \(p\). A family \(\{(U_\alpha,\bfx_\alpha)\}\)
+satisfying (1) and (2) is called a \emph{differentiable structure} on
+\(M\).
 
 %%% Local Variables:
 %%% mode: latex
