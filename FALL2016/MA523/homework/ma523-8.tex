@@ -53,8 +53,8 @@
 
   Next we show that \(u=0\) on \(\{\,|x|=1\,\}\times\{\,t\geq 0\,\}\) and
   \(u=\delta_0\) on \(\{\,|x|=1\,\}\times\{\,t=0\,\}\). To show \(u=0\) fix
-  a \(t\geq 0\) and after relabeling, we may assume that \(x=1\) which
-  gives us
+  a \(t\geq 0\) and, after relabeling if necessary, assume that \(x=1\)
+  which gives us
   \begin{align*}
     u(1,t)
     &=\sum_{k=-\infty}^\infty(-1)^k\frac{\rme^{-\frac{k^2}{4t}}}{\sqrt{4\pi
@@ -95,7 +95,7 @@
       \sum_{k=0}^\infty\frac{g^{(k)}(t)}{(2k)!}x^{2k}
       \right)\\
     &=\sum_{k=0}^\infty \frac{g^{(k+1)}(t)}{(2k)!}x^{2k}\\
-    &=\sum_{k=1}^\infty \frac{g^{(k)}(t)}{(2k-2)!}x^{2k-2},
+    &=\sum_{k=2}^\infty \frac{g^{(k)}(t)}{(2k-2)!}x^{2k-2},
   \end{align*}
   and
   \begin{align*}
@@ -113,7 +113,7 @@
     &&=\sum_{k=1}^\infty \frac{g^{(k)}(t)}{(2k-1)!}(2k-1)x^{2k-2}
        +\tfrac{\partial}{\partial x}g^{(0)}(t)\\
     &=\sum_{k=1}^\infty\frac{g^{(k)}(t)}{(2k-1)!}x^{2k-1},
-    &&=\sum_{k=1}^\infty\frac{g^{(k)}(t)}{(2k-2)!}x^{2k-2}.
+    &&=\sum_{k=2}^\infty\frac{g^{(k)}(t)}{(2k-2)!}x^{2k-2}.
   \end{align*}
   Thus, \(u_t-\Delta u=0\); i.e., \(u\) solves the heat equation.
 \end{solution}
@@ -129,6 +129,22 @@
   equation.)
 \end{problem}
 \begin{solution}
+  Write
+  \[
+    \cos(ax)=\tfrac{1}{2}\left(\rme^{\rmi ax}+\rme^{-\rmi ax}\right).
+  \]
+  Then,
+  \[
+    \cos(ax)\rme^{-x^2}=\tfrac{1}{2}
+    \bigl(\rme^{\rmi ax-x^2}+\rme^{-\rmi ax-x^2}\bigr)
+  \]
+  so
+  \begin{align*}
+    \int_{-\infty}^\infty \cos(ax)\rme^{-x^2}\diff x
+    &=\frac{1}{2}\int_{-\infty}^\infty
+      \bigl(\rme^{\rmi ax-x^2}+\rme^{-\rmi ax-x^2}\bigr)dx\\
+    &=
+  \end{align*}
 \end{solution}
 
 %%% Local Variables:
