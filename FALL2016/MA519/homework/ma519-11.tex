@@ -20,9 +20,10 @@
     \To 0%
     \text{ as \(n\to\infty\).}
   \end{equation}
-  Set \(g(x)\defeq x-c\). By the Jacobian formula
+  Let \(\varphi(x)\defeq x-c\) and let \(g_n\) denote the PDF of \(X_n-c\). By
+  the Jacobian formula
   \[
-    f_{X_n-c}(x)=\frac{f_n(g^{-1}(x))}{g'(g^{-1}(x))}=f_n(x+c)
+    g_n(x)=\frac{f_n(\varphi^{-1}(x))}{\varphi'(\varphi^{-1}(x))}=f_n(x+c)
   \]
   where by \(f_n\) we mean the PDF of \(X_n\). Therefore what
   \eqref{eq:11:exp-conv-alpha} is saying is that
@@ -30,6 +31,9 @@
     \left(\int_{-\infty}^\infty xf_n(x+c)\diff x\right)^\alpha
     \To 0\text{ as \(n\to\infty\).}
   \]
+  By Hölder's inequality for \(\beta\) and \(\gamma\) positive real numbers
+  such that \(\beta^{-1}+\gamma^{-1}=\alpha\)
+
 
   For part (c), suppose \(\{a_n\}\) and \(\{b_n\}\) are sequences such that
   \(a_n=\rmo_p(1)\) and \(b_n=\rmO_p(1)\), then for the sequence
