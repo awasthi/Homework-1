@@ -21,9 +21,13 @@
   \]
   Then
 
-  For part (c), suppose \(\{a_n:n\in\bbN\}\) and \(\{b_n:n\in\bbN\}\) are
-  sequences such that \(a_n=\rmo_p(1)\) and \(b_n=\rmO_p(1)\), then for the
-  sequence
+  For part (c), suppose \(\{a_n\}\) and \(\{b_n\}\) are sequences such that
+  \(a_n=\rmo_p(1)\) and \(b_n=\rmO_p(1)\), then for the sequence
+  \(\{c_n\defeq a_n+b_n\}\) the most we can expect is
+  \(c_n=\rmO_p(1)\). Indeed, we know that if a sequence is \(\rmo_p(1)\)
+  then it is also \(\rmO_p(1)\) therefore there exists \(K_1\) and \(K_2\)
+  such that \(|a_n|\leq K_1\), \(|b_n|\leq K_2\) for all \(n\geq
+  1\). Therefore, \(|c_n|\leq K_1+K_2\) for all \(n\geq 1\).
 \end{solution}
 \newpage
 
