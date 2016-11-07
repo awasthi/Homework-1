@@ -335,13 +335,27 @@
 \renewcommand\blacktriangleleft{\ensuremath{\scriptstyle\oldbtleft}}
 
 %% Arrows
+\usepackage{ifthen}
+\usepackage{xargs}
+
+\newcommandx{\yaHelper}[2][1=\empty]{%
+\ifthenelse{\equal{#1}{\empty}}%
+  { \ensuremath{ \scriptstyle{ #2 } } } % no offset
+  { \raisebox{ #1 }[0pt][0pt]{ \ensuremath{ \scriptstyle{ #2 } } } }  % with offset
+}
+
+\newcommandx{\yrightarrow}[4][1=\empty, 2=\empty, 4=\empty, usedefault=@]{%
+  \ifthenelse{\equal{#2}{\empty}}
+  { \xrightarrow{ \protect{ \yaHelper[ #4 ]{ #3 } } } } % there's no text below
+  { \xrightarrow[ \protect{ \yaHelper[ #2 ]{ #1 } } ]{ \protect{ \yaHelper[ #4 ]{ #3 } } } } % there's text below
+}
+
 \newcommand\too{\longrightarrow}
 \newcommand\To{\longrightarrow}
 \newcommand\from{\leftarrow}
 \newcommand\From{\longleftarrow}
-\newcommand{\myrightarrow}[1]{\mathrel{\raisebox{-2pt}{\(\xrightarrow{#1}\)}}}
-\newcommand\xright[1]{\myrightarrow{\,\,#1\,\,}}
-\newcommand\xleft[1]{\xleftarrow{\,\,#1\,\,}}
+\newcommand\yright[1]{\yrightarrow{#1}[-2pt]}
+\newcommand\yleft[1]{\yleftarrow{#1}[-2pt]}
 \newcommand\mapstoo{\longmapsto}
 \newcommand\mapsTo{\longmapsto}
 \newcommand\injects{\hookrightarrow}
