@@ -10,16 +10,26 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  For part (a), we suspect the statement \textsl{``\(X_n\) converges in
-    probability to \(c\)''} is false, but let us first try to prove this
-  and see where the proof might go wrong. Let \(0<\alpha<1\) and suppose
-  \[
-    E|X_n-c|^\alpha=%
-    \left(\int_{-\infty}^\infty xf_n(x+c)\diff x\right)^\alpha%
+  First let us tackle part (a) of this problem. We suspect that the
+  statement \textsl{``\(X_n\) converges in probability to \(c\)''} is false
+  but first let us attempt a proof of this to see where the problem in the
+  implication might lie. Fix \(0<\alpha<1\) and suppose
+  \begin{equation}
+    \label{eq:11:exp-conv-alpha}
+    E|X_n-c|^\alpha
     \To 0%
     \text{ as \(n\to\infty\).}
+  \end{equation}
+  Set \(g(x)\defeq x-c\). By the Jacobian formula
+  \[
+    f_{X_n-c}(x)=\frac{f_n(g^{-1}(x))}{g'(g^{-1}(x))}=f_n(x+c)
   \]
-  Then
+  where by \(f_n\) we mean the PDF of \(X_n\). Therefore what
+  \eqref{eq:11:exp-conv-alpha} is saying is that
+  \[
+    \left(\int_{-\infty}^\infty xf_n(x+c)\diff x\right)^\alpha
+    \To 0\text{ as \(n\to\infty\).}
+  \]
 
   For part (c), suppose \(\{a_n\}\) and \(\{b_n\}\) are sequences such that
   \(a_n=\rmo_p(1)\) and \(b_n=\rmO_p(1)\), then for the sequence
