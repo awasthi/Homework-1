@@ -10,12 +10,16 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  For part (a), we suspect the statement ``\(X_n\) converges in probability
-  to \(c\)'' is false, but let us first try to prove this and see where the
-  proof might go wrong. Suppose
+  For part (a), we suspect the statement \textsl{``\(X_n\) converges in
+    probability to \(c\)''} is false, but let us first try to prove this
+  and see where the proof might go wrong. Let \(0<\alpha<1\) and suppose
   \[
-    E|X_n-c|=\int_{-\infty}^\infty \frac{f(x)}{}\diff x
+    E|X_n-c|^\alpha=%
+    \left(\int_{-\infty}^\infty xf_n(x+c)\diff x\right)^\alpha%
+    \To 0%
+    \text{ as \(n\to\infty\).}
   \]
+  Then
 \end{solution}
 \newpage
 
