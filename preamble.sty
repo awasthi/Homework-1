@@ -339,7 +339,8 @@
 \newcommand\To{\longrightarrow}
 \newcommand\from{\leftarrow}
 \newcommand\From{\longleftarrow}
-\newcommand\xright[1]{\xrightarrow{\,\,#1\,\,}}
+\newcommand{\myrightarrow}[1]{\mathrel{\raisebox{-2pt}{\(\xrightarrow{#1}\)}}}
+\newcommand\xright[1]{\myrightarrow{\,\,#1\,\,}}
 \newcommand\xleft[1]{\xleftarrow{\,\,#1\,\,}}
 \newcommand\mapstoo{\longmapsto}
 \newcommand\mapsTo{\longmapsto}
