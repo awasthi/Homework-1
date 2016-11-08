@@ -12,27 +12,30 @@
 \begin{solution}
   First let us tackle part (a) of this problem. We suspect that the
   statement \textsl{``\(X_n\) converges in probability to \(c\)''} is false
-  but first let us attempt a proof of this to see where the problem in the
-  implication might lie. Fix \(0<\alpha<1\) and suppose
+  but first let us attempt to prove this to see where the problem in the
+  implication may lie. Fix \(0<\alpha<1\) and suppose
   \begin{equation}
     \label{eq:11:exp-conv-alpha}
-    E|X_n-c|^\alpha
+    E(|X_n-c|^\alpha)
     \To 0%
     \text{ as \(n\to\infty\).}
   \end{equation}
-  Let \(\varphi(x)\defeq x-c\) and let \(g_n\) denote the PDF of \(X_n-c\). By
-  the Jacobian formula
+  Set \(\varphi(x)\defeq x-c\) and let \(g_n\) denote the PDF of
+  \(X_n-c\). By the Jacobian formula
   \[
     g_n(x)=\frac{f_n(\varphi^{-1}(x))}{\varphi'(\varphi^{-1}(x))}=f_n(x+c)
   \]
-  where by \(f_n\) we mean the PDF of \(X_n\). Therefore what
-  \eqref{eq:11:exp-conv-alpha} is saying is that
+  where we denote by \(f_n\) the PDF of \(X_n\). Then equation
+  \eqref{eq:11:exp-conv-alpha} now reads
   \[
     \left(\int_{-\infty}^\infty xf_n(x+c)\diff x\right)^\alpha
     \To 0\text{ as \(n\to\infty\).}
   \]
-  By Hölder's inequality for \(\beta\) and \(\gamma\) positive real numbers
-  such that \(\beta^{-1}+\gamma^{-1}=\alpha\)
+  Fix \(\varepsilon>0\). Now observe, by Markov's inequality, that
+  \begin{align*}
+    P(|X_n-c|>\varepsilon)
+    &\leq \frac{E(|X_n-c|^\alpha)}{\varepsilon^\alpha}
+  \end{align*}
 
   For part (c), suppose \(\{a_n\}\) and \(\{b_n\}\) are sequences such that
   \(a_n=\rmo_p(1)\) and \(b_n=\rmO_p(1)\), then for the sequence
