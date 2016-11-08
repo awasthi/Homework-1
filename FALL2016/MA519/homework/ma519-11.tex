@@ -11,7 +11,7 @@
 \end{problem}
 \begin{solution}
   First let us tackle part (a) of this problem. We suspect that the
-  statement \textsl{``\(X_n\) converges in probability to \(c\)''} is false
+  statement \emph{``\(X_n\) converges in probability to \(c\)''} is false
   but first let us attempt to prove this to see where the problem in the
   implication may lie. Fix \(0<\alpha<1\) and suppose
   \begin{equation}
@@ -31,7 +31,7 @@
     \left(\int_{-\infty}^\infty xf_n(x+c)\diff x\right)^\alpha
     \To 0\text{ as \(n\to\infty\).}
   \]
-  Fix \(\varepsilon>0\). Now observe, by Markov's inequality, that
+  Fix \(\varepsilon>0\). By Markov's inequality, we have
   \begin{align*}
     P(|X_n-c|>\varepsilon)
     &\leq \frac{E(|X_n-c|^\alpha)}{\varepsilon^\alpha}
