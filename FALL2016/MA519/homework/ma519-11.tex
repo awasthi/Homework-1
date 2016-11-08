@@ -37,6 +37,25 @@
     &\leq \frac{E(|X_n-c|^\alpha)}{\varepsilon^\alpha}
   \end{align*}
 
+  Consider the following rather contrived counterexample. Let
+  \(X\sim U[0,\rme^{f(\alpha,n)}]\) where
+  \[
+    f(\alpha,n)\defeq
+    \frac{\ln\bigl(n(\frac{\alpha+1}{n+1})-\alpha\bigr)}{\alpha+1}.
+  \]
+  A short calculation shows that
+  \[
+    E(|X_n-0|^\alpha)=\frac{1}{n}
+  \]
+  so \(E(|X_n-0|^\alpha)\to 0\) as \(n\to\infty\). But does \(X_n\to 0\) in
+  probability? The answer to that appears to be yes. Indeed, by Markov's
+  inequality we have
+  \begin{align*}
+    P(|X_n-0|\geq\varepsilon)
+    &=P(|X_n-0|^\alpha>\varepsilon^\alpha)\\
+    &\leq\frac{E(|X-0|^\alpha)}
+  \end{align*}
+
   For part (c), suppose \(\{a_n\}\) and \(\{b_n\}\) are sequences such that
   \(a_n=\rmo_p(1)\) and \(b_n=\rmO_p(1)\), then for the sequence
   \(\{c_n\defeq a_n+b_n\}\) the most we can expect is
