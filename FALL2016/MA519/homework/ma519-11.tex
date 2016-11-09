@@ -37,18 +37,18 @@
     &=P(-x\leq a_n(X_n-\theta)\leq x)\\
     &=P\left(-\frac{x}{a_n}+\theta\leq X_n\leq\frac{x}{a_n}+\theta\right)\\
     &=\int_{-x/a_n+\theta}^{x/a_n+\theta} f(y)\diff y\\
-    &=f\left(\frac{x}{a_n}+\theta\right)
-      -f\left(-\frac{x}{a_n}+\theta\right),
+    &=f(x/a_n+\theta)
+      -f(-x/a_n+\theta),
   \end{align*}
   therefore its PDF is
   \begin{align*}
-    \tfrac{d}{dx}P(|a_n(X_n-\theta)|\leq x)
+    \frac{dP}{dx}(|a_n(X_n-\theta)|\leq x)
     &=\frac{d}{dx}
       \left[%
       f\left(\frac{x}{a_n}+\theta\right)%
       -f\left(-\frac{x}{a_n}+\theta\right)%
       \right]\\
-    &=
+    &=\frac{1}{a_n}\bigl(f(x/a_n+\theta)+f(-x/a_n+\theta)\bigr)
   \end{align*}
 
 
@@ -59,6 +59,24 @@
   then it is also \(\rmO_p(1)\) therefore there exists \(K_1\) and \(K_2\)
   such that \(|a_n|\leq K_1\), \(|b_n|\leq K_2\) for all \(n\geq
   1\). Therefore, \(|c_n|\leq K_1+K_2\) for all \(n\geq 1\).
+
+  For part (d), suppose \(\{a_n\}\) and \(\{b_n\}\) are sequences such that
+  \(a_n=\rmo_p(1)\) and \(b_n=\rmO_p(1)\), then for the sequence
+  \(\{c_n\defeq a_nb_n\}\) the most we can expect is
+  \(c_n=\rmO_p(1)\). Again, since \(\{a_n\}\) is \(\rmo_p(1)\) it is
+  \(\rmO_p(1)\) so there exists a constant \(K_1\geq 0\) such that
+  \(|a_n|\leq K_1\) for all \(n\geq 1\) and similarly for \(\{b_n\}\) there
+  exists a constant \(K_2\) such that \(|b_n|\leq K_2\) for all
+  \(n\geq 1\). Therefore, \(|c_n|\leq K_1K_2\) for all \(n\geq 1\) so
+  \(c_n=\rmO_p(1)\).
+
+  For part (e), suppose \(\{a_n\}\), \(\{b_n\}\), and \(\{c_n\}\) are
+  sequences such that \(a_n,b_n=\rmo_p(1)\) and \(c_n=\rmO_p(1)\), then for
+  the sequence \(\{d_n\defeq a_n+b_nc_n\}\) the most we can expect is
+  \(d_n=\rmO_p(1)\) since there exists contstants \(K_1\), \(K_2\), and
+  \(K_3\) such that \(|a_n|\leq K_1\), \(|b_n|\leq K_2\), and
+  \(|c_n|\leq K_3\) for all \(n\geq 1\). This implies that
+  \(|d_n|\leq K_1+K_2K_3\) for all \(n\geq 1\). Thus, \(d_n=\rmO_p(1)\).
 \end{solution}
 \newpage
 
