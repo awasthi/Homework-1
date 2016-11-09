@@ -22,12 +22,19 @@
   \(P(|X_n-c|>\varepsilon)\) as \(n\to\infty\); i.e., \(X_n\) converges to
   \(c\) in probability.
 
-  For part (b), suppose \(a_n(X_n-\theta)\yright{\calL}N(0,1)\). Under the
-  hypotheses of the central limit theorem (i.e., \(Y_n\) are i.i.d.\@
-  random variables with \(E(Y_n)=\theta\), \(\Var(Y_n)=1\), and setting
-  \(X_n\defeq\frac{1}{n}\sum_{k=1}^n Y_n\) and \(a_n\defeq\sqrt{n}\)) we
-  can say that \(a_n(X_n-\theta)\yright{\calL}N(0,1)\) implies
-  \(X_n\to\theta\). More generally, we would need \(\)
+  For part (b), suppose \(a_n(X_n-\theta)\yright{\calL}N(0,1)\). In words
+  \(X_n\yright{\calP}\theta\) means that for every \(\varepsilon>0\) and
+  every \(\eta>0\) there exists a positive integer \(N\) depending on
+  \(\varepsilon\) and \(\eta\) such that \(n\geq N\) implies
+  \[
+    P(|X_n-\theta|\geq\varepsilon)<\eta.
+  \]
+  We claim that it is enough for \(a_n\) to grow slower than
+  \(\rmo(x^{1/2})\).
+  \begin{solution*}[Proof of claim]
+    \renewcommand\qedsymbol{$\scriptstyle\clubsuit$}
+    Consider the following.
+  \end{solution*}
 
   For part (c), suppose \(\{a_n\}\) and \(\{b_n\}\) are sequences such that
   \(a_n=\rmo_p(1)\) and \(b_n=\rmO_p(1)\), then for the sequence
