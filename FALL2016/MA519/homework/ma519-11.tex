@@ -30,6 +30,27 @@
   \[
     P(|X_n-\theta|\geq\varepsilon)<\eta.
   \]
+  First, let us find the PDF of the sequence \(a_n(X_n-\theta)\). Let \(f_n\)
+  denote the PDF of \(X_n\), then the CDF of \(a_n(X_n+\theta)\) is
+  \begin{align*}
+    P(|a_n(X_n-\theta)|\leq x)
+    &=P(-x\leq a_n(X_n-\theta)\leq x)\\
+    &=P\left(-\frac{x}{a_n}+\theta\leq X_n\leq\frac{x}{a_n}+\theta\right)\\
+    &=\int_{-x/a_n+\theta}^{x/a_n+\theta} f(y)\diff y\\
+    &=f\left(\frac{x}{a_n}+\theta\right)
+      -f\left(-\frac{x}{a_n}+\theta\right),
+  \end{align*}
+  therefore its PDF is
+  \begin{align*}
+    \tfrac{d}{dx}P(|a_n(X_n-\theta)|\leq x)
+    &=\frac{d}{dx}
+      \left[%
+      f\left(\frac{x}{a_n}+\theta\right)%
+      -f\left(-\frac{x}{a_n}+\theta\right)%
+      \right]\\
+    &=
+  \end{align*}
+
 
   For part (c), suppose \(\{a_n\}\) and \(\{b_n\}\) are sequences such that
   \(a_n=\rmo_p(1)\) and \(b_n=\rmO_p(1)\), then for the sequence
