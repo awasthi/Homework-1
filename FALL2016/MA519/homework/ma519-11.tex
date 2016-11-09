@@ -90,7 +90,19 @@
   Numerical analysts call this Monte Carlo integration.
 \end{problem}
 \begin{solution}
-
+  Let \(X_k\), for \(1\leq k\leq n\), be independent and identically
+  distributed \(U[a,b]\) random variables and let \(f\colon[a,b]\to\bbR\)
+  be integrable on \([a,b]\). Moreover, let us denote the integral of \(f\)
+  on \([a,b]\) by
+  \[
+    I\defeq\int_a^b f\diff x
+  \]
+  and the average of \(n\) random sample points from \([a,b]\) by
+  \[
+    I_n\defeq\frac{1}{n}\sum_{k=1}^n f(X_k).
+  \]
+  We aim to show that the strong law of large numbers implies \(I_n\to I\)
+  almost surely as \(n\to\infty\).
 \end{solution}
 \newpage
 
