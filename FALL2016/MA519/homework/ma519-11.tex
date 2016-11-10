@@ -51,7 +51,6 @@
     &=\frac{1}{a_n}\bigl(f(x/a_n+\theta)+f(-x/a_n+\theta)\bigr)
   \end{align*}
 
-
   For part (c), suppose \(\{a_n\}\) and \(\{b_n\}\) are sequences such that
   \(a_n=\rmo_p(1)\) and \(b_n=\rmO_p(1)\), then for the sequence
   \(\{c_n\defeq a_n+b_n\}\) the most we can expect is
@@ -122,12 +121,20 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  For part (a), write
-  \[
-    T_n\defeq\frac{S_{m,1}}{S_{n,1}}=\frac{\sum_{k=1}^m X_k}{\sum_{k=1}^n X_k}.
-  \]
+  For part (a), by the strong law of large numbers the average
+  \(\bar X_n=S_{n,1}/n\yright{\text{a.s.}}\mu\) as \(n\to\infty\), so
+  \(S_{n,1}\yright{\text{a.s.}}\infty\) as \(n\to\infty\). Therefore, since
+  \(S_{m,1}\) is a fixed, \(S_{m,1}/S_{n,1}\yright{\text{a.s.}} 0\).
 
-  For part (b)
+  For part (b), we have
+  \begin{align*}
+    \frac{S_{n-m,1}}{S_{n,1}}
+    &=\frac{S_{n,1} - S_{m,1}}{S_{n,1}}\\
+    &=%
+      1-\frac{S_{m,1}}{S_{n,1}}
+  \end{align*}
+  which converges a.s.\@ to \(1\) since
+  \(S_{m,1}/S_{n,1}\yright{\text{a.s.}} 0\).
 \end{solution}
 \newpage
 
@@ -140,7 +147,14 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
+  One direction of this is obvious; namely, since \(I_{A_n}\) and \(I_A\)
+  are indicator random variables \(E(I_{A_n})=P(A_n)\) and \(E(I_A)=P(A)\)
+  so \(E(I_{A_n})=P(A_n)\to P(A)=E(I_A)\) implies \(I_{A_n}\yright{\calL}
+  I_A\).
 
+  On the other hand, if \(I_{A_n}\yright{\calL} I_A\), then \(P(I_{A_n}\leq
+  x)\to P(I_{A_n}\leq x)\) so letting \(x\to\infty\),
+  \(P(A_n)=P(I_{A_n}\leq\infty)\to P(I_A\leq\infty)=P(A)\).
 \end{solution}
 \newpage
 
@@ -151,7 +165,20 @@
   \(X_{(n)}\yright{\text{a.s.}}\xi(F)\).
 \end{problem}
 \begin{solution}
+  We point out that this is an immediate extension of Example 7.7 in
+  DasGupta's book. Let $\varepsilon >0$. Set $\xi = \xi(F)$. Then
+  \begin{align*}
+    P(|\forall n \geq m, \xi - X_{(n)}| \leq \varepsilon|)
+    &= P(\forall n \geq m, \xi - X_{(n)} \leq \varepsilon)\\
+    &= P(\forall n \geq m, X_{(n)} \geq \xi - \varepsilon )\\
+    &= P(X_{(m)} \geq \xi - \varepsilon )\\
+    &= 1- P(X_{(m)} < \xi - \varepsilon )\\
+    &= 1- P(X_i < \xi - \varepsilon)^m\\
+    &\to 1\\
+  \end{align*}
+  with convergence above being as $m \to \infty$.
 
+  That is, by definition, $X_{(n)} \to \xi$ almost surely.
 \end{solution}
 \newpage
 
@@ -162,7 +189,7 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-
+  From the CDF of
 \end{solution}
 \newpage
 
@@ -200,6 +227,17 @@
 \end{problem}
 \begin{solution}
 
+Note that
+
+\begin{align*}
+  \ln(G_n) &= \frac{1}{n} \ln(X_1 X_2 \ldots X_n) \\
+           &= \frac{1}{n} \sum_{i=1}^n \ln(X_i) \\
+           &\yright{\calP} \int_0^1 \ln(x) dx \\
+           &= -1 \\
+\end{align*}
+
+So that $\ln(G_n) \yright{\calP} -1$; that is, $G_n \yright{\calP} e^{-1}$.
+
 \end{solution}
 \newpage
 
@@ -209,6 +247,9 @@
   at) zero?
 \end{problem}
 \begin{solution}
+  No. Pick $X_n = U(\{-1,1\})$, and $Y_n = -X_n$. Then $X_n-Y_n = 2$ for
+  all $n \in \bbN$, but $X_n$ and $Y_n$ are both uniformly distributed on
+  $\{-1,1\}$, so they both converge (in distribution) to $U(\{-1,1\})$.
 
 \end{solution}
 \newpage
