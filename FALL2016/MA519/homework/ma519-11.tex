@@ -212,7 +212,12 @@
   \noindent (\emph{Hint:} Approximate the mean of \(W_n\).)
 \end{problem}
 \begin{solution}
-  Let \(X_n\sim\Geom(\frac{n-k}{n})\)
+  We can model the scenario by \(X_k\sim\Geom(\frac{n-k+1}{n})\) where
+  initially (\(k=1\)) we have a \(100\%\) chance of finding obtaining new
+  picture. Therefore, the minimum number of boxes required to obtain a
+  complete set of pictures \(W_n\) is the sum \(\sum_{k=1}^n X_k\). Define
+  \(a_n\defeq \sum_{k=1}^nn(n-k+1)^{-1}=n/(n^2-nk+n)\). Then by the weak
+  law of large numbers
 \end{solution}
 \newpage
 
