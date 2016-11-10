@@ -189,14 +189,15 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  We show that its converse
+  Recall that the sum of two independent Cauchy variables is again
+  Cauchy. Therefore, \(\bar X_n=\sum_{k=1}^n X_n\) is Cauchy. Now by the
+  weak law of large numbers, we have
   \[
-    P(\text{\(|X_n|\leq n\) infinitely often})=0.
+    P(\limsup|\bar X_n|=\infty)=1.
   \]
-  Using the CDF of a standard Cauchy distribution, we have
-  \[
-    P(|X_n|\leq n)=\frac{1}{\pi}\tan^{-1}(n)+\frac{1}{2}.
-  \]
+  This says that the average for any \(n\), the average \(\bar X_n\)
+  eventually exceeds \(n\) with probability \(1\). Therefore, \(X_n>n\)
+  infinitely often.
 \end{solution}
 \newpage
 
