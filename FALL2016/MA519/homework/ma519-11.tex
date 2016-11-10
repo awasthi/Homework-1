@@ -189,7 +189,14 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  From the CDF of
+  We show that its converse
+  \[
+    P(\text{\(|X_n|\leq n\) infinitely often})=0.
+  \]
+  Using the CDF of a standard Cauchy distribution, we have
+  \[
+    P(|X_n|\leq n)=\frac{1}{\pi}\tan^{-1}(n)+\frac{1}{2}.
+  \]
 \end{solution}
 \newpage
 
@@ -209,12 +216,43 @@
 \newpage
 
 \begin{problem}[DasGupta 7.17]
-  Let \(X\sim\Bin(n,p)\). Show that \((X_n/n)^2\) and
-  \(X_n(X_n-1)/(n(n-1))\) both converging in probability to \(p^2\). Do
+  Let \(X_n\sim\Bin(n,p)\). Show that \((X_n/n)^2\) and
+  \(X_n(X_n-1)/(n(n-1))\) both converge in probability to \(p^2\). Do
   they converge almost surely?
 \end{problem}
 \begin{solution}
-
+  First note that \((X_n/n)^2\sim X_n(X_n-1)/(n(n-1))\) so it suffices to
+  show that \((X_n/n)^2\to p^2\). We show this explicitly. Let
+  \(\varepsilon\) be given then we show that
+  \[
+    P\left(\left|\left(\frac{X_n}{n}\right)^2
+        -p^2\right|\geq\varepsilon\right)\To 0.
+  \]
+  That is, given \(\eta>0\) there exists \(N\) such that \(n\geq N\)
+  implies
+  \begin{align*}
+    P\left(\left|\left(\frac{X_n}{n}\right)^2
+        -p^2\right|\geq\varepsilon\right)
+    &=P\left(\left(\frac{X_n}{n}\right)^2
+      -p^2\geq\varepsilon\right)
+      +P\left(\left(\frac{X_n}{n}\right)^2
+      -p^2\leq-\varepsilon\right)\\
+    &<\eta.
+  \end{align*}
+  From the calculations above, we have
+  \begin{align*}
+    P\left(\left(\frac{X_n}{n}\right)^2
+    -p^2\geq\varepsilon\right)
+    &=P\left(X_n\geq n\sqrt{\varepsilon+p^2}\right)\\
+    &=1-P\left(X_n<n\sqrt{\varepsilon+p^2}\right)\\
+    &\approx\frac{1}{\sqrt{2\pi n p(1-p)}}\int_{-\infty}^{n\sqrt{\varepsilon+p^2}}
+      \rme^{-(x-np)^2/(2np(1-p))}\diff x
+    \\
+    &\sim C\rme^{-C''n^2}\int_{-\infty}^{C'n}\rme^{-C'''x^2}\diff x
+  \end{align*}
+  since both sequences in \(n\) above are convergent and the limit of the
+  product of convergent sequences is the product of the limits, then the
+  limit above equals \(0\).
 \end{solution}
 \newpage
 
