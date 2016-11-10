@@ -101,8 +101,12 @@
   \[
     I_n\defeq\frac{1}{n}\sum_{k=1}^n f(X_k).
   \]
-  We aim to show that the strong law of large numbers implies \(I_n\to I\)
-  almost surely as \(n\to\infty\).
+  By the strong law of large numbers, we immediately have
+  \[
+    I_n\To E(f(X_1))=\int_{-\infty}^\infty f(x)\chi_{[a,b]}(x)\diff
+    x=\int_a^b f(x)\diff x,
+  \]
+  as desired.
 \end{solution}
 \newpage
 
@@ -118,7 +122,12 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
+  For part (a), write
+  \[
+    T_n\defeq\frac{S_{m,1}}{S_{n,1}}=\frac{\sum_{k=1}^m X_k}{\sum_{k=1}^n X_k}.
+  \]
 
+  For part (b)
 \end{solution}
 \newpage
 
