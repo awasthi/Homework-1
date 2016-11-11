@@ -5,7 +5,7 @@
   \]
   where
   \[
-    \Phi(x,t)=\frac{\rme^{-x^2/(4t)}}{\sqrt{4\pi t}}
+    \Phi(x,t)=\frac{\rme^{-\frac{x^2}{4t}}}{\sqrt{4\pi t}}
   \]
   is positive for \(|x|<1\), \(t>0\).
 
@@ -30,24 +30,24 @@
   \begin{align*}
     \Phi_x(x,t)
     &=\frac{\partial}{\partial x}
-      \left(\frac{\rme^{-x^2/(4t)}}{\sqrt{4\pi t}}\right)
+      \left(\frac{\rme^{-\frac{x^2}{4t}}}{\sqrt{4\pi t}}\right)
     &\Phi_{xx}(x,t)
     &=\frac{\partial}{\partial x}
-      \left(-\frac{x\rme^{-x^2/(4t)}}{2\sqrt{4\pi}t^{\frac{3}{2}}}\right)\\
-    &=-\frac{x\rme^{-x^2/(4t)}}{2\sqrt{4\pi}t^{\frac{3}{2}}},
-    &&=\frac{x^2\rme^{-x^2/(4t)}}{4\sqrt{4\pi}t^{\frac{5}{2}}}
-      -\frac{\rme^{-x^2/(4t)}}{2\sqrt{4\pi}t^{\frac{3}{2}}}
+      \left(-\frac{x\rme^{-\frac{x^2}{4t}}}{2\sqrt{4\pi}t^{\frac{3}{2}}}\right)\\
+    &=-\frac{x\rme^{-\frac{x^2}{4t}}}{2\sqrt{4\pi}t^{\frac{3}{2}}},
+    &&=\frac{x^2\rme^{-\frac{x^2}{4t}}}{4\sqrt{4\pi}t^{\frac{5}{2}}}
+      -\frac{\rme^{-\frac{x^2}{4t}}}{2\sqrt{4\pi}t^{\frac{3}{2}}}
     \\
-    &&&=\frac{(x^2-2t)\rme^{-x^2/(4t)}}{4\sqrt{4\pi}t^{\frac{5}{2}}},
+    &&&=\frac{(x^2-2t)\rme^{-\frac{x^2}{4t}}}{4\sqrt{4\pi}t^{\frac{5}{2}}},
   \end{align*}
   and
   \begin{align*}
     \Phi_t(x,t)
     &=\frac{\partial}{\partial t}
-      \left(\frac{\rme^{-x^2/(4t)}}{\sqrt{4\pi t}}\right)\\
-    &=\frac{x^2\rme^{-x^2/(4t)}}{4\sqrt{4\pi}t^{\frac{5}{2}}}
-      -\frac{\rme^{-x^2/(4t)}}{2\sqrt{4\pi}t^{\frac{3}{2}}}\\
-    &=\frac{(x^2-2t)\rme^{-x^2/(4t)}}{4\sqrt{4\pi}t^{\frac{5}{2}}}.
+      \left(\frac{\rme^{-\frac{x^2}{4t}}}{\sqrt{4\pi t}}\right)\\
+    &=\frac{x^2\rme^{-\frac{x^2}{4t}}}{4\sqrt{4\pi}t^{\frac{5}{2}}}
+      -\frac{\rme^{-\frac{x^2}{4t}}}{2\sqrt{4\pi}t^{\frac{3}{2}}}\\
+    &=\frac{(x^2-2t)\rme^{-\frac{x^2}{4t}}}{4\sqrt{4\pi}t^{\frac{5}{2}}}.
   \end{align*}
   Since \(\Phi_t=\Phi_{xx}\) it follows that \(u_t=u_{xx}\) (for \(t>0\)).
 
@@ -115,7 +115,9 @@
     &=\sum_{k=1}^\infty\frac{g^{(k)}(t)}{(2k-1)!}x^{2k-1},
     &&=\sum_{k=2}^\infty\frac{g^{(k)}(t)}{(2k-2)!}x^{2k-2}.
   \end{align*}
-  Thus, \(u_t-\Delta u=0\); i.e., \(u\) solves the heat equation.
+  Thus, \(u_t-\Delta u=0\); i.e., \(u\) solves the heat equation. As this
+  example shows, unless some assumptions on \(u\) such as subexponential
+  (cf.\@ [E \S 2.3], Theorem 7) growth is assumed.
 \end{solution}
 \newpage
 
@@ -129,21 +131,30 @@
   equation.)
 \end{problem}
 \begin{solution}
-  Write
+  By separation of variables,
   \[
-    \cos(ax)=\tfrac{1}{2}\left(\rme^{\rmi ax}+\rme^{-\rmi ax}\right).
+    u(x,t)=\cos(ax)\rme^{-a^2t}
   \]
-  Then,
+  is a solution to the Cauchy problem
   \[
-    \cos(ax)\rme^{-x^2}=\tfrac{1}{2}
-    \bigl(\rme^{\rmi ax-x^2}+\rme^{-\rmi ax-x^2}\bigr)
+    \left\{
+      \begin{aligned}
+        u_t-\Delta u&=0&&\text{in \(\bbR\times(0,\infty)\),}\\
+        u&=\cos(ax)&&\text{on \(\bbR\times\{\,t=0\,\}\).}
+      \end{aligned}
+    \right.
   \]
-  so
+  However, the convolution
+  \[
+    u(x,t)=%
+    \frac{1}{\sqrt{4\pi t}}\int_{-\infty}^\infty%
+    \cos(a y)\rme^{-\frac{|x-y|^2}{4t}}\diff y
+  \]
+  is also a solution to the Cauchy problem. Now note that
   \begin{align*}
-    \int_{-\infty}^\infty \cos(ax)\rme^{-x^2}\diff x
-    &=\frac{1}{2}\int_{-\infty}^\infty
-      \bigl(\rme^{\rmi ax-x^2}+\rme^{-\rmi ax-x^2}\bigr)dx\\
-    &=
+    \int_{-\infty}^\infty\cos(ay)\rme^{-y^2}\diff y
+    &=\sqrt{\pi}\cdot u(0,\tfrac{1}{4})\\
+    &=\sqrt{\pi}\rme^{-\frac{a^2}{4}}.\qedhere
   \end{align*}
 \end{solution}
 
