@@ -15,7 +15,7 @@
     \left\{
       \begin{aligned}
         u&=0&&\text{on \(\{\,|x|=1\,\}\times\{\,t\geq 0\,\}\),}\\
-        u&=\delta_0&&\text{on \(\{\,|x|=1\,\}\times\{\,t=0\,\}\).}
+        u&=\delta_0&&\text{on \(\{\,|x|\leq 1\,\}\times\{\,t=0\,\}\).}
       \end{aligned}
     \right.
   \]
@@ -66,8 +66,14 @@
       +\rme^{-\frac{9}{4t}}+\dotsb\right)\\
     &=0.
   \end{align*}
-  Similarly for \(u(-1,t)=0\). For \(u(|x|=1,0)\) we have a sum of Dirac
-  deltas at \(0\)
+  Similarly for \(u(-1,t)=0\).
+
+  For \(u(|x|=1,0)\), we have a
+  \begin{align*}
+    u(x,0)
+    &=\sum_{k=-\infty}^\infty(-1)^k\delta_0(x-2k)\\
+  \end{align*}
+  And similarly for
 \end{solution}
 \newpage
 
