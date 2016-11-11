@@ -49,7 +49,8 @@
       -\frac{\rme^{-\frac{x^2}{4t}}}{2\sqrt{4\pi}t^{\frac{3}{2}}}\\
     &=\frac{(x^2-2t)\rme^{-\frac{x^2}{4t}}}{4\sqrt{4\pi}t^{\frac{5}{2}}}.
   \end{align*}
-  Since \(\Phi_t=\Phi_{xx}\) it follows that \(u_t=u_{xx}\) (for \(t>0\)).
+  Since \(\Phi_t=\Phi_{xx}\) it follows that \(u_t=u_{xx}\) (assuming
+  uniform convergence of \(u\)).
 
   Next we show that \(u=0\) on \(\{\,|x|=1\,\}\times\{\,t\geq 0\,\}\) and
   \(u=\delta_0\) on \(\{\,|x|=1\,\}\times\{\,t=0\,\}\). To show \(u=0\) fix
@@ -57,14 +58,16 @@
   which gives us
   \begin{align*}
     u(1,t)
-    &=\sum_{k=-\infty}^\infty(-1)^k\frac{\rme^{-k^2/(4t)}}{\sqrt{4\pi
+    &=\sum_{k=-\infty}^\infty(-1)^k\frac{\rme^{-\frac{(1-2k)^2}{4t}}}{\sqrt{4\pi
       t}}\\
-    &=\frac{1}{\sqrt{4\pi t}}\sum_{k=-\infty}^\infty
-      (-1)^k{(\rme^{-1/(4t)})}^{k^2}\\
-    &=\frac{2}{\sqrt{4\pi t}}\sum_{k=0}^\infty
-      (-1)^k{(\rme^{-1/(4t)})}^{k^2}\\
-    &=
+    &=\frac{1}{\sqrt{4\pi t}}%
+      \left(\dotsb-\rme^{-\frac{9}{4t}}%
+      +\rme^{-\frac{1}{4t}}-\rme^{-\frac{1}{4t}}%
+      +\rme^{-\frac{9}{4t}}+\dotsb\right)\\
+    &=0.
   \end{align*}
+  Similarly for \(u(-1,t)=0\). For \(u(|x|=1,0)\) we have a sum of Dirac
+  deltas at \(0\)
 \end{solution}
 \newpage
 
