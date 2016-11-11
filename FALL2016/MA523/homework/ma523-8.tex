@@ -68,12 +68,17 @@
   \end{align*}
   Similarly for \(u(-1,t)=0\).
 
-  For \(u(|x|=1,0)\), we have a
+  For \(u(|x|\leq 1,0)\), we have a
   \begin{align*}
-    u(x,0)
+    u(|x|\leq 1,0)
+    &=\sum_{k=-\infty}^\infty(-1)^k\lim_{t\to 0+}
+      \left[\rme^{-\frac{(x-2k)^2}{4t}}/\sqrt{4\pi t}\right]\\
     &=\sum_{k=-\infty}^\infty(-1)^k\delta_0(x-2k)\\
+    &=\delta_0(x)
   \end{align*}
-  And similarly for
+  since \(|x|\leq 1\).
+
+  Now,
 \end{solution}
 \newpage
 
@@ -82,7 +87,7 @@
   \[
     g(t)\defeq
     \begin{cases}
-      \rme^{-t^2}&t>0,\\
+      \rme^{-t^{-2}}&t>0,\\
       0&t\leq 0.
     \end{cases}
   \]
