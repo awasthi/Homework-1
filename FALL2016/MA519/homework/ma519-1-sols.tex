@@ -33,16 +33,28 @@ the fall semester of 2016.
 \begin{problem}[Handout 1, \# 7]
   A gene consists of \(10\) subunits, each of which is normal or
   mutant. For a particular cell, there are \(3\) mutant and \(7\) normal
-  subunits. Before the cell divides into \(2\) daughter cells, the gene
-  duplicates. The corresponding gene of cell \(1\) consists of \(10\)
-  subunits chosen from the \(6\) mutant and \(14\) normal units. Cell \(2\)
-  gets the rest. What is the probability that one of the cells consists of
-  all normal subunits.
+  subunits. Before the cell divides into two daughter cells, the gene
+  duplicates. The corresponding gene of cell 1 consists of \(10\) subunits
+  chosen from the \(6\) mutant and \(14\) normal units. Cell 2 gets the
+  rest. What is the probability that one of the cells consists of all
+  normal subunits.
 \end{problem}
 \begin{solution*}
-  Assuming we can arrange these subunits in any possible order, there are
-  \(\binom{20}{10}=\num{184756}\) possible gene combinations in any of
-  these daughter cells.
+  Assuming that we can arrange these gene subunits in any possible order,
+  there are \(\binom{20}{10}=\num{184756}\) possible gene combinations any
+  given daughter cell can end up with.
+
+  There are \(\binom{14}{10}=1001\) ways for cell 1 to end up without any
+  mutant subunits. Hence, there are \(2\cdot 1001=2002\) ways for at least
+  one of the daughter cells to end up without any mutant subunits.
+
+  Therefore, the probability that at least one of the two daughter cells
+  end up without any mutant subunits is
+  \[
+    P(\text{at least one daughter cell consists of all normal subunits})
+    =\frac{2002}{\num{184756}}
+    \approx\num{0.010835913312693499}.\qedhere
+  \]
 \end{solution*}
 
 \begin{problem}[Handout 1, \# 9]
@@ -56,6 +68,9 @@ the fall semester of 2016.
   Compute it for \(r=N=10\), \(n=100\).
 \end{problem}
 \begin{solution*}
+  For part (a): The size of the sample space is \(|\Omega|=n^r\) and
+  therefore each element \(x\in\Omega\) has a probability of \(n^{-r}\).
+
   For part (a), the sample space contains \(|\Omega|=n^r\) elements; these
   correspond to all of the possible draws of \(r\) with replacement. If
   \(n\) elements are specified, \(n-N\) have not and therefore, there are
