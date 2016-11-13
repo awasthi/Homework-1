@@ -70,26 +70,24 @@ the fall semester of 2016.
 \begin{solution*}
   For part (a): The size of the sample space is \(|\Omega|=n^r\) and
   therefore each element \(x\in\Omega\) has a probability of \(n^{-r}\).
-
-  For part (a), the sample space contains \(|\Omega|=n^r\) elements; these
-  correspond to all of the possible draws of \(r\) with replacement. If
-  \(n\) elements are specified, \(n-N\) have not and therefore, there are
-  \((n-N)^r\) ways of drawing \(r\) of the non-prespecified elements. Thus,
-  the probability that note of the \(N\) prespecified elements are drawn if
-  we sample \(r\) elements randomly with replacement is
+  If \(n\) elements are specified, \(n-N\) have not and therefore, there
+  are \((n-N)^r\) ways of drawing \(r\) of the non-prespecified
+  elements. Thus, the probability that note of the \(N\) prespecified
+  elements are drawn if we sample \(r\) elements randomly with replacement
+  is
   \begin{equation}
     \label{eq:1:with-replacement}
     p_1(n,N,r)=\frac{(n-N)^r}{n^r}.
   \end{equation}
 
-  The argument for part (b) is similar. There number of elements in the
-  sample space is \(|\Omega|=\binom{n}{r}\); these correspond to the
-  passible draws of \(r\) elements without replacement. As before, \(n-N\)
-  of the elements have not been prespecified and therefore, we have
-  \(\binom{n-N}{r}\) ways of drawing \(r\) of the non-prespecified
-  elements. Thus, the probability that note of the \(N\) prespecified
-  elements are drawn if we sample \(r\) elements randomly without
-  replacement is
+  For part (b): The argument leading to the probability of this event is
+  similar to that of part (a). The size of the sample space is
+  \(|\Omega|=\binom{n}{r}\); these correspond to the passible draws of
+  \(r\) elements without replacement. As before, \(n-N\) of the elements
+  have not been prespecified and therefore, we have \(\binom{n-N}{r}\) ways
+  of drawing \(r\) of the non-prespecified elements. Thus, the probability
+  that note of the \(N\) prespecified elements are drawn if we sample \(r\)
+  elements randomly without replacement is
   \begin{equation}
     \label{eq:1:without-replacement}
     p_2(n,N,r)=\frac{\binom{n-N}{r}}{\binom{n}{r}}.
@@ -116,31 +114,31 @@ the fall semester of 2016.
   \end{enumerate}
 \end{problem}
 \begin{solution*}
-  For part (a), the event ``from \(E\), \(F\), and \(G\) only \(E\)
+  For part (a): The event ``from \(E\), \(F\), and \(G\) only \(E\)
   occurs'' is given by
   \[
     E\cap(\Omega\setminus F)\cap(\Omega\setminus G).
   \]
 
-  For part (b), the event ``from \(E\), \(F\), and \(G\) both \(E\) and
+  For part (b): The event ``from \(E\), \(F\), and \(G\) both \(E\) and
   \(G\) occur, but not \(F\)'' is given by
   \[
     E\cap G\cap(\Omega\setminus F).
   \]
 
-  For part (c), the event ``from \(E\), \(F\), and \(G\) all three occur''
+  For part (c): The event ``from \(E\), \(F\), and \(G\) all three occur''
   is given by
   \[
     E\cap F\cap G.
   \]
 
-  For part (d), the event ``from \(E\), \(F\), and \(G\) at least one
+  For part (d): The event ``from \(E\), \(F\), and \(G\) at least one
   occurs'' is given by
   \[
     E\cup F\cup G.
   \]
 
-  For part (e), the event ``from \(E\), \(F\), and \(G\) at most two
+  For part (e): The event ``from \(E\), \(F\), and \(G\) at most two
   occur'' is given by
   \[
     \bigl(E\cap F\cap(\Omega\setminus G)\bigr)\cup%
@@ -158,32 +156,32 @@ the fall semester of 2016.
   \end{enumerate}
 \end{problem}
 \begin{solution*}
-  For both (a) and (b), we shall compute the probability of the complement
-  of the event in question.
-
-  For part (a), the event that ``we do not roll a six in six rolls of a
-  fair die'' is given by
+  For part (a): The probability that we do not roll a six in six rolls of a
+  fair die is
   \[
     q_1=\left(\frac{5}{6}\right)^6\approx\num{0.3348979766803842}.
   \]
   Therefore, the probability of seeing at least one six in six rolls of a
   fair die is
-  \begin{equation}
-    \label{eq:1:six-in-six-rolls}
+  \[
     p_1=1-q_1\approx\num{0.6651020233196159}.
-  \end{equation}
+  \]
 
-  For part (b),
-  % For part (b), we, again, compute the probability of the complement of the
-  % event, i.e., the event that no double \(6\) is rolled. This is
-  % \[
-  %   P(A)=1-P(\lnot
-  %   A)=1-\left(\frac{35}{36}\right)^6\approx\num{0.15551243015966854}.
-  % \]
-  % \\\\
-  % Therefore, it is more likely that you roll a \(6\) in \(6\) rolls of a
-  % fair die than that you roll a double \(6\) in \(6\) rolls of a pair of
-  % fair dice.
+  For part (b): The probability that we do not roll a double six in six
+  rolls of a pair fair die is
+  \[
+    q_2=\left(\frac{35}{36}\right)^6\approx\num{0.8444875698403315}.
+  \]
+  Therefore, the probability of seeing at least one double six in six rolls
+  of a pair of fair die is
+  \[
+    p_2=1-q_2\approx\num{0.15551243015966854}.
+  \]
+
+  Lastly, we see that the \(p_1>p_2\); i.e., the probability of rolling at
+  least one six in six rolls of a fair die is more likely than the
+  probability of obtaining two double sixes is six rolls of a pair of fair
+  dice.
 \end{solution*}
 
 \begin{problem}[Handout 1, \# 13]
@@ -192,12 +190,12 @@ the fall semester of 2016.
   each other?
 \end{problem}
 \begin{solution*}
-  The \(r\) specified people can stand as a group starting at positions
-  \(1,2,\dotsc,n-r+1\). They can be permuted among themselves in \(r!\)
+  The \(r\) prespecified people can stand as a group starting at positions
+  \(1,\dotsc,n-r+1\). They can be permuted among themselves in \(r!\)
   ways. The remaining \(n-r\) people can be permuted among themselves in
   \((n-r)!\) ways. Thus, we have
   \[
-    P=\frac{(n-r+1)r!(n-r)!}{n!}=\frac{(n-r+1)!r!}{n!}.\qedhere
+    p=\frac{(n-r+1)r!(n-r)!}{n!}=\frac{(n-r+1)!r!}{n!}.\qedhere
   \]
 \end{solution*}
 
@@ -217,13 +215,13 @@ the fall semester of 2016.
   \[
     P(X=x)=\frac{\binom{4}{x}\binom{48}{13-x}}{\binom{52}{13}}.
   \]
-  The explicit values are approximately
+  The explicit values are (approximately)
   \begin{align*}
     P(X=0)&\approx 0.304,
     &P(X=1)&\approx 0.439,\\
     P(X=2)&\approx 0.213,
     &P(X=3)&\approx 0.041,\\
-    P(X=4)&\approx 0.003.\qedhere
+    P(X=4)&\approx 0.003.&&\qedhere
   \end{align*}
 \end{solution*}
 
@@ -236,9 +234,9 @@ the fall semester of 2016.
 \end{problem}
 \begin{solution*}
   Let \(X\) be the random variable denoting the number of empty
-  cells. Define indicator variables \(X_1,\dotsc,X_n\) by
+  cells. Define \(X_1,\dotsc,X_n\) indicator variables by
   \[
-    X_k=
+    X_k\defeq
     \begin{cases}
       1&\text{if the \(i\)\textsup{th} cell is empty,}\\
       0&\text{otherwise.}
@@ -256,8 +254,14 @@ the fall semester of 2016.
     &=\sum_{k=1}^n\frac{(n-1)^n}{n^n}\\
     &=n\left(1-\frac{1}{n}\right)^n,
   \end{align*}
-  which approaches \(\infty\) as \(n\to\infty\) since
-  \(\bigl(1-\frac{1}{n}\bigr)^n\to \rme^{-1}\).
+  which approaches \(\infty\) as \(n\to\infty\); i.e., for any \(M>0\)
+  there exists a positive integer \(N\) such that
+  \begin{align*}
+    M&>n\left(1+\frac{1}{n}\right)^n\\
+    1&>\left(\frac{M}{n}\right)^{\frac{1}{n}}-\frac{1}{n}
+  \end{align*}
+  since both \(\frac{M}{n}\) and \(\frac{1}{n}\) approach \(0\) as
+  \(n\to\infty\).
   \\\\
   For \(n=100\), we have \(E(X)\approx 36.60\).
 \end{solution*}

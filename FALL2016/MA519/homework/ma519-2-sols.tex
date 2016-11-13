@@ -30,10 +30,12 @@
     A_3\cap A_4).
   \]
   All we need to do now is fill in the blanks. Intuitively, the probability
-  that the \(1\)\textsup{st} man gets back his own wallet is \(1/4\) since
-  only one wallet is his own out of the \(4\). Now, the probability that
-  the \(1\)\textsup{st} and the \(2\)\textsup{nd} man get their own wallet
-  back is \(1/4\cdot1/3=1/2\). Proceeding in this fashion, we have
+  that the \(1\)\textsup{st} man gets back his own wallet is
+  \(\frac{1}{4}\) since only one wallet is his own out of the \(4\). Now,
+  the probability that the \(1\)\textsup{st} and the \(2\)\textsup{nd} man
+  get their own wallet back is
+  \(\frac{1}{4}\cdot\frac{1}{3}=\frac{1}{2}\). Proceeding in this fashion,
+  we have
   \[
     P(A)=4\cdot\frac{1}{4}-6\cdot\frac{1}{12}+4\cdot\frac{1}{24}-\frac{1}{24}
     =0.625.\qedhere
@@ -64,7 +66,10 @@
   Similarly, the probability that player \(1\) and player \(2\) is void in
   red hearts is
   \[
-    P(A_1)=\frac{\binom{52-13}{13}}{\binom{52}{13}}\cdot\frac{\binom{52-13-13}{13}}{\binom{52-13}{13}}=\frac{\binom{52-13-13}{13}}{\binom{52}{13}};
+    P(A_1)=\frac{\binom{52-13}{13}}{\binom{52}{13}}%
+    \cdot\frac{\binom{52-13-13}{13}}%
+    {\binom{52-13}{13}}%
+    =\frac{\binom{52-13-13}{13}}{\binom{52}{13}};
   \]
   and so on.
 
@@ -109,7 +114,7 @@
   special case \(N=1\)).
 \end{problem}
 \begin{solution*}
-  For part (a), the originator can tell any one of the other \(n\)
+  For part (a): The originator can tell any one of the other \(n\)
   inhabitants the rumor. In turn, the non-originator can tell the other
   \(n-1\) inhabitants (not including the originator). Thus, the probability
   of the event \(A\) that the rumor told \(r\) does not return to the
@@ -118,7 +123,7 @@
     P(A)=\frac{n(n-1)^{r-1}}{n^r}=\left(\frac{n-1}{n}\right)^{r-1}.
   \]
   \\\\
-  For part (b),
+  For part (b):
 \end{solution*}
 
 \begin{problem}[Handout 2, \# 14]
