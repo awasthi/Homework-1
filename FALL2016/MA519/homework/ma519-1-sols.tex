@@ -31,8 +31,8 @@ the sample space in question.
   choose a complete pair of shoes we must choose from four different pairs,
   this can be done in \(\binom{5}{4}=5\) ways, and for each pair we have
   the possibility of choosing on of two shoes belonging to that pair
-  (either a left or a right shoe). Therefore, \(|\Omega\setminus A|=5\cdot
-  2^4=80\) and so the probability of \(A\) is
+  (either a left or a right shoe). Therefore,
+  \(|\Omega\setminus A|=5\cdot 2^4=80\) and so
   \begin{align*}
     P(A)
     &=1-P(\Omega\setminus A)\\
@@ -54,7 +54,21 @@ the sample space in question.
   Let \(A\subset\Omega\) denote the event ``at least one daughter cell
   contains all normal subunits.''
 
-  There are
+  When the cell duplicates, there will be a total of \(20\) subunits
+  (\(14\) normal and \(6\) mutant ones). There are
+  \(\binom{20}{10}=\num{184756}\) ways to distribute these subunits to a
+  given daughter cell. Therefore, \(|\Omega|=\num{184756}\).
+
+  Now, let us count the number of sample points in \(A\). Suppose, with out
+  loss of generality, that cell 1 receives all of the normal subunits;
+  there are \(\binom{14}{10}=1001\) ways to do this. Since we may as well have
+  chosen cell 2 to give the normal units to, the number of sample points in
+  \(A\) is twice the figure above; i.e., \(|A|=2002\).
+
+  Therefore,
+  \[
+    P(A)=\frac{2002}{\num{184756}}\approx\num{0.010835913312693499}.\qedhere
+  \]
 \end{solution*}
 
 \begin{problem}[Handout 1, \# 9]
@@ -68,13 +82,12 @@ the sample space in question.
   Compute it for \(r=N=10\), \(n=100\).
 \end{problem}
 \begin{solution*}
-  For part (a): The size of the sample space is \(|\Omega|=n^r\) and
-  therefore each element \(x\in\Omega\) has a probability of \(n^{-r}\).
-  If \(n\) elements are specified, \(n-N\) have not and therefore, there
-  are \((n-N)^r\) ways of drawing \(r\) of the non-prespecified
-  elements. Thus, the probability that note of the \(N\) prespecified
-  elements are drawn if we sample \(r\) elements randomly with replacement
-  is
+  For part (a): The size of the sample space is \(|\Omega|=n^r\) so for
+  each \(x\in\Omega\), \(P(x)=\frac{1}{n^r}\). If \(n\) elements are
+  prespecified, there are \(n-N\) non-prespecified elements and thus we
+  have \((n-N)^r\) ways to draw \(r\) non-prespecified elements. Thus, the
+  probability that none of the \(N\) prespecified elements are drawn if we
+  sample \(r\) elements randomly with replacement is
   \begin{equation}
     \label{eq:1:with-replacement}
     p_1(n,N,r)=\frac{(n-N)^r}{n^r}.
@@ -82,7 +95,7 @@ the sample space in question.
 
   For part (b): The argument leading to the probability of this event is
   similar to that of part (a). The size of the sample space is
-  \(|\Omega|=\binom{n}{r}\); these correspond to the passible draws of
+  \(|\Omega|=\binom{n}{r}\); these correspond to the possible draws of
   \(r\) elements without replacement. As before, \(n-N\) of the elements
   have not been prespecified and therefore, we have \(\binom{n-N}{r}\) ways
   of drawing \(r\) of the non-prespecified elements. Thus, the probability
@@ -204,18 +217,20 @@ the sample space in question.
   the number of aces in his hand. Find the distribution of \(X\).
 \end{problem}
 \begin{solution*}
-  The number of aces in North's hand \(X\) is a random variable which takes
-  integer values between \(0\) and \(4\). Therefore, we must compute the
-  probabilities \(P(X=x)\), \(0\leq x\leq 4\).
+  Let \(X\) denote the number of aces in North's hand; this is a random
+  variable taking integer values between \(0\) and \(4\). We are asked to
+  find the PMF of \(X\); i.e., the values \(P(X=x)\) for all
+  \(x=0,\dotsc,4\).
 
-  From a deck with \(52\) cards, \(13\) cards can be selected in
-  \(\binom{52}{13}\) ways among which the player will have \(x\) number of
-  aces in \(\binom{4}{x}\binom{48}{13-x}\) ways. Thus, the distribution is
-  given by
+  From a deck of \(52\) cards, \(13\) cards can be selected in
+  \(\binom{52}{13}\) ways. From these North can have \(x\) number of aces
+  in \(\binom{4}{x}\binom{48}{13-x}\) ways. Therefore, the PMF of \(X\) is
+  precisely
   \[
     P(X=x)=\frac{\binom{4}{x}\binom{48}{13-x}}{\binom{52}{13}}.
   \]
-  The explicit values are (approximately)
+
+  The values of \(P\) at each \(x=0,\dotsc,4\) are
   \begin{align*}
     P(X=0)&\approx 0.304,
     &P(X=1)&\approx 0.439,\\
@@ -233,37 +248,36 @@ the sample space in question.
   approximate it as \(n\) tends to \(\infty\).
 \end{problem}
 \begin{solution*}
-  Let \(X\) be the random variable denoting the number of empty
-  cells. Define \(X_1,\dotsc,X_n\) indicator variables by
+  Let \(X\) denote the number of empty cells. Define \(I_1,\dotsc,I_n\)
+  indicator variables as
   \[
-    X_k\defeq
+    I_k\defeq
     \begin{cases}
-      1&\text{if the \(i\)\textsup{th} cell is empty,}\\
+      1&\text{if the \(k\)\textsup{th} cell is empty,}\\
       0&\text{otherwise.}
     \end{cases}
   \]
   Then
   \[
-    X=\sum_{k=1}^n X_k
+    X=\sum_{k=1}^n I_k
   \]
-  and so the mean of this random variable is given by
+  so the mean of \(X\) is
   \begin{align*}
     E(X)
-    &=\sum_{k=1}^n E(X_k)\\
-    &=\sum_{k=1}^n P(X_k=1)\\
+    &=\sum_{k=1}^n E(I_k)\\
+    &=\sum_{k=1}^n P(I_k=1)\\
     &=\sum_{k=1}^n\frac{(n-1)^n}{n^n}\\
     &=n\left(1-\frac{1}{n}\right)^n,
   \end{align*}
-  which approaches \(\infty\) as \(n\to\infty\); i.e., for any \(M>0\)
-  there exists a positive integer \(N\) such that
+  which approaches \(\infty\) as \(n\to\infty\) since given any positive
+  real number \(M\), we have
   \begin{align*}
-    M&>n\left(1+\frac{1}{n}\right)^n\\
-    1&>\left(\frac{M}{n}\right)^{\frac{1}{n}}-\frac{1}{n}
+    M&<n\left(1-\frac{1}{n}\right)^{\frac{1}{n}}\\
+    1&>\left(\frac{M}{n}\right)^{\frac{1}{n}}+\frac{1}{n}
   \end{align*}
-  since both \(\frac{M}{n}\) and \(\frac{1}{n}\) approach \(0\) as
-  \(n\to\infty\).
-  \\\\
-  For \(n=100\), we have \(E(X)\approx 36.60\).
+  for sufficiently large \(n\).
+
+  For \(n=100\), we have \(E(X)\approx\num{36.60323412732292}\).
 \end{solution*}
 
 %%% Local Variables:
