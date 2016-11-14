@@ -148,6 +148,18 @@
     \frac{\binom{n}{N}\binom{n-1}{N}^{r-1}}{\binom{n}{N}^r}=%
     \left(\frac{\binom{n-1}{N}}{\binom{n}{N}}\right)^{r-1}.
   \]
+
+  For part (b): The originator can tell the rumor to any group of \(N\)
+  people; this can be done in \(\binom{n}{N}\) ways. At the
+  \(k\)\textsup{th} step, the person can tell the rumor to any group of
+  \(N\) people not including the previous \(k-1\) people; this can be done
+  in \(\binom{n-k+1}{N}\) ways. Therefore, the probability of \(B_N\) that
+  the rumor is not repeated to anybody who has already heard it is if it is
+  told to a gathering of \(N\) people is
+  \[
+    P(B_N)=\frac{\binom{n}{N}\dotsm\binom{n-r+1}{N}}{\binom{n}{N}^r}.
+  \]
+  (This equation brakes down if \(n-r+1<N\).)
 \end{solution*}
 
 \begin{problem}[Handout 2, \# 14]
