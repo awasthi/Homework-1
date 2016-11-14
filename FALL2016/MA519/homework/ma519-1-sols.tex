@@ -1,6 +1,10 @@
 \section{Homework Solutions}
 These are my (corrected) solutions to DasGupta's Math/Stat 519 homework for
 the fall semester of 2016.
+
+Throughout this document, unless otherwise specified, \(\Omega\) denotes
+the sample space in question.
+
 \subsection{Homework 1}
 \begin{problem}[Handout 1, \# 5]
   A closet contains five pairs of shoes. If four shoes are selected at
@@ -8,25 +12,32 @@ the fall semester of 2016.
   among the four?
 \end{problem}
 \begin{solution*}
-  There are \(\binom{10}{4}=210\) to choose four shoes from five
-  pairs. Therefore, the size of the sample space is \(|\Omega|=210\) and,
-  under the equally-likely hypothesis, each sample point \(x\in\Omega\) has
-  probability \(\frac{1}{210}\).
+  Let \(A\subset\Omega\) denote the event ``there is at least one complete
+  pair of shoes among the four randomly selected shoes.''
 
-  We compute the probability of the complement; i.e., the probability that
-  there is no complete pair among the four randomly selected shoes. To
-  avoid selecting a pair we choose must choose of two (a left or a right)
-  shoes from four pairs which we can do in \(\binom{5}{5}=5\) different
-  ways.
+  First, we compute the size of the sample space \(\Omega\). There are
+  \(\binom{10}{4}=210\) ways to select four shoes from five pairs of
+  shoes. Therefore, \(|\Omega|=210\) so each sample point \(x\in\Omega\)
+  has an associated probability of \(P(x)=\frac{1}{210}\).
 
-  Thus, the probability that at least one pair of shoes is among the four
-  randomly selected shoes is
+  Now, let us compute \(P(A)\). Oftentimes it is easier to compute the
+  probability \(P(\Omega\setminus A)\) and use the identity
+  \[
+    P(A)+P(\Omega\setminus A)=1;
+  \]
+  this is one of those times. Let us now find the number of sample points
+  in \(\Omega\setminus A\); i.e., the event ``there is no complete pair of
+  shoes among the four randomly selected shoes.'' In order that we do not
+  choose a complete pair of shoes we must choose from four different pairs,
+  this can be done in \(\binom{5}{4}=5\) ways, and for each pair we have
+  the possibility of choosing on of two shoes belonging to that pair
+  (either a left or a right shoe). Therefore, \(|\Omega\setminus A|=5\cdot
+  2^4=80\) and so the probability of \(A\) is
   \begin{align*}
-    P(\text{one pair is among the four})
-    &=1-P(\text{no pair is among the four})\\
-    &=1-\frac{5\cdot 2^4}{210}\\
-    &=1-\frac{8}{21}\\
-    &=\num{0.6190476190476191}.\qedhere
+    P(A)
+    &=1-P(\Omega\setminus A)\\
+    &=1-\frac{80}{210}\\
+    &\approx\num{0.6190476190476191}.\qedhere
   \end{align*}
 \end{solution*}
 
