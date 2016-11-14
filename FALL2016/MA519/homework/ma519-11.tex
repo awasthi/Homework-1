@@ -4,9 +4,9 @@
     \(X_n\) necessarily converge in probability to \(c\)?
   \item Suppose \(a_n(X_n-\theta)\yright{\calL}N(0,1)\). Under what
     condition on \(a_n\) can we conclude that \(X_n\yright{\calP}\theta\)?
-  \item \(\rmo_p(1)+\rmO_p(1)=?\)
-  \item \(\rmo_p(1)\rmO_p(1)=?\)
-  \item \(\rmo_p(1)+\rmo_p(1)\rmO_p(1)=?\)
+  \item \(o_p(1)+O_p(1)=?\)
+  \item \(o_p(1)O_p(1)=?\)
+  \item \(o_p(1)+o_p(1)O_p(1)=?\)
   \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -52,30 +52,30 @@
   \end{align*}
 
   For part (c), suppose \(\{a_n\}\) and \(\{b_n\}\) are sequences such that
-  \(a_n=\rmo_p(1)\) and \(b_n=\rmO_p(1)\), then for the sequence
+  \(a_n=o_p(1)\) and \(b_n=O_p(1)\), then for the sequence
   \(\{c_n\defeq a_n+b_n\}\) the most we can expect is
-  \(c_n=\rmO_p(1)\). Indeed, we know that if a sequence is \(\rmo_p(1)\)
-  then it is also \(\rmO_p(1)\) therefore there exists \(K_1\) and \(K_2\)
+  \(c_n=O_p(1)\). Indeed, we know that if a sequence is \(o_p(1)\)
+  then it is also \(O_p(1)\) therefore there exists \(K_1\) and \(K_2\)
   such that \(|a_n|\leq K_1\), \(|b_n|\leq K_2\) for all \(n\geq
   1\). Therefore, \(|c_n|\leq K_1+K_2\) for all \(n\geq 1\).
 
   For part (d), suppose \(\{a_n\}\) and \(\{b_n\}\) are sequences such that
-  \(a_n=\rmo_p(1)\) and \(b_n=\rmO_p(1)\), then for the sequence
+  \(a_n=o_p(1)\) and \(b_n=O_p(1)\), then for the sequence
   \(\{c_n\defeq a_nb_n\}\) the most we can expect is
-  \(c_n=\rmO_p(1)\). Again, since \(\{a_n\}\) is \(\rmo_p(1)\) it is
-  \(\rmO_p(1)\) so there exists a constant \(K_1\geq 0\) such that
+  \(c_n=O_p(1)\). Again, since \(\{a_n\}\) is \(o_p(1)\) it is
+  \(O_p(1)\) so there exists a constant \(K_1\geq 0\) such that
   \(|a_n|\leq K_1\) for all \(n\geq 1\) and similarly for \(\{b_n\}\) there
   exists a constant \(K_2\) such that \(|b_n|\leq K_2\) for all
   \(n\geq 1\). Therefore, \(|c_n|\leq K_1K_2\) for all \(n\geq 1\) so
-  \(c_n=\rmO_p(1)\).
+  \(c_n=O_p(1)\).
 
   For part (e), suppose \(\{a_n\}\), \(\{b_n\}\), and \(\{c_n\}\) are
-  sequences such that \(a_n,b_n=\rmo_p(1)\) and \(c_n=\rmO_p(1)\), then for
+  sequences such that \(a_n,b_n=o_p(1)\) and \(c_n=O_p(1)\), then for
   the sequence \(\{d_n\defeq a_n+b_nc_n\}\) the most we can expect is
-  \(d_n=\rmO_p(1)\) since there exists contstants \(K_1\), \(K_2\), and
+  \(d_n=O_p(1)\) since there exists contstants \(K_1\), \(K_2\), and
   \(K_3\) such that \(|a_n|\leq K_1\), \(|b_n|\leq K_2\), and
   \(|c_n|\leq K_3\) for all \(n\geq 1\). This implies that
-  \(|d_n|\leq K_1+K_2K_3\) for all \(n\geq 1\). Thus, \(d_n=\rmO_p(1)\).
+  \(|d_n|\leq K_1+K_2K_3\) for all \(n\geq 1\). Thus, \(d_n=O_p(1)\).
 \end{solution}
 \newpage
 

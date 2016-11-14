@@ -3,7 +3,27 @@ These are my (corrected) solutions to DasGupta's Math/Stat 519 homework for
 the fall semester of 2016.
 
 Throughout this document, unless otherwise specified, \(\Omega\) denotes
-the sample space in question.
+the sample space in question. The symbol `\(\sim\)' is used both to denote
+the distribution type of a random variable and to denote asymptotic
+equivalence; i.e., if \(\{a_n\}\), \(\{b_n\}\) are convergent sequences
+with limit \(a\) and \(b\), respectively, we say \(a_n\sim b_n\) if
+\(\frac{a_n}{b_n}\to 1\).
+
+For the sake of remaining consistent with DasGupta's book, we adopt the
+following notation for named distribution types:
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    Name&Symbol&mass/density function&mean&variance\\
+    \hline
+    Bernoulli&\(\Ber(p)\)&
+    \(\begin{cases}
+      p&\text{for \(k=0\),}\\
+      1-p&\text{for \(k=1\)}\end{cases}\)
+    &\(p\)&\(p(1-p)\)\\
+    binomial&\(\Bin(n,p)\)&\(\binom{n}{k}p^k(1-p)^{n-k}\)&\(np\)&\(np(1-p)\)\\
+  \end{tabular}
+\end{center}
 
 \subsection{Homework 1}
 \begin{problem}[Handout 1, \# 5]
