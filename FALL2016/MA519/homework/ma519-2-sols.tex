@@ -5,37 +5,37 @@
   gets his own watch back?
 \end{problem}
 \begin{solution*}
-  Suppose \(4\) men throw their watches into the sea. Label these men ``the
-  \(k\)\textsup{th} man'' for \(1\leq k\leq 4\). Let \(A_k\) denote the
-  probability that the \(k\)\textsup{th} man gets his own watch back. Then
-  the probability that at least one man gets his own watch back is the
-  event \(A=A_1\cup A_2\cup A_3\cup A_4\). By the inclusion-exclusion
+  Suppose four men throw their watches into the sea. Place these in some
+  order and label them (from left to right) ``the \(k\)\textsup{th} man'',
+  \(k=1,\dotsc,4\). Let \(A_k\) denote the event ``the \(k\)\textsup{th}
+  man gets his own watch back.'' Then the event \(A\) that at least one man
+  gets his own watch back is the union of these events; i.e.,
+  \(A=A_1\cup A_2\cup A_3\cup A_4\). Thus, by the inclusion-exclusion
   principle, we have
-  \begin{equation}
-    \label{eq:inclusion-exclusion-4}
-    \begin{aligned}
-      P(
-      A)&=P(A_1)+P(A_2)+P(A_3)+P(A_4)\\
-      &\phantom{{}={}}-P(A_1\cap A_2)-P(A_1\cap A_3)-P(A_1\cap A_4)\\
-      &\phantom{{}={}}-P(A_2\cap A_3)-P(A_2\cap A_4)-P(A_3\cap A_4)\\
-      &\phantom{{}={}}+P(A_1\cap A_2\cap A_3)+P(A_1\cap A_2\cap A_4)\\
-      &\phantom{{}={}}+P(A_1\cap A_3\cap A_4)+P(A_2\cap A_3\cap A_4)\\
-      &\phantom{{}={}}-P(A_1\cap A_2\cap A_3\cap A_4).
-    \end{aligned}
-  \end{equation}
-  Since the probabilities \(P(A_k)=P(A_j)\), \(P(A_k\cap A_j)=P(A_k\cap
-  A_\ell)\), etc., the equation above reduces to
+  \begin{align*}
+    P(A)
+    &=P(A_1)+P(A_2)+P(A_3)+P(A_4)\\
+    &\phantom{{}={}}-P(A_1\cap A_2)-P(A_1\cap A_3)-P(A_1\cap A_4)\\
+    &\phantom{{}={}}-P(A_2\cap A_3)-P(A_2\cap A_4)-P(A_3\cap A_4)\\
+    &\phantom{{}={}}+P(A_1\cap A_2\cap A_3)+P(A_1\cap A_2\cap A_4)\\
+    &\phantom{{}={}}+P(A_1\cap A_3\cap A_4)+P(A_2\cap A_3\cap A_4)\\
+    &\phantom{{}={}}-P(A_1\cap A_2\cap A_3\cap A_4).
+  \end{align*}
+  Since \(P(A_k)=P(A_j)\), \(P(A_k\cap A_j)=P(A_k\cap A_\ell)\), etc., for
+  \(k\), \(j\), and \(\ell\) distinct, the equation above reduces to
   \[
     P(A)=4P(A_1)-6P(A_1\cap A_2)+4P(A_1\cap A_2\cap A_3)-P(A_1\cap A_2\cap
-    A_3\cap A_4).
+    A_3\cap A_4);
   \]
-  All we need to do now is fill in the blanks. Intuitively, the probability
-  that the \(1\)\textsup{st} man gets back his own wallet is
-  \(\frac{1}{4}\) since only one wallet is his own out of the \(4\). Now,
-  the probability that the \(1\)\textsup{st} and the \(2\)\textsup{nd} man
-  get their own wallet back is
-  \(\frac{1}{4}\cdot\frac{1}{3}=\frac{1}{2}\). Proceeding in this fashion,
-  we have
+  the choice of \(A_1\), \(A_1\cap A_2\), \(A_1\cap A_2\cap A_3\), etc.\@,
+  above was arbitrary.
+
+  All we need to do now is fill in the blanks. The probability that the
+  \(1\)\textsup{st} man gets back his own wallet is \(\frac{1}{4}\) since
+  only one wallet is his own out of the \(4\). Now, the probability that
+  the \(1\)\textsup{st} and the \(2\)\textsup{nd} man get their own wallet
+  back is \(\frac{1}{4}\cdot\frac{1}{3}=\frac{1}{2}\). Proceeding in this
+  fashion, we have
   \[
     P(A)=4\cdot\frac{1}{4}-6\cdot\frac{1}{12}+4\cdot\frac{1}{24}-\frac{1}{24}
     =0.625.\qedhere
@@ -47,24 +47,25 @@
   is void in a particular suit.
 \end{problem}
 \begin{solution*}
-  Label the players ``player \(i\)'' for \(1\leq k\leq 4\). Let \(A_k\)
-  denote the event that player \(i\) is void in a particular suit. Then
-  the probability of the event \(A\) that at least one player is void in a
-  particular suit is \(P(A)=P\bigl(\bigcup_{k=1}^4 A_k\bigr)\). Again, we
-  can decompose this into
+  Order the players and label them ``player \(k\)'', where
+  \(k=1,\dotsc,4\). Let \(A_k\) denote the event ``player \(k\) is void in
+  a prespecified suit.'' Then the event \(A\) ``at least one player is void
+  in a prespecified suit'' is the union of these events. By the
+  inclusion-exclusion principle (and because of the symmetry of these
+  evenets) we can decompose the computation of \(P(A)\) to
   \[
     P(A)=4P(A_1)-6P(A_1\cap A_2)+4P(A_1\cap A_2\cap A_3)-P(A_1\cap A_2\cap
     A_3\cap A_4).
   \]
-  Thus, it suffices to fill in the blanks in the equation above, i.e., find
-  the probabilities \(P(A_1)\), \(P(A_1\cap A_2)\), etc. To this end, the
-  probability that player \(1\) is void in a particular suit, say red
-  hearts, is
+
+  Let us now fill in the blanks in the equation above. The probability that
+  player \(1\) is void in a particular suit, say red clubs
+  \(\color{Red}\clubsuit\), is
   \[
     P(A_1)=\frac{\binom{52-13}{13}}{\binom{52}{13}}.
   \]
   Similarly, the probability that player \(1\) and player \(2\) is void in
-  red hearts is
+  \(\color{Red}\clubsuit\) is
   \[
     P(A_1)=\frac{\binom{52-13}{13}}{\binom{52}{13}}%
     \cdot\frac{\binom{52-13-13}{13}}%
