@@ -136,7 +136,18 @@
   Let us calculate part (a) and (b) now for a rumor told to a gathering of
   \(N\) people.
 
-  For part (a):
+  For part (a): The originator can tell the rumor to any group of \(N\)
+  people which can be done in \(\binom{n}{N}\) ways while at the
+  \(k\)\textsup{th} step, the person can tell the rumor to any group of
+  \(N\) people not including the originator; this can be done in
+  \(\binom{n-1}{N}\) ways. Therefore, the probability of \(A_N\) that the
+  rumor does not return to the originator if it is told to a gathering of
+  \(N\) people is
+  \[
+    P(A_N)=%
+    \frac{\binom{n}{N}\binom{n-1}{N}^{r-1}}{\binom{n}{N}^r}=%
+    \left(\frac{\binom{n-1}{N}}{\binom{n}{N}}\right)^{r-1}.
+  \]
 \end{solution*}
 
 \begin{problem}[Handout 2, \# 14]
