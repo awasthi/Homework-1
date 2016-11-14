@@ -68,9 +68,9 @@
 
 \@ifundefined{solution*}{%
 \newenvironment{solution*}[1][Solution]{%
-  \begin{quote}\proof[#1]%
+  \begin{quotation}\proof[#1]%
 }{
-\endproof\end{quote}}}
+\endproof\end{quotation}}}
 \makeatother
 \else
 
@@ -114,9 +114,9 @@
 
 \@ifundefined{solution*}{%
 \newenvironment{solution*}[1][Solution]{%
-  \begin{quote}\proof[#1]%
+  \begin{quotation}\proof[#1]%
 }{
-\endproof\end{quote}}}
+\endproof\end{quotation}}}
 \makeatother
 \renewcommand\qedsymbol{\ensuremath{\blacksquare}}
 \else
@@ -154,9 +154,9 @@
 
 \@ifundefined{solution*}{%
 \newenvironment{solution*}[1][Solution]{%
-  \begin{quote}\proof[#1]%
+  \begin{quotation}\proof[#1]%
 }{
-\endproof\end{quote}}}
+\endproof\end{quotation}}}
 \makeatother
 \renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}} % Default is
 
@@ -327,8 +327,8 @@
 
 %% Replace some default math fonts
 % \renewcommand\cent{\text{\textcent}}%
-% \let\setminus\smallsetminus%
-% \let\emptyset\varnothing%
+\let\setminus\smallsetminus%
+\let\emptyset\varnothing%
 \let\oldbtright\blacktriangleright%
 \let\oldbtleft\blacktriangleleft%
 \renewcommand\blacktriangleright{\ensuremath{\scriptstyle\oldbtright}}
