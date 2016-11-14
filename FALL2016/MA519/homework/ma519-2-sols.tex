@@ -117,13 +117,20 @@
   For part (a): The originator can tell any one of the other \(n\)
   inhabitants the rumor. In turn, the non-originator can tell the other
   \(n-1\) inhabitants (not including the originator). Thus, the probability
-  of the event \(A\) that the rumor told \(r\) does not return to the
+  of the event \(A\) that the rumor told \(r\) times does not return to the
   originator is
   \[
     P(A)=\frac{n(n-1)^{r-1}}{n^r}=\left(\frac{n-1}{n}\right)^{r-1}.
   \]
-  \\\\
-  For part (b):
+
+  For part (b): The probability of \(B\) that the rumor told \(r\) times
+  is not repeated to any person is
+  \[
+    P(B)=\frac{n(n-1)\dotsc(n-r+1)}{n^r}=\frac{(n)_r}{n^r};
+  \]
+  the originator is allowed to tell the rumor to any of the other \(n\)
+  people while at the \(k\)\textsup{th} step, the person telling the rumor
+  is only allowed to tell the rumor to \(n-k\) people.
 \end{solution*}
 
 \begin{problem}[Handout 2, \# 14]
