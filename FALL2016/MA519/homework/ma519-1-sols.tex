@@ -12,16 +12,95 @@ with limit \(a\) and \(b\), respectively, we say \(a_n\sim b_n\) if
 For the sake of remaining consistent with DasGupta's book, we adopt the
 following notation for named distribution types:
 \begin{center}
-  \begin{tabular}{|c|c|c|c|c|}
+  \begin{tabular}{|c|c|c|c|c|c|}
     \hline
-    Name&Symbol&mass/density function&mean&variance\\
+    Name&Symbol&mass/density function&mean&variance&MGF\\
     \hline
-    Bernoulli&\(\Ber(p)\)&
-    \(\begin{cases}
-      p&\text{for \(k=0\),}\\
-      1-p&\text{for \(k=1\)}\end{cases}\)
-    &\(p\)&\(p(1-p)\)\\
-    binomial&\(\Bin(n,p)\)&\(\binom{n}{k}p^k(1-p)^{n-k}\)&\(np\)&\(np(1-p)\)\\
+        &&&&&\\
+    Bernoulli
+        &\(\Ber(p)\)%
+        &\(1-p\) for \(k=0\), \(p\) for \(k=1\)%
+        &\(p\)
+        &\(p(1-p)\)
+        &\((1-p)+p\rme^t\)
+    \\
+    binomial
+        &\(\Bin(n,p)\)%
+        &\(\binom{n}{k}p^k(1-p)^{n-k}\)%
+        &\(np\)
+        &\(np(1-p)\)
+        &\({(1-p+p\rme^t)}^n\)
+    \\
+    Poisson
+        &\(\Poi(p)\)
+        &\(\rme^{-\lambda}\frac{\lambda^k}{k!}\)
+        &\(\lambda\)
+        &\(\lambda\)
+        &\(\rme^{\lambda(\rme^t-1)}\)
+    \\
+    geometric
+        &\(\Geom(p)\)
+        &\((1-p)^{k-1}p\)
+        &\(\frac{1}{p}\)
+        &\(\frac{1-p}{p^2}\)
+        &\(\frac{p\rme^t}{1-(1-p)\rme^t}\)
+    \\
+    negative binomial
+        &\(\NB(r,p)\)
+        &\(\binom{k+r-1}{k}(1-p)^rp^k\)
+        &\(\frac{pr}{1-p}\)
+        &\(\frac{1-p}{p^2}\)
+        &\(\frac{pr}{(1-p)^2}\)
+    \\
+    exponential
+        &\(\Exp(\lambda)\)
+        &\((1-p)^{k-1}p\)
+        &\(\frac{1}{p}\)
+        &\(\frac{1-p}{p^2}\)
+        &\(\frac{p\rme^t}{1-(1-p)\rme^t}\)
+    \\
+    gamma
+        &\(\Gamma(\alpha,\lambda)\)
+        &\((1-p)^{k-1}p\)
+        &\(\frac{1}{p}\)
+        &\(\frac{1-p}{p^2}\)
+        &\(\frac{p\rme^t}{1-(1-p)\rme^t}\)
+    \\
+    chi-squared
+        &\(\chi^2_n\)
+        &\((1-p)^{k-1}p\)
+        &\(\frac{1}{p}\)
+        &\(\frac{1-p}{p^2}\)
+        &\(\frac{p\rme^t}{1-(1-p)\rme^t}\)
+    \\
+    Cauchy
+        &\(\Cauchy(\mu,\sigma)\)
+        &\((1-p)^{k-1}p\)
+        &\(\frac{1}{p}\)
+        &\(\frac{1-p}{p^2}\)
+        &\(\frac{p\rme^t}{1-(1-p)\rme^t}\)
+    \\
+    beta
+        &\(\rmB(\alpha,\beta)\)
+        &\((1-p)^{k-1}p\)
+        &\(\frac{1}{p}\)
+        &\(\frac{1-p}{p^2}\)
+        &\(\frac{p\rme^t}{1-(1-p)\rme^t}\)
+    \\
+    normal
+        &\(N(\mu,\sigma)\)
+        &\((1-p)^{k-1}p\)
+        &\(\frac{1}{p}\)
+        &\(\frac{1-p}{p^2}\)
+        &\(\frac{p\rme^t}{1-(1-p)\rme^t}\)
+    \\
+    uniform
+        &\(U(\mu,\sigma)\)
+        &\((1-p)^{k-1}p\)
+        &\(\frac{1}{p}\)
+        &\(\frac{1-p}{p^2}\)
+        &\(\frac{p\rme^t}{1-(1-p)\rme^t}\)\\
+    \hline
   \end{tabular}
 \end{center}
 
