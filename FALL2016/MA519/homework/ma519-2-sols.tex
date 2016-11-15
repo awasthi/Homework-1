@@ -184,7 +184,24 @@
 
   For part (b): Let \(B\) denote the event that the birthdays of six people
   will fall in exactly two calendar months. There are \(\binom{12}{2}=66\)
-  ways to choose two out of twelve calendar months
+  ways to choose two out of twelve calendar months. Now, we can have one
+  person having his birthday on the
+
+  For part (b): Let \(B\) denote the event that the birthdays of six people
+  will fall in exactly two calendar months. First, there are
+  \(\binom{12}{2}=66\) ways to choose the two calendar months on which the
+  six people's birthdays will fall. For each of the two months, we can have
+  one person having his birthday on the first and eleven on the other; two
+  persons having their birthday on the first and ten on the other; etc.\@
+  and vice-versa. Therefore,
+  \[
+    P(B)=%
+    \frac{\binom{12}{2}\cdot \binom{2}{1}%
+      \cdot\left[\binom{6}{1}+\dotsb+\binom{6}{5}\right]}%
+    {12^6}%
+    \approx
+    \num{0.0027408050411522633}.\qedhere
+  \]
 \end{solution*}
 
 \begin{problem}[Handout 2, \# 15]
