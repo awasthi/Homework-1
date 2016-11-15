@@ -11,9 +11,9 @@ with limit \(a\) and \(b\), respectively, we say \(a_n\sim b_n\) if
 
 For the sake of remaining consistent with DasGupta's book, we adopt the
 following notation for named distribution types:
-\begin{center}
+
 {\footnotesize
-  \begin{tabular}{|c|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|}
     \hline
     Name&Symbol&mass/density function&mean&variance&MGF\\
     \hline
@@ -74,7 +74,7 @@ following notation for named distribution types:
         &\((1-\lambda t)^{-1}\)
     \\
     gamma
-        &\(\Gamma(\alpha,\lambda)\)
+        &\(G(\alpha,\lambda)\)
         &\(\frac{\rme^{-\frac{x}{\lambda}}x^{\alpha-1}}
           {\lambda^\alpha\Gamma(\alpha)}\) for \(x\geq 0\)
         &\(\alpha\lambda\)
@@ -90,7 +90,7 @@ following notation for named distribution types:
         &\((1-2t)^{-\frac{m}{2}}\)
     \\
     beta
-        &\(\Be(\alpha,\beta)\)
+        &\(B(\alpha,\beta)\)
         &\(\frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha,\beta)}\)
           for \(0\leq x\leq 1\)
         &\(\frac{\alpha}{\alpha+\beta}\)
@@ -112,9 +112,7 @@ following notation for named distribution types:
         &DNE
     \\
     \hline
-  \end{tabular}
-}
-\end{center}
+  \end{tabular}}
 
 Recall that a sum of i.i.d.\@ Bernoulli random variables is a binomial; the
 sum of i.i.d.\@ geometric random variables is a negative binomial; the sum
