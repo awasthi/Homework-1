@@ -173,9 +173,18 @@
 \end{problem}
 \begin{solution*}
   For part (a): Let \(A\) denote the event that the birthdays of twelve
-  people fall in twelve different calendar months. After labeling the
-  people ``person \(k\)'', where \(k=1,\dotsc,12\), we make the following
-  counting argument. Person 1 can choose any one of \(12\) months.
+  people will fall in twelve different calendar months. There are \(12!\)
+  ways to assign a person to a calendar date without
+  duplication. Therefore,
+  \[
+    P(A)=\frac{12!}{12^{12}}=
+    \frac{\num{479001600}}{\num{8916100448256}}
+    \approx\num{5.372321709247828e-05}
+  \]
+
+  For part (b): Let \(B\) denote the event that the birthdays of six people
+  will fall in exactly two calendar months. There are \(\binom{12}{2}=66\)
+  ways to choose two out of twelve calendar months
 \end{solution*}
 
 \begin{problem}[Handout 2, \# 15]
