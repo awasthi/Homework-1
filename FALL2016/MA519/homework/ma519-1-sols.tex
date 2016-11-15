@@ -53,7 +53,7 @@ following notation for named distribution types:
         &\(\frac{pr}{(1-p)^2}\)
     \\
     hypergeometric
-        &\(\Hgeom(n,N,D)\)
+        &\(\HGeom(n,N,D)\)
         &\(\frac{\binom{D}{k}\binom{N-D}{n-x}}{\binom{N}{n}}\)
         &\(\frac{nD}{N}\)
         &\(\frac{nD}{N}(1-\frac{D}{N})\frac{N-n}{N-1}\)
@@ -61,14 +61,14 @@ following notation for named distribution types:
     \\
     uniform
         &\(U[a,b]\)
-        &\(\frac{1}{b-a}\) for \(a\leq x\leq b\), else \(0\)
+        &\(\frac{1}{b-a}\) if \(a\leq x\leq b\), else \(0\)
         &\(\frac{a+b}{2}\)
         &\(\frac{(b-a)^2}{12}\)
         &\(\frac{\rme^{bt}-\rme^{at}}{(b-a)t}\)
     \\
     exponential
         &\(\Exp(\lambda)\)
-        &\(\frac{1}{\lambda}\rme^{-\frac{x}{\lambda}}\) for \((x\geq 0)\)
+        &\(\frac{1}{\lambda}\rme^{-\frac{x}{\lambda}}\) for \(x\geq 0\)
         &\(\lambda\)
         &\(\lambda^2\)
         &\((1-\lambda t)^{-1}\)
@@ -90,8 +90,8 @@ following notation for named distribution types:
         &\((1-2t)^{-\frac{m}{2}}\)
     \\
     beta
-        &\(\rmB(\alpha,\beta)\)
-        &\(\frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha,\beta)}\),
+        &\(\Be(\alpha,\beta)\)
+        &\(\frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha,\beta)}\)
           for \(0\leq x\leq 1\)
         &\(\frac{\alpha}{\alpha+\beta}\)
         &\(\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}\)
