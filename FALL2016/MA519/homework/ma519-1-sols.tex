@@ -12,107 +12,109 @@ with limit \(a\) and \(b\), respectively, we say \(a_n\sim b_n\) if
 For the sake of remaining consistent with DasGupta's book, we adopt the
 following notation for named distribution types:
 
-{\footnotesize
+
+\begin{adjustwidth}{-1.5cm}{}
 \begin{tabular}{|c|c|c|c|c|c|}
-    \hline
-    Name&Symbol&mass/density function&mean&variance&MGF\\
-    \hline
-    Bernoulli
-        &\(\Ber(p)\)%
-        &\(1-p\) for \(k=0\), \(p\) for \(k=1\)%
-        &\(p\)
-        &\(p(1-p)\)
-        &\((1-p)+p\rme^t\)
-    \\
-    binomial
-        &\(\Bin(n,p)\)%
-        &\(\binom{n}{k}p^k(1-p)^{n-k}\) for \(k=0,\dotsc,n\)
-        &\(np\)
-        &\(np(1-p)\)
-        &\({(p\rme^t+1-p)}^n\)
-    \\
-    Poisson
-        &\(\Poi(p)\)
-        &\(\rme^{-\lambda}\frac{\lambda^k}{k!}\)
-        &\(\lambda\)
-        &\(\lambda\)
-        &\(\rme^{\lambda(\rme^t-1)}\)
-    \\
-    geometric
-        &\(\Geom(p)\)
-        &\((1-p)^k p\)
-        &\(\frac{1-p}{p}\)
-        &\(\frac{1-p}{p^2}\)
-        &\(\frac{p}{1-(1-p)\rme^t}\)
-    \\
-    negative binomial
-        &\(\NB(r,p)\)
-        &\(\binom{k+r-1}{k}(1-p)^rp^k\)
-        &\(\frac{pr}{1-p}\)
-        &\(\frac{1-p}{p^2}\)
-        &\(\frac{pr}{(1-p)^2}\)
-    \\
-    hypergeometric
-        &\(\HGeom(n,N,D)\)
-        &\(\frac{\binom{D}{k}\binom{N-D}{n-x}}{\binom{N}{n}}\)
-        &\(\frac{nD}{N}\)
-        &\(\frac{nD}{N}(1-\frac{D}{N})\frac{N-n}{N-1}\)
-        &
-    \\
-    uniform
-        &\(U[a,b]\)
-        &\(\frac{1}{b-a}\) if \(a\leq x\leq b\), else \(0\)
-        &\(\frac{a+b}{2}\)
-        &\(\frac{(b-a)^2}{12}\)
-        &\(\frac{\rme^{bt}-\rme^{at}}{(b-a)t}\)
-    \\
-    exponential
-        &\(\Exp(\lambda)\)
-        &\(\frac{1}{\lambda}\rme^{-\frac{x}{\lambda}}\) for \(x\geq 0\)
-        &\(\lambda\)
-        &\(\lambda^2\)
-        &\((1-\lambda t)^{-1}\)
-    \\
-    gamma
-        &\(G(\alpha,\lambda)\)
-        &\(\frac{\rme^{-\frac{x}{\lambda}}x^{\alpha-1}}
-          {\lambda^\alpha\Gamma(\alpha)}\) for \(x\geq 0\)
-        &\(\alpha\lambda\)
-        &\(\alpha\lambda^2\)
-        &\((1-\lambda t)^{-\alpha}\)
-    \\
-    chi-squared
-        &\(\chi^2_n\)
-        &\(\frac{\rme^{-\frac{x}{2}}x^{\frac{m}{2}-1}}
-          {2^{\frac{m}{2}}\Gamma(\frac{m}{2})}\) for \(x\geq 0\)
-        &\(m\)
-        &\(2m\)
-        &\((1-2t)^{-\frac{m}{2}}\)
-    \\
-    beta
-        &\(B(\alpha,\beta)\)
-        &\(\frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha,\beta)}\)
-          for \(0\leq x\leq 1\)
-        &\(\frac{\alpha}{\alpha+\beta}\)
-        &\(\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}\)
-        &
-    \\
-    normal
-        &\(N(\mu,\sigma)\)
-        &\(\frac{1}{\sqrt{2\pi\sigma^2}}\rme^{-\frac{(x-\mu)^2}{2\sigma^2}}\)
-        &\(\mu\)
-        &\(\sigma^2\)
-        &\(\rme^{t\mu+\frac{t^2\sigma^2}{2}}\)
-    \\
-    Cauchy
-        &\(\Cauchy(\mu,\sigma)\)
-        &\((\sigma\pi(1+\frac{(x-\mu)^2}{\sigma^2}))^{-1}\)
-        &DNE
-        &DNE
-        &DNE
-    \\
-    \hline
-  \end{tabular}}
+\hline
+Name&Symbol&mass/density function&mean&variance&MGF\\
+\hline
+Bernoulli
+&\(\Ber(p)\)%
+&\(1-p\) for \(k=0\), \(p\) for \(k=1\)%
+&\(p\)
+&\(p(1-p)\)
+&\((1-p)+p\rme^t\)
+\\
+binomial
+&\(\Bin(n,p)\)%
+&\(\binom{n}{k}p^k(1-p)^{n-k}\) for \(k=0,\dotsc,n\)
+&\(np\)
+&\(np(1-p)\)
+&\({(p\rme^t+1-p)}^n\)
+\\
+Poisson
+&\(\Poi(p)\)
+&\(\rme^{-\lambda}\frac{\lambda^k}{k!}\)
+&\(\lambda\)
+&\(\lambda\)
+&\(\rme^{\lambda(\rme^t-1)}\)
+\\
+geometric
+&\(\Geom(p)\)
+&\((1-p)^k p\)
+&\(\frac{1-p}{p}\)
+&\(\frac{1-p}{p^2}\)
+&\(\frac{p}{1-(1-p)\rme^t}\)
+\\
+negative binomial
+&\(\NB(r,p)\)
+&\(\binom{k+r-1}{k}(1-p)^rp^k\)
+&\(\frac{pr}{1-p}\)
+&\(\frac{1-p}{p^2}\)
+&\(\frac{pr}{(1-p)^2}\)
+\\
+hypergeometric
+&\(\HGeom(n,N,D)\)
+&\(\frac{\binom{D}{k}\binom{N-D}{n-x}}{\binom{N}{n}}\)
+&\(\frac{nD}{N}\)
+&\(\frac{nD}{N}(1-\frac{D}{N})\frac{N-n}{N-1}\)
+&
+\\
+uniform
+&\(U[a,b]\)
+&\(\frac{1}{b-a}\) if \(a\leq x\leq b\), else \(0\)
+&\(\frac{a+b}{2}\)
+&\(\frac{(b-a)^2}{12}\)
+&\(\frac{\rme^{bt}-\rme^{at}}{(b-a)t}\)
+\\
+exponential
+&\(\Exp(\lambda)\)
+&\(\frac{1}{\lambda}\rme^{-\frac{x}{\lambda}}\) for \(x\geq 0\)
+&\(\lambda\)
+&\(\lambda^2\)
+&\((1-\lambda t)^{-1}\)
+\\
+gamma
+&\(G(\alpha,\lambda)\)
+&\(\frac{\rme^{-\frac{x}{\lambda}}x^{\alpha-1}}
+  {\lambda^\alpha\Gamma(\alpha)}\) for \(x\geq 0\)
+&\(\alpha\lambda\)
+&\(\alpha\lambda^2\)
+&\((1-\lambda t)^{-\alpha}\)
+\\
+chi-squared
+&\(\chi^2_n\)
+&\(\frac{\rme^{-\frac{x}{2}}x^{\frac{m}{2}-1}}
+  {2^{\frac{m}{2}}\Gamma(\frac{m}{2})}\) for \(x\geq 0\)
+&\(m\)
+&\(2m\)
+&\((1-2t)^{-\frac{m}{2}}\)
+\\
+beta
+&\(B(\alpha,\beta)\)
+&\(\frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha,\beta)}\)
+  for \(0\leq x\leq 1\)
+&\(\frac{\alpha}{\alpha+\beta}\)
+&\(\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}\)
+&
+\\
+normal
+&\(N(\mu,\sigma)\)
+&\(\frac{1}{\sqrt{2\pi\sigma^2}}\rme^{-\frac{(x-\mu)^2}{2\sigma^2}}\)
+&\(\mu\)
+&\(\sigma^2\)
+&\(\rme^{t\mu+\frac{t^2\sigma^2}{2}}\)
+\\
+Cauchy
+&\(\Cauchy(\mu,\sigma)\)
+&\((\sigma\pi(1+\frac{(x-\mu)^2}{\sigma^2}))^{-1}\)
+&DNE
+&DNE
+&DNE
+\\
+\hline
+\end{tabular}
+\end{adjustwidth}
 
 Recall that a sum of i.i.d.\@ Bernoulli random variables is a binomial; the
 sum of i.i.d.\@ geometric random variables is a negative binomial; the sum
