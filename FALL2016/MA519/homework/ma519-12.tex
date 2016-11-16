@@ -87,9 +87,12 @@
   Suppose \(\sigma_X\) and \(\sigma_Y\) exist and are finite. Then the
   second moments of both \(X\) and \(Y\) exist and are finite. Therefore,
   by Minkowski's inequality, we have
-  \[
-    E(|X+Y|^2)\leq E(X^2)+E(Y^2)+2{[E(X^2)E(Y^2)]}^\frac{1}{2}
-  \]
+  \begin{align*}
+    E(|X+Y|^2)
+    &\leq E(X^2)+E(Y^2)+2{[E(X^2)E(Y^2)]}^\frac{1}{2}\\
+    E(|X+Y|^2)-E(X+Y)^2
+    &\leq E(X^2)+E(Y^2)+2{[E(X^2)E(Y^2)]}^\frac{1}{2}-E(X+Y)^2
+  \end{align*}
 \end{solution}
 \newpage
 
