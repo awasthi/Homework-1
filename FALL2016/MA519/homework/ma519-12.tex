@@ -84,14 +84,40 @@
   random variables. Show that \(\sigma_{X+Y}\leq\sigma_X+\sigma_Y\).
 \end{problem}
 \begin{solution}
-  Suppose \(\sigma_X\) and \(\sigma_Y\) exist and are finite. Then the
-  second moments of both \(X\) and \(Y\) exist and are finite. Therefore,
-  by Minkowski's inequality, we have
+  Suppose \(\sigma_X\) and \(\sigma_Y\) exist and are finite. We want to
+  show
+  \[
+    \sigma_{X+Y}\leq\sigma_X+\sigma_Y;
+  \]
+  this is the same as showing that
   \begin{align*}
-    E(|X+Y|^2)
-    &\leq E(X^2)+E(Y^2)+2{[E(X^2)E(Y^2)]}^\frac{1}{2}\\
-    E(|X+Y|^2)-E(X+Y)^2
-    &\leq E(X^2)+E(Y^2)+2{[E(X^2)E(Y^2)]}^\frac{1}{2}-E(X+Y)^2
+    \sigma_{X+Y}^2
+    &\leq\sigma_X+\sigma_Y^2+2\sigma_X\sigma_Y\\
+    \Var(X+Y)&\leq\Var(X)+\Var(Y)+2[\Var(X)\Var(Y)]^{\frac{1}{2}}.
+  \end{align*}
+
+  First, let us expand \(\Var(X+Y)\) using the definition of variance, we
+  have
+  \begin{align*}
+    \Var(X+Y)
+    &=E\bigl((X+Y)^2\bigr)-E(X+Y)^2\\
+    &=E(X^2)+2E(XY)+E(Y^2)-E(X)^2-2E(X)E(Y)-E(Y)^2\\
+    &=\bigl(E(X^2)-E(X)^2\bigr)+\bigl(E(Y^2)-E(Y)^2\bigr)+2[E(XY)-E(X)E(Y)]\\
+    &=\Var(X)+\Var(Y)+2[E(XY)-E(X)E(Y)].
+  \end{align*}
+  Therefore, it suffices to show that
+  \[
+    E(XY)-E(X)E(Y)\leq [\Var(X)\Var(Y)]^{\frac{1}{2}}.
+  \]
+
+  By the Cauchy--Schwartz inequality, we have
+  \begin{align*}
+    E(XY)-E(X)E(Y)
+    &\leq
+      {[E(X^2)E(Y^2)]}^{\frac{1}{2}}-{[E(X)^2E(Y)^2]}^{\frac{1}{2}}\\
+    &=\bigl({[E(X^2)E(Y^2)]}^{\frac{1}{2}}+E(X)E(Y)\bigr)
+      \bigl({[E(X^2)E(Y^2)]}^{\frac{1}{2}}-E(X)E(Y)\bigr)\\
+    &=
   \end{align*}
 \end{solution}
 \newpage
