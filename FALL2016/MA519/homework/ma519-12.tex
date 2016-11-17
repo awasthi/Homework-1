@@ -115,8 +115,6 @@
     E(XY)-E(X)E(Y)
     &\leq
       {[E(X^2)E(Y^2)]}^{\frac{1}{2}}-{[E(X)^2E(Y)^2]}^{\frac{1}{2}}\\
-    &=\bigl({[E(X^2)E(Y^2)]}^{\frac{1}{2}}+E(X)E(Y)\bigr)
-      \bigl({[E(X^2)E(Y^2)]}^{\frac{1}{2}}-E(X)E(Y)\bigr)\\
     &=
   \end{align*}
 \end{solution}
@@ -129,7 +127,25 @@
   \(X_2,X_3\).
 \end{problem}
 \begin{solution}
+  The tabled referenced in this problem is on p.\@ 40 of Feller. Let us
+  write down a table of our own for the joint distribution of
+  \((X_2,X_3)\):
+  \[
+    \begin{tabular}{c|c|c|c|c|}
+      \(X_3\backslash X_2\)&0&1&2&3\\\hline
+      0&\num{0.047539}&\num{0.156368}&\num{0.321295}&\num{0.107098}\\\hline
+      1&\num{0.108883}&\num{0.214197}&\num{0.026775}&0\\\hline
+      2&\num{0.017850}&0&0&0\\\hline
+    \end{tabular}
+  \]
 
+  Let us do a sanity check by summing over all of the entries in the table
+  above
+  \[
+    \num{0.047539}+\num{0.156368}+\num{0.321295}+\num{0.107098}+
+    \num{0.108883}+\num{0.214197}+\num{0.026775}+0+\num{0.017850}+0+0+0\approx
+    1.\qedhere
+  \]
 \end{solution}
 \newpage
 
