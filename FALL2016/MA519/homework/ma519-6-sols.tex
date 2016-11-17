@@ -28,8 +28,17 @@
     Y
     &=35\min\{X,x\}-20x\\
     &=17.5((X+x)-|X-x|)-20x\\
-    &=(17.5X-2.5x)-17.5|X-x|.
+    &=17.5X-2.5x-17.5|X-x|.
   \end{align*}
+
+  Therefore, the expectation of \(Y\) is
+  \begin{align*}
+    E(Y)
+    &=17.5E(X)-2.5x-17.5E(|X-x|)\\
+    &=437.5-2.5x-\sum_{k=0}^x(x-k)\binom{50}{k}0.5^{50}-\sum_{k=x+1}^{50}(k-x)\binom{50}{k}0.5^{50}.
+  \end{align*}
+  Recursively trying values of \(x\) we find that the optimal value is
+  \(x=24\).
 \end{solution}
 
 \begin{problem}[Handout 8, \# 12]
@@ -42,15 +51,15 @@
 \end{solution}
 
 \begin{problem}[Handout 8, \# 13]
-  A book of \(500\) pages contains \(500\) misprints. Estimate the chances
-  that a given page contains at least three misprints.
+  A book of \(\num{500}\) pages contains\(\num{500}\) misprints. Estimate
+  the chances that a given page contains at least three misprints.
 \end{problem}
 \begin{solution}
 \end{solution}
 
 
 \begin{problem}[Handout 8, \# 14]
-  Colorblindness appears in \(1\) per cent of the people in a certain
+  Colorblindness appears in one percent of the people in a certain
   population. How large must a random sample (with replacements) be if the
   probability of its containing a colorblind person is to be \(0.95\) or
   more?
@@ -80,7 +89,8 @@
   Suppose \(X\), \(Y\), \(Z\) are mutually independent random variables,
   and \(E(X)=0\), \(E(Y)=-1\), \(E(Z)=1\), \(E(X^2)=4\), \(E(Y^2)=3\),
   \(E(Z^2)=10\). Find the variance and the second moment of
-  \(2Z-Y/2+\rme X\), where \(\rme\) is the number such that \(\ln \rme=1\).
+  \(2Z-\frac{Y}{2}+\rme X\), where \(\rme\) is the number such that
+  \(\ln \rme=1\).
 \end{problem}
 \begin{solution}
 \end{solution}
