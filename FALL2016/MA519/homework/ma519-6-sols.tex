@@ -10,6 +10,9 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
+  For part (a): The distribution is a \(\Bin(5,0.5)\).
+
+  For part (b): The distribution is a \(\Bin(25,0.2)\).
 \end{solution}
 
 \begin{problem}[Handout 8, \# 10]
@@ -19,12 +22,21 @@
   number of papers the newsboy should purchase?
 \end{problem}
 \begin{solution}
+  Let \(x\) denote the optimum number of newspapers to be bought and
+  \(X\sim\Bin(50,0.5)\) the demand. Then the profit \(Y\) is given by
+  \begin{align*}
+    Y
+    &=35\min\{X,x\}-20x\\
+    &=17.5((X+x)-|X-x|)-20x\\
+    &=(17.5X-2.5x)-17.5|X-x|.
+  \end{align*}
 \end{solution}
 
 \begin{problem}[Handout 8, \# 12]
   How many independent bridge dealings are required in order for the
   probability of a preassigned player having four aces at least once to be
-  \(1/2\) or better? Solve again for some player instead of a given one.
+  \(\frac{1}{2}\) or better? Solve again for some player instead of a given
+  one.
 \end{problem}
 \begin{solution}
 \end{solution}
