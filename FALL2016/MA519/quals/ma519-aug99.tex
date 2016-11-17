@@ -87,12 +87,12 @@
   \]
 \end{problem}
 \begin{solution*}
- The points, call them \(Y_n\) and \(Z_n\) are uniformly distributed on
-  \([0,1]^n\). First, let us find the PDF of \(X_n\):
+ The points, call them \(Y_k\) and \(Z_k\) are uniformly distributed on
+  \([0,1]^n\). First, let us find the PDF of \(X_k\):
   \begin{align*}
-    P(X\leq x)
-    &=P\left(|Y_n-Z_n|\leq x\right)\\
-    &=
+    P(X_k\leq x)
+    &=P(|Y_k-Z_k|\leq x)\\
+    &=P\left((Y_{1,k}-Z_{1,k})^2+\dotsb+(Y_{n,k}-Z_{n,k})^2\leq x^2\right)
   \end{align*}
 \end{solution*}
 
