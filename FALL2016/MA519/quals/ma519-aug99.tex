@@ -63,12 +63,19 @@
 \end{problem}
 \begin{solution*}
   Suppose \(X\) and \(Y\) are both double-exponential random variables both
-  having identical PDFs \(f_X(x)=f_Y(x)=\frac{\rme^{-|x|}}{2}\). Then
+  having identical PDFs \(f_X(x)=f_Y(x)=\frac{\rme^{-|x|}}{2}\). Then,
+  since \(X\) and \(Y\) are independent, we have
   \begin{align*}
     P(X+Y\leq x)
     &=\int_{-\infty}^\infty f_X(x)f_Y(x-y)\diff y\\
-    &=\frac{\rme^{-|x|}}{4}\int_{-\infty}^\infty\rme^{-|x-y}\diff y\\
-    &=
+    &=\frac{\rme^{-|x|}}{4}\int_{-\infty}^\infty\rme^{-|x-y|}\diff y\\
+    &=\frac{\rme^{-|x|}}{4}
+      \left[
+      \int_{-\infty}^x\rme^{x-y}\diff y
+      +\int_x^\infty\rme^{y-x}\diff y
+      \right]\\
+    &\frac{\rme^{-|x|}}{4}[1+1]\\
+    &=\frac{\rme^{-|x|}}{2}.\qedhere
   \end{align*}
 \end{solution*}
 
@@ -80,6 +87,7 @@
   \]
 \end{problem}
 \begin{solution*}
+  The random variable \(X\sim U([0,1]^n)\).
 \end{solution*}
 
 \begin{problem}
