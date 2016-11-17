@@ -178,6 +178,7 @@
 \usepackage{microtype}%
 \usepackage{lastpage}%
 \usepackage{booktabs} % for better rules in tables
+\usepackage{changepage}
 
 %% Enumerate
 \usepackage{enumitem}%
@@ -327,6 +328,7 @@
 
 %% Replace some default math fonts
 % \renewcommand\cent{\text{\textcent}}%
+\let\bigsetminus\setminus%
 \let\setminus\smallsetminus%
 \let\emptyset\varnothing%
 \let\oldbtright\blacktriangleright%
@@ -639,8 +641,10 @@
 \DeclareMathOperator{\Exponential}{Exponential}
 \DeclareMathOperator{\Exp}{Exp}
 \DeclareMathOperator{\Gaussian}{Gaussian}
+\DeclareMathOperator{\GAMMA}{Gamma}
 \DeclareMathOperator{\Geometric}{Geomtric}
 \DeclareMathOperator{\Geom}{Geom}
+\DeclareMathOperator{\HGeom}{HGeom}
 \DeclareMathOperator{\NegBinom}{NegBinom}
 \DeclareMathOperator{\NB}{NB}
 \DeclareMathOperator{\Normal}{Normal}
