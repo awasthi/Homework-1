@@ -62,6 +62,14 @@
   density function of \(X+Y\).
 \end{problem}
 \begin{solution*}
+  Suppose \(X\) and \(Y\) are both double-exponential random variables both
+  having identical PDFs \(f_X(x)=f_Y(x)=\frac{\rme^{-|x|}}{2}\). Then
+  \begin{align*}
+    P(X+Y\leq x)
+    &=\int_{-\infty}^\infty f_X(x)f_Y(x-y)\diff y\\
+    &=\frac{\rme^{-|x|}}{4}\int_{-\infty}^\infty\rme^{-|x-y}\diff y\\
+    &=
+  \end{align*}
 \end{solution*}
 
 \begin{problem}
