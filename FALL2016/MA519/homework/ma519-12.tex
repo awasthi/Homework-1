@@ -145,7 +145,16 @@
   this hypergeometric distribution.
 \end{problem}
 \begin{solution}
-
+  First, let us find the PMF of \(X\) given \(X+Y=t\):
+  \begin{align*}
+    P(X=x\,|\,X+Y=t)
+    &=\frac{P\bigl(\{\,X=x\,\}\cap\{\,X+Y=t\,\}\bigr)}{P(X+Y=t)}\\
+    &=\frac{P(Y=t-x)}{P(X+Y=t)}\\
+    &=\frac{\binom{n}{k}\binom{m}{t-k}p^t(1-p)^{m+n-t}}
+      {\binom{m+n}{t}p^t(1-p)^{m+n-t}}\\
+    &=\frac{\binom{n}{k}\binom{m}{t-k}}{\binom{m+n}{t}}.
+  \end{align*}
+  This distribution is precisely \(\Hypergeo(t,m,n+m)\).
 \end{solution}
 \newpage
 
