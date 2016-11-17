@@ -150,9 +150,9 @@
     P(X=x\,|\,X+Y=t)
     &=\frac{P\bigl(\{\,X=x\,\}\cap\{\,X+Y=t\,\}\bigr)}{P(X+Y=t)}\\
     &=\frac{P(Y=t-x)}{P(X+Y=t)}\\
-    &=\frac{\binom{n}{k}\binom{m}{t-k}p^t(1-p)^{m+n-t}}
+    &=\frac{\binom{n}{x}\binom{m}{t-x}p^t(1-p)^{m+n-t}}
       {\binom{m+n}{t}p^t(1-p)^{m+n-t}}\\
-    &=\frac{\binom{n}{k}\binom{m}{t-k}}{\binom{m+n}{t}}.
+    &=\frac{\binom{n}{x}\binom{m}{t-x}}{\binom{m+n}{t}}.
   \end{align*}
   This distribution is precisely \(\Hypergeo(t,m,n+m)\).
 \end{solution}
