@@ -8,6 +8,21 @@
   takes home on a given day.
 \end{problem}
 \begin{solution*}
+  Let \(X\) denote the number of fish caught by Anirban on any given day
+  and let \(Y\) denote the number of fish released by Anirban. Since
+  Anirban releases on average three-fourths of the fish he catches, the
+  number of fish he keeps is
+  \[
+    K\defeq X-Y=X-\tfrac{3}{4}Y=\tfrac{1}{4}X.
+  \]
+  Therefore,
+  \[
+    E(K)=\tfrac{1}{4}E(X)=\frac{20}{4}=5
+  \]
+  and
+  \[
+    \Var(K)=\left(\tfrac{1}{4}\right)^2\Var(X)=\frac{20}{16}.
+  \]
 \end{solution*}
 
 \begin{problem}
@@ -16,12 +31,35 @@
   six occurs.
 \end{problem}
 \begin{solution*}
+  Let \(X\) denote the number of tosses until a head comes up and \(Y\)
+  denote the number of rolls until we roll a six. Both of these random
+  variables have geometric PMFs with parameters \(\frac{1}{2}\) and
+  \(\frac{1}{6}\), respectively. Then we need to find \(P(X<Y)\). Since
+  \(X\) and \(Y\) are independent this value is given by the sum
+  \begin{align*}
+    P(X<Y)
+    &=P(0<Y-X)\\
+    &=\sum_{k=1}^\infty\sum_{\ell=k+1}^\infty P(X=k)P(Y=\ell)\\
+    &=\sum_{k=1}^\infty\sum_{\ell=k+1}^\infty
+      \left(\frac{1}{2}\right)\left(\frac{1}{2}\right)^{k-1}
+      \left(\frac{1}{6}\right)\left(\frac{5}{6}\right)^{\ell-1}\\
+    &=\sum_{k=1}^\infty\sum_{\ell=k+1}^\infty\\
+    &=\left(\frac{1}{12}\right)
+     \left[\sum_{k=0}^\infty
+      \left(\frac{1}{12}\right)^{k-1}
+      \right]
+      \left[\sum_{\ell=0}^\infty \left(\frac{5}{6}\right)^\ell\right]\\
+    &=\left(\frac{1}{12}\right)
+      \left(\frac{1}{1-\frac{1}{12}}\right)
+      \left(\frac{1}{1-\frac{5}{6}}\right)\\
+    &=\frac{6}{11}.\qedhere
+  \end{align*}
 \end{solution*}
 
 \begin{problem}
   \(X\), \(Y\) are independent random variables with a common density
-  \(f(x)=\rme^{-|x|}/2\), \(x\in(-\infty,\infty)\). Find the density
-  function of \(X+Y\).
+  \(f(x)=\frac{\rme^{-|x|}}{2}\), \(x\in(-\infty,\infty)\). Find the
+  density function of \(X+Y\).
 \end{problem}
 \begin{solution*}
 \end{solution*}
