@@ -87,13 +87,35 @@
   \]
 \end{problem}
 \begin{solution*}
- The points, call them \(Y_k\) and \(Z_k\) are uniformly distributed on
-  \([0,1]^n\). First, let us find the PDF of \(X_k\):
+  The points, call them \(Y_n\) and \(Z_n\) are uniformly distributed on
+  \([0,1]^n\). First, note that if \(a_n\to a\), \(\sqrt{a_n}\to\sqrt{a}\).
+  Let find a bound on the size of the expected value, by the
+  Cauchy--Schwartz inequality
   \begin{align*}
-    P(X_k\leq x)
-    &=P(|Y_k-Z_k|\leq x)\\
-    &=P\left((Y_{1,k}-Z_{1,k})^2+\dotsb+(Y_{n,k}-Z_{n,k})^2\leq x^2\right)
+    E(X_n^2)
+    &=E\left((Y_{1,n}-Z_{1,n})^2+\dotsb+(Y_{n,n}-Z_{n,n})^2\right)\\
+    &=E\left(Y_{1,n}^2-2Y_{1,n}Z_{1,n}+Z_{1,n}^2
+      +\dotsb+
+      Y_{n,n}^2-2Y_{n,n}Z_{n,n}+Z_{n,n}^2
+      \right)\\
+    &=E(Y_{1,n^2})-2E(Y_{1,n})E(Z_{1,n})+E(Z_{1,n}^2)\\
+    &\phantom{{}={}}+\dotsb+E(Y_{n,n}^2)-2E(Y_{n,n,})E(Z_{n,n})+E(Z_{n,n}^2)
   \end{align*}
+  since \(Y_n\) and \(Z_n\) are independent, moreover, since each
+  coordinate is uniformly distributed on \([0,1]\), the equation above
+  further reduces to
+  \begin{align*}
+    E(X_n^2)
+    &=2nE(Y_{1,n}^2)-2nE(Y_{1,n})E(Z_{1,n})\\
+    &=2n\Var(Y_{1,n})\\
+    &=\frac{n}{6}.
+  \end{align*}
+
+  Now, by Jensen's inequality, we have
+  \[
+    \frac{E(X_n)^2}{n}\leq \frac{E(X_n^2)}{n}=\frac{1}{6}.
+  \]
+  This tells us that
 \end{solution*}
 
 \begin{problem}
