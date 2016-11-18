@@ -10,6 +10,28 @@
   \end{enumerate}
 \end{problem}
 \begin{solution*}
+  For part (a): We use the hierarchical probability formula to find the
+  desired probability. Let \(A_k\), where \(k=1,\dotsc,n\), denote the
+  event ``\(k\)\textsup{th} time we pick up a pair of sticks, the pair of
+  sticks for one of the original \(n\) sticks.'' Let us first analyze
+  \(A_1\). The first time we pick up a stick we have \(2n\) choices and
+  once that choice has been made we must choose the complementary stick
+  from among the \(2n-1\) remaining sticks. This results in a probability
+  of
+  \[
+    P(A_1)=\frac{2n}{2n(2n-1)}=\frac{1}{2n-1}.
+  \]
+  Now we can more easily analyze the \(k\)\textsup{th} step. At the
+  \(k\)\textsup{th} step, there are \(2(n-k+1)\) (which consist of
+  \(n-k+1\) original pairs) remaining. Once we make a choice from among the
+  \(2(n-k+1)\) sticks, we must choose the complementary stick from among
+  the \(2(n-k+1)-1\) remaining sticks giving us
+  \[
+    P(A_k)=\frac{2(n-k+1)}{(2(n-k+1))(2(n-k+1)-1)}=\frac{1}{2(n-k+1)-1}
+  \]
+  By the hierarchical probability formula,
+
+  For part (b):
 \end{solution*}
 
 \begin{problem}[Handout 3, \# 5]
