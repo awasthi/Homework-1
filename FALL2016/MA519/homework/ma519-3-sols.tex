@@ -21,18 +21,21 @@
   \[
     P(A_1)=\frac{2n}{2n(2n-1)}=\frac{1}{2n-1}.
   \]
-  Now we can more easily analyze the \(k\)\textsup{th} step. At the
-  \(k\)\textsup{th} step, there are \(2(n-k+1)\) (which consist of
-  \(n-k+1\) original pairs) remaining. Once we make a choice from among the
-  \(2(n-k+1)\) sticks, we must choose the complementary stick from among
-  the \(2(n-k+1)-1\) remaining sticks giving us
+  Now we can more easily analyze the \(k\)\textsup{th} step given that at
+  the previous step we chose an original pair. At the \(k\)\textsup{th}
+  step, there are \(2(n-k+1)\) (which consist of \(n-k+1\) original pairs)
+  remaining. Once we make a choice from among the \(2(n-k+1)\) sticks, we
+  must choose the complementary stick from among the \(2(n-k+1)-1\)
+  remaining sticks giving us
   \[
-    P(A_k)=\frac{2(n-k+1)}{(2(n-k+1))(2(n-k+1)-1)}=\frac{1}{2(n-k+1)-1}
+    P\left(A_k\,\middle|\,\bigcap\nolimits_{j=1}^{k-1}A_j\right)=%
+    \frac{2(n-k+1)}{(2(n-k+1))(2(n-k+1)-1)}=%
+    \frac{1}{2(n-k+1)-1}
   \]
   By the hierarchical multiplicative formula,
   \[
     P\left(\bigcap\nolimits_{k=1}^n A_k\right)=%
-    \prod_{k=1}^n P(A_k)=%
+    \prod_{k=1}^n P\left(A_k\,\middle|\,\bigcap\nolimits_{j=1}^{k-1}A_j\right)=%
     \left(\frac{1}{2n-1}\right)%
     \dotsm%
     \left(\frac{1}{3}\right)\left(\frac{1}{1}\right).
@@ -40,7 +43,27 @@
 
   For part (b): Let \(A_k\) denote the event ``at the \(k\)\textsup{th}
   time we pick up a pair of sticks, there is one short and one long
-  stick.'' First, we examine \(P(A_1)\).
+  stick.'' First, let us examine the probability of the first event in our
+  sequence \(A_1\). Initially there are \(2n\) choices and once we make
+  that choice (of either a long or a short stick) only \(n\) choices for
+  the complementary stick. This gives us a probability of
+  \[
+    P(A_1)=\frac{2nn}{2n(2n-1)}=\frac{n}{2n-1}.
+  \]
+  A similar analysis to the one we provided above leads us to conclude that
+  the probability at the \(k\)\textsup{th} step of this process is given by
+  \[
+    P(A_k)=\frac{2(n-k)(n-k)}{2(n-k)(2(n-k)-1)}=\frac{n-k}{2(n-k)-1}.
+  \]
+  Once again, the hierarchical multiplicative formula gives us the
+  probability we are after,
+  \[
+    P\left(\bigcap\nolimits_{k=1}^n A_k\right)=%
+    \prod_{k=1}^n
+    P\left(A_k\,\middle|\,\bigcap\nolimits_{j=1}^{k-1}A_j\right)=%
+    \left(\frac{n}{2n-1}\right)\dotsm
+    \left(\frac{2}{3}\right)\left(\frac{1}{1}\right).\qedhere
+  \]
 \end{solution*}
 
 \begin{problem}[Handout 3, \# 5]
