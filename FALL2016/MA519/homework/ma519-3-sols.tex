@@ -129,13 +129,15 @@
   the person is telling the truth.
 \end{problem}
 \begin{solution*}
-  Let us first establish some notation. Let \(p\) denote the probability of
-  the event \(A\) that ``a given person is telling the truth'', let \(B\)
-  denote the event that ``a given person fails the polygraph''. Then
-  Bayes's theorem implies that the probability of \(B\) given \(A\) is
-  \[
-    P(B\,|\,A)=\frac{P(A\cap B)}{P(A)}=\frac{P(A\cap B)}{p}
-  \]
+  Let \(T\) denote the event that a given person is telling the truth and
+  \(F\) denote the event that said person fails the polygraph test. Then
+  Bayes' theorem implies that
+  \begin{align*}
+    P(T\,|\,F)
+    &=\frac{P(F\,|\,T)P(T)}{P(F\,|\,T)P(T) + P(F\,|\,L)P(L)}\\
+    &=\frac{0.15p}{0.15p + 0.9 - 0.9p}\\
+    &=\frac{0.15p}{0.9-0.75p}.\qedhere
+  \end{align*}
 \end{solution*}
 
 \begin{problem}[Handout 4, \# 8]
@@ -146,6 +148,7 @@
   it was manufactured by machines \(A\), \(B\), \(C\)?
 \end{problem}
 \begin{solution*}
+  Let \(\chi\) be a riemannian metric
 \end{solution*}
 
 \begin{problem}[Handout 4, \# 9]
