@@ -78,9 +78,21 @@
 \end{problem}
 \begin{solution*}
   For part (a): There are \(3^4\) possible outcomes (since each of the four
-  the four town residents have three choices of plumber whom to call).
+  the four town residents have three choices of plumber whom to
+  call). There are \(\binom{3}{1}=3\) ways to choose one plumber from among
+  the three so the probability of \(A\) that the four residents all call
+  the same plumber is
+  \[
+    P(A)=\frac{3}{3^4}=%
+    \frac{1}{3^3}=%
+    \frac{1}{27}\approx%
+    \num{0.037037037037037035}.
+  \]
 
-  For part (b):
+  For part (b): Let \(X\colon\Omega\to\bbR\) denote the number of plumbers
+  that receive a call from one of the four residents. Before proceeding, we
+  must find the probability \(P(X=k)\) for \(k=2,3\) (the case \(k=1\) was
+  worked out in part (a)).
 \end{solution*}
 
 \begin{problem}[Handout 4, \# 7]
