@@ -92,7 +92,31 @@
   For part (b): Let \(X\colon\Omega\to\bbR\) denote the number of plumbers
   that receive a call from one of the four residents. Before proceeding, we
   must find the probability \(P(X=k)\) for \(k=2,3\) (the case \(k=1\) was
-  worked out in part (a)).
+  worked out in part (a)). The probability that two distinct plumbers are
+  called can be broken into the probability that two of the residents call
+  one plumber and the remaining residents call another plus the probability
+  that three residents call one plumber and the remaining resident calls
+  another; in symbols,
+  \[
+    P(X=2)=%
+    \frac{\binom{4}{2}3\cdot 2}{3^4}+\frac{\binom{4}{3}3\cdot 2}{3^4}=%
+    \frac{60}{81}\approx\num{0.7407407407407407}.
+  \]
+  Similarly, the probability that three distinct plumbers are called by the
+  four residents is
+  \[
+    P(X=3)=%
+    \frac{3!3}{3^4}=\frac{6}{27}\approx%
+    \num{0.2222222222222222}=%
+    1-P(X=2)-P(X=1).
+  \]
+
+  Therefore, the mean is
+  \[
+    E(X)
+    =1\cdot\tfrac{1}{27}+2\cdot\tfrac{20}{27}+3\cdot\tfrac{2}{9}
+    \approx\num{2.185185185185185}.\qedhere
+  \]
 \end{solution*}
 
 \begin{problem}[Handout 4, \# 7]
@@ -105,6 +129,7 @@
   the person is telling the truth.
 \end{problem}
 \begin{solution*}
+  Now, consider the following example.
 \end{solution*}
 
 \begin{problem}[Handout 4, \# 8]
