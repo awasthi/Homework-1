@@ -18,19 +18,18 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  For part (a): Consider the initial-value problem
-  \begin{equation}
-    \label{eq:9:wave-eq-init-value}
-    \left\{
-      \begin{aligned}
-        u_{tt}-\Delta u&=0&&&&\text{in \(\bbR^3\times(0,\infty)\),}\\
-        u&=g,&u_t&=h&&\text{on \(\bbR^3\times\{\,t=0\,\}\).}
-      \end{aligned}
-    \right.
-  \end{equation}
-  Suppose that \(u\) is a solution to the initial-value problem
-  \eqref{eq:9:wave-eq-init-value} that is symmetric about the origin; i.e.,
-  \(u(x)=u(x')\) whenever \(|x|=|x'|\). Now, make the following substitution
+  For part (a): From Kirchhoff's formula, we have
+  \[
+    u(x,t)=%
+    \fint_{\partial B(x,t)}
+    \bigl[
+    th(y)+g(y)+D^\alpha g(y)\cdot (y-x)
+    \bigr]
+    \diff S(y)
+  \]
+  solves the initial-value problem for the wave equation.
+
+  For part (b):
 \end{solution}
 \newpage
 
