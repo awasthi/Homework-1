@@ -1,32 +1,14 @@
+\section{Homework 13}
 \begin{problem}[Handout 17, \# 16]
   Suppose \(X\sim\Exp(1)\), \(Y\sim U[0,1]\), and \(X\), \(Y\) are
   independent.
   \begin{enumerate}[label=(\alph*),noitemsep]
-  \item Find the density of \(X+Y\).
-  \item Find the density of \(XY\).
+  \item
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  For part (a): Since \(X\) and \(Y\) are independent, the distribution of
-  \(X+Y\) is given by the convolution
-  \[
-    f_{X+Y}(x)=\int_{-\infty}^\infty f_X(x-y)f_Y(y)\diff y,
-  \]
-  where
-  \begin{align*}
-    f_X(x)
-      &=\begin{cases}
-        \frac{1}{\lambda}\rme^{-\frac{x}{\lambda}}&\text{for \(x\geq 0\),}\\
-        0&\text{otherwise,}
-      \end{cases}
-    &f_Y(x)
-       &=\begin{cases}
-         1&\text{for \(0\leq x\leq 1\),}\\
-         0&\text{otherwise.}
-       \end{cases}
-  \end{align*}
+
 \end{solution}
-\newpage
 
 \begin{problem}[Handout 17, \# 18]
   Two points \(A\), \(B\) are chosen at random from the unit circle. Find
@@ -35,7 +17,6 @@
 \end{problem}
 \begin{solution}
 \end{solution}
-\newpage
 
 \begin{problem}[Handout 17, \# 19]
   Let \(X\), \(Y\) be i.i.d.\@ \(U[0,1]\) random variables. Find the
@@ -46,5 +27,5 @@
 
 %%% Local Variables:
 %%% mode: latex
-%%% TeX-master: "../MA519-HW-Current"
+%%% TeX-master: "../MA519-HW-ALL"
 %%% End:
