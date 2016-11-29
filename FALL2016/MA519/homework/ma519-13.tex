@@ -25,15 +25,35 @@
          0&\text{otherwise.}
        \end{cases}
   \end{align*}
-  Therefore,
+  Therefore, a straight forward calculation gives us
   \begin{align*}
     f_{X+Y}(x)
     &=\int_{-\infty}^\infty
       \chi_{[0,\infty)}(x-y)\rme^{-(x-y)}\chi_{[0,1]}(y)\diff y\\
-    &=\rme^{-x}\int_{-\infty}^{\infty}\chi_{[0,\infty)}\chi_{[0,1]}\diff
+    &=\rme^{-x}\int_{-\infty}^{\infty}\rme^y\chi_{[0,\infty)}(x-y)\chi_{[0,1]}(y)\diff
       y\\
-    &=
+    &=\begin{cases}
+        0&\text{for \(x<0\),}\\
+        1-\rme^{-x}&\text{for \(0\leq x\leq 1\),}\\
+        (\rme-1)\rme^{-x}&\text{for \(x>1\).}
+      \end{cases}
   \end{align*}
+  Now let us run a sanity check by demonstrating that
+  \(\int_{-\infty}^\infty f_{X+Y}(x)\diff x=1\),
+  \begin{align*}
+    \int_{-\infty}^\infty f_{X+Y}(x)\diff x
+    &=\int_0^1 [1-\rme^{-x}]\diff x+(\rme-1)\int_1^\infty\rme^{-x}\diff x\\
+    &=\bigl[1+\rme^{-1}-1-0\bigr]+(\rme-1)\bigl[0-(-\rme^{-1})\bigr]\\
+    &=\rme^{-1}+1-\rme^{-1}\\
+    &=1.
+  \end{align*}
+
+  For part (b): We can use the formula
+  \[
+    f_{XY}(x)=\int_{-\infty}^\infty
+    \left[\tfrac{1}{|y|}f_X(y)f_Y(\tfrac{x}{y})\right]\diff y
+  \]
+  to arrive at the desired PDF.
 \end{solution}
 \newpage
 
