@@ -16,7 +16,7 @@
   \begin{align*}
     f_X(x)
       &=\begin{cases}
-        \frac{1}{\lambda}\rme^{-\frac{x}{\lambda}}&\text{for \(x\geq 0\),}\\
+        \rme^{-x}&\text{for \(x\geq 0\),}\\
         0&\text{otherwise,}
       \end{cases}
     &f_Y(x)
@@ -24,6 +24,15 @@
          1&\text{for \(0\leq x\leq 1\),}\\
          0&\text{otherwise.}
        \end{cases}
+  \end{align*}
+  Therefore,
+  \begin{align*}
+    f_{X+Y}(x)
+    &=\int_{-\infty}^\infty
+      \chi_{[0,\infty)}(x-y)\rme^{-(x-y)}\chi_{[0,1]}(y)\diff y\\
+    &=\rme^{-x}\int_{-\infty}^{\infty}\chi_{[0,\infty)}\chi_{[0,1]}\diff
+      y\\
+    &=
   \end{align*}
 \end{solution}
 \newpage
