@@ -67,19 +67,6 @@
   For part (b): We proceed as in [E, \S 2.4.1(b)]. Set
   \(v\defeq \frac{1}{r}u\). Then the \(v\) satisfies the initial-value
   problem
-  \[
-    \left\{
-      \begin{aligned}
-        v_{tt}-\Delta v=0,\\
-        v_t=
-      \end{aligned}
-    \right.
-  \]
-
-  \begin{align*}
-    v_r
-    &=
-  \end{align*}
 \end{solution}
 \newpage
 
@@ -112,6 +99,35 @@
   \]
 \end{problem}
 \begin{solution}
+  Taking the hint, the equation \(u(x_1,x_2,t)\defeq\cos(\lambda
+  x_2)w(x_1,t)\) satisfies the two-dimensional wave equation as we will
+  shortly see. First, let us compute find the necessary partial derivatives
+  of \(u\),
+  \begin{align*}
+    u_{tt}&=\cos(\lambda x_2)w_{tt}(x_1,t),\\
+    u_{x_1}&=\cos(\lambda x_2)w_{x_1}(x_1,t),\\
+    u_{x_1x_1}&=\cos(\lambda x_2)w_{x_1x_1}(x_1,t),\\
+    u_{x_2}&=-\lambda\sin(\lambda x_2)w(x_1,t),\\
+    u_{x_2x_2}&=-\lambda^2\cos(\lambda x_2)w(x_1,t).
+  \end{align*}
+  Then, by \eqref{eq:9:klein-gordon-eq} together with the equations above
+  we have
+  \[
+    \left\{
+      \begin{aligned}
+        u_{tt}-\Delta u=\cos(\lambda x_2)(w_{tt}-w_{x_1x_1}+\lambda^2 w)=0
+        &&&\text{in \(\bbR^3\times(0,\infty)\),}\\
+        u=0,\quad u=\cos(\lambda x_2)h(x_1)&&&\text{on
+          \(\bbR^3\times\{\,t=0\,\}\).}
+      \end{aligned}
+    \right.
+  \]
+  By Kirchhoff's formula,
+  \[
+    u(x_1,x_2,t)=\fint_{\partial
+      B(x_1,x_2,t)}th(y_1,y_2)+g(y_1,y_2)+Dg(y_1,y_2)\cdot(y-x)\diff S(y)
+  \]
+  solves the above initial-value problem.
 \end{solution}
 \newpage
 
@@ -120,8 +136,8 @@
   \[
     \left\{
       \begin{aligned}
-        u_{tt}-\Delta u=0&&&&\text{in \(\bbR^3\times(0,\infty)\),}\\
-        u=g,&&u_t=h&&\text{on \(\bbR^3\times\{\,t=0\,\}\)}
+        u_{tt}-\Delta u=0\phantom{,}&&&&&\text{in \(\bbR^3\times(0,\infty)\),}\\
+        u=g,&&u_t=h&&&\text{on \(\bbR^3\times\{\,t=0\,\}\)}
       \end{aligned}
     \right.
   \]
