@@ -34,7 +34,7 @@
     &=\tfrac{1}{r}F''(r+t)+\tfrac{1}{r}G''(r-t)\\
     &\phantom{{}={}\quad}-\tfrac{2}{r^2}F'(r+t)-\tfrac{2}{r^2}G'(r-t)\\
     &\phantom{{}={}\qquad}+\tfrac{2}{r^3}F(r+t)+\tfrac{2}{r^3}G(r-t),\\
-    \Delta_{S^2}u&=0
+    \Delta_{S^2}u&=0,
   \end{align*}
   and lastly,
   \begin{align*}
@@ -51,19 +51,29 @@
     &\phantom{{}={}}+0\\
     &=\tfrac{1}{r}F''(r+t)+\tfrac{1}{r}G''(r-t).
   \end{align*}
-  Therefore, we indeed have
+  Therefore, looking at the equation for \(u_{tt}\), we see that
   \[
     u_{tt}-\Delta u=0;
   \]
   i.e., \(u(r,t)\defeq\frac{1}{r}F(r+t)+\frac{1}{r}G(r-t)\) is a solution
-  to the wave equation with \(F\) and \(G\) at least \(C^2\) such that they
-  satisfy the initial conditions.
+  to the wave equation with \(F\) and \(G\) at least twice differentiable
+  and such that they satisfy the initial conditions of the (nonhomogeneous)
+  wave equation.
 
   We still need to show that if \(u\) is a solution to the wave equation
   with spherical symmetry it has the form prescribed above. We trust this
   can be done for now and return to this problem as time permits.
   \\\\
-  For part (b): Suppose \(h\) has even symmetry
+  For part (b): We proceed as in [E, \S 2.4.1(b)]. Set \(v\defeq ru\). Then
+  the \(v\) satisfies the initial-value problem
+  \[
+    \left\{
+      \begin{aligned}
+        v_{tt}-\Delta v=0,\\
+        v_t=
+      \end{aligned}
+    \right.
+  \]
 \end{solution}
 \newpage
 
