@@ -18,18 +18,52 @@
   \end{enumerate}
 \end{problem}
 \begin{solution}
-  For part (a): From Kirchhoff's formula, we have
+  For part (a): We show that
   \[
-    u(x,t)=%
-    \fint_{\partial B(x,t)}
-    \bigl[
-    th(y)+g(y)+D^\alpha g(y)\cdot (y-x)
-    \bigr]
-    \diff S(y)
+    u=\tfrac{1}{r}F(r+t)+\tfrac{1}{r}G(r-t)
   \]
-  solves the initial-value problem for the wave equation.
+  is in fact a solution to the wave equation in
+  \(\bbR^3\times(0,\infty)\). By direct calculation, we have
+  \begin{align*}
+    u_{tt}%
+    &=\tfrac{1}{r}F''(r+t)+\tfrac{1}{r}G''(r-t),\\
+    u_{r}
+    &=\tfrac{1}{r}F'(r+t)+\tfrac{1}{r}G'(r-t)
+      -\tfrac{1}{r^2}F(r+t)-\tfrac{1}{r^2}G(r-t),\\
+    u_{rr}
+    &=\tfrac{1}{r}F''(r+t)+\tfrac{1}{r}G''(r-t)\\
+    &\phantom{{}={}\quad}-\tfrac{2}{r^2}F'(r+t)-\tfrac{2}{r^2}G'(r-t)\\
+    &\phantom{{}={}\qquad}+\tfrac{2}{r^3}F(r+t)+\tfrac{2}{r^3}G(r-t),\\
+    \Delta_{S^2}u&=0
+  \end{align*}
+  and lastly,
+  \begin{align*}
+    \Delta u%
+    &=\tfrac{\partial}{\partial r^2}u%
+      +\tfrac{2}{r}\tfrac{\partial}{\partial r}u%
+      +\tfrac{1}{r^2}\Delta_{S^2} u\\
+    &=\tfrac{1}{r}F''(r+t)+\tfrac{1}{r}G''(r-t)\\
+    &\phantom{{}={}\quad}-\tfrac{2}{r^2}F'(r+t)-\tfrac{2}{r^2}G'(r-t)
+    +\tfrac{2}{r^3}F(r+t)+\tfrac{2}{r^3}G(r-t)\\
+    &\phantom{{}={}\quad}
+      +\tfrac{2}{r^2}F'(r+t)+\tfrac{2}{r^2}G'(r-t)
+      -\tfrac{2}{r^3}F(r+t)-\tfrac{2}{r^3}G(r-t)\\
+    &\phantom{{}={}}+0\\
+    &=\tfrac{1}{r}F''(r+t)+\tfrac{1}{r}G''(r-t).
+  \end{align*}
+  Therefore, we indeed have
+  \[
+    u_{tt}-\Delta u=0;
+  \]
+  i.e., \(u(r,t)\defeq\frac{1}{r}F(r+t)+\frac{1}{r}G(r-t)\) is a solution
+  to the wave equation with \(F\) and \(G\) at least \(C^2\) such that they
+  satisfy the initial conditions.
 
-  For part (b):
+  We still need to show that if \(u\) is a solution to the wave equation
+  with spherical symmetry it has the form prescribed above. We trust this
+  can be done for now and return to this problem as time permits.
+  \\\\
+  For part (b): Suppose \(h\) has even symmetry
 \end{solution}
 \newpage
 
@@ -40,8 +74,8 @@
     \label{eq:9:klein-gordon-eq}
     \left\{
       \begin{aligned}
-        w_{tt}&=w_{x_1x_1}-\lambda^2w,\\
-        w(x_1,0)&=0,&w_t(x_1,0)&=h(x_1)
+        w_{tt}=w_{x_1x_1}-\lambda^2w,\\
+        w(x_1,0)=0,&&w_t(x_1,0)=h(x_1)
       \end{aligned}
     \right.
   \end{equation}
@@ -70,8 +104,8 @@
   \[
     \left\{
       \begin{aligned}
-        u_{tt}-\Delta u&=0&&&&\text{in \(\bbR^3\times(0,\infty)\),}\\
-        u&=g,&u_t&=h&&\text{on \(\bbR^3\times\{\,t=0\,\}\)}
+        u_{tt}-\Delta u=0&&&&\text{in \(\bbR^3\times(0,\infty)\),}\\
+        u=g,&&u_t=h&&\text{on \(\bbR^3\times\{\,t=0\,\}\)}
       \end{aligned}
     \right.
   \]
