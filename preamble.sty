@@ -68,7 +68,7 @@
 
 \@ifundefined{solution*}{%
 \newenvironment{solution*}[1][Solution]{%
-  \begin{quotation}\proof[#1]%
+  \begin{quotation}\noindent\proof[#1]%
 }{
 \endproof\end{quotation}}}
 \makeatother
@@ -171,7 +171,7 @@
 \vcenter{\hbox{$#2#3$ }}\kern-.6\wd0}}
 \def\ddashint{\Xint=}
 \def\dashint{\Xint-}
-\newcommand\fint\dashint
+\newcommand\fint{\,\dashint}
 \fi \fi
 
 %%% Useful packages
@@ -212,6 +212,14 @@
 \usepackage{graphicx}%
 
 % My environments
+\@ifclassloaded{beamer}
+{
+\usepackage[Symbolsmallscale]{upgreek}
+\mathcode`;=\numexpr\mathcode`;-"6000
+\mathcode`:=\numexpr\mathcode`;-"6000
+\mathcode`,=\numexpr\mathcode`;-"6000
+}
+
 \@ifclassloaded{memoir}%
 {
 

@@ -64,9 +64,24 @@
   with spherical symmetry it has the form prescribed above. We trust this
   can be done for now and return to this problem as time permits.
   \\\\
-  For part (b): We proceed as in [E, \S 2.4.1(b)]. Set
-  \(v\defeq \frac{1}{r}u\). Then the \(v\) satisfies the initial-value
-  problem
+  For part (b): We show by a direct computation that
+  \[
+    u=\frac{1}{2r}\int_{r-t}^{r+t}\rho h(\rho)\diff\rho
+  \]
+  solve the initial-value problem for the wave equation. First, we compute
+  the necessary partial derivatives of \(u\),
+  \begin{align*}
+    u_t(r,t)
+    &=\tfrac{1}{2r}[(r+t)h(r+t)-(r-t)h(r-t)],\\
+    u_{tt}(r,t)
+    &=\tfrac{1}{2r}[(r+t)h'(r+t)+h(r+t)+(r-t)h'(r-t)+h(r-t)],\\
+    u_r(r,t)
+    &=\tfrac{1}{2r}[(r+t)h(r+t)-(r-t)h(r-t)]
+      -\frac{1}{2r^2}\int_{r-t}^{r+t}\rho h(\rho)\diff\rho\\
+    &=\tfrac{1}{2r}[(r+t)h(r+t)-(r-t)h(r-t)]
+      -\tfrac{1}{r}u(r,t),\\
+    u_{rr}(r,t)&=h'(r+t)-h'(r-t)-\tfrac{1}{r}u_r(r,t)+\tfrac{1}{r^2}u(r,t),
+  \end{align*}
 \end{solution}
 \newpage
 
@@ -144,10 +159,29 @@
   where \(g\) and \(h\) are smooth and have compact support. Show there
   exists a constant \(C\) such that
   \[
-    |u(x,t)|\leq Ct^{-1}\quad(x\in\bbR^3,\,t>0).
+    |u(x,t)|\leq \frac{C}{t}\quad(x\in\bbR^3,\,t>0).
   \]
 \end{problem}
 \begin{solution}
+  Since \(h\) and \(g\) are compactly supported, we can find sufficiently
+  large balls about their supports \(B(x,R)\) independent of the size of
+  \(B(x,t)\). Now, by Kirchhoff's formula we have
+  \begin{align*}
+    |u(x,t)|
+    &=\left|
+      \fint_{\partial B(x,t)} th(y)+g(y)+Dg(y)\cdot(y-x)\diff S(y)
+      \right|\\
+    &=\frac{1}{4\pi t^2}\left|
+      \int_{\partial B(x,t)} th(y)+g(y)+Dg(y)\cdot(y-x)\diff S(y)
+      \right|\\
+    &\leq\frac{1}{4\pi t^2}\int_{\partial B(x,R)}t\sup\{|h|,|g|,
+      |Dg|\}\diff S(y)\\
+    &=\frac{M|\partial B(x,R)|}{4\pi t}\\
+    &=\frac{C}{t},
+  \end{align*}
+  where \(M<\infty\) since \(h\) and \(g\) are smooth and compactly
+  supported (and hence \(h\), \(g\), and \(|Dg|\) achieve their supremum in
+  \(B(x,R)\)).
 \end{solution}
 
 %%% Local Variables:
