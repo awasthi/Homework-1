@@ -132,7 +132,7 @@
       \begin{aligned}
         u_{tt}-\Delta u=\cos(\lambda x_2)(w_{tt}-w_{x_1x_1}+\lambda^2 w)=0
         &&&\text{in \(\bbR^3\times(0,\infty)\),}\\
-        u=0,\quad u=\cos(\lambda x_2)h(x_1)&&&\text{on
+        u=0,\quad u_t=\cos(\lambda x_2)h(x_1)&&&\text{on
           \(\bbR^3\times\{\,t=0\,\}\).}
       \end{aligned}
     \right.
@@ -142,7 +142,14 @@
     u(x_1,x_2,t)=\fint_{\partial
       B(x_1,x_2,t)}t\cos(\lambda y_2)h(y_1)\diff S(y_1,y_2)
   \]
-  solves the above initial-value problem.
+  solves the above initial-value problem. We can rewrite the above surface
+  integral as the double integral
+  \begin{align*}
+    u(x_1,x_2,t)
+    &=\frac{1}{4\pi}\int_{\partial B(0,0,1)}
+      \cos(\lambda (x_2+tz_2))h(x_1+tz_1)\diff S(z)\\
+    &=
+  \end{align*}
 \end{solution}
 \newpage
 
