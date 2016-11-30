@@ -142,14 +142,34 @@
     u(x_1,x_2,t)=\fint_{\partial
       B(x_1,x_2,t)}t\cos(\lambda y_2)h(y_1)\diff S(y_1,y_2)
   \]
-  solves the above initial-value problem. We can rewrite the above surface
-  integral as the double integral
+  solves the above initial-value problem. Thus, \(u(x_1,0,t)=w(x_1,t)\)
+  solves the Klein--Gordon equation \eqref{eq:9:klein-gordon-eq}. Making
+  the substitution \(y_2\mapsto s=\sqrt{t^2-(x_1-y_1)^2}\) we can rewrite
+  \(u(x_1,0,t)\) as
+  \begingroup
+  \allowdisplaybreaks
   \begin{align*}
-    u(x_1,x_2,t)
+    w(x_1,t)
+    &=u(x_1,0,t)\\
+    &=\frac{1}{4\pi t^2}\int_{\partial B(x_1,0,t)} t\cos(\lambda
+      s)h(y_1)\diff S(y_1,s)\\
     &=\frac{1}{4\pi}\int_{\partial B(0,0,1)}
-      \cos(\lambda (x_2+tz_2))h(x_1+tz_1)\diff S(z)\\
-    &=
+      \cos(\lambda tz_2)h(x_1+tz_1)\diff
+      S(z_1,z_2)\\
+    &=\frac{1}{4\pi}\int_{-1}^1
+      \left[
+      \int_{z_2\in S^1}\cos(\lambda tz_2)\diff z_2
+      \right]
+      h(x_1+tz_1)\diff z_1\\
+    &=\frac{1}{4\pi}\int_{x_1-t}^{x_1+t}
+      \left[
+      4\int_0^{\frac{\pi}{2}}\cos(\lambda s\sin\theta)\diff \theta
+      \right]
+      h(y_1)\diff y_1\\
+    &=\frac{1}{2}\int_{x_1-t}^{x_1+t} J_0(\lamdba s) h(y_1)\diff y_1.
   \end{align*}
+  \endgroup
+  as desired.
 \end{solution}
 \newpage
 
