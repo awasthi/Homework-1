@@ -89,18 +89,20 @@
   \[
     f_R(x)=2x\qquad\text{for \(0<x<1\).}
   \]
-  Then \(A=R\Theta\) where \(\Theta\sim U(0,2\pi)\).
 
-  Now, the probability we are after is
+  Now, the probability that \(B\) lands in the set
+  \(D_{1-R}(A)=\{\,x:|x-A|<1-R\,\}\) given that \(|A|=R\) is given by the
+  ratio of the area
   \[
-    P\bigl(B\in\{\,x:|x-A|<1-R\,\}\bigr).
+    P(B\in D_{1-R}(A)\,|\,|A|=x)=(1-x)^2\qquad\text{for \(0<x<1\).}
   \]
-  To find this probability we use a bit of calculus
+  Then by the total probability formula,
   \begin{align*}
-    P\bigl(B\in\{\,x:|x-A|<1-R\,\}\,|\,A=x'\bigr)
-    &=\frac{1}{\pi}\int_{\{\,x:|x-x'|<1-R\,\}}\chi_{\{\,|x|=1\,\}}(y)\diff
-      y\\
-    &=
+    P(B\in D_{1-R}(A))
+    &=\int_0^1 (1-x)^2\cdot 2x\diff x\\
+    &=2\int_0^1 x-2x^2+x^3\\
+    &=2\left(1+\frac{1}{4}-\frac{2}{3}\right)\\
+    &=\frac{1}{6}.\qedhere
   \end{align*}
 \end{solution}
 \newpage
