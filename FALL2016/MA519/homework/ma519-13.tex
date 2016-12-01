@@ -87,8 +87,19 @@
   \[
     f_R(x)=2x\qquad\text{for \(0<x<1\).}
   \]
+  Then \(A=R\Theta\) where \(\Theta\sim U(0,2\pi)\).
 
-  Now, the probability that \(B\) lands in the set
+  Now, the probability we are after is
+  \[
+    P\bigl(B\in\{\,x:|x-A|<1-R\,\}\bigr).
+  \]
+  To find this probability we use a bit of calculus
+  \begin{align*}
+    P\bigl(B\in\{\,x:|x-A|<1-R\,\}\,|\,A=x'\bigr)
+    &=\frac{1}{\pi}\int_{\{\,x:|x-x'|<1-R\,\}}\chi_{\{\,|x|=1\,\}}(y)\diff
+      y\\
+    &=
+  \end{align*}
 \end{solution}
 \newpage
 
@@ -97,6 +108,24 @@
   correlation between \(\max\{X,Y\}\) and \(\min\{X,Y\}\).
 \end{problem}
 \begin{solution}
+  First, let us find the CDF of \(W\defeq \max\{X,Y\}\) and \(Z\defeq
+  \min\{X,Y\}\). These are
+  \begin{align*}
+    P(W\leq x)
+    &=P(\max\{X,Y\}\leq x)\\
+    &=P(\text{\(X\leq x\) and \(Y\leq x\)})\\
+    &=P(X\leq x)P(Y\leq x)\\
+    &=x\chi_{[0,\infty)}(x),\\
+  \end{align*}
+  and
+  \begin{align*}
+    P(Z\leq x)
+    &=1-P(Z\geq x)\\
+    &=1-P(\min\{X,Y\}\geq x)\\
+    &=1-P(\text\{\(X\geq x\) and \(Y\geq x\)\})\\
+    &=1-P(X\geq x)P(Y\geq x)\\
+    &=
+  \end{align*}
 \end{solution}
 
 %%% Local Variables:
