@@ -48,12 +48,18 @@
     &=1.
   \end{align*}
 
-  For part (b): We can use the formula
+  For part (b): Since \(X\) and \(Y\) are independent, we have
   \[
-    f_{XY}(x)=\int_{-\infty}^\infty
-    \left[\tfrac{1}{|y|}f_X(y)f_Y(\tfrac{x}{y})\right]\diff y
+    F_{XY}(z)=\iint\limits_{\{\,(x,y):xy\leq z\,\}} f_X(x)f_Y(y)\diff x\diff y.
   \]
-  to arrive at the desired PDF.
+  Let us find the CDF of \(XY\). By a direct computation
+  \begin{align*}
+    F_{XY}(z)
+    &=\iint\limits_{\{\,(x,y):xy\leq z\,\}} f_X(x)f_Y(y)\diff x\diff y\\
+    &=\iint\limits_{\{\,(x,y):xy\leq z\,\}} \rme^{-x}\chi_{[0,\infty)}(x)\chi_{[0,1]}(y)
+      \diff x\diff y\\
+    &=
+  \end{align*}
 \end{solution}
 \newpage
 
@@ -63,6 +69,26 @@
   fully contained within the original unit circle.
 \end{problem}
 \begin{solution}
+  The probability that a circle centered at \(A\) with radius \(AB\) is
+  contained in the original circle is zero. What the professor means is
+  ``two points \(A\), \(B\) are chosen at random from \emph{inside} the
+  unit circle''. We can think of choosing \(A\) as choosing a random
+  variable \(0<R<1\) representing the distance of \(A\) from the origin and
+  we ask what is the probability that the point \(B\) lands inside the
+  circle of radius \(1-R\) centered at \(A\).
+
+  First, let us find the distribution for the radius \(R\). We can find the
+  CDF of \(R\) as the ratio of the area of the circle centered at the
+  origin with radius \(x\) and the unit circle; i.e.,
+  \[
+    P(R\leq x)=\frac{\pi x^2}{\pi\cdot 1^2}=x^2\qquad \text{for \(0<x<1\).}
+  \]
+  Thus the PDF of \(R\) is
+  \[
+    f_R(x)=2x\qquad\text{for \(0<x<1\).}
+  \]
+
+  Now, the probability that \(B\) lands in the set
 \end{solution}
 \newpage
 
