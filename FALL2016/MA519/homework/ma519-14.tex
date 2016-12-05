@@ -1,3 +1,14 @@
+\begin{problem}[Handout 16, \# 2]
+  A number \(N\) is chosen according to a Poisson distribution with mean
+  \(10\). Then \(5\) numbers are chosen from \(\{0,1,\dotsc,N\}\). Suppose
+  \(X\) is the maximum of these \(5\) numbers.
+
+  What is \(P(X>10)\)?
+\end{problem}
+\begin{solution}
+\end{solution}
+\newpage
+
 \begin{problem}[Handout 18, \# 15]
   \((X,Y)\) is distributed uniformly inside of the unit circle. Find the
   density of \(X+Y\) and hence the mean of \(X+Y\). Was the value of the
@@ -15,9 +26,20 @@
   \(X\)?
 \end{problem}
 \begin{solution}
-  Suppose \(X\) is picked randomly from the interval \([0,1]\). Let \(A\)
-  be the set of all real numbers in \([0,1]\) without a \(5\) in their
-  decimal expansion. We show that \(P(X\in A)=0\).
+  Suppose \(X\) is picked randomly from the interval
+  \(\Omega\defeq [0,1]\). Let \(A\) be the set of all real numbers in
+  \(\Omega\) without a \(5\) in their decimal expansion. We show that
+  \(P(X\in \Omega\setminus A)=1\) by proving that \(P(X\in A)=0\).
+
+  To compute the probability of \(A\) we first decompose \(A\) as the limit
+  of \(\bigcap_{k=1}^n A_k\) where
+  \[
+    A_k\defeq\bigl\{\,x\in\Omega:\text{\(x=0.n_1n_2\dotsm n_k\dotsm\),
+      \(n_k=5\)}\,\bigr\}.
+  \]
+  By properties of the probability measure, \(P(A)=\lim_{k\to\infty}
+  P(A_k)\) so we need to find an expression for \(P(A_k)\). Let us begin
+  with the case \(k=1\):
 \end{solution}
 \newpage
 
