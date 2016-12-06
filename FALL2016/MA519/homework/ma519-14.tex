@@ -15,8 +15,17 @@
   mean obvious? Why?
 \end{problem}
 \begin{solution}
-  Suppose the random vector \((X,Y)\sim
-  U\bigl[\{\,(x,y):x^2+y^2<1\,\}\bigr]\).
+  Suppose the random vector \((X,Y)\) is uniformly distributed in
+  \(D\defeq \{\,x^2+y^2<1\,\}\). Let us first find the joint distribution
+  of \((X,Y)\). Fix a number \(y\in[0,1]\eqdef I\), then the PDF of \(X\)
+  given \(Y=y\) is
+  \[
+    f_{X\,|\,Y=y}(x)=%
+    \begin{cases}
+      \frac{1}{2}\sqrt{1-y^2}&\text{for \(x\in I\setminus \)}\\
+      0&\text{otherwise.}
+    \end{cases}
+  \]
 \end{solution}
 \newpage
 
