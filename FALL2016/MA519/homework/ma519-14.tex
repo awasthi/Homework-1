@@ -3,7 +3,7 @@
   \(10\). Then \(5\) numbers are chosen from \(\{0,1,\dotsc,N\}\). Suppose
   \(X\) is the maximum of these \(5\) numbers.
 
-  What is \(P(X>10)\)?
+  \noindent What is \(P(X>10)\)?
 \end{problem}
 \begin{solution}
 \end{solution}
@@ -26,20 +26,39 @@
   \(X\)?
 \end{problem}
 \begin{solution}
-  Suppose \(X\) is picked randomly from the interval
-  \(\Omega\defeq [0,1]\). Let \(A\) be the set of all real numbers in
-  \(\Omega\) without a \(5\) in their decimal expansion. We show that
-  \(P(X\in \Omega\setminus A)=1\) by proving that \(P(X\in A)=0\).
+  First let us establish some notation. Let \(\Omega\) denote the interval
+  \([0,1]\) and let \(A\) denote the set of all real numbers in \(\Omega\)
+  which do not contain a \(5\) in their decimal expansion. We show that the
+  probability that \(X\) is in \(A\) is zero; i.e., that \(P(X\in A)=0\).
 
-  To compute the probability of \(A\) we first decompose \(A\) as the limit
-  of \(\bigcap_{k=1}^n A_k\) where
+  To this end, let us consider the following Bernoulli process: Let \(N_k\)
+  denote the \(k\)\textsup{th} digit in the decimal expansion of
+  \(X\). Then \(N_k\) is uniformly distributed on \(\{0,\dotsc,9\}\) and
+  the probability that \(N_k\) is not the number \(5\) is
+  \(\frac{9}{10}\). Let \(I_k\) be an indicator random variable given by
   \[
-    A_k\defeq\bigl\{\,x\in\Omega:\text{\(x=0.n_1n_2\dotsm n_k\dotsm\),
-      \(n_k=5\)}\,\bigr\}.
+    I_k\defeq%
+    \begin{cases}%
+      0&\text{for \(N_k=5\),}\\
+      1&\text{otherwise.}
+    \end{cases}
   \]
-  By properties of the probability measure, \(P(A)=\lim_{k\to\infty}
-  P(A_k)\) so we need to find an expression for \(P(A_k)\). Let us begin
-  with the case \(k=1\):
+  Then the sequence of random variables \(\{I_k\}\) with \(p=\frac{9}{10}\)
+  forms a sequence of independent Bernoulli trials wit expected value
+  \[
+    E\left(\prod\nolimits_{k=1}^n I_k\right)=%
+    \prod_{k=1}^n E(I_k)=%
+    \prod_{k=1}^n p=p^n.
+  \]
+  The expectation above is in fact the probability every digit of \(X\)
+  from the first to the \(n\)\textsup{th} is not \(5\).
+
+  Taking the limit of the expression above, the probability that \(X\) does
+  not contain a \(5\) in its decimal expansion is the limit
+  \[
+    \lim_{n\to\infty}
+    p^n=\lim_{n\to\infty}\left(\frac{9}{10}\right)^n=0.\qedhere
+  \]
 \end{solution}
 \newpage
 
