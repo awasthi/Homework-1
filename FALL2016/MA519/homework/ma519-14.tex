@@ -5,17 +5,28 @@
 \end{problem}
 \begin{solution}
   Suppose the random vector \((X,Y)\) is uniformly distributed in
-  \(D\defeq \{\,x^2+y^2<1\,\}\). Let us first find the joint distribution
-  of \((X,Y)\). Fix a number \(y\in[0,1]\eqdef I\), then the PDF of \(X\)
-  given \(Y=y\) is
+  \(D\defeq \{\,x^2+y^2<1\,\}\). It is rather clear that the joint density
+  of \((X,Y)\) is given by the expression
   \[
-    f_{X\,|\,Y=y}(x)=%
+    p(x,y)=
     \begin{cases}
-      \frac{1}{2}\sqrt{1-y^2}&\text{for \(x\in I\setminus A\),}\\
-      0&\text{otherwise}
+      \frac{1}{\pi}&\text{for \((x,y)\in D\),}\\
+      0&\text{otherwise.}
     \end{cases}
   \]
-  where \(A\defeq \bigl[-1+\sqrt{1-y^2},1-\sqrt{1-y^2}\bigr]\).
+  Then the expectation is given by evaluating the integral
+  \begin{align*}
+    E(X+Y)
+    &=\int_D (x+y)p(x,y)\diff A(x,y)\\
+    &=\frac{1}{\pi}\int_{-1}^1\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}} (x+y)\diff
+      y\diff x\\
+    &=\frac{2}{\pi}\int_{-1}^1x\sqrt{1-x^2}\diff x\\
+    &=0.
+  \end{align*}
+
+  Yes, the mean was obvious. If we go through the trouble of computing the
+  distribution of \(X+Y\) we will see that this distribution is symmetric
+  about the origin so we should expect \(E(X+Y)\) to be zero.
 \end{solution}
 \newpage
 
