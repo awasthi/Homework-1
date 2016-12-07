@@ -1,0 +1,193 @@
+\subsection{Final Practice Problems}
+\begin{problem}
+  Let \(\Omega\) be a bounded domain in \(\bbR^n\) with a smooth
+  boundary. Show that the problem
+  \[
+    \left\{
+      \begin{aligned}
+        -\Delta u&=f&&\text{in \(\Omega\),}\\
+        u+\alpha+\partial u/\partial\nu&=g&&\text{on \(\partial\Omega\)}
+      \end{aligned}
+    \right.
+  \]
+  has at most one solution in \(C^2(\Omega)\cap C(\bar\Omega)\) if
+  \(\alpha>0\). Here \(\nu\) is the outward normal on \(\partial\Omega\)
+  and \(f\), \(g\) are assumed to be smooth.
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+  Let \(g\) be a continuous function with compact support in
+  \(\bbR^n\). Write the formula for the bounded solution of
+  \[
+    \left\{
+      \begin{aligned}
+        u_t-\Delta u&=0&&\text{for \(x\in\bbR^n\), \(t>0\),}\\
+        u(x,0)&=g(x)&&\text{for \(x\in\bbR^n\).}
+      \end{aligned}
+    \right.
+  \]
+  Prove that \(\lim_{t\to\infty} u(x,t)=0\), where the convergence is
+  uniform in \(x\in\bbR^n\).
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+  Find an explicit solution to the problem
+  \[
+    \left\{
+      \begin{aligned}
+        u_t-u_{xx}&=0&&\text{for \(x\in\bbR^n\), \(t>0\),}\\
+        u(x,0)&=\rme^{3x}&&\text{for \(x\in\bbR\).}
+      \end{aligned}
+    \right.
+  \]
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+  Find a formula for the solution of
+  \[
+    \left\{
+      \begin{aligned}
+        u_{tt}-u_{xx}+u=0&&&&\text{in \(\bbR\times(0,\infty)\),}\\
+        u(x,0)=f(x),&&u_t(x,0)=g(x),
+      \end{aligned}
+    \right.
+  \]
+  where \(f,g\in C_0^\infty(\bbR)\).
+
+  \noindent (\emph{Hint:} Method I: Use Hadamard's method of
+  descent. Namely, find \(h(y)\) such that \(v(x,y,t)\defeq h(y)u(x,t)\)
+  solves
+  \[
+    v_{tt}-(v_{xx}+v_{yy})=0.
+  \]
+
+  \noindent Method II: Use the Fourier transform.)
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+  Let \(u\in C^2(\bbR^n\times[0,\infty))\) satisfy
+  \[
+    \left\{
+      \begin{aligned}
+        u_{tt}-\Delta u=0&&&\text{in \(\bbR^n\times(0,\infty),\)}\\
+        u(x,0)=g(x),&&u_t(x,0)=h(x).
+      \end{aligned}
+    \right.
+  \]
+  Show that if both \(g\) and \(h\) are radial, then so is \(u(\blank,t)\)
+  for any \(t>0\). (Recall that the function \(f\) is called radial if
+  \(f(x)=f(|x|)\).)
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+  Find the value of the solution \(u\) of the initial value problem
+  \[
+    \left\{
+      \begin{aligned}
+        u_{tt}-\Delta u=0&&&\text{for \(x\in\bbR^3\), \(t>0\),}\\
+        u(x,0)=0,&u_t(x,0)=\phi(x),
+      \end{aligned}
+    \right.
+  \]
+  where
+  \[
+    \phi(x)\defeq
+    \begin{cases}
+      1&\text{for \(|x|<a\),}\\
+      0&\text{for \(|x|\geq a\)}
+    \end{cases}
+  \]
+  at a point \((x,t)\) such that \(|x|+t<a\).
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+  LEt \(u\) be a nonzero harmonic function in
+  \(B(0,R)\defeq\bigl\{\,x\in\bbR^n:|x|<R\,\bigr\}\). Define
+  \[
+    E(r)\defeq\fint_{\partial B(0,r)}u^2(y)\diff\sigma_y.
+  \]
+  Show that \(\ln E(r)\) is a convex function of \(\ln r\); i.e.,
+  \[
+    E\bigl(\sqrt{ab}\bigr)^2\leq E(a)E(b),\quad\text{for \(a,b>0\),}
+  \]
+  for any \(0<a\leq c<R\).
+
+  \noindent (\emph{Hint:} Use the representation of \(u\) as a uniformly
+  convergent series
+  \[
+    u(x)=\sum_{k=0}^\infty p_k(x),\qquad |x|<R,
+  \]
+  where \(p_k(x)\) is a homogeneous harmonic polynomial of order \(k\).)
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+  Use Kirchhoff's formula and Duhamel's principle to obtain an integral
+  representation of the solution to the following Cauchy problem,
+  \[
+    \left\{
+      \begin{aligned}
+        u_{tt}-\Delta u=\rme^{-t}f(x)&&\text{\(x\in\bbR^3\), \(t>0\),}\\
+        u(x,0)=u_t(x,0)=0,&&x\in\bbR^3.
+      \end{aligned}
+    \right.
+  \]
+  Verify that the integral representation reduces to the obvious solution
+  \(u=\rme^{-t}+t-1\) when \(f(x)=1\).
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+  Let \(f(x)=\rme^{-|x|^2}\), \(x\in\bbR^n\). Find \(f*f\).
+
+  \noindent (\emph{Hint:} Use either the heat equation or the Fourier
+  transform.)
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+  Recall that a solution to the heat equation
+  \[
+    \left\{
+      \begin{aligned}
+        u_t-\Delta u=0&&\text{in \(\bbR^n\times(0,\infty)\),}\\
+        u=g&&\text{on \(\bbR^n\times\{t=0\}\)}
+      \end{aligned}
+    \right.
+  \]
+  is given by
+  \[
+    u(x,t)=\int_{\bbR^n}\Phi(x-y,t)g(y)\diff t,
+  \]
+  where, for \(t>0\),
+  \[
+    \Phi(z,t)=(4\pi t)^{-\frac{n}{2}}\rme^{-\frac{|x|^2}{4t}}.
+  \]
+  Assume that \(g\) is continuous and compactly supported. Show that there
+  exists a \(C>0\) such that
+  \[
+    |D u(x,t)|\leq Ct^{-\frac{1}{2}}\|g\|_{L^\infty}.
+  \]
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA523-HW-ALL"
+%%% End:
