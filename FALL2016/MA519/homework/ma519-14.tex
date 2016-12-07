@@ -46,6 +46,16 @@
         1&\text{for \(\sqrt{2}\geq z<\infty\).}
       \end{cases}
   \end{align*}
+  Now, taking the derivative with respect to \(z\), we have
+  \[
+    f_Z(z)=
+    \begin{cases}
+      \frac{1}{\sqrt{2}}\sqrt{1-\frac{z^2}{2}}&\text{for
+        \(-\sqrt{2}<z<\sqrt{2}\),}\\
+      0&\text{otherwise}
+    \end{cases}
+  \]
+  which is clearly symmetric about the origin.
 \end{solution}
 \newpage
 
@@ -101,14 +111,15 @@
   choosing a point \(W\) randomly from \(I\defeq [0,1]\) and then, given
   that \(W=w\), choosing a point \(X\) randomly from \(I_w\defeq
   [0,w]\). Set \(Y\defeq W-X\), \(Z\defeq 1-W\). Then if we denote by
-  \(L_s\), \(L_m\), and \(L_\ell\) the smallest, medium, and largest parts
+  \(L_s\), \(L_m\), and \(L_l\) the smallest, medium, and largest parts
   of the broken stick, respectively, then
   \[
-    \text{ \(L_s=\min\{X,Y,Z\}\), \(L_\ell=\max\{X,Y,Z\}\), and
-      \(L_m=1-(L_1+L_3)\).}
+    \text{ \(L_s=\min\{X,Y,Z\}\), \(L_l=\max\{X,Y,Z\}\), and
+      \(L_m=1-(L_s+L_l)\).}
   \]
 
-NOw
+  Now let us find the densities \(f_s\), \(f_m\), and \(f_l\) of
+  \(L_s\), \(L_m\), and \(L_l\) respectively.
 \end{solution}
 
 %%% Local Variables:

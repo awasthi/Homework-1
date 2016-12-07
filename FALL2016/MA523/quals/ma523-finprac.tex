@@ -6,7 +6,7 @@
     \left\{
       \begin{aligned}
         -\Delta u&=f&&\text{in \(\Omega\),}\\
-        u+\alpha+\partial u/\partial\nu&=g&&\text{on \(\partial\Omega\)}
+        u+\alpha\frac{\partial u}{\partial\nu}&=g&&\text{on \(\partial\Omega\)}
       \end{aligned}
     \right.
   \]
@@ -15,6 +15,16 @@
   and \(f\), \(g\) are assumed to be smooth.
 \end{problem}
 \begin{solution*}
+  Suppose \(u_1\) and \(u_2\) are two solutions to the problem
+  above. Set \(v\defeq u_1-u_2\). Then \(v\) solves the problem
+  \[
+    \left\{
+      \begin{aligned}
+        -\Delta v&=0&&\text{in \(\Omega'\),}\\
+        v&=-\alpha\frac{\partial v}{\partial\nu}&&\text{on \(\partial\Omega'\).}
+      \end{aligned}
+    \right.
+  \]
 \end{solution*}
 
 \begin{problem}
