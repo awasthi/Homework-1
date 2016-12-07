@@ -79,9 +79,16 @@
 \end{problem}
 \begin{solution}
   We should think of breaking the foot long stick into three pieces as
-  choosing a point \(X\) randomly from \(I\defeq [0,1]\) and then, given
-  that \(X=x\), choosing a point \(Y\) randomly from \(I_x\defeq
-  [0,x]\). Set \(Z\defeq X-Y\), \(W\defeq 1-X\).
+  choosing a point \(W\) randomly from \(I\defeq [0,1]\) and then, given
+  that \(W=w\), choosing a point \(X\) randomly from \(I_w\defeq
+  [0,w]\). Set \(Y\defeq W-X\), \(Z\defeq 1-W\). Then if we denote by
+  \(L_1\), \(L_2\), and \(L_3\) the smallest, medium, and largest parts of
+  the broken stick, respectively, then
+  \[
+    \text{
+    \(L_1=\min\{X,Y,Z\}\),
+    \(L_3=\max\{X,Y,Z\}\), and \(L_2=1-(L_1+L_3)\).}
+  \]
 \end{solution}
 
 %%% Local Variables:
