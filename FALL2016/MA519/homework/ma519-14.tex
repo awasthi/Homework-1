@@ -14,7 +14,8 @@
       0&\text{otherwise.}
     \end{cases}
   \]
-  Then the expectation is given by evaluating the integral
+  We do not need to find the density of \(X+Y\) as the expectation is given
+  by evaluating the integral
   \begin{align*}
     E(X+Y)
     &=\int_D (x+y)p(x,y)\diff A(x,y)\\
@@ -25,8 +26,17 @@
   \end{align*}
 
   Yes, the mean was obvious. If we go through the trouble of computing the
-  distribution of \(X+Y\) we will see that this distribution is symmetric
-  about the origin so we should expect \(E(X+Y)\) to be zero.
+  density of \(X+Y\) we will see that this distribution is symmetric about
+  the origin so we should expect \(E(X+Y)\) to be zero.
+
+  Indeed, the distribution of \(X+Y\) is precisely the convolution
+  \begin{align*}
+   f_{X+Y}(x)
+    &=\int_{-1}^1 4\sqrt{1-x^2}\sqrt{1-(x-y)^2}\diff y\\
+    &=\tfrac{4}{\pi^2}\sqrt{1-x^2}
+      \int_{-1}^1\bigl(1-x^2+2xy-y^2\bigr)^{\frac{1}{2}}\diff y\\
+    &=
+  \end{align*}
 \end{solution}
 \newpage
 
@@ -82,13 +92,14 @@
   choosing a point \(W\) randomly from \(I\defeq [0,1]\) and then, given
   that \(W=w\), choosing a point \(X\) randomly from \(I_w\defeq
   [0,w]\). Set \(Y\defeq W-X\), \(Z\defeq 1-W\). Then if we denote by
-  \(L_1\), \(L_2\), and \(L_3\) the smallest, medium, and largest parts of
-  the broken stick, respectively, then
+  \(L_s\), \(L_m\), and \(L_\ell\) the smallest, medium, and largest parts
+  of the broken stick, respectively, then
   \[
-    \text{
-    \(L_1=\min\{X,Y,Z\}\),
-    \(L_3=\max\{X,Y,Z\}\), and \(L_2=1-(L_1+L_3)\).}
+    \text{ \(L_s=\min\{X,Y,Z\}\), \(L_\ell=\max\{X,Y,Z\}\), and
+      \(L_m=1-(L_1+L_3)\).}
   \]
+
+NOw
 \end{solution}
 
 %%% Local Variables:
