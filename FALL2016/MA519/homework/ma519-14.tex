@@ -29,12 +29,12 @@
   density of \(X+Y\) we will see that this distribution is symmetric about
   the origin so we should expect \(E(X+Y)\) to be zero.
 
-  Indeed, the distribution of \(X+Y\) is precisely the convolution
+  Indeed, set \(A\defeq\left[-\sqrt{1-y^2},\sqrt{1-y^2}\right]\), then the
+  distribution of \(X+Y\) is precisely the convolution
   \begin{align*}
    f_{X+Y}(x)
-    &=\int_{-1}^1 4\sqrt{1-x^2}\sqrt{1-(x-y)^2}\diff y\\
-    &=\tfrac{4}{\pi^2}\sqrt{1-x^2}
-      \int_{-1}^1\bigl(1-x^2+2xy-y^2\bigr)^{\frac{1}{2}}\diff y\\
+    &=\int_{-1}^1 f_{X\,|\,Y=y}(x-y)f_Y(y)\diff y\\
+    &=\frac{1}{\pi}\int_{-1}^1\sqrt{\tfrac{1-(x-y)^2}{1-y^2}}\chi_A(x)\diff y\\
     &=
   \end{align*}
 \end{solution}
