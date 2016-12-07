@@ -38,11 +38,12 @@
     reduces to geometry, and we have}
     &=
       \begin{cases}
-        \frac{1}{\pi}\left[\cos^{-1}\left(-\frac{z}{\sqrt{2}}\right)+\frac{z}{\sqrt{2}}\sqrt{1-\frac{z^2}{2}}\right]
-        &\text{for \(-\sqrt{2}<z\leq 0\)}\\
-        1-\frac{1}{\pi}\left[\cos^{-1}\left(-\frac{z}{\sqrt{2}}\right)+\frac{z}{\sqrt{2}}\sqrt{1-\frac{z^2}{2}}\right]
-        &\text{for \(0<z<\sqrt{2}\)}\\
-        0&\text{otherwise.}
+        0&\text{for \(-\infty<z\leq-\sqrt{2}\),}\\
+        \frac{1}{\pi}\left[\cos^{-1}\bigl(-\frac{z}{\sqrt{2}}\bigr)+\frac{z}{\sqrt{2}}\sqrt{1-\frac{z^2}{2}}\right]
+        &\text{for \(-\sqrt{2}<z\leq 0\),}\\
+        1-\frac{1}{\pi}\left[\cos^{-1}\bigl(-\frac{z}{\sqrt{2}}\bigr)+\frac{z}{\sqrt{2}}\sqrt{1-\frac{z^2}{2}}\right]
+        &\text{for \(0<z<\sqrt{2}\),}\\
+        1&\text{for \(\sqrt{2}\geq z<\infty\).}
       \end{cases}
   \end{align*}
 \end{solution}
