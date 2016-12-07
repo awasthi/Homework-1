@@ -14,10 +14,10 @@
       0&\text{otherwise.}
     \end{cases}
   \]
-  We do not need to find the density of \(X+Y\) as the expectation is given
-  by evaluating the integral
+  We do not need to find the density of \(Z\defeq X+Y\) as the expectation
+  is given by evaluating the integral
   \begin{align*}
-    E(X+Y)
+    E(Z)
     &=\int_D (x+y)p(x,y)\diff A(x,y)\\
     &=\frac{1}{\pi}\int_{-1}^1\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}} (x+y)\diff
       y\diff x\\
@@ -26,17 +26,24 @@
   \end{align*}
 
   Yes, the mean was obvious. If we go through the trouble of computing the
-  density of \(X+Y\) we will see that this distribution is symmetric about
-  the origin so we should expect \(E(X+Y)\) to be zero.
+  density of \(Z\) we will see that this distribution is symmetric about
+  the origin so we should expect \(E(Z)\) to be zero.
 
-  Indeed, the distribution of \(X+Y\) is precisely the convolution
+  Let us now find the PDF of \(Z\). First the CDF of \(Z\) is given by the
+  expression
   \begin{align*}
-   f_{X+Y}(t)
-    &=\int_{-1}^1 f_{X\,|\,Y=y}(t-y)f_Y(y)\diff y\\
-    &=\frac{1}{\pi}\int_{-1}^1
-      \left(\frac{1-y^2}{1-(t-y)^2}\right)^{\frac{1}{2}}
-      I_{\left[-\sqrt{1-y^2},\sqrt{1-y^2}\right]}(t-y)\diff y\\
+    F_Z(z)
+    &=P(Z\leq z)\\
+    \intertext{after rotating \(\frac{\pi}{4}\) degrees, the problem
+    reduces to geometry, and we have}
     &=
+      \begin{cases}
+        \frac{1}{\pi}\left[\cos^{-1}\left(-\frac{z}{\sqrt{2}}\right)+\frac{z}{\sqrt{2}}\sqrt{1-\frac{z^2}{2}}\right]
+        &\text{for \(-\sqrt{2}<z\leq 0\)}\\
+        1-\frac{1}{\pi}\left[\cos^{-1}\left(-\frac{z}{\sqrt{2}}\right)+\frac{z}{\sqrt{2}}\sqrt{1-\frac{z^2}{2}}\right]
+        &\text{for \(0<z<\sqrt{2}\)}\\
+        0&\text{otherwise.}
+      \end{cases}
   \end{align*}
 \end{solution}
 \newpage
