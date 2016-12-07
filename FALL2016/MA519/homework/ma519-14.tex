@@ -33,8 +33,9 @@
   distribution of \(X+Y\) is precisely the convolution
   \begin{align*}
    f_{X+Y}(x)
-    &=\int_{-1}^1 f_{X\,|\,Y=y}(x-y)f_Y(y)\diff y\\
-    &=\frac{1}{\pi}\int_{-1}^1\sqrt{\tfrac{1-(x-y)^2}{1-y^2}}\chi_A(x)\diff y\\
+    &=\int_{-1}^1 f_{X\,|\,Y=y}(t)f_Y(x-t)\diff t\\
+    &=\frac{1}{\pi}\int_{-1}^1\left(\frac{1-(x-t)^2}{}\right)^{\frac{1}{2}}\diff
+      t\\
     &=
   \end{align*}
 \end{solution}
