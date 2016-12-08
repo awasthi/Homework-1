@@ -107,19 +107,37 @@
   part. What are the expected values for each part?
 \end{problem}
 \begin{solution}
-  We should think of breaking the foot long stick into three pieces as
-  choosing a point \(W\) randomly from \(I\defeq [0,1]\) and then, given
-  that \(W=w\), choosing a point \(X\) randomly from \(I_w\defeq
-  [0,w]\). Set \(Y\defeq W-X\), \(Z\defeq 1-W\). Then if we denote by
-  \(L_s\), \(L_m\), and \(L_l\) the smallest, medium, and largest parts
-  of the broken stick, respectively, we have
-  \[
-    \text{ \(L_s=\min\{X,Y,Z\}\), \(L_l=\max\{X,Y,Z\}\), and
-      \(L_m=1-(L_s+L_l)\).}
-  \]
+  We should think of breaking a foot long stick into three pieces as
+  choosing a point \((X,Y)\) randomly from the unit square
+  \([0,1]\times[0,1]\). Then
 
-  Now let us find the densities \(f_s\), \(f_m\), and \(f_l\) of
-  \(L_s\), \(L_m\), and \(L_l\) respectively.
+  % We should think of breaking the foot long stick into three pieces as
+  % choosing a point \(W\) randomly from \(I\defeq [0,1]\) and then, given
+  % that \(W=w\), choosing a point \(X\) randomly from \(I_w\defeq
+  % [0,w]\). Set \(Y\defeq W-X\), \(Z\defeq 1-W\). Then if we denote by
+  % \(L_s\), \(L_m\), and \(L_l\) the smallest, medium, and largest parts
+  % of the broken stick, respectively, we have
+  % \[
+  %   \text{ \(L_s=\min\{X,Y,Z\}\), \(L_l=\max\{X,Y,Z\}\), and
+  %     \(L_m=1-(L_s+L_l)\).}
+  % \]
+
+  % Before we find the densities of \(L_s\), \(L_m\), and \(L_l\), let us
+  % first find the densities of \(X\), \(Y\), and \(Z\). We can compute the
+  % conditional probability of one of these densities rather quickly. This is
+  % \[
+  %   f_{X\,|\,w}(x)=
+  %   \begin{cases}
+  %     \frac{1}{w}&\text{for \(0\leq x\leq w\),}\\
+  %     0&\text{otherwise.}
+  %   \end{cases}
+  % \]
+  % Now we can find the density of \(Y\) by first finding its CDF,
+  % \begin{align*}
+  %   f_Y(x)
+  %   &=\int_{-\infty}^\infty f_{-X\,|\,w}(x-y)f_W(y)\diff y\\
+  %   &=\int_{-\infty}^\infty
+  % \end{align*}
 \end{solution}
 
 %%% Local Variables:
