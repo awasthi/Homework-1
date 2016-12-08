@@ -107,8 +107,22 @@
   part. What are the expected values for each part?
 \end{problem}
 \begin{solution}
-  Consider the unordered triplet \((X,Y,Z)\) such that \(X+Y+Z=1\),
-  \(X,Y,Z\geq 0\). This forms a triangle in the \(xyz\)-plane with
+  Choose a point \((X,Y)\) uniformly from the unit square
+  \([0,1]\times[0,1]\). Define \(A\defeq\min\{X,Y\}\) and
+  \(B\defeq\max\{X,Y\}\). Then \(L_s\defeq\min\{A,B-A,1-B\}\),
+  \(L_l\defeq\max\{A,B-A,1-B\}\), and \(L_m\defeq 1-(L_s+L_l)\).
+
+  Let us begin by finding the PDFs of \(A\) and \(B\). These are
+  \begin{align*}
+
+  \end{align*}
+
+  Let us find the PDFs of \(L_s\) and \(L_l\). For \(L_l\), we have
+  \begin{align*}
+    P(L_l\leq x)
+    &=P(A\leq x,B-A\leq x,1-B\leq x)\\
+    &=\iint 1\diff x\diff y
+  \end{align*}
 \end{solution}
 
 %%% Local Variables:
