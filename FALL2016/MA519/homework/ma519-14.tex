@@ -39,9 +39,9 @@
     &=
       \begin{cases}
         0&\text{for \(-\infty<z\leq-\sqrt{2}\),}\\
-        \frac{1}{\pi}\left[\cos^{-1}\bigl(-\frac{z}{\sqrt{2}}\bigr)+\frac{z}{\sqrt{2}}\sqrt{1-\frac{z^2}{2}}\right]
+        \dfrac{1}{\pi}\left[\cos^{-1}\bigl(-\frac{z}{\sqrt{2}}\bigr)+\frac{z}{\sqrt{2}}\sqrt{1-\frac{z^2}{2}}\right]
         &\text{for \(-\sqrt{2}<z\leq 0\),}\\
-        1-\frac{1}{\pi}\left[\cos^{-1}\bigl(-\frac{z}{\sqrt{2}}\bigr)+\frac{z}{\sqrt{2}}\sqrt{1-\frac{z^2}{2}}\right]
+        1-\dfrac{1}{\pi}\left[\cos^{-1}\bigl(-\frac{z}{\sqrt{2}}\bigr)+\frac{z}{\sqrt{2}}\sqrt{1-\frac{z^2}{2}}\right]
         &\text{for \(0<z<\sqrt{2}\),}\\
         1&\text{for \(\sqrt{2}\geq z<\infty\).}
       \end{cases}
@@ -107,37 +107,8 @@
   part. What are the expected values for each part?
 \end{problem}
 \begin{solution}
-  We should think of breaking a foot long stick into three pieces as
-  choosing a point \((X,Y)\) randomly from the unit square
-  \([0,1]\times[0,1]\). Then
-
-  % We should think of breaking the foot long stick into three pieces as
-  % choosing a point \(W\) randomly from \(I\defeq [0,1]\) and then, given
-  % that \(W=w\), choosing a point \(X\) randomly from \(I_w\defeq
-  % [0,w]\). Set \(Y\defeq W-X\), \(Z\defeq 1-W\). Then if we denote by
-  % \(L_s\), \(L_m\), and \(L_l\) the smallest, medium, and largest parts
-  % of the broken stick, respectively, we have
-  % \[
-  %   \text{ \(L_s=\min\{X,Y,Z\}\), \(L_l=\max\{X,Y,Z\}\), and
-  %     \(L_m=1-(L_s+L_l)\).}
-  % \]
-
-  % Before we find the densities of \(L_s\), \(L_m\), and \(L_l\), let us
-  % first find the densities of \(X\), \(Y\), and \(Z\). We can compute the
-  % conditional probability of one of these densities rather quickly. This is
-  % \[
-  %   f_{X\,|\,w}(x)=
-  %   \begin{cases}
-  %     \frac{1}{w}&\text{for \(0\leq x\leq w\),}\\
-  %     0&\text{otherwise.}
-  %   \end{cases}
-  % \]
-  % Now we can find the density of \(Y\) by first finding its CDF,
-  % \begin{align*}
-  %   f_Y(x)
-  %   &=\int_{-\infty}^\infty f_{-X\,|\,w}(x-y)f_W(y)\diff y\\
-  %   &=\int_{-\infty}^\infty
-  % \end{align*}
+  Consider the unordered triplet \((X,Y,Z)\) such that \(X+Y+Z=1\),
+  \(X,Y,Z\geq 0\). This forms a triangle in the \(xyz\)-plane with
 \end{solution}
 
 %%% Local Variables:
