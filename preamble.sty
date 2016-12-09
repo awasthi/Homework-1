@@ -338,6 +338,12 @@
 
 %% Replace some default math fonts
 % \renewcommand\cent{\text{\textcent}}%
+\let\oldepsilon\epsilon%
+\let\oldphi\phi%
+\let\phi\varphi%
+\let\epsilon\varepsilon%
+\let\varepsilon\oldepsilon%
+\let\varphi\oldphi%
 \let\bigsetminus\setminus%
 \let\setminus\smallsetminus%
 \let\emptyset\varnothing%
