@@ -77,14 +77,23 @@ fall semester of 2016.
   \]
   on \(\bbR^n\times(0,\infty)\), where \(b\in\bbR^n\). Using the
   characteristic equation, solve \eqref{eq:1:1} subject to the initial
-  condition
-  \[
-    u=g
-  \]
-  on \(\bbR^n\times\{t=0\}\). Make sure the answer agrees with formula (5)
-  in \S 2.1.2 of [E].
+  condition \(u=g\) on \(\bbR^n\times\{t=0\}\). Make sure the answer agrees
+  with formula (5) in \S 2.1.2 of [E].
 \end{problem}
 \begin{solution*}
+  Write
+  \[
+    F(p,z,x,t)\defeq (1,b)\cdot p-f.
+  \]
+  Then the characteristic equations to the problem \eqref{eq:1:1} with the
+  initial condition \(u(\blank,0)=g(\blank)\) are given by
+  \[
+    \left\{
+      \begin{aligned}
+        \dot p&=-D_{x,t}F-D_zFp
+      \end{aligned}
+    \right.
+  \]
 \end{solution*}
 
 \begin{problem}
