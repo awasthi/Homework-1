@@ -83,14 +83,16 @@ fall semester of 2016.
 \begin{solution*}
   Write
   \[
-    F(p,z,x,t)\defeq (1,b)\cdot p-f.
+    F(p,z,x,t)\defeq (b,1)\cdot p-f=0.
   \]
   Then the characteristic equations to the problem \eqref{eq:1:1} with the
   initial condition \(u(\blank,0)=g(\blank)\) are given by
   \[
     \left\{
       \begin{aligned}
-        \dot p&=-D_{x,t}F-D_zFp
+        \dot p&=-D_{x,t}F-D_zFp=0,\\
+        \dot z&=D_pF\cdot p=(b,1)\cdot p=f,\\
+        (\dot x,\dot t)&=D_pF=(b,1).
       \end{aligned}
     \right.
   \]
