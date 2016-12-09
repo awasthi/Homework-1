@@ -14,13 +14,41 @@ fall semester of 2016.
   \emph{Hint}: Fix \(x\in\bbR^n\) and consider the function of
   one variable \(g(t)\defeq f(tx)\). Prove that
   \[
-    \frac{d^m}{dt^m}g(t)
-    =\sum_{|\alpha|=m}\frac{m!}{\alpha!} D^\alpha f(tx)x^\alpha,
+    \frac{d^k}{dt^k}g(t)
+    =\sum_{|\alpha|=k}\frac{k!}{\alpha!} D^\alpha f(tx)x^\alpha,
   \]
   by induction on \(m\).
 \end{problem}
 \begin{solution*}
-  Taking the hint,
+  Taking the hint, let us consider the function in one variable
+  \(g(t)\defeq f(tx)\) for \(x\in\bbR^n\) fixed. We show by induction on
+  \(k\) that
+  \begin{equation}
+    \label{eq:1:taylors-formula-g}
+    \frac{d^k}{dt^k}g(t)=%
+    \sum_{|\alpha|=k}\frac{k!}{\alpha!} D^\alpha f(tx)x^\alpha.
+  \end{equation}
+
+  Once we have shown \eqref{eq:1:taylors-formula-g} holds, evaluating
+  \(g\) at \(t=1\) gives us the desired equality; i.e,
+  \begin{align*}
+    f(x)
+    &=g(1)%
+      \shortintertext{which, by Taylor's formula in one variable, is}
+    &=\sum_{j=0}^k\frac{g^{(j)}(0)}{j!}1^j+O\bjgl(|x|^{k+1}\bjgr)%
+      \shortintertext{applying \eqref{eq:1:taylors-formula-g} here gives us}
+    &=\sum_{j=0}^k\frac{1}{j!}
+      \left[%
+      \sum\nolimits_{|\alpha|=j}\frac{j!}{\alpha!}D^\alpha f(tx)x^\alpha
+      \right]+O\bjgl(|x|^{k+1}\bjgr)\\
+    &=\sum_{j=0}^k
+      \left[%
+      \sum\nolimits_{|\alpha|=j}\frac{1}{\alpha!}D^\alpha f(0)x^\alpha
+      \right]+O\bjgl(|x|^{k+1}\bjgr)\\
+    &=\sum_{|\alpha|\leq k}\frac{1}{\alpha!}D^\alpha f(0)x^\alpha+O\bjgl(|x|^{k+1}\bjgr)
+  \end{align*}
+  as desired.
+
 \end{solution*}
 
 \begin{problem}
