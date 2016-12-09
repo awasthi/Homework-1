@@ -15,8 +15,21 @@
   and \(f\), \(g\) are assumed to be smooth.
 \end{problem}
 \begin{solution*}
-  Suppose \(u_1\) and \(u_2\) are two solutions to the problem
-  above. Set \(v\defeq u_1-u_2\). Then \(v\) solves the problem
+  We will use energy methods to show that there is only one solution to the
+  problem
+  \begin{equation}
+    \label{eq:finprac:laplace-eq}
+    \left\{
+      \begin{aligned}
+        -\Delta u&=f&&\text{in \(\Omega\),}\\
+        u+\alpha\frac{\partial u}{\partial\nu}&=g&&\text{on \(\partial\Omega\)}
+      \end{aligned}
+    \right.
+  \end{equation}
+
+  Suppose \(u_1\) and \(u_2\) are two distinct solutions to the problem
+  \eqref{eq:finprac:laplace-eq}. Define \(v\defeq u_1-u_2\). Then \(v\)
+  solves the problem
   \[
     \left\{
       \begin{aligned}
@@ -24,6 +37,10 @@
         v&=-\alpha\frac{\partial v}{\partial\nu}&&\text{on \(\partial\Omega'\).}
       \end{aligned}
     \right.
+  \]
+  Consider the energy
+  \[
+    E[v]=\frac{1}{2}\int_{\Omega'}|Dv|^2\diff x.
   \]
 \end{solution*}
 
