@@ -8,27 +8,27 @@
   \(x'''\defeq(-x_1,-x_2)\), and define
   \begin{equation}
     \label{eq:6:corrector}
-    \varphi^x(y)\defeq\Phi(y-x')+\Phi(y-x'')-\Phi(y-x''').
+    \phi^x(y)\defeq\Phi(y-x')+\Phi(y-x'')-\Phi(y-x''').
   \end{equation}
 
-  We claim that \(\varphi^x\), as defined above, solves
+  We claim that \(\phi^x\), as defined above, solves
   \[
     \left\{
       \begin{aligned}
-        \Delta\varphi^x&=0&&\text{in \(U\),}\\
-        \varphi^x(y)&=\Phi(y-x)&&\text{on \(\partial U\).}
+        \Delta\phi^x&=0&&\text{in \(U\),}\\
+        \phi^x(y)&=\Phi(y-x)&&\text{on \(\partial U\).}
       \end{aligned}
     \right.
   \]
 
-  It is clear that \(\Delta\varphi^x=0\) since it is built up from the
+  It is clear that \(\Delta\phi^x=0\) since it is built up from the
   fundamental solutions on \(\bbR^n\) (this follows from the linearity of
-  the Laplace operator). To see that \(\varphi^x(y)=\Phi(x-y)\) on
+  the Laplace operator). To see that \(\phi^x(y)=\Phi(x-y)\) on
   \(\partial U\), we do a case by case analysis.
 
   Note that on \(\{\,x_1=0\,\}\subset\partial U\), we have
   \begin{align*}
-    \varphi^x(y_1,0)
+    \phi^x(y_1,0)
     &=\Phi(-x_1,y_2+x_2)+\Phi(-x_1,y_2-x_2)-\Phi(x_1,y_2+x_2),\\
     \intertext{where, since the fundamental solution is radial, we have
     \(\Phi(-x_1,y_2+x_2)=\Phi(x_1,y_2+x_2)\), and hence the above equals}
@@ -37,7 +37,7 @@
   \end{align*}
   and on \(\{\,x_2=0\,\}\subset\partial U\), we have
   \begin{align*}
-    \varphi^x(0,y_2)
+    \phi^x(0,y_2)
     &=\Phi(y_1-x_1,x_2)+\Phi(y_1+x_1,-x_2)-\Phi(y_1+x_1,x_2)\\
     \intertext{where, again because \(\Phi\) is radial,
     \(\Phi(y_1+x_1,-x_2)=\Phi(y_1+x_1,x_2)\), thus the above equals}
@@ -49,7 +49,7 @@
   Therefore, Green's function on \(U\) is
   \[
     G(x,y)
-    =\Phi(y-x)-\varphi^x(y)%
+    =\Phi(y-x)-\phi^x(y)%
     =\Phi(y-x)-\Phi(y-x')-\Phi(y-x'')+\Phi(y-x''').%
     \qedhere
   \]
