@@ -154,9 +154,10 @@
 
 \@ifundefined{solution*}{%
 \newenvironment{solution*}[1][Solution]{%
-  \begin{quotation}\proof[#1]%
+  \begin{adjustwidth}{.5cm}{.5cm}
+  \proof[#1]%
 }{
-\endproof\end{quotation}}}
+\endproof\end{adjustwidth}}}
 \makeatother
 \renewcommand\qedsymbol{\ensuremath{\scriptstyle\blacksquare}} % Default is
 
