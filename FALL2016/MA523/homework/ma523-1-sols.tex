@@ -35,20 +35,37 @@ fall semester of 2016.
     f(x)
     &=g(1)%
       \shortintertext{which, by Taylor's formula in one variable, is}
-    &=\sum_{j=0}^k\frac{g^{(j)}(0)}{j!}1^j+O\bjgl(|x|^{k+1}\bjgr)%
+    &=\sum_{j=0}^k\frac{g^{(j)}(0)}{j!}1^j+O\bigl(|x|^{k+1}\bigr)%
       \shortintertext{applying \eqref{eq:1:taylors-formula-g} here gives us}
     &=\sum_{j=0}^k\frac{1}{j!}
       \left[%
       \sum\nolimits_{|\alpha|=j}\frac{j!}{\alpha!}D^\alpha f(tx)x^\alpha
-      \right]+O\bjgl(|x|^{k+1}\bjgr)\\
+      \right]+O\bigl(|x|^{k+1}\bigr)\\
     &=\sum_{j=0}^k
       \left[%
       \sum\nolimits_{|\alpha|=j}\frac{1}{\alpha!}D^\alpha f(0)x^\alpha
-      \right]+O\bjgl(|x|^{k+1}\bjgr)\\
-    &=\sum_{|\alpha|\leq k}\frac{1}{\alpha!}D^\alpha f(0)x^\alpha+O\bjgl(|x|^{k+1}\bjgr)
+      \right]+O\bigl(|x|^{k+1}\bigr)\\
+    &=\sum_{|\alpha|\leq k}\frac{1}{\alpha!}D^\alpha f(0)x^\alpha+O\bigl(|x|^{k+1}\bigr)
   \end{align*}
   as desired.
 
+  Let us now show that \eqref{eq:1:taylors-formula-g} holds. To prove this
+  we consider the algebra on the differential operator \(d/dt\). By the
+  chain rule, we have
+  \[
+    \frac{d}{dt}(\blank)=\sum_{j=1}^n x_j\frac{\partial}{\partial x_j}(\blank).
+  \]
+  Since \(f\) is smooth by Schwartz's theorem the differential operators
+  \(\partial/\partial x_j\) and \(\partial/\partial x_l\) commute for all
+  \(1\leq j,l\leq n\). Therefore, by the multinomial theorem,
+  \[
+    \frac{d^k}{dt^k}(\blank)=%
+    \left(
+      \sum\nolimits_{j=1}^n x_j\frac{\partial}{\partial x_j}(\blank)
+    \right)^k
+    =%
+    \sum_{|\alpha|=k}\frac{m!}{\alpha!} x^\alpha D^\alpha(\blank).\qedhere
+  \]
 \end{solution*}
 
 \begin{problem}
