@@ -21,8 +21,8 @@
     \left\{
       \begin{aligned}
         \Lap u&=0&&\text{in \(1<r<2\),}\\
-        u&=\tfrac{1}{2}(\rme^{\rmi\theta}+\rme^{-\rmi\theta})&&\text{on \(r=1\),}\\
-        u&=1+\tfrac{1}{i}(\rme^{\rmi 2\theta}-\rme^{-\rmi 2\theta})&&\text{on \(r=2\).}
+        u&=\frac{1}{2}(\rme^{\rmi\theta}+\rme^{-\rmi\theta})&&\text{on \(r=1\),}\\
+        u&=1+\frac{1}{i}(\rme^{\rmi 2\theta}-\rme^{-\rmi 2\theta})&&\text{on \(r=2\).}
       \end{aligned}
     \right.
   \end{equation}
@@ -37,7 +37,7 @@
   that \(u\) is in fact harmonic:
   \begin{align*}
     \Lap u%
-    &=u_{rr}+\tfrac{1}{r}u_r+\tfrac{1}{r^2}u_{\theta\theta}\\
+    &=u_{rr}+\frac{1}{r}u_r+\frac{1}{r^2}u_{\theta\theta}\\
     &=-br^{-2}+br^{-2}+\sum_{n=-\infty}^\infty
       \left[\bigl(n(n-1)+n-n^2\bigr) a_nr^n\right.\\
     &\phantom{{}={}-\frac{b}{r^2}+\frac{b}{r^2}+}
@@ -50,12 +50,12 @@
   \(n\in\Z\). Using the data \eqref{eq:7:dirichlet-problem-polar}, on
   \(r=1\) we have
   \[
-    \tfrac{1}{2}(\rme^{\rmi\theta}+\rme^{-\rmi\theta})%
+    \frac{1}{2}(\rme^{\rmi\theta}+\rme^{-\rmi\theta})%
     =\sum_{n=-\infty}^\infty (a_n+\overline{a_{-n}})\rme^{\rmi n\theta},
   \]
   and on \(r=2\)
   \[
-    1+\tfrac{1}{i}(\rme^{\rmi 2\theta}-\rme^{-\rmi 2\theta}) = b\ln
+    1+\frac{1}{i}(\rme^{\rmi 2\theta}-\rme^{-\rmi 2\theta}) = b\ln
     2+\sum_{n=-\infty}^\infty (2^na_n+2^{-n}a_{-n})\rme^{\rmi n\theta}.
   \]
   These equations immediately tell us that \(b=1/{\ln 2}\). Moreover, the
@@ -86,29 +86,29 @@
   \[
     \begin{aligned}
       u(r\rme^{\rmi\theta})
-      &=\tfrac{1}{\ln 2}\ln r
-      +\left(-\tfrac{4\rmi}{15}r^{-2}+\tfrac{4\rmi}{15}r^2\right)\rme^{-\rmi
-        2\theta} +\left(\tfrac{2}{3}r^{-1}-\tfrac{1}{6}r\right)\rme^{-\rmi\theta}\\
+      &=\frac{1}{\ln 2}\ln r
+      +\left(-\frac{4\rmi}{15}r^{-2}+\frac{4\rmi}{15}r^2\right)\rme^{-\rmi
+        2\theta} +\left(\frac{2}{3}r^{-1}-\frac{1}{6}r\right)\rme^{-\rmi\theta}\\
       &\phantom{{}={}}
-      +\left(-\tfrac{1}{6}r+\tfrac{2}{3}r^{-1}\right)\rme^{\rmi\theta}
-      +\left(-\tfrac{4\rmi}{15}r^2+\tfrac{4\rmi}{15}r^{-2}\right)\rme^{\rmi
+      +\left(-\frac{1}{6}r+\frac{2}{3}r^{-1}\right)\rme^{\rmi\theta}
+      +\left(-\frac{4\rmi}{15}r^2+\frac{4\rmi}{15}r^{-2}\right)\rme^{\rmi
         2\theta}\\
-      &=\tfrac{1}{\ln 2}\ln r-\tfrac{8}{15}r^{-4}
+      &=\frac{1}{\ln 2}\ln r-\frac{8}{15}r^{-4}
       \left(\frac{r^2\rme^{\rmi 2\theta}-r^2\rme^{-\rmi 2\theta}}{2\rmi}\right)
-      +\tfrac{8}{15}
+      +\frac{8}{15}
       \left(\frac{r^2\rme^{\rmi 2\theta}-r^2\rme^{-\rmi
             2\theta}}{2\rmi}\right)\\
       &\phantom{{}={}}
-      +\tfrac{4}{3}r^{-2}
+      +\frac{4}{3}r^{-2}
       \left(\frac{r\rme^{\rmi\theta}+r\rme^{-\rmi\theta}}{2}\right)
-      -\tfrac{1}{3}
+      -\frac{1}{3}
       \left(\frac{r\rme^{\rmi\theta}+r\rme^{-\rmi\theta}}{2}\right).
     \end{aligned}
   \]
   Substituting back, we have
   \begin{equation}
     \label{eq:7:solution-to-dirichlet-problem}
-    u(x_1,x_2)=\tfrac{1}{\ln 2}\ln(x_1^2+x_2^2)
+    u(x_1,x_2)=\frac{1}{\ln 2}\ln(x_1^2+x_2^2)
     -\frac{16x_1x_2}{15{(x_1^2+x_2^2)}^2}+\frac{16x_1x_2}{15}
     +\frac{4x_1}{3(x_1^2+x_2^2)}-\frac{x_1}{3}.
   \end{equation}
