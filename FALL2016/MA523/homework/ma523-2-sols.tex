@@ -88,12 +88,14 @@
   \(x\).
 \end{problem}
 \begin{solution*}
-  Using the method of characteristics, we have the following characteristic
-  ODEs to solve
+  Write \(F(p,z,x,t)\defeq (a(z),1)\cdot p=0\). Using the method of
+  characteristics, we have the following characteristic ODEs to solve
   \[
     \left\{
       \begin{aligned}
-        u
+        \dot p&=-D_{x,t}F-D_zF p=-a'(z)p_1(p_1,p_2),\\
+        \dot z&=D_pF\cdot p=(a(z),1)\cdot p=0,\\
+        \dot x&=D_{p_1}F=a(z),\quad \dot t=D_{p_2}F=1.
       \end{aligned}
     \right.
   \]
