@@ -5,7 +5,7 @@
   \[
     \left\{
       \begin{aligned}
-        -\Delta u&=f&&\text{in \(\Omega\),}\\
+        -\Lap u&=f&&\text{in \(\Omega\),}\\
         u+\alpha\frac{\partial u}{\partial\nu}&=g&&\text{on \(\partial\Omega\)}
       \end{aligned}
     \right.
@@ -21,7 +21,7 @@
     \label{eq:finprac:laplace-eq}
     \left\{
       \begin{aligned}
-        -\Delta u&=f&&\text{in \(\Omega\),}\\
+        -\Lap u&=f&&\text{in \(\Omega\),}\\
         u+\alpha\frac{\partial u}{\partial\nu}&=g&&\text{on \(\partial\Omega\)}
       \end{aligned}
     \right.
@@ -33,7 +33,7 @@
   \[
     \left\{
       \begin{aligned}
-        -\Delta v&=0&&\text{in \(\Omega'\),}\\
+        -\Lap v&=0&&\text{in \(\Omega'\),}\\
         v&=-\alpha\frac{\partial v}{\partial\nu}&&\text{on \(\partial\Omega'\).}
       \end{aligned}
     \right.
@@ -50,7 +50,7 @@
   \[
     \left\{
       \begin{aligned}
-        u_t-\Delta u&=0&&\text{for \(x\in\bbR^n\), \(t>0\),}\\
+        u_t-\Lap u&=0&&\text{for \(x\in\bbR^n\), \(t>0\),}\\
         u(x,0)&=g(x)&&\text{for \(x\in\bbR^n\).}
       \end{aligned}
     \right.
@@ -104,7 +104,7 @@
   \[
     \left\{
       \begin{aligned}
-        u_{tt}-\Delta u=0&&&\text{in \(\bbR^n\times(0,\infty),\)}\\
+        u_{tt}-\Lap u=0&&&\text{in \(\bbR^n\times(0,\infty),\)}\\
         u(x,0)=g(x),&&u_t(x,0)=h(x).
       \end{aligned}
     \right.
@@ -121,7 +121,7 @@
   \[
     \left\{
       \begin{aligned}
-        u_{tt}-\Delta u=0&&&\text{for \(x\in\bbR^3\), \(t>0\),}\\
+        u_{tt}-\Lap u=0&&&\text{for \(x\in\bbR^3\), \(t>0\),}\\
         u(x,0)=0,&u_t(x,0)=\phi(x),
       \end{aligned}
     \right.
@@ -167,7 +167,7 @@
   \[
     \left\{
       \begin{aligned}
-        u_{tt}-\Delta u=\rme^{-t}f(x)&&\text{\(x\in\bbR^3\), \(t>0\),}\\
+        u_{tt}-\Lap u=\rme^{-t}f(x)&&\text{\(x\in\bbR^3\), \(t>0\),}\\
         u(x,0)=u_t(x,0)=0,&&x\in\bbR^3.
       \end{aligned}
     \right.
@@ -192,7 +192,7 @@
   \[
     \left\{
       \begin{aligned}
-        u_t-\Delta u=0&&\text{in \(\bbR^n\times(0,\infty)\),}\\
+        u_t-\Lap u=0&&\text{in \(\bbR^n\times(0,\infty)\),}\\
         u=g&&\text{on \(\bbR^n\times\{t=0\}\)}
       \end{aligned}
     \right.

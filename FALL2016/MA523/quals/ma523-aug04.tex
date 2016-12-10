@@ -60,7 +60,7 @@
   \[
     \left\{
       \begin{aligned}
-        u_{tt}-\Delta u&=\rme^{-t} g(x)&&\text{for \(x\in\bbR^3\), \(t>0\),}\\
+        u_{tt}-\Lap u&=\rme^{-t} g(x)&&\text{for \(x\in\bbR^3\), \(t>0\),}\\
         u(x,0)&=u_t(x,0)=0&&\text{for \(x\in\bbR^3\).}
       \end{aligned}
     \right.
@@ -78,7 +78,7 @@
   \[
     \left\{
       \begin{aligned}
-        \Delta u-u_t&=0&&\text{for \(x\in\Omega\), \(t>0\),}\\
+        \Lap u-u_t&=0&&\text{for \(x\in\Omega\), \(t>0\),}\\
         u(x,0)&=g(x)&&\text{for \(x\in\Omega\),}\\
         u(x,t)&=0&&\text{for \(xi\in\partial\Omega\), \(t\geq 0\),}
       \end{aligned}
@@ -88,7 +88,7 @@
   \[
     \left\{
       \begin{aligned}
-        \Delta v-v_t&=0&&\text{for \(x\in\bbR^n\), \(t>0\),}\\
+        \Lap v-v_t&=0&&\text{for \(x\in\bbR^n\), \(t>0\),}\\
         v(x,0)&=|g(x)|&&\text{for \(x\in\bbR^n\),}
       \end{aligned}
     \right.
@@ -118,7 +118,7 @@
   \]
   for any \(x\in\bbR^n\), \(\lambda>0\),
   \[
-    \Delta P_k=0,\qquad\Delta P_m=0
+    \Lap P_k=0,\qquad\Lap P_m=0
   \]
   in \(\bbR^n\).
   \begin{itemize}[noitemsep]

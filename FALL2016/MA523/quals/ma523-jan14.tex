@@ -25,7 +25,7 @@
   \[
     \left\{
       \begin{aligned}
-        \Delta u&=0&&\text{in \(\{\,x_n>0\,\}\),}\\
+        \Lap u&=0&&\text{in \(\{\,x_n>0\,\}\),}\\
         u(x',0)&=g(x')&&\text{for \(x'\in\bbR^{n-1}\),}
       \end{aligned}
     \right.
@@ -44,7 +44,7 @@
 \begin{problem}
   Let \(u\) be a bounded solution of the heat equation
   \[
-    \Delta u-u_t=0\qquad\text{in \(\bbR\times(0,\infty)\),}
+    \Lap u-u_t=0\qquad\text{in \(\bbR\times(0,\infty)\),}
   \]
   with the initial conditions \(u(x,0)=g(x)\), where \(g\) is a bounded
   continuous function on \(\bbR\) satisfying the Hölder condition
@@ -88,7 +88,7 @@
   \[
     \left\{
     \begin{aligned}
-      u_{tt}-\Delta u&=|x|^k&&&&\text{in \(\bbR^n\times(0,\infty)\),}\\
+      u_{tt}-\Lap u&=|x|^k&&&&\text{in \(\bbR^n\times(0,\infty)\),}\\
       u&=0,&u_t&=0&&\text{on \(\bbR^n\times\{0\}\)}.
     \end{aligned}
     \right.

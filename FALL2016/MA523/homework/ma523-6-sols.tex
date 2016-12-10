@@ -15,13 +15,13 @@
   \[
     \left\{
       \begin{aligned}
-        \Delta\phi^x&=0&&\text{in \(U\),}\\
+        \Lap\phi^x&=0&&\text{in \(U\),}\\
         \phi^x(y)&=\Phi(y-x)&&\text{on \(\partial U\).}
       \end{aligned}
     \right.
   \]
 
-  It is clear that \(\Delta\phi^x=0\) since it is built up from the
+  It is clear that \(\Lap\phi^x=0\) since it is built up from the
   fundamental solutions on \(\bbR^n\) (this follows from the linearity of
   the Laplace operator). To see that \(\phi^x(y)=\Phi(x-y)\) on
   \(\partial U\), we do a case by case analysis.
@@ -77,7 +77,7 @@
   \[
     \left\{
       \begin{aligned}
-        \Delta u&=0&&\text{in \(B(0,r)\),}\\
+        \Lap u&=0&&\text{in \(B(0,r)\),}\\
         u&=g&&\text{on \(\partial B(0,r)\).}
       \end{aligned}
     \right.
@@ -120,7 +120,7 @@
       \begin{aligned}
         P_k(\lambda x)&=\lambda^k P_k(x),&P_m(\lambda x)&=\lambda^m P_m(x)
         &&\text{for every \(x\in\bbR^n\), \(\lambda>0\),}\\
-        \Delta P_k&=0,&\Delta P_m&=0&&\text{in \(\bbR^n\).}
+        \Lap P_k&=0,&\Lap P_m&=0&&\text{in \(\bbR^n\).}
       \end{aligned}
     \right.
   \]
@@ -186,13 +186,13 @@
 
   For part (b), by Green's theorem, we have
   \begin{align*}
-    \int_{B(0,r)}P_k(x)\Delta P_m(x)-(\Delta P_k(x))P_m(x)\diff x
+    \int_{B(0,r)}P_k(x)\Lap P_m(x)-(\Lap P_k(x))P_m(x)\diff x
     &=\int_{\partial B(0,r)}P_k(x)\tfrac{\partial}{\partial\nu}P_m(x)-\tfrac{\partial}{\partial\nu}
       P_k(x)P_m(x)\diff S(x)\\
     &=\int_{\partial B(0,r)}(m-k) P_k(x)P_m(x)\diff S(x),
   \end{align*}
-  where the left-hand side is equal to zero since both \(\Delta P_k\) and
-  \(\Delta P_m\) are zero. Since \(m\neq k\), it must be the case that
+  where the left-hand side is equal to zero since both \(\Lap P_k\) and
+  \(\Lap P_m\) are zero. Since \(m\neq k\), it must be the case that
   \[
     \int_{\partial B(0,r)}P_k(x)P_m(x)\diff S(x)=0.
   \]

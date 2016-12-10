@@ -45,7 +45,7 @@
   \[
     u(x)\defeq(\Phi*f)(x)=\int_{\bbR^n}\Phi(x-y)f(y)\diff y
   \]
-  is a solution of the Poisson equation \(-\Delta u=f\) in \(\bbR^n\). Show
+  is a solution of the Poisson equation \(-\Lap u=f\) in \(\bbR^n\). Show
   that if \(f\) is radial (i.e., \(f(y)=f(|y|)\)) and supported in
   \(B_R=\{\,|x|<R\,\}\), then
   \[
@@ -67,7 +67,7 @@
   \[
     \left\{
       \begin{aligned}
-        u_{tt}-\Delta u+\alpha u_t&=0&&&&\text{in \(\bbR^2\times(0,\infty)\),}\\
+        u_{tt}-\Lap u+\alpha u_t&=0&&&&\text{in \(\bbR^2\times(0,\infty)\),}\\
         u(x,0)&=g(x),&u_t(x,0)&=h(x)&&\text{for \(x\in\bbR^2\),}
       \end{aligned}
     \right.
@@ -79,7 +79,7 @@
     \[
       v(x_1,x_2,x_3,t)\defeq \rme^{\lambda t+\mu x_3}u(x_1,x_2,t)
     \]
-    solves the \(3\)-dimensional wave equation \(v_{tt}-\Delta v=0\).
+    solves the \(3\)-dimensional wave equation \(v_{tt}-\Lap v=0\).
   \item[(b)] Use (a) to prove the following domain of dependence result:
     for any point \((x_0,t_0)\in\bbR^2\times(0,\infty)\) the value
     \(u(x_0,t_0)\) is uniquely determined by values of \(g\) and \(h\) in

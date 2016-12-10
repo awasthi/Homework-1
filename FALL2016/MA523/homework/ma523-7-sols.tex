@@ -4,7 +4,7 @@
   \[
     \left\{
       \begin{aligned}
-        \Delta u&=0&&\text{in \(1<|x|<2\),}\\
+        \Lap u&=0&&\text{in \(1<|x|<2\),}\\
         u&=x_1&&\text{on \(|x|=1\),}\\
         u&=1+x_1x_2&&\text{on \(|x|=2\).}
       \end{aligned}
@@ -20,7 +20,7 @@
     \label{eq:7:dirichlet-problem-polar}
     \left\{
       \begin{aligned}
-        \Delta u&=0&&\text{in \(1<r<2\),}\\
+        \Lap u&=0&&\text{in \(1<r<2\),}\\
         u&=\tfrac{1}{2}(\rme^{\rmi\theta}+\rme^{-\rmi\theta})&&\text{on \(r=1\),}\\
         u&=1+\tfrac{1}{i}(\rme^{\rmi 2\theta}-\rme^{-\rmi 2\theta})&&\text{on \(r=2\).}
       \end{aligned}
@@ -36,7 +36,7 @@
   to the problem \eqref{eq:7:dirichlet-problem-polar}. It is easy to see
   that \(u\) is in fact harmonic:
   \begin{align*}
-    \Delta u%
+    \Lap u%
     &=u_{rr}+\tfrac{1}{r}u_r+\tfrac{1}{r^2}u_{\theta\theta}\\
     &=-br^{-2}+br^{-2}+\sum_{n=-\infty}^\infty
       \left[\bigl(n(n-1)+n-n^2\bigr) a_nr^n\right.\\
@@ -125,7 +125,7 @@
     \tag{\(*\)}%
     \left\{
       \begin{aligned}
-        -\Delta u&=f&&\text{in \(\Omega\),}\\
+        -\Lap u&=f&&\text{in \(\Omega\),}\\
         \frac{\partial u}{\partial\nu}&=g&&\text{on \(\partial\Omega\),}
       \end{aligned}
     \right.
@@ -151,7 +151,7 @@
   \begin{align*}
     E[v]
     &=\frac{1}{2}\int_\Omega|Dv|^2\diff x\\
-    &=-\frac{1}{2}\int_\Omega v\Delta v\diff x
+    &=-\frac{1}{2}\int_\Omega v\Lap v\diff x
       +\int_{\partial U}\frac{\partial
       v}{\partial\nu} v\diff S(x)\\
     &=0.
@@ -167,7 +167,7 @@
   \[
     \left\{
       \begin{aligned}
-        u_t-\Delta_x u+cu&=f&&\text{in \(\bbR^n\times(0,\infty)\),}\\
+        u_t-\Lap_x u+cu&=f&&\text{in \(\bbR^n\times(0,\infty)\),}\\
         u&=g&&\text{on \(\bbR^n\times\{\,t=0\,\}\),}
       \end{aligned}
     \right.
@@ -184,7 +184,7 @@
     \label{eq:7:heat-problem-exp}
     \left\{
       \begin{aligned}
-        v_t-\Delta_xv&=\rme^{ct}f&&\text{in
+        v_t-\Lap_xv&=\rme^{ct}f&&\text{in
           \(\bbR^n\times(0,\infty),\)}\\
         v&=g&&\text{on \(\bbR^n\times\{\,t=0\,\}\).}
       \end{aligned}
