@@ -83,7 +83,16 @@
   \end{enumerate}
 \end{problem}
 \begin{solution*}
-  For part (a):
+  For part (a): We compute all partial \(D^\beta u\) at \((0,0)\) for
+  \(|\beta|\leq 2\) explicitly; these are
+  \begin{align*}
+    u(0,0)&=u_x(0,0)=u_{xx}(0,0)=0,\\
+    u_y(0,0)&=a(0,0,0)u_x(0,0)+b(0,0,0)=b\geq 0,\\
+    u_{xy}(0,0)&=(a_x(0,0,0)+a_u(0,0,0)u_x(0,0))+a(0,0,0)u_{xx}(0,0)+b_x(0,0,0)\\
+          &\phantom{{}={}}+b_z(0,0,0)u_x(0,0)\geq 0,\\
+    u_{yy}(0,0)&=(a_y(0,0,0)+a_u(0,0,0)u_y(0,0))u_x(0,0)\\
+               &\phantom{{}={}}+b_y(0,0,0)+b_u(0,0,0)u_y(0,0)\geq 0.
+  \end{align*}
   \\\\
   For part (b):
 \end{solution*}
