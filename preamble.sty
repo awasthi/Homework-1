@@ -339,23 +339,36 @@
 
 %% Replace some default math fonts
 % \renewcommand\cent{\text{\textcent}}%
-\let\oldesubset\subset%
-\let\subset\subseteq%
-\let\oldsupset\supset%
-\let\supset\supseteq%
-\let\oldesqsubset\sqsubset%
-\let\sqsubset\sqsubseteq%
-\let\oldsqsupset\sqsupset%
-\let\sqsupset\sqsupseteq%
-\let\oldepsilon\epsilon%
-\let\oldphi\phi%
-\let\phi\varphi%
-\let\epsilon\varepsilon%
-\let\varepsilon\oldepsilon%
-\let\varphi\oldphi%
-\let\bigsetminus\setminus%
-\let\setminus\smallsetminus%
-\let\emptyset\varnothing%
+
+%% Replace subset symbols
+\let\oldsubset\subset \let\subset\subseteq \let\subseteq\oldsubset
+\let\oldsupset\supset \let\supset\supseteq \let\supseteq\oldsupset
+\let\oldsqsubset\sqsubset \let\sqsubset\sqsubseteq \let\sqsubseteq\oldsqsubset
+\let\oldsqsupset\sqsupset \let\sqsupset\sqsupseteq \let\sqsupseteq\oldsqsupset
+
+%% Replace Greeks
+\let\oldepsilon\epsilon \let\epsilon\varepsilon \let\varepsilon\oldepsilon
+\let\oldphi\phi \let\phi\varphi \let\varphi\oldphi
+\let\oldGamma\Gamma \let\Gamma\varGamma \let\varGamma\oldGamma
+\let\oldDelta\Delta \let\Delta\varDelta \let\varDelta\oldDelta
+\let\oldTheta\Theta \let\Theta\varTheta \let\varTheta\oldTheta
+\let\oldLambda\Lambda \let\Lambda\varLambda \let\varLambda\oldLambda
+\let\oldXi\Xi \let\Xi\varXi \let\varXi\oldXi
+\let\oldPi\Pi \let\Pi\varPi \let\varPi\oldPi
+\let\oldSigma\Sigma \let\Sigma\varSigma \let\varSigma\oldSigma
+\let\oldUpsilon\Upsilon \let\Upsilon\varUpsilon \let\varUpsilon\oldUpsilon
+\let\oldPhi\Phi \let\Phi\varPhi \let\varPhi\oldPhi
+\let\oldGamma\Gamma \let\Gamma\varGamma \let\varGamma\oldGamma
+\let\oldPsi\Psi \let\Psi\varPsi \let\varPsi\oldPsi
+\let\oldOmega\Omega \let\Omega\varOmega \let\varOmega\oldOmega
+
+%% Replace setminus
+\let\bigsetminus\setminus \let\setminus\smallsetminus%
+
+%% Replace emptyset
+\let\oldemptyset\emptyset \let\emptyset\varnothing \let\varnothing\oldemptyset
+
+%% MIsc
 \let\oldbtright\blacktriangleright%
 \let\oldbtleft\blacktriangleleft%
 \renewcommand\blacktriangleright{\ensuremath{\scriptstyle\oldbtright}}
@@ -605,8 +618,11 @@
 \newcommand{\bbHP}{\mathbb{HP}}
 \newcommand{\bbRP}{\mathbb{RP}}
 \newcommand{\varbbCP}{\mathbb{C}\rmP}
+\let\CP\varCP
 \newcommand{\varbbHP}{\mathbb{H}\rmP}
+\let\HP\varHP
 \newcommand{\varbbRP}{\mathbb{R}\rmP}
+\let\RP\varRP
 \newcommand{\bfCP}{\mathbf{CP}}
 \newcommand{\bfHP}{\mathbf{HP}}
 \newcommand{\bfRP}{\mathbf{RP}}
@@ -642,7 +658,7 @@
 \DeclareMathOperator{\Curl}{curl}
 \DeclareMathOperator{\Div}{div}
 \DeclareMathOperator{\Grad}{grad}
-\DeclareMathOperator{\Lap}{lap}
+\newcommand{\Lap}{\varDelta}
 
 %% Measure theory
 \DeclareMathOperator{\vol}{vol}
@@ -875,6 +891,7 @@
 \newcommand{\bbA}{\mathbb{A}}
 \newcommand{\bbB}{\mathbb{B}}
 \newcommand{\bbC}{\mathbb{C}}
+\let\C\bbC
 \newcommand{\bbD}{\mathbb{D}}
 \newcommand{\bbE}{\mathbb{E}}
 \newcommand{\bbF}{\mathbb{F}}
@@ -884,13 +901,17 @@
 \newcommand{\bbJ}{\mathbb{J}}
 \newcommand{\bbk}{\Bbbk}
 \newcommand{\bbK}{\mathbb{K}}
+\let\K\bbK
 \newcommand{\bbL}{\mathbb{L}}
 \newcommand{\bbM}{\mathbb{M}}
 \newcommand{\bbN}{\mathbb{N}}
+\let\N\bbN
 \newcommand{\bbO}{\mathbb{O}}
 \newcommand{\bbP}{\mathbb{P}}
 \newcommand{\bbQ}{\mathbb{Q}}
+\let\Q\bbQ
 \newcommand{\bbR}{\mathbb{R}}
+\let\R\bbR
 \newcommand{\bbS}{\mathbb{S}}
 \newcommand{\bbT}{\mathbb{T}}
 \newcommand{\bbU}{\mathbb{U}}
@@ -899,6 +920,7 @@
 \newcommand{\bbX}{\mathbb{X}}
 \newcommand{\bbY}{\mathbb{Y}}
 \newcommand{\bbZ}{\mathbb{Z}}
+\let\Z\bbZ
 
 \newcommand{\frakA}{\mathfrak{A}}
 \newcommand{\frakB}{\mathfrak{B}}
