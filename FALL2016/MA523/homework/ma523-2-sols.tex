@@ -9,6 +9,32 @@
   \(x^0\)).
 \end{problem}
 \begin{solution*}
+  First, note that the condition
+  \[
+    D_pF(p^0,z^0,x^0)\cdot \nu(x^0)\neq 0
+  \]
+  reduces to the standard noncharacteristic boundary condition if
+  \(\Gamma\) is flat near \(x^0\) because in such case the normal to the
+  hypersurface at \(x^0\) will be \((0,\dotsc,0,1)\) so
+  \begin{align*}
+    0&\neq D_pF(p^0,z^0,x^0)\cdot (0,\dotsc,0,1)\\
+     &=F_{p_n}(p^0,z^0,x^0).
+  \end{align*}
+
+  We shall proceed to flatten the hypersurface \(\Gamma\) near \(x^0\) and
+  apply the standard noncharacteristic boundary condition. Assuming
+  \(\Gamma\) is reasonably tame, by the implicit function theorem, it can
+  be written as the graph \(x_n=\phi(x_1,\dotsc,x_{n-1})\) on some
+  neighborhood \(U\) of \(x^0\). Now consider the map \(\Phi\colon U\to V\)
+  given by
+  \[
+    \left\{
+      \begin{aligned}
+        y_j&=\Phi^j(x)=x_j,\qquad 1\leq j\leq n-1,\\
+        y_n&=\Phi^j(x)=x_n-\phi(x_1,\dotsc,x_{n-1}).
+      \end{aligned}
+    \right.
+  \]
 \end{solution*}
 
 \begin{problem}
