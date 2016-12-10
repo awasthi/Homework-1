@@ -86,7 +86,7 @@ fall semester of 2016.
     F(p,z,x,t)\defeq (b,1)\cdot p-f=0.
   \]
   Then the characteristic equations to the problem \eqref{eq:1:1} with the
-  initial condition \(u(\blank,0)=g(\blank)\) are given by
+  initial value \(u(\blank,0)=g(\blank)\) are given by
   \[
     \left\{
       \begin{aligned}
@@ -97,7 +97,7 @@ fall semester of 2016.
     \right.
   \]
   Now let us solve the characteristic equations above subject to the
-  initial conditions \((x(0),t(0))=(x^0,0)\in\R^n\times(0,\infty)\);
+  initial values \((x(0),t(0))=(x^0,0)\in\R^n\times(0,\infty)\);
   these are
   \[
     \left\{
@@ -267,13 +267,36 @@ fall semester of 2016.
   Let us find the characteristic equations for \(F\); these are
   \[
     \left\{
-      \begin{align*}
-        \dot p&=-D_xF-D_zFp=(-p_1,p_2)-1(p_1,p_2)=-2p,\\
+      \begin{aligned}
+        \dot p&=-D_xF-D_zFp=-(p_1,p_2)-(-1)(p_1,p_2)=0,\\
         \dot z&=D_pF\cdot p=(x_1+p_1,x_2+p_2)\cdot
                 (p_1,p_2)=(x_1+p_1)p_1+(x_2+p_2)p_2,\\
         \dot x&=D_pF=(x_1+p_1,x_2+p_2),
-      \end{align*}
+      \end{aligned}
     \right.
+  \]
+  Next we solve the characteristic equations subject to the initial values
+  \(x(0)=(x^0,0)\), \(z(0)=\tfrac{1}{2}(1-{(x^0)}^2)\) and, after
+  revisiting the equation \(F\), \(p_1(0)=-x^0\) and
+  \[
+    p_2(0)^2=
+    2\bigl(-{(x^0)}^2+\tfrac{1}{2}{(x^0)}^2+\tfrac{1}{2}(1-{(x^0)}^2)\bigr)=1
+  \]
+  so \(p_2(0)=\pm 1\). Therefore, the solution to the characteristic
+  equations subject to these initial values is
+  \[
+    \left\{
+      \begin{aligned}
+        p_1(s)&=-x^0,\quad p_2(s)=\pm 1,\\
+        x_1(s)&=x^0,\quad x_2(s)=\pm 1(\rme^s-1),\\
+        z(s)&=\tfrac{1}{2}\bigl(1-{(x^0)}^2\bigr)+(\rme^s-1).
+      \end{aligned}
+    \right.
+  \]
+  Thus, solving for \(s\) and \(x^0\) in terms of the coordinates
+  \((x_1,x_2)\), we have
+  \[
+    u(x_1,x_2)=\tfrac{1}{2}(1-x_1^2)\pm x_2.\qedhere
   \]
 \end{solution*}
 
