@@ -10,9 +10,55 @@
     \right.
   \]
   Verify that the assumptions of the Cauchy--Kovalevskaya theorem are
-  satisfied and obtain the taylor series of the solution about the origin.
+  satisfied and obtain the Taylor series of the solution about the origin.
 \end{problem}
 \begin{solution*}
+  The equation \(F(p,z,x,t)\defeq\sin p_1-p_2=0\) is a fully nonlinear
+  first-order PDE. We first verify that the curve \(\Gamma\) is
+  characteristic near the origin; i.e., we must show that \(F_p\cdot\nu\neq
+  0\) where \(\nu\) is the normal vector to \(\Gamma\) at the origin. In
+  this case, \(\nu=(0,1)\) and \(F_p=(\cos p_1,-1)\); hence,
+  \[
+    F_p\cdot\nu= (\cos p_1,-1)\cdot(0,1)=-1\neq 0.
+  \]
+
+  Moreover, the curve \(\Gamma\) is analytic (since it is cut out by the
+  equation \(\frac{\pi}{4}x\)) and the initial conditions are
+  analytic. Therefore, the assumptions of the Cauchy--Kovalevskaya theorem
+  are satisfied and we can obtain an analytic solution
+  \[
+    u(x,t)=\sum_{\alpha,\beta} \frac{a_{\alpha,\beta}}{\alpha!\beta!}
+    x^\alpha t^\beta
+  \]
+  about the origin.
+
+  First, we must compute the coefficients \(a_{\alpha,\beta}\). To this
+  end, we must find the partial derivatives \(u_{\alpha,\beta}\) and
+  potentially, relations among them which will help us to find these
+  coefficients. Naïvely listing the partials with respect to \(t\) and
+  \(x\), we have
+  \begin{align*}
+    u(0,0)&=0&
+    u_x(0,0)&=\tfrac{\pi}{4}\\
+    u_t(0,0)&=\sin u_x(0,0)=\tfrac{\sqrt{2}}{2}&
+    u_{xx}(0,0)&=0\\
+    u_{tx}(0,0)&=0&
+    u_{tt}(0,0)&=-\cos\bigl(u_x(0,0)\bigr)u_{xt}(0,0)=0\\
+    u_{xxx}(0,0)&=0&
+    u_{ttx}(0,0)&=0\\
+    &\vdotswithin{=}&&\vdotswithin{=}
+  \end{align*}
+  It is not difficult to see that higher derivatives of \(u\) will be
+  zero. Thus,
+  \[
+    u(x,t)=\tfrac{\pi}{4}x+\tfrac{\sqrt{2}}{2}t.
+  \]
+  Plugging this equation into \(F\) we see that
+  \[
+    u_t-\sin u_x=\tfrac{\sqrt{2}}{2}-\sin(\pi/4)=0;
+  \]
+  i.e., \(u(x,t)\), as defined above, is an analytic solution to the PDE
+  \(F\).
 \end{solution*}
 
 \begin{problem}
@@ -21,7 +67,7 @@
     \left\{
       \begin{aligned}
         u_y&=a(x, y, u)u_x+b(x,y,u),\\
-        u(x,0)&=0,
+        u(x,0)&=0
       \end{aligned}
     \right.
   \]
@@ -39,6 +85,9 @@
   \end{enumerate}
 \end{problem}
 \begin{solution*}
+  For part (a):
+  \\\\
+  For part (b):
 \end{solution*}
 
 \begin{problem}
