@@ -168,13 +168,14 @@ fall semester of 2016.
       -\left(\frac{1}{x^0}-\frac{1}{x_1}\right)\\
     &=\frac{1}{x_1}-\frac{2}{x_2}.
   \end{align*}
-  Hence, we have
+  Thus,
   \[
-    u(x_1,x_2)=z(s)=%
+    u(x_1,x_2)=
     \frac{1}{1-\left(\frac{1}{x_1}-\frac{2}{x_2}\right)}=%
     \frac{x_1x_2}{x_1x_2-x_2-2x_1}
   \]
-  for \((x_1,x_2)\) on the line \(x_1=2x_2\) away from the origin.
+  solves the PDE \(F\) for \((x_1,x_2)\) on the line \(x_1=2x_2\) away from
+  the origin.
   \\\\
   For part (b): Write \(F=(z,1)\cdot p-1=0\).  Then we have the
   characteristic equations
@@ -187,17 +188,67 @@ fall semester of 2016.
       \end{aligned}
     \right.
   \]
-  \\\\
-  For part (c): We have the characteristic equations
+  Next we solve the characteristic equations subject to the initial
+  conditions \(x(0)=(x^0,x^0)\), \(z(0)=x^0/2\) on the line \(x_1=x_2\);
+  these are
   \[
     \left\{
       \begin{aligned}
-        p&=\\
-        z&=\\
-       x&=
+        z(s)&=\tfrac{1}{2}x^0+s,\\
+        x_1(s)&=x^0+\tfrac{1}{2}\left(x^0s+s^2\right),
+        \quad x_2(s)=x^0+s.
       \end{aligned}
     \right.
   \]
+  Then, solving in terms of the coordinates \((x_1,x_2)\), we have
+  \[
+    x^0=2(x_2-z)\quad\text{and}\quad s=2z-x_2.
+  \]
+  Therefore,
+  \begin{align*}
+    x_1
+    &=2(x_2-z)+(x_2-z)(2z-x_2)+\tfrac{1}{2}(2z-x_2)^2\\
+    &=-\tfrac{1}{2}x_2(x_2-4)+(x_2-2)z.
+  \end{align*}
+  Hence,
+  \[
+    u(x_1,x_2)=\frac{2x_1+x_2^2-4x_2}{2(x_2-2)}
+  \]
+  solves the PDE \(F\) subject to the condition \(u(x_1,x_1)=x_1/2\)
+  provided \(x_2\neq 2\).
+  \\\\
+  For part (c): Write \(F=(x_1,2x_2,1)\cdot p-3z=0\). Then the
+  characteristic equations are
+  \[
+    \left\{
+      \begin{aligned}
+        \dot p&=-D_xF-D_zp=(2p_1,p_2,3p_3)\\
+        \dot z&=D_pF\cdot p=3z\\
+       \dot x&=D_pF=(x_1,2x_2,1)
+      \end{aligned}
+    \right.
+  \]
+  Next we sole the characteristic equations subject to the initial
+  conditions \(x(0)=(x_1^0,x_2^0,0)\), \(z(s)=g(x_1^0,x_2^0)\); these are
+  \[
+    \left\{
+      \begin{aligned}
+        x_1(s)&=x_1^0\rme^s,\quad x_2(s)=x_2^0\rme^{2s},\quad x_3(s)=s,\\
+        z(s)&=g(x_1^0,x_2^0)\rme^{3s}.
+      \end{aligned}
+    \right.
+  \]
+  Then, solving for \(u\) in terms of the coordinates \((x_1,x_2,x_3)\), we
+  have
+  \[
+    s=x_3,\quad x_1^0=x_1\rme^{-s},\quad\text{and}\quad x_2^0=x_2\rme^{-2s}.
+  \]
+  Thus,
+  \[
+    u(x_1,x_2,x_3)=g(x_1\rme^{-x_3},x_2\rme^{-2x_3})\rme^{3x_3}
+  \]
+  solves the PDE \(F\) subject to the condition
+  \(u(x_1,x_2,0)=g(x_1,x_2)\).
 \end{solution*}
 
 \begin{problem}
