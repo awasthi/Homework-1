@@ -262,9 +262,18 @@ fall semester of 2016.
   The equation is nonlinear and therefore, we do not expect the method of
   characteristics to yield a unique solution to the PDE
   \[
-    F\defeq x_1p_1+x_2p_2+\tfrac{1}{2}p_1^2+\tfrac{1}{2}p_2^2-z.
+    F\defeq x_1p_1+x_2p_2+\tfrac{1}{2}(p_1^2+p_2^2)-z.
   \]
-  Let us
+  Let us find the characteristic equations for \(F\); these are
+  \[
+    \left\{
+      \begin{align*}
+        \dot p&=-D_xF-D_zFp=,\\
+        \dot z&=D_pF\cdot p,\\
+        \dot x&=D_pF,
+      \end{align*}
+    \right.
+  \]
 \end{solution*}
 
 %%% Local Variables:
