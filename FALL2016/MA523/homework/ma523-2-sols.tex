@@ -155,9 +155,56 @@
 \end{problem}
 \begin{solution*}
   First we show that \(u\) is in fact a weak solution of the inviscid
-  Burgers' equation. That is, write \(u_r\) and \(u_l\) for \(u\)
+  Burgers' equation. That is, write \(u_l\) and \(u_r\) for \(u\)
   restricted to the domains \(\{\,4x+t^2<0\,\}\) and \(\{\,4x+t^2>0\,\}\),
-  respectively.
+  respectively. Then a trivial calculation shows that \(u_l\) and \(u_r\)
+  are solutions to the inviscid Burgers' equation: It is clear that \(u_l\)
+  is a solution of the Burgers' equation since it is the trivial solution;
+  for \(u_r\) we must work a little harder;
+  \begin{align*}
+    {(u_r)}_t&=-\frac{2}{3}\left(1+\frac{t}{\sqrt{3x+t^2}}\right),\\
+    {(u_r)}_x&=-\left(\frac{1}{\sqrt{3x+t^2}}\right)
+  \end{align*}
+  hence,
+  \begin{align*}
+    u_t+(u^2/2)_x
+    &=u_t+u_xu\\
+    &=-\frac{2}{3}\left(1+\frac{t}{\sqrt{3x+t^2}}\right)
+      +\frac{2}{3}
+      \left(\frac{1}{\sqrt{3x+t^2}}\right)\left(t+\sqrt{3x+t^2}\right)\\
+    &=0.
+  \end{align*}
+
+  Lastly, we need to verify the Rankine--Hugoniot condition on the curve
+  \(\{\,4x+t^2=0\,\}\). Write \(s(t)=x=-t^2/4\), then
+  \begin{align*}
+    \sigma&=\dot s(t),
+    &\llbracket u\rrbracket
+    &=u_l-u_r,
+    &\llbracket F\rrbracket
+    &=F(u_l)-F(u_r)\\
+          &=-\frac{t}{2}
+    &&=0+\frac{2}{3}\left(t+\sqrt{-\tfrac{3}{4}t^2+t^2}\right)
+    &&=0-\frac{\llbracket u_r\rrbracket^2}{2}\\
+          &&
+    &=0+\frac{2}{3}\left(\frac{3}{2}t\right)
+    &&=0-\frac{t^2}{2}
+    \\
+          &&&=t&&=-\frac{t^2}{2}.
+  \end{align*}
+  Thus,
+  \[
+    \llbracket
+    F\rrbracket=-\frac{t^2}{2}=\left(-\frac{t}{2}\right)t=\sigma\llbracket
+    u\rrbracket
+  \]
+  so the PDE satisfies the Rankine--Hugoniot condition and hence, is an
+  integral solution.
+
+  Finally, to check that \(u\) is an entropy solution we note that
+  \(u^2/2\) is strictly convex and therefore, we must show that
+  \(u_l>u_r\). But this is obvious since \(u_l-u_r=t\) which is strictly
+  greater than zero.
 \end{solution*}
 
 %%% Local Variables:
