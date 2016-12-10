@@ -96,6 +96,28 @@ fall semester of 2016.
       \end{aligned}
     \right.
   \]
+  Now let us solve the characteristic equations above subject to the
+  initial conditions \((x(0),t(0))=(x^0,0)\in\bbR^n\times(0,\infty)\);
+  these are
+  \[
+    \left\{
+      \begin{aligned}
+        x(s)
+        &=x^0+bs,\quad t(s)=s,\\
+        z(s)
+        &=z(0)+\int_0^s f(x(\tau),t(\tau))\diff\tau\\
+        &=g(x^0)+\int_0^s f(x^0+b\tau,\tau)\diff\tau.
+      \end{aligned}
+    \right.
+  \]
+  Solving back, we have \(t=s\), \(x^0=x-bs=x-bt\), and therefore
+  \[
+    u(x,t)=z(s)=g(x-bt,t)+\int_0^t f(x-b\tau, \tau)\diff\tau
+  \]
+  solves the transport equation \eqref{eq:1:1} with initial value
+  \(u(\blank,0)=g(\blank)\).
+
+  This verifies formula [5] from [E, \S 2.1.2].
 \end{solution*}
 
 \begin{problem}
@@ -109,6 +131,48 @@ fall semester of 2016.
   \end{enumerate}
 \end{problem}
 \begin{solution*}
+  For part (a): Write \(F\defeq (x_1^2,x_2^2)\cdot p-z^2=0\). We have the
+  characteristic equations
+  \[
+    \left\{
+      \begin{aligned}
+        (\dot p_1,\dot p_2)&=-D_xF-D_zFp=2\bigl((x_1-z)p_1,(x_2-z)p_2\bigr)\\
+        \dot z&=D_p\cdot p=z^2\\
+        (\dot x_1,\dot x_2)&=(x_1^2,x_2^2)
+      \end{aligned}
+    \right.
+  \]
+  We can solve the characteristic equations with respect to the initial
+  conditions \(x(0)=x^0\); these are
+  \[
+    \left\{
+      \begin{aligned}
+        u
+      \end{aligned}
+    \right.
+  \]
+  \\\\
+  For part (b): We have the characteristic equations
+  \[
+    \left\{
+      \begin{aligned}
+        p&=\\
+        z&=\\
+        x&=
+      \end{aligned}
+    \right.
+  \]
+  \\\\
+  For part (c): We have the characteristic equations
+  \[
+    \left\{
+      \begin{aligned}
+        p&=\\
+        z&=\\
+       x&=
+      \end{aligned}
+    \right.
+  \]
 \end{solution*}
 
 \begin{problem}
