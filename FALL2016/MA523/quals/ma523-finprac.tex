@@ -33,8 +33,8 @@
   \[
     \left\{
       \begin{aligned}
-        -\Lap v&=0&&\text{in \(\Delta\),}\\
-        v&=-\alpha\frac{\partial v}{\partial\nu}&&\text{on \(\partial\Delta\).}
+        -\Lap v&=0&&\text{in \(\Omega\),}\\
+        v&=-\alpha\frac{\partial v}{\partial\nu}&&\text{on \(\partial\Omega\).}
       \end{aligned}
     \right.
   \]
@@ -45,9 +45,12 @@
   By Green's formula, we may recast the expression above as the sum
   \begin{align*}
     E[v]
-    &=-\frac{1}{2}\int_\Omega v\Lap v\diff x
-      +\int_{\partial\Omega}\frac{\partial v}{\partial\nu }v\diff S(x)\\
-    &=-\alpha\int_{\partial\Omega} v^2\diff S(x)\\
+    &=-\frac{1}{2}
+      \left[%
+      \int_\Omega v\Lap v\diff x%
+      +\int_{\partial\Omega}\frac{\partial v}{\partial\nu }v\diff S(x)%
+      \right]\\
+    &=-\frac{\alpha}{2}\int_{\partial\Omega} v^2\diff S(x)\\
     &=
   \end{align*}
 \end{solution*}
