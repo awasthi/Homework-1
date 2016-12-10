@@ -9,7 +9,9 @@
   \(x^0\)).
 \end{problem}
 \begin{solution*}
-  First, note that the condition
+  Throughout this, let \((p^0,z^0,x^0)\) denote an admissible triple to the
+  PDE \(F\) at some point \(x^0\) in its domain. First, note that the
+  condition
   \[
     D_pF(p^0,z^0,x^0)\cdot \nu(x^0)\neq 0
   \]
@@ -24,44 +26,46 @@
   \(x^0\) and apply the standard noncharacteristic boundary condition.
 
   Assuming \(\Gamma\) is reasonably tame, by the implicit function theorem,
-  it can be written as the graph \(x_n=\phi(x_1,\dotsc,x_{n-1})\) on some
-  neighborhood \(U\) of \(x^0\). Now consider the map \(\Phi\colon U\to V\)
-  given by
+  it can be written as the graph \(\{\,x_n=\phi(x_1,\dotsc,x_{n-1})\,\}\)
+  on some neighborhood \(U\) of \(x^0\) for \(\phi\) smooth. Now consider
+  the smooth mapping \(\Phi\colon U\to V\) given by
   \[
     \left\{
       \begin{aligned}
-        y_j&=\Phi^j(x)=x_j,\qquad 1\leq j\leq n-1,\\
-        y_n&=\Phi^n(x)=x_n-\phi(x_1,\dotsc,x_{n-1}).
+        y_j&\defeq \Phi^j(x)\defeq x_j,\qquad 1\leq j\leq n-1,\\
+        y_n&\defeq \Phi^n(x)\defeq x_n-\phi(x_1,\dotsc,x_{n-1}),
       \end{aligned}
     \right.
   \]
-  Then the normal \(\nu\) to \(\Gamma\) at \(x^0\) is parallel to the
-  gradient \(D_x\Phi^n=(-\phi_{x_1},\dotsc,-\phi_{x_{n-1}},1)\).
+  where we use \(y\) to denote new coordinates on the image of
+  \(\Phi\). Note that \(\nu(x^0)\) is parallel to the gradient
+  \(D_x\Phi^n=(-\phi_{x_1},\dotsc,-\phi_{x_{n-1}},1)\) so the inner product
+  of the latter with \(F_{p_n}(p^0,z^0,x^0)\) is nonzero if and only if the
+  inner product of \(\nu(x^0)\) with \(F_{p_n}(p^0,z^0,x^0)\) is nonzero.
 
-  Now define \(v(y)\defeq u(\Phi^{-1}(y))\). Then \(u(x)=v(\Phi(x))\). By
-  the chain rule, we have
+  Set \(\Delta\defeq\Phi(\Gamma)\) and define
+  \(v(y)\defeq u(\Phi^{-1}(y))\). Then \(u(x)=v(\Phi(x))\). Moreover, by
+  the chain rule we have
   \[
     D_{x_i}u=\sum_{j=1}^n D_{y_j} vD_{x_j}\Phi^j,\quad 1\leq j\leq n;
   \]
-  i.e., \(D_x u=D_y v D_x\Phi\). Now the PDE \(F(D_xu,u,x)\) becomes
+  i.e., \(D_x u=D_y v D_x\Phi\). Thus, \(v\) satisfies the PDE
   \[
-    \tilde F(D_yv, v, y)=F(D_y vD_x\Phi,v,\Phi^{-1}(y))=0.
+    G(D_yv,v,y)\defeq F(D_yvD_x\Phi,v,\Phi^{-1}(y))=0
   \]
-  Lastly, we have
+  in \(\Delta\) and, since \(\Delta\) has been flattened near
+  \(y^0\defeq\Phi(x^0)\), applying the noncharacteristic condition, we have
   \begin{align*}
-    D_{p_n}\tilde F
+    D_{p_n}G
     &=(D_{p_1}F)(D_{x_1}\Phi^n)+\dotsb+(D_{p_n}F)(D_{x_n}\Phi)\\
     &=D_pF\cdot D_x\Phi^n.
   \end{align*}
+
   Therefore, if \((p^0,z^0,x^0)\) is a compatible triple for \(F\) and
-  \((q^0,z^0,y^0)=(p^0D_x\Phi(x^0),z^0,\Phi(x^0))\) is the
-  corresponding for \(\tilde F\), then
+  \((q^0,z^0,y^0)=(p^0D_x\Phi(x^0),z^0,\Phi(x^0))\) is the corresponding
+  for \(G\), then
   \[
-    D_{p_n}\tilde F(q^0,z^0,y^0)=D_pF(p^0,z^0,x^0)\cdot D_x\Phi^n(x^0).
-  \]
-  Hence, the noncharacteristic condition becomes
-  \[
-    D_p F(p^0,z^0,x^0)\cdot D_x\Phi^n(x^0)\neq 0;
+    D_{p_n}G(q^0,z^0,y^0)=D_pF(p^0,z^0,x^0)\cdot D_x\Phi^n(x^0);
   \]
   i.e.,
   \[
@@ -84,6 +88,15 @@
   \(x\).
 \end{problem}
 \begin{solution*}
+  Using the method of characteristics, we have the following characteristic
+  ODEs to solve
+  \[
+    \left\{
+      \begin{aligned}
+        u
+      \end{aligned}
+    \right.
+  \]
 \end{solution*}
 
 \begin{problem}
