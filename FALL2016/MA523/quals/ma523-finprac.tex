@@ -437,11 +437,39 @@
       \begin{aligned}
         &v_{tt}(\blank;s)-\Lap v(\blank;s)=0%
         &&\text{in \(\R^3\times(s,\infty)\),}\\
-        &v(\blank;s)=v_t(\blank;s)=\rme^{-s}f(x),%
+        &v(\blank;s)
+        =v_t(\blank;s)=\rme^{-s}f(x),
         &&\text{on \(\R^3\times\{\,t=s\,\}\).}
       \end{aligned}
     \right.
   \]
+  Then Duhamel's principle says that
+  \[
+    u(x,t)=\int_0^t u(x,t;s)\diff s
+  \]
+  solves the original problem. By Kirchhoff's formula,
+  \begin{align*}
+    u(x,t;s)
+    &=\fint_{\partial B(x,t)}%
+    \bigl[%
+    th(y)+g(y)+Dg(y)\cdot(y-x)
+      \bigr]\diff S(y)\\
+    &=\fint_{\partial B(x,t)}
+      \bigl[%
+      t\rme^{-s}f(y)+\rme^{-s}f(y)
+      +D\bigl(\rme^{-s}f(y)\bigr)\cdot (y-x)
+      \bigr]\diff S(y)\\
+    &=\fint_{\partial B(x,t)}
+      \bigl[%
+      t\rme^{-s}f(y)+\rme^{-s}f(y)
+      +\rme^{-s}D f(y)\cdot (y-x)
+      \bigr]\diff S(y)\\
+    &=
+  \end{align*}
+  Thus,
+  \begin{align*}
+    u(x,t)
+  \end{align*}
 \end{solution*}
 
 \begin{problem}
