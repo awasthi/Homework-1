@@ -83,26 +83,28 @@
   \]
   the initial-value problem above. A crude estimate on the magnitude of
   \(u\) gives us
-  \begin{align*}
-    |u(x,t)|
-    &=%
+  \begin{equation}
+    \label{eq:fp:crude-est}
+    \begin{aligned}
+      |u(x,t)| &=%
       \frac{1}{(4\pi t)^{\frac{n}{2}}}%
-      \left|
-      \int_{\R^n}\rme^{-\frac{|x-y|^2}{4t}}g(y)\diff y
+      \left| \int_{\R^n}\rme^{-\frac{|x-y|^2}{4t}}g(y)\diff y
       \right|\\
-    &\leq%
+      &\leq%
       \frac{1}{(4\pi t)^{\frac{n}{2}}}
       \int_{\R^n}\left|\rme^{-\frac{|x-y|^2}{4t}}g(y)\right|\diff y\\
-    &<M t^{-\frac{n}{2}};
-  \end{align*}
+      &<M t^{-\frac{n}{2}};
+    \end{aligned}
+  \end{equation}
   where \(M<\infty\) is chosen such that
   \[
     \frac{1}{(4\pi)^{\frac{n}{2}}}
     \int_{\Supp g}\left|\rme^{-\frac{|x-y|^2}{4t}}g(y)\right|\diff y
     <M.
   \]
-  Having established this estimate, we have \(\lim_{t\to\infty}u(x,t)=0\)
-  uniformly.
+
+  Thus, using the estimate \eqref{eq:fp:crude-est} we see that
+  \(\lim_{t\to\infty}u(x,t)=0\) uniformly.
 \end{solution*}
 
 \begin{problem}
@@ -119,25 +121,27 @@
 \begin{solution*}
   By separation of variables, suppose we can write \(u(x,t)\) as the
   product \(X(x)T(t)\). Then
-  \[
+  \begin{equation}
+    \label{eq:fp:sepvars-eqs}
     \left\{
       \begin{aligned}
         &X(x)T'(t)-X''(x)T(t)=0&&\text{in \(\R\times(0,\infty)\),}\\
         &X(x)T(0)=\rme^{3x}&&\text{on \(\R\times\{\,t=0\,\}\).}
       \end{aligned}
     \right.
-  \]
-  Then, it suffices to solve the system of ODEs
+  \end{equation}
+  After some algebraic maneuvers, we see
+  \(\frac{X''(x)}{X(x)}=\frac{T'(t)}{T(t)}=9\) so it suffices to solve the
+  system of ODEs
   \[
     \left\{
       \begin{aligned}
         X''(x)-9X(x)=0,\\
-        T'(t)-9T(t)=0
+        T'(t)-9T(t)=0.
       \end{aligned}
     \right.
   \]
-  which satisfy \(\frac{X''(x)}{X(x)}=\frac{T'(t)}{T(t)}=9\). The solution
-  to these ODEs are
+  The solution to these are
   \[
     \left\{%
       \begin{aligned}
@@ -146,12 +150,17 @@
       \end{aligned}
     \right.
   \]
-  Then,
+  Thus,
   \[
-    u(x,t)=X(x)T(t)=C\rme^{3x+9t}.
+    u(x,t)=X(x)T(t)=C\rme^{3x+9t}
   \]
-  Analyzing the initial conditions, we see \(C=1\).
-
+  solves \eqref{eq:fp:sepvars-eqs}. Analyzing the initial conditions, we
+  conclude that \(C=1\). In conclusion,
+  \[
+    u(x,t)=\rme^{3x+9t}
+  \]
+  solves the original problem.
+  \\\\
   Another way to solve this problem is by computing the convolution
   \[
     u(x,t)=%
@@ -251,38 +260,45 @@
 
   Throughout the following analysis, set \(s\defeq\sqrt{t^2-(\xi-x)^2}\).
   For \(I_1\), we have
-  \begin{align*}
-    I_1
-    &=\frac{1}{2\pi t^2}\int_{x-t}^{x+t}%
+  \begin{equation}
+    \label{eq:fp:i-1}
+    \begin{aligned}
+      I_1 &=\frac{1}{2\pi t^2}\int_{x-t}^{x+t}%
       \left[%
-      \int_{-s}^s\frac{\cos\eta}{\sqrt{s^2-\eta^2}}\diff\eta%
+        \int_{-s}^s\frac{\cos\eta}{\sqrt{s^2-\eta^2}}\diff\eta%
       \right]%
       (tf(\xi)+t^2g(\xi))\diff\xi\\
-    &=\frac{1}{2t}\int_{x-t}^{x+t} J_0(s)[f(\xi)+tg(\xi)]\diff\xi;
-  \end{align*}
+      &=\frac{1}{2t}\int_{x-t}^{x+t} J_0(s)[f(\xi)+tg(\xi)]\diff\xi;
+    \end{aligned}
+  \end{equation}
   for \(I_2\), we have
-  \begin{align*}
-    I_2
-    &=\frac{1}{2\pi t^2}%
+  \begin{equation}
+    \label{eq:fp:i-2}
+    \begin{aligned}
+      I_2 &=\frac{1}{2\pi t^2}%
       \int_{x-t}^{x+t}%
       \left[%
-      \int_{-s}^s\frac{\eta\sin\eta}{\sqrt{s-\eta^2}}\diff\eta%
+        \int_{-s}^s\frac{\eta\sin\eta}{\sqrt{s-\eta^2}}\diff\eta%
       \right](-t)\diff\xi\\
-    &=-\frac{1}{2t}\int_{x-t}^{x+t} sJ_1(s)\diff\xi;
-  \end{align*}
+      &=-\frac{1}{2t}\int_{x-t}^{x+t} sJ_1(s)\diff\xi;
+    \end{aligned}
+  \end{equation}
   and for \(I_3\), we have
-  \begin{align*}
-    I_3
-    &=\frac{1}{2\pi t^2}%
+  \begin{equation}
+    \label{eq:fp:i-3}
+    \begin{aligned}
+      I_3 &=\frac{1}{2\pi t^2}%
       \int_{x-t}^{x+t}%
       \left[%
-      \int_{-s}^s%
-      \frac{1}{\sqrt{s^2-\eta^2}}%
-      \diff\eta\right] tf'(\xi)(\xi-x)\diff\xi\\
-    &=\frac{1}{2t}\int_{x-t}^{x+t} f'(\xi)(\xi-x)\diff\xi.
-  \end{align*}
+        \int_{-s}^s%
+        \frac{1}{\sqrt{s^2-\eta^2}}%
+        \diff\eta\right] tf'(\xi)(\xi-x)\diff\xi\\
+      &=\frac{1}{2t}\int_{x-t}^{x+t} f'(\xi)(\xi-x)\diff\xi.
+    \end{aligned}
+  \end{equation}
 
-  Therefore,
+  Putting \eqref{eq:fp:i-1}, \eqref{eq:fp:i-2}, and \eqref{eq:fp:i-3}
+  together, we have
   \[
     u(x,t)=\frac{1}{2t}\int_{x-t}^{x+t}
     \left[
@@ -292,7 +308,7 @@
       -sJ_1(s)
     \right]\diff\xi
   \]
-  solves the initial-value problem.
+  which solves the initial-value problem in question.
 \end{solution*}
 
 \begin{problem}
@@ -409,10 +425,17 @@
       \left[
       \sum\nolimits_{k=0}^\infty p_k(x)^2
       \right]
-      \diff S(y).
+      \diff S(y);
   \end{align*}
-  Applying the Cauchy--Schwartz inequality to the latter equation with
-  \(r=\sqrt{ab}\), we achieve the desired inequality.
+  i.e.,
+  \begin{equation}
+    \label{eq:fp:e-harmonic-polys}
+    E(r)=\fint_{\partial B(0,r)}\sum_{k=0}^\infty p_k(x)^2\diff S(y)
+  \end{equation}
+  for \(r<R\).
+
+  Now, applying the Cauchy--Schwartz to \eqref{eq:fp:e-harmonic-polys} with
+  \(r=\sqrt{ab}\) we achieve the desired inequality.
 \end{solution*}
 
 \begin{problem}
@@ -430,74 +453,47 @@
   \(u=\rme^{-t}+t-1\) when \(f(x)=1\).
 \end{problem}
 \begin{solution*}
-  Proceeding by Duhamel's principle, define \(v(x,t;s)\defeq u(x,t)\) to be
-  the solution of
-  \[
+  Proceeding by Duhamel's principle, define \(v\defeq u(x,t;s)\). Then
+  \(v\) is a solution of
+  \begin{equation}
+    \label{eq:fp:duhamels-v}
     \left\{
       \begin{aligned}
-        &v_{tt}(\blank;s)-\Lap v(\blank;s)=0%
-        &&\text{in \(\R^3\times(s,\infty)\),}\\
-        &v(\blank;s)
-        =v_t(\blank;s)=\rme^{-s}f(x),
-        &&\text{on \(\R^3\times\{\,t=s\,\}\).}
+        &v_{tt}-\Lap v=\rme^{-t}f(x)%
+        &&\text{in \(\R^3\times(0,\infty)\),}\\
+        &v=0, \quad v_t(\blank;s)=\rme^{-s}f(\blank),%
+        &&\text{on \(\R^3\times\{\,t=0\,\}\).}
       \end{aligned}
     \right.
-  \]
-  Then Duhamel's principle says that
-  \[
-    u(x,t)=\int_0^t u(x,t;s)\diff s
-  \]
-  solves the original problem. By Kirchhoff's formula,
+  \end{equation}
+  By Kirchhoff's formula,
   \begin{align*}
-    u(x,t;s)
-    &=\fint_{\partial B(x,t)}%
-    \bigl[%
-    th(y)+g(y)+Dg(y)\cdot(y-x)
-      \bigr]\diff S(y)\\
-    &=\fint_{\partial B(x,t)}
-      \bigl[%
-      t\rme^{-s}f(y)+\rme^{-s}f(y)
-      +D\bigl(\rme^{-s}f(y)\bigr)\cdot (y-x)
-      \bigr]\diff S(y)\\
-    &=\fint_{\partial B(x,t)}
-      \bigl[%
-      t\rme^{-s}f(y)+\rme^{-s}f(y)
-      +\rme^{-s}D f(y)\cdot (y-x)
-      \bigr]\diff S(y)\\
-    &=\rme^{-s}
-      \fint_{\partial B(x,t)}
-      \bigl[%
-      tf(y)+f(y)+D f(y)\cdot (y-x)
-      \bigr]\diff S(y)
+    v(x,t;s)
+    &=\fint_{\partial B(x,t)} t\rme^{-s}f(y)\diff S(y)\\
+    &=\frac{\rme^{-s}}{4\pi t}\int_{\partial B(x,t)} f(y)\diff S(y)\\
+    &=\frac{\rme^{-s}}{4\pi(t-s)}\int_{\partial B(x,t-s)}f(y)\diff S(y)
   \end{align*}
-  Thus,
-  \begin{align*}
-    u(x,t)
-    &=\int_0^t%
-      \left[%
-      \fint_{\partial B(x,t)}
-      tf(y)+f(y)+D f(y)\cdot (y-x)%
-      \diff S(y)%
-      \right]%
-      \rme^{-s}\diff s
-    \\
-    &=(\rme^{-t}-1)
-      \left[
-      \fint_{\partial B(x,t)}
-      tf(y)+f(y)+D f(y)\cdot (y-x)%
-      \diff S(y)
-      \right].
-  \end{align*}
+  solves \eqref{eq:fp:duhamels-v}.
 
-  When \(f=1\), the integral above evaluates to
+  Then,
   \begin{align*}
     u(x,t)
-    &=(\rme^{-t}-1)
+    &=\int_0^t
       \left[
-      \fint_{\partial B(x,t)}
-      t+1%
+      \int_{\partial B(x,t-s)}f(y)\diff S(y)
+      \right]%
+      \left(\frac{\rme^{-s}}{4\pi(t-s)}\right)\diff s\\
+    &=\int_0^t
+      \left[%
+      \int_{\partial B(x,t-s)}%
+      \left(%
+      \frac{f(y)}{t-s}%
+      \right)%
       \diff S(y)
-      \right]\\
+      \right]%
+      \left(\frac{\rme^{-s}}{4\pi}\right)\diff s\\
+    &=\frac{1}{4\pi}
+      \int_0^t\int_{\partial B(x,r)}\frac{\rme^{t-r}f(y)}{r}\diff S(y)\diff r\\
     &=
   \end{align*}
 \end{solution*}
