@@ -347,28 +347,72 @@
   at a point \((x,t)\) such that \(|x|+t<a\).
 \end{problem}
 \begin{solution*}
+  By Kirchhoff's formula, to solution to this initial-value problem is
+  given by
+  \[
+    u(x,t)=\frac{1}{4\pi t^2}\int_{\partial B(x,t)} t\phi(y)\diff S(y).
+  \]
+  Then, since \(\phi(y)\equiv 1\) for \(|y|=|x|+t<a\), the integral above
+  becomes
+  \[
+    u(x,t)=\frac{1}{4\pi t^2}\int_{\partial B(x,t)} t\diff S(y)=t.\qedhere
+  \]
 \end{solution*}
 
 \begin{problem}
   Let \(u\) be a nonzero harmonic function in
   \(B(0,R)\defeq\bigl\{\,x\in\R^n:|x|<R\,\bigr\}\). Define
   \[
-    E(r)\defeq\fint_{\partial B(0,r)}u^2(y)\diff\sigma_y.
+    E(r)\defeq\fint_{\partial B(0,r)}u^2(y)\diff S(y).
   \]
   Show that \(\ln E(r)\) is a convex function of \(\ln r\); i.e.,
   \[
     E\bigl(\sqrt{ab}\bigr)^2\leq E(a)E(b),\quad\text{for \(a,b>0\),}
   \]
   for any \(0<a\leq c<R\).
-
-  \noindent (\emph{Hint:} Use the representation of \(u\) as a uniformly
+  \\\\
+  \emph{Hint:} Use the representation of \(u\) as a uniformly
   convergent series
   \[
     u(x)=\sum_{k=0}^\infty p_k(x),\qquad |x|<R,
   \]
-  where \(p_k(x)\) is a homogeneous harmonic polynomial of order \(k\).)
+  where \(p_k(x)\) is a homogeneous harmonic polynomial of order \(k\).
 \end{problem}
 \begin{solution*}
+  Write
+  \[
+    u(x)=\lim_{n\to\infty}\sum_{k=0}^n p_k(x),\qquad |x|<R,
+  \]
+  where \(p_k(x)\) is a homogeneous harmonic polynomial of order \(k\); the
+  limit converges uniformly. Then
+  \begin{align*}
+    E(r)
+    &=\fint_{\partial B(0,r)}\left[\lim_{n\to\infty}\sum\nolimits_{k=0}^n
+      p_k(x)\right]^2\diff S(y)
+    \shortintertext{expand the sum by the multinomial theorem}
+    &=\fint_{\partial B(0,r)}\lim_{n\to\infty}
+      \left[\sum_{k_0+\dotsb+k_n=2}
+      \binom{2}{k_0,\dotsc,k_n}p_0(x)^{k_0}\dotsm p_n(x)^{k_n}
+      \right]\diff S(y)
+      \shortintertext{since the limit is uniform, we may interchange the
+      limit with the integral}
+    &=\lim_{n\to\infty}
+      \left[
+      \fint_{\partial B(0,r)}
+      \sum_{k_0+\dotsb+k_n=2}
+      \binom{2}{k_0,\dotsc,k_n}p_0(x)^{k_0}\dotsm p_n(x)^{k_n}\diff S(y)
+      \right]\\
+    &=\lim_{n\to\infty}\fint_{\partial B(0,r)}
+      p_0(x)^2+\dotsb+p_n(x)^2\diff S(y)
+    \shortintertext{since harmonic polynomials of distinct degrees are orthogonal}
+    &=\fint_{\partial B(0,r)}
+      \left[
+      \sum\nolimits_{k=0}^\infty p_k(x)^2
+      \right]
+      \diff S(y).
+  \end{align*}
+  Applying the Cauchy--Schwartz inequality to the latter equation with
+  \(r=\sqrt{ab}\), we achieve the desired inequality.
 \end{solution*}
 
 \begin{problem}
@@ -390,9 +434,8 @@
 
 \begin{problem}
   Let \(f(x)=\rme^{-|x|^2}\), \(x\in\R^n\). Find \(f*f\).
-
-  \noindent (\emph{Hint:} Use either the heat equation or the Fourier
-  transform.)
+  \\\\
+  \emph{Hint:} Use either the heat equation or the Fourier transform.
 \end{problem}
 \begin{solution*}
 \end{solution*}
