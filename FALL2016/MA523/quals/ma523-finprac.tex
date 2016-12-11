@@ -1,7 +1,7 @@
 \subsection{Final Practice Problems}
 \begin{problem}
-  Let \(\Omega\) be a bounded domain in \(\R^n\) with a smooth
-  boundary. Show that the problem
+  Let \(\Omega\) be a bounded domain in \(\R^n\) with smooth boundary. Show
+  that the problem
   \[
     \left\{
       \begin{aligned}
@@ -15,7 +15,8 @@
   and \(f\), \(g\) are assumed to be smooth.
 \end{problem}
 \begin{solution*}
-  We will use energy methods to show that there is only one solution to the
+  Let us assume that \(\Omega\) is also a connected subset of \(\R^n\). We
+  will use energy methods to show that there is only one solution to the
   problem
   \begin{equation}
     \label{eq:finprac:laplace-eq}
@@ -34,13 +35,13 @@
     \left\{
       \begin{aligned}
         -\Lap v&=0&&\text{in \(\Omega\),}\\
-        v&=-\alpha\frac{\partial v}{\partial\nu}&&\text{on \(\partial\Omega\).}
+        v+\alpha\frac{\partial v}{\partial\nu}&=0&&\text{on \(\partial\Omega\).}
       \end{aligned}
     \right.
   \]
   Consider the energy
   \[
-    E[v]=\frac{1}{2}\int_{\Omega'}|Dv|^2\diff x.
+    E[v]=\frac{1}{2}\int_\Omega|Dv|^2\diff x.
   \]
   By Green's formula, we may recast the expression above as the sum
   \begin{align*}
@@ -51,8 +52,12 @@
       +\int_{\partial\Omega}\frac{\partial v}{\partial\nu }v\diff S(x)%
       \right]\\
     &=-\frac{\alpha}{2}\int_{\partial\Omega} v^2\diff S(x)\\
-    &=
+    &\geq 0.
   \end{align*}
+  However, since \(\alpha>0\) and \(v^2\) is strictly positive, it must be
+  the case that \(v\equiv 0\) on \(\partial\Omega\). The maximum principle
+  then implies that \(v\equiv 0\) in \(\Omega\). It follows that
+  \(u_1=u_2\); i.e., the solution is unique.
 \end{solution*}
 
 \begin{problem}
@@ -61,8 +66,8 @@
   \[
     \left\{
       \begin{aligned}
-        u_t-\Lap u&=0&&\text{for \(x\in\R^n\), \(t>0\),}\\
-        u(x,0)&=g(x)&&\text{for \(x\in\R^n\).}
+        u_t-\Lap u&=0&&\text{in \(\R^n\times(0,\infty)\),}\\
+        u&=g&&\text{on \(\R^n\times\{\,t=0\,\}\).}
       \end{aligned}
     \right.
   \]
@@ -70,6 +75,34 @@
   uniform in \(x\in\R^n\).
 \end{problem}
 \begin{solution*}
+  From previous work on the heat equation, we know that the convolution
+  \[
+    u(x,t)
+    =\frac{1}{(4\pi t)^{\frac{n}{2}}}%
+    \int_{\R^n}\rme^{-\frac{|x-y|^2}{4t}}g(y)\diff y
+  \]
+  the initial-value problem above. A crude estimate on the magnitude of
+  \(u\) gives us
+  \begin{align*}
+    |u(x,t)|
+    &=%
+      \frac{1}{(4\pi t)^{\frac{n}{2}}}%
+      \left|
+      \int_{\R^n}\rme^{-\frac{|x-y|^2}{4t}}g(y)\diff y
+      \right|\\
+    &\leq%
+      \frac{1}{(4\pi t)^{\frac{n}{2}}}
+      \int_{\R^n}\left|\rme^{-\frac{|x-y|^2}{4t}}g(y)\right|\diff y\\
+    &<M t^{-\frac{n}{2}};
+  \end{align*}
+  where \(M<\infty\) is chosen such that
+  \[
+    \frac{1}{(4\pi)^{\frac{n}{2}}}
+    \int_{\Supp g}\left|\rme^{-\frac{|x-y|^2}{4t}}g(y)\right|\diff y
+    <M.
+  \]
+  Having established this estimate, we have \(\lim_{t\to\infty}u(x,t)=0\)
+  uniformly.
 \end{solution*}
 
 \begin{problem}
@@ -77,13 +110,28 @@
   \[
     \left\{
       \begin{aligned}
-        u_t-u_{xx}&=0&&\text{for \(x\in\R^n\), \(t>0\),}\\
-        u(x,0)&=\rme^{3x}&&\text{for \(x\in\R\).}
+        u_t-u_{xx}&=0&&\text{on \(\R\times(0,\infty)\),}\\
+        u&=\rme^{3x}&&\text{in \(\R\times\{\,t=0\,\}\).}
       \end{aligned}
     \right.
   \]
 \end{problem}
 \begin{solution*}
+  By separation of variables,
+
+
+  All we need to do is compute the convolution
+  \[
+    u(x,t)=%
+    \frac{1}{\sqrt{4\pi t}}
+    \int_\R \rme^{-\frac{|x-y|^2}{4t}}
+    \rme^{3x}\diff y.
+  \]
+  Putting this through \textsf{Mathematica} gives
+  \[
+    u(x,t)= \frac{1}{\sqrt{4\pi t}} \left( \sqrt{4\pi t}\rme^{9t+3x}
+    \right)=\rme^{9t+3x}.
+  \]
 \end{solution*}
 
 \begin{problem}
