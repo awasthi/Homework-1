@@ -310,7 +310,20 @@
   \(f(x)=f(|x|)\).)
 \end{problem}
 \begin{solution*}
-  Suppose that
+  Let \(A\in\SO(n)\) be a rotation matrix. Set \(v(x)\defeq u(Ax)\). Then
+  \(v\) solves
+  \[
+    \left\{
+      \begin{aligned}
+        &v_{tt}-\Lap v=0&&\text{in \(\R^n\times(0,\infty),\)}\\
+        &v(x,0)=g(Ax)=g(x),\quad v_t(x,0)=h(Ax)=h(x)&&\text{in
+          \(\R^n\times\{\,t=0\,\}\).}
+      \end{aligned}
+    \right.
+  \]
+  By the uniqueness for the wave equation there exist at most one \(C^2\)
+  solution to the initial-value problem above. Thus, it must be the case
+  that \(v=u\); i.e., \(u(x)=u(|x|)\) since \(A\in\SO(3)\) was arbitrary.
 \end{solution*}
 
 \begin{problem}
@@ -318,8 +331,8 @@
   \[
     \left\{
       \begin{aligned}
-        u_{tt}-\Lap u=0&&&\text{for \(x\in\R^3\), \(t>0\),}\\
-        u(x,0)=0,&u_t(x,0)=\phi(x),
+        &u_{tt}-\Lap u=0&&\text{for \(x\in\R^3\), \(t>0\),}\\
+        &u(x,0)=0,\quad u_t(x,0)=\phi(x),
       \end{aligned}
     \right.
   \]
@@ -364,8 +377,8 @@
   \[
     \left\{
       \begin{aligned}
-        u_{tt}-\Lap u=\rme^{-t}f(x)&&\text{\(x\in\R^3\), \(t>0\),}\\
-        u(x,0)=u_t(x,0)=0,&&x\in\R^3.
+        &u_{tt}-\Lap u=\rme^{-t}f(x)&&\text{in \(\R^3\times(0,\infty)\),}\\
+        &u=u_t=0,&&\text{on \(\R^3\times\{\,t=0\,\}\).}
       \end{aligned}
     \right.
   \]
@@ -389,8 +402,8 @@
   \[
     \left\{
       \begin{aligned}
-        u_t-\Lap u=0&&\text{in \(\R^n\times(0,\infty)\),}\\
-        u=g&&\text{on \(\R^n\times\{t=0\}\)}
+        &u_t-\Lap u=0&&\text{in \(\R^n\times(0,\infty)\),}\\
+        &u=g&&\text{on \(\R^n\times\{t=0\}\)}
       \end{aligned}
     \right.
   \]
