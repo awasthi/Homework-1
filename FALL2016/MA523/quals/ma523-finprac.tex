@@ -476,29 +476,26 @@
   solves \eqref{eq:fp:duhamels-v}.
 
   Then,
-  \begin{align*}
-    u(x,t)
-    &=\int_0^t
-      \left[
-      \int_{\partial B(x,t-s)}f(y)\diff S(y)
+  \begin{equation}
+    \label{eq:fp:duhamels-sol}
+    \begin{aligned}
+      u(x,t) &=\int_0^t \left[ \int_{\partial B(x,t-s)}f(y)\diff S(y)
       \right]%
       \left(\frac{\rme^{-s}}{4\pi(t-s)}\right)\diff s\\
-    &=\int_0^t
-      \left[%
-      \int_{\partial B(x,t-s)}%
-      \left(%
-      \frac{f(y)}{t-s}%
-      \right)%
-      \diff S(y)
-      \right]%
+      &=\int_0^t \left[%
+        \int_{\partial B(x,t-s)}%
+        \left(%
+          \frac{f(y)}{t-s}%
+        \right)%
+        \diff S(y) \right]%
       \left(\frac{\rme^{-s}}{4\pi}\right)\diff s\\
-    &=\frac{1}{4\pi}
-      \int_0^t\int_{\partial B(x,r)}\frac{\rme^{t-r}f(y)}{r}\diff S(y)\diff
-      r
-  \end{align*}
+      &=\frac{1}{4\pi} \int_0^t\int_{\partial
+        B(x,r)}\frac{\rme^{t-r}f(y)}{r}\diff S(y)\diff r
+    \end{aligned}
+  \end{equation}
   solves the original problem.
 
-  In the case \(f(x)=1\), we have
+  In the case \(f(x)=1\), \eqref{eq:fp:duhamels-sol} becomes
   \begin{align*}
     u(x,t)
     &=\frac{1}{4\pi}
@@ -519,6 +516,54 @@
   \emph{Hint:} Use either the heat equation or the Fourier transform.
 \end{problem}
 \begin{solution*}
+  First we proceed by the heat equation. Suppose \(u\) is a solution to the
+  initial-value problem
+  \begin{equation}
+    \label{eq:fp:heat-eq-to-conv-f}
+    \left\{
+      \begin{aligned}
+        &u_t-\Lap u=0&&\text{in \(\R^n\times(0,\infty)\),}\\
+        &u=f&&\text{on \(\R^n\times\{\,t=0\,\}\)}
+      \end{aligned}
+    \right.
+  \end{equation}
+  where \(f(x)\defeq\rme^{-|x|^2}\). Then
+  \[
+    u(x,t)=f(x)*\Phi(x,t),
+  \]
+  where \(\Phi\) is the fundamental solution to the heat equation, solves
+  \eqref{eq:fp:heat-eq-to-conv-f}. But
+  \[
+    \Phi(x,t)=\frac{1}{(4\pi
+      t)^{\frac{n}{2}}}\rme^{-\frac{|x|^2}{4t}}=\frac{1}{(4\pi
+      t)^{\frac{n}{2}}}[f(x)]^{\frac{1}{4t}}.
+  \]
+  Therefore, the convolution we are after is precisely
+  \[
+    (f*f)(x)=\pi^{\frac{n}{2}}u(x,\tfrac{1}{4}).
+  \]
+
+  Solving for \(u(x,\frac{1}{4})\), we have
+  \begin{align*}
+    u(x,t)
+    &=\frac{1}{\pi^{\frac{n}{2}}}%
+      \int_{\R^n}\rme^{-|x-y|^2}f(y)\diff y\\
+    &=\frac{1}{\pi^{\frac{n}{2}}}%
+      \int_{\R^n}\rme^{-|x-y|^2}\rme^{-|y|^2}\diff y\\
+    &=\frac{1}{\pi^{\frac{n}{2}}}%
+      \int_{\R^n}\rme^{-|x-y|^2-|y|^2}\diff y
+      \shortintertext{which, by Fubini's theorem, becomes the product of
+      integrals in one coordinate}
+    &=\frac{1}{\pi^{\frac{n}{2}}}%
+      \prod_{k=1}^n\left[\int_{\R}\rme^{-|x_k-y_k|^2-|y_k|^2}\diff y_k\right]\\
+    &=\frac{1}{\pi^{\frac{n}{2}}}%
+      \prod_{k=1}^n\left[\int_{\R}\rme^{-(x_k^2-2x_ky_k+y_k^2)-y_k^2}\diff
+        y_k\right]\\
+    &=\frac{1}{\pi^{\frac{n}{2}}}%
+      \rme^{-|x|^2}\prod_{k=1}^n\left[\int_{\R}\rme^{2x_ky_k-2y_k^2}\diff
+      y_k\right]\\
+    &=
+  \end{align*}
 \end{solution*}
 
 \begin{problem}
