@@ -430,6 +430,18 @@
   \(u=\rme^{-t}+t-1\) when \(f(x)=1\).
 \end{problem}
 \begin{solution*}
+  Proceeding by Duhamel's principle, define \(v(x,t;s)\defeq u(x,t)\) to be
+  the solution of
+  \[
+    \left\{
+      \begin{aligned}
+        &v_{tt}(\blank;s)-\Lap v(\blank;s)=0%
+        &&\text{in \(\R^3\times(s,\infty)\),}\\
+        &v(\blank;s)=v_t(\blank;s)=\rme^{-s}f(x),%
+        &&\text{on \(\R^3\times\{\,t=s\,\}\).}
+      \end{aligned}
+    \right.
+  \]
 \end{solution*}
 
 \begin{problem}
