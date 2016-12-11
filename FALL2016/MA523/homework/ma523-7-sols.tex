@@ -167,8 +167,8 @@
   \[
     \left\{
       \begin{aligned}
-        u_t-\Lap_x u+cu&=f&&\text{in \(\R^n\times(0,\infty)\),}\\
-        u&=g&&\text{on \(\R^n\times\{\,t=0\,\}\),}
+        &u_t-\Lap_x u+cu=f&&\text{in \(\R^n\times(0,\infty)\),}\\
+        &u=g&&\text{on \(\R^n\times\{\,t=0\,\}\),}
       \end{aligned}
     \right.
   \]
@@ -184,9 +184,9 @@
     \label{eq:7:heat-problem-exp}
     \left\{
       \begin{aligned}
-        v_t-\Lap_xv&=\rme^{ct}f&&\text{in
+        &v_t-\Lap_xv=\rme^{ct}f&&\text{in
           \(\R^n\times(0,\infty),\)}\\
-        v&=g&&\text{on \(\R^n\times\{\,t=0\,\}\).}
+        &v=g&&\text{on \(\R^n\times\{\,t=0\,\}\).}
       \end{aligned}
     \right.
   \end{equation}
@@ -200,7 +200,7 @@
   the formula
   \[
     u(x,t)=\rme^{-ct}v(x,t)=\rme^{-ct}\int_{\R^n}\Phi(x-y,t)g(y)\diff y
-    +\rme^{-ct}\int_0^t\int_{\R^n}\Phi(x-y,t-s)\rme^{cs}f(y,s)\diff yds
+    +\rme^{-ct}\int_0^t\int_{\R^n}\Phi(x-y,t-s)\rme^{cs}f(y,s)\diff y\diff s
   \]
   solves the original problem.
 \end{solution*}
