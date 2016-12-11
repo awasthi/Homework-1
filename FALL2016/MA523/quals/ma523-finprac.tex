@@ -120,18 +120,23 @@
   By separation of variables,
 
 
-  All we need to do is compute the convolution
+  Another way to solve this problem is by computing the convolution
   \[
     u(x,t)=%
     \frac{1}{\sqrt{4\pi t}}
     \int_\R \rme^{-\frac{|x-y|^2}{4t}}
     \rme^{3x}\diff y.
   \]
-  Putting this through \textsf{Mathematica} gives
+  Putting this through \textsf{WolframAlpha} gives
   \[
-    u(x,t)= \frac{1}{\sqrt{4\pi t}} \left( \sqrt{4\pi t}\rme^{9t+3x}
-    \right)=\rme^{9t+3x}.
+    u(x,t)=%
+    \frac{1}{\sqrt{4\pi t}}%
+    \left[%
+      \sqrt{4\pi t}\rme^{9t+3x}%
+    \right]=%
+    \rme^{9t+3x}
   \]
+  which agrees with the solution to our first approach.
 \end{solution*}
 
 \begin{problem}
