@@ -192,7 +192,7 @@
   \noindent Method II: Use the Fourier transform.
 \end{problem}
 \begin{solution*}
-  By Method I: Set \(h(y)\defeq \rme^{-y}\) and \(v(x,y,t)\defeq
+  By Method I: Set \(h(y)\defeq\cos y\) and \(v(x,y,t)\defeq
   h(y)u(x,t)\). Then \(v\) solves the initial-value problem
   \[
     \left\{
@@ -210,8 +210,8 @@
     v(x,y,t)=%
     \frac{1}{2\pi t^2}\iint_{B(x,y,t)}%
     \left[%
-      \frac{t\rme^{-\eta}f(\xi)+t^2\rme^{-\eta}g(\xi)%
-        +tD(\rme^{-\eta}f(\xi))\cdot(\xi-x,\eta-y)}%
+      \frac{(tf(\xi)+t^2g(\xi))\cos\eta%
+        +tD((\cos\eta)f(\xi))\cdot(\xi-x,\eta-y)}%
       {{(t^2-(\xi-x)^2-(\eta-y)^2)}^{\frac{1}{2}}}%
     \right]\diff\xi\diff\eta
   \]
@@ -220,8 +220,8 @@
     v(x,0,t)=%
     \frac{1}{2\pi t^2}\iint_{B(x,0,t)}%
     \left[%
-      \frac{t\rme^{-\eta}f(\xi)+t^2\rme^{-\eta}g(\xi)
-        +t[f'(\xi)(\xi-x)-\eta\rme^{-\eta}]}%
+      \frac{(tf(\xi)+t^2g(\xi))\cos\eta%
+        +t[f'(\xi)(\xi-x)-\eta\sin(\eta)]}%
       {{(t^2-(\xi-x)^2-\eta^2)}^{\frac{1}{2}}}%
     \right]\diff\xi\diff\eta
   \]
@@ -233,13 +233,13 @@
     I_1
     &=\frac{1}{2\pi t^2}\iint_{B(x,0,t)}
       \left[
-      \frac{(tf(\xi)+t^2g(\xi))\rme^{-\eta}}{{(t^2-(\xi-x)^2-\eta^2)}^{\frac{1}{2}}}
+      \frac{(tf(\xi)+t^2g(\xi))\cos \eta}{{(t^2-(\xi-x)^2-\eta^2)}^{\frac{1}{2}}}
       \right]\diff\xi\diff\eta,
     \\
     I_2
     &=\frac{1}{2\pi t^2}\iint_{B(x,0,t)}
       \left[
-      \frac{-t\eta\rme^{-\eta}}{{(t^2-(\xi-x)^2-\eta^2)}^{\frac{1}{2}}}
+      \frac{-t\eta\sin\eta}{{(t^2-(\xi-x)^2-\eta^2)}^{\frac{1}{2}}}
       \right]\diff\xi\diff\eta,
     \\
     I_3
@@ -248,6 +248,51 @@
       \frac{tf'(\xi)(\xi-x)}{{(t^2-(\xi-x)^2-\eta^2)}^{\frac{1}{2}}}
       \right]\diff\xi\diff\eta.
   \end{align*}
+
+  Throughout the following analysis, set \(s\defeq\sqrt{t^2-(\xi-x)^2}\).
+  For \(I_1\), we have
+  \begin{align*}
+    I_1
+    &=\frac{1}{2\pi t^2}\int_{x-t}^{x+t}%
+      \left[%
+      \int_{-s}^s\frac{\cos\eta}{\sqrt{s^2-\eta^2}}\diff\eta%
+      \right]%
+      (tf(\xi)+t^2g(\xi))\diff\xi\\
+    &=\frac{1}{2t}\int_{x-t}^{x+t} J_0(s)[f(\xi)+tg(\xi)]\diff\xi;
+  \end{align*}
+  for \(I_2\), we have
+  \begin{align*}
+    I_2
+    &=\frac{1}{2\pi t^2}%
+      \int_{x-t}^{x+t}%
+      \left[%
+      \int_{-s}^s\frac{\eta\sin\eta}{\sqrt{s-\eta^2}}\diff\eta%
+      \right](-t)\diff\xi\\
+    &=-\frac{1}{2t}\int_{x-t}^{x+t} sJ_1(s)\diff\xi;
+  \end{align*}
+  and for \(I_3\), we have
+  \begin{align*}
+    I_3
+    &=\frac{1}{2\pi t^2}%
+      \int_{x-t}^{x+t}%
+      \left[%
+      \int_{-s}^s%
+      \frac{1}{\sqrt{s^2-\eta^2}}%
+      \diff\eta\right] tf'(\xi)(\xi-x)\diff\xi\\
+    &=\frac{1}{2t}\int_{x-t}^{x+t} f'(\xi)(\xi-x)\diff\xi.
+  \end{align*}
+
+  Therefore,
+  \[
+    u(x,t)=\frac{1}{2t}\int_{x-t}^{x+t}
+    \left[
+      J_0(s)(f(\xi)+tg(\xi))
+      +
+      f'(\xi)(\xi-x)
+      -sJ_1(s)
+    \right]\diff\xi
+  \]
+  solves the initial-value problem.
 \end{solution*}
 
 \begin{problem}
@@ -265,6 +310,7 @@
   \(f(x)=f(|x|)\).)
 \end{problem}
 \begin{solution*}
+  Suppose that
 \end{solution*}
 
 \begin{problem}
@@ -291,7 +337,7 @@
 \end{solution*}
 
 \begin{problem}
-  LEt \(u\) be a nonzero harmonic function in
+  Let \(u\) be a nonzero harmonic function in
   \(B(0,R)\defeq\bigl\{\,x\in\R^n:|x|<R\,\bigr\}\). Define
   \[
     E(r)\defeq\fint_{\partial B(0,r)}u^2(y)\diff\sigma_y.
