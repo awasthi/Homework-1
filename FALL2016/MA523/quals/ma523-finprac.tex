@@ -206,16 +206,47 @@
   \]
   where \(\tilde f\defeq hf\) and \(\tilde g\defeq hg\). The solution to
   this problem is given by the average integral
+  \[
+    v(x,y,t)=%
+    \frac{1}{2\pi t^2}\iint_{B(x,y,t)}%
+    \left[%
+      \frac{t\rme^{-\eta}f(\xi)+t^2\rme^{-\eta}g(\xi)%
+        +tD(\rme^{-\eta}f(\xi))\cdot(\xi-x,\eta-y)}%
+      {{(t^2-(\xi-x)^2-(\eta-y)^2)}^{\frac{1}{2}}}%
+    \right]\diff\xi\diff\eta
+  \]
+  Therefore, the equation
+  \[
+    v(x,0,t)=%
+    \frac{1}{2\pi t^2}\iint_{B(x,0,t)}%
+    \left[%
+      \frac{t\rme^{-\eta}f(\xi)+t^2\rme^{-\eta}g(\xi)
+        +t[f'(\xi)(\xi-x)-\eta\rme^{-\eta}]}%
+      {{(t^2-(\xi-x)^2-\eta^2)}^{\frac{1}{2}}}%
+    \right]\diff\xi\diff\eta
+  \]
+  solves the original problem.
+
+  To simplify this, let us first compute the following integrals since the
+  former integral is too large to work with directly,
   \begin{align*}
-    v(x,t)
-    &=%
-      \frac{1}{2}\fint_{B(x,t)}%
-      \left[%
-      \frac{t\tilde f(y)+t^2\tilde g(y)+tD\tilde f(y)\cdot
-      (y-x)}{{(t^2-|y-x|^2)}^{\frac{1}{2}}}%
-      \right]%
-      \diff y\\
-    &=
+    I_1
+    &=\frac{1}{2\pi t^2}\iint_{B(x,0,t)}
+      \left[
+      \frac{(tf(\xi)+t^2g(\xi))\rme^{-\eta}}{{(t^2-(\xi-x)^2-\eta^2)}^{\frac{1}{2}}}
+      \right]\diff\xi\diff\eta,
+    \\
+    I_2
+    &=\frac{1}{2\pi t^2}\iint_{B(x,0,t)}
+      \left[
+      \frac{-t\eta\rme^{-\eta}}{{(t^2-(\xi-x)^2-\eta^2)}^{\frac{1}{2}}}
+      \right]\diff\xi\diff\eta,
+    \\
+    I_3
+    &=\frac{1}{2\pi t^2}\iint_{B(x,0,t)}
+      \left[
+      \frac{tf'(\xi)(\xi-x)}{{(t^2-(\xi-x)^2-\eta^2)}^{\frac{1}{2}}}
+      \right]\diff\xi\diff\eta.
   \end{align*}
 \end{solution*}
 
