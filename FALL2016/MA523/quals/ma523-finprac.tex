@@ -464,11 +464,41 @@
       t\rme^{-s}f(y)+\rme^{-s}f(y)
       +\rme^{-s}D f(y)\cdot (y-x)
       \bigr]\diff S(y)\\
-    &=
+    &=\rme^{-s}
+      \fint_{\partial B(x,t)}
+      \bigl[%
+      tf(y)+f(y)+D f(y)\cdot (y-x)
+      \bigr]\diff S(y)
   \end{align*}
   Thus,
   \begin{align*}
     u(x,t)
+    &=\int_0^t%
+      \left[%
+      \fint_{\partial B(x,t)}
+      tf(y)+f(y)+D f(y)\cdot (y-x)%
+      \diff S(y)%
+      \right]%
+      \rme^{-s}\diff s
+    \\
+    &=(\rme^{-t}-1)
+      \left[
+      \fint_{\partial B(x,t)}
+      tf(y)+f(y)+D f(y)\cdot (y-x)%
+      \diff S(y)
+      \right].
+  \end{align*}
+
+  When \(f=1\), the integral above evaluates to
+  \begin{align*}
+    u(x,t)
+    &=(\rme^{-t}-1)
+      \left[
+      \fint_{\partial B(x,t)}
+      t+1%
+      \diff S(y)
+      \right]\\
+    &=
   \end{align*}
 \end{solution*}
 
