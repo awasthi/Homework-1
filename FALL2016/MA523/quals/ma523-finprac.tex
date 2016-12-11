@@ -117,8 +117,40 @@
   \]
 \end{problem}
 \begin{solution*}
-  By separation of variables,
-
+  By separation of variables, suppose we can write \(u(x,t)\) as the
+  product \(X(x)T(t)\). Then
+  \[
+    \left\{
+      \begin{aligned}
+        X(x)T'(t)-X''(x)T(t)&=0&&\text{in \(\R\times(0,\infty)\),}\\
+        X(x)T(0)&=\rme^{3x}&&\text{on \(\R\times\{\,t=0\,\}\).}
+      \end{aligned}
+    \right.
+  \]
+  Then, it suffices to solve the system of ODEs
+  \[
+    \left\{
+      \begin{aligned}
+        X''(x)-9X(x)=0,\\
+        T'(t)-9T(t)=0
+      \end{aligned}
+    \right.
+  \]
+  which satisfy \(\frac{X''(x)}{X(x)}=\frac{T'(t)}{T(t)}=9\). The solution
+  to these ODEs are
+  \[
+    \left\{%
+      \begin{aligned}
+        X(x)&=C_1\rme^{3x},\\
+        T(t)&=C_2\rme^{9t}.
+      \end{aligned}
+    \right.
+  \]
+  Then,
+  \[
+    u(x,t)=X(x)T(t)=C\rme^{3x+9t}.
+  \]
+  Analyzing the initial conditions, we see \(C=1\).
 
   Another way to solve this problem is by computing the convolution
   \[
@@ -136,7 +168,7 @@
     \right]=%
     \rme^{9t+3x}
   \]
-  which agrees with the solution to our first approach.
+  which agrees with our `separation of variables' solution.
 \end{solution*}
 
 \begin{problem}
