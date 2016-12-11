@@ -560,10 +560,26 @@
       \prod_{k=1}^n\left[\int_{\R}\rme^{-(x_k^2-2x_ky_k+y_k^2)-y_k^2}\diff
         y_k\right]\\
     &=\frac{1}{\pi^{\frac{n}{2}}}%
-      \rme^{-|x|^2}\prod_{k=1}^n\left[\int_{\R}\rme^{2x_ky_k-2y_k^2}\diff
-      y_k\right]\\
-    &=
+      \rme^{-|x|^2}\prod_{k=1}^n
+      \underbrace{\left[\int_{\R}\rme^{2x_ky_k-2y_k^2}\diff
+      y_k\right]}_{I_k}.
   \end{align*}
+  Let us find \(I_k\) and complete the solution of \(u\) above. This is,
+  \begin{align*}
+    I_k
+    &=\int_\R\rme^{-2\left(y_k-\frac{1}{2}x_k\right)^2+\frac{1}{2}x_k^2}\diff y_k\\
+    &=\frac{\rme^{\frac{1}{2}x_k^2}}{2}\int_\R\rme^{-z^2}\diff z\\
+    &=\left(\frac{\pi}{2}\right)^{\frac{1}{2}}\rme^{\frac{1}{2}x_k^2}.
+  \end{align*}
+
+  Thus, \(u(x,\tfrac{1}{4})\) is
+  \[
+    u(x,\tfrac{1}{4})=\frac{1}{2^{\frac{n}{2}}}\rme^{-\frac{|x|^2}{2}}
+  \]
+  so
+  \[
+    f*f=\left(\frac{\pi}{2}\right)^{\frac{n}{2}}\rme^{-\frac{|x|^2}{2}}.\qedhere
+  \]
 \end{solution*}
 
 \begin{problem}
