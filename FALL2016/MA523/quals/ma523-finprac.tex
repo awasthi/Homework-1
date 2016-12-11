@@ -493,8 +493,23 @@
       \right]%
       \left(\frac{\rme^{-s}}{4\pi}\right)\diff s\\
     &=\frac{1}{4\pi}
-      \int_0^t\int_{\partial B(x,r)}\frac{\rme^{t-r}f(y)}{r}\diff S(y)\diff r\\
-    &=
+      \int_0^t\int_{\partial B(x,r)}\frac{\rme^{t-r}f(y)}{r}\diff S(y)\diff
+      r
+  \end{align*}
+  solves the original problem.
+
+  In the case \(f(x)=1\), we have
+  \begin{align*}
+    u(x,t)
+    &=\frac{1}{4\pi}
+      \int_0^t\int_{\partial B(x,r)}\frac{\rme^{t-r}}{r}\diff S(y)\diff
+      r\\
+    &=\frac{1}{4\pi}\int_0^t
+      \left[\int_{\partial B(x,r)}\diff S(y)\right]\frac{\rme^{-r}}{r}\diff r\\
+    &=\frac{1}{4\pi}\int_0^t 4\pi r^2\left(\frac{\rme^{-r}}{r}\right)\diff
+      r\\
+    &=\int_0^tr\rme^{-r}\diff r\\
+    &=\rme^{-t}+t-1.\qedhere
   \end{align*}
 \end{solution*}
 
