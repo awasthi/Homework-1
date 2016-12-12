@@ -96,10 +96,10 @@
   \\\\
   For part (b): Following the proof of the Cauchy--Kovalevskaya theorem, we
   use induction on \(\beta_2\). The case \(\beta_2=0\) is clear as
-  \(D^{\beta_1,0}u=u_{x^{\beta_1}}=0\) by our previous work. Now suppose
-  the proposition is true for all \(\beta_2\leq n-1\), we show the
-  proposition holds for \(\beta_2=n\). From our previous work above, we
-  have
+  \(D^{(\beta_1,0)}u=\frac{\partial^{\beta_1}u}{\partial x^{\beta_1}}=0\)
+  by our previous work. Now suppose the proposition is true for all
+  \(\beta_2\leq n-1\), we show the proposition holds for
+  \(\beta_2=n\). From our previous work above, we have
   \begin{align*}
     D^\beta u
     &=D^{\beta_1,n-1} u_y\\
@@ -125,6 +125,91 @@
   in any neighborhood of \((0,0)\).
 \end{problem}
 \begin{solution*}
+    First we show that the line \(\gamma\defeq\{\,t=0\,\}\) is characteristic
+  for the heat equation. With \(\nu=(1,0)\) the normal to the line
+  \(\gamma\), the noncharacteristic condition reads
+  \[
+    \sum_{|\alpha|=2} a_\alpha\nu^\alpha\neq 0.
+  \]
+  However,
+  \[
+    \sum_{|\alpha|=2} a_\alpha\nu^\alpha=%
+    1\cdot 1+a_{0,2}\cdot 0=%
+    1\neq%
+    0.
+  \]
+  Thus, \(\gamma\) is characteristic for \(u_t=u_{xx}\).
+
+  Now, suppose \(u\) is an analytic solution to the heat equation
+  \(u_t-u_{xx}=0\) given by
+  \[
+    u(x,t)=\sum_{m,n} \frac{a_{m,n}}{m!n!}x^mt^n.
+  \]
+  Let us compute the coefficients \(a_{m,n}\) near \((0,0)\). From the PDE,
+  we have the relation
+  \begin{equation}
+    \label{eq:3:pde-relation}
+    \begin{aligned}
+      a_{m,n}
+      &=d^{(m,n)} u(0,0)\\
+      &=d^{(m,n-1)}u_t(0,0)\\
+      &=d^{(m,n-1)}u_{xx}(0,0)\\
+      &=d^{(m+2,n-1)}u(0,0)\\
+      &=a_{m+2,n-1}.
+    \end{aligned}
+  \end{equation}
+  Form the initial condition, we have
+  \begin{equation}
+    \label{eq:3:taylor-exp-g}
+    u(x,0)=\sum_{k=1}^\infty (-1)^k x^{2k}
+  \end{equation}
+  for a sufficiently small neighborhood about \((0,0)\), where the
+  right-hand side is given taylor series of \(\frac{1}{1+x^2}\). Taking the
+  \(m\)\textsuperscript{th} \(x\)-partial derivative at \((0,0)\), with the
+  help of Eq.\@ \eqref{eq:3:taylor-exp-g} we find the coefficients
+  \begin{equation}
+    \label{eq:3:boundary-relation}
+    a_{m,0}=
+    \begin{cases}
+      0&\text{if \(m=2k+1\) is odd}\\
+      (-1)^k(2k)!&\text{if \(m=2k\) is even.}
+    \end{cases}
+  \end{equation}
+
+  Putting all of this information together, we deduce that
+  \[
+    a_{2m+1,n}=0
+  \]
+  for all \(m,n\) and, recursively,
+  \[
+    a_{2m,n}=a_{2m+2,n-1}=\dotsb=
+    a_{2(m+n),0}=(-1)^{m+n}\bigl(2(m+n)\bigr)!.
+  \]
+  From this we see that the coefficients of the form \(a_{2n,n}\) grow very
+  quickly, that is,
+  \begin{align*}
+    \frac{a_{2n,n}}{(2n)!n!}
+    &=(-1)^{2n}\frac{\bigl(2(n+n)\bigr)!}{(2n)!n!}\\
+    &=\frac{(4n)!}{(2n)!n!}
+      \intertext{which, by Stirling's formula, is asymptotically equal to}
+    &\approx\frac{\sqrt{2\pi n}(4n/\rme)^{4n}}{\sqrt{4\pi
+      n}(2n/\rme)^{2n}\sqrt{2\pi n}(n/\rme)^n}\\
+    &=\frac{\sqrt{2\pi n}(4n/\rme)^{4n}}{\sqrt{8\pi
+      n^2}(2n/\rme)^{2n}(n/\rme)^n}\\
+    &=\frac{\bigl(\sqrt{\pi/n}\bigr)4^{4n}}{2\cdot
+      2^{2n}}\left(\frac{n}{\rme}\right)^{4n-3n-n}\\
+    &=\frac{\sqrt{\pi/n}}{2}\left(\frac{16}{2}\right)^{2n}
+      \left(\frac{n}{\rme}\right)^n\\
+    &=\bigl(\sqrt{\pi/n}\bigr)2^{6n-1}\left(\frac{n}{\rme}\right)^n\\
+    &=\alpha\beta_nn^{n+1/2}
+  \end{align*}
+  which approaches \(\infty\) as \(n\to\infty\). In particular, for any
+  \(t>0\), the series
+  \[
+    \sum_{n}a_{0,n}t^n
+  \]
+  must converge to \(0\), but the size of the coefficients \(a_{0,n}\)
+  prevent us from doing this. This leads to a contradiction.
 \end{solution*}
 
 %%% Local Variables:
