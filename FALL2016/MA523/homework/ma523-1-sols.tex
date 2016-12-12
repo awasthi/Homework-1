@@ -5,28 +5,28 @@ fall semester of 2016.
 \begin{problem}[Taylor's formula]
   Let \(f\colon\R^n\to\R\) be smooth, \(n\geq 2\). Prove that
   \[
-    f(x)=\sum_{|\alpha|\leq k}
-    \frac{1}{\alpha!}D^\alpha f(0)x^\alpha+O\bigl(|x|^{k+1}\bigr)
+    f(x)=\sum_{|\alpha|\leq m}
+    \frac{1}{\alpha!}D^\alpha f(0)x^\alpha+O\bigl(|x|^{m+1}\bigr)
   \]
-  as \(x\to\mathbf{0}\) for each \(k=1,2,\dotsc\), assuming that you know this
+  as \(x\to\mathbf{0}\) for each \(m=1,2,\dotsc\), assuming that you know this
   formula for \(n=1\).
   \\\\
   \emph{Hint}: Fix \(x\in\R^n\) and consider the function of
   one variable \(g(t)\defeq f(tx)\). Prove that
   \[
-    \frac{d^k}{dt^k}g(t)
-    =\sum_{|\alpha|=k}\frac{k!}{\alpha!} D^\alpha f(tx)x^\alpha,
+    \frac{d^m}{dt^m}g(t)
+    =\sum_{|\alpha|=m}\frac{m!}{\alpha!} D^\alpha f(tx)x^\alpha,
   \]
   by induction on \(m\).
 \end{problem}
 \begin{solution*}
   Taking the hint, let us consider the function in one variable
   \(g(t)\defeq f(tx)\) for \(x\in\R^n\) fixed. We show by induction on
-  \(k\) that
+  \(m\) that
   \begin{equation}
     \label{eq:1:taylors-formula-g}
-    \frac{d^k}{dt^k}g(t)=%
-    \sum_{|\alpha|=k}\frac{k!}{\alpha!} D^\alpha f(tx)x^\alpha.
+    \frac{d^m}{dt^m}g(t)=%
+    \sum_{|\alpha|=m}\frac{m!}{\alpha!} D^\alpha f(tx)x^\alpha.
   \end{equation}
 
   Once we have shown \eqref{eq:1:taylors-formula-g} holds, evaluating
@@ -35,17 +35,18 @@ fall semester of 2016.
     f(x)
     &=g(1)%
       \shortintertext{which, by Taylor's formula in one variable, is}
-    &=\sum_{j=0}^k\frac{g^{(j)}(0)}{j!}1^j+O\bigl(|x|^{k+1}\bigr)%
+    &=\sum_{j=0}^m\frac{g^{(j)}(0)}{j!}1^j+O\bigl(|x|^{m+1}\bigr)%
       \shortintertext{applying \eqref{eq:1:taylors-formula-g} here gives us}
-    &=\sum_{j=0}^k\frac{1}{j!}
+    &=\sum_{k=0}^m\frac{1}{k!}
       \left[%
-      \sum\nolimits_{|\alpha|=j}\frac{j!}{\alpha!}D^\alpha f(tx)x^\alpha
-      \right]+O\bigl(|x|^{k+1}\bigr)\\
-    &=\sum_{j=0}^k
+      \sum\nolimits_{|\alpha|=k}\frac{k!}{\alpha!}D^\alpha f(tx)x^\alpha
+      \right]+O\bigl(|x|^{m+1}\bigr)\\
+    &=\sum_{k=0}^m
       \left[%
-      \sum\nolimits_{|\alpha|=j}\frac{1}{\alpha!}D^\alpha f(0)x^\alpha
-      \right]+O\bigl(|x|^{k+1}\bigr)\\
-    &=\sum_{|\alpha|\leq k}\frac{1}{\alpha!}D^\alpha f(0)x^\alpha+O\bigl(|x|^{k+1}\bigr)
+      \sum\nolimits_{|\alpha|=k}\frac{1}{\alpha!}D^\alpha f(0)x^\alpha
+      \right]+O\bigl(|x|^{m+1}\bigr)\\
+    &=\sum_{|\alpha|\leq m}
+      \frac{1}{\alpha!}D^\alpha f(0)x^\alpha+O\bigl(|x|^{m+1}\bigr)
   \end{align*}
   as desired.
 
@@ -53,18 +54,18 @@ fall semester of 2016.
   we consider the algebra on the differential operator \(d/dt\). By the
   chain rule, we have
   \[
-    \frac{d}{dt}(\blank)=\sum_{j=1}^n x_j\frac{\partial}{\partial x_j}(\blank).
+    \frac{d}{dt}(\blank)=\sum_{k=1}^m x_k\frac{\partial}{\partial x_k}(\blank).
   \]
   Since \(f\) is smooth by Schwartz's theorem the differential operators
-  \(\partial/\partial x_j\) and \(\partial/\partial x_l\) commute for all
-  \(1\leq j,l\leq n\). Therefore, by the multinomial theorem,
+  \(\partial/\partial x_k\) and \(\partial/\partial x_l\) commute for all
+  \(1\leq k,l\leq n\). Therefore, by the multinomial theorem,
   \[
-    \frac{d^k}{dt^k}(\blank)=%
+    \frac{d^m}{dt^m}(\blank)=%
     \left(
-      \sum\nolimits_{j=1}^n x_j\frac{\partial}{\partial x_j}(\blank)
+      \sum\nolimits_{k=1}^m x_k\frac{\partial}{\partial x_k}(\blank)
     \right)^k
     =%
-    \sum_{|\alpha|=k}\frac{m!}{\alpha!} x^\alpha D^\alpha(\blank).\qedhere
+    \sum_{|\alpha|=m}\frac{m!}{\alpha!} x^\alpha D^\alpha(\blank).\qedhere
   \]
 \end{solution*}
 
@@ -125,7 +126,7 @@ fall semester of 2016.
   \begin{enumerate}[label=(\alph*)]
   \item \(x_1^2u_{x_1}+x_2^2u_{x_2}=u^2\), \(u=1\) on the line
     \(x_2=2x_1\).
-  \item \(uu_{x_1}+u_{x_2}=1\), \(u(x_1,x_1)=x_1/2\).
+  \item \(uu_{x_1}+u_{x_2}=1\), \(u(x_1,x_1)=\frac{x_1}{2}\).
   \item \(x_1u_{x_1}+2x_2u_{x_2}+u_{x_3}=3u\),
     \(u(x_1,x_2,0)=g(x_1,x_2)\).
   \end{enumerate}
@@ -189,13 +190,13 @@ fall semester of 2016.
     \right.
   \]
   Next we solve the characteristic equations subject to the initial
-  conditions \(x(0)=(x^0,x^0)\), \(z(0)=x^0/2\) on the line \(x_1=x_2\);
-  these are
+  conditions \(x(0)=(x^0,x^0)\), \(z(0)=\frac{x^0}{2}\) on the line
+  \(x_1=x_2\); these are
   \[
     \left\{
       \begin{aligned}
-        z(s)&=\frac{1}{2}x^0+s,\\
-        x_1(s)&=x^0+\frac{1}{2}\left(x^0s+s^2\right),
+        z(s)&=\tfrac{1}{2}x^0+s,\\
+        x_1(s)&=x^0+\tfrac{1}{2}\left(x^0s+s^2\right),
         \quad x_2(s)=x^0+s.
       \end{aligned}
     \right.
@@ -207,15 +208,15 @@ fall semester of 2016.
   Therefore,
   \begin{align*}
     x_1
-    &=2(x_2-z)+(x_2-z)(2z-x_2)+\frac{1}{2}(2z-x_2)^2\\
-    &=-\frac{1}{2}x_2(x_2-4)+(x_2-2)z.
+    &=2(x_2-z)+(x_2-z)(2z-x_2)+\tfrac{1}{2}(2z-x_2)^2\\
+    &=-\tfrac{1}{2}x_2(x_2-4)+(x_2-2)z.
   \end{align*}
   Hence,
   \[
     u(x_1,x_2)=\frac{2x_1+x_2^2-4x_2}{2(x_2-2)}
   \]
-  solves the PDE \(F\) subject to the condition \(u(x_1,x_1)=x_1/2\)
-  provided \(x_2\neq 2\).
+  solves the PDE \(F\) subject to the condition
+  \(u(x_1,x_1)=\frac{x_1}{2}\) provided \(x_2\neq 2\).
   \\\\
   For part (c): Write \(F\defeq (x_1,2x_2,1)\cdot p-3z=0\). Then the
   characteristic equations are
@@ -254,15 +255,15 @@ fall semester of 2016.
 \begin{problem}
   For the equation
   \[
-    u=x_1u_{x_1}+x_2u_{x_2}+\frac{1}{2}(u_{x_1}^2+u_{x_2}^2)
+    u=x_1u_{x_1}+x_2u_{x_2}+\tfrac{1}{2}(u_{x_1}^2+u_{x_2}^2)
   \]
-  find a solution with \(u(x_1,0)=(1-x_1^2)/2\).
+  find a solution with \(u(x_1,0)=\frac{1-x_1^2}{2}\).
 \end{problem}
 \begin{solution*}
   The equation is nonlinear and therefore, we do not expect the method of
   characteristics to yield a unique solution to the PDE
   \[
-    F\defeq x_1p_1+x_2p_2+\frac{1}{2}(p_1^2+p_2^2)-z.
+    F\defeq x_1p_1+x_2p_2+\tfrac{1}{2}(p_1^2+p_2^2)-z.
   \]
   Let us find the characteristic equations for \(F\); these are
   \[
@@ -280,7 +281,7 @@ fall semester of 2016.
   revisiting the equation \(F\), \(p_1(0)=-x^0\) and
   \[
     p_2(0)^2=
-    2\left(-{(x^0)}^2+\frac{1}{2}{(x^0)}^2+\frac{1}{2}(1-{(x^0)}^2)\right)=1
+    2\left(-{(x^0)}^2+\tfrac{1}{2}{(x^0)}^2+\tfrac{1}{2}(1-{(x^0)}^2)\right)=1
   \]
   so \(p_2(0)=\pm 1\). Therefore, the solution to the characteristic
   equations subject to these initial values is
@@ -289,14 +290,14 @@ fall semester of 2016.
       \begin{aligned}
         p_1(s)&=-x^0,\quad p_2(s)=\pm 1,\\
         x_1(s)&=x^0,\quad x_2(s)=\pm 1(\rme^s-1),\\
-        z(s)&=\frac{1}{2}\bigl(1-{(x^0)}^2\bigr)+(\rme^s-1).
+        z(s)&=\tfrac{1}{2}\bigl(1-{(x^0)}^2\bigr)+(\rme^s-1).
       \end{aligned}
     \right.
   \]
   Thus, solving for \(s\) and \(x^0\) in terms of the coordinates
   \((x_1,x_2)\), we have
   \[
-    u(x_1,x_2)=\frac{1}{2}(1-x_1^2)\pm x_2.\qedhere
+    u(x_1,x_2)=\tfrac{1}{2}(1-x_1^2)\pm x_2.\qedhere
   \]
 \end{solution*}
 
