@@ -31,14 +31,14 @@
   \]
   about the origin.
 
-  First, we must compute the coefficients \(a_{j,k}\). To this end, we must
-  find the partial derivatives \(u_{j,k}\) and potentially, relations among
+  First, we must compute the coefficients \(a_{m,n}\). To this end, we must
+  find the partial derivatives \(u_{m,n}\) and potentially, relations among
   them which will help us to find these coefficients. Naïvely listing the
   partials with respect to \(t\) and \(x\), we have
   \begin{align*}
     u(0,0)&=0&
-    u_x(0,0)&=\frac{\pi}{4}\\
-    u_t(0,0)&=\sin u_x(0,0)=\frac{\sqrt{2}}{2}&
+    u_x(0,0)&=\tfrac{\pi}{4}\\
+    u_t(0,0)&=\sin u_x(0,0)=\tfrac{\sqrt{2}}{2}&
     u_{xx}(0,0)&=0\\
     u_{tx}(0,0)&=0&
     u_{tt}(0,0)&=-\cos\bigl(u_x(0,0)\bigr)u_{xt}(0,0)=0\\
@@ -49,11 +49,11 @@
   It is not difficult to see that higher derivatives of \(u\) will be
   zero. Thus,
   \[
-    u(x,t)=\frac{\pi}{4}x+\frac{\sqrt{2}}{2}t.
+    u(x,t)=\tfrac{\pi}{4}x+\tfrac{\sqrt{2}}{2}t.
   \]
   Plugging this equation into \(F\) we see that
   \[
-    u_t-\sin u_x=\frac{\sqrt{2}}{2}-\sin(\pi/4)=0;
+    u_t-\sin u_x=\tfrac{\sqrt{2}}{2}-\sin(\tfrac{\pi}{4})=0;
   \]
   i.e., \(u(x,t)\), as defined above, is an analytic solution to the PDE
   \(F\).
@@ -194,7 +194,7 @@
   \(a_{0,n}\) grow very quickly; i.e.,
   \begin{align*}
     \frac{|a_{0,n+1}|}{|a_{0,n}|}
-    &=\frac{\frac{(2n+2)!}{2n!}}{\frac{(n+1)!}{n!}}\\
+    &=\frac{(2n+2)!/2n!}{(n+1)!/n!}\\
     &=\frac{(2n+2)(2n+1)}{n+1}\\
     &=2(2n+1)
   \end{align*}

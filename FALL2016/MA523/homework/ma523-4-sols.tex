@@ -4,7 +4,7 @@
   \[
     a^{11}(Du)u_{x_1x_1}+ 2a^{12}(Du)u_{x_1x_2}+a^{22}(Du)u_{x_2x_2}=0
   \]
-  in some region of \(\R^2\), where we can invert the relations
+  in some region of \(\bbR^2\), where we can invert the relations
   \[
     p^1=u_{x_1}(x_1,x_2),\quad p^2=u_{x_2}(x_1,x_2)
   \]
@@ -22,9 +22,95 @@
     a^{22}(p)v_{p_1p_2}-2a^{12}(p)v_{p_1p_2}+a^{11}(p)v_{p_1p_2}=0.
   \]
   \\\\
-  \emph{Hint:} See [Evans, 4.4.3b], prove the identities (29).
+  \emph{Hint:} See [E, \S 4.4.3b], prove the identities (29).
 \end{problem}
 \begin{solution*}
+  Assuming the regularity on \(v\) prescribed above, we compute
+  \(v_{p_1p_1}\), \(v_{p_1p_2}\) and \(v_{p_2p_2}\).
+
+  First, we compute \(v_{p_1p_2}\) since in the case of \(v_{p_1p_1}\) and
+  \(v_{p_2p_2}\), there is some symmetry we can exploit. Taking the first
+  partial with respect to \(p^1\), we have
+  \begin{equation}
+    \label{eq:4:vp1}
+    \begin{aligned}
+      v_{p_1} &=\tfrac{\partial}{\partial
+        p_1}\left(x^1(p)p^1+x^2(p)p^2-u\bigl(\bfx(p)\bigr)\right)\\
+      &=x^1(p)+x^1_{p_1}(p)p^1+x^2_{p_1}(p)p^2
+      -u_{x_1}\bigl(\bfx(p)\bigr)x^1_{p_1}(p)-u_{x_2}\bigl(\bfx(p)\bigr)x^2_{p_1}(p)\\
+      &=x^1+x^1_{p_1}p^1+x^2_{p_1}p^2-p^1x^1_{p_1}-p^2x^2_{p_1}\\
+      &=x^1,
+    \end{aligned}
+  \end{equation}
+  since \(u_{x_1}=p^1\) and \(u_{x_2}=p^2\).
+
+  Similarly, for \(v_{p_2}\), we have
+  \begin{equation}
+    \label{eq:4:vp2}
+    \begin{aligned}
+      v_{p_2} &=\tfrac{\partial}{\partial
+        p_2}\left(x^1(p)p^1+x^2(p)p^2-u\bigl(\bfx(p)\bigr)\right)\\
+      &=x^1_{p_2}(p)x^1(p)+x^2(p)+x^2_{p_2}(p)p^2
+      -u_{x_1}\bigl(\bfx(p)\bigr)x^1_{p_2}(p)
+      -u_{x_2}\bigl(\bfx(p)\bigr)x^2_{p_2}(p)\\
+      &=x^1_{p_2}x^1+x^2+x^2_{p_2}p^2
+      -p^1x^1_{p_2}
+      -p^2x^2_{p_2}\\
+      &=x^2.
+    \end{aligned}
+  \end{equation}
+
+  Now, taking the partial of \eqref{eq:4:vp1} with respect to \(p_1\) and
+  then \(p_2\), we have
+  \[
+    v_{p_1p_1}=x^1_{p_1}=x^1_{u_{x_1}}, \qquad
+    v_{p_1p_2}=x^1_{p_2}=x^1_{u_{x_2}},
+  \]
+  and similarly for \eqref{eq:4:vp2},
+  \[
+    v_{p_1p_2}=x^2_{p_1}=x^2_{u_{x_1}},\qquad
+    v_{p_2p_2}=x^2_{p_2}=x^2_{u_{x_2}}.
+  \]
+  By the inverse function theorem, we have
+  \begin{align*}
+    \begin{bmatrix}
+      v_{p_1p_1}&v_{p_1p_2}\\
+      v_{p_1p_2}&v_{p_2p_2}
+    \end{bmatrix}
+    &=
+      \begin{bmatrix}
+        x^1_{u_{x_1}}&x^1_{u_{x_2}}\\
+        x^2_{u_{x_1}}&x^2_{u_{x_2}}
+      \end{bmatrix}
+    \\
+    &=\begin{bmatrix}
+      u_{x_1x_1}&u_{x_1x_2}\\
+      u_{x_1x_2}&u_{x_2x_2}
+    \end{bmatrix}^{-1}\\
+    &=\frac{1}{J}
+      \begin{bmatrix}
+      u_{x_2x_2}&-u_{x_1x_2}\\
+      -u_{x_1x_2}&u_{x_1x_1}
+    \end{bmatrix}.
+  \end{align*}
+  Hence,
+  \begin{equation}
+    \label{eq:4:verified-29}
+    \left\{
+      \begin{aligned}
+        u_{x_1x_1}&=Jv_{p_2p_2}\\
+        u_{x_1x_2}&=-Jv_{p_1p_2}\\
+        u_{x_2x_2}&=Jv_{p_1p_1},
+      \end{aligned}
+    \right.
+  \end{equation}
+  which verifies Equation (29) from [E, \S 4.4.3b]. Substituting
+  \eqref{eq:4:verified-29} into the original equation,
+  \begin{align*}
+    0&=Ja^{11}(p)v_{p_2p_2}-Ja^{12}(p)v_{p_1p_2}+Ja^{22}(p)v_{p_1p_1}\\
+     &=a^{22}(p)v_{p_1p_1}-a^{12}(p)v_{p_1p_2}+a^{11}(p)v_{p_2p_2},
+  \end{align*}
+  as was to be shown.
 \end{solution*}
 
 \begin{problem}
@@ -36,8 +122,10 @@
   \[
     \left\{
       \begin{aligned}
-        u(x,0)&=f(x),&u_t(x,0)&=g(x),&\text{for \(x>0\),}\\
-        u_t(0,t)&=\alpha u_x(0,t),&&&\text{for \(t>0\)},
+        &u=f,\quad u_t=g,%
+        &&\text{for \((0,\infty)\times\{\,t=0\,\}\),}\\
+        &u_t=\alpha u_x,%
+        &&\text{for \(\{\,x=0\,\}\times(0,\infty)\)},
       \end{aligned}
     \right.
   \]
@@ -48,6 +136,35 @@
   solution.
 \end{problem}
 \begin{solution*}
+  Suppose \(u(x,t)=F(x-t)+G(x+t)\) is a classical solution to the
+  one-dimensional wave equation with the prescribed initial
+  conditions. Then, we want to extend the data to all of \(x\) so that we
+  can exploit d'Alembert's formula. Suppose we gave done this by, e.g.,
+  taking the odd reflection of \(\tilde f\), \(\tilde g\), and
+  \(\tilde h(x,t)\defeq \int_{x-t}^{x+t} \tilde g(s)ds\). All we need to do
+  is use the initial data to find the relation between \(\tilde f\),
+  \(\tilde g\), and \(\tilde g\) at \(x=0\).
+
+  Using d'Alembert's formula,
+  \[
+    \tilde u(x,t) =\frac{\tilde f(x+t)+\tilde
+      f(x-t)}{2}+\frac{1}{2}\int_{x-t}^{x+t}\tilde g(s)\diff s,
+  \]
+  we compute \(\tilde u_t(0,t)\) and \(\alpha\tilde u_x(0,t)\) to match
+  our initial data.
+
+  Hence,
+  \begin{align*}
+    u_t(0,t)&=\tfrac{1}{2}
+              \bigl(-\tilde f(-t)+\tilde f(t)+\tilde g(t)-\tilde g(-t)\bigr),\\
+    u_x(0,t)&=\tfrac{1}{2}
+              \bigl(\tilde f(-t)+\tilde f(t)+\tilde g(t)-\tilde g(-t)\bigr),
+  \end{align*}
+  so
+  \[
+    0=\tfrac{1}{2}\bigl(-(1+\alpha)\tilde f(-t)+(1-\alpha)\tilde
+    f(t)+(1-\alpha)(\tilde g(t)-\tilde g(t))\bigr).\qedhere
+  \]
 \end{solution*}
 
 \begin{problem}
@@ -58,7 +175,7 @@
     \[
       E(t)=\frac{1}{2}\int_0^\pi \bigl(u_t^2+c^2u_x^2 \bigr)\diff x,\quad t>0
     \]
-    is independent of \(t\); i.e., \(dE/dt=0\) for \(t>0\). Assume that
+    is independent of \(t\); i.e., \(\frac{d}{dt}E=0\) for \(t>0\). Assume that
     \(u\) is \(C^2\) up to the boundary.
   \item Express the energy \(E\) of the Fourier series solution
     \[
@@ -69,6 +186,64 @@
   \end{enumerate}
 \end{problem}
 \begin{solution*}
+  For part (a), suppose that \(u\) is, as above, a solution to the wave
+  equation which is \(C^2\) up to the boundary. We show that its energy is
+  independent of \(t\), i.e., that \(\frac{d}{dt}E=0\). Assuming the energy
+  is bounded, the dominated convergence theorem allows us to permute the
+  order of integration and differentiation like so
+  \begin{align*}
+    \tfrac{d}{dt}E(t)%
+    &=\frac{d}{dt}\left(\frac{1}{2}\int_0^\pi
+      \bigl(u_t^2+c^2u_x^2\bigr)\diff x\right)\\
+    &=\frac{1}{2}\int_0^\pi\tfrac{\partial}{\partial t}
+      \bigl(u_t^2+c^2u_x^2\bigr)\diff x\\
+    &=\frac{1}{2}\int_0^\pi 2u_tu_{tt}+2c^2u_xu_{xt}\diff x
+      \intertext{which, after using the relation \(u_{tt}=c^2u_{xx}\), becomes}
+    &=c^2\int_0^\pi u_tu_{xx}+u_xu_{xt}\diff x\\
+    &=c^2\int_0^\pi\tfrac{\partial}{\partial x}(u_xu_t)\diff x\\
+    &=c^2\bigl(u_x(\pi,t)u_t(\pi,t)-u_x(0,t)u_t(0,t)\bigr)\\
+    &=0
+  \end{align*}
+  since the boundary conditions, i.e., \(u=0\), implies \(u_x=u_t=0\) at
+  the boundary.
+
+  For part (b), suppose \(u\) is a Fourier series solution to the wave
+  equation, i.e.,
+  \[
+    u(x,t)=\sum_{k=1}^\infty \bigl(a_k\cos(kct)+b_k\sin(kct)\bigr)\sin(kx).
+  \]
+  First, we compute \(u_x\) and \(u_t\), they are
+  \begin{equation}
+    \label{eq:4:ux-ut}
+    \begin{aligned}
+      u_x(x,t)
+      &=\sum_{k=1}^\infty k\bigl(a_k\cos(kct)+b_k\sin(kct)\bigr)\cos(kx),\\
+      u_t(x,t)
+      &=\sum_{k=1}^\infty kc\bigl(-a_k\sin(kct)+b_k\cos(kct)\bigr)\sin(kx).
+    \end{aligned}
+  \end{equation}
+  Let \(u_x^n(x,t)\) and \(u_t^n(x,t)\) be the partial sums of the
+  equations above so \(u_x^n\to u_x\) and \(u_t^n\to u_t\) as
+  \(k\to\infty\). Then
+  \begin{align*}
+    E_n(t)
+    &=\frac{1}{2}\int_0^\pi (u_t^n)^2+c^2(u_x^n)^2\diff t
+      \intertext{taking into account orthogonality relations of \(\cos\) and
+      \(\sin\), we have}
+    &=\frac{1}{2}\sum_{k=1}^n k^2c^2
+      \left[
+      \left(\int_0^\pi\bigl(a_k^2\sin(kct)+b_k^2\cos(kct)\bigr)\right)\sin^2(kx)\right.\\
+    &\phantom{{}={}\frac{1}{2}\sum_{k=1}^n k^2c^2}
+      \left.+\left(\int_0^\pi\bigl(a_k^2\cos(kct)+a_k^2\sin(kct)\bigr)\right)\cos^2(kx)
+      \right]\\
+    &=\frac{\pi}{2}\sum_{k=1}^n k^2c^2(a_k^2+b_k^2).
+  \end{align*}
+  Thus, since the limit is uniform
+  \[
+    E(t)=\lim_{n\to\infty}E_n(t)=\frac{\pi}{4}\sum_{n=1}^\infty
+    n^2c^2(a_n^2+b_n^2).
+    \qedhere
+  \]
 \end{solution*}
 
 %%% Local Variables:

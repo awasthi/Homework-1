@@ -326,20 +326,20 @@
   \(f(x)=f(|x|)\).)
 \end{problem}
 \begin{solution*}
-  Let \(A\in\SO(n)\) be a rotation matrix. Set \(v(x)\defeq u(Ax)\). Then
+  Let \(O\in\SO(n)\) be a rotation matrix. Set \(v(x)\defeq u(Ox)\). Then
   \(v\) solves
   \[
     \left\{
       \begin{aligned}
         &v_{tt}-\Lap v=0&&\text{in \(\R^n\times(0,\infty),\)}\\
-        &v(x,0)=g(Ax)=g(x),\quad v_t(x,0)=h(Ax)=h(x)&&\text{in
+        &v(x,0)=g(Ox)=g(x),\quad v_t(x,0)=h(Ox)=h(x)&&\text{in
           \(\R^n\times\{\,t=0\,\}\).}
       \end{aligned}
     \right.
   \]
   By the uniqueness for the wave equation there exist at most one \(C^2\)
   solution to the initial-value problem above. Thus, it must be the case
-  that \(v=u\); i.e., \(u(x)=u(|x|)\) since \(A\in\SO(3)\) was arbitrary.
+  that \(v=u\); i.e., \(u(x)=u(|x|)\) since \(O\in\SO(3)\) was arbitrary.
 \end{solution*}
 
 \begin{problem}
