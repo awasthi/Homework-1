@@ -102,11 +102,11 @@
   \begin{equation}
     \label{eq:5:ortho-matrix}
     \begin{cases}
-    \text{(a) }\sum_{j=1}^na_{kj}a_{\ell j}=\sum_{j=1}^na_{kj}^2=1&\text{if \(k=\ell\),}\\
-    \text{(b) }\sum_{j=1}^na_{kj}a_{\ell j}=0&\text{if \(k\neq\ell\).}
+    \text{(a) }\sum_{j=1}^na_{kj}a_{lj}=\sum_{j=1}^na_{kj}^2=1&\text{if \(k=l\),}\\
+    \text{(b) }\sum_{j=1}^na_{kj}a_{lj}=0&\text{if \(k\neq l\).}
     \end{cases}
   \end{equation}
-  for \(1\leq k,\ell\leq n\).
+  for \(1\leq k,l\leq n\).
 
   Now, going back to \eqref{eq:5:laplacian-k-part}, we have
   \begin{equation}
@@ -129,7 +129,7 @@
   (b). And in fact one can see, expanding \eqref{eq:5:laplacian-full}, that
   the mixed terms have the form
   \[
-    \sum_{j=1}^na_{kj}a_{\ell j}=0.
+    \sum_{j=1}^na_{kj}a_{lj}=0.
   \]
   For example, the first member in the mixed terms sequence is
   \[
@@ -150,65 +150,65 @@
   U\). (The additional assumption is needed to exclude examples like
   \(u=x_2\).)
   \\\\
-  \emph{Hint:} Take for \(\varepsilon>0\) the harmonic function
+  \emph{Hint:} Take for \(\epsilon>0\) the harmonic function
   \[
-    u(x_1,x_2)-\varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}.
+    u(x_1,x_2)-\epsilon\ln\sqrt{x_1^2+(x_2+1)^2}.
   \]
   Apply the maximum principle to a region
   \(\bigl\{\,x_1^2+(x_2+1)^2<a^2,x_2>0\,\bigr\}\) with large \(a\). Let
-  \(\varepsilon\to 0\).
+  \(\epsilon\to 0\).
 \end{problem}
 \begin{solution*}
   Consider the harmonic function
   \[
-    u_\varepsilon(x_1,x_2)\defeq
-    u(x_1,x_2)-\varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}.
+    u_\epsilon(x_1,x_2)\defeq
+    u(x_1,x_2)-\epsilon\ln\sqrt{x_1^2+(x_2+1)^2}.
   \]
   Set \(U_a\defeq \bigl\{\,x_1^2+(x_2+1)^2<a^2,x_2>0\,\bigr\}\).
 
-  First, we note that \(u_\varepsilon\uparrow u\) as \(\varepsilon\to 0\)
+  First, we note that \(u_\epsilon\uparrow u\) as \(\epsilon\to 0\)
   pointwise, i.e., given \(\eta>0\), for
   \[
-    0<\varepsilon(x_1,x_2)<\eta/{\ln\sqrt{x_1^2+(x_2+1)^2}},
+    0<\epsilon(x_1,x_2)<\eta/{\ln\sqrt{x_1^2+(x_2+1)^2}},
   \]
   we have
   \begin{align*}
-    |u_\varepsilon(x_1,x_2)-u(x_1,x_2)|
+    |u_\epsilon(x_1,x_2)-u(x_1,x_2)|
     &=\left|
-      u(x_1,x_2)-\varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}
+      u(x_1,x_2)-\epsilon\ln\sqrt{x_1^2+(x_2+1)^2}
       -u(x_1,x_2)
       \right|\\
     &=\left|
-      \varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}
+      \epsilon\ln\sqrt{x_1^2+(x_2+1)^2}
       \right|\\
-    &=\varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}\\
+    &=\epsilon\ln\sqrt{x_1^2+(x_2+1)^2}\\
     &<\eta,
   \end{align*}
   for any \((x_1,x_2)\in U_a\).
 
-  Moreover, a simple calculation shows that \(u_\varepsilon\) is in fact
+  Moreover, a simple calculation shows that \(u_\epsilon\) is in fact
   harmonic. By the linearity the Laplacian, it suffices to show that the
   Laplacian of
   \[
-    v_\varepsilon(x)\defeq\varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}%
+    v_\epsilon(x)\defeq\epsilon\ln\sqrt{x_1^2+(x_2+1)^2}%
   \]
   is \(0\). First, we calculate he partial derivatives
   \(\frac{\partial^2}{\partial x_1\partial x_1}\) and
   \(\frac{\partial^2}{\partial x_2\partial x_2}\)
   \begin{align*}
-   \frac{(v_\varepsilon)_{x_1}}{\varepsilon}
+   \frac{(v_\epsilon)_{x_1}}{\epsilon}
     &=-\frac{x_1}{x_1^2+(x_2+1)^2}
-    &\frac{(v_\varepsilon)_{x_2}}{\varepsilon}
+    &\frac{(v_\epsilon)_{x_2}}{\epsilon}
     &=-\frac{(x_2+1)}{x_1^2+(x_2+1)^2}\\
-    \frac{(v_{\varepsilon})_{x_1x_1}}{\varepsilon}
+    \frac{(v_{\epsilon})_{x_1x_1}}{\epsilon}
     &=-\frac{-x_1^2+(x_2+1)^2}{\bigl(x_1^2+(x_2+1)^2\bigr)^2}
-    &\frac{(v_{\varepsilon})_{x_2x_2}}{\varepsilon}
+    &\frac{(v_{\epsilon})_{x_2x_2}}{\epsilon}
     &=-\frac{x_1^2-(x_2+1)^2}{\bigl(x_1^2+(x_2+1)^2\bigr)^2}.
   \end{align*}
   Thus,
   \[
-    \Lap u_\varepsilon=\Lap u+\Lap v_\varepsilon=
-    \Lap v_\varepsilon=\varepsilon
+    \Lap u_\epsilon=\Lap u+\Lap v_\epsilon=
+    \Lap v_\epsilon=\epsilon
     \left(
       -\frac{-x_1^2+(x_2+1)^2}{\bigl(x_1^2+(x_2+1)^2\bigr)^2}
       -\frac{x_1^2-(x_2+1)^2}{\bigl(x_1^2+(x_2+1)^2\bigr)^2}
@@ -217,26 +217,26 @@
 
   Now, observe that, for any \(a\), by the maximum principle, we have
   \[
-    \max_{\bar U_a}u_\varepsilon=\max_{\partial U_a}u_\varepsilon
+    \max_{\bar U_a}u_\epsilon=\max_{\partial U_a}u_\epsilon
   \]
   for any \(a\). Choose \(a\) large enough so
   \[
-    \sup_{\partial U_a}u_\varepsilon\leq
+    \sup_{\partial U_a}u_\epsilon\leq
     \sup_{\partial U}u.
   \]
   Then,
   \[
-    \sup_{\bar U_a}u_\varepsilon\leq\sup_{\partial U}u
+    \sup_{\bar U_a}u_\epsilon\leq\sup_{\partial U}u
   \]
   so, taking \(a\to\infty\), we have
   \[
-    \sup_{\bar U}u_\varepsilon\leq\sup_{\partial U}u.
+    \sup_{\bar U}u_\epsilon\leq\sup_{\partial U}u.
   \]
   Thus, for every \(x_1,x_2\in U\),
   \[
-    u(x_1,x_2)-\varepsilon\ln\sqrt{x_1^2+(x_2+1)^2}<\sup_{\partial U}u.
+    u(x_1,x_2)-\epsilon\ln\sqrt{x_1^2+(x_2+1)^2}<\sup_{\partial U}u.
   \]
-  Letting \(\varepsilon\to 0\), we achieve the desired inequality, i.e.,
+  Letting \(\epsilon\to 0\), we achieve the desired inequality, i.e.,
   \[
     \sup_{\bar U}u\leq\sup_{\partial U}u.
   \]
@@ -280,7 +280,7 @@
 \begin{solution*}
   For part (a): By the chain rule, we have
   \[
-    v_{x_i}=\varphi_{u_1}u^1_{x_i}+\dotsb+\varphi_{u_m}u^m_{x_i}.
+    v_{x_i}=\phi_{u_1}u^1_{x_i}+\dotsb+\phi_{u_m}u^m_{x_i}.
   \]
   Taking another partial, we have
   \begin{equation}
@@ -289,22 +289,22 @@
       v_{x_ix_i}
       &=(v_{x_i})_{x_i}\\
       &=\frac{\partial}{\partial x_i}
-      \bigl(\varphi_{u_1}u^1_{x_i}+\dotsb+\varphi_{u_m}u^m_{x_i}\bigr)\\
-      &=\varphi_{u_1}u^1_{x_ix_i}+\dotsb+\varphi_{u_m}u_{x_ix_i}^m\\
-      &\phantom{{}={}}+\bigl(\varphi_{u_1u_1}u_{x_i}^1
-      +\dotsb+\varphi_{u_1u_m}u_{x_i}^m\bigr)u_{x_i}^1\\
-      &\phantom{{}=+{}}+\dotsb+\bigl(\varphi_{u_1u_m}u_{x_i}^1
-      +\dotsb+\varphi_{u_mu_m}u_{x_i}^m\bigr)u_{x_i}^m.
+      \bigl(\phi_{u_1}u^1_{x_i}+\dotsb+\phi_{u_m}u^m_{x_i}\bigr)\\
+      &=\phi_{u_1}u^1_{x_ix_i}+\dotsb+\phi_{u_m}u_{x_ix_i}^m\\
+      &\phantom{{}={}}+\bigl(\phi_{u_1u_1}u_{x_i}^1
+      +\dotsb+\phi_{u_1u_m}u_{x_i}^m\bigr)u_{x_i}^1\\
+      &\phantom{{}=+{}}+\dotsb+\bigl(\phi_{u_1u_m}u_{x_i}^1
+      +\dotsb+\phi_{u_mu_m}u_{x_i}^m\bigr)u_{x_i}^m.
     \end{aligned}
   \end{equation}
 
   Now, taking the sum
   \begin{align*}
     \sum_{i=1}^nv_{x_ix_i}
-    &=\sum_{i=1}^n\sum_{j=1}^m\varphi_{u_j}u^j_{x_ix_i}\\
-    &=\sum_{j=1}^m\sum_{i=1}^n\varphi_{u_j}u^j_{x_ix_i}\\
-    &=\sum_{j=1}^m\bigl(\varphi_{u_j}u^j_{x_1x_1}+\dotsb+\varphi_{u_j}u^j_{x_nx_n}\bigr)\\
-    &=\sum_{j=1}^m\varphi_{u_j}\bigl(u^j_{x_1x_1}+\dotsb+u^j_{x_nx_n}\bigr)\\
+    &=\sum_{i=1}^n\sum_{j=1}^m\phi_{u_j}u^j_{x_ix_i}\\
+    &=\sum_{j=1}^m\sum_{i=1}^n\phi_{u_j}u^j_{x_ix_i}\\
+    &=\sum_{j=1}^m\bigl(\phi_{u_j}u^j_{x_1x_1}+\dotsb+\phi_{u_j}u^j_{x_nx_n}\bigr)\\
+    &=\sum_{j=1}^m\phi_{u_j}\bigl(u^j_{x_1x_1}+\dotsb+u^j_{x_nx_n}\bigr)\\
     &=0,
   \end{align*}
   since \(\Lap u^j=0\) for all \(j\).
@@ -312,11 +312,11 @@
   What about the remaining terms in \eqref{eq:5:partial-xi}? These terms
   can be written in the form
   \[
-    \sum_{j,k=1}^m\varphi_{u_ju_k}(u)\xi_j\xi_k,
+    \sum_{j,k=1}^m\phi_{u_ju_k}(u)\xi_j\xi_k,
   \]
   where
   \(\xi_i=\bigl(u^1_{x_i},\dotsc,u^m_{x_i}\bigr)(x_1,\dotsc,x_n)\in\bbR^m\)
-  for any \((x_1,\dotsc,x_n)\in\bbR^n\). Since \(\varphi\) is convex, by
+  for any \((x_1,\dotsc,x_n)\in\bbR^n\). Since \(\phi\) is convex, by
   assumption, this quantity is greater than or equal to \(0\).
 
   Thus, \(\Lap v\geq 0\) so \(v\) is subharmonic.

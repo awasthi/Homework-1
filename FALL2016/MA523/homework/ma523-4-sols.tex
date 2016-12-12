@@ -186,7 +186,7 @@
   \end{enumerate}
 \end{problem}
 \begin{solution*}
-  For part (a), suppose that \(u\) is, as above, a solution to the wave
+  For part (a): Suppose that \(u\) is, as above, a solution to the wave
   equation which is \(C^2\) up to the boundary. We show that its energy is
   independent of \(t\), i.e., that \(\frac{d}{dt}E=0\). Assuming the energy
   is bounded, the dominated convergence theorem allows us to permute the
@@ -206,25 +206,23 @@
   \end{align*}
   since the boundary conditions, i.e., \(u=0\), implies \(u_x=u_t=0\) at
   the boundary.
-
-  For part (b), suppose \(u\) is a Fourier series solution to the wave
+  \\\\
+  For part (b): Suppose \(u\) is a Fourier series solution to the wave
   equation, i.e.,
   \[
     u(x,t)=\sum_{k=1}^\infty \bigl(a_k\cos(kct)+b_k\sin(kct)\bigr)\sin(kx).
   \]
   First, we compute \(u_x\) and \(u_t\), they are
-  \begin{equation}
-    \label{eq:4:ux-ut}
+  \[
     \begin{aligned}
       u_x(x,t)
       &=\sum_{k=1}^\infty k\bigl(a_k\cos(kct)+b_k\sin(kct)\bigr)\cos(kx),\\
       u_t(x,t)
       &=\sum_{k=1}^\infty kc\bigl(-a_k\sin(kct)+b_k\cos(kct)\bigr)\sin(kx).
     \end{aligned}
-  \end{equation}
-  Let \(u_x^n(x,t)\) and \(u_t^n(x,t)\) be the partial sums of the
-  equations above so \(u_x^n\to u_x\) and \(u_t^n\to u_t\) as
-  \(k\to\infty\). Then
+  \]
+  Let \(u_x^n(x,t)\) and \(u_t^n(x,t)\) be the partial sums of the two
+  equations above. Then
   \begin{align*}
     E_n(t)
     &=\frac{1}{2}\int_0^\pi (u_t^n)^2+c^2(u_x^n)^2\diff t
