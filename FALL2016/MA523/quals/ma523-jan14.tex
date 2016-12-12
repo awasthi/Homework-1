@@ -25,8 +25,8 @@
   \[
     \left\{
       \begin{aligned}
-        \Lap u&=0&&\text{in \(\{\,x_n>0\,\}\),}\\
-        u(x',0)&=g(x')&&\text{for \(x'\in\R^{n-1}\),}
+        &\Lap u=0&&\text{in \(\{\,x_n>0\,\}\),}\\
+        &u(x',0)=g(x')&&\text{for \(x'\in\R^{n-1}\),}
       \end{aligned}
     \right.
   \]
@@ -54,15 +54,15 @@
   with a constant \(\alpha\in (0, 1]\). Show that
   \[
     \begin{aligned}
-      |u(x,t)-u(y,t)|&\leq M|x-y|^\alpha,&&x,y\in\R,t>0,\\
-      |u(x,t)-u(x,s)|&\leq C_\alpha M|t-s|^{\alpha/2},&&x\in\R,t,s>0.
+      &|u(x,t)-u(y,t)|\leq M|x-y|^\alpha,&&x,y\in\R,t>0,\\
+      &|u(x,t)-u(x,s)|\leq C_\alpha M|t-s|^{\frac{\alpha}{2}},&&x\in\R,t,s>0.
     \end{aligned}
   \]
-
-  \noindent [\emph{Hint:} For the last inequality, in the representation
-  formula of \(u(x,t)\) as a convolution with the heat kernel
-  \(\Phi(y,t)\), make a change of variables \(z=y/\sqrt{t}\) and use that
-  $\left|\sqrt{t}-\sqrt{s}\right|\leq\sqrt{|t-s|}$.]
+  \\\\
+  \emph{Hint:} For the last inequality, in the representation formula of
+  \(u(x,t)\) as a convolution with the heat kernel \(\Phi(y,t)\), make a
+  change of variables \(z=\frac{y}{\sqrt{t}}\) and use that
+  $\left|\sqrt{t}-\sqrt{s}\right|\leq\sqrt{|t-s|}$.
 \end{problem}
 \begin{solution*}
 \end{solution*}
@@ -71,14 +71,14 @@
   Let \(u\) be a positive harmonic function in the unit ball \(B_1\) in
   \(\R^n\). Show that
   \[
-    \bigl|D(\ln u)\bigr|\leq M\qquad \text{in \(B_{1/2}\)}
+    \bigl|D(\ln u)\bigr|\leq M\qquad \text{in \(B_{\frac{1}{2}}\)}
   \]
   for a constant \(M\) depending only on the dimension \(n\).
-
-  \noindent [\emph{Hint:} Use the interior derivative estimate
-  \(\bigl|Du(x)\bigr|\leq(C_n/r)\sup_{B_r(x)}|u|\) for
+  \\\\
+  \emph{Hint:} Use the interior derivative estimate
+  \(\bigl|Du(x)\bigr|\leq(\frac{C_n}{r})\sup_{B_r(x)}|u|\) for
   \(B_r(x)\subset B_1\) as well as the Harnack inequality for harmonic
-  functions.]
+  functions.
 \end{problem}
 \begin{solution*}
 \end{solution*}
@@ -88,20 +88,20 @@
   \[
     \left\{
     \begin{aligned}
-      u_{tt}-\Lap u&=|x|^k&&&&\text{in \(\R^n\times(0,\infty)\),}\\
-      u&=0,&u_t&=0&&\text{on \(\R^n\times\{0\}\)}.
+      &u_{tt}-\Lap u=|x|^k&&\text{in \(\R^n\times(0,\infty)\),}\\
+      &u=0,u_t=0&&\text{on \(\R^n\times\{0\}\)}.
     \end{aligned}
     \right.
   \]
   for some \(k\geq 0\). Prove that there exists a function \(\phi(r)\)
   such that
   \[
-    u(x,t)=t^{k+2}\phi\bigl(|x|/t\bigr).
+    u(x,t)=t^{k+2}\phi\bigl(\tfrac{|x|}{t}\bigr).
   \]
-
-  \noindent [\emph{Hint:} As one of the steps show that \(u\) is
-  \((k+2)\)-homogeneous in \((x,t)\) variables, i.e.,
-  \(u(\lambda x,\lambda t)=\lambda^{k+2}u(x,t)\) for any \(\lambda >0\).]
+  \\\\
+  \emph{Hint:} As one of the steps show that \(u\) is \((k+2)\)-homogeneous
+  in \((x,t)\) variables, i.e.,
+  \(u(\lambda x,\lambda t)=\lambda^{k+2}u(x,t)\) for any \(\lambda >0\).
 \end{problem}
 \begin{solution*}
 \end{solution*}

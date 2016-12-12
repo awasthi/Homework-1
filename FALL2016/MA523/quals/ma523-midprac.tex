@@ -2,11 +2,11 @@
 \subsection{Midterm Practice Problems}
 \begin{problem}
   Solve \(u_{x_1}^2+x_2u_{x_2}=u\) with initial conditions
-  \(u(x_1,1)=x_1^2/4+1\).
+  \(u(x_1,1)=\frac{x_1^2}{4}+1\).
 \end{problem}
 \begin{solution*}
-  By inspection, we may suspect that \(v(x_1,x_2)=x_1^2/4+x_2\) is a
-  solution to the PDE. It certainly satisfies the boundary condition. A
+  By inspection, we may suspect that \(v(x_1,x_2)=\frac{x_1^2}{4}+x_2\) is
+  a solution to the PDE. It certainly satisfies the boundary condition. A
   routine calculation shows that \(v\) is in fact a solution to the
   PDE. Lucky guess!
 
@@ -127,21 +127,21 @@
 
   Applying the boundary conditions, we see that
   \[
-    z^0=u(x^0,0)=\rme^{-(x^0)^2/2}.
+    z^0=u(x^0,0)=\rme^{-\frac{(x^0)^2}{2}}.
   \]
 
   Here's where it gets tricky. After a little struggling, we see that there
   is really no way to solve for \(z\) in terms of \((x(s),t(s))\). However,
   we can solve for the projected characteristics:
   \[
-    (x(t,y),t)=(\rme^{-y^2/2}t+y,t);
+    (x(t,y),t)=(\rme^{-\frac{y^2}{2}}t+y,t);
   \]
   and this is really all that matters for us to find the time \(t_0\)  when
   the shock develops, i.e., the time when the projected characteristic
   fails to be injective.
 
   A little calculation shows that this happens precisely when
-  \(t=\rme^{-1/2}\).
+  \(t=\rme^{-\frac{1}{2}}\).
 \end{solution*}
 
 \begin{problem}
