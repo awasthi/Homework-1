@@ -5,7 +5,7 @@
   \]
   where
   \[
-    \Phi(x,t)=\frac{\rme^{-\frac{x^2}{4t}}}{\sqrt{4\pi t}}
+    \Phi(x,t)=\frac{\rme^{-x^2/4t}}{\sqrt{4\pi t}}
   \]
   is positive for \(|x|<1\), \(t>0\).
 
@@ -30,24 +30,24 @@
   \begin{align*}
     \Phi_x(x,t)
     &=\frac{\partial}{\partial x}
-      \left(\frac{\rme^{-\frac{x^2}{4t}}}{\sqrt{4\pi t}}\right)
+      \left(\frac{\rme^{-x^2/4t}}{\sqrt{4\pi t}}\right)
     &\Phi_{xx}(x,t)
     &=\frac{\partial}{\partial x}
-      \left(-\frac{x\rme^{-\frac{x^2}{4t}}}{2\sqrt{4\pi}t^{\frac{3}{2}}}\right)\\
-    &=-\frac{x\rme^{-\frac{x^2}{4t}}}{2\sqrt{4\pi}t^{\frac{3}{2}}},
-    &&=\frac{x^2\rme^{-\frac{x^2}{4t}}}{4\sqrt{4\pi}t^{\frac{5}{2}}}
-      -\frac{\rme^{-\frac{x^2}{4t}}}{2\sqrt{4\pi}t^{\frac{3}{2}}}
+      \left(-\frac{x\rme^{-x^2/4t}}{2\sqrt{4\pi}t^{\frac{3}{2}}}\right)\\
+    &=-\frac{x\rme^{-x^2/4t}}{2\sqrt{4\pi}t^{\frac{3}{2}}},
+    &&=\frac{x^2\rme^{-x^2/4t}}{4\sqrt{4\pi}t^{\frac{5}{2}}}
+      -\frac{\rme^{-x^2/4t}}{2\sqrt{4\pi}t^{\frac{3}{2}}}
     \\
-    &&&=\frac{(x^2-2t)\rme^{-\frac{x^2}{4t}}}{4\sqrt{4\pi}t^{\frac{5}{2}}},
+    &&&=\frac{(x^2-2t)\rme^{-x^2/4t}}{4\sqrt{4\pi}t^{\frac{5}{2}}},
   \end{align*}
   and
   \begin{align*}
     \Phi_t(x,t)
     &=\frac{\partial}{\partial t}
-      \left(\frac{\rme^{-\frac{x^2}{4t}}}{\sqrt{4\pi t}}\right)\\
-    &=\frac{x^2\rme^{-\frac{x^2}{4t}}}{4\sqrt{4\pi}t^{\frac{5}{2}}}
-      -\frac{\rme^{-\frac{x^2}{4t}}}{2\sqrt{4\pi}t^{\frac{3}{2}}}\\
-    &=\frac{(x^2-2t)\rme^{-\frac{x^2}{4t}}}{4\sqrt{4\pi}t^{\frac{5}{2}}}.
+      \left(\frac{\rme^{-x^2/4t}}{\sqrt{4\pi t}}\right)\\
+    &=\frac{x^2\rme^{-x^2/4t}}{4\sqrt{4\pi}t^{\frac{5}{2}}}
+      -\frac{\rme^{-x^2/4t}}{2\sqrt{4\pi}t^{\frac{3}{2}}}\\
+    &=\frac{(x^2-2t)\rme^{-x^2/4t}}{4\sqrt{4\pi}t^{\frac{5}{2}}}.
   \end{align*}
   Since \(\Phi_t=\Phi_{xx}\) it follows that \(u_t=u_{xx}\) (assuming
   uniform convergence of \(u\)).
