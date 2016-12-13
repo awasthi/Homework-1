@@ -6,7 +6,7 @@
     \left\{
       \begin{aligned}
         &-\Lap u=f&&\text{in \(\Omega\),}\\
-        &u+\alpha\frac{\partial u}{\partial\nu}=g&&\text{on \(\partial\Omega\)}
+        &u+\alpha\tfrac{\partial u}{\partial\nu}=g&&\text{on \(\partial\Omega\)}
       \end{aligned}
     \right.
   \]
@@ -23,7 +23,7 @@
     \left\{
       \begin{aligned}
         &-\Lap u=f&&\text{in \(\Omega\),}\\
-        &u+\alpha\frac{\partial u}{\partial\nu}=g&&\text{on \(\partial\Omega\)}
+        &u+\alpha\tfrac{\partial u}{\partial\nu}=g&&\text{on \(\partial\Omega\)}
       \end{aligned}
     \right.
   \end{equation}
@@ -35,7 +35,7 @@
     \left\{
       \begin{aligned}
         &-\Lap v=0&&\text{in \(\Omega\),}\\
-        &v+\alpha\frac{\partial v}{\partial\nu}=0&&\text{on \(\partial\Omega\).}
+        &v+\alpha\tfrac{\partial v}{\partial\nu}=0&&\text{on \(\partial\Omega\).}
       \end{aligned}
     \right.
   \]
@@ -49,7 +49,7 @@
     &=-\frac{1}{2}
       \left[%
       \int_\Omega v\Lap v\diff x%
-      +\int_{\partial\Omega}\frac{\partial v}{\partial\nu }v\diff S(x)%
+      +\int_{\partial\Omega}\tfrac{\partial v}{\partial\nu }v\diff S(x)%
       \right]\\
     &=-\frac{\alpha}{2}\int_{\partial\Omega} v^2\diff S(x)\\
     &\geq 0.
@@ -78,8 +78,8 @@
   From previous work on the heat equation, we know that the convolution
   \[
     u(x,t)
-    =\frac{1}{(4\pi t)^{\frac{n}{2}}}%
-    \int_{\R^n}\rme^{-\frac{|x-y|^2}{4t}}g(y)\diff y
+    =\frac{1}{(4\pi t)^{n/2}}%
+    \int_{\R^n}\rme^{-|x-y|^2/4t}g(y)\diff y
   \]
   the initial-value problem above. A crude estimate on the magnitude of
   \(u\) gives us
@@ -87,19 +87,19 @@
     \label{eq:fp:crude-est}
     \begin{aligned}
       |u(x,t)| &=%
-      \frac{1}{(4\pi t)^{\frac{n}{2}}}%
-      \left| \int_{\R^n}\rme^{-\frac{|x-y|^2}{4t}}g(y)\diff y
+      \frac{1}{(4\pi t)^{n/2}}%
+      \left| \int_{\R^n}\rme^{-|x-y|^2/4t}g(y)\diff y
       \right|\\
       &\leq%
-      \frac{1}{(4\pi t)^{\frac{n}{2}}}
-      \int_{\R^n}\left|\rme^{-\frac{|x-y|^2}{4t}}g(y)\right|\diff y\\
+      \frac{1}{(4\pi t)^{n/2}}
+      \int_{\R^n}\left|\rme^{-|x-y|^2/4t}g(y)\right|\diff y\\
       &<M t^{-\frac{n}{2}};
     \end{aligned}
   \end{equation}
   where \(M<\infty\) is chosen such that
   \[
-    \frac{1}{(4\pi)^{\frac{n}{2}}}
-    \int_{\Supp g}\left|\rme^{-\frac{|x-y|^2}{4t}}g(y)\right|\diff y
+    \frac{1}{(4\pi)^{n/2}}
+    \int_{\Supp g}\left|\rme^{-|x-y|^2/4t}g(y)\right|\diff y
     <M.
   \]
 
@@ -165,7 +165,7 @@
   \[
     u(x,t)=%
     \frac{1}{\sqrt{4\pi t}}
-    \int_\R \rme^{-\frac{|x-y|^2}{4t}}
+    \int_\R \rme^{-|x-y|^2/4t}
     \rme^{3x}\diff y.
   \]
   Putting this through \textsf{WolframAlpha} gives
@@ -221,7 +221,7 @@
     \left[%
       \frac{(tf(\xi)+t^2g(\xi))\cos\eta%
         +tD((\cos\eta)f(\xi))\cdot(\xi-x,\eta-y)}%
-      {{(t^2-(\xi-x)^2-(\eta-y)^2)}^{\frac{1}{2}}}%
+      {{(t^2-(\xi-x)^2-(\eta-y)^2)}^{1/2}}%
     \right]\diff\xi\diff\eta
   \]
   Therefore, the equation
@@ -231,7 +231,7 @@
     \left[%
       \frac{(tf(\xi)+t^2g(\xi))\cos\eta%
         +t[f'(\xi)(\xi-x)-\eta\sin(\eta)]}%
-      {{(t^2-(\xi-x)^2-\eta^2)}^{\frac{1}{2}}}%
+      {{(t^2-(\xi-x)^2-\eta^2)}^{1/2}}%
     \right]\diff\xi\diff\eta
   \]
   solves the original problem.
@@ -242,19 +242,19 @@
     I_1
     &\defeq\frac{1}{2\pi t^2}\iint_{B(x,0,t)}
       \left[
-      \frac{(tf(\xi)+t^2g(\xi))\cos \eta}{{(t^2-(\xi-x)^2-\eta^2)}^{\frac{1}{2}}}
+      \frac{(tf(\xi)+t^2g(\xi))\cos \eta}{{(t^2-(\xi-x)^2-\eta^2)}^{1/2}}
       \right]\diff\xi\diff\eta,
     \\
     I_2
     &\defeq\frac{1}{2\pi t^2}\iint_{B(x,0,t)}
       \left[
-      \frac{-t\eta\sin\eta}{{(t^2-(\xi-x)^2-\eta^2)}^{\frac{1}{2}}}
+      \frac{-t\eta\sin\eta}{{(t^2-(\xi-x)^2-\eta^2)}^{1/2}}
       \right]\diff\xi\diff\eta,
     \\
     I_3
     &\defeq\frac{1}{2\pi t^2}\iint_{B(x,0,t)}
       \left[
-      \frac{tf'(\xi)(\xi-x)}{{(t^2-(\xi-x)^2-\eta^2)}^{\frac{1}{2}}}
+      \frac{tf'(\xi)(\xi-x)}{{(t^2-(\xi-x)^2-\eta^2)}^{1/2}}
       \right]\diff\xi\diff\eta.
   \end{align*}
 
@@ -535,31 +535,31 @@
   \eqref{eq:fp:heat-eq-to-conv-f}. But
   \[
     \Phi(x,t)=\frac{1}{(4\pi
-      t)^{\frac{n}{2}}}\rme^{-\frac{|x|^2}{4t}}=\frac{1}{(4\pi
-      t)^{\frac{n}{2}}}[f(x)]^{\frac{1}{4t}}.
+      t)^{n/2}}\rme^{-|x|^2/4t}=\frac{1}{(4\pi
+      t)^{n/2}}[f(x)]^{1/4t}.
   \]
   Therefore, the convolution we are after is precisely
   \[
-    (f*f)(x)=\pi^{\frac{n}{2}}u(x,\tfrac{1}{4}).
+    (f*f)(x)=\pi^{n/2}u(x,\tfrac{1}{4}).
   \]
 
   Solving for \(u(x,\frac{1}{4})\), we have
   \begin{align*}
     u(x,t)
-    &=\frac{1}{\pi^{\frac{n}{2}}}%
+    &=\frac{1}{\pi^{n/2}}%
       \int_{\R^n}\rme^{-|x-y|^2}f(y)\diff y\\
-    &=\frac{1}{\pi^{\frac{n}{2}}}%
+    &=\frac{1}{\pi^{n/2}}%
       \int_{\R^n}\rme^{-|x-y|^2}\rme^{-|y|^2}\diff y\\
-    &=\frac{1}{\pi^{\frac{n}{2}}}%
+    &=\frac{1}{\pi^{n/2}}%
       \int_{\R^n}\rme^{-|x-y|^2-|y|^2}\diff y
       \shortintertext{which, by Fubini's theorem, becomes the product of
       integrals in one coordinate}
-    &=\frac{1}{\pi^{\frac{n}{2}}}%
+    &=\frac{1}{\pi^{n/2}}%
       \prod_{k=1}^n\left[\int_{\R}\rme^{-|x_k-y_k|^2-|y_k|^2}\diff y_k\right]\\
-    &=\frac{1}{\pi^{\frac{n}{2}}}%
+    &=\frac{1}{\pi^{n/2}}%
       \prod_{k=1}^n\left[\int_{\R}\rme^{-(x_k^2-2x_ky_k+y_k^2)-y_k^2}\diff
         y_k\right]\\
-    &=\frac{1}{\pi^{\frac{n}{2}}}%
+    &=\frac{1}{\pi^{n/2}}%
       \rme^{-|x|^2}\prod_{k=1}^n
       \underbrace{\left[\int_{\R}\rme^{2x_ky_k-2y_k^2}\diff
       y_k\right]}_{I_k}.
@@ -567,18 +567,18 @@
   Let us find \(I_k\) and complete the solution of \(u\) above. This is,
   \begin{align*}
     I_k
-    &=\int_\R\rme^{-2\left(y_k-\frac{1}{2}x_k\right)^2+\frac{1}{2}x_k^2}\diff y_k\\
-    &=\frac{\rme^{\frac{1}{2}x_k^2}}{2}\int_\R\rme^{-z^2}\diff z\\
-    &=\left(\frac{\pi}{2}\right)^{\frac{1}{2}}\rme^{\frac{1}{2}x_k^2}.
+    &=\int_\R\rme^{-2\left(y_k-x_k/2\right)^2+x_k^2/2}\diff y_k\\
+    &=\frac{\rme^{x_k^2/2}}{2}\int_\R\rme^{-z^2}\diff z\\
+    &=\left(\frac{\pi}{2}\right)^{1/2}\rme^{x_k^2/2}.
   \end{align*}
 
   Thus, \(u(x,\tfrac{1}{4})\) is
   \[
-    u(x,\tfrac{1}{4})=\frac{1}{2^{\frac{n}{2}}}\rme^{-\frac{|x|^2}{2}}
+    u(x,\tfrac{1}{4})=\frac{1}{2^{n/2}}\rme^{-|x|^2/2}
   \]
   so
   \[
-    f*f=\left(\frac{\pi}{2}\right)^{\frac{n}{2}}\rme^{-\frac{|x|^2}{2}}.\qedhere
+    f*f=\left(\frac{\pi}{2}\right)^{n/2}\rme^{-|x|^2/2}.\qedhere
   \]
 \end{solution*}
 \begin{remarks*}
@@ -604,40 +604,40 @@
   \]
   where, for \(t>0\),
   \[
-    \Phi(z,t)=(4\pi t)^{-\frac{n}{2}}\rme^{-\frac{|x|^2}{4t}}.
+    \Phi(z,t)=(4\pi t)^{-n/2}\rme^{-|x|^2/4t}.
   \]
   Assume that \(g\) is continuous and compactly supported. Show that there
   exists a \(C>0\) such that
   \[
-    |D u(x,t)|\leq Ct^{-\frac{1}{2}}\|g\|_{L^\infty}.
+    |D u(x,t)|\leq Ct^{-1/2}\|g\|_{L^\infty}.
   \]
 \end{problem}
 \begin{solution*}
   Let us immediately jump to the partial derivative \(D_{x_k}\) of \(u\),
   \[
-    D_{x_j}u=\frac{1}{(4\pi t)^{\frac{n}{2}}}
+    D_{x_j}u=\frac{1}{(4\pi t)^{n/2}}
     \int_{\R^n} g(y)
-    \left[-\frac{(x_j-y_j)}{2t}\right]\rme^{-\frac{-|x-y|^2}{4t}}\diff y.
+    \left[-\frac{(x_j-y_j)}{2t}\right]\rme^{-|x-y|^2/4t}\diff y.
   \]
   Hence,
   \begin{align*}
     |D_x u(x,t)|
-    &\leq\frac{\|g\|_{L^\infty(\R^n)}}{(4\pi)^{\frac{n}{2}}}\frac{1}{t^{\frac{n}{2}}}
-      \int_{\R^n}\frac{|x-y|}{2t}\rme^{-\frac{|x-y|^2}{4t}}\diff y\\
-    &=\frac{\|g\|_{L^\infty(\R^n)}}{(4\pi)^{\frac{n}{2}}}\frac{1}{t^{\frac{n}{2}}}
-      \int_{\R^n}\frac{|z|}{2t}\rme^{-\frac{|z|^2}{4t}}\diff z
-      \intertext{setting \(w=|z|/\sqrt{t}\), we have}
-    &=\frac{\|g\|_{L^\infty(\R^n)}}{2(4\pi)^{\frac{n}{2}}}\frac{1}{t^{\frac{n}{2}}}
-      \int_{\R^n}\frac{|w|}{t^{\frac{1}{2}}}\rme^{-\frac{w^2}{4}}t^{\frac{n}{2}}\diff
+    &\leq\frac{\|g\|_{L^\infty(\R^n)}}{(4\pi)^{n/2}}\frac{1}{t^{n/2}}
+      \int_{\R^n}\tfrac{|x-y|}{2t}\rme^{-|x-y|^2/4t}\diff y\\
+    &=\frac{\|g\|_{L^\infty(\R^n)}}{(4\pi)^{n/2}}\frac{1}{t^{n/2}}
+      \int_{\R^n}\tfrac{|z|}{2t}\rme^{-|z|^2/4t}\diff z
+      \intertext{setting \(w=\frac{|z|}{\sqrt{t}}\), we have}
+    &=\frac{\|g\|_{L^\infty(\R^n)}}{2(4\pi)^{n/2}}\frac{1}{t^{n/2}}
+      \int_{\R^n}\frac{|w|}{t^{1/2}}\rme^{-w^2/4}t^{n/2}\diff
       w\\
-    &=\frac{\|g\|_{L^\infty(\R^n)}}{2(4\pi)^{\frac{n}{2}}}\frac{1}{\sqrt{t}}
-      \int_{\R^n}|w|\rme^{-\frac{w^2}{4}}\diff w\\
+    &=\frac{\|g\|_{L^\infty(\R^n)}}{2(4\pi)^{n/2}}\frac{1}{\sqrt{t}}
+      \int_{\R^n}|w|\rme^{-w^2/4}\diff w\\
     &=\frac{\|g\|_{L^\infty(\R^n)}C_n}{\sqrt{t}},
   \end{align*}
   where
   \[
-    C_n\defeq\frac{1}{2(4\pi)^{\frac{n}{2}}}%
-    \int_{\R^n}|w|\rme^{-\frac{w^2}{4}}\diff w>0.\qedhere
+    C_n\defeq\frac{1}{2(4\pi)^{n/2}}%
+    \int_{\R^n}|w|\rme^{-w^2/4}\diff w>0.\qedhere
   \]
 \end{solution*}
 
