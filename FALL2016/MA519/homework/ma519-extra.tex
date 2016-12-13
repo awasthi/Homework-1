@@ -43,7 +43,7 @@ losing both games, what are their chances of winning exactly once?
   Suppose for \(n>1\), a family has \(n\) children with probability
   \(\alpha p^n\); here \(\alpha\), \(p\) are fixed numbers between \(0\)
   and \(1\). The probability that the family has no children is \(1-\alpha
-  p-\alpha p^-\dotsb\).
+  p-\alpha p^2-\dotsb\).
 
   \noindent Suppose a randomly selected family is known to have at least
   one boy. What is the probability that the family has more than one boy?
@@ -125,65 +125,118 @@ No problems from this handout.
 \begin{problem}[Handout 9, \# 6]
   Suppose a general coin is tossed until the first head is obtained. Find
   the first mean, variance, and third moment of \(X\), where \(X\) is the
-  toss at which the first head was obtained
+  toss at which the first head was obtained.
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
-\begin{problem}
+\begin{problem}[Handout 9, \# 8]
+  Calculate in closed form the MGF of \(X\), the toss at which the first
+  head is obtained when the coin being tossed is a general coin.
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
-\begin{problem}
+\begin{problem}[Handout 9, \# 15]
+  \hfill
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item Always, \(E(X^2)\geq [E(X)]^2\); also \(E(X^2)\geq [E(|X|)]^2\).
+  \item Always, \(E(|X|)\geq |E(X)|\).
+  \item Jensen's inequality: For any convex function \(g\), and any
+    arbitrary random variable \(X\) such that \(E[g(X)]\) exists,
+    \(E[g(X)]\geq g[E(X)]\).
+  \item The triangle inequality: Always, \(E(|X|)+E(|Y|)\geq E(|X+Y|)\).
+  \item the Cauchy--Schwartz inequality: For \(s>r\geq 1\), and for any
+    arbitrary nonnegative random variable \(X\) such that \(E(X^s)\)
+    exists,
+    \[
+      [E(X^r)]^{1/r}\leq [E(X^s)]^{1/s}.
+    \]
+  \end{enumerate}
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
 \subsubsection{Handout 10}
-\begin{problem}
+\begin{problem}[Handout 10, \# 3]
+  A \(14\) inch circular pizza has been baked with \(20\) pieces of
+  barbecued chicken. A triangular slice of dimension \(4\times 4\times 2\)
+  was served to you. What is the probability that you got at least one
+  piece of chicken.
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
-\begin{problem}
-\end{problem}
-\begin{solution*}
-\end{solution*}
-
-\begin{problem}
+\begin{problem}[Handout 10, \# 15]
+  Prove that the sum of any finite number of independent Poissons is
+  another Poisson.
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
 \subsubsection{Handout 11}
-\begin{problem}
+\begin{problem}[Handout 11, 4]
+  \(n\) numbers are selected with replacement at random from the first
+  \(N\) positive integers.
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item Find the expected value of the sum of \(n\) drawn numbers.
+  \item What would be the story if sampling was without replacement.
+  \end{enumerate}
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
-\begin{problem}
-\end{problem}
-\begin{solution*}
-\end{solution*}
+\begin{problem}[Handout 11, \# 5]
+  I offer you to play the following game of chance with me. You will
+  continually toss a fair coin until you obtain a head for the first
+  time. If you obtain your first head at the \(n\)\textsup{th} toss, you
+  will receive \(2^n\) dollars. However, you have to pay \(30\) dollars up
+  front to play.
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item Is this a good game of chance for you to play?
+  \item Suppose you can win at most \(100\) dollars regardless of how many
+    tosses it takes to obtain the first head.
 
-\begin{problem}
+    \noindent what is a fair fee to pay up front under these circumstances?
+  \item Suppose there is no bound placed on the maximum you can win, but
+    you will win \(n\) dollars if you first head shows up at the
+    \(n\)\textsup{th} toss. What is now a fair fee to pay up front?
+  \end{enumerate}
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
 \subsubsection{Handout 12}
-\begin{problem}
+\begin{problem}[Handout 12, \# 6]
+  Let \(X\) be \(U[0,1]\) distributed. Evaluate the expected values of
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item  \(X\);
+  \item \(X^k\);
+  \item \(\frac{1}{1+X}\);
+  \item \(\rme^{tX}\);
+  \item \(\ln X\).
+  \end{enumerate}
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
-\begin{problem}
+\begin{problem}[Handout 12, \# 12]
+  Anirban's dog got mad at him and broke his walking cane off at a random
+  point. To hid his devious act, he then chewed off one of the two pieces
+  chosen at random. What is the expected length of the piece that remains?
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
-\begin{problem}
+\begin{problem}[Handout 12, \# 14]
+  Give an elementary reason for
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item if \(X\) is \(U[0,1]\), \(X^2\) cannot also be \(U[0,1]\);
+  \item if \(X\) is \(U[0,1]\), any continuous function \(g(X)\) has a
+    finite mean;
+  \item if \(X\) is \(U[0,1]\), no strictly monotone function of \(X\),
+    other than \(X\), can also be \(U[0,1]\).
+  \end{enumerate}
 \end{problem}
 \begin{solution*}
 \end{solution*}
@@ -205,39 +258,82 @@ No problems from this handout.
 \end{solution*}
 
 \subsubsection{Handout 14}
-\begin{problem}
+\begin{problem}[Handout 14, \# 2]
+  Approximately find the probability of getting between \(45\) and \(55\)
+  heads in \(100\) tosses of a fair coin.
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
-\begin{problem}
+\begin{problem}[Handout 14-II, \# 3]
+  In which of the following cases is the sequence \(X=o_p(1)\), in which
+  cases is it not \(o_p(1)\) but \(O_p(1)\), and in which cases is it
+  neither?
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item \(Y_k\) are IID \(N(0,1)\) and \(X_n=\bar Y_n\);
+  \item \(Y_k\) are IID \(N(10,1)\) and \(X_n=Y_n\);
+  \item \(X_n\) is \(N(\frac{1}{n},1)\) (the \(X_n\) need not be
+    independent!);
+  \item \(X_n\) is \(\Bin(n,\frac{1}{2})\);
+  \item \(X_n\) is \(\Bin(n,\frac{1}{n})\);
+  \item \(X_n\) is \(\Bin(n,\frac{1}{n^2})\).
+  \end{enumerate}
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
-\begin{problem}
+\begin{problem}[Handout 14-II, \# 7]
+  In which of the following cases does the sequence \(X_n\) converge in
+  distribution and what is the limiting distribution?
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item \(Y_k\) are IID \(\Exp(1)\) and \(X_n=\sqrt{n}(Y_n-1)\);
+  \item \(X_n\) are \(N(0,1)\) (the \(X_n\) need not be independent!);
+  \item \(Y_k\) are IID \(N(\mu,\sigma^2)\), and \(X_n=\sqrt{n}(\bar
+    Y_n-\mu)/s\) where \(s^2\defeq\frac{1}{n-1}\sum_{k=1}^n(Y_k-\bar
+    Y_n)^2\).
+  \item \(X_n\) is \(\Bin(n,\frac{10}{n})\);
+    \item \(Y_n\) is \(\Bin(n,p)\), \(0<p<1\), and
+      \(X_n=\frac{Y_n-np}{\sqrt{np(1-p)}}\).
+    \item \(Y_k\) are IID \(U[0,1]\) andh \(X=n[1-\bar Y_n]\).
+  \end{enumerate}
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
 \subsubsection{Handout 15}
-\begin{problem}
+\begin{problem}[Handout 15, \# 2]
+  For two rolls of a fair die, find the joint distribution of \(X\) the
+  larger of the two rolls, and \(Y\) the smaller of the two.
+
+  \noindent Hence, find the marginal distributions of \(X\), \(Y\), and the
+  correlation between \(X\) and \(Y\).
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
-\begin{problem}
+\begin{problem}[Handout 15, \# 6]
+  Sisters Sara and Wendy have the following plans: Sara will have children
+  until she has two boys and Wendy will have children until she has two
+  girls.
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item Find the conditional expectation of the size of Sara's family if
+    the size of Wendy's family is \(5\) (\(3\) children plus parents).
+  \item Find the conditiona lexpectation of the size of the larger family
+    if the size of the smaller family is \(4\).
+  \end{enumerate}
+  Comment on how parts (a) and (b) differ conceptually.
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
-\begin{problem}
+\begin{problem}[Handout 15, \# 7]
+  \(X\), \(Y\) are two independent Poisson variables, each with mean \(1\).
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
 \subsubsection{Handout 16}
-\begin{problem}
+\begin{problem}[Handout 16, \# ]
 \end{problem}
 \begin{solution*}
 \end{solution*}
