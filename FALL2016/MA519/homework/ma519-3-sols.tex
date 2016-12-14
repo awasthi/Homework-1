@@ -28,14 +28,14 @@
   must choose the complementary stick from among the \(2(n-k+1)-1\)
   remaining sticks giving us
   \[
-    P\left(A_k\,\middle|\,\bigcap\nolimits_{j=1}^{k-1}A_j\right)=%
+    P\left(A_k\relmiddle|\bigcap\nolimits_{j=1}^{k-1}A_j\right)=%
     \frac{2(n-k+1)}{(2(n-k+1))(2(n-k+1)-1)}=%
     \frac{1}{2(n-k+1)-1}
   \]
   By the hierarchical multiplicative formula,
   \[
     P\left(\bigcap\nolimits_{k=1}^n A_k\right)=%
-    \prod_{k=1}^n P\left(A_k\,\middle|\,\bigcap\nolimits_{j=1}^{k-1}A_j\right)=%
+    \prod_{k=1}^n P\left(A_k\relmiddle|\bigcap\nolimits_{j=1}^{k-1}A_j\right)=%
     \left(\frac{1}{2n-1}\right)%
     \dotsm%
     \left(\frac{1}{3}\right)\left(\frac{1}{1}\right).
@@ -60,7 +60,7 @@
   \[
     P\left(\bigcap\nolimits_{k=1}^n A_k\right)=%
     \prod_{k=1}^n
-    P\left(A_k\,\middle|\,\bigcap\nolimits_{j=1}^{k-1}A_j\right)=%
+    P\left(A_k\relmiddle|\bigcap\nolimits_{j=1}^{k-1}A_j\right)=%
     \left(\frac{n}{2n-1}\right)\dotsm
     \left(\frac{2}{3}\right)\left(\frac{1}{1}\right).\qedhere
   \]
@@ -133,8 +133,8 @@
   \(F\) denote the event that said person fails the polygraph test. Then
   Bayes' theorem implies that
   \begin{align*}
-    P(T\,|\,F)
-    &=\frac{P(F\,|\,T)P(T)}{P(F\,|\,T)P(T) + P(F\,|\,L)P(L)}\\
+    P(T\mid F)
+    &=\frac{P(F\mid T)P(T)}{P(F\mid T)P(T) + P(F\mid L)P(L)}\\
     &=\frac{0.15p}{0.15p + 0.9 - 0.9p}\\
     &=\frac{0.15p}{0.9-0.75p}.\qedhere
   \end{align*}
