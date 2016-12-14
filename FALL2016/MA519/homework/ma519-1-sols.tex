@@ -68,14 +68,14 @@ following notation for some of the distributions considered in this course:
 \\
 \text{exponential}
 &\Exp(\lambda)
-&\text{\(\frac{1}{\lambda}\rme^{-\frac{x}{\lambda}}\) for \(x\geq 0\)}
+&\text{\(\frac{1}{\lambda}\rme^{-x/\lambda}\) for \(x\geq 0\)}
 &\lambda
 &\lambda^2
 &(1-\lambda t)^{-1}
 \\
 \text{gamma}
 &G(\alpha,\lambda)
-&\text{\(\frac{\rme^{-\frac{x}{\lambda}}x^{\alpha-1}}
+&\text{\(\frac{\rme^{-x/\lambda}x^{\alpha-1}}
   {\lambda^\alpha\Gamma(\alpha)}\) for \(x\geq 0\)}
 &\alpha\lambda
 &\alpha\lambda^2
@@ -83,11 +83,11 @@ following notation for some of the distributions considered in this course:
 \\
 \text{chi-squared}
 &\chi^2_n
-&\text{\(\frac{\rme^{-\frac{x}{2}}x^{m/2-1}}
+&\text{\(\frac{\rme^{-x/2}x^{m/2-1}}
   {2^{m/2}\Gamma(\frac{m}{2})}\) for \(x\geq 0\)}
 &m
 &2m
-&(1-2t)^{-\frac{m}{2}}
+&(1-2t)^{-m/2}
 \\
 \text{beta}
 &B(\alpha,\beta)
@@ -99,14 +99,14 @@ following notation for some of the distributions considered in this course:
 \\
 \text{normal}
 &N(\mu,\sigma)
-&\frac{1}{\sqrt{2\pi\sigma^2}}\rme^{-\frac{(x-\mu)^2}{2\sigma^2}}
+&\frac{1}{\sqrt{2\pi\sigma^2}}\rme^{-(x-\mu)^2/2\sigma^2}
 &\mu
 &\sigma^2
-&\rme^{t\mu+\frac{t^2\sigma^2}{2}}
+&\rme^{t\mu+t^2\sigma^2/2}
 \\
 \text{Cauchy}
 &\Cauchy(\mu,\sigma)
-&(\sigma\pi(1+\frac{(x-\mu)^2}{\sigma^2}))^{-1}
+&\bigl(\sigma\pi(1+\frac{(x-\mu)^2}{\sigma^2})\bigr)^{-1}
 &\text{DNE}
 &\text{DNE}
 &\text{DNE}
