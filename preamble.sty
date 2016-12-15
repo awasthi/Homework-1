@@ -185,10 +185,15 @@
 
 %% Enumerate
 \usepackage{enumitem}%
-\newenvironment{aenumerate} % Enumeration environment with small caps
-    {\def\theenumi{\textsc{\alph{enumi}}}%
-     \enumerate}
-   {\endenumerate}
+\newlist{alphlist}{enumerate}{3}
+\setlist[alphlist,1]{label=\llap{(\alph*)}}%
+\setlist[alphlist,2]{label=\llap{(\arabic{enumi}.\roman*)}}%
+\setlist[alphlist,3]{label=\llap{\arabic{enumi}.\alph{enumii}.\roman*.}}
+
+% \setlist[exercises,1]{align=right,leftmargin=0pt,labelsep=0pt,
+%   label=\llap{\bfseries{\arabic*.} \hskip 9pt}}
+% \setlist[exercises,2]{align=right,leftmargin=0pt,labelsep=0pt, labelwidth=!,label=\llap{\bfseries{\arabic{enumi}.\alph*.} \hskip 9pt}}
+% \setlist[exercises,3]{align=right,leftmargin=0pt,labelsep=0pt, labelwidth=!,label=\llap{\bfseries{\arabic{enumi}.\alph{enumii}.\roman*.} \hskip 9pt}}
 
 %% Upright parentheses
 % \usepackage{embrac}
@@ -341,10 +346,10 @@
 % \renewcommand\cent{\text{\textcent}}%
 
 %% Replace subset symbols
-\let\oldsubset\subset \let\subset\subseteq \let\subseteq\oldsubset
-\let\oldsupset\supset \let\supset\supseteq \let\supseteq\oldsupset
-\let\oldsqsubset\sqsubset \let\sqsubset\sqsubseteq \let\sqsubseteq\oldsqsubset
-\let\oldsqsupset\sqsupset \let\sqsupset\sqsupseteq \let\sqsupseteq\oldsqsupset
+% \let\oldsubset\subset \let\subset\subseteq \let\subseteq\oldsubset
+% \let\oldsupset\supset \let\supset\supseteq \let\supseteq\oldsupset
+% \let\oldsqsubset\sqsubset \let\sqsubset\sqsubseteq \let\sqsubseteq\oldsqsubset
+% \let\oldsqsupset\sqsupset \let\sqsupset\sqsupseteq \let\sqsupseteq\oldsqsupset
 
 %% Replace Greeks
 \let\oldepsilon\epsilon \let\epsilon\varepsilon \let\varepsilon\oldepsilon
@@ -419,7 +424,7 @@
   =}%
 \newcommand*{\eqdef}{=\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
       \hbox{.}\hbox{.}}}}%
-\newcommand\bydef{\stackrel{\mathclap{\normalfont\mbox{def}}}{=}}
+\newcommand\bydef{\stackrel{\mathclap{\normalfont\mbox{\tiny def}}}{=}}
 
 \makeatletter
 \DeclareRobustCommand\widecheck[1]{{\mathpalette\@widecheck{#1}}}
@@ -698,11 +703,11 @@
 \DeclareMathOperator{\Gaussian}{Gaussian}
 \DeclareMathOperator{\GAMMA}{Gamma}
 \DeclareMathOperator{\Geometric}{Geomtric}
-\DeclareMathOperator{\Geom}{Geom}
-\DeclareMathOperator{\HGeom}{HGeom}
-\DeclareMathOperator{\Hypergeom}{Hypergeom}
+\DeclareMathOperator{\Geo}{Geo}
+\DeclareMathOperator{\Hypergeometric}{Hypergeometric}
+\DeclareMathOperator{\Hypergeo}{Hypergeo}
 \DeclareMathOperator{\NegBinom}{NegBinom}
-\DeclareMathOperator{\NB}{NB}
+\DeclareMathOperator{\NB}{\mathit{NB}}
 \DeclareMathOperator{\Normal}{Normal}
 \DeclareMathOperator{\Poisson}{Poisson}
 \DeclareMathOperator{\Poi}{Poi}
