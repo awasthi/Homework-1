@@ -10,104 +10,92 @@ with limit \(a\) and \(b\), respectively, we say \(a_n\sim b_n\) if
 \(\frac{a_n}{b_n}\to 1\).
 
 For the sake of remaining consistent with DasGupta's book, we adopt the
-following notation for some of the distributions considered in this course:
+following notation for some of the distributions considered in this course
+(here and throughout the text \(q\bydef q(p)=1-p\)):
 
-\begin{adjustwidth}{-1.5cm}{}
-\begin{tabular}{|L|L|L|L|L|L|}
+\begin{adjustwidth}{-.5cm}{}
+\begin{tabular}{|L|L|L|L|L|}
 \hline
-\text{Name}&\text{Symbol}&\text{mass/density function}&\text{mean}&\text{variance}&\text{MGF}\\
+\text{name}&\text{params.}&\text{PMF or PDF}&\text{mean}&\text{variance}\\
 \hline
 \text{Bernoulli}
 &\Ber(p)%
-&\text{\(1-p\) for \(k=0\), \(p\) for \(k=1\)}%
+&\text{\(1-p\), for \(k=0\); \(p\), for \(k=1\)}%
 &p
 &p(1-p)
-&(1-p)+p\rme^t
 \\
 \text{binomial}
 &\Bin(n,p)%
-&\text{\(\binom{n}{k}p^k(1-p)^{n-k}\) for \(k=0,\dotsc,n\)}
+&\text{\(\binom{n}{k}p^k(1-p)^{n-k}\), for \(k=0,\dotsc,n\)}
 &np
 &np(1-p)
-&{(p\rme^t+1-p)}^n
 \\
 \text{Poisson}
 &\Poi(p)
 &\rme^{-\lambda}\frac{\lambda^k}{k!}
 &\lambda
 &\lambda
-&\rme^{\lambda(\rme^t-1)}
 \\
 \text{geometric}
-&\Geom(p)
-&(1-p)^k p
-&\frac{1-p}{p}
-&\frac{1-p}{p^2}
-&\frac{p}{1-(1-p)\rme^t}
+&\Geo(p)
+&(1-p)^{k-1} p
+&\frac{1}{p}
+&\frac{q}{p^2}
 \\
 \text{negative binomial}
 &\NB(r,p)
 &\binom{k+r-1}{k}(1-p)^rp^k
 &\frac{pr}{1-p}
 &\frac{1-p}{p^2}
-&\frac{pr}{(1-p)^2}
 \\
 \text{hypergeometric}
-&\Hypergeom(n,N,D)
-&\frac{\binom{D}{k}\binom{N-D}{n-x}}{\binom{N}{n}}
+&\Hypergeo(n,D,N)
+&\frac{\binom{D}{k}\binom{N-D}{n-k}}{\binom{N}{n}}
 &\frac{nD}{N}
 &\frac{nD}{N}(1-\frac{D}{N})\frac{N-n}{N-1}
-&
 \\
 \text{uniform}
 &U[a,b]
-&\text{\(\frac{1}{b-a}\) for \(a\leq x\leq b\)}
+&\text{\(\frac{1}{b-a}\), for \(a\leq x\leq b\)}
 &\frac{a+b}{2}
 &\frac{(b-a)^2}{12}
-&\frac{\rme^{bt}-\rme^{at}}{(b-a)t}
 \\
 \text{exponential}
 &\Exp(\lambda)
-&\text{\(\frac{1}{\lambda}\rme^{-x/\lambda}\) for \(x\geq 0\)}
+&\text{\(\frac{1}{\lambda}\rme^{-x/\lambda}\), for \(x\geq 0\)}
 &\lambda
 &\lambda^2
-&(1-\lambda t)^{-1}
 \\
 \text{gamma}
 &G(\alpha,\lambda)
 &\text{\(\frac{\rme^{-x/\lambda}x^{\alpha-1}}
-  {\lambda^\alpha\Gamma(\alpha)}\) for \(x\geq 0\)}
+  {\lambda^\alpha\Gamma(\alpha)}\), for \(x\geq 0\)}
 &\alpha\lambda
 &\alpha\lambda^2
-&(1-\lambda t)^{-\alpha}
 \\
 \text{chi-squared}
 &\chi^2_n
 &\text{\(\frac{\rme^{-x/2}x^{m/2-1}}
-  {2^{m/2}\Gamma(\frac{m}{2})}\) for \(x\geq 0\)}
+  {2^{m/2}\Gamma(\frac{m}{2})}\), for \(x\geq 0\)}
 &m
 &2m
-&(1-2t)^{-m/2}
 \\
 \text{beta}
 &B(\alpha,\beta)
-&\text{\(\frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha,\beta)}\)
-  for \(0\leq x\leq 1\)}
+&\text{\(\frac{x^{\alpha-1}(1-x)^{\beta-1}}{\rmB(\alpha,\beta)}\)
+ , for \(0\leq x\leq 1\)}
 &\frac{\alpha}{\alpha+\beta}
 &\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}
-&
 \\
 \text{normal}
 &N(\mu,\sigma)
 &\frac{1}{\sqrt{2\pi\sigma^2}}\rme^{-(x-\mu)^2/2\sigma^2}
 &\mu
 &\sigma^2
-&\rme^{t\mu+t^2\sigma^2/2}
 \\
 \text{Cauchy}
-&\Cauchy(\mu,\sigma)
+&C(\mu,\sigma)
 &\bigl(\sigma\pi(1+\frac{(x-\mu)^2}{\sigma^2})\bigr)^{-1}
-&\text{DNE}
 &\text{DNE}
 &\text{DNE}
 \\

@@ -1,0 +1,160 @@
+\section{Extra Problems}
+These problems were taken from probability courses from other
+universities.
+\subsection{Stat 110 (Harvard) -- Final 2006}
+\begin{problem}
+  The number of fish in a certain lake is a \(\Poi(\lambda)\) random
+  variable. Worried there might be no fish at all, a statistician adds one
+  fish to the lake. Let \(Y\) be the resulting number of fish (so \(Y\) is
+  \(1\) plus a \(\Poi(\lambda)\) random variable).
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item Find \(E(Y^2)\).
+  \item Find \(E(\frac{1}{Y})\) (in terms of \(\lambda\); do not simplify
+    yet).
+  \item Find a simplified expression for \(E(\frac{1}{Y})\). \emph{Hint:}
+    \(k!(k+1)=(k+1)!\).
+  \end{enumerate}
+\end{problem}
+\begin{solution*}
+  For part (a): Let \(X\sim\Poi(\lambda)\) such that \(X=Y-1\). Then we
+  have
+  \begin{align*}
+    E(Y^2)
+    &=E\bigl[(X+1)^2\bigr]\\
+    &=E(X^2+2X+1)\\
+    &=E(X^2)+2E(X)+1\\
+    &=\lambda^2+\lambda+2\lambda+1\\
+    &=\lambda^2+3\lambda+1.
+  \end{align*}
+  \\\\
+  For part (b): Keeping \(X\) as above, we have
+  \begin{align*}
+    E\left(\tfrac{1}{Y}\right)
+    &=E\left(\tfrac{1}{X+1}\right)\\
+    &=\sum_{k=0}^\infty \frac{1}{k+1}\rme^{-\lambda}\frac{\lambda^k}{k!}\\
+    &=\rme^{-\lambda}\sum_{k=0}^\infty\frac{\lambda^k}{(k+1)!}\\
+    &=\rme^{-\lambda}\sum_{k=0}^\infty\frac{\lambda^{-1}\lambda^{k+1}}{(k+1)!}.
+  \end{align*}
+  \\\\
+  For part (c): Taking the equation above and further simplifying it, we
+  have
+  \begin{align*}
+    E\left( \tfrac{1}{Y} \right)
+    &=\frac{\rme^{-\lambda}}{\lambda}
+      \sum_{k=0}^\infty\frac{\lambda^{k+1}}{(k+1)!}\\
+    &=\frac{\rme^{-\lambda}}{\lambda}
+      \sum_{k=1}^\infty\frac{\lambda^k}{k!}\\
+    &=\frac{\rme^{-\lambda}}{\lambda}(\rme^{\lambda}-1)\\
+    &=\tfrac{1}{\lambda}(1-\rme^{-\lambda}).\qedhere
+  \end{align*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA519-HW-ALL"
+%%% End:
