@@ -58,17 +58,42 @@ universities.
   (independent identically distributed) positive random variables. Assume
   that the various expected values exist.
   \begin{alphlist}
-  \item the probability that a roll of \(2\) fair dice totals \(9\) \_ the
+  \item the probability that a roll of \(2\) fair dice totals \(9\) \(\_\) the
     probability that a roll of \(2\) fair dice totals \(10\).
-  \item the probability that \(65\%\) of \(20\) children born are girls \_
-    the probability that \(65\%\) of \(2000\) children born are girls.
-  \item \(E\bigl(\sqrt{X}\bigr)\_\sqrt{E(X)}\).
-  \item \(E(\sin X)\_\sin[E(X)]\).
-  \item \(P(X+Y>4)\_ P(X>2)P(Y>2)\).
-  \item \(E\bigl[ (X+Y)^2 \bigr]\_ 2E(X^2)+2[E(X)]^2\).
+  \item the probability that \(65\%\) of \(20\) children born are girls
+    \(\_\) the probability that \(65\%\) of \(2000\) children born are
+    girls.
+  \item \(E\bigl(\sqrt{X}\bigr)\mathrel{}\_\mathrel{}\sqrt{E(X)}\).
+  \item \(E(\sin X)\mathrel{}\_\mathrel{}\sin[E(X)]\).
+  \item \(P(X+Y>4)\mathrel{}\_\mathrel{}P(X>2)P(Y>2)\).
+  \item \(E\bigl[ (X+Y)^2 \bigr]\mathrel{}\_\mathrel{}2E(X^2)+2[E(X)]^2\).
   \end{alphlist}
 \end{problem}
 \begin{solution*}
+  For part (a): The probability that a roll of \(2\) fair dice totals \(9\)
+  \(\geq\) the probability that a roll of \(2\) fair dice totals \(10\)
+  since there are \(4\) ways to achieve \(x+y=9\), for \(1\leq x,y\leq 6\),
+  (taking \(x=4,y=5\) and \(x=3,y=6\) and vice-versa) whereas only \(3\)
+  ways to achieve \(x+y=10\) (since there is only one way to have
+  \(x=5,y=5\) and \(x=4,y=6\), \(x=6,y=4\)).
+  \\\\
+  For part (b): The probability that \(65\%\) of \(20\) children born are
+  girls \(\geq\) the probability that \(65\%\) of \(2000\) children born
+  are girls by the weak law of large numbers the latter probability is
+  close to \(\frac{1}{2}\).
+  \\\\
+  For part (c): The inequality \(E\bigl(\sqrt{X}\bigr)\leq\sqrt{E(X)}\)
+  follows by Jensen's inequality; i.e.,
+  \[
+    \bigl[E\bigl(\sqrt{X}\bigr)\bigr]^2\leq E(X)
+  \]
+  since \((\blank)^2\colon\R^+\to\R^+\) is convex.
+  \\\\
+  For part (d):
+  \\\\
+  For part (e):
+  \\\\
+  For part (f):
 \end{solution*}
 
 \begin{problem}
