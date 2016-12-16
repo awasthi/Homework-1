@@ -1,0 +1,329 @@
+\subsection{Homework 2}
+\begin{problem}[Handout 2, \# 5]
+  Four men throw their watches into the sea, and the sea brings each man
+  one watch back at random. What is the probability that at least one man
+  gets his own watch back?
+\end{problem}
+\begin{solution*}
+  Suppose four men throw their watches into the sea. Place these in some
+  order and label them (from left to right) ``the \(k\)\textsup{th} man'',
+  \(k=1,\dotsc,4\). Let \(A_k\) denote the event ``the \(k\)\textsup{th}
+  man gets his own watch back.'' Then the event \(A\) that at least one man
+  gets his own watch back is the union of these events; i.e.,
+  \(A=A_1\cup A_2\cup A_3\cup A_4\). Thus, by the inclusion-exclusion
+  principle, we have
+  \begin{align*}
+    P(A)
+    &=P(A_1)+P(A_2)+P(A_3)+P(A_4)\\
+    &\phantom{{}={}}-P(A_1\cap A_2)-P(A_1\cap A_3)-P(A_1\cap A_4)\\
+    &\phantom{{}={}}-P(A_2\cap A_3)-P(A_2\cap A_4)-P(A_3\cap A_4)\\
+    &\phantom{{}={}}+P(A_1\cap A_2\cap A_3)+P(A_1\cap A_2\cap A_4)\\
+    &\phantom{{}={}}+P(A_1\cap A_3\cap A_4)+P(A_2\cap A_3\cap A_4)\\
+    &\phantom{{}={}}-P(A_1\cap A_2\cap A_3\cap A_4).
+  \end{align*}
+  Since \(P(A_k)=P(A_j)\), \(P(A_k\cap A_j)=P(A_k\cap A_l)\), etc., for
+  \(k\), \(j\), and \(l\) distinct, the equation above reduces to
+  \[
+    P(A)=4P(A_1)-6P(A_1\cap A_2)+4P(A_1\cap A_2\cap A_3)-P(A_1\cap A_2\cap
+    A_3\cap A_4);
+  \]
+  the choice of \(A_1\), \(A_1\cap A_2\), \(A_1\cap A_2\cap A_3\), etc.\@,
+  above was arbitrary.
+
+  All we need to do now is fill in the blanks. The probability that the
+  \(1\)\textsup{st} man gets back his own wallet is \(\frac{1}{4}\) since
+  only one wallet is his own out of the \(4\). Now, the probability that
+  the \(1\)\textsup{st} and the \(2\)\textsup{nd} man get their own wallet
+  back is \(\frac{1}{4}\cdot\frac{1}{3}=\frac{1}{2}\). Proceeding in this
+  fashion, we have
+  \[
+    P(A)=4\cdot\tfrac{1}{4}-6\cdot\tfrac{1}{12}+4\cdot\tfrac{1}{24}-\tfrac{1}{24}
+    =0.625.\qedhere
+  \]
+\end{solution*}
+
+\begin{problem}[Handout 2, \# 7]
+  Calculate the probability that in Bridge, the hand of at least one player
+  is void in a particular suit.
+\end{problem}
+\begin{solution*}
+  Order the players and label them ``player \(k\)'', where
+  \(k=1,\dotsc,4\). Let \(A_k\) denote the event ``player \(k\) is void in
+  a prespecified suit.'' Then the event \(A\) ``at least one player is void
+  in a prespecified suit'' is the union of these events. By the
+  inclusion-exclusion principle (and because of the symmetry of these
+  evenets) we can decompose the computation of \(P(A)\) to
+  \[
+    P(A)=4P(A_1)-6P(A_1\cap A_2)+4P(A_1\cap A_2\cap A_3)-P(A_1\cap A_2\cap
+    A_3\cap A_4).
+  \]
+
+  Let us now fill in the blanks in the equation above. The probability that
+  player \(1\) is void in a particular suit, say red clubs
+  \(\color{Red}\clubsuit\), is
+  \[
+    P(A_1)=\frac{\binom{52-13}{13}}{\binom{52}{13}}.
+  \]
+  Similarly, the probability that player \(1\) and player \(2\) is void in
+  \(\color{Red}\clubsuit\) is
+  \[
+    P(A_1)=\frac{\binom{52-13}{13}}{\binom{52}{13}}%
+    \cdot\frac{\binom{52-13-13}{13}}%
+    {\binom{52-13}{13}}%
+    =\frac{\binom{52-13-13}{13}}{\binom{52}{13}};
+  \]
+  and so on.
+
+  Thus,
+  \[
+    P(A)=4\cdot\frac{\binom{52-13}{13}}{\binom{52}{13}}
+    -6\cdot\frac{\binom{52-13-13}{13}}{\binom{52}{13}}
+    +4\cdot\frac{\binom{52-13-13-13}{13}}{\binom{52}{13}} -1\cdot0\approx
+    \num{0.051065521}.\qedhere
+  \]
+\end{solution*}
+
+\begin{problem}[Handout 2, \# 12]
+  If \(n\) balls are placed at random into \(n\) cells, find the
+  probability that exactly one cell remains empty.
+\end{problem}
+\begin{solution*}
+  There are \(n\) ways to choose a cell to be left empty. Of the remaining
+  \(n-1\) cells, one must contain \(2\) balls. That cell can be chosen in
+  \(n-1\) ways and the two balls to be placed in it can be chosen in
+  \(\binom{2}{n}\) ways. Of the remaining cells, each must contain \(1\)
+  ball and this pairing can be done in \((n-2)!\) ways. Thus, the
+  probability of the event \(A\) that exactly one cell remains empty is
+  \[
+    P(A)=\frac{n(n-1)\binom{2}{n}(n-2)!}{n^n}=\frac{\binom{2}{n}n!}{n^n}.
+    \qedhere
+  \]
+\end{solution*}
+
+\begin{problem}[Handout 2, \# 13 -- \emph{Spread of rumors}]
+  In a town of \(n+1\) inhabitants, a person tells a rumor to a second
+  person, who in turn repeats it to a third person, etc. At each step the
+  recipient of the rumor is chosen at random from the \(n\) people
+  available. Find the probability that the rumor told \(r\) times without:
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item returning to the originator,
+  \item being repeated to any person.
+  \end{enumerate}
+  Do the same problem when at each step the rumor told by one person to a
+  gathering of \(N\) randomly chosen people. (The first question is the
+  special case \(N=1\)).
+\end{problem}
+\begin{solution*}
+  For part (a): The originator can tell any one of the other \(n\)
+  inhabitants the rumor. In turn, the non-originator can tell the other
+  \(n-1\) inhabitants (not including the originator). Thus, the probability
+  of the event \(A\) that the rumor told \(r\) times does not return to the
+  originator is
+  \[
+    P(A)=\frac{n(n-1)^{r-1}}{n^r}=\left(\frac{n-1}{n}\right)^{r-1}.
+  \]
+
+  For part (b): The probability of \(B\) that the rumor told \(r\) times is
+  not repeated to any person is
+  \[
+    P(B)=\frac{n(n-1)\dotsc(n-r+1)}{n^r}=\frac{(n)_r}{n^r};
+  \]
+  the originator is allowed to tell the rumor to any of the other \(n\)
+  people while at the \(k\)\textsup{th} step, the person telling the rumor
+  is only allowed to tell the rumor to \(n-k\) people.
+  \\\\
+  Let us calculate part (a) and (b) now for a rumor told to a gathering of
+  \(N\) people.
+
+  For part (a): The originator can tell the rumor to any group of \(N\)
+  people which can be done in \(\binom{n}{N}\) ways while at the
+  \(k\)\textsup{th} step, the person can tell the rumor to any group of
+  \(N\) people not including the originator; this can be done in
+  \(\binom{n-1}{N}\) ways. Therefore, the probability of \(A_N\) that the
+  rumor does not return to the originator if it is told to a gathering of
+  \(N\) people is
+  \[
+    P(A_N)=%
+    \frac{\binom{n}{N}\binom{n-1}{N}^{r-1}}{\binom{n}{N}^r}=%
+    \left(\frac{\binom{n-1}{N}}{\binom{n}{N}}\right)^{r-1}
+  \]
+
+  For part (b): The originator can tell the rumor to any group of \(N\)
+  people; this can be done in \(\binom{n}{N}\) ways. At the
+  \(k\)\textsup{th} step, the person can tell the rumor to any group of
+  \(N\) people not including the previous \(k-1\) people; this can be done
+  in \(\binom{n-k+1}{N}\) ways. Therefore, the probability of \(B_N\) that
+  the rumor is not repeated to anybody who has already heard it is if it is
+  told to a gathering of \(N\) people is
+  \[
+    P(B_N)=\frac{\binom{n}{N}\dotsm\binom{n-r+1}{N}}{\binom{n}{N}^r}.
+  \]
+  (This equation breaks down for \(n-r+1<N\).)
+\end{solution*}
+
+\begin{problem}[Handout 2, \# 14]
+  What is the probability that
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item the birthdays of twelve people will fall in twelve different
+    calendar months (assume equal probabilities for the twelve months),
+  \item the birthdays of six people will fall in exactly two calendar
+    months?
+  \end{enumerate}
+\end{problem}
+\begin{solution*}
+  For part (a): Let \(A\) denote the event that the birthdays of twelve
+  people will fall in twelve different calendar months. There are \(12!\)
+  ways to assign a person to a calendar date without
+  duplication. Therefore,
+  \[
+    P(A)=\frac{12!}{12^{12}}= \frac{\num{479001600}}{\num{8916100448256}}
+    \approx\num{5.372321709247828e-05}
+  \]
+
+  For part (b): Let \(B\) denote the event that the birthdays of six people
+  will fall in exactly two calendar months. First, there are
+  \(\binom{12}{2}=66\) ways to choose the two calendar months on which the
+  six people's birthdays will fall. For each of the two months, we can have
+  one person having his birthday on the first and eleven on the other; two
+  persons having their birthday on the first and ten on the other; etc.\@
+  and vice-versa. Therefore,
+  \[
+    P(B)=%
+    \frac{\binom{12}{2}\cdot \binom{2}{1}%
+      \cdot\left[\binom{6}{1}+\dotsb+\binom{6}{5}\right]}%
+    {12^6}%
+    \approx \num{2.7408050411522633e-03}.\qedhere
+  \]
+\end{solution*}
+
+\begin{problem}[Handout 2, \# 15]
+  A car is parked among \(N\) cars in a row, not at either end. On his
+  return the owner finds exactly \(r\) of the \(N\) places still
+  occupied. What is the probability that both neighboring places are empty?
+\end{problem}
+\begin{solution*}
+  Let \(A\) denote the event that upon returning the car owner finds the
+  parking spots neighboring his car empty. Let us count all of the possible
+  arrangements that leave the two spots adjacent to the car owner's car
+  empty. There were originally \(N-1\) cars (excluding the car owner's car)
+  so there are \(\binom{N-1}{r-1}\) possible arrangements for the remaining
+  cars (excluding the car owner's car); i.e.,
+  \(|\Omega|=\binom{N-1}{r-1}\). Now, since we want to count those
+  arrangements that leave the two spots adjacent to the car owner's car
+  empty, two of the choices above are forced on us. Therefore, the number
+  of arrangements which leave the two spots adjacent to the car owner's car
+  empty is \(\binom{N-1-2}{r-1}\). Thus,
+  \[
+    P(A)=\frac{\binom{N-3}{r-1}}{\binom{N-1}{r-1}}.\qedhere
+  \]
+\end{solution*}
+
+\begin{problem}[Handout 2, \# 16]
+  Find the probability that in a random arrangement of \(52\) bridge card
+  no two aces are adjacent.
+\end{problem}
+\begin{solution*}
+  Let \(A\) denote the event ``there are no two aces adjacent in a random
+  arrangement of \(52\) bridge card.'' We can arrange \(52\) cards in
+  \(52!\) ways so \(|\Omega|=52!\). Now, we can arrange four aces in any of
+  \(4!\) ways and, so that we do not place any ace adjacent to one another,
+  place them in \(\binom{48+1}{4}=\binom{49}{4}\) slots in the original
+  \(52\) set of cards (including the end places). The rest of the \(48\)
+  cards can be arranged in \(48!\) ways. Thus,
+  \[
+    P(A)=\frac{\binom{49}{4}4!48!}{52!}\approx\num{0.7826244343891402}.\qedhere
+  \]
+\end{solution*}
+
+\begin{problem}[Handout 2, \# 17]
+  Suppose \(P(A)=\frac{3}{4}\), and \(P(B)=\frac{1}{3}\).
+
+  \noindent Prove that \(P(A\cap B)\geq\frac{1}{12}\). Can it be equal to
+  \(\frac{1}{12}\)?
+\end{problem}
+\begin{solution*}
+  By the inclusion-exclusion principle, we have
+  \[
+    P(A\cup B)=P(A)+P(B)-P(A\cap B)
+  \]
+  so
+  \[
+    P(A\cap B)=P(A)+P(B)-P(A\cup B).
+  \]
+  But, since \(A\cup B\subset\Omega\) and \(P(\Omega)=1\), \(P(A\cup
+  B)\leq P(\Omega)=1\) so \(-P(A\cup B)\geq -1\). Thus,
+  \begin{align*}
+    P(A\cap B)&=P(A)+P(B)-P(A\cup B)\\
+              &\geq P(A)+P(B)-1\\
+              &=\frac{3}{4}+\frac{1}{3}-1\\
+              &=\frac{9}{12}+\frac{4}{12}-\frac{12}{12}\\
+              &=\frac{1}{12}.
+  \end{align*}
+
+  Lastly, we show that \(P(A\cap B)\) can in fact be equal to
+  \(\frac{1}{12}\). Consider the interval \(\Omega\defeq [0,1]\) equipped
+  with the probability measure \(P(I)=b-a\) where \(I\) is any interval
+  with endpoints \(\{a,b\}\) contained in \(\Omega\). Set
+  \(A\defeq (0,\frac{3}{4})\) and
+  \(B\defeq (1-\frac{1}{3},1)=(\frac{2}{3},1)\). Then the intersection
+  \(A\cap B=(\frac{2}{3},\frac{3}{4})\) has probability
+  \[
+    P(A\cap B)=\frac{3}{4}-\frac{2}{3}=\frac{1}{12}.\qedhere
+  \]
+\end{solution*}
+
+\begin{problem}[Handout 2, \# 18]
+  Suppose you have infinitely many events \(A_1,A_2,\dotsc\), and each one
+  is sure to occur, i.e., \(P(A_k)=1\) for any \(i\).
+
+  \noindent Prove that \(P\bigl(\bigcap_{k=1}^n A_k\bigr)=1\).
+\end{problem}
+\begin{solution*}
+  Consider the sequence of probabilities \(\{P_n\}\) where
+  \(P_n=P\bigl(\bigcap_{i=1}^n A_i\bigr)\). Note that
+  \(\bigcap_{i=1}^n A_i\downarrow\bigcap_{i=1}^\infty A_i\). First we show,
+  by induction, that \(P_n=1\).
+
+  The case \(n=1\) is trivial. Now, assume the result holds for \(n-1\) and
+  consider \(P_n=P\bigl(\bigcap_{i=1}^n A_i\bigr)\). Writing
+  \(A'=\bigcap_{i=1}^{n-1}A_i\), we have
+  \[
+    P_n=P(A'\cap A_n).
+  \]
+  By the inclusion-exclusion principle,
+  \begin{align*}
+    P_n&=P(A')+P(A_n)-P(A'\cup A_n)\\
+       &=1+1-P(A'\cup A_n)
+         \intertext{and since \(P(A'\cup A_n)\geq P(A')=1\) by the monotonicity
+         of the probability measure, \(P(A'\cup A_n)=1\) since \(P(A'\cup
+         A_n)\leq P(\Omega)=1\), thus}
+       &=1+1-1\\
+       &=1.
+  \end{align*}
+  It follows that \(\{P_n\}\) is the constant sequence \(\{1\}\) therefore,
+  its limit is \(1\).
+\end{solution*}
+
+\begin{problem}[Handout 2, \# 19]
+  There are \(n\) blue, \(n\) green, \(n\) red, and \(n\) white balls in an
+  urn. Four balls are drawn from the urn with replacement. Find the
+  probability that there are balls of at least three different colors among
+  the four drawn.
+\end{problem}
+\begin{solution*}
+  Let \(A\) denote the event ``there are balls of at least three different
+  colors among the four drawn.'' There are \(4^4\) ways to draw four balls;
+  therefore, \(|\Omega|=4^4\). There are \(4!\) wasy to draw a ball of each
+  color and \(4\cdot 3\binom{4}{2} 2!\) ways to draw four balls missing
+  exactly one color (pic a color to be missed; pick a color to be drawn
+  twice; pick two draws for that color to be drawn on; and rearrange the
+  other two colors into the other two draws). Thus,
+  \[
+    P(A)=\frac{4!+4\cdot 3\binom{4}{2}2!}{4^4}\approx\num{0.65625}.\qedhere
+  \]
+\end{solution*}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA519-HW-ALL"
+%%% End:

@@ -1,0 +1,205 @@
+\begin{problem}
+  For \(n=2\) find Green's function for the quadrant
+  \(U\defeq\{\,x_1,x_2>0\,\}\) by repeated reflection.
+\end{problem}
+\begin{solution}
+  Taking the hit, set \(x'\defeq(x_1,-x_2)\), \(x''\defeq(-x_1,x_2)\),
+  \(x'''\defeq(-x_1,-x_2)\), and define
+  \begin{equation}
+    \label{eq:6:corrector}
+    \varphi^x(y)\defeq\Phi(y-x')+\Phi(y-x'')-\Phi(y-x''').
+  \end{equation}
+
+  We claim that \(\varphi^x\), as defined above, solves
+  \[
+    \left\{
+      \begin{aligned}
+        \Delta\varphi^x&=0&&\text{in \(U\),}\\
+        \varphi^x(y)&=\Phi(y-x)&&\text{on \(\partial U\).}
+      \end{aligned}
+    \right.
+  \]
+
+  It is clear that \(\Delta\varphi^x=0\) since it is built up from the
+  fundamental solutions on \(\bbR^n\) (this follows from the linearity of
+  the Laplace operator). To see that \(\varphi^x(y)=\Phi(x-y)\) on
+  \(\partial U\), we do a case by case analysis.
+
+  Note that on \(\{\,x_1=0\,\}\subset\partial U\), we have
+  \begin{align*}
+    \varphi^x(y_1,0)
+    &=\Phi(-x_1,y_2+x_2)+\Phi(-x_1,y_2-x_2)-\Phi(x_1,y_2+x_2),\\
+    \intertext{where, since the fundamental solution is radial, we have
+    \(\Phi(-x_1,y_2+x_2)=\Phi(x_1,y_2+x_2)\), and hence the above equals}
+    &=\Phi(-x_1,y_2-x_2)\\
+    &=\Phi(y-x)
+  \end{align*}
+  and on \(\{\,x_2=0\,\}\subset\partial U\), we have
+  \begin{align*}
+    \varphi^x(0,y_2)
+    &=\Phi(y_1-x_1,x_2)+\Phi(y_1+x_1,-x_2)-\Phi(y_1+x_1,x_2)\\
+    \intertext{where, again because \(\Phi\) is radial,
+    \(\Phi(y_1+x_1,-x_2)=\Phi(y_1+x_1,x_2)\), thus the above equals}
+    &=\Phi(y_1-x_1,x_2)\\
+    &=\Phi(y-x).
+  \end{align*}
+  Thus, \(\phi^x(y)=\Phi(y-x)\) on \(\partial U\).
+
+  Therefore, Green's function on \(U\) is
+  \[
+    G(x,y)
+    =\Phi(y-x)-\varphi^x(y)%
+    =\Phi(y-x)-\Phi(y-x')-\Phi(y-x'')+\Phi(y-x''').%
+    \qedhere
+  \]
+\end{solution}
+\newpage
+
+\begin{problem}
+  (Precise form of Harnack's inequality) Use Poisson's formula for the ball
+  to prove
+  \[
+    \frac{r^{n-2}(r-|x|)}{(r+|x|)^{n-1}}u(0)%
+    \leq u(x)%
+    \leq \frac{r^{n-2}(r+|x|)}{(r-|x|)^{n-1}}u(0)
+  \]
+  whenever \(u\) is positive and harmonic in
+  \(B(0,r)=\{\,x\in\bbR^n:|x|<r\,\}\).
+\end{problem}
+\begin{solution}
+  Recall Poisson's formula for the ball
+  \begin{equation}
+    \label{eq:6:poissons-formula}
+    u(x)=\frac{r^2-|x|^2}{n\alpha_nr}
+    \int_{\partial B(0,r)}\frac{g(y)}{|x-y|^n}\diff S(y),
+  \end{equation}
+  where \(x\in B(0,r)\) and \(u\) solves the boundary-value problem
+  \[
+    \left\{
+      \begin{aligned}
+        \Delta u&=0&&\text{in \(B(0,r)\),}\\
+        u&=g&&\text{on \(\partial B(0,r)\).}
+      \end{aligned}
+    \right.
+  \]
+
+  For fixed \(x\in B(0,r)\), write
+  \[
+    u(x)=r^{n-2}(r+|x|)(r-|x|)%
+    \left[%
+      \frac{1}{n\alpha_n r^{n-1}} \int_{\partial%
+        B(0,r)}\frac{g(y)}{|x-y|^n}\diff S(y)%
+    \right]%
+    .
+  \]
+  Now, since \(r+|x|\geq |x-y|\geq r-|x|\) for all \(y\in\partial B(0,r)\),
+  we have
+  \begin{equation}
+    \label{eq:6:desired-inequality}
+    \frac{r^{n-2}(r-|x|)}{(r+|x|)^{n-1}}\dashint_{\partial
+      B(0,r)}g(y)\diff S(y)\leq u(x)
+    \leq\frac{r^{n-2}(r+|x|)}{(r-|x|)^{n-1}}\dashint_{\partial
+      B(0,r)}g(y)\diff S(y).
+  \end{equation}
+
+  Since \(u=g\) on the boundary \(\partial B(0,r)\), by applying the
+  mean-value property on \eqref{eq:6:desired-inequality} we have
+  \[
+    \frac{r^{n-2}(r-|x|)}{(r+|x|)^{n-1}}u(0)\leq
+    u(x)\leq
+    \frac{r^{n-2}(r+|x|)}{(r-|x|)^{n-1}}u(0),
+  \]
+  as desired.
+\end{solution}
+\newpage
+
+\begin{problem}
+  Let \(P_k(x)\) and \(P_m(x)\) be homogeneous harmonic polynomials in
+  \(\bbR^n\) of degrees \(k\) and \(m\) respectively; i.e.,
+  \[
+    \left\{%
+      \begin{aligned}
+        P_k(\lambda x)&=\lambda^k P_k(x),&P_m(\lambda x)&=\lambda^m P_m(x)
+        &&\text{for every \(x\in\bbR^n\), \(\lambda>0\),}\\
+        \Delta P_k&=0,&\Delta P_m&=0&&\text{in \(\bbR^n\).}
+      \end{aligned}
+    \right.
+  \]
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item Show that
+    \[
+      \left\{%
+        \begin{aligned}
+          \frac{\partial P_k}{\partial \nu}&=kP_k(x),& \frac{\partial
+            P_m}{\partial\nu}&=mP_m(x)&&\text{on \(\partial B(0,1)\),}
+        \end{aligned}
+      \right.
+    \]
+    where \(B(0,1)=\{\,x\in\bbR^n:|x|<1\,\}\) and \(\nu\) is the outward
+    normal
+    on \(\partial B(0,1)\).
+  \item Use (a) and Green's formula to prove that
+    \[
+      \int_{\partial B(0,1)}P_k(x)P_m(x)\diff\sigma=0,\qquad\text{if
+        \(k\neq m\).}
+    \]
+  \end{enumerate}
+\end{problem}
+\begin{solution}
+  For part (a), let
+  \[
+    P_k(x)=\sum_{|\alpha|=k}a_\alpha x^\alpha.
+  \]
+  Then, since \(\nu=(x_1,\dotsc,x_n)\), the derivative along \(\nu\) is
+  given by
+  \begin{align*}
+    \frac{\partial P_k(x)}{\partial\nu}
+    &=\sum_{i=1}^n (P_k)_{x_i}x_i\\
+    &=\sum_{i=1}^n\left(\sum\nolimits_{|\alpha|=k}a_\alpha
+      x^\alpha\right)_{x_i}x_i\\
+    &=\sum_{i=1}^n\left(\sum\nolimits_{j=1}^ma_\alpha
+      x_1^{\alpha_1^j}\dotsm x^{\alpha_i^j}\dotsm
+      x^{\alpha_n^j}\right)_{x_i}x_i
+      \intertext{where \(\sum_{i=1}^n\alpha_i^j=k\) and \(1\leq j\leq
+      \binom{n+k-1}{n}\eqdef m\) (by the stars and bars theorem)}
+    &=\sum_{i=1}^n\sum_{j=1}^m
+      \left(
+      \alpha_i^j
+      a_\alpha
+      x_1^{\alpha_1^j}\dotsm x^{\alpha_i^j-1}\dotsm
+      x^{\alpha_n^j}\right)x_i\\
+    &=\sum_{i=1}^n\sum_{j=1}^m
+      \alpha_i^j
+      a_\alpha
+      x_1^{\alpha_1^j}\dotsm x^{\alpha_i^j}\dotsm
+      x^{\alpha_n^j}\\
+    &=\sum_{i=1}^n\sum_{j=1}^m
+      \alpha_i^j a_\alpha x^\alpha
+      \intertext{switching the order of summation, we have}
+    &=\sum_{j=1}^m\sum_{i=1}^n
+      \alpha_i^j
+      a_\alpha x^\alpha\\
+    &=\sum_{j=1}^m ka_\alpha x^\alpha\\
+    &=k\sum_{j=1}^m a_\alpha x^\alpha\\
+    &=kP_k(x).
+  \end{align*}
+  This argument, of course, applies to every \(k\in\bbN\).
+
+  For part (b), by Green's theorem, we have
+  \begin{align*}
+    \int_{B(0,r)}P_k(x)\Delta P_m(x)-(\Delta P_k(x))P_m(x)\diff x
+    &=\int_{\partial B(0,r)}P_k(x)\tfrac{\partial}{\partial\nu}P_m(x)-\tfrac{\partial}{\partial\nu}
+      P_k(x)P_m(x)\diff S(x)\\
+    &=\int_{\partial B(0,r)}(m-k) P_k(x)P_m(x)\diff S(x),
+  \end{align*}
+  where the left-hand side is equal to zero since both \(\Delta P_k\) and
+  \(\Delta P_m\) are zero. Since \(m\neq k\), it must be the case that
+  \[
+    \int_{\partial B(0,r)}P_k(x)P_m(x)\diff S(x)=0.
+  \]
+\end{solution}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA523-HW-Current"
+%%% End:

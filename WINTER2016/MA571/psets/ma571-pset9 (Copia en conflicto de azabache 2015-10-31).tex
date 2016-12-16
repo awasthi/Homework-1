@@ -1,0 +1,120 @@
+\begin{problem}[Munkres \S46, Ex.\,6]
+Show that the compact-open topology, $\mathcal{C}(X,Y)$ is
+Hausdorff if $Y$ is Hausdorff, and regular if $Y$ is
+regular. [\emph{Hint:} If $\overline U\subset V$, then
+$\overline{S(C,U)}\subset S(C,V)$.]
+\end{problem}
+\begin{proof}
+Suppose that $Y$ is regular. We shall proceed by the
+hint and Lemma 31.1(b). Consider the subbasis element
+$S(C,U)$. Since $Y$ is regular, there exists a neighborhood
+$V\supset U$ such that $V\supset\overline{U}$. Let
+$f\in\overline{S(C,U)}$. Then, we claim that $f\in S(C,V)$. For
+suppose not, then there exists an element $x_0\in C$ such that
+$f(x_0)\notin V$. Then, since $\overline{U}\subset V$, by
+hypothesis, $f(x_0)\notin\overline{U}$. Consider the subbasic
+neighborhood $S\left(\left\{x_0\right\},Y-\overline{U}\right)$ of
+$f$. Then, $S\left(\left\{x_0\right\},Y-\overline{U}\right)\cap
+S(C,U)$ is nonempty. Let $g$ be in the aforementioned
+intersection. Then $g(x_0)\in g(C)\subset U$, but $g(x_0)\in
+Y-\overline{U}$. This is a contradiction. It follows by Lemma
+31.1(b) that $\mathcal{C}(X,Y)$ is regular.
+\end{proof}
+\newpage
+\begin{problem}[Munkres \S46, Ex.\,9(a,b,c)]
+Here is a (unexpected) application of Theorem 46.11 to quotient
+maps. (Compare Exercise 11 of \S29.)
+\begin{theorem*}
+If $p\colon A\to B$ is a quotient map and $X$ is locally compact
+Hausdorff, then $(\id_X,p)\colon X\times A\to X\times B$ is a
+quotient map.
+\begin{proof}
+\renewcommand\qedsymbol{\null}
+\begin{enumerate}[label=(\alph*)]
+\item Let $Y$ be the quotient space induced by $(\id_X,p)$; let
+  $q\colon X\times A\to Y$ be the quotient map. Show there is a
+  bijective continuous map $f\colon Y\to X\times B$ such that
+  $f\circ q=(\id_X,p)$.
+\item Let $g=f^{-1}$. Let $G\colon B\to\mathcal{C}(X,Y)$ and
+  $Q\colon A\to\mathcal{C}(X,Y)$ be the maps induced by $g$ and
+  $q$, respectively. Show that $Q=G\circ p$.
+\item Show that $Q$ is continuous; conclude that $G$ is
+  continuous, so that $g$ is continuous.
+\end{enumerate}
+\end{proof}
+\end{theorem*}
+\end{problem}
+\begin{proof}[Actual proof]
+(a) First, let us note that $Y$ has the same underlying set as
+the Cartesian product $X\times B$ with the topology induced by
+the map $(\id_X,p)$. Moreover, the quotient map $q$ is (as a map
+between sets) equivalent to $(\id_X,p)$. Thus, the natural
+bijective map to consider between $Y$ and $X\times B$ is the
+identity map $f=\id_{X\times B}=(\id_X,\id_B)$. It is clear that
+$f$ is bijective. To see that $f$ is continuous we note that
+since the composition
+\[
+(f\circ q)(x,a)
+=(\id_X,\id_B)\circ(\id_X,p)(x,a)
+=(\id_X(a),\id_B(p(a)))
+=(x,p(a))
+=(\id_X,p)(x,a)
+\]
+and the map $(\id_X,p)$ is continuous by Theorem 18.4, it
+follows by Theorem Q.2 that $f$ is continuous.
+\\\\
+(b) Recall, from the definition given on Munkres \S46, p.\,287,
+that the induced map $G$ (respectively $Q$) are defined by the
+equation $(G(b))(x)=(x,b)$ (respectively
+$(Q(a))(x)=(x,p(a))$). Then we have that the composition
+\[
+(G\circ p)(a)=G(p(a))=(G(p(a)))(x)=(x,p(a))=(Q(a))(x)=Q(a)
+\]
+as desired.
+\\\\
+(c) By Theorem 46.11, since $q$ is continuous with respect to the
+quotient topology on $Y$, it follows that the induced map $Q$ is
+continuous. Additionally, since $Q$ is equal to the composition
+$G\circ p$ by part (b) so by Theorem Q.2 $G$ is continuous. Since
+$X$ is locally compact Hausdorff, it follows by Theorem 46.11
+that the map $g$ is continuous.
+\end{proof}
+\newpage
+\begin{problem}[Munkres \S51, Ex.\,1]
+Show that if $h,h'\colon X\to Y$ are homotopic and $k,k'\colon
+Y\to Z$ are homotopic, then $k\circ h$ and $k'\circ h'$ are
+homotopic.
+\end{problem}
+\begin{proof}
+\end{proof}
+\newpage
+\begin{problem}[Munkres \S51, Ex.\,2]
+Given spaces $X$ and $Y$, let $[X,Y]$ denote the homotopy classes
+of maps of $X$ into $Y$
+\begin{enumerate}[label=(\alph*)]
+\item Let $I=[0,1]$. Show that for any $X$, the set $[X,I]$ has a
+  single element.
+\item Show that if $Y$ is path connected, the set $[I,Y]$ has a
+  single element.
+\end{enumerate}
+\end{problem}
+\begin{proof}
+\end{proof}
+\newpage
+\begin{problem}[Munkres \S51, Ex.\,3(a,b,c,)]
+A space $X$ is said to be \emph{contractible} if the identity map
+$\id_X\colon X\to X$ is nullhomotopic.
+\begin{enumerate}[label=(\alph*)]
+\item Show that $I$ and $\RR$ are contractible.
+\item Show that a contractible space is path connected.
+\item Show that if $Y$ is contractible, then for any $X$, the set
+  $[X,Y]$ has a single element.
+\end{enumerate}
+\end{problem}
+\begin{proof}
+\end{proof}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA571-HW-Current"
+%%% End:

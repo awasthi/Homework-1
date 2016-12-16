@@ -1,0 +1,77 @@
+\subsection{Homework 9}
+\begin{problem}
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item Show that for \(n=3\) the general solution to the wave equation
+    \(u_{tt}-\Lap u=0\) with spherical symmetry about the origin has the
+    form
+    \[
+      u=\tfrac{1}{r}F(r+t)+\tfrac{1}{r}G(r-t),\quad r=|x|,
+    \]
+    with suitable \(F\) and \(G\).
+  \item Show that the solution with initial data of the form
+    \[
+      u(r,0)=0,\quad u_t(r,0)=h(r)
+    \]
+    (\(h\) is an even function of \(r\)) is given by
+    \[
+      u=\frac{1}{2r}\int_{r-t}^{r+t} \rho h(\rho)\diff \rho.
+    \]
+  \end{enumerate}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+  Show that the solution \(w(x_1,t)\) of the initial-value problem for the
+  \emph{Klein--Gordon equation}
+  \begin{equation}
+    \label{eq:9:klein-gordon-eq}
+    \left\{
+      \begin{aligned}
+        w_{tt}&=w_{x_1x_1}-\lambda^2w,\\
+        w(x_1,0)&=0,&w_t(x_1,0)&=h(x_1)
+      \end{aligned}
+    \right.
+  \end{equation}
+  is given by
+  \[
+    w(x_1,t)=\frac{1}{2}\int_{x_1-t}^{x_1+t}J_0(\lambda s) h(y_1)\diff y_1.
+  \]
+  Here \(s^2=t^2-(x_1-y_1)^2\), while \(J_0\) denotes the Bessel function
+  defined by
+  \[
+    J_0(z)\defeq \frac{2}{\pi}\int_0^{pi/2}\cos(z\sin\theta)\diff\theta.
+  \]
+
+  \noindent\emph{Hint:} Descend to \eqref{eq:9:klein-gordon-eq} from the
+  two-dimensional wave equation satisfied by
+  \[
+    u(x_1,x_2,t)=\cos(\lambda x_2)w(x_1,t).
+  \]
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+  Let \(u\) solve
+  \[
+    \left\{
+      \begin{aligned}
+        u_{tt}-\Lap u&=0&&&&\text{in \(\R^3\times(0,\infty)\),}\\
+        u&=g,&u_t&=h&&\text{on \(\R^3\times\{\,t=0\,\}\)}
+      \end{aligned}
+    \right.
+  \]
+  where \(g\) and \(h\) are smooth and have compact support. Show there
+  exists a constant \(C\) such that
+  \[
+    |u(x,t)|\leq \frac{C}{t}\qquad \text{for every \(x\in\R^3\), \(t>0\).}
+  \]
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA523-HW-ALL"
+%%% End:

@@ -1,0 +1,236 @@
+\begin{problem}
+  Verify assertion (36) in [E, \S 3.2.3], that when \(\Gamma\) is not flat
+  near \(x^0\) the noncharacteristic condition is
+  \[
+    D_pF(p^0,z^0,x^0)\cdot \nu(x^0)\neq 0.
+  \]
+  (Here \(\nu(x^0)\) denotes the normal to the hypersurface \(\Gamma\) at
+  \(x^0\)).
+\end{problem}
+\begin{solution}
+  First, note that the condition
+  \begin{equation}
+    \label{eq:2-1}
+    D_pF(p^0,z^0,x^0)\cdot \nu(x^0)\neq 0
+  \end{equation}
+  reduces to the standard noncharacteristic boundary condition if
+  \(\Gamma\) is flat near \(x^0\) because in such case we have
+  \(\nu(x^0)=(0,\dotsc,0,1)\) so
+  \begin{align*}
+    0&\neq D_pF(p^0,z^0,x^0)\cdot (0,\dotsc,0,1)\\
+     &=F_{p_n}(p^0,z^0,x^0).
+  \end{align*}
+
+  We shall verify the noncharacteristic condition \eqref{eq:2-1} by first
+  flattening the boundary near \(x^0\) and then applying the
+  noncharacteristic boundary conditions to the flattened region. Assuming
+  some degree of regularity near \(x^0\), e.g., that the boundary of \(U\)
+  be smooth, we may express \(\Gamma\) near \(x^0\) as the graph of a
+  smooth function \(f\colon\bfR^{n-1}\to\bfR\), i.e.,
+  \(x=(x_1,\dotsc,x_{n-1},f(x_1,\dotsc,x_{n-1}))\) on \(\Gamma\) and
+  \(x_n\geq f(y)\) after reorienting the coordinate axes. Then we flatten
+  out \(\Gamma\) via the map \(\Phi(x)\colon\bfR^n\to\bfR^n\) given by
+  \[
+    \left\{
+      \begin{aligned}
+        y_1&=x_1=\Phi^1(x),\\
+        &\vdotswithin{=}\\
+        y_{n-1}&=x_{n-1}=\Phi^{n-1}(x),\\
+        y_n&=x_n-f(x_1,\dotsc,x_{n-1})=\Phi^n(x)
+      \end{aligned}
+    \right.
+  \]
+  and write \(y=\Phi(x)\). Let \(\Psi=\Phi^{-1}\) and rewrite our PDE \(F\)
+  in terms of \(y\) as follows,
+  \begin{equation}
+    \label{eq:2-2}
+    0=F\bigl(Du(\Psi(y)),u(\Psi(y)),\Psi(y)\bigr).
+  \end{equation}
+  Since \(\Delta=\Phi(\Gamma)\) is flat near
+  \(y^0=\Phi(x^0)=(y_1^0,\dotsc,y_{n-1}^0,0)\), we may apply the standard
+  noncharacteristic condition on \eqref{eq:2-2} and get
+  \[
+    0\neq F_{u_{y_n}}\bigl(Du(\Psi(y^0)),u(\Psi(y^0)),\Psi(y^0)\bigr).
+  \]
+  Before we move on to finding an expression for this derivative, let us
+  consider the gradient \(Du(\Psi(y))\). By the chain rule, we have
+  \begin{align*}
+    u_{y_i}(\Psi(y))
+    &=\sum_{j=1}^n u_{x_j}(\Psi(y))\frac{\partial x_j}{\partial y_i}\\
+    &=u_{x_i}(\Psi(y))+u_{x_n}(\Psi(y))f_{y_i}(y_1,\dotsc,y_{n-1}),\\
+    u_{y_n}(\Psi(y))
+    &=\sum_{j=1}^n u_{x_j}(\Psi(y))\frac{\partial x_j}{\partial y_n}\\
+    &=u_{x_n}(\Psi(y)),
+  \end{align*}
+  Then, substituting \(u_{y_n}\) for \(u_{x_n}\), we have
+  \[
+    u_{y_i}(\Psi(y))=u_{x_i}(\Psi(y))+u_{y_n}(\Psi(y))f_{y_i}(y_1,\dotsc,y_{n-1}),\\
+  \]
+  Now, by the chain rule on \eqref{eq:2-2}, we have
+  \begin{align*}
+    0&\neq F_{u_{y_n}}\bigl(Du(\Psi(y^0)),u(\Psi(y^0)),\Psi(y^0)\bigr)\\
+     &=F_{u_{y_n}}
+       \bigl(
+       u_{x_1}+u_{y_n}f_{y_1},\dotsc,
+       u_{x_{n-1}}+u_{y_n}f_{y_{n-1}},u_{y_n},z^0,x^0
+       \bigr)\\
+     &=F_{u_{x_1}}f_{y_1}+\dotsb+F_{u_{x_{n-1}}}f_{y_{n-1}}+F_{u_{x_n}}\\
+     &=D_pF(p^0,z^0,x^0)\cdot(Df(x^0),1)\\
+     &=D_pF(p^0,z^0,x^0)\cdot\nu(x^0),
+  \end{align*}
+  as we set out to show.
+\end{solution}
+\newpage
+
+\begin{problem}
+  Show that the solution of the quasilinear PDE
+  \[
+    u_t+a(u)u_x=0
+  \]
+  with initial conditions \(u(x,0)=g(x)\) is given implicitly by
+  \[
+    u=g(x-a(u)t).
+  \]
+  Show that the solution develops a shock (becomes singular) for some
+  \(t>0\), unless \(a(g(x))\) is a nondecreasing function of
+  \(x\).
+\end{problem}
+\begin{solution}
+  The characteristic ODEs of this PDE are
+  \begin{equation}
+    \label{eq:2-3}
+    \dot t=1,\qquad \dot x=a(z),\qquad \dot z=0.
+  \end{equation}
+  with initial conditions \(t_0=0\), \(x_0=x(0)\) and \(z(x_0,0)=g(x_0)\)
+  with \((x_0,0)\in\bfR\times(0,\infty)\). Hence, we have
+  \[
+    t(s)=s,\qquad x(s)=a(g(x_0))s+x_0,\qquad z(s)=g(x_0).
+  \]
+  Thus, solving for \(x_0\) and \(s\) in terms of \(t\), \(x\) and \(z\),
+  we have
+  \begin{align*}
+    x&=a(g(x_0))s+x_0\\
+     &=a(z)t+x_0,
+    \shortintertext{so, moving \(x_0\) to the left-hand side}
+    x_0
+     &=x-a(z)t
+       \shortintertext{hence,}
+       z&=g(x-a(z)t),
+          \shortintertext{i.e.,}
+          u&=g(x-a(u)t),
+  \end{align*}
+  as desired.
+
+  For the latter half of the problem, write
+  \[
+    u\bigl(x+a(g(x))t,t\bigr)=g(x).
+  \]
+  Suppose that \(a(g(x))\) is not a nondecreasing function of \(x\). Then,
+  there exists \(0<x_1<x_2\) such that \(a(g(x_1))>a(g(x_2))\). Define
+  \begin{equation}
+    \label{eq:2-4}
+    y=-\frac{x_1-x_2}{a(g(x_1))-a(g(x_2))}>0.
+  \end{equation}
+  Then, we have
+  \[
+    t_0=x_1+a(g(x_1))y=x_2+a(g(x_2))y.
+  \]
+  Thus,
+  \begin{align*}
+    u(x,t_0)&=g(x_1)\\
+            &=u\bigl(x_1+a(g(x_1))t_0,t_0\bigr)\\
+            &=g(x_2)\\
+            &=u\bigl(x_2+a(g(x_2))t_0,t_0\bigr).
+  \end{align*}
+  However, \(g(x_1)\neq g(x_2)\) since \(a(g(x_1))>a(g(x_2))\).
+\end{solution}
+\newpage
+
+\begin{problem}
+  Show that the function \(u(x,t)\) defined for \(t\geq 0\) by
+  \[
+    u(x,t)=
+    \begin{cases}
+      \displaystyle-\frac{2}{3}\Bigl(t+\sqrt{3x+t^2}\Bigr)
+      &\text{for \(4x+t^2>0\)}\\
+      0
+      &\text{for \(4x+t^2<0\)}
+    \end{cases}
+  \]
+  is an (unbounded) entropy solution of the conservation law
+  \(u_t+(u^2/2)_x=0\) (\emph{inviscid Burgers' equation}).
+\end{problem}
+\begin{solution}
+  The shock occurs along the curve \(C\) given by \(s(t)=-t^2/4\). First,
+  we verify that the equation given by \(u\) above is in fact a solution to
+  the inviscid Burgers' equation to the right and to the left of \(C\): to
+  the left of \(C\), \(4x+t^2<0\), the equation is trivially satisfied
+  whereas to the right, \(4x+t^2>0\), we have,
+  \[
+    -\frac{2}{3}\left(1+\frac{t}{\sqrt{3x+t^2}}\right)
+    +\frac{2}{9}\left(3+\frac{3t}{\sqrt{3x+t^2}}\right)
+    =0.
+  \]
+  So \(u\) is indeed a solution to the inviscid Burgers' equation.
+
+  Now we examine the behavior of \(u\) along the curve \(C\). First, we
+  have
+  \begin{align*}
+    \sigma&=\dot s(t),
+    &\llbracket u\rrbracket
+    &=u_\ell-u_r,
+    &\llbracket F\rrbracket
+    &=F(u_\ell)-F(u_r)\\
+          &=-\frac{t}{2}
+    &&=0+\frac{2}{3}\left(t+\sqrt{-\tfrac{3}{4}t^2+t^2}\right)
+    &&=0-\frac{\llbracket u_r\rrbracket^2}{2}\\
+          &&
+    &=0+\frac{2}{3}\left(\frac{3}{2}t\right)
+    &&=0-\frac{t^2}{2}
+    \\
+          &&&=t&&=-\frac{t^2}{2}.
+  \end{align*}
+  Thus,
+  \[
+    \llbracket
+    F\rrbracket=-\frac{t^2}{2}=\left(-\frac{t}{2}\right)t=\sigma\llbracket
+    u\rrbracket
+  \]
+  so the PDE satisfies the Rankine--Hugoniot condition and hence, is an
+  integral solution.
+
+  Lastly, we verify that \(u\) satisfies the entropy condition, i.e., the
+  one-sided jump estimate, Eq.\@ (36) from [E, \S 3.4.3]. We break this
+  test into two cases, (a) \(u\) is to the left of \(C\) and (b) \(u\) is
+  to the right of \(C\).
+
+  First we deal with case (b). When \(x>-t^2/4\), \(t>0\), \(z>0\), using
+  linear interpolation, we have
+  \begin{align*}
+    u(x+z,t)-u(x,t)
+    &\leq\sup_{x>-t^2/4}\bigl\{u_x(x,t)\bigr\}(x+z-x)\\
+    &=\sup_{x>-t^2/4}\left\{\frac{1}{\sqrt{3x+t^2}}\right\}z
+    \intertext{and since the function \(u_x\) is decreasing on
+    \(x>-t^2/4\), it achieves its maximum as \(x-\to -t^2/4\)}
+    &=\frac{1}{\sqrt{-(3/4)t^2+t^2}}z\\
+    &=\frac{2}{t}z
+  \end{align*}
+  for all \(t>0\), \(z>0\). Thus, \(u\) satisfies the entropy condition on
+  \(x>-t^2/4\).
+
+  For case (a), we have run into the problem of the characteristic curve of
+  \(u(x,t)\) crossing the curve \(C\) for sufficiently large values of
+  \(t\). But in that case, we are in the region \(x>-t^2/4\) and the
+  argument in provided for case (b), shows that \(u\) satisfies the entropy
+  condition. On the other hand, assuming \(t\) is less than some threshold
+  \(t'(x)\) we stay in the region \(x<-t^2/4\) and the entropy condition
+  \[
+    u(x+z,t)-u(x,t)=u(x+z,t)\leq 0
+  \]
+  is satisfied.
+\end{solution}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA523-Current-HW"
+%%% End:

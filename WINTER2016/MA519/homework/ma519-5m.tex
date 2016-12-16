@@ -1,0 +1,218 @@
+\begin{problem}[Handout 7, \# 6(d, f)]
+  Find the variance of the following random variables
+  \begin{itemize}[noitemsep]
+  \item[(d)] \(X=\#\) of tosses of a fair coin necessary to obtain a head
+    for the first time.
+  \item[(f)] \(X=\#\) matches observed in random sitting of \(4\) husbands
+    and their wives in opposite sides of a linear table.
+
+    This is an example of the \emph{matching problem.}
+  \end{itemize}
+\end{problem}
+\begin{solution}
+
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 7, \# 8]
+  \emph{(Nonexistence of variance).}
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item Show that for a suitable positive constant \(c\), the function
+    \(p(x)=c/x^3\), \(x=1,\dots\), is a valid probability mass function
+    (PMF).
+  \item Show that in this case, the expectation of the underlying random
+    variable exists, but the variance does not!
+  \end{enumerate}
+
+\end{problem}
+\begin{solution}
+
+First, note that $p(x)$ given above satisfies the requirements to be a probability mass function. First, set $1/c = \sum\limits_{x=1}^\infty 1/x^3$, and note that indeed $c$ is well defined (because the relevant series converges, by the so-called p-test.)
+
+Next, note that this means that $1= \sum\limits_{x=1}^\infty c/x^3 = \sum\limits p(x)$, by definition. Moreover, because $p(x) = c/x^3 > 0$ for all $x$ in our domain, this means that $p(x) \in [0,1]$. That is, $p$ is a valid probability mass function.
+
+Set $X$ equal to the random variable described by $p$. Next, note that
+
+\begin{align*}
+E(X) &= \sum\limits_{n=1}^\infty n \frac{c}{n^3}\\
+&= \sum\limits_{n=1}^\infty \frac{c}{n^2}\\
+\end{align*}
+
+which converges (and thus exists), again by the p-test.
+
+However,
+
+\begin{align*}
+E(X^2) &= \sum\limits_{n=1}^\infty n^2 \frac{c}{n^3}\\
+&= \sum\limits_{n=1}^\infty \frac{c}{n}\\
+\end{align*}
+
+which does not converge, again by the p-test. That is, the variance $E(X^2)-E(X)^2$ does not exist.
+
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 7, \# 9]
+  In a box, there are \(2\) black and \(4\) white balls. These are drawn
+  out one by one at random (without replacement).
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item Let \(X\) be the draw at which the first black ball comes out. Find
+    the mean the variance of \(X\).
+  \item Let \(X\) be the draw at which the second black ball comes
+    out. Find the mean (meman? what the fuck) the variance of \(X\).
+  \end{enumerate}
+\end{problem}
+\begin{solution}
+
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 7, \# 10]
+  Suppose \(X\) has a \emph{discrete uniform distribution} on the set
+  \(\{1,\dotsc,N\}\).
+
+  Find formulas for the mean and the variance of \(X\).
+\end{problem}
+\begin{solution}
+
+First, we find the mean: 
+\begin{align*}
+E(X) &= \sum\limits_{n=1}^N n \frac{1}{N}\\
+&= \frac{1}{N} \frac{N(N+1)}{2}\\
+&=\frac{(N+1)}{2}
+\end{align*}
+
+Next, we find the variance:
+\begin{align*}
+E(X^2) - E(X)^2 &= \sum\limits_{n=1}^N n^2 \frac{1}{N} - \left(\frac{(N+1)}{2}\right)^2\\
+&=  \frac{\pi^2}{6N} - \left(\frac{(N+1)}{2}\right)^2\\
+\end{align*}
+
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 7, \# 11]
+  \emph{(Be Original).} Give an example of a random variable with mean
+  \(1\) and variance \(100\).
+\end{problem}
+\begin{solution}
+Let $X$ be the random variable whose PMF is given by
+\begin{align*}
+p(X = -10-1) &= 0.5\\
+p(X = 10-1) &= 0.5\\
+p(X \neq \pm \sqrt{10}-1) &= 0\\
+\end{align*}
+
+(Note that those expressions are very easy to simplify (-10-1 =-11, 10-1=9), but leaving them in that form makes the arithmetic more obvious.)
+
+Then we see that the mean of $X$ is given by
+
+\begin{align*}
+E(X) &= 0.5 (-10-1 +10-1)\\
+&= 1
+\end{align*}
+
+and the variance of $X$ is given by
+
+\begin{align*}
+E((X-E(X))^2) &= E((X-1)^2) \\
+&= 0.5 (10^2 + (-10)^2) \\
+&= 0.5 (10^2 + (-10)^2) \\
+&= 100
+\end{align*}
+
+so that $X$ is such a random variable as described in the problem.
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 7, \# 13]
+  \emph{(Be Original).} Suppose a random variable \(X\) has the property
+  that its second and fourth moment are both \(1\).
+
+  What can you say about the nature of \(X\)?
+\end{problem}
+\begin{solution}
+
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 7, \# 14]
+  \emph{(Be Original).} One of the following inequalities is true in
+  general for all nonnegative random variables. Identify which one!
+  \begin{align*}
+    E(X)E(X^4)&\geq E(X^2)E(X^3);\\
+    E(X)E(X^4)&\leq E(X^2)E(X^2).
+  \end{align*}
+\end{problem}
+\begin{solution}
+
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 7, \# 15]
+  Suppose \(X\) is the number of heads obtained in \(4\) tosses of a fair
+  coin.
+
+  Find the expected value of the weird function
+  \[
+    \log\bigl( 2+\sin(\tfrac{\pi}{4}X) \bigr).
+  \]
+\end{problem}
+\begin{solution}
+
+First, note that
+
+\begin{align*}
+p(X=0) &= \frac{1}{16}\\
+p(X=1) &= \frac{4}{16}\\
+p(X=2) &= \frac{6}{16}\\
+p(X=3) &= \frac{4}{16}\\
+p(X=4) &= \frac{1}{16}\\
+\end{align*}
+
+So, computing the expected value of the function, we get
+
+\begin{align*}
+E(\log\bigl( 2+\sin(\tfrac{\pi}{4}X) \bigr)) &= \sum\limits_{x=0}^4 p(X=x)\log\bigl( 2+\sin(\tfrac{\pi}{4}x) \bigr)\\
+&= \frac{1}{16} \left(\log(2) +4 \log \left(2+\frac{\sqrt{2}}{2} \right) +6 \log \left(2+1 \right) +4 \log \left(2+\frac{\sqrt{2}}{2} \right) + \log(2)\right)\\
+\frac{1}{16} \left(2\log(2) +8 \log \left(2+\frac{\sqrt{2}}{2} \right) +6 \log (3) \right) \right)\\
+&\approx 0.9966
+\end{align*}
+
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 7, \# 16]
+  In a sequence of Bernoulli trials let \(X\) be the length of the run (of
+  either successes or failures) started by the first trial.
+  \begin{itemize}[noitemsep]
+  \item[(a)] Find the distribution of \(X\), \(E(X)\), \(\Var(X)\).
+  % \item[(b)] Let Y be the length of the second run. Find the distribution
+  %   of Y, E(Y), Var (Y), and the joint distribution of X, Y.
+  \end{itemize}
+\end{problem}
+\begin{solution}
+
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 7, \# 17]
+  A man with \(n\) keys wants to open his door and tries the keys
+  independently and at random. Find the mean and variance of the number of
+  trials
+  \begin{itemize}[noitemsep]
+  \item[(a)] if unsuccessful keys are not eliminated from further
+    selections;
+  \item[(b)] if they are.
+  \end{itemize}
+  (Assume that only one key fits the door. The exact distributions are
+  given in II, 7, but are not required for the present problem.)
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA519-Current-HW"
+%%% End:

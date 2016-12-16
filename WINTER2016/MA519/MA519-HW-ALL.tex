@@ -1,0 +1,87 @@
+\def\auth{Carlos Salinas}%
+\def\tight{MA 519: Homework, Midterms and Practice Problems Solutions}%
+\def\short{MA519-HW-ALL}%
+\def\class{MA 51900}%
+\def\subject{elementary probability}%
+\def\email{salinac@purdue.edu}%
+
+\documentclass{article}
+\usepackage{geometry}
+
+%% Base customization and variables
+\usepackage{preamble}
+
+%% Footnote style
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+%% Hyperref setup
+\hypersetup{%
+  breaklinks,%
+  colorlinks=true,%
+  linkcolor=black,%
+  citecolor=black,%
+  filecolor=black,%
+  menucolor=black,%
+  runcolor=black,%
+  urlcolor=black,%
+  pdftitle={\short},%
+  pdfauthor={\auth},%
+  pdfkeywords={\subject},%
+  pdfsubject={\class},%
+  % pageanchor={false},%
+  unicode
+}
+
+%% Graphics path as it says
+\graphicspath{{figures/}}
+
+\begin{document}%
+% \author{\href{mailto:\email}{\auth}}
+\author{\textti\auth}%
+\title{\textti\tight}%
+\date{\textti{Last compiled: \today}}%
+\maketitle%
+\tableofcontents%
+\numberwithin{equation}{subsection}
+
+%% DasGupta's homework
+\include{homework/ma519-1-sols}%
+\include{homework/ma519-2-sols}%
+\include{homework/ma519-3-sols}%
+\include{homework/ma519-4-sols}%
+\include{homework/ma519-5-sols}%
+\include{homework/ma519-6-sols}%
+\include{homework/ma519-7-sols}%
+\include{homework/ma519-8-sols}%
+\include{homework/ma519-9-sols}%
+\include{homework/ma519-10-sols}%
+\include{homework/ma519-11-sols}%
+\include{homework/ma519-12-sols}%
+\include{homework/ma519-13-sols}%
+\include{homework/ma519-14-sols}%
+\include{homework/ma519-extra}%
+
+%% Exams
+%%% DasGupta
+\include{quals/ma519-mid-1}%
+\include{quals/ma519-mid-2}%
+
+%%% Yip
+
+%% Quals
+%%% DasGupta
+\include{quals/ma519-aug99}
+\include{quals/ma519-jan06}
+\include{quals/ma519-aug14}
+
+%%% Yip
+
+%% Others
+\include{quals/ma519-aug10}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

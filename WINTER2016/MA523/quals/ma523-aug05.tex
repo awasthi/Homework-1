@@ -1,0 +1,115 @@
+\subsection{Qualifying Exam, August `05}
+\begin{problem}
+  \hfill
+  \begin{itemize}[noitemsep]
+  \item[(a)] Find a solution of the Cauchy problem
+    \[
+      \left\{
+        \begin{aligned}
+          &yu_x+xu_y=xy,\\
+          &u=1&&\text{on \(S^1=\bigl\{\,x^2+y^2=1\,\bigr\}\)}.
+        \end{aligned}
+      \right.
+    \]
+  \item[(b)] Is the solution unique in a neighborhood of the point
+    \((1,0)\)? Justify your answer.
+  \end{itemize}
+\end{problem}
+\begin{solution*}
+  The solution to teh first part is
+  \[
+    u(x,y)=\frac{x^2+y^2}{4}+\frac{3}{4}.
+  \]
+\end{solution*}
+
+\begin{problem}
+  Consider the second order PDE in \(\{\,x>0,y>0\,\}\subset\R^2\)
+  \[
+    x^2u_{xx}-y^2u_{yy}=0.
+  \]
+  \begin{itemize}[noitemsep]
+  \item[(a)] Classify the equation and reduce it to the canonical form.
+  \item[(b)] Show that the general solution of the equation is given by the
+    formula
+    \[
+      u(x,y)=F(x,y)+\sqrt{xy}G(\tfrac{x}{y}).
+    \]
+  \end{itemize}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+  Let \(\Phi\) be the fundamental solution of the Laplace equation in
+  \(\R^3\) and \(f\in C_0^\infty(\R^n)\). Then the convolution
+  \[
+    u(x)\defeq(\Phi*f)(x)=\int_{\R^n}\Phi(x-y)f(y)\diff y
+  \]
+  is a solution of the Poisson equation \(-\Lap u=f\) in \(\R^n\). Show
+  that if \(f\) is radial (i.e., \(f(y)=f(|y|)\)) and supported in
+  \(B_R=\{\,|x|<R\,\}\), then
+  \[
+    u(x)=c\Phi(x),
+  \]
+  for any \(x\in\R^n\setminus B_R\), where
+  \[
+    c=\int_{\R^n}f(y)\diff y.
+  \]
+
+  \noindent\emph{Hint:} Use spherical (polar) coordinates and the mean value
+  property.
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+  Consider the so-called \(2\)-dimensional wave equation with dissipation
+  \[
+    \left\{
+      \begin{aligned}
+        &u_{tt}-\Lap u+\alpha u_t=0&&\text{in \(\R^2\times(0,\infty)\),}\\
+        &u(x,0)=g(x),\quad u_t(x,0)=h(x)&&\text{for \(x\in\R^2\),}
+      \end{aligned}
+    \right.
+  \]
+  where \(g,h\in C_0^\infty(\R^2)\) and \(\alpha\geq 0\) is a constant.
+  \begin{itemize}[noitemsep]
+  \item[(a)] Show that for an appropriate choice of constant \(\lambda\)
+    and \(\mu\) the function
+    \[
+      v(x_1,x_2,x_3,t)\defeq \rme^{\lambda t+\mu x_3}u(x_1,x_2,t)
+    \]
+    solves the \(3\)-dimensional wave equation \(v_{tt}-\Lap v=0\).
+  \item[(b)] Use (a) to prove the following domain of dependence result:
+    for any point \((x_0,t_0)\in\R^2\times(0,\infty)\) the value
+    \(u(x_0,t_0)\) is uniquely determined by values of \(g\) and \(h\) in
+    \(\overline{B_{t_0}(x_0)}\defeq\{\,|x-x_0|\leq t_0\,\}\). (You may use
+    the corresponding result for the wave equation without proof.)
+  \end{itemize}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+  Let \(u(x,t)\) be a bounded solution of the heat equation \(u_t=u_{xx}\)
+  in \(\R\times(0,\infty)\) with the initial condition
+  \[
+    u(x,0)=u_0(x)
+  \]
+  for \(x\in\R\), where \(u_0\in C^\infty\) is \(2\pi\)-periodic, i.e.,
+  \(u_0(x+2\pi)=u_0(x)\). Show that
+  \[
+    \lim_{t\to\infty} u(x,t)=a_0,
+  \]
+  uniformly in \(x\in\R\), where
+  \[
+    a_0\defeq\frac{1}{2\pi}\int_0^{2\pi} u_0(x)\diff x.
+  \]
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA523-HW-ALL"
+%%% End:

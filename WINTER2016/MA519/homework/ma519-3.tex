@@ -1,0 +1,500 @@
+\begin{problem}[Handout 3, \# 3]
+  \(n\) sticks are broken into one short and one long part. The \(2n\)
+  parts are then randomly paired up to form \(n\) new sticks. Find the
+  probability that
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item the parts are joined in their original order, i.e., the new sticks
+    are the same as the old sticks;
+  \item each long part is paired up with a short part.
+  \end{enumerate}
+\end{problem}
+\begin{solution}
+  For part (a): let \(A_i\) denote the event that at the \(i\)th we choose
+  a pair of sticks we get pair that joins up to one of the original
+  sticks. We are after the probability of \(A\) the event that all the
+  parts are joined in their original order, i.e.,
+  \(A=\bigcap_{i=1}^n A_i\). First, we find \(P(A_i)\). There are \(2n\)
+  ways of choosing a part of a stick and, once we have made that choice,
+  only one way of choosing the original complement to it. The probability
+  of making this choice on our first try is
+  \[
+    P(A_1)=\frac{2n}{2n(2n-1)}=\frac{1}{2n-1}.
+  \]
+  Now, assuming that the event of choosing a part of a stick and its
+  original complement is independent from our other choices, we have
+  \(2n-2\) choices for our next stick and only one way to chose its
+  complement. Therefore, the probability of making this choice is
+  \[
+    P(A_2)=\frac{2n-2}{(2n-2)(2n-3)}=\frac{1}{2n-3}.
+  \]
+  Proceeding in this way we see that at the \(i\)th step, the probability
+  of choosing a two broken sticks that make up an original stick is
+  \[
+    P(A_i)=\frac{1}{2(n-i+1)-1}.
+  \]
+  Thus, by the hierarchical multiplicative formula the probability that the
+  sticks are paired in their original order is
+  \[
+    P(A)=\left(\frac{1}{2n-1}\right)\left(\frac{1}{2n-3}\right) \dotsm
+    \left(\frac{1}{3}\right)\left(\frac{1}{1}\right).
+  \]
+
+  For part (b): let \(A_i\) denote the event that at the \(i\)th step we
+  pair a long stick with a short stick. Then, to find the probability of
+  \(A=\bigcap_{i=1}^n A_i\), we first find the probabilities of the
+  \(A_i\). There are \(2n\) ways to choose the first stick and \(n\) ways
+  to chose either a long or a short part. Thus, the probability of choosing
+  a long and a short part on the first try is
+  \[
+    P(A_1)=\frac{2n(n)}{2n(2n-1)}=\frac{n}{2n-1}.
+  \]
+  As in part (a), at the \(i\)th step, the probability of choosing a long
+  and a short stick together is
+  \[
+    P(A_i)=\frac{n-i+1}n{2(n-i+1)-1}.
+  \]
+  Thus, the probability of event \(A\), that each long and short stick is
+  paired together, is
+  \[
+    P(A)=\left(\frac{n}{2n-1}\right)\left(\frac{n-1}{2n-3}\right)\dotsm
+    \left(\frac{2}{3}\right)\left(\frac{1}{1}\right).
+  \]
+\end{solution}
+\newpage
+\begin{problem}[Handout 3, \# 5]
+  In a town, there are \(3\) plumbers. On a certain day, \(4\) residents
+  need a plumber and they each call one plumber at random.
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item What is the probability that all the calls go to one plumber (not
+    necessarily a specific one)?
+  \item What is the expected value of the number of plumbers who get a
+    call?
+  \end{enumerate}
+\end{problem}
+\begin{solution}
+  Label the plumbers as $a$, $b$, and $c$. Let $A$ be the event that
+  plumber $a$ gets every call, let $B$ be the event that plumber $b$ gets
+  every call, and let $C$ be the event that plumber $c$ gets every call.
+
+  For (a): let $A$ be the event that plumber $a$ gets every call, let $B$
+  be the event that plumber $b$ gets every call, and let $C$ be the event
+  that plumber $c$ gets every call.  Then $P(A)=P(B)=P(C)=(1/3)^4$. (The
+  probability of plumber $a$ getting called by the first resident is
+  $1/3$. The residents call independently, the probability that all $4$
+  residents call him is $(1/3)^4$). Because all events are disjoint,
+  $P(A\cup B\cup C)=1/3^4+1/3^4+1/3^4$. That is, the probability that some
+  plumber gets every call is
+  $(1/3)^3=1/27\approx \num{0.037037037037037035}$.
+
+  For (b): let $X$ be the number of plumbers who get called.  As above,
+  \[
+    P(X = 1)=\frac{1}{27}.
+  \]
+  Similar to the above,
+  \[
+    P(X = 2) = 3\left(\left(\frac{2}{3}\right)^4 - \frac{2}{3^4}
+    \right)
+  \]
+  (The probability of a resident calling either plumber $a$ or plumber $b$
+  is $2/)$. The probability of every resident calling one of plumber $a$ or
+  $b$ is $(2/3)^4$. The probability that plumber $a$ was the only plumber
+  called is $(1/3)^4$. The probability that plumber $b$ was the only
+  plumber called is $(1/3)^4$. Thus, the probability that plumber $a$ and
+  plumber $b$ have both been called without calling plumber $c$ is
+  $(2/3)^4-2/3^4$. The probability that two plumbers have been called is
+  the sum of the probabilities that exactly plumbers $a$ and $b$ have been
+  called, exactly plumbers $b$ and $c$ have been called, and exactly
+  plumbers $a$ and $c$ have been called; that is, it is as given above.)
+  Lastly,
+  \[
+    P(X = 3) = 1-P(X = 1)-P(X = 2)
+  \]
+  so that
+  \begin{align*}
+    E(X) &= P(X=1) + 2P(X=2) + 3P(X = 3) \\
+             &= \frac{1}{27} + 6\left(\left(\frac{2}{3}\right)^4 - \frac{2}{3^4} \right) + 3\left(1-\frac{1}{27} -  3\left(\left(\frac{2}{3}\right)^4 - \frac{2}{3^4} \right)\right) \\
+             &= \frac{1}{27} + 6\frac{2^4}{3^4} - \frac{12}{3^4} + 3-\frac{1}{9} -  9\left(\left(\frac{2}{3}\right)^4 - \frac{2}{3^4} \right)\\
+             &= \frac{1}{27} + 6\frac{16}{81} - \frac{12}{81} + 3-\frac{1}{9} -  \frac{16}{9} - \frac{2}{9}\\
+             &= \frac{53}{27}\\
+             &\approx\num{1.962962962962963}.
+  \end{align*}
+  That is, the expected number of plumbers that get called is $53/27$,
+  which is slightly less than two.
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 4, \# 7]
+  \emph{(Polygraphs).} Polygraphs are routinely administered to job
+  applicants for sensitive government positions. Suppose someone actually
+  lying fails the polygraph \(90\%\) of the time. But someone telling the
+  truth also fails the polygraph \(15\%\) of the time. If a polygraph
+  indicates that an applicant is lying, what is the probability that he is
+  in fact telling the truth? Assume a general prior probability \(p\) that
+  the person is telling the truth.
+\end{problem}
+\begin{solution}
+  Let $T$ denote the event that the person is telling the truth. Set
+  $P(T) = p$. Let $F$ denote the event that the person fails the
+  polygraph. Let $L$ denote the event that the person has lied. Then
+  $P(F|L) = 0.9$, and $P(F|T) = 0.15$.
+
+  By Bayes' theorem,
+  \[
+    P(T|F) = \frac{P(F|T)P(T)}{P(F|T)P(T) + P(F|L)P(L)}
+  \]
+  which reduces to
+  \[
+    P(T|F) = \frac{0.15p}{0.15p + 0.9 - 0.9p} = \frac{0.15p}{0.9 -
+      0.75p}
+  \]
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 4, \# 8]
+  In a bolt factory machines \(A\), \(B\), \(C\) manufacture, respectively,
+  \(25\), \(35\), and \(40\) per cent of the total. Of their output \(5\),
+  \(4\), and \(2\) per cent are defective bolts. A bolt is drawn at random
+  from the produce and is found defective. What are the probabilities that
+  it was manufactured by machines \(A\), \(B\), \(C\)?
+\end{problem}
+\begin{solution}
+  Let $D$ denote the event in which the random bolt we have drawn was
+  defective. Let $A$, $B$, and $C$ denote the events in which we have drawn
+  our bolts from machines $A$, $B$, and $C$ (respectively). Then
+  \begin{align*}
+    P(D|A) &=0.05 \\
+    P(D|B) &=0.04 \\
+    P(D|C) &=0.02 \\
+    P(A)&=0.25 \\
+    P(B)&=0.35 \\
+    P(C)&=0.4 \\
+  \end{align*}
+  Which means that, by Bayes' theorem,
+  \begin{align*}
+    P(A|D) &=\frac{P(D|A)P(A)}{P(D|A)P(A)
+             +P(D|B)P(B)+P(D|C)P(C)} \\
+           &=\frac{0.05 \cdot 0.25}{0.05 \cdot 0.25 + 0.04 \cdot 0.35 + 0.02 \cdot 0.4 } \\
+           &= \frac{0.0125}{0.0125 + 0.014 + 0.008} \\
+           &= \frac{0.0125}{0.0345} \\
+           &\approx \num{0.36231884057971014}, \\
+    P(B|D) &= \frac{0.014}{0.0125 + 0.014 + 0.008} \\
+           &= \frac{0.014}{0.0345} \\
+           &\approx \num{0.40579710144927533}, \\
+    P(C|D) &= \frac{0.008}{0.0125 + 0.014 + 0.008} \\
+           &= \frac{0.008}{0.0345} \\
+           &\approx \num{0.23188405797101447}.\\
+  \end{align*}
+  That is, there's about a $36$ percent chance that our defective bolt came
+  from $A$, a $41$ percent chance it came from $B$, and a $23$ percent
+  chance it came from $C$.
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 4, \# 9]
+  Suppose that \(5\) men out of \(100\) and \(25\) women out of
+  \(\num{10000}\) are colorblind. A colorblind person is chosen at
+  random. What is the probability of his being male? (Assume males and
+  females to be in equal numbers.)
+\end{problem}
+\begin{solution}
+  Let $C$ be the event that a randomly chosen person is
+  color blind. Let $M$ be the event that the randomly chosen person was
+  male, and let $F$ be the event that the randomly chosen person was
+  female. Then
+  \begin{align*}
+    P(C|M)&=0.05\\
+    P(C|F)& 0.0025
+  \end{align*}
+  So, by Bayes' theorem,
+  \begin{align*}
+    P(M|C)
+    &=\frac{P(C|M)P(M)}{P(C|M)P(M)+P(C|F)P(F)}\\
+    &=\frac{0.05}{0.05+0.0025}\\
+    &=\frac{0.05}{0.0525}\\
+    &\approx\num{0.9523809523809524}.
+  \end{align*}
+  That is, there is about a \(95\) percent chance that the randomly chosen
+  color blind person was male.
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 4, \# 10]
+  \emph{(Bridge.)} In a Bridge party West has no ace. What probability
+  should he attribute to the event of his partner having
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item no ace,
+  \item two or more aces?
+  \end{enumerate}
+  Verify the result by a direct argument.
+\end{problem}
+\begin{solution}
+  For part (a): let \(A\) be the event of West's partner having an ace and
+  \(B\) be the event that West has no ace. We can compute the probability
+  \(P(A|B)\) directly. Since West has no aces, there are \(52-13=39\)
+  cards, \(4\) of which are aces. Then, the probability that West's partner
+  has no aces is
+  \begin{align*}
+    P(A|B)
+    &=\binom{39-4}{13}\Bigm/\binom{39}{13}\\
+    &=\frac{\num{1476337800}}{\num{8122425444}}\\
+    &\approx\num{0.18176070807649755}.
+  \end{align*}
+
+  For part (b): let \(A\) denote the event that West's partner has two or
+  more aces and let \(B\) remain as above. Then, by the inclusion-exclusion
+  principle we need only find the probability that West's partner has
+  exactly one ace. This is,
+  \begin{align*}
+    \binom{38}{12}\Bigm/\binom{39}{13}
+    &=\frac{\num{2707475148}}{\num{8122425444}}\\
+    &=\frac{1}{3}\\
+    &\approx\num{0.3333333333333333}.
+  \end{align*}
+  Then, the probability that West's partner has two or more aces is
+  \begin{align*}
+    P(A|B)
+    &=(1-\num{0.18176070807649755})-\num{0.3333333333333333}\\
+    &\approx\num{0.4849059585901691}.
+  \end{align*}
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 4, \# 12]
+  A true-false question will be posed to a couple on a game show. The
+  husband and the wife each has a probability \(p\) of picking the correct
+  answer. Should they decide to let one of the answer the question, or
+  decide that they will give the common answer if they agree and toss a
+  coin to pick the answer if they disagree?
+\end{problem}
+\begin{solution}
+  The probability that the couple wins if they let one of them answer the
+  question is $p$ (that is, it is the probability that that person gets it
+  right.)
+
+  The probability that the couple wins if they give a common answer if they
+  agree and toss a coin to pick the answer if they disagree is the sum of
+  the probabilities that they agree on the correct answer and the
+  probability that they guess differently and then win on the coin flip.
+
+  The probability that they agree on the correct answer is $p^2$.
+
+  The probability that they guess differently is $2(1-p)p$; that is, this
+  is the probability that the husband is wrong and the wife is right plus
+  the probability that the wife is wrong and the husband is right.
+
+  The probability that they win, given that they've guessed differently, is
+  $1/2$. So, the probability that they win because of the coin flip after
+  they guess differently is $(1-p)p$.
+
+  So, the probability that they win in this fashion is $p^2 + (1-p)p = p$.
+  That is, from the perspective of the game, it does not matter which
+  course of action they take. They should do whichever thing is most likely
+  to make them the least mad at each other if they lose.
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 4, \# 13]
+  An urn containing \(5\) balls has been filled up by taking \(5\) balls at
+  random from a second urn which originally had \(5\) black and \(5\) white
+  balls. A ball is chosen at random from the first urn and is found to be
+  black. What is the probability of drawing a white ball if a second ball
+  is chosen from among the remaining \(4\) balls in the first urn?
+\end{problem}
+\begin{solution}
+  We shall use the total probability formula to figure out the
+  probabilities in question. Let \(B\) denote the event that that on our
+  second drawing we draw a white ball. First, we must find a suitable
+  partition \(A_1,\dotsc,A_n\) of \(\Omega\) such that
+  \(A_i\cap A_j=\emptyset\) whenever \(i\neq j\), for \(1\leq i,j\leq n\),
+  i.e., the events \(A_i\) are mutually exclusive. Consider the following
+  partition of \(\Omega\),
+  \[
+    A_i=\bigl\{\,\text{exactly \(i\) white balls are put into the second
+      urn}\,\bigr\}.
+  \]
+  The events \(A_i\), \(1\leq i\leq 4\), are clearly mutually exclusive (if
+  we have exactly \(i\) white balls in the urn, we cannot simultaneously
+  have \(j\) white balls in the urn for \(i\neq j\)). Therefore, to find
+  \(P(A)\), we need only find the probabilities \(P(B|A_i)\) and
+  \(P(A_i)\).
+
+  The probabilities of \(A_i\) are easy to calculate: there are
+  \(\binom{10}{5}=252\) ways to chose \(5\) balls from the urn containing
+  the \(5\) white and \(5\) black balls, and the number of ways of choosing
+  exactly \(i\) black balls are \(\binom{5}{5-i}\). Thus,
+  \[
+    P(A_i)=\frac{\binom{5}{i}}{252}
+    =\binom{5}{i}^{\mathrlap{2}}\Bigm/252.
+  \]
+
+  The probabilities of \(B\) given \(A_i\) are also easy to calculate
+  \[
+    P(B|A_i)=\frac{i}{4},
+  \]
+  since we have removed one ball and it was not white and there are \(i\)
+  white balls remaining.
+
+  Thus, by the total probability formula,
+  \begin{align*}
+    P(B)
+    &=\left(\frac{1}{4}\right)\left(\frac{25}{252}\right)+
+      \left(\frac{2}{4}\right)\left(\frac{100}{252}\right)\\
+    &\phantom{{}={}}+\left(\frac{3}{4}\right)\left(\frac{100}{252}\right)+
+      \left(\frac{4}{4}\right)\left(\frac{25}{252}\right)\\
+    &\approx\num{0.6200396825396824}.
+  \end{align*}
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 4, \# 15]
+  Events \(A\), \(B\), \(C\) have probabilities \(p_1\), \(p_2\),
+  \(p_3\). Given that exactly two of the three events occured, the
+  probability that \(C\) occured is greater than \(1/2\) if and only if
+  ...\@ (write down the necessary and sufficient condition).
+\end{problem}
+\begin{solution}
+  For convenience, let \(D\) denote the event that two of \(A,B,C\)
+  occured. By Bayes' theorem, we have
+  \begin{align*}
+    P(C|D)
+    &=\frac{P(D|C)P(C)}{P(D)}\\
+    &=\frac{P(D|C)P(C)}{P(D|C)P(C)+P(D|\lnot C)P(\lnot C)}\\
+    &=\frac{P\bigl((A\cup B)\setminus (A\cap B)\bigr)p_3}
+      {P\bigl((A\cup B)\setminus (A\cap B)\bigr)p_3
+      +P\bigl((A\cup B)\setminus C\bigr)(1-p_3)},
+      \intertext{but by the inclusion-exclusion principle, \(P\bigl((A\cup
+      B)\setminus (A\cap B)\bigr)=P(A)+P(B)-2P(A\cap B)\) so, letting
+      \(x=P(A\cap B)\), the above becomes}
+    &=\frac{(p_1+p_2-2x)p_3}{(p_1+p_2-2x)p_3+x(1-p_3)}\\
+    &=\frac{p_1p_3+p_2p_3-2xp_3}{p_1p_3+p_2p_3+x-3xp_3}\\
+    &\geq\frac{1}{2}
+  \end{align*}
+  if and only if
+  \begin{align*}
+    2(p_1p_3+p_2p_3-2xp_3)&\geq p_1p_3+p_2p_3+x-3xp_3,
+    \intertext{that is,}
+    p_1p_3+p_2p_3&\geq x+xp_3.
+  \end{align*}
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 5, \# 1]
+  There are five coins on a desk: \(2\) are double-headed, \(2\) are
+  double-tailed, and \(1\) is a normal coin.
+
+  \noindent
+  One of the coins is selected at random and tossed. It shows heads.
+
+  \noindent
+  What is the probability that the other side of this coin is a tail?
+\end{problem}
+\begin{solution}
+  Let \(A\) denote the event that the other side of a coin is tail and let
+  \(B\) denote the event that after picking a coin at random and tossing
+  it, it comes up heads. By Bayes' theorem,
+  \[
+    P(A|B)=\frac{P(B|A)P(A)}{P(B)};
+  \]
+  where \(P(B|A)=1/3\) since there are \(3\) coins whose backside is tail,
+  but only one of which can come up heads; \(P(A)=3/5\) since \(3\) out of
+  the \(5\) coins have a tail; and \(P(B)=1/2\) since \(1+4=5\) of the
+  \(10\) faces are heads. Thus,
+  \[
+    P(A|B)=\frac{(1/3)(3/5)}{1/2}=\frac{2}{5}=0.4.
+  \]
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 5, \# 2]
+  \emph{(Genetic testing).} There is a \(50\)-\(50\) chance that the Queen
+  carries the gene for hemophilia. If she does, then each Prince has a
+  \(50\)-\(50\) chance of carrying it. Three Princesses were recently
+  tested and found to be non-carriers. Find the following probabilities:
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item that the Queen is a carrier;
+  \item that the fourth Princess is a carrier.
+  \end{enumerate}
+\end{problem}
+\begin{solution}
+  For part (a): let \(A\) denote the event that the Queen has hæmophilia
+  and let \(B\) be the event that three princesses were tested and found to
+  be non-carriers. Then, by Bayes' theorem,
+  \[
+    P(A|B)=\frac{P(B|A)P(A)}{P(B)}.
+  \]
+  By assumption, \(P(A)=1/2\). We cannot calculate \(P(B)\) directly
+  but, by the total probability formula,
+  \begin{align*}
+    P(B)&=P(B|A)P(A)+P(B|\lnot A)P(\lnot A)\\
+        &=\left(\frac{1}{8}\right)\left(\frac{1}{2}\right)
+          +1\left(\frac{1}{2}\right)\\
+        &=\frac{9}{16}.
+  \end{align*}
+  Thus,
+  \[
+    P(A|B)=\frac{(1/8)(1/2)}{9/16}=\frac{1}{9}\approx\num{0.1111111111111111}.
+  \]
+
+  For part (b): let \(A\) denote the event that the fourth princess is a
+  carrier and \(B\) remain as above, i.e., the event that three princesses
+  were found to be non-carriers. By Bayes' theorem,
+  \[
+    P(A|B)=\frac{P(B|A)P(A)}{P(B)}.
+  \]
+  If the fourth princess is a carrier then the Queen is a carrier. Thus,
+  \(P(B)=9/16\) and \(P(B|A)=1/8\) as above. Now,
+  \(P(A)=P(A|C)P(C)+P(A|\lnot C)P(\lnot C)\) where \(C\) denotes the event
+  that the Queen is a carrier. Thus,
+  \[
+    P(A)=\left(\frac{1}{2}\right)\frac{1}{2}=\frac{1}{4}.
+  \]
+  Thus,
+  \[
+    P(A|B)=\frac{(1/8)(1/4)}{9/16}=\frac{1}{18}\approx\num{0.05555555555555555}.
+  \]
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 5, \# 4]
+  \emph{(Is Johnny in Jail).} Johnny and you are roommates. You are a
+  terrific student and spend Friday evenings drowned in books. Johnny
+  always goes out on Friday evenings. \(40\%\) of the times, he goes out
+  with his girlfriend, and \(60\%\) of the times he goes to a bar. If he
+  goes out with his girlfriend, \(30\%\) of the times he is just too lazy
+  to come back and spends the night at hers. If he goes to a bar, \(40\%\)
+  of the times he gets mad at the person sitting on his right, beats him
+  up, and goes to jail.
+
+  \noindent
+  On one Saturday morning, you wake up to see Johnny is missing. Where is
+  Johnny?
+\end{problem}
+\begin{solution}
+  Let \(A\) denote the event that Johnny is in jail and \(B\) denote the
+  event that Johnny is missing. Then, by Bayes' theorem,
+  \[
+    P(A|B)=\frac{P(B|A)P(A)}{P(B)}.
+  \]
+  The probability \(P(B|A)=1\) clearly. Let \(C\) denote the event that
+  Johnny went to the bar. Then, by the total probability formula,
+  \begin{align*}
+    P(A)&=P(A|C)P(C)+P(A|\lnot C)P(\lnot C)\\
+        &=(0.4)(0.6)+0\\
+        &=0.24.
+  \end{align*}
+  Also by the total probability formula,
+  \begin{align*}
+    P(B)&=P(B|C)P(C)+P(B|\lnot C)P(\lnot C)\\
+        &=(0.4)(0.6)+(0.3)(0.4)\\
+        &=0.36.
+  \end{align*}
+  Thus,
+  \[
+    P(A|B)=\frac{0.24}{0.36}=\frac{2}{3}\approx\num{0.6666666666666666}.
+  \]
+\end{solution}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA519-Current-HW"
+%%% End:

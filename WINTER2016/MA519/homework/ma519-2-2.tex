@@ -1,0 +1,167 @@
+\begin{problem}[Handout 2, \# 5]
+  Four men throw their watches into the sea, and the sea brings each man
+  one watch back at random. What is the probability that at least one man
+  gets his own watch back?
+\end{problem}
+\begin{solution}
+  The sample space \(\Omega\) is in correspondence with \(S_4\) the set of
+  bijections from the set \(\{1,\dotsc,4\}\) to itself and therefore
+  \begin{equation}
+    \label{eq:2-1}
+    \#\Omega=\# S_4=4!=24.
+  \end{equation}
+  Let \(A\) denote the event that at least one man gets his own watch
+  back. This is a case where it is easier find the probability of the
+  complement of \(A\), i.e., the event \(\Omega\setminus A\) that no man
+  gets his own watch back.
+
+  Let \(A_i\) denote the event that the \(i\)-th man does not get his own
+  watch back.
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 2, \#7]
+  Calculate the probability that in Bridge, the hand of at least one player
+  is void in a particular suit.
+\end{problem}
+\begin{solution}
+
+(I read this as being equivalent to ``Calculate the probability that in a game of Bridge, some player has drawn no hearts.'')
+
+First, note that the number of possible Bridge hands for all 4 players is 
+
+\[
+\binom{52}{13} \cdot \binom{39}{13} \cdot \binom{26}{13} \cdot \binom{52}{13}
+\]
+
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 2, \# 12]
+  If \(n\) balls are placed at random into \(n\) cells, find the
+  probability that exactly \(1\) cell remains empty.
+\end{problem}
+\begin{solution}
+Let $n$ balls be placed at random into $n$ cells. (As was pointed out in the feedback, we will assume that these $n$ balls are distinct.)
+
+There are $n^n$ ways to do this.
+
+There are
+
+\[
+\binom{n}{1} \cdot \binom{n}{2} \cdot \binom{n-1}{1} \cdot (n-2)!
+\]
+
+ways to put $n$ balls into $n$ slots with exactly one remaining empty (we pick $1$ of our $n$ slots to be empty, we pick $2$ of our $n$ balls to share a slot, we pick one of our remaining $n-1$ slots for those $2$ balls to go into, we fill the rest with one ball each.)
+
+Thus, the probability that exactly $1$ cell remains empty is
+
+\begin{align*}
+\frac{\binom{n}{1} \cdot \binom{n}{2} \cdot \binom{n-1}{1} \cdot (n-2)!}{n^n} &= \frac{n \cdot \binom{n}{2} \cdot (n-1) \cdot (n-2)!}{n^n} \\
+&= \frac{n! \cdot \frac{n-1}{2}}{n^n} \\
+\end{align*}
+\end{solution}
+\newpage
+
+
+\begin{problem}[Handout 2, \# 13]
+  \emph{Spread of rumors.} In a town of \(n+1\) inhabitants, a person tells
+  a rumor to a second person, who in turn repeats it to a third person,
+  etc. At each step the recipient of the rumor is chosen at random from the
+  \(n\) people available. Find the probability that the rumor told \(r\)
+  times without:
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item returning to the originator,
+  \item being repeated to any person.
+  \end{enumerate}
+  Do the same problem when at each step the rumor told by one person to a
+  gathering of \(N\) randomly chosen people. (The first question is the
+  special case \(N=1\)).
+\end{problem}
+\begin{solution}
+
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 2, \# 14]
+  \emph{A family problem.} In a certain family four girls take turns at
+  washing dishes. Out of a total of four breakages, three were caused by
+  the youngest girl, and she was thereafter called clumsy. Was she
+  justified in attributing the frequency of breakages to chance? Discuss
+  the connection with random placement of balls.
+\end{problem}
+\begin{solution}
+Assume that it is equally likely that each girl breaks a dish.
+
+Four girls are 
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 2, \# 15]
+  A car is parked among \(N\) cars in a row, not at either end. On his
+  return the owner finds exactly \(r\) of the \(N\) places still
+  occupied. What is the probability that both neighboring places are empty?
+\end{problem}
+\begin{solution}
+
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 2, \# 16]
+  Find the probability that in a random arrangement of \(52\) bridge card
+  no two aces are adjacent.
+\end{problem}
+\begin{solution}
+
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 2, \# 17]
+  Suppose \(P(A)=3/4\), and \(P(B)=1/3\).
+
+  Prove that \(P(A\cap B)\geq 1/12\). Can it be equal to \(1/12\)?
+\end{problem}
+\begin{solution}
+
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 2, \# 18]
+  Suppose you have infinitely many events \(A_1,A_2,\dotsc\), and each one
+  is sure to occur, i.e., \(P(A_i)=1\) for any \(i\).
+  \\\\
+  Prove that \(P\bigl(\bigcap_{i=1}^n A_i\bigr)=1\).
+\end{problem}
+\begin{solution}
+
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 2, \# 19]
+  There are \(n\) blue, \(n\) green, \(n\) red, and \(n\) white balls in an
+  urn. Four balls are drawn from the urn with replacement. Find the
+  probability that there are balls of at least three different colors among
+  the four drawn.
+\end{problem}
+\begin{solution}
+Each ball has an equal probability of being drawn on each draw. That is, each (ordered) set of 4 draws is equally likely to occur.
+
+There are $4^4$ ways to draw $4$ balls.
+
+There are $4!$ ways to draw one ball of each color.
+
+There are $4 \cdot 3 \cdot \binom{4}{2} \cdot 2!$ ways to draw 4 balls, missing exactly one color (pick a color to be missed, pick a color to be drawn twice, pick two draws for that color to be drawn on, rearrange the other two colors into the other two draws.)
+
+Thus, the probability of having at least three different colors being drawn among those four is
+
+\begin{align*}
+\frac{4! + 4 \cdot 3 \cdot \binom{4}{2} \cdot 2!}{4^4} &= \frac{3!+6 \cdot \frac{4!}{2!2!}}{4^3} \\
+&= \frac{6+36}{4^3}\\
+&\cong 0.65625\\
+\end{align*}
+\end{solution}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA519-Current-HW"
+%%% End:

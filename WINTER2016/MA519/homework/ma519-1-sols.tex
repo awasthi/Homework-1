@@ -1,0 +1,399 @@
+\section{Homework Solutions}
+These are my (corrected) solutions to DasGupta's Math/Stat 519 homework for
+the fall semester of 2016.
+
+Throughout this document, unless otherwise specified, \(\Omega\) denotes
+the sample space in question. The symbol `\(\sim\)' is used both to denote
+the distribution type of a random variable and to denote asymptotic
+equivalence; i.e., if \(\{a_n\}\), \(\{b_n\}\) are convergent sequences
+with limit \(a\) and \(b\), respectively, we say \(a_n\sim b_n\) if
+\(\frac{a_n}{b_n}\to 1\).
+
+For the sake of remaining consistent with DasGupta's book, we adopt the
+following notation for some of the distributions considered in this course:
+
+\begin{adjustwidth}{-1.5cm}{}
+\begin{tabular}{|L|L|L|L|L|L|}
+\hline
+\text{Name}&\text{Symbol}&\text{mass/density function}&\text{mean}&\text{variance}&\text{MGF}\\
+\hline
+\text{Bernoulli}
+&\Ber(p)%
+&\text{\(1-p\) for \(k=0\), \(p\) for \(k=1\)}%
+&p
+&p(1-p)
+&(1-p)+p\rme^t
+\\
+\text{binomial}
+&\Bin(n,p)%
+&\text{\(\binom{n}{k}p^k(1-p)^{n-k}\) for \(k=0,\dotsc,n\)}
+&np
+&np(1-p)
+&{(p\rme^t+1-p)}^n
+\\
+\text{Poisson}
+&\Poi(p)
+&\rme^{-\lambda}\frac{\lambda^k}{k!}
+&\lambda
+&\lambda
+&\rme^{\lambda(\rme^t-1)}
+\\
+\text{geometric}
+&\Geom(p)
+&(1-p)^k p
+&\frac{1-p}{p}
+&\frac{1-p}{p^2}
+&\frac{p}{1-(1-p)\rme^t}
+\\
+\text{negative binomial}
+&\NB(r,p)
+&\binom{k+r-1}{k}(1-p)^rp^k
+&\frac{pr}{1-p}
+&\frac{1-p}{p^2}
+&\frac{pr}{(1-p)^2}
+\\
+\text{hypergeometric}
+&\Hypergeom(n,N,D)
+&\frac{\binom{D}{k}\binom{N-D}{n-x}}{\binom{N}{n}}
+&\frac{nD}{N}
+&\frac{nD}{N}(1-\frac{D}{N})\frac{N-n}{N-1}
+&
+\\
+\text{uniform}
+&U[a,b]
+&\text{\(\frac{1}{b-a}\) for \(a\leq x\leq b\)}
+&\frac{a+b}{2}
+&\frac{(b-a)^2}{12}
+&\frac{\rme^{bt}-\rme^{at}}{(b-a)t}
+\\
+\text{exponential}
+&\Exp(\lambda)
+&\text{\(\frac{1}{\lambda}\rme^{-x/\lambda}\) for \(x\geq 0\)}
+&\lambda
+&\lambda^2
+&(1-\lambda t)^{-1}
+\\
+\text{gamma}
+&G(\alpha,\lambda)
+&\text{\(\frac{\rme^{-x/\lambda}x^{\alpha-1}}
+  {\lambda^\alpha\Gamma(\alpha)}\) for \(x\geq 0\)}
+&\alpha\lambda
+&\alpha\lambda^2
+&(1-\lambda t)^{-\alpha}
+\\
+\text{chi-squared}
+&\chi^2_n
+&\text{\(\frac{\rme^{-x/2}x^{m/2-1}}
+  {2^{m/2}\Gamma(\frac{m}{2})}\) for \(x\geq 0\)}
+&m
+&2m
+&(1-2t)^{-m/2}
+\\
+\text{beta}
+&B(\alpha,\beta)
+&\text{\(\frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha,\beta)}\)
+  for \(0\leq x\leq 1\)}
+&\frac{\alpha}{\alpha+\beta}
+&\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}
+&
+\\
+\text{normal}
+&N(\mu,\sigma)
+&\frac{1}{\sqrt{2\pi\sigma^2}}\rme^{-(x-\mu)^2/2\sigma^2}
+&\mu
+&\sigma^2
+&\rme^{t\mu+t^2\sigma^2/2}
+\\
+\text{Cauchy}
+&\Cauchy(\mu,\sigma)
+&\bigl(\sigma\pi(1+\frac{(x-\mu)^2}{\sigma^2})\bigr)^{-1}
+&\text{DNE}
+&\text{DNE}
+&\text{DNE}
+\\
+\hline
+\end{tabular}
+\end{adjustwidth}
+
+For numerical problems, we consistently stick to the rule of writing four
+figures after the decimal point.
+
+\subsection{Homework 1}
+\begin{problem}[Handout 1, \# 5]
+  A closet contains five pairs of shoes. If four shoes are selected at
+  random, what is the probability that there is at least one complete pair
+  among the four?
+\end{problem}
+\begin{solution*}
+  Let \(A\subset\Omega\) denote the event ``there is at least one complete
+  pair of shoes among the four randomly selected shoes.''
+
+  First, we compute the size of the sample space \(\Omega\). There are
+  \(\binom{10}{4}=210\) ways to select four shoes from five pairs of
+  shoes. Therefore, \(|\Omega|=210\) so each sample point \(x\in\Omega\)
+  has an associated probability of \(P(x)=\frac{1}{210}\).
+
+  Now, let us compute \(P(A)\). Oftentimes it is easier to compute the
+  probability \(P(\Omega\setminus A)\) and use the identity
+  \[
+    P(A)+P(\Omega\setminus A)=1;
+  \]
+  this is one of those times. Let us now find the number of sample points
+  in \(\Omega\setminus A\); i.e., the event ``there is no complete pair of
+  shoes among the four randomly selected shoes.'' In order that we do not
+  choose a complete pair of shoes we must choose from four different pairs,
+  this can be done in \(\binom{5}{4}=5\) ways, and for each pair we have
+  the possibility of choosing on of two shoes belonging to that pair
+  (either a left or a right shoe). Therefore,
+  \(|\Omega\setminus A|=5\cdot 2^4=80\) and so
+  \begin{align*}
+    P(A)
+    &=1-P(\Omega\setminus A)\\
+    &=1-\frac{80}{210}\\
+    &\approx0.619.\qedhere
+  \end{align*}
+\end{solution*}
+
+\begin{problem}[Handout 1, \# 7]
+  A gene consists of \(10\) subunits, each of which is normal or
+  mutant. For a particular cell, there are \(3\) mutant and \(7\) normal
+  subunits. Before the cell divides into two daughter cells, the gene
+  duplicates. The corresponding gene of cell 1 consists of \(10\) subunits
+  chosen from the \(6\) mutant and \(14\) normal units. Cell 2 gets the
+  rest. What is the probability that one of the cells consists of all
+  normal subunits.
+\end{problem}
+\begin{solution*}
+  Let \(A\subset\Omega\) denote the event ``at least one daughter cell
+  contains all normal subunits.''
+
+  When the cell duplicates, there will be a total of \(20\) subunits
+  (\(14\) normal and \(6\) mutant ones). There are
+  \(\binom{20}{10}=184756\) ways to distribute these subunits to a given
+  daughter cell. Therefore, \(|\Omega|=184756\).
+
+  Now, let us count the number of sample points in \(A\). Suppose, with out
+  loss of generality, that cell 1 receives all of the normal subunits;
+  there are \(\binom{14}{10}=1001\) ways to do this. Since we may as well have
+  chosen cell 2 to give the normal units to, the number of sample points in
+  \(A\) is twice the figure above; i.e., \(|A|=2002\).
+
+  Therefore,
+  \[
+    P(A)=\frac{2002}{184756}\approx0.0108.\qedhere
+  \]
+\end{solution*}
+
+\begin{problem}[Handout 1, \# 9]
+  From a sample of size \(n\), \(r\) elements are sampled at random. Find
+  the probability that none of the \(N\) prespecified elements are included
+  in the sample, if sampling is
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item with replacement;
+  \item without replacement.
+  \end{enumerate}
+  Compute it for \(r=N=10\), \(n=100\).
+\end{problem}
+\begin{solution*}
+  For part (a): The size of the sample space is \(|\Omega|=n^r\) so for
+  each \(x\in\Omega\), \(P(x)=\frac{1}{n^r}\). If \(n\) elements are
+  prespecified, there are \(n-N\) non-prespecified elements and thus we
+  have \((n-N)^r\) ways to draw \(r\) non-prespecified elements. Thus, the
+  probability that none of the \(N\) prespecified elements are drawn if we
+  sample \(r\) elements randomly with replacement is
+  \begin{equation}
+    \label{eq:1:with-replacement}
+    p_1(n,N,r)=\frac{(n-N)^r}{n^r}.
+  \end{equation}
+  \\\\
+  For part (b): The argument leading to the probability of this event is
+  similar to that of part (a). The size of the sample space is
+  \(|\Omega|=\binom{n}{r}\); these correspond to the possible draws of
+  \(r\) elements without replacement. As before, \(n-N\) of the elements
+  have not been prespecified and therefore, we have \(\binom{n-N}{r}\) ways
+  of drawing \(r\) of the non-prespecified elements. Thus, the probability
+  that note of the \(N\) prespecified elements are drawn if we sample \(r\)
+  elements randomly without replacement is
+  \begin{equation}
+    \label{eq:1:without-replacement}
+    p_2(n,N,r)=\frac{\binom{n-N}{r}}{\binom{n}{r}}.
+  \end{equation}
+
+  Finally, we compute \(p_1\) and \(p_2\) for \(r=N=10\), \(n=100\) using
+  equations \eqref{eq:1:with-replacement} and
+  \eqref{eq:1:without-replacement} above:
+  \begin{align*}
+    p_1(100,10,10)&\approx\num{0.3486784401},\\
+    p_2(100,10,10)&\approx\num{0.3304762208462021}.\qedhere
+  \end{align*}
+\end{solution*}
+
+\begin{problem}[Handout 1, \# 11]
+  Let \(E\), \(F\), and \(G\) be three events. Find expressions for the
+  following events:
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item only \(E\) occurs;
+  \item both \(E\) and \(G\) occur, but not \(F\);
+  \item all three occur;
+  \item at least one of the events occurs;
+  \item at most two of them occur.
+  \end{enumerate}
+\end{problem}
+\begin{solution*}
+  For part (a): The event ``from \(E\), \(F\), and \(G\) only \(E\)
+  occurs'' is given by
+  \[
+    E\cap(\Omega\setminus F)\cap(\Omega\setminus G).
+  \]
+  \\\\
+  For part (b): The event ``from \(E\), \(F\), and \(G\) both \(E\) and
+  \(G\) occur, but not \(F\)'' is given by
+  \[
+    E\cap G\cap(\Omega\setminus F).
+  \]
+  \\\\
+  For part (c): The event ``from \(E\), \(F\), and \(G\) all three occur''
+  is given by
+  \[
+    E\cap F\cap G.
+  \]
+  \\\\
+  For part (d): The event ``from \(E\), \(F\), and \(G\) at least one
+  occurs'' is given by
+  \[
+    E\cup F\cup G.
+  \]
+  \\\\
+  For part (e): The event ``from \(E\), \(F\), and \(G\) at most two
+  occur'' is given by
+  \[
+    \bigl(E\cap F\cap(\Omega\setminus G)\bigr)\cup%
+    \bigl(E\cap (\Omega\setminus F)\cap G\bigr)\cup%
+    \bigl((\Omega\setminus E)\cap F\cap G\bigr).\qedhere
+  \]
+\end{solution*}
+
+\begin{problem}[Handout 1, \# 12]
+  Which is more likely:
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item Obtaining at least one six in six rolls of a fair die, or
+  \item Obtaining at least one double six in six rolls of a pair of fair
+    dice.
+  \end{enumerate}
+\end{problem}
+\begin{solution*}
+  For part (a): The probability that we do not roll a six in six rolls of a
+  fair die is
+  \[
+    q_1=\left(\frac{5}{6}\right)^6\approx\num{0.3348979766803842}.
+  \]
+  Therefore, the probability of seeing at least one six in six rolls of a
+  fair die is
+  \[
+    p_1=1-q_1\approx\num{0.6651020233196159}.
+  \]
+  \\\\
+  For part (b): The probability that we do not roll a double six in six
+  rolls of a pair fair die is
+  \[
+    q_2=\left(\frac{35}{36}\right)^6\approx\num{0.8444875698403315}.
+  \]
+  Therefore, the probability of seeing at least one double six in six rolls
+  of a pair of fair die is
+  \[
+    p_2=1-q_2\approx\num{0.15551243015966854}.
+  \]
+
+  Lastly, we see that the \(p_1>p_2\); i.e., the probability of rolling at
+  least one six in six rolls of a fair die is more likely than the
+  probability of obtaining two double sixes is six rolls of a pair of fair
+  dice.
+\end{solution*}
+
+\begin{problem}[Handout 1, \# 13]
+  There are \(n\) people are lined up at random for a photograph. What is
+  the probability that a specified set of \(r\) people happen to be next to
+  each other?
+\end{problem}
+\begin{solution*}
+  The \(r\) prespecified people can stand as a group starting at positions
+  \(1,\dotsc,n-r+1\). They can be permuted among themselves in \(r!\)
+  ways. The remaining \(n-r\) people can be permuted among themselves in
+  \((n-r)!\) ways. Thus, we have
+  \[
+    p=\frac{(n-r+1)r!(n-r)!}{n!}=\frac{(n-r+1)!r!}{n!}.\qedhere
+  \]
+\end{solution*}
+
+\begin{problem}[Handout 1, \# 16]
+  Consider a particular player, say North, in a Bridge game. Let \(X\) be
+  the number of aces in his hand. Find the distribution of \(X\).
+\end{problem}
+\begin{solution*}
+  Let \(X\) denote the number of aces in North's hand; this is a random
+  variable taking integer values between \(0\) and \(4\). We are asked to
+  find the PMF of \(X\); i.e., the values \(P(X=x)\) for all
+  \(x=0,\dotsc,4\).
+
+  From a deck of \(52\) cards, \(13\) cards can be selected in
+  \(\binom{52}{13}\) ways. From these North can have \(x\) number of aces
+  in \(\binom{4}{x}\binom{48}{13-x}\) ways. Therefore, the PMF of \(X\) is
+  precisely
+  \[
+    P(X=x)=\frac{\binom{4}{x}\binom{48}{13-x}}{\binom{52}{13}}.
+  \]
+
+  The values of \(P\) at each \(x=0,\dotsc,4\) are
+  \begin{align*}
+    P(X=0)&\approx 0.304,
+    &P(X=1)&\approx 0.439,\\
+    P(X=2)&\approx 0.213,
+    &P(X=3)&\approx 0.041,\\
+    P(X=4)&\approx 0.003.&&\qedhere
+  \end{align*}
+\end{solution*}
+
+\begin{problem}[Handout 1, \# 20]
+  If \(100\) balls are distributed completely at random into \(100\) cells,
+  find the expected value of the number of empty cells.
+
+  \noindent Replace \(100\) by \(n\) and derive the general expression. Now
+  approximate it as \(n\) tends to \(\infty\).
+\end{problem}
+\begin{solution*}
+  Let \(X\) denote the number of empty cells. Define \(I_1,\dotsc,I_n\)
+  indicator variables as
+  \[
+    I_k\defeq
+    \begin{cases}
+      1&\text{if the \(k\)\textsup{th} cell is empty,}\\
+      0&\text{otherwise.}
+    \end{cases}
+  \]
+  Then
+  \[
+    X=\sum_{k=1}^n I_k
+  \]
+  so the mean of \(X\) is
+  \begin{align*}
+    E(X)
+    &=\sum_{k=1}^n E(I_k)\\
+    &=\sum_{k=1}^n P(I_k=1)\\
+    &=\sum_{k=1}^n\frac{(n-1)^n}{n^n}\\
+    &=n\left(1-\frac{1}{n}\right)^n,
+  \end{align*}
+  which approaches \(\infty\) as \(n\to\infty\) since given any positive
+  real number \(M\), we have
+  \begin{align*}
+    M&<n\left(1-\frac{1}{n}\right)^{1/n}\\
+    1&>\left(\frac{M}{n}\right)^{1/n}+\frac{1}{n}
+  \end{align*}
+  for sufficiently large \(n\).
+
+  For \(n=100\), we have \(E(X)\approx\num{36.60323412732292}\).
+\end{solution*}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA519-HW-ALL"
+%%% End:

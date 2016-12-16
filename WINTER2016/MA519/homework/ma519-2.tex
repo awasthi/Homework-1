@@ -1,0 +1,304 @@
+\begin{problem}[Handout 2, \# 5]
+  Four men throw their watches into the sea, and the sea brings each man
+  one watch back at random. What is the probability that at least one man
+  gets his own watch back?
+\end{problem}
+\begin{solution}
+  Let \(\Omega\) denote the sample space and let \(A\) denote the event
+  that at least one man gets his own watch back. Since the order of
+  distributing wallets to each man matters,
+  \[
+    \#\Omega=4!=24.
+  \]
+  Now, let \(A_i\) be the event that man \(i\) gets his wallet back, where
+  \(1\leq i\leq 4\). Then \(A=A_1\cup A_2\cup A_3\cup A_4\) and by the
+  inclusion-exclusion principle, we have
+  \begin{align*}
+    P(A)
+    &=4P(A_1)-6P(A_1\cap A_2)+4P(A_1\cap A_2\cap A_3)-P(A_1\cap A_2\cap
+      A_3\cap A_4)\\
+    &=4\frac{3!}{24}-6\frac{2!}{24}+4\frac{1}{24}-\frac{1}{24}\\
+    &=1-\frac{1}{2}+\frac{3}{24}\\
+    &=\frac{1}{2}+\frac{3}{24}\\
+    &=\frac{15}{24}
+  \end{align*}
+  where, because of the symmetry of the events,
+  \(P(A_i\cap A_j)=P(A_k\cap A_\ell)\),
+  \(P(A_i\cap A_j\cap A_k)=P(A_\ell\cap A_n\cap A_m)\) etc., thereby
+  simplifying the above expression.
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 2, \# 7]
+  Calculate the probability that in Bridge, the hand of at least one player
+  is void in a particular suit.
+\end{problem}
+\begin{solution}
+  We employ the same strategy as the last problem, i.e., we will use the
+  inclusion-exclusion principle to solve this. We may, without loss of
+  generality, assume that the particular suit is heart. Now, by Feller's
+  solution to the occupancy problem, there are
+  \(\displaystyle\binom{13+4-1}{13}=560\) ways to distribute \(13\) hearts to
+  four people; this is the size of our sample space. Then, there are
+  \[
+    \begin{aligned}
+      \binom{13+3-1}{13}&=\binom{15}{13}=15\cdot 7=105\\
+      \binom{13+2-1}{13}&=\binom{14}{13}=14\\
+      \binom{13+1-1}{13}&=\binom{13}{13}=1\\
+    \end{aligned}
+  \]
+  ways to distribute \(13\) hearts between \(3\) (excluding \(N\)), \(2\)
+  (excluding \(N\) and \(E\)), and \(1\) person (excluding \(N\), \(E\) and
+  \(S\)). By the inclusion-exclusion principle and symmetry of the events,
+  we have
+  \begin{align*}
+    P(\text{at least one player is void in hearts})
+    &=\frac{4\cdot 105-6\cdot 14+4\cdot 1}{560}\\
+    &=\frac{340}{560}\\
+    &\approx 0.6071
+  \end{align*}
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 2, \# 12]
+  If \(n\) balls are placed at random into \(n\) cells, find the
+  probability that exactly one cell remains empty.
+\end{problem}
+\begin{solution}
+  Let \(n\) balls be placed at random into \(n\) cells. (As was pointed out
+  to us in the last homework, we will assume that the \(n\) balls are
+  distinct.) Thus, there are \(n^n\) ways to arrange the \(n\) balls into
+  the \(n\) bins.
+
+  Now, there are
+  \[
+    \binom{n}{1}\binom{n}{2}\binom{n-1}{1}(n-2)!
+  \]
+  ways to put $n$ balls into $n$ slots with exactly one remaining empty (we
+  pick $1$ of our $n$ slots to be empty, we pick $2$ of our $n$ balls to
+  share a slot, we pick one of our remaining $n-1$ slots for those $2$
+  balls to go into, we fill the rest with one ball each.)
+
+  Thus, the probability that exactly $1$ cell remains empty is
+  \begin{align*}
+    \frac{\displaystyle\binom{n}{1}\binom{n}{2}\binom{n-1}{1}(n-2)!}{n^n}
+    &= \frac{\displaystyle n\binom{n}{2}(n-1)(n-2)!}{n^n} \\
+    &= \frac{n!(n-1)/2}{n^n} \\
+\end{align*}
+\end{solution}
+\newpage
+
+
+\begin{problem}[Handout 2, \# 13]
+  \emph{(Spread of rumors.)} In a town of \(n+1\) inhabitants, a person tells
+  a rumor to a second person, who in turn repeats it to a third person,
+  etc. At each step the recipient of the rumor is chosen at random from the
+  \(n\) people available. Find the probability that the rumor told \(r\)
+  times without:
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item returning to the originator,
+  \item being repeated to any person.
+  \end{enumerate}
+  Do the same problem when at each step the rumor told by one person to a
+  gathering of \(N\) randomly chosen people. (The first question is the
+  special case \(N=1\)).
+\end{problem}
+\begin{solution}
+  For part (a), the originator can chose from among \(n\) different people
+  and at each step, each person can chose from among \(n-1\) people
+  (excluding the originator). This gives us a probability of
+  \[
+    \frac{n(n-1)^r}{n^r}=\left(\frac{n-1}{n}\right)^{r-1}
+  \]
+  of the rumor not returning to the originator.
+
+  For part (b), the originator can chose from among \(n\) different people
+  and at each step \(i\) each person can chose from among \(n-i+1\) people
+  excluding the people who told him the rumor. This gives us a probability
+  of
+  \[
+    \frac{n(n-1)\dotsm(n-r+1)}{n^r}
+  \]
+  of the rumor not being repeated to anybody.
+
+  Lastly, there are \(\displaystyle\binom{n}{N}^r\) ways to pick a group of
+  \(N\) people to tell the rumor to \(r\) times; this is the size of the
+  sample space. Now, the originator has \(\displaystyle\binom{n}{N}\)
+  choices he can make of group of \(N\) people to tell the rumor to and
+  similarly at step \(i\), the rumor spreader has
+  \(\displaystyle\binom{n-(i-1)N}{N}\) choices. Thus, the probability of
+  the rumor not returning to the originator with this strategy is
+  \[
+    \frac{\displaystyle\binom{n}{N}\binom{n-N}{N}\dotsm\binom{n-(r-1)N}{N}}
+    {\displaystyle\binom{n}{N}^r}.
+  \]
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 2, \# 14]
+  \emph{(A family problem.)} In a certain family four girls take turns at
+  washing dishes. Out of a total of four breakages, three were caused by
+  the youngest girl, and she was thereafter called clumsy. Was she
+  justified in attributing the frequency of breakages to chance? Discuss
+  the connection with random placement of balls.
+\end{problem}
+\begin{solution}
+  By assuming that every sample point in our sample space is equally
+  likely, we can relate the problem at hand to the probability of the event
+  \(A\) that out of four indistinguishable balls, three fall in a specific
+  bin, say, the first one. First, \(\#\Omega=4^4\) since we are including
+  the possibility that no sister is responsible for breaking the dish. Now,
+  there are \(3\) ways to attribute dishes to the youngest sister and the
+  last dish can go into one of \(4\) places, the three other sisters or
+  none of them. This gives us a probability of
+  \[
+    P(A)=\frac{4\cdot 3}{4^4}=\frac{12}{265}\approx 0.0469.
+  \]
+  Since this probability is rather small, the sisters are justified in
+  calling her clumsy.
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 2, \# 15]
+  A car is parked among \(N\) cars in a row, not at either end. On his
+  return the owner finds exactly \(r\) of the \(N\) places still
+  occupied. What is the probability that both neighboring places are empty?
+\end{problem}
+\begin{solution}
+  There are \(r-1\) cars not belonging to the owner with \(N-1\) spots for
+  them. Thus, there are \(\displaystyle \binom{N-1}{r-1}\) possible
+  arrangements. Out of those arrangements, we insist that that the spots to
+  the left and to the right of the car's owner be empty, leaving \(N-3\)
+  spots for \(r-1\) cars. This gives us a probability of
+  \[
+    \frac{\displaystyle\binom{N-3}{r-1}}{\displaystyle\binom{N-1}{r-1}}.
+  \]
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 2, \# 16]
+  Find the probability that in a random arrangement of \(52\) bridge card
+  no two aces are adjacent.
+\end{problem}
+\begin{solution}
+  We can simplify this problem by using the sticks and stars analogy. There
+  are \(4\) aces and, if we want to avoid placing the aces next to each
+  other, we count the spaces between the remaining cards \(48\) cards, this
+  is \(52-4+1=49\) and place the \(4\) aces in between. This gives a total
+  of \(\displaystyle\binom{48}{4}\) arrangements (where the order in which
+  we do it does not matter) out \(\displaystyle\binom{52}{4}\) possible
+  arrangements including the possibility of two aces being next to each
+  other. Thus, the probability that no two aces are adjacent is
+  \[
+    \frac{\displaystyle \binom{48}{4}}{\displaystyle \binom{52}{4}}\approx 0.7187.
+  \]
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 2, \# 17]
+  Suppose \(P(A)=3/4\), and \(P(B)=1/3\).
+  \\\\
+  Prove that \(P(A\cap B)\geq 1/12\). Can it be equal to \(1/12\)?
+\end{problem}
+\begin{solution}
+  By the inclusion-exclusion principle, we have
+  \[
+    P(A\cup B)=P(A)+P(B)-P(A\cap B)
+  \]
+  so
+  \[
+    P(A\cap B)=P(A)+P(B)-P(A\cup B).
+  \]
+  But, since \(A\cup B\subseteq\Omega\) and \(P(\Omega)=1\), \(P(A\cup
+  B)\leq P(\Omega)=1\) so \(-P(A\cup B)\geq -1\). Thus,
+  \begin{align*}
+    P(A\cap B)&=P(A)+P(B)-P(A\cup B)\\
+              &\geq P(A)+P(B)-1\\
+              &=\frac{3}{4}+\frac{1}{3}-1\\
+              &=\frac{9}{12}+\frac{4}{12}-\frac{12}{12}\\
+              &=\frac{1}{12}.
+  \end{align*}
+
+  Lastly, we show that \(P(A\cap B)\) can in fact be equal to
+  \(1/12\). Consider the closed unit interval \(I=[0,1]\) equipped with the
+  Lebesgue measure. Set \(A=(0,3/4)\) and \(B=(1-1/3,1)=(2/3,1)\). Then the
+  intersection \(A\cap B=(2/3,3/4)\) has Lebesgue measure
+  \[
+    m(A\cap B)=\frac{3}{4}-\frac{2}{3}=\frac{1}{12}.
+  \]
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 2, \# 18]
+  Suppose you have infinitely many events \(A_1,A_2,\dotsc\), and each one
+  is sure to occur, i.e., \(P(A_i)=1\) for any \(i\).
+  \\\\
+  Prove that \(P\bigl(\bigcap_{i=1}^n A_i\bigr)=1\).
+\end{problem}
+\begin{solution}
+  Consider the sequence of probabilities \(\{P_n:n\in\bbN\}\) where
+  \(P_n=P\bigl(\bigcap_{i=1}^n A_i\bigr)\). Note that
+  \(\bigcap_{i=1}^n A_i\downarrow\bigcap_{i=1}^\infty A_i\). First we show,
+  by induction, that \(P_n=1\).
+
+  The case \(n=1\) is trivial. Now, assume the result holds for \(n-1\) and
+  consider \(P_n=P\bigl(\bigcap_{i=1}^n A_i\bigr)\). Writing
+  \(A'=\bigcap_{i=1}^{n-1}A_i\), we have
+  \[
+    P_n=P(A'\cap A_n).
+  \]
+  By the inclusion-exclusion principle,
+  \begin{align*}
+    P_n&=P(A')+P(A_n)-P(A'\cup A_n)\\
+       &=1+1-P(A'\cup A_n)
+         \intertext{and since \(P(A'\cup A_n)\geq P(A')=1\) by the monotonicity
+         of the probability measure, \(P(A'\cup A_n)=1\) since \(P(A'\cup
+         A_n)\leq P(\Omega)=1\), thus}
+       &=1+1-1\\
+       &=1.
+  \end{align*}
+  It follows that \(\{P_n:n\in\bbN\}\) is the constant sequence
+  \(\{1\}\).
+
+  By Theorem 1.1 from DasGupta (this theorem is proved in Wheeden and
+  Zygmund in more generality, not this problem, but DasGupta's Theorem
+  1.1), we have
+  \[
+    P\left(\bigcap\nolimits_{i=1}^\infty A_i\right)=\lim_{n\to\infty} P_n=1.
+  \]
+\end{solution}
+\newpage
+
+\begin{problem}[Handout 2, \# 19]
+  There are \(n\) blue, \(n\) green, \(n\) red, and \(n\) white balls in an
+  urn. Four balls are drawn from the urn with replacement. Find the
+  probability that there are balls of at least three different colors among
+  the four drawn.
+\end{problem}
+\begin{solution}
+  Each ball has an equal probability of being drawn on each draw. That is,
+  each (ordered) set of \(4\) draws is equally likely to occur.
+
+  There are $4^4$ ways to draw $4$ balls.
+
+  There are $4!$ ways to draw one ball of each color.
+
+  There are $\displaystyle 4\cdot 3\binom{4}{2}2!$ ways to draw 4 balls,
+  missing exactly one color (pick a color to be missed, pick a color to be
+  drawn twice, pick two draws for that color to be drawn on, rearrange the
+  other two colors into the other two draws.)
+
+  Thus, the probability of having at least three different colors being
+  drawn among those four is
+\begin{align*}
+  \frac{\displaystyle 4!+4\cdot 3\binom{4}{2}2!}{4^4}
+  &=\frac{3!+6\cdot 4!/(2!2!)}{4^3} \\
+  &=\frac{6+36}{4^3}\\
+  &\cong 0.65625\\
+\end{align*}
+\end{solution}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA519-Current-HW"
+%%% End:

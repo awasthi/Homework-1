@@ -1,0 +1,459 @@
+\begin{problem}[Munkres \S23, Ex.\,3]
+Let $\left\{A_\alpha\right\}$ be a collection of connected
+subspaces of $X$; let $A$ be a connected subspace of $X$. Show
+that if $A\cap A_\alpha\neq\emptyset$ for all $\alpha$, then
+$A\cup\left(\bigcup A_\alpha\right)$ is connected.
+\end{problem}
+\begin{proof}
+We shall aim to prove this result by using Theorem 23.3 from
+Munkres. Define the collection $\left\{B_\alpha\right\}$ by
+setting $B_\alpha=A\cup A_\alpha$. Note that by Theorem 23.3,
+$B_\alpha$ is connected for all $\alpha$, since $A\cap
+A_\alpha\neq\emptyset$ and both $A$ and $A_\alpha$ are
+connected. Next observe that the intersection $B_\alpha\cap
+B_\beta\neq\emptyset$ for all $\alpha$ and $\beta$, in
+particular, the subspace $A$ is contained in the intersection
+since $A\subset B_\alpha$ and $A\subset B_\beta$ for all $\alpha$
+and $\beta$. Therefore, $\left\{B_\alpha\right\}$ is a collection
+of connected subspaces of $X$ that have a point in
+common. Applying Theorem 23.3 one last time, we see that the
+union
+\[
+\bigcup B_\alpha
+=
+\bigcup\left(A\cup A_\alpha\right)
+=
+A\cup\left(\bigcup A_\alpha\right)
+\]
+is connected.
+\end{proof}
+\newpage
+\begin{problem}[Munkres \S23, Ex.\,6]
+Let $A\subset X$. Show that if $C$ is a connected subspace of $X$
+that intersects both $A$ and $X\setminus A$, then $C$ intersects
+$\partial A$.
+\end{problem}
+\begin{proof}
+We shall proceed by contradiction. Suppose that $C\cap\partial
+A=\emptyset$, then we shall show that the pair $C\cap A$ and
+$C\cap(X\setminus A)$ forms a separation of
+$C$. Recall that by definition (see Munkres \S17, p.\,102) the
+boundary $\partial A=\clsr A\cap\clsr{X\setminus A}$. Then we
+claim that $\clsr A=\partial A\cup \Int A$:
+\begin{lemma}
+Let $X$ be a topological space and $A\subset X$. Then $\partial
+A$ and $\Int{A}$ are disjoint and $\clsr{A}=\partial A\cup\Int
+A$.
+\end{lemma}
+\begin{proof}[Proof of lemma]
+\renewcommand\qedsymbol{$\clubsuit$}
+The point $x\in\partial A$ if and only if $x\in\clsr A$ and
+$x\in\clsr{X\setminus A}$. Thus, for every neighborhood $U$ of
+$x$, the intersection $U\cap X\setminus A\neq\emptyset$, in
+particular $U\nsubset A$ so $x$ is not an interior point of
+$A$. Hence, we see that $\partial A\cap\Int A=\emptyset$. To
+prove the last statement note that $\partial A\subset\clsr A$ and
+$\Int A\subset A\subset\clsr A$ (cf.\,Munkres \S17, p.\,95), so
+that $\partial A\cup\Int A\subset\clsr A$ hence, it suffices to
+show the reverse inclusion, namely, $\clsr A\subset\partial
+A\cup\Int A$. Let $x\in\clsr A$. If $x\in\Int A$, then clearly
+$x\in\partial A\cup\Int A$. Suppose $x\notin\Int A$. Then, by
+Theorem 17.5(a), for every neighborhood $U$ of $x$, the
+intersection $U\cap A\neq\emptyset$ and $U\nsubset A$. Thus,
+$U\cap (X\setminus A)\neq\emptyset$ so $x\in\clsr{X\setminus
+  A}$. It follows that $x\in\clsr{A}\cap\clsr{X\setminus
+  A}=\partial A$.
+\end{proof}
+\begin{lemma}
+Let $X$ be a topological space and $A\subset X$. Then $\partial
+A=\partial(X\setminus A)$.
+\end{lemma}
+\begin{proof}[Proof of lemma]
+\renewcommand\qedsymbol{$\clubsuit$}
+Replace $A$ by $X\setminus A$ in the definition of the boundary
+of $A$. Then we have:
+\begin{align*}
+\partial(X\setminus A)&=\clsr{X\setminus A}\cap
+                             \clsr{X\setminus(X\setminus A)}\\
+&=\clsr{X\setminus A}\cap\clsr{A}\\
+&=\clsr A\cap\clsr{X\setminus A}\\
+&=\partial A.
+\end{align*}
+\end{proof}
+Now, by Theorem 17.4, we have that $\clsr{C\cap A}=C\cap\clsr A$
+and $\clsr{C\cap(X\setminus A)}=C\cap\clsr{X\setminus
+  A}$. But by Lemma 13 and Lemma 14, the latter sets are
+equivalent to $\clsr{C\cap A}=C\cap(\partial A\cup\Int
+  A)$ and $\clsr{C\cap(X\setminus
+    A)}=C\cap(\partial A\cup\Int(X\setminus
+    A))$. But since $C\cap\partial A=\emptyset$ by
+assumption, we have
+\begin{align*}
+\clsr{C\cap A}\cap(C\cap(X\setminus A))
+&=(C\cap(\partial A\cup\Int A))
+\cap(C\cap(X\setminus A))\\
+&=((C\cap\partial A)
+\cup
+(C\cap\Int A))
+\cap
+(C\cap(X\setminus A))\\
+&=(C\cap\Int A)\cap(C\cap(X\setminus A))\\
+&=\emptyset
+\end{align*}
+since $C\cap\Int A\subset A$ and $C\cap(X\setminus
+  A)\subset X\setminus A$. Similarly, we have that the intersection
+$\clsr{C\cap(X\setminus A)}\cap(C\cap
+  A)=\emptyset$. So by Lemma 23.1, $C\cap A$ and
+$C\cap(X\setminus A)$ form a separation of $C$. This
+contradicts the assumption that $C$ is connected. Therefore, we
+conclude that $C\cap\partial A\neq\emptyset$.
+\end{proof}
+\newpage
+\begin{problem}[Munkres \S23, Ex.\,7]
+Is the space $\RR_\ell$ connected? Justify your answer.
+\end{problem}
+\begin{proof}
+No. The space $\RR_\ell$ is not connected and we may exhibit an
+explicit separation. Namely, consider the basis elements
+$(-\infty,0)$ and $[0,\infty)$. Then
+$\RR=(-\infty,0)\cup[0,\infty)$, hence $(-\infty,0)$ and
+$[0,\infty)$ form a separation of $\RR$ with the lower limit
+topology.
+\\\\
+Alternatively, one may note that
+$\RR\setminus(-\infty,0)=[0,\infty)$ is open in $\RR_\ell$ so
+$(-\infty,0)$ is both open and closed. Hence, by Munkres's
+alternative formulation of connectedness (cf.\,Munkres \S23,
+p.\,148 the italicized paragraph), $\RR_\ell$ is disconnected.
+\end{proof}
+\newpage
+\begin{problem}[Munkres \S23, Ex.\,9]
+Let $A$ be a proper subset of $X$, and let $B$ be a proper subset
+of $Y$. If $X$ and $Y$ are connected, show that
+\[
+(X\times Y)\setminus(A\times B)
+\]
+is connected.
+\end{problem}
+\begin{proof}
+Consider the family of embeddings $\left\{i_\alpha\right\}$
+where $i_\alpha\colon X\hookrightarrow X\times Y$ maps
+$x\mapsto x\times y_\alpha$ for $y_\alpha\notin B$, for all
+$\alpha$. By Theorem 23.5, $i_\alpha(X)=X\times y_\alpha$ is
+connected subspace of $X\times Y$. Moreover $X\times
+y_\alpha\subset(X\times Y)\setminus(A\times B)$ so $X\times y_0$,
+in particular, we have that is a connected subspace of $(X\times
+Y)\setminus(A\times B)$. Similarly, consider the family of
+embeddigs $\left\{j_\alpha\right\}$ where $j_\alpha\colon
+Y\hookrightarrow X\times Y$ maps $y\mapsto x_\alpha\times y$ for
+$x_\alpha\notin A$. We similarly have that
+$j_\alpha(Y)=x_\alpha\times Y$ is a connected subspace of
+$(X\times Y)\setminus(A\times B)$. Then we claim that
+\[
+(X\times Y)\setminus(A\times B)
+=\bigcup (X\times y_\alpha)\cup(x_\beta\times Y).
+\]
+It is clear that the union on the right is a subset of $(X\times
+Y)\setminus(A\times B)$ since each $X\times y_\alpha$ and
+$x_\beta\times Y$ is a subset of $(X\times Y)\setminus(A\times
+B)$. To see the reverse containment, take $x\times y$ in the
+union $\bigcup (X\times y_\alpha)\cup(x_\beta\times Y)$. Then
+$x\times y$ is in some $(X\times y_\alpha)\cup(x_\beta\times Y)$
+so $x\times y\in X\times y_\alpha$ or $x\times y\in x_\beta\times
+Y$. If $x\times y\in\bigcup X\times y_\alpha$, then
+$y_\alpha\notin B$ so $x\times y\notin A\times B$, hence $x\times
+y\in(X\times Y)\setminus(A\times B)$. If $x\times y\in\bigcup
+x_\beta\times Y$ then $x\notin A$, hence $x\times y\notin
+A\times B$ so $x\times y\in(X\times Y)\setminus(A\times
+B)$. Thus, we have that $(X\times Y)\setminus(A\times
+B)=\bigcup (X\times y_\alpha)\cup(x_\beta\times Y)$. Then, note
+that by Theorem 23.3, since $X\cap  y_\alpha\cap x_\beta\cap
+Y\neq\emptyset$, in particular, $x_\beta\times y_\alpha$ is in
+the intersection, $(X\times y_\alpha)\cup(x_\beta\times Y)$ is
+connected for all $\alpha$ and all $\beta$. Thus, the subspace
+$(X\times Y)\setminus(A\times B)$ is connected.
+\end{proof}
+\newpage
+\begin{problem}[Munkres \S24, Ex.\,1(ac)]
+\begin{enumerate}[noitemsep]
+\item[(a)] Show that no two of the spaces $(0,1)$, $(0,1]$ and
+  $[0,1]$ are homeomorphic. [\emph{Hint:} What happens if you
+  remove a point from each of these spaces?]
+\item[(c)] Show $\RR^n$ and $\RR$ are not homeomorphic if $n>1$.
+\end{enumerate}
+\end{problem}
+\begin{proof}
+(a) Suppose $\phi\colon (0,1]\to (0,1)$ is a homeomorphism. We
+claim that the restriction of $\phi$ to $(0,1)\subset(0,1]$ gives
+a homeomorphism to $(0,1)\setminus\{\phi(1)\}$, more generally,
+the following result holds:
+\begin{lemma}
+Suppose $\phi\colon X\to Y$ is a homeomorphism and $U\subset
+X$. Then the restriction $\restr{\phi}{U}\colon U\to\phi(U)$ is a
+homeomorphism.
+\end{lemma}
+\begin{proof}[Proof of lemma]
+\renewcommand\qedsymbol{$\clubsuit$}
+The restriction $\phi_U=\restr{\phi}{U}\colon U\to \phi(U)$ has a
+canonical inverse, namely,
+$\phi_U^{-1}=\restr{\phi^{-1}}{\phi(U)}\colon\phi(U)\to U$ since
+$\phi$ is a bijection. By Theorem 18.2(d,e) both $\phi_U$ and
+$\phi_U^{-1}$ are continuous hence,
+$U\approx\phi(U)$.
+\end{proof}
+Now remove $1$ from $(0,1]$. Then, since $\phi(1)$ is bijective,
+there exists $y\in(0,1)$ such that $\phi(1)=y$ with $0<y<1$. Then
+$(0,1)\setminus\{y\}=(0,y)\cup(y,1)$ is disconnected, but
+$(0,1]\setminus\{1\}=(0,1)$ is connected. This contradicts
+Theorem 23.5 that the image of $(0,1]$ under a continuous map is
+connected. The same argument shows that $(0,1)\not\approx[0,1]$
+(in fact, if we allow ourselves results from \S26 and \S27
+we have that $[0,1]$ is compact by 27.3 (Heine--Borel), but
+$(0,1)$ is not compact, by 26.5 it follows that they are not
+homeomorphic).
+
+Similarly, if $[0,1]\approx(0,1]$ via $\phi$ then
+$[0,1]\setminus\{0,1\}\approx(0,1]\setminus\{\phi(0),\phi(1)\}$.
+\\\\
+(b) From Example 4 of \S24, the punctured Euclidean space
+$\RR\setminus\{\mathbf{0}\}$ is path-connected, in particular,
+connected. But $\RR$ minus a point is disconnected. More
+precisely, if $\RR^n\approx\RR$ via $\phi$, by Lemma 15,
+$\RR^n\setminus\{0\}\approx\RR\setminus\{\phi(0)\}$, but
+$\RR\setminus\{\phi(0)\}$ is disconnected, contradicting Theorem 23.5.
+\end{proof}
+\begin{remarks*}
+I realized too late that Lemma 15 here is the same as Lemma A
+given to us in lecture.
+\end{remarks*}
+\newpage
+\begin{problem}[Munkres \S24, Ex.\,2]
+Let $f\colon S^1\to\RR$ be a continuous map. Show there exists a
+point $x$ of $S^1$ such that $f(x)=f(-x)$.
+\end{problem}
+\begin{proof}
+Consider the map $g\colon S^1\to\RR$ given by
+$g(x)=f(x)-f(-x)$. This map is continuous by Lemma 9(i) (proved on
+Homework 4 which showed that if $f,g$ are continuous real valued maps on a
+metric space $X$ then (i) $f+g$ and (ii) $fg$ are continuous;
+moreover $S^1$ is naturally a metric space as a subspace of
+$\RR^2$ which is how Munkres defines it in Example 5 on
+\S24). Fix $x_0\in S^1$ and suppose, without loss of generality,
+that $g(x_0)>0$ (for if $g(x_0)=0$ we are done, i.e,
+$f(x_0)=f(-x_0)$ and if $g(x_0)<0$ we reverse the direction of
+$<$ in the following argument). Then
+\[
+g(-x_0)=f(-x_0)-f(-(-x_0))=-f(x_0)+f(-x_0)=-g(x_0).
+\]
+Then $g(-x_0)=-g(x_0)<g(x_0)$ and by the Intermediate Value
+Theorem (Theorem 24.3) there exists $y\in S$ such that $g(y)=0$,
+i.e, $f(y)=f(-y)$.
+\end{proof}
+\newpage
+\begin{problem}[Munkres \S25, Ex.\,2(b)]
+\begin{enumerate}[noitemsep]
+\item[(b)] Consider $\RR^\omega$ in the uniform topology. Show
+  that $\mathbf{x}$ and $\mathbf{y}$ lie in the same component of
+  $\RR^\omega$ if and only if the sequence
+  \[
+    \mathbf{x}-\mathbf{y}=(x_1-y_1,x_2-y_2,...)
+  \]
+  is bounded. [\emph{Hint:} It suffices to consider the case
+  where $\mathbf{y}=\mathbf{0}$.]
+\end{enumerate}
+\end{problem}
+\begin{proof}
+$\implies$ Suppose that $\mathbf{x}$ and $\mathbf{y}$ lie in the
+same connected component, call it $C$. Consider the set
+\[
+U=\left\{\,
+\mathbf{z}
+\;\middle|\;
+\text{$\mathbf{x}-\mathbf{z}$ is bounded}\,\right\}
+\quad
+\text{and}
+\quad
+X\setminus
+U=\left\{\,\mathbf{z}
+\;\middle|\;
+\text{$\mathbf{z}-\mathbf{z}$ is unbounded}\,\right\}.
+\]
+These sets are open in the uniform topology since, in the case
+of $U$: for any $\mathbf{z}\in U$ for $\epsilon=1/2$, the open ball
+$B_{\bar\rho}(\mathbf{z},\epsilon)\subset U$ since for every
+$\mathbf{z}'\in B_{\bar\rho}(\mathbf{z},\epsilon)$ the difference
+$\mathbf{x}-\mathbf{z}'$ is bounded, i.e.,
+\begin{align*}
+\bar\rho(\mathbf{x},\mathbf{z}')
+&\leq\bar\rho(\mathbf{x},\mathbf{z})+\bar\rho(\mathbf{z},\mathbf{z}')\\
+&\leq M+\epsilon\\
+&=M+\frac{1}{2}
+\end{align*}
+for some positive real number $M<\infty$. In the case of
+$X\setminus U$: Take $\mathbf{z}\in X\setminus U$ and take the
+open ball of radius $1/2$, $B_{\bar\rho}(\mathbf{z},1/2)$ then if
+$\mathbf{z}'\in B_{\bar\rho}(\mathbf{z},1/2)$ then, by the
+Reverse Triangle Inequality, the sequence
+\begin{align*}
+|x_n-z_n'|
+&\geq\left||x_n-z_n|-|x_n-z_n'|\right|\\
+&\geq\left||x_n-z_n|-\frac{1}{2}\right|\\
+&>\left|M-\frac{1}{2}\right|
+\end{align*}
+for every positive real number $M$, hence
+$\mathbf{x}-\mathbf{z}'$ is unbounded. Then, by Theorem 23.2,
+$C\subset U$ or $C\subset (X\setminus U)$. But $\mathbf{x}\in U$
+so $C\subset U$, i.e., $\mathbf{x}-\mathbf{y}$ is bounded.
+
+$\impliedby$ Suppose $\mathbf{x}-\mathbf{y}$ is bounded. Then for
+every $\epsilon>0$, there exists a positive integer $N$ such that
+$|x_n-y_n|<\epsilon$ for all $n\geq N$. We will show that there
+exists a path $f\colon [0,1]\to\RR^\omega$ from $\mathbf{x}$ to
+$\mathbf{y}$. Consider the path
+\[
+f(t)=\mathbf{x}-t(\mathbf{x}-\mathbf{y}).
+\]
+Note that $f(0)=\mathbf{x}$ and $f(1)=\mathbf{y}$. Now we show
+that $f$ is indeed continuous. By Lemma 8 (the equivalence of the
+$\epsilon$-$\delta$ definition to the metric topology which I
+proved on Homework 4) it suffices to show that for every
+$\epsilon>0$ there exists a $\delta>0$ such that $s,s'\in B(t,\delta)$
+implies $f(s),f(s')\in B_{\bar\rho}(\mathbf{z},\epsilon)$. In
+particular, chose $\delta=\epsilon/M$ where $M>|x_n-y_n|$ for all
+$n$, then we have
+\begin{align*}
+\left|f(s)-f(s)'\right|
+&=\left|\mathbf{x}-s(\mathbf{x}-\mathbf{y})-
+(\mathbf{x}-s'(\mathbf{x}-\mathbf{y}))\right|\\
+&=\left|(s-s')(\mathbf{x}-\mathbf{y})\right|\\
+&=\left|(s-s')\right|\left|\mathbf{x}-\mathbf{y}\right|\\
+&<\delta\left|\mathbf{x}-\mathbf{y}\right|\\
+&<\epsilon.
+\end{align*}
+Thus $x$ and $y$ are path-connected, in particular, by Theorem
+25.2, $x$ and $y$ lie in the same connected component.
+\end{proof}
+\newpage
+\begin{problem}[Munkres \S25, Ex.\,4]
+Let $X$ be locally path connected. Show that every connected open
+set in $X$ is path connected.
+\end{problem}
+\begin{proof}
+First we prove the following claim:
+\begin{claim*}
+If $U$ is an open subset of $X$, then it is locally
+path-connected.
+\end{claim*}
+\begin{proof}[Proof of claim]
+\renewcommand\qedsymbol{$\spadesuit$}
+Let $x\in U$ and let $V\subset U$ be a neighborhood of $x$ then,
+by Lemma 16.2, since $V$ is open in $X$ and $X$ is locally
+path-connected, there exists path-connected neighborhood $W$ of
+$x$ contained in $V$, hence contained in $U$. Thus, $U$ is
+locally path-connected.
+\end{proof}
+Now, suppose $U$ is a connected open subset of $X$. Then $U$ has
+one component by Theorem 25.2. Moreover, by Theorem 25.5, since $U$ is locally
+path-connected the components of $U$ and path-components are
+equivalent. Thus, $U$ has exactly one path component, i.e, $U$ is
+path-connected.
+\end{proof}
+\newpage
+\begin{problem}[Munkres \S25, Ex.\,6]
+A space $X$ is said to be \emph{weakly locally path connected at
+  $x$} if for every neighborhood $U$ of $x$, there is a connected
+subspace of $X$ contained in $U$ that contains a neighborhood of
+$x$. Show that if $X$ is weakly locally connected at each of its
+points, then $X$ is locally connected. [\emph{Hint:} Show that
+components of open sets are open.]
+\end{problem}
+\begin{proof}
+By Theorem 25.5, it suffices to show that for every open set $U$
+of $X$, each component of $U$ is open in $X$. Let $x\in U$. Then,
+by Theorem 25.2, $x$ lies in some component of $U$, say
+$C$. Since $X$ is weakly locally path-connected, there is a
+connected subspace, say $C_x$, contained in $U$ that contains a
+neighborhood $V_x$ of $x$. Then by Theorem 25.2, $C_x\subset
+C$. In particular, for every $x\in C$ we have a neighborhood
+$V_x$ of $x$ contained in $C$,i.e., $C$ is the union
+$C=\bigcup_{x\in C}V_x$ of open subsets. Thus, $C$ is open in $X$.
+\end{proof}
+\newpage
+\begin{problem}[A]
+Let $X$ be a topological space. The quotient space
+$(X\times[0,1])/(X\times 0)$ is called the \emph{cone} of $X$ and
+denoted $CX$.
+\\\\
+Prove that if $X$ is homeomorphic to $Y$ then $CX$ is
+homeomorphic to $CY$ (\emph{Hint:} There are maps in both
+directions).
+\end{problem}
+\begin{proof}
+Let $\phi\colon X\to Y$ be a homeomorphism and let $p$ and $q$
+denote the quotient maps the pairs $(X\times[0,1],CX)$ and
+$(Y\times[0,1],CY)$, respectively. Then we get a canonical
+homeomorphism $\Phi\colon X\times[0,1]\to Y\times[0,1]$ given by
+the map $(x,z)\mapsto (\phi(x),z)$. Note that $\Phi$ is
+continuous, by Theorem 18.4, since $\phi$ and $\id_{[0,1]}$ are
+continuous and its inverse is given by
+$\Phi^{-1}=(\phi^{-1},\id_{[0,1]})$ (which is continuous by
+18.4). Now, we claim that the map $\Phi^*\colon CX\to CY$ given
+by $[(x,z)]\mapsto[\Phi(x,z)]=[(\phi(x),z)$ defines a
+homeomorphism $CX\approx CY$.
+
+First we will prove that $\Phi^*$ is well-defined. Fix an
+equivalence class $[(x,z)]$ in $CX$ and choose two
+representatives $(x_1,z_1)$ and $(x_2,z_2)$ of $[(x,z)]$ in
+$X\times[0,1]$. Then, by the definition of the quotient space
+(cf.\,Homework 4, Problem F), $(x_1,z_1)\sim(x_2,z_2)$ if and
+only if $(x_1,z_1)=(x_2,z_2)$ or $z_1=z_2=0$, i.e,
+$\{(x_1,z_1),(x_2,z_2)\}\subset X\times 0$. In the former case
+$\Phi(x_1,z_1)=\Phi(x_2,z_2)=(\phi(x_1),z_1)$ and we see that
+\[
+\Phi^*([(x_1,z_1)]=[\Phi(x_1,z_1)]=[(\phi(x_1),z_1)]=[\Phi(x_2,z_2)]=\Phi^*([(x_2,z_2)])
+\]
+and in the latter $\Phi(x_1,0)=(\phi(x_1),0)$ and
+$\Phi(x_2,0)=(\phi(x_2),0)$ so $(\phi(x_1),0)\sim(\phi(x_2),0)$, hence
+\[
+\Phi^*([(x_1,0)]=[\Phi(x_1,0)]=[(\phi(x_1),0)]=[\Phi(x_2,0)]=\Phi^*([(x_2,0)]).
+\]
+Thus $\Phi$ is well-defined.
+
+Now we will show that $\Phi^*$ is a continuous bijection and with
+a continuous inverse. To show bijectivity we construct an
+explicit inverse, namely, define $(\Phi^*)^{-1}\colon CY\to CX$
+by $[(y,z)]\mapsto[\Phi^{-1}(y,z)]=[\phi^{-1}(x),z]$. The map
+$(\Phi^*)^{-1}$ is clearly well-defined (by a similar argument to
+showing that $\Phi$ is well-defined) and we have that
+\begin{align*}
+\Phi^*\circ(\Phi^*)^{-1}([y,z])
+&=\Phi^*([\Phi^{-1}(y,z)]
+&
+(\Phi^*)^{-1}\circ\Phi^*([x,z])
+&=(\Phi^*)^{-1}([\Phi(x,z)])
+\\
+&=[\Phi(\Phi^{-1}(y,z)]
+&
+&=[\Phi^{-1}(\Phi(x,z))]
+\\
+&=[(y,z)]
+&
+&=[(x,z)]\\
+&=\id_{CY}
+&&=\id_{CX}.
+\end{align*}
+It is clear that $\Phi^*$ is continuous since, by Theorem Q.2,
+$\Phi^*\circ p=q\circ\Phi$ is continuous. Let $U_\sim$ be open in
+$CX$. Then $U=p^{-1}(U_\sim)$ is open in $X\times[0,1]$ then
+$\Phi(U)$ is open in $Y\times[0,1]$ since $\Phi$ is a
+homeomorphism. The same argument applies to showing that
+$(\Phi^*)^{-1}$ is continuous in the reverse direction, that is,
+consider the composition $(\Phi^*)^{-1}\circ q=p\circ\Phi^{-1}$
+and apply Theorem Q.2.
+\end{proof}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA571-HW-Current"
+%%% TeX-engine: default
+%%% End:

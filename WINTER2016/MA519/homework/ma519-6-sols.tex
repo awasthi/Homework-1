@@ -1,0 +1,109 @@
+\subsection{Homework 6}
+\begin{problem}[Handout 8, \# 2]
+  Identify the parameters \(n\) and \(p\) for each of the following
+  binomial distributions:
+  \begin{enumerate}[label=(\alph*),noitemsep]
+  \item \(\#\) boys in a family with \(5\) children;
+  \item \(\#\) correct answers in a multiple choice test if each
+    question has a \(5\) alternatives, there are \(25\) questions, and the
+    student is making guesses at random.
+  \end{enumerate}
+\end{problem}
+\begin{solution}
+  For part (a): The distribution is a \(\Bin(5,0.5)\).
+
+  For part (b): The distribution is a \(\Bin(25,0.2)\).
+\end{solution}
+
+\begin{problem}[Handout 8, \# 10]
+  A newsboy purchases papers at \(20\) cents and sells them for \(35\)
+  cents. He cannot return unsold papers. If the daily demand for papers is
+  modeled as a \(\Bin(50,0.5)\) random variable, what is the optimum
+  number of papers the newsboy should purchase?
+\end{problem}
+\begin{solution}
+  Let \(x\) denote the optimum number of newspapers to be bought and
+  \(X\sim\Bin(50,0.5)\) the demand. Then the profit \(Y\) is given by
+  \begin{align*}
+    Y
+    &=35\min\{X,x\}-20x\\
+    &=17.5((X+x)-|X-x|)-20x\\
+    &=17.5X-2.5x-17.5|X-x|.
+  \end{align*}
+
+  Therefore, the expectation of \(Y\) is
+  \begin{align*}
+    E(Y)
+    &=17.5E(X)-2.5x-17.5E(|X-x|)\\
+    &=437.5-2.5x-\sum_{k=0}^x(x-k)\binom{50}{k}0.5^{50}-\sum_{k=x+1}^{50}(k-x)\binom{50}{k}0.5^{50}.
+  \end{align*}
+  Recursively trying values of \(x\) we find that the optimal value is
+  \(x=24\).
+\end{solution}
+
+\begin{problem}[Handout 8, \# 12]
+  How many independent bridge dealings are required in order for the
+  probability of a preassigned player having four aces at least once to be
+  \(\frac{1}{2}\) or better? Solve again for some player instead of a given
+  one.
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}[Handout 8, \# 13]
+  A book of \(500\) pages contain s\(500\) misprints. Estimate the chances
+  that a given page contains at least three misprints.
+\end{problem}
+\begin{solution}
+\end{solution}
+
+
+\begin{problem}[Handout 8, \# 14]
+  Colorblindness appears in one percent of the people in a certain
+  population. How large must a random sample (with replacements) be if the
+  probability of its containing a colorblind person is to be \(0.95\) or
+  more?
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}[Handout 8, \# 15]
+  Two people toss a true coin \(n\) times each. Find the probability that
+  they will score the same number of heads.
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}[Handout 8, \# 16 -- \emph{Binomial approximation to the hypergeometric distribution}]
+  A population of TV elements is divided into red and black elements in the
+  proportion \(p:q\) (where \(p+q=1\)). A sample of size \(n\) is taken
+  without replacement. The probability that it contains exactly \(k\) red
+  elements is given by the hypergeometric distribution of II, 6. Show that
+  as \(n\to\infty\) this probability approaches \(\Bin(n,p)\).
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}[Handout 9, \# 3]
+  Suppose \(X\), \(Y\), \(Z\) are mutually independent random variables,
+  and \(E(X)=0\), \(E(Y)=-1\), \(E(Z)=1\), \(E(X^2)=4\), \(E(Y^2)=3\),
+  \(E(Z^2)=10\). Find the variance and the second moment of
+  \(2Z-\frac{Y}{2}+\rme X\), where \(\rme\) is the number such that
+  \(\ln \rme=1\).
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}[Handout 9, \# 14 -- \emph{Variance of Product}]
+  Suppose \(X\), \(Y\) are independent random variables. Can it ever be
+  true that \(\Var(XY)=\Var(X)\Var(Y)\)?
+
+  \noindent If it can, when?
+\end{problem}
+\begin{solution}
+\end{solution}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA519-HW-ALL"
+%%% End:
