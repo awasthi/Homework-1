@@ -1,0 +1,207 @@
+\section{Extra Problems}
+These problems were taken from probability courses from other
+universities.
+\subsection{Stat 110 (Harvard) -- Final 2006}
+\begin{problem}
+  The number of fish in a certain lake is a \(\Poi(\lambda)\) random
+  variable. Worried there might be no fish at all, a statistician adds one
+  fish to the lake. Let \(Y\) be the resulting number of fish (so \(Y\) is
+  \(1\) plus a \(\Poi(\lambda)\) random variable).
+  \begin{alphlist}
+  \item Find \(E(Y^2)\).
+  \item Find \(E(\frac{1}{Y})\) (in terms of \(\lambda\); do not simplify
+    yet).
+  \item Find a simplified expression for \(E(\frac{1}{Y})\). \emph{Hint:}
+    \(k!(k+1)=(k+1)!\).
+  \end{alphlist}
+\end{problem}
+\begin{solution*}
+  For part (a): Let \(X\sim\Poi(\lambda)\) such that \(X=Y-1\). Then we
+  have
+  \begin{align*}
+    E(Y^2)
+    &=E\bigl[(X+1)^2\bigr]\\
+    &=E(X^2+2X+1)\\
+    &=E(X^2)+2E(X)+1\\
+    &=\lambda^2+\lambda+2\lambda+1\\
+    &=\lambda^2+3\lambda+1.
+  \end{align*}
+  \\\\
+  For part (b): Keeping \(X\) as above, we have
+  \begin{align*}
+    E\left(\tfrac{1}{Y}\right)
+    &=E\left(\tfrac{1}{X+1}\right)\\
+    &=\sum_{k=0}^\infty \frac{1}{k+1}\rme^{-\lambda}\frac{\lambda^k}{k!}\\
+    &=\rme^{-\lambda}\sum_{k=0}^\infty\frac{\lambda^k}{(k+1)!}\\
+    &=\rme^{-\lambda}\sum_{k=0}^\infty\frac{\lambda^{-1}\lambda^{k+1}}{(k+1)!}.
+  \end{align*}
+  \\\\
+  For part (c): Taking the equation above and further simplifying it, we
+  have
+  \begin{align*}
+    E\left( \tfrac{1}{Y} \right)
+    &=\frac{\rme^{-\lambda}}{\lambda}
+      \sum_{k=0}^\infty\frac{\lambda^{k+1}}{(k+1)!}\\
+    &=\frac{\rme^{-\lambda}}{\lambda}
+      \sum_{k=1}^\infty\frac{\lambda^k}{k!}\\
+    &=\frac{\rme^{-\lambda}}{\lambda}(\rme^{\lambda}-1)\\
+    &=\tfrac{1}{\lambda}(1-\rme^{-\lambda}).\qedhere
+  \end{align*}
+\end{solution*}
+
+\begin{problem}
+  Write the most appropriate of \(\leq\), \(\geq\), \(=\) or \(?\) in the
+  blank for each part (where ``\(?\)'' means that no relation holds in
+  general.)  It is not necessary to justify your answers for full credit;
+  some partial credit is available for justified answers that are flawed
+  but on the right track.  In (c) through (f), \(X\) and \(Y\) are IID
+  (independent identically distributed) positive random variables. Assume
+  that the various expected values exist.
+  \begin{alphlist}
+  \item the probability that a roll of \(2\) fair dice totals \(9\) \(\_\) the
+    probability that a roll of \(2\) fair dice totals \(10\).
+  \item the probability that \(65\%\) of \(20\) children born are girls
+    \(\_\) the probability that \(65\%\) of \(2000\) children born are
+    girls.
+  \item \(E\bigl(\sqrt{X}\bigr)\mathrel{}\_\mathrel{}\sqrt{E(X)}\).
+  \item \(E(\sin X)\mathrel{}\_\mathrel{}\sin[E(X)]\).
+  \item \(P(X+Y>4)\mathrel{}\_\mathrel{}P(X>2)P(Y>2)\).
+  \item \(E\bigl[ (X+Y)^2 \bigr]\mathrel{}\_\mathrel{}2E(X^2)+2[E(X)]^2\).
+  \end{alphlist}
+\end{problem}
+\begin{solution*}
+  For part (a): The probability that a roll of \(2\) fair dice totals \(9\)
+  \(\geq\) the probability that a roll of \(2\) fair dice totals \(10\)
+  since there are \(4\) ways to achieve \(x+y=9\), for \(1\leq x,y\leq 6\),
+  (taking \(x=4,y=5\) and \(x=3,y=6\) and vice-versa) whereas only \(3\)
+  ways to achieve \(x+y=10\) (since there is only one way to have
+  \(x=5,y=5\) and \(x=4,y=6\), \(x=6,y=4\)).
+  \\\\
+  For part (b): The probability that \(65\%\) of \(20\) children born are
+  girls \(\geq\) the probability that \(65\%\) of \(2000\) children born
+  are girls by the weak law of large numbers the latter probability is
+  close to \(\frac{1}{2}\).
+  \\\\
+  For part (c): The inequality \(E\bigl(\sqrt{X}\bigr)\leq\sqrt{E(X)}\)
+  follows by Jensen's inequality; i.e.,
+  \[
+    \bigl[E\bigl(\sqrt{X}\bigr)\bigr]^2\leq E(X)
+  \]
+  since \((\blank)^2\colon\R^+\to\R^+\) is convex.
+  \\\\
+  For part (d):
+  \\\\
+  For part (e):
+  \\\\
+  For part (f):
+\end{solution*}
+
+\begin{problem}
+  A fair die is rolled twice, with outcomes \(X\) for the \(1\)\textsup{th}
+  roll and \(Y\) for the \(2\)\textsup{th} roll.
+  \begin{alphlist}
+  \item
+  \end{alphlist}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../MA519-HW-ALL"
+%%% End:
