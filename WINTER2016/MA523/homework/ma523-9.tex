@@ -1,7 +1,8 @@
+\subsection{Homework 9}
 \begin{problem}
   \begin{enumerate}[label=(\alph*),noitemsep]
   \item Show that for \(n=3\) the general solution to the wave equation
-    \(u_{tt}-\Delta u=0\) with spherical symmetry about the origin has the
+    \(u_{tt}-\Lap u=0\) with spherical symmetry about the origin has the
     form
     \[
       u=\tfrac{1}{r}F(r+t)+\tfrac{1}{r}G(r-t),\quad r=|x|,
@@ -17,75 +18,8 @@
     \]
   \end{enumerate}
 \end{problem}
-\begin{solution}
-  For part (a): We show that
-  \[
-    u=\tfrac{1}{r}F(r+t)+\tfrac{1}{r}G(r-t)
-  \]
-  is in fact a solution to the wave equation in
-  \(\bbR^3\times(0,\infty)\). By direct calculation, we have
-  \begin{align*}
-    u_{tt}%
-    &=\tfrac{1}{r}F''(r+t)+\tfrac{1}{r}G''(r-t),\\
-    u_{r}
-    &=\tfrac{1}{r}F'(r+t)+\tfrac{1}{r}G'(r-t)
-      -\tfrac{1}{r^2}F(r+t)-\tfrac{1}{r^2}G(r-t),\\
-    u_{rr}
-    &=\tfrac{1}{r}F''(r+t)+\tfrac{1}{r}G''(r-t)\\
-    &\phantom{{}={}\quad}-\tfrac{2}{r^2}F'(r+t)-\tfrac{2}{r^2}G'(r-t)\\
-    &\phantom{{}={}\qquad}+\tfrac{2}{r^3}F(r+t)+\tfrac{2}{r^3}G(r-t),\\
-    \Delta_{S^2}u&=0,
-  \end{align*}
-  and lastly,
-  \begin{align*}
-    \Delta u%
-    &=\tfrac{\partial}{\partial r^2}u%
-      +\tfrac{2}{r}\tfrac{\partial}{\partial r}u%
-      +\tfrac{1}{r^2}\Delta_{S^2} u\\
-    &=\tfrac{1}{r}F''(r+t)+\tfrac{1}{r}G''(r-t)\\
-    &\phantom{{}={}\quad}-\tfrac{2}{r^2}F'(r+t)-\tfrac{2}{r^2}G'(r-t)
-    +\tfrac{2}{r^3}F(r+t)+\tfrac{2}{r^3}G(r-t)\\
-    &\phantom{{}={}\quad}
-      +\tfrac{2}{r^2}F'(r+t)+\tfrac{2}{r^2}G'(r-t)
-      -\tfrac{2}{r^3}F(r+t)-\tfrac{2}{r^3}G(r-t)\\
-    &\phantom{{}={}}+0\\
-    &=\tfrac{1}{r}F''(r+t)+\tfrac{1}{r}G''(r-t).
-  \end{align*}
-  Therefore, looking at the equation for \(u_{tt}\), we see that
-  \[
-    u_{tt}-\Delta u=0;
-  \]
-  i.e., \(u(r,t)\defeq\frac{1}{r}F(r+t)+\frac{1}{r}G(r-t)\) is a solution
-  to the wave equation with \(F\) and \(G\) at least twice differentiable
-  and such that they satisfy the initial conditions of the (nonhomogeneous)
-  wave equation.
-
-  We still need to show that if \(u\) is a solution to the wave equation
-  with spherical symmetry it has the form prescribed above. We trust this
-  can be done for now and return to this problem as time permits.
-  \\\\
-  For part (b): We show by a direct computation that
-  \[
-    u=\frac{1}{2r}\int_{r-t}^{r+t}\rho h(\rho)\diff\rho
-  \]
-  solve the initial-value problem for the wave equation. First, we compute
-  the necessary partial derivatives of \(u\),
-  \begin{align*}
-    u_t(r,t)
-    &=\tfrac{1}{2r}[(r+t)h(r+t)-(r-t)h(r-t)],\\
-    u_{tt}(r,t)
-    &=\tfrac{1}{2r}[(r+t)h'(r+t)+h(r+t)+(r-t)h'(r-t)+h(r-t)],\\
-    u_r(r,t)
-    &=\tfrac{1}{2r}[(r+t)h(r+t)-(r-t)h(r-t)]
-      -\frac{1}{2r^2}\int_{r-t}^{r+t}\rho h(\rho)\diff\rho\\
-    &=\tfrac{1}{2r}[(r+t)h(r+t)-(r-t)h(r-t)]
-      -\tfrac{1}{r}u(r,t),\\
-    u_{rr}(r,t)&=h'(r+t)-h'(r-t)-\tfrac{1}{r}u_r(r,t)+\tfrac{1}{r^2}u(r,t),
-  \end{align*}
-  \footnote{Couldn't finish. Wrote it down on paper. It's a bit messy. Not
-    worth my time to write it down.}
-\end{solution}
-\newpage
+\begin{solution*}
+\end{solution*}
 
 \begin{problem}
   Show that the solution \(w(x_1,t)\) of the initial-value problem for the
@@ -94,8 +28,8 @@
     \label{eq:9:klein-gordon-eq}
     \left\{
       \begin{aligned}
-        w_{tt}=w_{x_1x_1}-\lambda^2w,\\
-        w(x_1,0)=0,&&w_t(x_1,0)=h(x_1)
+        w_{tt}&=w_{x_1x_1}-\lambda^2w,\\
+        w(x_1,0)&=0,&w_t(x_1,0)&=h(x_1)
       \end{aligned}
     \right.
   \end{equation}
@@ -106,114 +40,38 @@
   Here \(s^2=t^2-(x_1-y_1)^2\), while \(J_0\) denotes the Bessel function
   defined by
   \[
-    J_0(z)\defeq \frac{2}{\pi}\int_0^{\frac{\pi}{2}}\cos(z\sin\theta)\diff\theta.
+    J_0(z)\defeq \frac{2}{\pi}\int_0^{pi/2}\cos(z\sin\theta)\diff\theta.
   \]
 
-  \noindent (\emph{Hint:} Descend to \eqref{eq:9:klein-gordon-eq} from the
+  \noindent\emph{Hint:} Descend to \eqref{eq:9:klein-gordon-eq} from the
   two-dimensional wave equation satisfied by
   \[
-    u(x_1,x_2,t)=\cos(\lambda x_2)w(x_1,t).\text{)}
+    u(x_1,x_2,t)=\cos(\lambda x_2)w(x_1,t).
   \]
 \end{problem}
-\begin{solution}
-  Taking the hint, the equation \(u(x_1,x_2,t)\defeq\cos(\lambda
-  x_2)w(x_1,t)\) satisfies the two-dimensional wave equation as we will
-  shortly see. First, let us compute find the necessary partial derivatives
-  of \(u\),
-  \begin{align*}
-    u_{tt}&=\cos(\lambda x_2)w_{tt}(x_1,t),\\
-    u_{x_1}&=\cos(\lambda x_2)w_{x_1}(x_1,t),\\
-    u_{x_1x_1}&=\cos(\lambda x_2)w_{x_1x_1}(x_1,t),\\
-    u_{x_2}&=-\lambda\sin(\lambda x_2)w(x_1,t),\\
-    u_{x_2x_2}&=-\lambda^2\cos(\lambda x_2)w(x_1,t).
-  \end{align*}
-  Then, by \eqref{eq:9:klein-gordon-eq} together with the equations above
-  we have
-  \[
-    \left\{
-      \begin{aligned}
-        u_{tt}-\Delta u=\cos(\lambda x_2)(w_{tt}-w_{x_1x_1}+\lambda^2 w)=0
-        &&&\text{in \(\bbR^3\times(0,\infty)\),}\\
-        u=0,\quad u_t=\cos(\lambda x_2)h(x_1)&&&\text{on
-          \(\bbR^3\times\{\,t=0\,\}\).}
-      \end{aligned}
-    \right.
-  \]
-  By Kirchhoff's formula,
-  \[
-    u(x_1,x_2,t)=\fint_{\partial
-      B(x_1,x_2,t)}t\cos(\lambda y_2)h(y_1)\diff S(y_1,y_2)
-  \]
-  solves the above initial-value problem. Thus, \(u(x_1,0,t)=w(x_1,t)\)
-  solves the Klein--Gordon equation \eqref{eq:9:klein-gordon-eq}. Making
-  the substitution \(y_2\mapsto s=\sqrt{t^2-(x_1-y_1)^2}\) we can rewrite
-  \(u(x_1,0,t)\) as
-  \begingroup
-  \allowdisplaybreaks
-  \begin{align*}
-    w(x_1,t)
-    &=u(x_1,0,t)\\
-    &=\frac{1}{4\pi t^2}\int_{\partial B(x_1,0,t)} t\cos(\lambda
-      s)h(y_1)\diff S(y_1,s)\\
-    &=\frac{1}{4\pi}\int_{\partial B(0,0,1)}
-      \cos(\lambda tz_2)h(x_1+tz_1)\diff
-      S(z_1,z_2)\\
-    &=\frac{1}{4\pi}\int_{-1}^1
-      \left[
-      \int_{z_2\in S^1}\cos(\lambda tz_2)\diff z_2
-      \right]
-      h(x_1+tz_1)\diff z_1\\
-    &=\frac{1}{4\pi}\int_{x_1-t}^{x_1+t}
-      \left[
-      4\int_0^{\frac{\pi}{2}}\cos(\lambda s\sin\theta)\diff \theta
-      \right]
-      h(y_1)\diff y_1\\
-    &=\frac{1}{2}\int_{x_1-t}^{x_1+t} J_0(\lamdba s) h(y_1)\diff y_1.
-  \end{align*}
-  \endgroup
-  as desired.
-\end{solution}
-\newpage
+\begin{solution*}
+\end{solution*}
 
 \begin{problem}
   Let \(u\) solve
   \[
     \left\{
       \begin{aligned}
-        u_{tt}-\Delta u=0\phantom{,}&&&&&\text{in \(\bbR^3\times(0,\infty)\),}\\
-        u=g,&&u_t=h&&&\text{on \(\bbR^3\times\{\,t=0\,\}\)}
+        u_{tt}-\Lap u&=0&&&&\text{in \(\R^3\times(0,\infty)\),}\\
+        u&=g,&u_t&=h&&\text{on \(\R^3\times\{\,t=0\,\}\)}
       \end{aligned}
     \right.
   \]
   where \(g\) and \(h\) are smooth and have compact support. Show there
   exists a constant \(C\) such that
   \[
-    |u(x,t)|\leq \frac{C}{t}\quad(x\in\bbR^3,\,t>0).
+    |u(x,t)|\leq \frac{C}{t}\qquad \text{for every \(x\in\R^3\), \(t>0\).}
   \]
 \end{problem}
-\begin{solution}
-  Since \(h\) and \(g\) are compactly supported, we can find sufficiently
-  large balls about their supports \(B(x,R)\) independent of the size of
-  \(B(x,t)\). Now, by Kirchhoff's formula we have
-  \begin{align*}
-    |u(x,t)|
-    &=\left|
-      \fint_{\partial B(x,t)} th(y)+g(y)+Dg(y)\cdot(y-x)\diff S(y)
-      \right|\\
-    &=\frac{1}{4\pi t^2}\left|
-      \int_{\partial B(x,t)} th(y)+g(y)+Dg(y)\cdot(y-x)\diff S(y)
-      \right|\\
-    &\leq\frac{1}{4\pi t^2}\int_{\partial B(x,R)}t\sup\{|h|,|g|,
-      |Dg|\}\diff S(y)\\
-    &=\frac{M|\partial B(x,R)|}{4\pi t}\\
-    &=\frac{C}{t},
-  \end{align*}
-  where \(M<\infty\) since \(h\) and \(g\) are smooth and compactly
-  supported (and hence \(h\), \(g\), and \(|Dg|\) achieve their supremum in
-  \(B(x,R)\)).
-\end{solution}
+\begin{solution*}
+\end{solution*}
 
 %%% Local Variables:
 %%% mode: latex
-%%% TeX-master: "../MA523-HW-Current"
+%%% TeX-master: "../MA523-HW-ALL"
 %%% End:

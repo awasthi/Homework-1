@@ -1,3 +1,4 @@
+\subsection{Homework 4}
 \begin{problem}[Legendre transform]
   Let \(u(x_1,x_2)\) be a solution of the quasilinear equation
   \[
@@ -20,9 +21,10 @@
   \[
     a^{22}(p)v_{p_1p_2}-2a^{12}(p)v_{p_1p_2}+a^{11}(p)v_{p_1p_2}=0.
   \]
-  (\emph{Hint:} See [Evans, 4.4.3b], prove the identities (29)).
+
+  \noindent\emph{Hint:} See [E, \S 4.4.3b], prove the identities (29).
 \end{problem}
-\begin{solution}
+\begin{solution*}
   Assuming the regularity on \(v\) prescribed above, we compute
   \(v_{p_1p_1}\), \(v_{p_1p_2}\) and \(v_{p_2p_2}\).
 
@@ -30,7 +32,7 @@
   \(v_{p_2p_2}\), there is some symmetry we can exploit. Taking the first
   partial with respect to \(p^1\), we have
   \begin{equation}
-    \label{eq:3:vp1}
+    \label{eq:4:vp1}
     \begin{aligned}
       v_{p_1} &=\tfrac{\partial}{\partial
         p_1}\left(x^1(p)p^1+x^2(p)p^2-u\bigl(\bfx(p)\bigr)\right)\\
@@ -44,7 +46,7 @@
 
   Similarly, for \(v_{p_2}\), we have
   \begin{equation}
-    \label{eq:3:vp2}
+    \label{eq:4:vp2}
     \begin{aligned}
       v_{p_2} &=\tfrac{\partial}{\partial
         p_2}\left(x^1(p)p^1+x^2(p)p^2-u\bigl(\bfx(p)\bigr)\right)\\
@@ -58,13 +60,13 @@
     \end{aligned}
   \end{equation}
 
-  Now, taking the partial of \eqref{eq:3:vp1} with respect to \(p_1\) and
+  Now, taking the partial of \eqref{eq:4:vp1} with respect to \(p_1\) and
   then \(p_2\), we have
   \[
     v_{p_1p_1}=x^1_{p_1}=x^1_{u_{x_1}}, \qquad
     v_{p_1p_2}=x^1_{p_2}=x^1_{u_{x_2}},
   \]
-  and similarly for \eqref{eq:3:vp2},
+  and similarly for \eqref{eq:4:vp2},
   \[
     v_{p_1p_2}=x^2_{p_1}=x^2_{u_{x_1}},\qquad
     v_{p_2p_2}=x^2_{p_2}=x^2_{u_{x_2}}.
@@ -93,7 +95,7 @@
   \end{align*}
   Hence,
   \begin{equation}
-    \label{eq:3:verified-29}
+    \label{eq:4:verified-29}
     \left\{
       \begin{aligned}
         u_{x_1x_1}&=Jv_{p_2p_2}\\
@@ -102,15 +104,14 @@
       \end{aligned}
     \right.
   \end{equation}
-  which verifies Equation (29) from [E, 4.4.3b]. Substituting
-  \eqref{eq:3:verified-29} into the original equation,
+  which verifies Equation (29) from [E, \S 4.4.3b]. Substituting
+  \eqref{eq:4:verified-29} into the original equation,
   \begin{align*}
     0&=Ja^{11}(p)v_{p_2p_2}-Ja^{12}(p)v_{p_1p_2}+Ja^{22}(p)v_{p_1p_1}\\
      &=a^{22}(p)v_{p_1p_1}-a^{12}(p)v_{p_1p_2}+a^{11}(p)v_{p_2p_2},
   \end{align*}
   as was to be shown.
-\end{solution}
-\newpage
+\end{solution*}
 
 \begin{problem}
   Find the solution \(u(x,t)\) of the one-dimensional wave equation
@@ -121,82 +122,20 @@
   \[
     \left\{
       \begin{aligned}
-        u(x,0)&=f(x),&u_t(x,0)&=g(x),&\text{for \(x>0\),}\\
-        u_t(0,t)&=\alpha u_x(0,t),&&&\text{for \(t>0\)},
+        &u=f,\quad u_t=g,%
+        &&\text{for \((0,\infty)\times\{\,t=0\,\}\),}\\
+        &u_t=\alpha u_x,%
+        &&\text{for \(\{\,x=0\,\}\times(0,\infty)\)},
       \end{aligned}
     \right.
   \]
   where \(\alpha\neq -1\) is a given constant. Show that generally no
-  solution exists when \(\alpha=-1\). (\emph{Hint:} Use a representation
-  \(u(x,t)=F(x-t)+G(x+t)\) for the solution.)
+  solution exists when \(\alpha=-1\).
+
+  \noindent\emph{Hint:} Use a representation \(u(x,t)=F(x-t)+G(x+t)\) for the
+  solution.
 \end{problem}
-\begin{solution}
-  % Suppose \(u(x,t)=F(x-t)+G(x+t)\) is a classical solution to the
-  % one-dimensional wave equation. From Evans, we know d'Alembert's formula,
-  % i.e.,
-  % \[
-  %   u(x,t)=\frac{f(x+t)+f(x-t)}{2}+\frac{1}{2}\int^{x+t}_{x-t}g(s)\diff s,
-  % \]
-  % is a solution to the PDE with the prescribed initial conditions.
-
-  % Using the method of reflection, extend \(f\), \(g\), and
-  % \(h(x+t)\defeq \int_0^{x+t}g(s)\diff s\) to all of \(\bbR^2\). Now, using
-  % the initial conditions prescribed above, particularly, the restriction on
-  % the derivative of \(u\) at \(x=0\), we obtain the following relations on
-  % \(G\) and \(F\),
-  % \begin{align*}
-  %   u(x,0)
-  %   &=F(x)+G(x)\\
-  %   &=f(x),
-  %   \\
-  %   u_t(x,0)
-  %   &=-F'(x)+G'(x)\\
-  %   &=g(x),\\
-  %   u_t(0,t)&=\alpha u_x(0,t)\\
-  %   -F'(-t)+G'(t)&=\alpha \bigl(F'(-t)+G'(t)\bigr),
-  % \end{align*}
-  % which, more concisely, reads
-  % \begin{equation}
-  %   \label{eq:3:relations}
-  %   \left\{
-  %     \begin{aligned}
-  %       F(x)&=f(x)-G(x)\\
-  %       F'(x)&=G'(x)-g(x)\\
-  %       F'(-t)&=-\bigl(\tfrac{\alpha-1}{\alpha+1}\bigr)G'(t).
-  %     \end{aligned}
-  %   \right.
-  % \end{equation}
-  % This gives us, after a bit of calculation,
-  % \begin{align*}
-  %   f'(-t)-g(-t)
-  %   &=-\bigl(\tfrac{\alpha-1}{\alpha+1}\bigr)\bigl(f'(t)+g(t)\bigr)\\
-  %   f(x+t)-f(x-t)-\int_{x-t}^{x+t}g(s)\diff s
-  %   &=-\left(\frac{\alpha-1}{\alpha+1}\right)
-  %     \left[
-  %     f(x+t)-f(x-t)+\int^{x+t}_{x-t}g(s)\diff s
-  %     \right]\\
-  %   \frac{f(x+t)+f(x-t)}{2}+\frac{1}{2}\int_{x-t}^{x+t}g(s)\diff s
-  %   &=-\frac{1}{2}\left(\frac{\alpha+1}{\alpha-1}\right)
-  %     \left[
-  %     f(x+t)-f(x-t)-\int_{x-t}^{x+t}g(s)\diff s
-  %     \right]+f(x-t).
-  % \end{align*}
-  % Thus,
-  % \begin{equation}
-  %   \label{eq:3:solution-2}
-  %   u(x,t)
-  %   =-\frac{1}{2}\left(\frac{\alpha+1}{\alpha-1}\right)
-  %     \left[
-  %     f(x+t)-f(x-t)-\int_{x-t}^{x+t}g(s)\diff s
-  %     \right]+f(x-t)
-  % \end{equation}
-  % is a solution to the PDE with the prescribed initial conditions.
-
-  % Suppose \(\alpha=-1\). Then \eqref{eq:3:solution-2} tells us that
-  % \[
-  %   u(x,t)=f(x-t).
-  % \]
-  % Thus, \(f'(x)=g(x)\) and
+\begin{solution*}
   Suppose \(u(x,t)=F(x-t)+G(x+t)\) is a classical solution to the
   one-dimensional wave equation with the prescribed initial
   conditions. Then, we want to extend the data to all of \(x\) so that we
@@ -224,10 +163,9 @@
   so
   \[
     0=\tfrac{1}{2}\bigl(-(1+\alpha)\tilde f(-t)+(1-\alpha)\tilde
-    f(t)+(1-\alpha)(\tilde g(t)-\tilde g(t))\bigr)
+    f(t)+(1-\alpha)(\tilde g(t)-\tilde g(t))\bigr).\qedhere
   \]
-\end{solution}
-\newpage
+\end{solution*}
 
 \begin{problem}
   \begin{enumerate}[label=(\alph*),noitemsep]
@@ -247,8 +185,8 @@
     in terms of coefficients \(a_n\), \(b_n\).
   \end{enumerate}
 \end{problem}
-\begin{solution}
-  For part (a), suppose that \(u\) is, as above, a solution to the wave
+\begin{solution*}
+  For part (a): Suppose that \(u\) is, as above, a solution to the wave
   equation which is \(C^2\) up to the boundary. We show that its energy is
   independent of \(t\), i.e., that \(\frac{d}{dt}E=0\). Assuming the energy
   is bounded, the dominated convergence theorem allows us to permute the
@@ -268,83 +206,45 @@
   \end{align*}
   since the boundary conditions, i.e., \(u=0\), implies \(u_x=u_t=0\) at
   the boundary.
-
-  For part (b), suppose \(u\) is a Fourier series solution to the wave
+  \\\\
+  For part (b): Suppose \(u\) is a Fourier series solution to the wave
   equation, i.e.,
   \[
-    u(x,t)=\sum_{n=1}^\infty \bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)\sin(nx).
+    u(x,t)=\sum_{k=1}^\infty \bigl(a_k\cos(kct)+b_k\sin(kct)\bigr)\sin(kx).
   \]
   First, we compute \(u_x\) and \(u_t\), they are
-  \begin{equation}
-    \label{eq:3:ux-ut}
+  \[
     \begin{aligned}
       u_x(x,t)
-      &=\sum_{n=1}^\infty n\bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)\cos(nx),\\
+      &=\sum_{k=1}^\infty k\bigl(a_k\cos(kct)+b_k\sin(kct)\bigr)\cos(kx),\\
       u_t(x,t)
-      &=\sum_{n=1}^\infty nc\bigl(-a_n\sin(nct)+b_n\cos(nct)\bigr)\sin(nx).
+      &=\sum_{k=1}^\infty kc\bigl(-a_k\sin(kct)+b_k\cos(kct)\bigr)\sin(kx).
     \end{aligned}
-  \end{equation}
-  Let \(u_x^k(x,t)\) and \(u_t^k(x,t)\) be the partial sums of the
-  equations above so \(u_x^k\to u_x\) and \(u_t^k\to u_t\) as
-  \(k\to\infty\). Then
+  \]
+  Let \(u_x^n(x,t)\) and \(u_t^n(x,t)\) be the partial sums of the two
+  equations above. Then
   \begin{align*}
-    E_k(t)
-    &=\frac{1}{2}\int_0^\pi (u_t^k)^2+c^2(u_x^k)^2\diff t
-    \intertext{taking into account orthogonality relations of \(\cos\) and
-    \(\sin\), we have}
-    &=\frac{1}{2}\sum_{n=1}^k n^2c^2
+    E_n(t)
+    &=\frac{1}{2}\int_0^\pi (u_t^n)^2+c^2(u_x^n)^2\diff t
+      \intertext{taking into account orthogonality relations of \(\cos\) and
+      \(\sin\), we have}
+    &=\frac{1}{2}\sum_{k=1}^n k^2c^2
       \left[
-      \left(\int_0^\pi\bigl(a_n^2\sin(nct)+b_n^2\cos(nct)\bigr)\right)\sin^2(nx)\right.\\
-    &\phantom{{}={}\frac{1}{2}\sum_{n=1}^k n^2c^2}
-      \left.+\left(\int_0^\pi\bigl(a_n^2\cos(nct)+a_n^2\sin(nct)\bigr)\right)\cos^2(nx)
+      \left(\int_0^\pi\bigl(a_k^2\sin(kct)+b_k^2\cos(kct)\bigr)\right)\sin^2(kx)\right.\\
+    &\phantom{{}={}\frac{1}{2}\sum_{k=1}^n k^2c^2}
+      \left.+\left(\int_0^\pi\bigl(a_k^2\cos(kct)+a_k^2\sin(kct)\bigr)\right)\cos^2(kx)
       \right]\\
-    &=\sum_{n=1}^k n^2c^2\pi(a_n^2+b_n^2).
+    &=\frac{\pi}{2}\sum_{k=1}^n k^2c^2(a_k^2+b_k^2).
   \end{align*}
-  Thus,
-  \begin{equation}
-    \label{eq:3:fourier-energy}
-    E(t)=\lim_{k\to\infty}E_k(t)=\sum_{n=1}^\infty n^2c^2\pi(a_n^2+b_n^2).
-  \end{equation}
-\end{solution}
-% They are
-%   \begin{align*}
-%     u_t(x,t)%
-%     &=\tfrac{\partial}{\partial t} u(x,t)\\
-%     &=\sum_{n=1}^\infty cn\bigl(b_n\cos(nct)-a_n\sin(nct)\bigr)\sin(nx)
-%     \intertext{and}
-%     u_x(x,t)%
-%     &=\tfrac{\partial}{\partial x} u(x,t)\\
-%     &=\sum_{n=1}^\infty n\bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)\cos(nx).
-%   \end{align*}
-%   Thus,
-%   \begin{align*}
-%     E(t)%
-%     &=\frac{1}{2}\int_0^\pi%
-%       \Biggl[\biggl( \sum_{n=1}^\infty cn\bigl(
-%       b_n\cos(nct)-a_n\sin(nct) \bigr)\sin(nx)
-%       \biggr)^2\\
-%     &\phantom{=\frac{1}{2}\int_0^\pi\Biggl[}%
-%       +c^2 \biggl(\sum_{n=1}^\infty
-%       n\bigl(a_n\cos(nct)+b_n\sin(nct)\bigr)\cos(nx) \biggr)^2 \Biggr],
-%   \end{align*}
-%   which, after expanding and using the fact that \(\cos(nct)\),
-%   \(\sin(nct)\), \(\cos(nx)\), and \(\sin(nx)\) are orthogonal, becomes
-%   \begin{align*}
-%   E(t)&=\frac{1}{2}\int_0^\pi \Biggl[\sum_{n,m=1}^\infty
-%   c^2nm\bigl(b_nb_m\cos(nct)\cos(mct)+a_na_m\sin(nct)\sin(mct)\\
-%   &\phantom{\frac{1}{2}\int_0^\pi \sum_{n,m=1}^\infty c^2nm\bigl(}
-%   -a_nb_m\cos(mct)\sin(nct)-a_mb_n\cos(nct)\sin(mct)\bigr)\sin(nx)\sin(mx)\\
-%   &\phantom{=\frac{1}{2}\int_0^\pi} -c^2\sum_{n,m=1}^\infty
-%   n^2\bigl(a_na_m\cos(nct)\cos(mct)+b_nb_m\sin(nct)\sin(mct)\\
-%   &\phantom{=\frac{1}{2}\int_0^\pi \sum_{n,m=1}^\infty c^2nm\bigl(}
-%   +a_nb_m\cos(nct)\sin(mct)+a_mb_n\cos(mct)\sin(nct)\bigr)\cos(nx)\cos(mx)\Biggr]\\
-%   &=\frac{1}{2}\int_0^\pi \sum_{n=1}^\infty \biggl(
-%   cn^2\bigl(b_n^2\cos^2(nct)+a_n^2\sin^2(nct)\bigr)\sin^2(nx)
-%     -cn^2\bigl(a_n^2\cos^2(nct)+b_n^2\sin^2(nct)\bigr)\cos^2(nx) \biggr)\\
-%     &=\sum_{n=1}^\infty\frac{\pi c^2n^2}{2}(a_n^2+b_n^2).
-%   \end{align*}
+  Thus, since the limit is uniform
+  \[
+    E(t)=\lim_{n\to\infty}E_n(t)=\frac{\pi}{4}\sum_{n=1}^\infty
+    n^2c^2(a_n^2+b_n^2).
+    \qedhere
+  \]
+\end{solution*}
 
 %%% Local Variables:
 %%% mode: latex
-%%% TeX-master: "../MA523-Current-HW"
+%%% TeX-master: "../MA523-HW-ALL"
 %%% End:

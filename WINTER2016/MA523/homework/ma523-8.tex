@@ -1,3 +1,4 @@
+\subsection{Homework 8}
 \begin{problem}
   Show that the function
   \[
@@ -5,49 +6,48 @@
   \]
   where
   \[
-    \Phi(x,t)=\frac{\rme^{-x^2/4t}}{\sqrt{4\pi t}}
+    \Phi(x,t)=\frac{\rme^{-x^2/(4t)}}{\sqrt{4\pi t}}
   \]
   is positive for \(|x|<1\), \(t>0\).
 
-  \noindent (\emph{Hint:} Show that \(u\) satisfies \(u_t=u_{xx}\) for
-  \(t>0\),
+  \noindent\emph{Hint:} Show that \(u\) satisfies \(u_t=u_{xx}\) for \(t>0\),
   \[
     \left\{
       \begin{aligned}
-        u&=0&&\text{on \(\{\,|x|=1\,\}\times\{\,t\geq 0\,\}\),}\\
-        u&=\delta_0&&\text{on \(\{\,|x|\leq 1\,\}\times\{\,t=0\,\}\).}
+        &u=0&&\text{on \(\{\,|x|=1\,\}\times\{\,t\geq 0\,\}\),}\\
+        &u=\delta_0&&\text{on \(\{\,|x|\leq 1\,\}\times\{\,t=0\,\}\).}
       \end{aligned}
     \right.
   \]
   Then, carefully apply the maximum/minimum principle in a domain
-  \(\{\,|x|\leq 1\,\}\times\{\,\varepsilon\leq t\leq T\,\}\) for small
-  \(\varepsilon>0\) and large \(T>0\) pass to the limit as
-  \(\varepsilon\to 0+\) and \(T\to\infty\).)
+  \(\{\,|x|\leq 1\,\}\times\{\,\epsilon\leq t\leq T\,\}\) for small
+  \(\epsilon>0\) and large \(T>0\) pass to the limit as
+  \(\epsilon\to 0+\) and \(T\to\infty\).
 \end{problem}
-\begin{solution}
+\begin{solution*}
   Taking the hint, let us verify that \(u_t=u_{xx}\), for \(t>0\). By
   direct computation, we have
   \begin{align*}
     \Phi_x(x,t)
     &=\frac{\partial}{\partial x}
-      \left(\frac{\rme^{-x^2/4t}}{\sqrt{4\pi t}}\right)
+      \left(\frac{\rme^{-x^2/(4t)}}{\sqrt{4\pi t}}\right)
     &\Phi_{xx}(x,t)
     &=\frac{\partial}{\partial x}
-      \left(-\frac{x\rme^{-x^2/4t}}{2\sqrt{4\pi}t^{\frac{3}{2}}}\right)\\
-    &=-\frac{x\rme^{-x^2/4t}}{2\sqrt{4\pi}t^{\frac{3}{2}}},
-    &&=\frac{x^2\rme^{-x^2/4t}}{4\sqrt{4\pi}t^{\frac{5}{2}}}
-      -\frac{\rme^{-x^2/4t}}{2\sqrt{4\pi}t^{\frac{3}{2}}}
+      \left(-\frac{x\rme^{-x^2/(4t)}}{2\sqrt{4\pi}t^{3/2}}\right)\\
+    &=-\frac{x\rme^{-x^2/(4t)}}{2\sqrt{4\pi}t^{3/2}},
+    &&=\frac{x^2\rme^{-x^2/(4t)}}{4\sqrt{4\pi}t^{5/2}}
+      -\frac{\rme^{-x^2/(4t)}}{2\sqrt{4\pi}t^{3/2}}
     \\
-    &&&=\frac{(x^2-2t)\rme^{-x^2/4t}}{4\sqrt{4\pi}t^{\frac{5}{2}}},
+    &&&=\frac{(x^2-2t)\rme^{-x^2/(4t)}}{4\sqrt{4\pi}t^{5/2}},
   \end{align*}
   and
   \begin{align*}
     \Phi_t(x,t)
     &=\frac{\partial}{\partial t}
-      \left(\frac{\rme^{-x^2/4t}}{\sqrt{4\pi t}}\right)\\
-    &=\frac{x^2\rme^{-x^2/4t}}{4\sqrt{4\pi}t^{\frac{5}{2}}}
-      -\frac{\rme^{-x^2/4t}}{2\sqrt{4\pi}t^{\frac{3}{2}}}\\
-    &=\frac{(x^2-2t)\rme^{-x^2/4t}}{4\sqrt{4\pi}t^{\frac{5}{2}}}.
+      \left(\frac{\rme^{-x^2/(4t)}}{\sqrt{4\pi t}}\right)\\
+    &=\frac{x^2\rme^{-x^2/(4t)}}{4\sqrt{4\pi}t^{5/2}}
+      -\frac{\rme^{-x^2/(4t)}}{2\sqrt{4\pi}t^{3/2}}\\
+    &=\frac{(x^2-2t)\rme^{-x^2/(4t)}}{4\sqrt{4\pi}t^{5/2}}.
   \end{align*}
   Since \(\Phi_t=\Phi_{xx}\) it follows that \(u_t=u_{xx}\) (assuming
   uniform convergence of \(u\)).
@@ -58,12 +58,12 @@
   which gives us
   \begin{align*}
     u(1,t)
-    &=\sum_{k=-\infty}^\infty(-1)^k\frac{\rme^{-\frac{(1-2k)^2}{4t}}}{\sqrt{4\pi
+    &=\sum_{k=-\infty}^\infty(-1)^k\frac{\rme^{-(1-2k)^2/(4t)}}{\sqrt{4\pi
       t}}\\
     &=\frac{1}{\sqrt{4\pi t}}%
-      \left(\dotsb-\rme^{-\frac{9}{4t}}%
-      +\rme^{-\frac{1}{4t}}-\rme^{-\frac{1}{4t}}%
-      +\rme^{-\frac{9}{4t}}+\dotsb\right)\\
+      \left(\dotsb-\rme^{-9/(4t)}%
+      +\rme^{-1/(4t)}-\rme^{-1/(4t)}%
+      +\rme^{-9/(4t)}+\dotsb\right)\\
     &=0.
   \end{align*}
   Similarly for \(u(-1,t)=0\).
@@ -72,7 +72,7 @@
   \begin{align*}
     u(|x|\leq 1,0)
     &=\sum_{k=-\infty}^\infty(-1)^k\lim_{t\to 0+}
-      \left[\rme^{-\frac{(x-2k)^2}{4t}}/\sqrt{4\pi t}\right]\\
+      \left[\rme^{-(x-2k)^2/(4t)}/\sqrt{4\pi t}\right]\\
     &=\sum_{k=-\infty}^\infty(-1)^k\delta_0(x-2k)\\
     &=\delta_0(x)
   \end{align*}
@@ -81,16 +81,15 @@
 
   At last we show that \(u\) is positive for \(|x|<1\), \(t>0\). Seeking a
   contradiction, suppose \(u\) is negative on some point \((x_0,t_0)\) in
-  \(\{\,|x|<1\,\}\times\{\,\varepsilon\leq t\leq T\,\}\). Then by the
+  \(\{\,|x|<1\,\}\times\{\,\epsilon\leq t\leq T\,\}\). Then by the
   minimum principle, \(u\) achieves its minimum somewhere on the bottom
-  boundary \(\{\,|x|=1\,\}\times\{\,t=\varepsilon\,\}\). Therefore, there
+  boundary \(\{\,|x|=1\,\}\times\{\,t=\epsilon\,\}\). Therefore, there
   exists a sequence \((x_n,t_n{+})\to (x,0)\), where \(|x_n|,|x|<1\),
   such that \(u(x,0)<0\). However, we have shown above that
   \(u(x,0)=\delta_0(x)\) for \(|x|<1\); i.e., either \(u(x,0)=0\) or
   \(u(x,0)=+\infty\). This is a contradiction. Therefore, it must be the
   case that \(u\geq 0\) for \(|x|<1\), \(t>0\).
-\end{solution}
-\newpage
+\end{solution*}
 
 \begin{problem}[Tikhonov's example]
   Let
@@ -101,16 +100,16 @@
       0&t\leq 0.
     \end{cases}
   \]
-  Then \(g\in C^\infty(\bbR)\) and we define
+  Then \(g\in C^\infty(\R)\) and we define
   \[
     u(x,t)\defeq\sum_{k=0}^\infty\frac{g^{(k)}(t)}{(2k)!}x^{2k}.
   \]
   Assuming that the series is convergent, show that \(u(x,t)\) solves the
-  heat equation in \(\bbR\times(0,\infty)\) with the initial condition
-  \(u(x,0)=0\), \(x\in\bbR\). Why doesn't this contradict the uniqueness
+  heat equation in \(\R\times(0,\infty)\) with the initial condition
+  \(u(x,0)=0\), \(x\in\R\). Why doesn't this contradict the uniqueness
   theorem for the initial value problem?
 \end{problem}
-\begin{solution}
+\begin{solution*}
   Let \(u\) be as above. Then
   \begin{align*}
     u_t(x,t)
@@ -135,26 +134,25 @@
       \right)\\
     &=\sum_{k=0}^\infty\frac{g^{(k)}(t)}{(2k)!} 2kx^{2k-1}
     &&=\sum_{k=1}^\infty \frac{g^{(k)}(t)}{(2k-1)!}(2k-1)x^{2k-2}
-       +\tfrac{\partial}{\partial x}g^{(0)}(t)\\
+       +\frac{\partial}{\partial x}g^{(0)}(t)\\
     &=\sum_{k=1}^\infty\frac{g^{(k)}(t)}{(2k-1)!}x^{2k-1},
     &&=\sum_{k=2}^\infty\frac{g^{(k)}(t)}{(2k-2)!}x^{2k-2}.
   \end{align*}
-  Thus, \(u_t-\Delta u=0\); i.e., \(u\) solves the heat equation. As this
+  Thus, \(u_t-\Lap u=0\); i.e., \(u\) solves the heat equation. As this
   example shows, unless some assumptions on \(u\) such as subexponential
-  (cf.\@ [E \S 2.3], Theorem 7) growth is assumed.
-\end{solution}
-\newpage
+  (cf.\@ [E, \S 2.3], Theorem 7) growth is assumed.
+\end{solution*}
 
 \begin{problem}
   Evaluate the integral
   \[
     \int_{-\infty}^\infty \cos(ax)\rme^{-x^2}\diff x,\qquad (a>0).
   \]
-  \noindent (\emph{Hint:} Use the separation of variables to find the
-  solution of the corresponding initial-value problem for the heat
-  equation.)
+
+  \noindent\emph{Hint:} Use the separation of variables to find the solution of the
+  corresponding initial-value problem for the heat equation.
 \end{problem}
-\begin{solution}
+\begin{solution*}
   By separation of variables,
   \[
     u(x,t)=\cos(ax)\rme^{-a^2t}
@@ -163,8 +161,8 @@
   \[
     \left\{
       \begin{aligned}
-        u_t-\Delta u&=0&&\text{in \(\bbR\times(0,\infty)\),}\\
-        u&=\cos(ax)&&\text{on \(\bbR\times\{\,t=0\,\}\).}
+        &u_t-\Lap u=0&&\text{in \(\R\times(0,\infty)\),}\\
+        &u=\cos(ax)&&\text{on \(\R\times\{\,t=0\,\}\).}
       \end{aligned}
     \right.
   \]
@@ -172,17 +170,17 @@
   \[
     u(x,t)=%
     \frac{1}{\sqrt{4\pi t}}\int_{-\infty}^\infty%
-    \cos(a y)\rme^{-\frac{|x-y|^2}{4t}}\diff y
+    \cos(a y)\rme^{-|x-y|^2/(4t)}\diff y
   \]
   is also a solution to the Cauchy problem. Now note that
   \begin{align*}
     \int_{-\infty}^\infty\cos(ay)\rme^{-y^2}\diff y
     &=\sqrt{\pi}\cdot u(0,\tfrac{1}{4})\\
-    &=\sqrt{\pi}\rme^{-\frac{a^2}{4}}.\qedhere
+    &=\sqrt{\pi}\rme^{-a^2/4}.\qedhere
   \end{align*}
-\end{solution}
+\end{solution*}
 
 %%% Local Variables:
 %%% mode: latex
-%%% TeX-master: "../MA523-HW-Current"
+%%% TeX-master: "../MA523-HW-ALL"
 %%% End:
