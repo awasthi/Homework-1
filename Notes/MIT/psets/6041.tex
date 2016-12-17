@@ -1,0 +1,110 @@
+\section{6.041: Probabilistic Systems Analysis}
+Because the notation \(A^\rmc\) is too ugly to our eyes and we will often
+be working with set complements we shall set aside the notation
+\(\tilde A\) for the complement of \(A\).
+
+\subsection{Problem-Set 1}
+\begin{problem}
+  Express each of the following events in terms of the events \(A\), \(B\),
+  and \(C\) as well as the operations of complementation, union, and
+  intersection:
+  \begin{alphlist}
+  \item at least one of the events \(A\), \(B\), \(C\) occurs;
+  \item at most one of the events \(A\), \(B\), \(C\) occurs;
+  \item none of the events \(A\), \(B\), \(C\) occurs;
+  \item exactly one of the events \(A\), \(B\), \(C\) occurs;
+  \item events \(A\) and \(B\) occur, but not \(C\);
+  \item either event \(A\) occurs or, if not, then \(B\) also does not
+    occur.
+  \end{alphlist}
+  In each case draw the corresponding Venn diagram.
+\end{problem}
+\begin{solution*}
+  We present only one of the many possible expressions for (a)-(g) and we
+  shall omit the finer details; suffice it to say, these are all
+  consequences of elementary set theory. We also omit the Venn diagrams the
+  problem is asking us to draw as it would be a bad investment of our time
+  to trace them out using PGF/Ti\textit{k}Z.
+  \\\\
+  For part (a): the event, call it \(E\), that at least one of \(A\),
+  \(B\), \(C\) occurs is the expression
+  \[
+    E=A\cup B\cup C.
+  \]
+  \\\\
+  For part (b): the event \(E\) that at most one of \(A\), \(B\), \(C\)
+  occurs is the expression
+  \[
+    E=\widetilde{\left[(A\cap B)\cup (A\cap C)\cup (B\cap C)\cup (A\cap
+      B\cap C)\right]}.
+  \]
+  \\\\
+  For part (c): the event \(E\) that none of \(A\), \(B\), \(C\) occur is
+  the expression
+  \[
+    E=\widetilde{A\cup B\cup C}
+  \]
+  \\\\
+  For part (d): the event \(E\) that all three events \(A\), \(B\), \(C\)
+  occur is the expression
+  \[
+    E=A\cap B\cap C.
+  \]
+  \\\\
+  For part (e): the event \(E\) that exactly one of the events \(A\),
+  \(B\), \(C\) occurs is
+  \[
+    E=(A\cup B\cup C)\setminus \left[(A\cap B)\cup (A\cap C)\cup (B\cap
+      C)\cup (A\cap B\cap C)\right].
+  \]
+  \\\\
+  For part (f):
+  \\\\
+  For part (g):
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\subsection{Problem-Set 2}
+\subsection{Problem-Set 3}
+\subsection{Problem-Set 4}
+\subsection{Problem-Set 5}
+\subsection{Problem-Set 6}
+\subsection{Problem-Set 7}
+\subsection{Problem-Set 8}
+\subsection{Problem-Set 9}
+\subsection{Problem-Set 10}
+\subsection{Problem-Set 11}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../OCW-Notes"
+%%% End:
