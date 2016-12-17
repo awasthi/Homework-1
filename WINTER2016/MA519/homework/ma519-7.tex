@@ -1,239 +1,76 @@
-\begin{problem}[Handout 10, \# 4]
-  \emph{(Poisson Approximation.)} One hundred people will each toss a fair
-  coin \(200\) times. Approximate the probability that at least \(10\) of
-  the \(100\) people would each have obtained exactly \(100\) heads and
-  \(100\) tails.
+\subsection{Homework 7}
+\begin{problem}[Handout 10, \# 4 -- \emph{Poisson Approximation}]
+  One hundred people will each toss a fair coin \(200\) times. Approximate
+  the probability that at least \(10\) of the \(100\) people would each
+  have obtained exactly \(100\) heads and \(100\) tails.
 \end{problem}
-\begin{solution}
-  Let \(X\) denote the number of people who obtain exactly \(100\) heads
-  and (consequently) \(100\) tails. First, we compute the probability that
-  any one given person obtains exactly \(100\) heads. There are \(2^{200}\)
-  possible outcomes for \(200\) tosses of a fair coin, and
-  \(\binom{200}{100}\) possible ways of obtaining exactly \(100\)
-  heads. Thus, the probability that any one person obtains exactly \(100\)
-  head in \(200\) tosses of a fair coin is
-  \[
-    p=\frac{\binom{200}{100}}{2^{200}}\approx\num{0.05634847900925642},
-  \]
-  so the mean of \(X\) is approximately \(\num{5.634847900925642})\).
+\begin{solution*}
+\end{solution*}
 
-  Now, assuming \(X\sim\Poisson(\lambda)\) with
-  \(\lambda\approx\num{5.634847900925642}\), the probability that at least
-  \(10\) of the \(100\) people have each obtained exactly \(100\) heads and
-  \(100\) tails is
-  \begin{align*}
-    P(X\geq 10)
-    &=1-P(X<10)\\
-    &=1-\sum_{i=1}^9 P(X=i)\\
-    &=1
-      -e^{-\num{5.634847900925642}}
-      \sum_{i=0}^9\frac{\num{5.634847900925642}^i}{i!}\\
-    &=1-\num{0.8825634032515405}\\
-    &\approx \num{0.11743659674845952}.
-  \end{align*}
-\end{solution}
-\newpage
-
-\begin{problem}[Handout 10, \# 5]
-  \emph{(A Pretty Question.)} Suppose \(X\) is a Poisson distributed random
-  variable. Can three different values of \(X\) have an equal probability?
+\begin{problem}[Handout 10, \# 5 -- \emph{A Pretty Question} ]
+  Suppose \(X\) is a Poisson distributed random variable. Can three
+  different values of \(X\) have an equal probability?
 \end{problem}
-\begin{solution}
-  No. Let \(X\sim\Poisson(\lambda)\). First, we show that given any two
-  values \(k_1,k_2\in\bbZ_{\geq 0}\), there exists \(\lambda\) such that
-  \(p(k_1)=p(k_2)\).
+\begin{solution*}
 
-  Observe that for \(p(k_1)=p(k_2)\) we must have
-  \begin{align*}
-    e^{-\lambda}\frac{\lambda^{k_1}}{k_1!}
-    &=e^{-\lambda}\frac{\lambda^{k_2}}{k_2!}\\
-    \lambda^{k_1-k_2}
-    &=\frac{k_1!}{k_2!}
-      \intertext{this implies that, given \(k_1\) and \(k_2\),}
-      (k_1-k_2)\ln\lambda&=\ln(k_1!/k_2!)\\
-    \lambda(k_1,k_2)&=e^{\ln(k_1!/k_2!)/(k_1-k_2)}.
-  \end{align*}
-  For example, \(\lambda(3,5)\approx\num{4.472135954999579}\) and
-  \[
-    p(3)\approx\num{0.17028240507308132}\approx p(5).
-  \]
+\end{solution*}
 
-  We now prove our original claim. Assume for a moment that \(X\) is
-  continuous. We will show that the PMF \(p\) of \(X\) has at most one
-  critical point. Write the PMF of \(p\) as its continuous analogue
-  \[
-    p(x)=P(X=x)=\frac{e^{-\lambda}\lambda^x}{\Gamma(x)}.
-  \]
-  Then, taking the derivative of \(p\), we have
-  \begin{align*}
-    p'(x)
-    &=e^{-\lambda}\frac{\Gamma(x)\lambda^x\ln\lambda-\lambda^x\Gamma(x)}{\Gamma(x)^2}\\
-    &=\frac{e^{-\lambda}\lambda^x}{\Gamma(x)}
-      \left[\ln\lambda-\frac{\Gamma'(x)}{\Gamma(x)}\right]\\
-    &=p(x)\left[\ln\lambda-\frac{\Gamma'(x)}{\Gamma(x)}\right].
-  \end{align*}
-  Since \(\Gamma,\Gamma'>0\) for all \(x\in\bbR_{\geq 0}\), \(p'(x)=0\) if
-  and only if
-  \[
-    \ln\lambda=\frac{\Gamma'(x)}{\Gamma(x)}
-  \]
-  which happens at most once since the quotient.
-\end{solution}
-\newpage
-
-\begin{problem}[Handout 10, \# 6]
-  \emph{(Poisson Approximation.)} There are \(20\) couples seated at a
-  rectangular table, husbands on one side and the wives on the other, in a
-  random order. Using a Poisson approximation, find the probability that
-  exactly two husbands are seated directly across from their wives; at
-  least three are; at most three are.
+\begin{problem}[Handout 10, \# 6 -- \emph{Poisson Approximation}]
+  There are \(20\) couples seated at a rectangular table, husbands on one
+  side and the wives on the other, in a random order. Using a Poisson
+  approximation, find the probability that exactly two husbands are seated
+  directly across from their wives; at least three are; at most three are.
 \end{problem}
-\begin{solution}
-  Let \(X\) count the number of husbands that have been seated directly
-  across from their respective wives. We approximate the probabilities that
-  (i) exactly two husbands are seated directly across from their wives,
-  (ii) at least three are, and (iii) at most three are, by assuming that
-  \(X\sim\Poisson(\lambda)\). But first, we compute the mean of \(X\).
+\begin{solution*}
 
-  Fixing the men, the probability that any given man is sitting directly
-  across from his wife is \(1/20\). Since the distribution of \(X\) is
-  binomial, its mean is \(20(1/20)=1\). Thus, \(\lambda=1\).
+\end{solution*}
 
-  For (i), the probability that exactly two husbands are seated directly
-  from their wives is
-  \[
-    p(2;1)=e^{-1}\frac{1}{2!}\approx\num{0.18393972058572117}.
-  \]
-
-  For (iii), the probability is
-  \[
-    p(x\geq
-    3;1)=1-e^{-1}\left[1+1+\frac{1}{2}\right]\approx\num{0.08030139707139416}.
-  \]
-
-  For (iii), the probability is
-  \[
-    p(x\leq 3;1)=
-    e^{-1}\left[1+1+\frac{1}{2}+\frac{1}{6}\right]\approx\num{0.9810118431238462}.
-  \]
-\end{solution}
-\newpage
-
-\begin{problem}[Handout 10, \# 7]
-  \emph{(Poisson Approximation.)} There are \(5\) coins on a desk, with
-  probabilities \(0.05\), \(0.1\), \(0.05\), \(0.01\), and \(0.04\) for
-  heads. By using a Poisson approximation, find the probability of
-  obtaining at least one head when the five coins are each tossed once.
-
-  \noindent Is the number of heads obtained binomially distributed in this
-  problem?
+\begin{problem}[Handout 10, \# 7 -- \emph{Poisson Approximation}]
+  There are \(5\) coins on a desk, with probabilities \(0.05\), \(0.1\),
+  \(0.05\), \(0.01\), and \(0.04\) for heads. By using a Poisson
+  approximation, find the probability of obtaining at least one head when
+  the five coins are each tossed once. Is the number of heads obtained
+  binomially distributed in this problem?
 \end{problem}
-\begin{solution}
-  Let \(X_i\), \(1\leq i\leq 5\), count the number of heads of a toss of
-  the \(i\)\textsup{th} coin. First, let us find the mean of
-  \(X=X_1+\dotsb+X_5\). This is given by
-  \[
-   0.05+0.1+0.05+0.01+0.04=0.25.
-  \]
-  Set \(\lambda=0.25\). Then, using a Poisson approximation to the PMF of
-  \(X\), the probability of obtaining at least one head is
-  \[
-    e^{-0.25}\sum_{i=1}^5 \frac{0.25^i}{i!}\approx\num{0.22119894311503177}.
-  \]
+\begin{solution*}
 
-  Theorem 1.28(a) from the Text suggests that the distribution may not be
-  binomial unless the probabilities of each head are identical.
-\end{solution}
-\newpage
+\end{solution*}
 
 \begin{problem}[Handout 10, \# 8]
   A book of \(500\) pages contains \(500\) misprints. Estimate the chances
   that a given page contains at least three misprints.
 \end{problem}
-\begin{solution}
-  We approximate the distribution of \(X\) the number of misprints on a
-  given page using a Poisson distribution with parameter \(\lambda=1\) the
-  density of misprints throughout the book. Under these assumptions, the
-  probability that a given page contains at least three misprints is given
-  by
-  \[
-    1-e^{-1}\frac{1}{1!}-e^{-1}\frac{1}{1!}-e^{-1}\frac{1}{2!}
-    \approx\num{0.08030139707139416}.
-  \]
-\end{solution}
-\newpage
+\begin{solution*}
+
+\end{solution*}
 
 \begin{problem}[Handout 10, \# 9]
   Estimate the number of raisins which a cookie should contain on the
   average if it is desired that not more than one cookie out of a hundred
   should be without raisin.
 \end{problem}
-\begin{solution}
-  The number of raisins in a cookie is given by a poisson distribution: Let
-  $X_{\lambda}$ be the number of raisins in a cookie that came out of a batch
-  where the average number of raisins per cookie was $\lambda$. We want
-  $P(X_{\lambda} = 0) \leq 0.01$. That is, we want
-  \[
-    \frac{\lambda^0 e^{-\lambda}}{0!} = e^{-\lambda} \leq 0.01
-  \]
-  which occurs for
-  $\lambda \geq -\ln(0.01) = \ln(100) \approx \num{4.60517}$.
+\begin{solution*}
 
-  That is, we want there to be about $4.6$ raisins per cookie in order to
-  guarantee that no more than one out of one hundred cookies is raisinless.
-\end{solution}
-\newpage
+\end{solution*}
 
 \begin{problem}[Handout 10, \# 10]
   The terms \(p(k;\lambda)\) of the Poisson distribution reach their
   maximum when \(k\) is the largest integer not exceeding \(\lambda\).
 \end{problem}
-\begin{solution}
-  First, set $\lfloor{\lambda}\rfloor$ equal to the largest integer not
-  exceeding $\lambda$. Then we show $p(k;\lambda)$ is increasing on
-  $[0,\lfloor{\lambda}\rfloor]$ and decreasing on
-  $[\lfloor{\lambda}\rfloor, \infty)$; this suffices to show that the maximum
-  occurs at $\lfloor{\lambda}\rfloor$.
+\begin{solution*}
 
-  Now, note that for all $k$,
-  \begin{align*}
-    p(k; \lambda) - p(k+1;\lambda)
-    &= \frac{\lambda^k e^{-\lambda}}{k!} -\frac{\lambda^{k+1} e^{-\lambda}}{(k+1)!}\\
-    &= \frac{e^{-\lambda} \lambda^k}{k!} \left[ 1 -\frac{\lambda}{k+1} \right]\\
-    &= \frac{e^{-\lambda} \lambda^k}{k!} \left[ 1 -\frac{\lambda}{k+1} \right]
-  \end{align*}
-  which is positive exactly when $k < \lambda +1$ and negative exactly when
-  $k \geq lambda +1$. That is, $p(k+1;\lambda)$ is larger than
-  $p(k; \lambda)$ exactly when $k < \lambda +1$; that is, $p(k;\lambda)$
-  increases until the largest integer not exceeding $\lambda$;
-  $p(k;\lambda)$ is increasing on $[0,\lfloor {\lambda} \rfloor$ and decreasing on
-  $[\lfloor  {\lambda}\rfloor,\infty)$, as desired.
-\end{solution}
-\newpage
+\end{solution*}
 
 \begin{problem}[Handout 10, \# 11]
   Prove
   \[
-    p(0,\lambda)+\dotsb+p(n,\lambda)
-    =\frac{1}{n!}\int_\lambda^\infty e^{-x}x^n\diff x.
+    p(0;\lambda)+\dotsb+p(n;\lambda) =\frac{1}{n!}\int_\lambda^\infty
+    \rme^{-x}x^n\diff x.
   \]
 \end{problem}
-\begin{solution}
-  By integration by parts, we have
-  \begin{align*}
-    \frac{1}{n!}\int_\lambda^\infty e^{-x}x^n\diff x
-    &=\frac{1}{n!}e^{-x}x^n\Bigr|_\lambda^\infty-\frac{1}{n!}\int_\lambda^\infty
-      -ne^{-x}x^{n-1}\diff x\\
-    &=\frac{e^{-\lambda}\lambda^n}{n!}+\frac{1}{(n-1)!}\int_\lambda^\infty
-      e^{-x}x^{n-1}\diff x\\
-    &\vdotswithin{=}\\
-    &=\frac{e^{-\lambda}\lambda^n}{n!}+\frac{e^{-\lambda}\lambda^{n-1}}{(n-1)!}+\dotsb+
-      \frac{e^{-\lambda}\lambda^{0}}{0!}\\
-    &=p(n;\lambda)+\dotsb+p(0;\lambda),
-  \end{align*}
-  as was to be shown.
-\end{solution}
-\newpage
+\begin{solution*}
+
+\end{solution*}
 
 \begin{problem}[Handout 10, \# 12]
   There is a random number \(N\) of coins in your pocket, where \(N\) has a
@@ -243,73 +80,30 @@
 
   \noindent Find the distribution of \(X\).
 \end{problem}
-\begin{solution}
-  First, note that $P(N=n)=e^{-\mu} \mu^n/n!$.  Given that there are $n$
-  coins in your pocket, let $X_n$ denote the number of heads shown. Then
-  $P(X_n = m) = \binom{n}{m} \left( 0.5 \right)^n$.  So, the distribution
-  of $X$ is given by
-  \begin{align*}
-    P(X=m) &= \sum_{n=0}^\infty P(X_n = m) P(N=n) \\
-           &= \sum_{n=0}^\infty \binom{n}{m} \left( 0.5 \right)^n \frac{e^{-\mu} \mu^n}{n!} \\
-           &= e^{-\mu} \sum_{n=0}^\infty \frac{n!}{(n-m)!m!n!} (0.5 \mu)^n \\
-           &= \frac{e^{-\mu}}{m!} \sum_{n=0}^\infty \frac{(0.5 \mu)^n}{(n-m)!}
-  \end{align*}
-\end{solution}
-\newpage
+\begin{solution*}
+
+\end{solution*}
 
 \begin{problem}[Handout 10, \# 14]
   Find the MGF of a general Poisson distribution, and hence prove that the
   mean and the variance of an arbitrary Poisson distribution are equal.
 \end{problem}
-\begin{solution}
-  Let $X$ be a poisson distribution with mean $\lambda$. Then
-  \begin{align*}
-    M_X(t) &= \sum_{n=0}^\infty e^{tn} P(X = n) \\
-           &= \sum_{n=0}^\infty e^{tn} \frac{e^{-\lambda} \lambda^n}{n!} \\
-           &= e^{-\lambda} \sum_{n=0}^\infty \frac{(e^t \lambda)^n}{n!} \\
-           &= e^{-\lambda} e^{\lambda e^t} \\
-  \end{align*}
-  Note that
-  $M_X'(t) = e^{-\lambda} \left(\lambda e^{\lambda e^t + t} \right)$ and
-  $M_X''(t) = e^{-\lambda} \left(\lambda e^{\lambda e^t + t} \right)
-  \left(\lambda e^t +1 \right)$.
+\begin{solution*}
 
-  Evaluating at $0$, we get that $E(X) = M_X'(0) = \lambda$ and
-  $E(X^2) = M_X''(0) /2= \lambda$.
-\end{solution}
-\newpage
+\end{solution*}
 
-\begin{problem}[Handout 10, \# 17 (a)]
-  \emph{(Poisson approximations.)} \(20\) couples are seated in a
-  rectangular table, husbands on one side and the wives on the
-  other. First, find the expected number of husbands that sit directly
-  across from their wives. Then, using a Poisson approximation, find the
-  probability that two do; three do; at most five do.
+\begin{problem}[Handout 10, \# 17 (a) -- \emph{Poisson approximations}]
+  \(20\) couples are seated in a rectangular table, husbands on one side
+  and the wives on the other. First, find the expected number of husbands
+  that sit directly across from their wives. Then, using a Poisson
+  approximation, find the probability that two do; three do; at most five
+  do.
 \end{problem}
-\begin{solution}
-  Like in Problem 7.3, \(\lambda=1\).
+\begin{solution*}
 
-  Using a Poisson approximation, the probability that two husbands are
-  seated directly across from their wives is
-  \[
-    p(2;1)=e^{-1}\frac{1}{2}\approx\num{0.18393972058572117}.
-  \]
-
-  The probability that three do is
-  \[
-    p(3;1)=e^{-1}\frac{1}{6}\approx\num{0.06131324019524039}.
-  \]
-
-  The probability that at most five do
-  \[
-    p(x\leq 5;1)=%
-    e^{-1}%
-    \left[1+1+\frac{1}{2}+\frac{1}{6}+\frac{1}{24}+\frac{1}{120}\right]\approx%
-    \num{0.9994058151824182}.
-  \]
-\end{solution}
+\end{solution*}
 
 %%% Local Variables:
 %%% mode: latex
-%%% TeX-master: "../MA519-HW-Current"
+%%% TeX-master: "../MA519-HW-ALL"
 %%% End:

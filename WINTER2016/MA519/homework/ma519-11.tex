@@ -1,3 +1,4 @@
+\subsection{Homework 11}
 \begin{problem}[DasGupta 7.2 (a), (b), (c), (d), (e)]
   \begin{enumerate}[label=(\alph*),noitemsep]
   \item Suppose \(E|X_n-c|^\alpha\to 0\), where \(0<\alpha<1\). Does
@@ -9,75 +10,8 @@
   \item \(o_p(1)+o_p(1)O_p(1)=?\)
   \end{enumerate}
 \end{problem}
-\begin{solution}
-  For part (a) we show that indeed \(E(|X_n-c|^\alpha)\to 0\) implies
-  \(X_n\yright{\calP}c\). Let \(\varepsilon>0\) be given. By Markov's
-  inequality, we have
-  \[
-    P(|X_n-c|>\varepsilon)=
-    P(|X_n-c|^\alpha>\varepsilon^\alpha)
-    \leq\frac{E(|X_n-c|^\alpha)}{\varepsilon^\alpha}.
-  \]
-  Since \(E(|X_n-c|^\alpha)\to 0\) as \(n\to\infty\), it follows that
-  \(P(|X_n-c|>\varepsilon)\) as \(n\to\infty\); i.e., \(X_n\) converges to
-  \(c\) in probability.
-
-  For part (b), suppose \(a_n(X_n-\theta)\yright{\calL}N(0,1)\); i.e.,
-  \(P(|a_n(X_n-\theta)|\leq x)\to\Phi(x)\) as \(n\to\infty\). In words
-  \(X_n\yright{\calP}\theta\) means that for every \(\varepsilon>0\) and
-  every \(\eta>0\) there exists a positive integer \(N\) depending on
-  \(\varepsilon\) and \(\eta\) such that \(n\geq N\) implies
-  \[
-    P(|X_n-\theta|\geq\varepsilon)<\eta.
-  \]
-  First, let us find the PDF of the sequence \(a_n(X_n-\theta)\). Let \(f_n\)
-  denote the PDF of \(X_n\), then the CDF of \(a_n(X_n+\theta)\) is
-  \begin{align*}
-    P(|a_n(X_n-\theta)|\leq x)
-    &=P(-x\leq a_n(X_n-\theta)\leq x)\\
-    &=P\left(-\frac{x}{a_n}+\theta\leq X_n\leq\frac{x}{a_n}+\theta\right)\\
-    &=\int_{-x/a_n+\theta}^{x/a_n+\theta} f(y)\diff y\\
-    &=f(x/a_n+\theta)
-      -f(-x/a_n+\theta),
-  \end{align*}
-  therefore its PDF is
-  \begin{align*}
-    \frac{dP}{dx}(|a_n(X_n-\theta)|\leq x)
-    &=\frac{d}{dx}
-      \left[%
-      f\left(\frac{x}{a_n}+\theta\right)%
-      -f\left(-\frac{x}{a_n}+\theta\right)%
-      \right]\\
-    &=\frac{1}{a_n}\bigl(f(x/a_n+\theta)+f(-x/a_n+\theta)\bigr)
-  \end{align*}
-
-  For part (c), suppose \(\{a_n\}\) and \(\{b_n\}\) are sequences such that
-  \(a_n=o_p(1)\) and \(b_n=O_p(1)\), then for the sequence
-  \(\{c_n\defeq a_n+b_n\}\) the most we can expect is
-  \(c_n=O_p(1)\). Indeed, we know that if a sequence is \(o_p(1)\)
-  then it is also \(O_p(1)\) therefore there exists \(K_1\) and \(K_2\)
-  such that \(|a_n|\leq K_1\), \(|b_n|\leq K_2\) for all \(n\geq
-  1\). Therefore, \(|c_n|\leq K_1+K_2\) for all \(n\geq 1\).
-
-  For part (d), suppose \(\{a_n\}\) and \(\{b_n\}\) are sequences such that
-  \(a_n=o_p(1)\) and \(b_n=O_p(1)\), then for the sequence
-  \(\{c_n\defeq a_nb_n\}\) the most we can expect is
-  \(c_n=O_p(1)\). Again, since \(\{a_n\}\) is \(o_p(1)\) it is
-  \(O_p(1)\) so there exists a constant \(K_1\geq 0\) such that
-  \(|a_n|\leq K_1\) for all \(n\geq 1\) and similarly for \(\{b_n\}\) there
-  exists a constant \(K_2\) such that \(|b_n|\leq K_2\) for all
-  \(n\geq 1\). Therefore, \(|c_n|\leq K_1K_2\) for all \(n\geq 1\) so
-  \(c_n=O_p(1)\).
-
-  For part (e), suppose \(\{a_n\}\), \(\{b_n\}\), and \(\{c_n\}\) are
-  sequences such that \(a_n,b_n=o_p(1)\) and \(c_n=O_p(1)\), then for
-  the sequence \(\{d_n\defeq a_n+b_nc_n\}\) the most we can expect is
-  \(d_n=O_p(1)\) since there exists contstants \(K_1\), \(K_2\), and
-  \(K_3\) such that \(|a_n|\leq K_1\), \(|b_n|\leq K_2\), and
-  \(|c_n|\leq K_3\) for all \(n\geq 1\). This implies that
-  \(|d_n|\leq K_1+K_2K_3\) for all \(n\geq 1\). Thus, \(d_n=O_p(1)\).
-\end{solution}
-\newpage
+\begin{solution*}
+\end{solution*}
 
 \begin{problem}[DasGupta 7.3 {\protect[Monte Carlo]}]
   Consider the purely mathematical problem of finding a definite integral
@@ -88,26 +22,9 @@
 
   Numerical analysts call this Monte Carlo integration.
 \end{problem}
-\begin{solution}
-  Let \(X_k\), for \(1\leq k\leq n\), be independent and identically
-  distributed \(U[a,b]\) random variables and let \(f\colon[a,b]\to\bbR\)
-  be integrable on \([a,b]\). Moreover, let us denote the integral of \(f\)
-  on \([a,b]\) by
-  \[
-    I\defeq\int_a^b f\diff x
-  \]
-  and the average of \(n\) random sample points from \([a,b]\) by
-  \[
-    I_n\defeq\frac{1}{n}\sum_{k=1}^n f(X_k).
-  \]
-  By the strong law of large numbers, we immediately have
-  \[
-    I_n\To E(f(X_1))=\int_{-\infty}^\infty f(x)\chi_{[a,b]}(x)\diff
-    x=\int_a^b f(x)\diff x,
-  \]
-  as desired.
-\end{solution}
-\newpage
+\begin{solution*}
+
+\end{solution*}
 
 \begin{problem}[DasGupta 7.4 (a), (b)]
   Suppose \(X_1,\dotsc,\) are i.i.d.\@ and that \(E(X_1)=\mu\neq 0\),
@@ -120,23 +37,9 @@
     for fixed \(m\), and \(n\to\infty\).
   \end{enumerate}
 \end{problem}
-\begin{solution}
-  For part (a), by the strong law of large numbers the average
-  \(\bar X_n=S_{n,1}/n\yright{\text{a.s.}}\mu\) as \(n\to\infty\), so
-  \(S_{n,1}\yright{\text{a.s.}}\infty\) as \(n\to\infty\). Therefore, since
-  \(S_{m,1}\) is a fixed, \(S_{m,1}/S_{n,1}\yright{\text{a.s.}} 0\).
+\begin{solution*}
 
-  For part (b), we have
-  \begin{align*}
-    \frac{S_{n-m,1}}{S_{n,1}}
-    &=\frac{S_{n,1} - S_{m,1}}{S_{n,1}}\\
-    &=%
-      1-\frac{S_{m,1}}{S_{n,1}}
-  \end{align*}
-  which converges a.s.\@ to \(1\) since
-  \(S_{m,1}/S_{n,1}\yright{\text{a.s.}} 0\).
-\end{solution}
-\newpage
+\end{solution*}
 
 \begin{problem}[DasGupta 7.5 (a)]
   Let \(A_n\), \(n\geq 1\), \(A\) be events with respect to a common sample
@@ -146,17 +49,9 @@
     P(A)\).
   \end{enumerate}
 \end{problem}
-\begin{solution}
-  One direction of this is obvious; namely, since \(I_{A_n}\) and \(I_A\)
-  are indicator random variables \(E(I_{A_n})=P(A_n)\) and \(E(I_A)=P(A)\)
-  so \(E(I_{A_n})=P(A_n)\to P(A)=E(I_A)\) implies \(I_{A_n}\yright{\calL}
-  I_A\).
+\begin{solution*}
 
-  On the other hand, if \(I_{A_n}\yright{\calL} I_A\), then \(P(I_{A_n}\leq
-  x)\to P(I_{A_n}\leq x)\) so letting \(x\to\infty\),
-  \(P(A_n)=P(I_{A_n}\leq\infty)\to P(I_A\leq\infty)=P(A)\).
-\end{solution}
-\newpage
+\end{solution*}
 
 \begin{problem}[DasGupta 7.11 {\protect[Sample Maximum]}]
   Let \(X_k\), \(k\geq 1\), be an i.i.d.\@ sequence, and \(X_{(n)}\) the
@@ -164,23 +59,9 @@
   \(F\) is the common CDF of the \(X_k\). Prove that
   \(X_{(n)}\yright{\text{a.s.}}\xi(F)\).
 \end{problem}
-\begin{solution}
-  We point out that this is an immediate extension of Example 7.7 in
-  DasGupta's book. Let $\varepsilon >0$. Set $\xi = \xi(F)$. Then
-  \begin{align*}
-    P(|\forall n \geq m, \xi - X_{(n)}| \leq \varepsilon|)
-    &= P(\forall n \geq m, \xi - X_{(n)} \leq \varepsilon)\\
-    &= P(\forall n \geq m, X_{(n)} \geq \xi - \varepsilon )\\
-    &= P(X_{(m)} \geq \xi - \varepsilon )\\
-    &= 1- P(X_{(m)} < \xi - \varepsilon )\\
-    &= 1- P(X_i < \xi - \varepsilon)^m\\
-    &\to 1\\
-  \end{align*}
-  with convergence above being as $m \to \infty$.
+\begin{solution*}
 
-  That is, by definition, $X_{(n)} \to \xi$ almost surely.
-\end{solution}
-\newpage
+\end{solution*}
 
 \begin{problem}[DasGupta 7.14 (a)]
   Suppose \(X_k\) are i.i.d.\@ standard Cauchy. Show that
@@ -188,18 +69,9 @@
   \item \(P(\text{\(|X_n|>n\) infinitely often})=1\).
   \end{enumerate}
 \end{problem}
-\begin{solution}
-  Recall that the sum of two independent Cauchy variables is again
-  Cauchy. Therefore, \(\bar X_n=\sum_{k=1}^n X_n\) is Cauchy. Now by the
-  weak law of large numbers, we have
-  \[
-    P(\limsup|\bar X_n|=\infty)=1.
-  \]
-  This says that the average for any \(n\), the average \(\bar X_n\)
-  eventually exceeds \(n\) with probability \(1\). Therefore, \(X_n>n\)
-  infinitely often.
-\end{solution}
-\newpage
+\begin{solution*}
+
+\end{solution*}
 
 \begin{problem}[DasGupta 7.16 {\protect[Coupon Collection]}]
   Cereal boxes contain independently and with equal probability exactly one
@@ -207,60 +79,22 @@
   \(n\) pictures can cash them in for money. Let \(W_n\) be the minimum
   number of cereal boxes one would need to purchase to own a complete set
   of the pictures. Find a sequence \(a_n\) such that
-  \(W_n/a_n\yright{\calP} 1\).
+  \(\frac{W_n}{a_n}\yright{\calP} 1\).
 
-  \noindent (\emph{Hint:} Approximate the mean of \(W_n\).)
+  \noindent\emph{Hint:} Approximate the mean of \(W_n\).
 \end{problem}
-\begin{solution}
-  We can model the scenario by \(X_k\sim\Geom(\frac{n-k+1}{n})\) where
-  initially (\(k=1\)) we have a \(100\%\) chance of finding obtaining new
-  picture. Therefore, the minimum number of boxes required to obtain a
-  complete set of pictures \(W_n\) is the sum \(\sum_{k=1}^n X_k\). Define
-  \(a_n\defeq \sum_{k=1}^nn(n-k+1)^{-1}=n/(n^2-nk+n)\). Then by the weak
-  law of large numbers
-\end{solution}
-\newpage
+\begin{solution*}
+
+\end{solution*}
 
 \begin{problem}[DasGupta 7.17]
-  Let \(X_n\sim\Bin(n,p)\). Show that \((X_n/n)^2\) and
-  \(X_n(X_n-1)/(n(n-1))\) both converge in probability to \(p^2\). Do
-  they converge almost surely?
+  Let \(X\sim\Bin(n,p)\). Show that \((\frac{X_n}{n})^2\) and
+  \(\frac{X_n(X_n-1)}{n(n-1)}\) both converging in probability to
+  \(p^2\). Do they converge almost surely?
 \end{problem}
-\begin{solution}
-  First note that \((X_n/n)^2\sim X_n(X_n-1)/(n(n-1))\) so it suffices to
-  show that \((X_n/n)^2\to p^2\). We show this explicitly. Let
-  \(\varepsilon\) be given then we show that
-  \[
-    P\left(\left|\left(\frac{X_n}{n}\right)^2
-        -p^2\right|\geq\varepsilon\right)\To 0.
-  \]
-  That is, given \(\eta>0\) there exists \(N\) such that \(n\geq N\)
-  implies
-  \begin{align*}
-    P\left(\left|\left(\frac{X_n}{n}\right)^2
-        -p^2\right|\geq\varepsilon\right)
-    &=P\left(\left(\frac{X_n}{n}\right)^2
-      -p^2\geq\varepsilon\right)
-      +P\left(\left(\frac{X_n}{n}\right)^2
-      -p^2\leq-\varepsilon\right)\\
-    &<\eta.
-  \end{align*}
-  From the calculations above, we have
-  \begin{align*}
-    P\left(\left(\frac{X_n}{n}\right)^2
-    -p^2\geq\varepsilon\right)
-    &=P\left(X_n\geq n\sqrt{\varepsilon+p^2}\right)\\
-    &=1-P\left(X_n<n\sqrt{\varepsilon+p^2}\right)\\
-    &\approx\frac{1}{\sqrt{2\pi n p(1-p)}}\int_{-\infty}^{n\sqrt{\varepsilon+p^2}}
-      \rme^{-(x-np)^2/(2np(1-p))}\diff x
-    \\
-    &\sim C\rme^{-C''n^2}\int_{-\infty}^{C'n}\rme^{-C'''x^2}\diff x
-  \end{align*}
-  since both sequences in \(n\) above are convergent and the limit of the
-  product of convergent sequences is the product of the limits, then the
-  limit above equals \(0\).
-\end{solution}
-\newpage
+\begin{solution*}
+
+\end{solution*}
 
 \begin{problem}[DasGupta 7.21]
   Let \(X_1,X_2,\dotsc,\) be i.i.d.\@ \(U[0,1]\). Let
@@ -269,34 +103,18 @@
   \]
   Find \(c\) such that \(G_n\yright{\calP} c\).
 \end{problem}
-\begin{solution}
+\begin{solution*}
 
-Note that
-
-\begin{align*}
-  \ln(G_n) &= \frac{1}{n} \ln(X_1 X_2 \ldots X_n) \\
-           &= \frac{1}{n} \sum_{i=1}^n \ln(X_i) \\
-           &\yright{\calP} \int_0^1 \ln(x) dx \\
-           &= -1 \\
-\end{align*}
-
-So that $\ln(G_n) \yright{\calP} -1$; that is, $G_n \yright{\calP} e^{-1}$.
-
-\end{solution}
-\newpage
+\end{solution*}
 
 \begin{problem}[DasGupta 7.30 {\protect[Conceptual]}]
   Suppose \(X_n\yright{\calL}X\), and also \(Y_n\yright{\calL} X\). Does
   this mean that \(X_n-Y_n\) converge in distribution to (the point mass
   at) zero?
 \end{problem}
-\begin{solution}
-  No. Pick $X_n = U(\{-1,1\})$, and $Y_n = -X_n$. Then $X_n-Y_n = 2$ for
-  all $n \in \bbN$, but $X_n$ and $Y_n$ are both uniformly distributed on
-  $\{-1,1\}$, so they both converge (in distribution) to $U(\{-1,1\})$.
+\begin{solution*}
 
-\end{solution}
-\newpage
+\end{solution*}
 
 \begin{problem}[DasGupta 7.31 (a)]
   \begin{enumerate}[label=(\alph*),noitemsep]
@@ -305,11 +123,11 @@ So that $\ln(G_n) \yright{\calP} -1$; that is, $G_n \yright{\calP} e^{-1}$.
     \(\theta=0\)?
   \end{enumerate}
 \end{problem}
-\begin{solution}
+\begin{solution*}
 
-\end{solution}
+\end{solution*}
 
 %%% Local Variables:
 %%% mode: latex
-%%% TeX-master: "../MA519-HW-Current"
+%%% TeX-master: "../MA519-HW-ALL"
 %%% End:

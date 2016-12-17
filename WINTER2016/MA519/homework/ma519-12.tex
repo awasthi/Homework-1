@@ -1,3 +1,4 @@
+\subsection{Homework 12}
 \begin{problem}[Handout 15, \# 10]
   Consider the experiment of picking one word at random from the sentence
   \begin{quote}
@@ -48,12 +49,9 @@
   \end{align*}
   Lastly, the correlation between $X$ and $Y$ is
   \[
-    \rho_{X,Y}
-    =\frac{5}{\sqrt{\frac{576}{7}}}
-    \approx\num{0.551198189805123}.\qedhere
+    \rho_{X,Y} =\frac{5}{\sqrt{\frac{576}{7}}} \approx 0.5512.\qedhere
   \]
 \end{solution}
-\newpage
 
 \begin{problem}[Handout 15, \# 11]
   Consider the joint PMF \(p(x,y)=cxy\), \(1\leq x\leq 3\), \(1\leq y\leq
@@ -86,7 +84,6 @@
   For part (b): We see that $X$ and $Y$ are independent;
   $E(XY) = E(X)E(Y)$.
 \end{solution}
-\newpage
 
 \begin{problem}[Handout 15, \# 12]
   A fair die is rolled twice. Let \(X\) be the maximum and \(Y\) the
@@ -111,10 +108,9 @@
 
   So that the mean is
   \[
-    \mu_{\frac{X}{Y}} = \frac{487}{216} \approx\num{2.2546296296296298}\qedhere
+    \mu_{\frac{X}{Y}} = \frac{487}{216} \approx 2.2546.\qedhere
   \]
 \end{solution}
-\newpage
 
 \begin{problem}[Handout 15, \# 13]
   Two random variables have the joint PMF \(p(x,x+1)=\frac{1}{n+1}\),
@@ -123,7 +119,7 @@
   \begin{enumerate}[label=(\alph*),noitemsep]
   \item Are \(X\) and \(Y\) independent?
   \item What is the variance of \(Y-X\)?
-  \item What is \(\Var(Y\,|\,{X=1})\)?
+  \item What is \(\Var(Y\mid {X=1})\)?
   \end{enumerate}
 \end{problem}
 \begin{solution}
@@ -133,21 +129,20 @@
   For part (b): $\Var(Y-X) = 0$, because $Y-X$ is constant; it is
   always $1$.
 
-  For part (c): $\Var(Y\,|\,X=1) = 0$, because $Y = 2$ if $X=1$.
+  For part (c): $\Var(Y\mid X=1) = 0$, because $Y = 2$ if $X=1$.
 \end{solution}
-\newpage
 
-\begin{problem}[Handout 15, \# 14]
-  \emph{(Binomial Conditional Distribution).} Suppose \(X\) and \(Y\) are
-  independent random variables, and \(X\sim\Bin(m,p)\),
-  \(Y\sim\Bin(n,p)\). Show that the conditional distribution of \(X\) given
-  by \(X+Y=t\) is a hypergeometric distribution; identify the parameters of
-  this hypergeometric distribution.
+\begin{problem}[Handout 15, \# 14 -- \emph{Binomial Conditional Distribution}]
+  Suppose \(X\) and \(Y\) are independent random variables, and
+  \(X\sim\Bin(m,p)\), \(Y\sim\Bin(n,p)\). Show that the conditional
+  distribution of \(X\) given by \(X+Y=t\) is a hypergeometric
+  distribution; identify the parameters of this hypergeometric
+  distribution.
 \end{problem}
 \begin{solution}
   First, let us find the PMF of \(X\) given \(X+Y=t\):
   \begin{align*}
-    P(X=x\,|\,X+Y=t)
+    P(X=x\mid X+Y=t)
     &=\frac{P\bigl(\{\,X=x\,\}\cap\{\,X+Y=t\,\}\bigr)}{P(X+Y=t)}\\
     &=\frac{P(Y=t-x)}{P(X+Y=t)}\\
     &=\frac{\binom{n}{x}\binom{m}{t-x}p^t(1-p)^{m+n-t}}
@@ -156,28 +151,27 @@
   \end{align*}
   This distribution is precisely \(\Hypergeo(t,m,n+m)\).
 \end{solution}
-\newpage
 
 \begin{problem}[Handout 15, \# 15]
   Suppose a fair die is rolled twice. Let \(X\) and \(Y\) be the two
   rolls. Find the following with as little calculation as possible.
   \begin{enumerate}[label=(\alph*),noitemsep]
-  \item \(E(X+Y\,|\,Y=y)\).
-  \item \(E(XY\,|\,Y=y)\).
-  \item \(\Var(X^2Y\,|\,Y=y)\).
+  \item \(E(X+Y\mid Y=y)\).
+  \item \(E(XY\mid Y=y)\).
+  \item \(\Var(X^2Y\mid Y=y)\).
   \item \(\rho_{X+Y,X-Y}\).
   \end{enumerate}
 \end{problem}
 \begin{solution}
   For part (a):
-  \[E(X+Y\,|\,Y=y) = E(X\,|\,Y=y) + E(Y\,|\,Y=y) = 3.5+y.\]
+  \[E(X+Y\mid Y=y) = E(X\mid Y=y) + E(Y\mid Y=y) = 3.5+y.\]
 
   For part (b):
-  \[E(XY\,|\,Y=y) = E(X\,|\,Y=y)E(Y\,|\,Y=y) = 3.5y.\]
+  \[E(XY\mid Y=y) = E(X\mid Y=y)E(Y\mid Y=y) = 3.5y.\]
 
   For part (c):
   \[
-    \Var(X^2Y\,|\,Y=y)=E((X^2Y)^2\,|\,Y=y)-E(X^2Y\,|\,Y=y)^2
+    \Var(X^2Y\mid Y=y)=E((X^2Y)^2\mid Y=y)-E(X^2Y\mid Y=y)^2
     =c^2\left(\frac{91}{6}-3.5\right).
   \]
 
@@ -190,11 +184,10 @@
   \end{align*}
   so $\rho_{X+Y,X-Y} = 0$.
 \end{solution}
-\newpage
 
-\begin{problem}[Handout 15, \# 16]
-  \emph{(A Standard Deviation Inequality).} Let \(X\) and \(Y\) be two
-  random variables. Show that \(\sigma_{X+Y}\leq\sigma_X+\sigma_Y\).
+\begin{problem}[Handout 15, \# 16 -- \emph{A Standard Deviation Inequality}]
+  Let \(X\) and \(Y\) be two random variables. Show that
+  \(\sigma_{X+Y}\leq\sigma_X+\sigma_Y\).
 \end{problem}
 \begin{solution}
   Suppose \(\sigma_X\) and \(\sigma_Y\) exist and are finite. We want to
@@ -206,7 +199,7 @@
   \begin{align*}
     \sigma_{X+Y}^2
     &\leq\sigma_X+\sigma_Y^2+2\sigma_X\sigma_Y\\
-    \Var(X+Y)&\leq\Var(X)+\Var(Y)+2[\Var(X)\Var(Y)]^{\frac{1}{2}}.
+    \Var(X+Y)&\leq\Var(X)+\Var(Y)+2[\Var(X)\Var(Y)]^{1/2}.
   \end{align*}
 
   First, let us expand \(\Var(X+Y)\) using the definition of variance, we
@@ -220,7 +213,7 @@
   \end{align*}
   Therefore, it suffices to show that
   \[
-    E(XY)-E(X)E(Y)\leq [\Var(X)\Var(Y)]^{\frac{1}{2}},
+    E(XY)-E(X)E(Y)\leq [\Var(X)\Var(Y)]^{1/2},
   \]
   or, rewritten using covariance,
   \[
@@ -236,7 +229,6 @@
     &=\Var(X)\Var(Y).\qedhere
   \end{align*}
 \end{solution}
-\newpage
 
 \begin{problem}[Handout 15, \# 17]
   Seven balls are distributed randomly in seven cells. Let \(X_k\) be
@@ -251,21 +243,19 @@
   \begin{center}
     \begin{tabular}{L|L|L|L|L|}
       _{X_3}\backslash^{X_2}&0&1&2&3\\\hline
-      0&\num{0.047539}&\num{0.156368}&\num{0.321295}&\num{0.107098}\\\hline
-      1&\num{0.108883}&\num{0.214197}&\num{0.026775}&0\\\hline
-      2&\num{0.017850}&0&0&0\\\hline
+      0&0.0475&0.1564&0.3213&0.1071\\\hline
+      1&0.1089&0.2142&0.0268&0\\\hline
+      2&0.0179&0&0&0\\\hline
     \end{tabular}.
   \end{center}
 
   Let us do a sanity check by summing over all of the entries in the table
   above
   \[
-    \num{0.047539}+\num{0.156368}+\num{0.321295}+\num{0.107098}+
-    \num{0.108883}+\num{0.214197}+\num{0.026775}+0+\num{0.017850}+0+0+0\approx
+    0.0475+0.1564+0.3213+0.1071+ 0.1089+0.2142+0.0268+0+0.0179+0+0+0\approx
     1.\qedhere
   \]
 \end{solution}
-\newpage
 
 \begin{problem}[Handout 15, \# 18]
   Two ideal dice are thrown. Let \(X\) be the score on the first die and
@@ -278,8 +268,8 @@
 \begin{solution}
   For part (a): The random variable \(X\) takes on integer values between
   zero and six and so does \(Y\). Moreover, the dependence of \(Y\) on
-  \(X\) tells us that \(P(\{\,X=k\,\}\cap\{\,Y=\ell\,\})=0\) if
-  \(\ell<k\); this allows us to fill in a significant portion of the joint
+  \(X\) tells us that \(P(\{\,X=k\,\}\cap\{\,Y=l\,\})=0\) if
+  \(l<k\); this allows us to fill in a significant portion of the joint
   distribution table:
   \begin{center}
     \begin{tabular}{L|L|L|L|L|L|L|}
@@ -312,8 +302,8 @@
           +4^2\left(\frac{6}{36}\right)%
           +5^2\left(\frac{6}{36}\right)%
           +6^2\left(\frac{6}{36}\right)\\
-        &\approx\num{15.166666666666666},\\
-    \Var(X)&\approx\num{2.916666666666666},
+        &\approx15.1667,\\
+    \Var(X)&\approx 2.9167,
   \end{align*}
   and
   \begin{align*}
@@ -323,22 +313,21 @@
           +4\left(\frac{7}{36}\right)%
           +5\left(\frac{9}{36}\right)%
           +6\left(\frac{11}{36}\right)\\
-        &\approx\num{4.472222222222222},\\
+        &\approx 4.4722,\\
     E(Y^2)&=1^2\left(\frac{1}{36}\right)%
-          +2^2\left(\frac{3}{36}\right)%
-          +3^2\left(\frac{5}{36}\right)%
-          +4^2\left(\frac{7}{36}\right)%
-          +5^2\left(\frac{9}{36}\right)%
-          +6^2\left(\frac{11}{36}\right)\\
-        &\approx\num{21.97222222222222},\\
-    \Var(Y)&\approx\num{1.9714506172839492},
+            +2^2\left(\frac{3}{36}\right)%
+            +3^2\left(\frac{5}{36}\right)%
+            +4^2\left(\frac{7}{36}\right)%
+            +5^2\left(\frac{9}{36}\right)%
+            +6^2\left(\frac{11}{36}\right)\\
+        &\approx 21.9722,\\
+    \Var(Y)&\approx 1.9715,
   \end{align*}
   and lastly (after a long calculation which we omit) the covariance is
   \[
-    \Cov(X,Y)\approx\num{2.0611111111111153}.\qedhere
+    \Cov(X,Y)\approx 2.06111.\qedhere
   \]
 \end{solution}
-\newpage
 
 \begin{problem}[Handout 15, \# 19]
   Let \(X_1\) and \(X_2\) be independent and have the common geometric
@@ -347,20 +336,19 @@
     uniform}, that is,
   \begin{equation}
     \label{eq:12:uniform-conditional-pmf}
-    P(X_1=k\,|\,X_1+X_2=n)=\frac{1}{n+1},\quad k=0,\dotsc,n.
+    P(X_1=k\mid X_1+X_2=n)=\frac{1}{n+1},\quad k=0,\dotsc,n.
   \end{equation}
 \end{problem}
 \begin{solution}
   By definition of conditional probability, we have
   \begin{align*}
-    P(X_1=k\,|\,X_1+X_2=n)
+    P(X_1=k\mid X_1+X_2=n)
     &=\frac{P(\{\,X_1=k\,\}\cap\{\,X_1+X_2=n\,\})}{P(X_1=k)}\\
     &=\frac{P(X_2=n-k)}{P(X_1+X_2=n)}\\
     &=\frac{q^{n-k}p}{q^{n-k}p(n+1)}\\
     &=\frac{1}{n+1}.\qedhere
   \end{align*}
 \end{solution}
-\newpage
 
 \begin{problem}[Handout 15, \# 20]
   If two random variables \(X\) and \(Y\) assume only two values
@@ -406,7 +394,8 @@
   \(f_{X,Y}(x,y)=f_X(x)f_Y(y)\); i.e., \(X\) and \(Y\) are independent.
 \end{solution}
 
+
 %%% Local Variables:
 %%% mode: latex
-%%% TeX-master: "../MA519-HW-Current"
+%%% TeX-master: "../MA519-HW-ALL"
 %%% End:

@@ -1,3 +1,4 @@
+\subsection{Homework 4}
 \begin{problem}[Handout 5, \# 2]
   In an urn, there are \(12\) balls. \(4\) of these are white. Three
   players: \(A\), \(B\), and \(C\), take turns drawing a ball from the urn,
@@ -6,306 +7,89 @@
   trial, the ball drawn in the trial before is put back into the urn (i.e.,
   selection \emph{with replacement}).
 \end{problem}
-\begin{solution}
-  Denote the events that player $A$ wins, player $B$ wins, and player $C$
-  wins by $A$, $B$, and $C$ respectively.
-
-  Note that $A$ wins if some multiple of 3 losses occurs, followed by a
-  win. Also, $B$ wins if some multiple of three losses occurs, followed by
-  a loss, then a win. Last, $C$ wins if some multiple of three losses
-  occurs, followed by two losses then a win.
-
-  A win occurs with probability $1/3$ each time, and a loss occurs with
-  probability $2/3$ each time. Thus, because each draw is independent,
-  \begin{align*}
-    P(A) &= \sum\limits_{i=0}^\infty \frac{1}{3} \left(\frac{2}{3}\right)^{3i}, &
-    P(B) &= \sum\limits_{i=0}^\infty \frac{1}{3} \left(\frac{2}{3}\right)^{3i+1}, &
-    P(C) &= \sum\limits_{i=0}^\infty \frac{1}{3} \left(\frac{2}{3}\right)^{3i+2}.
-  \end{align*}
-  That is,
-  \begin{align*}
-    P(A) &= \sum\limits_{i=0}^\infty \frac{9}{19} \approx 0.47,&
-    P(B) &= \sum\limits_{i=0}^\infty \frac{6}{19} \approx 0.32,&
-    P(C) &= \sum\limits_{i=0}^\infty \frac{4}{19} \approx 0.21.
-  \end{align*}
-\end{solution}
-\newpage
+\begin{solution*}
+\end{solution*}
 
 \begin{problem}[Handout 5, \# 8]
   Consider \(n\) families with \(4\) children each. How large must \(n\) be
   to have a \(90\%\) probability that at least \(3\) of the \(n\) families
   are all girl families?
 \end{problem}
-\begin{solution}
-  The probability that a family has all girls is $(0.5)^4$.
+\begin{solution*}
+\end{solution*}
 
-  In $n$ families, the probability that at least $3$ are all-girl is
-  $1-P(0)-P(1)-P(2)$, where $P(m)$ is the probability that exactly $m$
-  families are all-girl.
-
-  Note that
-  \begin{align*}
-    P(0) &= (1-(0.5)^4)^n \\
-    P(1) &= \binom{n}{1}(0.5)^4\bigl(1-(0.5)^4\bigr)^{n-1} \\
-    P(2) &= \binom{n}{2}(0.5)^8\bigl(1-(0.5)^4\bigr)^{n-2}
-  \end{align*}
-  (we choose a number of families to be all-girl, and then find the
-  probability that that family is all-girl, while all of the rest are not
-  all-girl).
-
-  So that the probability that at least $3$ are all girl is
-  \[
-    1-\bigl(1-(0.5)^4\bigr)^n - n(0.5)^4\bigl(1-(0.5)^4\bigr)^{n-1} -
-    n(n-1)(0.5)(0.5)^8\bigl(1-(0.5)^4\bigr)^{n-2}.
-  \]
-\end{solution}
-\newpage
-
-\begin{problem}[Handout 5, \# 10]
-  \emph{(Yahtzee).} In Yahtzee, five fair dice are rolled. Find the
-  probability of getting a Full House, which is three rolls of one number
-  and two rolls of another, in Yahtzee.
+\begin{problem}[Handout 5, \# 10 -- \emph{Yahtzee}]
+  In Yahtzee, five fair dice are rolled. Find the probability of getting a
+  Full House, which is three rolls of one number and two rolls of another,
+  in Yahtzee.
 \end{problem}
-\begin{solution}
-  There are $30$ different kinds of full house ($6$ different three of a
-  kinds, and $5$ different kinds of different two of a kind).
-
-  The probability of rolling a specific kind of full house is
-  \[
-    \binom{5}{3} \left( \frac{1}{6}\right)^3 \left(\frac{1}{6} \right)^2.
-  \]
-  (Choose 3 dice to be the three of a kind, have them all rolled the
-  specific number, have the other two dice rolled the other specific
-  number.)
-
-  So the probability of rolling some kind of full house is
-  \[
-    30 \binom{5}{3} \left( \frac{1}{6}\right)^3 \left(\frac{1}{6}
-    \right)^2 = \frac{25}{648} \approx 0.039.
-  \]
-\end{solution}
-\newpage
+\begin{solution*}
+\end{solution*}
 
 \begin{problem}[Handout 5, \# 12]
   The probability that a coin will show all heads or all tails when tossed
   four times is \(0.25\). What is the probability that it will show two
   heads and two tails?
 \end{problem}
-\begin{solution}
-  Let $H$ denote the event that, on a given coin toss, that coin is heads,
-  and let $T$ denote the event that, on a given coin toss, that coin is
-  tails. Then, because each coin toss is independent, this says that
-  \[
-    P(H)^4 + P(T)^4 = \frac{1}{4}.
-  \]
-  Moreover, because this is a coin,
-  \[
-    P(H) + P(T) = 1.
-  \]
-
-  So,
-  \begin{align*}
-    P(H)^4 + \bigl(1-P(H)\bigr)^4 &= \frac{1}{4} \\
-    2P(H)^4 -4P(H)^3 + 6P(H)^2 - 4P(H) +1 &= \frac{1}{4}.
-  \end{align*}
-  We can approximate a solution to the above by $P(H) \approx 0.299$ or by
-  $P(H) \approx 0.701$.
-
-  Now, the probability that two coin flips of four are heads is
-  \[
-    \binom{4}{2}P(H)^2P(T)^2 \approx 0.263.
-  \]
-\end{solution}
-\newpage
+\begin{solution*}
+\end{solution*}
 
 \begin{problem}[Handout 5, \# 13]
   Let the events \(A_1, A_2,\dotsc,A_n\) be independent and
   \(P(A_k)=p_k\). Find the probability \(p\) that none of the events
   occurs.
 \end{problem}
-\begin{solution}
-  Let the events $A_1, A_2,\dotsc, A_n$ be independent. Then the events
-  $A_1^\sim, A_2^\sim, \dotsc, A_n^\sim$ are independent. (Where $A$
-  denotes the event that $A$ does \emph{not} happen, i.e.,
-  \(A^\sim=\Omega\setminus A\)). The events $A_i^\sim$ each have
-  probability $1-p_i$ of occurring. Thus, the probability, $p$, that none
-  of the events occur is
-  \[
-    p = \prod_{k=1}^n (1-p_k)
-  \]
-\end{solution}
-\newpage
+\begin{solution*}
+\end{solution*}
 
 \begin{problem}[Handout 6, \# 5]
   Suppose a fair die is rolled twice and suppose \(X\) is the absolute
   value of the difference of the two rolls. Find the PMF and the CDF of
   \(X\) and plot the CDF. Find a median of \(X\); is the median unique?
 \end{problem}
-\begin{solution}
-  First, we compute the probability mass function. Note that $X$ is an
-  integer between $0$ and $5$, so computing the probilities that $X$ is
-  each of $0$ through $5$ suffices to describe the PMF of $X$.
-
-  We calculate the probabilities, by counting.
-  \begin{align*}
-    P(0) &= \frac{6}{36} = \frac{1}{6}\\
-    P(1) &= \frac{10}{36} = \frac{5}{18}\\
-    P(2) &= \frac{8}{36} = \frac{2}{9}\\
-    P(3) &= \frac{6}{36} = \frac{1}{6}\\
-    P(4) &= \frac{4}{36} = \frac{1}{9}\\
-    P(5) &= \frac{2}{36} = \frac{1}{18}\\
-  \end{align*}
-  We calculate the CDF by summing.
-  \begin{align*}
-    \CDF(0) &= \frac{6}{36} = \frac{1}{6}\\
-    \CDF(1) &= \frac{16}{36} = \frac{4}{9}\\
-    \CDF(2) &= \frac{24}{36} = \frac{2}{3}\\
-    \CDF(3) &= \frac{30}{36} = \frac{5}{6}\\
-    \CDF(4) &= \frac{34}{36} = \frac{17}{18}\\
-    \CDF(5) &= \frac{36}{36} = 1\\
-  \end{align*}
-  The median is $2$.
-\end{solution}
-\newpage
+\begin{solution*}
+\end{solution*}
 
 \begin{problem}[Handout 6, \# 7]
   Find a discrete random variable \(X\) such that \(E(X)=E(X^3)=0\);
   \(E(X^2)=E(X^4)=1\).
 \end{problem}
-\begin{solution}
-  Set \(\Omega=\{0,1\}\) and define a random variable
-  \(X\colon\Omega\to\bbR\) by \(X(0)= -1\), \(X(1)= 1\) as well as a
-  probability \(P(0)=P(1)=1/2\). Then
-  \[
-    E(X)=-1(1/2)+1(1/2)=0=(-1)^3(1/2)+1^3(1/2)=E(X^3),
-  \]
-  whereas
-  \[
-    E(X^2)=(-1)^2(1/2)+1^2(1/2)=1=(-1)^4(1/2)+1^4(1/2)=E(X^4),
-  \]
-  as desired.
-\end{solution}
-\newpage
+\begin{solution*}
+\end{solution*}
 
-\begin{problem}[Handout 6, \# 9]
-  \emph{(Runs).} Suppose a fair die is rolled \(n\) times. By using the
-  indicator variable method, find the expected number of times that a six
-  is followed by at least two other sixes. Now compute the value when
-  \(n=100\).
+\begin{problem}[Handout 6, \# 9 -- \emph{Runs}]
+  Suppose a fair die is rolled \(n\) times. By using the indicator variable
+  method, find the expected number of times that a six is followed by at
+  least two other sixes. Now compute the value when \(n=100\).
 \end{problem}
-\begin{solution}
-  Let \(\Omega\) denote the sample space and let \(A\) denote the event
-  that in a sequence of \(n\) rolls of a die, a subsequence of sixes of
-  length at least three occurs. Define a random variables
-  \(X_i\colon\Omega\to\bbR\), \(1\leq i\leq n-2\), as the indicator
-  variable that the there are three or more consecutive \(6\)s starting at
-  the \(i\)\textsup{th} roll. Then,
-  \[
-    E(X_1+\dotsb+X_{n-2})=E(X_1)+\dotsb+E(X_{n-2})=p_1+\dotsb+p_{n-2}.
-  \]
-  We need to find these \(p_i\). There are \(6^n\) points in the sample
-  space \(\Omega\). Starting at the \(i\)\textsup{th} place, we can have
-  exactly \(6^{n-3}\) ways of choosing the remaining terms in the
-  sequence. Thus,
-  \[
-    p_i=\frac{6^{n-3}}{6^n}=\frac{1}{6^3}.
-  \]
-  Then,
-  \[
-    E(X_1+\dotsb+X_{n-2})=\frac{n-1}{6^3}
-  \]
+\begin{solution*}
+\end{solution*}
 
-  For \(n=100\), this value is
-  \[
-    E(X)\approx\num{0.4537037037037037}.
-  \]
-\end{solution}
-\newpage
-
-\begin{problem}[Handout 6, \# 10]
-  \emph{(Birthdays).} For a group of \(n\) people find the expected number
-  of days of the year which are birthdays of exactly \(k\) people. (Assume
-  \(365\) days and that all arrangements are equally probable.)
+\begin{problem}[Handout 6, \# 10 -- \emph{Birthdays}]
+  For a group of \(n\) people find the expected number of days of the year
+  which are birthdays of exactly \(k\) people. (Assume \(365\) days and
+  that all arrangements are equally probable.)
 \end{problem}
-\begin{solution}
-  Let \(\Omega\) denote the sample space and let \(A\) denote the event
-  that exactly \(k\) people share a birthday. Define a random variable
-  \(X_i\colon\Omega\to\bbR\), \(1\leq i\leq 365\), as the indicator
-  variable that the \(i\)\textsup{th} day of the year is the birthday of
-  exactly \(k\) people. Then,
-  \[
-    E(X_1+\dotsb+X_{365})=E(X_1)+\dotsb+E(X_{365})=365p,
-  \]
-  where \(p\) is the probability that a exactly \(k\) people have a given
-  day of the year as their birthday.
+\begin{solution*}
+\end{solution*}
 
-  The latter probability is not difficult to compute. There are exactly
-  \(\binom{n}{k}\) ways to chose \(k\) people having the 1\textsup{st} of
-  January as their birthday and \((365-1)^{n-k}=364^{n-k}\) choices for we
-  can assign to the remaining \(n-k\) people and of course, the sample
-  space has cardinality \(\#\Omega=365^n\). Thus, the probability that
-  exactly \(k\) people have the 1\textsup{st} of January as their birthday
-  is
-  \[
-    P=\frac{\binom{n}{k}364^{n-k}}{365^n}.
-  \]
-  Thus,
-  \[
-    E[X]
-    =365\left(\frac{\binom{n}{k}364^{n-k}}{365^n}\right)
-    =\frac{\binom{n}{k}364^{n-k}}{365^{n-1}}.
-  \]
-\end{solution}
-\newpage
-
-\begin{problem}[Handout 6, \# 11]
-  \emph{(Continuation).} Find the expected number of multiple
-  birthdays. How large should \(n\) be to make this expectation exceed
-  \(1\)?
+\begin{problem}[Handout 6, \# 11 -- \emph{Continuation}]
+  Find the expected number of multiple birthdays. How large should \(n\) be
+  to make this expectation exceed \(1\)?
 \end{problem}
-\begin{solution}
-  For any given person, the probability that the other \(n-1\) people do
-  not share a birthday with them is
-  \[
-    \frac{\binom{365}{1}(365-1)^{n-1}}{365^n}=\frac{365\cdot 364^{n-1}}{365^n}
-    =\left(\frac{364}{365}\right)^{n-1}.
-  \]
-  Thus, the probability that any given person shares a birthday with
-  somebody else is
-  \[
-    p=1-\left(\frac{364}{365}\right)^{n-1}.
-  \]
-  Now, define a random variable \(X_i\colon\Omega\to\bbR\),
-  \(1\leq i\leq n\), the indicator random variable that the
-  \(i\)\textsup{th} person shares a birthday. Then
-  \begin{align*}
-    E(X_1+\dotsb+X_n)
-    &=E(X_1)+\dotsc+E(X_1)\\
-    &=n p\\
-    &=n\left(1-\left(\frac{364}{365}\right)^{n-1}\right).
-  \end{align*}
+\begin{solution*}
+\end{solution*}
 
-  For the expectation to exceed \(1\), we must have
-  \begin{align*}
-    1
-    &<n\left(1-\left(\frac{364}{365}\right)^{n-1}\right)\\
-    \frac{1}{n}&<1-\left(\frac{364}{365}\right)^{n-1}\\
-    \frac{365^n}{n}&<365^n-364^n.
-  \end{align*}
-  Experimentally, this number seems to be \(20\).
-\end{solution}
-\newpage
-
-\begin{problem}[Handout 6, \# 12]
-  \emph{(The blood-testing problem).} A large number, \(N\), of people are
-  subject to a blood test. This can be administered in two ways, (i) Each
-  person can be tested separately. In this case \(N\) tests are required,
-  (ii) The blood samples of \(k\) people can be pooled and analyzed
-  together. If the test is negative, this one test suffices for the \(k\)
-  people. If the test is positive, each of the \(k\) persons must be tested
-  separately, and in all \(k+1\) tests are required for the \(k\)
-  people. Assume the probability \(p\) that the test is positive is the
-  same for all people and that people are stochastically independent.
+\begin{problem}[Handout 6, \# 12 -- \emph{The blood-testing problem}]
+  A large number, \(N\), of people are subject to a blood test. This can be
+  administered in two ways, (i) Each person can be tested separately. In
+  this case \(N\) tests are required, (ii) The blood samples of \(k\)
+  people can be pooled and analyzed together. If the test is negative, this
+  one test suffices for the \(k\) people. If the test is positive, each of
+  the \(k\) persons must be tested separately, and in all \(k+1\) tests are
+  required for the \(k\) people. Assume the probability \(p\) that the test
+  is positive is the same for all people and that people are stochastically
+  independent.
   \begin{itemize}[noitemsep]
   \item[(b)] What is the expected value of the number, \(X\), of tests
     necessary under plan (ii)?
@@ -314,30 +98,19 @@
     numerical solutions.)
   \end{itemize}
 \end{problem}
-\begin{solution}
+\begin{solution*}
+\end{solution*}
 
-\end{solution}
-\newpage
-
-\begin{problem}[Handout 6, \# 13]
-  \emph{(Sample structure).} A population consists of \(r\) (classes whose
-  sizes are in the proportion \(p_1:p_2:\dotsb:p_r\). A random sample of
-  size \(n\) is taken with replacement. Find the expected number of classes
-  not represented in the sample.
+\begin{problem}[Handout 6, \# 13 -- \emph{Sample structure}]
+  A population consists of \(r\) (classes whose sizes are in the proportion
+  \(p_1:p_2:\dotsb:p_r\). A random sample of size \(n\) is taken with
+  replacement. Find the expected number of classes not represented in the
+  sample.
 \end{problem}
-\begin{solution}
-  Let $A_i$ be the event that the $i$\textsup{th} class is not represented
-  in the sample of size $n$. Let $A$ be the number of classes not
-  represented in the sample of size $n$. Let $A_i$ also represent the
-  number of times that the $i$\textsup{th} class is not represented. Then
-\begin{align*}
-  E(A) &=\sum_{i=1}^r E(A_i) \\
-       &=\sum_{i=1}^r P(A_i) \\
-       &=\sum_{i=1}^r (1-p_i)^n \\
-\end{align*}
-\end{solution}
+\begin{solution*}
+\end{solution*}
 
 %%% Local Variables:
 %%% mode: latex
-%%% TeX-master: "../MA519-Current-HW"
+%%% TeX-master: "../MA519-HW-ALL"
 %%% End:
