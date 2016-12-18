@@ -52,43 +52,139 @@ be working with set complements we shall set aside the notation
   \]
   \\\\
   For part (e): the event \(E\) that exactly one of the events \(A\),
-  \(B\), \(C\) occurs is
+  \(B\), \(C\) occurs is the expression
   \[
     E=(A\cup B\cup C)\setminus \left[(A\cap B)\cup (A\cap C)\cup (B\cap
       C)\cup (A\cap B\cap C)\right].
   \]
   \\\\
-  For part (f):
+  For part (f): the event \(E\) that \(A\) and \(B\) occur, but not \(C\)
+  is the expression
+  \[
+    E=(A\cup B)\cap \tilde C.
+  \]
   \\\\
-  For part (g):
+  For part (g): the event \(E\) that \(A\) occurs or, if not, then \(B\)
+  also does not occur is the expression
+  \[
+    E=A\cup(C\setminus B).\qedhere
+  \]
 \end{solution*}
 
 \begin{problem}
+  You flip a fair coin three times, determine the probability of the below
+  events. Assume all sequences are equally likely.
+  \begin{alphlist}
+  \item Three heads: \(\rmH\rmH\rmH\).
+  \item The sequence hea, tail, head: \(\rmH\rmT\rmH\).
+  \item Any sequence with two heads and one tail.
+  \item Any sequence where the number of heads is greater than or eqal to
+    the number of tails.
+  \end{alphlist}
+\end{problem}
+\begin{solution*}
+  For part (a): Consider the following analysis
+  \\\\
+  For part (b):
+  \\\\
+  For part (c):
+  \\\\\
+  For part (d):
+\end{solution*}
+
+\begin{problem}
+  Bob has a peculiar pair of four-sided dice. When he rolls the dice, the
+  probability of any particular outcome is proportional to the sum of the
+  results of each die. All outcomes that result in a particular sum are
+  equally likely.
+  \begin{alphlist}
+  \item What is the probability of the sum being even?
+  \item What is the probability of Bob rolling a \(2\) and a \(3\), in any
+    order?
+  \end{alphlist}
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
 \begin{problem}
+  Alice and Bob each choose at random a number in the interval
+  \([0,2]\). We assume a uniform probability law under which the
+  probability of an event is proportional to its area. Consider the
+  following events
+  \begin{align*}
+    A&=\bigl\{\,\text{the magnitude of the difference of the events is
+       greater than \(\tfrac{1}{3}\)}\,\bigr\},\\
+    B&=\bigl\{\,\text{at least one of the numbers is greater that
+       \(\tfrac{1}{3}\)}\,\bigr\},\\
+    C&=\bigl\{\,\text{the two numbers are equal}\,\bigr\},\\
+    D&=\bigl\{\,\text{Alice's number is greater that \(\tfrac{1}{3}\)}\,\bigr\}.
+  \end{align*}
+  Find the probabilities \(P(B)\), \(P(C)\), and \(P(A\cap D)\).
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
 \begin{problem}
+  Mike and John are playing a friendly game of darts where the dart board
+  is a disk with radius \(10\) inches.
+
+  Whenever a dart falls within \(1\) inch of the center, \(50\) points are
+  scored. If the point of impact is between \(1\) and \(3\) inches from the
+  center, \(30\) points are scored, if it is at a distance of \(3\) to
+  \(5\) inches, \(20\) points are scored and if it is further than \(5\)
+  inches, \(10\) points are scored.
+
+  Assume that both players are skilled enough to be able to throw the dart
+  within the boundaries of the board.
+
+  Mike can place the dart uniformly on the board (i.e., the probability of
+  the dart falling in a given region is proportional to its area).
+  \begin{alphlist}
+  \item What is the probability that Mike scores \(50\) points on one
+    throw?
+  \item What is the probability of him scoring \(30\) points on one throw?
+  \item John is right handed and twice more likely to throw in the right
+    half of the board than it the left half. Across each half, the dart
+    falls uniformly in that region. Answer the previous questions for
+    John's throw.
+  \end{alphlist}
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
 \begin{problem}
+  Prove that for three events \(A\), \(B\), and \(C\), we have
+  \[
+    P(A\cap B\cap C)\geq P(A)+P(B)+P(C)-2.
+  \]
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
 \begin{problem}
-\end{problem}
-\begin{solution*}
-\end{solution*}
+  Consider an experiment whose sample space is the real line.
+  \begin{alphlist}
+  \item Let \(\{a_n\}\) be an increasing sequence of numbers that converges
+    to \(a\) and \(\{b_n\}\) a decreasing sequence of numbers that
+    converges to \(b\). Show that
+    \[
+      \lim_{n\to\infty} P([a_n,b_n])=P([a,b]).
+    \]
+    Here, the notation \([a,b]\) stands for the closed interval \(\{x:a\leq
+    x\leq b\}\).
 
-\begin{problem}
+    \noindent\emph{Note:} This result seems intuitively obvious. The issue is to
+    derive it using he axioms of probability theory.
+  \item Let \(\{a_n\}\) be a decreasing sequence that converges to \(a\)
+    and \(\{b_n\}\) an increasing sequence that converges to \(b\). Is it
+    true that
+    \[
+      \lim_{n\to\infty} P([a_n,b_n])=P([a,b])?
+    \]
+
+    \noindent\emph{Note:} You may use freely the results from the problems
+    in the text in your proofs.
+  \end{alphlist}
 \end{problem}
 \begin{solution*}
 \end{solution*}
