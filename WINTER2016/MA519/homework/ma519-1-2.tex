@@ -76,37 +76,111 @@ Our main reference is \cite{ross}.
 \end{solution*}
 
 \begin{problem}[Ross, \S 1, \# 33]
+  We have \(\$ 20,000\) that must be invested among \(4\) possible
+  opportunities. Each investment must be integral in units of \(\$1000\),
+  and there are minimal investment that need to be made if one is to invest
+  these opportunities. The minimal investments are \(\$2000\), \(\$2000\),
+  \(\$3000\), and \(\$4000\). How many different investment strategies are
+  available if
+  \begin{alphlist}
+  \item an investment must be made in each opportunity?
+  \item investments must be made in at least \(3\) of the \(4\)
+    opportunities?
+  \end{alphlist}
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
 \subsubsection{Theoretical exercises}
 \begin{problem}[Ross, \S 1, \# 5]
+  Determine the number of vectors \((x_1,\dotsc,x_n)\) such that each
+  \(x_k\) is either \(0\) or \(1\) and
+  \[
+    \sum_{k=1}^n x_k\geq l.
+  \]
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
 \begin{problem}[Ross, \S 1, \# 6]
+  How many vectors \(x_1,\dotsc,x_k\) are there for which each \(x_k\) is a
+  positive integer such that \(1\leq x_k\leq n\) and \(x_1<x_2<\dotsb<
+  x_n\)?
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
 \begin{problem}[Ross, \S 1, \# 8]
+  Prove that
+  \[
+    \binom{n+m}{r}=%
+    \binom{n}{0}\binom{m}{r}+\binom{n}{1}\binom{m}{r-1}%
+    +\dotsb+\binom{n}{r}\binom{m}{0}.
+  \]
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
 \begin{problem}[Ross, \S 1, \# 9]
+  Use Theoretical Exercise 8 to prove that
+  \[
+    \binom{2}{n}=\sum_{k=0}^n\binom{n}{k}^2.
+  \]
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
 \begin{problem}[Ross, \S 1, \# 12]
+  Consider the following combinatorial identity:
+  \[
+    \sum_{k=1}^n k\binom{n}{k}=n2^{n-1}.
+  \]
+  \begin{alphlist}
+  \item Present a combinatorial argument for this identity by considering
+    the set of \(n\) people and determining, in two ways, the number of
+    possible selections of a committee of any size and a chairperson for
+    the committee.
+
+    \noindent\emph{Hint:}
+    \begin{enumerate}[label=(\roman*)]
+    \item How many possible elections are there of a committee of size
+      \(k\) and its chairperson?
+    \item How many possible selections are there of a chairperson and the
+      other committee members?
+    \end{enumerate}
+  \item Verify the following identity for \(n=1,2,3,4,5\):
+    \[
+      \sum_{k=1}^n \binom{n}{k}k^2=2^{n-2}n(n+1).
+    \]
+    For a combinatorial proof of the preceding, consider the set of \(n\)
+    people and argue that both sides of the identity represent the number
+    of different selections of a committee, its chairperson, and its
+    secretary (possibly the same as the chairperson).
+
+    \noindent\emph{Hint:}
+    \begin{enumerate}[label=(\roman*)]
+    \item How many different selection result in the committee containing
+      exactly \(k\) people?
+    \item How many different selections are there in which the chairperson
+      and the secretary are the same? (Answer: \(n2^{n-1}\).)
+    \item How many different selections result in a chairperson and the
+      secretary being different?
+    \end{enumerate}
+  \item Now argue that
+    \[
+      \sum_{k=1}^n\binom{n}{k}k^3=2^{n-3}n^2(n+3).
+    \]
+  \end{alphlist}
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
 \begin{problem}[Ross, \S 1, \# 23]
+  Determine the number of vectors \((x_1,\dotsc,x_n)\) of \(n\) variables
+  such that each \(x_k\) is a nonnegative integer and
+  \[
+    \sum_{k=1}^n x_k\leq l.
+  \]
 \end{problem}
 \begin{solution*}
 \end{solution*}
