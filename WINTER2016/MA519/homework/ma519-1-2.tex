@@ -266,6 +266,22 @@ Our main reference is \cite{ross}.
   Prove Proposition 4.4 by mathematical induction.
 \end{problem}
 \begin{solution*}
+  Proposition 4.4 is called the inclusion-exclusion principle.
+  \begin{proposition*}[Inclusion-exclusion principle]
+    \[
+      \begin{split}
+        P(E_1\cup E_2\cup\dotsb\cup E_n)
+        =\sum_{k=1}^n P(E_k)&-\sum_{k_1<k_2} P(E_{k_1}\cap E_{k_2})\\
+        &+\dotsb+(-1)^{r+1}\sum_{k_1<k_2<\dotsb<k_r}
+        P(E_{k_1}\cap\dotsb\cap E_{k_r})\\
+        &+\dotsb+(-1)^{n+1}P(E_1\cap\dotsb\cap E_n).
+      \end{split}
+    \]
+    The summation
+    \(\sum_{k_1<k_2<\dotsb<k_r}P(E_{k_1}\cap\dotsb\cap E_{k_r})\) is taken
+    over all the \(\binom{n}{r}\) possible subsets of size \(r\) of the set
+    \(\{1,\dotsc,n\}\).
+  \end{proposition*}
 \end{solution*}
 
 \begin{problem}[Ross, \S 2, \# 19]
