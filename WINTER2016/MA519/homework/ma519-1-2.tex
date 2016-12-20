@@ -187,42 +187,96 @@ Our main reference is \cite{ross}.
 
 \subsubsection{Problems}
 \begin{problem}[Ross, \S 2, \# 25]
+  A pair of dice is rolled until a sum of either \(5\) or \(7\)
+  appears. Find the probability that a \(5\) occurs first.
+
+  \noindent\emph{Hint:} Let \(E_n\)
+  denote the event that a \(5\) occurs on the \(n\)\textsup{th} roll and no
+  \(5\) or \(7\) occurs on the first \(n-1\) rolls. Compute \(P(E_n)\) and
+  argue that \(\sum_{n=1}^\infty P(E_n)\) is the desired probability.
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
 \begin{problem}[Ross, \S 2, \# 29]
-\end{problem}
+  An urn contains \(n\) white and \(m\) black balls, where \(n\) and \(m\)
+  are positive numbers.
+  \begin{alphlist}
+  \item If two balls are randomly withdrawn, what is the probability that
+    they are the same color?
+  \item If a ball is randomly withdrawn and then replaced before the second
+    one is drawn, what is the probability that the withdrawn balls are the
+    same color?
+  \item Show that the probability in part (b) is always larger than the one
+    in part (a).
+  \end{alphlist}
+  \end{problem}
 \begin{solution*}
 \end{solution*}
 
 \begin{problem}[Ross, \S 2, \# 35]
+  Seven balls are randomly withdrawn from an urn that contains \(12\) red,
+  \(16\) blue, and \(18\) green balls. Find the probability that
+  \begin{alphlist}
+  \item \(3\) red, \(2\) blue, and \(2\) green balls are withdrawn;
+  \item at least \(2\) red balls are withdrawn;
+  \item all withdrawn balls are the same color;
+  \item either exactly \(3\) red balls or exactly \(3\) blue balls are
+    withdrawn.
+  \end{alphlist}
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
 \begin{problem}[Ross, \S 2, \# 44]
+  Five people, designated as \(A,B,C,D,E\), are arranged in linear
+  order. Assuming that each possible order is equally likely, what is the
+  probability that
+  \begin{alphlist}
+  \item there is exactly one person between \(A\) and \(B\)?
+  \item there are exactly two people between \(A\) and \(B\)?
+  \item there are three people between \(A\) and \(B\)?
+  \end{alphlist}
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
 \begin{problem}[Ross, \S 2, \# 49]
+  A group of \(6\) men and \(6\) women is randomly divided into \(2\)
+  groups of size \(6\) each. What is the probability that both groups will
+  have the same number of men?
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
 \subsubsection{Theoretical exercises}
 \begin{problem}[Ross, \S 2, \# 5]
+  For any sequence of events \(E_1,E_2,\dotsc\), define a new sequence
+  \(F_1,F_2,\dotsc\), of disjoint events (that is, events such that
+  \(F_j\cap F_k=\emptyset\) whenever \(j\neq k\)) such that for all \(n\geq
+  1\),
+  \[
+    \bigcup_{k=1}^n F_k=\bigcup_{k=1}^n E_k.
+  \]
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
 \begin{problem}[Ross, \S 2, \# 14]
+  Prove Proposition 4.4 by mathematical induction.
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
 \begin{problem}[Ross, \S 2, \# 19]
+  An urn contains \(n\) red and \(m\) blue balls. They are withdrawn one at
+  a time until a total of \(r\), \(r\leq n\), red balls have been
+  withdrawn. Find the probability that a total of \(k\) balls are
+  withdrawn.
+
+  \noindent\emph{Hint:} A total of \(k\) balls will be withdrawn if there are \(r-1\)
+  red balls in the first \(k-1\) withdrawals and the \(k\)\textsup{th}
+  withdrawal is a red ball.
 \end{problem}
 \begin{solution*}
 \end{solution*}
