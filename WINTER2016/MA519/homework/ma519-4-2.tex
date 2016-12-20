@@ -1,267 +1,94 @@
-\begin{problem}[Handout 5, \# 2]
-  In an urn, there are \(12\) balls. \(4\) of these are white. Three
-  players: \(A\), \(B\), and \(C\), take turns drawing a ball from the urn,
-  in the alphabetical order. The first player to draw a white ball is the
-  winner. Find the respective winning probabilities: assume that at each
-  trial, the ball drawn in the trial before is put back into the urn (i.e.,
-  selection \emph{with replacement}).
+\begin{problem}[Ross, \S 4, \# 4]
 \end{problem}
-\begin{solution}
-  Denote the events that player $A$ wins, player $B$ wins, and player $C$ wins by $A$, $B$, and $C$ respectively.
-  
-  Note that $A$ wins if some multiple of 3 losses occurs, followed by a win. Also, $B$ wins if some multiple of three losses occurs, followed by a loss, then a win. Last, $C$ wins if some multiple of three losses occurs, followed by two losses then a win.
-  
-  A win occurs with probability $1/3$ each time, and a loss occurs with probability $2/3$ each time. Thus, because each draw is independent,
-  
-  \begin{align*}
-  P(A) &= \sum\limits_{i=0}^\infty \frac{1}{3} \left{\frac{2}{3}\right)^{3i} \\
-  P(B) &= \sum\limits_{i=0}^\infty \frac{1}{3} \left{\frac{2}{3}\right)^{3i+1} \\
-  P(C) &= \sum\limits_{i=0}^\infty \frac{1}{3} \left{\frac{2}{3}\right)^{3i+2} \\
-  \end{align*}
-  
-  That is,
-  
-  \begin{align*}
-  P(A) &= \sum\limits_{i=0}^\infty \frac{9}{19} \approx 0.47\\
-  P(B) &= \sum\limits_{i=0}^\infty \frac{6}{19} \approx 0.32\\
-  P(C) &= \sum\limits_{i=0}^\infty \frac{4}{19} \approx 0.21\\
-  \end{align*}
-\end{solution}
-\newpage
+\begin{solution*}
+\end{solution*}
 
-\begin{problem}[Handout 5, \# 8]
-  Consider \(n\) families with \(4\) children each. How large must \(n\) be
-  to have a \(90\%\) probability that at least \(3\) of the \(n\) families
-  are all girl families?
+\begin{problem}[Ross, \S 4, \# 21]
 \end{problem}
-\begin{solution}
-The probability that a family has all girls is $(0.5)^4$.
+\begin{solution*}
+\end{solution*}
 
-In $n$ families, the probability that at least $3$ are all-girl is $1-P(0)-P(1)-P(2)$, where $P(m)$ is the probability that exactly $m$ families are all-girl. 
-
-Note that
-
-\begin{align*}
-P(0) &= (1-(0.5)^4)^n \\
-P(1) &= \binom{n}{1}(0.5)^4(1-(0.5)^4)^{n-1} \\
-P(2) &= \binom{n}{2}(0.5)^8(1-(0.5)^4)^{n-2} \\
-\end{align*}
-
-(we choose a number of families to be all-girl, and then find the probability that that family is all-girl, while all of the rest are not all-girl.)
-
-So that the probability that at least $3$ are all girl is
-
-\[
-1-(1-(0.5)^4)^n - n(0.5)^4(1-(0.5)^4)^{n-1} - n(n-1)(0.5)(0.5)^8(1-(0.5)^4)^{n-2}
-\]
-
-
-\end{solution}
-\newpage
-
-\begin{problem}[Handout 5, \# 10]
-  \emph{(Yahtzee).} In Yahtzee, five fair dice are rolled. Find the
-  probability of getting a Full House, which is three rolls of one number
-  and two rolls of another, in Yahtzee.
+\begin{problem}[Ross, \S 4, \# 22]
 \end{problem}
-\begin{solution}
-There are $30$ different kinds of full house ($6$ different three of a kinds, and $5$ different kinds of different two of a kind).
+\begin{solution*}
+\end{solution*}
 
-The probability of rolling a specific kind of full house is 
-
-\[
-\binom{5}{3} \left( \frac{1}{6}\right)^3 \left(\frac{1}{6} \right)^2
-\]
-
-(Choose 3 dice to be the three of a kind, have them all rolled the specific number, have the other two dice rolled the other specific number.)
-
-So the probability of rolling some kind of full house is
-
-\[
-30* \binom{5}{3} \left( \frac{1}{6}\right)^3 \left(\frac{1}{6} \right)^2 = \frac{25}{648} \approx 0.039
-\]
-
-\end{solution}
-\newpage
-
-\begin{problem}[Handout 5, \# 12]
-  The probability that a coin will show all heads or all tails when tossed
-  four times is \(0.25\). What is the probability that it will show two
-  heads and two tails?
+\begin{problem}[Ross, \S 4, \# 36]
 \end{problem}
-\begin{solution}
-Let $H$ denote the event that, on a given coin toss, that coin is heads, and let $T$ denote the event that, on a given coin toss, that coin is tails. Then, because each coin toss is independent, this says that
+\begin{solution*}
+\end{solution*}
 
-\[
-P(H)^4 + P(T)^4 = \frac{1}{4} 
-\]
-
-Moreover, because this is a coin,
-
-\[
-P(H) + P(T) = 1
-\]
-
-So,
-
-\begin{align*}
-P(H)^4 + (1-P(H))^4 &= \frac{1}{4} \\ 
-2P(H)^4 -4P(H)^3 + 6P(H)^2 - 4P(H) +1 &= \frac{1}{4} \\
-\end{align*}
-
-We can approximate a solution to the above by $P(H) \approx 0.299$ or by $P(H) \approx 0.701$.
-
-Now, the probability that two coin flips of four are heads is
-
-\[
-\binom{4}{2}P(H)^2P(T)^2 \approx 0.263
-\]
-
-\end{solution}
-\newpage
-
-\begin{problem}[Handout 5, \# 13]
-  Let the events \(A_1, A_2,\dotsc,A_n\) be independent and
-  \(P(A_k)=p_k\). Find the probability \(p\) that none of the events
-  occurs.
+\begin{problem}[Ross, \S 4, \# 37]
 \end{problem}
-\begin{solution}
+\begin{solution*}
+\end{solution*}
 
-Let the events $A_1, A_2, \ldots A_n$ be independent.
-
-Then the events $A_1^c, A_2^c, \ldots A_n^c$ are independent. (Where $A^c$ denotes the event that $A$ does not happen.)
-
-The events $A_i^c$ each have probability $1-p_i$ of occurring.
-
-Thus, the probability, $p$, that none of the events occur is
-
-\[
-
-p = \prod\limits_{k=1}^n (1-p_k)
-
-
-\]
-\end{solution}
-\newpage
-
-\begin{problem}[Handout 6, \# 5]
-  Suppose a fair die is rolled twice and suppose \(X\) is the absolute
-  value of the difference of the two rolls. Find the PMF and the CDF of
-  \(X\) and plot the CDF. Find a median of \(X\); is the median unique?
+\begin{problem}[Ross, \S 4, \# 42]
 \end{problem}
-\begin{solution}
+\begin{solution*}
+\end{solution*}
 
-First, we compute the probability mass function. Note that $X$ is an integer between $0$ and $5$, so computing the probilities that $X$ is each of $0$ through $5$ suffices to describe the PMF of $X$.
-
-We calculate the probabilities, by counting.
-
-\begin{align*}
-P(0) &= \frac{6}{36} = \frac{1}{6}\\
-P(1) &= \frac{10}{36} = \frac{5}{18}\\
-P(2) &= \frac{8}{36} = \frac{2}{9}\\
-P(3) &= \frac{6}{36} = \frac{1}{6}\\
-P(4) &= \frac{4}{36} = \frac{1}{9}\\
-P(5) &= \frac{2}{36} = \frac{1}{18}\\
-\end{align*}
-
-We calculate the CDF by summing.
-
-\begin{align*}
-CDF(0) &= \frac{6}{36} = \frac{1}{6}\\
-CDF(1) &= \frac{16}{36} = \frac{4}{9}\\
-CDF(2) &= \frac{24}{36} = \frac{2}{3}\\
-CDF(3) &= \frac{30}{36} = \frac{5}{6}\\
-CDF(4) &= \frac{34}{36} = \frac{17}{18}\\
-CDF(5) &= \frac{36}{36} = 1\\
-\end{align*}
-
-The median is $2$.
-
-\end{solution}
-\newpage
-
-\begin{problem}[Handout 6, \# 7]
-  Find a discrete random variable \(X\) such that \(E(X)=E(X^3)=0\);
-  \(E(X^2)=E(X^4)=1\).
+\begin{problem}[Ross, \S 4, \# 43]
 \end{problem}
-\begin{solution}
+\begin{solution*}
+\end{solution*}
 
-Let $X$ be the random variable whose $PMF$ is given by 
-
-\end{solution}
-\newpage
-
-\begin{problem}[Handout 6, \# 9]
-  \emph{(Runs).} Suppose a fair die is rolled \(n\) times. By using the
-  indicator variable method, find the expected number of times that a six
-  is followed by at least two other sixes. Now compute the value when
-  \(n=100\).
+\begin{problem}[Ross, \S 4, \# 4]
 \end{problem}
-\begin{solution}
+\begin{solution*}
+\end{solution*}
 
-\end{solution}
-\newpage
-
-\begin{problem}[Handout 6, \# 10]
-  \emph{(Birthdays).} For a group of \(n\) people find the expected number
-  of days of the year which are birthdays of exactly \(k\) people. (Assume
-  \(365\) days and that all arrangements are equally probable.)
+\begin{problem}[Ross, \S 4, \# 5]
 \end{problem}
-\begin{solution}
+\begin{solution*}
+\end{solution*}
 
-\end{solution}
-\newpage
-
-\begin{problem}[Handout 6, \# 11]
-  \emph{(Continuation).} Find the expected number of multiple
-  birthdays. How large should \(n\) be to make this expectation exceed
-  \(1\)?
+\begin{problem}[Ross, \S 4, \# 10]
 \end{problem}
-\begin{solution}
+\begin{solution*}
+\end{solution*}
 
-\end{solution}
-\newpage
-
-\begin{problem}[Handout 6, \# 12]
-  \emph{(The blood-testing problem).} A large number, \(N\), of people are
-  subject to a blood test. This can be administered in two ways, (i) Each
-  person can be tested separately. In this case \(N\) tests are required,
-  (ii) The blood samples of \(k\) people can be pooled and analyzed
-  together. If the test is negative, this one test suffices for the \(k\)
-  people. If the test is positive, each of the \(k\) persons must be tested
-  separately, and in all \(k+1\) tests are required for the \(k\)
-  people. Assume the probability \(p\) that the test is positive is the
-  same for all people and that people are stochastically independent.
-  \begin{itemize}[noitemsep]
-  \item[(b)] What is the expected value of the number, \(X\), of tests
-    necessary under plan (ii)?
-  \item[(c)] Find an equation for the value of \(k\) which will minimize
-    the expected number of tests under the second plan. (Do not try
-    numerical solutions.)
-  \end{itemize}
-  \end{problem}
-\begin{solution}
-
-\end{solution}
-\newpage
-
-\begin{problem}[Handout 6, \# 13]
-  \emph{(Sample structure).} A population consists of \(r\) (classes whose
-  sizes are in the proportion \(p_1:p_2:\dotsb:p_r\). A random sample of
-  size \(n\) is taken with replacement. Find the expected number of classes
-  not represented in the sample.
+\begin{problem}[Ross, \S 4, \# 13]
 \end{problem}
-\begin{solution}
-Let $A_i$ be the event that the $i$th class is not represented in the sample of size $n$. Let $A$ be the number of classes not represented in the sample of size $n$. Let $A_i$ also represent the number of times that the $i$th class is not represented. Then
+\begin{solution*}
+\end{solution*}
 
-\begin{align*}
-E(A) &= \sum\limits_{i=1}^r E(A_i) \\
-&= \sum\limits_{i=1}^r P(A_i) \\
-&= \sum\limits_{i=1}^r (1-p_i)^n \\
-\end{align*}
-\end{solution}
+\begin{problem}[Ross, \S 4, \# 14]
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}[Ross, \S 4, \# 18]
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}[Ross, \S 4, \# 25]
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}[Ross, \S 4, \# 27]
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}[Ross, \S 4, \# 30]
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}[Ross, \S 4, \# 32]
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}[Ross, \S 4, \# 34]
+\end{problem}
+\begin{solution*}
+\end{solution*}
 
 %%% Local Variables:
 %%% mode: latex
-%%% TeX-master: "../MA519-Current-HW"
+%%% TeX-master: "../MA519-HW-ALL"
 %%% End:
