@@ -59,11 +59,21 @@ Our main reference is \cite{ross}.
   \end{alphlist}
 \end{problem}
 \begin{solution*}
-  For part (a),
+  For part (a), if the \(3+2+1=6\) books can be arranged in any order,
+  there are \(6!\) arrangements.
   \\\\
-  For part (b),
+  For part (b), let us first count the different ways we can arrange \(3\)
+  blocks of books. There are \(3!\) different ways to arrange these and
+  once this arrangement has been made, \(3!2!\) ways to arrange the \(3\)
+  novels and \(2\) mathematics books. Thus, there are \((3!)^22!\) ways of
+  arranging the \(6\) books subject to these restrictions.
   \\\\
-  For part (c),
+  For part (c), if the novels must be together, we must first count the
+  different number of ways we can put a contiguous row of \(3\) books in
+  \(6\) slots. The answer to that problem is \(4\). Now, assuming the
+  arrangement of the \(3\) novels does not matter, we have \(4\cdot 3!\)
+  ways of arranging the rest of the books. If we care about randomizing the
+  \(3\) novels themselves, then we have \(4(3!)^2\) distinct arrangements.
 \end{solution*}
 
 \begin{problem}[Ross, \S 1, \# 19]
@@ -77,6 +87,11 @@ Our main reference is \cite{ross}.
   \end{alphlist}
 \end{problem}
 \begin{solution*}
+  For part (a),
+  \\\\
+  For part (b),
+  \\\\
+  For part (c),
 \end{solution*}
 
 \begin{problem}[Ross, \S 1, \# 21]
