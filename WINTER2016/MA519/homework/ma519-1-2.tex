@@ -243,6 +243,20 @@ Our main reference is \cite{ross}.
   \]
 \end{problem}
 \begin{solution*}
+  An implicit assumption must be that \(n\geq l\) for otherwise
+  \((1,\dotsc,1)\) would not satisfy \(\sum_{k=1}^n x_k\geq l\). We
+  henceforth assume \(n\geq l\).
+
+  For a vector \((x_1,\dotsc,x_n)\) to satisfy
+  \[
+    \sum_{k=1}^n x_k\geq l
+  \]
+  at least \(l\) of the \(x_k\) must be \(1\). We can distribute these
+  \(l\) \(1\)s between \(x_n\) in
+  \[
+    \binom{n+l-1}{l-1}
+  \]
+  by the stars and bars problem.
 \end{solution*}
 
 \begin{problem}[Ross, \S 1, \# 6]
