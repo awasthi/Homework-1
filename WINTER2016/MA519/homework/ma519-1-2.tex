@@ -131,10 +131,14 @@ Our main reference is \cite{ross}.
   \(4\) steps to the right and \(3\) steps up.
 \end{problem}
 \begin{solution*}
-  Every path in the figure in the problem prompt is a possible path from
-  \(A\) to \(B\). We can count them, in which case, we have \(12\) distinct
-  paths or we can use the basic principle of counting to arrive at the
-  desired quantity \(4\cdot 3=12\).
+  There are \(4+3=7\) total steps we must make to reach point \(B\) from
+  point \(A\). Of these steps \(4\) must be in the direction right and
+  \(3\) must be in the direction left. Thus, by some formula in Ross's
+  book, we have
+  \[
+    \binom{7}{4,3}
+  \]
+  total paths from point \(A\) to point \(B\) in the figure.
 \end{solution*}
 
 \begin{problem}[Ross, \S 1, \# 22]
@@ -145,11 +149,16 @@ Our main reference is \cite{ross}.
   \]
 \end{problem}
 \begin{solution*}
-  This problem is slightly more complicated than its predecessor, but we
-  win if we can count all of the possible paths from \(A\) to \(B\) passing
-  through that circled point. We know a priori that the number of paths is
-  less than or equal to \(12\). If we do count these, we arrive at the
-  quantity \(6\) which is less than or equal to \(12\).
+  This problem is only slightly more complicated than its predecessor. We
+  say slightly because thinking of the circled point as another point \(C\)
+  and thinking of paths from \(A\) to \(B\) passing to \(C\) as joining
+  paths from \(A\) to \(C\) and paths from \(C\) to \(D\), we have
+  \(\binom{4}{2,2}\) ways to get from \(A\) to \(C\) and \(\binom{3}{2,1}\)
+  ways to get from \(C\) to \(B\). Thus, we have
+  \[
+    \binom{4}{2,2}\binom{3}{2,1}
+  \]
+  paths from \(A\) to \(B\) passing through \(C\).
 \end{solution*}
 
 \begin{problem}[Ross, \S 1, \# 33]
