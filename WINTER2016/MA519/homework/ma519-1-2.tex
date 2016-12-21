@@ -251,7 +251,15 @@ Our main reference is \cite{ross}.
   \[
     \sum_{k=1}^n x_k\geq l
   \]
-  at least \(l\) of the \(x_k\) must be \(1\).
+  at least \(l\) of the \(x_k\) must be \(1\). One way to approach this is
+  counting the different number of ways to achieve each number from \(l\)
+  to \(n\). There are \(n\) vectors of the form
+  \((0,\dotsc,0,1,0,\dotsc,0)\) and we want to consider distinct sums of at
+  least \(l\) of these. Therefore, we have
+  \[
+    \sum_{k=l}^n\binom{n}{l}
+  \]
+  different ways to achieve this.
 \end{solution*}
 
 \begin{problem}[Ross, \S 1, \# 6]
@@ -260,6 +268,7 @@ Our main reference is \cite{ross}.
   \(x_1<x_2<\dotsb<x_n\)?
 \end{problem}
 \begin{solution*}
+  Let
 \end{solution*}
 
 \begin{problem}[Ross, \S 1, \# 8]
