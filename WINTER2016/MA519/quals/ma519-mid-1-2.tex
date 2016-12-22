@@ -55,10 +55,10 @@ correct grammar and orthography when it is obvious what the author meant.
   \]
   Thus,
   \[
-    \Var(S)=
-    r\left(1-\tfrac{1}{r}\right)^n+
-    \tbinom{r}{2}\left(1-\tfrac{2}{r}\right)^n+
-    -r^2\left(1-\tfrac{1}{r}\right)^{2n}.\qedhere
+    \Var(S)=%
+    r\left(1-\tfrac{1}{r}\right)^n+%
+    \tbinom{r}{2}\left(1-\tfrac{2}{r}\right)^n-%
+    r^2\left(1-\tfrac{1}{r}\right)^{2n}.\qedhere
   \]
 \end{solution*}
 
@@ -66,20 +66,27 @@ correct grammar and orthography when it is obvious what the author meant.
   Suppose \(n\) balls are distributed in \(n\) boxes in such a way that
   each ball chooses a box independently of each other.
   \begin{alphlist}
-  \item What is the probability that box \(1\) is empty?
-  \item What is the probability that only box \(1\) is empty?
+  \item What is the probability that box \# 1 is empty?
+  \item What is the probability that only box \# 1 is empty?
   \item What is the probability that only one box is empty?
-  \item Given that box \(1\) is empty, what is the probability that only
-    one box is empty?
+  \item Given that box \# 1 is empty, what is the probability that only one
+    box is empty?
   \item Given that only one box is empty, what is the probability that box
-    \(1\) is empty?
+    \# 1 is empty?
   \end{alphlist}
 
   \noindent\emph{Hint:} make use of the fact that the number of balls and
   boxes are the same.
 \end{problem}
 \begin{solution*}
-  For part (a),
+  To make this more formal, let \(X_1\) be an indicator random variable
+  such that \(X_1\) equals \(1\) if box \#1 is empty and \(0\) otherwise.
+  \\\\
+  For part (a), the probability that box \# 1 is empty can be quickly shown
+  to be
+  \[
+    P()
+  \]
   \\\\
   For part (b),
   \\\\
@@ -87,7 +94,7 @@ correct grammar and orthography when it is obvious what the author meant.
   \\\\
   For part (d),
   \\\\
-  For part (e).
+  For part (e),
 \end{solution*}
 
 \begin{problem}
