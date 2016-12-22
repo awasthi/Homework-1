@@ -29,11 +29,11 @@ correct grammar and orthography when it is obvious what the author meant.
   \]
   Lastly,
   \[
-    P(X_1=1)=\frac{(r-1)^n}{r^n}=\left(1-\tfrac{1}{r}\right)^n.
+    P(X_1=1)=\frac{(r-1)^n}{r^n}.
   \]
   Thus,
   \[
-    E(S)=r\left(1-\tfrac{1}{r}\right)^n.
+    E(S)=\frac{r(r-1)^n}{r^n}=\frac{(r-1)^n}{r^{n-1}}.
   \]
 
   As for the variance, the second moment can likewise be computed as
@@ -44,21 +44,21 @@ correct grammar and orthography when it is obvious what the author meant.
       +E\left(\sum\nolimits_{j\neq k}^r X_jX_k\right)\\
     &=\sum_{k=1}^r E(X_k^2)+\sum_{j\neq k} E(X_jX_k)\\
     &=\sum_{k=1}^r E(X_k)+\sum_{j\neq k}E(X_jX_k)\\
-    &=r\left(1-\tfrac{1}{r}\right)^n+\sum_{j\neq k}E(X_jX_k).
+    &=\frac{(r-1)^n}{r^{n-1}}+\sum_{j\neq k}E(X_jX_k).
   \end{align*}
   Now, the sum
   \[
     \sum_{j\neq k}E(X_jX_k)=%
     \sum_{j\neq k}P(X_j=1,X_k=1)=\sum_{j\neq
       k}\left(1-\tfrac{2}{r}\right)^n=%
-    \tbinom{r}{2}\left(1-\tfrac{2}{r}\right)^n.
+    \binom{r}{2}\frac{(r-2)^n}{r^n}.
   \]
   Thus,
   \[
     \Var(S)=%
-    r\left(1-\tfrac{1}{r}\right)^n+%
-    \tbinom{r}{2}\left(1-\tfrac{2}{r}\right)^n-%
-    r^2\left(1-\tfrac{1}{r}\right)^{2n}.\qedhere
+    \frac{(r-1)^n}{r^{n-1}}+%
+    \binom{r}{2}\frac{(r-2)^n}{r^n}-%
+    \frac{(r-1)^{2n}}{r^{2n-2}}.\qedhere
   \]
 \end{solution*}
 
@@ -82,7 +82,7 @@ correct grammar and orthography when it is obvious what the author meant.
   For part (a), the probability that box \# 1 is empty can be quickly shown
   to be
   \[
-    \left(1-\tfrac{1}{n}\right)^n;
+    \frac{(n-1)^n}{n^n};
   \]
   i.e., there are \(n^n\) ways to distribute the \(n\) balls among the
   \(n\) boxes; then there are \((n-1)^n\) ways to distribute the \(n\)
@@ -106,9 +106,18 @@ correct grammar and orthography when it is obvious what the author meant.
   probability that box \# 1 is empty; and that probability we found in part
   (b).
   \\\\
-  For part (d),
+  For part (d), by Bayes' theorem together with parts (a), (b), and (c) the
+  probability that
+  \[
+    \frac{\left(\binom{n}{2}(n-1)!/n^n\right)\left(\right)}{}
+  \]
   \\\\
-  For part (e),
+  For part (e), the probability is clearly
+  \[
+    \frac{1}{n}
+  \]
+  since at most one box is empty and the event that box \# 1 is empty is
+  one sample point in our conditioned probability space.
 \end{solution*}
 
 \begin{problem}
