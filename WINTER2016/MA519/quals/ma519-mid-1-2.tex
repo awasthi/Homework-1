@@ -132,9 +132,30 @@ correct grammar and orthography when it is obvious what the author meant.
   three distinct types of toys, and so forth.
 \end{problem}
 \begin{solution*}
-  Setting the utter wackiness of this problem aside for a moment, let \(X\)
-  be a random variable denoting the number of burgers eaten to get the
-  \(N\) toys. This is clearly a \(\Geo(\frac{1}{N})\) random variable.
+  Setting the utter wackiness of this problem aside for a moment, let
+  \(X_k\) denote the number of burgers we need to purchase in order to get
+  the \(k\)\textsup{th} toy, for \(1\leq k\leq N\). Before preceding, note
+  that each \(X_k\), for \(k>1\), is a \(\Geo(\frac{N-k+1}{N})\) random
+  variable; i.e., in our \(j\)\textsup{th} try we succeed with in getting a
+  new toy with probability \((\frac{N-k+1}{N})^j\). Then the total number
+  of burgers we must purchase is
+  \[
+    X=\sum_{k=1}^n X_k.
+  \]
+  Thus,
+  \begin{align*}
+    E(X)
+    &=\sum_{k=1}^n E(X_k)\\
+    &=1+\frac{N}{N-1}+\dotsb+\frac{N}{1}\\
+    &=\sum_{k=1}^N\frac{N}{j}.
+  \end{align*}
+  For the variance, we have
+  \begin{align*}
+    \Var(X)
+    &=\sum_{k=1}^n\Var(X_k)\\
+    &=0+\frac{1/N}{(N-1/N)^2)}+\dotsb+\frac{(N-1)/N}{(1/N)^2}\\
+    &=
+  \end{align*}
 \end{solution*}
 
 \begin{problem}
