@@ -79,28 +79,32 @@ correct grammar and orthography when it is obvious what the author meant.
   boxes are the same.
 \end{problem}
 \begin{solution*}
-  To make this more formal, let \(X\) be an indicator random variable
-  defined by
-  \[
-    X=
-    \begin{cases}
-      1&\text{if box \# 1 is empty,}\\
-      0&\text{otherwise.}
-    \end{cases}
-  \]
-  \\\\
   For part (a), the probability that box \# 1 is empty can be quickly shown
   to be
   \[
-    P(X=1)=\left(1-\tfrac{1}{n}\right)^n;
+    \left(1-\tfrac{1}{n}\right)^n;
   \]
   i.e., there are \(n^n\) ways to distribute the \(n\) balls among the
   \(n\) boxes; then there are \((n-1)^n\) ways to distribute the \(n\)
   balls among the \(n-1\) remaining boxes.
   \\\\
-  For part (b),
+  For part (b), the probability that only box \# 1 is empty is
+  \[
+    \frac{\binom{n}{2}(n-1)!}{n^n};
+  \]
+  i.e., each box must contain at least \(1\) ball and there are
+  \(\binom{n}{2}(n-1)!\) ways to distribute \(2\) of the \(n\) balls among
+  the remaining \(n-1\) boxes.
   \\\\
-  For part (c),
+  For part (c), using part (b), the probability that exactly one box is
+  empty is
+  \[
+    \frac{n\binom{n}{2}(n-1)!}{n^n};
+  \]
+  i.e., there are \(\binom{n}{1}=n\) ways to choose a box to be empty once
+  this is done, the probability that said box is empty is the same as the
+  probability that box \# 1 is empty; and that probability we found in part
+  (b).
   \\\\
   For part (d),
   \\\\
