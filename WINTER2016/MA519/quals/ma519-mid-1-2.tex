@@ -209,7 +209,14 @@ correct grammar and orthography when it is obvious what the author meant.
     p(k)=q^{2k-2}p^2+2q^{2k-1}p.
   \]
   \\\\
-  For part (b), let \(W=\max\{X,Y\}\).
+  For part (b), let \(W=\max\{X,Y\}\). Then we can expand the PMF \(p\) of
+  \(W\) to get a simpler expression as follows
+  \begin{align*}
+    p(k)
+    &=P(W=k)\\
+    &=P(X=Y=k)+P(X=k,Y<k)+P(X<k,Y=k)\\
+    &=P(X)P(K)+2P(X=k)P(Y<k).
+  \end{align*}
   \\\\\
   For part (c),
   \\\\
