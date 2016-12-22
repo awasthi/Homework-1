@@ -81,23 +81,25 @@ correct grammar and orthography when it is obvious what the author meant.
 \begin{solution*}
   For part (a), the probability that box \# 1 is empty can be quickly shown
   to be
-  \[
+  \begin{equation}
+    \label{eq:yip:mid-1:2-a}
     \frac{(n-1)^n}{n^n};
-  \]
+  \end{equation}
   i.e., there are \(n^n\) ways to distribute the \(n\) balls among the
   \(n\) boxes; then there are \((n-1)^n\) ways to distribute the \(n\)
   balls among the \(n-1\) remaining boxes.
   \\\\
   For part (b), the probability that only box \# 1 is empty is
-  \[
+  \begin{equation}
+    \label{eq:yip:mid-1:2-b}
     \frac{\binom{n}{2}(n-1)!}{n^n};
-  \]
+  \end{equation}
   i.e., each box must contain at least \(1\) ball and there are
   \(\binom{n}{2}(n-1)!\) ways to distribute \(2\) of the \(n\) balls among
   the remaining \(n-1\) boxes.
   \\\\
-  For part (c), using part (b), the probability that exactly one box is
-  empty is
+  For part (c), using \eqref{eq:yip:mid-1:2-b}, the probability that
+  exactly one box is empty is
   \[
     \frac{n\binom{n}{2}(n-1)!}{n^n};
   \]
@@ -107,7 +109,7 @@ correct grammar and orthography when it is obvious what the author meant.
   (b).
   \\\\
   For part (d), by the definition of conditional probability together with
-  parts (a) and (b) we have
+  parts \eqref{eq:yip:mid-1:2-a} and \eqref{eq:yip:mid-1:2-b} we have
   \[
     \frac{\binom{n}{2}(n-1)!/n^n}{(n-1)^n/n^n}=\frac{\binom{n}{2}(n-1)!}{(n-1)^n}.
   \]
@@ -169,15 +171,45 @@ correct grammar and orthography when it is obvious what the author meant.
   \end{alphlist}
 \end{problem}
 \begin{solution*}
-  For part (a), using some of the axioms of probability, we have
+  For part (a), let \(Z=\min\{X,Y\}\). Then using the axioms of
+  probability, we can manipulate the expression for the PMF \(p\) of \(Z\)
+  into the following
+  \begin{equation}
+    \label{eq:yip:mid-1:4-a}
+    \begin{aligned}
+      p(k)
+      &=P(Z=k)\\
+      &=P(X=Y=k)+P(X=k,Y>k)+P(X>k,Y=k)\\
+      &=P(X=k)P(Y=k)+P(X=k)P(Y>k)+P(X>k)P(Y=k).
+    \end{aligned}
+  \end{equation}
+  Now let us find a closed form for the expression above. To make the
+  analysis more digestible, we consider each term in the sum
+  \eqref{eq:yip:mid-1:4-a} individually.
+
+  First, we have
   \begin{align*}
-    P(\min\{X,Y\}=x)
-    &=1-P(\min\{X,Y\}>x)-P(\min\{X,Y\}<x)\\
-    &=1-P(X\geq x,Y\geq x)\\
-    &=
+    P(X=k)P(Y=k)
+    &=(q^{k-1}p)(q^{k-1}p)\\
+    &=q^{2k-2}p^2
   \end{align*}
+  Next,
+  \begin{align*}
+    P(X=k)P(Y>k)
+    &=q^{k-1}p\sum_{j\geq k}^\infty q^{j-1}p\\
+    &=q^{2k-1}p^2\sum_{j>k}^\infty q^{j-k-1}\\
+    &=q^{2k-1}p.
+  \end{align*}
+  Lastly, because \(X\) and \(Y\) are identically distributed, by symmetry
+  \[
+    P(X>k)P(Y=k)=q^{2k-1}p.
+  \]
+  Therefore, the PMF of \(Z\) is given by the expression
+  \[
+    p(k)=q^{2k-2}p^2+2q^{2k-1}p.
+  \]
   \\\\
-  For part (b),
+  For part (b), let \(W=\max\{X,Y\}\).
   \\\\\
   For part (c),
   \\\\
