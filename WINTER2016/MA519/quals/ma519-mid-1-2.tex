@@ -170,9 +170,12 @@ correct grammar and orthography when it is obvious what the author meant.
 \end{problem}
 \begin{solution*}
   For part (a), using some of the axioms of probability, we have
-  \[
-    P(\min\{X,Y\}=x)=1-P(\min{X,Y}\geq x)=1-P(X\geq x,Y\geq x).
-  \]
+  \begin{align*}
+    P(\min\{X,Y\}=x)
+    &=1-P(\min\{X,Y\}>x)-P(\min\{X,Y\}<x)\\
+    &=1-P(X\geq x,Y\geq x)\\
+    &=
+  \end{align*}
   \\\\
   For part (b),
   \\\\\
