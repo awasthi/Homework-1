@@ -263,7 +263,7 @@ Our main reference is \cite{ross}.
 \end{solution*}
 
 \begin{problem}[Ross, \S 1, \# 6]
-  How many vectors \(x_1,\dotsc,x_k\) are there for which each \(x_k\) is a
+  How many vectors \((x_1,\dotsc,x_k)\) are there for which each \(x_k\) is a
   positive integer such that \(1\leq x_j\leq n\) and
   \(x_1<x_2<\dotsb<x_k\)?
 \end{problem}
@@ -271,9 +271,11 @@ Our main reference is \cite{ross}.
   Ignoring degenerate cases such as would arise if \(n<k\), let us analyze
   the situation presented in the statement of the problem for \(n\geq k\).
 
-  It is clear that for \(1\leq j\leq k\) we must have \(j\leq x_j<n-k+j\);
-  this can be shown by induction on \(j\) and the restrictions
-  \(1\leq x_j\leq n\) and \(x_1\leq x_2<\dotsb<x_k\) placed on our data.
+  There are
+  \[
+    \binom{n}{k}
+  \]
+  solutions
 \end{solution*}
 
 \begin{problem}[Ross, \S 1, \# 8]

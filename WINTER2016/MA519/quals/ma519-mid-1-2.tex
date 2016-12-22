@@ -1,0 +1,147 @@
+\section{Midterms and Finals (Yip)}
+\subsection{Midterm 1}
+The author of this document apologizes for any ungrammatical content in
+this document. We present the problems as they are given to us and only
+correct grammar and orthography when it is obvious what the author meant.
+\begin{problem}
+  Suppose \(n\) balls are distributed at random into \(r\) boxes in such a
+  way that each ball chooses a box independently of each other. Let \(S\)
+  be the number of \emph{empty boxes}. Compute \(E(S)\) and \(\Var(S)\).
+
+  \noindent\emph{Hint:} Consider the random variables \(X_k\), for
+  \(k=1,\dotsc,r\), which equals \(1\) if the \(k\)\textsup{th} box is
+  empty and \(0\) otherwise. Relate \(S\) and the \(X_k\).
+\end{problem}
+\begin{solution*}
+  Write \(S=\sum_{k=1}^n X_k\) where \(X_k\) is \(1\) if the
+  \(k\)\textsup{th} box is empty and \(0\) otherwise. Then the expected
+  value of \(S\) is
+  \begin{align*}
+    E(S)
+    &=E\left(\sum\nolimits_{k=1}^r X_k\right)\\
+    &=\sum_{k=1}^n E(X_k)\\
+    &=r E(X_1).
+  \end{align*}
+  Before finding a closed form for \(E(S)\) we need to compute
+  \(E(X_1)\). Unraveling the definition, we have
+  \[
+    E(X_1)=0\cdot P(X_1=0)+1\cdot P(X_1=1)=P(X_1=1).
+  \]
+  Lastly,
+  \[
+    P(X_1=1)=\frac{(r-1)^n}{r^n}=\left(1-\tfrac{1}{r}\right)^n.
+  \]
+  Thus,
+  \[
+    E(S)=r\left(1-\tfrac{1}{r}\right)^n.
+  \]
+
+  As for the variance, the second moment can likewise be computed as
+  \begin{align*}
+    E(S^2)
+    &=E\left[\left(\sum\nolimits_{k=1}^r X_k\right)^2\right]\\
+    &=E\left(\sum\nolimits_{k=1}^r X_k^2\right)
+      +E\left(\sum\nolimits_{j\neq k}^r X_jX_k\right)\\
+    &=\sum_{k=1}^r E(X_k^2)+\sum_{j\neq k} E(X_jX_k)\\
+    &=\sum_{k=1}^r E(X_k)+\sum_{j\neq k}E(X_jX_k)\\
+    &=r\left(1-\tfrac{1}{r}\right)^n+\sum_{j\neq k}E(X_jX_k).
+  \end{align*}
+  Now, the sum
+  \[
+    \sum_{j\neq k}E(X_jX_k)=%
+    \sum_{j\neq k}P(X_j=1,X_k=1)=\sum_{j\neq
+      k}\left(1-\tfrac{2}{r}\right)^n=%
+    \tbinom{r}{2}\left(1-\tfrac{2}{r}\right)^n.
+  \]
+  Thus,
+  \[
+    \Var(S)=
+    r\left(1-\tfrac{1}{r}\right)^n+
+    \tbinom{r}{2}\left(1-\tfrac{2}{r}\right)^n+
+    -r^2\left(1-\tfrac{1}{r}\right)^{2n}.\qedhere
+  \]
+\end{solution*}
+
+\begin{problem}
+  Suppose \(n\) balls are distributed in \(n\) boxes in such a way that
+  each ball chooses a box independently of each other.
+  \begin{alphlist}
+  \item What is the probability that box \(1\) is empty?
+  \item What is the probability that only box \(1\) is empty?
+  \item What is the probability that only one box is empty?
+  \item Given that box \(1\) is empty, what is the probability that only
+    one box is empty?
+  \item Given that only one box is empty, what is the probability that box
+    \(1\) is empty?
+  \end{alphlist}
+
+  \noindent\emph{Hint:} make use of the fact that the number of balls and
+  boxes are the same.
+\end{problem}
+\begin{solution*}
+  For part (a),
+  \\\\
+  For part (b),
+  \\\\
+  For part (c),
+  \\\\
+  For part (d),
+  \\\\
+  For part (e).
+\end{solution*}
+
+\begin{problem}
+  McDonald's newest promotion is putting a toy inside every one of its
+  hamburgers. Suppose there are \(N\) distinct types of toys and each of
+  them is equally likely to be put inside any of the hamburges. What is the
+  expected value and variance of the number of hamburgers you need to order
+  (or eat) before you have a complet set of the \(N\) toys.
+
+  \noindent\emph{Hint:} consider the number of hamburgers you need to order
+  (or eat) in between getting one and two distinct types of toys, two and
+  three distinct types of toys, and so forth.
+\end{problem}
+\begin{solution*}
+  Here's a question: What is the probability that you will eat at least
+  \(1\) of the \(N\) toys given that the toys are in the hamburger?
+  WackDonald's is crazy for thinking it is a good idea to put their toys
+  inside every one of their hamburgers.
+\end{solution*}
+
+\begin{problem}
+  Let \(X\) and \(Y\) be two independent geometric random variables with
+  parameter \(p\).
+  \begin{alphlist}
+  \item Find the probability distribution function of \(\min\{X,Y\}\).
+  \item Find the probability distribution function of \(\max\{X,Y\}\).
+  \item Find the probability distribution function of \(X+Y\).
+  \item Find \(P(X=j\mid X+Y=k)\) for \(j=1,\dotsc,k-1\).
+  \end{alphlist}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+\begin{problem}
+  Suppose the events \(E\), \(F\), \(G\) are independent, in other words
+  \begin{align*}
+    P(E\cap F)&=P(E)P(F),\\
+    P(F\cap G)&=P(F)P(G),\\
+    P(G\cap E)&=P(G)P(E),\\
+    P(E\cap F\cap G)&=P(E)P(F)P(G).
+  \end{align*}
+  Using he above definition, show that the following events are
+  independent:
+  \begin{alphlist}
+  \item \(E\) and \(F^\rmc\);
+  \item \(E\) and \(F\cap G^\rmc\);
+  \item \(E\) and \(F^\rmc\cap G^\rmc\);
+  \item \(E\) and \(F\cup G\);
+  \item \(E\) and \(F\cup G^\rmc\).
+  \end{alphlist}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
+%%% Local Variables:
+%%% TeX-master: "../MA519-HW-ALL"
+%%% End:
