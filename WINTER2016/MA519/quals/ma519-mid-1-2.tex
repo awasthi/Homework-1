@@ -172,13 +172,12 @@ correct grammar and orthography when it is obvious what the author meant.
 \end{problem}
 \begin{solution*}
   For part (a), let \(Z=\min\{X,Y\}\). Then using the axioms of
-  probability, we can manipulate the expression for the PMF \(p\) of \(Z\)
-  into the following
+  probability, we can manipulate the expression for the PMF of \(Z\) into
+  the following
   \begin{equation}
     \label{eq:yip:mid-1:4-a}
     \begin{aligned}
-      p(k)
-      &=P(Z=k)\\
+      P(Z=k)\\
       &=P(X=Y=k)+P(X=k,Y>k)+P(X>k,Y=k)\\
       &=P(X=k)P(Y=k)+P(X=k)P(Y>k)+P(X>k)P(Y=k).
     \end{aligned}
@@ -206,21 +205,45 @@ correct grammar and orthography when it is obvious what the author meant.
   \]
   Therefore, the PMF of \(Z\) is given by the expression
   \[
-    p(k)=q^{2k-2}p^2+2q^{2k-1}p.
+    P(Z=k)=q^{2k-2}p^2+2q^{2k-1}p.
   \]
   \\\\
-  For part (b), let \(W=\max\{X,Y\}\). Then we can expand the PMF \(p\) of
-  \(W\) to get a simpler expression as follows
+  For part (b), let \(W=\max\{X,Y\}\). Then we can expand the PMF of \(W\)
+  to get a simpler expression as follows
+  \begin{equation}
+    \label{eq:yip:mid-1:4-b}
+    \begin{aligned}
+      P(W=k)
+      &=P(X=Y=k)+P(X=k,Y<k)+P(X<k,Y=k)\\
+      &=P(X=k)P(Y=k)+2P(X=k)P(Y<k).
+    \end{aligned}
+  \end{equation}
+
+  One term of the expression \eqref{eq:yip:mid-1:4-b} we already know from
+  part (a); namely,
+  \[
+    P(X=k)P(Y=k)=q^{2k-2}p^2.
+  \]
+  As for the other term, we have
   \begin{align*}
-    p(k)
-    &=P(W=k)\\
-    &=P(X=Y=k)+P(X=k,Y<k)+P(X<k,Y=k)\\
-    &=P(X)P(K)+2P(X=k)P(Y<k).
+    P(X=k)P(Y<k)
+    &=q^{k-1}p\sum_{j=1}^k q^{j-1}p\\
+    &=q^{k-1}p^2\frac{1-q^k}{p}\\
+    &=q^{k-1}(1-q^k)p.
   \end{align*}
+
+  Thus, the PMF of \(W\) is given by the expression
+  \[
+    P(W=k)=q^{2k-2}p^2+2q^{k-1}(1-q^k)p.
+  \]
   \\\\\
-  For part (c),
+  For part (c), since \(X\) and \(Y\) are independent the PMF of \(X+Y\) is
+  given by the convolution
+  \[
+    P(X+Y=k)=\sum_{j=1}^\infty P(X=k-j)P(Y=j)
+  \]
   \\\\
-  For part (d)
+  For part (d),
 \end{solution*}
 
 \begin{problem}
