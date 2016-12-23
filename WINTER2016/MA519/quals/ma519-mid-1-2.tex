@@ -247,7 +247,9 @@ correct grammar and orthography when it is obvious what the author meant.
     P(X+Y=k)
     &=\sum_{j=1}^\infty P(X=k-j) P(Y=j)\\
     &=\sum_{j=1}^\infty (q^{k-j-1}p) (q^{j-1}p)\\
-    &=\sum_{j=1}^\infty q^{k-2(j-1)} p^2
+    &=\sum_{j=1}^\infty q^{k-2(j+1)} p^2\\
+    &=q^{k-4}p^2\sum_{j=-1}^\infty{(q^{-2})}^{j+1}\\
+    &=
   \end{align*}
   \\\\
   For part (d),
