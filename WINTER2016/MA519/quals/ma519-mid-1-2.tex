@@ -240,8 +240,15 @@ correct grammar and orthography when it is obvious what the author meant.
   For part (c), since \(X\) and \(Y\) are independent the PMF of \(X+Y\) is
   given by the convolution
   \[
-    P(X+Y=k)=\sum_{j=1}^\infty P(X=k-j)P(Y=j)
+    P(X+Y=k)=\sum_{j=1}^\infty P(X=k-j)P(Y=j).
   \]
+  Let us find a closed form for this expression,
+  \begin{align*}
+    P(X+Y=k)
+    &=\sum_{j=1}^\infty P(X=k-j) P(Y=j)\\
+    &=\sum_{j=1}^\infty (q^{k-j-1}p) (q^{j-1}p)\\
+    &=\sum_{j=1}^\infty q^{k-2(j-1)} p^2
+  \end{align*}
   \\\\
   For part (d),
 \end{solution*}
