@@ -36,19 +36,71 @@
 \end{solution*}
 
 \begin{problem}
+  Let \(X_1,\dotsc,X_n\) be a collection of IID exponential random
+  variables with parameter \(\lambda\). Let
+  \begin{align*}
+    Y_1&=X_1,\\
+    Y_2&=X_1+X_2,\\
+       &\vdotswithin{{}={}}\\
+    Y_n&=X_1+\dotsb+X_n.
+  \end{align*}
+  Find the joint PDF \(p(y_1,\dotsc,y_n)\) of \(Y_1,\dotsc,Y_n\).
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
 \begin{problem}
+  The PDF \(p(x)\) of the gamma distribution with parameter (\(\alpha>0\),
+  \(\lambda>0\)) is given by
+  \[
+    p(x)=
+    \begin{cases}
+      \frac{\lambda}{\Gamma(\alpha)}\rme^{-\lambda x}(\lambda x)^{\alpha
+        -1}
+      &\text{for \(x\geq 0\),}\\
+      0&\text{otherwise.}
+    \end{cases}
+  \]
+  Let \(X\) and \(Y\) be independent gamma distributed random variables
+  with parameters \((\alpha,\lambda)\) and \((\beta,\lambda)\). Show
+  analitically that \(X+Y\) has a gamma distribution with parameter
+  \((\alpha+\beta,\lambda)\).
+
+  Show how as a byproduct that the above conclusion leads to the following
+  integration identity for \(\alpha,\beta>0\)
+  \[
+    \int_0^1 x^{\alpha-1}(1-x)^{\beta-1}\diff x
+    =\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}.
+  \]
 \end{problem}
 \begin{solution*}
 \end{solution*}
 
 \begin{problem}
+  Let \(X_1,\dotsc,X_n\) be a collection of IID random variables with
+  expectations and variances equal to \(\mu\) and \(\sigma^2\). Define the
+  \emph{sample mean} \(\bar X\) and \emph{sample variance} \(S^2\) as
+  \[
+    \bar X=\tfrac{1}{n}(X_1+\dotsb+X_n),\quad
+    S^2=\frac{1}{n}\sum_{k=1}^n(X_k-\bar X)^2.
+  \]
+  Compute \(\Var(\bar X)\) and \(E(S^2)\).
 \end{problem}
 \begin{solution*}
 \end{solution*}
+
+\begin{problem}[Estimation of the length of an interval]
+  Let \(l>0\) be some unknown but fixed length. Let \(X_1,X_2\dotsc\), be a
+  sequence of IID random variables uniformly distributed on \([0,l]\). The
+  goal is to use the \(X_k\) to estimate \(l\).
+  \begin{alphlist}
+  \item Let \(A_n=\tfrac{2}{n}(X_1+\dotsb+X_n).\) Show that \(A_n\) is an
+    unbiased estimation in the sense that \(E(A_n)=l\).
+  \end{alphlist}
+\end{problem}
+\begin{solution*}
+\end{solution*}
+
 
 %%% Local Variables:
 %%% TeX-master: "../MA519-HW-ALL"
