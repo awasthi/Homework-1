@@ -4,7 +4,7 @@ This is actually the past final.
   Consider the infinitely many independent, identical experiments of
   throwing a pair of dice and the outcome of each experiment is the sum of
   the two numbers. Let \(N\geq 1\) be the number of experiments such that
-  the number \(5\) or \(7\) first appears as the outcome. Let furher \(X\)
+  the number \(5\) or \(7\) first appears as the outcome. Let further \(X\)
   be that number at the \(N\)\textsup{th} experiment; i.e., \(X\) can be
   either a \(5\) or a \(7\).
   \begin{alphlist}
@@ -14,16 +14,39 @@ This is actually the past final.
   \end{alphlist}
 \end{problem}
 \begin{solution*}
-  For part (a), first let us determine the number of ways in which a \(5\)
-  or a \(7\) arise. To form a \(5\) the pair of dice must come up as either
-  \((4,1)\) or \((2,3)\) and vice versa; giving us a probability of
-  \(\frac{4}{36}=\frac{1}{9}\). To form a \(7\) the pair of dice must come
-  up as either \((6,1)\), \((5,2)\)
-  out
+  For part (a): It is clear that \(N\sim\Geo(p)\) where \(p\) is the
+  probability of getting a \(5\) or a \(7\) in a trial of the experiment in
+  question. Let us therefore compute \(p\). Assuming each event is equally
+  likely, there are \(4\) ways to make a \(5\) (rolling a \(4\)-\(1\) or
+  \(2\)-\(3\) and vice-versa) and \(6\) ways to make a \(7\) (rolling
+  a \(6\)-\(1\), \(5\)-\(2\), or \(4\)-\(3\) and vice-versa). Therefore,
+  \(p=\frac{4}{36}+\frac{6}{36}=\frac{5}{18}\) and consequently the PMF of
+  \(N\) is given by
+  \[
+    P(N=n)=\left(1-\tfrac{5}{18}\right)^{n-1}\tfrac{5}{18}
+    =\left(\tfrac{13}{18}\right)^{n-1}\tfrac{5}{18}.
+  \]
   \\\\
-  For part (b),
+  For part (b): Since \(X\) takes the values \(5\) and \(7\) conditioned
+  upon the result of a trial of a pair of dice by the definition of
+  conditional probability we have
+  \[
+    P(X=5)=\frac{P(\text{the experiment returns a \(5\)})}
+    {P(\text{the experiment returns either a \(5\) or a \(7\)})}
+    =\frac{4/36}{10/36}=\frac{2}{5}.
+  \]
   \\\\
-  For part (c),
+  For part (c): To prove that \(N\) and \(X\) are independent, we must show
+  that
+  \[
+    P(N=n,X=x)=P(N=n)P(X=x).
+  \]
+  Since \(X=\Ber(\frac{2}{5})\), we only have a couple of cases to
+  consider. For \(X=5\) consider
+  \begin{align*}
+    P(N=n,X=5)
+    &=\left(1-\tfrac{2}{18}\right)^{n-1}\tfrac{2}{18}
+  \end{align*}
 \end{solution*}
 
 \begin{problem}

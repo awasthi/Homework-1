@@ -13,21 +13,29 @@ correct grammar and orthography when it is obvious what the author meant.
   empty and \(0\) otherwise. Relate \(S\) and the \(X_k\).
 \end{problem}
 \begin{solution*}
-  Write \(S=\sum_{k=1}^n X_k\) where \(X_k\) is \(1\) if the
-  \(k\)\textsup{th} box is empty and \(0\) otherwise. Then the expected
-  value of \(S\) is
+  Write \(S=\sum_{k=1}^n X_k\) where
+  \[
+    X_k
+    =
+    \begin{cases}
+      1&\text{if the \(k\)\textsup{th} box is empty,}\\
+      0&\text{otherwise.}
+    \end{cases}
+  \]
+  Then, by the definition of expected value, we have
   \begin{align*}
     E(S)
     &=E\left(\sum\nolimits_{k=1}^r X_k\right)\\
     &=\sum_{k=1}^n E(X_k)\\
-    &=r E(X_1).
+    \shortintertext{which, by the tail-sum formula, becomes}
+    &=rE(X_1).
   \end{align*}
-  Before finding a closed form for \(E(S)\) we need to compute
-  \(E(X_1)\). Unraveling the definition, we have
+  Hence, to compute \(E(s)\) we need first compute \(E(X_1)\), as we now
+  do. Unraveling the definition of expected value for \(X_1\) we have
   \[
-    E(X_1)=0\cdot P(X_1=0)+1\cdot P(X_1=1)=P(X_1=1).
+    E(X_1)=0\cdot P(X_1=0)+1\cdot P(X_1=1)=P(X_1=1)
   \]
-  Lastly,
+  where
   \[
     P(X_1=1)=\frac{(r-1)^n}{r^n}.
   \]
