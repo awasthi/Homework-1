@@ -229,23 +229,47 @@ This is actually the past final.
 \begin{solution*}
   We show that \(X+Y\sim G(\alpha+\beta,\lambda)\) by showing that the MGF
   of \(X+Y\) is that of a gamma. But first, let us find the MGF of a gamma
-  \begin{lemma}
+  \begin{lemma*}
     Let \(X\sim G(\alpha,\lambda)\). Then
     \[
-      E(\rme^{tX})=
+      E(\rme^{tX})=\left(1-\frac{t}{\lambda}\right)^{-\alpha}.
     \]
-  \end{lemma}
+  \end{lemma*}
   \begin{solution*}[Proof]
     \renewcommand\qedsymbol{\(\scriptstyle\clubsuit\)}
     A straightforward calculation gives us the desired equality
     \begin{align*}
       E(\rme^{tX})
-      &=\int_0^\infty\sum_{k=0}^\infty \frac{t^k}{k!}
-        \bigl(\tfrac{\lambda}{\Gamma(\alpha)}
-        \rme^{-\lambda x}(\lambda x)^{\alpha-1}\bigr)^k\diff x\\
-      &=
+      &=\int_{-\infty}^\infty \rme^{tx}
+        \bigl(\tfrac{\lambda}{\Gamma(\alpha)}%
+        \rme^{-\lambda x}(\lambda x)^{\alpha-1}\bigr)%
+        \chi_{x>0}(x)\diff x\\
+      &=\frac{\lambda^\alpha}{\Gamma(\alpha)}%
+        \int_0^\infty \rme^{-(\lambda -t)x}x^{\alpha-1}\diff x\\
+      &=\frac{\lambda^\alpha}{\Gamma(\alpha)}%
+        \int_0^\infty\rme^{-u}%
+        \left[\frac{u}{(\lambda-t)}\right]^{\alpha-1}%
+        \frac{\diff u}{\lambda-t}\\
+      &=\left(\frac{\lambda}{(\lambda-t)}\right)^\alpha
+        \frac{1}{\Gamma(\alpha)}
+        \left(\int_0^\infty \rme^{-u}u^{\alpha-1}\diff u\right)\\
+      &=\left(\frac{\lambda}{\lambda-t}\right)^\alpha\\
+      &=\left(1-\frac{t}{\lambda}\right)^{-\alpha}.\qedhere
     \end{align*}
   \end{solution*}
+  With this handy lemma in our hands we can quickly show that \(X+Y\sim
+  G(\alpha+\beta,\lambda)\) as we now do. First, since \(X\) and \(Y\) are
+  independent \(\rme^{tX}\) and \(\rme^{tY}\) are independent for any fixed
+  \(t\). Therefore,
+  \begin{align*}
+    E(\rme^{t(X+Y)})
+    &=E(\rme^{tX})E(\rme^{tY})\\
+    &=\left(1-\frac{t}{\lambda}\right)^{-\alpha}
+      \left(1-\frac{t}{\lambda}\right)^{-\beta}\\
+    &=\left(1-\frac{t}{\lambda}\right)^{-\alpha-\beta}.
+  \end{align*}
+  This is precisely the MGF of a \(G(\alpha+\beta,\lambda)\) gamma random
+  variable; i.e., \(X+Y\sim G(\alpha+\beta,\lambda)\).
 \end{solution*}
 
 \begin{problem}
