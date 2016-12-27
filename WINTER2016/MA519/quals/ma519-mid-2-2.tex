@@ -295,38 +295,6 @@ This is actually the past final.
   Compute \(\Var(\bar X)\) and \(E(S^2)\).
 \end{problem}
 \begin{solution*}
-  Let us first find \(\Var(\bar X)\). One can easily see that \(E(\bar
-  X)=\mu\); and this follows from the linearity of expected value
-  \begin{align*}
-    E(\bar X)
-    &=E\left(\tfrac{1}{n}(X_1+\dotsb+X_n)\right)\\
-    &=\tfrac{1}{n}(E(X_1)+\dotsb+E(X_n))\\
-    &=\tfrac{1}{n}(\mu+\dotsb+\mu)\\
-    &=\mu.
-  \end{align*}
-  Since there is no way to avoid calculating the second moment of \(\bar
-  X\), we do so here
-  \begin{align*}
-    E(\bar X^2)
-    &=\tfrac{1}{n^2}%
-      E\left[\sum\nolimits_{k=1}^n X_k^2+%
-      \sum\nolimits_{1\leq k<j\leq n} X_kX_j\right]\\
-    &=\frac{1}{n^2}
-      \left(%
-      \sum\nolimits_{k=1}^nE(X_k^2)%
-      +\sum\nolimits_{1\leq k<j\leq n} E(X_k)E(X_j)%
-      \right)\\
-    &=\tfrac{1}{n^2}\left(n(\sigma^2+\mu^2)+\tbinom{n}{2}\mu^2\right)\\
-    &=\tfrac{1}{n}\sigma^2+\tfrac{1}{n}\mu^2+\tfrac{n-1}{2}\mu^2
-  \end{align*}
-  so
-  \begin{align*}
-    \Var(\bar X)
-    &=\left(\tfrac{1}{n}\sigma^2%
-      +\tfrac{1}{n}\mu^2+%
-      \tfrac{n-1}{2}\mu^2\right)-\mu^2\\
-    &=\tfrac{1}{n}\left(\sigma^2+(n-2)(n-1)\mu^2\right).
-  \end{align*}
 \end{solution*}
 
 \begin{problem}[Estimation of the length of an interval]
