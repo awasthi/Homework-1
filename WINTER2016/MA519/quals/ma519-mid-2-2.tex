@@ -14,39 +14,44 @@ This is actually the past final.
   \end{alphlist}
 \end{problem}
 \begin{solution*}
-  For part (a): It is clear that \(N\sim\Geo(p)\) where \(p\) is the
-  probability of getting a \(5\) or a \(7\) in a trial of the experiment in
-  question. Let us therefore compute \(p\). Assuming each event is equally
-  likely, there are \(4\) ways to make a \(5\) (rolling a \(4\)-\(1\) or
-  \(2\)-\(3\) and vice-versa) and \(6\) ways to make a \(7\) (rolling
-  a \(6\)-\(1\), \(5\)-\(2\), or \(4\)-\(3\) and vice-versa). Therefore,
-  \(p=\frac{4}{36}+\frac{6}{36}=\frac{5}{18}\) and consequently the PMF of
-  \(N\) is given by
+  For part (a): It is clear that \(N\sim\Geo(p)\) where \(p\) here is the
+  probability of landing a \(5\) or a \(7\). Let us explicitly compute
+  \(p\).
+
+  Assuming each event is equally likely, there are \(4\) ways to make a
+  \(5\) (rolling a \(4\)-\(1\) or \(2\)-\(3\) and vice-versa) and \(6\)
+  ways to make a \(7\) (rolling a \(6\)-\(1\), \(5\)-\(2\), or \(4\)-\(3\)
+  and vice-versa). Therefore,
+  \(p=\frac{4}{36}+\frac{6}{36}=\frac{5}{18}\).
+
+  Consequently the PMF of \(N\) is given by
   \[
     P(N=n)=\left(1-\tfrac{5}{18}\right)^{n-1}\tfrac{5}{18}
     =\left(\tfrac{13}{18}\right)^{n-1}\tfrac{5}{18}.
   \]
   \\\\
-  For part (b): Since \(X\) takes the values \(5\) and \(7\) conditioned
-  upon the result of a trial of a pair of dice by the definition of
-  conditional probability we have
+  For part (b): As we will soon show, \(X\) is independent from \(N\) so we
+  should be able to compute \(P(X=5)\) without working with \(N\) directly
+  (unlike the solution proposed by Prof.\@ Yip). Indeed, since each
+  experiment is independent the probability of \(\{\,X=5\,\}\) comes down
+  to a computation of conditional probabilities like we now show
   \[
     P(X=5)=\frac{P(\text{the experiment returns a \(5\)})}
     {P(\text{the experiment returns either a \(5\) or a \(7\)})}
     =\frac{4/36}{10/36}=\frac{2}{5}.
   \]
   \\\\
-  For part (c): To prove that \(N\) and \(X\) are independent, we must show
+  For part (c): To show that \(N\) and \(X\) are independent we must show
   that
   \[
     P(N=n,X=x)=P(N=n)P(X=x).
   \]
-  Since \(X=\Ber(\frac{2}{5})\), we only have a couple of cases to
-  consider. For \(X=5\) consider
-  \begin{align*}
-    P(N=n,X=5)
-    &=\left(1-\tfrac{2}{18}\right)^{n-1}\tfrac{2}{18}
-  \end{align*}
+  Expanding \(P(N=n,X=x)\) a little we see that
+  \[
+    P(N=n,X=x)=P(N=n\mid X=x)P(X=x)
+  \]
+  so it suffices to show that \(P(N=n\mid X=x)=P(N=n)\); but this is
+  clear. Therefore, \(X\) and \(N\) are independent.
 \end{solution*}
 
 \begin{problem}
@@ -60,11 +65,73 @@ This is actually the past final.
   driver will have an accident in the \(k\)\textsup{th} year. Let \(M\) be
   the event that the randomly chosen driver is male.
   \begin{alphlist}
-  \item Suppose \(p_M>p_F\). Show that \(P(M\mid A_k)>p(M)\).
-  \item Suppose \(p_M\neq p_F\). Show that \(P(A_2\mid A_1)>p(A_1)\).
+  \item Suppose \(p_M>p_F\). Show that \(P(M\mid A_k)>P(M)\).
+  \item Suppose \(p_M\neq p_F\). Show that \(P(A_2\mid A_1)>P(A_1)\).
   \end{alphlist}
 \end{problem}
 \begin{solution*}
+  For part (a): Let us first explicitly compute some of the probabilities
+  stated in the problem for use later in its solution. First off,
+  \(P(M)=\alpha\); i.e., the ratio of male drivers. Now, we can compute
+  \(P(M\mid A_k)\) using the definition of conditional probability and the
+  total probability formula as we now show
+  \begin{equation}
+    \label{eq:yip:mid-2:2-a}
+    P(M\mid A_k)=\frac{P(M\cap A_k)}{P(A_k)}=\frac{P(M\cap
+      A_k)}{P(A_k\mid M)P(M)+P(A_k\mid F)P(F)}.
+  \end{equation}
+  We know some of the values in \eqref{eq:yip:mid-2:2-a} explicitly so let
+  us fill them in here
+  \[
+    P(M\mid A_k)=\frac{p_M}{\alpha p_M+(1-\alpha)p_F}.
+  \]
+
+  At last we have collected the necessary data to show that
+  \begin{align*}
+    P(M\mid A_k)-P(M)
+    &=\frac{p_M}{p_M\alpha+(1-\alpha)p_F}-\alpha\\
+    &=\frac{p_M-\alpha^2 p_M+(1-\alpha)\alpha p_F}{\alpha
+      p_M+(1-\alpha)p_F}\\
+    &=\frac{(1-\alpha^2)p_M-(1-\alpha)\alpha p_F}{\alpha p_M+(1-\alpha)p_F}\\
+    &=\frac{(1-\alpha)(1+\alpha)p_M-(1-\alpha)\alpha p_F}{\alpha
+      p_M+(1-\alpha)p_F}\\
+    &=(1-\alpha)\frac{(1+\alpha)p_M-\alpha p_F}{\alpha p_M+(1-\alpha)p_F}\\
+    &>0
+  \end{align*}
+  since \(p_M>p_F\) and \(1+\alpha>\alpha\); i.e., \(P(M\mid A_k)>P(M)\).
+  \\\\
+  For part (b): Similar to our analysis above if we unravel the definition
+  of conditional probability we arrive at the following equality
+  \begin{align*}
+    P(A_2\mid A_1)
+    &=\frac{P(A_2\cap A_1)}{P(A_1)}\\
+    &=\frac{P(A_2\cap A_1\mid M)P(M)+P(A_2\cap A_1\mid F)P(F)}
+      {P(A_1\mid M)P(M)+P(A_1\mid F)P(F)}\\
+    &=\frac{\alpha p_M^2+(1-\alpha)p_F^2}{\alpha p_M+(1-\alpha)p_F}.
+  \end{align*}
+  Therefore,
+  \begin{align*}
+    P(A_2\mid A_1)-P(A_1)
+    &=\frac{\alpha p_M^2+(1-\alpha)p_F^2}{\alpha p_M+(1-\alpha)p_F}
+    -\alpha p_M-(1-\alpha)p_F\\
+    &=\frac{\alpha p_M^2+(1-\alpha)p_F^2
+      -\alpha^2p_M^2-2\alpha(1-\alpha)p_Mp_F
+      -(1-\alpha)^2p_F^2}{\alpha p_M+(1-\alpha)p_F}\\
+    &=\frac{(\alpha-\alpha^2)p_M^2+((1-\alpha)-(1-\alpha)^2)p_F^2-2\alpha(1-\alpha)p_Mp_F}
+      {\alpha p_M+(1-\alpha)p_F}\\
+    &=\frac{(\alpha-\alpha^2)p_M^2+(\alpha-\alpha^2)p_F^2-2\alpha(1-\alpha)p_Mp_F}
+      {\alpha p_M+(1-\alpha)p_F}\\
+    &=\alpha(1-\alpha)\frac{p_M^2+p_F^2-2p_Mp_F}{\alpha
+      p_M+(1-\alpha)p_F}\\
+    &=\alpha(1-\alpha)\frac{(p_M-p_F)^2}{\alpha
+      p_M+(1-\alpha)p_F}\\
+    &>0
+  \end{align*}
+  which holds since \(p_M\neq p_F\). Thus,
+  \[
+    P(A_2\mid A_1)>P(A_1)
+  \]
+  as we wanted to show.
 \end{solution*}
 
 \begin{problem}
@@ -76,9 +143,56 @@ This is actually the past final.
        &\vdotswithin{{}={}}\\
     Y_n&=X_1+\dotsb+X_n.
   \end{align*}
-  Find the joint PDF \(p(y_1,\dotsc,y_n)\) of \(Y_1,\dotsc,Y_n\).
+  Find the joint PDF \(p(y_1,\dotsc,y_n)\) of \((Y_1,\dotsc,Y_n)\).
 \end{problem}
 \begin{solution*}
+  In DasGupta's class we defined the PDF of an exponential random variable
+  \(X\) to be
+  \[
+    P(X=x)=
+    \begin{cases}
+      \tfrac{1}{\lambda}\rme^{-\frac{1}{\lambda}x}&\text{for \(x>0\),}\\
+      0&\text{otherwise.}
+    \end{cases}
+  \]
+  Keeping this in mind let us compute the joint PDF of \((Y_1,\dotsc,Y_n)\)
+  here
+  \begin{equation}
+    \label{eq:yip:mid-2:3}
+    \begin{aligned}
+      p(y_1,\dotsc,y_n)%
+      &=P(Y_n=y_n\mid Y_{n-1}=y_{n-1},\dotsc,Y_1=y_1)%
+      P(Y_{n-1}=y_{n-1},\dotsc,Y_1=y_1)\\
+      &=P(Y_n=y_n\mid Y_{n-1}=y_{n-1},\dotsc,Y_1=y_1)\dotsm%
+      P(Y_2=y_2\mid Y_1=y_1)%
+      P(Y_1=y_1).
+    \end{aligned}
+  \end{equation}
+
+  Now,
+  \begin{align*}
+    P(Y_2=y_2\mid Y_1=y_1)P(Y_1=y_1)
+    &=\begin{cases}%
+      \bigl(\frac{1}{\lambda}\rme^{-\frac{1}{\lambda}(y_2-y_1)}\bigr)%
+      \bigl(\frac{1}{\lambda}\rme^{-\frac{1}{\lambda}y_1}\bigr)%
+      &\text{for \(x>0\),}\\
+      0&\text{otherwise,}\\
+    \end{cases}\\
+    &=\begin{cases}%
+      \frac{1}{\lambda^2}\rme^{-\frac{1}{\lambda}y_2}&\text{for \(x>0\),}\\
+      0&\text{otherwise.}\\
+    \end{cases}
+  \end{align*}
+  and consequently \eqref{eq:yip:mid-2:3} becomes by repeated application
+  of the result above
+  \[
+    p(y_1,\dotsc,y_n)=
+    \begin{cases}
+      \frac{1}{\lambda^n}\rme^{-\frac{1}{\lambda}y_n}
+      &\text{for \(y_1,\dotsc,y_n>0\),}\\
+      0&\text{otherwise.}
+    \end{cases}
+  \]
 \end{solution*}
 
 \begin{problem}

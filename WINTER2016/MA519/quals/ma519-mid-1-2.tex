@@ -13,7 +13,7 @@ correct grammar and orthography when it is obvious what the author meant.
   empty and \(0\) otherwise. Relate \(S\) and the \(X_k\).
 \end{problem}
 \begin{solution*}
-  Write \(S=\sum_{k=1}^n X_k\) where
+  Write \(S\) as the sum \(\sum_{k=1}^r X_k\) where
   \[
     X_k
     =
@@ -23,28 +23,35 @@ correct grammar and orthography when it is obvious what the author meant.
     \end{cases}
   \]
   Then, by the definition of expected value, we have
-  \begin{align*}
-    E(S)
-    &=E\left(\sum\nolimits_{k=1}^r X_k\right)\\
-    &=\sum_{k=1}^n E(X_k)\\
-    \shortintertext{which, by the tail-sum formula, becomes}
-    &=rE(X_1).
-  \end{align*}
-  Hence, to compute \(E(S)\) we need first compute \(E(X_1)\), as we now
-  do. Unraveling the definition of expected value for \(X_1\) we have
+  \begin{equation}
+    \label{eq:yip:mid-1:1-expanded}
+    \begin{aligned}
+      E(S)
+      &=E\left(\sum\nolimits_{k=1}^r X_k\right)\\
+      &=\sum_{k=1}^n E(X_k);
+    \end{aligned}
+  \end{equation}
+  and this is as far as the definition of expected value will take us
+  unless we make an important observation about the \(E(X_k)\).
+
+  In fact, We claim that \(E(X_k)=E(X_j)\) for all \(1\leq k,j\leq r\). To
+  see this, let us unwind the definition of expected value as we now do
   \[
-    E(X_1)=0\cdot P(X_1=0)+1\cdot P(X_1=1)=P(X_1=1)
+    E(X_k)=0\cdot P(X_k=0)+1\cdot P(X_k=1)=P(X_k=1).
   \]
-  where
+  Similarly we have \(E(X_j)=P(X_j=1)\). But
   \[
-    P(X_1=1)=\frac{(r-1)^n}{r^n}.
+    P(X_k)=\frac{(r-1)^n}{r^n}=P(X_j).
   \]
-  Thus,
+  Thus, \(E(X_k)=E(X_j)\).
+
+  Consequently, \eqref{eq:yip:mid-1:1-expanded} becomes
   \[
-    E(S)=\frac{r(r-1)^n}{r^n}=\frac{(r-1)^n}{r^{n-1}}.
+    E(S)=rE(X_k)=r\frac{(r-1)^n}{r^n}=\frac{(r-1)^n}{r^{n-1}}.
   \]
 
-  As for the variance, the second moment can likewise be computed as
+  Regarding the variance, we first need to compute the second moment of
+  \(S\) as we now do
   \begin{align*}
     E(S^2)
     &=E\left[\left(\sum\nolimits_{k=1}^r X_k\right)^2\right]\\
@@ -54,19 +61,21 @@ correct grammar and orthography when it is obvious what the author meant.
     &=\sum_{k=1}^r E(X_k)+\sum_{j\neq k}E(X_jX_k)\\
     &=\frac{(r-1)^n}{r^{n-1}}+\sum_{j\neq k}E(X_jX_k).
   \end{align*}
-  Now we can expand the second term in \(E(S^2)\) (i.e., the sum) as
-  follows
+  Let us now take care of that second term in the expansion of \(E(S^2)\);
+  i.e., the sum \(\sum_{j\neq k}E(X_jX_k)\). Taking this sum and expanding
+  it, we have
   \[
     \sum_{j\neq k}E(X_jX_k)=%
     \sum_{j\neq k}P(X_j=1,X_k=1)=%
     \sum_{j\neq k}\frac{(r-2)^n}{r^n}=%
     \binom{r}{2}\frac{(r-2)^n}{r^n}.
   \]
-  Thus,
+  Putting all of our results together,
   \[
     \Var(S)=%
-    \frac{(r-1)^n}{r^{n-1}}+%
-    \binom{r}{2}\frac{(r-2)^n}{r^n}-%
+    E(S^2)-E(S)^2=%
+    \left[\frac{(r-1)^n}{r^{n-1}}+%
+    \binom{r}{2}\frac{(r-2)^n}{r^n}\right]-%
     \frac{(r-1)^{2n}}{r^{2n-2}}.\qedhere
   \]
 \end{solution*}
@@ -88,7 +97,7 @@ correct grammar and orthography when it is obvious what the author meant.
   boxes are the same.
 \end{problem}
 \begin{solution*}
-  For part (a), the probability that box \# 1 is empty can be quickly shown
+  For part (a): The probability that box \# 1 is empty can be quickly shown
   to be
   \begin{equation}
     \label{eq:yip:mid-1:2-a}
@@ -98,7 +107,7 @@ correct grammar and orthography when it is obvious what the author meant.
   \(n\) boxes; then there are \((n-1)^n\) ways to distribute the \(n\)
   balls among the \(n-1\) remaining boxes.
   \\\\
-  For part (b), the probability that only box \# 1 is empty is
+  For part (b): The probability that only box \# 1 is empty is
   \begin{equation}
     \label{eq:yip:mid-1:2-b}
     \frac{\binom{n}{2}(n-1)!}{n^n};
@@ -107,7 +116,7 @@ correct grammar and orthography when it is obvious what the author meant.
   \(\binom{n}{2}(n-1)!\) ways to distribute \(2\) of the \(n\) balls among
   the remaining \(n-1\) boxes.
   \\\\
-  For part (c), using \eqref{eq:yip:mid-1:2-b}, the probability that
+  For part (c): Using \eqref{eq:yip:mid-1:2-b}, the probability that
   exactly one box is empty is
   \[
     \frac{n\binom{n}{2}(n-1)!}{n^n};
@@ -117,13 +126,13 @@ correct grammar and orthography when it is obvious what the author meant.
   probability that box \# 1 is empty; and that probability we found in part
   (b).
   \\\\
-  For part (d), by the definition of conditional probability together with
+  For part (d): By the definition of conditional probability together with
   parts \eqref{eq:yip:mid-1:2-a} and \eqref{eq:yip:mid-1:2-b} we have
   \[
     \frac{\binom{n}{2}(n-1)!/n^n}{(n-1)^n/n^n}=\frac{\binom{n}{2}(n-1)!}{(n-1)^n}.
   \]
   \\\\
-  For part (e), the probability is clearly
+  For part (e): The probability is clearly
   \[
     \frac{1}{n}
   \]
@@ -180,7 +189,7 @@ correct grammar and orthography when it is obvious what the author meant.
   \end{alphlist}
 \end{problem}
 \begin{solution*}
-  For part (a), let \(Z=\min\{X,Y\}\). Then using the axioms of
+  For part (a): Let \(Z=\min\{X,Y\}\). Then using the axioms of
   probability, we can manipulate the expression for the PMF of \(Z\) into
   the following
   \begin{equation}
@@ -217,7 +226,7 @@ correct grammar and orthography when it is obvious what the author meant.
     P(Z=k)=q^{2k-2}p^2+2q^{2k-1}p.
   \]
   \\\\
-  For part (b), let \(W=\max\{X,Y\}\). Then we can expand the PMF of \(W\)
+  For part (b): Let \(W=\max\{X,Y\}\). Then we can expand the PMF of \(W\)
   to get a simpler expression as follows
   \begin{equation}
     \label{eq:yip:mid-1:4-b}
@@ -246,7 +255,7 @@ correct grammar and orthography when it is obvious what the author meant.
     P(W=k)=q^{2k-2}p^2+2q^{k-1}(1-q^k)p.
   \]
   \\\\\
-  For part (c), since \(X\) and \(Y\) are independent the PMF of \(X+Y\) is
+  For part (c): Since \(X\) and \(Y\) are independent the PMF of \(X+Y\) is
   given by the convolution
   \[
     P(X+Y=k)=\sum_{j=1}^{k-1} P(X=k-j)P(Y=j).
@@ -260,7 +269,7 @@ correct grammar and orthography when it is obvious what the author meant.
     &=(k-1)q^{k-2}p^2.
   \end{align*}
   \\\\
-  For part (d), by the definition of conditional probability, we have
+  For part (d): By the definition of conditional probability, we have
   \begin{equation}
     \label{eq:yip:mid-1:4-d}
     P(X=j\mid X+Y=k)=%
@@ -295,7 +304,7 @@ correct grammar and orthography when it is obvious what the author meant.
   \end{alphlist}
 \end{problem}
 \begin{solution*}
-  For part (a), we have
+  For part (a): We have
   \begin{align*}
     P(E\cap F^\rmc)
     &=P(E)-P(E\cap F)\\
@@ -304,7 +313,7 @@ correct grammar and orthography when it is obvious what the author meant.
     &=P(E)P(F^\rmc).
   \end{align*}
   \\\\
-  For part (b), we have
+  For part (b): We have
   \begin{align*}
     P(E\cap (F\cap G^\rmc))
     &=P((E\cap F)\cap(E\cap G^\rmc))\\
@@ -314,7 +323,7 @@ correct grammar and orthography when it is obvious what the author meant.
     &=P(E)P(F\cap G^\rmc).
   \end{align*}
   \\\\
-  For part (c), we have
+  For part (c): We have
   \begin{align*}
     P(E\cap F^\rmc\cap G^\rmc)
     &=P((E\cap F^\rmc)\cap(E\cap G^\rmc))\\
@@ -324,7 +333,7 @@ correct grammar and orthography when it is obvious what the author meant.
     &=P(E)(P(F^\rmc\cap G^\rmc)).
   \end{align*}
   \\\\
-  For part (d), we have
+  For part (d): We have
   \begin{align*}
     P(E\cap F\cup G)
     &=P((E\cap F)\cup (E\cap G))\\
@@ -335,7 +344,7 @@ correct grammar and orthography when it is obvious what the author meant.
     &=P(E)P(F\cup G).
   \end{align*}
   \\\\
-  For part (e), we have
+  For part (e): We have
   \begin{align*}
     P(E\cap F\cup G^\rmc)
     &=P((E\cap F)\cup(E\cap G^\rmc))\\
