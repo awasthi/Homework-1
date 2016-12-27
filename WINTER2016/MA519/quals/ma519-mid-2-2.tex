@@ -295,7 +295,27 @@ This is actually the past final.
   Compute \(\Var(\bar X)\) and \(E(S^2)\).
 \end{problem}
 \begin{solution*}
-  Computing the expected value of \(\bar X\) is easy enough
+  Let us first find \(\Var(\bar X)\). One can easily see that \(E(\bar
+  X)=\mu\); and this follows from the linearity of expected value
+  \begin{align*}
+    E(\bar X)
+    &=E\left(\tfrac{1}{n}(X_1+\dotsb+X_n)\right)\\
+    &=\tfrac{1}{n}(E(X_1)+\dotsb+E(X_n))\\
+    &=\tfrac{1}{n}(\mu+\dotsb+\mu)\\
+    &=\mu.
+  \end{align*}
+  Now let us calculate \(\Var(\bar X)\) directly to avoid cluttering this
+  page further with long calculations (we still have to compute the second
+  moment of \(\bar X\), but we will do so as a step in the calculation of
+  \(\Var(\bar X)\));
+  \begin{align*}
+    \Var(\bar X)
+    &=E\left[(\bar X-E(\bar X))^2\right]\\
+    &=E\left[(\bar X-\mu)^2\right]\\
+    &=E(\bar X^2-2\mu \bar X+\mu^2)\\
+    &=E(\bar X^2)-\mu^2\\
+    &=\frac{1}{n^2}(E(X_1^2)+\dotsb+E(X_1^2))
+  \end{align*}
 \end{solution*}
 
 \begin{problem}[Estimation of the length of an interval]
