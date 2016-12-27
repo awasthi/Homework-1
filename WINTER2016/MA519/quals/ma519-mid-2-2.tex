@@ -152,19 +152,21 @@ This is actually the past final.
     P(X=x)=
     \begin{cases}
       \tfrac{1}{\lambda}\rme^{-\frac{1}{\lambda}x}&\text{for \(x>0\),}\\
-      0&\text{otherwise.}
+      0&\text{otherwise}
     \end{cases}
   \]
+  and this shall be the definition we use here.
 
-  Keeping this in mind, let us now compute the joint PDF of
-  \((Y_1,\dotsc,Y_n)\)
+  Now, let us now compute the joint PDF of \((Y_1,\dotsc,Y_n)\)
   \begin{equation}
     \label{eq:yip:mid-2:3}
     \begin{aligned}
       p(y_1,\dotsc,y_n)
       &=P(Y_1=y_1,\dotsc,Y_n=y_n)\\
-      &=P(Y_1=y_1)P(Y_1=y_1\mid Y_2=y_2,\dotsc Y_n=y_n)\\
-      &=
+      &=P(Y_2=y_2,\dotsc,Y_n=y_n)P(Y_1=y_1\mid Y_2=y_2,\dotsc,Y_n=y_n)\\
+      &=P(Y_n=y_n)P(Y_{n-1}=y_{n-1}\mid Y_n=y_n)\\
+      &\phantom{{}={}}\dotsm%
+      P(Y_2=y_2,\dotsc,Y_n=y_n)P(Y_1=y_1\mid Y_2=y_2,\dotsc,Y_n=y_n)
     \end{aligned}
   \end{equation}
 \end{solution*}
