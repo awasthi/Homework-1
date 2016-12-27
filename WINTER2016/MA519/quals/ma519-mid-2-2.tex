@@ -227,7 +227,25 @@ This is actually the past final.
   \]
 \end{problem}
 \begin{solution*}
-  What is the following
+  We show that \(X+Y\sim G(\alpha+\beta,\lambda)\) by showing that the MGF
+  of \(X+Y\) is that of a gamma. But first, let us find the MGF of a gamma
+  \begin{lemma}
+    Let \(X\sim G(\alpha,\lambda)\). Then
+    \[
+      E(\rme^{tX})=
+    \]
+  \end{lemma}
+  \begin{solution*}[Proof]
+    \renewcommand\qedsymbol{\(\scriptstyle\clubsuit\)}
+    A straightforward calculation gives us the desired equality
+    \begin{align*}
+      E(\rme^{tX})
+      &=\int_0^\infty\sum_{k=0}^\infty \frac{t^k}{k!}
+        \bigl(\tfrac{\lambda}{\Gamma(\alpha)}
+        \rme^{-\lambda x}(\lambda x)^{\alpha-1}\bigr)^k\diff x\\
+      &=
+    \end{align*}
+  \end{solution*}
 \end{solution*}
 
 \begin{problem}
