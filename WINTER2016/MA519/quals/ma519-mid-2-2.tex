@@ -162,16 +162,44 @@ This is actually the past final.
     \label{eq:yip:mid-2:3}
     \begin{aligned}
       p(y_1,\dotsc,y_n)
-      &=P(Y_1=y_1,\dotsc,Y_n=y_n)\\
-      &=P(Y_2=y_2,\dotsc,Y_n=y_n)P(Y_1=y_1\mid Y_2=y_2,\dotsc,Y_n=y_n)\\
-      &=P(Y_n=y_n)P(Y_{n-1}=y_{n-1}\mid Y_n=y_n)\\
+      &=P(Y_n=y_n,\dotsc,Y_1=y_1)\\
+      &=P(Y_1=y_1,\dotsc,Y_{n-1}=y_{n-1})\\
+      &\phantom{{}={}\dotsm}
+      P(Y_n=y_n\mid Y_1=y_2,\dotsc,Y_{n-1}=y_{n-1})\\
+      &=P(Y_1=y_1)P(Y_2=y_2\mid Y_1=y_1)\\
       &\phantom{{}={}}\dotsm%
       P(Y_2=y_2\mid Y_3=y_3,\dotsc,Y_n=y_n)\\
-      &\phantom{{}={}\dotsm\dotsm}P(Y_1=y_1\mid Y_2=y_2,\dotsc,Y_n=y_n).
+      &\phantom{{}={}\dotsm\dotsm}P(Y_n=y_n\mid Y_1=y_1,\dotsc,Y_{n-1}=y_{n-1}).
     \end{aligned}
   \end{equation}
 
-  Now, note that
+  Now, if we examine the product \(P(Y_n=y_n)P(Y_{n-1}=y_{n-1}\mid
+  Y_n=y_n)\) we see that
+  \[
+    \begin{aligned}
+      P(Y_1=y_1)P(Y_2=y_2\mid Y_1=y_1)&=%
+      \begin{cases}
+        \bigl(\frac{1}{\lambda}\rme^{-\frac{1}{\lambda}y_1}\bigr)%
+        \bigl(\frac{1}{\lambda}\rme^{-\frac{1}{\lambda}(y_2-y_1)}\bigr)
+        &\text{for \(y_1,y_2>0\),}\\
+        0&\text{otherwise}
+      \end{cases}\\
+      &=\begin{cases}
+        \frac{1}{\lambda^2}\rme^{-\frac{1}{\lambda}y_2}
+        &\text{for \(y_1,y_2>0\),}\\
+        0&\text{otherwise}
+    \end{cases}
+  \end{aligned}
+  \]
+  and so forth for \(1\leq k\leq n\). This same analysis applied to
+  \eqref{eq:yip:mid-2:3} gives us
+  \[
+    p(y_1,\dotsc,y_n)=
+    \begin{cases}
+      \frac{1}{\lambda}\rme^{-\frac{1}{\lambda}y_n}&\text{for \(y_n>0\),}\\
+      0&\text{otherwise.}
+    \end{cases}\qedhere
+  \]
 \end{solution*}
 
 \begin{problem}
