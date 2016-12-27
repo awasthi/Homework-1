@@ -304,18 +304,28 @@ This is actually the past final.
     &=\tfrac{1}{n}(\mu+\dotsb+\mu)\\
     &=\mu.
   \end{align*}
-  Now let us calculate \(\Var(\bar X)\) directly to avoid cluttering this
-  page further with long calculations (we still have to compute the second
-  moment of \(\bar X\), but we will do so as a step in the calculation of
-  \(\Var(\bar X)\));
+  Since there is no way to avoid calculating the second moment of \(\bar
+  X\), we do so here
+  \begin{align*}
+    E(\bar X^2)
+    &=\tfrac{1}{n^2}%
+      E\left[\sum\nolimits_{k=1}^n X_k^2+%
+      \sum\nolimits_{1\leq k<j\leq n} X_kX_j\right]\\
+    &=\frac{1}{n^2}
+      \left(%
+      \sum\nolimits_{k=1}^nE(X_k^2)%
+      +\sum\nolimits_{1\leq k<j\leq n} E(X_k)E(X_j)%
+      \right)\\
+    &=\tfrac{1}{n^2}\left(n(\sigma^2+\mu^2)+\tbinom{n}{2}\mu^2\right)\\
+    &=\tfrac{1}{n}\sigma^2+\tfrac{1}{n}\mu^2+\tfrac{n-1}{2}\mu^2
+  \end{align*}
+  so
   \begin{align*}
     \Var(\bar X)
-    &=E\left[(\bar X-E(\bar X))^2\right]\\
-    &=E\left[(\bar X-\mu)^2\right]\\
-    &=E(\bar X^2-2\mu \bar X+\mu^2)\\
-    &=E(\bar X^2)-\mu^2\\
-    &=\tfrac{1}{n^2}\left[E(X_1^2)+\dotsb+E(X_1^2)\right]
-      +
+    &=\left(\tfrac{1}{n}\sigma^2%
+      +\tfrac{1}{n}\mu^2+%
+      \tfrac{n-1}{2}\mu^2\right)-\mu^2\\
+    &=\tfrac{1}{n}\left(\sigma^2+(n-2)(n-1)\mu^2\right).
   \end{align*}
 \end{solution*}
 
